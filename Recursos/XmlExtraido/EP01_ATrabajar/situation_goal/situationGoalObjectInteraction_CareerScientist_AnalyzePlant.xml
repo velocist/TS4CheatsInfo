@@ -1,0 +1,92 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<I c="SituationGoalObjectInteraction" i="situation_goal" m="situations.situation_goal_object_interaction" n="situationGoalObjectInteraction_CareerScientist_AnalyzePlant" s="111159">
+  <V t="enabled" n="_display_data">
+    <U n="enabled">
+      <V t="enabled" n="instance_display_icon">
+        <T n="enabled" p="InGame\UI\Icons\Headlines\Final\headline_PlantSeed.png">2f7d0004:00000000:dd5f106ca95eb64c</T>
+      </V>
+      <V n="instance_display_name" t="enabled">
+        <T n="enabled">0x964622F1<!--String: "Analizar una fruta o flor"--></T>
+      </V>
+      <V n="instance_display_tooltip" t="enabled">
+        <T n="enabled">0xE2DF5EE2<!--String: "Selecciona un analizador químico y escoge Analizar flora. A continuación, elige una fruta o una flor entre las opciones disponibles."--></T>
+      </V>
+    </U>
+  </V>
+  <U n="_goal_test">
+    <L n="affordances">
+      <T>104724<!--SuperInteraction: chemicalAnalyzer_Analyze_Flora--></T>
+    </L>
+    <E n="test_event">InteractionComplete</E>
+  </U>
+  <L n="_post_tests">
+    <V t="object_criteria">
+      <U n="object_criteria">
+        <V t="tags" n="identity_test">
+          <U n="tags">
+            <L n="tag_set">
+              <E>BuyCat_Collection_Gardening</E>
+            </L>
+          </U>
+        </V>
+        <V t="single_object" n="subject_specific_tests">
+          <U n="single_object">
+            <E n="target">PickedObject</E>
+          </U>
+        </V>
+        <L n="test_events">
+          <E>OnInventoryChanged</E>
+        </L>
+      </U>
+    </V>
+  </L>
+  <L n="_pre_tests">
+    <V t="inventory">
+      <U n="inventory">
+        <V n="contents_check" t="has_object_with_states">
+          <U n="has_object_with_states">
+            <V n="object_requirement" t="tag">
+              <U n="tag">
+                <U n="tag">
+                  <L n="tag_set">
+                    <E>BuyCat_Collection_Gardening</E>
+                  </L>
+                </U>
+              </U>
+            </V>
+            <L n="state_set">
+              <T>107804<!--ObjectStateValue: chemicalAnalyzer_SampleAnalysis_UnTested--></T>
+            </L>
+          </U>
+        </V>
+      </U>
+    </V>
+    <V t="statistic">
+      <U n="statistic">
+        <T n="stat">113011<!--Statistic: statistic_Career_Scientist_Inventing--></T>
+        <V t="value_threshold" n="threshold">
+          <U n="value_threshold">
+            <E n="comparison">EQUAL</E>
+            <T n="value">1</T>
+          </U>
+        </V>
+      </U>
+    </V>
+    <V t="career">
+      <U n="career">
+        <V n="test_type" t="career_reference">
+          <U n="career_reference">
+            <V t="specific_career" n="career">
+              <T n="specific_career">107255<!--Career: career_Adult_Active_Scientist--></T>
+            </V>
+            <V t="enabled" n="user_level" />
+          </U>
+        </V>
+      </U>
+    </V>
+  </L>
+  <T p="InGame\Audio\Bumper\bumper_event_goal_complete.propx" n="audio_sting_on_complete">39b2aa4a:00000000:ed52c39bcc2a7111</T>
+  <L n="role_tags">
+    <E>Role_Scientist</E>
+  </L>
+</I>

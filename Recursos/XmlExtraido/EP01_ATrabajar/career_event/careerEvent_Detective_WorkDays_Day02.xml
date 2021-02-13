@@ -1,0 +1,102 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<I c="CareerEvent" i="career_event" m="careers.career_event" n="careerEvent_Detective_WorkDays_Day02" s="112050">
+  <T n="loot_on_request">115428<!--LootActions: loot_Career_Detective_RemoveInventoryClues--></T>
+  <T n="loot_on_start">115309<!--LootActions: loot_career_Detective_Notification_Day2--></T>
+  <L n="loots_on_end">
+    <T>116388<!--LootActions: loot_Statistic_Detective_ResetGoalDayStats--></T>
+    <T>215757<!--LootActions: loot_Cauldron_Potion_Effect_Luck_Promote--></T>
+  </L>
+  <V t="lot_description" n="required_zone">
+    <U n="lot_description">
+      <T n="lot_description">72884</T>
+    </U>
+  </V>
+  <V n="scorable_situation" t="main_event">
+    <U n="main_event">
+      <U n="medal_payout_bronze">
+        <U n="money">
+          <T n="base_value">0.8</T>
+        </U>
+        <T n="text">0x10E8376<!--String: "Hoy {0.SimFirstName} ha cumplido adecuadamente su trabajo. Sacarle un poco más de lustre a su placa y echarle más brío no le vendría mal."--></T>
+        <U n="work_performance">
+          <T n="base_value">1</T>
+        </U>
+      </U>
+      <U n="medal_payout_gold">
+        <U n="money">
+          <T n="base_value">1.3</T>
+        </U>
+        <T n="text">0xE91EC3B4<!--String: "Hoy {0.SimFirstName} ha estado increíble en su trabajo. Puede que el futuro le depare un nuevo cargo y una placa más brillante..."--></T>
+        <U n="work_performance">
+          <T n="base_value">3</T>
+        </U>
+      </U>
+      <U n="medal_payout_silver">
+        <T n="text">0x9E27C0DF<!--String: "Hoy {0.SimFirstName} ha desempeñado bien su trabajo. ¡Los ciudadanos de esta comunidad sabrán apreciar sus ganas de proteger y servir!"--></T>
+        <U n="work_performance">
+          <T n="base_value">1.1</T>
+        </U>
+      </U>
+      <U n="medal_payout_tin">
+        <U n="money">
+          <T n="base_value">0.15</T>
+        </U>
+        <T n="text">0xD7A3CC6C<!--String: "Hoy {0.SimFirstName} lo ha hecho fatal en su trabajo. Seguro que su negligencia hace que aumenten los delitos."--></T>
+        <U n="work_performance">
+          <T n="base_value">-0.5</T>
+        </U>
+      </U>
+      <T n="situation">112171<!--CareerEventSituation: careerEventSituations_DetectiveCareer_Day02--></T>
+    </U>
+  </V>
+  <L n="tests">
+    <L>
+      <V t="career_test">
+        <U n="career_test">
+          <V n="test_type" t="days_worked">
+            <U n="days_worked">
+              <T n="career">106132<!--DetectiveCareer: detectiveCareer_1--></T>
+              <U n="threshold">
+                <E n="comparison">EQUAL</E>
+                <T n="value">1</T>
+              </U>
+            </U>
+          </V>
+        </U>
+      </V>
+      <V t="career_test">
+        <U n="career_test">
+          <T n="negate">True</T>
+          <V t="career_reference" n="test_type">
+            <U n="career_reference">
+              <V t="specific_career" n="career">
+                <T n="specific_career">106132<!--DetectiveCareer: detectiveCareer_1--></T>
+              </V>
+              <V t="enabled" n="user_level">
+                <U n="enabled">
+                  <T n="lower_bound">10</T>
+                </U>
+              </V>
+            </U>
+          </V>
+        </U>
+      </V>
+    </L>
+    <L>
+      <V t="statistic">
+        <U n="statistic">
+          <T n="stat">112734<!--Statistic: statistic_Career_Detective_DEBUG_EventSelected--></T>
+          <V t="value_threshold" n="threshold">
+            <U n="value_threshold">
+              <E n="comparison">EQUAL</E>
+              <T n="value">2</T>
+            </U>
+          </V>
+        </U>
+      </V>
+    </L>
+  </L>
+  <V t="enabled" n="zone_director">
+    <T n="enabled">108193<!--DetectiveCareerEventZoneDirector: careerEventZoneDirector_Detective--></T>
+  </V>
+</I>

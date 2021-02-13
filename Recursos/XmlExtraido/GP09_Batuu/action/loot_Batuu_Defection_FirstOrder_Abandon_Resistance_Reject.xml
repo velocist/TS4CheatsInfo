@@ -1,0 +1,54 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<I c="LootActions" i="action" m="interactions.utils.loot" n="loot_Batuu_Defection_FirstOrder_Abandon_Resistance_Reject" s="243570">
+  <L n="loot_actions">
+    <V t="create_situation">
+      <U n="create_situation">
+        <U n="create_situation">
+          <V t="specify_job" n="actor_init_job">
+            <T n="specify_job">242081<!--SituationJob: job_Batuu_StormtrooperArrest_Prisoner--></T>
+          </V>
+          <T n="situation">241958<!--PrisonerEscortSituation: situation_Batuu_StormtrooperArrest--></T>
+          <V t="specify_job" n="target_init_job">
+            <T n="specify_job">242080<!--SituationJob: job_Batuu_StormtrooperArrest_Escort--></T>
+          </V>
+          <T n="user_facing">False</T>
+        </U>
+      </U>
+    </V>
+    <V t="notification_and_dialog">
+      <U n="notification_and_dialog">
+        <V n="dialog" t="notification">
+          <U n="notification">
+            <V t="enabled" n="icon">
+              <V t="participant" n="enabled">
+                <U n="participant">
+                  <L n="participant_type">
+                    <E>TargetSim</E>
+                  </L>
+                </U>
+              </V>
+            </V>
+            <V n="text" t="single">
+              <T n="single">0x2854ADE<!--String: "¡Si no tienes intención de unirte a nuestra causa contra la Resistencia, solo queda una opción!"--></T>
+            </V>
+            <E n="visual_type">SPEECH</E>
+          </U>
+        </V>
+      </U>
+    </V>
+    <V t="reaction">
+      <U n="reaction">
+        <V n="si_reaction" t="enabled">
+          <U n="enabled">
+            <T n="affordance">236578<!--SuperInteraction: batuu_Arrest_Escort_GoToPrisoner--></T>
+            <E n="affordance_priority">High</E>
+            <V t="enabled" n="affordance_target">
+              <E n="enabled">Actor</E>
+            </V>
+          </U>
+        </V>
+        <E n="subject">TargetSim</E>
+      </U>
+    </V>
+  </L>
+</I>

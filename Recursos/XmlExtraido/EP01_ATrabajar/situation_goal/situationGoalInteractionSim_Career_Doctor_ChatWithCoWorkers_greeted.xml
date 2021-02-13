@@ -1,0 +1,58 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<I c="SituationGoalRanInteractionOnTargetedSim" i="situation_goal" m="situations.situation_goal_targeted_sim" n="situationGoalInteractionSim_Career_Doctor_ChatWithCoWorkers_greeted" s="116223">
+  <T n="_cooldown">5</T>
+  <V t="enabled" n="_display_data">
+    <U n="enabled">
+      <V t="enabled" n="instance_display_icon">
+        <T n="enabled" p="InGame\UI\Icons\Events\EventGoal_Socialize.png">2f7d0004:00000000:21835a4b8238b2fa</T>
+      </V>
+      <V n="instance_display_name" t="enabled">
+        <T n="enabled">0xDA367193<!--String: "Charlar con compañeros de trabajo"--></T>
+      </V>
+      <V n="instance_display_tooltip" t="enabled">
+        <T n="enabled">0xB47455B4<!--String: "El trabajo no tiene por qué consistir solo en dar el callo. Saca algo de tiempo al día para relacionarte con algunos de tus colegas."--></T>
+      </V>
+    </U>
+  </V>
+  <U n="_goal_test">
+    <L n="affordances">
+      <T>13998<!--SocialSuperInteraction: sim_Chat--></T>
+    </L>
+    <V t="enabled" n="running_time" />
+    <L n="tags">
+      <E>Interaction_Chat</E>
+    </L>
+    <E n="test_event">InteractionUpdate</E>
+  </U>
+  <T n="_iterations">1</T>
+  <L n="_pre_tests">
+    <V t="relationship">
+      <U n="relationship">
+        <T n="num_relations">2</T>
+        <U n="required_relationship_bits">
+          <L n="match_all">
+            <T>107373<!--RelationshipBit: relationshipbit_CoWorkers--></T>
+            <T>15803<!--RelationshipBit: has_met--></T>
+          </L>
+        </U>
+        <L n="target_sim">
+          <E>TargetSim</E>
+        </L>
+      </U>
+    </V>
+  </L>
+  <T n="_score">9</T>
+  <T n="_select_sims_outside_of_situation">True</T>
+  <L n="_target_tests">
+    <V t="relationship">
+      <U n="relationship">
+        <U n="required_relationship_bits">
+          <L n="match_any">
+            <T>107373<!--RelationshipBit: relationshipbit_CoWorkers--></T>
+          </L>
+        </U>
+      </U>
+    </V>
+  </L>
+  <T p="InGame\Audio\Bumper\bumper_event_goal_complete.propx" n="audio_sting_on_complete">39b2aa4a:00000000:ed52c39bcc2a7111</T>
+</I>

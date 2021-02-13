@@ -1,0 +1,124 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<I c="SituationDramaNode" i="drama_node" m="drama_scheduler.situation_drama_node" n="situationDramaNode_IslanderCulture_ExtraFood" s="208991">
+  <V t="node_cooldown" n="cooldown_data">
+    <U n="node_cooldown">
+      <V n="duration" t="duration">
+        <T n="duration">72</T>
+      </V>
+    </U>
+  </V>
+  <U n="min_and_max_times">
+    <T n="lower_bound">10</T>
+    <T n="upper_bound">20</T>
+  </U>
+  <L n="pretests">
+    <L>
+      <V t="region">
+        <U n="region">
+          <V n="whitelist" t="enabled">
+            <L n="enabled">
+              <T>208308<!--Region: region_Residential_IslandWorld--></T>
+            </L>
+          </V>
+        </U>
+      </V>
+      <V t="zone">
+        <U n="zone">
+          <U n="zone_tests">
+            <V n="zone_modifiers" t="enabled">
+              <U n="enabled">
+                <V n="blacklist" t="specify">
+                  <U n="specify">
+                    <L n="blacklist">
+                      <T>144159<!--ZoneModifier: zoneModifier_lotTrait_NoTrespassing--></T>
+                    </L>
+                  </U>
+                </V>
+              </U>
+            </V>
+          </U>
+        </U>
+      </V>
+      <V t="statistic">
+        <U n="statistic">
+          <T n="stat">233829<!--Statistic: statistic_Situations_Disallow_Neighbors--></T>
+          <V t="value_threshold" n="threshold">
+            <U n="value_threshold">
+              <E n="comparison">EQUAL</E>
+              <T n="value">0</T>
+            </U>
+          </V>
+          <E n="who">Lot</E>
+        </U>
+      </V>
+      <V t="unlock_earned">
+        <U n="unlock_earned">
+          <V n="unlock_to_test" t="household_milestone_earned">
+            <U n="household_milestone_earned">
+              <T n="household_milestone">209316<!--HouseholdMilestone: householdMilestone_IslanderCulture_NoCookingForADay--></T>
+            </U>
+          </V>
+        </U>
+      </V>
+    </L>
+  </L>
+  <L n="run_tests">
+    <L>
+      <V t="lot_owner">
+        <U n="lot_owner">
+          <T n="consider_business_lot_as_owned">False</T>
+          <T n="consider_rented_lot_as_owned">False</T>
+        </U>
+      </V>
+      <V t="location">
+        <U n="location">
+          <U n="location_tests">
+            <V n="is_on_active_lot" t="Is_or_is_not_on_active_lot" />
+          </U>
+        </U>
+      </V>
+      <V t="filter_test">
+        <U n="filter_test">
+          <V t="disabled" n="filter_target" />
+          <E n="relative_sim">Actor</E>
+          <T n="sim_filter">119901<!--TunableSimFilter: filter_WelcomeWagon_WelcomingNeighbor--></T>
+          <V n="threshold_matched" t="enabled">
+            <U n="enabled">
+              <T n="value">2</T>
+            </U>
+          </V>
+        </U>
+      </V>
+    </L>
+  </L>
+  <V t="enabled" n="scoring">
+    <U n="enabled">
+      <T n="base_score">50</T>
+      <E n="bucket">IslandCulture_IslanderHelp</E>
+    </U>
+  </V>
+  <V t="no_participant" n="sender_sim_info" />
+  <E n="sender_sim_info_type">INSTANCED_ALLOWED</E>
+  <T n="situation_to_run">208434<!--PreWelcomeWagon: preWelcomeWagon_IslanderCulture_ExtraFood--></T>
+  <V n="time_option" t="schedule">
+    <U n="schedule">
+      <L n="valid_times">
+        <U>
+          <U n="days_available">
+            <T n="0 SUNDAY">True</T>
+            <T n="1 MONDAY">True</T>
+            <T n="2 TUESDAY">True</T>
+            <T n="3 WEDNESDAY">True</T>
+            <T n="4 THURSDAY">True</T>
+            <T n="5 FRIDAY">True</T>
+            <T n="6 SATURDAY">True</T>
+          </U>
+          <T n="duration">11</T>
+          <U n="start_time">
+            <T n="hour">10</T>
+          </U>
+        </U>
+      </L>
+    </U>
+  </V>
+</I>

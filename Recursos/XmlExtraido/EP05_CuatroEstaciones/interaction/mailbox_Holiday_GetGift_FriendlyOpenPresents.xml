@@ -1,0 +1,149 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<I c="SuperInteraction" i="interaction" m="interactions.base.super_interaction" n="mailbox_Holiday_GetGift_FriendlyOpenPresents" s="185484">
+  <V t="participant" n="_icon">
+    <U n="participant">
+      <L n="participant_type">
+        <E>Object</E>
+      </L>
+    </U>
+  </V>
+  <V t="enabled" n="_saveable" />
+  <T n="allow_autonomous">False</T>
+  <T n="attention_cost">0.75</T>
+  <V n="basic_content" t="one_shot">
+    <U n="one_shot">
+      <U n="animation_ref">
+        <T n="factory">185491<!--AnimationElement: Mailbox_GetPackage--></T>
+      </U>
+    </U>
+  </V>
+  <L n="basic_extras">
+    <V t="loot">
+      <U n="loot">
+        <L n="loot_list">
+          <T>185509<!--LootActions: loot_Buff_Mailbox_GetGift_Cooldown--></T>
+        </L>
+      </U>
+    </V>
+  </L>
+  <V t="disabled" n="content_score" />
+  <T n="display_name">0xDA6C7FCB<!--String: "Comprobar si hay regalos de la festividad {2.String}"--></T>
+  <U n="display_name_text_tokens">
+    <L n="tokens">
+      <V t="participant_type">
+        <U n="participant_type">
+          <V t="from_participant" n="objects">
+            <U n="from_participant">
+              <E n="participant">Actor</E>
+            </U>
+          </V>
+        </U>
+      </V>
+      <V t="participant_type">
+        <U n="participant_type">
+          <V t="from_participant" n="objects">
+            <U n="from_participant">
+              <E n="participant">Object</E>
+            </U>
+          </V>
+        </U>
+      </V>
+      <V t="active_holiday" />
+    </L>
+  </U>
+  <L n="interaction_category_tags">
+    <E>Interaction_Super</E>
+    <E>Interaction_All</E>
+  </L>
+  <V n="outcome" t="test_based">
+    <U n="test_based">
+      <L n="fallback_outcomes">
+        <U>
+          <U n="outcome">
+            <L n="continuation">
+              <U>
+                <T n="affordance">185478<!--AutonomousSimPickerSuperInteraction: autonomousSimPicker_Mailbox_GetGifts_Friendly--></T>
+              </U>
+            </L>
+          </U>
+        </U>
+      </L>
+    </U>
+  </V>
+  <V t="enabled" n="route_start_balloon">
+    <U n="enabled">
+      <U n="balloon">
+        <L n="balloon_choices">
+          <U>
+            <V n="item" t="balloon_icon">
+              <U n="balloon_icon">
+                <V t="participant" n="icon">
+                  <U n="participant">
+                    <L n="participant_type">
+                      <E>Object</E>
+                    </L>
+                  </U>
+                </V>
+              </U>
+            </V>
+          </U>
+        </L>
+        <L n="balloon_target">
+          <E>Actor</E>
+        </L>
+      </U>
+    </U>
+  </V>
+  <E n="scoring_priority">NORMAL</E>
+  <T n="subaction_selection_weight">1</T>
+  <E n="target_type">OBJECT</E>
+  <L n="test_globals">
+    <V t="sim_info">
+      <U n="sim_info">
+        <V t="specified" n="ages" />
+        <V t="specified" n="species">
+          <U n="specified">
+            <L n="species">
+              <E />
+            </L>
+          </U>
+        </V>
+        <E n="who">Actor</E>
+      </U>
+    </V>
+    <V t="buff">
+      <U n="buff">
+        <L n="blacklist">
+          <T>185510<!--Buff: buff_Mailbox_GetGift_Cooldown--></T>
+        </L>
+      </U>
+    </V>
+    <V t="holiday_tradition">
+      <U n="holiday_tradition">
+        <U n="tradition_filter">
+          <V n="whitelist" t="specify">
+            <U n="specify">
+              <L n="whitelist">
+                <T>182120<!--HolidayTradition: holidayTradition_OpenPresents--></T>
+                <T>183389<!--HolidayTradition: holidayTradition_GiveGift--></T>
+              </L>
+            </U>
+          </V>
+        </U>
+      </U>
+    </V>
+    <V t="relationship">
+      <U n="relationship">
+        <T n="num_relations">1</T>
+        <U n="relationship_score_interval">
+          <T n="lower_bound">30</T>
+        </U>
+        <L n="target_sim">
+          <E>AllRelationships</E>
+        </L>
+        <T n="track">16650<!--RelationshipTrack: LTR_Friendship_Main--></T>
+      </U>
+    </V>
+  </L>
+  <T n="time_overhead">5</T>
+</I>

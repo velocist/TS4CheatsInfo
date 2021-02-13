@@ -1,0 +1,659 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<I c="GameObject" i="object" m="objects.game_object" n="object_ResearchMachine_DebateOrgReward" s="228997">
+  <V t="enabled" n="_anim_overrides">
+    <U n="enabled">
+      <L n="params">
+        <U>
+          <T n="name">computerType</T>
+          <V n="value" t="string">
+            <T n="string">Desktop</T>
+          </V>
+        </U>
+      </L>
+    </U>
+  </V>
+  <U n="_components">
+    <V t="enabled" n="focus">
+      <U n="enabled">
+        <V n="_focus_score" t="globally">
+          <U n="globally">
+            <E n="base">LOW</E>
+          </U>
+        </V>
+      </U>
+    </V>
+    <V n="object_locking_component" t="enabled">
+      <U n="enabled">
+        <L n="preset_lock_datas">
+          <V t="lock_siminfo" />
+        </L>
+      </U>
+    </V>
+    <V t="enabled" n="retail_component">
+      <V n="enabled" t="reference">
+        <T n="reference">115303<!--RetailComponent: retailComponent_Default_HighAppeal--></T>
+      </V>
+    </V>
+    <V n="state" t="enabled">
+      <U n="enabled">
+        <L n="state_triggers">
+          <U>
+            <L n="at_states">
+              <T>15076<!--CommodityBasedObjectStateValue: Brokenness_Broken--></T>
+            </L>
+            <V t="Set_state_list" n="set_states">
+              <L n="Set_state_list">
+                <T>15080<!--ObjectStateValue: BrokenState_Broken--></T>
+              </L>
+            </V>
+          </U>
+          <U>
+            <L n="at_states">
+              <T>15078<!--CommodityBasedObjectStateValue: Brokenness_Unbroken--></T>
+            </L>
+            <V t="Set_state_list" n="set_states">
+              <L n="Set_state_list">
+                <T>15081<!--ObjectStateValue: BrokenState_Unbroken--></T>
+              </L>
+            </V>
+          </U>
+          <U>
+            <L n="at_states">
+              <T>97654<!--VideoChannel: Computer_Game_WatchStreams--></T>
+            </L>
+            <V n="set_random_state" t="Trigger_random_state">
+              <L n="Trigger_random_state">
+                <U>
+                  <T n="state_value">15105<!--VideoChannel: Computer_Game_Blicblock--></T>
+                </U>
+                <U>
+                  <T n="state_value">32918<!--VideoChannel: Computer_Game_Hillock--></T>
+                </U>
+                <U>
+                  <T n="state_value">32920<!--VideoChannel: Computer_Game_IncredibleSports--></T>
+                </U>
+                <U>
+                  <T n="state_value">32922<!--VideoChannel: Computer_Game_MariaSisters--></T>
+                </U>
+                <U>
+                  <T n="state_value">32917<!--VideoChannel: Computer_Game_REFUGE--></T>
+                </U>
+                <U>
+                  <T n="state_value">32921<!--VideoChannel: Computer_Game_RoadRival--></T>
+                </U>
+                <U>
+                  <T n="state_value">32919<!--VideoChannel: Computer_Game_SimsForever--></T>
+                </U>
+              </L>
+            </V>
+          </U>
+          <U>
+            <L n="at_states">
+              <T>15106<!--VideoChannel: Computer_Off--></T>
+              <T>15081<!--ObjectStateValue: BrokenState_Unbroken--></T>
+            </L>
+            <V n="set_states" t="Set_state_list">
+              <L n="Set_state_list">
+                <T>35297<!--ObjectStateValue: GenericOnOff_Off--></T>
+              </L>
+            </V>
+            <L n="statistic_operations">
+              <V t="statistic_set_min">
+                <U n="statistic_set_min">
+                  <T n="stat">208412<!--Commodity: commodity_IslanderCulture_TimeSinceBroken--></T>
+                </U>
+              </V>
+            </L>
+            <E n="trigger_operation">AND</E>
+          </U>
+          <U>
+            <L n="at_states">
+              <T>15106<!--VideoChannel: Computer_Off--></T>
+              <T>15080<!--ObjectStateValue: BrokenState_Broken--></T>
+            </L>
+            <V n="set_states" t="Set_state_list">
+              <L n="Set_state_list">
+                <T>35296<!--ObjectStateValue: GenericOnOff_On--></T>
+              </L>
+            </V>
+            <E n="trigger_operation">NONE</E>
+          </U>
+          <U>
+            <L n="at_states">
+              <T>77532<!--CommodityBasedObjectStateValue: FireState_Burn_Material_Change_Replace--></T>
+            </L>
+            <V n="set_states" t="Set_state_list">
+              <L n="Set_state_list">
+                <T>39737<!--CommodityBasedObjectStateValue: FireState_Burn_Material_Change_Not_Burning--></T>
+              </L>
+            </V>
+          </U>
+        </L>
+        <L n="states">
+          <U>
+            <V n="default_value" t="reference">
+              <T n="reference">15106<!--VideoChannel: Computer_Off--></T>
+            </V>
+            <T n="reset_on_load_if_time_passes">True</T>
+          </U>
+          <U>
+            <L n="client_states">
+              <U>
+                <T n="key">35296<!--ObjectStateValue: GenericOnOff_On--></T>
+                <U n="value">
+                  <V t="apply_new_value" n="audio_state" />
+                  <V n="broadcaster" t="apply_new_value">
+                    <V n="apply_new_value" t="start_broadcaster">
+                      <U n="start_broadcaster">
+                        <L n="broadcaster_types">
+                          <U>
+                            <T n="item">159384<!--Broadcaster: broadcaster_Fear_Pet_Computer--></T>
+                          </U>
+                        </L>
+                      </U>
+                    </V>
+                  </V>
+                </U>
+              </U>
+              <U>
+                <T n="key">35297<!--ObjectStateValue: GenericOnOff_Off--></T>
+                <U n="value">
+                  <V t="apply_new_value" n="audio_state" />
+                  <V t="apply_new_value" n="video_playlist">
+                    <V n="apply_new_value" t="no_video" />
+                  </V>
+                </U>
+              </U>
+            </L>
+            <V t="reference" n="default_value">
+              <T n="reference">35297<!--ObjectStateValue: GenericOnOff_Off--></T>
+            </V>
+          </U>
+          <U>
+            <L n="client_states">
+              <U>
+                <T n="key">15076<!--CommodityBasedObjectStateValue: Brokenness_Broken--></T>
+              </U>
+              <U>
+                <T n="key">15077<!--CommodityBasedObjectStateValue: Brokenness_Neutral--></T>
+              </U>
+              <U>
+                <T n="key">15078<!--CommodityBasedObjectStateValue: Brokenness_Unbroken--></T>
+              </U>
+              <U>
+                <T n="key">97754<!--CommodityBasedObjectStateValue: Brokenness_Broken_Sabotage--></T>
+              </U>
+            </L>
+            <V n="default_value" t="reference">
+              <T n="reference">15078<!--CommodityBasedObjectStateValue: Brokenness_Unbroken--></T>
+            </V>
+          </U>
+          <U>
+            <L n="client_states">
+              <U>
+                <T n="key">15080<!--ObjectStateValue: BrokenState_Broken--></T>
+                <U n="value">
+                  <V t="apply_new_value" n="autonomy_modifiers">
+                    <V n="apply_new_value" t="apply_statistic_modifiers">
+                      <U n="apply_statistic_modifiers">
+                        <L n="autonomy_modifiers">
+                          <U>
+                            <L n="decay_modifiers">
+                              <U>
+                                <T n="key">208412<!--Commodity: commodity_IslanderCulture_TimeSinceBroken--></T>
+                                <T n="value">1</T>
+                              </U>
+                            </L>
+                          </U>
+                        </L>
+                      </U>
+                    </V>
+                  </V>
+                  <V n="vfx_state" t="apply_new_value">
+                    <V n="apply_new_value" t="start_vfx">
+                      <V n="start_vfx" t="single_effect">
+                        <U n="single_effect">
+                          <T n="effect_name">S40_Obj_computer_deskMED01_broken</T>
+                          <V n="joint_name" t="Slot">
+                            <T n="Slot">_FX_repair</T>
+                          </V>
+                        </U>
+                      </V>
+                    </V>
+                  </V>
+                  <V n="video_playlist" t="apply_new_value">
+                    <V n="apply_new_value" t="start_video">
+                      <U n="start_video">
+                        <L n="clip_list">
+                          <T p="InGame\Video\Computer\TS4_PC_BLUE_SCREEN_OF_DEATH.vp6">376840d7:00000000:0adbfbaa0fd05083</T>
+                        </L>
+                      </U>
+                    </V>
+                  </V>
+                </U>
+              </U>
+              <U>
+                <T n="key">15081<!--ObjectStateValue: BrokenState_Unbroken--></T>
+                <U n="value">
+                  <V t="apply_new_value" n="autonomy_modifiers">
+                    <V n="apply_new_value" t="apply_statistic_modifiers">
+                      <U n="apply_statistic_modifiers">
+                        <L n="autonomy_modifiers">
+                          <U>
+                            <L n="decay_modifiers">
+                              <U>
+                                <T n="key">208412<!--Commodity: commodity_IslanderCulture_TimeSinceBroken--></T>
+                              </U>
+                            </L>
+                          </U>
+                        </L>
+                      </U>
+                    </V>
+                  </V>
+                  <V t="apply_new_value" n="vfx_state" />
+                  <V t="apply_new_value" n="video_playlist">
+                    <V n="apply_new_value" t="no_video" />
+                  </V>
+                </U>
+              </U>
+            </L>
+            <V t="reference" n="default_value">
+              <T n="reference">15081<!--ObjectStateValue: BrokenState_Unbroken--></T>
+            </V>
+          </U>
+          <U>
+            <L n="client_states">
+              <U>
+                <T n="key">29029<!--CommodityBasedObjectStateValue: upgrade_Computer_GamingSkill_Completed--></T>
+              </U>
+              <U>
+                <T n="key">29048<!--CommodityBasedObjectStateValue: upgrade_Computer_GamingSkill_NotStarted--></T>
+              </U>
+              <U>
+                <T n="key">29051<!--CommodityBasedObjectStateValue: upgrade_Computer_GamingSkill_Partial--></T>
+              </U>
+            </L>
+            <V n="default_value" t="reference">
+              <T n="reference">29048<!--CommodityBasedObjectStateValue: upgrade_Computer_GamingSkill_NotStarted--></T>
+            </V>
+          </U>
+          <U>
+            <L n="client_states">
+              <U>
+                <T n="key">29030<!--CommodityBasedObjectStateValue: upgrade_Computer_HackingMoney_Completed--></T>
+              </U>
+              <U>
+                <T n="key">29049<!--CommodityBasedObjectStateValue: upgrade_Computer_HackingMoney_NotStarted--></T>
+              </U>
+              <U>
+                <T n="key">29052<!--CommodityBasedObjectStateValue: upgrade_Computer_HackingMoney_Partial--></T>
+              </U>
+            </L>
+            <V n="default_value" t="reference">
+              <T n="reference">29049<!--CommodityBasedObjectStateValue: upgrade_Computer_HackingMoney_NotStarted--></T>
+            </V>
+          </U>
+          <U>
+            <L n="client_states">
+              <U>
+                <T n="key">15396<!--CommodityBasedObjectStateValue: Upgrade_Generic_LowerBrokenness_Completed--></T>
+              </U>
+              <U>
+                <T n="key">15397<!--CommodityBasedObjectStateValue: Upgrade_Generic_LowerBrokenness_NotStarted--></T>
+              </U>
+              <U>
+                <T n="key">15398<!--CommodityBasedObjectStateValue: Upgrade_Generic_LowerBrokenness_Partial--></T>
+              </U>
+            </L>
+            <V t="reference" n="default_value">
+              <T n="reference">15397<!--CommodityBasedObjectStateValue: Upgrade_Generic_LowerBrokenness_NotStarted--></T>
+            </V>
+          </U>
+          <U>
+            <L n="client_states">
+              <U>
+                <T n="key">108830<!--ObjectStateValue: ObjectStateValue_Detective_NotStolen--></T>
+              </U>
+              <U>
+                <T n="key">108831<!--ObjectStateValue: ObjectStateValue_Detective_Stolen--></T>
+              </U>
+            </L>
+            <V n="default_value" t="reference">
+              <T n="reference">108830<!--ObjectStateValue: ObjectStateValue_Detective_NotStolen--></T>
+            </V>
+          </U>
+          <U>
+            <L n="client_states">
+              <U>
+                <T n="key">109125<!--ObjectStateValue: objectStateValue_Detective_NotBroken--></T>
+              </U>
+              <U>
+                <T n="key">109126<!--ObjectStateValue: objectStateValue_Detective_Broken--></T>
+              </U>
+            </L>
+            <V n="default_value" t="reference">
+              <T n="reference">109125<!--ObjectStateValue: objectStateValue_Detective_NotBroken--></T>
+            </V>
+          </U>
+          <U>
+            <L n="client_states">
+              <U>
+                <T n="key">109127<!--ObjectStateValue: objectStateValue_Detective_Burned--></T>
+              </U>
+              <U>
+                <T n="key">109128<!--ObjectStateValue: objectStateValue_Detective_NotBurned--></T>
+              </U>
+            </L>
+            <V n="default_value" t="reference">
+              <T n="reference">109128<!--ObjectStateValue: objectStateValue_Detective_NotBurned--></T>
+            </V>
+          </U>
+          <U>
+            <V n="default_value" t="reference">
+              <T n="reference">104260<!--CommodityBasedObjectStateValue: objectStateValue_elixirOfBurning_Applied_Off--></T>
+            </V>
+          </U>
+          <U>
+            <L n="client_states">
+              <U>
+                <T n="key">131794<!--ObjectStateValue: Kelpto_Stolen_Object--></T>
+              </U>
+              <U>
+                <T n="key">131795<!--ObjectStateValue: Klepto_Not_Stolen_Object--></T>
+              </U>
+            </L>
+            <V n="default_value" t="reference">
+              <T n="reference">131795<!--ObjectStateValue: Klepto_Not_Stolen_Object--></T>
+            </V>
+          </U>
+          <U>
+            <L n="client_states">
+              <U>
+                <T n="key">185122<!--ObjectStateValue: object_Rain_Outside--></T>
+              </U>
+              <U>
+                <T n="key">185125<!--ObjectStateValue: object_Rain_Inside--></T>
+              </U>
+            </L>
+            <V n="default_value" t="reference">
+              <T n="reference">185125<!--ObjectStateValue: object_Rain_Inside--></T>
+            </V>
+          </U>
+          <U>
+            <L n="client_states">
+              <U>
+                <T n="key">203466<!--ObjectStateValue: computer_NotInSecretLab--></T>
+              </U>
+              <U>
+                <T n="key">203470<!--ObjectStateValue: computer_InSecretLab--></T>
+              </U>
+            </L>
+            <V n="default_value" t="reference">
+              <T n="reference">203466<!--ObjectStateValue: computer_NotInSecretLab--></T>
+            </V>
+          </U>
+          <U>
+            <V n="default_value" t="reference">
+              <T n="reference">203504<!--CommodityBasedObjectStateValue: computer_RepairCooldown_ReadyForRepair--></T>
+            </V>
+          </U>
+          <U>
+            <L n="client_states">
+              <U>
+                <T n="key">208511<!--ObjectStateValue: freelancer_Careeers_Programmer_Computer_Overclocked--></T>
+                <U n="value">
+                  <V n="autonomy_modifiers" t="apply_new_value">
+                    <V n="apply_new_value" t="apply_statistic_modifiers">
+                      <U n="apply_statistic_modifiers">
+                        <L n="autonomy_modifiers">
+                          <U>
+                            <L n="skill_tag_modifiers">
+                              <U>
+                                <E n="key">Skill_Programming</E>
+                                <T n="value">2</T>
+                              </U>
+                            </L>
+                            <L n="stat_use_multiplier">
+                              <U>
+                                <T n="key">31410<!--Commodity: commodity_ProgrammingSkill_PluginProgress--></T>
+                                <U n="value">
+                                  <E n="apply_direction">INCREASE</E>
+                                  <T n="multiplier">2</T>
+                                </U>
+                              </U>
+                              <U>
+                                <T n="key">33234<!--Commodity: commodity_ProgrammingSkill_FreelanceProgress--></T>
+                                <U n="value">
+                                  <E n="apply_direction">INCREASE</E>
+                                  <T n="multiplier">2</T>
+                                </U>
+                              </U>
+                              <U>
+                                <T n="key">33259<!--Commodity: commodity_ProgrammingSkill_VirusProgress--></T>
+                                <U n="value">
+                                  <E n="apply_direction">INCREASE</E>
+                                  <T n="multiplier">2</T>
+                                </U>
+                              </U>
+                              <U>
+                                <T n="key">33284<!--Commodity: commodity_ProgrammingSkill_AppProgress--></T>
+                                <U n="value">
+                                  <E n="apply_direction">INCREASE</E>
+                                  <T n="multiplier">2</T>
+                                </U>
+                              </U>
+                              <U>
+                                <T n="key">36387<!--Commodity: commodity_ProgrammingSkill_GameProgress--></T>
+                                <U n="value">
+                                  <E n="apply_direction">INCREASE</E>
+                                  <T n="multiplier">2</T>
+                                </U>
+                              </U>
+                            </L>
+                          </U>
+                        </L>
+                      </U>
+                    </V>
+                  </V>
+                </U>
+              </U>
+              <U>
+                <T n="key">208512<!--ObjectStateValue: freelancer_Careeers_Programmer_Computer_NOT_Overclocked--></T>
+                <U n="value">
+                  <V t="apply_new_value" n="autonomy_modifiers" />
+                </U>
+              </U>
+            </L>
+            <V n="default_value" t="reference">
+              <T n="reference">208512<!--ObjectStateValue: freelancer_Careeers_Programmer_Computer_NOT_Overclocked--></T>
+            </V>
+          </U>
+          <U>
+            <V n="default_value" t="reference">
+              <T n="reference">208488<!--CommodityBasedObjectStateValue: state_IslanderCulture_TimeSinceBroken_NotBroken--></T>
+            </V>
+          </U>
+          <U>
+            <L n="client_states">
+              <U>
+                <T n="key">73870<!--ObjectStateValue: TheKnack_Awesome--></T>
+              </U>
+              <U>
+                <T n="key">73871<!--ObjectStateValue: TheKnack_NotAwesome--></T>
+              </U>
+            </L>
+            <V n="default_value" t="reference">
+              <T n="reference">73871<!--ObjectStateValue: TheKnack_NotAwesome--></T>
+            </V>
+          </U>
+          <U>
+            <L n="client_states">
+              <U>
+                <T n="key">110121<!--ObjectStateValue: frontDesk_Slotted_0_No--></T>
+              </U>
+              <U>
+                <T n="key">110122<!--ObjectStateValue: frontDesk_Slotted_1_Yes--></T>
+              </U>
+            </L>
+            <V n="default_value" t="reference">
+              <T n="reference">110121<!--ObjectStateValue: frontDesk_Slotted_0_No--></T>
+            </V>
+            <T n="reset_on_load_if_time_passes">True</T>
+          </U>
+          <U>
+            <L n="client_states">
+              <U>
+                <T n="key">39611<!--CommodityBasedObjectStateValue: FireState_Burn_Material_Change--></T>
+              </U>
+              <U>
+                <T n="key">39736<!--CommodityBasedObjectStateValue: FireState_Burn_Material_Change_Burning--></T>
+              </U>
+              <U>
+                <T n="key">39737<!--CommodityBasedObjectStateValue: FireState_Burn_Material_Change_Not_Burning--></T>
+              </U>
+              <U>
+                <T n="key">77532<!--CommodityBasedObjectStateValue: FireState_Burn_Material_Change_Replace--></T>
+              </U>
+            </L>
+            <V t="reference" n="default_value">
+              <T n="reference">39737<!--CommodityBasedObjectStateValue: FireState_Burn_Material_Change_Not_Burning--></T>
+            </V>
+          </U>
+          <U>
+            <L n="client_states">
+              <U>
+                <T n="key">35956<!--CommodityBasedObjectStateValue: Materialistic_Admired--></T>
+              </U>
+              <U>
+                <T n="key">35957<!--CommodityBasedObjectStateValue: Materialistic_YetToAdmire--></T>
+              </U>
+            </L>
+            <V t="reference" n="default_value">
+              <T n="reference">35957<!--CommodityBasedObjectStateValue: Materialistic_YetToAdmire--></T>
+            </V>
+          </U>
+        </L>
+      </U>
+    </V>
+    <V t="enabled" n="tooltip_component" />
+    <V t="enabled" n="weather_aware_component">
+      <U n="enabled">
+        <L n="outside_loot">
+          <U>
+            <E n="key">AnyRain</E>
+            <U n="value">
+              <L n="end_loot">
+                <T>185163<!--LootActions: loot_Wetness_Object_Rain_End--></T>
+              </L>
+              <L n="start_loot">
+                <T>184964<!--LootActions: Loot_Wetness_Object_Start--></T>
+              </L>
+            </U>
+          </U>
+        </L>
+      </U>
+    </V>
+  </U>
+  <L n="_super_affordances">
+    <T>13328<!--ImmediateSuperInteraction: debug_Reset--></T>
+    <T>13326<!--ImmediateSuperInteraction: debug_ObjectDestroy--></T>
+    <T>103888<!--ImmediateSuperInteraction: cheat_set_as_head--></T>
+    <T>13319<!--ImmediateSuperInteraction: debug_BreakObject--></T>
+    <T>13327<!--ImmediateSuperInteraction: debug_RepairObject--></T>
+    <T>196759<!--SuperInteraction: famePerks_GoodReputation_GivingBack_DonateObject--></T>
+    <T>34920<!--SuperInteraction: object_Repair_Computer--></T>
+    <T>99087<!--ImmediateSuperInteraction: object_ReplaceBrokenObject--></T>
+    <T>229152<!--SuperInteraction: computer_University_Studying_CourseA_ResearchMachine--></T>
+    <T>229153<!--SuperInteraction: computer_University_Studying_CourseB_ResearchMachine--></T>
+    <T>229154<!--SuperInteraction: computer_University_Studying_CourseC_ResearchMachine--></T>
+    <T>229155<!--SuperInteraction: computer_University_Studying_CourseD_ResearchMachine--></T>
+    <T>129510<!--SuperInteraction: object_Hire_Repair_Service--></T>
+    <T>73830<!--SuperInteraction: object_Knack_FixIt_Computer--></T>
+    <T>102433<!--SuperInteraction: Ghost_Possess_Break_Electrocution--></T>
+    <T>227014<!--SuperInteraction: computer_ResearchMachine_PrepForDebate--></T>
+    <T>227039<!--SuperInteraction: computer_ResearchMachine_ContributeKnowledge_Acting--></T>
+    <T>227040<!--SuperInteraction: computer_ResearchMachine_ContributeKnowledge_Charisma--></T>
+    <T>227041<!--SuperInteraction: computer_ResearchMachine_ContributeKnowledge_Comedy--></T>
+    <T>227042<!--SuperInteraction: computer_ResearchMachine_ContributeKnowledge_Cooking--></T>
+    <T>227043<!--SuperInteraction: computer_ResearchMachine_ContributeKnowledge_Fitness--></T>
+    <T>227044<!--SuperInteraction: computer_ResearchMachine_ContributeKnowledge_Gardening--></T>
+    <T>227045<!--SuperInteraction: computer_ResearchMachine_ContributeKnowledge_Handiness--></T>
+    <T>227046<!--SuperInteraction: computer_ResearchMachine_ContributeKnowledge_Logic--></T>
+    <T>227047<!--SuperInteraction: computer_ResearchMachine_ContributeKnowledge_Painting--></T>
+    <T>227048<!--SuperInteraction: computer_ResearchMachine_ContributeKnowledge_Photography--></T>
+    <T>227049<!--SuperInteraction: computer_ResearchMachine_ContributeKnowledge_Programming--></T>
+    <T>227050<!--SuperInteraction: computer_ResearchMachine_ContributeKnowledge_ResearchDebate--></T>
+    <T>227051<!--SuperInteraction: computer_ResearchMachine_ContributeKnowledge_Robotics--></T>
+    <T>227052<!--SuperInteraction: computer_ResearchMachine_ContributeKnowledge_RocketScience--></T>
+    <T>227053<!--SuperInteraction: computer_ResearchMachine_ContributeKnowledge_VideoGaming--></T>
+    <T>227054<!--SuperInteraction: computer_ResearchMachine_ContributeKnowledge_Writing--></T>
+    <T>227029<!--SuperInteraction: computer_ResearchMachine_Research_Acting--></T>
+    <T>227031<!--SuperInteraction: computer_ResearchMachine_Research_Charisma--></T>
+    <T>227032<!--SuperInteraction: computer_ResearchMachine_Research_Comedy--></T>
+    <T>227034<!--SuperInteraction: computer_ResearchMachine_Research_Cooking--></T>
+    <T>227021<!--SuperInteraction: computer_ResearchMachine_Research_Fitness--></T>
+    <T>227035<!--SuperInteraction: computer_ResearchMachine_Research_Gardening--></T>
+    <T>227022<!--SuperInteraction: computer_ResearchMachine_Research_Handiness--></T>
+    <T>227036<!--SuperInteraction: computer_ResearchMachine_Research_Logic--></T>
+    <T>227033<!--SuperInteraction: computer_ResearchMachine_Research_Painting--></T>
+    <T>227037<!--SuperInteraction: computer_ResearchMachine_Research_Photography--></T>
+    <T>227026<!--SuperInteraction: computer_ResearchMachine_Research_Programming--></T>
+    <T>227023<!--SuperInteraction: computer_ResearchMachine_Research_ResearchDebate--></T>
+    <T>227028<!--SuperInteraction: computer_ResearchMachine_Research_Robotics--></T>
+    <T>227030<!--SuperInteraction: computer_ResearchMachine_Research_RocketScience--></T>
+    <T>227025<!--SuperInteraction: computer_ResearchMachine_Research_VideoGaming--></T>
+    <T>227024<!--SuperInteraction: computer_ResearchMachine_Research_Writing--></T>
+    <T>223923<!--SuperInteraction: researchMachine_Career_Law_ResearchCase--></T>
+    <T>223925<!--SuperInteraction: researchMachine_Career_Law_ResearchCaseLaw--></T>
+    <T>223924<!--SuperInteraction: researchMachine_Career_Law_ResearchLegalIssues--></T>
+    <T>226983<!--SuperInteraction: researchMachine_collegeOrganization_SecretSociety_ReadSecretHistory--></T>
+    <T>225301<!--SuperInteraction: researchMachine_collegeOrganization_SecretSociety_ReadHistory--></T>
+    <T>106859<!--SuperInteraction: simRay_Transform_Object--></T>
+    <T>40053<!--SuperInteraction: object_Bane_Sabotage_Computer--></T>
+    <T>74457<!--ImmediateSuperInteraction: fire_ReplaceBurntObject--></T>
+    <T>102258<!--SuperInteraction: Ghost_Possess--></T>
+    <T>168502<!--SuperInteraction: Ghost_Pet_Possess--></T>
+  </L>
+  <L n="autonomy_modifiers">
+    <U>
+      <L n="stat_use_multiplier">
+        <U>
+          <T n="key">16633<!--Commodity: commodity_Object_Brokenness--></T>
+          <U n="value">
+            <E n="apply_direction">DECREASE</E>
+            <T n="multiplier">0.125</T>
+          </U>
+        </U>
+      </L>
+    </U>
+    <U>
+      <L n="stat_use_multiplier">
+        <U>
+          <T n="key">233027<!--Commodity: commodity_Utilities_Power--></T>
+          <U n="value">
+            <T n="multiplier">0.4</T>
+          </U>
+        </U>
+      </L>
+      <V t="apply_on_interaction_to_participant" n="subject">
+        <V n="apply_on_interaction_to_participant" t="enabled">
+          <L n="enabled">
+            <E>Lot</E>
+          </L>
+        </V>
+      </V>
+    </U>
+  </L>
+  <U n="recycling_data">
+    <L n="recycling_values">
+      <U>
+        <E n="Bucks Type">RecycleBitsBucks</E>
+        <T n="Value">0.5</T>
+      </U>
+      <U>
+        <E n="Bucks Type">RecyclePiecesBucks</E>
+        <T n="Value">0.5</T>
+      </U>
+    </L>
+  </U>
+</I>

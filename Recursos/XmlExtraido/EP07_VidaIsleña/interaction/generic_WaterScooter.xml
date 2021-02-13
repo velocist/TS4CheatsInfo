@@ -1,0 +1,238 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<I c="SuperInteraction" i="interaction" m="interactions.base.super_interaction" n="generic_WaterScooter" s="199823">
+  <L n="_constraints">
+    <U>
+      <L n="constraints">
+        <U>
+          <V n="value" t="posture">
+            <U n="posture">
+              <E n="body_target_tuning">INTERACTION_TARGET</E>
+              <L n="posture_manifest_tuning">
+                <U>
+                  <V t="enabled" n="posture_type">
+                    <T n="enabled">199821<!--MobilePosture: posture_WaterScooter--></T>
+                  </V>
+                </U>
+              </L>
+            </U>
+          </V>
+        </U>
+      </L>
+    </U>
+  </L>
+  <V t="resource_key" n="_icon">
+    <U n="resource_key">
+      <T n="key" p="InGame\UI\Icons\InteractionQueue\IconQueueSitting.png">2f7d0004:00000000:1150bb0e5d1ff959</T>
+    </U>
+  </V>
+  <T n="_multi_surface">False</T>
+  <T n="_provided_posture_type">199821<!--MobilePosture: posture_WaterScooter--></T>
+  <V t="enabled" n="_saveable" />
+  <T n="_super_affordance_can_share_target">True</T>
+  <T n="allow_autonomous">False</T>
+  <T n="allow_user_directed">True</T>
+  <T n="attention_cost">0.5</T>
+  <V t="flexible_length" n="basic_content">
+    <U n="flexible_length">
+      <L n="conditional_actions">
+        <V t="literal">
+          <U n="literal">
+            <L n="conditions">
+              <V t="buff_based">
+                <U n="buff_based">
+                  <T n="buff">185970<!--Buff: buff_GlobalTemperature_Freezing--></T>
+                  <E n="timing">ON_ADD</E>
+                </U>
+              </V>
+            </L>
+            <E n="interaction_action">EXIT_CANCEL</E>
+            <L n="loot_actions">
+              <T>222947<!--LootActions: loot_Temperature_Freezing_AddExitDelay--></T>
+            </L>
+          </U>
+        </V>
+      </L>
+      <T n="start_user_directed_inertial">True</T>
+    </U>
+  </V>
+  <L n="basic_extras">
+    <V t="state_change">
+      <U n="state_change">
+        <V n="new_value" t="single_value">
+          <U n="single_value">
+            <T n="new_value">201399<!--ObjectStateValue: waterScooter_Rider_On--></T>
+          </U>
+        </V>
+        <V t="immediately" n="timing" />
+      </U>
+    </V>
+    <V t="state_change">
+      <U n="state_change">
+        <V n="new_value" t="single_value">
+          <U n="single_value">
+            <T n="new_value">201400<!--ObjectStateValue: waterScooter_Rider_Off--></T>
+          </U>
+        </V>
+        <V t="at_end" n="timing">
+          <U n="at_end">
+            <E n="criticality">OnCancelOrException</E>
+          </U>
+        </V>
+      </U>
+    </V>
+    <V t="routing_formation">
+      <U n="routing_formation">
+        <E n="master">Object</E>
+        <L n="routing_formations">
+          <T>203091<!--RoutingFormation: routingFormation_WaterScooter_Ride--></T>
+        </L>
+        <E n="slave">Actor</E>
+        <V t="at_beginning" n="timing" />
+      </U>
+    </V>
+  </L>
+  <L n="cancel_replacement_affordances">
+    <U>
+      <E n="key">BODY</E>
+      <U n="value">
+        <T n="affordance">102325<!--StandSuperInteraction: sim-swim--></T>
+      </U>
+    </U>
+  </L>
+  <V t="disabled" n="content_score" />
+  <T n="display_name">0xCCCAE13B<!--String: "Montar"--></T>
+  <V t="testable" n="display_name_overrides">
+    <U n="testable">
+      <L n="overrides">
+        <U>
+          <V n="new_display_name" t="enabled">
+            <T n="enabled">0x30D31473<!--String: "En {1.ObjectName}"--></T>
+          </V>
+          <L n="test">
+            <L>
+              <V t="state">
+                <U n="state">
+                  <T n="value">201399<!--ObjectStateValue: waterScooter_Rider_On--></T>
+                </U>
+              </V>
+            </L>
+          </L>
+        </U>
+      </L>
+    </U>
+  </V>
+  <U n="display_name_text_tokens">
+    <L n="tokens">
+      <V t="participant_type">
+        <U n="participant_type">
+          <V t="from_participant" n="objects">
+            <U n="from_participant">
+              <E n="participant">Actor</E>
+            </U>
+          </V>
+        </U>
+      </V>
+      <V t="participant_type">
+        <U n="participant_type">
+          <V t="from_participant" n="objects">
+            <U n="from_participant">
+              <E n="participant">Object</E>
+            </U>
+          </V>
+        </U>
+      </V>
+    </L>
+  </U>
+  <V t="enabled" n="display_tooltip">
+    <T n="enabled">0xCF95D678<!--String: "Haz que tu Sim se suba a la embarcación."--></T>
+  </V>
+  <T n="ignore_group_socials">False</T>
+  <L n="interaction_category_tags">
+    <E>Interaction_Super</E>
+    <E>Interaction_All</E>
+  </L>
+  <V t="enabled" n="pie_menu_icon">
+    <V n="enabled" t="resource_key">
+      <U n="resource_key">
+        <T n="key" p="InGame\UI\Icons\PieMenu\Interactions\icon_pieMenu_postureSit.png">2f7d0004:00000000:72eeed089a25dfef</T>
+      </U>
+    </V>
+  </V>
+  <T n="pie_menu_priority">9</T>
+  <E n="scoring_priority">NORMAL</E>
+  <T n="subaction_selection_weight">1</T>
+  <E n="target_type">OBJECT</E>
+  <L n="test_autonomous">
+    <L>
+      <V t="day_and_time">
+        <U n="day_and_time">
+          <V n="time_range" t="enabled">
+            <U n="enabled">
+              <U n="begin_time">
+                <T n="hour">5</T>
+              </U>
+              <U n="duration">
+                <T n="hour">16</T>
+              </U>
+            </U>
+          </V>
+        </U>
+      </V>
+      <V t="buff">
+        <U n="buff">
+          <L n="blacklist">
+            <T>215134<!--Buff: buff_AutonomyMod_OceanActivity_Cooldown--></T>
+          </L>
+        </U>
+      </V>
+    </L>
+  </L>
+  <L n="test_globals">
+    <V t="sim_info">
+      <U n="sim_info">
+        <V t="specified" n="ages">
+          <L n="specified">
+            <E>TEEN</E>
+            <E>YOUNGADULT</E>
+            <E>ADULT</E>
+            <E>ELDER</E>
+          </L>
+        </V>
+        <V t="specified" n="species">
+          <U n="specified">
+            <L n="species">
+              <E />
+            </L>
+          </U>
+        </V>
+        <E n="who">Actor</E>
+      </U>
+    </V>
+    <V t="state">
+      <U n="state">
+        <T n="value">201400<!--ObjectStateValue: waterScooter_Rider_Off--></T>
+      </U>
+    </V>
+    <V t="wading_interval_test">
+      <U n="wading_interval_test">
+        <V t="swim_here" n="test" />
+        <V n="tooltip" t="enabled">
+          <T n="enabled">0xE34CC36A<!--String: "Disponible al colocar el objeto en aguas aptas para nadar"--></T>
+        </V>
+      </U>
+    </V>
+    <V t="buff">
+      <U n="buff">
+        <L n="blacklist">
+          <T>185970<!--Buff: buff_GlobalTemperature_Freezing--></T>
+        </L>
+        <V n="tooltip" t="enabled">
+          <T n="enabled">0xD70E66B4<!--String: "Hace demasiado frío para hacer esto."--></T>
+        </V>
+      </U>
+    </V>
+  </L>
+  <T n="time_overhead">30</T>
+  <T n="visible">True</T>
+  <E n="visual_type_override">POSTURE</E>
+</I>

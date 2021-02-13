@@ -1,0 +1,187 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<I c="SuperInteraction" i="interaction" m="interactions.base.super_interaction" n="career_CivilDesigner_Concept_Modify_Municipal" s="238378">
+  <V t="enabled" n="_saveable" />
+  <T n="allow_autonomous">False</T>
+  <T n="allow_from_sim_inventory">True</T>
+  <T n="allow_from_world">True</T>
+  <T n="attention_cost">0.5</T>
+  <V n="basic_content" t="flexible_length">
+    <U n="flexible_length">
+      <L n="conditional_actions">
+        <V t="literal">
+          <U n="literal">
+            <L n="conditions">
+              <V t="time_based">
+                <U n="time_based">
+                  <T n="max_time">40</T>
+                  <T n="min_time">30</T>
+                </U>
+              </V>
+            </L>
+            <E n="interaction_action">EXIT_NATURALLY</E>
+          </U>
+        </V>
+      </L>
+      <V n="content" t="looping_content">
+        <U n="looping_content">
+          <U n="animation_ref">
+            <T n="factory">233804<!--AnimationElement: civilDesignerCareer_DraftingTablet_Use--></T>
+          </U>
+        </U>
+      </V>
+    </U>
+  </V>
+  <V t="disabled" n="content_score" />
+  <T n="display_name">0xDB43E9EB<!--String: "Modificar proyecto"--></T>
+  <U n="display_name_text_tokens">
+    <L n="tokens">
+      <V t="participant_type">
+        <U n="participant_type">
+          <V t="from_participant" n="objects">
+            <U n="from_participant">
+              <E n="participant">Actor</E>
+            </U>
+          </V>
+        </U>
+      </V>
+      <V t="participant_type">
+        <U n="participant_type">
+          <V t="from_participant" n="objects">
+            <U n="from_participant">
+              <E n="participant">Object</E>
+            </U>
+          </V>
+        </U>
+      </V>
+    </L>
+  </U>
+  <L n="interaction_category_tags">
+    <E>Interaction_Super</E>
+    <E>Interaction_All</E>
+    <E>LIfestyles_LowEnergy_Career</E>
+  </L>
+  <V t="test_based" n="outcome">
+    <U n="test_based">
+      <L n="fallback_outcomes">
+        <U>
+          <U n="outcome">
+            <L n="loot_list">
+              <T>234227<!--LootActions: loot_Career_CivilDesigner_Concept_IncreaseQuality--></T>
+            </L>
+          </U>
+          <U n="weight">
+            <L n="multipliers">
+              <U>
+                <T n="multiplier">0.7</T>
+                <L n="tests">
+                  <L>
+                    <V t="skill_test">
+                      <U n="skill_test">
+                        <T n="skill">16706<!--Skill: statistic_Skill_AdultMajor_Logic--></T>
+                        <V n="skill_range" t="interval">
+                          <U n="interval">
+                            <U n="skill_interval">
+                              <T n="upper_bound">2</T>
+                            </U>
+                          </U>
+                        </V>
+                      </U>
+                    </V>
+                  </L>
+                </L>
+              </U>
+              <U>
+                <T n="multiplier">3</T>
+                <L n="tests">
+                  <L>
+                    <V t="skill_test">
+                      <U n="skill_test">
+                        <T n="skill">16706<!--Skill: statistic_Skill_AdultMajor_Logic--></T>
+                        <V n="skill_range" t="interval">
+                          <U n="interval">
+                            <U n="skill_interval">
+                              <T n="lower_bound">3</T>
+                              <T n="upper_bound">6</T>
+                            </U>
+                          </U>
+                        </V>
+                      </U>
+                    </V>
+                  </L>
+                </L>
+              </U>
+              <U>
+                <T n="multiplier">4</T>
+                <L n="tests">
+                  <L>
+                    <V t="skill_test">
+                      <U n="skill_test">
+                        <T n="skill">16706<!--Skill: statistic_Skill_AdultMajor_Logic--></T>
+                        <V t="interval" n="skill_range">
+                          <U n="interval">
+                            <U n="skill_interval">
+                              <T n="lower_bound">7</T>
+                              <T n="upper_bound">10</T>
+                            </U>
+                          </U>
+                        </V>
+                      </U>
+                    </V>
+                  </L>
+                </L>
+              </U>
+            </L>
+          </U>
+        </U>
+        <U>
+          <U n="outcome">
+            <L n="basic_extras">
+              <V t="balloon">
+                <U n="balloon">
+                  <L n="balloon_choices">
+                    <U>
+                      <V n="item" t="balloon_category">
+                        <T n="balloon_category">31982<!--BalloonCategory: balloonCategory_EmotionSad_Thought--></T>
+                      </V>
+                    </U>
+                  </L>
+                  <L n="balloon_target">
+                    <E>Actor</E>
+                  </L>
+                </U>
+              </V>
+            </L>
+            <L n="loot_list">
+              <T>234226<!--LootActions: loot_Career_CivilDesigner_Concept_ReduceQuality--></T>
+            </L>
+          </U>
+        </U>
+      </L>
+    </U>
+  </V>
+  <E n="scoring_priority">NORMAL</E>
+  <T n="subaction_selection_weight">1</T>
+  <E n="target_type">OBJECT</E>
+  <L n="test_globals">
+    <V t="sim_info">
+      <U n="sim_info">
+        <V t="specified" n="ages" />
+        <V t="specified" n="species">
+          <U n="specified">
+            <L n="species">
+              <E />
+            </L>
+          </U>
+        </V>
+        <E n="who">Actor</E>
+      </U>
+    </V>
+    <V t="state">
+      <U n="state">
+        <T n="value">234248<!--ObjectStateValue: civilDesignerCareer_ConceptModifiable_CanModify--></T>
+        <E n="who">PickedObject</E>
+      </U>
+    </V>
+  </L>
+  <T n="time_overhead">30</T>
+</I>

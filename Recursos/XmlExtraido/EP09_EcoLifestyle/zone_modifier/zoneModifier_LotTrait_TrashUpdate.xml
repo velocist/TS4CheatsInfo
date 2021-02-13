@@ -1,0 +1,205 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<I c="ZoneModifier" i="zone_modifier" m="zone_modifier.zone_modifier" n="zoneModifier_LotTrait_TrashUpdate" s="230867">
+  <U n="cleanup_loot">
+    <L n="actions">
+      <V t="modify_lot_items">
+        <U n="modify_lot_items">
+          <U n="actions">
+            <L n="modifications">
+              <U>
+                <V n="action" t="set_state">
+                  <U n="set_state">
+                    <T n="action_value">15347<!--CommodityBasedObjectStateValue: Trashcan_Capacity_Empty--></T>
+                  </U>
+                </V>
+                <L n="tests">
+                  <L>
+                    <V t="object_definition">
+                      <U n="object_definition">
+                        <V n="item" t="tagged_item">
+                          <U n="tagged_item">
+                            <L n="tag_set">
+                              <E>Func_TrashCan_Outdoor</E>
+                            </L>
+                          </U>
+                        </V>
+                      </U>
+                    </V>
+                  </L>
+                </L>
+              </U>
+            </L>
+          </U>
+        </U>
+      </V>
+      <V t="modify_lot_items">
+        <U n="modify_lot_items">
+          <U n="actions">
+            <L n="modifications">
+              <U>
+                <V n="action" t="set_state">
+                  <U n="set_state">
+                    <T n="action_value">232047<!--ObjectStateValue: trashUpdate_Flies_NoFlies--></T>
+                  </U>
+                </V>
+                <L n="tests">
+                  <L>
+                    <V t="object_definition">
+                      <U n="object_definition">
+                        <V n="item" t="tagged_item">
+                          <U n="tagged_item">
+                            <L n="tag_set">
+                              <E>Func_TrashCan</E>
+                            </L>
+                          </U>
+                        </V>
+                      </U>
+                    </V>
+                  </L>
+                </L>
+              </U>
+            </L>
+          </U>
+        </U>
+      </V>
+      <V t="modify_lot_items">
+        <U n="modify_lot_items">
+          <U n="actions">
+            <L n="modifications">
+              <U>
+                <V n="action" t="set_state">
+                  <U n="set_state">
+                    <T n="action_value">232059<!--ObjectStateValue: trashUpdate_Roaches_NoRoaches--></T>
+                  </U>
+                </V>
+                <L n="tests">
+                  <L>
+                    <V t="object_definition">
+                      <U n="object_definition">
+                        <V n="item" t="tagged_item">
+                          <U n="tagged_item">
+                            <L n="tag_set">
+                              <E>Func_TrashCan</E>
+                            </L>
+                          </U>
+                        </V>
+                      </U>
+                    </V>
+                  </L>
+                </L>
+              </U>
+            </L>
+          </U>
+        </U>
+      </V>
+      <V t="loot">
+        <U n="loot">
+          <L n="loots">
+            <T>238411<!--LootActions: loot_TrashUpdate_RemoveOnLot--></T>
+          </L>
+        </U>
+      </V>
+    </L>
+  </U>
+  <L n="enter_lot_loot">
+    <T>238405<!--LootActions: loot_TrashUpdate_AddOnLot--></T>
+  </L>
+  <L n="exit_lot_loot">
+    <T>238411<!--LootActions: loot_TrashUpdate_RemoveOnLot--></T>
+  </L>
+  <L n="interaction_triggers">
+    <U>
+      <L n="on_interaction_loot">
+        <T>230874<!--LootActions: loot_ObjectCreate_TrashUpdate_Recyclable_ToInventory--></T>
+      </L>
+      <L n="trigger_conditions">
+        <U>
+          <U n="test">
+            <L n="affordances">
+              <T>161823<!--SuperInteraction: object_SchoolProjectBox_WorkCarefully--></T>
+              <T>161824<!--SuperInteraction: object_SchoolProjectBox_WorkSloppily--></T>
+              <T>13539<!--SuperInteraction: mailbox_GetMail--></T>
+              <T>134809<!--SuperInteraction: mailboxWall_GetMail--></T>
+              <T>180901<!--SuperInteraction: presentPile_SneakPresent--></T>
+              <T>180900<!--SuperInteraction: presentPile_OpenPresent--></T>
+              <T>165015<!--SuperInteraction: superInteraction_MakeAMess_FlourVariantD--></T>
+              <T>132796<!--SuperInteraction: marketStalls_ShopFor_Festival--></T>
+              <T>165142<!--SuperInteraction: superInteraction_MakeAMess_FlourVariantE--></T>
+              <T>165144<!--SuperInteraction: superInteraction_MakeAMess_FlourVariantF--></T>
+              <T>162782<!--SuperInteraction: superInteraction_MakeAMess_VariantA--></T>
+              <T>163032<!--SuperInteraction: superInteraction_MakeAMess_VariantB--></T>
+              <T>163033<!--SuperInteraction: superInteraction_MakeAMess_VariantC--></T>
+            </L>
+          </U>
+        </U>
+      </L>
+    </U>
+    <U>
+      <L n="on_interaction_loot">
+        <T>230872<!--LootActions: loot_ObjectCreate_TrashUpdate_FoodCompost_ToInventory--></T>
+      </L>
+      <L n="trigger_conditions">
+        <U>
+          <U n="test">
+            <L n="affordances">
+              <T>160004<!--ObjectInInventoryPickerInteraction: sackLunch_Unpack--></T>
+              <T>13770<!--CraftingPhaseStagingSuperInteraction: oven_MakeFood_Staging_Basic--></T>
+              <T>37782<!--CraftingPhaseStagingSuperInteraction: oven_MakeFood_Staging_Gourmet--></T>
+              <T>37788<!--CraftingPhaseStagingSuperInteraction: stove_MakeFood_FryingPan_Staging_Gourmet--></T>
+              <T>32043<!--CraftingPhaseStagingSuperInteraction: stove_MakeFood_Pot_Staging_Basic--></T>
+              <T>37789<!--CraftingPhaseStagingSuperInteraction: stove_MakeFood_Pot_Staging_Gourmet--></T>
+              <T>14338<!--CraftingPhaseStagingSuperInteraction: stove_MakeFood_FryingPan_Staging_Basic--></T>
+              <T>212642<!--CraftingPhaseStagingSuperInteraction: stove_MakeFood_FryingPan_Staging_Basic_OffTheGrid--></T>
+              <T>37112<!--SuperInteraction: brew_WaitFor_Pot--></T>
+              <T>77081<!--SuperInteraction: brew_WaitFor_Pot_Tea--></T>
+              <T>125479<!--PutInInventoryInteraction: espressoBarFood_Put_In_Inventory_ToGo--></T>
+              <T>224275<!--PutInInventoryInteraction: marketStalls_CoffeeCart_Put_In_Inventory_ToGo--></T>
+              <T>228043<!--PutInInventoryInteraction: marketStalls_PizzaBox_Put_In_Inventory--></T>
+              <T>132700<!--SuperInteraction: si_MarketStalls_WaitForFood--></T>
+            </L>
+          </U>
+        </U>
+      </L>
+    </U>
+    <U>
+      <L n="on_interaction_loot">
+        <T>230896<!--LootActions: loot_ObjectCreate_TrashUpdate_GardenCompost_ToInventory--></T>
+      </L>
+      <L n="trigger_conditions">
+        <U>
+          <U n="test">
+            <L n="affordances">
+              <T>183295<!--SuperInteraction: Gardening_Weed_All_Area--></T>
+              <T>97822<!--SuperInteraction: Gardening_Weed_All_Planter--></T>
+              <T>188410<!--StartCraftingSuperInteraction: flowerArrangement_StartCrafting_All--></T>
+              <T>183079<!--SuperInteraction: LeafPile_PlayIn--></T>
+              <T>183234<!--SuperInteraction: LeafPile_PlayWith--></T>
+            </L>
+            <E n="test_event">InteractionStart</E>
+          </U>
+        </U>
+      </L>
+    </U>
+    <U>
+      <L n="on_interaction_loot">
+        <T>230892<!--LootActions: loot_ObjectCreate_TrashUpdate_Regular_ToInventory--></T>
+      </L>
+      <L n="trigger_conditions">
+        <U>
+          <U n="test">
+            <L n="affordances">
+              <T>140926<!--SocialSuperInteraction: si_Touching_Toddler_ChangeDiaper--></T>
+              <T>13008<!--SuperInteraction: baby_ChangeDiaper--></T>
+              <T>12984<!--CraftingPhaseStagingSuperInteraction: activityTable_CraftPicture_Staging--></T>
+              <T>13921<!--SuperInteraction: scienceTable_Experiment--></T>
+              <T>31682<!--SuperInteraction: scienceTable_CreatePotion_Emotion--></T>
+              <T>31680<!--SuperInteraction: scienceTable_CreatePotion_Health--></T>
+              <T>31681<!--SuperInteraction: scienceTable_CreatePotion_Stink--></T>
+              <T>23740<!--SuperInteraction: canvas_scrapPainting--></T>
+            </L>
+          </U>
+        </U>
+      </L>
+    </U>
+  </L>
+</I>

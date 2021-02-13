@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+
+<TuningRoot>
+    <Instance instance_type="situation" class="WalkDogSituation" module="situations.complex.walk_dog_situation" muid="D15A56CF1DBF29C9" description="A Situation to manage walking dogs along paths in the world. The goal of&#xA;this situation is to give autonomy to dogs and walkers and push them along&#xA;a path in the world and allow them to do things at places of interest." instance_subclasses_only="False" parents="SituationComplexCommon, SituationComplex, Situation" path="Situations\Descriptions" use_guid_for_reference="True">
+        <Deleted name="_buff" muid="46103B699047EC6B" />
+
+        <Deleted name="_cost" muid="C6128A2360C1641" />
+
+        <Deleted name="_display_name" muid="983395DFCBA61FA0" />
+
+        <Deleted name="_icon" muid="F9A23B8BFA22E06E" />
+
+        <Deleted name="_implies_greeted_status" muid="46EF9628D48782F0" />
+
+        <Deleted name="_initiating_sim_tests" muid="217938CEB2740099" />
+
+        <Deleted name="_level_data" muid="5F1E4850C7F96EB5" />
+
+        <Deleted name="_main_goal_visibility_test" muid="647946D0B330C7A7" />
+
+        <Deleted name="_relationship_between_job_members" muid="B2A3DF70D0B3BE10" />
+
+        <Deleted name="_resident_job" muid="DE829AE701251766" />
+
+        <TunableTuple name="attractor_point_tags" class="TunableTuple" display="Attractor Point Tags" muid="722159F6B23C2713" description="Tags that are used to select objects and attractor points for our&#xA;path." Deprecated="False" filter="0" group="General">
+            <TunableList name="fallback_tags" class="TunableTags" display="Fallback Tags" muid="779AEA891EEF090A" min="1" Deprecated="False" filter="0" group="General" unique_entries="true">
+                <TunableEnum type="Tag" class="TunableEnumWithFilter" default="INVALID" muid="4114D44E1AE169" dynamic_entries="tag.Tag._elements" static_entries="tag.Tag" description="Tags to use if we don't find any objects with the search tags.&#xA;This is primarily so we can have a separate list for pre-&#xA;patched worlds where there are no hand-placed attractor points." Deprecated="False" dynamic_entries_prefix="AtPo" filter="0" group="General" invalid_entries="INVALID" pack_safe="True" />
+            </TunableList>
+            <TunableList name="search_tags" class="TunableList" display="Search Tags" muid="D5F934A3027A7359" description="A list of path tags to look for in order. This will search for&#xA;objects with each tag, find the closest object, and use it's&#xA;matching tag to find others for a full path. &#xA;&#xA;Example: Short_1, Short_2 are in the list. We would search for &#xA;all objects with either of those tags, and grab the closest &#xA;one. If the object has Short_1 tag on it, we find all objects &#xA;with Short_1 to create our path." Deprecated="False" filter="0" group="General" unique_entries="true">
+                <TunableEnum type="Tag" class="TunableEnumWithFilter" default="INVALID" muid="609C0BB85DCD8949" dynamic_entries="tag.Tag._elements" static_entries="tag.Tag" description="A set of attractor point tags we use to pull objects from when&#xA;searching for attractor points to create a walking path from." Deprecated="False" dynamic_entries_prefix="AtPo" filter="0" group="General" invalid_entries="INVALID" />
+            </TunableList>
+        </TunableTuple>
+
+        <Deleted name="audio_sting_on_start" muid="F7833FFF99CDDEED" />
+
+        <Deleted name="background_audio" muid="FEFEC9B74E6E22A8" />
+
+        <Deleted name="category" muid="8ABD92E73DF59D0E" />
+
+        <Deleted name="compatible_venues" muid="A8AFB64E45C24B35" />
+
+        <Deleted name="creation_ui_option" muid="FAE3AE65E7FA7C9C" />
+
+        <TunableTuple name="dog_job_and_role_state" class="TunableSituationJobAndRoleState" display="Dog Job And Role State" muid="EFC6E837969FD81C" description="Job and Role State for the dog being walked. Pre-populated as the&#xA;target of the Situation." Deprecated="False" filter="0" group="General">
+            <Tunable type="role_state" name="role_state" class="TunableReference" display="Role State" muid="AD40737E1BB76199" description="A role state the sim assigned to the job will perform" allow_none="False" Deprecated="False" filter="0" group="General" />
+            <Tunable type="situation_job" name="situation_job" class="TunableReference" display="Situation Job" muid="866A659D36D66CDA" description="A reference to a SituationJob that can be performed at this Situation." allow_none="False" Deprecated="False" filter="0" group="General" />
+        </TunableTuple>
+
+        <Deleted name="entitlement" muid="DB7AB09B19893415" />
+
+        <Deleted name="exclusivity" muid="513105FDA36C4D45" />
+
+        <TunableTuple name="finish_walk_state" class="TunableFinishWalkState" display="Finish Walk State" muid="7AFC816028E1E899" description="The state to walk back home." Deprecated="False" filter="0" group="State">
+            <Tunable type="bool" name="allow_join_situation" class="Tunable" default="True" display="Allow Join Situation" muid="6C756BF8BA9B3CD6" description="Whether the situation is allowed to join at this state." Deprecated="False" filter="0" group="General" />
+            <Tunable type="interaction" name="go_home_affordance" class="TunableReference" display="Go Home Affordance" muid="3D374B29C378D2D7" description="The affordance that the dog walker runs to go home." allow_none="False" Deprecated="False" filter="0" group="General" />
+            <TunableTuple name="interaction_of_interest" class="TunableInteractionOfInterest" display="Interaction Of Interest" muid="8F67E5DC5BF6DA76" description="The interaction that when run will cause GPE defined behavior&#xA;to run." Deprecated="False" filter="0" group="General">
+                <TunableList name="affordances" class="TunableList" display="Affordances" muid="61E0D68D58343326" description="The Sim must have started either any affordance in this list or an&#xA;interaction matching one of the tags in this tunable's Tags&#xA;field." Deprecated="False" filter="0" group="General">
+                    <Tunable type="interaction" class="TunableReference" muid="F4E0FBE158A217A1" allow_none="False" Deprecated="False" filter="0" group="General" pack_safe="True" />
+                </TunableList>
+                <TunableList name="tags" class="TunableSet" display="Tags" muid="109C673E9FE75AA9" description="The Sim must have run either an interaction matching one of these&#xA;Tags or an affordance from the list of Affordances in this&#xA;tunable." Deprecated="False" filter="0" group="General" unique_entries="true">
+                    <TunableEnum type="Tag" class="TunableEnumEntry" default="INVALID" muid="2B33F18A0F7C445F" dynamic_entries="tag.Tag._elements" static_entries="tag.Tag" Deprecated="False" filter="0" group="General" />
+                </TunableList>
+            </TunableTuple>
+            <TunableList name="job_and_role_changes" class="TunableMapping" display="Job And Role Changes" muid="F5249D8F7385100D" mapping_key="Situation Job" mapping_value="Role State" description="A mapping between situation jobs and role states that defines&#xA;what role states we want to switch to for sims on which jobs&#xA;when this situation state is entered." Deprecated="False" filter="0" group="General">
+                <TunableTuple class="TunableTuple" muid="9FCC1DB85FE545F4" Deprecated="False" filter="0" group="General">
+                    <Tunable type="role_state" name="Role State" class="TunableReference" display="Role State" muid="BA78BF0FF98F2605" description="The role state that we will switch sims of the linked job&#xA;into." allow_none="False" Deprecated="False" filter="0" group="General" />
+                    <Tunable type="situation_job" name="Situation Job" class="TunableReference" display="Situation Job" muid="467DE2E539C68703" description="A reference to a SituationJob that we will use to change&#xA;sim's role state." allow_none="False" Deprecated="False" filter="0" group="General" />
+                </TunableTuple>
+            </TunableList>
+            <TunableVariant type="None" name="time_out" class="OptionalTunable" default="disabled" display="Time Out" muid="1755786CE86EB4F8" description="How long this state will last before time expired. Please talk to the GPE who implemented the specific&#xA;situation to see what the state will do on time expired." Deprecated="False" filter="0" group="General">
+                <Tunable name="disabled" class="TunableExistance" display="Disabled" muid="53897299DD29510B" />
+                <Tunable type="float" name="enabled" class="TunableSimMinute" default="15" display="Enabled" muid="75C1748FB4A87FE1" min="1" max="None" tuning_state="NeedsTuning" Deprecated="False" filter="0" group="General" />
+            </TunableVariant>
+        </TunableTuple>
+
+        <Deleted name="force_invite_only" muid="A17EBF5E3527631A" />
+
+        <Deleted name="goal_button_text" muid="2857AD1FF02548E0" />
+
+        <Deleted name="goal_sub_text" muid="C66A9856D641CFE2" />
+
+        <Deleted name="highlight_first_incomplete_minor_goal" muid="E29E91FB0CD5F241" />
+
+        <Deleted name="job_display_ordering" muid="8A79378A4A9D50E8" />
+
+        <Deleted name="main_goal" muid="89A2B105D617E282" />
+
+        <Deleted name="main_goal_audio_sting" muid="19B247B9729E8B78" />
+
+        <Deleted name="max_participants" muid="E6A50E3910E5EFDE" />
+
+        <Deleted name="minor_goal_chains" muid="68A11B07398C1CA1" />
+
+        <Deleted name="recommended_job_object_notification" muid="A112F4FB81F43064" />
+
+        <Deleted name="recommended_job_object_text" muid="7816360D3DF25A94" />
+
+        <Deleted name="screen_slam_bronze" muid="F9EE9D64B07BAE19" />
+
+        <Deleted name="screen_slam_gold" muid="782BDF00D4DA468B" />
+
+        <Deleted name="screen_slam_no_medal" muid="BBF44E40CF2C23EB" />
+
+        <Deleted name="screen_slam_silver" muid="308014555A79531C" />
+
+        <Deleted name="situation_description" muid="B39F28E81EE5116" />
+
+        <Deleted name="suppress_scoring_progress_bar" muid="9ADBDA89366E442" />
+
+        <Deleted name="targeted_situation" muid="C7469AABA33F57F0" />
+
+        <Deleted name="travel_request_behavior" muid="BD50BBB64B94C96E" />
+
+        <Deleted name="venue_invitation_message" muid="4BC2274EB83CB06B" />
+
+        <Deleted name="venue_situation_player_job" muid="5A0B2EA0C1FF3E04" />
+
+        <TunableTuple name="wait_around_state" class="TunableWaitAroundState" display="Wait Around State" muid="E321F21D53B46596" description="The state for the walker and dog to hang out so they can run interactions&#xA;and act lively." Deprecated="False" filter="0" group="State">
+            <Tunable type="bool" name="allow_join_situation" class="Tunable" default="True" display="Allow Join Situation" muid="1BCDF21FAC77314A" description="Whether the situation is allowed to join at this state." Deprecated="False" filter="0" group="General" />
+            <TunableList name="job_and_role_changes" class="TunableMapping" display="Job And Role Changes" muid="F728F2AEA2EEBB58" mapping_key="Situation Job" mapping_value="Role State" description="A mapping between situation jobs and role states that defines&#xA;what role states we want to switch to for sims on which jobs&#xA;when this situation state is entered." Deprecated="False" filter="0" group="General">
+                <TunableTuple class="TunableTuple" muid="21C528EEFF0D8043" Deprecated="False" filter="0" group="General">
+                    <Tunable type="role_state" name="Role State" class="TunableReference" display="Role State" muid="E40B618B28E6C9CB" description="The role state that we will switch sims of the linked job&#xA;into." allow_none="False" Deprecated="False" filter="0" group="General" />
+                    <Tunable type="situation_job" name="Situation Job" class="TunableReference" display="Situation Job" muid="978A8F59396C70D3" description="A reference to a SituationJob that we will use to change&#xA;sim's role state." allow_none="False" Deprecated="False" filter="0" group="General" />
+                </TunableTuple>
+            </TunableList>
+            <TunableVariant type="None" name="time_out" class="OptionalTunable" default="disabled" display="Time Out" muid="A610762191C11796" description="How long this state will last before time expired. Please talk to the GPE who implemented the specific&#xA;situation to see what the state will do on time expired." Deprecated="False" filter="0" group="General">
+                <Tunable name="disabled" class="TunableExistance" display="Disabled" muid="3A740817F00D0B4C" />
+                <Tunable type="float" name="enabled" class="TunableSimMinute" default="15" display="Enabled" muid="C8CEC79A211BA3D1" min="1" max="None" tuning_state="NeedsTuning" Deprecated="False" filter="0" group="General" />
+            </TunableVariant>
+            <TunableTuple name="wait_stat_and_value" class="TunableTuple" display="Wait Stat And Value" muid="D08FF75D36040CCD" description="The stat and initial value on the dog that decides when we should&#xA;walk to the next node in the situation. The timer for this state is&#xA;a fallback if the Sim and dog end up taking too long." Deprecated="False" filter="0" group="General">
+                <Tunable type="float" name="initial_value" class="Tunable" default="5" display="Initial Value" muid="545AAF7DDF1FAAF2" description="The initial value we should set on the Dog to decide when they should walk again. " tuning_state="NeedsTuning" Deprecated="False" filter="0" group="General" />
+                <Tunable type="statistic" name="stat" class="TunableReference" display="Stat" muid="4A4C2EEAAB1F3139" description="The stat we track on the Dog, to notify us when the Sim should attempt to walk&#xA;to the next attractor point.&#xA;&#xA;When the stat reaches its convergence value, we enter the walk state." allow_none="False" Deprecated="False" filter="0" group="General" restrict="Commodity" />
+            </TunableTuple>
+        </TunableTuple>
+
+        <TunableTuple name="walk_nodes" class="TunableInterval" display="Walk Nodes" muid="9FA2409BC17E06EC" description="How many nodes in the world we want to traverse for our walk.&#xA;Currently this will only affect fallback attractor points. We will&#xA;try to use ALL of the attractor points returned by search tags." Deprecated="False" filter="0" group="General">
+            <Tunable type="int" name="lower_bound" class="TunableRange" default="5" display="Lower Bound" muid="E13C809196F9AE55" min="1" max="None" description="The lower bound of the interval." tuning_state="NeedsTuning" Deprecated="False" filter="0" group="General" />
+            <Tunable type="int" name="upper_bound" class="TunableRange" default="6" display="Upper Bound" muid="B255F2B20171E356" min="None" max="None" description="The upper bound of the interval." tuning_state="NeedsTuning" Deprecated="False" filter="0" group="General" />
+        </TunableTuple>
+
+        <TunableTuple name="walk_state" class="TunableWalkState" display="Walk State" muid="8E99B458840C5EA9" description="The state for the walker to take the dog to the next attractor node." Deprecated="False" filter="0" group="State">
+            <Tunable type="bool" name="allow_join_situation" class="Tunable" default="True" display="Allow Join Situation" muid="807753146354394D" description="Whether the situation is allowed to join at this state." Deprecated="False" filter="0" group="General" />
+            <Tunable type="interaction" name="attractor_node_affordance" class="TunableReference" display="Attractor Node Affordance" muid="8C0F9CCF237D5DA1" description="The affordance that the dog walker runs on the next attractor point&#xA;object." allow_none="False" Deprecated="False" filter="0" group="General" pack_safe="True" />
+            <TunableTuple name="interaction_of_interest" class="TunableInteractionOfInterest" display="Interaction Of Interest" muid="7F8CB55405DAA5" description="The interaction that when run will cause GPE defined behavior&#xA;to run." Deprecated="False" filter="0" group="General">
+                <TunableList name="affordances" class="TunableList" display="Affordances" muid="B0AA380A29B13604" description="The Sim must have started either any affordance in this list or an&#xA;interaction matching one of the tags in this tunable's Tags&#xA;field." Deprecated="False" filter="0" group="General">
+                    <Tunable type="interaction" class="TunableReference" muid="84918874ADB04691" allow_none="False" Deprecated="False" filter="0" group="General" pack_safe="True" />
+                </TunableList>
+                <TunableList name="tags" class="TunableSet" display="Tags" muid="A3154E4032047D5B" description="The Sim must have run either an interaction matching one of these&#xA;Tags or an affordance from the list of Affordances in this&#xA;tunable." Deprecated="False" filter="0" group="General" unique_entries="true">
+                    <TunableEnum type="Tag" class="TunableEnumEntry" default="INVALID" muid="2ABEDCD041D193B3" dynamic_entries="tag.Tag._elements" static_entries="tag.Tag" Deprecated="False" filter="0" group="General" />
+                </TunableList>
+            </TunableTuple>
+            <TunableList name="job_and_role_changes" class="TunableMapping" display="Job And Role Changes" muid="5A1B6DE0F85F30D1" mapping_key="Situation Job" mapping_value="Role State" description="A mapping between situation jobs and role states that defines&#xA;what role states we want to switch to for sims on which jobs&#xA;when this situation state is entered." Deprecated="False" filter="0" group="General">
+                <TunableTuple class="TunableTuple" muid="E9AE433017969BAE" Deprecated="False" filter="0" group="General">
+                    <Tunable type="role_state" name="Role State" class="TunableReference" display="Role State" muid="4D73CA2A9A6A9911" description="The role state that we will switch sims of the linked job&#xA;into." allow_none="False" Deprecated="False" filter="0" group="General" />
+                    <Tunable type="situation_job" name="Situation Job" class="TunableReference" display="Situation Job" muid="49EA77D7E07B51D1" description="A reference to a SituationJob that we will use to change&#xA;sim's role state." allow_none="False" Deprecated="False" filter="0" group="General" />
+                </TunableTuple>
+            </TunableList>
+            <Tunable type="int" name="max_attempts" class="TunableRange" default="3" display="Max Attempts" muid="364D9CBBC60CBCDC" min="1" max="None" description="The maximum number of attempts we will try to walk to a node before&#xA;walking to the next node." tuning_state="NeedsTuning" Deprecated="False" filter="0" group="General" />
+            <Tunable type="float" name="time_between_attempts" class="TunableSimMinute" default="5" display="Time Between Attempts" muid="A28DB13A400DFA82" min="None" max="None" description="The time in sim minutes between attempts to walk to the current&#xA;attractor point." tuning_state="NeedsTuning" Deprecated="False" filter="0" group="General" />
+            <TunableVariant type="None" name="time_out" class="OptionalTunable" default="disabled" display="Time Out" muid="6A6B04A4108DAC81" description="How long this state will last before time expired. Please talk to the GPE who implemented the specific&#xA;situation to see what the state will do on time expired." Deprecated="False" filter="0" group="General">
+                <Tunable name="disabled" class="TunableExistance" display="Disabled" muid="AC0CFA31C147795E" />
+                <Tunable type="float" name="enabled" class="TunableSimMinute" default="15" display="Enabled" muid="8B6E4E518847CB27" min="1" max="None" tuning_state="NeedsTuning" Deprecated="False" filter="0" group="General" />
+            </TunableVariant>
+        </TunableTuple>
+
+        <TunableTuple name="walker_job_and_role_state" class="TunableSituationJobAndRoleState" display="Walker Job And Role State" muid="62ECB439E683AEDE" description="Job and Role State for the Sim walking the dog. Pre-populated as&#xA;the actor of the Situation." Deprecated="False" filter="0" group="General">
+            <Tunable type="role_state" name="role_state" class="TunableReference" display="Role State" muid="FC340157C6D5CBED" description="A role state the sim assigned to the job will perform" allow_none="False" Deprecated="False" filter="0" group="General" />
+            <Tunable type="situation_job" name="situation_job" class="TunableReference" display="Situation Job" muid="21582D495B28DBE" description="A reference to a SituationJob that can be performed at this Situation." allow_none="False" Deprecated="False" filter="0" group="General" />
+        </TunableTuple>
+    </Instance>
+
+    <VersionHistory>
+        <ActionList>
+            <Action type="kRemove" old_muid="937CF6B95C77173D" />
+        </ActionList>
+
+        <ActionList>
+            <Action type="kRename" old_muid="F5CE8D5213B93081" new_muid="A8AFB64E45C24B35" />
+        </ActionList>
+
+        <ActionList>
+            <Action type="kRemove" old_muid="9D368E824C2DD0B" />
+            <Action type="kRemove" old_muid="8E0CCCD9580398C1" />
+        </ActionList>
+    </VersionHistory>
+</TuningRoot>

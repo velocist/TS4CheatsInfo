@@ -1,0 +1,115 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<I c="SuperInteraction" i="interaction" m="interactions.base.super_interaction" n="motherPlant_Fight_Lose" s="204325">
+  <V t="prohibit_cancelation" n="_cancelable_by_user" />
+  <V t="enabled" n="_saveable" />
+  <T n="allow_autonomous">False</T>
+  <T n="attention_cost">0.5</T>
+  <V t="flexible_length" n="basic_content">
+    <U n="flexible_length">
+      <L n="conditional_actions">
+        <V t="literal">
+          <U n="literal">
+            <L n="conditions">
+              <V t="time_based">
+                <U n="time_based">
+                  <T n="max_time">10</T>
+                  <T n="min_time">10</T>
+                </U>
+              </V>
+            </L>
+            <E n="interaction_action">EXIT_NATURALLY</E>
+          </U>
+        </V>
+      </L>
+      <V n="content" t="looping_content">
+        <U n="looping_content">
+          <U n="animation_ref">
+            <T n="factory">204324<!--AnimationElement: motherPlant_MainSimFight_Lose--></T>
+          </U>
+        </U>
+      </V>
+      <V t="enabled" n="periodic_stat_change">
+        <U n="enabled">
+          <L n="operations">
+            <V t="reference">
+              <T n="reference">249770<!--PeriodicStatChangeOperation: periodicStatChangeOperation_Lifestyles_Liked_AdrenalineSeeker--></T>
+            </V>
+            <V t="reference">
+              <T n="reference">249762<!--PeriodicStatChangeOperation: periodicStatChangeOperation_Lifestyles_Progress_AdrenalineSeeker--></T>
+            </V>
+          </L>
+        </U>
+      </V>
+    </U>
+  </V>
+  <L n="basic_extras">
+    <V t="state_change">
+      <U n="state_change">
+        <V t="single_value" n="new_value">
+          <U n="single_value">
+            <T n="new_value">201778<!--ObjectStateValue: motherplant_Idle_basic--></T>
+          </U>
+        </V>
+        <V t="at_end" n="timing" />
+      </U>
+    </V>
+    <V t="state_change">
+      <U n="state_change">
+        <V t="single_value" n="new_value">
+          <U n="single_value">
+            <T n="new_value">204719<!--ObjectStateValue: motherplant_Fight_Values_NoFightInProgress--></T>
+          </U>
+        </V>
+        <V t="at_end" n="timing">
+          <U n="at_end">
+            <E n="criticality">OnCancelOrException</E>
+          </U>
+        </V>
+      </U>
+    </V>
+  </L>
+  <V t="disabled" n="content_score" />
+  <T n="display_name">0x78FD770B<!--String: "Combatir a la planta madre"--></T>
+  <U n="display_name_text_tokens">
+    <L n="tokens">
+      <V t="participant_type">
+        <U n="participant_type">
+          <V n="objects" t="from_participant">
+            <U n="from_participant">
+              <E n="participant">Actor</E>
+            </U>
+          </V>
+        </U>
+      </V>
+      <V t="participant_type">
+        <U n="participant_type">
+          <V t="from_participant" n="objects">
+            <U n="from_participant">
+              <E n="participant">Object</E>
+            </U>
+          </V>
+        </U>
+      </V>
+    </L>
+  </U>
+  <L n="interaction_category_tags">
+    <E>Interaction_Super</E>
+    <E>Interaction_All</E>
+    <E>Interaction_Lifestyles_AdrenalineSeeker_FlexibleLength</E>
+  </L>
+  <V n="outcome" t="single">
+    <U n="single">
+      <U n="actions">
+        <L n="loot_list">
+          <T>204375<!--LootActions: loot_MotherPlant_Lose--></T>
+          <T>206127<!--LootActions: loot_MotherPlant_Rel_Loss_big--></T>
+        </L>
+      </U>
+    </U>
+  </V>
+  <E n="scoring_priority">NORMAL</E>
+  <T n="subaction_selection_weight">1</T>
+  <E n="target_type">OBJECT</E>
+  <L n="test_globals" />
+  <T n="time_overhead">30</T>
+</I>

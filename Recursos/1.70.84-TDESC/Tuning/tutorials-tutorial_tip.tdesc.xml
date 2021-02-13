@@ -1,0 +1,424 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+
+<TuningRoot>
+    <Module name="tutorials.tutorial_tip" muid="ECED4903DF372A6">
+        <Class name="TutorialTipTuning" muid="1523B89F5312D928">
+            <TunableTuple name="FTUE_TUNABLES" class="FtueDataTuple" display="Ftue Tunables" muid="F22B0C34515EF756" description="Tunables relating to the FTUE tutorial mode." Deprecated="False" export_modes="client_binary" filter="0" group="General">
+                <TunableList name="disable_ui_elements" class="TunableList" display="Disable Ui Elements" muid="C3241858F10FB80A" description="Disable one or more UI elements during a phase of the tutorial, denoted by&#xA;the starting and ending tips." Deprecated="False" filter="0" group="General">
+                    <TunableTuple class="TutorialTipDisableUiElements" muid="AE658EAEC13B048B" description="Defines a set of UI elements to be disabled during a range of tips." Deprecated="False" filter="0" group="General">
+                        <TunableList name="elements" class="TunableEnumSet" display="Elements" muid="31D13600E674E2C3" description="List of UI elements to disable.  Note that not all elements can be disabled." Deprecated="False" filter="0" group="General" unique_entries="true">
+                            <TunableEnum type="TutorialTipUiElement" class="TunableEnumEntry" default="UI_INVALID" muid="6549142AF90D9BF0" static_entries="tutorials-tutorial_tip.TutorialTipUiElement" Deprecated="False" filter="0" group="General" />
+                        </TunableList>
+                        <Tunable type="tutorial_tip" name="end_tip" class="TunableReference" display="End Tip" muid="D41F5B1BD38B8109" description="When this tip becomes active or is satisfied, the target elements&#xA;will become re-enabled." allow_none="False" Deprecated="False" filter="0" group="General" pack_safe="True" />
+                        <Tunable type="int" name="reason" class="TunableLocalizedString" default="0x0" display="Reason" muid="7ED9BB8F57B62AB5" description="The reason the element has been disabled, usually displayed as a tooltip." Deprecated="False" filter="0" group="General" />
+                        <Tunable type="tutorial_tip" name="start_tip" class="TunableReference" display="Start Tip" muid="57D53BEFBDE60A50" description="When this tip becomes active or is satisfied, the target elements&#xA;will become disabled." allow_none="False" Deprecated="False" filter="0" group="General" pack_safe="True" />
+                    </TunableTuple>
+                </TunableList>
+                <Tunable type="aspiration_category" name="ftue_aspiration_category" class="TunableReference" display="Ftue Aspiration Category" muid="C155863576D2350B" description="A reference to an aspiration category which is used in cas for the ftue flow" allow_none="False" Deprecated="False" filter="0" group="General" pack_safe="True" />
+                <Tunable type="housedescription" name="start_house_description" class="TunableReference" display="Start House Description" muid="B9D86F9AE81BEEB8" description="A reference to the HouseDescription resource to load into in FTUE" Deprecated="False" filter="0" group="General" />
+            </TunableTuple>
+        </Class>
+
+        <Class name="TutorialTipGameState" muid="EA3B9FD476F4FEB0" enum_bit_flag="False" enum_locked="False">
+            <EnumItem name="BUILD_BUY" muid="3D0EAE094F29F56" enum_value="2919482169" />
+
+            <EnumItem name="CAS" muid="39C21824696DB89" enum_value="983016380" />
+
+            <EnumItem name="GALLERY" muid="34215F52A548F125" enum_value="1" />
+
+            <EnumItem name="GAMESTATE_NONE" muid="C34D4421D48CFF55" enum_value="0" />
+
+            <EnumItem name="LIVE_MODE" muid="C46D800E05A9DECA" enum_value="270579719" />
+
+            <EnumItem name="NEIGHBORHOOD_VIEW" muid="88BA9BFDDE2F7F79" enum_value="3640749201" />
+
+            <EnumItem name="TRAVEL" muid="535CEEAE35D7053F" enum_value="238138433" />
+        </Class>
+
+        <Class name="TutorialTipUiElement" muid="8F9264054BF454D2" enum_bit_flag="False" enum_locked="False">
+            <EnumItem name="BB_BEDBATH_DROPDOWN" muid="D5F421EB6899BC7C" enum_value="421" />
+
+            <EnumItem name="BB_BUILD_SORT" muid="5255322BEB9A03A9" enum_value="400" />
+
+            <EnumItem name="BB_BULLDOZE" muid="676D463CE5491523" enum_value="422" />
+
+            <EnumItem name="BB_CAMERA" muid="798A8E90B417BE37" enum_value="405" />
+
+            <EnumItem name="BB_CAMERA_FLOOR" muid="F1D8E872F8F6A040" enum_value="419" />
+
+            <EnumItem name="BB_DESIGN_TOOL" muid="264977DF20B62F0A" enum_value="408" />
+
+            <EnumItem name="BB_DOOR" muid="7B9D0490A061198F" enum_value="417" />
+
+            <EnumItem name="BB_EMPTY_ROOM" muid="6490ED093A1FD760" enum_value="414" />
+
+            <EnumItem name="BB_EYEDROPPER" muid="5CE26EF9EC63FE2B" enum_value="406" />
+
+            <EnumItem name="BB_FAMILY_INVENTORY" muid="A8A01A87EAB2AD07" enum_value="404" />
+
+            <EnumItem name="BB_FOUNDATION_BUTTON" muid="F8470A890711F7F8" enum_value="424" />
+
+            <EnumItem name="BB_GALLERY_BUTTON" muid="6932CB694F3DE1B0" enum_value="411" />
+
+            <EnumItem name="BB_GP_NOT_GALLERY_UI" muid="2A4E7836DC74A031" enum_value="430" />
+
+            <EnumItem name="BB_LOT_INFO" muid="675E2F96D8B56B4A" enum_value="426" />
+
+            <EnumItem name="BB_LOTNAME" muid="866C4F9A227103C9" enum_value="423" />
+
+            <EnumItem name="BB_MAGALOG_BUTTON" muid="6DA876986F050471" enum_value="420" />
+
+            <EnumItem name="BB_MAGALOG_CATEGORY" muid="D8487FC56599013C" enum_value="412" />
+
+            <EnumItem name="BB_MAGALOG_FURNISHED_ROOMS" muid="EFC1CA34D424267B" enum_value="425" />
+
+            <EnumItem name="BB_MAGALOG_ITEM" muid="F04F96DCEAEDC007" enum_value="413" />
+
+            <EnumItem name="BB_NAVIGATION_HOUSE" muid="23154C9DE9080F48" enum_value="415" />
+
+            <EnumItem name="BB_OBJECTS_BY_FUNCTION" muid="66FA1C0950389A4" enum_value="402" />
+
+            <EnumItem name="BB_OBJECTS_BY_ROOM" muid="B93C71B573432C3" enum_value="401" />
+
+            <EnumItem name="BB_POOL_OBJECTS" muid="47390664DEBC4CDF" enum_value="429" />
+
+            <EnumItem name="BB_POOL_TOOL" muid="DC274793CD3A763E" enum_value="428" />
+
+            <EnumItem name="BB_PRODUCT_CATALOG_ITEM" muid="1F91E54052D5C907" enum_value="418" />
+
+            <EnumItem name="BB_PRODUCT_CATALOG_STAIRS" muid="5AB3F079EE03CCF6" enum_value="427" />
+
+            <EnumItem name="BB_SEARCH_BAR" muid="BC18699BAC6ED3C7" enum_value="403" />
+
+            <EnumItem name="BB_SHARE_LOT" muid="D27A3876EF0F054A" enum_value="410" />
+
+            <EnumItem name="BB_SLEDGEHAMMER" muid="909B36AC90F9C3C" enum_value="407" />
+
+            <EnumItem name="BB_STAIRS" muid="678F8EFF288DE3AB" enum_value="416" />
+
+            <EnumItem name="BB_UNDO_REDO" muid="D176832E1AE5B38D" enum_value="409" />
+
+            <EnumItem name="CAS_ASPIRATION_GROUP_BUTTON" muid="A7C21605A8EEE614" enum_value="117" />
+
+            <EnumItem name="CAS_ASPIRATION_TRACK_BUTTON" muid="A0F01471070A520C" enum_value="118" />
+
+            <EnumItem name="CAS_ASPIRATIONS" muid="63E8A8F754B43EB" enum_value="101" />
+
+            <EnumItem name="CAS_BONUS_TRAIT_ICON" muid="A0D8873B1FEF6566" enum_value="120" />
+
+            <EnumItem name="CAS_DETAILED_EDIT_BUTTON" muid="F1C123F55371C86" enum_value="113" />
+
+            <EnumItem name="CAS_FEATURED_LOOKS_BUTTON" muid="EED5913A5933B27E" enum_value="112" />
+
+            <EnumItem name="CAS_GALLERY_BUTTON" muid="76FF00AE24C1824A" enum_value="127" />
+
+            <EnumItem name="CAS_GALLERY_RANDOMIZE_BUTTON" muid="4744031507B01779" enum_value="128" />
+
+            <EnumItem name="CAS_GALLERY_SAVE_BUTTON" muid="D89BC24975454059" enum_value="111" />
+
+            <EnumItem name="CAS_GENETICS_BUTTON" muid="C3D0D12CD3B6E81D" enum_value="108" />
+
+            <EnumItem name="CAS_GP_BODY_MANIPULATION" muid="F6DDD3363705B858" enum_value="152" />
+
+            <EnumItem name="CAS_GP_HELP_CONTROL_LAYOUT" muid="EE8299283F86E0F3" enum_value="151" />
+
+            <EnumItem name="CAS_GP_MENU_CYCLE" muid="22BF4A2E79A5917F" enum_value="150" />
+
+            <EnumItem name="CAS_MENU_BODY_BUTTON" muid="6061F895C0278787" enum_value="123" />
+
+            <EnumItem name="CAS_MENU_FACES_BUTTON" muid="AD7A08F3A245D419" enum_value="124" />
+
+            <EnumItem name="CAS_MULTIPLE_SIMS" muid="9DF5FEEBB1633B1A" enum_value="125" />
+
+            <EnumItem name="CAS_NAME_PANEL" muid="37FCE47995C39D9D" enum_value="115" />
+
+            <EnumItem name="CAS_OUTFIT_BUTTON" muid="4C0E437CF17EA808" enum_value="105" />
+
+            <EnumItem name="CAS_OUTFIT_TYPE_BUTTON" muid="7450263775A65BBC" enum_value="122" />
+
+            <EnumItem name="CAS_PERSONALITYPANEL" muid="1286C6FD06C82775" enum_value="100" />
+
+            <EnumItem name="CAS_PLUMBOB_BUTTON" muid="13B8973D7C4FE98C" enum_value="114" />
+
+            <EnumItem name="CAS_PRIMARY_ASPIRATION_BUTTON" muid="3AC7A9268E779D53" enum_value="116" />
+
+            <EnumItem name="CAS_RANDOM_BUTTON" muid="3DAFD2D5B90AB416" enum_value="107" />
+
+            <EnumItem name="CAS_RELATIONSHIP_BUTTON" muid="F92188B36D6A1C8C" enum_value="106" />
+
+            <EnumItem name="CAS_SIM_BODY" muid="50461BC6BD41214B" enum_value="104" />
+
+            <EnumItem name="CAS_SIM_HEAD" muid="B53D5724D9140AB4" enum_value="103" />
+
+            <EnumItem name="CAS_SKIN_COLOR_MENU" muid="F89542D2A6F01B5E" enum_value="110" />
+
+            <EnumItem name="CAS_SKIN_DETAILS_BUTTON" muid="EB44C97D8EDEE960" enum_value="126" />
+
+            <EnumItem name="CAS_TATTOOS_BUTTON" muid="B18521FCCF72CB6" enum_value="109" />
+
+            <EnumItem name="CAS_TRAIT_CATEGORY_BUTTON" muid="35F7DE37ABF276C5" enum_value="121" />
+
+            <EnumItem name="CAS_TRAIT_GRID_BUTTON" muid="D4EDD17B4C89A789" enum_value="119" />
+
+            <EnumItem name="CAS_TRAITS" muid="F628F72274044D46" enum_value="102" />
+
+            <EnumItem name="GAL_APPLY_BUTTON" muid="FA7909DE6C5572B4" enum_value="514" />
+
+            <EnumItem name="GAL_COMMENTS" muid="F815C889A717928E" enum_value="512" />
+
+            <EnumItem name="GAL_COMMUNITY_TAB" muid="1A6D5BA927680C1D" enum_value="505" />
+
+            <EnumItem name="GAL_FEED_SECTION" muid="DE0A528B8EFD1802" enum_value="502" />
+
+            <EnumItem name="GAL_FILTER_HEADER" muid="311922E52FB5DDC0" enum_value="507" />
+
+            <EnumItem name="GAL_FILTERS_PANEL" muid="E2EF29AD177AFF33" enum_value="508" />
+
+            <EnumItem name="GAL_GALLERY_UI" muid="15C6D78A1F65A87B" enum_value="500" />
+
+            <EnumItem name="GAL_HASHTAG_SECTION" muid="ACB18A3B623E22E8" enum_value="503" />
+
+            <EnumItem name="GAL_HOME_TAB" muid="B8216063E8D6D8EC" enum_value="501" />
+
+            <EnumItem name="GAL_INFO_PANEL" muid="5DE1508FC34EFA12" enum_value="511" />
+
+            <EnumItem name="GAL_LIBRARY_TAB" muid="7BDF0CF4ED275AB0" enum_value="506" />
+
+            <EnumItem name="GAL_PLAYER_PROFILE" muid="5DD807BEB3A04E5C" enum_value="515" />
+
+            <EnumItem name="GAL_SAVE_BUTTON" muid="3151C6C495A46743" enum_value="513" />
+
+            <EnumItem name="GAL_SEARCH_WIDGET" muid="5C24462639F1AC62" enum_value="509" />
+
+            <EnumItem name="GAL_SPOTLIGHT_SECTION" muid="58ED85CB2952478B" enum_value="504" />
+
+            <EnumItem name="GAL_THUMBNAILS_WIDGET" muid="6166543467C582A3" enum_value="510" />
+
+            <EnumItem name="GLOBAL_ESCAPE_MENU" muid="4631FC815F6A0A29" enum_value="1" />
+
+            <EnumItem name="GLOBAL_ESCAPE_MENU_BUTTON" muid="8FAB41D4F71C0FDF" enum_value="2" />
+
+            <EnumItem name="GLOBAL_HELP_BUTTON" muid="CD7E1F1B967B808C" enum_value="3" />
+
+            <EnumItem name="LIVE_ASPIRATION_ICON" muid="F21F045605C2E4F4" enum_value="321" />
+
+            <EnumItem name="LIVE_ASPIRATION_PANEL_BUTTON" muid="54E00C5AD5F5DD55" enum_value="320" />
+
+            <EnumItem name="LIVE_BUFF" muid="B680730676661DBC" enum_value="307" />
+
+            <EnumItem name="LIVE_BUILD_BUTTON" muid="B82BE2299750B3F5" enum_value="305" />
+
+            <EnumItem name="LIVE_CALENDAR_BUTTON" muid="4DBB8E133C1A41A4" enum_value="354" />
+
+            <EnumItem name="LIVE_CAMERA_ADVANCED_BUTTON" muid="E77EFAA796CE9E6B" enum_value="357" />
+
+            <EnumItem name="LIVE_CAREER_ADVANCEMENT" muid="938A889A3EEB8C62" enum_value="330" />
+
+            <EnumItem name="LIVE_CAREER_GOALS" muid="EF03865C10A3333" enum_value="314" />
+
+            <EnumItem name="LIVE_CAREER_PANEL_BUTTON" muid="B95C6275D7733138" enum_value="312" />
+
+            <EnumItem name="LIVE_CHANGE_ASPIRATION_BUTTON" muid="21A344D1FA848CAA" enum_value="323" />
+
+            <EnumItem name="LIVE_CLUB_ADMISSIONS_CREATION" muid="2F96898AB96532B4" enum_value="345" />
+
+            <EnumItem name="LIVE_CLUB_ADMISSIONS_DETAILS" muid="3A44A110390AEEAF" enum_value="346" />
+
+            <EnumItem name="LIVE_CLUB_ADMISSIONS_PANEL" muid="835D171FE7E52742" enum_value="344" />
+
+            <EnumItem name="LIVE_CLUB_ADMISSIONS_QUALIFIERS" muid="53B4A0B8E0613D91" enum_value="347" />
+
+            <EnumItem name="LIVE_CLUB_CONDUCT_ACTION" muid="CC98C71D360784EB" enum_value="350" />
+
+            <EnumItem name="LIVE_CLUB_CONDUCT_ENCOURAGED" muid="277DDA95D878046" enum_value="349" />
+
+            <EnumItem name="LIVE_CLUB_CONDUCT_PANEL" muid="D1BDF0084146ADF4" enum_value="348" />
+
+            <EnumItem name="LIVE_CLUB_DETAILS_ADMISSION_RULES" muid="21CC082C88635749" enum_value="341" />
+
+            <EnumItem name="LIVE_CLUB_DETAILS_CLUB_MEMBERS" muid="7E15341C338B6D06" enum_value="342" />
+
+            <EnumItem name="LIVE_CLUB_DETAILS_CONDUCT_RULES" muid="93F8B95819278817" enum_value="343" />
+
+            <EnumItem name="LIVE_CLUB_DETAILS_IDENTITY" muid="A3246743268C8FB1" enum_value="340" />
+
+            <EnumItem name="LIVE_CLUB_DETAILS_PANEL" muid="26601F926695CAF9" enum_value="339" />
+
+            <EnumItem name="LIVE_CLUB_MANAGER" muid="BC7E68C20E007B47" enum_value="332" />
+
+            <EnumItem name="LIVE_CLUB_MANAGER_CREATE_CLUB" muid="EF787DD9D03F6B41" enum_value="351" />
+
+            <EnumItem name="LIVE_CLUB_MANAGER_LIST" muid="FFA70F90A4F803FE" enum_value="333" />
+
+            <EnumItem name="LIVE_CLUB_PANEL" muid="4B340A14B14A7A14" enum_value="334" />
+
+            <EnumItem name="LIVE_CLUB_PANEL_BUTTON" muid="29876B907F0B4111" enum_value="355" />
+
+            <EnumItem name="LIVE_CLUB_PANEL_CLUB_PICKER" muid="662C2571D2F49D1A" enum_value="335" />
+
+            <EnumItem name="LIVE_CLUB_PANEL_CONDUCT_RULES" muid="A3F6A445058DD874" enum_value="336" />
+
+            <EnumItem name="LIVE_CLUB_PANEL_REWARDS" muid="EC602B6DB6879B44" enum_value="337" />
+
+            <EnumItem name="LIVE_CLUB_PANEL_START_GATHERING" muid="161CE8053F092262" enum_value="338" />
+
+            <EnumItem name="LIVE_CURRENT_SIM_PORTRAIT" muid="82D4C1D0E3358FBE" enum_value="302" />
+
+            <EnumItem name="LIVE_EMOTION" muid="9AC233B81F339372" enum_value="306" />
+
+            <EnumItem name="LIVE_EMOTIONAL_WHIM" muid="F884F2F63362A2CC" enum_value="309" />
+
+            <EnumItem name="LIVE_EVENT_GOALS_UI" muid="5A83FE77649E868F" enum_value="316" />
+
+            <EnumItem name="LIVE_EVENTS_UI" muid="D3A84C3DC1823459" enum_value="315" />
+
+            <EnumItem name="LIVE_FLOOR_BUTTON" muid="17F75B44C48E8656" enum_value="329" />
+
+            <EnumItem name="LIVE_GET_JOB_BUTTON" muid="E9E29F72A5C82B5D" enum_value="313" />
+
+            <EnumItem name="LIVE_HOUSEHOLD_SIM_1" muid="6CFCF199588F5F44" enum_value="358" />
+
+            <EnumItem name="LIVE_HOUSEHOLD_SIM_1_GO_HOME" muid="1E413574F6127C07" enum_value="360" />
+
+            <EnumItem name="LIVE_HOUSEHOLD_SIM_2" muid="C221D1977A00B411" enum_value="359" />
+
+            <EnumItem name="LIVE_HOUSEHOLD_SIM_2_GO_HOME" muid="D73896A6D2E97C2D" enum_value="361" />
+
+            <EnumItem name="LIVE_INTERACTION_QUEUE" muid="D8D42A89D64B6B3E" enum_value="304" />
+
+            <EnumItem name="LIVE_INVENTORY_PANEL_BUTTON" muid="9C8DE65A3B8F2CE2" enum_value="326" />
+
+            <EnumItem name="LIVE_ITEM_IN_PANEL" muid="F38B2260983A86D2" enum_value="327" />
+
+            <EnumItem name="LIVE_MANAGE_WORLDS_BUTTON" muid="2FF5CD6C1AC7179C" enum_value="353" />
+
+            <EnumItem name="LIVE_MOTIVE_PANEL_BUTTON" muid="DD5154169063D6E" enum_value="308" />
+
+            <EnumItem name="LIVE_NOTIFICATION_WALL_BUTTON" muid="D82FBCF6932DD65C" enum_value="352" />
+
+            <EnumItem name="LIVE_PHONE_BUTTON" muid="14655E0B6916C6F2" enum_value="331" />
+
+            <EnumItem name="LIVE_REL_INSPECTOR" muid="5590A045120D2ECC" enum_value="317" />
+
+            <EnumItem name="LIVE_RELATIONSHIP_PANEL_BUTTON" muid="3727CD7F9CDF95A0" enum_value="319" />
+
+            <EnumItem name="LIVE_SATISFACTION_STORE_BUTTON" muid="896583362418B16" enum_value="322" />
+
+            <EnumItem name="LIVE_SIM_IN_REL_INSPECTOR" muid="8FB3944F6C22FE77" enum_value="318" />
+
+            <EnumItem name="LIVE_SIM_PICKER_UI" muid="FF735A6DAE2AB12B" enum_value="362" />
+
+            <EnumItem name="LIVE_SIM_SELECTOR" muid="688858D412FA5B8E" enum_value="301" />
+
+            <EnumItem name="LIVE_SIMOLEON_WALLET" muid="419BA0C6B2A7E07C" enum_value="311" />
+
+            <EnumItem name="LIVE_SKILL_LIST" muid="87D8D5A3A211C794" enum_value="328" />
+
+            <EnumItem name="LIVE_SKILL_PANEL_BUTTON" muid="B0F8F62F88D5158" enum_value="310" />
+
+            <EnumItem name="LIVE_SUMMARY_PANEL_BUTTON" muid="335BAC934CD2C5AA" enum_value="324" />
+
+            <EnumItem name="LIVE_TIME_CONTROLS" muid="607C01B042C44838" enum_value="303" />
+
+            <EnumItem name="LIVE_TIME_SPEED3_CONTROL" muid="9F7D115059929023" enum_value="363" />
+
+            <EnumItem name="LIVE_TRAIT_IN_PANEL" muid="DCC338A6BA040164" enum_value="325" />
+
+            <EnumItem name="LIVE_VENUE_PANEL_BUTTON" muid="19C300963A957FF9" enum_value="356" />
+
+            <EnumItem name="LIVE_WALL_BUTTON" muid="71D630C216ED431" enum_value="300" />
+
+            <EnumItem name="MTX_PACK_BROWSER" muid="2D2A961276A1DF22" enum_value="600" />
+
+            <EnumItem name="MTX_PACK_BROWSER_NCAS" muid="107F323103ADAAB8" enum_value="601" />
+
+            <EnumItem name="NHV_BUILD_BUTTON" muid="CAC9974ABA597DB8" enum_value="206" />
+
+            <EnumItem name="NHV_CHANGE_LOT_TYPE_BUTTON" muid="1ED3CE7BB381D96A" enum_value="209" />
+
+            <EnumItem name="NHV_CONFIRM_BUTTON" muid="AE36C717EA970A42" enum_value="218" />
+
+            <EnumItem name="NHV_CURRENT_LOT" muid="4C65C4FA286B1AD6" enum_value="202" />
+
+            <EnumItem name="NHV_EMPTY_LOT" muid="46ACFAB0E8D320A5" enum_value="210" />
+
+            <EnumItem name="NHV_EMPTY_LOT_MOVE_IN" muid="F64005C0B74543A6" enum_value="217" />
+
+            <EnumItem name="NHV_EMPTY_LOT_OASIS" muid="F2AD9D605A73D291" enum_value="215" />
+
+            <EnumItem name="NHV_EVICT_BUTTON" muid="F42775D728B9AAA" enum_value="207" />
+
+            <EnumItem name="NHV_FTUE_TRAVEL_LOT" muid="66DEE4111B70BC16" enum_value="219" />
+
+            <EnumItem name="NHV_HOUSEHOLD_MANAGEMENT" muid="CFEDD13EBA07FB10" enum_value="214" />
+
+            <EnumItem name="NHV_MORE_BUTTON" muid="81DEA007073B754F" enum_value="205" />
+
+            <EnumItem name="NHV_MOVE_HOUSEHOLD_BUTTON" muid="C848BD68DD1E1587" enum_value="208" />
+
+            <EnumItem name="NHV_MOVE_NEW_HOUSEHOLD_BUTTON" muid="D9BA01C04E5F503E" enum_value="211" />
+
+            <EnumItem name="NHV_OASIS_SPRINGS_MAP" muid="A38A07F562D3FF80" enum_value="212" />
+
+            <EnumItem name="NHV_OCCUPANTS" muid="E4F2E6CFD892DCDE" enum_value="203" />
+
+            <EnumItem name="NHV_PLAY_BUTTON" muid="ED935D3BACF90543" enum_value="204" />
+
+            <EnumItem name="NHV_SET_HOME" muid="614939FA74329AE5" enum_value="200" />
+
+            <EnumItem name="NHV_STARTER_WILLOW" muid="7AFE3B4F2CEF60E" enum_value="216" />
+
+            <EnumItem name="NHV_WILLOW_CREEK_SELECT" muid="8F72303B5296C76B" enum_value="213" />
+
+            <EnumItem name="NHV_WORLD_SELECT" muid="A10B3C4B5FEE2CF3" enum_value="201" />
+
+            <EnumItem name="UI_INVALID" muid="B15C0AD966601349" enum_value="0" />
+        </Class>
+
+        <Class name="TutorialTipGroupRequirementType" muid="B4C9037A7CB42A7C" enum_bit_flag="False" enum_locked="False">
+            <EnumItem name="ALL" muid="C67BFFD077650AA8" enum_value="1" />
+
+            <EnumItem name="ANY" muid="36DF98BC6503DBD2" enum_value="0" />
+        </Class>
+
+        <Class name="TutorialTipDisplayOption" muid="B993EBAD9EA5E2CC" enum_bit_flag="False" enum_locked="False">
+            <EnumItem name="ARROW_INDICATOR" muid="1DD904CC1ABA69AF" enum_value="2" />
+
+            <EnumItem name="GAME_MODE" muid="17598AF2B3F75E2A" enum_value="1" />
+
+            <EnumItem name="STANDARD" muid="D41D6B15D1F54F25" enum_value="0" />
+        </Class>
+
+        <Class name="TutorialTipActorOption" muid="460436DC4F6E7F25" enum_bit_flag="False" enum_locked="False">
+            <EnumItem name="ACTIVE_SIM" muid="DA5829FBCF6780AE" enum_value="0" />
+
+            <EnumItem name="HOUSEMATE_SIM" muid="7C9B11D62AD7A7B8" enum_value="2" />
+
+            <EnumItem name="PLAYER_SIM" muid="DEC05CD5060BA1F0" enum_value="1" />
+        </Class>
+
+        <Class name="TutorialTipTestSpecificityOption" muid="442D9DF669ED8C82" enum_bit_flag="False" enum_locked="False">
+            <EnumItem name="ACTIVE_SIM" muid="9AE88123D080363B" enum_value="1" />
+
+            <EnumItem name="HOUSEMATE_SIM" muid="508A9609EAC94F41" enum_value="3" />
+
+            <EnumItem name="PLAYER_SIM" muid="5A737D6BA31C08BD" enum_value="2" />
+
+            <EnumItem name="UNSPECIFIED" muid="AD8F05B399404EDF" enum_value="0" />
+        </Class>
+
+        <Class name="TutorialTipSubtitleDisplayLocation" muid="E8413B77C05AD137" enum_bit_flag="False" enum_locked="False">
+            <EnumItem name="BOTTOM" muid="AB4A78F8D343450D" enum_value="1" />
+
+            <EnumItem name="TOP" muid="99BCF56F3333A64F" enum_value="0" />
+        </Class>
+
+        <Class name="TutorialMode" muid="AA4DEB2B9ED923D7" enum_bit_flag="False" enum_locked="False">
+            <EnumItem name="DISABLED" muid="777C0A54EF10E7F3" enum_value="0" />
+
+            <EnumItem name="FTUE" muid="32CF45BF9AFDDC32" enum_value="2" />
+
+            <EnumItem name="STANDARD" muid="E22A9D50E766055" enum_value="1" />
+        </Class>
+    </Module>
+</TuningRoot>

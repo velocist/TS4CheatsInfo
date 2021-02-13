@@ -1,0 +1,108 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<I c="SituationGoalObjectInteraction" i="situation_goal" m="situations.situation_goal_object_interaction" n="situationGoalObjectInteraction_CareerScientist_DrinkSerum_Tainted" s="113738">
+  <T n="_cooldown">600000000</T>
+  <V n="_display_data" t="enabled">
+    <U n="enabled">
+      <V t="enabled" n="instance_display_icon">
+        <T p="InGame\UI\Icons\Headlines\Final\headline_radioactive.png" n="enabled">2f7d0004:00000000:45a8833b5f7ba597</T>
+      </V>
+      <V n="instance_display_name" t="enabled">
+        <T n="enabled">0x3E11DD20<!--String: "Beber o darle a alguien un suero contaminado"--></T>
+      </V>
+      <V n="instance_display_tooltip" t="enabled">
+        <T n="enabled">0x63954361<!--String: "Abre tu inventario, selecciona un suero contaminado y escoge Beber."--></T>
+      </V>
+    </U>
+  </V>
+  <U n="_goal_test">
+    <L n="affordances">
+      <T>115158<!--SuperInteraction: si_Serums_Outcomes_AgeAway--></T>
+      <T>115159<!--SuperInteraction: si_Serums_Outcomes_AlienAura--></T>
+      <T>115168<!--SuperInteraction: si_Serums_Outcomes_Embiggen--></T>
+      <T>115169<!--SuperInteraction: si_Serums_Outcomes_FixersLuck--></T>
+      <T>115170<!--SuperInteraction: si_Serums_Outcomes_GhostGoo--></T>
+      <T>115171<!--SuperInteraction: si_Serums_Outcomes_NeedFixer--></T>
+      <T>115172<!--SuperInteraction: si_Serums_Outcomes_OxStrength--></T>
+      <T>115160<!--SuperInteraction: si_Serums_Outcomes_ReapersFriend--></T>
+      <T>115161<!--SuperInteraction: si_Serums_Outcomes_RedHot--></T>
+      <T>115162<!--SuperInteraction: si_Serums_Outcomes_RosePerfume--></T>
+      <T>115163<!--SuperInteraction: si_Serums_Outcomes_Slimify--></T>
+      <T>115164<!--SuperInteraction: si_Serums_Outcomes_Smart--></T>
+      <T>115165<!--SuperInteraction: si_Serums_Outcomes_SnakeOil--></T>
+      <T>115166<!--SuperInteraction: si_Serums_Outcomes_SparkDrive--></T>
+      <T>115167<!--SuperInteraction: si_Serums_Outcomes_SyntheticFood--></T>
+      <T>115030<!--SocialSuperInteraction: si_Touching_Serums_TestSerum--></T>
+    </L>
+    <E n="test_event">InteractionComplete</E>
+  </U>
+  <L n="_post_tests">
+    <V t="object_criteria">
+      <U n="object_criteria">
+        <V t="enabled" n="desired_state_threshold">
+          <U n="enabled">
+            <E n="comparison">EQUAL</E>
+            <T n="value">104872<!--ObjectStateValue: objectStateValue_Serum_Tainted_Tainted--></T>
+          </U>
+        </V>
+        <V t="single_object" n="subject_specific_tests">
+          <U n="single_object">
+            <E n="target">SavedActor1</E>
+          </U>
+        </V>
+      </U>
+    </V>
+  </L>
+  <L n="_pre_tests">
+    <V t="inventory">
+      <U n="inventory">
+        <V n="contents_check" t="has_object_with_states">
+          <U n="has_object_with_states">
+            <V t="tag" n="object_requirement">
+              <U n="tag">
+                <U n="tag">
+                  <L n="tag_set">
+                    <E>Drink_Serum</E>
+                  </L>
+                </U>
+              </U>
+            </V>
+            <L n="state_set">
+              <T>104872<!--ObjectStateValue: objectStateValue_Serum_Tainted_Tainted--></T>
+            </L>
+          </U>
+        </V>
+      </U>
+    </V>
+    <V t="statistic">
+      <U n="statistic">
+        <T n="stat">113011<!--Statistic: statistic_Career_Scientist_Inventing--></T>
+        <V t="value_threshold" n="threshold">
+          <U n="value_threshold">
+            <E n="comparison">EQUAL</E>
+            <T n="value">1</T>
+          </U>
+        </V>
+      </U>
+    </V>
+    <V t="career">
+      <U n="career">
+        <V n="test_type" t="career_reference">
+          <U n="career_reference">
+            <V t="specific_career" n="career">
+              <T n="specific_career">107255<!--Career: career_Adult_Active_Scientist--></T>
+            </V>
+            <V t="enabled" n="user_level">
+              <U n="enabled">
+                <T n="lower_bound">2</T>
+              </U>
+            </V>
+          </U>
+        </V>
+      </U>
+    </V>
+  </L>
+  <T p="InGame\Audio\Bumper\bumper_event_goal_complete.propx" n="audio_sting_on_complete">39b2aa4a:00000000:ed52c39bcc2a7111</T>
+  <L n="role_tags">
+    <E>Role_Scientist</E>
+  </L>
+</I>

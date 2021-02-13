@@ -1,0 +1,135 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<I c="LootActions" i="action" m="interactions.utils.loot" n="loot_career_Detective_Notification_FirstCase" s="115310">
+  <L n="loot_actions">
+    <V t="statistics">
+      <V n="statistics" t="statistic_set">
+        <U n="statistic_set">
+          <T n="advertise">False</T>
+          <U n="chance">
+            <T n="base_chance">100</T>
+            <L n="multipliers" />
+          </U>
+          <T n="stat">112059<!--Statistic: statistic_Career_Detective_HasCase--></T>
+          <L n="subject">
+            <E>Actor</E>
+          </L>
+          <L n="tests" />
+          <V t="use_default" n="text" />
+          <T n="value">0</T>
+        </U>
+      </V>
+    </V>
+    <V t="buff_removal">
+      <U n="buff_removal">
+        <L n="buffs_to_ignore" />
+        <L n="buffs_to_remove">
+          <T>112551<!--Buff: buff_Career_Detective_WentToCrimeScene--></T>
+          <T>112552<!--Buff: buff_Career_Detective_UsedChemicalAnalyzer--></T>
+        </L>
+        <U n="chance">
+          <T n="base_chance">100</T>
+          <L n="multipliers" />
+        </U>
+        <T n="remove_all_visible_buffs">False</T>
+        <E n="subject">Actor</E>
+        <L n="tests" />
+        <V t="use_default" n="text" />
+      </U>
+    </V>
+    <V t="remove_notebook_entry">
+      <U n="remove_notebook_entry">
+        <U n="chance">
+          <T n="base_chance">100</T>
+          <L n="multipliers" />
+        </U>
+        <V n="removal_type" t="all_entries" />
+        <E n="subcategory_id">Detective Career Clue</E>
+        <E n="subject">Actor</E>
+        <L n="tests" />
+        <V t="use_default" n="text" />
+      </U>
+    </V>
+    <V t="actions">
+      <T n="actions">108868<!--LootActions: loot_NewCrime--></T>
+    </V>
+    <V t="actions">
+      <T n="actions">116388<!--LootActions: loot_Statistic_Detective_ResetGoalDayStats--></T>
+    </V>
+    <V t="statistics">
+      <V n="statistics" t="statistic_remove">
+        <U n="statistic_remove">
+          <T n="advertise">False</T>
+          <U n="chance">
+            <T n="base_chance">100</T>
+            <L n="multipliers" />
+          </U>
+          <T n="stat">116463<!--Statistic: statistic_Career_Detective_InterrogationAt100--></T>
+          <L n="subject">
+            <E>Actor</E>
+          </L>
+          <L n="tests" />
+          <V t="use_default" n="text" />
+        </U>
+      </V>
+    </V>
+    <V t="notification_and_dialog">
+      <U n="notification_and_dialog">
+        <V n="dialog" t="dialog_ok">
+          <U n="dialog_ok">
+            <V t="enabled" n="icon">
+              <V t="resource_key" n="enabled">
+                <U n="resource_key">
+                  <T p="InEP01\UI\Icons\Career\Career_Detective_Main.png" n="key">2f7d0004:00000000:7e10457cfc46f451</T>
+                </U>
+              </V>
+            </V>
+            <V n="text" t="single">
+              <T n="single">0xC768078B<!--String: "Tu formación ha concluido y ha llegado la hora de que lleves tu propio caso.\n\nTendrás que reunir pruebas, descubrir pistas, localizar a tu sospechoso y hacer que confiese sus delitos.\n\nNo es un trabajo fácil, pero si lo haces bien, contribuirás a hacer de la comunidad un lugar más seguro para todos.\n\nBuena suerte, detective."--></T>
+            </V>
+            <V n="title" t="enabled">
+              <T n="enabled">0x38E96F9<!--String: "Asignación de primer caso"--></T>
+            </V>
+          </U>
+        </V>
+        <L n="tests">
+          <L>
+            <V t="career_test">
+              <U n="career_test">
+                <T n="negate">True</T>
+                <V n="test_type" t="days_worked">
+                  <U n="days_worked">
+                    <T n="career">106132<!--DetectiveCareer: detectiveCareer_1--></T>
+                    <U n="threshold">
+                      <E n="comparison">EQUAL</E>
+                      <T n="value">3</T>
+                    </U>
+                  </U>
+                </V>
+              </U>
+            </V>
+          </L>
+        </L>
+      </U>
+    </V>
+    <V t="relationship_bits_loot">
+      <U n="relationship_bits_loot">
+        <L n="bit_operations">
+          <U>
+            <T n="bit">113055<!--RelationshipBit: relationshipBit_DetectiveCareer_Arrested--></T>
+            <E n="operation">REMOVE</E>
+            <E n="recipients">Actor</E>
+            <E n="targets">AllRelationships</E>
+          </U>
+        </L>
+      </U>
+    </V>
+    <V t="statistics">
+      <V n="statistics" t="statistic_remove">
+        <U n="statistic_remove">
+          <T n="advertise">False</T>
+          <T n="stat">112060<!--Statistic: statistic_Career_Detective_ArrestedSuspect--></T>
+        </U>
+      </V>
+    </V>
+  </L>
+</I>

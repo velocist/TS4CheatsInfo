@@ -1,0 +1,189 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<I c="Recipe" i="recipe" m="crafting.recipe" n="recipe_Drink_Cauldron_Potion_BFF" s="214410">
+  <L n="_first_phases">
+    <E>START_PHASE</E>
+  </L>
+  <L n="_phases">
+    <U>
+      <E n="key">2-Staging</E>
+      <V n="value" t="multi_stage_phase">
+        <U n="multi_stage_phase">
+          <V t="progress_based" n="completion" />
+          <U n="content_set">
+            <L n="affordance_links">
+              <T>213947<!--CraftingStepInteraction: mixer_Cauldron_Brew--></T>
+              <T>214004<!--CraftingStepInteraction: mixer_Cauldron_Idles--></T>
+              <T>213987<!--CraftingStepInteraction: mixer_Cauldron_Stir--></T>
+            </L>
+          </U>
+          <T n="is_visible">True</T>
+          <L n="next_phases">
+            <E>Finalize</E>
+          </L>
+          <T n="super_affordance">214102<!--CraftingPhaseTransferCraftingComponentSuperInteraction: cauldron_Brew_SlowProgress--></T>
+          <T n="target_ico">True</T>
+        </U>
+      </V>
+    </U>
+    <U>
+      <E n="key">Finalize</E>
+      <V n="value" t="simple_phase">
+        <U n="simple_phase">
+          <T n="super_affordance">213968<!--CraftingPhaseStagingSuperInteraction: cauldron_Done_Potion--></T>
+          <T n="target_ico">True</T>
+        </U>
+      </V>
+    </U>
+    <U>
+      <E n="key">START_PHASE</E>
+      <V n="value" t="simple_phase">
+        <U n="simple_phase">
+          <L n="next_phases">
+            <E>2-Staging</E>
+          </L>
+          <T n="super_affordance">215930<!--CraftingPhaseStagingSuperInteraction: cauldron_Start_Potion--></T>
+          <T n="target_ico">True</T>
+        </U>
+      </V>
+    </U>
+  </L>
+  <V t="enabled" n="_quality_control_stat">
+    <U n="enabled">
+      <T n="statistic">213064<!--RankedStatistic: rankedStatistic_WitchOccult_WitchXP--></T>
+    </U>
+  </V>
+  <T n="_retail_price">30</T>
+  <L n="additional_tests">
+    <L>
+      <V t="unlock_tracker">
+        <U n="unlock_tracker">
+          <V t="unlock_recipe" n="unlock_item">
+            <T n="unlock_recipe">214410<!--Recipe: recipe_Drink_Cauldron_Potion_BFF--></T>
+          </V>
+        </U>
+      </V>
+    </L>
+  </L>
+  <T n="autonomy_weight">1</T>
+  <T n="available_in_restaurant">False</T>
+  <T n="crafted_by_text">0x2642142E<!--String: "Obra de: {0.SimName}"--></T>
+  <V t="flat_fee" n="crafting_cost" />
+  <U n="final_product">
+    <L n="apply_states">
+      <T>15113<!--CommodityBasedObjectStateValue: Consumable_Untouched--></T>
+    </L>
+    <V t="enabled" n="carry_track">
+      <E n="enabled">RIGHT</E>
+    </V>
+    <L n="conditional_apply_states">
+      <U>
+        <T n="state">32305<!--ObjectStateValue: Marketable_HigherValue--></T>
+        <V n="test" t="trait">
+          <U n="trait">
+            <L n="whitelist_traits">
+              <T>31924<!--Trait: trait_Marketable--></T>
+            </L>
+          </U>
+        </V>
+      </U>
+    </L>
+    <T n="definition">222984</T>
+    <L n="loot_list">
+      <T>33896<!--LootActions: loot_Buff_Trait_Perfectionist_Outstanding--></T>
+      <T>33897<!--LootActions: loot_Buff_Trait_Perfectionist_Poor--></T>
+    </L>
+    <U n="quality_adjustment">
+      <T n="base_quality">-65</T>
+      <T n="skill_adjustment">15</T>
+    </U>
+    <L n="simoleon_value_modifiers_map">
+      <U>
+        <T n="key">32305<!--ObjectStateValue: Marketable_HigherValue--></T>
+        <U n="value">
+          <T n="upper_bound">3</T>
+        </U>
+      </U>
+    </L>
+  </U>
+  <T n="name">0x8B75DB80<!--String: "Poción de amistad forzada"--></T>
+  <T n="phase_interaction_name">0x393B558B<!--String: "Preparar poción de amistad forzada"--></T>
+  <T n="push_consume">False</T>
+  <T n="recipe_description">0xC8C25470<!--String: "Una poción que desata el poder de la conversación amistosa."--></T>
+  <E n="recipe_difficulty">1</E>
+  <L n="recipe_tags">
+    <E>Recipe_Type_Drink</E>
+    <E>Recipe_Category_Drinks</E>
+    <E>Recipe_Course_Drink</E>
+    <E>Recipe_Cauldron_Potion</E>
+    <E>Recipe_Plopsy_Browser</E>
+  </L>
+  <T n="restaurant_base_price">7</T>
+  <V t="enabled" n="resume_affordance">
+    <T n="enabled">214044<!--CraftingResumeInteraction: craftingResume_Cauldron--></T>
+  </V>
+  <V t="disabled" n="skill_test" />
+  <T n="unlock_as_new">True</T>
+  <V n="use_ingredients" t="enabled">
+    <U n="enabled">
+      <T n="all_ingredients_required">True</T>
+      <L n="ingredient_list">
+        <V t="ingredient_by_definition">
+          <U n="ingredient_by_definition">
+            <T n="ingredient_ref">28778</T>
+          </U>
+        </V>
+        <V t="ingredient_by_definition">
+          <U n="ingredient_by_definition">
+            <T n="ingredient_ref">45295</T>
+          </U>
+        </V>
+        <V t="ingredient_by_definition">
+          <U n="ingredient_by_definition">
+            <T n="ingredient_ref">45218</T>
+          </U>
+        </V>
+      </L>
+      <V t="enabled" n="ingredients_save">
+        <U n="enabled">
+          <V n="balloon" t="enabled">
+            <U n="enabled">
+              <L n="balloon_choices">
+                <U>
+                  <V n="item" t="balloon_icon">
+                    <U n="balloon_icon">
+                      <V n="icon" t="resource_key">
+                        <U n="resource_key">
+                          <T n="key" p="InGP08\UI\Icons\Headlines\Headline_alchemyFrugalCombinations.png">2f7d0004:00000000:6c407a250d205be6</T>
+                        </U>
+                      </V>
+                    </U>
+                  </V>
+                </U>
+              </L>
+              <L n="balloon_target">
+                <E>Actor</E>
+              </L>
+            </U>
+          </V>
+          <V n="notification" t="enabled">
+            <V n="enabled" t="reference">
+              <T n="reference">215927<!--Notification: notification_MagicIngredientsSave--></T>
+            </V>
+          </V>
+          <U n="save_chance">
+            <T n="base_chance">30</T>
+          </U>
+          <L n="tests">
+            <L>
+              <V t="bucks_perks_test">
+                <U n="bucks_perks_test">
+                  <T n="bucks_perk">215750<!--BucksPerk: witchPerks_Alchemy_2_FrugalCombinations--></T>
+                </U>
+              </V>
+            </L>
+          </L>
+        </U>
+      </V>
+    </U>
+  </V>
+</I>

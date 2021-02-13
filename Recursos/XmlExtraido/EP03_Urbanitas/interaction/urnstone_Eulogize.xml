@@ -1,0 +1,212 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<I c="SuperInteraction" i="interaction" m="interactions.base.super_interaction" n="urnstone_Eulogize" s="152727">
+  <V t="participant" n="_icon">
+    <U n="participant">
+      <L n="participant_type">
+        <E>Object</E>
+      </L>
+    </U>
+  </V>
+  <V t="enabled" n="_saveable" />
+  <T n="allow_from_sim_inventory">True</T>
+  <T n="allow_from_world">False</T>
+  <T n="attention_cost">0.5</T>
+  <V t="one_shot" n="basic_content" />
+  <V t="disabled" n="content_score" />
+  <T n="display_name">0x7F9787EA<!--String: "Pronunciar elegía"--></T>
+  <V n="display_name_overrides" t="testable">
+    <U n="testable">
+      <L n="overrides">
+        <U>
+          <V t="disabled" n="new_display_name" />
+          <V t="enabled" n="new_pie_menu_icon">
+            <V n="enabled" t="tradition">
+              <U n="tradition">
+                <L n="participant_type">
+                  <E>Actor</E>
+                </L>
+              </U>
+            </V>
+          </V>
+          <L n="test">
+            <L>
+              <V t="holiday_tradition">
+                <U n="holiday_tradition">
+                  <U n="tradition_filter">
+                    <V n="whitelist" t="specify">
+                      <U n="specify">
+                        <L n="whitelist">
+                          <T>182126<!--HolidayTradition: holidayTradition_Ghosts--></T>
+                        </L>
+                      </U>
+                    </V>
+                  </U>
+                </U>
+              </V>
+            </L>
+          </L>
+        </U>
+        <U>
+          <V n="new_display_name" t="enabled">
+            <T n="enabled">0x49F2AF3<!--String: "Pronunciar elegía conmovedora"--></T>
+          </V>
+          <L n="test">
+            <L>
+              <V t="mood">
+                <U n="mood">
+                  <T n="mood">14643<!--Mood: Mood_Sad--></T>
+                </U>
+              </V>
+            </L>
+          </L>
+        </U>
+        <U>
+          <V n="new_display_name" t="enabled">
+            <T n="enabled">0x1F9C4B92<!--String: "Pronunciar elegía exaltadora"--></T>
+          </V>
+          <L n="test">
+            <L>
+              <V t="mood">
+                <U n="mood">
+                  <T n="mood">14640<!--Mood: Mood_Happy--></T>
+                </U>
+              </V>
+            </L>
+          </L>
+        </U>
+      </L>
+    </U>
+  </V>
+  <U n="display_name_text_tokens">
+    <L n="tokens">
+      <V t="participant_type">
+        <U n="participant_type">
+          <V t="from_participant" n="objects">
+            <U n="from_participant">
+              <E n="participant">Actor</E>
+            </U>
+          </V>
+        </U>
+      </V>
+      <V t="participant_type">
+        <U n="participant_type">
+          <V t="from_participant" n="objects">
+            <U n="from_participant">
+              <E n="participant">Object</E>
+            </U>
+          </V>
+        </U>
+      </V>
+      <V t="participant_type">
+        <U n="participant_type">
+          <V n="objects" t="from_participant">
+            <U n="from_participant">
+              <E n="participant">StoredSim</E>
+            </U>
+          </V>
+        </U>
+      </V>
+    </L>
+  </U>
+  <L n="interaction_category_tags">
+    <E>Interaction_Super</E>
+    <E>Interaction_All</E>
+  </L>
+  <V n="outcome" t="single">
+    <U n="single">
+      <U n="actions">
+        <L n="loot_list">
+          <T>152741<!--LootActions: loot_Buff_Podium_GiveEulogy--></T>
+        </L>
+        <L n="parameterized_autonomy">
+          <U>
+            <E n="key">Actor</E>
+            <U n="value">
+              <L n="requests">
+                <U>
+                  <L n="static_commodities">
+                    <T>152740<!--StaticCommodity: staticCommodity_PodiumEulogy--></T>
+                  </L>
+                </U>
+              </L>
+            </U>
+          </U>
+        </L>
+      </U>
+    </U>
+  </V>
+  <V t="enabled" n="route_start_balloon">
+    <U n="enabled">
+      <U n="balloon">
+        <L n="balloon_choices">
+          <U>
+            <V n="item" t="balloon_icon">
+              <U n="balloon_icon">
+                <V t="participant" n="icon">
+                  <U n="participant">
+                    <L n="participant_type">
+                      <E>Object</E>
+                    </L>
+                  </U>
+                </V>
+              </U>
+            </V>
+          </U>
+        </L>
+        <L n="balloon_target">
+          <E>Actor</E>
+        </L>
+      </U>
+    </U>
+  </V>
+  <E n="scoring_priority">NORMAL</E>
+  <T n="subaction_selection_weight">1</T>
+  <E n="target_type">OBJECT</E>
+  <L n="test_globals">
+    <V t="sim_info">
+      <U n="sim_info">
+        <V t="specified" n="ages" />
+        <V t="specified" n="species">
+          <U n="specified">
+            <L n="species">
+              <E />
+            </L>
+          </U>
+        </V>
+        <E n="who">Actor</E>
+      </U>
+    </V>
+    <V t="existence">
+      <U n="existence">
+        <E n="participant">StoredSim</E>
+        <T n="require_instantiated">False</T>
+      </U>
+    </V>
+    <V t="object_criteria">
+      <U n="object_criteria">
+        <V n="identity_test" t="tags">
+          <U n="tags">
+            <L n="tag_set">
+              <E>Func_Podium</E>
+            </L>
+          </U>
+        </V>
+        <T n="on_active_lot">True</T>
+        <T n="owned">False</T>
+      </U>
+    </V>
+    <V t="skill_test">
+      <U n="skill_test">
+        <T n="skill">16699<!--Skill: statistic_Skill_AdultMajor_Charisma--></T>
+        <V t="interval" n="skill_range">
+          <U n="interval">
+            <U n="skill_interval">
+              <T n="lower_bound">6</T>
+            </U>
+          </U>
+        </V>
+      </U>
+    </V>
+  </L>
+  <T n="time_overhead">30</T>
+</I>

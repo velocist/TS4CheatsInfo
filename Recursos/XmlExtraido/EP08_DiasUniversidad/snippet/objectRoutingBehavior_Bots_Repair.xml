@@ -1,0 +1,446 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<I c="ObjectRoutingBehavior" i="snippet" m="routing.object_routing.object_routing_behavior" n="objectRoutingBehavior_Bots_Repair" s="220984">
+  <V n="route" t="from_target_object">
+    <U n="from_target_object">
+      <L n="constraints">
+        <V t="circle">
+          <U n="circle">
+            <T n="ideal_radius">0.75</T>
+            <T n="ideal_radius_width">0.5</T>
+            <T n="multi_surface">True</T>
+            <T n="radius">1.2</T>
+          </U>
+        </V>
+        <V t="facing" />
+        <V t="line_of_sight">
+          <U n="line_of_sight">
+            <T n="multi_surface">True</T>
+            <V t="enabled" n="temporary_los" />
+          </U>
+        </V>
+      </L>
+      <L n="no_target_loot">
+        <T>222433<!--LootActions: loot_Bots_Actor_Wander--></T>
+      </L>
+      <T n="radius">25</T>
+      <L n="target_action_rules">
+        <U>
+          <L n="actions">
+            <V t="play_animation">
+              <U n="play_animation">
+                <U n="animation">
+                  <T n="loop_time">8</T>
+                  <T n="reference">221040<!--ObjectAnimationElement: bots_Animations_Actions_Repair--></T>
+                </U>
+              </U>
+            </V>
+            <V t="play_animation">
+              <U n="play_animation">
+                <U n="animation">
+                  <T n="reference">221041<!--ObjectAnimationElement: bots_Animations_Actions_Repair_Electrocute--></T>
+                </U>
+              </U>
+            </V>
+            <V t="apply_loot">
+              <U n="apply_loot">
+                <L n="loot_actions">
+                  <T>222538<!--LootActions: loot_Bots_Actor_Requeue--></T>
+                  <T>229692<!--LootActions: loot_Bots_Actor_Electrocute--></T>
+                </L>
+              </U>
+            </V>
+          </L>
+          <T n="chance">20</T>
+        </U>
+        <U>
+          <L n="actions">
+            <V t="play_animation">
+              <U n="play_animation">
+                <U n="animation">
+                  <L n="loop_exit_conditions">
+                    <U>
+                      <L n="conditions">
+                        <V t="time_based">
+                          <U n="time_based">
+                            <T n="max_time">13</T>
+                            <T n="min_time">12</T>
+                          </U>
+                        </V>
+                      </L>
+                      <L n="tests">
+                        <L>
+                          <V t="state_white_black">
+                            <U n="state_white_black">
+                              <U n="states">
+                                <V n="whitelist" t="specify">
+                                  <U n="specify">
+                                    <L n="whitelist">
+                                      <T>220880<!--CommodityBasedObjectStateValue: bots_Enhancement_Values_6--></T>
+                                      <T>220881<!--CommodityBasedObjectStateValue: bots_Enhancement_Values_7--></T>
+                                      <T>220882<!--CommodityBasedObjectStateValue: bots_Enhancement_Values_8--></T>
+                                      <T>220891<!--CommodityBasedObjectStateValue: bots_Enhancement_Values_9--></T>
+                                    </L>
+                                  </U>
+                                </V>
+                              </U>
+                            </U>
+                          </V>
+                        </L>
+                      </L>
+                    </U>
+                    <U>
+                      <L n="conditions">
+                        <V t="time_based">
+                          <U n="time_based">
+                            <T n="max_time">10</T>
+                            <T n="min_time">8</T>
+                          </U>
+                        </V>
+                      </L>
+                      <L n="tests">
+                        <L>
+                          <V t="state_white_black">
+                            <U n="state_white_black">
+                              <U n="states">
+                                <V n="whitelist" t="specify">
+                                  <U n="specify">
+                                    <V n="threshold" t="threshold">
+                                      <U n="threshold">
+                                        <T n="value">1</T>
+                                      </U>
+                                    </V>
+                                    <L n="whitelist">
+                                      <T>220892<!--CommodityBasedObjectStateValue: bots_Enhancement_Values_10--></T>
+                                    </L>
+                                  </U>
+                                </V>
+                              </U>
+                            </U>
+                          </V>
+                        </L>
+                      </L>
+                    </U>
+                  </L>
+                  <T n="loop_time">20</T>
+                  <T n="reference">230238<!--ObjectAnimationElement: bots_Animations_Actions_Repair_High--></T>
+                </U>
+              </U>
+            </V>
+            <V t="apply_loot">
+              <U n="apply_loot">
+                <L n="loot_actions">
+                  <T>222924<!--LootActions: loot_Repair_Bot--></T>
+                </L>
+              </U>
+            </V>
+            <V t="play_animation">
+              <U n="play_animation">
+                <U n="animation">
+                  <T n="reference">221034<!--ObjectAnimationElement: bots_Animations_Actions_Generic_Hover--></T>
+                </U>
+              </U>
+            </V>
+          </L>
+          <L n="test">
+            <L>
+              <V t="state_white_black">
+                <U n="state_white_black">
+                  <U n="states">
+                    <V n="whitelist" t="specify">
+                      <U n="specify">
+                        <L n="whitelist">
+                          <T>15076<!--CommodityBasedObjectStateValue: Brokenness_Broken--></T>
+                          <T>15080<!--ObjectStateValue: BrokenState_Broken--></T>
+                          <T>220829<!--CommodityBasedObjectStateValue: bot_Durability_Values_Broken--></T>
+                        </L>
+                      </U>
+                    </V>
+                  </U>
+                </U>
+              </V>
+              <V t="object_criteria">
+                <U n="object_criteria">
+                  <V n="identity_test" t="tags">
+                    <U n="tags">
+                      <L n="tag_set">
+                        <E>Func_Table</E>
+                        <E>Func_Counter</E>
+                        <E>Func_Bar</E>
+                        <E>BuyCatSS_Desk</E>
+                        <E>Func_RoboticsTable</E>
+                      </L>
+                    </U>
+                  </V>
+                  <V n="subject_specific_tests" t="single_object">
+                    <U n="single_object">
+                      <E n="target">ObjectParent</E>
+                    </U>
+                  </V>
+                </U>
+              </V>
+            </L>
+          </L>
+        </U>
+        <U>
+          <L n="actions">
+            <V t="play_animation">
+              <U n="play_animation">
+                <U n="animation">
+                  <L n="loop_exit_conditions">
+                    <U>
+                      <L n="conditions">
+                        <V t="time_based">
+                          <U n="time_based">
+                            <T n="max_time">13</T>
+                            <T n="min_time">12</T>
+                          </U>
+                        </V>
+                      </L>
+                      <L n="tests">
+                        <L>
+                          <V t="state_white_black">
+                            <U n="state_white_black">
+                              <U n="states">
+                                <V n="whitelist" t="specify">
+                                  <U n="specify">
+                                    <L n="whitelist">
+                                      <T>220880<!--CommodityBasedObjectStateValue: bots_Enhancement_Values_6--></T>
+                                      <T>220881<!--CommodityBasedObjectStateValue: bots_Enhancement_Values_7--></T>
+                                      <T>220882<!--CommodityBasedObjectStateValue: bots_Enhancement_Values_8--></T>
+                                      <T>220891<!--CommodityBasedObjectStateValue: bots_Enhancement_Values_9--></T>
+                                    </L>
+                                  </U>
+                                </V>
+                              </U>
+                            </U>
+                          </V>
+                        </L>
+                      </L>
+                    </U>
+                    <U>
+                      <L n="conditions">
+                        <V t="time_based">
+                          <U n="time_based">
+                            <T n="max_time">10</T>
+                            <T n="min_time">8</T>
+                          </U>
+                        </V>
+                      </L>
+                      <L n="tests">
+                        <L>
+                          <V t="state_white_black">
+                            <U n="state_white_black">
+                              <U n="states">
+                                <V n="whitelist" t="specify">
+                                  <U n="specify">
+                                    <V n="threshold" t="threshold">
+                                      <U n="threshold">
+                                        <T n="value">1</T>
+                                      </U>
+                                    </V>
+                                    <L n="whitelist">
+                                      <T>220892<!--CommodityBasedObjectStateValue: bots_Enhancement_Values_10--></T>
+                                    </L>
+                                  </U>
+                                </V>
+                              </U>
+                            </U>
+                          </V>
+                        </L>
+                      </L>
+                    </U>
+                  </L>
+                  <T n="loop_time">20</T>
+                  <T n="reference">221040<!--ObjectAnimationElement: bots_Animations_Actions_Repair--></T>
+                </U>
+              </U>
+            </V>
+            <V t="apply_loot">
+              <U n="apply_loot">
+                <L n="loot_actions">
+                  <T>222924<!--LootActions: loot_Repair_Bot--></T>
+                </L>
+              </U>
+            </V>
+            <V t="play_animation">
+              <U n="play_animation">
+                <U n="animation">
+                  <T n="reference">221034<!--ObjectAnimationElement: bots_Animations_Actions_Generic_Hover--></T>
+                </U>
+              </U>
+            </V>
+          </L>
+          <L n="test">
+            <L>
+              <V t="state_white_black">
+                <U n="state_white_black">
+                  <U n="states">
+                    <V n="whitelist" t="specify">
+                      <U n="specify">
+                        <L n="whitelist">
+                          <T>15076<!--CommodityBasedObjectStateValue: Brokenness_Broken--></T>
+                          <T>15080<!--ObjectStateValue: BrokenState_Broken--></T>
+                          <T>220829<!--CommodityBasedObjectStateValue: bot_Durability_Values_Broken--></T>
+                        </L>
+                      </U>
+                    </V>
+                  </U>
+                </U>
+              </V>
+            </L>
+          </L>
+        </U>
+        <U>
+          <L n="actions">
+            <V t="play_animation">
+              <U n="play_animation">
+                <U n="animation">
+                  <L n="loop_exit_conditions">
+                    <U>
+                      <L n="conditions">
+                        <V t="time_based">
+                          <U n="time_based">
+                            <T n="max_time">13</T>
+                            <T n="min_time">12</T>
+                          </U>
+                        </V>
+                      </L>
+                      <L n="tests">
+                        <L>
+                          <V t="state_white_black">
+                            <U n="state_white_black">
+                              <U n="states">
+                                <V n="whitelist" t="specify">
+                                  <U n="specify">
+                                    <L n="whitelist">
+                                      <T>220880<!--CommodityBasedObjectStateValue: bots_Enhancement_Values_6--></T>
+                                      <T>220881<!--CommodityBasedObjectStateValue: bots_Enhancement_Values_7--></T>
+                                      <T>220882<!--CommodityBasedObjectStateValue: bots_Enhancement_Values_8--></T>
+                                      <T>220891<!--CommodityBasedObjectStateValue: bots_Enhancement_Values_9--></T>
+                                    </L>
+                                  </U>
+                                </V>
+                              </U>
+                            </U>
+                          </V>
+                        </L>
+                      </L>
+                    </U>
+                    <U>
+                      <L n="conditions">
+                        <V t="time_based">
+                          <U n="time_based">
+                            <T n="max_time">10</T>
+                            <T n="min_time">8</T>
+                          </U>
+                        </V>
+                      </L>
+                      <L n="tests">
+                        <L>
+                          <V t="state_white_black">
+                            <U n="state_white_black">
+                              <U n="states">
+                                <V n="whitelist" t="specify">
+                                  <U n="specify">
+                                    <V n="threshold" t="threshold">
+                                      <U n="threshold">
+                                        <T n="value">1</T>
+                                      </U>
+                                    </V>
+                                    <L n="whitelist">
+                                      <T>220892<!--CommodityBasedObjectStateValue: bots_Enhancement_Values_10--></T>
+                                    </L>
+                                  </U>
+                                </V>
+                              </U>
+                            </U>
+                          </V>
+                        </L>
+                      </L>
+                    </U>
+                  </L>
+                  <T n="loop_time">20</T>
+                  <T n="reference">221040<!--ObjectAnimationElement: bots_Animations_Actions_Repair--></T>
+                </U>
+              </U>
+            </V>
+            <V t="apply_loot">
+              <U n="apply_loot">
+                <L n="loot_actions">
+                  <T>229041<!--LootActions: loot_Humanoid_Robots_Durability_SetMax--></T>
+                </L>
+              </U>
+            </V>
+          </L>
+          <L n="test">
+            <L>
+              <V t="statistic">
+                <U n="statistic">
+                  <T n="stat">218485<!--Commodity: motive_Robots_Durability--></T>
+                  <V t="value_threshold" n="threshold">
+                    <U n="value_threshold">
+                      <E n="comparison">EQUAL</E>
+                      <T n="value">-100</T>
+                    </U>
+                  </V>
+                  <E n="who">Object</E>
+                </U>
+              </V>
+            </L>
+          </L>
+        </U>
+        <U>
+          <L n="actions">
+            <V t="apply_loot">
+              <U n="apply_loot">
+                <L n="loot_actions">
+                  <T>222538<!--LootActions: loot_Bots_Actor_Requeue--></T>
+                </L>
+              </U>
+            </V>
+          </L>
+        </U>
+      </L>
+      <L n="target_selection_test">
+        <L>
+          <V t="state_white_black">
+            <U n="state_white_black">
+              <U n="states">
+                <V n="whitelist" t="specify">
+                  <U n="specify">
+                    <L n="whitelist">
+                      <T>15076<!--CommodityBasedObjectStateValue: Brokenness_Broken--></T>
+                      <T>15080<!--ObjectStateValue: BrokenState_Broken--></T>
+                      <T>220829<!--CommodityBasedObjectStateValue: bot_Durability_Values_Broken--></T>
+                    </L>
+                  </U>
+                </V>
+              </U>
+            </U>
+          </V>
+        </L>
+        <L>
+          <V t="statistic">
+            <U n="statistic">
+              <T n="stat">218485<!--Commodity: motive_Robots_Durability--></T>
+              <V t="value_threshold" n="threshold">
+                <U n="value_threshold">
+                  <E n="comparison">EQUAL</E>
+                  <T n="value">-100</T>
+                </U>
+              </V>
+              <E n="who">Object</E>
+            </U>
+          </V>
+        </L>
+      </L>
+      <V n="target_type" t="object">
+        <U n="object">
+          <L n="tags">
+            <E>Func_Lightning_CanStrike</E>
+          </L>
+        </U>
+      </V>
+    </U>
+  </V>
+</I>

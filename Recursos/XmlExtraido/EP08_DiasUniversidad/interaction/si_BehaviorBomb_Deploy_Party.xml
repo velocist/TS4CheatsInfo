@@ -1,0 +1,156 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<I c="SuperInteraction" i="interaction" m="interactions.base.super_interaction" n="si_BehaviorBomb_Deploy_Party" s="218808">
+  <V t="enabled" n="_saveable" />
+  <T n="allow_from_sim_inventory">True</T>
+  <T n="allow_from_world">False</T>
+  <T n="attention_cost">0.5</T>
+  <V n="basic_content" t="one_shot">
+    <U n="one_shot">
+      <U n="animation_ref">
+        <U n="overrides">
+          <L n="props" />
+        </U>
+      </U>
+    </U>
+  </V>
+  <V t="disabled" n="content_score" />
+  <T n="display_name">0x5E8222BE<!--String: "Sacar motivador experimental de fiesta"--></T>
+  <U n="display_name_text_tokens">
+    <L n="tokens">
+      <V t="participant_type">
+        <U n="participant_type">
+          <V n="objects" t="from_participant">
+            <U n="from_participant">
+              <E n="participant">Actor</E>
+            </U>
+          </V>
+        </U>
+      </V>
+      <V t="participant_type">
+        <U n="participant_type">
+          <V t="from_participant" n="objects">
+            <U n="from_participant">
+              <E n="participant">Object</E>
+            </U>
+          </V>
+        </U>
+      </V>
+    </L>
+  </U>
+  <L n="interaction_category_tags">
+    <E>Interaction_Super</E>
+    <E>Interaction_All</E>
+  </L>
+  <V n="outcome" t="test_based">
+    <U n="test_based">
+      <L n="fallback_outcomes">
+        <U>
+          <U n="outcome">
+            <V n="animation_ref" t="enabled">
+              <U n="enabled">
+                <T n="factory">222447<!--AnimationElement: behaviorBomb_Deploy--></T>
+                <U n="overrides">
+                  <L n="props">
+                    <U>
+                      <T n="key">behaviorBomb</T>
+                      <U n="value">
+                        <T n="definition">230192</T>
+                      </U>
+                    </U>
+                  </L>
+                  <L n="vfx">
+                    <U>
+                      <T n="original_effect">fx_behavior_bomb</T>
+                      <U n="replacement_effect">
+                        <V n="effect" t="play_effect">
+                          <T n="play_effect">ep08_behavior_bomb_success_party</T>
+                        </V>
+                      </U>
+                    </U>
+                  </L>
+                </U>
+              </U>
+            </V>
+            <L n="basic_extras">
+              <V t="destroy_object" />
+            </L>
+            <L n="loot_list">
+              <T>224479<!--LootActions: loot_BehaviorBomb_Broadcaster_Party--></T>
+              <T>227913<!--LootActions: loot_BehaviorBomb_Party--></T>
+            </L>
+          </U>
+          <U n="weight">
+            <T n="base_value">3</T>
+          </U>
+        </U>
+        <U>
+          <U n="outcome">
+            <V n="animation_ref" t="enabled">
+              <U n="enabled">
+                <T n="factory">222447<!--AnimationElement: behaviorBomb_Deploy--></T>
+                <U n="overrides">
+                  <L n="props">
+                    <U>
+                      <T n="key">behaviorBomb</T>
+                      <U n="value">
+                        <T n="definition">230192</T>
+                      </U>
+                    </U>
+                  </L>
+                  <L n="vfx">
+                    <U>
+                      <T n="original_effect">fx_behavior_bomb</T>
+                      <U n="replacement_effect">
+                        <V n="effect" t="play_effect">
+                          <T n="play_effect">ep08_behavior_bomb_fail_party</T>
+                        </V>
+                      </U>
+                    </U>
+                  </L>
+                </U>
+              </U>
+            </V>
+            <L n="basic_extras">
+              <V t="destroy_object" />
+            </L>
+            <L n="loot_list">
+              <T>224480<!--LootActions: loot_BehaviorBomb_Broadcaster_Fail--></T>
+              <T>220586<!--LootActions: loot_BehaviorBombFailure_Human--></T>
+              <T>220588<!--LootActions: loot_BehaviorBombFailure_PlantSim--></T>
+              <T>220589<!--LootActions: loot_BehaviorBombFailure_Vampire--></T>
+            </L>
+            <E n="outcome_result">FAILURE</E>
+          </U>
+          <U n="weight">
+            <T n="base_value">1</T>
+          </U>
+        </U>
+      </L>
+    </U>
+  </V>
+  <E n="scoring_priority">NORMAL</E>
+  <T n="subaction_selection_weight">1</T>
+  <E n="target_type">OBJECT</E>
+  <L n="test_globals">
+    <V t="sim_info">
+      <U n="sim_info">
+        <V t="specified" n="ages">
+          <L n="specified">
+            <E>YOUNGADULT</E>
+            <E>ADULT</E>
+            <E>ELDER</E>
+          </L>
+        </V>
+        <V t="specified" n="species">
+          <U n="specified">
+            <L n="species">
+              <E />
+            </L>
+          </U>
+        </V>
+        <E n="who">Actor</E>
+      </U>
+    </V>
+  </L>
+  <T n="time_overhead">30</T>
+</I>

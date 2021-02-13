@@ -1,0 +1,122 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<I c="DialogDramaNode" i="drama_node" m="drama_scheduler.dialog_drama_node" n="dialogDramaNode_CommunityCloseness_HotHeaded" s="231588">
+  <T n="allow_during_work_hours">False</T>
+  <V t="group_cooldown" n="cooldown_data">
+    <U n="group_cooldown">
+      <E n="group">CommunityClosenessCooldown</E>
+    </U>
+  </V>
+  <V n="dialog_and_loot" t="dialog_multi_response">
+    <U n="dialog_multi_response">
+      <U n="dialog">
+        <E n="phone_ring_type">RING</E>
+        <V n="text" t="variation">
+          <U n="variation">
+            <L n="variations">
+              <T>0x404AB9CA<!--String: "¡Hoy estoy que muerdo! Un tipo no hacía más que preguntarme por mi día una y otra vez. ¿Cree que martilleándome con la misma pregunta se va a hacer mi amigo o qué? Pedazo de... En fin, qué gente."--></T>
+              <T>0x500C2FF7<!--String: "¡Hoy estoy que muerdo! Y ni siquiera sé por qué. Es que... ¡todo me sale al revés! Espero que tengas algo bueno que decir, {0.SimFirstName}, porque necesito calmarme."--></T>
+              <T>0x47EAAD20<!--String: "Vaya con algunos Sims... He tenido visita en casa, ¿y no va y, de pronto, se pone a asaltarme la nevera? ¡Cogiéndome comida, sin preguntar! Vaya modales. "--></T>
+            </L>
+          </U>
+        </V>
+      </U>
+      <L n="possible_responses">
+        <U>
+          <U n="item">
+            <L n="loot">
+              <T>231684<!--LootActions: loot_DramaNode_CommunityCloseness_HotHeaded_CalmDown--></T>
+            </L>
+            <T n="text">0xAA1BF916<!--String: "Intentar {M1.tranquilizarlo}{F1.tranquilizarla}"--></T>
+          </U>
+        </U>
+        <U>
+          <U n="item">
+            <L n="loot">
+              <T>232854<!--LootActions: loot_DramaNode_CommunityCloseness_HotHeaded_BeFunny_Base--></T>
+            </L>
+            <T n="text">0xAC56DEEE<!--String: "Intentar que se ría"--></T>
+          </U>
+        </U>
+        <U>
+          <U n="item">
+            <L n="loot">
+              <T>231685<!--LootActions: loot_DramaNode_CommunityCloseness_HotHeaded_IKnow--></T>
+            </L>
+            <T n="text">0xD69D61C1<!--String: "Darle la razón"--></T>
+          </U>
+        </U>
+      </L>
+    </U>
+  </V>
+  <U n="min_and_max_times">
+    <T n="lower_bound">1</T>
+    <T n="upper_bound">72</T>
+  </U>
+  <L n="receiver_sim_pretests">
+    <L>
+      <V t="sim_info">
+        <U n="sim_info">
+          <V t="specified" n="ages">
+            <L n="specified">
+              <E>TEEN</E>
+              <E>YOUNGADULT</E>
+              <E>ADULT</E>
+              <E>ELDER</E>
+              <E>CHILD</E>
+            </L>
+          </V>
+          <V t="specified" n="species">
+            <U n="specified">
+              <L n="species">
+                <E>HUMAN</E>
+              </L>
+            </U>
+          </V>
+        </U>
+      </V>
+    </L>
+  </L>
+  <L n="run_tests">
+    <L>
+      <V t="buff">
+        <U n="buff">
+          <L n="blacklist">
+            <T>10094<!--Buff: buff_Sim_IsSleeping--></T>
+          </L>
+        </U>
+      </V>
+    </L>
+  </L>
+  <V t="enabled" n="scoring">
+    <U n="enabled">
+      <T n="base_score">100</T>
+      <E n="bucket">CommunityClosenessCalls</E>
+    </U>
+  </V>
+  <V n="sender_sim_info" t="sim_filter">
+    <U n="sim_filter">
+      <T n="sim_filter">234674<!--TunableSimFilter: dramaNodeFilters_CommunityCloseness_HotHeaded--></T>
+    </U>
+  </V>
+  <V t="schedule" n="time_option">
+    <U n="schedule">
+      <L n="valid_times">
+        <U>
+          <U n="days_available">
+            <T n="0 SUNDAY">True</T>
+            <T n="1 MONDAY">True</T>
+            <T n="2 TUESDAY">True</T>
+            <T n="3 WEDNESDAY">True</T>
+            <T n="4 THURSDAY">True</T>
+            <T n="5 FRIDAY">True</T>
+            <T n="6 SATURDAY">True</T>
+          </U>
+          <T n="duration">8</T>
+          <U n="start_time">
+            <T n="hour">12</T>
+          </U>
+        </U>
+      </L>
+    </U>
+  </V>
+</I>

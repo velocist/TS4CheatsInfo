@@ -1,0 +1,71 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<I c="CareerEvent" i="career_event" m="careers.career_event" n="careerEvent_Detective_CrimeScenes_Theft" s="109163">
+  <T n="loot_on_start">114538<!--LootActions: loot_career_Detective_Notification_CrimeScene--></T>
+  <L n="loots_on_end">
+    <T>215757<!--LootActions: loot_Cauldron_Potion_Effect_Luck_Promote--></T>
+  </L>
+  <V t="random_lot" n="required_zone">
+    <U n="random_lot">
+      <L n="random_weight_terms">
+        <U>
+          <V n="test" t="belongs_to_active_player" />
+          <V t="forbid" n="weight" />
+        </U>
+        <U>
+          <V n="test" t="venue_type">
+            <U n="venue_type">
+              <L n="venues">
+                <T>110576<!--Venue: venue_DoctorClinic--></T>
+                <T>109774<!--Venue: venue_PoliceStation--></T>
+                <T>107487<!--Venue: venue_ScientistLab--></T>
+                <T>98133<!--Venue: venue_HiddenCave--></T>
+                <T>98132<!--Venue: venue_HiddenGlade--></T>
+                <T>111611<!--Venue: venue_HiddenAlienWorld--></T>
+                <T>107453<!--Venue: venue_ForestPark--></T>
+                <T>25847<!--Venue: venue_park--></T>
+                <T>173492<!--Venue: venue_Temple--></T>
+              </L>
+            </U>
+          </V>
+          <V t="forbid" n="weight" />
+        </U>
+        <U>
+          <V n="test" t="is_npc_household" />
+          <V n="weight" t="add_weight">
+            <T n="add_weight">99999</T>
+          </V>
+        </U>
+        <U>
+          <V n="test" t="is_plex" />
+          <V t="forbid" n="weight" />
+        </U>
+        <U>
+          <T n="negate">False</T>
+          <V n="test" t="venue_type">
+            <U n="venue_type">
+              <L n="venues">
+                <T>16869<!--Venue: venue_bar--></T>
+                <T>16870<!--Venue: venue_club--></T>
+                <T>16874<!--Venue: venue_library--></T>
+                <T>16875<!--Venue: venue_lounge--></T>
+              </L>
+            </U>
+          </V>
+          <V n="weight" t="add_weight">
+            <T n="add_weight">10000</T>
+          </V>
+        </U>
+        <U>
+          <V t="is_owned_by_any_household" n="test" />
+          <V n="weight" t="add_weight">
+            <T n="add_weight">1</T>
+          </V>
+        </U>
+      </L>
+    </U>
+  </V>
+  <V t="sub_event" n="scorable_situation" />
+  <V n="zone_director" t="enabled">
+    <T n="enabled">109160<!--CrimeSceneZoneDirector: crimeSceneZoneDirector_Theft--></T>
+  </V>
+</I>

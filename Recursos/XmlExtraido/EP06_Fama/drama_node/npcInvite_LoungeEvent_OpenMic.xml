@@ -1,0 +1,119 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<I c="NPCInviteSituationDramaNode" i="drama_node" m="drama_scheduler.npc_invite_situation_drama_node" n="npcInvite_LoungeEvent_OpenMic" s="198599">
+  <V t="enabled" n="_NPC_host_job">
+    <T n="enabled">198864<!--SituationJob: situationJob_NPCInvites_LoungeEvent_TargetSim--></T>
+  </V>
+  <V t="enabled" n="_NPC_hosted_situation_player_job">
+    <T n="enabled">198863<!--SituationJob: situationJob_NPCInvites_LoungeEvent_Actor--></T>
+  </V>
+  <L n="_NPC_hosted_situation_start_messages">
+    <U>
+      <U n="dialog">
+        <V t="enabled" n="icon">
+          <V t="participant" n="enabled">
+            <U n="participant">
+              <L n="participant_type">
+                <E>TargetSim</E>
+              </L>
+            </U>
+          </V>
+        </V>
+        <E n="phone_ring_type">BUZZ</E>
+        <V n="text" t="single">
+          <T n="single">0xFA975257<!--String: "He oído que hay un concurso de talentos en el pub. ¡Vamos a hacer un poco el ridículo!"--></T>
+        </V>
+        <T n="zone_title">0xC79595F2<!--String: "{0.String}: {1.String}"--></T>
+      </U>
+    </U>
+  </L>
+  <T n="_situation_to_run">215483<!--SituationSimple: situation_NPCInvites_LoungeEvent--></T>
+  <T n="_user_facing">False</T>
+  <T n="allow_during_work_hours">False</T>
+  <V t="group_cooldown" n="cooldown_data">
+    <U n="group_cooldown">
+      <E n="group">LesserInviteCooldown</E>
+    </U>
+  </V>
+  <U n="min_and_max_times">
+    <T n="lower_bound">0</T>
+    <T n="upper_bound">0.5</T>
+  </U>
+  <L n="receiver_sim_pretests">
+    <L>
+      <V t="sim_info">
+        <U n="sim_info">
+          <V t="specified" n="ages" />
+          <V t="specified" n="species">
+            <U n="specified">
+              <L n="species">
+                <E />
+              </L>
+            </U>
+          </V>
+        </U>
+      </V>
+      <V t="region">
+        <U n="region">
+          <V n="blacklist" t="enabled">
+            <L n="enabled">
+              <T>104096<!--Region: region_Destination_CampingForest--></T>
+              <T>173593<!--Region: region_Destination_Jungle--></T>
+            </L>
+          </V>
+          <V t="enabled" n="subject" />
+        </U>
+      </V>
+    </L>
+  </L>
+  <L n="run_tests">
+    <L>
+      <V t="relationship">
+        <U n="relationship">
+          <U n="prohibited_relationship_bits">
+            <L n="match_any">
+              <T>240110<!--RelationshipBitCollection: rbc_Sentiment_Negative--></T>
+            </L>
+          </U>
+          <L n="subject">
+            <E>Actor</E>
+          </L>
+          <L n="target_sim">
+            <E>TargetSim</E>
+          </L>
+        </U>
+      </V>
+    </L>
+  </L>
+  <V t="enabled" n="scoring">
+    <U n="enabled">
+      <T n="base_score">50</T>
+      <E n="bucket">SpecialScoring</E>
+    </U>
+  </V>
+  <V t="sim_filter" n="sender_sim_info">
+    <U n="sim_filter">
+      <T n="sim_filter">127381<!--TunableSimFilter: filter_HasMet_TYAE_AllowGhosts_NotInHousehold_PreferFriends--></T>
+    </U>
+  </V>
+  <V t="schedule" n="time_option">
+    <U n="schedule">
+      <L n="valid_times">
+        <U>
+          <U n="days_available">
+            <T n="0 SUNDAY">True</T>
+            <T n="1 MONDAY">True</T>
+            <T n="2 TUESDAY">True</T>
+            <T n="3 WEDNESDAY">True</T>
+            <T n="4 THURSDAY">True</T>
+            <T n="5 FRIDAY">True</T>
+            <T n="6 SATURDAY">True</T>
+          </U>
+          <T n="duration">24</T>
+          <U n="start_time">
+            <T n="hour">0</T>
+          </U>
+        </U>
+      </L>
+    </U>
+  </V>
+</I>

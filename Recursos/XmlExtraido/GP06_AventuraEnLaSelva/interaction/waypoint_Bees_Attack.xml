@@ -1,0 +1,214 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<I c="WaypointInteraction" i="interaction" m="interactions.jog_interaction" n="waypoint_Bees_Attack" s="176162">
+  <V t="prohibit_cancelation" n="_cancelable_by_user" />
+  <V t="resource_key" n="_icon">
+    <U n="resource_key">
+      <T n="key" p="InGP06\UI\Icons\InteractionQueue\Queue_Bees.png">2f7d0004:00000000:12c9a5114e5937ee</T>
+    </U>
+  </V>
+  <V t="enabled" n="_saveable" />
+  <T n="attention_cost">0.5</T>
+  <V n="basic_content" t="one_shot">
+    <U n="one_shot">
+      <U n="animation_ref">
+        <T n="factory">176160<!--AnimationElement: natural_Dangers_Bees_Panic--></T>
+      </U>
+    </U>
+  </V>
+  <L n="basic_extras">
+    <V t="camera_focus">
+      <U n="camera_focus">
+        <T n="follow">True</T>
+        <U n="success_chance">
+          <L n="multipliers">
+            <U>
+              <T n="multiplier">0</T>
+              <L n="tests">
+                <L>
+                  <V t="sim_info">
+                    <U n="sim_info">
+                      <V t="enabled" n="npc">
+                        <T n="enabled">True</T>
+                      </V>
+                    </U>
+                  </V>
+                </L>
+              </L>
+            </U>
+          </L>
+        </U>
+        <V t="at_beginning" n="timing" />
+      </U>
+    </V>
+    <V t="audio_sting">
+      <U n="audio_sting">
+        <U n="audio_sting">
+          <T n="audio" p="InGP06\Audio\bumper\bumper_naturaldanger_warning.propx">39b2aa4a:00000000:6007dfc4836d7fae</T>
+          <T n="play_on_active_sim_only">True</T>
+        </U>
+        <V t="at_beginning" n="timing" />
+      </U>
+    </V>
+    <V t="buff">
+      <U n="buff">
+        <U n="buff_type">
+          <T n="buff_type">180802<!--Buff: buff_NaturalDangers_RouteEvent--></T>
+        </U>
+      </U>
+    </V>
+    <V t="loot">
+      <U n="loot">
+        <L n="loot_list">
+          <T>250343<!--LootActions: loot_Lifestyles_Progress_Unlock_AdrenalineSeeker--></T>
+          <T>250351<!--LootActions: loot_Lifestyles_AdrenalineSeeker_Liked--></T>
+        </L>
+        <V t="at_beginning" n="timing" />
+      </U>
+    </V>
+    <V t="notification">
+      <U n="notification">
+        <V n="dialog" t="single">
+          <V n="single" t="literal">
+            <U n="literal">
+              <V t="enabled" n="icon">
+                <V n="enabled" t="resource_key">
+                  <U n="resource_key">
+                    <T n="key" p="InGP06\UI\icons\Headlines\headline_JungleBees.png">2f7d0004:00000000:3b734dd37c1d8c50</T>
+                  </U>
+                </V>
+              </V>
+              <V t="enabled" n="secondary_icon">
+                <V n="enabled" t="participant" />
+              </V>
+              <V n="text" t="single">
+                <T n="single">0xDFC27EAA<!--String: "¡Un enjambre de abejas se abalanza sobre {0.SimFirstName}!\n\nSin una flor de guzmania pollenis para distraerlas, {0.SimFirstName} intenta pensar en una forma lógica de evitar su ataque, pero es más que probable que esté a su merced."--></T>
+              </V>
+            </U>
+          </V>
+        </V>
+        <V t="at_beginning" n="timing" />
+      </U>
+    </V>
+  </L>
+  <V t="enabled" n="canonical_animation">
+    <U n="enabled">
+      <T n="factory">8749<!--AnimationElement: PostureIdle_Stand--></T>
+    </U>
+  </V>
+  <V t="disabled" n="content_score" />
+  <T n="display_name">0x6B919714<!--String: "¡Ataque de abejas!"--></T>
+  <U n="display_name_text_tokens">
+    <L n="tokens">
+      <V t="participant_type">
+        <U n="participant_type">
+          <V t="from_participant" n="objects">
+            <U n="from_participant">
+              <E n="participant">Actor</E>
+            </U>
+          </V>
+        </U>
+      </V>
+      <V t="participant_type">
+        <U n="participant_type">
+          <V t="from_participant" n="objects">
+            <U n="from_participant">
+              <E n="participant">Object</E>
+            </U>
+          </V>
+        </U>
+      </V>
+    </L>
+  </U>
+  <L n="interaction_category_tags">
+    <E>Interaction_Super</E>
+    <E>Interaction_All</E>
+    <E>Interaction_Lifestyles_AdrenalineSeeker_OneShot</E>
+  </L>
+  <V n="outcome" t="single">
+    <U n="single">
+      <U n="actions">
+        <V n="animation_ref" t="enabled">
+          <U n="enabled">
+            <T n="factory">176161<!--AnimationElement: natural_Dangers_Bees_Stung--></T>
+          </U>
+        </V>
+        <L n="loot_list">
+          <T>177132<!--LootActions: loot_NaturalDangers_Bees_Failure--></T>
+        </L>
+      </U>
+    </U>
+  </V>
+  <E n="scoring_priority">NORMAL</E>
+  <T n="subaction_selection_weight">1</T>
+  <V t="literal" n="super_affordance_compatibility">
+    <U n="literal">
+      <V n="default_inclusion" t="exclude_all">
+        <U n="exclude_all">
+          <L n="include_lists" />
+        </U>
+      </V>
+    </U>
+  </V>
+  <E n="target_type">ACTOR</E>
+  <L n="test_globals">
+    <V t="sim_info">
+      <U n="sim_info">
+        <V t="specified" n="ages">
+          <L n="specified">
+            <E>TEEN</E>
+            <E>YOUNGADULT</E>
+            <E>ADULT</E>
+            <E>ELDER</E>
+            <E>CHILD</E>
+          </L>
+        </V>
+        <V t="specified" n="species">
+          <U n="specified">
+            <L n="species">
+              <E />
+            </L>
+          </U>
+        </V>
+        <E n="who">Actor</E>
+      </U>
+    </V>
+    <V t="identity">
+      <U n="identity">
+        <T n="subjects_match">True</T>
+      </U>
+    </V>
+  </L>
+  <T n="time_overhead">30</T>
+  <V t="object_points" n="waypoint_constraint">
+    <U n="object_points">
+      <T n="object_constraint_radius">5</T>
+      <T n="waypoint_constraint_radius">3</T>
+    </U>
+  </V>
+  <T n="waypoint_count">5</T>
+  <V t="enabled" n="waypoint_route_fail_balloon">
+    <U n="enabled">
+      <L n="balloon_choices">
+        <U>
+          <V n="item" t="balloon_icon">
+            <U n="balloon_icon">
+              <V n="icon" t="resource_key">
+                <U n="resource_key">
+                  <T n="key" p="InGame\UI\Icons\Headlines\Final\headline_RouteFail.png">2f7d0004:00000000:97cc3201d9f385cf</T>
+                </U>
+              </V>
+            </U>
+          </V>
+        </U>
+      </L>
+      <L n="balloon_target">
+        <E>Actor</E>
+      </L>
+    </U>
+  </V>
+  <V t="waypoints" n="waypoint_stitching" />
+  <U n="waypoint_walk_style">
+    <E n="priority">PANIC_HIGH</E>
+    <T n="walkstyle" p="InGame\Locomotion\RunPanic.walkstyle">27c01d95:00000000:00000000278b1e71</T>
+  </U>
+</I>

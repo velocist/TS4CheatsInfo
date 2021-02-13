@@ -1,0 +1,219 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<I c="SuperInteraction" i="interaction" m="interactions.base.super_interaction" n="vendingMachine_Interactions_PurchaseCAS_PaperHat" s="249484">
+  <L n="_constraints">
+    <U>
+      <L n="constraints">
+        <U>
+          <V n="value" t="cone">
+            <U n="cone">
+              <T n="angle">45</T>
+              <T n="max_radius">1.5</T>
+            </U>
+          </V>
+        </U>
+      </L>
+    </U>
+    <U>
+      <L n="constraints">
+        <U>
+          <V n="value" t="facing">
+            <U n="facing">
+              <T n="range">135</T>
+            </U>
+          </V>
+        </U>
+      </L>
+    </U>
+  </L>
+  <V t="enabled" n="_saveable" />
+  <T n="allow_autonomous">False</T>
+  <T n="attention_cost">0.5</T>
+  <V t="one_shot" n="basic_content">
+    <U n="one_shot">
+      <U n="animation_ref">
+        <T n="factory">249359<!--AnimationElement: vendingMachine_Purchase--></T>
+      </U>
+    </U>
+  </V>
+  <L n="basic_extras">
+    <V t="payment">
+      <U n="payment">
+        <V n="payment" t="literal">
+          <U n="literal">
+            <V n="payment_cost" t="amount">
+              <U n="amount">
+                <T n="amount">150</T>
+              </U>
+            </V>
+          </U>
+        </V>
+      </U>
+    </V>
+    <V t="loot">
+      <U n="loot">
+        <L n="loot_list">
+          <T>249097<!--LootActions: loot_VendingMachine_Reward_PaperHat--></T>
+        </L>
+        <V t="at_beginning" n="timing" />
+      </U>
+    </V>
+  </L>
+  <V t="disabled" n="content_score" />
+  <T n="display_name">0x4FA66941<!--String: "Comprar kabuto de papel"--></T>
+  <U n="display_name_text_tokens">
+    <L n="tokens">
+      <V t="participant_type">
+        <U n="participant_type">
+          <V t="from_participant" n="objects">
+            <U n="from_participant">
+              <E n="participant">Actor</E>
+            </U>
+          </V>
+        </U>
+      </V>
+      <V t="participant_type">
+        <U n="participant_type">
+          <V t="from_participant" n="objects">
+            <U n="from_participant">
+              <E n="participant">Object</E>
+            </U>
+          </V>
+        </U>
+      </V>
+    </L>
+  </U>
+  <L n="interaction_category_tags">
+    <E>Interaction_Super</E>
+    <E>Interaction_All</E>
+  </L>
+  <V n="outcome" t="single">
+    <U n="single">
+      <U n="actions">
+        <V t="enabled" n="animation_ref">
+          <U n="enabled">
+            <T n="factory">23926<!--AnimationElement: Generic_PickUp--></T>
+          </U>
+        </V>
+        <L n="basic_extras">
+          <V t="notification">
+            <U n="notification">
+              <V n="dialog" t="single">
+                <V n="single" t="literal">
+                  <U n="literal">
+                    <V t="enabled" n="icon">
+                      <V t="participant" n="enabled">
+                        <U n="participant">
+                          <L n="participant_type">
+                            <E>Object</E>
+                          </L>
+                        </U>
+                      </V>
+                    </V>
+                    <V t="enabled" n="secondary_icon">
+                      <V t="participant" n="enabled" />
+                    </V>
+                    <V t="single" n="text">
+                      <T n="single">0x8D5EF03<!--String: "¡El kabuto de papel que has comprado ya está disponible para infantes y niños en Crear un Sim y puede utilizarse al cambiar de atuendo!"--></T>
+                    </V>
+                    <V n="title" t="enabled">
+                      <T n="enabled">0x273B2170<!--String: "Productos de la máquina expendedora recibidos"--></T>
+                    </V>
+                  </U>
+                </V>
+              </V>
+            </U>
+          </V>
+        </L>
+        <L n="loot_list">
+          <T>249775<!--RandomWeightedLoot: randomWeightedLoot_VendingMachine_Brokeness--></T>
+        </L>
+      </U>
+    </U>
+  </V>
+  <E n="scoring_priority">NORMAL</E>
+  <T n="subaction_selection_weight">1</T>
+  <V t="literal" n="super_affordance_compatibility">
+    <U n="literal">
+      <V n="default_inclusion" t="exclude_all" />
+    </U>
+  </V>
+  <E n="target_type">OBJECT</E>
+  <L n="test_globals">
+    <V t="sim_info">
+      <U n="sim_info">
+        <V t="specified" n="ages">
+          <L n="specified">
+            <E>TEEN</E>
+            <E>YOUNGADULT</E>
+            <E>ADULT</E>
+            <E>ELDER</E>
+            <E>CHILD</E>
+          </L>
+        </V>
+        <V t="specified" n="species">
+          <U n="specified">
+            <L n="species">
+              <E />
+            </L>
+          </U>
+        </V>
+        <E n="who">Actor</E>
+      </U>
+    </V>
+    <V t="state">
+      <U n="state">
+        <E n="operator">NOTEQUAL</E>
+        <T n="value">15076<!--CommodityBasedObjectStateValue: Brokenness_Broken--></T>
+      </U>
+    </V>
+    <V t="state">
+      <U n="state">
+        <E n="operator">NOTEQUAL</E>
+        <T n="value">248119<!--ObjectStateValue: vendingMachine_Stuck--></T>
+      </U>
+    </V>
+    <V t="reward_part_test">
+      <U n="reward_part_test">
+        <T n="invert">True</T>
+        <L n="reward_parts">
+          <T>255717</T>
+          <T>255611</T>
+          <T>255604</T>
+          <T>255605</T>
+          <T>255606</T>
+          <T>255718</T>
+          <T>255607</T>
+          <T>255608</T>
+          <T>255609</T>
+          <T>255610</T>
+          <T>256902</T>
+          <T>256911<!--SuperInteraction: hauntedHouse_GuidryLeave--></T>
+          <T>256903</T>
+          <T>256904</T>
+          <T>256905</T>
+          <T>256906</T>
+          <T>256907</T>
+          <T>256908</T>
+          <T>256909</T>
+          <T>256910</T>
+        </L>
+      </U>
+    </V>
+    <V t="festival_running">
+      <U n="festival_running">
+        <V t="enabled" n="check_if_on_festival_street" />
+        <V t="enabled" n="drama_node">
+          <T n="enabled">246533<!--FestivalDramaNode: festivalDramaNodes_YouthFestival--></T>
+        </V>
+      </U>
+    </V>
+  </L>
+  <T n="time_overhead">30</T>
+  <V t="enabled" n="utility_info">
+    <L n="enabled">
+      <U>
+        <E n="key">POWER</E>
+      </U>
+    </L>
+  </V>
+</I>

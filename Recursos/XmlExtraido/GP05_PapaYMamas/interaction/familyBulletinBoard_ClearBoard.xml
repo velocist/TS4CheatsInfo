@@ -1,0 +1,212 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<I c="SuperInteraction" i="interaction" m="interactions.base.super_interaction" n="familyBulletinBoard_ClearBoard" s="161317">
+  <L n="_false_advertisements">
+    <V t="statistic_set_max">
+      <U n="statistic_set_max">
+        <T n="stat">166672<!--Commodity: commodity_Autonomy_FamilyBulletinBoard--></T>
+      </U>
+    </V>
+  </L>
+  <V t="enabled" n="_saveable" />
+  <T n="attention_cost">0.5</T>
+  <V n="basic_content" t="one_shot">
+    <U n="one_shot">
+      <U n="animation_ref">
+        <T n="factory">161026<!--AnimationElement: familyBulletinBoard_Clean--></T>
+      </U>
+    </U>
+  </V>
+  <V t="disabled" n="content_score" />
+  <T n="display_name">0xA9DD279C<!--String: "Vaciar tablón de anuncios"--></T>
+  <U n="display_name_text_tokens">
+    <L n="tokens">
+      <V t="participant_type">
+        <U n="participant_type">
+          <V t="from_participant" n="objects">
+            <U n="from_participant">
+              <E n="participant">Actor</E>
+            </U>
+          </V>
+        </U>
+      </V>
+      <V t="participant_type">
+        <U n="participant_type">
+          <V t="from_participant" n="objects">
+            <U n="from_participant">
+              <E n="participant">Object</E>
+            </U>
+          </V>
+        </U>
+      </V>
+    </L>
+  </U>
+  <L n="interaction_category_tags">
+    <E>Interaction_Super</E>
+    <E>Interaction_All</E>
+  </L>
+  <V n="outcome" t="test_based">
+    <U n="test_based">
+      <L n="fallback_outcomes">
+        <U>
+          <U n="outcome">
+            <L n="basic_extras">
+              <V t="destroy_object">
+                <U n="destroy_object">
+                  <V t="from_participant" n="objects_to_destroy">
+                    <U n="from_participant">
+                      <E n="participant">ObjectChildren</E>
+                    </U>
+                  </V>
+                  <V t="add_restriction" n="tag_restriction">
+                    <L n="add_restriction">
+                      <E>Func_PaperPosted</E>
+                    </L>
+                  </V>
+                </U>
+              </V>
+              <V t="slot_item_transfer" />
+            </L>
+          </U>
+        </U>
+      </L>
+      <L n="tested_outcomes">
+        <U>
+          <L n="potential_outcomes">
+            <U>
+              <U n="outcome">
+                <L n="basic_extras">
+                  <V t="destroy_object">
+                    <U n="destroy_object">
+                      <V t="from_participant" n="objects_to_destroy">
+                        <U n="from_participant">
+                          <E n="participant">ObjectChildren</E>
+                        </U>
+                      </V>
+                      <V n="tag_restriction" t="add_restriction">
+                        <L n="add_restriction">
+                          <E>Func_PaperPosted</E>
+                          <E>Func_DrawingPosted</E>
+                          <E>Func_ActivityTable_Drawing</E>
+                        </L>
+                      </V>
+                    </U>
+                  </V>
+                </L>
+              </U>
+            </U>
+          </L>
+          <L n="tests">
+            <L>
+              <V t="sim_info">
+                <U n="sim_info">
+                  <V t="enabled" n="npc">
+                    <T n="enabled">True</T>
+                  </V>
+                </U>
+              </V>
+            </L>
+          </L>
+        </U>
+      </L>
+    </U>
+  </V>
+  <E n="scoring_priority">NORMAL</E>
+  <U n="skill_loot_data">
+    <T n="stat">160504<!--Skill: statistic_Skill_AdultMajor_Parenting--></T>
+  </U>
+  <T n="subaction_selection_weight">1</T>
+  <E n="target_type">OBJECT</E>
+  <L n="test_autonomous">
+    <L>
+      <V t="sim_info">
+        <U n="sim_info">
+          <V t="enabled" n="npc">
+            <T n="enabled">True</T>
+          </V>
+        </U>
+      </V>
+      <V t="lot_owner">
+        <U n="lot_owner">
+          <T n="consider_business_lot_as_owned">False</T>
+          <T n="consider_rented_lot_as_owned">False</T>
+        </U>
+      </V>
+      <V t="slot_test">
+        <U n="slot_test">
+          <V t="by_reference" n="child_slot">
+            <T n="by_reference">slot_bulletinBoardCurfewDrawing</T>
+          </V>
+          <V t="has_used_slot" n="slot_test_type">
+            <U n="has_used_slot">
+              <T n="check_all_slots">True</T>
+            </U>
+          </V>
+        </U>
+      </V>
+      <V t="slot_test">
+        <U n="slot_test">
+          <V t="by_reference" n="child_slot">
+            <T n="by_reference">slot_bulletinBoardCurfewNote</T>
+          </V>
+          <V t="has_used_slot" n="slot_test_type">
+            <U n="has_used_slot">
+              <T n="check_all_slots">True</T>
+            </U>
+          </V>
+        </U>
+      </V>
+    </L>
+  </L>
+  <L n="test_globals">
+    <V t="sim_info">
+      <U n="sim_info">
+        <V t="specified" n="ages">
+          <L n="specified">
+            <E>TEEN</E>
+            <E>YOUNGADULT</E>
+            <E>ADULT</E>
+            <E>ELDER</E>
+            <E>CHILD</E>
+          </L>
+        </V>
+        <V t="specified" n="species">
+          <U n="specified">
+            <L n="species">
+              <E />
+            </L>
+          </U>
+        </V>
+        <E n="who">Actor</E>
+      </U>
+    </V>
+    <V t="lot_owner">
+      <U n="lot_owner">
+        <T n="consider_business_lot_as_owned">False</T>
+        <T n="consider_rented_lot_as_owned">False</T>
+      </U>
+    </V>
+  </L>
+  <L n="tests">
+    <L>
+      <V t="slot_test">
+        <U n="slot_test">
+          <V t="by_reference" n="child_slot">
+            <T n="by_reference">slot_bulletinBoardCurfewDrawing</T>
+          </V>
+          <V t="has_used_slot" n="slot_test_type" />
+        </U>
+      </V>
+    </L>
+    <L>
+      <V t="slot_test">
+        <U n="slot_test">
+          <V t="by_reference" n="child_slot">
+            <T n="by_reference">slot_bulletinBoardCurfewNote</T>
+          </V>
+          <V t="has_used_slot" n="slot_test_type" />
+        </U>
+      </V>
+    </L>
+  </L>
+  <T n="time_overhead">30</T>
+</I>

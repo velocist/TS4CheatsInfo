@@ -1,0 +1,175 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<I c="SimPickerInteraction" i="interaction" m="interactions.base.picker_interaction" n="simPickerInteraction_StudyWith" s="224799">
+  <V t="disabled" n="_saveable" />
+  <T n="allow_from_sim_inventory">True</T>
+  <V t="disabled" n="content_score" />
+  <T n="display_name">0x5D733EC8<!--String: "Estudiar con"--></T>
+  <V t="testable" n="display_name_overrides">
+    <U n="testable">
+      <L n="overrides">
+        <U>
+          <V t="disabled" n="new_display_name" />
+          <V t="enabled" n="new_pie_menu_icon">
+            <V n="enabled" t="resource_key">
+              <U n="resource_key">
+                <T n="key" p="InEP08\UI\Icons\PieMenu\SpecialInteractions\specialinteraction_orgHonorSociety_piemenu.png">2f7d0004:00000000:63f1bad1a450a829</T>
+              </U>
+            </V>
+          </V>
+          <L n="test">
+            <L>
+              <V t="organization_membership_test">
+                <U n="organization_membership_test">
+                  <L n="organizations">
+                    <T>219856<!--Organization: University_Organization_Honor--></T>
+                  </L>
+                </U>
+              </V>
+              <V t="situation_running_test">
+                <U n="situation_running_test">
+                  <V n="situation_whitelist" t="enabled">
+                    <L n="enabled">
+                      <T>209035<!--OrganizationMemberSingleJobSituation: situation_CollegeOrganizations_SmallEvents_StudyGroup--></T>
+                      <T>226481<!--OrganizationMemberSingleJobSituation: University_HonorSociety_BarNight--></T>
+                    </L>
+                  </V>
+                </U>
+              </V>
+            </L>
+          </L>
+        </U>
+      </L>
+    </U>
+  </V>
+  <U n="display_name_text_tokens">
+    <L n="tokens">
+      <V t="participant_type">
+        <U n="participant_type">
+          <V n="objects" t="from_participant">
+            <U n="from_participant">
+              <E n="participant">Actor</E>
+            </U>
+          </V>
+        </U>
+      </V>
+      <V t="participant_type">
+        <U n="participant_type">
+          <V t="from_participant" n="objects">
+            <U n="from_participant">
+              <E n="participant">Object</E>
+            </U>
+          </V>
+        </U>
+      </V>
+      <V t="career_data">
+        <U n="career_data">
+          <T n="career_type">209979<!--UniversityCourseCareerSlot: university_CourseSlot_A--></T>
+        </U>
+      </V>
+    </L>
+  </U>
+  <T n="include_uninstantiated_sims">False</T>
+  <L n="interaction_category_tags">
+    <E>INVALID</E>
+  </L>
+  <L n="picked_continuation">
+    <U>
+      <T n="affordance">225072<!--SuperInteraction: studying_CreateBook--></T>
+      <E n="target">Actor</E>
+    </U>
+  </L>
+  <V n="picker_dialog" t="sim_picker">
+    <U n="sim_picker">
+      <V n="max_selectable" t="static_count">
+        <U n="static_count">
+          <T n="number_selectable">7</T>
+        </U>
+      </V>
+    </U>
+  </V>
+  <V n="pie_menu_test_tooltip" t="enabled">
+    <T n="enabled">0x67E173A1<!--String: "No conoces a ningún estudiante cercano con quien estudiar."--></T>
+  </V>
+  <U n="progress_bar_enabled">
+    <T n="bar_enabled">False</T>
+  </U>
+  <L n="sim_tests">
+    <L>
+      <V t="university_enrollment_test">
+        <U n="university_enrollment_test">
+          <V t="enabled" n="enrollment_status">
+            <U n="enabled">
+              <V n="whitelist" t="specify">
+                <U n="specify">
+                  <L n="whitelist">
+                    <E>ENROLLED</E>
+                    <E>PROBATION</E>
+                  </L>
+                </U>
+              </V>
+            </U>
+          </V>
+          <E n="subject">PickedSim</E>
+        </U>
+      </V>
+      <V t="relationship">
+        <U n="relationship">
+          <U n="required_relationship_bits">
+            <L n="match_any">
+              <T>15803<!--RelationshipBit: has_met--></T>
+            </L>
+          </U>
+          <L n="target_sim">
+            <E>PickedSim</E>
+          </L>
+        </U>
+      </V>
+      <V t="distance">
+        <U n="distance">
+          <E n="subject">PickedSim</E>
+          <E n="target">Actor</E>
+          <U n="threshold">
+            <E n="comparison">LESS_OR_EQUAL</E>
+            <T n="value">20</T>
+          </U>
+        </U>
+      </V>
+      <V t="university_test">
+        <U n="university_test">
+          <V n="test" t="course_career_slot_test">
+            <U n="course_career_slot_test">
+              <E n="actor">PickedSim</E>
+              <L n="course_career_slots">
+                <T>209979<!--UniversityCourseCareerSlot: university_CourseSlot_A--></T>
+                <T>209984<!--UniversityCourseCareerSlot: university_CourseSlot_B--></T>
+                <T>209988<!--UniversityCourseCareerSlot: university_CourseSlot_C--></T>
+                <T>209989<!--UniversityCourseCareerSlot: university_CourseSlot_D--></T>
+              </L>
+              <V t="ongoing_courses_only" n="course_completion_status" />
+            </U>
+          </V>
+        </U>
+      </V>
+    </L>
+  </L>
+  <E n="target_type">OBJECT</E>
+  <L n="test_globals">
+    <V t="user_running_interaction">
+      <U n="user_running_interaction">
+        <L n="affordances">
+          <T>223571<!--SuperInteraction: book_Read_University_Text_CourseA--></T>
+          <T>223572<!--SuperInteraction: book_Read_University_Text_CourseB--></T>
+          <T>223667<!--SuperInteraction: book_Read_University_Text_CourseC--></T>
+          <T>223668<!--SuperInteraction: book_Read_University_Text_CourseD--></T>
+          <T>225092<!--SuperInteraction: book_Read_University_Text_CourseA_StudyWith--></T>
+          <T>225147<!--SuperInteraction: book_Read_University_Text_CourseB_StudyWith--></T>
+          <T>225165<!--SuperInteraction: book_Read_University_Text_CourseC_StudyWith--></T>
+          <T>225167<!--SuperInteraction: book_Read_University_Text_CourseD_StudyWith--></T>
+        </L>
+        <V n="tooltip" t="enabled">
+          <T n="enabled">0xC58AC14C<!--String: "{0.SimFirstName} tiene que estar estudiando para iniciar una sesión de estudio."--></T>
+        </V>
+      </U>
+    </V>
+  </L>
+</I>

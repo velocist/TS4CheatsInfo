@@ -1,0 +1,206 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<I c="Door" i="object" m="objects.doors.door" n="object_Vault_VaultDoor" s="193378">
+  <U n="_components">
+    <V t="enabled" n="focus">
+      <U n="enabled">
+        <V n="_focus_score" t="globally">
+          <U n="globally">
+            <E n="base">NONE</E>
+          </U>
+        </V>
+      </U>
+    </V>
+    <V n="idle_component" t="enabled">
+      <U n="enabled">
+        <V n="client_suppressed_state" t="enabled">
+          <T n="enabled">200824<!--ObjectStateValue: vault_Door_Anim_Closed--></T>
+        </V>
+        <L n="idle_animation_map">
+          <U>
+            <T n="key">200823<!--ObjectStateValue: vault_Door_Anim_Open--></T>
+            <T n="value">193375<!--ObjectAnimationElement: vaultDoor_Open--></T>
+          </U>
+          <U>
+            <T n="key">200824<!--ObjectStateValue: vault_Door_Anim_Closed--></T>
+            <T n="value">193376<!--ObjectAnimationElement: vaultDoor_Close--></T>
+          </U>
+        </L>
+      </U>
+    </V>
+    <V n="portal" t="enabled">
+      <U n="enabled">
+        <V t="disabled" n="_portal_animation_component" />
+        <L n="_portal_data">
+          <T>178685<!--PortalData: portalData_Door--></T>
+        </L>
+        <V t="enabled" n="_portal_locking_component" />
+      </U>
+    </V>
+    <V n="state" t="enabled">
+      <U n="enabled">
+        <L n="state_triggers">
+          <U>
+            <L n="at_states">
+              <T>193382<!--ObjectStateValue: vault_Door_Open--></T>
+              <T>200824<!--ObjectStateValue: vault_Door_Anim_Closed--></T>
+            </L>
+            <V t="Set_state_list" n="set_states">
+              <L n="Set_state_list">
+                <T>35296<!--ObjectStateValue: GenericOnOff_On--></T>
+              </L>
+            </V>
+          </U>
+          <U>
+            <L n="at_states">
+              <T>193383<!--ObjectStateValue: vault_Door_Closed--></T>
+            </L>
+            <V n="set_states" t="Set_state_list">
+              <L n="Set_state_list">
+                <T>200824<!--ObjectStateValue: vault_Door_Anim_Closed--></T>
+              </L>
+            </V>
+          </U>
+        </L>
+        <L n="states">
+          <U>
+            <L n="client_states">
+              <U>
+                <T n="key">29002<!--ObjectStateValue: FrontDoor_Disabled--></T>
+              </U>
+            </L>
+            <V n="default_value" t="reference">
+              <T n="reference">29002<!--ObjectStateValue: FrontDoor_Disabled--></T>
+            </V>
+          </U>
+          <U>
+            <V t="reference" n="default_value">
+              <T n="reference">35296<!--ObjectStateValue: GenericOnOff_On--></T>
+            </V>
+          </U>
+          <U>
+            <V t="reference" n="default_value">
+              <T n="reference">193382<!--ObjectStateValue: vault_Door_Open--></T>
+            </V>
+          </U>
+          <U>
+            <V n="default_value" t="reference">
+              <T n="reference">200824<!--ObjectStateValue: vault_Door_Anim_Closed--></T>
+            </V>
+            <T n="reset_on_load_if_time_passes">True</T>
+            <T n="reset_to_default">True</T>
+          </U>
+        </L>
+        <V t="enabled" n="timed_state_triggers">
+          <L n="enabled">
+            <U>
+              <T n="key">35296<!--ObjectStateValue: GenericOnOff_On--></T>
+              <U n="value">
+                <L n="ops">
+                  <U>
+                    <L n="states_to_trigger">
+                      <T>200823<!--ObjectStateValue: vault_Door_Anim_Open--></T>
+                      <T>35297<!--ObjectStateValue: GenericOnOff_Off--></T>
+                    </L>
+                    <T n="trigger_time">1</T>
+                  </U>
+                </L>
+                <T n="trigger_on_load">True</T>
+              </U>
+            </U>
+          </L>
+        </V>
+      </U>
+    </V>
+    <V n="tooltip_component" t="enabled">
+      <U n="enabled">
+        <L n="custom_tooltips">
+          <U>
+            <L n="object_tests">
+              <L>
+                <V t="existence">
+                  <U n="existence">
+                    <E n="participant">StoredSim</E>
+                    <T n="require_instantiatable">False</T>
+                  </U>
+                </V>
+              </L>
+            </L>
+            <L n="tooltip_fields">
+              <U>
+                <E n="key">header</E>
+                <U n="value">
+                  <V n="text" t="single">
+                    <T n="single">0x7E84632B<!--String: "Acceso a: {0.SimName}"--></T>
+                  </V>
+                  <V t="enabled" n="text_tokens">
+                    <U n="enabled">
+                      <L n="tokens">
+                        <V t="participant_type">
+                          <U n="participant_type">
+                            <V n="objects" t="from_participant">
+                              <U n="from_participant">
+                                <E n="participant">StoredSim</E>
+                              </U>
+                            </V>
+                          </U>
+                        </V>
+                      </L>
+                    </U>
+                  </V>
+                </U>
+              </U>
+            </L>
+          </U>
+        </L>
+      </U>
+    </V>
+  </U>
+  <L n="_super_affordances">
+    <T>13328<!--ImmediateSuperInteraction: debug_Reset--></T>
+    <T>13326<!--ImmediateSuperInteraction: debug_ObjectDestroy--></T>
+    <T>103888<!--ImmediateSuperInteraction: cheat_set_as_head--></T>
+  </L>
+  <L n="additional_interaction_constraints">
+    <U>
+      <V t="literal" n="affordance_links">
+        <U n="literal">
+          <V n="default_inclusion" t="exclude_all">
+            <U n="exclude_all">
+              <L n="include_affordances">
+                <T>193406<!--SuperInteraction: Vault_VaultDoor_BreakIn--></T>
+              </L>
+            </U>
+          </V>
+        </U>
+      </V>
+      <V n="constraint" t="constraint_set">
+        <U n="constraint_set">
+          <L n="constraints">
+            <V t="circle">
+              <U n="circle">
+                <T n="ideal_radius">0.5</T>
+                <T n="radial_cost_weight">50</T>
+                <T n="radius">2</T>
+                <T n="require_los">False</T>
+              </U>
+            </V>
+            <V t="facing" />
+          </L>
+        </U>
+      </V>
+    </U>
+  </L>
+  <T n="is_door_portal">True</T>
+  <U n="recycling_data">
+    <L n="recycling_values">
+      <U>
+        <E n="Bucks Type">RecycleBitsBucks</E>
+        <T n="Value">0.5</T>
+      </U>
+      <U>
+        <E n="Bucks Type">RecyclePiecesBucks</E>
+        <T n="Value">0.5</T>
+      </U>
+    </L>
+  </U>
+</I>

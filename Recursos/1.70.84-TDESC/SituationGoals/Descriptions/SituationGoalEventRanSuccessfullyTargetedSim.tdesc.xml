@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+
+<TuningRoot>
+    <Instance instance_type="situation_goal" class="SituationGoalEventRanSuccessfullyTargetedSim" module="situations.situation_goal_targeted_sim" muid="B5B27883F2588269" description="A situation goal that allows you to specify test events that you can&#xA;listen to and an associated score to award when a specific event is &#xA;successfully run." instance_needs_reference="True" instance_subclasses_only="False" parents="SituationGoalTargetedSim, SituationGoal" path="SituationGoals\Descriptions" use_guid_for_reference="True">
+        <TunableList name="test_events_to_score" class="TunableMapping" display="Test Events To Score" muid="1889B0F2E13C3B21" mapping_key="key" mapping_value="value" description="A mapping of test event -&gt; score achieved when successfully ran." Deprecated="False" filter="0" group="General">
+            <TunableTuple class="TunableTuple" muid="2A20B36C1DCBA44A" Deprecated="False" filter="0" group="General">
+                <TunableEnum type="TestEvent" name="key" class="TunableEnumEntry" default="Invalid" display="Key" muid="D232FE3B837ACF88" dynamic_entries="event_testing-test_events.TestEvent._elements" static_entries="event_testing-test_events.TestEvent" description="The event to listen to for goal completion." Deprecated="False" filter="0" group="General" />
+                <TunableTuple name="value" class="TunableTuple" display="Value" muid="C5FE196F5AD03152" description="A tuple of the score to award and other checks to make on the &#xA;event before it satisfies the goal." Deprecated="False" filter="0" group="General">
+                    <TunableVariant type="None" name="interaction" class="OptionalTunable" default="disabled" display="Interaction" muid="5FC3B1327CD0AA0B" description="When turned on there will be a test to verify that the &#xA;interaction sending the associated test event is the same&#xA;as the tuned interaction." Deprecated="False" filter="0" group="General">
+                        <Tunable name="disabled" class="TunableExistance" display="Disabled" muid="69D3A1698A6AC166" />
+                        <Tunable type="interaction" name="enabled" class="TunableReference" display="Enabled" muid="B01D1814F2483720" description="The interaction to require the event to come from in&#xA;order for it to satisfy the goal." allow_none="False" Deprecated="False" filter="0" group="General" />
+                    </TunableVariant>
+                    <Tunable type="int" name="score" class="Tunable" default="100" display="Score" muid="C127B72451E98D6A" description="The score the goal results in when completed." tuning_state="NeedsTuning" Deprecated="False" filter="0" group="General" />
+                    <TunableEnum type="UiSituationGoalStatus" name="status" class="TunableEnumEntry" default="COMPLETED" display="Status" muid="395C7ABC04C17E41" static_entries="situations-situation_goal.UiSituationGoalStatus" description="The status of the goal result. This will only change the &#xA;visual when removing this goal from the list of goals." Deprecated="False" filter="0" group="General" />
+                </TunableTuple>
+            </TunableTuple>
+        </TunableList>
+    </Instance>
+</TuningRoot>

@@ -1,0 +1,122 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<I c="SuperInteraction" i="interaction" m="interactions.base.super_interaction" n="door_Apartment_InviteOver_createSituation" s="146553">
+  <V t="enabled" n="_saveable" />
+  <T n="allow_autonomous">False</T>
+  <T n="allow_user_directed">False</T>
+  <T n="attention_cost">0.5</T>
+  <V t="one_shot" n="basic_content">
+    <U n="one_shot">
+      <U n="animation_ref">
+        <T n="factory">31008<!--AnimationElement: Door_Ring_Doorbell--></T>
+      </U>
+    </U>
+  </V>
+  <L n="basic_extras" />
+  <V t="enabled" n="basic_reserve_object">
+    <U n="enabled">
+      <L n="subject_list">
+        <U>
+          <V t="multi" n="reserve_type" />
+        </U>
+      </L>
+    </U>
+  </V>
+  <V t="disabled" n="content_score" />
+  <T n="display_name">0xA2C07FB3<!--String: "Invitar a reunión"--></T>
+  <U n="display_name_text_tokens">
+    <L n="tokens">
+      <V t="participant_type">
+        <U n="participant_type">
+          <V t="from_participant" n="objects">
+            <U n="from_participant">
+              <E n="participant">Actor</E>
+            </U>
+          </V>
+        </U>
+      </V>
+      <V t="participant_type">
+        <U n="participant_type">
+          <V t="from_participant" n="objects">
+            <U n="from_participant">
+              <E n="participant">Object</E>
+            </U>
+          </V>
+        </U>
+      </V>
+    </L>
+  </U>
+  <L n="interaction_category_tags">
+    <E>Interaction_Super</E>
+    <E>Interaction_All</E>
+  </L>
+  <V n="outcome" t="single">
+    <U n="single">
+      <U n="actions">
+        <L n="basic_extras">
+          <V t="create_situation">
+            <U n="create_situation">
+              <V n="create_situation" t="situation_start">
+                <U n="situation_start">
+                  <V n="actor_init_job" t="specify_job">
+                    <T n="specify_job">139272<!--SituationJob: situationJob_ApartmentNeighbor_playerHost_Hangout_generic--></T>
+                  </V>
+                  <T n="invite_actor">True</T>
+                  <L n="invite_participants">
+                    <U>
+                      <E n="participants_to_invite">PickedSim</E>
+                      <V n="invite_to_job" t="specify_job">
+                        <L n="specify_job">
+                          <T>146556<!--SituationJob: situationJob_ApartmentNeighbor_NPC_invitedHangout--></T>
+                        </L>
+                      </V>
+                    </U>
+                  </L>
+                  <T n="invite_picked_sims">False</T>
+                  <T n="invite_target_sim">False</T>
+                  <T n="situation">146518<!--SituationSimple: situationSimple_ApartmentNeighbors_invitedHangout--></T>
+                  <T n="user_facing">False</T>
+                </U>
+              </V>
+            </U>
+          </V>
+        </L>
+        <L n="continuation">
+          <U>
+            <T n="affordance">141939<!--SuperInteraction: door_Apartment_RouteTo_goInside_ActiveLot--></T>
+          </U>
+        </L>
+      </U>
+    </U>
+  </V>
+  <U n="posture_preferences">
+    <T n="apply_penalties">True</T>
+    <T n="prefer_clicked_part">False</T>
+  </U>
+  <E n="scoring_priority">NORMAL</E>
+  <T n="subaction_selection_weight">1</T>
+  <E n="target_type">OBJECT</E>
+  <L n="test_globals">
+    <V t="sim_info">
+      <U n="sim_info">
+        <V t="specified" n="ages">
+          <L n="specified">
+            <E>TEEN</E>
+            <E>YOUNGADULT</E>
+            <E>ADULT</E>
+            <E>ELDER</E>
+            <E>CHILD</E>
+          </L>
+        </V>
+        <V t="specified" n="species">
+          <U n="specified">
+            <L n="species">
+              <E />
+            </L>
+          </U>
+        </V>
+        <E n="who">Actor</E>
+      </U>
+    </V>
+  </L>
+  <T n="time_overhead">30</T>
+</I>

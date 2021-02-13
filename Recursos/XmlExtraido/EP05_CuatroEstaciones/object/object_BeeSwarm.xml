@@ -1,0 +1,204 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<I c="GameObject" i="object" m="objects.game_object" n="object_BeeSwarm" s="186503">
+  <U n="_components">
+    <V t="enabled" n="focus">
+      <U n="enabled">
+        <V t="globally" n="_focus_score">
+          <U n="globally">
+            <E n="base">LOW</E>
+          </U>
+        </V>
+      </U>
+    </V>
+    <V n="inventory_item" t="enabled">
+      <U n="enabled">
+        <T n="can_place_in_world">False</T>
+        <T n="forward_affordances_to_inventory_owner">True</T>
+        <V n="forward_client_state_change_to_inventory_owner" t="enabled">
+          <L n="enabled">
+            <V t="vfx_state" />
+          </L>
+        </V>
+        <T n="inventory_only">True</T>
+        <T n="remove_from_npc_inventory">True</T>
+        <E n="stack_scheme">NONE</E>
+        <L n="target_super_affordances">
+          <U>
+            <T n="affordance">186533<!--SuperInteraction: si_BeeSwarm_Start_Attack_TargetSim--></T>
+          </U>
+          <U>
+            <T n="affordance">186520<!--SuperInteraction: si_BeeSwarm_Start_CheerUp_TargetSim--></T>
+          </U>
+          <U>
+            <T n="affordance">186546<!--SuperInteraction: si_BeeSwarm_Start_Woo_TargetSim--></T>
+          </U>
+        </L>
+        <L n="valid_inventory_types">
+          <E>SIM</E>
+        </L>
+      </U>
+    </V>
+    <V n="state" t="enabled">
+      <U n="enabled">
+        <L n="state_triggers">
+          <U>
+            <L n="at_states">
+              <T>15189<!--CommodityBasedObjectStateValue: Freshness_Fresh--></T>
+            </L>
+            <V n="set_states" t="Set_state_list">
+              <L n="Set_state_list">
+                <T>98745<!--ObjectStateValue: GenericFX_On--></T>
+              </L>
+            </V>
+          </U>
+          <U>
+            <L n="at_states">
+              <T>15190<!--CommodityBasedObjectStateValue: Freshness_Spoiled--></T>
+            </L>
+            <V n="set_states" t="Set_state_list">
+              <L n="Set_state_list">
+                <T>190149<!--ObjectStateValue: beeSwarm_Disperse_PlayVFX--></T>
+              </L>
+            </V>
+          </U>
+        </L>
+        <L n="states">
+          <U>
+            <L n="client_states">
+              <U>
+                <T n="key">98745<!--ObjectStateValue: GenericFX_On--></T>
+                <U n="value">
+                  <V n="vfx_state" t="apply_new_value">
+                    <V n="apply_new_value" t="start_vfx">
+                      <V n="start_vfx" t="single_effect">
+                        <U n="single_effect">
+                          <T n="effect_name">ep05_bee_swarm_occasional</T>
+                          <V t="Slot" n="joint_name">
+                            <T n="Slot">b__Spine2__</T>
+                          </V>
+                        </U>
+                      </V>
+                    </V>
+                  </V>
+                </U>
+              </U>
+              <U>
+                <T n="key">98746<!--ObjectStateValue: GenericFX_Off--></T>
+                <U n="value">
+                  <V t="apply_new_value" n="vfx_state" />
+                </U>
+              </U>
+            </L>
+            <V t="reference" n="default_value">
+              <T n="reference">98746<!--ObjectStateValue: GenericFX_Off--></T>
+            </V>
+          </U>
+          <U>
+            <L n="client_states">
+              <U>
+                <T n="key">15189<!--CommodityBasedObjectStateValue: Freshness_Fresh--></T>
+              </U>
+              <U>
+                <T n="key">15190<!--CommodityBasedObjectStateValue: Freshness_Spoiled--></T>
+              </U>
+              <U>
+                <T n="key">15191<!--CommodityBasedObjectStateValue: Freshness_Untouched--></T>
+                <U n="value">
+                  <V n="autonomy_modifiers" t="apply_new_value">
+                    <V n="apply_new_value" t="apply_statistic_modifiers">
+                      <U n="apply_statistic_modifiers">
+                        <L n="autonomy_modifiers">
+                          <U>
+                            <L n="decay_modifiers">
+                              <U>
+                                <T n="key">16591<!--Commodity: commodity_freshness--></T>
+                                <T n="value">2</T>
+                              </U>
+                            </L>
+                          </U>
+                        </L>
+                      </U>
+                    </V>
+                  </V>
+                </U>
+              </U>
+            </L>
+            <V t="reference" n="default_value">
+              <T n="reference">15191<!--CommodityBasedObjectStateValue: Freshness_Untouched--></T>
+            </V>
+          </U>
+          <U>
+            <V n="default_value" t="reference">
+              <T n="reference">190147<!--ObjectStateValue: beeSwarm_Disperse_Off--></T>
+            </V>
+          </U>
+        </L>
+        <V n="timed_state_triggers" t="enabled">
+          <L n="enabled">
+            <U>
+              <T n="key">190149<!--ObjectStateValue: beeSwarm_Disperse_PlayVFX--></T>
+              <U n="value">
+                <L n="ops">
+                  <U>
+                    <L n="states_to_trigger">
+                      <T>190148<!--ObjectStateValue: beeSwarm_Disperse_Swarm--></T>
+                    </L>
+                    <T n="trigger_time">4</T>
+                  </U>
+                </L>
+              </U>
+            </U>
+            <U>
+              <T n="key">98745<!--ObjectStateValue: GenericFX_On--></T>
+              <U n="value">
+                <L n="ops">
+                  <U>
+                    <L n="states_to_trigger">
+                      <T>98746<!--ObjectStateValue: GenericFX_Off--></T>
+                    </L>
+                    <T n="trigger_time">3</T>
+                  </U>
+                </L>
+              </U>
+            </U>
+            <U>
+              <T n="key">98746<!--ObjectStateValue: GenericFX_Off--></T>
+              <U n="value">
+                <L n="ops">
+                  <U>
+                    <L n="states_to_trigger">
+                      <T>98745<!--ObjectStateValue: GenericFX_On--></T>
+                    </L>
+                    <T n="trigger_time">30</T>
+                  </U>
+                </L>
+              </U>
+            </U>
+          </L>
+        </V>
+      </U>
+    </V>
+    <V t="enabled" n="tooltip_component" />
+  </U>
+  <L n="_super_affordances">
+    <T>13326<!--ImmediateSuperInteraction: debug_ObjectDestroy--></T>
+    <T>186509<!--SimPickerInteraction: beeSwarm_SimPicker_Attack--></T>
+    <T>186511<!--SimPickerInteraction: beeSwarm_SimPicker_CheerUp--></T>
+    <T>186510<!--SimPickerInteraction: beeSwarm_SimPicker_Woo--></T>
+    <T>186518<!--SuperInteraction: si_BeeSwarm_Start_Fetch--></T>
+    <T>186517<!--SuperInteraction: si_BeeSwarm_Start_Pollinate--></T>
+    <T>187233<!--SuperInteraction: si_BeeSwarm_Start_CheerUp_Self--></T>
+  </L>
+  <U n="recycling_data">
+    <L n="recycling_values">
+      <U>
+        <E n="Bucks Type">RecycleBitsBucks</E>
+        <T n="Value">0.5</T>
+      </U>
+      <U>
+        <E n="Bucks Type">RecyclePiecesBucks</E>
+        <T n="Value">0.5</T>
+      </U>
+    </L>
+  </U>
+</I>

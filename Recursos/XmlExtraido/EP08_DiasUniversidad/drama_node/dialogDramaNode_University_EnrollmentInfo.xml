@@ -1,0 +1,211 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<I c="DialogDramaNode" i="drama_node" m="drama_scheduler.dialog_drama_node" n="dialogDramaNode_University_EnrollmentInfo" s="229272">
+  <V n="cooldown_data" t="node_cooldown">
+    <U n="node_cooldown">
+      <V n="duration" t="duration">
+        <T n="duration">96</T>
+      </V>
+    </U>
+  </V>
+  <V t="notification" n="dialog_and_loot">
+    <U n="notification">
+      <L n="loot_list">
+        <T>230111<!--LootActions: loot_University_EnrollmentInfoState--></T>
+      </L>
+      <U n="notification">
+        <L n="dialog_options">
+          <E>DISABLE_CLOSE_BUTTON</E>
+        </L>
+        <V t="enabled" n="icon">
+          <V n="enabled" t="resource_key">
+            <U n="resource_key">
+              <T n="key" p="InEP08\UI\Icons\Notifications\notification_gradHat.png">2f7d0004:00000000:4d1bc1dd9f40abca</T>
+            </U>
+          </V>
+        </V>
+        <V t="enabled" n="secondary_icon">
+          <V t="participant" n="enabled">
+            <U n="participant">
+              <L n="participant_type">
+                <E>Actor</E>
+              </L>
+            </U>
+          </V>
+        </V>
+        <V n="text" t="single">
+          <T n="single">0xC5DBAC9<!--String: "¡{0.SimFirstName} debería empezar a pensar en cursar estudios superiores! Echa un vistazo a sus opciones informándote sobre las universidades a continuación o en un ordenador. "--></T>
+        </V>
+        <L n="ui_responses">
+          <U>
+            <V n="response_command" t="enabled">
+              <V n="enabled" t="literal">
+                <U n="literal">
+                  <L n="arguments">
+                    <V t="integer">
+                      <U n="integer">
+                        <T n="arg_value">219732<!--University: ArtsUniversity--></T>
+                      </U>
+                    </V>
+                  </L>
+                  <T n="command">university.show_brochure</T>
+                </U>
+              </V>
+            </V>
+            <T n="text">0x6ADB322E<!--String: "UB"--></T>
+            <E n="ui_request">SEND_COMMAND</E>
+          </U>
+          <U>
+            <V n="response_command" t="enabled">
+              <V n="enabled" t="literal">
+                <U n="literal">
+                  <L n="arguments">
+                    <V t="integer">
+                      <U n="integer">
+                        <T n="arg_value">219731<!--University: ScienceUniversity--></T>
+                      </U>
+                    </V>
+                  </L>
+                  <T n="command">university.show_brochure</T>
+                </U>
+              </V>
+            </V>
+            <T n="text">0x55CFB92<!--String: "Instituto Foxbury"--></T>
+            <E n="ui_request">SEND_COMMAND</E>
+          </U>
+        </L>
+      </U>
+    </U>
+  </V>
+  <U n="min_and_max_times">
+    <T n="lower_bound">0</T>
+    <T n="upper_bound">1</T>
+  </U>
+  <L n="run_tests">
+    <L>
+      <V t="sim_info">
+        <U n="sim_info">
+          <V t="specified" n="ages">
+            <L n="specified">
+              <E>TEEN</E>
+            </L>
+          </V>
+          <V t="enabled" n="npc" />
+          <V t="specified" n="species">
+            <U n="specified">
+              <L n="species">
+                <E />
+              </L>
+            </U>
+          </V>
+        </U>
+      </V>
+      <V t="university_test">
+        <U n="university_test">
+          <V n="test" t="can_apply_test">
+            <U n="can_apply_test">
+              <E n="actor">Actor</E>
+            </U>
+          </V>
+        </U>
+      </V>
+      <V t="statistic">
+        <U n="statistic">
+          <T n="stat">219667<!--Commodity: commodity_UniversityEnrollment_ApplicationTime--></T>
+          <V t="value_threshold" n="threshold">
+            <U n="value_threshold">
+              <E n="comparison">EQUAL</E>
+              <T n="value">0</T>
+            </U>
+          </V>
+        </U>
+      </V>
+      <V t="birthday_test">
+        <U n="birthday_test">
+          <T n="days_until_birthday">5</T>
+        </U>
+      </V>
+    </L>
+    <L>
+      <V t="sim_info">
+        <U n="sim_info">
+          <V t="specified" n="ages">
+            <L n="specified">
+              <E>YOUNGADULT</E>
+            </L>
+          </V>
+          <V t="enabled" n="npc" />
+          <V t="specified" n="species">
+            <U n="specified">
+              <L n="species">
+                <E />
+              </L>
+            </U>
+          </V>
+        </U>
+      </V>
+      <V t="university_test">
+        <U n="university_test">
+          <V n="test" t="can_apply_test">
+            <U n="can_apply_test">
+              <E n="actor">Actor</E>
+            </U>
+          </V>
+        </U>
+      </V>
+      <V t="statistic">
+        <U n="statistic">
+          <T n="stat">219667<!--Commodity: commodity_UniversityEnrollment_ApplicationTime--></T>
+          <V t="value_threshold" n="threshold">
+            <U n="value_threshold">
+              <E n="comparison">EQUAL</E>
+              <T n="value">0</T>
+            </U>
+          </V>
+        </U>
+      </V>
+      <V t="university_enrollment_test">
+        <U n="university_enrollment_test">
+          <V n="enrollment_status" t="enabled">
+            <U n="enabled">
+              <V n="blacklist" t="specify">
+                <U n="specify">
+                  <L n="blacklist">
+                    <E>DROPOUT</E>
+                    <E>ENROLLED</E>
+                    <E>GRADUATED</E>
+                    <E>PROBATION</E>
+                    <E>SUSPENDED</E>
+                    <E>NOT_ENROLLED</E>
+                  </L>
+                </U>
+              </V>
+            </U>
+          </V>
+          <V t="disabled" n="major" />
+        </U>
+      </V>
+      <V t="test_set_reference">
+        <T n="test_set_reference">229396<!--TestSetInstance: testSetInstance_UniversityEnrollment_NotAlumniOrEnrolled--></T>
+      </V>
+    </L>
+  </L>
+  <E n="sender_sim_info_type">INSTANCED_ALLOWED</E>
+  <V t="schedule" n="time_option">
+    <U n="schedule">
+      <L n="valid_times">
+        <U>
+          <U n="days_available">
+            <T n="0 SUNDAY">True</T>
+            <T n="1 MONDAY">True</T>
+            <T n="2 TUESDAY">True</T>
+            <T n="3 WEDNESDAY">True</T>
+            <T n="4 THURSDAY">True</T>
+            <T n="5 FRIDAY">True</T>
+            <T n="6 SATURDAY">True</T>
+          </U>
+          <T n="duration">24</T>
+        </U>
+      </L>
+    </U>
+  </V>
+</I>

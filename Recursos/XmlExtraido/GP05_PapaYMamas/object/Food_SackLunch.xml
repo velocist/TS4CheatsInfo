@@ -1,0 +1,208 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<I c="GameObject" i="object" m="objects.game_object" n="Food_SackLunch" s="160002">
+  <V n="_anim_overrides" t="enabled">
+    <U n="enabled">
+      <L n="params">
+        <U>
+          <T n="name">carryObject</T>
+          <V t="string" n="value">
+            <T n="string">sackLunch</T>
+          </V>
+        </U>
+        <U>
+          <T n="name">items</T>
+          <V t="string" n="value">
+            <T n="string">sackLunch</T>
+          </V>
+        </U>
+      </L>
+    </U>
+  </V>
+  <U n="_components">
+    <V n="carryable" t="enabled">
+      <U n="enabled">
+        <T n="prefer_owning_sim_inventory_when_not_on_home_lot">False</T>
+        <V n="put_down_tuning" t="use_default" />
+        <L n="state_based_put_down_tuning" />
+      </U>
+    </V>
+    <V t="disabled" n="consumable" />
+    <V t="disabled" n="flowing_puddle" />
+    <V t="enabled" n="focus">
+      <U n="enabled">
+        <V n="_focus_score" t="globally">
+          <U n="globally">
+            <E n="base">LOW</E>
+          </U>
+        </V>
+      </U>
+    </V>
+    <V n="inventory" t="enabled">
+      <U n="enabled">
+        <T n="_use_top_item_tooltip">True</T>
+        <E n="inventory_type">SACK_GP05</E>
+        <L n="item_state_triggers">
+          <U>
+            <T n="item_state_value">15190<!--CommodityBasedObjectStateValue: Freshness_Spoiled--></T>
+            <T n="owner_state_value">98864<!--ObjectStateValue: InventorySpoil_Spoil--></T>
+            <E n="trigger_condition">ANY</E>
+          </U>
+          <U>
+            <T n="item_state_value">15190<!--CommodityBasedObjectStateValue: Freshness_Spoiled--></T>
+            <T n="owner_state_value">98865<!--ObjectStateValue: InventorySpoil_Clean--></T>
+            <E n="trigger_condition">NONE</E>
+          </U>
+          <U>
+            <T n="item_state_value">15305<!--CommodityBasedObjectStateValue: Quality_Outstanding--></T>
+            <T n="owner_state_value">168704<!--ObjectStateValue: sackLunchQuality_High--></T>
+          </U>
+        </L>
+        <T n="score_contained_objects_for_autonomy">False</T>
+        <T n="visible">False</T>
+      </U>
+    </V>
+    <V n="inventory_item" t="enabled">
+      <U n="enabled">
+        <L n="valid_inventory_types">
+          <E>SIM</E>
+          <E>FRIDGE</E>
+          <E>SINK</E>
+          <E>TRASHCAN</E>
+          <E>RETAIL_FRIDGE</E>
+          <E>CRAFT_SALES_TABLE_EP03</E>
+          <E>STORAGE_CHEST_DORM</E>
+          <E>RETAIL_SHELF</E>
+        </L>
+      </U>
+    </V>
+    <V t="enabled" n="object_age" />
+    <V t="enabled" n="ownable_component" />
+    <V t="enabled" n="retail_component">
+      <V n="enabled" t="reference">
+        <T n="reference">115301<!--RetailComponent: retailComponent_Default_LowAppeal--></T>
+      </V>
+    </V>
+    <V n="state" t="enabled">
+      <U n="enabled">
+        <L n="state_triggers" />
+        <L n="states">
+          <U>
+            <L n="client_states">
+              <U>
+                <T n="key">238957<!--CommodityBasedObjectStateValue: checkFreshness_Values_NotChecked--></T>
+              </U>
+              <U>
+                <T n="key">238958<!--CommodityBasedObjectStateValue: checkFreshness_Values_Checked--></T>
+              </U>
+            </L>
+            <V n="default_value" t="reference">
+              <T n="reference">238957<!--CommodityBasedObjectStateValue: checkFreshness_Values_NotChecked--></T>
+            </V>
+          </U>
+          <U>
+            <V n="default_value" t="reference">
+              <T n="reference">245635<!--ObjectStateValue: consumable_Anim_EatType_Hands--></T>
+            </V>
+          </U>
+          <U>
+            <V n="default_value" t="reference">
+              <T n="reference">247616<!--ObjectStateValue: junkFoodAdd_None--></T>
+            </V>
+          </U>
+          <U>
+            <L n="client_states">
+              <U>
+                <T n="key">98864<!--ObjectStateValue: InventorySpoil_Spoil--></T>
+                <U n="value">
+                  <V n="vfx_state" t="apply_new_value">
+                    <V n="apply_new_value" t="start_vfx">
+                      <V n="start_vfx" t="single_effect">
+                        <U n="single_effect">
+                          <T n="effect_name">Obj_food_rotten</T>
+                        </U>
+                      </V>
+                    </V>
+                  </V>
+                </U>
+              </U>
+              <U>
+                <T n="key">98865<!--ObjectStateValue: InventorySpoil_Clean--></T>
+                <U n="value">
+                  <V n="vfx_state" t="apply_new_value">
+                    <V n="apply_new_value" t="no_vfx" />
+                  </V>
+                </U>
+              </U>
+            </L>
+            <V t="reference" n="default_value">
+              <T n="reference">98865<!--ObjectStateValue: InventorySpoil_Clean--></T>
+            </V>
+          </U>
+          <U>
+            <L n="client_states">
+              <U>
+                <T n="key">168703<!--ObjectStateValue: sackLunchQuality_Normal--></T>
+              </U>
+              <U>
+                <T n="key">168704<!--ObjectStateValue: sackLunchQuality_High--></T>
+              </U>
+            </L>
+            <V n="default_value" t="reference">
+              <T n="reference">168703<!--ObjectStateValue: sackLunchQuality_Normal--></T>
+            </V>
+          </U>
+          <U>
+            <L n="client_states">
+              <U>
+                <T n="key">39478<!--CommodityBasedObjectStateValue: FireState_Burn_Incinerate_Burning--></T>
+              </U>
+              <U>
+                <T n="key">39479<!--CommodityBasedObjectStateValue: FireState_Burn_Incinerate--></T>
+              </U>
+              <U>
+                <T n="key">39612<!--CommodityBasedObjectStateValue: FireState_Burn_Incinerate_Not_Burning--></T>
+              </U>
+            </L>
+            <V t="reference" n="default_value">
+              <T n="reference">39612<!--CommodityBasedObjectStateValue: FireState_Burn_Incinerate_Not_Burning--></T>
+            </V>
+          </U>
+        </L>
+      </U>
+    </V>
+    <V t="enabled" n="tooltip_component" />
+  </U>
+  <L n="_super_affordances">
+    <T>13176<!--AggregateSuperInteraction: collect_Trash_Aggregate--></T>
+    <T>13328<!--ImmediateSuperInteraction: debug_Reset--></T>
+    <T>13326<!--ImmediateSuperInteraction: debug_ObjectDestroy--></T>
+    <T>103888<!--ImmediateSuperInteraction: cheat_set_as_head--></T>
+    <T>239269<!--ImmediateSuperInteraction: cheat_SetQuality_Normal--></T>
+    <T>239268<!--ImmediateSuperInteraction: cheat_SetQuality_Outstanding--></T>
+    <T>239270<!--ImmediateSuperInteraction: cheat_SetQuality_Poor--></T>
+    <T>132402<!--ImmediateSuperInteraction: debug_Food_ToggleFoodPoisoning--></T>
+    <T>13851<!--PutDownChooserInteraction: putdownchooser--></T>
+    <T>160004<!--ObjectInInventoryPickerInteraction: sackLunch_Unpack--></T>
+    <T>29763<!--PutAwayInteraction: maid_PutAwayItem--></T>
+    <T>10028<!--ImmediateSuperInteraction: Cheat_MakeSpoiled--></T>
+    <T>99066<!--ImmediateSuperInteraction: Cheat_RefillConsumable--></T>
+    <T>99067<!--ImmediateSuperInteraction: Cheat_EmptyConsumable--></T>
+    <T>99068<!--ImmediateSuperInteraction: Cheat_MakeFresh--></T>
+  </L>
+  <T n="_transient_tuning">False</T>
+  <U n="recycling_data">
+    <L n="recycling_loot">
+      <T>239241<!--LootActions: loot_Recycler_FoodLoot_Food_MultiServing--></T>
+    </L>
+    <L n="recycling_values">
+      <U>
+        <E n="Bucks Type">RecycleBitsBucks</E>
+        <T n="Value">1</T>
+      </U>
+      <U>
+        <E n="Bucks Type">RecyclePiecesBucks</E>
+        <T n="Value">0</T>
+      </U>
+    </L>
+  </U>
+</I>

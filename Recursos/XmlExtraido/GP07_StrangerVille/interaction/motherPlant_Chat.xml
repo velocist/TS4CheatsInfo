@@ -1,0 +1,216 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<I c="SuperInteraction" i="interaction" m="interactions.base.super_interaction" n="motherPlant_Chat" s="203377">
+  <L n="_constraints">
+    <U>
+      <L n="constraints">
+        <U>
+          <V n="value" t="cone">
+            <U n="cone">
+              <T n="angle">10</T>
+              <T n="max_radius">7</T>
+              <T n="min_radius">6</T>
+            </U>
+          </V>
+        </U>
+        <U>
+          <V n="value" t="facing" />
+        </U>
+      </L>
+    </U>
+  </L>
+  <V t="enabled" n="_saveable" />
+  <T n="allow_autonomous">False</T>
+  <T n="allow_user_directed">True</T>
+  <T n="attention_cost">0.5</T>
+  <V n="basic_content" t="flexible_length">
+    <U n="flexible_length">
+      <L n="conditional_actions">
+        <V t="literal">
+          <U n="literal">
+            <L n="conditions">
+              <V t="time_based">
+                <U n="time_based">
+                  <T n="max_time">30</T>
+                  <T n="min_time">30</T>
+                </U>
+              </V>
+            </L>
+            <E n="interaction_action">EXIT_NATURALLY</E>
+          </U>
+        </V>
+        <V t="list_reference">
+          <T n="list_reference">40705<!--ExitConditionList: ExitConditionList_MotivesNearFail--></T>
+        </V>
+        <V t="literal">
+          <U n="literal">
+            <L n="conditions">
+              <V t="state_based">
+                <U n="state_based">
+                  <V n="state" t="on_trigger">
+                    <T n="on_trigger">204718<!--ObjectStateValue: motherplant_Fight_Values_FightInProgress--></T>
+                  </V>
+                </U>
+              </V>
+            </L>
+            <E n="interaction_action">EXIT_NATURALLY</E>
+          </U>
+        </V>
+      </L>
+      <V n="content" t="staging_content">
+        <U n="staging_content">
+          <U n="content_set">
+            <L n="affordance_links">
+              <T>204654<!--MixerInteraction: infectedPlant_Social_Mixers_Possessed_Chat--></T>
+              <T>204653<!--MixerInteraction: infectedPlant_Social_Mixers_Possessed_Idle--></T>
+              <T>202797<!--MixerInteraction: infectedPlant_Social_Mixer_Idle--></T>
+              <T>202800<!--MixerInteraction: InfectedPlant_Social_Mixer_SmallTalk--></T>
+            </L>
+          </U>
+        </U>
+      </V>
+      <V t="enabled" n="periodic_stat_change">
+        <U n="enabled">
+          <L n="operations">
+            <V t="statistic_change">
+              <U n="statistic_change">
+                <T n="amount">0.2</T>
+                <E n="periodic_change_behavior">APPLY_AT_INTERVAL_ONLY</E>
+                <T n="stat">16658<!--Commodity: motive_Social--></T>
+                <L n="subject">
+                  <E>Actor</E>
+                </L>
+              </U>
+            </V>
+          </L>
+        </U>
+      </V>
+      <T n="start_user_directed_inertial">False</T>
+    </U>
+  </V>
+  <L n="basic_extras">
+    <V t="loot">
+      <U n="loot">
+        <L n="loot_list">
+          <T>204733<!--LootActions: loot_MotherPlant_beginCommunications--></T>
+        </L>
+        <V t="at_beginning" n="timing" />
+      </U>
+    </V>
+    <V t="loot">
+      <U n="loot">
+        <L n="loot_list">
+          <T>205431<!--LootActions: loot_MotherPlant_EndCommunications--></T>
+          <T>206020<!--LootActions: loot_MotherPlant_Rel_Gain--></T>
+        </L>
+        <V t="at_end" n="timing">
+          <U n="at_end">
+            <E n="criticality">OnCancelOrException</E>
+          </U>
+        </V>
+      </U>
+    </V>
+  </L>
+  <T o="true" n="category" />
+  <V t="disabled" n="content_score" />
+  <T n="display_name">0xBCA78B79<!--String: "Intentar comunicarse"--></T>
+  <V n="display_name_overrides" t="testable">
+    <U n="testable">
+      <L n="overrides">
+        <U>
+          <V n="new_display_name" t="enabled">
+            <T n="enabled">0x7B55A114<!--String: "Comunicarse"--></T>
+          </V>
+          <L n="test">
+            <L>
+              <V t="mood">
+                <U n="mood">
+                  <T n="disallow">False</T>
+                  <T n="mood">201531<!--Mood: Mood_Possessed--></T>
+                </U>
+              </V>
+            </L>
+          </L>
+        </U>
+      </L>
+    </U>
+  </V>
+  <U n="display_name_text_tokens">
+    <L n="tokens">
+      <V t="participant_type">
+        <U n="participant_type">
+          <V n="objects" t="from_participant">
+            <U n="from_participant">
+              <E n="participant">Actor</E>
+            </U>
+          </V>
+        </U>
+      </V>
+      <V t="participant_type">
+        <U n="participant_type">
+          <V t="from_participant" n="objects">
+            <U n="from_participant">
+              <E n="participant">Object</E>
+            </U>
+          </V>
+        </U>
+      </V>
+    </L>
+  </U>
+  <L n="interaction_category_tags">
+    <E>Interaction_Super</E>
+    <E>Interaction_All</E>
+  </L>
+  <L n="mood_list">
+    <T>201531<!--Mood: Mood_Possessed--></T>
+  </L>
+  <U n="progress_bar_enabled">
+    <T n="bar_enabled">True</T>
+  </U>
+  <E n="scoring_priority">NORMAL</E>
+  <T n="subaction_selection_weight">2</T>
+  <E n="target_type">OBJECT</E>
+  <V t="disabled" n="test_disallow_while_running" />
+  <L n="test_globals">
+    <V t="sim_info">
+      <U n="sim_info">
+        <V t="specified" n="ages" />
+        <V t="specified" n="species">
+          <U n="specified">
+            <L n="species">
+              <E />
+            </L>
+          </U>
+        </V>
+        <E n="who">Actor</E>
+      </U>
+    </V>
+    <V t="state">
+      <U n="state">
+        <E n="operator">NOTEQUAL</E>
+        <T n="value">204485<!--ObjectStateValue: motherplant_Vitals_Values_Dead--></T>
+      </U>
+    </V>
+    <V t="situation_running_test">
+      <U n="situation_running_test">
+        <V t="enabled" n="situation_blacklist">
+          <L n="enabled">
+            <T>203311<!--MotherPlantBattleSituation: motherPlantBattleSituation--></T>
+          </L>
+        </V>
+      </U>
+    </V>
+    <V t="state">
+      <U n="state">
+        <T n="value">204719<!--ObjectStateValue: motherplant_Fight_Values_NoFightInProgress--></T>
+      </U>
+    </V>
+    <V t="test_set_reference">
+      <T n="test_set_reference">28305<!--TestSetInstance: testSet_EmotionNotMiserable--></T>
+    </V>
+    <V t="test_set_reference">
+      <T n="test_set_reference">28176<!--TestSetInstance: testSet_EmotionNotStressed--></T>
+    </V>
+  </L>
+  <T n="time_overhead">30</T>
+  <T n="visible">True</T>
+</I>

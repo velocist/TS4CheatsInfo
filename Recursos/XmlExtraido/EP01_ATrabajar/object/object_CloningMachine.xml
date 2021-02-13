@@ -1,0 +1,307 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<I c="GameObject" i="object" m="objects.game_object" n="object_CloningMachine" s="104753">
+  <U n="_components">
+    <V t="enabled" n="focus">
+      <U n="enabled">
+        <V t="globally" n="_focus_score">
+          <U n="globally">
+            <E n="base">LOW</E>
+          </U>
+        </V>
+      </U>
+    </V>
+    <V n="inventory_item" t="enabled">
+      <U n="enabled">
+        <V n="no_carry_add_to_sim_inventory_affordances" t="OVERRIDE">
+          <L n="OVERRIDE">
+            <T>113255<!--SuperInteraction: si_SwipeIntoSimInventory_slottedItem--></T>
+          </L>
+        </V>
+        <T n="skip_carry_pose">True</T>
+        <L n="valid_inventory_types">
+          <E>SIM</E>
+          <E>STORAGE_CHEST_DORM</E>
+        </L>
+      </U>
+    </V>
+    <V t="enabled" n="retail_component">
+      <V n="enabled" t="reference">
+        <T n="reference">110393<!--RetailComponent: retailComponent_Default--></T>
+      </V>
+    </V>
+    <V n="state" t="enabled">
+      <U n="enabled">
+        <L n="state_triggers">
+          <U>
+            <L n="at_states">
+              <T>15076<!--CommodityBasedObjectStateValue: Brokenness_Broken--></T>
+            </L>
+            <V n="set_states" t="Set_state_list">
+              <L n="Set_state_list">
+                <T>15080<!--ObjectStateValue: BrokenState_Broken--></T>
+              </L>
+            </V>
+          </U>
+          <U>
+            <L n="at_states">
+              <T>15078<!--CommodityBasedObjectStateValue: Brokenness_Unbroken--></T>
+            </L>
+            <V t="Set_state_list" n="set_states">
+              <L n="Set_state_list">
+                <T>15081<!--ObjectStateValue: BrokenState_Unbroken--></T>
+              </L>
+            </V>
+          </U>
+          <U>
+            <L n="at_states">
+              <T>77532<!--CommodityBasedObjectStateValue: FireState_Burn_Material_Change_Replace--></T>
+            </L>
+            <V t="Set_state_list" n="set_states">
+              <L n="Set_state_list">
+                <T>39737<!--CommodityBasedObjectStateValue: FireState_Burn_Material_Change_Not_Burning--></T>
+              </L>
+            </V>
+          </U>
+          <U>
+            <L n="at_states">
+              <T>39736<!--CommodityBasedObjectStateValue: FireState_Burn_Material_Change_Burning--></T>
+            </L>
+            <V n="set_states" t="Set_state_list">
+              <L n="Set_state_list">
+                <T>35297<!--ObjectStateValue: GenericOnOff_Off--></T>
+              </L>
+            </V>
+          </U>
+          <U>
+            <L n="at_states">
+              <T>39737<!--CommodityBasedObjectStateValue: FireState_Burn_Material_Change_Not_Burning--></T>
+            </L>
+            <V n="set_states" t="Set_state_list">
+              <L n="Set_state_list">
+                <T>35296<!--ObjectStateValue: GenericOnOff_On--></T>
+              </L>
+            </V>
+          </U>
+        </L>
+        <L n="states">
+          <U>
+            <L n="client_states">
+              <U>
+                <T n="key">15076<!--CommodityBasedObjectStateValue: Brokenness_Broken--></T>
+              </U>
+              <U>
+                <T n="key">15077<!--CommodityBasedObjectStateValue: Brokenness_Neutral--></T>
+              </U>
+              <U>
+                <T n="key">15078<!--CommodityBasedObjectStateValue: Brokenness_Unbroken--></T>
+              </U>
+              <U>
+                <T n="key">97754<!--CommodityBasedObjectStateValue: Brokenness_Broken_Sabotage--></T>
+              </U>
+            </L>
+            <V t="reference" n="default_value">
+              <T n="reference">15078<!--CommodityBasedObjectStateValue: Brokenness_Unbroken--></T>
+            </V>
+          </U>
+          <U>
+            <L n="client_states">
+              <U>
+                <T n="key">15080<!--ObjectStateValue: BrokenState_Broken--></T>
+                <U n="value">
+                  <V n="vfx_state" t="apply_new_value">
+                    <V n="apply_new_value" t="start_vfx">
+                      <V n="start_vfx" t="single_effect">
+                        <U n="single_effect">
+                          <T n="effect_name">EP1_Obj_cloning_machine_broken</T>
+                          <V t="Slot" n="joint_name">
+                            <T n="Slot">_FX_1</T>
+                          </V>
+                        </U>
+                      </V>
+                    </V>
+                  </V>
+                </U>
+              </U>
+              <U>
+                <T n="key">15081<!--ObjectStateValue: BrokenState_Unbroken--></T>
+                <U n="value">
+                  <V t="apply_new_value" n="vfx_state" />
+                </U>
+              </U>
+            </L>
+            <V t="reference" n="default_value">
+              <T n="reference">15081<!--ObjectStateValue: BrokenState_Unbroken--></T>
+            </V>
+          </U>
+          <U>
+            <V t="reference" n="default_value">
+              <T n="reference">111993<!--CommodityBasedObjectStateValue: osv_InventionConstructorUpgrade_NotStarted--></T>
+            </V>
+          </U>
+          <U>
+            <L n="client_states">
+              <U>
+                <T n="key">39611<!--CommodityBasedObjectStateValue: FireState_Burn_Material_Change--></T>
+              </U>
+              <U>
+                <T n="key">39736<!--CommodityBasedObjectStateValue: FireState_Burn_Material_Change_Burning--></T>
+              </U>
+              <U>
+                <T n="key">39737<!--CommodityBasedObjectStateValue: FireState_Burn_Material_Change_Not_Burning--></T>
+              </U>
+              <U>
+                <T n="key">77532<!--CommodityBasedObjectStateValue: FireState_Burn_Material_Change_Replace--></T>
+              </U>
+            </L>
+            <V t="reference" n="default_value">
+              <T n="reference">39737<!--CommodityBasedObjectStateValue: FireState_Burn_Material_Change_Not_Burning--></T>
+            </V>
+          </U>
+          <U>
+            <L n="client_states">
+              <U>
+                <T n="key">185122<!--ObjectStateValue: object_Rain_Outside--></T>
+              </U>
+              <U>
+                <T n="key">185125<!--ObjectStateValue: object_Rain_Inside--></T>
+              </U>
+            </L>
+            <V n="default_value" t="reference">
+              <T n="reference">185125<!--ObjectStateValue: object_Rain_Inside--></T>
+            </V>
+          </U>
+          <U>
+            <L n="client_states">
+              <U>
+                <T n="key">35296<!--ObjectStateValue: GenericOnOff_On--></T>
+                <U n="value">
+                  <V n="vfx_state" t="apply_new_value">
+                    <V n="apply_new_value" t="start_vfx">
+                      <V n="start_vfx" t="single_effect">
+                        <U n="single_effect">
+                          <T n="effect_name">ep1_cloning_machine_sim_clone_placement</T>
+                          <V t="Slot" n="joint_name">
+                            <T n="Slot">_FX_2</T>
+                          </V>
+                        </U>
+                      </V>
+                    </V>
+                  </V>
+                </U>
+              </U>
+              <U>
+                <T n="key">35297<!--ObjectStateValue: GenericOnOff_Off--></T>
+                <U n="value">
+                  <V t="apply_new_value" n="vfx_state">
+                    <V n="apply_new_value" t="no_vfx" />
+                  </V>
+                </U>
+              </U>
+            </L>
+            <V t="reference" n="default_value">
+              <T n="reference">35296<!--ObjectStateValue: GenericOnOff_On--></T>
+            </V>
+          </U>
+          <U>
+            <L n="client_states">
+              <U>
+                <T n="key">98745<!--ObjectStateValue: GenericFX_On--></T>
+                <U n="value">
+                  <V n="vfx_state" t="apply_new_value">
+                    <V n="apply_new_value" t="start_vfx">
+                      <V n="start_vfx" t="single_effect">
+                        <U n="single_effect">
+                          <T n="effect_name">ep1_cloning_machine_object_clone_placement</T>
+                          <V t="Slot" n="joint_name">
+                            <T n="Slot">_FX_2</T>
+                          </V>
+                        </U>
+                      </V>
+                    </V>
+                  </V>
+                </U>
+              </U>
+              <U>
+                <T n="key">98746<!--ObjectStateValue: GenericFX_Off--></T>
+                <U n="value">
+                  <V t="apply_new_value" n="vfx_state" />
+                </U>
+              </U>
+            </L>
+            <V t="reference" n="default_value">
+              <T n="reference">98746<!--ObjectStateValue: GenericFX_Off--></T>
+            </V>
+          </U>
+        </L>
+      </U>
+    </V>
+    <V t="enabled" n="tooltip_component" />
+    <V t="enabled" n="weather_aware_component">
+      <U n="enabled">
+        <L n="outside_loot">
+          <U>
+            <E n="key">AnyRain</E>
+            <U n="value">
+              <L n="end_loot">
+                <T>185163<!--LootActions: loot_Wetness_Object_Rain_End--></T>
+              </L>
+              <L n="start_loot">
+                <T>184964<!--LootActions: Loot_Wetness_Object_Start--></T>
+              </L>
+            </U>
+          </U>
+        </L>
+      </U>
+    </V>
+  </U>
+  <L n="_super_affordances">
+    <T>13983<!--StandSuperInteraction: sim-stand--></T>
+    <T>23835<!--StandSuperInteraction: sim-standExclusive--></T>
+    <T>107341<!--SimPickerInteraction: CloningMachine_CloneSim_simPicker--></T>
+    <T>107351<!--SuperInteraction: cloningMachine_CloneSim_Actor_RemoteTurnOn--></T>
+    <T>13328<!--ImmediateSuperInteraction: debug_Reset--></T>
+    <T>13326<!--ImmediateSuperInteraction: debug_ObjectDestroy--></T>
+    <T>103888<!--ImmediateSuperInteraction: cheat_set_as_head--></T>
+    <T>107344<!--SuperInteraction: cloningMachine_CloneSim_Picked_continuation--></T>
+    <T>110558<!--SuperInteraction: cloningMachine_CloneObject--></T>
+    <T>109298<!--SuperInteraction: cloningMachine_View--></T>
+    <T>107367<!--SuperInteraction: object_Repair_Electronic_CloningMachine--></T>
+    <T>107739<!--SuperInteraction: si_CareerScientist_Tinker_StereoTV--></T>
+    <T>99087<!--ImmediateSuperInteraction: object_ReplaceBrokenObject--></T>
+    <T>102258<!--SuperInteraction: Ghost_Possess--></T>
+    <T>168502<!--SuperInteraction: Ghost_Pet_Possess--></T>
+    <T>74457<!--ImmediateSuperInteraction: fire_ReplaceBurntObject--></T>
+    <T>111970<!--SuperInteraction: cloningMachine_Upgrade--></T>
+    <T>116484<!--SuperInteraction: debug_cloningMachine_CloneSelf--></T>
+    <T>129510<!--SuperInteraction: object_Hire_Repair_Service--></T>
+    <T>168614<!--SuperInteraction: cloningMachine_Upgrade_CompletedDisplay--></T>
+    <T>111319<!--ImmediateSuperInteraction: debugObjectUpgrade_CloningMachine_CloneSim--></T>
+    <T>13319<!--ImmediateSuperInteraction: debug_BreakObject--></T>
+  </L>
+  <U n="recycling_data">
+    <L n="recycling_values">
+      <U>
+        <E n="Bucks Type">RecycleBitsBucks</E>
+        <T n="Value">0.5</T>
+      </U>
+      <U>
+        <E n="Bucks Type">RecyclePiecesBucks</E>
+        <T n="Value">0.5</T>
+      </U>
+    </L>
+  </U>
+  <L n="slot_cost_modifiers">
+    <U>
+      <T n="key">slot_CloningMachineSource</T>
+      <T n="value">1000</T>
+    </U>
+    <U>
+      <T n="key">slot_CloningMachineClone</T>
+      <T n="value">1000</T>
+    </U>
+    <U>
+      <T n="key">slot_CloningMachineSim</T>
+      <T n="value">1000</T>
+    </U>
+  </L>
+</I>

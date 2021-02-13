@@ -1,0 +1,172 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<I c="SuperInteraction" i="interaction" m="interactions.base.super_interaction" n="batuu_Mission_SuperInteraction_GoTo_Kylo" s="241799">
+  <L n="_constraints">
+    <U>
+      <L n="constraints">
+        <U />
+      </L>
+    </U>
+  </L>
+  <V t="enabled" n="_saveable" />
+  <L n="_static_commodities">
+    <U>
+      <T n="static_commodity">241807<!--StaticCommodity: staticCommodity_Batuu_GoTo_Kylo--></T>
+    </U>
+  </L>
+  <T n="attention_cost">0.5</T>
+  <V t="one_shot" n="basic_content" />
+  <L n="basic_extras">
+    <V t="create_situation">
+      <U n="create_situation">
+        <V n="create_situation" t="situation_start">
+          <U n="situation_start">
+            <T n="invite_actor">False</T>
+            <L n="invite_participants">
+              <U>
+                <E n="participants_to_invite">PickedSim</E>
+                <V t="specify_job" n="invite_to_job">
+                  <L n="specify_job">
+                    <T>241796<!--SituationJob: job_Batuu_First_Order_Officer_Suspected_Spy--></T>
+                  </L>
+                </V>
+              </U>
+            </L>
+            <T n="invite_picked_sims">False</T>
+            <T n="invite_target_sim">False</T>
+            <T n="situation">241795<!--CustomStatesSituation: batuu_Missions_CustomStatesSituation_Deliver_Suspected_Spy--></T>
+            <T n="user_facing">False</T>
+          </U>
+        </V>
+        <U n="success_chance">
+          <L n="multipliers">
+            <U>
+              <T n="multiplier">0</T>
+              <L n="tests">
+                <L>
+                  <V t="situation_running_test">
+                    <U n="situation_running_test">
+                      <V n="situation_whitelist" t="enabled">
+                        <L n="enabled">
+                          <T>241795<!--CustomStatesSituation: batuu_Missions_CustomStatesSituation_Deliver_Suspected_Spy--></T>
+                        </L>
+                      </V>
+                    </U>
+                  </V>
+                </L>
+              </L>
+            </U>
+          </L>
+        </U>
+      </U>
+    </V>
+  </L>
+  <V t="enabled" n="content_score">
+    <U n="enabled">
+      <T n="base_score">999999999</T>
+    </U>
+  </V>
+  <T n="display_name">0xC4E59741<!--String: "Reunirse con Kylo Ren"--></T>
+  <U n="display_name_text_tokens">
+    <L n="tokens">
+      <V t="participant_type">
+        <U n="participant_type">
+          <V n="objects" t="from_participant">
+            <U n="from_participant">
+              <E n="participant">Actor</E>
+            </U>
+          </V>
+        </U>
+      </V>
+      <V t="participant_type">
+        <U n="participant_type">
+          <V t="from_participant" n="objects">
+            <U n="from_participant">
+              <E n="participant">Object</E>
+            </U>
+          </V>
+        </U>
+      </V>
+    </L>
+  </U>
+  <L n="interaction_category_tags">
+    <E>Interaction_Super</E>
+    <E>Interaction_All</E>
+  </L>
+  <V n="outcome" t="test_based">
+    <U n="test_based">
+      <L n="tested_outcomes">
+        <U>
+          <L n="potential_outcomes">
+            <U>
+              <U n="outcome">
+                <L n="continuation">
+                  <U>
+                    <E n="actor">TargetSim</E>
+                    <T n="affordance">241979<!--SocialSuperInteraction: social_Batuu_Missions_Kylo_Read_Mind--></T>
+                    <E n="target">Actor</E>
+                  </U>
+                </L>
+              </U>
+            </U>
+          </L>
+          <L n="tests">
+            <L>
+              <V t="situation_job_test">
+                <U n="situation_job_test">
+                  <L n="situation_jobs">
+                    <T>248933<!--SituationJob: walkby_jobs_Batuu_FirstOrder_NotSpy_Officer--></T>
+                    <T>241696<!--SituationJob: walkby_jobs_Batuu_FirstOrder_Officer_Resistance_Spy--></T>
+                  </L>
+                </U>
+              </V>
+            </L>
+          </L>
+        </U>
+        <U>
+          <L n="potential_outcomes">
+            <U>
+              <U n="outcome">
+                <L n="continuation">
+                  <U>
+                    <T n="affordance">242236<!--SuperInteraction: batuu_Mission_SuperInteraction_Wait_By_Kylo--></T>
+                  </U>
+                </L>
+              </U>
+            </U>
+          </L>
+          <L n="tests">
+            <L>
+              <V t="situation_job_test">
+                <U n="situation_job_test">
+                  <L n="situation_jobs">
+                    <T>242231<!--SituationJob: job_Batuu_Delivering_Spy--></T>
+                  </L>
+                </U>
+              </V>
+            </L>
+          </L>
+        </U>
+      </L>
+    </U>
+  </V>
+  <E n="scoring_priority">NORMAL</E>
+  <T n="subaction_selection_weight">1</T>
+  <V t="enabled" n="super_affordance_klobberers" />
+  <E n="target_type">OBJECT</E>
+  <L n="test_globals">
+    <V t="sim_info">
+      <U n="sim_info">
+        <V t="specified" n="ages" />
+        <V t="specified" n="species">
+          <U n="specified">
+            <L n="species">
+              <E />
+            </L>
+          </U>
+        </V>
+        <E n="who">Actor</E>
+      </U>
+    </V>
+  </L>
+  <T n="time_overhead">30</T>
+</I>

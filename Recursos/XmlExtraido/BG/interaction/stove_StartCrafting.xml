@@ -1,0 +1,542 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<I c="StartCraftingSuperInteraction" i="interaction" m="crafting.crafting_interactions" n="stove_StartCrafting" s="14344">
+  <V t="participant" n="_icon">
+    <U n="participant">
+      <L n="participant_type">
+        <E>Object</E>
+      </L>
+    </U>
+  </V>
+  <V t="disabled" n="_saveable" />
+  <V t="no_content" n="basic_content" />
+  <U n="basic_reserve_object">
+    <L n="subject_list">
+      <U>
+        <V t="basic" n="reserve_type" />
+        <L n="subject">
+          <E>CraftingObject</E>
+          <E>CarriedObject</E>
+        </L>
+      </U>
+    </L>
+  </U>
+  <V t="disabled" n="content_score" />
+  <T n="display_name">0x922C300A<!--String: "Preparar comida"--></T>
+  <V n="display_name_overrides" t="testable">
+    <U n="testable">
+      <L n="overrides">
+        <U>
+          <V n="new_display_name" t="enabled">
+            <T n="enabled">0x922C300A<!--String: "Preparar comida"--></T>
+          </V>
+          <V t="enabled" n="new_display_tooltip">
+            <T n="enabled">0x457F512A<!--String: "¡Estar inspirado ayuda con la cocina!"--></T>
+          </V>
+          <L n="test">
+            <L>
+              <V t="mood">
+                <U n="mood">
+                  <T n="mood">14641<!--Mood: Mood_Inspired--></T>
+                </U>
+              </V>
+            </L>
+          </L>
+        </U>
+        <U>
+          <V n="new_display_name" t="enabled">
+            <T n="enabled">0x4208921D<!--String: "Preparar manduca"--></T>
+          </V>
+          <V t="enabled" n="new_pie_menu_icon">
+            <V n="enabled" t="tradition" />
+          </V>
+          <L n="test">
+            <L>
+              <V t="buff">
+                <U n="buff">
+                  <V n="whitelist" t="enabled">
+                    <L n="enabled">
+                      <T>182293<!--Buff: buff_SurpriseHoliday_PirateDay_Autonomy--></T>
+                    </L>
+                  </V>
+                </U>
+              </V>
+            </L>
+          </L>
+        </U>
+      </L>
+    </U>
+  </V>
+  <U n="display_name_text_tokens">
+    <L n="tokens">
+      <V t="participant_type">
+        <U n="participant_type">
+          <V t="from_participant" n="objects">
+            <U n="from_participant">
+              <E n="participant">Actor</E>
+            </U>
+          </V>
+        </U>
+      </V>
+      <V t="participant_type">
+        <U n="participant_type">
+          <V t="from_participant" n="objects">
+            <U n="from_participant">
+              <E n="participant">Object</E>
+            </U>
+          </V>
+        </U>
+      </V>
+    </L>
+  </U>
+  <L n="interaction_category_tags">
+    <E>Interaction_Cook</E>
+    <E>Interaction_Skill_HomestyleCooking</E>
+  </L>
+  <V t="recipe_picker" n="picker_dialog">
+    <U n="recipe_picker">
+      <V t="enabled" n="column_sort_priorities">
+        <L n="enabled">
+          <T>1</T>
+        </L>
+      </V>
+      <L n="picker_columns">
+        <U>
+          <V t="enabled" n="label">
+            <T n="enabled">0xB39914F3<!--String: "Nombre"--></T>
+          </V>
+          <T n="width">200</T>
+        </U>
+        <U>
+          <E n="column_data_name">SKILL_LEVEL</E>
+          <E n="column_type">TEXT</E>
+          <V n="label" t="enabled">
+            <T n="enabled">0x2590CCB1<!--String: "Nivel"--></T>
+          </V>
+          <T n="width">80</T>
+        </U>
+        <U>
+          <E n="column_data_name">PRICE</E>
+          <E n="column_type">TEXT</E>
+          <V t="enabled" n="label">
+            <T n="enabled">0x413F43F1<!--String: "Precio"--></T>
+          </V>
+          <T n="width">96</T>
+        </U>
+        <U>
+          <E n="column_data_name">INGREDIENTS</E>
+          <E n="column_icon_name">INGREDIENTS</E>
+          <E n="column_type">TEXT</E>
+          <V t="enabled" n="label">
+            <T n="enabled">0xD4B20BFF<!--String: "Ingredientes"--></T>
+          </V>
+          <T n="sortable">False</T>
+          <T n="width">205</T>
+        </U>
+      </L>
+      <V t="enabled" n="skill">
+        <T n="enabled">16705<!--Skill: statistic_Skill_AdultMajor_HomestyleCooking--></T>
+      </V>
+    </U>
+  </V>
+  <T n="pie_menu_priority">9</T>
+  <U n="price_multiplier">
+    <L n="multipliers">
+      <U>
+        <T n="multiplier">2</T>
+        <L n="tests">
+          <L>
+            <V t="global_policy_state">
+              <U n="global_policy_state">
+                <E n="progress_state">COMPLETE</E>
+                <V n="test_type" t="specific_policy">
+                  <U n="specific_policy">
+                    <L n="policies">
+                      <T>207010<!--GlobalPolicy: globalPolicy_Conservationist_Food_SupportOrganicProduce--></T>
+                    </L>
+                  </U>
+                </V>
+              </U>
+            </V>
+          </L>
+        </L>
+      </U>
+      <U>
+        <T n="multiplier">0.7</T>
+        <L n="tests">
+          <L>
+            <V t="zone">
+              <U n="zone">
+                <U n="zone_tests">
+                  <V n="zone_modifiers" t="enabled">
+                    <U n="enabled">
+                      <V n="whitelist" t="specify">
+                        <U n="specify">
+                          <L n="whitelist">
+                            <T>225543<!--ZoneModifier: zoneModifier_lotTrait_UniversityStudentHangout--></T>
+                          </L>
+                        </U>
+                      </V>
+                    </U>
+                  </V>
+                </U>
+              </U>
+            </V>
+          </L>
+        </L>
+      </U>
+    </L>
+  </U>
+  <U n="progress_bar_enabled">
+    <T n="bar_enabled">False</T>
+  </U>
+  <L n="recipes">
+    <T>15759<!--Recipe: recipe_Food_Homestyle_FrenchToast-Single--></T>
+    <T>15758<!--Recipe: recipe_Food_Homestyle_FrenchToast-Medium--></T>
+    <T>15757<!--Recipe: recipe_Food_Homestyle_FrenchToast-Large--></T>
+    <T>15772<!--Recipe: recipe_Food_Homestyle_RoastChicken-Large--></T>
+    <T>15776<!--Recipe: recipe_Food_Homestyle_Spaghetti-Single--></T>
+    <T>15775<!--Recipe: recipe_Food_Homestyle_Spaghetti-Medium--></T>
+    <T>15774<!--Recipe: recipe_Food_Homestyle_Spaghetti-Large--></T>
+    <T>32440<!--Recipe: recipe_Food_Homestyle_EggsToast-Single--></T>
+    <T>32462<!--Recipe: recipe_Food_Homestyle_EggsToast-Large--></T>
+    <T>32461<!--Recipe: recipe_Food_Homestyle_EggsToast-Medium--></T>
+    <T>15765<!--Recipe: recipe_Food_Homestyle_GrilledCheese-Single--></T>
+    <T>15764<!--Recipe: recipe_Food_Homestyle_GrilledCheese-Medium--></T>
+    <T>15763<!--Recipe: recipe_Food_Homestyle_GrilledCheese-Large--></T>
+    <T>15749<!--Recipe: recipe_Food_Homestyle_Cake-Large--></T>
+    <T>97467<!--Recipe: recipe_Food_Homestyle_CakeChocolate-Large--></T>
+    <T>97470<!--Recipe: recipe_Food_Homestyle_CakeStrawberry-Large--></T>
+    <T>97473<!--Recipe: recipe_Food_Homestyle_CakeBlue-Large--></T>
+    <T>76032<!--Recipe: recipe_Food_Homestyle_Fish&Chips-Single--></T>
+    <T>76040<!--Recipe: recipe_Food_Homestyle_BlackenedBass-Large--></T>
+    <T>76039<!--Recipe: recipe_Food_Homestyle_BlackenedBass-Medium--></T>
+    <T>15771<!--Recipe: recipe_Food_Homestyle_Pancakes-Single--></T>
+    <T>15770<!--Recipe: recipe_Food_Homestyle_Pancakes-Medium--></T>
+    <T>15769<!--Recipe: recipe_Food_Homestyle_Pancakes-Large--></T>
+    <T>15756<!--Recipe: recipe_Food_Homestyle_Chili-Single--></T>
+    <T>15755<!--Recipe: recipe_Food_Homestyle_Chili-Medium--></T>
+    <T>15754<!--Recipe: recipe_Food_Homestyle_Chili-Large--></T>
+    <T>15768<!--Recipe: recipe_Food_Homestyle_Omelet-Single--></T>
+    <T>15767<!--Recipe: recipe_Food_Homestyle_Omelet-Medium--></T>
+    <T>15766<!--Recipe: recipe_Food_Homestyle_Omelet-Large--></T>
+    <T>15744<!--Recipe: recipe_Food_Homestyle_ApplePie-Large--></T>
+    <T>15753<!--Recipe: recipe_Food_Homestyle_ChickenStirFry-Single--></T>
+    <T>15752<!--Recipe: recipe_Food_Homestyle_ChickenStirFry-Medium--></T>
+    <T>15751<!--Recipe: recipe_Food_Homestyle_ChickenStirFry-Large--></T>
+    <T>33396<!--Recipe: recipe_Food_Homestyle_ScrambledEggs-Single--></T>
+    <T>33408<!--Recipe: recipe_Food_Homestyle_ScrambledEggs-Large--></T>
+    <T>33407<!--Recipe: recipe_Food_Homestyle_ScrambledEggs-Medium--></T>
+    <T>76123<!--Recipe: recipe_Food_Homestyle_PanFriedTilapia-Single--></T>
+    <T>76131<!--Recipe: recipe_Food_Homestyle_FishTacos-Large--></T>
+    <T>33418<!--Recipe: recipe_Food_Homestyle_CookieChocolateChip-Large--></T>
+    <T>33439<!--Recipe: recipe_Food_Homestyle_MacNCheese-Single--></T>
+    <T>33441<!--Recipe: recipe_Food_Homestyle_MacNCheese-Medium--></T>
+    <T>33442<!--Recipe: recipe_Food_Homestyle_MacNCheese-Large--></T>
+    <T>33452<!--Recipe: recipe_Food_Homestyle_CasseroleTuna-Single--></T>
+    <T>33454<!--Recipe: recipe_Food_Homestyle_CasseroleTuna-Medium--></T>
+    <T>33461<!--Recipe: recipe_Food_Homestyle_CasseroleTuna-Large--></T>
+    <T>33823<!--Recipe: recipe_Food_Homestyle_CakeSignature-Large--></T>
+    <T>76038<!--Recipe: recipe_Food_Homestyle_BlackenedBass-Single--></T>
+    <T>76041<!--Recipe: recipe_Food_Homestyle_Fish&Chips-Medium--></T>
+    <T>76042<!--Recipe: recipe_Food_Homestyle_Fish&Chips-Large--></T>
+    <T>76121<!--Recipe: recipe_Food_Homestyle_Cioppino-Large--></T>
+    <T>76126<!--Recipe: recipe_Food_Homestyle_PanFriedTilapia-Medium--></T>
+    <T>76125<!--Recipe: recipe_Food_Homestyle_PanFriedTilapia-Large--></T>
+    <T>76130<!--Recipe: recipe_Food_Homestyle_FishTacos-Medium--></T>
+    <T>76129<!--Recipe: recipe_Food_Homestyle_FishTacos-Single--></T>
+    <T>118510<!--Recipe: recipe_Food_Homestyle_CarobCake_Large--></T>
+    <T>126601<!--Recipe: recipe_Food_Homestyle_CorpseCake-Large--></T>
+    <T>126594<!--Recipe: recipe_Food_Homestyle_SpookyCookies-Large--></T>
+    <T>126642<!--Recipe: recipe_Food_Homestyle_CheeseEyeballs-Large--></T>
+    <T>130669<!--Recipe: recipe_Food_Homestyle_ClamChowder-Large--></T>
+    <T>130668<!--Recipe: recipe_Food_Homestyle_ClamChowder-Medium--></T>
+    <T>130667<!--Recipe: recipe_Food_Homestyle_ClamChowder-Small--></T>
+    <T>153926<!--Recipe: recipe_Food_Homestyle_PanDeMuerto_Single--></T>
+    <T>153927<!--Recipe: recipe_Food_Homestyle_PanDeMuerto_Large--></T>
+    <T>135955<!--Recipe: recipe_Food_CulturalFood_BanhMi_Large--></T>
+    <T>135954<!--Recipe: recipe_Food_CulturalFood_BanhMi_Medium--></T>
+    <T>35500<!--Recipe: recipe_Food_Homestyle_CakeHamburger-Large--></T>
+    <T>135953<!--Recipe: recipe_Food_CulturalFood_BanhMi_Single--></T>
+    <T>130675<!--Recipe: recipe_Food_Homestyle_ItalianMeatballs-Large--></T>
+    <T>130674<!--Recipe: recipe_Food_Homestyle_ItalianMeatballs-Medium--></T>
+    <T>130673<!--Recipe: recipe_Food_Homestyle_ItalianMeatballs-Small--></T>
+    <T>130677<!--Recipe: recipe_Food_Homestyle_Minestrone-Medium--></T>
+    <T>130678<!--Recipe: recipe_Food_Homestyle_Minestrone-Large--></T>
+    <T>130676<!--Recipe: recipe_Food_Homestyle_Minestrone-Small--></T>
+    <T>133295<!--Recipe: recipe_Food_CulturalFood_BhelPuri_Large--></T>
+    <T>133296<!--Recipe: recipe_Food_CulturalFood_BhelPuri_Medium--></T>
+    <T>35582<!--Recipe: recipe_Food_Homestyle_CasseroleTaco-Large--></T>
+    <T>133297<!--Recipe: recipe_Food_CulturalFood_BhelPuri_Single--></T>
+    <T>133300<!--Recipe: recipe_Food_CulturalFood_Brochette_Large--></T>
+    <T>133299<!--Recipe: recipe_Food_CulturalFood_Brochette_Medium--></T>
+    <T>133298<!--Recipe: recipe_Food_CulturalFood_Brochette_Single--></T>
+    <T>135962<!--Recipe: recipe_Food_CulturalFood_Burrito_BeanAndCheese_Large--></T>
+    <T>135961<!--Recipe: recipe_Food_CulturalFood_Burrito_BeanAndCheese_Medium--></T>
+    <T>135960<!--Recipe: recipe_Food_CulturalFood_Burrito_BeanAndCheese_Single--></T>
+    <T>135965<!--Recipe: recipe_Food_CulturalFood_Burrito_Chicken_Large--></T>
+    <T>135964<!--Recipe: recipe_Food_CulturalFood_Burrito_Chicken_Medium--></T>
+    <T>35583<!--Recipe: recipe_Food_Homestyle_CasseroleTaco-Medium--></T>
+    <T>135963<!--Recipe: recipe_Food_CulturalFood_Burrito_Chicken_Single--></T>
+    <T>135969<!--Recipe: recipe_Food_CulturalFood_Burrito_VeggieInSpinachWrap_Large--></T>
+    <T>135968<!--Recipe: recipe_Food_CulturalFood_Burrito_VeggieInSpinachWrap_Medium--></T>
+    <T>135967<!--Recipe: recipe_Food_CulturalFood_Burrito_VeggieInSpinachWrap_Single--></T>
+    <T>135972<!--Recipe: recipe_Food_CulturalFood_Burrito_VeggieInTomatoWrap_Large--></T>
+    <T>135971<!--Recipe: recipe_Food_CulturalFood_Burrito_VeggieInTomatoWrap_Medium--></T>
+    <T>135970<!--Recipe: recipe_Food_CulturalFood_Burrito_VeggieInTomatoWrap_Single--></T>
+    <T>133303<!--Recipe: recipe_Food_CulturalFood_Curry_Large--></T>
+    <T>133302<!--Recipe: recipe_Food_CulturalFood_Curry_Medium--></T>
+    <T>35584<!--Recipe: recipe_Food_Homestyle_CasseroleTaco-Single--></T>
+    <T>133301<!--Recipe: recipe_Food_CulturalFood_Curry_Single--></T>
+    <T>133306<!--Recipe: recipe_Food_CulturalFood_Dango_Large--></T>
+    <T>133305<!--Recipe: recipe_Food_CulturalFood_Dango_Medium--></T>
+    <T>133304<!--Recipe: recipe_Food_CulturalFood_Dango_Single--></T>
+    <T>135975<!--Recipe: recipe_Food_CulturalFood_EggRoll_Large--></T>
+    <T>135974<!--Recipe: recipe_Food_CulturalFood_EggRoll_Medium--></T>
+    <T>135973<!--Recipe: recipe_Food_CulturalFood_EggRoll_Single--></T>
+    <T>135978<!--Recipe: recipe_Food_CulturalFood_Empanada_Large--></T>
+    <T>135977<!--Recipe: recipe_Food_CulturalFood_Empanada_Medium--></T>
+    <T>35721<!--Recipe: recipe_Food_Homestyle_BlackWhiteCookie-Large--></T>
+    <T>135976<!--Recipe: recipe_Food_CulturalFood_Empanada_Single--></T>
+    <T>135982<!--Recipe: recipe_Food_CulturalFood_Lumpia_Large--></T>
+    <T>135981<!--Recipe: recipe_Food_CulturalFood_Lumpia_Medium--></T>
+    <T>135980<!--Recipe: recipe_Food_CulturalFood_Lumpia_Single--></T>
+    <T>135988<!--Recipe: recipe_Food_CulturalFood_MaoPaoTofu_Large--></T>
+    <T>135987<!--Recipe: recipe_Food_CulturalFood_MaoPaoTofu_Medium--></T>
+    <T>135986<!--Recipe: recipe_Food_CulturalFood_MaoPaoTofu_Single--></T>
+    <T>133309<!--Recipe: recipe_Food_CulturalFood_Merguez_Large--></T>
+    <T>133308<!--Recipe: recipe_Food_CulturalFood_Merguez_Medium--></T>
+    <T>40806<!--Recipe: recipe_Food_Homestyle_CookieHeart-Large--></T>
+    <T>133307<!--Recipe: recipe_Food_CulturalFood_Merguez_Single--></T>
+    <T>133312<!--Recipe: recipe_Food_CulturalFood_Nigiri_Large--></T>
+    <T>133311<!--Recipe: recipe_Food_CulturalFood_Nigiri_Medium--></T>
+    <T>133310<!--Recipe: recipe_Food_CulturalFood_Nigiri_Single--></T>
+    <T>135997<!--Recipe: recipe_Food_CulturalFood_Pho_Large--></T>
+    <T>135996<!--Recipe: recipe_Food_CulturalFood_Pho_Medium--></T>
+    <T>135995<!--Recipe: recipe_Food_CulturalFood_Pho_Single--></T>
+    <T>136000<!--Recipe: recipe_Food_CulturalFood_PorkAdobo_Large--></T>
+    <T>135999<!--Recipe: recipe_Food_CulturalFood_PorkAdobo_Medium--></T>
+    <T>40799<!--Recipe: recipe_Food_Homestyle_GummyBearPancakes-Large--></T>
+    <T>135998<!--Recipe: recipe_Food_CulturalFood_PorkAdobo_Single--></T>
+    <T>133423<!--Recipe: recipe_Food_CulturalFood_PufferfishNigiri_Large--></T>
+    <T>133422<!--Recipe: recipe_Food_CulturalFood_PufferfishNigiri_Medium--></T>
+    <T>133420<!--Recipe: recipe_Food_CulturalFood_PufferfishNigiri_Single--></T>
+    <T>133315<!--Recipe: recipe_Food_CulturalFood_Ramen_Large--></T>
+    <T>133314<!--Recipe: recipe_Food_CulturalFood_Ramen_Medium--></T>
+    <T>133313<!--Recipe: recipe_Food_CulturalFood_Ramen_Single--></T>
+    <T>133318<!--Recipe: recipe_Food_CulturalFood_Samosa_Large--></T>
+    <T>133317<!--Recipe: recipe_Food_CulturalFood_Samosa_Medium--></T>
+    <T>40788<!--Recipe: recipe_Food_Homestyle_GummyBearPancakes-Medium--></T>
+    <T>136001<!--Recipe: recipe_Food_CulturalFood_Siapao_Single--></T>
+    <T>136003<!--Recipe: recipe_Food_CulturalFood_Siapao_Large--></T>
+    <T>136002<!--Recipe: recipe_Food_CulturalFood_Siapao_Medium--></T>
+    <T>133316<!--Recipe: recipe_Food_CulturalFood_Samosa_Single--></T>
+    <T>136006<!--Recipe: recipe_Food_CulturalFood_SummerRoll_Large--></T>
+    <T>136005<!--Recipe: recipe_Food_CulturalFood_SummerRoll_Medium--></T>
+    <T>136004<!--Recipe: recipe_Food_CulturalFood_SummerRoll_Single--></T>
+    <T>136009<!--Recipe: recipe_Food_CulturalFood_SweetAndSourEggplant_Large--></T>
+    <T>136008<!--Recipe: recipe_Food_CulturalFood_SweetAndSourEggplant_Medium--></T>
+    <T>40771<!--Recipe: recipe_Food_Homestyle_GummyBearPancakes-Single--></T>
+    <T>136007<!--Recipe: recipe_Food_CulturalFood_SweetAndSourEggplant_Single--></T>
+    <T>136012<!--Recipe: recipe_Food_CulturalFood_SweetAndSourPork_Large--></T>
+    <T>136011<!--Recipe: recipe_Food_CulturalFood_SweetAndSourPork_Medium--></T>
+    <T>136010<!--Recipe: recipe_Food_CulturalFood_SweetAndSourPork_Single--></T>
+    <T>133321<!--Recipe: recipe_Food_CulturalFood_Tajine_Large--></T>
+    <T>133320<!--Recipe: recipe_Food_CulturalFood_Tajine_Medium--></T>
+    <T>133319<!--Recipe: recipe_Food_CulturalFood_Tajine_Single--></T>
+    <T>136015<!--Recipe: recipe_Food_CulturalFood_Taquito_Large--></T>
+    <T>136014<!--Recipe: recipe_Food_CulturalFood_Taquito_Medium--></T>
+    <T>40839<!--Recipe: Recipe_Food_Homestyle_ProteinPlate-Large--></T>
+    <T>136013<!--Recipe: recipe_Food_CulturalFood_Taquito_Single--></T>
+    <T>153548<!--Recipe: recipe_Food_CulturalFood_Ensaymada_Single--></T>
+    <T>153546<!--Recipe: recipe_Food_CulturalFood_Ensaymada_Large--></T>
+    <T>153547<!--Recipe: recipe_Food_CulturalFood_Ensaymada_Medium--></T>
+    <T>40838<!--Recipe: Recipe_Food_Homestyle_ProteinPlate-Medium--></T>
+    <T>40815<!--Recipe: recipe_Food_Homestyle_ProteinPlate-Single--></T>
+    <T>40873<!--Recipe: recipe_Food_Homestyle_SpaghettiFlaming-Large--></T>
+    <T>40872<!--Recipe: recipe_Food_Homestyle_SpaghettiFlaming-Medium--></T>
+    <T>40864<!--Recipe: recipe_Food_Homestyle_SpaghettiFlaming-Single--></T>
+    <T>102564<!--Recipe: recipe_Food_Homestyle_FriedFish_Stove_Large--></T>
+    <T>102580<!--Recipe: recipe_Food_Homestyle_BreakfastScramble_Stove-Large--></T>
+    <T>102599<!--Recipe: recipe_Food_Homestyle_CampersStew_Stove-Large--></T>
+    <T>102591<!--Recipe: recipe_Food_Homestyle_FranksAndBeans_Stove-Large--></T>
+    <T>102596<!--Recipe: recipe_Food_Homestyle_FruitCobbler_Stove-Large--></T>
+    <T>169972<!--Recipe: recipe_Food_Seafood_HaddockSandwich_Single--></T>
+    <T>169973<!--Recipe: recipe_Food_Seafood_LobsterRoll_Single--></T>
+    <T>169974<!--Recipe: recipe_Food_Seafood_PopcornShrimp_Single--></T>
+    <T>169975<!--Recipe: recipe_Food_Seafood_SeafoodChowder_Single--></T>
+    <T>170090<!--Recipe: recipe_Food_Seafood_SeafoodChowder_Large--></T>
+    <T>170091<!--Recipe: recipe_Food_Seafood_SeafoodChowder_Medium--></T>
+    <T>175059<!--Recipe: recipe_Food_Homestyle_AncientSicknessCure_Stove_Single--></T>
+    <T>186380<!--Recipe: recipe_Food_Homestyle_HoneyCake_Large--></T>
+    <T>187458<!--Recipe: recipe_Food_Homestyle_ScoutCookies-Large--></T>
+    <T>102587<!--Recipe: recipe_Food_Homestyle_Gumbo_Stove-Large--></T>
+    <T>203916<!--Recipe: recipe_Food_Homestyle_CrownRoast_Large--></T>
+    <T>205443<!--Recipe: recipe_Food_Homestyle_MudCarp_Large--></T>
+    <T>204224<!--Recipe: recipe_Food_Homestyle_WinterCake_Large--></T>
+    <T>205438<!--Recipe: recipe_Food_Homestyle_VeggieDumplings_Large--></T>
+    <T>205439<!--Recipe: recipe_Food_Homestyle_VeggieDumplings_Single--></T>
+    <T>205442<!--Recipe: recipe_Food_Homestyle_MudCarp_Single--></T>
+    <T>206406<!--Recipe: recipe_Food_Homestyle_MudCarp_Medium--></T>
+    <T>206407<!--Recipe: recipe_Food_Homestyle_VeggieDumplings_Medium--></T>
+    <T>210603<!--Recipe: recipe_Food_Homestyle_CakeCoconut-Large--></T>
+    <T>102604<!--Recipe: recipe_Food_Homestyle_WalleyeSurprise_Stove-Large--></T>
+    <T>177399<!--Recipe: recipe_Food_JungleFood_ArepaPabellon_Large--></T>
+    <T>177398<!--Recipe: recipe_Food_JungleFood_ArepaPabellon_Medium--></T>
+    <T>177397<!--Recipe: recipe_Food_JungleFood_ArepaPabellon_Single--></T>
+    <T>177402<!--Recipe: recipe_Food_JungleFood_ArepaRellena_Large--></T>
+    <T>177401<!--Recipe: recipe_Food_JungleFood_ArepaRellena_Medium--></T>
+    <T>177400<!--Recipe: recipe_Food_JungleFood_ArepaRellena_Single--></T>
+    <T>177405<!--Recipe: recipe_Food_JungleFood_Baleada_Large--></T>
+    <T>177404<!--Recipe: recipe_Food_JungleFood_Baleada_Medium--></T>
+    <T>177403<!--Recipe: recipe_Food_JungleFood_Baleada_Single--></T>
+    <T>177408<!--Recipe: recipe_Food_JungleFood_Bunuelos_Large--></T>
+    <T>177407<!--Recipe: recipe_Food_JungleFood_Bunuelos_Medium--></T>
+    <T>177406<!--Recipe: recipe_Food_JungleFood_Bunuelos_Single--></T>
+    <T>235495<!--Recipe: recipe_Food_Homestyle_BombBeetleStirFryFamily--></T>
+    <T>231517<!--Recipe: recipe_Food_Homestyle_Batuu_BatuuBon--></T>
+    <T>176555<!--Recipe: recipe_Food_JungleFood_EmpanadasVerde_Large--></T>
+    <T>176554<!--Recipe: recipe_Food_JungleFood_EmpanadasVerde_Medium--></T>
+    <T>176537<!--Recipe: recipe_Food_JungleFood_EmpanadasVerde_Single--></T>
+    <T>177236<!--Recipe: recipe_Food_JungleFood_Feijoada_Large--></T>
+    <T>177235<!--Recipe: recipe_Food_JungleFood_Feijoada_Medium--></T>
+    <T>177230<!--Recipe: recipe_Food_JungleFood_Feijoada_Single--></T>
+    <T>177234<!--Recipe: recipe_Food_JungleFood_PastelCamarao_Large--></T>
+    <T>177233<!--Recipe: recipe_Food_JungleFood_PastelCamarao_Medium--></T>
+    <T>177228<!--Recipe: recipe_Food_JungleFood_PastelCamarao_Single--></T>
+    <T>177232<!--Recipe: recipe_Food_JungleFood_PastelPalmito_Large--></T>
+    <T>177231<!--Recipe: recipe_Food_JungleFood_PastelPalmito_Medium--></T>
+    <T>177229<!--Recipe: recipe_Food_JungleFood_PastelPalmito_Single--></T>
+    <T>176779<!--Recipe: recipe_Food_JungleFood_PlantanosFritos_Large--></T>
+    <T>176778<!--Recipe: recipe_Food_JungleFood_PlantanosFritos_Medium--></T>
+    <T>176576<!--Recipe: recipe_Food_JungleFood_PlantanosFritos_Single--></T>
+    <T>235260<!--Recipe: recipe_Food_Homestyle_BombBeetleStirFrySingle--></T>
+    <T>235496<!--Recipe: recipe_Food_Homestyle_CricketMealFamily--></T>
+    <T>235241<!--Recipe: recipe_Food_Homestyle_CricketMealSingle--></T>
+    <T>235517<!--Recipe: recipe_Food_Homestyle_PopcornCrickets--></T>
+    <T>235767<!--Recipe: recipe_Food_Homestyle_CricketMealParty--></T>
+    <T>235756<!--Recipe: recipe_Food_Homestyle_BombBeetleStirFryParty--></T>
+    <T>237598<!--Recipe: recipe_Food_Homestyle_Batuu_BatuuBon-Large--></T>
+    <T>231551<!--Recipe: recipe_Food_Homestyle_Batuu_EndorianTipYip-Large--></T>
+    <T>231549<!--Recipe: recipe_Food_Homestyle_Batuu_EndorianTipYip-Medium--></T>
+    <T>231550<!--Recipe: recipe_Food_Homestyle_Batuu_EndorianTipYip-Small--></T>
+    <T>231552<!--Recipe: recipe_Food_Homestyle_Batuu_GardenSpread-Large--></T>
+    <T>231553<!--Recipe: recipe_Food_Homestyle_Batuu_GardenSpread-Medium--></T>
+    <T>231554<!--Recipe: recipe_Food_Homestyle_Batuu_GardenSpread-Small--></T>
+    <T>231555<!--Recipe: recipe_Food_Homestyle_Batuu_LavaRoll-Large--></T>
+    <T>231556<!--Recipe: recipe_Food_Homestyle_Batuu_LavaRoll-Medium--></T>
+    <T>231557<!--Recipe: recipe_Food_Homestyle_Batuu_LavaRoll-Small--></T>
+    <T>231536<!--Recipe: recipe_Food_Homestyle_Batuu_OvernightOats-Large--></T>
+    <T>231558<!--Recipe: recipe_Food_Homestyle_Batuu_OvernightOats-Medium--></T>
+    <T>231559<!--Recipe: recipe_Food_Homestyle_Batuu_OvernightOats-Small--></T>
+    <T>231561<!--Recipe: recipe_Food_Homestyle_Batuu_RontoWrap-Large--></T>
+    <T>231562<!--Recipe: recipe_Food_Homestyle_Batuu_RontoWrap-Medium--></T>
+    <T>231560<!--Recipe: recipe_Food_Homestyle_Batuu_RontoWrap-Small--></T>
+    <T>231563<!--Recipe: recipe_Food_Homestyle_Batuu_RontoWrap_Veggie-Large--></T>
+    <T>231564<!--Recipe: recipe_Food_Homestyle_Batuu_RontoWrap_Veggie-Medium--></T>
+    <T>231565<!--Recipe: recipe_Food_Homestyle_Batuu_RontoWrap_Veggie-Small--></T>
+    <T>231568<!--Recipe: recipe_Food_Homestyle_Batuu_ShaakRoast-Large--></T>
+    <T>231567<!--Recipe: recipe_Food_Homestyle_Batuu_ShaakRoast-Medium--></T>
+    <T>231566<!--Recipe: recipe_Food_Homestyle_Batuu_ShaakRoast-Small--></T>
+    <T>231571<!--Recipe: recipe_Food_Homestyle_Batuu_YobshrimpNoodle-Medium--></T>
+    <T>231569<!--Recipe: recipe_Food_Homestyle_Batuu_YobshrimpNoodle-Large--></T>
+    <T>231570<!--Recipe: recipe_Food_Homestyle_Batuu_YobshrimpNoodle-Small--></T>
+    <T>237597<!--Recipe: recipe_Food_Homestyle_Batuu_BatuuBon-Medium--></T>
+    <T>249043<!--Recipe: recipe_Food_Gourmet_MakiRoll_Avocado_Large--></T>
+    <T>249044<!--Recipe: recipe_Food_Gourmet_MakiRoll_Avocado_Medium--></T>
+    <T>249042<!--Recipe: recipe_Food_Gourmet_MakiRoll_Avocado_Single--></T>
+    <T>249045<!--Recipe: recipe_Food_Gourmet_MakiRoll_Salmon_Large--></T>
+    <T>249046<!--Recipe: recipe_Food_Gourmet_MakiRoll_Salmon_Medium--></T>
+    <T>249047<!--Recipe: recipe_Food_Gourmet_MakiRoll_Salmon_Single--></T>
+    <T>249048<!--Recipe: recipe_Food_Gourmet_MakiRoll_Tuna_Large--></T>
+    <T>249049<!--Recipe: recipe_Food_Gourmet_MakiRoll_Tuna_Medium--></T>
+    <T>249050<!--Recipe: recipe_Food_Gourmet_MakiRoll_Tuna_Single--></T>
+    <T>249058<!--Recipe: recipe_Food_Gourmet_Nigiri_Salmon_Large--></T>
+    <T>250831<!--Recipe: recipe_Food_Gourmet_Nigiri_Salmon_Medium--></T>
+    <T>250832<!--Recipe: recipe_Food_Gourmet_Nigiri_Salmon_Small--></T>
+    <T>250834<!--Recipe: recipe_Food_Gourmet_Nigiri_Tomago_Large--></T>
+    <T>250833<!--Recipe: recipe_Food_Gourmet_Nigiri_Tomago_Medium--></T>
+    <T>249062<!--Recipe: recipe_Food_Gourmet_Nigiri_Tomago_Small--></T>
+    <T>250836<!--Recipe: recipe_Food_Gourmet_Nigiri_Tuna_Large--></T>
+    <T>250835<!--Recipe: recipe_Food_Gourmet_Nigiri_Tuna_Medium--></T>
+    <T>250382<!--Recipe: recipe_Food_Gourmet_Nigiri_Tuna_Small--></T>
+    <T>249065<!--Recipe: recipe_Food_Homestyle_MatchaTeaCake_Large--></T>
+    <T>249023<!--Recipe: recipe_Food_Homestyle_Onigiri_Large--></T>
+    <T>249024<!--Recipe: recipe_Food_Homestyle_Onigiri_Medium--></T>
+    <T>249022<!--Recipe: recipe_Food_Homestyle_Onigiri_Single--></T>
+    <T>249055<!--Recipe: recipe_Food_Homestyle_Ramen_Beef--></T>
+    <T>250376<!--Recipe: recipe_Food_Homestyle_Ramen_Egg--></T>
+    <T>250374<!--Recipe: recipe_Food_Homestyle_Ramen_Miso--></T>
+    <T>250375<!--Recipe: recipe_Food_Homestyle_Ramen_Seaweed--></T>
+    <T>251451<!--Recipe: recipe_Food_Homestyle_TriColorDango_Large--></T>
+    <T>251452<!--Recipe: recipe_Food_Homestyle_TriColorDango_Medium--></T>
+    <T>251453<!--Recipe: recipe_Food_Homestyle_TriColorDango_Small--></T>
+    <T>249030<!--Recipe: recipe_Food_Yakisoba_Beef_Large--></T>
+    <T>249031<!--Recipe: recipe_Food_Yakisoba_Beef_Medium--></T>
+    <T>249029<!--Recipe: recipe_Food_Yakisoba_Beef_Single--></T>
+    <T>249032<!--Recipe: recipe_Food_Yakisoba_Fish_Large--></T>
+    <T>249033<!--Recipe: Recipe_Food_Yakisoba_Fish_Medium--></T>
+    <T>249034<!--Recipe: recipe_Food_Yakisoba_Fish_Single--></T>
+    <T>249035<!--Recipe: recipe_Food_Yakisoba_Veggie_Large--></T>
+    <T>249036<!--Recipe: recipe_Food_Yakisoba_Veggie_Medium--></T>
+    <T>249037<!--Recipe: recipe_Food_Yakisoba_Veggie_Single--></T>
+    <T>249003<!--Recipe: recipe_Food_CorporateWorker_ChickenYakitori-Single--></T>
+    <T>133205<!--Recipe: recipe_Food_Homestyle_ChiliVegetable-Large--></T>
+    <T>133208<!--Recipe: recipe_Food_Homestyle_TofuStirFry-Large--></T>
+    <T>133211<!--Recipe: recipe_Food_Homestyle_CasseroleTofu-Large--></T>
+    <T>133202<!--Recipe: recipe_Food_Homestyle_TofuTacos-Large--></T>
+    <T>133212<!--Recipe: recipe_Food_Homestyle_CasseroleTofu-Medium--></T>
+    <T>133209<!--Recipe: recipe_Food_Homestyle_TofuStirFry-Medium--></T>
+    <T>133206<!--Recipe: recipe_Food_Homestyle_ChiliVegetable-Medium--></T>
+    <T>133203<!--Recipe: recipe_Food_Homestyle_TofuTacos-Medium--></T>
+    <T>133213<!--Recipe: recipe_Food_Homestyle_CasseroleTofu-Single--></T>
+    <T>133210<!--Recipe: recipe_Food_Homestyle_TofuStirFry-Single--></T>
+    <T>133207<!--Recipe: recipe_Food_Homestyle_ChiliVegetable-Single--></T>
+    <T>133204<!--Recipe: recipe_Food_Homestyle_TofuTacos-Single--></T>
+  </L>
+  <E n="target_type">OBJECT</E>
+  <L n="test_globals">
+    <V t="test_set_reference">
+      <T n="test_set_reference">135281<!--TestSetInstance: testSet_ChefStationChefSituationRunning--></T>
+    </V>
+    <V t="sim_info">
+      <U n="sim_info">
+        <V t="specified" n="ages">
+          <L n="specified">
+            <E>TEEN</E>
+            <E>YOUNGADULT</E>
+            <E>ADULT</E>
+            <E>ELDER</E>
+          </L>
+        </V>
+        <V t="specified" n="species">
+          <U n="specified">
+            <L n="species">
+              <E />
+            </L>
+          </U>
+        </V>
+        <E n="who">Actor</E>
+      </U>
+    </V>
+    <V t="trait">
+      <U n="trait">
+        <L n="blacklist_traits">
+          <T>218444<!--Trait: trait_Humanoid_Robots_MainTrait--></T>
+        </L>
+      </U>
+    </V>
+    <V t="state">
+      <U n="state">
+        <E n="operator">NOTEQUAL</E>
+        <T n="value">15080<!--ObjectStateValue: BrokenState_Broken--></T>
+      </U>
+    </V>
+  </L>
+  <V t="enabled" n="utility_info">
+    <L n="enabled">
+      <U>
+        <E n="key">POWER</E>
+      </U>
+    </L>
+  </V>
+</I>

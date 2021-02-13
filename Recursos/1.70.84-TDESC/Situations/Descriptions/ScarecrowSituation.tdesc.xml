@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+
+<TuningRoot>
+    <Instance instance_type="situation" class="ScarecrowSituation" module="situations.complex.scarecrow_situation" muid="7B93A6F193DA259F" description="The situation to handle scarecrow appearing from its scarecrow object." instance_subclasses_only="False" parents="SituationComplexCommon, SituationComplex, Situation" path="Situations\Descriptions" use_guid_for_reference="True">
+        <Deleted name="_buff" muid="A891B9E90D4DCE20" />
+
+        <Deleted name="_cost" muid="1B6C0B864E100671" />
+
+        <Deleted name="_display_name" muid="B0068427C9B1D522" />
+
+        <TunableTuple name="_do_stuff_state" class="Tunable_DoStuffState" display="1. Do Stuff" muid="6DC7D3DFB0CF0673" description="The state for the Sim doing stuff.&#xA;&#xA;This is the initial state after the Sim spawns onto the lot.&#xA;&#xA;Any on-activate affordances run in this role will target&#xA;the object the Sim spawned near." Deprecated="False" filter="0" group="State">
+            <Tunable type="bool" name="allow_join_situation" class="Tunable" default="True" display="Allow Join Situation" muid="57D2825C31AF527D" description="Whether the situation is allowed to join at this state." Deprecated="False" filter="0" group="General" />
+            <Tunable type="role_state" name="role_state" class="TunableReference" display="Role State" muid="226D29A5013D72E0" description="The role the Sim has while in this state.&#xA;&#xA;This is the initial state." allow_none="False" Deprecated="False" filter="0" group="General" restrict="RoleState" />
+            <TunableVariant type="None" name="time_out" class="OptionalTunable" default="disabled" display="Time Out" muid="34BC711A33BE725" description="How long this state will last before time expired. Please talk to the GPE who implemented the specific&#xA;situation to see what the state will do on time expired." Deprecated="False" filter="0" group="General">
+                <Tunable name="disabled" class="TunableExistance" display="Disabled" muid="5197205B3538943" />
+                <Tunable type="float" name="enabled" class="TunableSimMinute" default="15" display="Enabled" muid="F3423E5F47F0DCDB" min="1" max="None" tuning_state="NeedsTuning" Deprecated="False" filter="0" group="General" />
+            </TunableVariant>
+        </TunableTuple>
+
+        <Deleted name="_icon" muid="F54B6B0D5F2CEF96" />
+
+        <Deleted name="_initiating_sim_tests" muid="AC9B70AF62056F47" />
+
+        <TunableTuple name="_leave_state" class="Tunable_LeaveState" display="2. Leave" muid="2BEFD317380F464D" description="The state for the Sim leaving.&#xA;&#xA;Any on-activate affordances run in this role will target&#xA;the object the Sim spawned near." Deprecated="False" filter="0" group="State">
+            <TunableTuple name="_leave_interaction" class="TunableInteractionOfInterest" display="Leave Interaction" muid="872F94E6AB3D84D7" description="The interaction that, once completed, can end the situation.&#xA;Typically the interaction that the Sim uses to route back&#xA;to the starting object.&#xA;&#xA;As a fallback, setting a timeout will also end the situation.&#xA;If for some reason this interaction fails to run or complete." Deprecated="False" filter="0" group="General">
+                <TunableList name="affordances" class="TunableList" display="Affordances" muid="D72AC41647E47B79" description="The Sim must have started either any affordance in this list or an&#xA;interaction matching one of the tags in this tunable's Tags&#xA;field." Deprecated="False" filter="0" group="General">
+                    <Tunable type="interaction" class="TunableReference" muid="4FEAC816054BDAB7" allow_none="False" Deprecated="False" filter="0" group="General" pack_safe="True" />
+                </TunableList>
+                <TunableList name="tags" class="TunableSet" display="Tags" muid="76838BF3CFCE0A90" description="The Sim must have run either an interaction matching one of these&#xA;Tags or an affordance from the list of Affordances in this&#xA;tunable." Deprecated="False" filter="0" group="General" unique_entries="true">
+                    <TunableEnum type="Tag" class="TunableEnumEntry" default="INVALID" muid="7705FF1EA5F56164" dynamic_entries="tag.Tag._elements" static_entries="tag.Tag" Deprecated="False" filter="0" group="General" />
+                </TunableList>
+            </TunableTuple>
+            <Tunable type="bool" name="allow_join_situation" class="Tunable" default="True" display="Allow Join Situation" muid="A1B34FFA76B31D30" description="Whether the situation is allowed to join at this state." Deprecated="False" filter="0" group="General" />
+            <Tunable type="role_state" name="role_state" class="TunableReference" display="Role State" muid="B20F360FBDBD5131" description="The role the Sim has while in this state.&#xA;&#xA;This is the initial state." allow_none="False" Deprecated="False" filter="0" group="General" restrict="RoleState" />
+            <TunableVariant type="None" name="time_out" class="OptionalTunable" default="disabled" display="Time Out" muid="4D01D0A7B4F3ACD8" description="How long this state will last before time expired. Please talk to the GPE who implemented the specific&#xA;situation to see what the state will do on time expired." Deprecated="False" filter="0" group="General">
+                <Tunable name="disabled" class="TunableExistance" display="Disabled" muid="E5881C2B38C6F9C5" />
+                <Tunable type="float" name="enabled" class="TunableSimMinute" default="15" display="Enabled" muid="4A28F9203EA5875" min="1" max="None" tuning_state="NeedsTuning" Deprecated="False" filter="0" group="General" />
+            </TunableVariant>
+        </TunableTuple>
+
+        <Deleted name="_level_data" muid="298C67F44504CF7B" />
+
+        <Deleted name="_main_goal_visibility_test" muid="73129B155BE00603" />
+
+        <Deleted name="_relationship_between_job_members" muid="7CD3EFECE43355EC" />
+
+        <Deleted name="_resident_job" muid="5CFF59F7B9E1CE2C" />
+
+        <Tunable type="situation_job" name="_situation_job" class="TunableReference" display="Situation Job" muid="4A8A02A28D31B08B" description="The situation job for the Sim.&#xA;&#xA;This job should define a spawn affordance that will trigger&#xA;a continuation targeting the object the Sim spawns at." allow_none="False" Deprecated="False" filter="0" group="Situation" restrict="SituationJob" />
+
+        <Tunable type="action" name="_spawn_object_reset_loots" class="TunableReference" display="Spawn Object Reset Loots" muid="B7B341FB67854040" description="Loots used to reset the object from which the scarecrow spawned from,&#xA;to handle cases for when the scarecrow Sim is not on lot during load." allow_none="False" Deprecated="False" filter="0" group="Situation" restrict="LootActions" />
+
+        <TunableTuple name="_spawn_object_targeting_affordance" class="TunableInteractionOfInterest" display="Spawn Object Targeting Affordance" muid="C319A106423C6A4F" description="Affordance that runs targeting the object that the object that the&#xA;Sim had spawned at. This allows the situation to 'remember' that&#xA;object and when that object is destroyed, the situation will&#xA;be destroyed as well. " Deprecated="False" filter="0" group="Situation">
+            <TunableList name="affordances" class="TunableList" display="Affordances" muid="CC90EFB0F0F9C8D4" description="The Sim must have started either any affordance in this list or an&#xA;interaction matching one of the tags in this tunable's Tags&#xA;field." Deprecated="False" filter="0" group="General">
+                <Tunable type="interaction" class="TunableReference" muid="803188633DF8C8D1" allow_none="False" Deprecated="False" filter="0" group="General" pack_safe="True" />
+            </TunableList>
+            <TunableList name="tags" class="TunableSet" display="Tags" muid="C51D103C283BDDAE" description="The Sim must have run either an interaction matching one of these&#xA;Tags or an affordance from the list of Affordances in this&#xA;tunable." Deprecated="False" filter="0" group="General" unique_entries="true">
+                <TunableEnum type="Tag" class="TunableEnumEntry" default="INVALID" muid="D363536A8E2370A6" dynamic_entries="tag.Tag._elements" static_entries="tag.Tag" Deprecated="False" filter="0" group="General" />
+            </TunableList>
+        </TunableTuple>
+
+        <Deleted name="audio_sting_on_start" muid="EC9EF194FAC1EF02" />
+
+        <Deleted name="background_audio" muid="E5DBE4A13A689805" />
+
+        <Deleted name="category" muid="78006692468D35D0" />
+
+        <Deleted name="compatible_venues" muid="D0829EFC3C35242" />
+
+        <Deleted name="creation_ui_option" muid="89A5B28D851D188B" />
+
+        <Deleted name="entitlement" muid="835C259AB2391B55" />
+
+        <Deleted name="exclusivity" muid="554E2633F328A993" />
+
+        <Deleted name="force_invite_only" muid="CD7E3E8F936E453E" />
+
+        <Deleted name="goal_button_text" muid="3AA13A6B7E316461" />
+
+        <Deleted name="goal_sub_text" muid="B2F2D99A39A67184" />
+
+        <Deleted name="highlight_first_incomplete_minor_goal" muid="C9F3D740F9A29C23" />
+
+        <Deleted name="job_display_ordering" muid="9CD487785AEE060" />
+
+        <Deleted name="main_goal" muid="5AB1A1DAD206B5CE" />
+
+        <Deleted name="main_goal_audio_sting" muid="FAD8A67D95413C59" />
+
+        <Deleted name="max_participants" muid="F819D89BD660A1E" />
+
+        <Deleted name="minor_goal_chains" muid="AA97FE5794FA88CE" />
+
+        <Deleted name="recommended_job_object_notification" muid="8C3B840F3B272288" />
+
+        <Deleted name="recommended_job_object_text" muid="8A27A44A00D8159E" />
+
+        <Deleted name="screen_slam_bronze" muid="AAAFE14FEC2F84D" />
+
+        <Deleted name="screen_slam_gold" muid="168FA5EE870470F7" />
+
+        <Deleted name="screen_slam_no_medal" muid="76550C0A0C159C45" />
+
+        <Deleted name="screen_slam_silver" muid="D305DEB3DD036666" />
+
+        <Deleted name="situation_description" muid="270D21DEE22D2FAC" />
+
+        <Deleted name="suppress_scoring_progress_bar" muid="966E04B08DB19B90" />
+
+        <Deleted name="targeted_situation" muid="3A4B1D26BCF71527" />
+
+        <Deleted name="travel_request_behavior" muid="B58ECDCB37A724D0" />
+
+        <Deleted name="venue_invitation_message" muid="94A7F8F0C070AC44" />
+
+        <Deleted name="venue_situation_player_job" muid="9C64AD20C06C647D" />
+    </Instance>
+
+    <VersionHistory>
+        <ActionList>
+            <Action type="kRemove" old_muid="937CF6B95C77173D" />
+        </ActionList>
+
+        <ActionList>
+            <Action type="kRename" old_muid="C168299A6D909FB8" new_muid="D0829EFC3C35242" />
+        </ActionList>
+
+        <ActionList>
+            <Action type="kRemove" old_muid="9D368E824C2DD0B" />
+            <Action type="kRemove" old_muid="8E0CCCD9580398C1" />
+        </ActionList>
+    </VersionHistory>
+</TuningRoot>

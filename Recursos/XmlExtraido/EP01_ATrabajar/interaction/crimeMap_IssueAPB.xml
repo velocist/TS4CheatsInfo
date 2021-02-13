@@ -1,0 +1,181 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<I c="SuperInteraction" i="interaction" m="interactions.base.super_interaction" n="crimeMap_IssueAPB" s="107070">
+  <V t="participant" n="_icon">
+    <U n="participant">
+      <L n="participant_type">
+        <E>Object</E>
+      </L>
+    </U>
+  </V>
+  <V t="enabled" n="_saveable" />
+  <T n="allow_autonomous">False</T>
+  <T n="attention_cost">0.5</T>
+  <V n="basic_content" t="one_shot">
+    <U n="one_shot">
+      <U n="animation_ref">
+        <T n="factory">107493<!--AnimationElement: object_CrimeMap_IssueAPB--></T>
+      </U>
+    </U>
+  </V>
+  <V t="disabled" n="content_score" />
+  <T n="display_name">0x7EC48389<!--String: "Expedir aviso de búsqueda"--></T>
+  <U n="display_name_text_tokens">
+    <L n="tokens">
+      <V t="participant_type">
+        <U n="participant_type">
+          <V t="from_participant" n="objects">
+            <U n="from_participant">
+              <E n="participant">Actor</E>
+            </U>
+          </V>
+        </U>
+      </V>
+      <V t="participant_type">
+        <U n="participant_type">
+          <V t="from_participant" n="objects">
+            <U n="from_participant">
+              <E n="participant">Object</E>
+            </U>
+          </V>
+        </U>
+      </V>
+    </L>
+  </U>
+  <V n="display_tooltip" t="enabled">
+    <T n="enabled">0xB75E25DA<!--String: "Un aviso de búsqueda te llevará a un lugar en el que se haya visto a alguien que coincida con la descripción de la persona sospechosa."--></T>
+  </V>
+  <L n="interaction_category_tags">
+    <E>Interaction_Super</E>
+    <E>Interaction_All</E>
+  </L>
+  <V n="outcome" t="single">
+    <U n="single">
+      <U n="actions">
+        <L n="continuation">
+          <U>
+            <T n="affordance">108203<!--SuperInteraction: crimeMap_Detective_StartApb--></T>
+          </U>
+        </L>
+      </U>
+    </U>
+  </V>
+  <V t="enabled" n="pie_menu_icon">
+    <V t="resource_key" n="enabled">
+      <U n="resource_key">
+        <T p="InEP01\UI\Icons\Career\Career_Detective_Main.png" n="key">2f7d0004:00000000:7e10457cfc46f451</T>
+      </U>
+    </V>
+  </V>
+  <T n="pie_menu_priority">10</T>
+  <E n="scoring_priority">NORMAL</E>
+  <T n="subaction_selection_weight">1</T>
+  <E n="target_type">OBJECT</E>
+  <L n="test_globals">
+    <V t="sim_info">
+      <U n="sim_info">
+        <V t="specified" n="ages" />
+        <V t="specified" n="species">
+          <U n="specified">
+            <L n="species">
+              <E />
+            </L>
+          </U>
+        </V>
+        <E n="who">Actor</E>
+      </U>
+    </V>
+    <V t="career_test">
+      <U n="career_test">
+        <V t="career_reference" n="test_type">
+          <U n="career_reference">
+            <V t="specific_career" n="career">
+              <T n="specific_career">106132<!--DetectiveCareer: detectiveCareer_1--></T>
+            </V>
+          </U>
+        </V>
+      </U>
+    </V>
+    <V t="state">
+      <U n="state">
+        <E n="operator">NOTEQUAL</E>
+        <T n="value">110420<!--ObjectStateValue: objectStateValue_Detective_CrimeMap_Empty--></T>
+      </U>
+    </V>
+    <V t="situation_running_test">
+      <U n="situation_running_test">
+        <V t="enabled" n="situation_blacklist">
+          <L n="enabled">
+            <T>112170<!--CareerEventSituation: careerEventSituations_DetectiveCareer_Day01--></T>
+          </L>
+        </V>
+      </U>
+    </V>
+    <V t="relationship">
+      <U n="relationship">
+        <U n="prohibited_relationship_bits">
+          <L n="match_all">
+            <T>113055<!--RelationshipBit: relationshipBit_DetectiveCareer_Arrested--></T>
+          </L>
+        </U>
+        <L n="target_sim">
+          <E>AllOtherInstancedSims</E>
+        </L>
+      </U>
+    </V>
+    <V t="statistic">
+      <U n="statistic">
+        <T n="stat">112059<!--Statistic: statistic_Career_Detective_HasCase--></T>
+        <V t="value_threshold" n="threshold">
+          <U n="value_threshold">
+            <T n="value">1</T>
+          </U>
+        </V>
+      </U>
+    </V>
+    <V t="detective_clues">
+      <U n="detective_clues">
+        <T n="career_reference">106132<!--DetectiveCareer: detectiveCareer_1--></T>
+        <U n="threshold">
+          <T n="value">2</T>
+        </U>
+        <V n="tooltip" t="enabled">
+          <T n="enabled">0x939C3911<!--String: "¡Añade más pistas al mapa del delito para dar con un sospechoso!"--></T>
+        </V>
+      </U>
+    </V>
+  </L>
+  <L n="tests">
+    <L>
+      <V t="situation_running_test">
+        <U n="situation_running_test">
+          <V t="enabled" n="situation_blacklist">
+            <L n="enabled">
+              <T>112171<!--CareerEventSituation: careerEventSituations_DetectiveCareer_Day02--></T>
+            </L>
+          </V>
+        </U>
+      </V>
+    </L>
+    <L>
+      <V t="situation_running_test">
+        <U n="situation_running_test">
+          <V t="enabled" n="situation_whitelist">
+            <L n="enabled">
+              <T>112171<!--CareerEventSituation: careerEventSituations_DetectiveCareer_Day02--></T>
+            </L>
+          </V>
+        </U>
+      </V>
+      <V t="buff">
+        <U n="buff">
+          <V n="whitelist" t="enabled">
+            <L n="enabled">
+              <T>116738<!--Buff: buff_Career_Detective_Day02_AllowAPB--></T>
+            </L>
+          </V>
+        </U>
+      </V>
+    </L>
+  </L>
+  <T n="time_overhead">30</T>
+</I>

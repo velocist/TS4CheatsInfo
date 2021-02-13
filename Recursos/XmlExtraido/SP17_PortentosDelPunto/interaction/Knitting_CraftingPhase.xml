@@ -1,0 +1,435 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<I c="CraftingPhaseStagingSuperInteraction" i="interaction" m="crafting.crafting_interactions" n="Knitting_CraftingPhase" s="239944">
+  <L n="_constraints">
+    <U>
+      <L n="constraints">
+        <U>
+          <V n="value" t="posture">
+            <U n="posture">
+              <L n="posture_manifest_tuning">
+                <U>
+                  <V t="None" n="carry_left" />
+                  <V t="None" n="carry_right" />
+                </U>
+              </L>
+            </U>
+          </V>
+        </U>
+      </L>
+    </U>
+  </L>
+  <L n="_false_advertisements" />
+  <V t="participant" n="_icon">
+    <U n="participant">
+      <L n="participant_type">
+        <E>Actor</E>
+      </L>
+    </U>
+  </V>
+  <V t="enabled" n="_saveable">
+    <U n="enabled">
+      <V n="affordance_to_save" t="use_another_si">
+        <T n="use_another_si">13287<!--CraftingResumeInteraction: crafting_resume--></T>
+      </V>
+      <E n="target_to_save">CarriedObject</E>
+    </U>
+  </V>
+  <L n="_static_commodities">
+    <U>
+      <T n="static_commodity">16403<!--StaticCommodity: Crafting--></T>
+    </U>
+  </L>
+  <V t="enabled" n="animation_stat">
+    <U n="enabled">
+      <V n="actor_stat" t="enabled">
+        <V n="enabled" t="single">
+          <U n="single">
+            <T n="item">239521<!--Skill: statistic_Skill_AdultMajor_Knitting--></T>
+          </U>
+        </V>
+      </V>
+    </U>
+  </V>
+  <T n="attention_cost">0.5</T>
+  <T n="autonomy_can_overwrite_similar_affordance">True</T>
+  <V n="basic_content" t="flexible_length">
+    <U n="flexible_length">
+      <L n="conditional_actions">
+        <V t="literal">
+          <U n="literal">
+            <L n="conditions">
+              <V t="stat_based">
+                <U n="stat_based">
+                  <T n="absolute">True</T>
+                  <T n="stat">16574<!--Commodity: commodity_CraftingProgress--></T>
+                  <U n="threshold">
+                    <T n="value">100</T>
+                  </U>
+                  <E n="who">CraftingObject</E>
+                </U>
+              </V>
+            </L>
+            <E n="interaction_action">EXIT_NATURALLY</E>
+            <L n="loot_actions">
+              <T>241315<!--LootActions: loot_Knitting_FinishedKnitting--></T>
+            </L>
+          </U>
+        </V>
+        <V t="list_reference">
+          <T n="list_reference">40705<!--ExitConditionList: ExitConditionList_MotivesNearFail--></T>
+        </V>
+        <V t="list_reference">
+          <T n="list_reference">40702<!--ExitConditionList: ExitConditionList_EmotionStressed--></T>
+        </V>
+        <V t="list_reference">
+          <T n="list_reference">40144<!--ExitConditionList: ExitConditionList_EmotionMiserable--></T>
+        </V>
+      </L>
+      <V t="looping_content" n="content">
+        <U n="looping_content">
+          <U n="animation_ref">
+            <T n="factory">240520<!--AnimationElement: knitting_Knit--></T>
+            <U n="overrides">
+              <V n="balloons" t="enabled">
+                <L n="enabled">
+                  <U>
+                    <L n="balloon_choices">
+                      <U>
+                        <V n="item" t="balloon_icon">
+                          <U n="balloon_icon">
+                            <V n="icon" t="resource_key">
+                              <U n="resource_key">
+                                <T p="InSP17\UI\Icons\Skills\Skill_Knitting_SkillBar.png" n="key">2f7d0004:00000000:c46040638c865160</T>
+                              </U>
+                            </V>
+                          </U>
+                        </V>
+                      </U>
+                    </L>
+                    <L n="balloon_target">
+                      <E>Actor</E>
+                    </L>
+                  </U>
+                </L>
+              </V>
+            </U>
+          </U>
+        </U>
+      </V>
+      <V n="periodic_stat_change" t="enabled">
+        <U n="enabled">
+          <L n="operations">
+            <V t="statistic_change">
+              <U n="statistic_change">
+                <T n="amount">10</T>
+                <T n="stat">27162<!--Commodity: commodity_Trait_Creative_Creativity--></T>
+                <L n="subject">
+                  <E>Actor</E>
+                </L>
+              </U>
+            </V>
+            <V t="statistic_change">
+              <U n="statistic_change">
+                <T n="advertise">False</T>
+                <T n="amount">-5</T>
+                <T n="stat">99719<!--Commodity: Commodity_Trait_Creative_TenseTimer--></T>
+                <L n="subject">
+                  <E>Actor</E>
+                </L>
+                <L n="tests">
+                  <L>
+                    <V t="buff">
+                      <U n="buff">
+                        <V n="whitelist" t="enabled">
+                          <L n="enabled">
+                            <T>74668<!--Buff: Buff_Trait_Creative_Uncreative--></T>
+                          </L>
+                        </V>
+                      </U>
+                    </V>
+                  </L>
+                </L>
+              </U>
+            </V>
+            <V t="statistic_change">
+              <U n="statistic_change">
+                <T n="amount">1</T>
+                <T n="stat">16574<!--Commodity: commodity_CraftingProgress--></T>
+                <L n="subject">
+                  <E>CraftingProcess</E>
+                </L>
+              </U>
+            </V>
+            <V t="dynamic_skill">
+              <U n="dynamic_skill">
+                <U n="skill_loot_data_override">
+                  <E n="effectiveness">StandardPeriodic</E>
+                </U>
+              </U>
+            </V>
+            <V t="statistic_change">
+              <U n="statistic_change">
+                <T n="amount">0.09047619</T>
+                <T n="stat">161618<!--LifeSkillStatistic: lifeSkillStatistic_EmotionalControl--></T>
+                <L n="subject">
+                  <E>Actor</E>
+                </L>
+                <L n="tests">
+                  <L>
+                    <V t="sim_info">
+                      <U n="sim_info">
+                        <V t="specified" n="ages">
+                          <L n="specified">
+                            <E>TEEN</E>
+                            <E>CHILD</E>
+                            <E>TODDLER</E>
+                          </L>
+                        </V>
+                      </U>
+                    </V>
+                  </L>
+                </L>
+              </U>
+            </V>
+            <V t="dynamic_skill">
+              <U n="dynamic_skill">
+                <U n="skill_loot_data_override">
+                  <E n="effectiveness">SmallPeriodic</E>
+                  <T n="stat">16720<!--Skill: statistic_Skill_Child_Motor--></T>
+                </U>
+                <L n="tests">
+                  <L>
+                    <V t="sim_info">
+                      <U n="sim_info">
+                        <V n="ages" t="specified">
+                          <L n="specified">
+                            <E>CHILD</E>
+                          </L>
+                        </V>
+                      </U>
+                    </V>
+                  </L>
+                </L>
+              </U>
+            </V>
+            <V t="statistic_change">
+              <U n="statistic_change">
+                <T n="amount">0.34</T>
+                <T n="stat">16655<!--Commodity: motive_Fun--></T>
+              </U>
+            </V>
+          </L>
+        </U>
+      </V>
+      <V n="progressive_stat_change" t="enabled">
+        <U n="enabled">
+          <V n="goal_completion_time" t="skill_based_curve">
+            <U n="skill_based_curve">
+              <L n="curve">
+                <U>
+                  <T n="x">100</T>
+                  <T n="y">100</T>
+                </U>
+              </L>
+              <T n="skill">239521<!--Skill: statistic_Skill_AdultMajor_Knitting--></T>
+            </U>
+          </V>
+          <V t="disabled" n="goal_exit_condition" />
+          <V t="maximum_value" n="goal_value">
+            <U n="maximum_value">
+              <T n="stat">16574<!--Commodity: commodity_CraftingProgress--></T>
+            </U>
+          </V>
+          <E n="subject">CraftingObject</E>
+        </U>
+      </V>
+      <T n="start_autonomous_inertial">False</T>
+    </U>
+  </V>
+  <L n="basic_extras">
+    <V t="loot">
+      <U n="loot">
+        <L n="loot_list">
+          <T>241318<!--LootActions: loot_Knitting_NoMoreKnitting--></T>
+        </L>
+      </U>
+    </V>
+    <V t="buff">
+      <U n="buff">
+        <U n="buff_type">
+          <T n="buff_type">245464<!--Buff: buff_Knitting_IsKnitting--></T>
+        </U>
+      </U>
+    </V>
+    <V t="buff_fire_and_forget">
+      <U n="buff_fire_and_forget">
+        <U n="buff">
+          <T n="buff_type">250694<!--Buff: buff_Knitting_AutonomousCooldown--></T>
+        </U>
+        <V t="at_beginning" n="timing" />
+      </U>
+    </V>
+  </L>
+  <V t="disabled" n="basic_reserve_object" />
+  <V t="disabled" n="content_score" />
+  <T n="disallow_as_mixer_target">True</T>
+  <U n="display_name_text_tokens">
+    <L n="tokens">
+      <V t="participant_type">
+        <U n="participant_type">
+          <V n="objects" t="from_participant">
+            <U n="from_participant">
+              <E n="participant">Actor</E>
+            </U>
+          </V>
+        </U>
+      </V>
+      <V t="participant_type">
+        <U n="participant_type">
+          <V n="objects" t="from_participant">
+            <U n="from_participant">
+              <E n="participant">Object</E>
+            </U>
+          </V>
+        </U>
+      </V>
+    </L>
+  </U>
+  <L n="interaction_category_tags">
+    <E>Interaction_Super</E>
+    <E>Interaction_All</E>
+    <E>Interaction_Knitting</E>
+    <E>Interaction_Skill_Knitting</E>
+  </L>
+  <L n="joinable">
+    <U>
+      <V n="invite_available" t="enabled">
+        <U n="enabled">
+          <V n="loc_custom_invite_name" t="enabled">
+            <T n="enabled">0x2898B0EE<!--String: "Pedirle a {1.SimFirstName} {0.String|xxLower}"--></T>
+          </V>
+        </U>
+      </V>
+      <V n="join_affordance" t="affordance">
+        <U n="affordance">
+          <V n="value" t="custom">
+            <T n="custom">245598<!--SuperInteraction: mentor_Knitting--></T>
+          </V>
+        </U>
+      </V>
+      <V n="join_available" t="enabled">
+        <U n="enabled">
+          <V n="loc_custom_join_name" t="enabled">
+            <T n="enabled">0xF80506D0<!--String: "{0.String}"--></T>
+          </V>
+        </U>
+      </V>
+      <E n="join_target">Actor</E>
+      <T n="link_joinable">True</T>
+    </U>
+  </L>
+  <V t="single" n="outcome">
+    <U n="single">
+      <U n="actions">
+        <L n="basic_extras">
+          <V t="transfer_name">
+            <U n="transfer_name">
+              <E n="participant_receiving_name">CraftingProcess</E>
+              <E n="participant_sending_name">CraftingObject</E>
+            </U>
+          </V>
+        </L>
+      </U>
+    </U>
+  </V>
+  <U n="posture_preferences">
+    <T n="apply_penalties">True</T>
+    <L n="posture_cost_overrides">
+      <U>
+        <T n="key">15527<!--Posture: posture_Kneel--></T>
+        <T n="value">100</T>
+      </U>
+      <U>
+        <T n="key">15535<!--Posture: posture_Sit--></T>
+        <T n="value">25</T>
+      </U>
+      <U>
+        <T n="key">240809<!--Posture: posture_Sit_RockingChair--></T>
+      </U>
+    </L>
+    <T n="prefer_clicked_part">False</T>
+  </U>
+  <V t="enabled" n="posture_target_preference">
+    <L n="enabled">
+      <U>
+        <E n="key">SEATING_BED</E>
+        <T n="value">50</T>
+      </U>
+      <U>
+        <E n="key">SEATING_HOTTUB</E>
+      </U>
+      <U>
+        <E n="key">SEATING_LIVING</E>
+        <T n="value">50</T>
+      </U>
+      <U>
+        <E n="key">SEATING_LOVESEAT</E>
+        <T n="value">50</T>
+      </U>
+      <U>
+        <E n="key">SEATING_POOL</E>
+        <T n="value">50</T>
+      </U>
+      <U>
+        <E n="key">SEATING_ROCK</E>
+        <T n="value">50</T>
+      </U>
+      <U>
+        <E n="key">SEATING_SOFA</E>
+        <T n="value">50</T>
+      </U>
+      <U>
+        <E n="key">SEATING_SWINGS</E>
+      </U>
+    </L>
+  </V>
+  <U n="progress_bar_enabled">
+    <T n="remember_progress">True</T>
+  </U>
+  <E n="scoring_priority">NORMAL</E>
+  <U n="skill_loot_data">
+    <V t="enabled" n="level_range">
+      <U n="enabled">
+        <T n="lower_bound">1</T>
+        <T n="upper_bound">10</T>
+      </U>
+    </V>
+    <T n="stat">239521<!--Skill: statistic_Skill_AdultMajor_Knitting--></T>
+  </U>
+  <T n="subaction_selection_weight">3</T>
+  <E n="target_type">OBJECT</E>
+  <L n="test_globals">
+    <V t="sim_info">
+      <U n="sim_info">
+        <V t="specified" n="ages">
+          <L n="specified">
+            <E>TEEN</E>
+            <E>YOUNGADULT</E>
+            <E>ADULT</E>
+            <E>ELDER</E>
+            <E>CHILD</E>
+          </L>
+        </V>
+        <V t="specified" n="species">
+          <U n="specified">
+            <L n="species">
+              <E />
+            </L>
+          </U>
+        </V>
+        <E n="who">Actor</E>
+      </U>
+    </V>
+  </L>
+  <T n="time_overhead">600</T>
+</I>

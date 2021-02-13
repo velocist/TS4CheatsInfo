@@ -1,0 +1,144 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<I c="MixerInteraction" i="interaction" m="interactions.base.mixer_interaction" n="mixer_Sabacc_Cheat" s="237265">
+  <T n="allow_user_directed">False</T>
+  <V t="one_shot" n="basic_content">
+    <U n="one_shot">
+      <U n="animation_ref">
+        <T n="factory">236542<!--AnimationElement: Sabacc_Cheat--></T>
+      </U>
+    </U>
+  </V>
+  <L n="basic_extras">
+    <V t="loot">
+      <U n="loot">
+        <L n="loot_list">
+          <T>162659<!--LootActions: loot_Commodity_Culling_GhostAdd_target--></T>
+          <T>237258<!--LootActions: loot_SabaccTable_Gameplay_Cheated--></T>
+        </L>
+      </U>
+    </V>
+    <V t="balloon">
+      <U n="balloon">
+        <L n="balloon_choices">
+          <U>
+            <V n="item" t="balloon_icon">
+              <U n="balloon_icon">
+                <V n="category_icon" t="show_category_icon">
+                  <V t="resource_key" n="show_category_icon">
+                    <U n="resource_key">
+                      <T n="key" p="InGame\UI\Icons\Headlines\Final\headline_sneakymask.png">2f7d0004:00000000:8dbe07f570e4dc75</T>
+                    </U>
+                  </V>
+                </V>
+                <V t="resource_key" n="icon">
+                  <U n="resource_key">
+                    <T n="key" p="InGP09\UI\Icons\Headlines\Headline_sabaccSleeve.png">2f7d0004:00000000:42f03c13f128dd89</T>
+                  </U>
+                </V>
+              </U>
+            </V>
+          </U>
+        </L>
+        <L n="balloon_target">
+          <E>Actor</E>
+        </L>
+      </U>
+    </V>
+  </L>
+  <V t="disable_focus" n="basic_focus" />
+  <T n="display_name">0x42BCD918<!--String: "Hacer trampas al sabacc"--></T>
+  <U n="display_name_text_tokens">
+    <L n="tokens">
+      <V t="participant_type">
+        <U n="participant_type">
+          <V n="objects" t="from_participant">
+            <U n="from_participant">
+              <E n="participant">Actor</E>
+            </U>
+          </V>
+        </U>
+      </V>
+      <V t="participant_type">
+        <U n="participant_type">
+          <V t="from_participant" n="objects">
+            <U n="from_participant">
+              <E n="participant">Object</E>
+            </U>
+          </V>
+        </U>
+      </V>
+    </L>
+  </U>
+  <L n="interaction_category_tags">
+    <E>Interaction_Mixer</E>
+    <E>Interaction_All</E>
+  </L>
+  <V t="none" n="outcome" />
+  <U n="sub_action">
+    <T n="base_weight">1</T>
+  </U>
+  <E n="target_type">OBJECT</E>
+  <L n="test_globals">
+    <V t="buff">
+      <U n="buff">
+        <V t="enabled" n="whitelist">
+          <L n="enabled">
+            <T>234914<!--Buff: buff_SabaccTable_GrabbedCards--></T>
+          </L>
+        </V>
+      </U>
+    </V>
+    <V t="statistic">
+      <U n="statistic">
+        <T n="stat">235228<!--Commodity: commodity_SabaccTable_TurnsTaken--></T>
+        <V n="threshold" t="value_threshold">
+          <U n="value_threshold">
+            <T n="value">1</T>
+          </U>
+        </V>
+        <E n="who">Object</E>
+      </U>
+    </V>
+    <V t="game_component">
+      <U n="game_component">
+        <V t="enabled" n="game_over">
+          <T n="enabled">False</T>
+        </V>
+      </U>
+    </V>
+    <V t="buff">
+      <U n="buff">
+        <L n="blacklist">
+          <T>233815<!--Buff: buff_SabaccTable_Folded--></T>
+        </L>
+      </U>
+    </V>
+    <V t="sim_info">
+      <U n="sim_info">
+        <V t="enabled" n="npc">
+          <T n="enabled">True</T>
+        </V>
+      </U>
+    </V>
+    <V t="buff">
+      <U n="buff">
+        <L n="blacklist">
+          <T>241791<!--Buff: buff_SabaccTable_AccuseOfCheating_Accuser--></T>
+          <T>241815<!--Buff: buff_SabaccTable_AccuseOfCheating_Accused--></T>
+        </L>
+      </U>
+    </V>
+    <V t="state">
+      <U n="state">
+        <E n="operator">NOTEQUAL</E>
+        <T n="value">237262<!--ObjectStateValue: sabaccTable_StateValues_Cheater_True--></T>
+      </U>
+    </V>
+    <V t="state">
+      <U n="state">
+        <T n="value">234582<!--ObjectStateValue: sabaccTable_StateValues_Game_BettingPhase--></T>
+      </U>
+    </V>
+  </L>
+  <T n="visible">False</T>
+</I>

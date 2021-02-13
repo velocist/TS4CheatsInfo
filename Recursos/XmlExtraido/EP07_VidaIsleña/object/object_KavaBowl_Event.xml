@@ -1,0 +1,266 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<I c="GameObject" i="object" m="objects.game_object" n="object_KavaBowl_Event" s="212471">
+  <V t="enabled" n="_anim_overrides">
+    <U n="enabled">
+      <L n="params">
+        <U>
+          <T n="name">carryObject</T>
+          <V t="string" n="value">
+            <T n="string">mixingBowl</T>
+          </V>
+        </U>
+        <U>
+          <T n="name">items</T>
+          <V t="string" n="value">
+            <T n="string">mixingBowl</T>
+          </V>
+        </U>
+      </L>
+    </U>
+  </V>
+  <U n="_components">
+    <V t="enabled" n="affordance_tuning">
+      <U n="enabled">
+        <L n="affordance_map">
+          <U>
+            <T n="key">13287<!--CraftingResumeInteraction: crafting_resume--></T>
+            <U n="value">
+              <L n="tests">
+                <L>
+                  <V t="state">
+                    <U n="state">
+                      <T n="value">204893<!--CommodityBasedObjectStateValue: state_KavaBowl_Progress_InProgress--></T>
+                    </U>
+                  </V>
+                </L>
+              </L>
+            </U>
+          </U>
+        </L>
+      </U>
+    </V>
+    <V t="enabled" n="carryable">
+      <U n="enabled">
+        <V n="put_down_tuning" t="reference">
+          <L n="reference">
+            <U>
+              <T n="value">145514<!--PutDownStrategy: putDownStrategy_FoodMulti_FruitCake--></T>
+            </U>
+          </L>
+        </V>
+      </U>
+    </V>
+    <V t="enabled" n="crafting_station">
+      <U n="enabled">
+        <L n="crafting_station_types">
+          <T>204857<!--CraftingObjectType: craftingObjectType_KavaBowl--></T>
+        </L>
+      </U>
+    </V>
+    <V t="enabled" n="focus">
+      <U n="enabled">
+        <V n="_focus_score" t="globally">
+          <U n="globally">
+            <E n="base">LOW</E>
+          </U>
+        </V>
+      </U>
+    </V>
+    <V t="enabled" n="inventory_item">
+      <U n="enabled">
+        <T n="skip_carry_pose">True</T>
+        <L n="valid_inventory_types">
+          <E>STORAGE_CHEST_DORM</E>
+          <E>SIM</E>
+        </L>
+      </U>
+    </V>
+    <V t="enabled" n="retail_component">
+      <V n="enabled" t="reference">
+        <T n="reference">115301<!--RetailComponent: retailComponent_Default_LowAppeal--></T>
+      </V>
+    </V>
+    <V n="state" t="enabled">
+      <U n="enabled">
+        <L n="state_triggers">
+          <U>
+            <L n="at_states">
+              <T>204950<!--CommodityBasedObjectStateValue: state_KavaBowl_Servings_Empty--></T>
+            </L>
+            <L n="prohibited_states">
+              <T>204893<!--CommodityBasedObjectStateValue: state_KavaBowl_Progress_InProgress--></T>
+            </L>
+            <V n="set_states" t="Set_state_list">
+              <L n="Set_state_list">
+                <T>204890<!--CommodityBasedObjectStateValue: state_KavaBowl_Progress_NotStarted--></T>
+              </L>
+            </V>
+          </U>
+          <U>
+            <L n="at_states">
+              <T>204892<!--CommodityBasedObjectStateValue: state_KavaBowl_Progress_Done--></T>
+              <T>204950<!--CommodityBasedObjectStateValue: state_KavaBowl_Servings_Empty--></T>
+            </L>
+            <V n="set_states" t="Set_state_list">
+              <L n="Set_state_list">
+                <T>204951<!--CommodityBasedObjectStateValue: state_KavaBowl_Servings_Full--></T>
+              </L>
+            </V>
+          </U>
+          <U>
+            <L n="at_states">
+              <T>204950<!--CommodityBasedObjectStateValue: state_KavaBowl_Servings_Empty--></T>
+            </L>
+            <V n="set_states" t="Set_state_list">
+              <L n="Set_state_list">
+                <T>15191<!--CommodityBasedObjectStateValue: Freshness_Untouched--></T>
+              </L>
+            </V>
+          </U>
+        </L>
+        <L n="states">
+          <U>
+            <V n="default_value" t="reference">
+              <T n="reference">204892<!--CommodityBasedObjectStateValue: state_KavaBowl_Progress_Done--></T>
+            </V>
+          </U>
+          <U>
+            <L n="client_states">
+              <U>
+                <T n="key">15189<!--CommodityBasedObjectStateValue: Freshness_Fresh--></T>
+              </U>
+              <U>
+                <T n="key">15190<!--CommodityBasedObjectStateValue: Freshness_Spoiled--></T>
+                <U n="value">
+                  <V n="vfx_state" t="apply_new_value">
+                    <V n="apply_new_value" t="start_vfx">
+                      <V n="start_vfx" t="single_effect">
+                        <U n="single_effect">
+                          <T n="effect_name">Obj_food_rotten</T>
+                          <V t="Slot" n="joint_name">
+                            <T n="Slot">_FX_</T>
+                          </V>
+                        </U>
+                      </V>
+                    </V>
+                  </V>
+                </U>
+              </U>
+              <U>
+                <T n="key">15191<!--CommodityBasedObjectStateValue: Freshness_Untouched--></T>
+                <U n="value">
+                  <V t="apply_new_value" n="vfx_state" />
+                </U>
+              </U>
+            </L>
+            <V n="default_value" t="reference">
+              <T n="reference">15189<!--CommodityBasedObjectStateValue: Freshness_Fresh--></T>
+            </V>
+          </U>
+          <U>
+            <L n="client_states">
+              <U>
+                <T n="key">100046<!--CommodityBasedObjectStateValue: FireState_Burn_Incinerate_NoAsh--></T>
+              </U>
+              <U>
+                <T n="key">100095<!--CommodityBasedObjectStateValue: FireState_Burn_Incinerate_NoAsh_Burning--></T>
+              </U>
+              <U>
+                <T n="key">100096<!--CommodityBasedObjectStateValue: FireState_Burn_Incinerate_NoAsh_Not_Burning--></T>
+              </U>
+            </L>
+            <V n="default_value" t="reference">
+              <T n="reference">100096<!--CommodityBasedObjectStateValue: FireState_Burn_Incinerate_NoAsh_Not_Burning--></T>
+            </V>
+          </U>
+          <U>
+            <V t="reference" n="default_value">
+              <T n="reference">15304<!--CommodityBasedObjectStateValue: Quality_Normal--></T>
+            </V>
+          </U>
+          <U>
+            <V n="default_value" t="reference">
+              <T n="reference">204951<!--CommodityBasedObjectStateValue: state_KavaBowl_Servings_Full--></T>
+            </V>
+          </U>
+        </L>
+      </U>
+    </V>
+    <V t="enabled" n="tooltip_component">
+      <U n="enabled">
+        <L n="custom_tooltips">
+          <U>
+            <L n="object_tests">
+              <L>
+                <V t="state">
+                  <U n="state">
+                    <T n="value">204950<!--CommodityBasedObjectStateValue: state_KavaBowl_Servings_Empty--></T>
+                  </U>
+                </V>
+                <V t="in_inventory" />
+              </L>
+            </L>
+            <L n="tooltip_fields">
+              <U>
+                <E n="key">recipe_name</E>
+                <U n="value">
+                  <V n="text" t="single">
+                    <T n="single">0x144FD666<!--String: "{0.ObjectName}"--></T>
+                  </V>
+                  <V t="enabled" n="text_tokens">
+                    <U n="enabled">
+                      <L n="tokens">
+                        <V t="participant_type">
+                          <U n="participant_type">
+                            <V t="from_participant" n="objects">
+                              <U n="from_participant">
+                                <E n="participant">Object</E>
+                              </U>
+                            </V>
+                          </U>
+                        </V>
+                      </L>
+                    </U>
+                  </V>
+                </U>
+              </U>
+            </L>
+          </U>
+        </L>
+      </U>
+    </V>
+  </U>
+  <L n="_super_affordances">
+    <T>13328<!--ImmediateSuperInteraction: debug_Reset--></T>
+    <T>13326<!--ImmediateSuperInteraction: debug_ObjectDestroy--></T>
+    <T>103888<!--ImmediateSuperInteraction: cheat_set_as_head--></T>
+    <T>13276<!--CraftingPhaseCreateObjectFromCarryingSuperInteraction: counter_Ico_Transition--></T>
+    <T>204720<!--StartCraftingSuperInteraction: kavaBowl_StartCrafting--></T>
+    <T>13983<!--StandSuperInteraction: sim-stand--></T>
+    <T>13434<!--SuperInteraction: generic_cook--></T>
+    <T>14337<!--CraftingPhaseCreateObjectFromCarryingSuperInteraction: stove_Ico_Transition--></T>
+    <T>13763<!--CraftingPhaseCreateObjectFromCarryingSuperInteraction: oven_Ico_Transition--></T>
+    <T>103665<!--CraftingPhaseStagingSuperInteraction: generic_Ico_Pickup--></T>
+    <T>37210<!--CraftingPhaseStagingSuperInteraction: fridge_Ico_Transition--></T>
+    <T>196759<!--SuperInteraction: famePerks_GoodReputation_GivingBack_DonateObject--></T>
+    <T>106859<!--SuperInteraction: simRay_Transform_Object--></T>
+    <T>168502<!--SuperInteraction: Ghost_Pet_Possess--></T>
+    <T>102258<!--SuperInteraction: Ghost_Possess--></T>
+    <T>189267<!--AddToWorldSuperInteraction: add_To_World_Welcome_Wagon_FruitCake--></T>
+    <T>212476<!--StartCraftingSuperInteraction: kavaBowl_StartCrafting_Venue--></T>
+    <T>204922<!--CraftingPhaseCreateCarriedObjectSuperInteraction: kavaBowl_CreateKava--></T>
+    <T>212073<!--StartCraftingAutonomouslySuperInteraction: kavaBowl_StartCrafting_Autonomously--></T>
+  </L>
+  <U n="recycling_data">
+    <L n="recycling_values">
+      <U>
+        <E n="Bucks Type">RecycleBitsBucks</E>
+        <T n="Value">0.5</T>
+      </U>
+      <U>
+        <E n="Bucks Type">RecyclePiecesBucks</E>
+        <T n="Value">0.5</T>
+      </U>
+    </L>
+  </U>
+</I>

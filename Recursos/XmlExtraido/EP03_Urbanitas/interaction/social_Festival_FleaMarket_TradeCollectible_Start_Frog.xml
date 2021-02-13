@@ -1,0 +1,293 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<I c="SocialSuperInteraction" i="interaction" m="interactions.social.social_super_interaction" n="social_Festival_FleaMarket_TradeCollectible_Start_Frog" s="144450">
+  <V t="participant" n="_icon">
+    <U n="participant">
+      <L n="participant_type">
+        <E>TargetSim</E>
+      </L>
+    </U>
+  </V>
+  <L n="_party_size_weight_tuning">
+    <U>
+      <T n="y">100</T>
+    </U>
+    <U>
+      <T n="x">1</T>
+      <T n="y">100</T>
+    </U>
+    <U>
+      <T n="x">2</T>
+      <T n="y">50</T>
+    </U>
+    <U>
+      <T n="x">3</T>
+      <T n="y">0</T>
+    </U>
+    <U>
+      <T n="x">4</T>
+    </U>
+  </L>
+  <V t="enabled" n="_saveable" />
+  <T n="_social_group_type">74849<!--JigGroup: group_Platonic--></T>
+  <V t="push_self_or_none" n="affordance_to_push_on_target">
+    <T n="push_self_or_none">False</T>
+  </V>
+  <T n="allow_autonomous">False</T>
+  <T n="attention_cost">0</T>
+  <V t="one_shot" n="basic_content" />
+  <L n="basic_extras">
+    <V t="loot">
+      <U n="loot">
+        <L n="loot_list">
+          <T>162659<!--LootActions: loot_Commodity_Culling_GhostAdd_target--></T>
+        </L>
+      </U>
+    </V>
+    <V t="buff">
+      <U n="buff">
+        <U n="buff_type">
+          <V n="buff_reason" t="enabled">
+            <T n="enabled">0x9C09275F<!--String: "(Por estar en un grupo social con al menos 3 Sims)"--></T>
+          </V>
+          <T n="buff_type">125555<!--Buff: buff_Trait_WithMyFriends--></T>
+        </U>
+        <L n="subject">
+          <E>Actor</E>
+          <E>SocialGroupSims</E>
+          <E>TargetSim</E>
+        </L>
+        <L n="tests">
+          <L>
+            <V t="social_group">
+              <U n="social_group">
+                <V n="threshold" t="enabled">
+                  <U n="enabled">
+                    <T n="value">3</T>
+                  </U>
+                </V>
+              </U>
+            </V>
+          </L>
+        </L>
+      </U>
+    </V>
+  </L>
+  <V t="disabled" n="basic_reserve_object" />
+  <T n="category">144400<!--PieMenuCategory: pieMenuCategory_Festival_FleaMarket_Trade--></T>
+  <V t="disabled" n="content_score" />
+  <T n="display_name">0x2BD2688B<!--String: "Intercambiar ranas"--></T>
+  <U n="display_name_text_tokens">
+    <L n="tokens">
+      <V t="participant_type">
+        <U n="participant_type">
+          <V t="from_participant" n="objects">
+            <U n="from_participant">
+              <E n="participant">Actor</E>
+            </U>
+          </V>
+        </U>
+      </V>
+      <V t="participant_type">
+        <U n="participant_type">
+          <V t="from_participant" n="objects">
+            <U n="from_participant">
+              <E n="participant">Object</E>
+            </U>
+          </V>
+        </U>
+      </V>
+    </L>
+  </U>
+  <V t="enabled" n="idle_animation">
+    <U n="enabled">
+      <T n="factory">11570<!--AnimationElement: Listen_Listen_Looping_basic--></T>
+    </U>
+  </V>
+  <T n="ignore_group_socials">False</T>
+  <L n="interaction_category_tags">
+    <E>Interaction_SocialSuper</E>
+    <E>Interaction_Super</E>
+    <E>Interaction_All</E>
+    <E>Interaction_SocialAll</E>
+    <E>Interaction_Social_Contagious</E>
+  </L>
+  <T n="invite_in_after_interaction">True</T>
+  <U n="listen_animation">
+    <T n="factory">11570<!--AnimationElement: Listen_Listen_Looping_basic--></T>
+  </U>
+  <V n="outcome" t="test_based">
+    <U n="test_based">
+      <L n="fallback_outcomes">
+        <U>
+          <U n="outcome">
+            <V t="enabled" n="animation_ref">
+              <U n="enabled">
+                <T n="factory">11897<!--AnimationElement: Soc_Generic_NT_Compliment_succeed_basic--></T>
+              </U>
+            </V>
+            <L n="continuation">
+              <U>
+                <T n="affordance">144385<!--ObjectInInventoryPickerInteraction: festival_FleaMarket_CollectibleTrading_Frog--></T>
+                <E n="target">TargetSim</E>
+              </U>
+            </L>
+          </U>
+          <U n="weight">
+            <T n="base_value">3</T>
+          </U>
+        </U>
+        <U>
+          <U n="outcome">
+            <V t="enabled" n="animation_ref">
+              <U n="enabled">
+                <T n="factory">11896<!--AnimationElement: Soc_Generic_NT_Compliment_fail_basic--></T>
+              </U>
+            </V>
+            <L n="basic_extras">
+              <V t="notification">
+                <U n="notification">
+                  <V n="dialog" t="single">
+                    <V n="single" t="literal">
+                      <U n="literal">
+                        <V n="text" t="single">
+                          <T n="single">0x9B7A7AC5<!--String: "Parece que {0.SimFirstName} no quiere intercambiar nada ahora."--></T>
+                        </V>
+                        <V n="text_tokens" t="enabled">
+                          <U n="enabled">
+                            <L n="tokens">
+                              <V t="participant_type">
+                                <U n="participant_type">
+                                  <V n="objects" t="from_participant">
+                                    <U n="from_participant">
+                                      <E n="participant">TargetSim</E>
+                                    </U>
+                                  </V>
+                                </U>
+                              </V>
+                            </L>
+                          </U>
+                        </V>
+                      </U>
+                    </V>
+                  </V>
+                </U>
+              </V>
+            </L>
+            <L n="loot_list">
+              <T>152785<!--LootActions: loot_Festival_FleaMarket_TradeFailCDBuff--></T>
+            </L>
+          </U>
+        </U>
+      </L>
+    </U>
+  </V>
+  <U n="progress_bar_enabled">
+    <T n="bar_enabled">False</T>
+  </U>
+  <T n="relationship_scoring">True</T>
+  <E n="scoring_priority">NORMAL</E>
+  <V t="enabled" n="sim_affinity_posture_scoring_data">
+    <U n="enabled">
+      <L n="my_scoring">
+        <U>
+          <V t="relationship_based" n="affinity_strategy" />
+          <T n="negate_tag">True</T>
+          <E n="running_interaction_tag">Sleeping</E>
+        </U>
+        <U>
+          <V t="avoid" n="affinity_strategy" />
+          <E n="running_interaction_tag">Very_Loud</E>
+        </U>
+      </L>
+      <L n="my_tags">
+        <E>Loud</E>
+        <E>Chat</E>
+      </L>
+    </U>
+  </V>
+  <T n="subaction_selection_weight">1</T>
+  <E n="target_type">TARGET</E>
+  <L n="test_globals">
+    <V t="sim_info">
+      <U n="sim_info">
+        <V t="specified" n="species">
+          <U n="specified">
+            <L n="species">
+              <E />
+            </L>
+          </U>
+        </V>
+        <E n="who">TargetSim</E>
+      </U>
+    </V>
+    <V t="sim_info">
+      <U n="sim_info">
+        <V t="specified" n="ages">
+          <L n="specified">
+            <E>TEEN</E>
+            <E>YOUNGADULT</E>
+            <E>ADULT</E>
+            <E>ELDER</E>
+            <E>CHILD</E>
+          </L>
+        </V>
+        <V t="specified" n="species">
+          <U n="specified">
+            <L n="species">
+              <E />
+            </L>
+          </U>
+        </V>
+        <E n="who">Actor</E>
+      </U>
+    </V>
+    <V t="festival_running">
+      <U n="festival_running">
+        <V t="enabled" n="check_if_on_festival_street" />
+        <V t="enabled" n="drama_node">
+          <T n="enabled">140085<!--FestivalDramaNode: festivalDramaNode_FleaMarket--></T>
+        </V>
+        <U n="valid_time_blocks">
+          <T n="pre_festival">False</T>
+        </U>
+      </U>
+    </V>
+    <V t="buff">
+      <U n="buff">
+        <L n="blacklist">
+          <T>152786<!--Buff: buff_Festival_FleaMarket_TradeFailCD--></T>
+        </L>
+        <E n="subject">TargetSim</E>
+        <V n="tooltip" t="enabled">
+          <T n="enabled">0x4349BCC6<!--String: "{M0.Este}{F0.Esta} Sim no quiere intercambiar nada ahora mismo."--></T>
+        </V>
+      </U>
+    </V>
+    <V t="buff">
+      <U n="buff">
+        <L n="blacklist">
+          <T>144401<!--Buff: buff_Festival_FleaMarket_TradeCD--></T>
+        </L>
+        <E n="subject">TargetSim</E>
+        <V n="tooltip" t="enabled">
+          <T n="enabled">0x37ADA0EE<!--String: "{M0.Este}{F0.Esta} Sim no tiene objetos para intercambiar ahora mismo."--></T>
+        </V>
+      </U>
+    </V>
+    <V t="inventory">
+      <U n="inventory">
+        <V n="contents_check" t="has_object_with_tag">
+          <U n="has_object_with_tag">
+            <L n="tag_set">
+              <E>BuyCat_Collection_Frog</E>
+            </L>
+          </U>
+        </V>
+        <V t="enabled" n="tooltip">
+          <T n="enabled">0xE0564EC0<!--String: "A {0.SimFirstName} le falta el objeto necesario para el intercambio."--></T>
+        </V>
+      </U>
+    </V>
+  </L>
+  <T n="time_overhead">30</T>
+</I>

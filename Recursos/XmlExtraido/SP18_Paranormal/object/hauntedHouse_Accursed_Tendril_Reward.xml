@@ -1,0 +1,190 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<I c="GameObject" i="object" m="objects.game_object" n="hauntedHouse_Accursed_Tendril_Reward" s="254162">
+  <U n="_components">
+    <V t="enabled" n="focus">
+      <U n="enabled">
+        <V n="_focus_score" t="globally">
+          <U n="globally">
+            <E n="base">NONE</E>
+          </U>
+        </V>
+      </U>
+    </V>
+    <V t="enabled" n="inventory_item">
+      <U n="enabled">
+        <V t="OVERRIDE" n="add_to_sim_inventory_affordances">
+          <L n="OVERRIDE">
+            <T>184685<!--SuperInteraction: si_SwipeIntoSimInventory_NoOwnership--></T>
+          </L>
+        </V>
+        <V n="no_carry_add_to_sim_inventory_affordances" t="OVERRIDE">
+          <L n="OVERRIDE">
+            <T>10459<!--SuperInteraction: si_SwipeIntoSimInventory--></T>
+            <T>202254<!--SuperInteraction: si_SwipeIntoSimInventory_Swim--></T>
+          </L>
+        </V>
+        <V t="OVERRIDE" n="no_carry_add_to_world_affordances">
+          <L n="OVERRIDE">
+            <T>10466<!--SwipeAddToWorldSuperInteraction: si_SwipeAddToWorld--></T>
+          </L>
+        </V>
+        <V t="OVERRIDE" n="put_away_affordance">
+          <T n="OVERRIDE">10466<!--SwipeAddToWorldSuperInteraction: si_SwipeAddToWorld--></T>
+        </V>
+        <T n="skip_carry_pose">True</T>
+        <E n="stack_scheme">NONE</E>
+        <L n="valid_inventory_types">
+          <E>SIM</E>
+          <E>STORAGE_CHEST_DORM</E>
+          <E>STORAGE_CHEST</E>
+        </L>
+      </U>
+    </V>
+    <V t="enabled" n="line_of_sight" />
+    <V t="enabled" n="retail_component">
+      <V n="enabled" t="reference">
+        <T n="reference">110393<!--RetailComponent: retailComponent_Default--></T>
+      </V>
+    </V>
+    <V n="state" t="enabled">
+      <U n="enabled">
+        <L n="states">
+          <U>
+            <L n="client_states">
+              <U>
+                <T n="key">255075<!--ObjectStateValue: hauntedHouse_Values_AccursedObject_Default--></T>
+              </U>
+              <U>
+                <T n="key">255078<!--ObjectStateValue: hauntedHouse_Values_AccursedObject_Despawn--></T>
+                <U n="value">
+                  <V n="vfx_state" t="apply_new_value">
+                    <V n="apply_new_value" t="start_vfx">
+                      <V n="start_vfx" t="single_effect">
+                        <U n="single_effect">
+                          <T n="effect_name">sp18_lawn_tendrils_appear</T>
+                        </U>
+                      </V>
+                    </V>
+                  </V>
+                </U>
+              </U>
+              <U>
+                <T n="key">255080<!--ObjectStateValue: hauntedHouse_Values_AccursedObject_Delete--></T>
+              </U>
+            </L>
+            <V t="reference" n="default_value">
+              <T n="reference">255075<!--ObjectStateValue: hauntedHouse_Values_AccursedObject_Default--></T>
+            </V>
+          </U>
+          <U>
+            <L n="client_states">
+              <U>
+                <T n="key">131794<!--ObjectStateValue: Kelpto_Stolen_Object--></T>
+              </U>
+              <U>
+                <T n="key">131795<!--ObjectStateValue: Klepto_Not_Stolen_Object--></T>
+              </U>
+            </L>
+            <V n="default_value" t="reference">
+              <T n="reference">131795<!--ObjectStateValue: Klepto_Not_Stolen_Object--></T>
+            </V>
+          </U>
+        </L>
+        <V t="enabled" n="timed_state_triggers">
+          <L n="enabled">
+            <U>
+              <T n="key">255078<!--ObjectStateValue: hauntedHouse_Values_AccursedObject_Despawn--></T>
+              <U n="value">
+                <L n="ops">
+                  <U>
+                    <L n="states_to_trigger">
+                      <T>255080<!--ObjectStateValue: hauntedHouse_Values_AccursedObject_Delete--></T>
+                    </L>
+                    <T n="trigger_time">1</T>
+                  </U>
+                </L>
+              </U>
+            </U>
+          </L>
+        </V>
+      </U>
+    </V>
+    <V t="enabled" n="tooltip_component">
+      <U n="enabled">
+        <L n="custom_tooltips">
+          <U>
+            <L n="tooltip_fields">
+              <U>
+                <E n="key">recipe_description</E>
+                <U n="value">
+                  <V t="single" n="text">
+                    <T n="single">0xE2E9872D<!--String: "{0.ObjectDescription}"--></T>
+                  </V>
+                  <V n="text_tokens" t="enabled">
+                    <U n="enabled">
+                      <L n="tokens">
+                        <V t="participant_type">
+                          <U n="participant_type">
+                            <V t="from_participant" n="objects">
+                              <U n="from_participant">
+                                <E n="participant">Object</E>
+                              </U>
+                            </V>
+                          </U>
+                        </V>
+                        <V t="participant_type" />
+                      </L>
+                    </U>
+                  </V>
+                </U>
+              </U>
+              <U>
+                <E n="key">recipe_name</E>
+                <U n="value">
+                  <V n="text" t="single">
+                    <T n="single">0x4F918F8<!--String: "{0.ObjectName}"--></T>
+                  </V>
+                  <V t="enabled" n="text_tokens">
+                    <U n="enabled">
+                      <L n="tokens">
+                        <V t="participant_type">
+                          <U n="participant_type">
+                            <V t="from_participant" n="objects">
+                              <U n="from_participant">
+                                <E n="participant">Object</E>
+                              </U>
+                            </V>
+                          </U>
+                        </V>
+                      </L>
+                    </U>
+                  </V>
+                </U>
+              </U>
+            </L>
+            <E n="tooltip_style">HOVER_TIP_CUSTOM_OBJECT</E>
+          </U>
+        </L>
+      </U>
+    </V>
+  </U>
+  <L n="_super_affordances">
+    <T>13328<!--ImmediateSuperInteraction: debug_Reset--></T>
+    <T>13326<!--ImmediateSuperInteraction: debug_ObjectDestroy--></T>
+    <T>103888<!--ImmediateSuperInteraction: cheat_set_as_head--></T>
+    <T>33623<!--SuperInteraction: art_View--></T>
+    <T>256670<!--SuperInteraction: hauntedHouse_SpecterLoot_Sell--></T>
+  </L>
+  <U n="recycling_data">
+    <L n="recycling_values">
+      <U>
+        <E n="Bucks Type">RecycleBitsBucks</E>
+        <T n="Value">0.5</T>
+      </U>
+      <U>
+        <E n="Bucks Type">RecyclePiecesBucks</E>
+        <T n="Value">0.5</T>
+      </U>
+    </L>
+  </U>
+</I>

@@ -1,0 +1,250 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<I c="GameObject" i="object" m="objects.game_object" n="object_MailboxWall" s="133176">
+  <U n="_components">
+    <V t="enabled" n="focus">
+      <U n="enabled">
+        <V n="_focus_score" t="globally">
+          <U n="globally">
+            <E n="base">NONE</E>
+          </U>
+        </V>
+      </U>
+    </V>
+    <V t="enabled" n="inventory">
+      <U n="enabled">
+        <T n="allow_putdown_in_inventory">False</T>
+        <V n="count_statistic" t="enabled">
+          <T n="enabled">16675<!--Statistic: statistic_Object_Mailbox-InventoryCount--></T>
+        </V>
+        <V n="get_put" t="custom">
+          <U n="custom">
+            <U n="get">
+              <T n="factory">11571<!--AnimationElement: Mailbox_GetLetter--></T>
+            </U>
+            <U n="put">
+              <T n="factory">11572<!--AnimationElement: Mailbox_MailLetter--></T>
+            </U>
+          </U>
+        </V>
+        <E n="inventory_type">MAILBOX</E>
+        <T n="visible">False</T>
+      </U>
+    </V>
+    <V n="live_drag_target" t="enabled">
+      <U n="enabled">
+        <L n="drop_tests_and_actions">
+          <U>
+            <E n="drop_type">MAILBOX</E>
+            <L n="test_set">
+              <V t="state">
+                <U n="state">
+                  <E n="operator">NOTEQUAL</E>
+                  <T n="value">133178<!--CommodityBasedObjectStateValue: MailboxWall_Contents_1_Full--></T>
+                  <E n="who">LiveDragTarget</E>
+                </U>
+              </V>
+              <V t="state">
+                <U n="state">
+                  <E n="operator">NOTEQUAL</E>
+                  <T n="value">133179<!--CommodityBasedObjectStateValue: MailboxWall_Contents_0_Empty--></T>
+                  <E n="who">LiveDragTarget</E>
+                </U>
+              </V>
+            </L>
+          </U>
+        </L>
+      </U>
+    </V>
+    <V n="state" t="enabled">
+      <U n="enabled">
+        <L n="state_triggers">
+          <U>
+            <L n="at_states">
+              <T>143557<!--CommodityBasedObjectStateValue: MailboxWall_autonomousDelivery_0_True--></T>
+            </L>
+            <V n="set_states" t="Set_state_list">
+              <L n="Set_state_list">
+                <T>133179<!--CommodityBasedObjectStateValue: MailboxWall_Contents_0_Empty--></T>
+              </L>
+            </V>
+          </U>
+          <U>
+            <L n="at_states">
+              <T>143558<!--CommodityBasedObjectStateValue: MailboxWall_autonomousDelivery_1_False--></T>
+            </L>
+            <V n="set_states" t="Set_state_list">
+              <L n="Set_state_list">
+                <T>133178<!--CommodityBasedObjectStateValue: MailboxWall_Contents_1_Full--></T>
+              </L>
+            </V>
+          </U>
+        </L>
+        <L n="states">
+          <U>
+            <L n="client_states">
+              <U>
+                <T n="key">133178<!--CommodityBasedObjectStateValue: MailboxWall_Contents_1_Full--></T>
+              </U>
+              <U>
+                <T n="key">133179<!--CommodityBasedObjectStateValue: MailboxWall_Contents_0_Empty--></T>
+              </U>
+            </L>
+            <V n="default_value" t="reference">
+              <T n="reference">133179<!--CommodityBasedObjectStateValue: MailboxWall_Contents_0_Empty--></T>
+            </V>
+          </U>
+          <U>
+            <L n="client_states">
+              <U>
+                <T n="key">143557<!--CommodityBasedObjectStateValue: MailboxWall_autonomousDelivery_0_True--></T>
+              </U>
+              <U>
+                <T n="key">143558<!--CommodityBasedObjectStateValue: MailboxWall_autonomousDelivery_1_False--></T>
+              </U>
+            </L>
+            <V n="default_value" t="reference">
+              <T n="reference">143557<!--CommodityBasedObjectStateValue: MailboxWall_autonomousDelivery_0_True--></T>
+            </V>
+          </U>
+          <U>
+            <L n="client_states">
+              <U>
+                <T n="key">147346<!--ObjectStateValue: MailboxWall_Nameplate_0_No--></T>
+              </U>
+              <U>
+                <T n="key">147347<!--ObjectStateValue: MailboxWall_Nameplate_1_Yes--></T>
+              </U>
+            </L>
+            <V n="default_value" t="reference">
+              <T n="reference">147347<!--ObjectStateValue: MailboxWall_Nameplate_1_Yes--></T>
+            </V>
+          </U>
+          <U>
+            <L n="client_states">
+              <U>
+                <T n="key">234605<!--ObjectStateValue: utilities_PowerShutoff_True--></T>
+                <U n="value">
+                  <V n="utility_modifiers" t="apply_new_value">
+                    <U n="apply_new_value">
+                      <L n="utility_modifiers">
+                        <V t="shut_off">
+                          <U n="shut_off">
+                            <E n="shutoff_reason">UTILITY_BOX_NEEDS_REPAIRS</E>
+                            <T n="shutoff_tooltip">0x665D309<!--String: "Se ha cortado la corriente. La Compañía Eléctrica Del Solar se disculpa por los inconvenientes ocasionados... Más o menos... En realidad no."--></T>
+                          </U>
+                        </V>
+                      </L>
+                    </U>
+                  </V>
+                </U>
+              </U>
+              <U>
+                <T n="key">234606<!--ObjectStateValue: utilities_PowerShutoff_False--></T>
+                <U n="value">
+                  <V t="apply_new_value" n="utility_modifiers" />
+                </U>
+              </U>
+            </L>
+            <V n="default_value" t="reference">
+              <T n="reference">234606<!--ObjectStateValue: utilities_PowerShutoff_False--></T>
+            </V>
+          </U>
+        </L>
+      </U>
+    </V>
+  </U>
+  <L n="_super_affordances">
+    <T>24821<!--SuperInteraction: mailbox_visit--></T>
+    <T>13328<!--ImmediateSuperInteraction: debug_Reset--></T>
+    <T>13326<!--ImmediateSuperInteraction: debug_ObjectDestroy--></T>
+    <T>103888<!--ImmediateSuperInteraction: cheat_set_as_head--></T>
+    <T>134814<!--ImmediateSuperInteraction: Mailbox_modifyInventory_add1--></T>
+    <T>134817<!--ImmediateSuperInteraction: mailbox_modifyInventory_clearAll--></T>
+    <T>134809<!--SuperInteraction: mailboxWall_GetMail--></T>
+    <T>133182<!--SuperInteraction: mailboxWall_BrowseMail--></T>
+    <T>134811<!--SuperInteraction: mailboxWall_PayBills--></T>
+    <T>224882<!--ImmediateSuperInteraction: utilities_Produce_Power_Debug--></T>
+    <T>224880<!--ImmediateSuperInteraction: utilities_Produce_Water_Debug--></T>
+    <T>134813<!--SuperInteraction: mailboxWall_MailmanDeliverMail--></T>
+    <T>143343<!--SuperInteraction: mailboxWall_MailmanDeliverMail_continuation--></T>
+    <T>151335<!--LicenseSongSuperInteraction: licenseSong_Guitar_mailboxWall--></T>
+    <T>151333<!--LicenseSongSuperInteraction: licenseSong_Piano_mailboxWall--></T>
+    <T>151337<!--LicenseSongSuperInteraction: licenseSong_Violin_mailboxWall--></T>
+    <T>126119<!--LicenseSongSuperInteraction: licenseSong_DJMix--></T>
+    <T>34081<!--ObjectInInventoryPickerInteraction: writing_SelfPublish--></T>
+    <T>35135<!--ObjectInInventoryPickerInteraction: writing_SellToPublisher--></T>
+    <T>35290<!--ObjectInInventoryPickerInteraction: writing_SellCopy--></T>
+    <T>13538<!--CheatRequestServiceNpcSuperInteraction: mailbox_CheatRequestServiceNpc--></T>
+    <T>100324<!--ImmediateSuperInteraction: cheat_disable_household_motive_decay--></T>
+    <T>100326<!--ImmediateSuperInteraction: cheat_disable_world_motive_decay--></T>
+    <T>99866<!--ImmediateSuperInteraction: debug_CreateFriendsForSim--></T>
+    <T>100323<!--ImmediateSuperInteraction: cheat_enable_household_motive_decay--></T>
+    <T>100325<!--ImmediateSuperInteraction: cheat_enable_world_motive_decay--></T>
+    <T>100322<!--ImmediateSuperInteraction: cheat_fill_visible_commodities_household--></T>
+    <T>100320<!--ImmediateSuperInteraction: cheat_fill_visible_commodities_world--></T>
+    <T>151344<!--LicenseSongSuperInteraction: licenseLyrics_Microphone_mailboxWall--></T>
+    <T>151360<!--LicenseSongSuperInteraction: licenseSong_PortableKeyboard_mailboxWall--></T>
+    <T>167682<!--SuperInteraction: mailboxWall_IgnoreBills--></T>
+    <T>181522<!--NPCLeaveLotInteraction: si_HolidayTradition_FatherWinter_Exit--></T>
+    <T>201660<!--SuperInteraction: mailbox_MailmanDeliverMail_Debug--></T>
+    <T>184781<!--SimPickerInteraction: simPicker_Mailbox_SendThankYouCard--></T>
+    <T>209747<!--ObjectInInventoryPickerInteraction: objectInInventoryPicker_OddJob_Woodworking--></T>
+    <T>151355<!--LicenseSongSuperInteraction: licenseSong_PipeOrgan--></T>
+    <T>209968<!--ObjectInInventoryPickerInteraction: objectInInventoryPicker_OddJob_Coconut--></T>
+    <T>209965<!--ObjectInInventoryPickerInteraction: objectInInventoryPicker_OddJob_KaluaPork--></T>
+    <T>209964<!--ObjectInInventoryPickerInteraction: objectInInventoryPicker_OddJob_Kava--></T>
+    <T>209969<!--ObjectInInventoryPickerInteraction: objectInInventoryPicker_OddJob_MahiMahi--></T>
+    <T>187182<!--ObjectInInventoryPickerInteraction: objectPicker_Mailbox_DonateCraftedItemToCharity--></T>
+    <T>187282<!--SimPickerInteraction: simPicker_Mailbox_SendForgedBreakupLetter--></T>
+    <T>209971<!--ObjectInInventoryPickerInteraction: objectInInventoryPicker_OddJob_Treasure--></T>
+    <T>210810<!--ObjectInInventoryPickerInteraction: objectInInventoryPicker_OddJob_Seashells--></T>
+    <T>222243<!--SuperInteraction: mailbox_UniversityEnrollment_Apply--></T>
+    <T>222244<!--SuperInteraction: mailbox_UniversityEnrollment_Enroll--></T>
+    <T>228782<!--SuperInteraction: mailbox_UniversityScholarships_Apply_Init--></T>
+    <T>228343<!--SuperInteraction: mailbox_PayLoans--></T>
+    <T>234233<!--ObjectInInventoryPickerInteraction: civilDesigner_Concept_PickConceptToSubmit--></T>
+    <T>233538<!--DisplaySnippetPickerSuperInteraction: community_Vote_Policy_StopRepealProcess--></T>
+    <T>226468<!--SuperInteraction: mailbox_GoToVote_EnactablePolicies--></T>
+    <T>226508<!--SuperInteraction: mailbox_GoToVote_RepealablePolicies--></T>
+    <T>242399<!--ImmediateSuperInteraction: immediate_CheckPolicies_Mailbox--></T>
+    <T>235461<!--DisplaySnippetPickerSuperInteraction: community_Policy_Enact_Cheat_Street--></T>
+    <T>235458<!--DisplaySnippetPickerSuperInteraction: community_Policy_Repealable_Picker_Cheat--></T>
+    <T>236393<!--ObjectInInventoryPickerInteraction: objectPicker_Mailbox_JuiceFizzing_SendForEvaluation--></T>
+    <T>236502<!--SuperInteraction: mailbox_JuiceFizzing_SendForEvaluation--></T>
+    <T>226037<!--SuperInteraction: mailbox_VoteByMail--></T>
+    <T>237568<!--ImmediateSuperInteraction: Mailbox_DisplayBillsDialog--></T>
+    <T>237636<!--ImmediateSuperInteraction: utilities_AddUtility_PowerConsumption_Large--></T>
+    <T>237637<!--ImmediateSuperInteraction: utilities_AddUtility_PowerConsumption_Medium--></T>
+    <T>237638<!--ImmediateSuperInteraction: utilities_AddUtility_PowerConsumption_Small--></T>
+    <T>237640<!--ImmediateSuperInteraction: utilities_AddUtility_PowerProduction_Large--></T>
+    <T>237641<!--ImmediateSuperInteraction: utilities_AddUtility_PowerProduction_Medium--></T>
+    <T>237642<!--ImmediateSuperInteraction: utilities_AddUtility_PowerProduction_Small--></T>
+    <T>237643<!--ImmediateSuperInteraction: utilities_AddUtility_WaterConsumption_Large--></T>
+    <T>237644<!--ImmediateSuperInteraction: utilities_AddUtility_WaterConsumption_Medium--></T>
+    <T>237645<!--ImmediateSuperInteraction: utilities_AddUtility_WaterConsumption_Small--></T>
+    <T>237646<!--ImmediateSuperInteraction: utilities_AddUtility_WaterProduction_Large--></T>
+    <T>237647<!--ImmediateSuperInteraction: utilities_AddUtility_WaterProduction_Medium--></T>
+    <T>237648<!--ImmediateSuperInteraction: utilities_AddUtility_WaterProduction_Small--></T>
+    <T>155969<!--ImmediateSuperInteraction: Mailbox_ForceBillsDue_Debug--></T>
+    <T>155973<!--ImmediateSuperInteraction: Mailbox_MakeBillsDelinquent_Debug--></T>
+    <T>201528<!--SuperInteraction: mailbox_GetMail_Influencer_Child--></T>
+    <T>229798<!--ImmediateSuperInteraction: debug_CommunityBoard_GiveInfluencePoint--></T>
+    <T>249382<!--PurchasePickerInteraction: purchase_Vacation_mailbox--></T>
+    <T>249418<!--PurchasePickerInteraction: purchase_Vacation_mailbox_child--></T>
+    <T>201923<!--SuperInteraction: mailboxWall_GetMail_Influencer_Child--></T>
+    <T>182948<!--SuperInteraction: si_HolidayTradition_FatherWinter_Arrival--></T>
+  </L>
+  <T n="fire_retardant">True</T>
+  <U n="recycling_data">
+    <L n="recycling_values">
+      <U>
+        <E n="Bucks Type">RecycleBitsBucks</E>
+        <T n="Value">0.25</T>
+      </U>
+      <U>
+        <E n="Bucks Type">RecyclePiecesBucks</E>
+        <T n="Value">0.75</T>
+      </U>
+    </L>
+  </U>
+</I>

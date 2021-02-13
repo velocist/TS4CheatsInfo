@@ -1,0 +1,130 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<I c="MixerInteraction" i="interaction" m="interactions.base.mixer_interaction" n="Food_Eat_Active" s="13377">
+  <V t="participant" n="_icon">
+    <U n="participant">
+      <L n="participant_type">
+        <E>Object</E>
+      </L>
+    </U>
+  </V>
+  <T n="allow_user_directed">False</T>
+  <V t="disable_focus" n="basic_focus" />
+  <U n="display_name_text_tokens">
+    <L n="tokens">
+      <V t="participant_type">
+        <U n="participant_type">
+          <V t="from_participant" n="objects">
+            <U n="from_participant">
+              <E n="participant">Actor</E>
+            </U>
+          </V>
+        </U>
+      </V>
+      <V t="participant_type">
+        <U n="participant_type">
+          <V t="from_participant" n="objects">
+            <U n="from_participant">
+              <E n="participant">Object</E>
+            </U>
+          </V>
+        </U>
+      </V>
+    </L>
+  </U>
+  <L n="interaction_category_tags">
+    <E>Interaction_Mixer</E>
+    <E>Interaction_All</E>
+  </L>
+  <V t="enabled" n="lock_out_time">
+    <U n="enabled">
+      <U n="interval">
+        <T n="lower_bound">1</T>
+        <T n="upper_bound">1</T>
+      </U>
+    </U>
+  </V>
+  <V n="outcome" t="single">
+    <U n="single">
+      <U n="actions">
+        <V n="animation_ref" t="enabled">
+          <U n="enabled">
+            <T n="factory">11498<!--AnimationElementSet: Food_Eat_ActiveActions_Set--></T>
+            <U n="overrides">
+              <V n="balloons" t="enabled">
+                <L n="enabled">
+                  <U>
+                    <L n="balloon_choices">
+                      <U>
+                        <V t="balloon_category" n="item">
+                          <T n="balloon_category">38372<!--BalloonCategory: balloonCategory_SetEating_Thought--></T>
+                        </V>
+                        <L n="tests">
+                          <L>
+                            <V t="object_criteria">
+                              <U n="object_criteria">
+                                <V n="identity_test" t="tags">
+                                  <U n="tags">
+                                    <L n="tag_set">
+                                      <E>Func_IceCreamBowl</E>
+                                    </L>
+                                    <E n="test_type">CONTAINS_NO_TAGS_IN_SET</E>
+                                  </U>
+                                </V>
+                                <V t="single_object" n="subject_specific_tests" />
+                              </U>
+                            </V>
+                          </L>
+                        </L>
+                      </U>
+                    </L>
+                    <L n="balloon_target">
+                      <E>Actor</E>
+                    </L>
+                  </U>
+                </L>
+              </V>
+            </U>
+          </U>
+        </V>
+        <T n="consume_object">True</T>
+        <L n="loot_list">
+          <T>176932<!--LootActions: loot_LocalCultureSkill_FoodTolerance_Consume--></T>
+          <T>175279<!--LootActions: curses_SeeingThings_IncrementDispel--></T>
+          <T>187146<!--LootActions: loot_SabotagedFoodBuffs--></T>
+          <T>209821<!--LootActions: loot_Career_Conservationist_ConsultRegulation_OrganicProduce_EatingOrganic--></T>
+          <T>211573<!--LootActions: loot_Trait_IslandAncestor_TasteofHome--></T>
+          <T>210800<!--LootActions: loot_Trait_ChildoftheOcean_StomachSquall--></T>
+        </L>
+        <V t="enabled" n="xevt">
+          <T n="enabled">770</T>
+        </V>
+      </U>
+    </U>
+  </V>
+  <U n="sub_action">
+    <T n="base_weight">1000</T>
+  </U>
+  <E n="target_type">OBJECT</E>
+  <L n="test_autonomous">
+    <L>
+      <V t="buff">
+        <U n="buff">
+          <L n="blacklist">
+            <T>137560<!--Buff: buff_Career_Critic_ThatFoodMustBeAwful--></T>
+          </L>
+        </U>
+      </V>
+    </L>
+  </L>
+  <L n="test_globals">
+    <V t="buff">
+      <U n="buff">
+        <L n="blacklist">
+          <T>142689<!--Buff: buff_Food_SuppressStandardEatMixer--></T>
+          <T>247897<!--Buff: buff_ChopsticksOptional_PreferChopsticks--></T>
+        </L>
+      </U>
+    </V>
+  </L>
+  <T n="visible">False</T>
+</I>

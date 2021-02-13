@@ -1,0 +1,129 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<I c="SuperInteraction" i="interaction" m="interactions.base.super_interaction" n="skill_RockClimbing_Gear_Repair" s="246649">
+  <V t="enabled" n="_saveable" />
+  <T n="allow_autonomous">False</T>
+  <T n="allow_from_sim_inventory">True</T>
+  <T n="attention_cost">0.5</T>
+  <V t="one_shot" n="basic_content" />
+  <V t="disabled" n="content_score" />
+  <T n="display_name">0x30CB6341<!--String: "Reparar equipo de escalada"--></T>
+  <U n="display_name_text_tokens">
+    <L n="tokens">
+      <V t="participant_type">
+        <U n="participant_type">
+          <V t="from_participant" n="objects">
+            <U n="from_participant">
+              <E n="participant">Actor</E>
+            </U>
+          </V>
+        </U>
+      </V>
+      <V t="participant_type">
+        <U n="participant_type">
+          <V t="from_participant" n="objects">
+            <U n="from_participant">
+              <E n="participant">Object</E>
+            </U>
+          </V>
+        </U>
+      </V>
+    </L>
+  </U>
+  <L n="interaction_category_tags">
+    <E>Interaction_Super</E>
+    <E>Interaction_All</E>
+  </L>
+  <V n="outcome" t="single">
+    <U n="single">
+      <U n="actions">
+        <L n="basic_extras">
+          <V t="notification">
+            <U n="notification">
+              <V n="dialog" t="single">
+                <V n="single" t="literal">
+                  <U n="literal">
+                    <V t="enabled" n="icon">
+                      <V t="resource_key" n="enabled">
+                        <U n="resource_key">
+                          <T n="key" p="InEP10\UI\Icons\Inventory\inventory_climbingGear.png">2f7d0004:00000000:87cdbacf3ea28482</T>
+                        </U>
+                      </V>
+                    </V>
+                    <V n="text" t="single">
+                      <T n="single">0x42A6E3BD<!--String: "El equipo de escalada de {0.SimFirstName} se ha reparado."--></T>
+                    </V>
+                  </U>
+                </V>
+              </V>
+            </U>
+          </V>
+          <V t="buff_fire_and_forget">
+            <U n="buff_fire_and_forget">
+              <U n="buff">
+                <T n="buff_type">252530<!--Buff: buff_RockClimbingGear_RepairCooldown--></T>
+              </U>
+            </U>
+          </V>
+        </L>
+        <L n="loot_list">
+          <T>252528<!--LootActions: loot_RockClimbingGear_RepairGear--></T>
+        </L>
+      </U>
+    </U>
+  </V>
+  <E n="scoring_priority">NORMAL</E>
+  <T n="subaction_selection_weight">1</T>
+  <E n="target_type">OBJECT</E>
+  <L n="test_globals">
+    <V t="sim_info">
+      <U n="sim_info">
+        <V t="specified" n="ages" />
+        <V t="specified" n="species">
+          <U n="specified">
+            <L n="species">
+              <E />
+            </L>
+          </U>
+        </V>
+        <E n="who">Actor</E>
+      </U>
+    </V>
+    <V t="user_running_interaction">
+      <U n="user_running_interaction">
+        <L n="affordance_lists">
+          <T>246908<!--AffordanceList: affordanceList_ClimbingRoute--></T>
+        </L>
+        <E n="participant">Actor</E>
+        <T n="test_for_not_running">True</T>
+      </U>
+    </V>
+    <V t="buff">
+      <U n="buff">
+        <L n="blacklist">
+          <T>252530<!--Buff: buff_RockClimbingGear_RepairCooldown--></T>
+        </L>
+        <V t="enabled" n="tooltip">
+          <T n="enabled">0x94B2B15E<!--String: "¡{0.SimFirstName} tiene que esperar para poder hacer esto de nuevo!"--></T>
+        </V>
+      </U>
+    </V>
+    <V t="state">
+      <U n="state">
+        <E n="operator">NOTEQUAL</E>
+        <V n="tooltip" t="enabled">
+          <T n="enabled">0xFAE1AB6A<!--String: "El equipo de escalada está en muy buen estado y no necesita reparaciones."--></T>
+        </V>
+        <T n="value">246871<!--CommodityBasedObjectStateValue: rockClimbingGear_Condition_Great--></T>
+      </U>
+    </V>
+    <V t="state">
+      <U n="state">
+        <V n="tooltip" t="enabled">
+          <T n="enabled">0x3F3DC349<!--String: "{0.SimFirstName} no puede hacer esto mientras lleva puesto el equipo de escalada."--></T>
+        </V>
+        <T n="value">246585<!--ObjectStateValue: object_RockClimbingGear_NotEquipped--></T>
+      </U>
+    </V>
+  </L>
+  <T n="time_overhead">30</T>
+</I>

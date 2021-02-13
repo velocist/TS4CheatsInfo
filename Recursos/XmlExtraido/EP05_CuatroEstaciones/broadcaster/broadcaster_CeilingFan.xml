@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<I c="Broadcaster" i="broadcaster" m="broadcasters.broadcaster" n="broadcaster_CeilingFan" s="210328">
+  <L n="constraints">
+    <V t="circle">
+      <U n="circle">
+        <T n="radius">3</T>
+      </U>
+    </V>
+    <V t="line_of_sight" />
+  </L>
+  <L n="effects">
+    <V t="buff">
+      <U n="buff">
+        <U n="buff">
+          <T n="buff_type">210313<!--Buff: buff_Object_CeilingFan_Cooling--></T>
+        </U>
+        <T n="remove_buff">True</T>
+      </U>
+    </V>
+    <V t="buff">
+      <U n="buff">
+        <U n="buff">
+          <T n="buff_type">210312<!--Buff: buff_Object_CeilingFan_Drying--></T>
+        </U>
+        <T n="remove_buff">True</T>
+        <L n="tests">
+          <L>
+            <V t="trait">
+              <U n="trait">
+                <L n="blacklist_traits">
+                  <T>162668<!--Trait: trait_PlantSim--></T>
+                  <T>164296<!--Trait: trait_isPlantSimNPC--></T>
+                </L>
+              </U>
+            </V>
+          </L>
+        </L>
+      </U>
+    </V>
+  </L>
+  <V t="on_pulse" n="frequency">
+    <U n="on_pulse">
+      <T n="cooldown_time">10</T>
+    </U>
+  </V>
+</I>

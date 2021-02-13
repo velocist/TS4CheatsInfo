@@ -1,0 +1,383 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<I c="CancelOnStateChangeInteraction" i="interaction" m="objects.electronics.stereo" n="DJBooth_Watch" s="122659">
+  <L n="_constraints">
+    <U>
+      <L n="constraints">
+        <U>
+          <V n="value" t="facing">
+            <U n="facing">
+              <T n="inner_radius">0</T>
+              <T n="range">180</T>
+            </U>
+          </V>
+        </U>
+      </L>
+    </U>
+    <U>
+      <L n="constraints">
+        <U>
+          <V n="value" t="cone">
+            <U n="cone">
+              <T n="angle">180</T>
+              <T n="ideal_angle">0.75</T>
+              <T n="ideal_radius_min">0.25</T>
+              <T n="max_radius">3</T>
+              <T n="min_radius">1</T>
+            </U>
+          </V>
+        </U>
+      </L>
+    </U>
+  </L>
+  <V t="participant" n="_icon">
+    <U n="participant">
+      <L n="participant_type">
+        <E>Object</E>
+      </L>
+    </U>
+  </V>
+  <V t="enabled" n="_saveable" />
+  <L n="_static_commodities">
+    <U>
+      <T n="desire">8</T>
+      <T n="static_commodity">123012<!--StaticCommodity: staticCommodity_SituationRole_ClubGoDancing_DJAudience--></T>
+    </U>
+    <U>
+      <T n="desire">2</T>
+      <T n="static_commodity">123412<!--StaticCommodity: staticCommodity_SituationRole_ClubGoDancing_PartyGoer--></T>
+    </U>
+    <U>
+      <T n="desire">16</T>
+      <T n="static_commodity">124599<!--StaticCommodity: staticCommodity_DJBooth_Watch--></T>
+    </U>
+    <U>
+      <T n="static_commodity">147086<!--StaticCommodity: staticCommodity_WatchDJPerformance--></T>
+    </U>
+  </L>
+  <T n="_super_affordance_can_share_target">True</T>
+  <T n="acquire_targets_as_resource">False</T>
+  <L n="appropriateness_tags">
+    <E>Appropriateness_Stereo</E>
+  </L>
+  <T n="attention_cost">0.5</T>
+  <V n="basic_content" t="flexible_length">
+    <U n="flexible_length">
+      <L n="conditional_actions">
+        <V t="literal">
+          <U n="literal">
+            <L n="conditions">
+              <V t="time_based">
+                <U n="time_based">
+                  <T n="max_time">5</T>
+                  <T n="min_time">5</T>
+                </U>
+              </V>
+            </L>
+            <E n="interaction_action">NO_ACTION</E>
+            <L n="loot_actions">
+              <T>123184<!--LootActions: loot_Commodity_DJBooth_ShowQuality_AddOnStart--></T>
+            </L>
+          </U>
+        </V>
+        <V t="literal">
+          <U n="literal">
+            <L n="conditions">
+              <V t="time_based">
+                <U n="time_based">
+                  <T n="max_time">30</T>
+                  <T n="min_time">30</T>
+                </U>
+              </V>
+            </L>
+            <E n="interaction_action">NO_ACTION</E>
+            <L n="loot_actions">
+              <T>124743<!--LootActions: loot_Statistic_Skill_DJMixing_fromWatch--></T>
+            </L>
+          </U>
+        </V>
+        <V t="literal">
+          <U n="literal">
+            <L n="conditions">
+              <V t="buff_based">
+                <U n="buff_based">
+                  <T n="buff">125704<!--Buff: buff_AutonomyMod_DJBooth_Audience_X_Anti--></T>
+                  <E n="timing">HAS_BUFF</E>
+                </U>
+              </V>
+            </L>
+            <E n="interaction_action">EXIT_NATURALLY</E>
+            <E n="restrictions">AUTONOMOUS_ONLY</E>
+          </U>
+        </V>
+        <V t="literal">
+          <U n="literal">
+            <L n="conditions">
+              <V t="state_based">
+                <U n="state_based">
+                  <V n="state" t="on_trigger">
+                    <T n="on_trigger">39736<!--CommodityBasedObjectStateValue: FireState_Burn_Material_Change_Burning--></T>
+                  </V>
+                </U>
+              </V>
+            </L>
+            <E n="interaction_action">EXIT_CANCEL</E>
+          </U>
+        </V>
+        <V t="list_reference">
+          <T n="list_reference">39200<!--ExitConditionList: ExitConditionList_StateBrokenObject--></T>
+        </V>
+      </L>
+      <V n="content" t="staging_content">
+        <U n="staging_content">
+          <U n="content_set">
+            <L n="affordance_links">
+              <T>130635<!--MixerInteraction: stereo_listenPassive_mixer_DJBooth--></T>
+              <T>126407<!--MixerInteraction: DJBooth_crowdReact_Watch_cheer--></T>
+              <T>126408<!--MixerInteraction: DJBooth_crowdReact_Watch_heckle--></T>
+              <T>127875<!--MixerInteraction: mixer_DJBooth_GiveTipToPlayer--></T>
+            </L>
+            <V n="balloon_overrides" t="enabled">
+              <L n="enabled">
+                <U>
+                  <T n="balloon_chance">50</T>
+                  <L n="balloon_choices">
+                    <U>
+                      <V n="item" t="balloon_category">
+                        <T n="balloon_category">125542<!--BalloonCategory: balloonCategory_setDJ_Thought--></T>
+                      </V>
+                    </U>
+                  </L>
+                  <T n="balloon_delay">1</T>
+                  <T n="balloon_delay_random_offset">0.5</T>
+                  <L n="balloon_target">
+                    <E>Actor</E>
+                  </L>
+                </U>
+              </L>
+            </V>
+          </U>
+        </U>
+      </V>
+      <V n="periodic_stat_change" t="enabled">
+        <U n="enabled">
+          <L n="operations">
+            <V t="statistic_change">
+              <U n="statistic_change">
+                <T n="amount">0.18</T>
+                <T n="stat">16655<!--Commodity: motive_Fun--></T>
+              </U>
+            </V>
+          </L>
+        </U>
+      </V>
+    </U>
+  </V>
+  <L n="basic_extras">
+    <V t="buff">
+      <U n="buff">
+        <U n="buff_type">
+          <T n="buff_type">122968<!--Buff: buff_Object_DJBooth_hidden_crowdMember--></T>
+        </U>
+      </U>
+    </V>
+  </L>
+  <V t="tunable_focus" n="basic_focus">
+    <U n="tunable_focus">
+      <T n="layer">3</T>
+    </U>
+  </V>
+  <L n="basic_liabilities">
+    <V t="route_goal_suppression" />
+  </L>
+  <V t="disabled" n="basic_reserve_object" />
+  <U n="cancel_state_test">
+    <T n="value">122491<!--ObjectStateValue: DJBooth_PerformanceType_None--></T>
+  </U>
+  <V t="disabled" n="content_score" />
+  <T n="display_name">0xCC1F5AD8<!--String: "Mirar"--></T>
+  <U n="display_name_text_tokens">
+    <L n="tokens">
+      <V t="participant_type">
+        <U n="participant_type">
+          <V n="objects" t="from_participant">
+            <U n="from_participant">
+              <E n="participant">Actor</E>
+            </U>
+          </V>
+        </U>
+      </V>
+      <V t="participant_type">
+        <U n="participant_type">
+          <V t="from_participant" n="objects">
+            <U n="from_participant">
+              <E n="participant">Object</E>
+            </U>
+          </V>
+        </U>
+      </V>
+    </L>
+  </U>
+  <T n="ignore_group_socials">False</T>
+  <L n="interaction_category_tags">
+    <E>Interaction_Super</E>
+    <E>Interaction_All</E>
+  </L>
+  <V t="test_based" n="outcome">
+    <U n="test_based">
+      <L n="fallback_outcomes">
+        <U>
+          <U n="outcome">
+            <T n="force_outcome_on_exit">True</T>
+            <L n="loot_list">
+              <T>122971<!--LootActions: loot_Buff_DJBooth_Remove_hidden_crowdMember--></T>
+              <T>123182<!--LootActions: loot_Commodity_DJBooth_ShowQuality_RemoveOnOutcome--></T>
+            </L>
+            <E n="outcome_result">NONE</E>
+          </U>
+        </U>
+      </L>
+    </U>
+  </V>
+  <T n="pie_menu_priority">6</T>
+  <L n="rallyable">
+    <U>
+      <V n="behavior" t="push_affordance">
+        <U n="push_affordance">
+          <T n="affordance">122659<!--CancelOnStateChangeInteraction: DJBooth_Watch--></T>
+          <T n="loc_display_name">0x12534158<!--String: "{0.String} en grupo"--></T>
+        </U>
+      </V>
+      <V t="enabled" n="pie_menu_icon">
+        <V n="enabled" t="resource_key">
+          <U n="resource_key">
+            <T n="key" p="InGame\UI\Icons\PieMenu\SpecialInteractions\specialinteraction_ensembles_piemenu.png">2f7d0004:00000000:a113281581961bf1</T>
+          </U>
+        </V>
+      </V>
+      <T n="skip_interaction_test">True</T>
+    </U>
+  </L>
+  <V t="enabled" n="route_start_balloon">
+    <U n="enabled">
+      <U n="balloon">
+        <L n="balloon_choices">
+          <U>
+            <V n="item" t="balloon_icon">
+              <U n="balloon_icon">
+                <V t="participant" n="icon">
+                  <U n="participant">
+                    <L n="participant_type">
+                      <E>Object</E>
+                    </L>
+                  </U>
+                </V>
+              </U>
+            </V>
+          </U>
+        </L>
+        <L n="balloon_target">
+          <E>Actor</E>
+        </L>
+      </U>
+    </U>
+  </V>
+  <E n="scoring_priority">NORMAL</E>
+  <T n="subaction_selection_weight">1</T>
+  <V n="super_affordance_klobberers" t="enabled">
+    <V n="enabled" t="literal">
+      <U n="literal">
+        <V n="default_inclusion" t="include_all">
+          <U n="include_all">
+            <L n="exclude_affordances">
+              <T>122399<!--CancelOnStateChangeInteraction: DJBooth_Dance--></T>
+            </L>
+          </U>
+        </V>
+      </U>
+    </V>
+  </V>
+  <E n="target_type">OBJECT</E>
+  <L n="test_autonomous">
+    <L>
+      <V t="state">
+        <U n="state">
+          <T n="value">122492<!--ObjectStateValue: DJBooth_PerformanceType_Gig--></T>
+        </U>
+      </V>
+      <V t="buff">
+        <U n="buff">
+          <L n="blacklist">
+            <T>125704<!--Buff: buff_AutonomyMod_DJBooth_Audience_X_Anti--></T>
+          </L>
+        </U>
+      </V>
+      <V t="appropriateness" />
+    </L>
+  </L>
+  <V t="enabled" n="test_disallow_while_running">
+    <U n="enabled">
+      <L n="affordances">
+        <T>121412<!--SuperInteraction: DJBooth_Play--></T>
+      </L>
+      <T n="test_self">True</T>
+    </U>
+  </V>
+  <L n="test_globals">
+    <V t="sim_info">
+      <U n="sim_info">
+        <V t="specified" n="ages">
+          <L n="specified">
+            <E>CHILD</E>
+            <E>TEEN</E>
+            <E>YOUNGADULT</E>
+            <E>ADULT</E>
+            <E>ELDER</E>
+          </L>
+        </V>
+        <V t="specified" n="species">
+          <U n="specified">
+            <L n="species">
+              <E />
+            </L>
+          </U>
+        </V>
+        <E n="who">Actor</E>
+      </U>
+    </V>
+    <V t="posture">
+      <U n="posture">
+        <L n="prohibited_postures">
+          <T>121363<!--Posture: posture_DJBooth--></T>
+        </L>
+      </U>
+    </V>
+    <V t="buff">
+      <U n="buff">
+        <L n="blacklist">
+          <T>122816<!--Buff: buff_Role_Situation_DJDancing_NPC_DJ--></T>
+          <T>29363<!--Buff: buff_Sim_IsBarTending--></T>
+        </L>
+      </U>
+    </V>
+    <V t="state">
+      <U n="state">
+        <E n="operator">NOTEQUAL</E>
+        <T n="value">128106<!--ObjectStateValue: DJBooth_PerformanceType_Radio--></T>
+      </U>
+    </V>
+    <V t="test_set_reference">
+      <T n="test_set_reference">77630<!--TestSetInstance: testSet_StateNotBroken--></T>
+    </V>
+    <V t="state">
+      <U n="state">
+        <V t="always_pass" n="fallback_behavior" />
+        <E n="operator">NOTEQUAL</E>
+        <V n="tooltip" t="enabled">
+          <T n="enabled">0x8668098A<!--String: "Es necesario que este objeto esté siendo utilizando para realizar esta interacción."--></T>
+        </V>
+        <T n="value">122491<!--ObjectStateValue: DJBooth_PerformanceType_None--></T>
+      </U>
+    </V>
+  </L>
+  <T n="time_overhead">30</T>
+</I>

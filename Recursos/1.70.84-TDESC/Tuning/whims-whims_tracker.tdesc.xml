@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+
+<TuningRoot>
+    <Module name="whims.whims_tracker" muid="475B6E9A94B13440">
+        <Class name="WhimsTracker" muid="31E46AC2F6F0E561">
+            <TunableList name="SATISFACTION_STORE_ITEMS" class="TunableMapping" display="Satisfaction Store Items" muid="7F96C0BACE26F7C5" mapping_key="key" mapping_value="value" description="A list of Sim based Tunable Rewards offered from the Satisfaction Store." Deprecated="False" filter="0" group="General">
+                <TunableTuple class="TunableTuple" muid="84CEB82D5DC61E29" Deprecated="False" filter="0" group="General">
+                    <Tunable type="reward" name="key" class="TunableReference" display="Key" muid="925351D9B9A4473" description="The reward to offer." allow_none="False" Deprecated="False" filter="0" group="General" pack_safe="True" />
+                    <TunableTuple name="value" class="TunableTuple" display="Value" muid="3BB353E945484FC3" description="A collection of data about this reward." Deprecated="False" filter="0" group="General">
+                        <TunableEnum type="WhimAwardTypes" name="award_type" class="TunableEnumEntry" default="MONEY" display="Award Type" muid="609E859F6B38BFD7" static_entries="whims-whims_tracker.WhimsTracker.WhimAwardTypes" Deprecated="False" filter="0" group="General" />
+                        <Tunable type="int" name="cost" class="Tunable" default="100" display="Cost" muid="7116688D3A01715" tuning_state="NeedsTuning" Deprecated="False" filter="0" group="General" />
+                    </TunableTuple>
+                </TunableTuple>
+            </TunableList>
+
+            <Tunable type="float" name="WHIM_ANTI_THRASHING_TIME" class="TunableSimMinute" default="5" display="Whim Anti Thrashing Time" muid="1793DC06714FFE8" min="None" max="None" description="The amount of time in sim minutes that a whim will not be overwritten&#xA;by another whimset becoming active.  This is essentially a period of&#xA;time after a whim becomes active that it is considered locked." tuning_state="NeedsTuning" Deprecated="False" filter="0" group="General" />
+
+            <Tunable type="float" name="WHIM_THRASHING_CHANCE" class="TunablePercent" default="50" display="Whim Thrashing Chance" muid="5603FDA66D5F1B24" min="0" max="100" description="The tunable percent chance that the activation of a whimset will try&#xA;and cancel a whim of a lower whimset priority as long as that whim is&#xA;not locked, and not on the anti thrashing cooldown." Deprecated="False" filter="0" group="General" />
+
+            <Class name="WhimAwardTypes" muid="3F06A9346E624536" enum_bit_flag="False" enum_locked="False">
+                <EnumItem name="BUFF" muid="404DB184595F6010" enum_value="1" />
+
+                <EnumItem name="CASPART" muid="CBF724B4834FAD57" enum_value="4" />
+
+                <EnumItem name="MONEY" muid="43782AB5C0BB33D5" enum_value="0" />
+
+                <EnumItem name="OBJECT" muid="76E62ECEB509E148" enum_value="2" />
+
+                <EnumItem name="TRAIT" muid="A715D172531D21E0" enum_value="3" />
+            </Class>
+        </Class>
+    </Module>
+</TuningRoot>

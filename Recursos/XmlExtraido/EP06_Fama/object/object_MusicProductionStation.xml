@@ -1,0 +1,426 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<I c="GameObject" i="object" m="objects.game_object" n="object_MusicProductionStation" s="192168">
+  <U n="_components">
+    <V t="enabled" n="focus">
+      <U n="enabled">
+        <V t="globally" n="_focus_score">
+          <U n="globally">
+            <E n="base">LOW</E>
+          </U>
+        </V>
+      </U>
+    </V>
+    <V t="enabled" n="retail_component">
+      <V n="enabled" t="reference">
+        <T n="reference">115303<!--RetailComponent: retailComponent_Default_HighAppeal--></T>
+      </V>
+    </V>
+    <V n="state" t="enabled">
+      <U n="enabled">
+        <L n="state_triggers">
+          <U>
+            <L n="at_states">
+              <T>195580<!--ObjectStateValue: musicProductionStation_AudioState_Create--></T>
+              <T>191967<!--ObjectStateValue: MusicProductionStation_AudioState_Play--></T>
+              <T>197074<!--ObjectStateValue: musicProductionStation_AudioState_Remixing--></T>
+            </L>
+            <V t="Set_state_list" n="set_states">
+              <L n="Set_state_list">
+                <T>224553<!--ObjectStateValue: utilities_Power_Consumption_On--></T>
+              </L>
+            </V>
+            <E n="trigger_operation">OR</E>
+          </U>
+          <U>
+            <L n="at_states">
+              <T>191966<!--ObjectStateValue: MusicProductionStation_AudioState_Off--></T>
+            </L>
+            <V t="Set_state_list" n="set_states">
+              <L n="Set_state_list">
+                <T>224564<!--ObjectStateValue: utilities_Power_Consumption_Off--></T>
+              </L>
+            </V>
+          </U>
+          <U>
+            <L n="at_states">
+              <T>15078<!--CommodityBasedObjectStateValue: Brokenness_Unbroken--></T>
+            </L>
+            <V t="Set_state_list" n="set_states">
+              <L n="Set_state_list">
+                <T>15081<!--ObjectStateValue: BrokenState_Unbroken--></T>
+              </L>
+            </V>
+          </U>
+          <U>
+            <L n="at_states">
+              <T>15076<!--CommodityBasedObjectStateValue: Brokenness_Broken--></T>
+            </L>
+            <V n="set_states" t="Set_state_list">
+              <L n="Set_state_list">
+                <T>15080<!--ObjectStateValue: BrokenState_Broken--></T>
+              </L>
+            </V>
+          </U>
+          <U>
+            <L n="at_states">
+              <T>77532<!--CommodityBasedObjectStateValue: FireState_Burn_Material_Change_Replace--></T>
+            </L>
+            <V n="set_states" t="Set_state_list">
+              <L n="Set_state_list">
+                <T>39737<!--CommodityBasedObjectStateValue: FireState_Burn_Material_Change_Not_Burning--></T>
+              </L>
+            </V>
+          </U>
+        </L>
+        <L n="states">
+          <U>
+            <L n="client_states">
+              <U>
+                <T n="key">191966<!--ObjectStateValue: MusicProductionStation_AudioState_Off--></T>
+                <U n="value">
+                  <V t="apply_new_value" n="material_state">
+                    <U n="apply_new_value">
+                      <V t="set_to_custom_value" n="state_name">
+                        <T n="set_to_custom_value">Off</T>
+                      </V>
+                    </U>
+                  </V>
+                </U>
+              </U>
+              <U>
+                <T n="key">191967<!--ObjectStateValue: MusicProductionStation_AudioState_Play--></T>
+                <U n="value">
+                  <V t="apply_new_value" n="broadcaster">
+                    <V n="apply_new_value" t="start_broadcaster">
+                      <U n="start_broadcaster">
+                        <L n="broadcaster_types">
+                          <U>
+                            <T n="item">159374<!--Broadcaster: broadcaster_Fear_Pet_Stereo--></T>
+                          </U>
+                        </L>
+                      </U>
+                    </V>
+                  </V>
+                  <V n="material_state" t="apply_new_value">
+                    <U n="apply_new_value">
+                      <V n="state_name" t="set_to_custom_value">
+                        <T n="set_to_custom_value">Tablet</T>
+                      </V>
+                    </U>
+                  </V>
+                </U>
+              </U>
+              <U>
+                <T n="key">195580<!--ObjectStateValue: musicProductionStation_AudioState_Create--></T>
+                <U n="value">
+                  <V t="apply_new_value" n="broadcaster">
+                    <V n="apply_new_value" t="start_broadcaster">
+                      <U n="start_broadcaster">
+                        <L n="broadcaster_types">
+                          <U>
+                            <T n="item">159374<!--Broadcaster: broadcaster_Fear_Pet_Stereo--></T>
+                          </U>
+                        </L>
+                      </U>
+                    </V>
+                  </V>
+                  <V t="apply_new_value" n="material_state">
+                    <U n="apply_new_value">
+                      <V n="state_name" t="set_to_custom_value">
+                        <T n="set_to_custom_value">On</T>
+                      </V>
+                    </U>
+                  </V>
+                </U>
+              </U>
+              <U>
+                <T n="key">197074<!--ObjectStateValue: musicProductionStation_AudioState_Remixing--></T>
+                <U n="value">
+                  <V t="apply_new_value" n="broadcaster">
+                    <V n="apply_new_value" t="start_broadcaster">
+                      <U n="start_broadcaster">
+                        <L n="broadcaster_types">
+                          <U>
+                            <T n="item">159374<!--Broadcaster: broadcaster_Fear_Pet_Stereo--></T>
+                          </U>
+                        </L>
+                      </U>
+                    </V>
+                  </V>
+                  <V n="material_state" t="apply_new_value">
+                    <U n="apply_new_value">
+                      <V n="state_name" t="set_to_custom_value">
+                        <T n="set_to_custom_value">Tablet</T>
+                      </V>
+                    </U>
+                  </V>
+                </U>
+              </U>
+            </L>
+            <V t="reference" n="default_value">
+              <T n="reference">191966<!--ObjectStateValue: MusicProductionStation_AudioState_Off--></T>
+            </V>
+            <T n="reset_on_load_if_time_passes">True</T>
+            <T n="reset_to_default">True</T>
+          </U>
+          <U>
+            <L n="client_states">
+              <U>
+                <T n="key">224553<!--ObjectStateValue: utilities_Power_Consumption_On--></T>
+                <U n="value">
+                  <V n="autonomy_modifiers" t="apply_new_value">
+                    <V n="apply_new_value" t="apply_statistic_modifiers">
+                      <U n="apply_statistic_modifiers">
+                        <L n="lot_statistic_modifiers">
+                          <U>
+                            <V n="modifier" t="basic_value">
+                              <U n="basic_value">
+                                <T n="value">-0.00694</T>
+                              </U>
+                            </V>
+                            <T n="statistic">233027<!--Commodity: commodity_Utilities_Power--></T>
+                          </U>
+                        </L>
+                      </U>
+                    </V>
+                  </V>
+                </U>
+              </U>
+              <U>
+                <T n="key">224564<!--ObjectStateValue: utilities_Power_Consumption_Off--></T>
+                <U n="value">
+                  <V t="apply_new_value" n="autonomy_modifiers" />
+                </U>
+              </U>
+            </L>
+            <V t="reference" n="default_value">
+              <T n="reference">224564<!--ObjectStateValue: utilities_Power_Consumption_Off--></T>
+            </V>
+          </U>
+          <U>
+            <L n="client_states">
+              <U>
+                <T n="key">15076<!--CommodityBasedObjectStateValue: Brokenness_Broken--></T>
+              </U>
+              <U>
+                <T n="key">15077<!--CommodityBasedObjectStateValue: Brokenness_Neutral--></T>
+              </U>
+              <U>
+                <T n="key">15078<!--CommodityBasedObjectStateValue: Brokenness_Unbroken--></T>
+              </U>
+              <U>
+                <T n="key">97754<!--CommodityBasedObjectStateValue: Brokenness_Broken_Sabotage--></T>
+              </U>
+            </L>
+            <V t="reference" n="default_value">
+              <T n="reference">15078<!--CommodityBasedObjectStateValue: Brokenness_Unbroken--></T>
+            </V>
+          </U>
+          <U>
+            <L n="client_states">
+              <U>
+                <T n="key">15080<!--ObjectStateValue: BrokenState_Broken--></T>
+                <U n="value">
+                  <V n="vfx_state" t="apply_new_value">
+                    <V n="apply_new_value" t="start_vfx">
+                      <V n="start_vfx" t="single_effect">
+                        <U n="single_effect">
+                          <T n="effect_name">ep02_dj_booth_broken</T>
+                          <V t="Slot" n="joint_name">
+                            <T n="Slot">_FX_repair</T>
+                          </V>
+                        </U>
+                      </V>
+                    </V>
+                  </V>
+                </U>
+              </U>
+              <U>
+                <T n="key">15081<!--ObjectStateValue: BrokenState_Unbroken--></T>
+                <U n="value">
+                  <V t="apply_new_value" n="vfx_state" />
+                </U>
+              </U>
+              <U>
+                <T n="key">39292<!--ObjectStateValue: BrokenState_Repairing--></T>
+              </U>
+            </L>
+            <V t="reference" n="default_value">
+              <T n="reference">15081<!--ObjectStateValue: BrokenState_Unbroken--></T>
+            </V>
+          </U>
+          <U>
+            <V n="default_value" t="reference">
+              <T n="reference">74181<!--ObjectStateValue: CraftingEmotion_None--></T>
+            </V>
+          </U>
+          <U>
+            <L n="client_states">
+              <U>
+                <T n="key">153260<!--ObjectStateValue: stereoOnOff_VFX_Music--></T>
+                <U n="value">
+                  <V n="vfx_state" t="apply_new_value">
+                    <V n="apply_new_value" t="start_vfx">
+                      <V n="start_vfx" t="multiple_effects">
+                        <U n="multiple_effects">
+                          <L n="vfx_list">
+                            <U>
+                              <T n="effect_name">ep06_music_station_lights</T>
+                            </U>
+                            <U>
+                              <T n="effect_name">s40_music_stereo_table_1</T>
+                              <V n="joint_name" t="Slot">
+                                <T n="Slot">_FX_sound_1</T>
+                              </V>
+                            </U>
+                            <U>
+                              <T n="effect_name">s40_music_stereo_table_2</T>
+                              <V n="joint_name" t="Slot">
+                                <T n="Slot">_FX_sound_2</T>
+                              </V>
+                            </U>
+                          </L>
+                        </U>
+                      </V>
+                    </V>
+                  </V>
+                </U>
+              </U>
+              <U>
+                <T n="key">153299<!--ObjectStateValue: stereoOnOff_VFX_Off--></T>
+                <U n="value">
+                  <V t="apply_new_value" n="vfx_state">
+                    <V n="apply_new_value" t="no_vfx" />
+                  </V>
+                </U>
+              </U>
+            </L>
+            <V t="reference" n="default_value">
+              <T n="reference">153299<!--ObjectStateValue: stereoOnOff_VFX_Off--></T>
+            </V>
+            <T n="reset_on_load_if_time_passes">True</T>
+            <T n="reset_to_default">True</T>
+          </U>
+          <U>
+            <V t="reference" n="default_value">
+              <T n="reference">185125<!--ObjectStateValue: object_Rain_Inside--></T>
+            </V>
+          </U>
+          <U>
+            <L n="client_states">
+              <U>
+                <T n="key">39611<!--CommodityBasedObjectStateValue: FireState_Burn_Material_Change--></T>
+              </U>
+              <U>
+                <T n="key">39736<!--CommodityBasedObjectStateValue: FireState_Burn_Material_Change_Burning--></T>
+              </U>
+              <U>
+                <T n="key">39737<!--CommodityBasedObjectStateValue: FireState_Burn_Material_Change_Not_Burning--></T>
+              </U>
+              <U>
+                <T n="key">77532<!--CommodityBasedObjectStateValue: FireState_Burn_Material_Change_Replace--></T>
+              </U>
+            </L>
+            <V t="reference" n="default_value">
+              <T n="reference">39737<!--CommodityBasedObjectStateValue: FireState_Burn_Material_Change_Not_Burning--></T>
+            </V>
+          </U>
+          <U>
+            <L n="client_states">
+              <U>
+                <T n="key">35956<!--CommodityBasedObjectStateValue: Materialistic_Admired--></T>
+              </U>
+              <U>
+                <T n="key">35957<!--CommodityBasedObjectStateValue: Materialistic_YetToAdmire--></T>
+              </U>
+            </L>
+            <V n="default_value" t="reference">
+              <T n="reference">35957<!--CommodityBasedObjectStateValue: Materialistic_YetToAdmire--></T>
+            </V>
+          </U>
+        </L>
+      </U>
+    </V>
+    <V t="enabled" n="stored_audio_component">
+      <U n="enabled">
+        <V n="audio_effect" t="enabled">
+          <U n="enabled">
+            <T n="effect_id">music_volume_channel</T>
+            <T n="tag_name">track_effect</T>
+          </U>
+        </V>
+      </U>
+    </V>
+    <V t="enabled" n="weather_aware_component">
+      <U n="enabled">
+        <L n="outside_loot">
+          <U>
+            <E n="key">AnyRain</E>
+            <U n="value">
+              <L n="end_loot">
+                <T>185163<!--LootActions: loot_Wetness_Object_Rain_End--></T>
+              </L>
+              <L n="start_loot">
+                <T>184964<!--LootActions: Loot_Wetness_Object_Start--></T>
+              </L>
+            </U>
+          </U>
+        </L>
+      </U>
+    </V>
+    <V n="whim_component" t="enabled">
+      <U n="enabled">
+        <T n="whim_set">195616<!--ObjectivelessWhimSet: whimSet_MusicProductionStation--></T>
+      </U>
+    </V>
+  </U>
+  <L n="_super_affordances">
+    <T>13328<!--ImmediateSuperInteraction: debug_Reset--></T>
+    <T>13326<!--ImmediateSuperInteraction: debug_ObjectDestroy--></T>
+    <T>103888<!--ImmediateSuperInteraction: cheat_set_as_head--></T>
+    <T>196759<!--SuperInteraction: famePerks_GoodReputation_GivingBack_DonateObject--></T>
+    <T>13983<!--StandSuperInteraction: sim-stand--></T>
+    <T>194052<!--ObjectInInventoryPickerInteraction: picker_MusicProductionStation_PlayTrack--></T>
+    <T>194049<!--ObjectInInventoryPickerInteraction: Picker_MusicProductionStation_ReleaseTrack--></T>
+    <T>194102<!--UseMusicProductionStationSuperInteraction: MusicProductionStation_ProduceNewTrack_Song1--></T>
+    <T>194121<!--UseMusicProductionStationSuperInteraction: musicProductionStation_ProduceNewTrack_Song2--></T>
+    <T>194122<!--UseMusicProductionStationSuperInteraction: musicProductionStation_ProduceNewTrack_Song3--></T>
+    <T>194127<!--UseMusicProductionStationSuperInteraction: musicProductionStation_ProduceNewTrack_Song4--></T>
+    <T>194126<!--UseMusicProductionStationSuperInteraction: musicProductionStation_ProduceNewTrack_Song5--></T>
+    <T>194125<!--UseMusicProductionStationSuperInteraction: musicProductionStation_ProduceNewTrack_Song6--></T>
+    <T>194123<!--UseMusicProductionStationSuperInteraction: musicProductionStation_ProduceNewTrack_Song8--></T>
+    <T>194124<!--UseMusicProductionStationSuperInteraction: musicProductionStation_ProduceNewTrack_Song7--></T>
+    <T>129510<!--SuperInteraction: object_Hire_Repair_Service--></T>
+    <T>13327<!--ImmediateSuperInteraction: debug_RepairObject--></T>
+    <T>99087<!--ImmediateSuperInteraction: object_ReplaceBrokenObject--></T>
+    <T>13319<!--ImmediateSuperInteraction: debug_BreakObject--></T>
+    <T>195342<!--SuperInteraction: object_Repair_MusicProductionStation--></T>
+    <T>33618<!--SuperInteraction: generic_Dance--></T>
+    <T>195467<!--SuperInteraction: musicProductionStation_BurnTrack_Disabled--></T>
+    <T>195954<!--SuperInteraction: musicProductionStation_RemixTrack_Disabled--></T>
+    <T>102433<!--SuperInteraction: Ghost_Possess_Break_Electrocution--></T>
+    <T>40055<!--SuperInteraction: object_Bane_Sabotage_StereoTV--></T>
+    <T>73832<!--SuperInteraction: object_Knack_FixIt_StereoTV--></T>
+    <T>201453<!--UseMusicProductionStationSuperInteraction: musicProductionStation_ProduceNewTrack_Song9--></T>
+    <T>159689<!--SuperInteraction: petInvestigate_Obsess_Watch_Stereo--></T>
+    <T>164489<!--SuperInteraction: PetInvestigate_LazyTrait_Fear_Stereo--></T>
+    <T>159879<!--SuperInteraction: PetInvestigate_Fear_Stereo--></T>
+    <T>164512<!--SuperInteraction: petInvestigate_LazyTrait_Obsess_Watch_Stereo--></T>
+    <T>106859<!--SuperInteraction: simRay_Transform_Object--></T>
+    <T>74457<!--ImmediateSuperInteraction: fire_ReplaceBurntObject--></T>
+    <T>102258<!--SuperInteraction: Ghost_Possess--></T>
+    <T>168502<!--SuperInteraction: Ghost_Pet_Possess--></T>
+  </L>
+  <U n="recycling_data">
+    <L n="recycling_values">
+      <U>
+        <E n="Bucks Type">RecycleBitsBucks</E>
+        <T n="Value">0.5</T>
+      </U>
+      <U>
+        <E n="Bucks Type">RecyclePiecesBucks</E>
+        <T n="Value">0.5</T>
+      </U>
+    </L>
+  </U>
+</I>

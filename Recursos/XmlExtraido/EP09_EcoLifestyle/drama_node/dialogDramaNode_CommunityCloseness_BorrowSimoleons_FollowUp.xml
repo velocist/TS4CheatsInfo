@@ -1,0 +1,137 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<I c="DialogDramaNode" i="drama_node" m="drama_scheduler.dialog_drama_node" n="dialogDramaNode_CommunityCloseness_BorrowSimoleons_FollowUp" s="232871">
+  <T n="allow_during_work_hours">True</T>
+  <V t="none" n="cooldown_data" />
+  <V n="dialog_and_loot" t="dialog_multi_response">
+    <U n="dialog_multi_response">
+      <U n="dialog">
+        <E n="phone_ring_type">RING</E>
+        <V n="text" t="variation">
+          <U n="variation">
+            <L n="variations">
+              <T>0xF65CBAB8<!--String: "Em... Bueno... Aún necesito un tiempecito para dar del todo forma a mi idea de negocio. Voy a necesitar mil pavetes más para seguir adelante. No me irás a fallar, ¿verdad?"--></T>
+              <T>0xD63BA84C<!--String: "Pues parece que voy a necesitar mil simoleones más, porque los últimos que me diste se me han ido en pillar cajas de dinero de un juego de móvil al que me he viciado. ¡Prometo que seré más responsable esta vez!"--></T>
+              <T>0xF2F23789<!--String: "¡Estoy a puntito de fundar mi propia compañía! Pero me estoy quedando sin blanca. ¿Podrías darme mil simoleones más para arrancar del todo?"--></T>
+              <T>0x17FA4A94<!--String: "Eres la generosidad personificada. ¡Mi nueva empresa está a punto de despegar, pero mil simoleones se van en nada! Me vendría bien una inyección de capital extra, si no te parece mal."--></T>
+            </L>
+          </U>
+        </V>
+      </U>
+      <L n="on_dialog_complete_loot_list">
+        <T>239732<!--LootActions: loot_DramaNode_CommunityCloseness_BorrowSimoleons_Reschedule--></T>
+      </L>
+      <L n="possible_responses">
+        <U>
+          <U n="item">
+            <L n="loot">
+              <T>231620<!--LootActions: loot_DramaNode_CommunityCloseness_BorrowSimoleons_GiveSimoleons--></T>
+            </L>
+            <T n="text">0x802D8056<!--String: "Darle a {1.SimFirstName} mil simoleones."--></T>
+          </U>
+          <L n="test">
+            <L>
+              <V t="simoleon_value">
+                <U n="simoleon_value">
+                  <U n="value_threshold">
+                    <T n="value">1000</T>
+                  </U>
+                </U>
+              </V>
+            </L>
+          </L>
+        </U>
+        <U>
+          <U n="item">
+            <L n="loot">
+              <T>231649<!--LootActions: loot_DramaNode_CommunityCloseness_BorrowSimoleons_NotRightNow--></T>
+            </L>
+            <T n="text">0x86DB7A7E<!--String: "Lo siento, ahora mismo no puedo permitírmelo."--></T>
+          </U>
+        </U>
+        <U>
+          <U n="item">
+            <L n="loot">
+              <T>231650<!--LootActions: loot_DramaNode_CommunityCloseness_BorrowSimoleons_CallThemOut--></T>
+            </L>
+            <T n="text">0xD046DB9B<!--String: "¡Recrimínale que no te haya devuelto el dinero!"--></T>
+          </U>
+        </U>
+      </L>
+    </U>
+  </V>
+  <U n="min_and_max_times">
+    <T n="lower_bound">6</T>
+    <T n="upper_bound">48</T>
+  </U>
+  <L n="receiver_sim_pretests">
+    <L>
+      <V t="sim_info">
+        <U n="sim_info">
+          <V t="specified" n="ages">
+            <L n="specified">
+              <E>TEEN</E>
+              <E>YOUNGADULT</E>
+              <E>ADULT</E>
+              <E>ELDER</E>
+              <E>CHILD</E>
+            </L>
+          </V>
+          <V t="specified" n="species">
+            <U n="specified">
+              <L n="species">
+                <E>HUMAN</E>
+              </L>
+            </U>
+          </V>
+        </U>
+      </V>
+    </L>
+  </L>
+  <L n="run_tests">
+    <L>
+      <V t="relationship">
+        <U n="relationship">
+          <U n="required_relationship_bits">
+            <L n="match_any">
+              <T>232917<!--RelationshipBit: relationshipBit_CommunityCloseness_BorrowedSimoleons--></T>
+            </L>
+          </U>
+          <L n="subject">
+            <E>Actor</E>
+          </L>
+          <L n="target_sim">
+            <E>TargetSim</E>
+          </L>
+        </U>
+      </V>
+    </L>
+  </L>
+  <V t="disabled" n="scoring" />
+  <V t="participant_type" n="sender_sim_info">
+    <U n="participant_type">
+      <E n="participant_type">TargetSim</E>
+    </U>
+  </V>
+  <E n="sender_sim_info_type">INSTANCED_ALLOWED</E>
+  <V t="schedule" n="time_option">
+    <U n="schedule">
+      <L n="valid_times">
+        <U>
+          <U n="days_available">
+            <T n="0 SUNDAY">True</T>
+            <T n="1 MONDAY">True</T>
+            <T n="2 TUESDAY">True</T>
+            <T n="3 WEDNESDAY">True</T>
+            <T n="4 THURSDAY">True</T>
+            <T n="5 FRIDAY">True</T>
+            <T n="6 SATURDAY">True</T>
+          </U>
+          <T n="duration">24</T>
+          <U n="start_time">
+            <T n="hour">12</T>
+          </U>
+        </U>
+      </L>
+    </U>
+  </V>
+</I>

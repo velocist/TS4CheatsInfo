@@ -1,0 +1,84 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<I c="SituationGoalObjectInteraction" i="situation_goal" m="situations.situation_goal_object_interaction" n="Whim_AdmireArt_AtMuseum" s="38417">
+  <V n="_display_data" t="enabled">
+    <U n="enabled">
+      <V t="enabled" n="instance_display_icon">
+        <T n="enabled" p="InGame\UI\Icons\Whims\whim_ArtLover.png">2f7d0004:00000000:77828df9700280de</T>
+      </V>
+      <V t="enabled" n="instance_display_name">
+        <T n="enabled">0xCFF7C8F<!--String: "Ver o admirar una obra de arte en el museo"--></T>
+      </V>
+      <V n="instance_display_tooltip" t="enabled">
+        <T n="enabled">0x4E316D50<!--String: "Para ir al museo, abre el mapa del mundo y haz clic en su ubicación. Una vez allí, haz clic en una obra de arte para verla o admirarla."--></T>
+      </V>
+    </U>
+  </V>
+  <U n="_goal_test">
+    <T n="consider_user_cancelled_as_failure">False</T>
+    <L n="tags">
+      <E>Interaction_ViewArt</E>
+    </L>
+    <E n="test_event">InteractionStart</E>
+  </U>
+  <L n="_post_tests">
+    <V t="location">
+      <U n="location">
+        <U n="location_tests">
+          <V n="is_venue_type" t="enabled">
+            <U n="enabled">
+              <T n="venue_type">16876<!--Venue: venue_museum--></T>
+            </U>
+          </V>
+        </U>
+      </U>
+    </V>
+  </L>
+  <L n="_pre_tests">
+    <V t="sim_info">
+      <U n="sim_info">
+        <V t="specified" n="ages">
+          <L n="specified">
+            <E>TEEN</E>
+            <E>YOUNGADULT</E>
+            <E>ADULT</E>
+            <E>ELDER</E>
+          </L>
+        </V>
+        <V t="specified" n="species">
+          <U n="specified">
+            <L n="species">
+              <E />
+            </L>
+          </U>
+        </V>
+      </U>
+    </V>
+    <V t="buff">
+      <U n="buff">
+        <L n="blacklist">
+          <T>104835<!--Buff: buff_Region_CampingForest--></T>
+        </L>
+      </U>
+    </V>
+    <V t="trait">
+      <U n="trait">
+        <L n="whitelist_traits">
+          <T>27918<!--Trait: trait_ArtLover--></T>
+        </L>
+      </U>
+    </V>
+    <V t="location">
+      <U n="location">
+        <U n="location_tests">
+          <V n="is_venue_type" t="enabled">
+            <U n="enabled">
+              <T n="venue_type">16876<!--Venue: venue_museum--></T>
+            </U>
+          </V>
+        </U>
+      </U>
+    </V>
+  </L>
+  <T n="_score">50</T>
+  <T p="InGame\Audio\Bumper\bumper_event_goal_complete.propx" n="audio_sting_on_complete">39b2aa4a:00000000:ed52c39bcc2a7111</T>
+</I>

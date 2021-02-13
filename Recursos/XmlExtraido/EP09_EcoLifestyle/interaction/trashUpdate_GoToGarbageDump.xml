@@ -1,0 +1,176 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<I c="SuperInteraction" i="interaction" m="interactions.base.super_interaction" n="trashUpdate_GoToGarbageDump" s="233486">
+  <V t="reference" n="_animation_actor_map">
+    <T n="reference">104104<!--AnimationActorMap: AlreadyCarryingCarryTarget--></T>
+  </V>
+  <L n="_constraints">
+    <U>
+      <L n="constraints">
+        <U>
+          <V n="value" t="spawn_points">
+            <U n="spawn_points">
+              <V n="tags" t="Spawn_Point_Tags">
+                <L n="Spawn_Point_Tags">
+                  <E>Spawn_Arrival</E>
+                </L>
+              </V>
+            </U>
+          </V>
+        </U>
+      </L>
+    </U>
+  </L>
+  <V t="participant" n="_icon">
+    <U n="participant">
+      <L n="participant_type">
+        <E>Actor</E>
+      </L>
+    </U>
+  </V>
+  <V t="enabled" n="_saveable" />
+  <L n="_static_commodities">
+    <U>
+      <T n="static_commodity">238854<!--StaticCommodity: staticCommodity_TrashUpdate_Collect--></T>
+    </U>
+  </L>
+  <T n="allow_user_directed">False</T>
+  <T n="attention_cost">0.5</T>
+  <V n="basic_content" t="one_shot">
+    <U n="one_shot">
+      <U n="animation_ref">
+        <T n="factory">8749<!--AnimationElement: PostureIdle_Stand--></T>
+      </U>
+    </U>
+  </V>
+  <L n="basic_extras">
+    <V t="buff">
+      <U n="buff">
+        <U n="buff_type">
+          <T n="buff_type">27833<!--Buff: buff_Suppress_Visible_Motives--></T>
+        </U>
+        <L n="subject">
+          <E>Actor</E>
+        </L>
+      </U>
+    </V>
+    <V t="put_sim_in_rabbit_hole">
+      <U n="put_sim_in_rabbit_hole">
+        <T n="rabbit_hole">233447<!--RabbitHole: rabbitHole_TrashUpdate_GoToGarbageDump--></T>
+        <V t="at_end" n="timing">
+          <U n="at_end">
+            <E n="criticality">NotCritical</E>
+          </U>
+        </V>
+      </U>
+    </V>
+    <V t="transience_change">
+      <U n="transience_change">
+        <V t="make_transient" n="new_value_beginning" />
+        <E n="who">CarriedObject</E>
+      </U>
+    </V>
+  </L>
+  <L n="basic_liabilities">
+    <V t="game_speed">
+      <U n="game_speed">
+        <E n="game_speed">SUPER_SPEED3</E>
+        <U n="species_interaction_speed_requirements">
+          <L n="exempt_sim_buffs">
+            <T>167047<!--Buff: buff_Motives_Pet_Cat_InSS3Mode--></T>
+            <T>167048<!--Buff: buff_Motives_Pet_Dog_InSS3Mode--></T>
+          </L>
+          <L n="species_affordance_mapping">
+            <U>
+              <E n="key">CAT</E>
+              <T n="value">171288<!--AggregateSuperInteraction: pet_Sleep_Aggregate_LeftAtHome_Selection--></T>
+            </U>
+            <U>
+              <E n="key">DOG</E>
+              <T n="value">171288<!--AggregateSuperInteraction: pet_Sleep_Aggregate_LeftAtHome_Selection--></T>
+            </U>
+          </L>
+          <L n="speed_affordance_tags">
+            <E>Interaction_Sleep</E>
+            <E>Interaction_Pets_SS3Allowed</E>
+          </L>
+        </U>
+      </U>
+    </V>
+  </L>
+  <V n="canonical_animation" t="enabled">
+    <U n="enabled">
+      <T n="factory">157520<!--AnimationElement: Canonical_CarryObject--></T>
+    </U>
+  </V>
+  <V t="disabled" n="content_score" />
+  <T n="counts_as_inside">True</T>
+  <T n="display_name">0xC22C8AB9<!--String: "Ir al vertedero"--></T>
+  <U n="display_name_text_tokens">
+    <L n="tokens">
+      <V t="participant_type">
+        <U n="participant_type">
+          <V t="from_participant" n="objects">
+            <U n="from_participant">
+              <E n="participant">Actor</E>
+            </U>
+          </V>
+        </U>
+      </V>
+      <V t="participant_type">
+        <U n="participant_type">
+          <V t="from_participant" n="objects">
+            <U n="from_participant">
+              <E n="participant">Object</E>
+            </U>
+          </V>
+        </U>
+      </V>
+    </L>
+  </U>
+  <T n="fade_sim_out">True</T>
+  <L n="interaction_category_tags">
+    <E>Interaction_Super</E>
+    <E>Interaction_All</E>
+  </L>
+  <V t="single" n="outcome">
+    <U n="single">
+      <U n="actions">
+        <L n="continuation">
+          <U>
+            <T n="affordance">14261<!--SuperInteraction: si_moveAwayCircle--></T>
+            <E n="target">Actor</E>
+          </U>
+        </L>
+        <L n="loot_list" />
+      </U>
+    </U>
+  </V>
+  <E n="scoring_priority">NORMAL</E>
+  <T n="subaction_selection_weight">1</T>
+  <E n="target_type">ACTOR</E>
+  <L n="test_globals">
+    <V t="sim_info">
+      <U n="sim_info">
+        <V n="ages" t="specified">
+          <L n="specified">
+            <E>TEEN</E>
+            <E>YOUNGADULT</E>
+            <E>ADULT</E>
+            <E>ELDER</E>
+            <E>CHILD</E>
+            <E>TODDLER</E>
+          </L>
+        </V>
+        <V t="specified" n="species">
+          <U n="specified">
+            <L n="species">
+              <E />
+            </L>
+          </U>
+        </V>
+        <E n="who">Actor</E>
+      </U>
+    </V>
+  </L>
+  <T n="time_overhead">30</T>
+</I>

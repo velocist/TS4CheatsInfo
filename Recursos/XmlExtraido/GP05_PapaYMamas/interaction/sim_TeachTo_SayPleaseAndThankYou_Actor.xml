@@ -1,0 +1,291 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<I c="SocialSuperInteraction" i="interaction" m="interactions.social.social_super_interaction" n="sim_TeachTo_SayPleaseAndThankYou_Actor" s="161142">
+  <V t="participant" n="_icon">
+    <U n="participant">
+      <L n="participant_type">
+        <E>TargetSim</E>
+      </L>
+    </U>
+  </V>
+  <L n="_party_size_weight_tuning">
+    <U>
+      <T n="y">100</T>
+    </U>
+    <U>
+      <T n="x">1</T>
+      <T n="y">100</T>
+    </U>
+    <U>
+      <T n="x">2</T>
+      <T n="y">50</T>
+    </U>
+    <U>
+      <T n="x">3</T>
+      <T n="y">0</T>
+    </U>
+    <U>
+      <T n="x">4</T>
+    </U>
+  </L>
+  <V t="enabled" n="_saveable" />
+  <T n="_social_group_type">157894<!--SocialGroup: chat_Toddler_Ask--></T>
+  <V n="affordance_to_push_on_target" t="push_affordance">
+    <T n="push_affordance">161138<!--SocialSuperInteraction: sim_TeachTo_SayPleaseAndThankYou_Target--></T>
+  </V>
+  <T n="allow_autonomous">False</T>
+  <T n="attention_cost">1</T>
+  <V t="flexible_length" n="basic_content">
+    <U n="flexible_length">
+      <L n="conditional_actions">
+        <V t="literal">
+          <U n="literal">
+            <L n="conditions">
+              <V t="time_based">
+                <U n="time_based">
+                  <T n="max_time">60</T>
+                  <T n="min_time">60</T>
+                </U>
+              </V>
+            </L>
+            <E n="interaction_action">EXIT_NATURALLY</E>
+          </U>
+        </V>
+      </L>
+      <V n="content" t="staging_content">
+        <U n="staging_content">
+          <U n="content_set">
+            <L n="affordance_links">
+              <T>161202<!--SocialMixerInteraction: teachTo_SayPlease_Mixers_TYAE_Story--></T>
+            </L>
+          </U>
+        </U>
+      </V>
+      <V t="enabled" n="periodic_stat_change">
+        <U n="enabled">
+          <L n="operations">
+            <V t="statistic_change">
+              <U n="statistic_change">
+                <T n="amount">1</T>
+                <T n="stat">16658<!--Commodity: motive_Social--></T>
+              </U>
+            </V>
+            <V t="dynamic_skill">
+              <U n="dynamic_skill">
+                <U n="skill_loot_data_override">
+                  <E n="effectiveness">StandardPeriodic</E>
+                  <T n="stat">160504<!--Skill: statistic_Skill_AdultMajor_Parenting--></T>
+                </U>
+              </U>
+            </V>
+            <V t="statistic_change">
+              <U n="statistic_change">
+                <T n="amount">0.25</T>
+                <T n="stat">160760<!--Commodity: commodity_ParentingSkill_SuperParent--></T>
+                <L n="tests">
+                  <L>
+                    <V t="skill_test">
+                      <U n="skill_test">
+                        <T n="skill">160504<!--Skill: statistic_Skill_AdultMajor_Parenting--></T>
+                        <V t="threshold" n="skill_range">
+                          <U n="threshold">
+                            <U n="skill_threshold">
+                              <T n="value">10</T>
+                            </U>
+                          </U>
+                        </V>
+                      </U>
+                    </V>
+                  </L>
+                </L>
+              </U>
+            </V>
+          </L>
+        </U>
+      </V>
+    </U>
+  </V>
+  <L n="basic_extras">
+    <V t="loot">
+      <U n="loot">
+        <L n="loot_list">
+          <T>162659<!--LootActions: loot_Commodity_Culling_GhostAdd_target--></T>
+        </L>
+      </U>
+    </V>
+    <V t="loot">
+      <U n="loot">
+        <L n="loot_list">
+          <T>161238<!--LootActions: loot_RemoveRandomNumber--></T>
+        </L>
+        <V t="at_end" n="timing" />
+      </U>
+    </V>
+  </L>
+  <V t="disabled" n="basic_reserve_object" />
+  <V t="enabled" n="canonical_animation">
+    <U n="enabled">
+      <T n="factory">11326<!--AnimationElement: Canonical_NonTouchingSocial--></T>
+    </U>
+  </V>
+  <T n="category">161232<!--PieMenuCategory: Parenting_Socials--></T>
+  <V t="disabled" n="content_score" />
+  <T n="display_name">0x27041AFB<!--String: "Enseñar a decir "por favor" y "gracias""--></T>
+  <U n="display_name_text_tokens">
+    <L n="tokens">
+      <V t="participant_type">
+        <U n="participant_type">
+          <V t="from_participant" n="objects">
+            <U n="from_participant">
+              <E n="participant">Actor</E>
+            </U>
+          </V>
+        </U>
+      </V>
+      <V t="participant_type">
+        <U n="participant_type">
+          <V t="from_participant" n="objects">
+            <U n="from_participant">
+              <E n="participant">Object</E>
+            </U>
+          </V>
+        </U>
+      </V>
+    </L>
+  </U>
+  <V t="enabled" n="idle_animation">
+    <U n="enabled">
+      <T n="factory">11570<!--AnimationElement: Listen_Listen_Looping_basic--></T>
+    </U>
+  </V>
+  <V t="enabled" n="idle_animation_overrides">
+    <L n="enabled">
+      <U>
+        <U n="override">
+          <T n="factory">244348<!--AnimationElement: batuu_SNPC_Listen--></T>
+        </U>
+        <L n="tests">
+          <L>
+            <V t="test_set_reference">
+              <T n="test_set_reference">247857<!--TestSetInstance: testSet_Batuu_SNPC_ListenOverride--></T>
+            </V>
+          </L>
+        </L>
+      </U>
+    </L>
+  </V>
+  <T n="ignore_group_socials">False</T>
+  <L n="interaction_category_tags">
+    <E>Interaction_SocialSuper</E>
+    <E>Interaction_Super</E>
+    <E>Interaction_All</E>
+    <E>Interaction_SocialAll</E>
+    <E>Interaction_Social_Contagious</E>
+  </L>
+  <T n="invite_in_after_interaction">True</T>
+  <U n="listen_animation">
+    <T n="factory">11570<!--AnimationElement: Listen_Listen_Looping_basic--></T>
+  </U>
+  <V n="outcome" t="single">
+    <U n="single">
+      <U n="actions">
+        <L n="loot_list">
+          <T>161216<!--LootActions: Loot_Buff_TeachToSayPlease_Success_Child--></T>
+        </L>
+      </U>
+    </U>
+  </V>
+  <T n="pie_menu_priority">10</T>
+  <U n="progress_bar_enabled">
+    <T n="bar_enabled">True</T>
+  </U>
+  <T n="relationship_scoring">True</T>
+  <E n="scoring_priority">NORMAL</E>
+  <V t="enabled" n="sim_affinity_posture_scoring_data">
+    <U n="enabled">
+      <L n="my_scoring">
+        <U>
+          <V t="relationship_based" n="affinity_strategy" />
+          <T n="negate_tag">True</T>
+          <E n="running_interaction_tag">Sleeping</E>
+        </U>
+        <U>
+          <V n="affinity_strategy" t="avoid" />
+          <E n="running_interaction_tag">Very_Loud</E>
+        </U>
+      </L>
+      <L n="my_tags">
+        <E>Loud</E>
+        <E>Chat</E>
+      </L>
+    </U>
+  </V>
+  <T n="subaction_selection_weight">1</T>
+  <V t="literal" n="super_affordance_compatibility">
+    <U n="literal">
+      <V n="default_inclusion" t="exclude_all" />
+    </U>
+  </V>
+  <E n="target_type">TARGET</E>
+  <L n="test_globals">
+    <V t="sim_info">
+      <U n="sim_info">
+        <V t="specified" n="ages">
+          <L n="specified">
+            <E>CHILD</E>
+          </L>
+        </V>
+        <V t="enabled" n="npc" />
+        <V t="specified" n="species">
+          <U n="specified">
+            <L n="species">
+              <E />
+            </L>
+          </U>
+        </V>
+        <E n="who">TargetSim</E>
+      </U>
+    </V>
+    <V t="sim_info">
+      <U n="sim_info">
+        <V t="specified" n="ages">
+          <L n="specified">
+            <E>YOUNGADULT</E>
+            <E>ADULT</E>
+            <E>ELDER</E>
+          </L>
+        </V>
+        <V t="specified" n="species">
+          <U n="specified">
+            <L n="species">
+              <E />
+            </L>
+          </U>
+        </V>
+        <E n="who">Actor</E>
+      </U>
+    </V>
+    <V t="relationship">
+      <U n="relationship">
+        <U n="required_relationship_bits">
+          <L n="match_any">
+            <T>8805<!--RelationshipBit: family_son_daughter--></T>
+            <T>162483<!--RelationshipBit: CT_notParent_CareDependent--></T>
+            <T>152851<!--RelationshipBit: toddler_notParent_CareDependent--></T>
+          </L>
+        </U>
+      </U>
+    </V>
+    <V t="buff">
+      <U n="buff">
+        <L n="blacklist">
+          <T>161226<!--Buff: buff_TeachToSayPlease_Bored_Child--></T>
+        </L>
+        <E n="subject">TargetSim</E>
+        <V t="enabled" n="tooltip">
+          <T n="enabled">0xBE50B2B6<!--String: "{M1.Este niño}{F1.Esta niña} está demasiado {M1.aburrido}{F1.aburrida} ahora mismo."--></T>
+        </V>
+      </U>
+    </V>
+  </L>
+  <T n="time_overhead">30</T>
+</I>

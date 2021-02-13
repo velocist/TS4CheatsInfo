@@ -1,0 +1,101 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<I c="PickerDramaNode" i="drama_node" m="drama_scheduler.picker_drama_node" n="pickerDramaNode_Freelancer_Batuu_Resistance_Repeatable_15" s="239468">
+  <V t="enabled" n="associated_sim_filter">
+    <T n="enabled">240207<!--TunableSimFilter: filter_Batuu_Missions_Resistance_Member--></T>
+  </V>
+  <V t="enabled" n="associated_sim_thumbnail_background">
+    <T n="enabled" p="InGP09\UI\Icons\Missions\picker_missions_resistance_simportrait_bg.png">2f7d0004:00000000:a11a29be3d848f56</T>
+  </V>
+  <V n="behavior" t="schedule_career_gig">
+    <U n="schedule_career_gig">
+      <T n="allow_add_career">True</T>
+      <T n="career_gig">239467<!--MissionGig: missionGig_Missions_Resistance_Repeatable_15--></T>
+    </U>
+  </V>
+  <V t="node_cooldown" n="cooldown_data">
+    <U n="node_cooldown">
+      <E n="cooldown_option">ON_SCHEDULE</E>
+      <V n="duration" t="duration">
+        <T n="duration">49</T>
+      </V>
+    </U>
+  </V>
+  <U n="min_and_max_times">
+    <T n="lower_bound">24</T>
+    <T n="upper_bound">48</T>
+  </U>
+  <E n="on_pick_behavior">REMOVE</E>
+  <T n="replace_if_removed">True</T>
+  <V t="enabled" n="scoring">
+    <U n="enabled">
+      <E n="bucket">Batuu_Mission_Resistance</E>
+    </U>
+  </V>
+  <V t="schedule" n="time_option">
+    <U n="schedule">
+      <L n="valid_times">
+        <U>
+          <U n="days_available">
+            <T n="0 SUNDAY">True</T>
+            <T n="1 MONDAY">True</T>
+            <T n="2 TUESDAY">True</T>
+            <T n="3 WEDNESDAY">True</T>
+            <T n="4 THURSDAY">True</T>
+            <T n="5 FRIDAY">True</T>
+            <T n="6 SATURDAY">True</T>
+          </U>
+          <T n="duration">8</T>
+        </U>
+      </L>
+    </U>
+  </V>
+  <L n="visibility_tests">
+    <L>
+      <V t="test_set_reference">
+        <T n="test_set_reference">245450<!--TestSetInstance: testSet_Batuu_FactionReputation_FirstOrder_LessThan_Rank+2--></T>
+      </V>
+      <V t="unlock_earned">
+        <U n="unlock_earned">
+          <V n="unlock_to_test" t="aspiration">
+            <U n="aspiration">
+              <T n="aspiration">243556<!--AspirationGig: aspirationGig_Batuu_Missions_Resistance_Story_07_Part_3--></T>
+            </U>
+          </V>
+        </U>
+      </V>
+      <V t="career_gig_test">
+        <U n="career_gig_test">
+          <T n="career">231099<!--Career: career_Batuu--></T>
+          <T n="negate">True</T>
+          <V t="specific_gigs" n="test_type">
+            <U n="specific_gigs">
+              <L n="gigs">
+                <T>239467<!--MissionGig: missionGig_Missions_Resistance_Repeatable_15--></T>
+              </L>
+            </U>
+          </V>
+        </U>
+      </V>
+      <V t="test_set_reference">
+        <T n="test_set_reference">245855<!--TestSetInstance: testSet_Batuu_FactionReputation_Resistance_GreaterOrEqual_Rank+2--></T>
+      </V>
+      <V t="career_gig_test">
+        <U n="career_gig_test">
+          <T n="career">231099<!--Career: career_Batuu--></T>
+          <T n="negate">True</T>
+          <E n="participant">ActiveHousehold</E>
+          <V t="specific_gigs" n="test_type">
+            <U n="specific_gigs">
+              <L n="gigs">
+                <T>239467<!--MissionGig: missionGig_Missions_Resistance_Repeatable_15--></T>
+              </L>
+            </U>
+          </V>
+          <V t="enabled" n="tooltip">
+            <T n="enabled">0xB5517ADF<!--String: "Alguien de tu unidad doméstica está llevando a cabo esta misión.\n\nCompleta o cancela la misión desde su panel de profesión."--></T>
+          </V>
+        </U>
+      </V>
+    </L>
+  </L>
+</I>

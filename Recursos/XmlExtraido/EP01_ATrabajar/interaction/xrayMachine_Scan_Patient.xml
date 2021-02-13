@@ -1,0 +1,114 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<I c="MixerInteraction" i="interaction" m="interactions.base.mixer_interaction" n="xrayMachine_Scan_Patient" s="106069">
+  <T n="allow_user_directed">False</T>
+  <V n="basic_content" t="looping_animation">
+    <U n="looping_animation">
+      <U n="animation_ref">
+        <T n="factory">105793<!--AnimationElement: object_XrayMachine_Scan_patient--></T>
+        <U n="overrides">
+          <V n="balloons" t="enabled">
+            <L n="enabled">
+              <U>
+                <L n="balloon_choices">
+                  <U>
+                    <V n="item" t="balloon_category">
+                      <T n="balloon_category">114275<!--BalloonCategory: balloonCategory_CareerDoctor_XRay_Scan--></T>
+                    </V>
+                  </U>
+                </L>
+                <T n="balloon_delay">1.5</T>
+                <T n="balloon_delay_random_offset">0.5</T>
+                <L n="balloon_target">
+                  <E>Actor</E>
+                </L>
+              </U>
+            </L>
+          </V>
+        </U>
+      </U>
+      <L n="conditional_actions">
+        <V t="literal">
+          <U n="literal">
+            <L n="conditions">
+              <V t="state_based">
+                <U n="state_based">
+                  <V n="state" t="on_trigger">
+                    <T n="on_trigger">106061<!--ObjectStateValue: xrayMachine_Scan_Doctor_completed--></T>
+                  </V>
+                  <E n="subject">ActorPostureTarget</E>
+                </U>
+              </V>
+            </L>
+            <E n="interaction_action">EXIT_NATURALLY</E>
+          </U>
+        </V>
+        <V t="literal">
+          <U n="literal">
+            <L n="conditions">
+              <V t="time_based">
+                <U n="time_based">
+                  <T n="max_time">5</T>
+                  <T n="min_time">3</T>
+                </U>
+              </V>
+            </L>
+          </U>
+        </V>
+        <V t="literal">
+          <U n="literal">
+            <L n="conditions">
+              <V t="state_based">
+                <U n="state_based">
+                  <V t="on_trigger" n="state">
+                    <T n="on_trigger">15080<!--ObjectStateValue: BrokenState_Broken--></T>
+                  </V>
+                  <E n="subject">ActorPostureTarget</E>
+                </U>
+              </V>
+            </L>
+            <E n="interaction_action">EXIT_NATURALLY</E>
+          </U>
+        </V>
+      </L>
+    </U>
+  </V>
+  <V t="disable_focus" n="basic_focus" />
+  <U n="display_name_text_tokens">
+    <L n="tokens">
+      <V t="participant_type">
+        <U n="participant_type">
+          <V t="from_participant" n="objects">
+            <U n="from_participant">
+              <E n="participant">Actor</E>
+            </U>
+          </V>
+        </U>
+      </V>
+      <V t="participant_type">
+        <U n="participant_type">
+          <V t="from_participant" n="objects">
+            <U n="from_participant">
+              <E n="participant">Object</E>
+            </U>
+          </V>
+        </U>
+      </V>
+    </L>
+  </U>
+  <L n="interaction_category_tags">
+    <E>Interaction_Mixer</E>
+    <E>Interaction_All</E>
+  </L>
+  <U n="sub_action">
+    <T n="base_weight">10</T>
+  </U>
+  <E n="target_type">OBJECT</E>
+  <L n="test_globals">
+    <V t="state">
+      <U n="state">
+        <T n="value">106059<!--ObjectStateValue: xrayMachine_Scan_Doctor_inprogress--></T>
+      </U>
+    </V>
+  </L>
+  <T n="visible">False</T>
+</I>

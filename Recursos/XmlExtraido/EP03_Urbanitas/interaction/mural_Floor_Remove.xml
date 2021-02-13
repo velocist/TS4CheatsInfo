@@ -1,0 +1,201 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<I c="SuperInteraction" i="interaction" m="interactions.base.super_interaction" n="mural_Floor_Remove" s="147908">
+  <V t="enabled" n="_saveable" />
+  <L n="_static_commodities">
+    <U>
+      <T n="static_commodity">148097<!--StaticCommodity: staticCommodity_ClearMural--></T>
+    </U>
+  </L>
+  <T n="allow_autonomous">False</T>
+  <T n="attention_cost">0.5</T>
+  <V n="basic_content" t="flexible_length">
+    <U n="flexible_length">
+      <L n="conditional_actions">
+        <V t="literal">
+          <U n="literal">
+            <L n="conditions">
+              <V t="time_based">
+                <U n="time_based">
+                  <T n="max_time">10</T>
+                  <T n="min_time">10</T>
+                </U>
+              </V>
+            </L>
+            <E n="interaction_action">EXIT_NATURALLY</E>
+            <L n="loot_actions">
+              <T>147376<!--LootActions: loot_ObjectState_Mural_Remove--></T>
+            </L>
+          </U>
+        </V>
+      </L>
+      <V t="looping_content" n="content">
+        <U n="looping_content">
+          <U n="animation_ref">
+            <T n="factory">11718<!--AnimationElement: Puddle_Mop_Loop--></T>
+          </U>
+        </U>
+      </V>
+      <V n="periodic_stat_change" t="enabled">
+        <U n="enabled">
+          <L n="operations">
+            <V t="statistic_change">
+              <U n="statistic_change">
+                <T n="amount">-20</T>
+                <T n="stat">147256<!--Commodity: commodity_Mural_Decay--></T>
+                <L n="subject">
+                  <E>Actor</E>
+                </L>
+              </U>
+            </V>
+          </L>
+        </U>
+      </V>
+    </U>
+  </V>
+  <L n="basic_extras">
+    <V t="state_change">
+      <U n="state_change">
+        <V n="new_value" t="single_value">
+          <U n="single_value">
+            <T n="new_value">154515<!--ObjectStateValue: mural_RemoveOn--></T>
+          </U>
+        </V>
+        <V t="immediately" n="timing" />
+      </U>
+    </V>
+    <V t="state_change">
+      <U n="state_change">
+        <V n="new_value" t="single_value">
+          <U n="single_value">
+            <T n="new_value">154516<!--ObjectStateValue: mural_RemoveOff--></T>
+          </U>
+        </V>
+        <V t="at_end" n="timing" />
+      </U>
+    </V>
+  </L>
+  <V t="disabled" n="basic_reserve_object" />
+  <V t="enabled" n="canonical_animation">
+    <U n="enabled">
+      <T n="factory">147298<!--AnimationElement: Mural_Wall_Clean--></T>
+    </U>
+  </V>
+  <V t="disabled" n="content_score" />
+  <T n="display_name">0x3FFE86EC<!--String: "Quitar"--></T>
+  <V t="testable" n="display_name_overrides">
+    <U n="testable">
+      <L n="overrides">
+        <U>
+          <V t="disabled" n="new_display_name" />
+          <V t="enabled" n="new_pie_menu_icon">
+            <V n="enabled" t="tradition" />
+          </V>
+          <L n="test">
+            <L>
+              <V t="holiday_tradition">
+                <U n="holiday_tradition">
+                  <U n="tradition_filter">
+                    <V n="whitelist" t="specify">
+                      <U n="specify">
+                        <L n="whitelist">
+                          <T>185434<!--HolidayTradition: holidayTradition_ArtAndMusic--></T>
+                        </L>
+                      </U>
+                    </V>
+                  </U>
+                </U>
+              </V>
+            </L>
+          </L>
+        </U>
+      </L>
+    </U>
+  </V>
+  <U n="display_name_text_tokens">
+    <L n="tokens">
+      <V t="participant_type">
+        <U n="participant_type">
+          <V t="from_participant" n="objects">
+            <U n="from_participant">
+              <E n="participant">Actor</E>
+            </U>
+          </V>
+        </U>
+      </V>
+      <V t="participant_type">
+        <U n="participant_type">
+          <V t="from_participant" n="objects">
+            <U n="from_participant">
+              <E n="participant">Object</E>
+            </U>
+          </V>
+        </U>
+      </V>
+    </L>
+  </U>
+  <L n="interaction_category_tags">
+    <E>Interaction_Super</E>
+    <E>Interaction_All</E>
+    <E>Interaction_Paint</E>
+  </L>
+  <V n="outcome" t="single">
+    <U n="single">
+      <U n="actions">
+        <T n="force_outcome_on_exit">False</T>
+        <L n="loot_list">
+          <T>147376<!--LootActions: loot_ObjectState_Mural_Remove--></T>
+        </L>
+      </U>
+    </U>
+  </V>
+  <E n="scoring_priority">NORMAL</E>
+  <T n="subaction_selection_weight">1</T>
+  <E n="target_type">OBJECT</E>
+  <L n="test_globals">
+    <V t="sim_info">
+      <U n="sim_info">
+        <V t="specified" n="ages" />
+        <V t="specified" n="species">
+          <U n="specified">
+            <L n="species">
+              <E />
+            </L>
+          </U>
+        </V>
+        <E n="who">Actor</E>
+      </U>
+    </V>
+    <V t="user_running_interaction">
+      <U n="user_running_interaction">
+        <L n="affordances">
+          <T>147899<!--SuperInteraction: mural_Floor_Paint_Staging--></T>
+          <T>149561<!--SuperInteraction: mural_Floor_Graffiti_Staging--></T>
+        </L>
+        <T n="test_for_not_running">True</T>
+        <V n="tooltip" t="enabled">
+          <T n="enabled">0x4D0512C1<!--String: "Echa a los otros Sims que trabajan en el mural antes de quitarlo."--></T>
+        </V>
+      </U>
+    </V>
+    <V t="test_set_reference">
+      <T n="test_set_reference">229651<!--TestSetInstance: testSetInstance_Mural_SnowOnGround_Outside--></T>
+    </V>
+  </L>
+  <L n="tests">
+    <L>
+      <V t="state">
+        <U n="state">
+          <T n="value">147825<!--ObjectStateValue: mural_Floor_StateValues_InProgress--></T>
+        </U>
+      </V>
+    </L>
+    <L>
+      <V t="state">
+        <U n="state">
+          <T n="value">147824<!--ObjectStateValue: mural_Floor_StateValues_Complete--></T>
+        </U>
+      </V>
+    </L>
+  </L>
+  <T n="time_overhead">30</T>
+</I>

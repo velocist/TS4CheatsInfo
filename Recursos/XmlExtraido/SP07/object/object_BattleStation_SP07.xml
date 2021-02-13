@@ -1,0 +1,335 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<I c="GameObject" i="object" m="objects.game_object" n="object_BattleStation_SP07" s="133912">
+  <V n="_anim_overrides" t="enabled">
+    <U n="enabled">
+      <L n="params">
+        <U>
+          <T n="name">kneelType</T>
+          <V n="value" t="string">
+            <T n="string">NoStep</T>
+          </V>
+        </U>
+      </L>
+    </U>
+  </V>
+  <U n="_components">
+    <V t="enabled" n="focus">
+      <U n="enabled">
+        <V t="globally" n="_focus_score">
+          <U n="globally">
+            <E n="base">LOW</E>
+          </U>
+        </V>
+      </U>
+    </V>
+    <V n="game" t="enabled">
+      <U n="enabled">
+        <L n="games">
+          <T>134737<!--GameRules: BattleMonsters--></T>
+          <T>135854<!--GameRules: BattleMonsters_Practice--></T>
+        </L>
+      </U>
+    </V>
+    <V t="enabled" n="retail_component">
+      <V n="enabled" t="reference">
+        <T n="reference">115301<!--RetailComponent: retailComponent_Default_LowAppeal--></T>
+      </V>
+    </V>
+    <V n="state" t="enabled">
+      <U n="enabled">
+        <L n="state_triggers">
+          <U>
+            <L n="at_states">
+              <T>135538<!--ObjectStateValue: monsterBattleStation_Music_BattleMusic--></T>
+              <T>134339<!--ObjectStateValue: monsterBattleStation_InUse_Off--></T>
+            </L>
+            <V n="set_states" t="Set_state_list">
+              <L n="Set_state_list">
+                <T>135537<!--ObjectStateValue: monsterBattleStation_Music_None--></T>
+              </L>
+            </V>
+          </U>
+          <U>
+            <L n="at_states">
+              <T>134338<!--ObjectStateValue: monsterBattleStation_InUse_On--></T>
+            </L>
+            <V n="set_states" t="Set_state_list">
+              <L n="Set_state_list">
+                <T>224553<!--ObjectStateValue: utilities_Power_Consumption_On--></T>
+              </L>
+            </V>
+          </U>
+          <U>
+            <L n="at_states">
+              <T>134339<!--ObjectStateValue: monsterBattleStation_InUse_Off--></T>
+            </L>
+            <V n="set_states" t="Set_state_list">
+              <L n="Set_state_list">
+                <T>224564<!--ObjectStateValue: utilities_Power_Consumption_Off--></T>
+              </L>
+            </V>
+          </U>
+          <U>
+            <L n="at_states">
+              <T>77532<!--CommodityBasedObjectStateValue: FireState_Burn_Material_Change_Replace--></T>
+            </L>
+            <V n="set_states" t="Set_state_list">
+              <L n="Set_state_list">
+                <T>39737<!--CommodityBasedObjectStateValue: FireState_Burn_Material_Change_Not_Burning--></T>
+              </L>
+            </V>
+          </U>
+        </L>
+        <L n="states">
+          <U>
+            <L n="client_states">
+              <U>
+                <T n="key">134338<!--ObjectStateValue: monsterBattleStation_InUse_On--></T>
+                <U n="value">
+                  <V n="geometry_state" t="apply_new_value">
+                    <V n="apply_new_value" t="set_to_custom_value">
+                      <T n="set_to_custom_value">Play</T>
+                    </V>
+                  </V>
+                  <V n="material_state" t="apply_new_value">
+                    <U n="apply_new_value">
+                      <V n="state_name" t="set_to_custom_value">
+                        <T n="set_to_custom_value">Lit</T>
+                      </V>
+                    </U>
+                  </V>
+                </U>
+              </U>
+              <U>
+                <T n="key">134339<!--ObjectStateValue: monsterBattleStation_InUse_Off--></T>
+                <U n="value">
+                  <V t="apply_new_value" n="geometry_state" />
+                  <V t="apply_new_value" n="material_state" />
+                </U>
+              </U>
+            </L>
+            <V n="default_value" t="reference">
+              <T n="reference">134339<!--ObjectStateValue: monsterBattleStation_InUse_Off--></T>
+            </V>
+            <T n="reset_to_default">True</T>
+          </U>
+          <U>
+            <L n="client_states">
+              <U>
+                <T n="key">134789<!--ObjectStateValue: object_Collection_Monsters_GameState_NotStarted--></T>
+              </U>
+              <U>
+                <T n="key">134790<!--ObjectStateValue: object_Collection_Monsters_GameState_InProgress--></T>
+              </U>
+              <U>
+                <T n="key">134791<!--ObjectStateValue: object_Collection_Monsters_GameState_GameOver--></T>
+              </U>
+            </L>
+            <V n="default_value" t="reference">
+              <T n="reference">134789<!--ObjectStateValue: object_Collection_Monsters_GameState_NotStarted--></T>
+            </V>
+            <T n="reset_on_load_if_time_passes">True</T>
+            <T n="reset_to_default">True</T>
+          </U>
+          <U>
+            <L n="client_states">
+              <U>
+                <T n="key">135537<!--ObjectStateValue: monsterBattleStation_Music_None--></T>
+                <U n="value">
+                  <V t="apply_new_value" n="audio_state" />
+                </U>
+              </U>
+              <U>
+                <T n="key">135538<!--ObjectStateValue: monsterBattleStation_Music_BattleMusic--></T>
+                <U n="value">
+                  <V n="audio_state" t="apply_new_value">
+                    <V n="apply_new_value" t="start_audio">
+                      <U n="start_audio">
+                        <T n="audio" p="InSP07\Audio\SFX\monsterbattlestation\monsterbattlestation_music_lp.propx">39b2aa4a:00000000:13b9c4f9408170e4</T>
+                      </U>
+                    </V>
+                  </V>
+                </U>
+              </U>
+              <U>
+                <T n="key">135539<!--ObjectStateValue: monsterBattleStation_Music_VictoryTheme--></T>
+                <U n="value">
+                  <V n="audio_state" t="apply_new_value">
+                    <V n="apply_new_value" t="start_audio">
+                      <U n="start_audio">
+                        <T n="audio" p="InSP07\Audio\SFX\monsterbattlestation\monsterbattlestation_win.propx">39b2aa4a:00000000:92d75639edb6225e</T>
+                      </U>
+                    </V>
+                  </V>
+                </U>
+              </U>
+            </L>
+            <V n="default_value" t="reference">
+              <T n="reference">135537<!--ObjectStateValue: monsterBattleStation_Music_None--></T>
+            </V>
+            <T n="reset_on_load_if_time_passes">True</T>
+            <T n="reset_to_default">True</T>
+          </U>
+          <U>
+            <L n="client_states">
+              <U>
+                <T n="key">135547<!--ObjectStateValue: monsterBattleStation_GameProgress_NotSetup--></T>
+              </U>
+              <U>
+                <T n="key">135548<!--ObjectStateValue: monsterBattleStation_GameProgress_InProgress--></T>
+              </U>
+            </L>
+            <V n="default_value" t="reference">
+              <T n="reference">135547<!--ObjectStateValue: monsterBattleStation_GameProgress_NotSetup--></T>
+            </V>
+            <T n="reset_on_load_if_time_passes">True</T>
+            <T n="reset_to_default">True</T>
+          </U>
+          <U>
+            <L n="client_states">
+              <U>
+                <T n="key">224553<!--ObjectStateValue: utilities_Power_Consumption_On--></T>
+                <U n="value">
+                  <V n="autonomy_modifiers" t="apply_new_value">
+                    <V n="apply_new_value" t="apply_statistic_modifiers">
+                      <U n="apply_statistic_modifiers">
+                        <L n="lot_statistic_modifiers">
+                          <U>
+                            <V n="modifier" t="multipliers">
+                              <U n="multipliers">
+                                <U n="value">
+                                  <T n="base_value">-0.00694</T>
+                                  <L n="multipliers">
+                                    <U>
+                                      <T n="multiplier">2.8</T>
+                                    </U>
+                                    <U>
+                                      <T n="multiplier">0.8</T>
+                                      <L n="tests">
+                                        <L>
+                                          <V t="statistic">
+                                            <U n="statistic">
+                                              <T n="stat">187710<!--Statistic: statistic_Object_Thermostat_LotStat_Setting--></T>
+                                              <V n="threshold" t="value_threshold">
+                                                <U n="value_threshold">
+                                                  <E n="comparison">LESS_OR_EQUAL</E>
+                                                  <T n="value">-1</T>
+                                                </U>
+                                              </V>
+                                              <E n="who">Lot</E>
+                                            </U>
+                                          </V>
+                                        </L>
+                                      </L>
+                                    </U>
+                                  </L>
+                                </U>
+                              </U>
+                            </V>
+                            <T n="statistic">233027<!--Commodity: commodity_Utilities_Power--></T>
+                          </U>
+                        </L>
+                        <U n="periodic_statistic_change">
+                          <T n="interval">10</T>
+                          <L n="operations" />
+                        </U>
+                      </U>
+                    </V>
+                  </V>
+                </U>
+              </U>
+              <U>
+                <T n="key">224564<!--ObjectStateValue: utilities_Power_Consumption_Off--></T>
+                <U n="value">
+                  <V t="apply_new_value" n="autonomy_modifiers" />
+                </U>
+              </U>
+            </L>
+            <V t="reference" n="default_value">
+              <T n="reference">224564<!--ObjectStateValue: utilities_Power_Consumption_Off--></T>
+            </V>
+          </U>
+          <U>
+            <L n="client_states">
+              <U>
+                <T n="key">39611<!--CommodityBasedObjectStateValue: FireState_Burn_Material_Change--></T>
+              </U>
+              <U>
+                <T n="key">39736<!--CommodityBasedObjectStateValue: FireState_Burn_Material_Change_Burning--></T>
+              </U>
+              <U>
+                <T n="key">39737<!--CommodityBasedObjectStateValue: FireState_Burn_Material_Change_Not_Burning--></T>
+              </U>
+              <U>
+                <T n="key">77532<!--CommodityBasedObjectStateValue: FireState_Burn_Material_Change_Replace--></T>
+              </U>
+            </L>
+            <V n="default_value" t="reference">
+              <T n="reference">39737<!--CommodityBasedObjectStateValue: FireState_Burn_Material_Change_Not_Burning--></T>
+            </V>
+          </U>
+          <U>
+            <L n="client_states">
+              <U>
+                <T n="key">35956<!--CommodityBasedObjectStateValue: Materialistic_Admired--></T>
+              </U>
+              <U>
+                <T n="key">35957<!--CommodityBasedObjectStateValue: Materialistic_YetToAdmire--></T>
+              </U>
+            </L>
+            <V n="default_value" t="reference">
+              <T n="reference">35957<!--CommodityBasedObjectStateValue: Materialistic_YetToAdmire--></T>
+            </V>
+          </U>
+        </L>
+      </U>
+    </V>
+  </U>
+  <U n="_components_native">
+    <V n="Slot" t="enabled">
+      <U n="enabled">
+        <L n="state_values">
+          <T>134121<!--ObjectStateValue: object_Collection_Monsters_DisplayState_OnStation--></T>
+        </L>
+      </U>
+    </V>
+  </U>
+  <L n="_part_data">
+    <U>
+      <T n="part_definition">134961<!--ObjectPart: part_battleStation--></T>
+    </U>
+    <U>
+      <T n="part_definition">134961<!--ObjectPart: part_battleStation--></T>
+      <V t="enabled" n="subroot_index">
+        <T n="enabled">1</T>
+      </V>
+    </U>
+  </L>
+  <L n="_super_affordances">
+    <T>13328<!--ImmediateSuperInteraction: debug_Reset--></T>
+    <T>13326<!--ImmediateSuperInteraction: debug_ObjectDestroy--></T>
+    <T>196759<!--SuperInteraction: famePerks_GoodReputation_GivingBack_DonateObject--></T>
+    <T>134736<!--SimPickerInteraction: battleStation_BattleMonstersWith--></T>
+    <T>134735<!--SocialSuperInteraction: battleStation_Social_BattleMonsters--></T>
+    <T>13436<!--SuperInteraction: generic_Kneel--></T>
+    <T>135598<!--SocialSuperInteraction: battleStation_Social_Practice--></T>
+    <T>136885<!--ObjectInInventoryPickerInteraction: BattleStation_PracticeBattle--></T>
+    <T>137215<!--SuperInteraction: object_BattleStation_Watch--></T>
+    <T>106859<!--SuperInteraction: simRay_Transform_Object--></T>
+    <T>74457<!--ImmediateSuperInteraction: fire_ReplaceBurntObject--></T>
+    <T>102258<!--SuperInteraction: Ghost_Possess--></T>
+    <T>168502<!--SuperInteraction: Ghost_Pet_Possess--></T>
+  </L>
+  <U n="recycling_data">
+    <L n="recycling_values">
+      <U>
+        <E n="Bucks Type">RecycleBitsBucks</E>
+        <T n="Value">0</T>
+      </U>
+      <U>
+        <E n="Bucks Type">RecyclePiecesBucks</E>
+        <T n="Value">1</T>
+      </U>
+    </L>
+  </U>
+</I>

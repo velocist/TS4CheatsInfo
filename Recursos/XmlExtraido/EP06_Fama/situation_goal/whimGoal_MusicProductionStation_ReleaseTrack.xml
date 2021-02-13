@@ -1,0 +1,72 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<I c="SituationGoalObjectInteraction" i="situation_goal" m="situations.situation_goal_object_interaction" n="whimGoal_MusicProductionStation_ReleaseTrack" s="195615">
+  <V n="_display_data" t="enabled">
+    <U n="enabled">
+      <V n="instance_display_icon" t="enabled">
+        <T n="enabled" p="InGame\UI\Icons\Whims\whim_CompactDisc.png">2f7d0004:00000000:2a8493ff8a282967</T>
+      </V>
+      <V n="instance_display_name" t="enabled">
+        <T n="enabled">0xD09C7DC1<!--String: "Publicar un tema"--></T>
+      </V>
+      <V n="instance_display_tooltip" t="enabled">
+        <T n="enabled">0xB53F0E23<!--String: "Haz clic en el puesto de producción musical Mezclas Maestras con un CD sin publicar en el inventario de un Sim y selecciona Publicar tema."--></T>
+      </V>
+    </U>
+  </V>
+  <U n="_goal_test">
+    <L n="affordances">
+      <T>194075<!--SuperInteraction: musicProductionStation_ReleaseTrack--></T>
+      <T>195630<!--SuperInteraction: musicProductionStation_ReleaseTrack_FromCD--></T>
+    </L>
+    <E n="test_event">InteractionComplete</E>
+  </U>
+  <L n="_pre_tests">
+    <V t="sim_info">
+      <U n="sim_info">
+        <V t="specified" n="ages">
+          <L n="specified">
+            <E>TEEN</E>
+            <E>YOUNGADULT</E>
+            <E>ADULT</E>
+            <E>ELDER</E>
+            <E>CHILD</E>
+          </L>
+        </V>
+        <V t="specified" n="species">
+          <U n="specified">
+            <L n="species">
+              <E />
+            </L>
+          </U>
+        </V>
+      </U>
+    </V>
+    <V t="inventory">
+      <U n="inventory">
+        <V n="contents_check" t="has_object_with_states">
+          <U n="has_object_with_states">
+            <V t="tag" n="object_requirement">
+              <U n="tag">
+                <U n="tag">
+                  <L n="tag_set">
+                    <E>Func_MusicDisc</E>
+                  </L>
+                </U>
+              </U>
+            </V>
+            <L n="state_set">
+              <T>195232<!--ObjectStateValue: MusicProductionStation_Unreleased--></T>
+            </L>
+          </U>
+        </V>
+        <V n="inventory_location" t="participant_inventory">
+          <U n="participant_inventory">
+            <E n="inventory">Actor</E>
+          </U>
+        </V>
+      </U>
+    </V>
+  </L>
+  <T n="_score">25</T>
+  <T p="InGame\Audio\Bumper\bumper_event_goal_complete.propx" n="audio_sting_on_complete">39b2aa4a:00000000:ed52c39bcc2a7111</T>
+</I>

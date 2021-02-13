@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+
+<TuningRoot>
+    <Instance instance_type="situation" class="SpookyParty" module="situations.complex.spooky_party_situation" muid="2788ABFC11C5572B" description="Situation for the Spooky Party." instance_subclasses_only="False" parents="SituationComplexCommon, SituationComplex, Situation" path="Situations\Descriptions" use_guid_for_reference="True">
+        <Tunable type="situation_job" name="_default_job" class="TunableReference" display="Default Job" muid="D7C43CF7F6F1B86F" description="The job for all of the sims invited to the situation." allow_none="False" Deprecated="False" filter="0" group="General" />
+
+        <TunableTuple name="party_time_state" class="Tunable_PartyTimeState" display="Party Time State" muid="9D1F900D320F9D95" description="The first and main state of the situation, this will be where&#xA;the actual party is ran before the winding down phase." Deprecated="False" filter="0" group="State">
+            <Tunable type="bool" name="allow_join_situation" class="Tunable" default="True" display="Allow Join Situation" muid="4EBF02F82ADDCE05" description="Whether the situation is allowed to join at this state." Deprecated="False" filter="0" group="General" />
+            <TunableList name="job_and_role_changes" class="TunableMapping" display="Job And Role Changes" muid="566B176958625EA7" mapping_key="Situation Job" mapping_value="Role State" description="A mapping between situation jobs and role states that defines&#xA;what role states we want to switch to for sims on which jobs&#xA;when this situation state is entered." Deprecated="False" filter="0" group="General">
+                <TunableTuple class="TunableTuple" muid="CC5B7A9542285D8D" Deprecated="False" filter="0" group="General">
+                    <Tunable type="role_state" name="Role State" class="TunableReference" display="Role State" muid="C83D1B7DED9D926" description="The role state that we will switch sims of the linked job&#xA;into." allow_none="False" Deprecated="False" filter="0" group="General" />
+                    <Tunable type="situation_job" name="Situation Job" class="TunableReference" display="Situation Job" muid="F747887D7E049F0C" description="A reference to a SituationJob that we will use to change&#xA;sim's role state." allow_none="False" Deprecated="False" filter="0" group="General" />
+                </TunableTuple>
+            </TunableList>
+            <TunableVariant type="None" name="time_out" class="OptionalTunable" default="disabled" display="Time Out" muid="44D91BC84EDDFC8D" description="How long this state will last before time expired. Please talk to the GPE who implemented the specific&#xA;situation to see what the state will do on time expired." Deprecated="False" filter="0" group="General">
+                <Tunable name="disabled" class="TunableExistance" display="Disabled" muid="96DA9ECE577B0D36" />
+                <Tunable type="float" name="enabled" class="TunableSimMinute" default="15" display="Enabled" muid="C143DB70169BAEDD" min="1" max="None" tuning_state="NeedsTuning" Deprecated="False" filter="0" group="General" />
+            </TunableVariant>
+            <Tunable type="float" name="timeout" class="TunableSimMinute" default="10" display="Timeout" muid="52B24466A9517695" min="1" max="None" description="The amount of time to wait until the party switches to phase 2&#xA;winding down." tuning_state="NeedsTuning" Deprecated="False" filter="0" group="General" />
+        </TunableTuple>
+
+        <TunableTuple name="wind_down_state" class="Tunable_WindDownState" display="Wind Down State" muid="DC425536F8373446" description="Last phase of the situation where desserts will start being&#xA;served and cleanup will start." Deprecated="False" filter="0" group="State">
+            <Tunable type="bool" name="allow_join_situation" class="Tunable" default="True" display="Allow Join Situation" muid="56F6A2AE7EDE0811" description="Whether the situation is allowed to join at this state." Deprecated="False" filter="0" group="General" />
+            <TunableList name="job_and_role_changes" class="TunableMapping" display="Job And Role Changes" muid="EC15A3DC64656B1C" mapping_key="Situation Job" mapping_value="Role State" description="A mapping between situation jobs and role states that defines&#xA;what role states we want to switch to for sims on which jobs&#xA;when this situation state is entered." Deprecated="False" filter="0" group="General">
+                <TunableTuple class="TunableTuple" muid="D11A8A2659140B9" Deprecated="False" filter="0" group="General">
+                    <Tunable type="role_state" name="Role State" class="TunableReference" display="Role State" muid="A5BC8C9110C1E1A6" description="The role state that we will switch sims of the linked job&#xA;into." allow_none="False" Deprecated="False" filter="0" group="General" />
+                    <Tunable type="situation_job" name="Situation Job" class="TunableReference" display="Situation Job" muid="C1F5B711BDA1C033" description="A reference to a SituationJob that we will use to change&#xA;sim's role state." allow_none="False" Deprecated="False" filter="0" group="General" />
+                </TunableTuple>
+            </TunableList>
+            <TunableVariant type="None" name="time_out" class="OptionalTunable" default="disabled" display="Time Out" muid="386BDC536DAC5B7E" description="How long this state will last before time expired. Please talk to the GPE who implemented the specific&#xA;situation to see what the state will do on time expired." Deprecated="False" filter="0" group="General">
+                <Tunable name="disabled" class="TunableExistance" display="Disabled" muid="9131BF1ACC731020" />
+                <Tunable type="float" name="enabled" class="TunableSimMinute" default="15" display="Enabled" muid="BB830E110FE1C356" min="1" max="None" tuning_state="NeedsTuning" Deprecated="False" filter="0" group="General" />
+            </TunableVariant>
+        </TunableTuple>
+    </Instance>
+</TuningRoot>

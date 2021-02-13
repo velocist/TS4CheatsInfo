@@ -1,0 +1,1419 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<I c="SuperInteraction" i="interaction" m="interactions.base.super_interaction" n="starship_Tie_InSpace_Mission_FR9" s="244589">
+  <L n="_constraints">
+    <U>
+      <L n="constraints">
+        <U>
+          <V n="value" t="spawn_points">
+            <U n="spawn_points">
+              <V t="Spawn_Point_Tags" n="tags">
+                <L n="Spawn_Point_Tags">
+                  <E>Spawn_Starship</E>
+                </L>
+              </V>
+            </U>
+          </V>
+        </U>
+      </L>
+    </U>
+  </L>
+  <V t="enabled" n="_saveable" />
+  <T n="allow_autonomous">False</T>
+  <T n="attention_cost">0.5</T>
+  <V t="flexible_length" n="basic_content">
+    <U n="flexible_length">
+      <L n="conditional_actions">
+        <V t="literal">
+          <U n="literal">
+            <L n="conditions">
+              <V t="state_based">
+                <U n="state_based">
+                  <V n="state" t="on_trigger">
+                    <T n="on_trigger">238529<!--ObjectStateValue: starship_CanExit_Yes--></T>
+                  </V>
+                </U>
+              </V>
+            </L>
+            <E n="interaction_action">EXIT_NATURALLY</E>
+          </U>
+        </V>
+      </L>
+      <V t="staging_content" n="content">
+        <U n="staging_content">
+          <U n="content_set">
+            <L n="affordance_links">
+              <T>239542<!--MixerInteraction: mixer_Starship_Motive_Bladder--></T>
+              <T>239544<!--MixerInteraction: mixer_Starship_Motive_Default--></T>
+              <T>239546<!--MixerInteraction: mixer_Starship_Motive_Energy--></T>
+              <T>239545<!--MixerInteraction: mixer_Starship_Motive_Hunger--></T>
+            </L>
+          </U>
+          <T n="only_use_mixers_from_SI">True</T>
+        </U>
+      </V>
+      <V n="periodic_stat_change" t="enabled">
+        <U n="enabled">
+          <L n="operations">
+            <V t="dynamic_skill">
+              <U n="dynamic_skill">
+                <U n="skill_loot_data_override">
+                  <E n="effectiveness">VerySmallPeriodic</E>
+                </U>
+              </U>
+            </V>
+          </L>
+        </U>
+      </V>
+      <T n="start_autonomous_inertial">False</T>
+    </U>
+  </V>
+  <L n="basic_extras">
+    <V t="state_change">
+      <U n="state_change">
+        <V n="new_value" t="single_value">
+          <U n="single_value">
+            <T n="new_value">238526<!--ObjectStateValue: starship_Idle_Space--></T>
+          </U>
+        </V>
+        <V t="immediately" n="timing" />
+      </U>
+    </V>
+    <V t="adventure">
+      <U n="adventure">
+        <L n="_adventure_moments">
+          <U>
+            <E n="key">Generic_01</E>
+            <U n="value">
+              <V n="aventure_moment" t="literal">
+                <U n="literal">
+                  <L n="_finish_actions">
+                    <U>
+                      <L n="action_results">
+                        <U>
+                          <L n="next_moments">
+                            <E>Generic_03</E>
+                          </L>
+                        </U>
+                      </L>
+                      <V n="display_text" t="single">
+                        <T n="single">0x35769668<!--String: "Alertar al teniente Agnon"--></T>
+                      </V>
+                    </U>
+                    <U>
+                      <L n="action_results">
+                        <U>
+                          <L n="next_moments">
+                            <E>Generic_04</E>
+                          </L>
+                          <L n="weight_modifiers">
+                            <U>
+                              <V t="skill_test" n="test">
+                                <U n="skill_test">
+                                  <T n="skill">16699<!--Skill: statistic_Skill_AdultMajor_Charisma--></T>
+                                  <V t="interval" n="skill_range">
+                                    <U n="interval">
+                                      <U n="skill_interval">
+                                        <T n="lower_bound">3</T>
+                                      </U>
+                                    </U>
+                                  </V>
+                                </U>
+                              </V>
+                              <T n="weight_multiplier">2</T>
+                            </U>
+                          </L>
+                        </U>
+                        <U>
+                          <L n="next_moments">
+                            <E>Generic_05</E>
+                          </L>
+                        </U>
+                      </L>
+                      <V n="display_text" t="single">
+                        <T n="single">0x2714C07B<!--String: "Culpar a recluta"--></T>
+                      </V>
+                    </U>
+                    <U>
+                      <L n="action_results">
+                        <U>
+                          <L n="next_moments">
+                            <E>Generic_10</E>
+                          </L>
+                        </U>
+                      </L>
+                      <L n="availability_tests">
+                        <L>
+                          <V t="inventory">
+                            <U n="inventory">
+                              <V t="has_object_with_tag" n="contents_check">
+                                <U n="has_object_with_tag">
+                                  <L n="tag_set">
+                                    <E>Func_DroidBB</E>
+                                    <E>Func_DroidR</E>
+                                  </L>
+                                </U>
+                              </V>
+                            </U>
+                          </V>
+                        </L>
+                        <L>
+                          <V t="routing_slave_formation">
+                            <U n="routing_slave_formation">
+                              <V t="in_formation" n="formation_test">
+                                <U n="in_formation">
+                                  <V t="enabled" n="formations_to_validate">
+                                    <U n="enabled">
+                                      <V n="whitelist" t="specify">
+                                        <U n="specify">
+                                          <L n="whitelist">
+                                            <T>230813<!--RoutingFormation: routingFormation_Droid_Follow--></T>
+                                          </L>
+                                        </U>
+                                      </V>
+                                    </U>
+                                  </V>
+                                </U>
+                              </V>
+                              <V t="enabled" n="participant_master" />
+                            </U>
+                          </V>
+                        </L>
+                      </L>
+                      <V t="enabled" n="disabled_text">
+                        <T n="enabled">0x2BF2DC22<!--String: "Requiere un droide."--></T>
+                      </V>
+                      <V n="display_text" t="single">
+                        <T n="single">0xF202B5DA<!--String: "Hacer que lo arregle el droide"--></T>
+                      </V>
+                    </U>
+                  </L>
+                  <V n="_visibility" t="show_dialog">
+                    <U n="show_dialog">
+                      <E n="dialog_style">LARGE_ICON</E>
+                      <V t="enabled" n="icon">
+                        <V n="enabled" t="resource_key">
+                          <U n="resource_key">
+                            <T n="key" p="InGP09\UI\Icons\ChanceCard\ChanceCard_Echelon_Spires.png">2f7d0004:00000000:4755bb71bf40097d</T>
+                          </U>
+                        </V>
+                      </V>
+                      <V t="single" n="text">
+                        <T n="single">0x1AE45FD7<!--String: "{0.SimFirstName} pilota el TIE Echelon con cuidado sobre el puesto avanzado de la Aguja Negra. Hay dos cosas que puede probar: los sistemas de armamento o la agilidad de la nave utilizando maniobras aéreas agresivas."--></T>
+                      </V>
+                      <V t="disabled" n="title" />
+                    </U>
+                  </V>
+                </U>
+              </V>
+            </U>
+          </U>
+          <U>
+            <E n="key">Generic_02</E>
+            <U n="value">
+              <V n="aventure_moment" t="literal">
+                <U n="literal">
+                  <L n="_finish_actions">
+                    <U>
+                      <L n="action_results">
+                        <U>
+                          <L n="loot_actions">
+                            <T>244626<!--LootActions: loot_Batuu_Starship_Mission_SR9_Rocket_Science--></T>
+                          </L>
+                          <L n="next_moments">
+                            <E>Generic_11</E>
+                          </L>
+                        </U>
+                      </L>
+                      <V n="display_text" t="single">
+                        <T n="single">0xEBF6211E<!--String: "Tonel volado"--></T>
+                      </V>
+                    </U>
+                    <U>
+                      <L n="action_results">
+                        <U>
+                          <L n="loot_actions">
+                            <T>244626<!--LootActions: loot_Batuu_Starship_Mission_SR9_Rocket_Science--></T>
+                          </L>
+                          <L n="next_moments">
+                            <E>Generic_12</E>
+                          </L>
+                        </U>
+                      </L>
+                      <V n="display_text" t="single">
+                        <T n="single">0xD14DC542<!--String: "Rizo aéreo"--></T>
+                      </V>
+                    </U>
+                  </L>
+                  <V n="_visibility" t="show_dialog">
+                    <U n="show_dialog">
+                      <E n="dialog_style">LARGE_ICON</E>
+                      <V t="enabled" n="icon">
+                        <V n="enabled" t="resource_key">
+                          <U n="resource_key">
+                            <T n="key" p="InGP09\UI\Icons\ChanceCard\ChanceCard_Echelon_Spires.png">2f7d0004:00000000:4755bb71bf40097d</T>
+                          </U>
+                        </V>
+                      </V>
+                      <V n="text" t="single">
+                        <T n="single">0x94C8A8E0<!--String: "¡Veamos qué puede hacer esta pequeña! {0.SimFirstName} debería poner a prueba sus dotes de piloto y forzar la nave al máximo. ¡Si las alas no se caen, el vuelo de prueba será un éxito! ¿Qué maniobra debería probar?"--></T>
+                      </V>
+                      <V t="disabled" n="title" />
+                    </U>
+                  </V>
+                </U>
+              </V>
+            </U>
+          </U>
+          <U>
+            <E n="key">Generic_03</E>
+            <U n="value">
+              <V n="aventure_moment" t="literal">
+                <U n="literal">
+                  <L n="_finish_actions">
+                    <U>
+                      <L n="action_results">
+                        <U>
+                          <L n="next_moments">
+                            <E>Generic_06</E>
+                          </L>
+                        </U>
+                      </L>
+                      <V n="display_text" t="single">
+                        <T n="single">0xB29A4592<!--String: "Ordenar a recluta"--></T>
+                      </V>
+                    </U>
+                    <U>
+                      <L n="action_results">
+                        <U>
+                          <L n="next_moments">
+                            <E>Generic_07</E>
+                          </L>
+                        </U>
+                      </L>
+                      <V n="display_text" t="single">
+                        <T n="single">0x7287E83B<!--String: "Apagar y encender"--></T>
+                      </V>
+                    </U>
+                    <U>
+                      <L n="action_results">
+                        <U>
+                          <L n="next_moments">
+                            <E>Generic_08</E>
+                          </L>
+                          <L n="weight_modifiers">
+                            <U>
+                              <V n="test" t="skill_test">
+                                <U n="skill_test">
+                                  <T n="skill">16704<!--Skill: statistic_Skill_AdultMajor_Handiness--></T>
+                                  <V t="interval" n="skill_range">
+                                    <U n="interval">
+                                      <U n="skill_interval">
+                                        <T n="lower_bound">4</T>
+                                      </U>
+                                    </U>
+                                  </V>
+                                </U>
+                              </V>
+                              <T n="weight_multiplier">2</T>
+                            </U>
+                          </L>
+                        </U>
+                        <U>
+                          <L n="next_moments">
+                            <E>Generic_09</E>
+                          </L>
+                        </U>
+                      </L>
+                      <V n="display_text" t="single">
+                        <T n="single">0xDA3BD2B2<!--String: "Intentar arreglar"--></T>
+                      </V>
+                    </U>
+                    <U>
+                      <L n="action_results">
+                        <U>
+                          <L n="next_moments">
+                            <E>Generic_10</E>
+                          </L>
+                        </U>
+                      </L>
+                      <L n="availability_tests">
+                        <L>
+                          <V t="inventory">
+                            <U n="inventory">
+                              <V t="has_object_with_tag" n="contents_check">
+                                <U n="has_object_with_tag">
+                                  <L n="tag_set">
+                                    <E>Func_DroidBB</E>
+                                    <E>Func_DroidR</E>
+                                  </L>
+                                </U>
+                              </V>
+                            </U>
+                          </V>
+                        </L>
+                        <L>
+                          <V t="routing_slave_formation">
+                            <U n="routing_slave_formation">
+                              <V t="in_formation" n="formation_test">
+                                <U n="in_formation">
+                                  <V t="enabled" n="formations_to_validate">
+                                    <U n="enabled">
+                                      <V n="whitelist" t="specify">
+                                        <U n="specify">
+                                          <L n="whitelist">
+                                            <T>230813<!--RoutingFormation: routingFormation_Droid_Follow--></T>
+                                          </L>
+                                        </U>
+                                      </V>
+                                    </U>
+                                  </V>
+                                </U>
+                              </V>
+                              <V t="enabled" n="participant_master" />
+                            </U>
+                          </V>
+                        </L>
+                      </L>
+                      <V t="enabled" n="disabled_text">
+                        <T n="enabled">0x2BF2DC22<!--String: "Requiere un droide."--></T>
+                      </V>
+                      <V n="display_text" t="single">
+                        <T n="single">0xF202B5DA<!--String: "Hacer que lo arregle el droide"--></T>
+                      </V>
+                    </U>
+                  </L>
+                  <V n="_visibility" t="show_dialog">
+                    <U n="show_dialog">
+                      <E n="dialog_style">LARGE_ICON</E>
+                      <V t="enabled" n="icon">
+                        <V n="enabled" t="resource_key">
+                          <U n="resource_key">
+                            <T n="key" p="InGP09\UI\Icons\ChanceCard\ChanceCard_LtAgnon_Coms.png">2f7d0004:00000000:1427f2077430d014</T>
+                          </U>
+                        </V>
+                      </V>
+                      <V n="text" t="single">
+                        <T n="single">0xB2EB074<!--String: "El teniente Agnon está ocupado y la emprende contra {0.SimFirstName}. “Si dejase mis obligaciones cada vez que algo sale mal durante estos simulacros tuyos de patio de colegio, jamás terminaría nada. ¡Haz tu trabajo y ocúpate del problema tú {M0.mismo}{F0.misma}!” {0.SimFirstName} podría intentar encargarse {M0.él}{F0.ella} u ordenar a un nuevo recluta que lo arregle. ¿Qué debería hacer?"--></T>
+                      </V>
+                      <V t="disabled" n="title" />
+                    </U>
+                  </V>
+                </U>
+              </V>
+            </U>
+          </U>
+          <U>
+            <E n="key">Generic_04</E>
+            <U n="value">
+              <V n="aventure_moment" t="literal">
+                <U n="literal">
+                  <L n="_finish_actions">
+                    <U>
+                      <L n="action_results">
+                        <U>
+                          <L n="loot_actions">
+                            <T>238560<!--LootActions: loot_Batuu_Starship_IdleGround--></T>
+                            <T>244616<!--LootActions: loot_Batuu_Starship_Mission_SR9_Blame_Recruit_Success--></T>
+                          </L>
+                        </U>
+                      </L>
+                      <V t="single" n="display_text">
+                        <T n="single">0xA1A3F34C<!--String: "Volver al distrito de la Primera Orden"--></T>
+                      </V>
+                    </U>
+                  </L>
+                  <V n="_visibility" t="show_dialog">
+                    <U n="show_dialog">
+                      <E n="dialog_style">LARGE_ICON</E>
+                      <V t="enabled" n="icon">
+                        <V n="enabled" t="resource_key">
+                          <U n="resource_key">
+                            <T n="key" p="InGP09\UI\Icons\ChanceCard\ChanceCard_Echelon_Spires.png">2f7d0004:00000000:4755bb71bf40097d</T>
+                          </U>
+                        </V>
+                      </V>
+                      <V n="text" t="single">
+                        <T n="single">0xAE8E1BDB<!--String: "{0.SimFirstName} llama por radio al teniente Agnon para echarle la culpa de manera convincente al nuevo recluta. Agnon se muestra furioso con el recluta y agradecido con {0.SimFirstName} por haber descubierto el error. ¡Alguien pagará por esto, pero no será {0.SimFirstName}! El Echelon da la vuelta y vuelve hacia el puesto avanzado de la Aguja Negra."--></T>
+                      </V>
+                      <V t="disabled" n="title" />
+                    </U>
+                  </V>
+                </U>
+              </V>
+            </U>
+          </U>
+          <U>
+            <E n="key">Generic_05</E>
+            <U n="value">
+              <V n="aventure_moment" t="literal">
+                <U n="literal">
+                  <L n="_finish_actions">
+                    <U>
+                      <L n="action_results">
+                        <U>
+                          <L n="loot_actions">
+                            <T>238560<!--LootActions: loot_Batuu_Starship_IdleGround--></T>
+                            <T>244617<!--LootActions: loot_Batuu_Starship_Mission_SR9_Blame_Recruit_Fail--></T>
+                          </L>
+                        </U>
+                      </L>
+                      <V t="single" n="display_text">
+                        <T n="single">0xA1A3F34C<!--String: "Volver al distrito de la Primera Orden"--></T>
+                      </V>
+                    </U>
+                  </L>
+                  <V n="_visibility" t="show_dialog">
+                    <U n="show_dialog">
+                      <E n="dialog_style">LARGE_ICON</E>
+                      <V t="enabled" n="icon">
+                        <V n="enabled" t="resource_key">
+                          <U n="resource_key">
+                            <T n="key" p="InGP09\UI\Icons\ChanceCard\ChanceCard_Echelon_Spires.png">2f7d0004:00000000:4755bb71bf40097d</T>
+                          </U>
+                        </V>
+                      </V>
+                      <V n="text" t="single">
+                        <T n="single">0x87F20471<!--String: "El teniente Agnon lee la lista de trabajos asignados y señala que {0.SimFirstName} tenía la responsabilidad de comprobar las armas. {M0.Humillado, este}{F0.Humillada, esta} da la vuelta con el Echelon y vuelve hacia el puesto avanzado de la Aguja Negra."--></T>
+                      </V>
+                      <V t="disabled" n="title" />
+                    </U>
+                  </V>
+                </U>
+              </V>
+            </U>
+          </U>
+          <U>
+            <E n="key">Generic_06</E>
+            <U n="value">
+              <V n="aventure_moment" t="literal">
+                <U n="literal">
+                  <L n="_finish_actions">
+                    <U>
+                      <L n="action_results">
+                        <U>
+                          <L n="loot_actions">
+                            <T>238560<!--LootActions: loot_Batuu_Starship_IdleGround--></T>
+                            <T>244608<!--LootActions: loot_Batuu_Starship_Mission_SR9_Order_Recruit--></T>
+                          </L>
+                        </U>
+                      </L>
+                      <V t="single" n="display_text">
+                        <T n="single">0xA1A3F34C<!--String: "Volver al distrito de la Primera Orden"--></T>
+                      </V>
+                    </U>
+                  </L>
+                  <V n="_visibility" t="show_dialog">
+                    <U n="show_dialog">
+                      <E n="dialog_style">LARGE_ICON</E>
+                      <V t="enabled" n="icon">
+                        <V n="enabled" t="resource_key">
+                          <U n="resource_key">
+                            <T n="key" p="InGP09\UI\Icons\ChanceCard\ChanceCard_LtAgnon_Coms.png">2f7d0004:00000000:1427f2077430d014</T>
+                          </U>
+                        </V>
+                      </V>
+                      <V n="text" t="single">
+                        <T n="single">0xDE273568<!--String: "El teniente Agnon escucha a {0.SimFirstName} gritarle órdenes a un nuevo recluta y queda impresionado con su exhibición de liderazgo. Derrochando seguridad, {0.SimFirstName} da la vuelta con el Echelon y vuelve hacia el puesto avanzado de la Aguja Negra."--></T>
+                      </V>
+                      <V t="disabled" n="title" />
+                    </U>
+                  </V>
+                </U>
+              </V>
+            </U>
+          </U>
+          <U>
+            <E n="key">Generic_07</E>
+            <U n="value">
+              <V n="aventure_moment" t="literal">
+                <U n="literal">
+                  <L n="_finish_actions">
+                    <U>
+                      <L n="action_results">
+                        <U>
+                          <L n="loot_actions">
+                            <T>238560<!--LootActions: loot_Batuu_Starship_IdleGround--></T>
+                          </L>
+                        </U>
+                      </L>
+                      <V t="single" n="display_text">
+                        <T n="single">0xA1A3F34C<!--String: "Volver al distrito de la Primera Orden"--></T>
+                      </V>
+                    </U>
+                  </L>
+                  <V n="_visibility" t="show_dialog">
+                    <U n="show_dialog">
+                      <E n="dialog_style">LARGE_ICON</E>
+                      <V t="enabled" n="icon">
+                        <V n="enabled" t="resource_key">
+                          <U n="resource_key">
+                            <T n="key" p="InGP09\UI\Icons\ChanceCard\ChanceCard_Echelon_Spires.png">2f7d0004:00000000:4755bb71bf40097d</T>
+                          </U>
+                        </V>
+                      </V>
+                      <V n="text" t="single">
+                        <T n="single">0xFEF0324D<!--String: "{0.SimFirstName} pulsa unos cuantos botones y acciona el interruptor de los cañones láser para apagarlos. Después de contar hasta tres, vuelve a encenderlos y escucha una sinfonía de clics, chirridos, vibraciones, zumbidos y sonidos rechinantes... ¡Perfecto! ¡Parece que... vuelven a funcionar bien! Bueno, todo lo bien que pueden...\n\n{0.SimFirstName} dispara los cañones láser y derriba las agujas cercanas. ¡Prueba completada! {0.SimFirstName} da la vuelta con el Echelon y vuelve hacia el puesto avanzado de la Aguja Negra."--></T>
+                      </V>
+                      <V t="disabled" n="title" />
+                    </U>
+                  </V>
+                </U>
+              </V>
+            </U>
+          </U>
+          <U>
+            <E n="key">Generic_08</E>
+            <U n="value">
+              <V n="aventure_moment" t="literal">
+                <U n="literal">
+                  <L n="_finish_actions">
+                    <U>
+                      <L n="action_results">
+                        <U>
+                          <L n="loot_actions">
+                            <T>238560<!--LootActions: loot_Batuu_Starship_IdleGround--></T>
+                            <T>244612<!--LootActions: loot_Batuu_Starship_Mission_SR9_Try_To_Fix_Success--></T>
+                          </L>
+                        </U>
+                      </L>
+                      <V t="single" n="display_text">
+                        <T n="single">0xA1A3F34C<!--String: "Volver al distrito de la Primera Orden"--></T>
+                      </V>
+                    </U>
+                  </L>
+                  <V n="_visibility" t="show_dialog">
+                    <U n="show_dialog">
+                      <E n="dialog_style">LARGE_ICON</E>
+                      <V t="enabled" n="icon">
+                        <V n="enabled" t="resource_key">
+                          <U n="resource_key">
+                            <T n="key" p="InGP09\UI\Icons\ChanceCard\ChanceCard_Echelon_Spires.png">2f7d0004:00000000:4755bb71bf40097d</T>
+                          </U>
+                        </V>
+                      </V>
+                      <V n="text" t="single">
+                        <T n="single">0x4F2D52E9<!--String: "{0.SimFirstName} retira un panel y se encuentra una maraña de cables. Redirige el cable rojo al conducto C… Puentea el circuito, pulsa algunos botones y toca unas cuantas cosas. Tras activar el interruptor de encendido, un leve zumbido reverbera por toda la cabina. {0.SimFirstName} dispara los cañones láser y derriba las agujas cercanas. ¡Arreglado! ¡Hora de volver al distrito de la Primera Orden con la nave como debe estar!"--></T>
+                      </V>
+                      <V t="disabled" n="title" />
+                    </U>
+                  </V>
+                </U>
+              </V>
+            </U>
+          </U>
+          <U>
+            <E n="key">Generic_09</E>
+            <U n="value">
+              <V n="aventure_moment" t="literal">
+                <U n="literal">
+                  <L n="_finish_actions">
+                    <U>
+                      <L n="action_results">
+                        <U>
+                          <L n="loot_actions">
+                            <T>238560<!--LootActions: loot_Batuu_Starship_IdleGround--></T>
+                            <T>244613<!--LootActions: loot_Batuu_Starship_Mission_SR9_Try_To_Fix_Fail--></T>
+                          </L>
+                        </U>
+                      </L>
+                      <V t="single" n="display_text">
+                        <T n="single">0xA1A3F34C<!--String: "Volver al distrito de la Primera Orden"--></T>
+                      </V>
+                    </U>
+                  </L>
+                  <V n="_visibility" t="show_dialog">
+                    <U n="show_dialog">
+                      <E n="dialog_style">LARGE_ICON</E>
+                      <V t="enabled" n="icon">
+                        <V n="enabled" t="resource_key">
+                          <U n="resource_key">
+                            <T n="key" p="InGP09\UI\Icons\ChanceCard\ChanceCard_Echelon_Spires.png">2f7d0004:00000000:4755bb71bf40097d</T>
+                          </U>
+                        </V>
+                      </V>
+                      <V n="text" t="single">
+                        <T n="single">0xE4F23CD6<!--String: "{0.SimFirstName} retira un panel y se encuentra una maraña de cables. ¿Cuál decían en el entrenamiento que había que cortar? ¿El cable rojo o el azul? ¡¿Y desde cuándo hay cables morados?! Presa del pánico, {0.SimFirstName} corta puñados de cables. Como era de esperar, los cañones láser siguen fuera de servicio y han empezado a soltar chispas. {M0.Un avergonzado}{F0.Una avergonzada} {0.SimFirstName} da la vuelta con el Echelon y vuelve hacia el puesto avanzado de la Aguja Negra."--></T>
+                      </V>
+                      <V t="disabled" n="title" />
+                    </U>
+                  </V>
+                </U>
+              </V>
+            </U>
+          </U>
+          <U>
+            <E n="key">Generic_10</E>
+            <U n="value">
+              <V n="aventure_moment" t="literal">
+                <U n="literal">
+                  <L n="_finish_actions">
+                    <U>
+                      <L n="action_results">
+                        <U>
+                          <L n="loot_actions">
+                            <T>238560<!--LootActions: loot_Batuu_Starship_IdleGround--></T>
+                            <T>244622<!--LootActions: loot_Batuu_Starship_Mission_SR9_Make_Droid_Rel_Gain--></T>
+                          </L>
+                        </U>
+                      </L>
+                      <V t="single" n="display_text">
+                        <T n="single">0xA1A3F34C<!--String: "Volver al distrito de la Primera Orden"--></T>
+                      </V>
+                    </U>
+                  </L>
+                  <V n="_visibility" t="show_dialog">
+                    <U n="show_dialog">
+                      <V t="enabled" n="audio_sting">
+                        <U n="enabled">
+                          <T n="audio" p="InGP09\Audio\ui\ui_gp09_advm_droid_beeps.propx">39b2aa4a:00000000:c7503bbf5f02db88</T>
+                        </U>
+                      </V>
+                      <E n="dialog_style">LARGE_ICON</E>
+                      <V t="enabled" n="icon">
+                        <V n="enabled" t="resource_key">
+                          <U n="resource_key">
+                            <T n="key" p="InGP09\UI\Icons\ChanceCard\ChanceCard_Echelon_Spires.png">2f7d0004:00000000:4755bb71bf40097d</T>
+                          </U>
+                        </V>
+                      </V>
+                      <V n="text" t="single">
+                        <T n="single">0x196E56B5<!--String: "El droide de {0.SimFirstName} logra arreglar el cañón láser antes de que nadie se dé cuenta. ¡Fiuuu!"--></T>
+                      </V>
+                      <V t="disabled" n="title" />
+                    </U>
+                  </V>
+                </U>
+              </V>
+            </U>
+          </U>
+          <U>
+            <E n="key">Generic_11</E>
+            <U n="value">
+              <V n="aventure_moment" t="literal">
+                <U n="literal">
+                  <L n="_finish_actions">
+                    <U>
+                      <L n="action_results">
+                        <U>
+                          <L n="next_moments">
+                            <E>Generic_13</E>
+                          </L>
+                        </U>
+                      </L>
+                      <V n="display_text" t="single">
+                        <T n="single">0xE35C977D<!--String: " Ir a informar"--></T>
+                      </V>
+                    </U>
+                    <U>
+                      <L n="action_results">
+                        <U>
+                          <L n="next_moments">
+                            <E>Generic_14</E>
+                          </L>
+                        </U>
+                      </L>
+                      <L n="availability_tests">
+                        <L>
+                          <V t="inventory">
+                            <U n="inventory">
+                              <V n="contents_check" t="has_object_with_def">
+                                <U n="has_object_with_def">
+                                  <T n="definition">240676</T>
+                                </U>
+                              </V>
+                            </U>
+                          </V>
+                        </L>
+                        <L>
+                          <V t="inventory">
+                            <U n="inventory">
+                              <V n="contents_check" t="has_object_with_def">
+                                <U n="has_object_with_def">
+                                  <T n="definition">239505</T>
+                                </U>
+                              </V>
+                            </U>
+                          </V>
+                        </L>
+                      </L>
+                      <V t="enabled" n="disabled_text">
+                        <T n="enabled">0xFEFD1B36<!--String: "Requiere un bláster."--></T>
+                      </V>
+                      <V t="single" n="display_text">
+                        <T n="single">0x8702F194<!--String: "Investigar con bláster"--></T>
+                      </V>
+                    </U>
+                    <U>
+                      <L n="action_results">
+                        <U>
+                          <L n="next_moments">
+                            <E>Generic_15</E>
+                          </L>
+                        </U>
+                      </L>
+                      <L n="availability_tests">
+                        <L>
+                          <V t="inventory">
+                            <U n="inventory">
+                              <V t="has_object_with_tag" n="contents_check">
+                                <U n="has_object_with_tag">
+                                  <L n="tag_set">
+                                    <E>Func_DroidBB</E>
+                                    <E>Func_DroidR</E>
+                                  </L>
+                                </U>
+                              </V>
+                            </U>
+                          </V>
+                        </L>
+                        <L>
+                          <V t="routing_slave_formation">
+                            <U n="routing_slave_formation">
+                              <V t="in_formation" n="formation_test">
+                                <U n="in_formation">
+                                  <V t="enabled" n="formations_to_validate">
+                                    <U n="enabled">
+                                      <V n="whitelist" t="specify">
+                                        <U n="specify">
+                                          <L n="whitelist">
+                                            <T>230813<!--RoutingFormation: routingFormation_Droid_Follow--></T>
+                                          </L>
+                                        </U>
+                                      </V>
+                                    </U>
+                                  </V>
+                                </U>
+                              </V>
+                              <V t="enabled" n="participant_master" />
+                            </U>
+                          </V>
+                        </L>
+                      </L>
+                      <V t="enabled" n="disabled_text">
+                        <T n="enabled">0x2BF2DC22<!--String: "Requiere un droide."--></T>
+                      </V>
+                      <V t="single" n="display_text">
+                        <T n="single">0xF0EE371A<!--String: "Escanear con droide"--></T>
+                      </V>
+                    </U>
+                  </L>
+                  <V n="_visibility" t="show_dialog">
+                    <U n="show_dialog">
+                      <E n="dialog_style">LARGE_ICON</E>
+                      <V t="enabled" n="icon">
+                        <V n="enabled" t="resource_key">
+                          <U n="resource_key">
+                            <T n="key" p="InGP09\UI\Icons\ChanceCard\ChanceCard_Echelon_Engines_Batuu.png">2f7d0004:00000000:6f0ead869d02c5cc</T>
+                          </U>
+                        </V>
+                      </V>
+                      <V n="text" t="single">
+                        <T n="single">0x535A3E27<!--String: "Mientras fuerza el Echelon para ejecutar un tonel volado, {0.SimFirstName} oye un ruido extraño en la nave que parece proceder de debajo de los paneles del suelo. ¿Qué debería hacer?"--></T>
+                      </V>
+                      <V t="disabled" n="title" />
+                    </U>
+                  </V>
+                </U>
+              </V>
+            </U>
+          </U>
+          <U>
+            <E n="key">Generic_12</E>
+            <U n="value">
+              <V n="aventure_moment" t="literal">
+                <U n="literal">
+                  <L n="_finish_actions">
+                    <U>
+                      <L n="action_results">
+                        <U>
+                          <L n="next_moments">
+                            <E>Generic_13</E>
+                          </L>
+                        </U>
+                      </L>
+                      <V n="display_text" t="single">
+                        <T n="single">0xE35C977D<!--String: " Ir a informar"--></T>
+                      </V>
+                    </U>
+                    <U>
+                      <L n="action_results">
+                        <U>
+                          <L n="loot_actions">
+                            <T>244628<!--LootActions: loot_Batuu_Starship_Mission_SR9_Investigate--></T>
+                          </L>
+                          <L n="next_moments">
+                            <E>Generic_14</E>
+                          </L>
+                        </U>
+                      </L>
+                      <L n="availability_tests">
+                        <L>
+                          <V t="inventory">
+                            <U n="inventory">
+                              <V n="contents_check" t="has_object_with_def">
+                                <U n="has_object_with_def">
+                                  <T n="definition">240676</T>
+                                </U>
+                              </V>
+                            </U>
+                          </V>
+                        </L>
+                        <L>
+                          <V t="inventory">
+                            <U n="inventory">
+                              <V n="contents_check" t="has_object_with_def">
+                                <U n="has_object_with_def">
+                                  <T n="definition">239505</T>
+                                </U>
+                              </V>
+                            </U>
+                          </V>
+                        </L>
+                      </L>
+                      <V t="enabled" n="disabled_text">
+                        <T n="enabled">0xFEFD1B36<!--String: "Requiere un bláster."--></T>
+                      </V>
+                      <V t="single" n="display_text">
+                        <T n="single">0x8702F194<!--String: "Investigar con bláster"--></T>
+                      </V>
+                    </U>
+                    <U>
+                      <L n="action_results">
+                        <U>
+                          <L n="loot_actions">
+                            <T>244622<!--LootActions: loot_Batuu_Starship_Mission_SR9_Make_Droid_Rel_Gain--></T>
+                          </L>
+                          <L n="next_moments">
+                            <E>Generic_15</E>
+                          </L>
+                        </U>
+                      </L>
+                      <L n="availability_tests">
+                        <L>
+                          <V t="inventory">
+                            <U n="inventory">
+                              <V t="has_object_with_tag" n="contents_check">
+                                <U n="has_object_with_tag">
+                                  <L n="tag_set">
+                                    <E>Func_DroidBB</E>
+                                    <E>Func_DroidR</E>
+                                  </L>
+                                </U>
+                              </V>
+                            </U>
+                          </V>
+                        </L>
+                        <L>
+                          <V t="routing_slave_formation">
+                            <U n="routing_slave_formation">
+                              <V t="in_formation" n="formation_test">
+                                <U n="in_formation">
+                                  <V t="enabled" n="formations_to_validate">
+                                    <U n="enabled">
+                                      <V n="whitelist" t="specify">
+                                        <U n="specify">
+                                          <L n="whitelist">
+                                            <T>230813<!--RoutingFormation: routingFormation_Droid_Follow--></T>
+                                          </L>
+                                        </U>
+                                      </V>
+                                    </U>
+                                  </V>
+                                </U>
+                              </V>
+                              <V t="enabled" n="participant_master" />
+                            </U>
+                          </V>
+                        </L>
+                      </L>
+                      <V t="enabled" n="disabled_text">
+                        <T n="enabled">0x2BF2DC22<!--String: "Requiere un droide."--></T>
+                      </V>
+                      <V t="single" n="display_text">
+                        <T n="single">0xF0EE371A<!--String: "Escanear con droide"--></T>
+                      </V>
+                    </U>
+                  </L>
+                  <V n="_visibility" t="show_dialog">
+                    <U n="show_dialog">
+                      <E n="dialog_style">LARGE_ICON</E>
+                      <V t="enabled" n="icon">
+                        <V n="enabled" t="resource_key">
+                          <U n="resource_key">
+                            <T n="key" p="InGP09\UI\Icons\ChanceCard\ChanceCard_Echelon_Engines_Batuu.png">2f7d0004:00000000:6f0ead869d02c5cc</T>
+                          </U>
+                        </V>
+                      </V>
+                      <V n="text" t="single">
+                        <T n="single">0x5D453EAD<!--String: "Mientras fuerza el Echelon para ejecutar un rizo aéreo, {0.SimFirstName} oye un ruido extraño en la nave que parece proceder de debajo de los paneles del suelo. ¿Qué debería hacer?"--></T>
+                      </V>
+                      <V t="disabled" n="title" />
+                    </U>
+                  </V>
+                </U>
+              </V>
+            </U>
+          </U>
+          <U>
+            <E n="key">Generic_13</E>
+            <U n="value">
+              <V n="aventure_moment" t="literal">
+                <U n="literal">
+                  <L n="_finish_actions">
+                    <U>
+                      <L n="action_results">
+                        <U>
+                          <L n="loot_actions">
+                            <T>238560<!--LootActions: loot_Batuu_Starship_IdleGround--></T>
+                          </L>
+                        </U>
+                      </L>
+                      <V t="single" n="display_text">
+                        <T n="single">0xA1A3F34C<!--String: "Volver al distrito de la Primera Orden"--></T>
+                      </V>
+                    </U>
+                  </L>
+                  <V n="_visibility" t="show_dialog">
+                    <U n="show_dialog">
+                      <E n="dialog_style">LARGE_ICON</E>
+                      <V t="enabled" n="icon">
+                        <V n="enabled" t="resource_key">
+                          <U n="resource_key">
+                            <T n="key" p="InGP09\UI\Icons\ChanceCard\ChanceCard_Echelon_Spires.png">2f7d0004:00000000:4755bb71bf40097d</T>
+                          </U>
+                        </V>
+                      </V>
+                      <V n="text" t="single">
+                        <T n="single">0x551FA1F4<!--String: "La nave parece volar bien y los ruidos han desaparecido. {0.SimFirstName} da la vuelta con el Echelon y vuelve hacia el puesto avanzado de la Aguja Negra. A su regreso, un nuevo recluta realiza una revisión rutinaria de los conductos ¡y encuentra a un espía de la Resistencia! ¡Conque ESA era la causa de los ruidos!... El teniente Agnon se muestra encantado, pero {0.SimFirstName} no puede evitar sentirse {M0.excluido}{F0.excluida}. ¡Si hubiese mostrado algo más de curiosidad, el fabuloso elogio del teniente Agnon habría sido suyo!"--></T>
+                      </V>
+                      <V t="disabled" n="title" />
+                    </U>
+                  </V>
+                </U>
+              </V>
+            </U>
+          </U>
+          <U>
+            <E n="key">Generic_14</E>
+            <U n="value">
+              <V n="aventure_moment" t="literal">
+                <U n="literal">
+                  <L n="_finish_actions">
+                    <U>
+                      <L n="action_results">
+                        <U>
+                          <L n="loot_actions">
+                            <T>238560<!--LootActions: loot_Batuu_Starship_IdleGround--></T>
+                          </L>
+                        </U>
+                      </L>
+                      <V t="single" n="display_text">
+                        <T n="single">0xA1A3F34C<!--String: "Volver al distrito de la Primera Orden"--></T>
+                      </V>
+                    </U>
+                  </L>
+                  <V n="_visibility" t="show_dialog">
+                    <U n="show_dialog">
+                      <E n="dialog_style">LARGE_ICON</E>
+                      <V t="enabled" n="icon">
+                        <V n="enabled" t="resource_key">
+                          <U n="resource_key">
+                            <T n="key" p="InGP09\UI\Icons\ChanceCard\ChanceCard_Echelon_Spires.png">2f7d0004:00000000:4755bb71bf40097d</T>
+                          </U>
+                        </V>
+                      </V>
+                      <V n="text" t="single">
+                        <T n="single">0x3C4AD6F2<!--String: "{0.SimFirstName} se arrastra por el suelo para escuchar. ¡Juraría que el ruido parece una respiración ahogada! {M0.Preparado}{F0.Preparada} para detener al polizón, {0.SimFirstName} arranca el panel y levanta su bláster. ¡Un espía de la Resistencia! {0.SimFirstName} detiene al saboteador y se lo entrega a Agnon, que {M0.lo}{F0.la} elogia por ello."--></T>
+                      </V>
+                      <V t="disabled" n="title" />
+                    </U>
+                  </V>
+                </U>
+              </V>
+            </U>
+          </U>
+          <U>
+            <E n="key">Generic_15</E>
+            <U n="value">
+              <V n="aventure_moment" t="literal">
+                <U n="literal">
+                  <L n="_finish_actions">
+                    <U>
+                      <L n="action_results">
+                        <U>
+                          <L n="next_moments">
+                            <E>Generic_16</E>
+                          </L>
+                        </U>
+                      </L>
+                      <L n="availability_tests">
+                        <L>
+                          <V t="inventory">
+                            <U n="inventory">
+                              <V t="has_object_with_states" n="contents_check">
+                                <U n="has_object_with_states">
+                                  <V t="tag" n="object_requirement">
+                                    <U n="tag">
+                                      <U n="tag">
+                                        <L n="tag_set">
+                                          <E>Func_Lightsaber_Hilt</E>
+                                        </L>
+                                      </U>
+                                    </U>
+                                  </V>
+                                  <L n="state_set">
+                                    <T>231895<!--ObjectStateValue: lightsaber_Complete--></T>
+                                  </L>
+                                </U>
+                              </V>
+                            </U>
+                          </V>
+                        </L>
+                      </L>
+                      <V n="disabled_text" t="enabled">
+                        <T n="enabled">0x5CA8A7D2<!--String: "Requiere una espada láser."--></T>
+                      </V>
+                      <V n="display_text" t="single">
+                        <T n="single">0x4E9D5E5C<!--String: "Cortar paneles con espada láser"--></T>
+                      </V>
+                    </U>
+                    <U>
+                      <L n="action_results">
+                        <U>
+                          <L n="next_moments">
+                            <E>Generic_17</E>
+                          </L>
+                        </U>
+                      </L>
+                      <V n="display_text" t="single">
+                        <T n="single">0xF40A34FA<!--String: "Preparar a unidades terrestres"--></T>
+                      </V>
+                    </U>
+                  </L>
+                  <V n="_visibility" t="show_dialog">
+                    <U n="show_dialog">
+                      <V t="enabled" n="audio_sting">
+                        <U n="enabled">
+                          <T n="audio" p="InGP09\Audio\ui\ui_gp09_advm_droid_beeps.propx">39b2aa4a:00000000:c7503bbf5f02db88</T>
+                        </U>
+                      </V>
+                      <E n="dialog_style">LARGE_ICON</E>
+                      <V t="enabled" n="icon">
+                        <V n="enabled" t="resource_key">
+                          <U n="resource_key">
+                            <T n="key" p="InGP09\UI\Icons\ChanceCard\ChanceCard_Echelon_Spires.png">2f7d0004:00000000:4755bb71bf40097d</T>
+                          </U>
+                        </V>
+                      </V>
+                      <V n="text" t="single">
+                        <T n="single">0xC30C22DB<!--String: "El droide de {0.SimFirstName} realiza un escaneo exhaustivo de la nave que confirma la presencia de una forma de vida orgánica bajo los paneles del suelo. ¿Debería ocuparse de este asunto {M0.él mismo}{F0.ella misma} o volver al distrito de la Primera Orden para obtener ayuda de las unidades terrestres?"--></T>
+                      </V>
+                      <V t="disabled" n="title" />
+                    </U>
+                  </V>
+                </U>
+              </V>
+            </U>
+          </U>
+          <U>
+            <E n="key">Generic_16</E>
+            <U n="value">
+              <V n="aventure_moment" t="literal">
+                <U n="literal">
+                  <L n="_finish_actions">
+                    <U>
+                      <L n="action_results">
+                        <U>
+                          <L n="loot_actions">
+                            <T>238560<!--LootActions: loot_Batuu_Starship_IdleGround--></T>
+                          </L>
+                        </U>
+                      </L>
+                      <V t="single" n="display_text">
+                        <T n="single">0xA1A3F34C<!--String: "Volver al distrito de la Primera Orden"--></T>
+                      </V>
+                    </U>
+                  </L>
+                  <V n="_visibility" t="show_dialog">
+                    <U n="show_dialog">
+                      <V t="enabled" n="audio_sting">
+                        <U n="enabled">
+                          <T n="audio" p="InGP09\Audio\ui\ui_gp09_advm_lightsaber_cut.propx">39b2aa4a:00000000:0d5a481e5fc7ef32</T>
+                        </U>
+                      </V>
+                      <E n="dialog_style">LARGE_ICON</E>
+                      <V t="enabled" n="icon">
+                        <V n="enabled" t="resource_key">
+                          <U n="resource_key">
+                            <T n="key" p="InGP09\UI\Icons\ChanceCard\ChanceCard_Lightsaber_Metal.png">2f7d0004:00000000:e90444f3b50baf99</T>
+                          </U>
+                        </V>
+                      </V>
+                      <V n="text" t="single">
+                        <T n="single">0x222619B3<!--String: "Mientras nadie mira, {0.SimFirstName} enciende su espada láser y corta de forma agresiva el panel del suelo, dejando al descubierto… ¡a un polizón! “¡Alto! ¡Queda detenido!” Tras interrogarlo, {0.SimFirstName} descubre que el polizón intentaba impresionar a la Resistencia saboteando la nave. El teniente Agnon se muestra complacido por la captura de semejante rata."--></T>
+                      </V>
+                      <V t="disabled" n="title" />
+                    </U>
+                  </V>
+                </U>
+              </V>
+            </U>
+          </U>
+          <U>
+            <E n="key">Generic_17</E>
+            <U n="value">
+              <V n="aventure_moment" t="literal">
+                <U n="literal">
+                  <L n="_finish_actions">
+                    <U>
+                      <L n="action_results">
+                        <U>
+                          <L n="loot_actions">
+                            <T>238560<!--LootActions: loot_Batuu_Starship_IdleGround--></T>
+                          </L>
+                        </U>
+                      </L>
+                      <V t="single" n="display_text">
+                        <T n="single">0xA1A3F34C<!--String: "Volver al distrito de la Primera Orden"--></T>
+                      </V>
+                    </U>
+                  </L>
+                  <V n="_visibility" t="show_dialog">
+                    <U n="show_dialog">
+                      <E n="dialog_style">LARGE_ICON</E>
+                      <V t="enabled" n="icon">
+                        <V n="enabled" t="resource_key">
+                          <U n="resource_key">
+                            <T n="key" p="InGP09\UI\Icons\ChanceCard\ChanceCard_LtAgnon_Coms.png">2f7d0004:00000000:1427f2077430d014</T>
+                          </U>
+                        </V>
+                      </V>
+                      <V n="text" t="single">
+                        <T n="single">0xFEB45EC1<!--String: "{0.SimFirstName} llama para avisar al teniente Agnon, que le ordena aterrizar la nave a las afueras de la ciudad. Unos soldados de asalto suben abordo con herramientas para perforar y se apresuran a cortar el panel del suelo, dejando al descubierto… ¡a un polizón! “¡Alto! ¡Queda detenido!”\n\nTras interrogarlo, {0.SimFirstName} descubre que el polizón intentaba impresionar a la Resistencia saboteando la nave. El teniente Agnon se muestra complacido por la captura de semejante rata."--></T>
+                      </V>
+                      <V t="disabled" n="title" />
+                    </U>
+                  </V>
+                </U>
+              </V>
+            </U>
+          </U>
+          <U>
+            <E n="key">Generic_Starter</E>
+            <U n="value">
+              <V n="aventure_moment" t="literal">
+                <U n="literal">
+                  <L n="_finish_actions">
+                    <U>
+                      <L n="action_results">
+                        <U>
+                          <L n="next_moments">
+                            <E>Generic_01</E>
+                          </L>
+                        </U>
+                      </L>
+                      <V n="display_text" t="single">
+                        <T n="single">0xFA5421D3<!--String: "Probar cañones láser"--></T>
+                      </V>
+                    </U>
+                    <U>
+                      <L n="action_results">
+                        <U>
+                          <L n="next_moments">
+                            <E>Generic_02</E>
+                          </L>
+                        </U>
+                      </L>
+                      <V n="display_text" t="single">
+                        <T n="single">0xDE3B2238<!--String: "Probar maniobras aéreas"--></T>
+                      </V>
+                    </U>
+                  </L>
+                  <V n="_visibility" t="show_dialog">
+                    <U n="show_dialog">
+                      <V t="enabled" n="audio_sting">
+                        <U n="enabled">
+                          <T n="audio" p="InGP09\Audio\music\bumpers\bumper_mission_adventure_firstorder.propx">39b2aa4a:00000000:d4362a0e87c1b463</T>
+                        </U>
+                      </V>
+                      <E n="dialog_style">LARGE_ICON</E>
+                      <V t="enabled" n="icon">
+                        <V n="enabled" t="resource_key">
+                          <U n="resource_key">
+                            <T n="key" p="InGP09\UI\Icons\ChanceCard\ChanceCard_Echelon_Spires.png">2f7d0004:00000000:4755bb71bf40097d</T>
+                          </U>
+                        </V>
+                      </V>
+                      <V t="single" n="text">
+                        <T n="single">0x1AE45FD7<!--String: "{0.SimFirstName} pilota el TIE Echelon con cuidado sobre el puesto avanzado de la Aguja Negra. Hay dos cosas que puede probar: los sistemas de armamento o la agilidad de la nave utilizando maniobras aéreas agresivas."--></T>
+                      </V>
+                    </U>
+                  </V>
+                </U>
+              </V>
+            </U>
+          </U>
+        </L>
+        <L n="_initial_moments">
+          <U>
+            <E n="adventure_moment_key">Generic_Starter</E>
+          </U>
+        </L>
+        <T n="_resumable">False</T>
+        <V t="at_beginning" n="timing">
+          <U n="at_beginning">
+            <V t="enabled" n="offset_time">
+              <T n="enabled">5</T>
+            </V>
+          </U>
+        </V>
+      </U>
+    </V>
+    <V t="state_change">
+      <U n="state_change">
+        <T n="force_update">True</T>
+        <V t="single_value" n="new_value">
+          <U n="single_value">
+            <T n="new_value">242321<!--ObjectStateValue: droid_Anim_Idle_Off--></T>
+          </U>
+        </V>
+        <E n="state_change_target">RoutingSlaves</E>
+        <V t="immediately" n="timing" />
+      </U>
+    </V>
+  </L>
+  <L n="basic_liabilities">
+    <V t="hide_sim_liability">
+      <U n="hide_sim_liability">
+        <T n="should_transfer_liabilities">True</T>
+      </U>
+    </V>
+  </L>
+  <V t="disabled" n="basic_reserve_object" />
+  <V t="disabled" n="content_score" />
+  <T n="counts_as_inside">True</T>
+  <T n="display_name">0x6F3C3BCB<!--String: "De misión"--></T>
+  <U n="display_name_text_tokens">
+    <L n="tokens">
+      <V t="participant_type">
+        <U n="participant_type">
+          <V n="objects" t="from_participant">
+            <U n="from_participant">
+              <E n="participant">Actor</E>
+            </U>
+          </V>
+        </U>
+      </V>
+      <V t="participant_type">
+        <U n="participant_type">
+          <V t="from_participant" n="objects">
+            <U n="from_participant">
+              <E n="participant">Object</E>
+            </U>
+          </V>
+        </U>
+      </V>
+    </L>
+  </U>
+  <T n="fade_sim_out">True</T>
+  <L n="interaction_category_tags">
+    <E>Interaction_Super</E>
+    <E>Interaction_All</E>
+  </L>
+  <V t="test_based" n="outcome">
+    <U n="test_based">
+      <L n="fallback_outcomes">
+        <U>
+          <U n="outcome">
+            <L n="basic_extras">
+              <V t="change_outfit">
+                <U n="change_outfit">
+                  <V t="for_reason" n="outfit_change">
+                    <U n="for_reason">
+                      <V n="on_entry" t="enabled">
+                        <E n="enabled">PreviousClothing</E>
+                      </V>
+                    </U>
+                  </V>
+                  <L n="tests">
+                    <L>
+                      <V t="object_definition_criteria">
+                        <U n="object_definition_criteria">
+                          <V t="definition_id" n="identity_test">
+                            <U n="definition_id">
+                              <T n="actual_object">241487</T>
+                            </U>
+                          </V>
+                        </U>
+                      </V>
+                    </L>
+                  </L>
+                </U>
+              </V>
+              <V t="state_change">
+                <U n="state_change">
+                  <T n="force_update">True</T>
+                  <V t="single_value" n="new_value">
+                    <U n="single_value">
+                      <T n="new_value">239626<!--ObjectStateValue: droid_Anim_Idle_Active--></T>
+                    </U>
+                  </V>
+                  <E n="state_change_target">RoutingSlaves</E>
+                  <V t="immediately" n="timing" />
+                </U>
+              </V>
+            </L>
+            <L n="continuation">
+              <U>
+                <T n="affordance">245773<!--SuperInteraction: Starship_Land--></T>
+              </U>
+            </L>
+            <T n="force_outcome_on_exit">True</T>
+            <L n="loot_list">
+              <T>238560<!--LootActions: loot_Batuu_Starship_IdleGround--></T>
+            </L>
+          </U>
+        </U>
+      </L>
+    </U>
+  </V>
+  <E n="scoring_priority">NORMAL</E>
+  <U n="skill_loot_data">
+    <E n="effectiveness">VerySmallPeriodic</E>
+    <V t="enabled" n="level_range">
+      <U n="enabled">
+        <T n="lower_bound">1</T>
+        <T n="upper_bound">10</T>
+      </U>
+    </V>
+    <T n="stat">16710<!--Skill: statistic_Skill_AdultMajor_RocketScience--></T>
+  </U>
+  <T n="subaction_selection_weight">1</T>
+  <V t="literal" n="super_affordance_compatibility">
+    <U n="literal">
+      <V n="default_inclusion" t="exclude_all">
+        <U n="exclude_all">
+          <L n="include_affordances">
+            <T>245584<!--SuperInteraction: droid_BB_Following--></T>
+          </L>
+        </U>
+      </V>
+    </U>
+  </V>
+  <E n="target_type">OBJECT</E>
+  <L n="test_globals">
+    <V t="career_gig_test">
+      <U n="career_gig_test">
+        <T n="career">231099<!--Career: career_Batuu--></T>
+        <V t="specific_gigs" n="test_type">
+          <U n="specific_gigs">
+            <L n="gigs">
+              <T>239924<!--MissionGig: missionGig_Missions_FirstOrder_Repeatable_09--></T>
+            </L>
+          </U>
+        </V>
+      </U>
+    </V>
+  </L>
+  <T n="time_overhead">30</T>
+</I>

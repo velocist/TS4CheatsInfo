@@ -1,0 +1,460 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<I c="GameObject" i="object" m="objects.game_object" n="object_BubbleBlower_hiTech" s="132952">
+  <U n="_components">
+    <V t="enabled" n="focus">
+      <U n="enabled">
+        <V t="globally" n="_focus_score">
+          <U n="globally">
+            <E n="base">LOW</E>
+          </U>
+        </V>
+      </U>
+    </V>
+    <V t="enabled" n="line_of_sight" />
+    <V t="enabled" n="retail_component">
+      <V n="enabled" t="reference">
+        <T n="reference">115301<!--RetailComponent: retailComponent_Default_LowAppeal--></T>
+      </V>
+    </V>
+    <V n="state" t="enabled">
+      <U n="enabled">
+        <L n="state_triggers">
+          <U>
+            <L n="at_states">
+              <T>133021<!--ObjectStateValue: BubbleBlower_Cartridge_1_Default--></T>
+            </L>
+            <V n="set_states" t="Set_state_list">
+              <L n="Set_state_list">
+                <T>133030<!--CommodityBasedObjectStateValue: BubbleBlower_commodity_CartridgeCharges_0_Off--></T>
+              </L>
+            </V>
+          </U>
+          <U>
+            <L n="at_states">
+              <T>133030<!--CommodityBasedObjectStateValue: BubbleBlower_commodity_CartridgeCharges_0_Off--></T>
+            </L>
+            <V n="set_states" t="Set_state_list">
+              <L n="Set_state_list">
+                <T>133021<!--ObjectStateValue: BubbleBlower_Cartridge_1_Default--></T>
+              </L>
+            </V>
+          </U>
+          <U>
+            <L n="at_states">
+              <T>133022<!--ObjectStateValue: BubbleBlower_Cartridge_2--></T>
+              <T>133023<!--ObjectStateValue: BubbleBlower_Cartridge_3--></T>
+              <T>133024<!--ObjectStateValue: BubbleBlower_Cartridge_4--></T>
+              <T>133025<!--ObjectStateValue: BubbleBlower_Cartridge_5--></T>
+              <T>133026<!--ObjectStateValue: BubbleBlower_Cartridge_6--></T>
+              <T>133027<!--ObjectStateValue: BubbleBlower_Cartridge_7--></T>
+              <T>133038<!--ObjectStateValue: BubbleBlower_Cartridge_8--></T>
+            </L>
+            <V n="set_states" t="Set_state_list">
+              <L n="Set_state_list">
+                <T>133031<!--CommodityBasedObjectStateValue: BubbleBlower_commodity_CartridgeCharges_1_On--></T>
+              </L>
+            </V>
+            <E n="trigger_operation">OR</E>
+          </U>
+          <U>
+            <L n="at_states">
+              <T>39611<!--CommodityBasedObjectStateValue: FireState_Burn_Material_Change--></T>
+            </L>
+            <V n="set_states" t="Set_state_list">
+              <L n="Set_state_list">
+                <T>133020<!--ObjectStateValue: BubbleBlower_Cartridge_0_None--></T>
+              </L>
+            </V>
+          </U>
+          <U>
+            <L n="at_states">
+              <T>77532<!--CommodityBasedObjectStateValue: FireState_Burn_Material_Change_Replace--></T>
+            </L>
+            <V n="set_states" t="Set_state_list">
+              <L n="Set_state_list">
+                <T>39737<!--CommodityBasedObjectStateValue: FireState_Burn_Material_Change_Not_Burning--></T>
+                <T>133021<!--ObjectStateValue: BubbleBlower_Cartridge_1_Default--></T>
+              </L>
+            </V>
+          </U>
+        </L>
+        <L n="states">
+          <U>
+            <L n="client_states">
+              <U>
+                <T n="key">133020<!--ObjectStateValue: BubbleBlower_Cartridge_0_None--></T>
+                <U n="value">
+                  <V t="leave_unchanged" n="material_state" />
+                  <V t="apply_new_value" n="vfx_state" />
+                </U>
+              </U>
+              <U>
+                <T n="key">133021<!--ObjectStateValue: BubbleBlower_Cartridge_1_Default--></T>
+                <U n="value">
+                  <V t="apply_new_value" n="material_state">
+                    <U n="apply_new_value">
+                      <V n="state_name" t="set_to_custom_value">
+                        <T n="set_to_custom_value">Oxygen</T>
+                      </V>
+                    </U>
+                  </V>
+                  <V n="vfx_state" t="apply_new_value">
+                    <V n="apply_new_value" t="start_vfx">
+                      <V n="start_vfx" t="single_effect">
+                        <U n="single_effect">
+                          <T n="effect_name">ep03_bubble_blower_canister_modern_oxygen</T>
+                        </U>
+                      </V>
+                    </V>
+                  </V>
+                </U>
+              </U>
+              <U>
+                <T n="key">133022<!--ObjectStateValue: BubbleBlower_Cartridge_2--></T>
+                <U n="value">
+                  <V t="apply_new_value" n="material_state">
+                    <U n="apply_new_value">
+                      <V n="state_name" t="set_to_custom_value">
+                        <T n="set_to_custom_value">Helium</T>
+                      </V>
+                    </U>
+                  </V>
+                  <V n="vfx_state" t="apply_new_value">
+                    <V n="apply_new_value" t="start_vfx">
+                      <V n="start_vfx" t="single_effect">
+                        <U n="single_effect">
+                          <T n="effect_name">ep03_bubble_blower_canister_modern_helium</T>
+                        </U>
+                      </V>
+                    </V>
+                  </V>
+                </U>
+              </U>
+              <U>
+                <T n="key">133023<!--ObjectStateValue: BubbleBlower_Cartridge_3--></T>
+                <U n="value">
+                  <V t="apply_new_value" n="material_state">
+                    <U n="apply_new_value">
+                      <V n="state_name" t="set_to_custom_value">
+                        <T n="set_to_custom_value">Nitrogen</T>
+                      </V>
+                    </U>
+                  </V>
+                  <V n="vfx_state" t="apply_new_value">
+                    <V n="apply_new_value" t="start_vfx">
+                      <V n="start_vfx" t="single_effect">
+                        <U n="single_effect">
+                          <T n="effect_name">ep03_bubble_blower_canister_modern_nitrogen</T>
+                        </U>
+                      </V>
+                    </V>
+                  </V>
+                </U>
+              </U>
+              <U>
+                <T n="key">133024<!--ObjectStateValue: BubbleBlower_Cartridge_4--></T>
+                <U n="value">
+                  <V t="apply_new_value" n="material_state">
+                    <U n="apply_new_value">
+                      <V n="state_name" t="set_to_custom_value">
+                        <T n="set_to_custom_value">Sulfur</T>
+                      </V>
+                    </U>
+                  </V>
+                  <V n="vfx_state" t="apply_new_value">
+                    <V n="apply_new_value" t="start_vfx">
+                      <V n="start_vfx" t="single_effect">
+                        <U n="single_effect">
+                          <T n="effect_name">ep03_bubble_blower_canister_modern_sulfur</T>
+                        </U>
+                      </V>
+                    </V>
+                  </V>
+                </U>
+              </U>
+              <U>
+                <T n="key">133025<!--ObjectStateValue: BubbleBlower_Cartridge_5--></T>
+                <U n="value">
+                  <V t="apply_new_value" n="material_state">
+                    <U n="apply_new_value">
+                      <V n="state_name" t="set_to_custom_value">
+                        <T n="set_to_custom_value">Krypton</T>
+                      </V>
+                    </U>
+                  </V>
+                  <V n="vfx_state" t="apply_new_value">
+                    <V n="apply_new_value" t="start_vfx">
+                      <V n="start_vfx" t="single_effect">
+                        <U n="single_effect">
+                          <T n="effect_name">ep03_bubble_blower_canister_modern_krypton</T>
+                        </U>
+                      </V>
+                    </V>
+                  </V>
+                </U>
+              </U>
+              <U>
+                <T n="key">133026<!--ObjectStateValue: BubbleBlower_Cartridge_6--></T>
+                <U n="value">
+                  <V t="apply_new_value" n="material_state">
+                    <U n="apply_new_value">
+                      <V n="state_name" t="set_to_custom_value">
+                        <T n="set_to_custom_value">Xenon</T>
+                      </V>
+                    </U>
+                  </V>
+                  <V n="vfx_state" t="apply_new_value">
+                    <V n="apply_new_value" t="start_vfx">
+                      <V n="start_vfx" t="single_effect">
+                        <U n="single_effect">
+                          <T n="effect_name">ep03_bubble_blower_canister_modern_xenon</T>
+                        </U>
+                      </V>
+                    </V>
+                  </V>
+                </U>
+              </U>
+              <U>
+                <T n="key">133027<!--ObjectStateValue: BubbleBlower_Cartridge_7--></T>
+                <U n="value">
+                  <V t="apply_new_value" n="material_state">
+                    <U n="apply_new_value">
+                      <V n="state_name" t="set_to_custom_value">
+                        <T n="set_to_custom_value">Argon</T>
+                      </V>
+                    </U>
+                  </V>
+                  <V n="vfx_state" t="apply_new_value">
+                    <V n="apply_new_value" t="start_vfx">
+                      <V n="start_vfx" t="single_effect">
+                        <U n="single_effect">
+                          <T n="effect_name">ep03_bubble_blower_canister_modern_argon</T>
+                        </U>
+                      </V>
+                    </V>
+                  </V>
+                </U>
+              </U>
+              <U>
+                <T n="key">133029<!--ObjectStateValue: BubbleBlower_Cartridge_9--></T>
+                <U n="value">
+                  <V t="apply_new_value" n="material_state">
+                    <U n="apply_new_value">
+                      <V n="state_name" t="set_to_custom_value">
+                        <T n="set_to_custom_value">Radon</T>
+                      </V>
+                    </U>
+                  </V>
+                  <V n="vfx_state" t="apply_new_value">
+                    <V n="apply_new_value" t="start_vfx">
+                      <V n="start_vfx" t="single_effect">
+                        <U n="single_effect">
+                          <T n="effect_name">ep03_bubble_blower_canister_modern_radon</T>
+                        </U>
+                      </V>
+                    </V>
+                  </V>
+                </U>
+              </U>
+              <U>
+                <T n="key">133038<!--ObjectStateValue: BubbleBlower_Cartridge_8--></T>
+                <U n="value">
+                  <V t="apply_new_value" n="material_state">
+                    <U n="apply_new_value">
+                      <V n="state_name" t="set_to_custom_value">
+                        <T n="set_to_custom_value">Neon</T>
+                      </V>
+                    </U>
+                  </V>
+                  <V n="vfx_state" t="apply_new_value">
+                    <V n="apply_new_value" t="start_vfx">
+                      <V n="start_vfx" t="single_effect">
+                        <U n="single_effect">
+                          <T n="effect_name">ep03_bubble_blower_canister_modern_neon</T>
+                        </U>
+                      </V>
+                    </V>
+                  </V>
+                </U>
+              </U>
+            </L>
+            <V t="reference" n="default_value">
+              <T n="reference">133021<!--ObjectStateValue: BubbleBlower_Cartridge_1_Default--></T>
+            </V>
+            <T n="reset_on_load_if_time_passes">True</T>
+            <T n="reset_to_default">True</T>
+          </U>
+          <U>
+            <L n="client_states">
+              <U>
+                <T n="key">133030<!--CommodityBasedObjectStateValue: BubbleBlower_commodity_CartridgeCharges_0_Off--></T>
+              </U>
+              <U>
+                <T n="key">133031<!--CommodityBasedObjectStateValue: BubbleBlower_commodity_CartridgeCharges_1_On--></T>
+              </U>
+            </L>
+            <V n="default_value" t="reference">
+              <T n="reference">133030<!--CommodityBasedObjectStateValue: BubbleBlower_commodity_CartridgeCharges_0_Off--></T>
+            </V>
+          </U>
+          <U>
+            <L n="client_states">
+              <U>
+                <T n="key">142955<!--ObjectStateValue: BubbleBlower_InUse_0_No--></T>
+              </U>
+              <U>
+                <T n="key">142956<!--ObjectStateValue: BubbleBlower_InUse_1_Yes--></T>
+              </U>
+            </L>
+            <V n="default_value" t="reference">
+              <T n="reference">142955<!--ObjectStateValue: BubbleBlower_InUse_0_No--></T>
+            </V>
+            <T n="reset_on_load_if_time_passes">True</T>
+            <T n="reset_to_default">True</T>
+          </U>
+          <U>
+            <L n="client_states">
+              <U>
+                <T n="key">143969<!--ObjectStateValue: BubbleBlower_Possessed_0_No--></T>
+              </U>
+              <U>
+                <T n="key">143970<!--ObjectStateValue: BubbleBlower_Possessed_1_Start--></T>
+              </U>
+              <U>
+                <T n="key">143992<!--ObjectStateValue: BubbleBlower_Possessed_2_VFX--></T>
+              </U>
+            </L>
+            <V n="default_value" t="reference">
+              <T n="reference">143969<!--ObjectStateValue: BubbleBlower_Possessed_0_No--></T>
+            </V>
+            <T n="reset_on_load_if_time_passes">True</T>
+            <T n="reset_to_default">True</T>
+          </U>
+          <U>
+            <L n="client_states">
+              <U>
+                <T n="key">138270<!--ObjectStateValue: BubbleBlower_CartType_2_noble--></T>
+              </U>
+              <U>
+                <T n="key">138271<!--ObjectStateValue: BubbleBlower_CartType_1_juice--></T>
+              </U>
+              <U>
+                <T n="key">138272<!--ObjectStateValue: BubbleBlower_CartType_0_numeral--></T>
+              </U>
+            </L>
+            <V n="default_value" t="reference">
+              <T n="reference">138271<!--ObjectStateValue: BubbleBlower_CartType_1_juice--></T>
+            </V>
+            <T n="reset_to_default">False</T>
+          </U>
+          <U>
+            <L n="client_states">
+              <U>
+                <T n="key">39611<!--CommodityBasedObjectStateValue: FireState_Burn_Material_Change--></T>
+                <U n="value">
+                  <V t="apply_new_value" n="material_state">
+                    <U n="apply_new_value">
+                      <V n="state_name" t="set_to_custom_value">
+                        <T n="set_to_custom_value">Burnt</T>
+                      </V>
+                    </U>
+                  </V>
+                </U>
+              </U>
+              <U>
+                <T n="key">39736<!--CommodityBasedObjectStateValue: FireState_Burn_Material_Change_Burning--></T>
+              </U>
+              <U>
+                <T n="key">39737<!--CommodityBasedObjectStateValue: FireState_Burn_Material_Change_Not_Burning--></T>
+              </U>
+              <U>
+                <T n="key">77532<!--CommodityBasedObjectStateValue: FireState_Burn_Material_Change_Replace--></T>
+              </U>
+            </L>
+            <V t="reference" n="default_value">
+              <T n="reference">39737<!--CommodityBasedObjectStateValue: FireState_Burn_Material_Change_Not_Burning--></T>
+            </V>
+          </U>
+          <U>
+            <L n="client_states">
+              <U>
+                <T n="key">35956<!--CommodityBasedObjectStateValue: Materialistic_Admired--></T>
+              </U>
+              <U>
+                <T n="key">35957<!--CommodityBasedObjectStateValue: Materialistic_YetToAdmire--></T>
+              </U>
+            </L>
+            <V n="default_value" t="reference">
+              <T n="reference">35957<!--CommodityBasedObjectStateValue: Materialistic_YetToAdmire--></T>
+            </V>
+          </U>
+        </L>
+      </U>
+    </V>
+  </U>
+  <L n="_part_data">
+    <U>
+      <T n="part_definition">133645<!--ObjectPart: part_BubbleBlower_Seat--></T>
+    </U>
+    <U>
+      <T n="part_definition">133645<!--ObjectPart: part_BubbleBlower_Seat--></T>
+      <V t="enabled" n="subroot_index">
+        <T n="enabled">1</T>
+      </V>
+    </U>
+    <U>
+      <T n="part_definition">133645<!--ObjectPart: part_BubbleBlower_Seat--></T>
+      <V t="enabled" n="subroot_index">
+        <T n="enabled">2</T>
+      </V>
+    </U>
+    <U>
+      <T n="part_definition">133645<!--ObjectPart: part_BubbleBlower_Seat--></T>
+      <V t="enabled" n="subroot_index">
+        <T n="enabled">3</T>
+      </V>
+    </U>
+  </L>
+  <L n="_super_affordances">
+    <T>13983<!--StandSuperInteraction: sim-stand--></T>
+    <T>13328<!--ImmediateSuperInteraction: debug_Reset--></T>
+    <T>13326<!--ImmediateSuperInteraction: debug_ObjectDestroy--></T>
+    <T>103888<!--ImmediateSuperInteraction: cheat_set_as_head--></T>
+    <T>134002<!--SuperInteraction: BubbleBlower_Use_SI--></T>
+    <T>133544<!--SuperInteraction: BubbleBlower_ChangeCartridge_1_Default--></T>
+    <T>133561<!--SuperInteraction: BubbleBlower_ChangeCartridge_2--></T>
+    <T>143465<!--SuperInteraction: BubbleBlower_ChangeCartridge_2_venue--></T>
+    <T>135359<!--SuperInteraction: BubbleBlower_ChangeCartridge_3--></T>
+    <T>135358<!--SuperInteraction: BubbleBlower_ChangeCartridge_4--></T>
+    <T>135357<!--SuperInteraction: BubbleBlower_ChangeCartridge_5--></T>
+    <T>135356<!--SuperInteraction: BubbleBlower_ChangeCartridge_6--></T>
+    <T>143466<!--SuperInteraction: BubbleBlower_ChangeCartridge_6_venue--></T>
+    <T>135355<!--SuperInteraction: BubbleBlower_ChangeCartridge_7--></T>
+    <T>135413<!--SuperInteraction: BubbleBlower_ChangeCartridge_8--></T>
+    <T>143467<!--SuperInteraction: BubbleBlower_ChangeCartridge_8_venue--></T>
+    <T>135905<!--SuperInteraction: BubbleBlower_ChangeCartridge_9--></T>
+    <T>143468<!--SuperInteraction: BubbleBlower_ChangeCartridge_9_venue--></T>
+    <T>142951<!--SimPickerInteraction: BubbleBlower_simPicker_InviteToJoin_si--></T>
+    <T>196759<!--SuperInteraction: famePerks_GoodReputation_GivingBack_DonateObject--></T>
+    <T>138318<!--ImmediateSuperInteraction: BubbleBlower_debug_changeCartType_1_juice--></T>
+    <T>138317<!--ImmediateSuperInteraction: BubbleBlower_debug_changeCartType_2_noble--></T>
+    <T>144099<!--SuperInteraction: generic_Object_Toddler_Check_Out--></T>
+    <T>156936<!--SuperInteraction: generic_Object_Toddler_Check_Out_HighChair--></T>
+    <T>106859<!--SuperInteraction: simRay_Transform_Object--></T>
+    <T>74457<!--ImmediateSuperInteraction: fire_ReplaceBurntObject--></T>
+    <T>143965<!--SuperInteraction: Ghost_Possess_BubbleBlower--></T>
+    <T>168502<!--SuperInteraction: Ghost_Pet_Possess--></T>
+  </L>
+  <U n="recycling_data">
+    <L n="recycling_values">
+      <U>
+        <E n="Bucks Type">RecycleBitsBucks</E>
+        <T n="Value">0.5</T>
+      </U>
+      <U>
+        <E n="Bucks Type">RecyclePiecesBucks</E>
+        <T n="Value">0.5</T>
+      </U>
+    </L>
+  </U>
+</I>

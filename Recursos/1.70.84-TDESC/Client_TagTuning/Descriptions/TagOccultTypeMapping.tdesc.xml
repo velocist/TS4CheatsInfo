@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+
+<TuningRoot>
+    <Instance instance_type="tagtuning" class="TagOccultTypeMapping" module="tagtuning.TagOccultTypeMapping" muid="2B8C0815A1B610BA" description="Mapping between CAS occult types and occult tags." export_modes="client_binary, server_binary" path="Client_TagTuning\Descriptions">
+        <TunableList name="OccultToArchetypeTagCategory" class="TunableList" display="Occult Archetype Tag Categories" muid="F7BC734D367B2A7E" description="List of CAS occult to tag category mappings.">
+            <TunableTuple name="OccultTypeToArchetypeTagCategory" class="TagOccultTypeMapping.OccultTypeToArchetypeTagCategory" muid="70A7959242595BF6" description="Mapping from occult type to the corresponding archetype tag category.">
+                <TunableEnum type="TagCategory" name="ArchetypeTagCategory" class="TunableEnumEntry" default="INVALID" display="ArchetypeTagCategory" muid="8D6722C5C7E13492" dynamic_entries="tag.TagCategory._elements" static_entries="tag.TagCategory" description="Tag Category for this occult type." pack_safe="true" />
+                <TunableEnum type="OccultType" name="OccultType" class="TunableEnumEntry" default="HUMAN" display="Occult Type" muid="EBCD8DDCC769BCF8" static_entries="sims-occult-occult_enums.OccultType" description="The occult type to be mapped." />
+            </TunableTuple>
+        </TunableList>
+
+        <TunableList name="OccultTypes" class="TunableList" display="Occult Types" muid="40BF04BB7EEB9838" description="List of CAS occult mappings.">
+            <TunableTuple name="OccultTypeToTag" class="TagOccultTypeMapping.OccultTypeToTag" muid="C528D65CBA7C74C3" description="Mapping from occult type to the corresponding tag.">
+                <TunableEnum type="OccultType" name="OccultType" class="TunableEnumEntry" default="HUMAN" display="Occult Type" muid="9352CFC40C4776EA" static_entries="sims-occult-occult_enums.OccultType" description="The occult type to be mapped." />
+                <TunableEnum type="Tag" name="Tag" class="TunableEnumEntry" default="INVALID" display="Tag" muid="2160F542081E4577" dynamic_entries="tag.Tag._elements" static_entries="tag.Tag" description="Tag for this occult type." pack_safe="true" />
+            </TunableTuple>
+        </TunableList>
+    </Instance>
+</TuningRoot>

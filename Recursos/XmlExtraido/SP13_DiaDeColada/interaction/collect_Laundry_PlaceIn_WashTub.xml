@@ -1,0 +1,189 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<I c="CollectManyInteraction" i="interaction" m="carry.put_down_interactions" n="collect_Laundry_PlaceIn_WashTub" s="176827">
+  <V t="reference" n="_animation_actor_map">
+    <T n="reference">104044<!--AnimationActorMap: CreateAndPickupObject--></T>
+  </V>
+  <L n="_constraints">
+    <U>
+      <L n="constraints">
+        <U>
+          <V n="value" t="circle">
+            <U n="circle">
+              <T n="ideal_radius">0.7</T>
+              <T n="radius">2</T>
+            </U>
+          </V>
+        </U>
+      </L>
+    </U>
+    <U>
+      <L n="constraints">
+        <U>
+          <V n="value" t="facing">
+            <U n="facing">
+              <T n="inner_radius">0</T>
+              <T n="range">90</T>
+            </U>
+          </V>
+        </U>
+      </L>
+    </U>
+  </L>
+  <V t="participant" n="_icon">
+    <U n="participant">
+      <L n="participant_type">
+        <E>Object</E>
+      </L>
+    </U>
+  </V>
+  <V t="enabled" n="_saveable" />
+  <L n="_static_commodities">
+    <U>
+      <T n="static_commodity">176826<!--StaticCommodity: staticCommodity_Collect_Laundry_PlaceIn_WashTub--></T>
+    </U>
+    <U>
+      <T n="static_commodity">33808<!--StaticCommodity: StaticCommodity_MaidClean--></T>
+    </U>
+    <U>
+      <T n="static_commodity">16440<!--StaticCommodity: StaticCommodity_Tidy--></T>
+    </U>
+  </L>
+  <V t="definitions" n="aggregate_object">
+    <L n="definitions">
+      <T>182560</T>
+      <T>183376</T>
+      <T>183377</T>
+    </L>
+  </V>
+  <T n="allow_from_sim_inventory">True</T>
+  <L n="appropriateness_tags">
+    <E>Appropriateness_Cleaning</E>
+  </L>
+  <L n="asm_actor_overrides">
+    <U>
+      <T n="actor_name">surface</T>
+      <E n="actor_participant">ObjectParent</E>
+    </U>
+  </L>
+  <T n="attention_cost">0.75</T>
+  <V t="one_shot" n="basic_content">
+    <U n="one_shot">
+      <U n="animation_ref">
+        <T n="factory">176757<!--AnimationElement: laundry_CleanUp_First--></T>
+      </U>
+    </U>
+  </V>
+  <L n="basic_extras">
+    <V t="loot">
+      <U n="loot">
+        <L n="loot_list">
+          <T>175439<!--LootActions: loot_Laundry_Transfer_Pickup--></T>
+        </L>
+        <V t="on_xevt" n="timing">
+          <U n="on_xevt">
+            <T n="xevt_id">700</T>
+          </U>
+        </V>
+      </U>
+    </V>
+  </L>
+  <T n="category">176072<!--PieMenuCategory: Laundry_PlaceIn_pieMenuCategory--></T>
+  <V t="disabled" n="content_score" />
+  <T n="display_name">0x2EB37754<!--String: "Lavar en barreño"--></T>
+  <U n="display_name_text_tokens">
+    <L n="tokens">
+      <V t="participant_type">
+        <U n="participant_type">
+          <V t="from_participant" n="objects">
+            <U n="from_participant">
+              <E n="participant">Actor</E>
+            </U>
+          </V>
+        </U>
+      </V>
+      <V t="participant_type">
+        <U n="participant_type">
+          <V t="from_participant" n="objects">
+            <U n="from_participant">
+              <E n="participant">Object</E>
+            </U>
+          </V>
+        </U>
+      </V>
+    </L>
+  </U>
+  <L n="interaction_category_tags">
+    <E>Interaction_Super</E>
+    <E>Interaction_All</E>
+  </L>
+  <V t="single" n="outcome">
+    <U n="single">
+      <U n="actions">
+        <L n="parameterized_autonomy">
+          <U>
+            <E n="key">Actor</E>
+            <U n="value">
+              <L n="requests">
+                <U>
+                  <T n="consider_same_target">False</T>
+                  <V t="enabled" n="randomization_override">
+                    <E n="enabled">DISABLED</E>
+                  </V>
+                  <L n="static_commodities">
+                    <T>176826<!--StaticCommodity: staticCommodity_Collect_Laundry_PlaceIn_WashTub--></T>
+                    <T>176828<!--StaticCommodity: staticCommodity_PutIn_WashTub_Laundry--></T>
+                  </L>
+                </U>
+              </L>
+            </U>
+          </U>
+        </L>
+      </U>
+    </U>
+  </V>
+  <T n="pie_menu_priority">8</T>
+  <E n="scoring_priority">NORMAL</E>
+  <T n="subaction_selection_weight">1</T>
+  <V t="literal" n="super_affordance_compatibility">
+    <U n="literal">
+      <V n="default_inclusion" t="exclude_all" />
+    </U>
+  </V>
+  <E n="target_type">OBJECT</E>
+  <L n="test_autonomous">
+    <L>
+      <V t="appropriateness" />
+      <V t="state">
+        <U n="state">
+          <E n="operator">LESS</E>
+          <T n="value">175407<!--CommodityBasedObjectStateValue: laundry_Cleanliness_Values_Clean--></T>
+        </U>
+      </V>
+    </L>
+  </L>
+  <L n="test_globals">
+    <V t="sim_info">
+      <U n="sim_info">
+        <V t="specified" n="ages">
+          <L n="specified">
+            <E>TEEN</E>
+            <E>YOUNGADULT</E>
+            <E>ADULT</E>
+            <E>ELDER</E>
+          </L>
+        </V>
+        <V t="specified" n="species">
+          <U n="specified">
+            <L n="species">
+              <E />
+            </L>
+          </U>
+        </V>
+        <V n="tooltip" t="enabled">
+          <T n="enabled">0xC277613A<!--String: "Necesitas la fuerza de un Sim más mayor para frotar bien la ropa."--></T>
+        </V>
+      </U>
+    </V>
+  </L>
+  <T n="time_overhead">30</T>
+</I>

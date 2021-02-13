@@ -1,0 +1,300 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<I c="GameObject" i="object" m="objects.game_object" n="object_toyNightLight" s="165377">
+  <V n="_anim_overrides" t="enabled">
+    <U n="enabled">
+      <L n="params">
+        <U>
+          <T n="name">carryObject</T>
+          <V n="value" t="string">
+            <T n="string">toy</T>
+          </V>
+        </U>
+        <U>
+          <T n="name">type</T>
+          <V n="value" t="string">
+            <T n="string">shared</T>
+          </V>
+        </U>
+      </L>
+    </U>
+  </V>
+  <U n="_components">
+    <V n="carryable" t="enabled">
+      <U n="enabled">
+        <V n="put_down_tuning" t="reference">
+          <L n="reference">
+            <U>
+              <T n="value">97305<!--PutDownStrategy: PutDownStrategy_ToyboxToy--></T>
+            </U>
+          </L>
+        </V>
+      </U>
+    </V>
+    <V t="enabled" n="focus">
+      <U n="enabled">
+        <V n="_focus_score" t="globally">
+          <U n="globally">
+            <E n="base">LOW</E>
+          </U>
+        </V>
+      </U>
+    </V>
+    <V n="inventory_item" t="enabled">
+      <U n="enabled">
+        <V n="put_away_affordance" t="OVERRIDE">
+          <T n="OVERRIDE">168535<!--PutAwayInteraction: Put_Away_NightLightToy--></T>
+        </V>
+        <L n="valid_inventory_types">
+          <E>TOYBOX</E>
+          <E>SIM</E>
+          <E>HIDDEN</E>
+          <E>MAILBOX</E>
+          <E>CRAFT_SALES_TABLE_EP03</E>
+          <E>STORAGE_CHEST_DORM</E>
+          <E>VENDING_MACHINE</E>
+        </L>
+      </U>
+    </V>
+    <V n="lighting" t="enabled">
+      <U n="enabled">
+        <L n="component_interactions">
+          <T>76676<!--SwitchLightImmediateInteraction: ChangeLightColorIntensity_Target--></T>
+        </L>
+      </U>
+    </V>
+    <V t="enabled" n="line_of_sight" />
+    <V n="name" t="enabled">
+      <U n="enabled">
+        <V n="affordance" t="enabled">
+          <T n="enabled">26880<!--RenameImmediateInteraction: rename_Toy--></T>
+        </V>
+        <T n="allow_description">False</T>
+        <L n="templates">
+          <U>
+            <T n="template_name">0xA74F5605<!--String: "Oliscón"--></T>
+          </U>
+        </L>
+      </U>
+    </V>
+    <V t="enabled" n="retail_component">
+      <V n="enabled" t="reference">
+        <T n="reference">110393<!--RetailComponent: retailComponent_Default--></T>
+      </V>
+    </V>
+    <V n="state" t="enabled">
+      <U n="enabled">
+        <L n="state_triggers">
+          <U>
+            <L n="at_states">
+              <T>165404<!--ObjectStateValue: toyNIghtLight_On--></T>
+              <T>165401<!--ObjectStateValue: carriedState_notCarried--></T>
+            </L>
+            <V n="set_states" t="Set_state_list">
+              <L n="Set_state_list">
+                <T>77849<!--CommodityBasedObjectStateValue: Lights_On--></T>
+              </L>
+            </V>
+          </U>
+          <U>
+            <L n="at_states">
+              <T>165405<!--ObjectStateValue: toyNightLight_Off--></T>
+              <T>165400<!--ObjectStateValue: carriedState_carried--></T>
+            </L>
+            <V n="set_states" t="Set_state_list">
+              <L n="Set_state_list">
+                <T>77850<!--CommodityBasedObjectStateValue: Lights_Off--></T>
+              </L>
+            </V>
+            <E n="trigger_operation">OR</E>
+          </U>
+        </L>
+        <L n="states">
+          <U>
+            <L n="client_states" />
+            <V n="default_value" t="reference">
+              <T n="reference">97653<!--ObjectStateValue: ChildObjects_Toy--></T>
+            </V>
+          </U>
+          <U>
+            <L n="client_states">
+              <U>
+                <T n="key">77849<!--CommodityBasedObjectStateValue: Lights_On--></T>
+                <U n="value">
+                  <V n="broadcaster" t="apply_new_value">
+                    <V n="apply_new_value" t="start_broadcaster">
+                      <U n="start_broadcaster">
+                        <L n="broadcaster_types">
+                          <U>
+                            <T n="item">136715<!--Broadcaster: broadcaster_Bed_Monster_DeterentObject_Prevent_Spawn--></T>
+                          </U>
+                          <U>
+                            <T n="item">165353<!--Broadcaster: broadcaster_Bed_Nightlight--></T>
+                          </U>
+                        </L>
+                      </U>
+                    </V>
+                  </V>
+                </U>
+              </U>
+              <U>
+                <T n="key">77850<!--CommodityBasedObjectStateValue: Lights_Off--></T>
+                <U n="value">
+                  <V t="apply_new_value" n="broadcaster" />
+                </U>
+              </U>
+            </L>
+            <V n="default_value" t="reference">
+              <T n="reference">77849<!--CommodityBasedObjectStateValue: Lights_On--></T>
+            </V>
+          </U>
+          <U>
+            <L n="client_states">
+              <U>
+                <T n="key">165400<!--ObjectStateValue: carriedState_carried--></T>
+              </U>
+              <U>
+                <T n="key">165401<!--ObjectStateValue: carriedState_notCarried--></T>
+              </U>
+            </L>
+            <V n="default_value" t="reference">
+              <T n="reference">165401<!--ObjectStateValue: carriedState_notCarried--></T>
+            </V>
+          </U>
+          <U>
+            <L n="client_states">
+              <U>
+                <T n="key">165404<!--ObjectStateValue: toyNIghtLight_On--></T>
+              </U>
+              <U>
+                <T n="key">165405<!--ObjectStateValue: toyNightLight_Off--></T>
+              </U>
+            </L>
+            <V n="default_value" t="reference">
+              <T n="reference">165404<!--ObjectStateValue: toyNIghtLight_On--></T>
+            </V>
+          </U>
+          <U>
+            <L n="client_states">
+              <U>
+                <T n="key">39478<!--CommodityBasedObjectStateValue: FireState_Burn_Incinerate_Burning--></T>
+              </U>
+              <U>
+                <T n="key">39479<!--CommodityBasedObjectStateValue: FireState_Burn_Incinerate--></T>
+              </U>
+              <U>
+                <T n="key">39612<!--CommodityBasedObjectStateValue: FireState_Burn_Incinerate_Not_Burning--></T>
+              </U>
+            </L>
+            <V t="reference" n="default_value">
+              <T n="reference">39612<!--CommodityBasedObjectStateValue: FireState_Burn_Incinerate_Not_Burning--></T>
+            </V>
+          </U>
+          <U>
+            <L n="client_states">
+              <U>
+                <T n="key">131794<!--ObjectStateValue: Kelpto_Stolen_Object--></T>
+              </U>
+              <U>
+                <T n="key">131795<!--ObjectStateValue: Klepto_Not_Stolen_Object--></T>
+              </U>
+            </L>
+            <V n="default_value" t="reference">
+              <T n="reference">131795<!--ObjectStateValue: Klepto_Not_Stolen_Object--></T>
+            </V>
+          </U>
+        </L>
+        <V n="unique_state_changes" t="enabled">
+          <U n="enabled">
+            <T n="enter_carry_state">165400<!--ObjectStateValue: carriedState_carried--></T>
+            <T n="exit_carry_state">165401<!--ObjectStateValue: carriedState_notCarried--></T>
+          </U>
+        </V>
+      </U>
+    </V>
+    <V n="tooltip_component" t="enabled">
+      <U n="enabled">
+        <L n="custom_tooltips">
+          <U>
+            <L n="tooltip_fields">
+              <U>
+                <E n="key">recipe_description</E>
+                <U n="value">
+                  <V n="text" t="single">
+                    <T n="single">0xE2E9872D<!--String: "{0.ObjectDescription}"--></T>
+                  </V>
+                  <V t="enabled" n="text_tokens">
+                    <U n="enabled">
+                      <L n="tokens">
+                        <V t="participant_type">
+                          <U n="participant_type">
+                            <V t="from_participant" n="objects">
+                              <U n="from_participant">
+                                <E n="participant">Object</E>
+                              </U>
+                            </V>
+                          </U>
+                        </V>
+                      </L>
+                    </U>
+                  </V>
+                </U>
+              </U>
+              <U>
+                <E n="key">recipe_name</E>
+                <U n="value">
+                  <V n="text" t="single">
+                    <T n="single">0x4F918F8<!--String: "{0.ObjectName}"--></T>
+                  </V>
+                  <V t="enabled" n="text_tokens">
+                    <U n="enabled">
+                      <L n="tokens">
+                        <V t="participant_type">
+                          <U n="participant_type">
+                            <V t="from_participant" n="objects">
+                              <U n="from_participant">
+                                <E n="participant">Object</E>
+                              </U>
+                            </V>
+                          </U>
+                        </V>
+                      </L>
+                    </U>
+                  </V>
+                </U>
+              </U>
+            </L>
+            <E n="tooltip_style">HOVER_TIP_CUSTOM_OBJECT</E>
+          </U>
+        </L>
+      </U>
+    </V>
+  </U>
+  <L n="_super_affordances">
+    <T>14441<!--SuperInteraction: toy_Play--></T>
+    <T>13328<!--ImmediateSuperInteraction: debug_Reset--></T>
+    <T>13326<!--ImmediateSuperInteraction: debug_ObjectDestroy--></T>
+    <T>103888<!--ImmediateSuperInteraction: cheat_set_as_head--></T>
+    <T>143783<!--SuperInteraction: toy_ChewOn--></T>
+    <T>147697<!--SuperInteraction: toy_toddler_play--></T>
+    <T>151704<!--SimPickerInteraction: simPickerInteraction_ShowToy--></T>
+    <T>161894<!--SuperInteraction: toy_PlayAwayFeelings--></T>
+    <T>165407<!--ImmediateSuperInteraction: toyNightLight_TurnOn--></T>
+    <T>165408<!--ImmediateSuperInteraction: toyNightLight_TurnOff--></T>
+    <T>102258<!--SuperInteraction: Ghost_Possess--></T>
+    <T>168502<!--SuperInteraction: Ghost_Pet_Possess--></T>
+    <T>106859<!--SuperInteraction: simRay_Transform_Object--></T>
+    <T>29763<!--PutAwayInteraction: maid_PutAwayItem--></T>
+  </L>
+  <U n="recycling_data">
+    <L n="recycling_values">
+      <U>
+        <E n="Bucks Type">RecycleBitsBucks</E>
+        <T n="Value">0.5</T>
+      </U>
+      <U>
+        <E n="Bucks Type">RecyclePiecesBucks</E>
+        <T n="Value">0.5</T>
+      </U>
+    </L>
+  </U>
+</I>

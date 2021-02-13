@@ -1,0 +1,128 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<I c="SuperInteraction" i="interaction" m="interactions.base.super_interaction" n="spells_Effects_Control_Clone_Fight" s="215969">
+  <L n="_constraints">
+    <U>
+      <L n="constraints">
+        <U>
+          <V n="value" t="circle">
+            <U n="circle">
+              <T n="ideal_radius">3</T>
+              <T n="radius">5</T>
+            </U>
+          </V>
+        </U>
+        <U>
+          <V n="value" t="facing" />
+        </U>
+        <U>
+          <V t="line_of_sight" n="value">
+            <U n="line_of_sight">
+              <V t="enabled" n="temporary_los" />
+            </U>
+          </V>
+        </U>
+      </L>
+    </U>
+  </L>
+  <V t="enabled" n="_saveable" />
+  <T n="attention_cost">0.5</T>
+  <V t="one_shot" n="basic_content">
+    <U n="one_shot">
+      <U n="animation_ref">
+        <T n="factory">213301<!--AnimationElement: spells_Spellcasting_Succeed_CastForward--></T>
+      </U>
+    </U>
+  </V>
+  <V t="disabled" n="content_score" />
+  <T n="display_name">0xEEEECBC<!--String: "Ordenar pelear"--></T>
+  <U n="display_name_text_tokens">
+    <L n="tokens">
+      <V t="participant_type">
+        <U n="participant_type">
+          <V t="from_participant" n="objects">
+            <U n="from_participant">
+              <E n="participant">Actor</E>
+            </U>
+          </V>
+        </U>
+      </V>
+      <V t="participant_type">
+        <U n="participant_type">
+          <V t="from_participant" n="objects">
+            <U n="from_participant">
+              <E n="participant">Object</E>
+            </U>
+          </V>
+        </U>
+      </V>
+    </L>
+  </U>
+  <L n="interaction_category_tags">
+    <E>Interaction_Super</E>
+    <E>Interaction_All</E>
+  </L>
+  <V n="outcome" t="single">
+    <U n="single">
+      <U n="actions">
+        <L n="basic_extras">
+          <V t="buff_fire_and_forget">
+            <U n="buff_fire_and_forget">
+              <U n="buff">
+                <T n="buff_type">215368<!--Buff: buff_Spells_Fight--></T>
+              </U>
+              <E n="participant">TargetSim</E>
+              <V t="at_beginning" n="timing" />
+            </U>
+          </V>
+        </L>
+        <L n="continuation">
+          <U>
+            <E n="actor">TargetSim</E>
+            <T n="affordance">215318<!--SocialSuperInteraction: socialSuperInteraction_Magic_Fight_Spell--></T>
+            <E n="target">PickedSim</E>
+          </U>
+        </L>
+      </U>
+    </U>
+  </V>
+  <E n="scoring_priority">NORMAL</E>
+  <T n="subaction_selection_weight">1</T>
+  <E n="target_type">OBJECT</E>
+  <L n="test_globals">
+    <V t="sim_info">
+      <U n="sim_info">
+        <V t="specified" n="ages" />
+        <V t="specified" n="species">
+          <U n="specified">
+            <L n="species">
+              <E />
+            </L>
+          </U>
+        </V>
+        <E n="who">Actor</E>
+      </U>
+    </V>
+    <V t="situation_job_test">
+      <U n="situation_job_test">
+        <E n="participant">TargetSim</E>
+        <L n="situation_jobs">
+          <T>215158<!--SituationJob: job_TemporaryClone--></T>
+        </L>
+      </U>
+    </V>
+    <V t="buff">
+      <U n="buff">
+        <E n="subject">TargetSim</E>
+        <V n="tooltip" t="enabled">
+          <T n="enabled">0x15999023<!--String: "Incapaz de hacer que un clon malvado cumpla órdenes."--></T>
+        </V>
+        <V n="whitelist" t="enabled">
+          <L n="enabled">
+            <T>215997<!--Buff: buff_Spells_Clone_Success--></T>
+          </L>
+        </V>
+      </U>
+    </V>
+  </L>
+  <T n="time_overhead">30</T>
+</I>

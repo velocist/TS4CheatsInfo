@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+
+<TuningRoot>
+    <Instance instance_type="situation" class="DanceTogetherSituation" module="situations.complex.dance_together" muid="8D0CCE7AF0EE6771" description="The situation to run a dance together situation." instance_subclasses_only="False" parents="GroupDanceSituation, SituationComplexCommon, SituationComplex, Situation" path="Situations\Descriptions" use_guid_for_reference="True">
+        <Tunable type="interaction" name="dance_affordance" class="TunableReference" display="Dance Affordance" muid="E4E9FD21F1DC573A" description="The affordance for leader sim to run with dance movement mixers tuned in." allow_none="False" Deprecated="False" filter="0" group="Dance" restrict="JigPartConstraintInteraction" />
+
+        <Tunable type="situation_job" name="dance_leader_job" class="TunableReference" display="Dance Leader Job" muid="FD6B2224DF607E33" description="The situation job for dance leader." allow_none="True" Deprecated="False" filter="0" group="Dance" restrict="SituationJob" />
+
+        <Tunable type="situation_job" name="dance_member_job" class="TunableReference" display="Dance Member Job" muid="53FFCE75C8227B7D" description="The situation job for dance member." allow_none="True" Deprecated="False" filter="0" group="Dance" restrict="SituationJob" />
+
+        <TunableTuple name="dance_state" class="Tunable_DanceState" display="Dance State" muid="C70CE21A27B2B525" description="The state that sim is doing dance movements." Deprecated="False" filter="0" group="Dance">
+            <Tunable type="bool" name="allow_join_situation" class="Tunable" default="True" display="Allow Join Situation" muid="FEB7A1D411332D5F" description="Whether the situation is allowed to join at this state." Deprecated="False" filter="0" group="General" />
+            <TunableTuple name="interaction_of_interest" class="TunableInteractionOfInterest" display="Interaction Of Interest" muid="E493CF7EC6E5057D" description="The interaction that when run will cause GPE defined behavior&#xA;to run." Deprecated="False" filter="0" group="General">
+                <TunableList name="affordances" class="TunableList" display="Affordances" muid="565FAD42E81B9F24" description="The Sim must have started either any affordance in this list or an&#xA;interaction matching one of the tags in this tunable's Tags&#xA;field." Deprecated="False" filter="0" group="General">
+                    <Tunable type="interaction" class="TunableReference" muid="E6926AF9DD067AD" allow_none="False" Deprecated="False" filter="0" group="General" pack_safe="True" />
+                </TunableList>
+                <TunableList name="tags" class="TunableSet" display="Tags" muid="35DE77EC18E4265B" description="The Sim must have run either an interaction matching one of these&#xA;Tags or an affordance from the list of Affordances in this&#xA;tunable." Deprecated="False" filter="0" group="General" unique_entries="true">
+                    <TunableEnum type="Tag" class="TunableEnumEntry" default="INVALID" muid="4B9F58009AE599B2" dynamic_entries="tag.Tag._elements" static_entries="tag.Tag" Deprecated="False" filter="0" group="General" />
+                </TunableList>
+            </TunableTuple>
+            <TunableList name="job_and_role_changes" class="TunableMapping" display="Job And Role Changes" muid="AEE0D7BBB3F5D2FF" mapping_key="Situation Job" mapping_value="Role State" description="A mapping between situation jobs and role states that defines&#xA;what role states we want to switch to for sims on which jobs&#xA;when this situation state is entered." Deprecated="False" filter="0" group="General">
+                <TunableTuple class="TunableTuple" muid="A368ED852D5439BF" Deprecated="False" filter="0" group="General">
+                    <Tunable type="role_state" name="Role State" class="TunableReference" display="Role State" muid="4DD87996AF123BE8" description="The role state that we will switch sims of the linked job&#xA;into." allow_none="False" Deprecated="False" filter="0" group="General" />
+                    <Tunable type="situation_job" name="Situation Job" class="TunableReference" display="Situation Job" muid="1B71569318D14733" description="A reference to a SituationJob that we will use to change&#xA;sim's role state." allow_none="False" Deprecated="False" filter="0" group="General" />
+                </TunableTuple>
+            </TunableList>
+            <TunableVariant type="None" name="time_out" class="OptionalTunable" default="disabled" display="Time Out" muid="48BC43D31EA449CA" description="How long this state will last before time expired. Please talk to the GPE who implemented the specific&#xA;situation to see what the state will do on time expired." Deprecated="False" filter="0" group="General">
+                <Tunable name="disabled" class="TunableExistance" display="Disabled" muid="63FEFDFAB9FC70D2" />
+                <Tunable type="float" name="enabled" class="TunableSimMinute" default="15" display="Enabled" muid="8FD3F4F5162CA4E9" min="1" max="None" tuning_state="NeedsTuning" Deprecated="False" filter="0" group="General" />
+            </TunableVariant>
+        </TunableTuple>
+
+        <TunableList name="jig_map" class="TunableMapping" display="Jig Map" muid="A3E7D59C2DA7C4C" mapping_key="number_of_sim" mapping_value="jig_to_use" description="The static map to mapping dancing jig with number of sims in the dance group&#xA;Put it here instead of in the module tuning is for pack safe reason.&#xA;This should only be tuned on prototype, and not suggesting to change/override&#xA;in tuning instance unless you have very strong reason." Deprecated="False" filter="0" group="Dance">
+            <TunableTuple class="TunableTuple" muid="716CDA1D8EDF32B" Deprecated="False" filter="0" group="General">
+                <Tunable type="object" name="jig_to_use" class="TunableReference" display="Jig To Use" muid="42724A8765D26FEB" allow_none="False" Deprecated="False" filter="0" group="General" />
+                <Tunable type="int" name="number_of_sim" class="Tunable" default="2" display="Number Of Sim" muid="511AEEC4B6B65C6B" tuning_state="NeedsTuning" Deprecated="False" filter="0" group="General" />
+            </TunableTuple>
+        </TunableList>
+    </Instance>
+</TuningRoot>

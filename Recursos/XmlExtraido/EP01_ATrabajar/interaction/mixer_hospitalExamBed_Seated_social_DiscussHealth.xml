@@ -1,0 +1,99 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<I c="MixerInteraction" i="interaction" m="interactions.base.mixer_interaction" n="mixer_hospitalExamBed_Seated_social_DiscussHealth" s="110950">
+  <V t="resource_key" n="_icon">
+    <U n="resource_key">
+      <T n="key" p="InGame\UI\Icons\Headlines\Final\headline_speechbubble.png">2f7d0004:00000000:12d5a92b12749828</T>
+    </U>
+  </V>
+  <T n="allow_autonomous">False</T>
+  <T n="allow_user_directed">True</T>
+  <V n="basic_content" t="one_shot">
+    <U n="one_shot">
+      <U n="animation_ref">
+        <T n="factory">107418<!--AnimationElement: object_HospitalExamBed_Patient_Soc_SitActions_DiscussHealth--></T>
+      </U>
+    </U>
+  </V>
+  <V t="disable_focus" n="basic_focus" />
+  <T n="category">111235<!--PieMenuCategory: pieMenuCategories_SicknessSystem_ExaminePatient--></T>
+  <T n="display_name">0x7E81077D<!--String: "Hablar de salud en general"--></T>
+  <U n="display_name_text_tokens">
+    <L n="tokens">
+      <V t="participant_type">
+        <U n="participant_type">
+          <V t="from_participant" n="objects">
+            <U n="from_participant">
+              <E n="participant">Actor</E>
+            </U>
+          </V>
+        </U>
+      </V>
+      <V t="participant_type">
+        <U n="participant_type">
+          <V t="from_participant" n="objects">
+            <U n="from_participant">
+              <E n="participant">Object</E>
+            </U>
+          </V>
+        </U>
+      </V>
+    </L>
+  </U>
+  <L n="interaction_category_tags">
+    <E>Interaction_Mixer</E>
+    <E>Interaction_All</E>
+  </L>
+  <V t="enabled" n="lock_out_time">
+    <U n="enabled">
+      <U n="interval">
+        <T n="lower_bound">10</T>
+        <T n="upper_bound">15</T>
+      </U>
+    </U>
+  </V>
+  <V t="single" n="outcome">
+    <U n="single">
+      <U n="actions">
+        <L n="loot_list">
+          <T>113022<!--LootActions: loot_Commodity_SicknessSystem_Patient_Target_Diagnosis_DiscussHealth--></T>
+          <T>115286<!--LootActions: Rel_Gain_Small_target--></T>
+          <T>116642<!--LootActions: loot_Commodity_SicknessSystem_Doctor_ExamsRan_+1--></T>
+        </L>
+      </U>
+    </U>
+  </V>
+  <V t="enabled" n="pie_menu_icon">
+    <V t="resource_key" n="enabled">
+      <U n="resource_key">
+        <T p="InGame\UI\Icons\Headlines\Final\headline_stethoscope.png" n="key">2f7d0004:00000000:64fae0686643d1d7</T>
+      </U>
+    </V>
+  </V>
+  <T n="pie_menu_priority">7</T>
+  <U n="sub_action">
+    <T n="base_weight">2</T>
+  </U>
+  <E n="target_type">OBJECT</E>
+  <L n="test_globals">
+    <V t="test_set_reference">
+      <T n="test_set_reference">115422<!--TestSetInstance: testSet_Doctor_CareerEvent_Target_isPatient_notPregnant--></T>
+    </V>
+    <V t="buff">
+      <U n="buff">
+        <L n="blacklist">
+          <T>114415<!--Buff: buff_Role_DoctorCareer_PatientState_Treated--></T>
+        </L>
+        <E n="subject">TargetSim</E>
+      </U>
+    </V>
+    <V t="posture">
+      <U n="posture">
+        <L n="required_postures">
+          <T>107793<!--Posture: posture_hospitalExamBed_Sit--></T>
+        </L>
+        <E n="subject">TargetSim</E>
+      </U>
+    </V>
+  </L>
+  <T n="visible">True</T>
+</I>

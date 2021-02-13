@@ -1,0 +1,82 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<I c="Broadcaster" i="broadcaster" m="broadcasters.broadcaster" n="broadcaster_TalkingToilet_removePuddles" s="134613">
+  <V n="allow_objects" t="from_tags">
+    <U n="from_tags">
+      <L n="tags">
+        <E>Func_Toilet_Talking</E>
+        <E>Func_Puddle</E>
+      </L>
+    </U>
+  </V>
+  <T n="allow_sims">False</T>
+  <L n="constraints">
+    <V t="line_of_sight" />
+    <V t="circle">
+      <U n="circle">
+        <T n="radius">5</T>
+      </U>
+    </V>
+  </L>
+  <L n="effects">
+    <V t="loot">
+      <U n="loot">
+        <L n="loot_list">
+          <T>140014<!--LootActions: Loot_ObjectStateChange_ToiletTalking_RoomDryingVFX_On--></T>
+        </L>
+        <L n="tests">
+          <L>
+            <V t="object_criteria">
+              <U n="object_criteria">
+                <V t="tags" n="identity_test">
+                  <U n="tags">
+                    <L n="tag_set">
+                      <E>Func_Toilet_Talking</E>
+                    </L>
+                  </U>
+                </V>
+                <T n="on_active_lot">True</T>
+                <T n="owned">False</T>
+              </U>
+            </V>
+          </L>
+        </L>
+      </U>
+    </V>
+    <V t="loot">
+      <U n="loot">
+        <L n="loot_list">
+          <T>136089<!--LootActions: Loot_ObjectStateChange_Puddle_Destroy--></T>
+        </L>
+        <L n="tests">
+          <L>
+            <V t="object_criteria">
+              <U n="object_criteria">
+                <V n="desired_state_threshold" t="enabled">
+                  <U n="enabled">
+                    <E n="comparison">EQUAL</E>
+                    <T n="value">74328<!--ObjectStateValue: Puddle_IsPuddle--></T>
+                  </U>
+                </V>
+                <V t="tags" n="identity_test">
+                  <U n="tags">
+                    <L n="tag_set">
+                      <E>Func_Puddle</E>
+                    </L>
+                  </U>
+                </V>
+                <T n="on_active_lot">True</T>
+                <T n="owned">False</T>
+              </U>
+            </V>
+          </L>
+        </L>
+      </U>
+    </V>
+  </L>
+  <V t="on_pulse" n="frequency">
+    <U n="on_pulse">
+      <T n="cooldown_time">30</T>
+    </U>
+  </V>
+  <T n="immediate">True</T>
+</I>

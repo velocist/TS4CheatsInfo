@@ -1,0 +1,209 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<I c="SuperInteraction" i="interaction" m="interactions.base.super_interaction" n="Collection_Frogs_FishingHole_SO" s="77459">
+  <L n="_constraints" />
+  <V t="participant" n="_icon">
+    <U n="participant">
+      <L n="participant_type">
+        <E>Object</E>
+      </L>
+    </U>
+  </V>
+  <V t="enabled" n="_saveable" />
+  <T n="allow_autonomous">True</T>
+  <T n="allow_user_directed">True</T>
+  <T n="attention_cost">0.5</T>
+  <V t="one_shot" n="basic_content" />
+  <V t="disabled" n="basic_reserve_object" />
+  <V t="disabled" n="canonical_animation" />
+  <V t="disabled" n="content_score" />
+  <T n="display_name">0xE7BD326D<!--String: "Buscar ranas"--></T>
+  <U n="display_name_text_tokens">
+    <L n="tokens">
+      <V t="participant_type">
+        <U n="participant_type">
+          <V t="from_participant" n="objects">
+            <U n="from_participant">
+              <E n="participant">Actor</E>
+            </U>
+          </V>
+        </U>
+      </V>
+      <V t="participant_type">
+        <U n="participant_type">
+          <V t="from_participant" n="objects">
+            <U n="from_participant">
+              <E n="participant">Object</E>
+            </U>
+          </V>
+        </U>
+      </V>
+    </L>
+  </U>
+  <L n="interaction_category_tags">
+    <E>Interaction_Super</E>
+    <E>Interaction_All</E>
+    <E>Interaction_Collect</E>
+    <E>Interaction_Lifestyles_Outdoorsy_FlexibleLength</E>
+  </L>
+  <V n="outcome" t="dual">
+    <U n="dual">
+      <U n="failure_actions">
+        <V t="enabled" n="animation_ref">
+          <U n="enabled">
+            <T n="factory">76766<!--AnimationElement: FishingHole_SearchFrogs_Fail--></T>
+          </U>
+        </V>
+        <L n="basic_extras">
+          <V t="notification">
+            <U n="notification">
+              <T n="allow_autonomous">False</T>
+              <V n="dialog" t="single">
+                <V n="single" t="literal">
+                  <U n="literal">
+                    <V t="enabled" n="secondary_icon">
+                      <V t="participant" n="enabled">
+                        <U n="participant">
+                          <L n="participant_type">
+                            <E>Actor</E>
+                          </L>
+                        </U>
+                      </V>
+                    </V>
+                    <V t="single" n="text">
+                      <T n="single">0x24F9860C<!--String: "{0.SimFirstName} no ha podido atrapar una rana. ¡Son muy escurridizas! A ver si tiene suerte a la próxima."--></T>
+                    </V>
+                    <V n="text_tokens" t="enabled">
+                      <U n="enabled">
+                        <L n="tokens">
+                          <V t="participant_type">
+                            <U n="participant_type">
+                              <V t="from_participant" n="objects">
+                                <U n="from_participant">
+                                  <E n="participant">Actor</E>
+                                </U>
+                              </V>
+                            </U>
+                          </V>
+                        </L>
+                      </U>
+                    </V>
+                  </U>
+                </V>
+              </V>
+              <T n="limit_to_one_notification">False</T>
+            </U>
+          </V>
+        </L>
+        <T n="force_outcome_on_exit">False</T>
+        <L n="loot_list">
+          <T>103017<!--LootActions: loot_Buff_Trait_Squeamish_Nauseous_CatchingFrog--></T>
+        </L>
+      </U>
+      <U n="success_actions">
+        <V t="enabled" n="animation_ref">
+          <U n="enabled">
+            <T n="factory">76765<!--AnimationElement: FishingHole_SearchFrogs_Succeed--></T>
+          </U>
+        </V>
+        <L n="loot_list">
+          <T>77458<!--LootActions: loot_FrogCollectible_fishingHole_SO--></T>
+          <T>35516<!--LootActions: Loot_Buff_Trait_Geek_CollectedSomething--></T>
+          <T>103017<!--LootActions: loot_Buff_Trait_Squeamish_Nauseous_CatchingFrog--></T>
+        </L>
+      </U>
+      <U n="success_chance">
+        <T n="base_chance">25</T>
+        <L n="multipliers">
+          <U>
+            <T n="multiplier">1.2</T>
+            <L n="tests">
+              <L>
+                <V t="mood">
+                  <U n="mood">
+                    <T n="mood">14639<!--Mood: Mood_Focused--></T>
+                  </U>
+                </V>
+              </L>
+            </L>
+          </U>
+          <U>
+            <T n="multiplier">1.2</T>
+            <L n="tests">
+              <L>
+                <V t="trait">
+                  <U n="trait">
+                    <T n="num_blacklist_allowed">0</T>
+                    <T n="num_whitelist_required">1</T>
+                    <E n="subject">Actor</E>
+                    <L n="whitelist_traits">
+                      <T>35719<!--Trait: trait_Collector--></T>
+                      <T>76817<!--Trait: trait_OneWithNature--></T>
+                      <T>27914<!--Trait: trait_LovesOutdoors--></T>
+                    </L>
+                  </U>
+                </V>
+              </L>
+            </L>
+          </U>
+        </L>
+      </U>
+    </U>
+  </V>
+  <E n="scoring_priority">NORMAL</E>
+  <T n="subaction_selection_weight">1</T>
+  <E n="target_type">OBJECT</E>
+  <V t="disabled" n="test_disallow_while_running" />
+  <L n="test_globals">
+    <V t="sim_info">
+      <U n="sim_info">
+        <V t="specified" n="ages">
+          <L n="specified">
+            <E>TEEN</E>
+            <E>YOUNGADULT</E>
+            <E>ADULT</E>
+            <E>ELDER</E>
+            <E>CHILD</E>
+          </L>
+        </V>
+        <V t="specified" n="species">
+          <U n="specified">
+            <L n="species">
+              <E />
+            </L>
+          </U>
+        </V>
+        <E n="who">Actor</E>
+      </U>
+    </V>
+    <V t="weather">
+      <U n="weather">
+        <V n="water_freeze" t="enabled">
+          <U n="enabled">
+            <U n="range">
+              <T n="lower_bound">0</T>
+              <T n="upper_bound">80</T>
+            </U>
+            <T n="zero_is_true">True</T>
+          </U>
+        </V>
+      </U>
+    </V>
+    <V t="weather">
+      <U n="weather">
+        <V n="temperature" t="enabled">
+          <U n="enabled">
+            <T n="invert">True</T>
+            <L n="temperature">
+              <E />
+            </L>
+          </U>
+        </V>
+        <V t="disabled" n="tooltip" />
+      </U>
+    </V>
+    <V t="test_set_reference">
+      <T n="test_set_reference">28305<!--TestSetInstance: testSet_EmotionNotMiserable--></T>
+    </V>
+  </L>
+  <T n="time_overhead">15</T>
+</I>

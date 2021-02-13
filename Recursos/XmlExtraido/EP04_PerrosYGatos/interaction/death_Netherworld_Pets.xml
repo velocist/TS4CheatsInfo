@@ -1,0 +1,203 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<I c="DeathSuperInteraction" i="interaction" m="interactions.utils.death_interactions" n="death_Netherworld_Pets" s="165599">
+  <L n="_constraints">
+    <U>
+      <L n="constraints">
+        <U>
+          <V n="value" t="circle">
+            <U n="circle">
+              <T n="ideal_radius">1</T>
+              <T n="radius">1.5</T>
+              <T n="require_los">False</T>
+            </U>
+          </V>
+        </U>
+      </L>
+    </U>
+    <U>
+      <L n="constraints">
+        <U>
+          <V t="facing" n="value" />
+        </U>
+      </L>
+    </U>
+  </L>
+  <V t="participant" n="_icon">
+    <U n="participant">
+      <L n="participant_type">
+        <E>Actor</E>
+      </L>
+    </U>
+  </V>
+  <V t="enabled" n="_saveable" />
+  <T n="allow_autonomous">False</T>
+  <T n="attention_cost">0.5</T>
+  <V t="one_shot" n="basic_content" />
+  <T n="can_shoo">False</T>
+  <V n="confirmation_dialog" t="enabled">
+    <U n="enabled">
+      <U n="dialog">
+        <V n="dialog" t="ok_cancel">
+          <U n="ok_cancel">
+            <L n="dialog_options">
+              <E>DISABLE_CLOSE_BUTTON</E>
+            </L>
+            <V t="enabled" n="icon">
+              <V t="participant" n="enabled">
+                <U n="participant">
+                  <L n="participant_type">
+                    <E>Actor</E>
+                  </L>
+                </U>
+              </V>
+            </V>
+            <V n="text" t="single">
+              <T n="single">0x3620C3CA<!--String: "Regresar al más allá eliminará de forma permanente de la unidad doméstica a {0.SimFirstName}, que dejará atrás todas sus posesiones terrenales ¡y también a los miembros de su familia! No se puede volver del más allá."--></T>
+            </V>
+            <V n="title" t="enabled">
+              <T n="enabled">0x50F262C<!--String: "Regresar al más allá"--></T>
+            </V>
+          </U>
+        </V>
+      </U>
+    </U>
+  </V>
+  <V t="disabled" n="content_score" />
+  <U n="death_dialog">
+    <V t="enabled" n="audio_sting">
+      <U n="enabled">
+        <T n="audio" p="InGame\Audio\Bumper\bumper_game_over.propx">39b2aa4a:00000000:e4380625f832c48e</T>
+      </U>
+    </V>
+    <V t="enabled" n="icon">
+      <V t="resource_key" n="enabled">
+        <U n="resource_key">
+          <T n="key" p="InGame\UI\Icons\Headlines\Final\headline_gravestone.png">2f7d0004:00000000:7c70ef2a230cf012</T>
+        </U>
+      </V>
+    </V>
+    <U n="text">
+      <V n="empty_household" t="enabled">
+        <V n="enabled" t="single">
+          <T n="single">0x1721900E<!--String: "Con {0.SimFirstName} de vuelta en el más allá, esta unidad doméstica se ha quedado vacía. Selecciona una nueva para seguir jugando con seres terrenales."--></T>
+        </V>
+      </V>
+      <V n="fallback" t="single">
+        <T n="single">0xF225983F<!--String: "{1.SimFirstName} ha partido de esta vida antinatural para {M1.él}{F1.ella} y ya no puede cuidar de los niños de la unidad doméstica. Los servicios sociales están perfectamente preparados para este tipo de situaciones y pasarán a ocuparse de ellos."--></T>
+      </V>
+      <V n="single_sim" t="enabled">
+        <V n="enabled" t="single">
+          <T n="single">0x3C79B5AB<!--String: "¿Acaso {1.SimFirstName} no se dio cuenta de que iba a dejar atrás a {0.SimFirstName}? En fin. Los servicios sociales están de camino para hacerse cargo de {M0.él}{F0.ella}."--></T>
+        </V>
+      </V>
+    </U>
+    <V t="enabled" n="title">
+      <T n="enabled">0x992A95D2<!--String: "¡Fin de la partida!"--></T>
+    </V>
+    <L n="ui_responses">
+      <U>
+        <T n="text">0x2B08947E<!--String: "Guardar y gestionar mundos"--></T>
+        <E n="ui_request">TRANSITION_TO_NEIGHBORHOOD_SAVE</E>
+      </U>
+      <U>
+        <T n="text">0xF9E584E6<!--String: "Salir al menú principal"--></T>
+        <E n="ui_request">TRANSITION_TO_MAIN_MENU_NO_SAVE</E>
+      </U>
+    </L>
+  </U>
+  <U n="death_element">
+    <T n="create_urnstone">False</T>
+    <V n="location" t="position">
+      <U n="position">
+        <V t="enabled" n="surface_type_override" />
+      </U>
+    </V>
+    <V t="on_xevt" n="timing">
+      <U n="on_xevt">
+        <E n="criticality">OnCancelOrException</E>
+        <T n="xevt_id">101</T>
+      </U>
+    </V>
+  </U>
+  <V t="Set_To_Minimum_LOD" n="death_info" />
+  <T n="display_name">0x50F262C<!--String: "Regresar al más allá"--></T>
+  <U n="display_name_text_tokens">
+    <L n="tokens">
+      <V t="participant_type">
+        <U n="participant_type">
+          <V t="from_participant" n="objects">
+            <U n="from_participant">
+              <E n="participant">Actor</E>
+            </U>
+          </V>
+        </U>
+      </V>
+      <V t="participant_type">
+        <U n="participant_type">
+          <V t="from_participant" n="objects">
+            <U n="from_participant">
+              <E n="participant">Object</E>
+            </U>
+          </V>
+        </U>
+      </V>
+    </L>
+  </U>
+  <L n="interaction_category_tags">
+    <E>Interaction_Super</E>
+    <E>Interaction_All</E>
+  </L>
+  <V n="outcome" t="single">
+    <U n="single">
+      <U n="actions">
+        <V n="animation_ref" t="enabled">
+          <U n="enabled">
+            <T n="factory">162860<!--AnimationElement: Ghost_JumpIn_Pet--></T>
+          </U>
+        </V>
+        <E n="outcome_result">FAILURE</E>
+      </U>
+    </U>
+  </V>
+  <T n="save_lock_tooltip">0xAC0C976F<!--String: "¡No puedes hacer esto mientras un Sim regresa al más allá!"--></T>
+  <E n="scoring_priority">NORMAL</E>
+  <T n="subaction_selection_weight">1</T>
+  <V t="literal" n="super_affordance_compatibility">
+    <U n="literal">
+      <V n="default_inclusion" t="exclude_all" />
+    </U>
+  </V>
+  <E n="target_type">OBJECT</E>
+  <L n="test_globals">
+    <V t="sim_info">
+      <U n="sim_info">
+        <V t="specified" n="ages" />
+        <V t="specified" n="species">
+          <U n="specified">
+            <L n="species">
+              <E>CAT</E>
+              <E>DOG</E>
+            </L>
+          </U>
+        </V>
+        <E n="who">StoredSim</E>
+      </U>
+    </V>
+    <V t="identity">
+      <U n="identity">
+        <E n="subject_b">StoredSim</E>
+        <T n="subjects_match">True</T>
+      </U>
+    </V>
+    <V t="lot_owner" />
+    <V t="test_set_reference">
+      <T n="test_set_reference">101697<!--TestSetInstance: testSet_ActorIsGhost--></T>
+    </V>
+    <V t="has_head_parented_object">
+      <U n="has_head_parented_object">
+        <T n="negate">True</T>
+      </U>
+    </V>
+  </L>
+  <T n="time_overhead">30</T>
+</I>

@@ -1,0 +1,162 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<I c="SuperInteraction" i="interaction" m="interactions.base.super_interaction" n="crimeMap_AddClues_Stage02" s="107063">
+  <V t="participant" n="_icon">
+    <U n="participant">
+      <L n="participant_type">
+        <E>Object</E>
+      </L>
+    </U>
+  </V>
+  <V t="enabled" n="_saveable" />
+  <T n="allow_autonomous">False</T>
+  <T n="allow_user_directed">False</T>
+  <T n="attention_cost">0.5</T>
+  <V t="one_shot" n="basic_content">
+    <U n="one_shot">
+      <U n="animation_ref">
+        <T n="factory">107501<!--AnimationElement: object_CrimeMap_AddClues--></T>
+      </U>
+    </U>
+  </V>
+  <L n="basic_extras">
+    <V t="destroy_specified_objects_from_target_inventory">
+      <U n="destroy_specified_objects_from_target_inventory">
+        <V n="count" t="number" />
+        <E n="inventory_owner">Actor</E>
+        <L n="object_tests">
+          <L>
+            <V t="object_criteria">
+              <U n="object_criteria">
+                <V n="identity_test" t="tags">
+                  <U n="tags">
+                    <L n="tag_set">
+                      <E>Func_Detective_Clue_AddToMap</E>
+                    </L>
+                  </U>
+                </V>
+                <T n="owned">False</T>
+                <V t="single_object" n="subject_specific_tests" />
+              </U>
+            </V>
+          </L>
+        </L>
+        <V t="at_beginning" n="timing" />
+      </U>
+    </V>
+  </L>
+  <V t="disabled" n="content_score" />
+  <T n="display_name">0x2C2C1E36<!--String: "Añadir pistas"--></T>
+  <U n="display_name_text_tokens">
+    <L n="tokens">
+      <V t="participant_type">
+        <U n="participant_type">
+          <V t="from_participant" n="objects">
+            <U n="from_participant">
+              <E n="participant">Actor</E>
+            </U>
+          </V>
+        </U>
+      </V>
+      <V t="participant_type">
+        <U n="participant_type">
+          <V t="from_participant" n="objects">
+            <U n="from_participant">
+              <E n="participant">Object</E>
+            </U>
+          </V>
+        </U>
+      </V>
+    </L>
+  </U>
+  <L n="interaction_category_tags">
+    <E>Interaction_Super</E>
+    <E>Interaction_All</E>
+  </L>
+  <V t="single" n="outcome">
+    <U n="single">
+      <U n="actions">
+        <L n="loot_list">
+          <T>106524<!--LootActions: loot_DiscoverClue--></T>
+          <T>109452<!--LootActions: loot_ObjectStateChange_CrimeMap_NextState--></T>
+        </L>
+      </U>
+    </U>
+  </V>
+  <V t="enabled" n="pie_menu_icon">
+    <V t="resource_key" n="enabled">
+      <U n="resource_key">
+        <T p="InEP01\UI\Icons\Career\Career_Detective_Main.png" n="key">2f7d0004:00000000:7e10457cfc46f451</T>
+      </U>
+    </V>
+  </V>
+  <T n="pie_menu_priority">10</T>
+  <E n="scoring_priority">NORMAL</E>
+  <T n="subaction_selection_weight">1</T>
+  <E n="target_type">OBJECT</E>
+  <L n="test_globals">
+    <V t="sim_info">
+      <U n="sim_info">
+        <V t="specified" n="ages" />
+        <V t="specified" n="species">
+          <U n="specified">
+            <L n="species">
+              <E />
+            </L>
+          </U>
+        </V>
+        <E n="who">Actor</E>
+      </U>
+    </V>
+    <V t="career_test">
+      <U n="career_test">
+        <V t="career_reference" n="test_type">
+          <U n="career_reference">
+            <V t="specific_career" n="career">
+              <T n="specific_career">106132<!--DetectiveCareer: detectiveCareer_1--></T>
+            </V>
+          </U>
+        </V>
+      </U>
+    </V>
+    <V t="state">
+      <U n="state">
+        <E n="operator">NOTEQUAL</E>
+        <T n="value">110420<!--ObjectStateValue: objectStateValue_Detective_CrimeMap_Empty--></T>
+      </U>
+    </V>
+    <V t="situation_running_test">
+      <U n="situation_running_test">
+        <V t="enabled" n="situation_blacklist">
+          <L n="enabled">
+            <T>112171<!--CareerEventSituation: careerEventSituations_DetectiveCareer_Day02--></T>
+          </L>
+        </V>
+      </U>
+    </V>
+  </L>
+  <L n="tests">
+    <L>
+      <V t="state">
+        <U n="state">
+          <T n="value">109271<!--ObjectStateValue: objectStateValue_Detective_CrimeMap_Set01_1--></T>
+        </U>
+      </V>
+    </L>
+    <L>
+      <V t="state">
+        <U n="state">
+          <T n="value">109436<!--ObjectStateValue: objectStateVAlue_Detective_CrimeMap_Set02_1--></T>
+        </U>
+      </V>
+    </L>
+    <L>
+      <V t="state">
+        <U n="state">
+          <T n="value">109444<!--ObjectStateValue: objectStateValue_Detective_CrimeMap_Set03_1--></T>
+        </U>
+      </V>
+    </L>
+  </L>
+  <T n="time_overhead">30</T>
+  <T n="visible">True</T>
+</I>

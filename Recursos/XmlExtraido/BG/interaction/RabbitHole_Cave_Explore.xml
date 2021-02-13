@@ -1,0 +1,599 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<I c="SuperInteraction" i="interaction" m="interactions.base.super_interaction" n="RabbitHole_Cave_Explore" s="75562">
+  <V t="participant" n="_icon">
+    <U n="participant">
+      <L n="participant_type">
+        <E>Object</E>
+      </L>
+    </U>
+  </V>
+  <V t="enabled" n="_saveable" />
+  <T n="allow_autonomous">False</T>
+  <T n="attention_cost">0.75</T>
+  <V n="basic_content" t="flexible_length">
+    <U n="flexible_length">
+      <L n="conditional_actions">
+        <V t="list_reference">
+          <T n="list_reference">40705<!--ExitConditionList: ExitConditionList_MotivesNearFail--></T>
+        </V>
+        <V t="literal">
+          <U n="literal">
+            <L n="conditions">
+              <V t="stat_based">
+                <U n="stat_based">
+                  <T n="stat">77469<!--Statistic: statistic_Object_RabbitHoleCave_AdventureState--></T>
+                  <U n="threshold">
+                    <E n="comparison">LESS_OR_EQUAL</E>
+                    <T n="value">0</T>
+                  </U>
+                  <E n="who">Object</E>
+                </U>
+              </V>
+            </L>
+            <E n="interaction_action">EXIT_NATURALLY</E>
+          </U>
+        </V>
+        <V t="list_reference">
+          <T n="list_reference">40702<!--ExitConditionList: ExitConditionList_EmotionStressed--></T>
+        </V>
+        <V t="list_reference">
+          <T n="list_reference">40144<!--ExitConditionList: ExitConditionList_EmotionMiserable--></T>
+        </V>
+      </L>
+      <V t="looping_content" n="content">
+        <U n="looping_content">
+          <U n="animation_ref">
+            <T n="factory">98540<!--AnimationElement: PostureIdle_TreeCave--></T>
+          </U>
+        </U>
+      </V>
+      <V t="disabled" n="progressive_stat_change" />
+      <T n="start_autonomous_inertial">False</T>
+    </U>
+  </V>
+  <L n="basic_extras">
+    <V t="adventure">
+      <U n="adventure">
+        <L n="_adventure_moments">
+          <U>
+            <E n="key">RabbitHole_Cave_1_Fail</E>
+            <U n="value">
+              <V n="aventure_moment" t="literal">
+                <U n="literal">
+                  <L n="_finish_actions">
+                    <U>
+                      <L n="action_results">
+                        <U>
+                          <L n="loot_actions">
+                            <T>75520<!--LootActions: Loot_Buff_GotLost--></T>
+                            <T>101253<!--LootActions: Loot_RabbitHoleCave_AdventureFail--></T>
+                            <T>252301<!--LootActions: loot_Adventurous_AdventuringGain_OneShot--></T>
+                          </L>
+                          <L n="weight_modifiers">
+                            <U />
+                          </L>
+                        </U>
+                      </L>
+                      <V t="single" n="display_text">
+                        <T n="single">0x36664A1<!--String: "Vale"--></T>
+                      </V>
+                    </U>
+                  </L>
+                  <V n="_visibility" t="show_dialog">
+                    <U n="show_dialog">
+                      <V t="enabled" n="icon">
+                        <V t="resource_key" n="enabled">
+                          <U n="resource_key">
+                            <T n="key" p="InGame\UI\Icons\Headlines\Final\headline_maptreasure.png">2f7d0004:00000000:b9d25ec85100e581</T>
+                          </U>
+                        </V>
+                      </V>
+                      <V n="text" t="single">
+                        <T n="single">0x82092651<!--String: "La oscura y sinuosa fisura resulta demasiado difícil de atravesar {0.SimFirstName|esAnd} no tarda en sentir desánimo y frustración."--></T>
+                      </V>
+                      <V t="enabled" n="text_tokens">
+                        <U n="enabled">
+                          <L n="tokens">
+                            <V t="participant_type" />
+                          </L>
+                        </U>
+                      </V>
+                      <V t="enabled" n="title">
+                        <T n="enabled">0xCCDC5F5E<!--String: "Explorando cueva"--></T>
+                      </V>
+                    </U>
+                  </V>
+                </U>
+              </V>
+            </U>
+          </U>
+          <U>
+            <E n="key">RabbitHole_Cave_1_Success</E>
+            <U n="value">
+              <V n="aventure_moment" t="literal">
+                <U n="literal">
+                  <L n="_finish_actions">
+                    <U>
+                      <L n="action_results">
+                        <U>
+                          <L n="loot_actions">
+                            <T>252301<!--LootActions: loot_Adventurous_AdventuringGain_OneShot--></T>
+                          </L>
+                          <L n="next_moments">
+                            <E>RabbitHole_Cave_2_Fail</E>
+                          </L>
+                          <L n="weight_modifiers">
+                            <U />
+                          </L>
+                        </U>
+                      </L>
+                      <V n="display_text" t="single">
+                        <T n="single">0xBBA3953<!--String: "Seguir el camino con altibajos"--></T>
+                      </V>
+                    </U>
+                    <U>
+                      <L n="action_results">
+                        <U>
+                          <L n="loot_actions">
+                            <T>252301<!--LootActions: loot_Adventurous_AdventuringGain_OneShot--></T>
+                          </L>
+                          <L n="next_moments">
+                            <E>Rabbithole_Cave_2_Success</E>
+                          </L>
+                          <L n="weight_modifiers">
+                            <U />
+                          </L>
+                        </U>
+                      </L>
+                      <V n="display_text" t="single">
+                        <T n="single">0x41CB73F8<!--String: "Utilizar la escalera"--></T>
+                      </V>
+                    </U>
+                  </L>
+                  <V n="_visibility" t="show_dialog">
+                    <U n="show_dialog">
+                      <V t="enabled" n="icon">
+                        <V t="resource_key" n="enabled">
+                          <U n="resource_key">
+                            <T n="key" p="InGame\UI\Icons\Headlines\Final\headline_maptreasure.png">2f7d0004:00000000:b9d25ec85100e581</T>
+                          </U>
+                        </V>
+                      </V>
+                      <V n="text" t="single">
+                        <T n="single">0x1F931247<!--String: "¡No hay por qué intentar algo peligroso! {0.SimFirstName} se desliza sigilosamente por el ramal principal y observa, a través de la tenue luz restante, un camino con altibajos que asciende gradualmente y una escalera desvencijada que lleva hacia abajo."--></T>
+                      </V>
+                      <V t="enabled" n="text_tokens">
+                        <U n="enabled">
+                          <L n="tokens">
+                            <V t="participant_type" />
+                          </L>
+                        </U>
+                      </V>
+                      <V t="enabled" n="title">
+                        <T n="enabled">0xCCDC5F5E<!--String: "Explorando cueva"--></T>
+                      </V>
+                    </U>
+                  </V>
+                </U>
+              </V>
+            </U>
+          </U>
+          <U>
+            <E n="key">RabbitHole_Cave_2_Fail</E>
+            <U n="value">
+              <V n="aventure_moment" t="literal">
+                <U n="literal">
+                  <L n="_finish_actions">
+                    <U>
+                      <L n="action_results">
+                        <U>
+                          <L n="loot_actions">
+                            <T>75520<!--LootActions: Loot_Buff_GotLost--></T>
+                            <T>101253<!--LootActions: Loot_RabbitHoleCave_AdventureFail--></T>
+                            <T>252301<!--LootActions: loot_Adventurous_AdventuringGain_OneShot--></T>
+                          </L>
+                          <L n="weight_modifiers">
+                            <U />
+                          </L>
+                        </U>
+                      </L>
+                      <V t="single" n="display_text">
+                        <T n="single">0x36664A1<!--String: "Vale"--></T>
+                      </V>
+                    </U>
+                  </L>
+                  <V n="_visibility" t="show_dialog">
+                    <U n="show_dialog">
+                      <V t="enabled" n="icon">
+                        <V t="resource_key" n="enabled">
+                          <U n="resource_key">
+                            <T n="key" p="InGame\UI\Icons\Headlines\Final\headline_maptreasure.png">2f7d0004:00000000:b9d25ec85100e581</T>
+                          </U>
+                        </V>
+                      </V>
+                      <V n="text" t="single">
+                        <T n="single">0x1F1BC759<!--String: "El camino con altibajos lleva a {0.SimFirstName} a través de un corredor, una curva y un túnel particularmente reducido ¡y {M0.lo}{F0.la} deja de nuevo en la entrada!"--></T>
+                      </V>
+                      <V t="enabled" n="text_tokens">
+                        <U n="enabled">
+                          <L n="tokens">
+                            <V t="participant_type" />
+                          </L>
+                        </U>
+                      </V>
+                      <V t="enabled" n="title">
+                        <T n="enabled">0xCCDC5F5E<!--String: "Explorando cueva"--></T>
+                      </V>
+                    </U>
+                  </V>
+                </U>
+              </V>
+            </U>
+          </U>
+          <U>
+            <E n="key">RabbitHole_Cave_3_Fail</E>
+            <U n="value">
+              <V n="aventure_moment" t="literal">
+                <U n="literal">
+                  <L n="_finish_actions">
+                    <U>
+                      <L n="action_results">
+                        <U>
+                          <L n="loot_actions">
+                            <T>75520<!--LootActions: Loot_Buff_GotLost--></T>
+                            <T>101253<!--LootActions: Loot_RabbitHoleCave_AdventureFail--></T>
+                            <T>252301<!--LootActions: loot_Adventurous_AdventuringGain_OneShot--></T>
+                          </L>
+                          <L n="weight_modifiers">
+                            <U />
+                          </L>
+                        </U>
+                      </L>
+                      <V t="single" n="display_text">
+                        <T n="single">0x36664A1<!--String: "Vale"--></T>
+                      </V>
+                    </U>
+                  </L>
+                  <V n="_visibility" t="show_dialog">
+                    <U n="show_dialog">
+                      <V t="enabled" n="icon">
+                        <V t="resource_key" n="enabled">
+                          <U n="resource_key">
+                            <T n="key" p="InGame\UI\Icons\Headlines\Final\headline_maptreasure.png">2f7d0004:00000000:b9d25ec85100e581</T>
+                          </U>
+                        </V>
+                      </V>
+                      <V n="text" t="single">
+                        <T n="single">0x73A3BA62<!--String: "{0.SimFirstName} baja unos escalones que parecen interminables y {M0.lo}{F0.la} adentran cada vez más en la cueva. Después de un buen rato tras el que acaba {M0.agotado}{F0.agotada}, se da cuenta de que necesita emprender el regreso si no quiere quedarse ahí abajo para siempre..."--></T>
+                      </V>
+                      <V t="enabled" n="text_tokens">
+                        <U n="enabled">
+                          <L n="tokens">
+                            <V t="participant_type" />
+                          </L>
+                        </U>
+                      </V>
+                    </U>
+                  </V>
+                </U>
+              </V>
+            </U>
+          </U>
+          <U>
+            <E n="key">RabbitHole_Cave_3_Success</E>
+            <U n="value">
+              <V n="aventure_moment" t="literal">
+                <U n="literal">
+                  <L n="_finish_actions">
+                    <U>
+                      <L n="action_results">
+                        <U>
+                          <L n="continuation">
+                            <U>
+                              <T n="affordance">98755<!--GoToSpecificLotTravelInteraction: go_To_Specific_Lot_ForgottenGrotto--></T>
+                            </U>
+                          </L>
+                          <L n="loot_actions">
+                            <T>77470<!--LootActions: Loot_RabbitHoleCave_AdventureEnd--></T>
+                            <T>252301<!--LootActions: loot_Adventurous_AdventuringGain_OneShot--></T>
+                          </L>
+                          <L n="weight_modifiers">
+                            <U />
+                          </L>
+                        </U>
+                      </L>
+                      <V n="display_text" t="single">
+                        <T n="single">0x7AE43FDC<!--String: "Ir a la gruta"--></T>
+                      </V>
+                    </U>
+                    <U>
+                      <L n="action_results">
+                        <U>
+                          <L n="loot_actions">
+                            <T>77470<!--LootActions: Loot_RabbitHoleCave_AdventureEnd--></T>
+                            <T>252301<!--LootActions: loot_Adventurous_AdventuringGain_OneShot--></T>
+                          </L>
+                          <L n="weight_modifiers">
+                            <U />
+                          </L>
+                        </U>
+                      </L>
+                      <V n="display_text" t="single">
+                        <T n="single">0xBFC1131E<!--String: "Volver a la entrada de la cueva"--></T>
+                      </V>
+                    </U>
+                  </L>
+                  <V n="_visibility" t="show_dialog">
+                    <U n="show_dialog">
+                      <V t="enabled" n="icon">
+                        <V t="resource_key" n="enabled">
+                          <U n="resource_key">
+                            <T n="key" p="InGame\UI\Icons\Headlines\Final\headline_maptreasure.png">2f7d0004:00000000:b9d25ec85100e581</T>
+                          </U>
+                        </V>
+                      </V>
+                      <V n="text" t="single">
+                        <T n="single">0xFC41119A<!--String: "{0.SimFirstName} consigue avanzar sin esfuerzo por un sencillo sendero lleno de musgo hasta que ve la entrada a una hermosa gruta."--></T>
+                      </V>
+                      <V t="enabled" n="text_tokens">
+                        <U n="enabled">
+                          <L n="tokens">
+                            <V t="participant_type" />
+                          </L>
+                        </U>
+                      </V>
+                    </U>
+                  </V>
+                </U>
+              </V>
+            </U>
+          </U>
+          <U>
+            <E n="key">RabbitHole_Cave_Start</E>
+            <U n="value">
+              <V n="aventure_moment" t="literal">
+                <U n="literal">
+                  <L n="_finish_actions">
+                    <U>
+                      <L n="action_results">
+                        <U>
+                          <L n="loot_actions">
+                            <T>252301<!--LootActions: loot_Adventurous_AdventuringGain_OneShot--></T>
+                          </L>
+                          <L n="next_moments">
+                            <E>RabbitHole_Cave_1_Fail</E>
+                          </L>
+                          <L n="weight_modifiers">
+                            <U />
+                          </L>
+                        </U>
+                      </L>
+                      <V n="display_text" t="single">
+                        <T n="single">0xF80A0714<!--String: "Seguir el camino estrecho"--></T>
+                      </V>
+                    </U>
+                    <U>
+                      <L n="action_results">
+                        <U>
+                          <L n="loot_actions">
+                            <T>252301<!--LootActions: loot_Adventurous_AdventuringGain_OneShot--></T>
+                          </L>
+                          <L n="next_moments">
+                            <E>RabbitHole_Cave_1_Success</E>
+                          </L>
+                        </U>
+                      </L>
+                      <V n="display_text" t="single">
+                        <T n="single">0x84907954<!--String: "Seguir el camino ancho"--></T>
+                      </V>
+                    </U>
+                  </L>
+                  <V n="_visibility" t="show_dialog">
+                    <U n="show_dialog">
+                      <V t="enabled" n="icon">
+                        <V t="resource_key" n="enabled">
+                          <U n="resource_key">
+                            <T n="key" p="InGame\UI\Icons\Headlines\Final\headline_maptreasure.png">2f7d0004:00000000:b9d25ec85100e581</T>
+                          </U>
+                        </V>
+                      </V>
+                      <V n="text" t="single">
+                        <T n="single">0x1E5E12D0<!--String: "Como {M0.buen explorador intrépido}{F0.buena exploradora intrépida}, {0.SimFirstName} decide adentrarse en la cueva. Hay dos caminos. El más estrecho presenta espacios un pelín justos entre estalactitas y estalagmitas, pero {0.SimFirstName} podría atravesarlos si se aprieta un poco."--></T>
+                      </V>
+                      <V t="enabled" n="text_tokens">
+                        <U n="enabled">
+                          <L n="tokens">
+                            <V t="participant_type" />
+                          </L>
+                        </U>
+                      </V>
+                      <V t="enabled" n="title">
+                        <T n="enabled">0xCCDC5F5E<!--String: "Explorando cueva"--></T>
+                      </V>
+                    </U>
+                  </V>
+                </U>
+              </V>
+            </U>
+          </U>
+          <U>
+            <E n="key">Rabbithole_Cave_2_Success</E>
+            <U n="value">
+              <V n="aventure_moment" t="literal">
+                <U n="literal">
+                  <L n="_finish_actions">
+                    <U>
+                      <L n="action_results">
+                        <U>
+                          <L n="loot_actions">
+                            <T>252301<!--LootActions: loot_Adventurous_AdventuringGain_OneShot--></T>
+                          </L>
+                          <L n="next_moments">
+                            <E>RabbitHole_Cave_3_Success</E>
+                          </L>
+                          <L n="weight_modifiers">
+                            <U />
+                          </L>
+                        </U>
+                      </L>
+                      <V n="display_text" t="single">
+                        <T n="single">0xEC2A6D0F<!--String: "Saltar al saliente"--></T>
+                      </V>
+                    </U>
+                    <U>
+                      <L n="action_results">
+                        <U>
+                          <L n="loot_actions">
+                            <T>252301<!--LootActions: loot_Adventurous_AdventuringGain_OneShot--></T>
+                          </L>
+                          <L n="next_moments">
+                            <E>RabbitHole_Cave_3_Fail</E>
+                          </L>
+                          <L n="weight_modifiers">
+                            <U />
+                          </L>
+                        </U>
+                      </L>
+                      <V n="display_text" t="single">
+                        <T n="single">0xFEF7523D<!--String: "Seguir avanzando"--></T>
+                      </V>
+                    </U>
+                  </L>
+                  <V n="_visibility" t="show_dialog">
+                    <U n="show_dialog">
+                      <V t="enabled" n="icon">
+                        <V t="resource_key" n="enabled">
+                          <U n="resource_key">
+                            <T n="key" p="InGame\UI\Icons\Headlines\Final\headline_maptreasure.png">2f7d0004:00000000:b9d25ec85100e581</T>
+                          </U>
+                        </V>
+                      </V>
+                      <V n="text" t="single">
+                        <T n="single">0x59ED3145<!--String: "{0.SimFirstName} se aventura con cuidado hacia el interior de un oscuro abismo, bajando a tientas por unos escalones astillados. Tras un largo descenso, una tenue luz azul celeste empieza a llenar el espacio inferior. Puede saltar a un oscuro saliente lleno de musgo o seguir avanzando hacia la luz azul."--></T>
+                      </V>
+                      <V t="enabled" n="text_tokens">
+                        <U n="enabled">
+                          <L n="tokens">
+                            <V t="participant_type" />
+                          </L>
+                        </U>
+                      </V>
+                      <V t="enabled" n="title">
+                        <T n="enabled">0xCCDC5F5E<!--String: "Explorando cueva"--></T>
+                      </V>
+                    </U>
+                  </V>
+                </U>
+              </V>
+            </U>
+          </U>
+        </L>
+        <L n="_initial_moments">
+          <U>
+            <E n="adventure_moment_key">RabbitHole_Cave_Start</E>
+          </U>
+        </L>
+        <T n="_resumable">False</T>
+        <U n="_trigger_interval">
+          <T n="lower_bound">5</T>
+          <T n="upper_bound">10</T>
+        </U>
+        <V t="at_beginning" n="timing">
+          <U n="at_beginning">
+            <V t="enabled" n="offset_time">
+              <T n="enabled">5</T>
+            </V>
+          </U>
+        </V>
+      </U>
+    </V>
+  </L>
+  <V t="disabled" n="content_score" />
+  <T n="counts_as_inside">True</T>
+  <T n="display_name">0xF419DCF4<!--String: "Explorar"--></T>
+  <U n="display_name_text_tokens">
+    <L n="tokens">
+      <V t="participant_type">
+        <U n="participant_type">
+          <V t="from_participant" n="objects">
+            <U n="from_participant">
+              <E n="participant">Actor</E>
+            </U>
+          </V>
+        </U>
+      </V>
+      <V t="participant_type">
+        <U n="participant_type">
+          <V t="from_participant" n="objects">
+            <U n="from_participant">
+              <E n="participant">Object</E>
+            </U>
+          </V>
+        </U>
+      </V>
+    </L>
+  </U>
+  <L n="interaction_category_tags">
+    <E>Interaction_Super</E>
+    <E>Interaction_All</E>
+  </L>
+  <V n="outcome" t="single">
+    <U n="single">
+      <U n="actions">
+        <L n="loot_list">
+          <T>77468<!--LootActions: Loot_RabbitHoleCave_AdventureStart--></T>
+          <T>103007<!--LootActions: loot_Buff_Trait_Squeamish_Nauseous_Cave--></T>
+        </L>
+      </U>
+    </U>
+  </V>
+  <E n="scoring_priority">NORMAL</E>
+  <T n="subaction_selection_weight">3</T>
+  <E n="target_type">OBJECT</E>
+  <L n="test_globals">
+    <V t="location">
+      <U n="location">
+        <U n="location_tests">
+          <V n="is_venue_type" t="enabled">
+            <U n="enabled">
+              <T n="negate">True</T>
+              <T n="venue_type">98133<!--Venue: venue_HiddenCave--></T>
+            </U>
+          </V>
+        </U>
+        <E n="subject">Object</E>
+      </U>
+    </V>
+    <V t="sim_info">
+      <U n="sim_info">
+        <V t="specified" n="ages">
+          <L n="specified">
+            <E>TEEN</E>
+            <E>YOUNGADULT</E>
+            <E>ADULT</E>
+            <E>ELDER</E>
+            <E>CHILD</E>
+          </L>
+        </V>
+        <V t="specified" n="species">
+          <U n="specified">
+            <L n="species">
+              <E />
+            </L>
+          </U>
+        </V>
+        <E n="who">Actor</E>
+      </U>
+    </V>
+  </L>
+  <L n="tests">
+    <L>
+      <V t="state">
+        <U n="state">
+          <T n="value">75555<!--ObjectStateValue: RabbitHole_Cave_Open--></T>
+        </U>
+      </V>
+    </L>
+  </L>
+  <T n="time_overhead">30</T>
+</I>

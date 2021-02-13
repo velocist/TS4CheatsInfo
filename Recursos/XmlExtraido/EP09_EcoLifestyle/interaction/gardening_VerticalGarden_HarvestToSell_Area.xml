@@ -1,0 +1,310 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<I c="SuperInteraction" i="interaction" m="interactions.base.super_interaction" n="gardening_VerticalGarden_HarvestToSell_Area" s="235293">
+  <L n="_constraints">
+    <U>
+      <L n="constraints">
+        <U>
+          <V n="value" t="posture">
+            <U n="posture">
+              <L n="posture_manifest_tuning">
+                <U>
+                  <V n="posture_type" t="enabled">
+                    <T n="enabled">15537<!--MobilePosture: posture_Stand--></T>
+                  </V>
+                </U>
+              </L>
+            </U>
+          </V>
+        </U>
+        <U>
+          <V n="value" t="circle">
+            <U n="circle">
+              <T n="radius">1</T>
+            </U>
+          </V>
+        </U>
+      </L>
+    </U>
+  </L>
+  <V t="resource_key" n="_icon">
+    <U n="resource_key">
+      <T n="key" p="InGame\UI\Icons\InteractionQueue\IconQueueHarvest.png">2f7d0004:00000000:442953a176e56b82</T>
+    </U>
+  </V>
+  <V t="enabled" n="_saveable" />
+  <L n="_static_commodities">
+    <U>
+      <T n="static_commodity">168145<!--StaticCommodity: staticCommodity_Gardening_DoGardeningThings--></T>
+    </U>
+  </L>
+  <T n="allow_autonomous">False</T>
+  <T n="attention_cost">0.75</T>
+  <V t="one_shot" n="basic_content">
+    <U n="one_shot">
+      <V t="override" n="allow_holster">
+        <T n="override">True</T>
+      </V>
+      <U n="animation_ref">
+        <T n="factory">234790<!--AnimationElement: VerticalGarden_Planter_Harvest--></T>
+        <U n="overrides">
+          <T n="animation_context">True</T>
+        </U>
+      </U>
+    </U>
+  </V>
+  <L n="basic_extras">
+    <V t="loot">
+      <U n="loot">
+        <L n="loot_list">
+          <T>11081<!--LootActions: Skill_Loot_Dynamic_Tiny--></T>
+          <T>9636<!--LootActions: loot_Gardening_Harvest--></T>
+          <T>35510<!--LootActions: Loot_Gardening_SuperGreenThumb--></T>
+          <T>96887<!--LootActions: loot_Commodity_HygieneHands_ReduceHigh--></T>
+          <T>189825<!--LootActions: loot_Career_Gardening_DailyTask_SetMax--></T>
+        </L>
+        <V n="object_override" t="enabled">
+          <V n="enabled" t="from_gardening">
+            <U n="from_gardening">
+              <T n="distance">0.75</T>
+            </U>
+          </V>
+        </V>
+        <V t="on_xevt" n="timing" />
+      </U>
+    </V>
+    <V t="loot">
+      <U n="loot">
+        <L n="loot_list">
+          <T>34189<!--LootActions: loot_Gardening_Harvest_ResetGrowth--></T>
+        </L>
+        <V t="enabled" n="object_override">
+          <V t="from_gardening" n="enabled">
+            <U n="from_gardening">
+              <T n="distance">0.9</T>
+            </U>
+          </V>
+        </V>
+        <V t="at_end" n="timing" />
+      </U>
+    </V>
+    <V t="destroy_object">
+      <U n="destroy_object">
+        <V t="enabled" n="award_value" />
+        <V t="from_gardening" n="objects_to_destroy">
+          <U n="from_gardening">
+            <T n="distance">0.9</T>
+            <V t="harvestables" n="object_type" />
+          </U>
+        </V>
+        <V t="on_xevt" n="timing" />
+      </U>
+    </V>
+  </L>
+  <V t="enabled" n="canonical_animation">
+    <U n="enabled">
+      <T n="factory">234790<!--AnimationElement: VerticalGarden_Planter_Harvest--></T>
+    </U>
+  </V>
+  <V t="disabled" n="content_score" />
+  <T n="display_name">0xF1AE179<!--String: "Vender {S2.{S3.ObjectName}}{P2.{P3.ObjectName}} de la zona circundante"--></T>
+  <V t="testable" n="display_name_overrides">
+    <U n="testable">
+      <L n="overrides">
+        <U>
+          <V t="disabled" n="new_display_name" />
+          <V t="enabled" n="new_pie_menu_icon">
+            <V n="enabled" t="tradition" />
+          </V>
+          <L n="test">
+            <L>
+              <V t="holiday_tradition">
+                <U n="holiday_tradition">
+                  <U n="tradition_filter">
+                    <V n="whitelist" t="specify">
+                      <U n="specify">
+                        <L n="whitelist">
+                          <T>182135<!--HolidayTradition: holidayTradition_Gardening--></T>
+                        </L>
+                      </U>
+                    </V>
+                  </U>
+                </U>
+              </V>
+            </L>
+          </L>
+        </U>
+      </L>
+    </U>
+  </V>
+  <U n="display_name_text_tokens">
+    <L n="tokens">
+      <V t="participant_type">
+        <U n="participant_type">
+          <V t="from_participant" n="objects">
+            <U n="from_participant">
+              <E n="participant">Actor</E>
+            </U>
+          </V>
+        </U>
+      </V>
+      <V t="participant_type">
+        <U n="participant_type">
+          <V t="from_participant" n="objects">
+            <U n="from_participant">
+              <E n="participant">Object</E>
+            </U>
+          </V>
+        </U>
+      </V>
+      <V t="participant_count">
+        <U n="participant_count">
+          <V t="from_gardening" n="objects">
+            <U n="from_gardening">
+              <T n="distance">0.75</T>
+              <V t="harvestables" n="object_type" />
+            </U>
+          </V>
+        </U>
+      </V>
+      <V t="participant_type">
+        <U n="participant_type">
+          <V t="single" n="formatter">
+            <U n="single">
+              <V n="mismatch_name" t="enabled">
+                <T n="enabled">0x7B02B4FB<!--String: "{S.Producto cosechable}{P.Productos cosechables}"--></T>
+              </V>
+            </U>
+          </V>
+          <V t="from_gardening" n="objects">
+            <U n="from_gardening">
+              <T n="distance">0.75</T>
+              <V t="harvestables" n="object_type" />
+            </U>
+          </V>
+        </U>
+      </V>
+      <V t="interaction_payout" />
+      <V t="participant_type">
+        <U n="participant_type">
+          <V t="bullet_list" n="formatter">
+            <U n="bullet_list">
+              <T n="bullet_text">0x743E4007<!--String: "{1.Number} {S1.{S0.ObjectName}}{P1.{P0.ObjectName}}"--></T>
+            </U>
+          </V>
+          <V t="from_gardening" n="objects">
+            <U n="from_gardening">
+              <T n="distance">0.75</T>
+              <V t="harvestables" n="object_type" />
+            </U>
+          </V>
+        </U>
+      </V>
+    </L>
+  </U>
+  <V t="enabled" n="display_tooltip">
+    <T n="enabled">0x3E6F5FB7<!--String: "Cosechas y ventas:\n{5.String}"--></T>
+  </V>
+  <L n="interaction_category_tags">
+    <E>Interaction_Skill_Gardening</E>
+    <E>Interaction_Super</E>
+    <E>Interaction_All</E>
+    <E>Interaction_Lifestyles_Outdoorsy_FlexibleLength</E>
+    <E>Interaction_Lifestyles_AdrenalineSeeker_Mundane</E>
+  </L>
+  <L n="mood_list" />
+  <V t="none" n="outcome" />
+  <T n="pie_menu_priority">4</T>
+  <E n="scoring_priority">NORMAL</E>
+  <U n="skill_loot_data">
+    <E n="effectiveness">Small</E>
+    <T n="stat">16700<!--Skill: statistic_Skill_AdultMajor_Gardening--></T>
+  </U>
+  <T n="subaction_selection_weight">3</T>
+  <V t="literal" n="super_affordance_compatibility">
+    <U n="literal">
+      <V n="default_inclusion" t="include_all">
+        <U n="include_all">
+          <L n="exclude_lists">
+            <T>75763<!--AffordanceList: AffordanceList_Painting--></T>
+            <T>30816<!--AffordanceList: affordanceList_FoodConsume--></T>
+          </L>
+        </U>
+      </V>
+    </U>
+  </V>
+  <E n="target_type">OBJECT</E>
+  <V t="enabled" n="test_disallow_while_running" />
+  <L n="test_globals">
+    <V t="location">
+      <U n="location">
+        <U n="location_tests">
+          <V t="Is_or_is_not_on_active_lot" n="is_on_active_lot" />
+        </U>
+        <E n="subject">Object</E>
+      </U>
+    </V>
+    <V t="sim_info">
+      <U n="sim_info">
+        <V t="specified" n="ages" />
+        <V t="specified" n="species">
+          <U n="specified">
+            <L n="species">
+              <E />
+            </L>
+          </U>
+        </V>
+        <E n="who">Actor</E>
+      </U>
+    </V>
+    <V t="state">
+      <U n="state">
+        <E n="operator">NOTEQUAL</E>
+        <T n="value">39611<!--CommodityBasedObjectStateValue: FireState_Burn_Material_Change--></T>
+        <E n="who">ObjectParent</E>
+      </U>
+    </V>
+    <V t="state">
+      <U n="state">
+        <V t="always_pass" n="fallback_behavior" />
+        <E n="operator">NOTEQUAL</E>
+        <T n="value">32491<!--ObjectStateValue: Cowplant_GrowthState_Mature--></T>
+      </U>
+    </V>
+    <V t="state">
+      <U n="state">
+        <E n="operator">NOTEQUAL</E>
+        <T n="value">39330<!--CommodityBasedObjectStateValue: PlantEvolution_0_Death--></T>
+      </U>
+    </V>
+    <V t="test_set_reference">
+      <T n="test_set_reference">97576<!--TestSetInstance: testSet_Garden_Blossoming_UsedSlot--></T>
+    </V>
+    <V t="count">
+      <U n="count">
+        <V t="from_participant" n="participant">
+          <U n="from_participant">
+            <E n="participant">ObjectChildren</E>
+          </U>
+        </V>
+        <V n="threshold" t="from_count">
+          <U n="from_count">
+            <E n="comparison">LESS</E>
+            <V t="from_gardening" n="participant">
+              <U n="from_gardening">
+                <T n="distance">0.75</T>
+                <V t="harvestables" n="object_type" />
+              </U>
+            </V>
+          </U>
+        </V>
+      </U>
+    </V>
+    <V t="test_set_reference">
+      <T n="test_set_reference">28305<!--TestSetInstance: testSet_EmotionNotMiserable--></T>
+    </V>
+    <V t="test_set_reference">
+      <T n="test_set_reference">28176<!--TestSetInstance: testSet_EmotionNotStressed--></T>
+    </V>
+  </L>
+  <T n="time_overhead">5</T>
+</I>

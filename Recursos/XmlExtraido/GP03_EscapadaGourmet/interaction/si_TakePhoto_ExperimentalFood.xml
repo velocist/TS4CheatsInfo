@@ -1,0 +1,209 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<I c="SuperInteraction" i="interaction" m="interactions.base.super_interaction" n="si_TakePhoto_ExperimentalFood" s="133275">
+  <L n="_constraints">
+    <U>
+      <L n="constraints">
+        <U>
+          <V n="value" t="facing" />
+        </U>
+      </L>
+    </U>
+    <U>
+      <L n="constraints">
+        <U>
+          <V n="value" t="circle">
+            <U n="circle">
+              <T n="radius">4</T>
+            </U>
+          </V>
+        </U>
+      </L>
+    </U>
+    <U>
+      <L n="constraints">
+        <U>
+          <V n="value" t="posture">
+            <U n="posture">
+              <L n="posture_manifest_tuning">
+                <U>
+                  <V n="posture_type" t="enabled">
+                    <T n="enabled">15535<!--Posture: posture_Sit--></T>
+                  </V>
+                </U>
+              </L>
+            </U>
+          </V>
+        </U>
+      </L>
+    </U>
+  </L>
+  <V t="enabled" n="_saveable" />
+  <T n="allow_autonomous">False</T>
+  <T n="attention_cost">0.5</T>
+  <V t="one_shot" n="basic_content">
+    <U n="one_shot">
+      <U n="animation_ref">
+        <T n="factory">133377<!--AnimationElement: ExperimentalFoodPhoto_takePicture--></T>
+      </U>
+    </U>
+  </V>
+  <L n="basic_extras">
+    <V t="notification">
+      <U n="notification">
+        <V n="dialog" t="single">
+          <V n="single" t="literal">
+            <U n="literal">
+              <V t="enabled" n="icon">
+                <V t="participant" n="enabled">
+                  <U n="participant">
+                    <L n="participant_type">
+                      <E>Object</E>
+                    </L>
+                  </U>
+                </V>
+              </V>
+              <V t="enabled" n="secondary_icon">
+                <V t="participant" n="enabled" />
+              </V>
+              <V t="single" n="text">
+                <T n="single">0x5F73FACD<!--String: "{0.SimFirstName} le ha sacado una foto a un plato de comida experimental. Puede encontrarse en su inventario."--></T>
+              </V>
+              <V n="text_tokens" t="enabled">
+                <U n="enabled">
+                  <L n="tokens">
+                    <V t="participant_type" />
+                    <V t="participant_type">
+                      <U n="participant_type">
+                        <V n="objects" t="from_participant">
+                          <U n="from_participant">
+                            <E n="participant">Object</E>
+                          </U>
+                        </V>
+                      </U>
+                    </V>
+                  </L>
+                </U>
+              </V>
+            </U>
+          </V>
+        </V>
+      </U>
+    </V>
+    <V t="create_object">
+      <U n="create_object">
+        <V t="create_photo_object" n="creation_data" />
+        <V n="location" t="inventory" />
+        <E n="owner_sim">Actor</E>
+      </U>
+    </V>
+  </L>
+  <V t="disabled" n="content_score" />
+  <T n="display_name">0x76D6228A<!--String: "Hacer una foto de comida experimental"--></T>
+  <U n="display_name_text_tokens">
+    <L n="tokens">
+      <V t="participant_type">
+        <U n="participant_type">
+          <V n="objects" t="from_participant">
+            <U n="from_participant">
+              <E n="participant">Actor</E>
+            </U>
+          </V>
+        </U>
+      </V>
+      <V t="participant_type">
+        <U n="participant_type">
+          <V n="objects" t="from_participant">
+            <U n="from_participant">
+              <E n="participant">Object</E>
+            </U>
+          </V>
+        </U>
+      </V>
+    </L>
+  </U>
+  <L n="interaction_category_tags">
+    <E>Interaction_Super</E>
+    <E>Interaction_All</E>
+  </L>
+  <V n="outcome" t="single">
+    <U n="single">
+      <U n="actions">
+        <L n="loot_list">
+          <T>133383<!--LootActions: loot_Skill_ExperimentalFoodPhoto_GourmetCooking_Small--></T>
+          <T>133384<!--LootActions: loot_Commodity_Motive_Fun_ExperimentalFoodPhoto--></T>
+        </L>
+      </U>
+    </U>
+  </V>
+  <E n="scoring_priority">NORMAL</E>
+  <T n="subaction_selection_weight">1</T>
+  <V t="literal" n="super_affordance_compatibility">
+    <U n="literal">
+      <V n="default_inclusion" t="include_all">
+        <U n="include_all">
+          <L n="exclude_affordances">
+            <T>133275<!--SuperInteraction: si_TakePhoto_ExperimentalFood--></T>
+            <T>137548<!--SuperInteraction: si_TakePhoto_ExperimentalFood_CurrentlyEating_Continuation--></T>
+            <T>137545<!--SuperInteraction: si_TakePhoto_ExperimentalFood_PlayerSim_CurrentlyEating--></T>
+          </L>
+        </U>
+      </V>
+    </U>
+  </V>
+  <E n="target_type">OBJECT</E>
+  <L n="test_globals">
+    <V t="sim_info">
+      <U n="sim_info">
+        <V t="specified" n="ages">
+          <L n="specified">
+            <E>TEEN</E>
+            <E>YOUNGADULT</E>
+            <E>ADULT</E>
+            <E>ELDER</E>
+            <E>CHILD</E>
+          </L>
+        </V>
+        <V t="specified" n="species">
+          <U n="specified">
+            <L n="species">
+              <E />
+            </L>
+          </U>
+        </V>
+        <E n="who">Actor</E>
+      </U>
+    </V>
+    <V t="state">
+      <U n="state">
+        <E n="operator">NOTEQUAL</E>
+        <T n="value">15108<!--CommodityBasedObjectStateValue: Consumable_Empty--></T>
+      </U>
+    </V>
+    <V t="buff">
+      <U n="buff">
+        <L n="blacklist">
+          <T>9273<!--Buff: buff_Sim_IsEating--></T>
+          <T>137573<!--Buff: buff_Food_HasEatenRecently_IncludingCancel--></T>
+        </L>
+      </U>
+    </V>
+    <V t="object_criteria">
+      <U n="object_criteria">
+        <V t="tags" n="identity_test">
+          <U n="tags">
+            <L n="tag_set">
+              <E>Func_Table</E>
+            </L>
+          </U>
+        </V>
+        <T n="owned">False</T>
+        <V t="single_object" n="subject_specific_tests">
+          <U n="single_object">
+            <E n="target">ObjectParent</E>
+          </U>
+        </V>
+      </U>
+    </V>
+  </L>
+  <T n="time_overhead">30</T>
+</I>

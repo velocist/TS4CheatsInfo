@@ -1,0 +1,255 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<I c="SuperInteraction" i="interaction" m="interactions.base.super_interaction" n="powerGenerator_DangerButton_set3" s="242409">
+  <V t="enabled" n="_saveable" />
+  <T n="attention_cost">0.5</T>
+  <V t="flexible_length" n="basic_content">
+    <U n="flexible_length">
+      <L n="conditional_actions">
+        <V t="literal">
+          <U n="literal">
+            <L n="conditions">
+              <V t="time_based">
+                <U n="time_based">
+                  <T n="max_time">15</T>
+                  <T n="min_time">14</T>
+                </U>
+              </V>
+            </L>
+          </U>
+        </V>
+      </L>
+      <V n="content" t="looping_content">
+        <U n="looping_content">
+          <U n="animation_ref">
+            <T n="factory">238807<!--AnimationElement: powerGenerator_DangerMode--></T>
+          </U>
+        </U>
+      </V>
+      <V n="periodic_stat_change" t="enabled">
+        <U n="enabled">
+          <L n="operations">
+            <V t="statistic_change">
+              <U n="statistic_change">
+                <T n="amount">1</T>
+                <T n="stat">233027<!--Commodity: commodity_Utilities_Power--></T>
+                <L n="subject">
+                  <E>Lot</E>
+                </L>
+              </U>
+            </V>
+          </L>
+        </U>
+      </V>
+    </U>
+  </V>
+  <L n="basic_extras">
+    <V t="state_change">
+      <U n="state_change">
+        <V t="single_value" n="new_value">
+          <U n="single_value">
+            <T n="new_value">224566<!--ObjectStateValue: utilities_Power_Production_On--></T>
+          </U>
+        </V>
+        <V t="on_xevt" n="timing">
+          <U n="on_xevt">
+            <E n="criticality">OnCancelOrException</E>
+            <T n="xevt_id">200</T>
+          </U>
+        </V>
+      </U>
+    </V>
+    <V t="state_change">
+      <U n="state_change">
+        <V n="new_value" t="single_value">
+          <U n="single_value">
+            <T n="new_value">238813<!--ObjectStateValue: powerGenerator_DangerMode_On--></T>
+          </U>
+        </V>
+        <V t="on_xevt" n="timing">
+          <U n="on_xevt">
+            <E n="criticality">OnCancelOrException</E>
+            <T n="xevt_id">200</T>
+          </U>
+        </V>
+      </U>
+    </V>
+    <V t="state_change">
+      <U n="state_change">
+        <V t="single_value" n="new_value">
+          <U n="single_value">
+            <T n="new_value">238812<!--ObjectStateValue: powerGenerator_DangerMode_Off--></T>
+          </U>
+        </V>
+        <V n="timing" t="on_xevt">
+          <U n="on_xevt">
+            <E n="criticality">OnCancelOrException</E>
+            <T n="xevt_id">201</T>
+          </U>
+        </V>
+      </U>
+    </V>
+    <V t="vfx">
+      <U n="vfx">
+        <V t="at_beginning" n="timing" />
+        <U n="vfx">
+          <T n="effect_name">ep09_obj_power_generator_shake_set3</T>
+        </U>
+        <V t="interaction" n="vfx_lifetime" />
+      </U>
+    </V>
+  </L>
+  <V t="disabled" n="content_score" />
+  <T n="display_name">0x2A19D549<!--String: "Pulsar el botón rojo de "PELIGRO""--></T>
+  <U n="display_name_text_tokens">
+    <L n="tokens">
+      <V t="participant_type">
+        <U n="participant_type">
+          <V t="from_participant" n="objects">
+            <U n="from_participant">
+              <E n="participant">Actor</E>
+            </U>
+          </V>
+        </U>
+      </V>
+      <V t="participant_type">
+        <U n="participant_type">
+          <V t="from_participant" n="objects">
+            <U n="from_participant">
+              <E n="participant">Object</E>
+            </U>
+          </V>
+        </U>
+      </V>
+    </L>
+  </U>
+  <L n="interaction_category_tags">
+    <E>Interaction_Super</E>
+    <E>Interaction_All</E>
+    <E>Interaction_Lifestyles_Techie_OneShot</E>
+  </L>
+  <V t="test_based" n="outcome">
+    <U n="test_based">
+      <L n="tested_outcomes">
+        <U>
+          <L n="potential_outcomes">
+            <U>
+              <U n="outcome">
+                <V n="animation_ref" t="enabled">
+                  <U n="enabled">
+                    <T n="factory">238809<!--AnimationElement: powerGenerator_DangerMode_Electrocute--></T>
+                  </U>
+                </V>
+                <L n="basic_extras">
+                  <V t="state_change">
+                    <U n="state_change">
+                      <V t="single_value" n="new_value">
+                        <U n="single_value">
+                          <T n="new_value">238812<!--ObjectStateValue: powerGenerator_DangerMode_Off--></T>
+                        </U>
+                      </V>
+                      <V t="immediately" n="timing" />
+                    </U>
+                  </V>
+                  <V t="buff_fire_and_forget">
+                    <U n="buff_fire_and_forget">
+                      <U n="buff">
+                        <V t="enabled" n="buff_reason">
+                          <T n="enabled">0x38ECC79B<!--String: "(Por sufrir electrocución)"--></T>
+                        </V>
+                        <T n="buff_type">8686<!--Buff: buff_Death_Electrocution_Warning--></T>
+                      </U>
+                    </U>
+                  </V>
+                </L>
+                <T n="force_outcome_on_exit">False</T>
+                <L n="loot_list">
+                  <T>238814<!--LootActions: loot_Buff_Hypercharged--></T>
+                  <T>40548<!--LootActions: Loot_Fire_Object--></T>
+                  <T>8936<!--LootActions: loot_Death_Electrocution_Outcome--></T>
+                </L>
+              </U>
+              <U n="weight">
+                <T n="base_value">2</T>
+              </U>
+            </U>
+            <U>
+              <U n="outcome">
+                <L n="basic_extras">
+                  <V t="state_change">
+                    <U n="state_change">
+                      <V t="single_value" n="new_value">
+                        <U n="single_value">
+                          <T n="new_value">238812<!--ObjectStateValue: powerGenerator_DangerMode_Off--></T>
+                        </U>
+                      </V>
+                      <V t="immediately" n="timing" />
+                    </U>
+                  </V>
+                </L>
+                <T n="force_outcome_on_exit">False</T>
+              </U>
+              <U n="weight">
+                <T n="base_value">1</T>
+              </U>
+            </U>
+          </L>
+        </U>
+      </L>
+    </U>
+  </V>
+  <E n="scoring_priority">NORMAL</E>
+  <T n="subaction_selection_weight">1</T>
+  <E n="target_type">OBJECT</E>
+  <L n="test_globals">
+    <V t="sim_info">
+      <U n="sim_info">
+        <V t="specified" n="ages" />
+        <V t="specified" n="species">
+          <U n="specified">
+            <L n="species">
+              <E />
+            </L>
+          </U>
+        </V>
+        <E n="who">Actor</E>
+      </U>
+    </V>
+    <V t="object_criteria">
+      <U n="object_criteria">
+        <V n="identity_test" t="definition_id">
+          <U n="definition_id">
+            <T n="actual_object">248571</T>
+          </U>
+        </V>
+        <V t="single_object" n="subject_specific_tests" />
+      </U>
+    </V>
+    <V t="state">
+      <U n="state">
+        <V n="tooltip" t="enabled">
+          <T n="enabled">0xCEB34FF<!--String: "Este objeto no se puede encender mientras está averiado."--></T>
+        </V>
+        <T n="value">15081<!--ObjectStateValue: BrokenState_Unbroken--></T>
+      </U>
+    </V>
+    <V t="state">
+      <U n="state">
+        <E n="operator">NOTEQUAL</E>
+        <V n="tooltip" t="enabled">
+          <T n="enabled">0xC085FF88<!--String: "Este generador de corriente necesita combustible para arrancar."--></T>
+        </V>
+        <T n="value">232094<!--CommodityBasedObjectStateValue: powerGenerator_Fuel_Empty--></T>
+      </U>
+    </V>
+    <V t="state">
+      <U n="state">
+        <E n="operator">NOTEQUAL</E>
+        <V n="tooltip" t="enabled">
+          <T n="enabled">0xB89B7F56<!--String: "El generador de corriente debe estar en marcha para que este botón haga algo."--></T>
+        </V>
+        <T n="value">231448<!--ObjectStateValue: powerGenerator_PowerProduction_Off--></T>
+      </U>
+    </V>
+  </L>
+  <T n="time_overhead">30</T>
+</I>

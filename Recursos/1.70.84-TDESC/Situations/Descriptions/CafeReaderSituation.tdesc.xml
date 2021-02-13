@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+
+<TuningRoot>
+    <Instance instance_type="situation" class="CafeReaderSituation" module="venues.cafe_venue.cafe_reader_situation" muid="4D05A2985B2B434F" description="Situation for the Reader at the Cafe Venue." instance_subclasses_only="False" parents="SituationComplexCommon, SituationComplex, Situation" path="Situations\Descriptions" use_guid_for_reference="True">
+        <Deleted name="_buff" muid="F2A194AA4690FF8D" />
+
+        <Deleted name="_cost" muid="3FE920C585191BC6" />
+
+        <Deleted name="_display_name" muid="3654FF098536A4B8" />
+
+        <Deleted name="_icon" muid="F1A45C850A5B7E3" />
+
+        <Deleted name="_implies_greeted_status" muid="9E07140AF840B0B8" />
+
+        <Deleted name="_initiating_sim_tests" muid="B4EB0EEA73D8301C" />
+
+        <Deleted name="_level_data" muid="F503B1D3388C383A" />
+
+        <Deleted name="_main_goal_visibility_test" muid="425F8B324BC0C6FF" />
+
+        <Deleted name="_relationship_between_job_members" muid="C87C865663E06F23" />
+
+        <Deleted name="_resident_job" muid="BADF3C1D1FE47C67" />
+
+        <Deleted name="audio_sting_on_start" muid="5940AAB301F56648" />
+
+        <Deleted name="background_audio" muid="F8479712A707D4B8" />
+
+        <TunableTuple name="cafe_reader_job" class="TunableSituationJobAndRoleState" display="Cafe Reader Job" muid="8AF3BB2D46E6BA92" description="The default job for a Sim in this situation. This shouldn't&#xA;actually matter because the Situation will put the Sim in the Order&#xA;Coffee State when they are added." Deprecated="False" filter="0" group="General">
+            <Tunable type="role_state" name="role_state" class="TunableReference" display="Role State" muid="C8DCA9FCE7AB3BDE" description="A role state the sim assigned to the job will perform" allow_none="False" Deprecated="False" filter="0" group="General" />
+            <Tunable type="situation_job" name="situation_job" class="TunableReference" display="Situation Job" muid="9867C5E55AF0523F" description="A reference to a SituationJob that can be performed at this Situation." allow_none="False" Deprecated="False" filter="0" group="General" />
+        </TunableTuple>
+
+        <Deleted name="category" muid="4D80A10B5B2F6A7A" />
+
+        <Deleted name="compatible_venues" muid="C2821D12FB0A74E0" />
+
+        <Deleted name="creation_ui_option" muid="AFABAB5955641B13" />
+
+        <Deleted name="entitlement" muid="DC68D887CF36853C" />
+
+        <Deleted name="exclusivity" muid="7A85239753B6B3E8" />
+
+        <Deleted name="force_invite_only" muid="53A836632B95CF7C" />
+
+        <Deleted name="goal_button_text" muid="7FEFE8E3DE7111EC" />
+
+        <Deleted name="goal_sub_text" muid="D7548B9903F916FA" />
+
+        <Deleted name="highlight_first_incomplete_minor_goal" muid="2473E659CBF7CC0E" />
+
+        <Deleted name="job_display_ordering" muid="22E832FDE279C8D0" />
+
+        <Deleted name="main_goal" muid="3CD8F6336646E8EA" />
+
+        <Deleted name="main_goal_audio_sting" muid="99F582FA9FB0B576" />
+
+        <Deleted name="max_participants" muid="B84A56B9636FF786" />
+
+        <Deleted name="minor_goal_chains" muid="E273404540722B91" />
+
+        <TunableTuple name="order_coffee_state" class="Tunable_OrderCoffeeState" display="02_order_coffee_situation_state" muid="EB1CA00BDF9FF15E" description="The situation state used for when a Sim is ordering coffee as a Cafe&#xA;Reader Sim." Deprecated="False" filter="0" group="Situation State">
+            <Tunable type="bool" name="allow_join_situation" class="Tunable" default="True" display="Allow Join Situation" muid="F60412157C781C11" description="Whether the situation is allowed to join at this state." Deprecated="False" filter="0" group="General" />
+            <TunableTuple name="interaction_of_interest" class="TunableInteractionOfInterest" display="Interaction Of Interest" muid="2BB93053F8914757" description="The interaction that when run will cause GPE defined behavior&#xA;to run." Deprecated="False" filter="0" group="General">
+                <TunableList name="affordances" class="TunableList" display="Affordances" muid="5BCE35696E652416" description="The Sim must have started either any affordance in this list or an&#xA;interaction matching one of the tags in this tunable's Tags&#xA;field." Deprecated="False" filter="0" group="General">
+                    <Tunable type="interaction" class="TunableReference" muid="C00B42539069EFDF" allow_none="False" Deprecated="False" filter="0" group="General" pack_safe="True" />
+                </TunableList>
+                <TunableList name="tags" class="TunableSet" display="Tags" muid="24A3DD5271B3BBF9" description="The Sim must have run either an interaction matching one of these&#xA;Tags or an affordance from the list of Affordances in this&#xA;tunable." Deprecated="False" filter="0" group="General" unique_entries="true">
+                    <TunableEnum type="Tag" class="TunableEnumEntry" default="INVALID" muid="A16379981B43EA69" dynamic_entries="tag.Tag._elements" static_entries="tag.Tag" Deprecated="False" filter="0" group="General" />
+                </TunableList>
+            </TunableTuple>
+            <TunableList name="job_and_role_changes" class="TunableMapping" display="Job And Role Changes" muid="F4E31274BC47F83A" mapping_key="Situation Job" mapping_value="Role State" description="A mapping between situation jobs and role states that defines&#xA;what role states we want to switch to for sims on which jobs&#xA;when this situation state is entered." Deprecated="False" filter="0" group="General">
+                <TunableTuple class="TunableTuple" muid="3FC72A18EC686C19" Deprecated="False" filter="0" group="General">
+                    <Tunable type="role_state" name="Role State" class="TunableReference" display="Role State" muid="69CED83590459166" description="The role state that we will switch sims of the linked job&#xA;into." allow_none="False" Deprecated="False" filter="0" group="General" />
+                    <Tunable type="situation_job" name="Situation Job" class="TunableReference" display="Situation Job" muid="B1C820922DC03CCB" description="A reference to a SituationJob that we will use to change&#xA;sim's role state." allow_none="False" Deprecated="False" filter="0" group="General" />
+                </TunableTuple>
+            </TunableList>
+            <TunableVariant type="None" name="order_coffee_timeout" class="OptionalTunable" default="disabled" display="Order Coffee Timeout" muid="46BB89CA5AEFB47B" description="Optional tunable for how long to wait before progressing to the&#xA;next state. This is basically here if you don't care if they order&#xA;coffee all of the time." Deprecated="False" filter="0" group="General">
+                <Tunable name="disabled" class="TunableExistance" display="Disabled" muid="E8C641AE1D2EEDCC" />
+                <Tunable type="float" name="enabled" class="TunableSimMinute" default="60" display="Enabled" muid="7D5F1F60A2E72181" min="None" max="None" description="The length of time before moving onto the next state." tuning_state="NeedsTuning" Deprecated="False" filter="0" group="General" />
+            </TunableVariant>
+            <TunableVariant type="None" name="time_out" class="OptionalTunable" default="disabled" display="Time Out" muid="B4E6A7F9385865CF" description="How long this state will last before time expired. Please talk to the GPE who implemented the specific&#xA;situation to see what the state will do on time expired." Deprecated="False" filter="0" group="General">
+                <Tunable name="disabled" class="TunableExistance" display="Disabled" muid="E419F0BE091C2B73" />
+                <Tunable type="float" name="enabled" class="TunableSimMinute" default="15" display="Enabled" muid="97209ADA5FFCA259" min="1" max="None" tuning_state="NeedsTuning" Deprecated="False" filter="0" group="General" />
+            </TunableVariant>
+        </TunableTuple>
+
+        <TunableTuple name="pre_order_coffee_state" class="Tunable_PreOrderCoffeeState" display="01_pre_order_coffee_situation_state" muid="6FD5C5E5563FED29" description="The situation state used for when a Sim is arriving as a Cafe&#xA;Reader Sim." Deprecated="False" filter="0" group="Situation State">
+            <Tunable type="bool" name="allow_join_situation" class="Tunable" default="True" display="Allow Join Situation" muid="3F92EBB5F53D8CEF" description="Whether the situation is allowed to join at this state." Deprecated="False" filter="0" group="General" />
+            <TunableList name="job_and_role_changes" class="TunableMapping" display="Job And Role Changes" muid="3A75C25723ECC30D" mapping_key="Situation Job" mapping_value="Role State" description="A mapping between situation jobs and role states that defines&#xA;what role states we want to switch to for sims on which jobs&#xA;when this situation state is entered." Deprecated="False" filter="0" group="General">
+                <TunableTuple class="TunableTuple" muid="399DD40A1EC196B3" Deprecated="False" filter="0" group="General">
+                    <Tunable type="role_state" name="Role State" class="TunableReference" display="Role State" muid="6CFC3DCEDF475110" description="The role state that we will switch sims of the linked job&#xA;into." allow_none="False" Deprecated="False" filter="0" group="General" />
+                    <Tunable type="situation_job" name="Situation Job" class="TunableReference" display="Situation Job" muid="544953506469DE2A" description="A reference to a SituationJob that we will use to change&#xA;sim's role state." allow_none="False" Deprecated="False" filter="0" group="General" />
+                </TunableTuple>
+            </TunableList>
+            <TunableVariant type="None" name="time_out" class="OptionalTunable" default="disabled" display="Time Out" muid="75BAF2F3ADFCDEA2" description="How long this state will last before time expired. Please talk to the GPE who implemented the specific&#xA;situation to see what the state will do on time expired." Deprecated="False" filter="0" group="General">
+                <Tunable name="disabled" class="TunableExistance" display="Disabled" muid="352209BD08ECFEF1" />
+                <Tunable type="float" name="enabled" class="TunableSimMinute" default="15" display="Enabled" muid="F1B43EE442340FC9" min="1" max="None" tuning_state="NeedsTuning" Deprecated="False" filter="0" group="General" />
+            </TunableVariant>
+            <TunableTuple name="wait_to_order_duration" class="TunableInterval" display="Wait To Order Duration" muid="D996C31E5B6F64B7" description="The duration in Sim minutes for the Sim to wait before ordering coffee when&#xA;they spawn at the Cafe. Any behavior can be tuned for ths Sim to&#xA;perform before ordering coffee." Deprecated="False" filter="0" group="General">
+                <Tunable type="float" name="lower_bound" class="TunableSimMinute" default="10" display="Lower Bound" muid="3A0635115C2548D8" min="0" max="None" description="The lower bound of the interval." tuning_state="NeedsTuning" Deprecated="False" filter="0" group="General" />
+                <Tunable type="float" name="upper_bound" class="TunableSimMinute" default="100" display="Upper Bound" muid="65C1903C2CB0B277" min="None" max="None" description="The upper bound of the interval." tuning_state="NeedsTuning" Deprecated="False" filter="0" group="General" />
+            </TunableTuple>
+        </TunableTuple>
+
+        <TunableList name="reader_objects_to_create" class="TunableList" display="Reader Objects To Create" muid="70134BED50DF6FC9" description="A list of objects to randomly pick from for this type of Reader.&#xA;When the reader enters the state to read after they get their&#xA;coffee, we randomly create one of these objects and pass it to the&#xA;role affordances as the target." Deprecated="False" filter="0" group="General">
+            <Tunable type="object" class="TunableReference" muid="947840A1F2950A09" description="An object to create." allow_none="False" Deprecated="False" filter="0" group="General" />
+        </TunableList>
+
+        <TunableTuple name="reader_state" class="Tunable_ReaderState" display="03_reader_state" muid="98A73A25276DA044" description="The main state of the situation. This is where Sims will do &#xA;behavior after ordering coffee" Deprecated="False" filter="0" group="Situation State">
+            <Tunable type="bool" name="allow_join_situation" class="Tunable" default="True" display="Allow Join Situation" muid="3BA626CEDFF91824" description="Whether the situation is allowed to join at this state." Deprecated="False" filter="0" group="General" />
+            <TunableList name="job_and_role_changes" class="TunableMapping" display="Job And Role Changes" muid="7CB9D7652E28153B" mapping_key="Situation Job" mapping_value="Role State" description="A mapping between situation jobs and role states that defines&#xA;what role states we want to switch to for sims on which jobs&#xA;when this situation state is entered." Deprecated="False" filter="0" group="General">
+                <TunableTuple class="TunableTuple" muid="51DA81AC46964A81" Deprecated="False" filter="0" group="General">
+                    <Tunable type="role_state" name="Role State" class="TunableReference" display="Role State" muid="175721B5DAA10E20" description="The role state that we will switch sims of the linked job&#xA;into." allow_none="False" Deprecated="False" filter="0" group="General" />
+                    <Tunable type="situation_job" name="Situation Job" class="TunableReference" display="Situation Job" muid="A12F1ABF825DE79C" description="A reference to a SituationJob that we will use to change&#xA;sim's role state." allow_none="False" Deprecated="False" filter="0" group="General" />
+                </TunableTuple>
+            </TunableList>
+            <TunableVariant type="None" name="time_out" class="OptionalTunable" default="disabled" display="Time Out" muid="308F4439E228583E" description="How long this state will last before time expired. Please talk to the GPE who implemented the specific&#xA;situation to see what the state will do on time expired." Deprecated="False" filter="0" group="General">
+                <Tunable name="disabled" class="TunableExistance" display="Disabled" muid="20AA97B6AD38D6ED" />
+                <Tunable type="float" name="enabled" class="TunableSimMinute" default="15" display="Enabled" muid="8702D8383FB0302C" min="1" max="None" tuning_state="NeedsTuning" Deprecated="False" filter="0" group="General" />
+            </TunableVariant>
+        </TunableTuple>
+
+        <Deleted name="recommended_job_object_notification" muid="C22E47BD7F5DDCA7" />
+
+        <Deleted name="recommended_job_object_text" muid="C2CF5DF6161AA780" />
+
+        <Deleted name="screen_slam_bronze" muid="F477E2C021589F39" />
+
+        <Deleted name="screen_slam_gold" muid="9302410CFC3E14A9" />
+
+        <Deleted name="screen_slam_no_medal" muid="E023FC5F89BF1483" />
+
+        <Deleted name="screen_slam_silver" muid="13ED45049B1D1829" />
+
+        <Deleted name="situation_description" muid="36C135DBAB508B63" />
+
+        <Deleted name="suppress_scoring_progress_bar" muid="BC9D7F764258F371" />
+
+        <Deleted name="targeted_situation" muid="967B814664C630D9" />
+
+        <Deleted name="travel_request_behavior" muid="F83AC36A70933029" />
+
+        <Deleted name="venue_invitation_message" muid="A7F639DB72B64FEA" />
+
+        <Deleted name="venue_situation_player_job" muid="F5DA109DB2E36519" />
+    </Instance>
+
+    <VersionHistory>
+        <ActionList>
+            <Action type="kRemove" old_muid="937CF6B95C77173D" />
+        </ActionList>
+
+        <ActionList>
+            <Action type="kRename" old_muid="116BA8119DE9ECA5" new_muid="C2821D12FB0A74E0" />
+        </ActionList>
+
+        <ActionList>
+            <Action type="kRemove" old_muid="9D368E824C2DD0B" />
+            <Action type="kRemove" old_muid="8E0CCCD9580398C1" />
+        </ActionList>
+    </VersionHistory>
+</TuningRoot>

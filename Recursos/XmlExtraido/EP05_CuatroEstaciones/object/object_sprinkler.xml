@@ -1,0 +1,688 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<I c="GameObject" i="object" m="objects.game_object" n="object_sprinkler" s="179882">
+  <U n="_components">
+    <V n="flowing_puddle" t="enabled">
+      <U n="enabled">
+        <T n="max_distance">2</T>
+        <T n="max_num_puddles">1</T>
+        <T n="spawn_rate">90</T>
+      </U>
+    </V>
+    <V t="enabled" n="focus">
+      <U n="enabled">
+        <V t="globally" n="_focus_score">
+          <U n="globally">
+            <E n="base">LOW</E>
+          </U>
+        </V>
+      </U>
+    </V>
+    <V n="idle_component" t="enabled">
+      <U n="enabled">
+        <L n="idle_animation_map">
+          <U>
+            <T n="key">179888<!--ObjectStateValue: sprinkler_OnOff_Values_On--></T>
+            <T n="value">184276<!--ObjectAnimationElement: sprinkler_On--></T>
+          </U>
+          <U>
+            <T n="key">179889<!--ObjectStateValue: sprinkler_OnOff_Values_Off--></T>
+            <T n="value">184284<!--ObjectAnimationElement: sprinkler_Off--></T>
+          </U>
+          <U>
+            <T n="key">185915<!--ObjectStateValue: sprinkler_OnOff_Values_Broken--></T>
+            <T n="value">184277<!--ObjectAnimationElement: sprinkler_Break--></T>
+          </U>
+        </L>
+      </U>
+    </V>
+    <V t="enabled" n="line_of_sight" />
+    <V t="enabled" n="retail_component">
+      <V n="enabled" t="reference">
+        <T n="reference">115301<!--RetailComponent: retailComponent_Default_LowAppeal--></T>
+      </V>
+    </V>
+    <V n="state" t="enabled">
+      <U n="enabled">
+        <V n="delinquency_state_changes" t="enabled">
+          <L n="enabled">
+            <U>
+              <E n="key">WATER</E>
+              <L n="value">
+                <T>179889<!--ObjectStateValue: sprinkler_OnOff_Values_Off--></T>
+              </L>
+            </U>
+          </L>
+        </V>
+        <L n="state_triggers">
+          <U>
+            <L n="at_states">
+              <T>15076<!--CommodityBasedObjectStateValue: Brokenness_Broken--></T>
+            </L>
+            <V n="set_states" t="Set_state_list">
+              <L n="Set_state_list">
+                <T>15080<!--ObjectStateValue: BrokenState_Broken--></T>
+                <T>185915<!--ObjectStateValue: sprinkler_OnOff_Values_Broken--></T>
+              </L>
+            </V>
+          </U>
+          <U>
+            <L n="at_states">
+              <T>15078<!--CommodityBasedObjectStateValue: Brokenness_Unbroken--></T>
+            </L>
+            <V n="set_states" t="Set_state_list">
+              <L n="Set_state_list">
+                <T>15081<!--ObjectStateValue: BrokenState_Unbroken--></T>
+                <T>179889<!--ObjectStateValue: sprinkler_OnOff_Values_Off--></T>
+              </L>
+            </V>
+          </U>
+          <U>
+            <L n="at_states">
+              <T>179889<!--ObjectStateValue: sprinkler_OnOff_Values_Off--></T>
+              <T>184677<!--CommodityBasedObjectStateValue: upgrade_Sprinkler_Unbreakable_Completed--></T>
+            </L>
+            <V n="set_states" t="Set_state_list">
+              <L n="Set_state_list">
+                <T>184688<!--ObjectStateValue: sprinkler_Breaking_IsBreaking--></T>
+              </L>
+            </V>
+            <E n="trigger_operation">NONE</E>
+          </U>
+          <U>
+            <L n="at_states">
+              <T>179889<!--ObjectStateValue: sprinkler_OnOff_Values_Off--></T>
+            </L>
+            <V n="set_states" t="Set_state_list">
+              <L n="Set_state_list">
+                <T>184687<!--ObjectStateValue: sprinkler_Breaking_NotBreaking--></T>
+              </L>
+            </V>
+          </U>
+          <U>
+            <L n="at_states">
+              <T>179889<!--ObjectStateValue: sprinkler_OnOff_Values_Off--></T>
+              <T>184676<!--CommodityBasedObjectStateValue: upgrade_Sprinkler_PuddlePrevention_Completed--></T>
+            </L>
+            <V n="set_states" t="Set_state_list">
+              <L n="Set_state_list">
+                <T>184697<!--ObjectStateValue: sprinkler_PuddleCreation_On--></T>
+              </L>
+            </V>
+            <E n="trigger_operation">NONE</E>
+          </U>
+          <U>
+            <L n="at_states">
+              <T>179889<!--ObjectStateValue: sprinkler_OnOff_Values_Off--></T>
+            </L>
+            <V n="set_states" t="Set_state_list">
+              <L n="Set_state_list">
+                <T>184698<!--ObjectStateValue: sprinkler_PuddleCreation_Off--></T>
+              </L>
+            </V>
+          </U>
+          <U>
+            <L n="at_states">
+              <T>179888<!--ObjectStateValue: sprinkler_OnOff_Values_On--></T>
+            </L>
+            <L n="prohibited_states">
+              <T>15080<!--ObjectStateValue: BrokenState_Broken--></T>
+            </L>
+            <V n="set_states" t="Set_state_list">
+              <L n="Set_state_list">
+                <T>185818<!--ObjectStateValue: sprinkler_Effects_On--></T>
+                <T>75187<!--ObjectStateValue: FireSprinkler_On--></T>
+              </L>
+            </V>
+          </U>
+          <U>
+            <L n="at_states">
+              <T>185915<!--ObjectStateValue: sprinkler_OnOff_Values_Broken--></T>
+            </L>
+            <V n="set_states" t="Set_state_list">
+              <L n="Set_state_list">
+                <T>185820<!--ObjectStateValue: sprinkler_Effects_Breaking--></T>
+                <T>191300<!--ObjectStateValue: sprinkler_TurnedOn_Off--></T>
+              </L>
+            </V>
+          </U>
+          <U>
+            <L n="at_states">
+              <T>179889<!--ObjectStateValue: sprinkler_OnOff_Values_Off--></T>
+            </L>
+            <V n="set_states" t="Set_state_list">
+              <L n="Set_state_list">
+                <T>185819<!--ObjectStateValue: sprinkler_Effects_Off--></T>
+                <T>75186<!--ObjectStateValue: FireSprinklerState_Off--></T>
+              </L>
+            </V>
+          </U>
+          <U>
+            <L n="at_states">
+              <T>179888<!--ObjectStateValue: sprinkler_OnOff_Values_On--></T>
+              <T>185915<!--ObjectStateValue: sprinkler_OnOff_Values_Broken--></T>
+            </L>
+            <V n="set_states" t="Set_state_list">
+              <L n="Set_state_list">
+                <T>224557<!--ObjectStateValue: utilities_Water_Consumption_On--></T>
+              </L>
+            </V>
+            <E n="trigger_operation">OR</E>
+          </U>
+          <U>
+            <L n="at_states">
+              <T>179889<!--ObjectStateValue: sprinkler_OnOff_Values_Off--></T>
+            </L>
+            <V n="set_states" t="Set_state_list">
+              <L n="Set_state_list">
+                <T>224559<!--ObjectStateValue: utilities_Water_Consumption_Off--></T>
+              </L>
+            </V>
+          </U>
+          <U>
+            <L n="at_states">
+              <T>77532<!--CommodityBasedObjectStateValue: FireState_Burn_Material_Change_Replace--></T>
+            </L>
+            <V n="set_states" t="Set_state_list">
+              <L n="Set_state_list">
+                <T>39737<!--CommodityBasedObjectStateValue: FireState_Burn_Material_Change_Not_Burning--></T>
+              </L>
+            </V>
+          </U>
+        </L>
+        <L n="states">
+          <U>
+            <L n="client_states">
+              <U>
+                <T n="key">179888<!--ObjectStateValue: sprinkler_OnOff_Values_On--></T>
+                <U n="value">
+                  <V n="broadcaster" t="apply_new_value">
+                    <V n="apply_new_value" t="start_broadcaster">
+                      <U n="start_broadcaster">
+                        <L n="broadcaster_types">
+                          <U>
+                            <T n="item">184290<!--Broadcaster: broadcaster_Sprinkler_On_Plants--></T>
+                          </U>
+                          <U>
+                            <T n="item">184291<!--Broadcaster: broadcaster_Sprinkler_On_Sims--></T>
+                          </U>
+                          <U>
+                            <T n="item">189713<!--Broadcaster: broadcaster_Sprinkler_On_ElecObjects--></T>
+                          </U>
+                          <U>
+                            <T n="item">189726<!--Broadcaster: broadcaster_Sprinkler_On_LaundryPile--></T>
+                          </U>
+                        </L>
+                      </U>
+                    </V>
+                  </V>
+                  <V n="toggle_footprint" t="apply_new_value">
+                    <U n="apply_new_value">
+                      <L n="toggles">
+                        <U>
+                          <T n="enable">True</T>
+                          <T n="footprint_hash">sprinklerFloor_ftp_pathingToggleShape</T>
+                        </U>
+                      </L>
+                    </U>
+                  </V>
+                </U>
+              </U>
+              <U>
+                <T n="key">179889<!--ObjectStateValue: sprinkler_OnOff_Values_Off--></T>
+                <U n="value">
+                  <V t="apply_new_value" n="broadcaster" />
+                  <V n="toggle_footprint" t="apply_new_value">
+                    <U n="apply_new_value">
+                      <L n="toggles">
+                        <U>
+                          <T n="enable">False</T>
+                          <T n="footprint_hash">sprinklerFloor_ftp_pathingToggleShape</T>
+                        </U>
+                      </L>
+                    </U>
+                  </V>
+                </U>
+              </U>
+              <U>
+                <T n="key">185915<!--ObjectStateValue: sprinkler_OnOff_Values_Broken--></T>
+                <U n="value">
+                  <V t="apply_new_value" n="broadcaster" />
+                  <V n="toggle_footprint" t="apply_new_value">
+                    <U n="apply_new_value">
+                      <L n="toggles">
+                        <U>
+                          <T n="enable">False</T>
+                          <T n="footprint_hash">sprinklerFloor_ftp_pathingToggleShape</T>
+                        </U>
+                      </L>
+                    </U>
+                  </V>
+                </U>
+              </U>
+            </L>
+            <V n="default_value" t="reference">
+              <T n="reference">179889<!--ObjectStateValue: sprinkler_OnOff_Values_Off--></T>
+            </V>
+            <T n="reset_to_default">False</T>
+          </U>
+          <U>
+            <L n="client_states">
+              <U>
+                <T n="key">75186<!--ObjectStateValue: FireSprinklerState_Off--></T>
+              </U>
+              <U>
+                <T n="key">75187<!--ObjectStateValue: FireSprinkler_On--></T>
+              </U>
+            </L>
+            <V n="default_value" t="reference">
+              <T n="reference">75186<!--ObjectStateValue: FireSprinklerState_Off--></T>
+            </V>
+            <T n="reset_to_default">True</T>
+          </U>
+          <U>
+            <L n="client_states">
+              <U>
+                <T n="key">15076<!--CommodityBasedObjectStateValue: Brokenness_Broken--></T>
+              </U>
+              <U>
+                <T n="key">15077<!--CommodityBasedObjectStateValue: Brokenness_Neutral--></T>
+              </U>
+              <U>
+                <T n="key">15078<!--CommodityBasedObjectStateValue: Brokenness_Unbroken--></T>
+              </U>
+              <U>
+                <T n="key">97754<!--CommodityBasedObjectStateValue: Brokenness_Broken_Sabotage--></T>
+              </U>
+            </L>
+            <V t="reference" n="default_value">
+              <T n="reference">15078<!--CommodityBasedObjectStateValue: Brokenness_Unbroken--></T>
+            </V>
+            <T n="reset_to_default">False</T>
+          </U>
+          <U>
+            <L n="client_states">
+              <U>
+                <T n="key">15080<!--ObjectStateValue: BrokenState_Broken--></T>
+              </U>
+              <U>
+                <T n="key">15081<!--ObjectStateValue: BrokenState_Unbroken--></T>
+              </U>
+            </L>
+            <V t="reference" n="default_value">
+              <T n="reference">15081<!--ObjectStateValue: BrokenState_Unbroken--></T>
+            </V>
+          </U>
+          <U>
+            <L n="client_states">
+              <U>
+                <T n="key">184687<!--ObjectStateValue: sprinkler_Breaking_NotBreaking--></T>
+                <U n="value">
+                  <V n="autonomy_modifiers" t="apply_new_value">
+                    <V n="apply_new_value" t="apply_statistic_modifiers">
+                      <U n="apply_statistic_modifiers">
+                        <L n="autonomy_modifiers">
+                          <U>
+                            <L n="decay_modifiers">
+                              <U>
+                                <T n="key">16633<!--Commodity: commodity_Object_Brokenness--></T>
+                              </U>
+                            </L>
+                          </U>
+                        </L>
+                      </U>
+                    </V>
+                  </V>
+                </U>
+              </U>
+              <U>
+                <T n="key">184688<!--ObjectStateValue: sprinkler_Breaking_IsBreaking--></T>
+                <U n="value">
+                  <V n="autonomy_modifiers" t="apply_new_value">
+                    <V n="apply_new_value" t="apply_statistic_modifiers">
+                      <U n="apply_statistic_modifiers">
+                        <U n="periodic_statistic_change">
+                          <L n="operations">
+                            <U>
+                              <T n="amount">-2.33</T>
+                              <T n="stat">16633<!--Commodity: commodity_Object_Brokenness--></T>
+                            </U>
+                          </L>
+                        </U>
+                      </U>
+                    </V>
+                  </V>
+                </U>
+              </U>
+            </L>
+            <V n="default_value" t="reference">
+              <T n="reference">184687<!--ObjectStateValue: sprinkler_Breaking_NotBreaking--></T>
+            </V>
+          </U>
+          <U>
+            <L n="client_states">
+              <U>
+                <T n="key">179896<!--ObjectStateValue: sprinkler_EnabledDisabled_Enabled--></T>
+                <U n="value">
+                  <V n="lot_statistic_modifiers" t="apply_new_value">
+                    <V n="apply_new_value" t="apply_modifiers">
+                      <U n="apply_modifiers">
+                        <L n="statistic_changes">
+                          <U>
+                            <T n="amount">1</T>
+                            <T n="stat">184403<!--Statistic: statistic_Object_Sprinklers_EnabledNum--></T>
+                          </U>
+                          <U>
+                            <T n="stat">184640<!--Statistic: statistic_Object_Sprinklers_DisabledNum--></T>
+                          </U>
+                        </L>
+                      </U>
+                    </V>
+                  </V>
+                </U>
+              </U>
+              <U>
+                <T n="key">179897<!--ObjectStateValue: sprinkler_EnabledDisabled_Disabled--></T>
+                <U n="value">
+                  <V n="lot_statistic_modifiers" t="apply_new_value">
+                    <V n="apply_new_value" t="apply_modifiers">
+                      <U n="apply_modifiers">
+                        <L n="statistic_changes">
+                          <U>
+                            <T n="amount">0</T>
+                            <T n="stat">184403<!--Statistic: statistic_Object_Sprinklers_EnabledNum--></T>
+                          </U>
+                          <U>
+                            <T n="amount">1</T>
+                            <T n="stat">184640<!--Statistic: statistic_Object_Sprinklers_DisabledNum--></T>
+                          </U>
+                        </L>
+                      </U>
+                    </V>
+                  </V>
+                </U>
+              </U>
+            </L>
+            <V n="default_value" t="reference">
+              <T n="reference">179896<!--ObjectStateValue: sprinkler_EnabledDisabled_Enabled--></T>
+            </V>
+          </U>
+          <U>
+            <L n="client_states">
+              <U>
+                <T n="key">185818<!--ObjectStateValue: sprinkler_Effects_On--></T>
+                <U n="value">
+                  <V n="vfx_state" t="apply_new_value">
+                    <V n="apply_new_value" t="start_vfx">
+                      <V n="start_vfx" t="single_effect">
+                        <U n="single_effect">
+                          <T n="effect_name">ep05_gardening_sprinkler</T>
+                        </U>
+                      </V>
+                    </V>
+                  </V>
+                </U>
+              </U>
+              <U>
+                <T n="key">185819<!--ObjectStateValue: sprinkler_Effects_Off--></T>
+                <U n="value">
+                  <V t="apply_new_value" n="vfx_state" />
+                </U>
+              </U>
+              <U>
+                <T n="key">185820<!--ObjectStateValue: sprinkler_Effects_Breaking--></T>
+                <U n="value">
+                  <V n="vfx_state" t="apply_new_value">
+                    <V n="apply_new_value" t="start_vfx">
+                      <V n="start_vfx" t="single_effect">
+                        <U n="single_effect">
+                          <T n="effect_name">ep05_gardening_sprinkler_broken</T>
+                        </U>
+                      </V>
+                    </V>
+                  </V>
+                </U>
+              </U>
+            </L>
+            <V n="default_value" t="reference">
+              <T n="reference">185819<!--ObjectStateValue: sprinkler_Effects_Off--></T>
+            </V>
+          </U>
+          <U>
+            <V n="default_value" t="reference">
+              <T n="reference">184417<!--CommodityBasedObjectStateValue: SprinklerAllEnabled_Some--></T>
+            </V>
+          </U>
+          <U>
+            <V n="default_value" t="reference">
+              <T n="reference">184642<!--CommodityBasedObjectStateValue: SprinklerAllDisabled_None--></T>
+            </V>
+          </U>
+          <U>
+            <V n="default_value" t="reference">
+              <T n="reference">184675<!--CommodityBasedObjectStateValue: upgrade_Sprinkler_Unbreakable_NotStarted--></T>
+            </V>
+          </U>
+          <U>
+            <L n="client_states">
+              <U>
+                <T n="key">184672<!--CommodityBasedObjectStateValue: upgrade_Sprinkler_PuddlePrevention_Partial--></T>
+              </U>
+              <U>
+                <T n="key">184674<!--CommodityBasedObjectStateValue: upgrade_Sprinkler_PuddlePrevention_NotStarted--></T>
+              </U>
+              <U>
+                <T n="key">184676<!--CommodityBasedObjectStateValue: upgrade_Sprinkler_PuddlePrevention_Completed--></T>
+              </U>
+            </L>
+            <V n="default_value" t="reference">
+              <T n="reference">184674<!--CommodityBasedObjectStateValue: upgrade_Sprinkler_PuddlePrevention_NotStarted--></T>
+            </V>
+          </U>
+          <U>
+            <L n="client_states">
+              <U>
+                <T n="key">184697<!--ObjectStateValue: sprinkler_PuddleCreation_On--></T>
+                <U n="value">
+                  <V t="apply_new_value" n="flowing_puddle_enabled">
+                    <T n="apply_new_value">True</T>
+                  </V>
+                </U>
+              </U>
+              <U>
+                <T n="key">184698<!--ObjectStateValue: sprinkler_PuddleCreation_Off--></T>
+                <U n="value">
+                  <V t="apply_new_value" n="flowing_puddle_enabled" />
+                </U>
+              </U>
+            </L>
+            <V n="default_value" t="reference">
+              <T n="reference">184698<!--ObjectStateValue: sprinkler_PuddleCreation_Off--></T>
+            </V>
+          </U>
+          <U>
+            <V t="reference" n="default_value">
+              <T n="reference">73871<!--ObjectStateValue: TheKnack_NotAwesome--></T>
+            </V>
+          </U>
+          <U>
+            <V n="default_value" t="reference">
+              <T n="reference">191301<!--ObjectStateValue: sprinkler_TurnedOn_On--></T>
+            </V>
+          </U>
+          <U>
+            <L n="client_states">
+              <U>
+                <T n="key">224557<!--ObjectStateValue: utilities_Water_Consumption_On--></T>
+                <U n="value">
+                  <V n="autonomy_modifiers" t="apply_new_value">
+                    <V n="apply_new_value" t="apply_statistic_modifiers">
+                      <U n="apply_statistic_modifiers">
+                        <L n="lot_statistic_modifiers">
+                          <U>
+                            <V n="modifier" t="basic_value">
+                              <U n="basic_value">
+                                <T n="value">-0.139</T>
+                              </U>
+                            </V>
+                            <T n="statistic">233028<!--Commodity: commodity_Utilities_Water--></T>
+                          </U>
+                        </L>
+                        <U n="periodic_statistic_change">
+                          <T n="interval">10</T>
+                          <L n="operations" />
+                        </U>
+                      </U>
+                    </V>
+                  </V>
+                </U>
+              </U>
+              <U>
+                <T n="key">224559<!--ObjectStateValue: utilities_Water_Consumption_Off--></T>
+                <U n="value">
+                  <V t="apply_new_value" n="autonomy_modifiers" />
+                </U>
+              </U>
+            </L>
+            <V t="reference" n="default_value">
+              <T n="reference">224559<!--ObjectStateValue: utilities_Water_Consumption_Off--></T>
+            </V>
+          </U>
+          <U>
+            <L n="client_states">
+              <U>
+                <T n="key">35956<!--CommodityBasedObjectStateValue: Materialistic_Admired--></T>
+              </U>
+              <U>
+                <T n="key">35957<!--CommodityBasedObjectStateValue: Materialistic_YetToAdmire--></T>
+              </U>
+            </L>
+            <V n="default_value" t="reference">
+              <T n="reference">35957<!--CommodityBasedObjectStateValue: Materialistic_YetToAdmire--></T>
+            </V>
+          </U>
+        </L>
+      </U>
+    </V>
+    <V n="time_of_day_component" t="enabled">
+      <U n="enabled">
+        <L n="state_changes">
+          <U>
+            <T n="key">179941<!--ObjectState: sprinkler_State_OnOff--></T>
+            <L n="value">
+              <U>
+                <T n="start_time">6</T>
+                <L n="tests">
+                  <L>
+                    <V t="state_white_black">
+                      <U n="state_white_black">
+                        <U n="states">
+                          <V n="whitelist" t="specify">
+                            <U n="specify">
+                              <V n="threshold" t="threshold">
+                                <U n="threshold">
+                                  <T n="value">2</T>
+                                </U>
+                              </V>
+                              <L n="whitelist">
+                                <T>179889<!--ObjectStateValue: sprinkler_OnOff_Values_Off--></T>
+                                <T>179896<!--ObjectStateValue: sprinkler_EnabledDisabled_Enabled--></T>
+                              </L>
+                            </U>
+                          </V>
+                        </U>
+                      </U>
+                    </V>
+                    <V t="weather_type">
+                      <U n="weather_type">
+                        <T n="invert">True</T>
+                        <L n="weather_types">
+                          <E>Rain_Light</E>
+                          <E>Rain_Heavy</E>
+                          <E>Rain_Storm</E>
+                          <E>Snow_Light</E>
+                          <E>Snow_Heavy</E>
+                          <E>Snow_Storm</E>
+                        </L>
+                      </U>
+                    </V>
+                  </L>
+                </L>
+                <T n="value">179888<!--ObjectStateValue: sprinkler_OnOff_Values_On--></T>
+              </U>
+              <U>
+                <T n="start_time">6.5</T>
+                <L n="tests">
+                  <L>
+                    <V t="state_white_black">
+                      <U n="state_white_black">
+                        <U n="states">
+                          <V n="blacklist" t="specify">
+                            <U n="specify">
+                              <L n="blacklist">
+                                <T>15076<!--CommodityBasedObjectStateValue: Brokenness_Broken--></T>
+                                <T>191301<!--ObjectStateValue: sprinkler_TurnedOn_On--></T>
+                              </L>
+                            </U>
+                          </V>
+                          <V n="whitelist" t="specify">
+                            <U n="specify">
+                              <L n="whitelist">
+                                <T>179888<!--ObjectStateValue: sprinkler_OnOff_Values_On--></T>
+                                <T>179896<!--ObjectStateValue: sprinkler_EnabledDisabled_Enabled--></T>
+                              </L>
+                            </U>
+                          </V>
+                        </U>
+                      </U>
+                    </V>
+                  </L>
+                </L>
+                <T n="value">179889<!--ObjectStateValue: sprinkler_OnOff_Values_Off--></T>
+              </U>
+            </L>
+          </U>
+        </L>
+      </U>
+    </V>
+  </U>
+  <L n="_super_affordances">
+    <T>13328<!--ImmediateSuperInteraction: debug_Reset--></T>
+    <T>13326<!--ImmediateSuperInteraction: debug_ObjectDestroy--></T>
+    <T>103888<!--ImmediateSuperInteraction: cheat_set_as_head--></T>
+    <T>196759<!--SuperInteraction: famePerks_GoodReputation_GivingBack_DonateObject--></T>
+    <T>179870<!--ImmediateSuperInteraction: sprinkler_Immediate_Disable--></T>
+    <T>179906<!--ImmediateSuperInteraction: sprinkler_Immediate_DisableAll--></T>
+    <T>179861<!--ImmediateSuperInteraction: sprinkler_Immediate_Enable--></T>
+    <T>179907<!--ImmediateSuperInteraction: sprinkler_Immediate_EnableAll--></T>
+    <T>99087<!--ImmediateSuperInteraction: object_ReplaceBrokenObject--></T>
+    <T>179908<!--SuperInteraction: object_Repair_Sprinkler--></T>
+    <T>179880<!--SuperInteraction: sprinkler_Upgrade_PuddlePrevention--></T>
+    <T>179910<!--SuperInteraction: sprinkler_Upgrade_PuddlePrevention_Resume--></T>
+    <T>179879<!--SuperInteraction: sprinkler_Upgrade_Unbreakable--></T>
+    <T>179912<!--SuperInteraction: sprinkler_Upgrade_Unbreakable_Resume--></T>
+    <T>189657<!--SuperInteraction: object_Knack_MakeAwesome_Sprinkler--></T>
+    <T>179913<!--SuperInteraction: Sprinkler_Play--></T>
+    <T>185926<!--SuperInteraction: object_Bane_Sabotage_Sprinkler--></T>
+    <T>185932<!--SuperInteraction: object_Knack_FixIt_Sprinkler--></T>
+    <T>185944<!--SuperInteraction: sprinkler_Upgrade_Unbreakable_CompletedDisplay--></T>
+    <T>185943<!--SuperInteraction: sprinkler_Upgrade_PuddlePrevention_CompletedDisplay--></T>
+    <T>13319<!--ImmediateSuperInteraction: debug_BreakObject--></T>
+    <T>13327<!--ImmediateSuperInteraction: debug_RepairObject--></T>
+    <T>129510<!--SuperInteraction: object_Hire_Repair_Service--></T>
+    <T>13983<!--StandSuperInteraction: sim-stand--></T>
+    <T>74457<!--ImmediateSuperInteraction: fire_ReplaceBurntObject--></T>
+  </L>
+  <T n="fire_retardant">False</T>
+  <U n="recycling_data">
+    <L n="recycling_values">
+      <U>
+        <E n="Bucks Type">RecycleBitsBucks</E>
+        <T n="Value">0.25</T>
+      </U>
+      <U>
+        <E n="Bucks Type">RecyclePiecesBucks</E>
+        <T n="Value">0.75</T>
+      </U>
+    </L>
+  </U>
+</I>

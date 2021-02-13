@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+
+<TuningRoot>
+    <Instance instance_type="situation" class="WalkbyMagicDuelSituation" module="situations.ambient.walkby_magic_duel_situation" muid="1AA4888AD8D704ED" description="A very basic non-user facing complex situation that runs an aggregate&#xA;filter to get the Sims that should be used in it and then has a single&#xA;situation state." instance_subclasses_only="False" parents="SituationComplexCommon, SituationComplex, Situation" path="Situations\Descriptions" use_guid_for_reference="True">
+        <TunableList name="_favorite_objects" class="TunableList" display="Favorite Objects" muid="5F91477D4D1D206" description="A list of favorites objects to give to Sims when they enter this&#xA;situation. These favorites will be removed from the Sim when the &#xA;situation ends." Deprecated="False" filter="0" group="Situation">
+            <TunableTuple class="TunableTuple" muid="D6047B4AA61AAE78" description="Favorite data to add to the Sim." Deprecated="False" filter="0" group="General">
+                <TunableEnum type="Tag" name="favorite_tag" class="TunableTag" default="INVALID" display="Favorite Tag" muid="A2BED822F3BE7A01" dynamic_entries="tag.Tag._elements" static_entries="tag.Tag" description="The tag for this favorite object." Deprecated="False" dynamic_entries_prefix="func" filter="0" group="General" invalid_entries="INVALID" pack_safe="True" />
+                <TunableList name="potential_favorites" class="TunableSet" display="Potential Favorites" muid="58C3E37B17DA5059" min="1" description="A set of potential objects. One of these will be chosen at&#xA;random." Deprecated="False" filter="0" group="General" unique_entries="true">
+                    <Tunable type="object" class="TunableReference" muid="8369C8A964BA343B" description="The definition of the favorite object." allow_none="False" Deprecated="False" filter="0" group="General" />
+                </TunableList>
+            </TunableTuple>
+        </TunableList>
+
+        <Deleted name="_implies_greeted_status" muid="7119C3CB3B990DAA" />
+
+        <Deleted name="creation_ui_option" muid="FA043106CEC7AD20" />
+
+        <TunableTuple name="duel_state" class="TunableDuelSituationState" display="Duel State" muid="442A2F16D5ABD93C" description="State for WalkbyMagicDuelSituation where the sims do the duel." Deprecated="False" filter="0" group="State">
+            <TunableTuple name="interaction_of_interest" class="TunableInteractionOfInterest" display="Interaction Of Interest" muid="1E8F04D7511968BA" description="The interaction that when run will cause GPE defined behavior&#xA;to run." Deprecated="False" filter="0" group="General">
+                <TunableList name="affordances" class="TunableList" display="Affordances" muid="2E4C674BC8F40B87" description="The Sim must have started either any affordance in this list or an&#xA;interaction matching one of the tags in this tunable's Tags&#xA;field." Deprecated="False" filter="0" group="General">
+                    <Tunable type="interaction" class="TunableReference" muid="25384472CA2AC9F9" allow_none="False" Deprecated="False" filter="0" group="General" pack_safe="True" />
+                </TunableList>
+                <TunableList name="tags" class="TunableSet" display="Tags" muid="CFA498AD956FF637" description="The Sim must have run either an interaction matching one of these&#xA;Tags or an affordance from the list of Affordances in this&#xA;tunable." Deprecated="False" filter="0" group="General" unique_entries="true">
+                    <TunableEnum type="Tag" class="TunableEnumEntry" default="INVALID" muid="5A3A9BB7280E0E2B" dynamic_entries="tag.Tag._elements" static_entries="tag.Tag" Deprecated="False" filter="0" group="General" />
+                </TunableList>
+            </TunableTuple>
+            <TunableList name="job_and_role_changes" class="TunableMapping" display="Job And Role Changes" muid="247AD05B040F02DE" mapping_key="Situation Job" mapping_value="Role State" description="A mapping between situation jobs and role states that defines&#xA;what role states we want to switch to for sims on which jobs&#xA;when this situation state is entered." Deprecated="False" filter="0" group="General">
+                <TunableTuple class="TunableTuple" muid="2E80DACA70383E89" Deprecated="False" filter="0" group="General">
+                    <Tunable type="role_state" name="Role State" class="TunableReference" display="Role State" muid="3260522DC52C735E" description="The role state that we will switch sims of the linked job&#xA;into." allow_none="False" Deprecated="False" filter="0" group="General" />
+                    <Tunable type="situation_job" name="Situation Job" class="TunableReference" display="Situation Job" muid="245E6B867F594F21" description="A reference to a SituationJob that we will use to change&#xA;sim's role state." allow_none="False" Deprecated="False" filter="0" group="General" />
+                </TunableTuple>
+            </TunableList>
+        </TunableTuple>
+
+        <Deleted name="duration" muid="B617A1A58EE6751F" />
+
+        <TunableTuple name="go_to_dueling_ground_state" class="TunableGoToDuelingGroundSituationState" display="Go To Dueling Ground State" muid="27DE7001EF052F5" description="State for WalkbyMagicDuelSituation where the dueling sims go to the duel location." Deprecated="False" filter="0" group="State">
+            <TunableTuple name="interaction_of_interest" class="TunableInteractionOfInterest" display="Interaction Of Interest" muid="9A7701A6A16003A7" description="The interaction that when run will cause GPE defined behavior&#xA;to run." Deprecated="False" filter="0" group="General">
+                <TunableList name="affordances" class="TunableList" display="Affordances" muid="EB9032C2B2C590E5" description="The Sim must have started either any affordance in this list or an&#xA;interaction matching one of the tags in this tunable's Tags&#xA;field." Deprecated="False" filter="0" group="General">
+                    <Tunable type="interaction" class="TunableReference" muid="F7F60F43BF7C01DA" allow_none="False" Deprecated="False" filter="0" group="General" pack_safe="True" />
+                </TunableList>
+                <TunableList name="tags" class="TunableSet" display="Tags" muid="6C0D3C7A5092AA12" description="The Sim must have run either an interaction matching one of these&#xA;Tags or an affordance from the list of Affordances in this&#xA;tunable." Deprecated="False" filter="0" group="General" unique_entries="true">
+                    <TunableEnum type="Tag" class="TunableEnumEntry" default="INVALID" muid="30677C7351C0049A" dynamic_entries="tag.Tag._elements" static_entries="tag.Tag" Deprecated="False" filter="0" group="General" />
+                </TunableList>
+            </TunableTuple>
+            <TunableList name="job_and_role_changes" class="TunableMapping" display="Job And Role Changes" muid="E082821F5BE2B157" mapping_key="Situation Job" mapping_value="Role State" description="A mapping between situation jobs and role states that defines&#xA;what role states we want to switch to for sims on which jobs&#xA;when this situation state is entered." Deprecated="False" filter="0" group="General">
+                <TunableTuple class="TunableTuple" muid="B087DCED9C56C956" Deprecated="False" filter="0" group="General">
+                    <Tunable type="role_state" name="Role State" class="TunableReference" display="Role State" muid="159CB5016FE73579" description="The role state that we will switch sims of the linked job&#xA;into." allow_none="False" Deprecated="False" filter="0" group="General" />
+                    <Tunable type="situation_job" name="Situation Job" class="TunableReference" display="Situation Job" muid="5B0C3D4A19CF0318" description="A reference to a SituationJob that we will use to change&#xA;sim's role state." allow_none="False" Deprecated="False" filter="0" group="General" />
+                </TunableTuple>
+            </TunableList>
+        </TunableTuple>
+    </Instance>
+
+    <VersionHistory>
+        <ActionList>
+            <Action type="kRemove" old_muid="8C78EAE9ACA2B0EA" />
+            <Action type="kRemove" old_muid="48CEF55497C2DA81" />
+            <Action type="kRemove" old_muid="E66349459EF35C6A" />
+        </ActionList>
+
+        <ActionList>
+            <Action type="kRemove" old_muid="4126C04413D3BABE" />
+            <Action type="kRemove" old_muid="1E96E77C9E7990E8" />
+            <Action type="kRemove" old_muid="EA7F0D0BE656FE16" />
+            <Action type="kRemove" old_muid="C06FC7C802C5339A" />
+            <Action type="kRemove" old_muid="E0507239223F1CBD" />
+            <Action type="kRemove" old_muid="CB79475F2EA58509" />
+            <Action type="kRemove" old_muid="61F06FB42354A049" />
+            <Action type="kRemove" old_muid="FAC1F2CDE6FD4DB2" />
+            <Action type="kRemove" old_muid="596C20D61C38958C" />
+            <Action type="kRemove" old_muid="B09F1B026EDD8309" />
+            <Action type="kRemove" old_muid="D6B91A7403650AEB" />
+            <Action type="kRemove" old_muid="4FBA037C54D2CE37" />
+            <Action type="kRemove" old_muid="3E38E8B2AB013798" />
+            <Action type="kRemove" old_muid="6D9ECE9CF828BABF" />
+            <Action type="kRemove" old_muid="6C5BC2E500645B84" />
+            <Action type="kRemove" old_muid="A351B0F79B84633F" />
+            <Action type="kRemove" old_muid="D13BD61F92E24A51" />
+            <Action type="kRemove" old_muid="71C2350542D0704E" />
+            <Action type="kRemove" old_muid="DFA44FA3F962844" />
+            <Action type="kRemove" old_muid="5A9DA3C4D59317F3" />
+            <Action type="kRemove" old_muid="9FABDE19E0C9E25E" />
+            <Action type="kRemove" old_muid="71B439F3DAB621B9" />
+            <Action type="kRemove" old_muid="F89502BB028CD7E4" />
+            <Action type="kRemove" old_muid="3857468166B91D5D" />
+            <Action type="kRemove" old_muid="13D508038B98B8CD" />
+            <Action type="kRemove" old_muid="F8C82E5C64D78A9C" />
+            <Action type="kRemove" old_muid="1C1D2109104C79C2" />
+            <Action type="kRemove" old_muid="8173227B9A83A159" />
+            <Action type="kRemove" old_muid="EBDF7FC0C5A9271D" />
+            <Action type="kRemove" old_muid="77EA174498FBD8C1" />
+            <Action type="kRemove" old_muid="FEF050FC54E581BC" />
+            <Action type="kRemove" old_muid="41E2E836E3C2802D" />
+            <Action type="kRemove" old_muid="D04C7347FA265341" />
+        </ActionList>
+
+        <ActionList>
+            <Action type="kRemove" old_muid="FE3CC5F8892DFBC9" />
+        </ActionList>
+    </VersionHistory>
+</TuningRoot>

@@ -1,0 +1,179 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<I c="SuperInteraction" i="interaction" m="interactions.base.super_interaction" n="knitting_Scrap_FromSwipe" s="243121">
+  <V t="participant" n="_icon">
+    <U n="participant">
+      <L n="participant_type">
+        <E>Actor</E>
+      </L>
+    </U>
+  </V>
+  <V t="enabled" n="_saveable" />
+  <T n="allow_from_sim_inventory">True</T>
+  <T n="allow_from_world">True</T>
+  <V t="enabled" n="animation_stat">
+    <U n="enabled">
+      <V n="actor_stat" t="enabled">
+        <V n="enabled" t="single">
+          <U n="single">
+            <T n="item">239521<!--Skill: statistic_Skill_AdultMajor_Knitting--></T>
+          </U>
+        </V>
+      </V>
+    </U>
+  </V>
+  <T n="attention_cost">0.5</T>
+  <V t="flexible_length" n="basic_content">
+    <U n="flexible_length">
+      <L n="conditional_actions">
+        <V t="literal">
+          <U n="literal">
+            <L n="conditions">
+              <V t="time_based">
+                <U n="time_based">
+                  <T n="max_time">30</T>
+                  <T n="min_time">30</T>
+                </U>
+              </V>
+            </L>
+            <E n="interaction_action">EXIT_NATURALLY</E>
+          </U>
+        </V>
+      </L>
+      <V n="content" t="looping_content">
+        <U n="looping_content">
+          <U n="animation_ref">
+            <T n="factory">240520<!--AnimationElement: knitting_Knit--></T>
+          </U>
+        </U>
+      </V>
+    </U>
+  </V>
+  <L n="basic_extras">
+    <V t="buff_fire_and_forget">
+      <U n="buff_fire_and_forget">
+        <U n="buff">
+          <V n="buff_reason" t="enabled">
+            <T n="enabled">0xC1C01F0B<!--String: "(Por deshacer un proyecto de punto)"--></T>
+          </V>
+          <T n="buff_type">243734<!--Buff: buff_Knitting_Visible_FreshStart--></T>
+        </U>
+        <V t="at_end" n="timing">
+          <U n="at_end">
+            <E n="criticality">NotCritical</E>
+          </U>
+        </V>
+      </U>
+    </V>
+  </L>
+  <V t="disabled" n="content_score" />
+  <T n="display_name">0x6FBBB225<!--String: "Deshacer proyecto de punto"--></T>
+  <U n="display_name_text_tokens">
+    <L n="tokens">
+      <V t="participant_type">
+        <U n="participant_type">
+          <V n="objects" t="from_participant">
+            <U n="from_participant">
+              <E n="participant">Actor</E>
+            </U>
+          </V>
+        </U>
+      </V>
+      <V t="participant_type">
+        <U n="participant_type">
+          <V n="objects" t="from_participant">
+            <U n="from_participant">
+              <E n="participant">Object</E>
+            </U>
+          </V>
+        </U>
+      </V>
+    </L>
+  </U>
+  <V t="enabled" n="display_tooltip">
+    <T n="enabled">0xBD49D0FD<!--String: "Deshila la labor, lo que destruye el artículo de punto y reembolsa una pequeña suma de simoleones."--></T>
+  </V>
+  <L n="interaction_category_tags">
+    <E>Interaction_Super</E>
+    <E>Interaction_All</E>
+  </L>
+  <V t="single" n="outcome">
+    <U n="single">
+      <U n="actions">
+        <L n="basic_extras">
+          <V t="destroy_object" />
+        </L>
+        <L n="loot_list">
+          <T>245655<!--LootActions: loot_Knitting_Scrap--></T>
+        </L>
+      </U>
+    </U>
+  </V>
+  <U n="posture_preferences">
+    <T n="prefer_clicked_part">False</T>
+  </U>
+  <V t="enabled" n="posture_target_preference">
+    <L n="enabled">
+      <U>
+        <E n="key">SEATING_BED</E>
+        <T n="value">50</T>
+      </U>
+      <U>
+        <E n="key">SEATING_LIVING</E>
+        <T n="value">50</T>
+      </U>
+      <U>
+        <E n="key">SEATING_LOVESEAT</E>
+        <T n="value">50</T>
+      </U>
+      <U>
+        <E n="key">SEATING_POOL</E>
+        <T n="value">50</T>
+      </U>
+      <U>
+        <E n="key">SEATING_ROCK</E>
+        <T n="value">50</T>
+      </U>
+      <U>
+        <E n="key">SEATING_SOFA</E>
+        <T n="value">50</T>
+      </U>
+    </L>
+  </V>
+  <E n="scoring_priority">NORMAL</E>
+  <T n="subaction_selection_weight">1</T>
+  <E n="target_type">OBJECT</E>
+  <L n="test_globals">
+    <V t="sim_info">
+      <U n="sim_info">
+        <V t="specified" n="ages">
+          <L n="specified">
+            <E>TEEN</E>
+            <E>YOUNGADULT</E>
+            <E>ADULT</E>
+            <E>ELDER</E>
+            <E>CHILD</E>
+          </L>
+        </V>
+        <V t="specified" n="species">
+          <U n="specified">
+            <L n="species">
+              <E />
+            </L>
+          </U>
+        </V>
+        <E n="who">Actor</E>
+      </U>
+    </V>
+    <V t="buff">
+      <U n="buff">
+        <L n="blacklist">
+          <T>239808<!--Buff: buff_Knitting_Visible_NoMoreKnitting--></T>
+        </L>
+        <V t="enabled" n="tooltip">
+          <T n="enabled">0xC21404BC<!--String: "¡{0.SimFirstName} no quiere hacer punto ahora mismo!"--></T>
+        </V>
+      </U>
+    </V>
+  </L>
+  <T n="time_overhead">30</T>
+</I>

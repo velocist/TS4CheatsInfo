@@ -1,0 +1,164 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<I c="SuperInteraction" i="interaction" m="interactions.base.super_interaction" n="wildlifeEncounter_Attack_Denkimushi" s="247638">
+  <V t="participant" n="_icon">
+    <U n="participant">
+      <L n="participant_type">
+        <E>Actor</E>
+      </L>
+    </U>
+  </V>
+  <V t="enabled" n="_saveable" />
+  <T n="allow_autonomous">False</T>
+  <T n="attention_cost">0.5</T>
+  <V t="one_shot" n="basic_content" />
+  <L n="basic_extras">
+    <V t="loot">
+      <U n="loot">
+        <L n="loot_list">
+          <T>250343<!--LootActions: loot_Lifestyles_Progress_Unlock_AdrenalineSeeker--></T>
+        </L>
+        <V t="at_beginning" n="timing" />
+      </U>
+    </V>
+  </L>
+  <V t="disabled" n="content_score" />
+  <T n="display_name">0x2A1682F<!--String: "Ataque de denkimushi"--></T>
+  <U n="display_name_text_tokens">
+    <L n="tokens">
+      <V t="participant_type">
+        <U n="participant_type">
+          <V t="from_participant" n="objects">
+            <U n="from_participant">
+              <E n="participant">Actor</E>
+            </U>
+          </V>
+        </U>
+      </V>
+      <V t="participant_type">
+        <U n="participant_type">
+          <V t="from_participant" n="objects">
+            <U n="from_participant">
+              <E n="participant">Object</E>
+            </U>
+          </V>
+        </U>
+      </V>
+    </L>
+  </U>
+  <L n="interaction_category_tags">
+    <E>Interaction_Super</E>
+    <E>Interaction_All</E>
+  </L>
+  <V n="outcome" t="single">
+    <U n="single">
+      <U n="actions">
+        <V n="animation_ref" t="enabled">
+          <U n="enabled">
+            <T n="factory">251637<!--AnimationElement: wildlifeEncounter_Attack_Denkimushi_InflictInjury--></T>
+          </U>
+        </V>
+        <L n="basic_extras">
+          <V t="buff_fire_and_forget">
+            <U n="buff_fire_and_forget">
+              <U n="buff">
+                <T n="buff_type">247863<!--Buff: buff_WildlifeEncounter_Attacked--></T>
+              </U>
+            </U>
+          </V>
+          <V t="buff_fire_and_forget">
+            <U n="buff_fire_and_forget">
+              <U n="buff">
+                <V t="enabled" n="buff_reason">
+                  <T n="enabled">0xF9A80F5F<!--String: "(Por encuentro con un animal salvaje)"--></T>
+                </V>
+                <T n="buff_type">248078<!--Buff: buff_WildlifeEncounter_ShockingEncounter--></T>
+              </U>
+            </U>
+          </V>
+          <V t="buff_fire_and_forget">
+            <U n="buff_fire_and_forget">
+              <U n="buff">
+                <T n="buff_type">249480<!--Buff: buff_WildlifeEncounter_HikingTrailAttackCooldown--></T>
+              </U>
+            </U>
+          </V>
+          <V t="notification">
+            <U n="notification">
+              <T n="allow_autonomous">False</T>
+              <V n="dialog" t="single">
+                <V n="single" t="literal">
+                  <U n="literal">
+                    <V t="enabled" n="icon">
+                      <V n="enabled" t="resource_key">
+                        <U n="resource_key">
+                          <T n="key" p="InEP10\UI\Icons\Notifications\Notification_scratchedAttack.png">2f7d0004:00000000:16022b413a51add0</T>
+                        </U>
+                      </V>
+                    </V>
+                    <V t="enabled" n="secondary_icon">
+                      <V t="participant" n="enabled">
+                        <U n="participant">
+                          <L n="participant_type">
+                            <E>Actor</E>
+                          </L>
+                        </U>
+                      </V>
+                    </V>
+                    <V n="text" t="single">
+                      <T n="single">0x3C8181A4<!--String: "Un grupo de denkimushi ha atacado y herido a {0.SimFirstName}. Un nivel alto de la habilidad Ejercicio físico o un tarro de polvo de insectos reptantes pueden ayudar a evitar futuros dolores."--></T>
+                    </V>
+                  </U>
+                </V>
+              </V>
+              <U n="success_chance">
+                <L n="multipliers">
+                  <U>
+                    <T n="multiplier">0</T>
+                    <L n="tests">
+                      <L>
+                        <V t="sim_info">
+                          <U n="sim_info">
+                            <V t="enabled" n="npc">
+                              <T n="enabled">True</T>
+                            </V>
+                          </U>
+                        </V>
+                      </L>
+                    </L>
+                  </U>
+                </L>
+              </U>
+            </U>
+          </V>
+        </L>
+      </U>
+    </U>
+  </V>
+  <E n="scoring_priority">NORMAL</E>
+  <T n="subaction_selection_weight">1</T>
+  <E n="target_type">ACTOR</E>
+  <L n="test_globals">
+    <V t="sim_info">
+      <U n="sim_info">
+        <V t="specified" n="ages">
+          <L n="specified">
+            <E>TEEN</E>
+            <E>YOUNGADULT</E>
+            <E>ADULT</E>
+            <E>ELDER</E>
+            <E>CHILD</E>
+          </L>
+        </V>
+        <V t="specified" n="species">
+          <U n="specified">
+            <L n="species">
+              <E />
+            </L>
+          </U>
+        </V>
+        <E n="who">Actor</E>
+      </U>
+    </V>
+  </L>
+  <T n="time_overhead">30</T>
+</I>

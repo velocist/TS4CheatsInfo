@@ -1,0 +1,81 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<I c="SituationGoalRanInteractionOnTargetedSim" i="situation_goal" m="situations.situation_goal_targeted_sim" n="situationGoalInteractionSim_Career_Scientist_SimRayUse_Civilian_3" s="113678">
+  <T n="_cooldown">240</T>
+  <V n="_display_data" t="enabled">
+    <U n="enabled">
+      <V t="enabled" n="instance_display_icon">
+        <T p="InEP01\UI\Icons\Events\EventGoal_SimRay.png" n="enabled">2f7d0004:00000000:6c88e65af065393a</T>
+      </V>
+      <V n="instance_display_name" t="enabled">
+        <T n="enabled">0xE75DDA5D<!--String: "Usar el Sim-Rayo en un turista"--></T>
+      </V>
+      <V n="instance_display_tooltip" t="enabled">
+        <T n="enabled">0x7FDAE04E<!--String: "Selecciona a un Sim fuera del laboratorio y elige Control mental, Congelar o Transformar."--></T>
+      </V>
+    </U>
+  </V>
+  <U n="_goal_test">
+    <L n="tags">
+      <E>Func_SimRay</E>
+    </L>
+    <E n="test_event">InteractionComplete</E>
+  </U>
+  <T n="_iterations">3</T>
+  <L n="_pre_tests">
+    <V t="inventory">
+      <U n="inventory">
+        <V t="has_object_with_tag" n="contents_check">
+          <U n="has_object_with_tag">
+            <L n="tag_set">
+              <E>Func_SimRay</E>
+            </L>
+          </U>
+        </V>
+      </U>
+    </V>
+    <V t="statistic">
+      <U n="statistic">
+        <T n="stat">113011<!--Statistic: statistic_Career_Scientist_Inventing--></T>
+        <V t="value_threshold" n="threshold">
+          <U n="value_threshold">
+            <E n="comparison">EQUAL</E>
+            <T n="value">1</T>
+          </U>
+        </V>
+      </U>
+    </V>
+    <V t="career">
+      <U n="career">
+        <V t="career_reference" n="test_type">
+          <U n="career_reference">
+            <V t="specific_career" n="career">
+              <T n="specific_career">107255<!--Career: career_Adult_Active_Scientist--></T>
+            </V>
+            <V t="enabled" n="user_level">
+              <U n="enabled">
+                <T n="lower_bound">8</T>
+              </U>
+            </V>
+          </U>
+        </V>
+      </U>
+    </V>
+  </L>
+  <T n="_score">20</T>
+  <T n="_select_sims_outside_of_situation">True</T>
+  <L n="_target_tests">
+    <V t="relationship">
+      <U n="relationship">
+        <U n="prohibited_relationship_bits">
+          <L n="match_all">
+            <T>107373<!--RelationshipBit: relationshipbit_CoWorkers--></T>
+          </L>
+        </U>
+      </U>
+    </V>
+  </L>
+  <T p="InGame\Audio\Bumper\bumper_event_goal_complete.propx" n="audio_sting_on_complete">39b2aa4a:00000000:ed52c39bcc2a7111</T>
+  <L n="role_tags">
+    <E>Role_Scientist</E>
+  </L>
+</I>

@@ -1,0 +1,218 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<I c="SuperInteraction" i="interaction" m="interactions.base.super_interaction" n="juiceFizzing_JuiceFizzer_Collect_Grimbucha" s="237212">
+  <V t="enabled" n="_saveable" />
+  <T n="attention_cost">0.5</T>
+  <V n="basic_content" t="one_shot">
+    <U n="one_shot">
+      <U n="animation_ref">
+        <T n="factory">234979<!--AnimationElement: juiceFizzer_Collect--></T>
+        <U n="overrides">
+          <L n="props">
+            <U>
+              <T n="key">fizzerDrink</T>
+              <U n="value">
+                <T n="definition">244423</T>
+              </U>
+            </U>
+          </L>
+          <L n="vfx">
+            <U>
+              <T n="original_effect">fx_obj_juice_fizzer_fill</T>
+              <U n="replacement_effect">
+                <V n="effect" t="play_effect">
+                  <T n="play_effect">ep09_obj_juice_fizzer_jar_3</T>
+                </V>
+              </U>
+            </U>
+          </L>
+        </U>
+      </U>
+    </U>
+  </V>
+  <L n="basic_extras">
+    <V t="buff_fire_and_forget">
+      <U n="buff_fire_and_forget">
+        <U n="buff">
+          <V n="buff_reason" t="enabled">
+            <T n="enabled">0x85D275F9<!--String: "(Por ser {M0.gasiaficionado}{F0.gasiaficionada})"--></T>
+          </V>
+          <T n="buff_type">236953<!--Buff: buff_JuiceFizzer_Trait_FizzerFocus--></T>
+        </U>
+      </U>
+    </V>
+    <V t="state_change">
+      <U n="state_change">
+        <V n="new_value" t="single_value">
+          <U n="single_value">
+            <T n="new_value">241067<!--ObjectStateValue: juiceFizzer_Product_Off--></T>
+          </U>
+        </V>
+        <V t="immediately" n="timing" />
+      </U>
+    </V>
+    <V t="loot">
+      <U n="loot">
+        <L n="loot_list">
+          <T>237577<!--LootActions: Loot_Object_Breakage_JuiceFizzer--></T>
+        </L>
+        <V t="at_beginning" n="timing" />
+      </U>
+    </V>
+  </L>
+  <V t="disabled" n="content_score" />
+  <T n="display_name">0x4A1C37B7<!--String: "Recoger"--></T>
+  <U n="display_name_text_tokens">
+    <L n="tokens">
+      <V t="participant_type">
+        <U n="participant_type">
+          <V t="from_participant" n="objects">
+            <U n="from_participant">
+              <E n="participant">Actor</E>
+            </U>
+          </V>
+        </U>
+      </V>
+      <V t="participant_type">
+        <U n="participant_type">
+          <V t="from_participant" n="objects">
+            <U n="from_participant">
+              <E n="participant">Object</E>
+            </U>
+          </V>
+        </U>
+      </V>
+    </L>
+  </U>
+  <L n="interaction_category_tags">
+    <E>Interaction_Super</E>
+    <E>Interaction_All</E>
+    <E>Interaction_Skill_JuiceFizzing</E>
+  </L>
+  <V n="outcome" t="single">
+    <U n="single">
+      <U n="actions">
+        <L n="basic_extras">
+          <V t="inventory_transfer">
+            <U n="inventory_transfer">
+              <L n="object_tests">
+                <L>
+                  <V t="inventory">
+                    <U n="inventory">
+                      <V t="has_object_with_tag" n="contents_check">
+                        <U n="has_object_with_tag">
+                          <L n="tag_set">
+                            <E>Func_JuiceFizzingProduct</E>
+                          </L>
+                        </U>
+                      </V>
+                      <V t="participant_inventory" n="inventory_location">
+                        <U n="participant_inventory">
+                          <E n="inventory">Object</E>
+                        </U>
+                      </V>
+                    </U>
+                  </V>
+                </L>
+              </L>
+              <V t="participant" n="recipient">
+                <E n="participant">Actor</E>
+              </V>
+              <V t="participant" n="source" />
+              <V t="at_beginning" n="timing" />
+            </U>
+          </V>
+          <V t="state_change">
+            <U n="state_change">
+              <V n="new_value" t="single_value">
+                <U n="single_value">
+                  <T n="new_value">235269<!--CommodityBasedObjectStateValue: juiceFizzer_ProgressValues_Off--></T>
+                </U>
+              </V>
+            </U>
+          </V>
+        </L>
+        <L n="continuation">
+          <U>
+            <T n="affordance">237220<!--RenameImmediateInteraction: name_JuiceFizzing_Grimbucha--></T>
+            <E n="target">PickedObject</E>
+          </U>
+        </L>
+        <L n="loot_list">
+          <T>11080<!--LootActions: Skill_Loot_Dynamic_Small--></T>
+          <T>237128<!--LootActions: commodity_Dirtiness_JuiceFizzer--></T>
+        </L>
+      </U>
+    </U>
+  </V>
+  <V t="enabled" n="pie_menu_icon">
+    <V n="enabled" t="resource_key">
+      <U n="resource_key">
+        <T p="InEP09\UI\Icons\Skill\Skill_juiceFizzing.png" n="key">2f7d0004:00000000:483eabbf3a6de7ae</T>
+      </U>
+    </V>
+  </V>
+  <T n="pie_menu_priority">5</T>
+  <E n="scoring_priority">NORMAL</E>
+  <U n="skill_loot_data">
+    <T n="stat">234806<!--Skill: statistic_Skill_AdultMinor_JuiceFizzing--></T>
+  </U>
+  <T n="subaction_selection_weight">1</T>
+  <E n="target_type">OBJECT</E>
+  <L n="test_globals">
+    <V t="sim_info">
+      <U n="sim_info">
+        <V t="specified" n="ages" />
+        <V t="specified" n="species">
+          <U n="specified">
+            <L n="species">
+              <E />
+            </L>
+          </U>
+        </V>
+        <E n="who">Actor</E>
+      </U>
+    </V>
+    <V t="state">
+      <U n="state">
+        <V t="always_pass" n="fallback_behavior" />
+        <E n="operator">NOTEQUAL</E>
+        <T n="value">15076<!--CommodityBasedObjectStateValue: Brokenness_Broken--></T>
+      </U>
+    </V>
+  </L>
+  <L n="tests">
+    <L>
+      <V t="inventory">
+        <U n="inventory">
+          <V t="has_object_with_def" n="contents_check">
+            <U n="has_object_with_def">
+              <T n="definition">244670</T>
+            </U>
+          </V>
+          <V t="participant_inventory" n="inventory_location">
+            <U n="participant_inventory">
+              <E n="inventory">Object</E>
+            </U>
+          </V>
+        </U>
+      </V>
+    </L>
+    <L>
+      <V t="inventory">
+        <U n="inventory">
+          <V t="has_object_with_def" n="contents_check">
+            <U n="has_object_with_def">
+              <T n="definition">244687</T>
+            </U>
+          </V>
+          <V t="participant_inventory" n="inventory_location">
+            <U n="participant_inventory">
+              <E n="inventory">Object</E>
+            </U>
+          </V>
+        </U>
+      </V>
+    </L>
+  </L>
+  <T n="time_overhead">30</T>
+</I>

@@ -1,0 +1,246 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<I c="SuperInteraction" i="interaction" m="interactions.base.super_interaction" n="vampires_MindPowers_TankBladder" s="150717">
+  <L n="_constraints">
+    <U>
+      <L n="constraints">
+        <U>
+          <V n="value" t="facing" />
+        </U>
+      </L>
+    </U>
+    <U>
+      <L n="constraints">
+        <U>
+          <V t="line_of_sight" n="value" />
+        </U>
+      </L>
+    </U>
+    <U>
+      <L n="constraints">
+        <U>
+          <V n="value" t="circle">
+            <U n="circle">
+              <T n="ideal_radius">5</T>
+              <T n="radius">7</T>
+            </U>
+          </V>
+        </U>
+      </L>
+    </U>
+  </L>
+  <V t="enabled" n="_saveable" />
+  <T n="allow_autonomous">False</T>
+  <T n="attention_cost">0.5</T>
+  <V t="one_shot" n="basic_content" />
+  <T n="category">150720<!--PieMenuCategory: category_Vampires_MindPowers_NeedsNaughtiness--></T>
+  <V t="disabled" n="content_score" />
+  <T n="display_name">0x13BDC377<!--String: "Vaciar barra de vejiga"--></T>
+  <U n="display_name_text_tokens">
+    <L n="tokens">
+      <V t="participant_type">
+        <U n="participant_type">
+          <V t="from_participant" n="objects">
+            <U n="from_participant">
+              <E n="participant">Actor</E>
+            </U>
+          </V>
+        </U>
+      </V>
+      <V t="participant_type">
+        <U n="participant_type">
+          <V n="objects" t="from_participant">
+            <U n="from_participant">
+              <E n="participant">Object</E>
+            </U>
+          </V>
+        </U>
+      </V>
+    </L>
+  </U>
+  <L n="interaction_category_tags">
+    <E>Interaction_Super</E>
+    <E>Interaction_All</E>
+  </L>
+  <V n="outcome" t="test_based">
+    <U n="test_based">
+      <L n="fallback_outcomes">
+        <U>
+          <U n="outcome">
+            <V t="enabled" n="animation_ref">
+              <U n="enabled">
+                <T n="factory">150426<!--AnimationElement: vampires_MindPowers_Generic_Fail--></T>
+              </U>
+            </V>
+            <L n="basic_extras">
+              <V t="vfx">
+                <U n="vfx">
+                  <V t="from_participant" n="participant">
+                    <U n="from_participant">
+                      <E n="participant">Actor</E>
+                    </U>
+                  </V>
+                  <V t="on_xevt" n="timing">
+                    <U n="on_xevt">
+                      <T n="xevt_id">1290</T>
+                    </U>
+                  </V>
+                  <U n="vfx">
+                    <T n="effect_name">gp04_vampire_mind_power_beam_fail</T>
+                    <V t="Slot" n="joint_name">
+                      <T n="Slot">b__Spine2__</T>
+                    </V>
+                  </U>
+                  <V t="interaction" n="vfx_lifetime" />
+                  <V t="enabled" n="vfx_target">
+                    <U n="enabled">
+                      <T n="joint_name">b__Head__</T>
+                    </U>
+                  </V>
+                </U>
+              </V>
+            </L>
+            <L n="loot_list">
+              <T>150986<!--LootActions: loot_VampirePowerCost_Med--></T>
+            </L>
+          </U>
+        </U>
+      </L>
+      <L n="tested_outcomes">
+        <U>
+          <L n="potential_outcomes">
+            <U>
+              <U n="outcome">
+                <V t="enabled" n="animation_ref">
+                  <U n="enabled">
+                    <T n="factory">150425<!--AnimationElement: vampires_MindPowers_Generic_Success--></T>
+                  </U>
+                </V>
+                <L n="basic_extras">
+                  <V t="vfx">
+                    <U n="vfx">
+                      <V t="from_participant" n="participant">
+                        <U n="from_participant">
+                          <E n="participant">Actor</E>
+                        </U>
+                      </V>
+                      <V t="on_xevt" n="timing">
+                        <U n="on_xevt">
+                          <T n="xevt_id">1289</T>
+                        </U>
+                      </V>
+                      <U n="vfx">
+                        <T n="effect_name">gp04_vampire_mind_power_beam_succeed</T>
+                        <V t="Slot" n="joint_name">
+                          <T n="Slot">b__Spine2__</T>
+                        </V>
+                      </U>
+                      <V t="interaction" n="vfx_lifetime" />
+                      <V t="enabled" n="vfx_target">
+                        <U n="enabled">
+                          <T n="joint_name">b__Head__</T>
+                        </U>
+                      </V>
+                    </U>
+                  </V>
+                  <V t="vfx">
+                    <U n="vfx">
+                      <V t="on_xevt" n="timing">
+                        <U n="on_xevt">
+                          <T n="xevt_id">1289</T>
+                        </U>
+                      </V>
+                      <U n="vfx">
+                        <T n="effect_name">gp04_vampire_mind_needs_naughtiness</T>
+                        <V t="Slot" n="joint_name">
+                          <T n="Slot">b__Head__</T>
+                        </V>
+                      </U>
+                      <V t="interaction" n="vfx_lifetime" />
+                    </U>
+                  </V>
+                </L>
+                <L n="loot_list">
+                  <T>150729<!--LootActions: loot_MindPowers_TankBladder--></T>
+                  <T>150986<!--LootActions: loot_VampirePowerCost_Med--></T>
+                </L>
+              </U>
+            </U>
+          </L>
+          <L n="tests">
+            <L>
+              <V t="test_based_score_threshold">
+                <U n="test_based_score_threshold">
+                  <T n="test_based_score">150131<!--TestBasedScore: scores_MindPowers_Outcomes--></T>
+                  <U n="threshold">
+                    <T n="value">4</T>
+                  </U>
+                </U>
+              </V>
+            </L>
+          </L>
+        </U>
+      </L>
+    </U>
+  </V>
+  <E n="scoring_priority">NORMAL</E>
+  <T n="subaction_selection_weight">1</T>
+  <V t="literal" n="super_affordance_compatibility">
+    <U n="literal">
+      <V n="default_inclusion" t="exclude_all" />
+    </U>
+  </V>
+  <E n="target_type">TARGET</E>
+  <L n="test_globals">
+    <V t="sim_info">
+      <U n="sim_info">
+        <V t="specified" n="ages" />
+        <V t="specified" n="species">
+          <U n="specified">
+            <L n="species">
+              <E />
+            </L>
+          </U>
+        </V>
+        <E n="who">Actor</E>
+      </U>
+    </V>
+    <V t="region">
+      <U n="region">
+        <V n="blacklist" t="enabled">
+          <L n="enabled">
+            <T>231104<!--Region: region_Destination_Batuu--></T>
+          </L>
+        </V>
+      </U>
+    </V>
+    <V t="identity" />
+    <V t="bucks_perks_test">
+      <U n="bucks_perks_test">
+        <T n="bucks_perk">150746<!--BucksPerk: VampirePerks_MindPowers_NeedsNaughtiness--></T>
+      </U>
+    </V>
+    <V t="statistic">
+      <U n="statistic">
+        <T n="stat">16652<!--Commodity: motive_Bladder--></T>
+        <V t="value_threshold" n="threshold">
+          <U n="value_threshold">
+            <E n="comparison">GREATER</E>
+            <T n="value">-90</T>
+          </U>
+        </V>
+        <E n="who">TargetSim</E>
+      </U>
+    </V>
+    <V t="statistic_in_category">
+      <U n="statistic_in_category">
+        <T n="check_for_existence">False</T>
+        <E n="statistic_category">MindPowers_Buffs</E>
+        <V t="enabled" n="tooltip">
+          <T n="enabled">0x20419825<!--String: "{M1.Este}{F1.Esta} Sim ya está bajo influencia vampírica."--></T>
+        </V>
+        <E n="who">TargetSim</E>
+      </U>
+    </V>
+  </L>
+  <T n="time_overhead">30</T>
+</I>

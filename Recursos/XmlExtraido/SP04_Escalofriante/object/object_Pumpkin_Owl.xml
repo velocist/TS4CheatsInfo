@@ -1,0 +1,1206 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<I c="GameObject" i="object" m="objects.game_object" n="object_Pumpkin_Owl" s="124996">
+  <U n="_components">
+    <V t="enabled" n="focus">
+      <U n="enabled">
+        <V n="_focus_score" t="globally">
+          <U n="globally">
+            <E n="base">LOW</E>
+          </U>
+        </V>
+      </U>
+    </V>
+    <V t="enabled" n="inventory_item">
+      <U n="enabled">
+        <V n="put_away_affordance" t="DEFAULT" />
+        <T n="skip_carry_pose">True</T>
+        <L n="valid_inventory_types">
+          <E>TRASHCAN</E>
+          <E>SIM</E>
+          <E>STORAGE_CHEST_DORM</E>
+        </L>
+      </U>
+    </V>
+    <V t="enabled" n="lighting">
+      <U n="enabled">
+        <L n="component_interactions">
+          <T>126334<!--SwitchLightImmediateInteraction: pumpkin_TurnOn_Extinguish--></T>
+          <T>126333<!--SwitchLightImmediateInteraction: pumpkin_TurnOn_Light--></T>
+        </L>
+      </U>
+    </V>
+    <V t="enabled" n="retail_component">
+      <V n="enabled" t="reference">
+        <T n="reference">115301<!--RetailComponent: retailComponent_Default_LowAppeal--></T>
+      </V>
+    </V>
+    <V n="state" t="enabled">
+      <U n="enabled">
+        <L n="state_triggers">
+          <U>
+            <L n="at_states">
+              <T>15304<!--CommodityBasedObjectStateValue: Quality_Normal--></T>
+              <T>125003<!--ObjectStateValue: pumpkin_Smashed_Fine--></T>
+            </L>
+            <V t="Set_state_list" n="set_states">
+              <L n="Set_state_list">
+                <T>126674<!--ObjectStateValue: pumpkin_GeoStates_Carved--></T>
+              </L>
+            </V>
+            <E n="trigger_operation">AND</E>
+          </U>
+          <U>
+            <L n="at_states">
+              <T>15306<!--CommodityBasedObjectStateValue: Quality_Poor--></T>
+              <T>125003<!--ObjectStateValue: pumpkin_Smashed_Fine--></T>
+            </L>
+            <V n="set_states" t="Set_state_list">
+              <L n="Set_state_list">
+                <T>126675<!--ObjectStateValue: pumpkin_GeoStates_Fail--></T>
+              </L>
+            </V>
+          </U>
+          <U>
+            <L n="at_states">
+              <T>125004<!--ObjectStateValue: pumpkin_Smashed_Destroyed--></T>
+            </L>
+            <V n="set_states" t="Set_state_list">
+              <L n="Set_state_list">
+                <T>126676<!--ObjectStateValue: pumpkin_GeoStates_Smash--></T>
+              </L>
+            </V>
+          </U>
+          <U>
+            <L n="at_states">
+              <T>15305<!--CommodityBasedObjectStateValue: Quality_Outstanding--></T>
+              <T>125003<!--ObjectStateValue: pumpkin_Smashed_Fine--></T>
+            </L>
+            <V t="Set_state_list" n="set_states">
+              <L n="Set_state_list">
+                <T>126674<!--ObjectStateValue: pumpkin_GeoStates_Carved--></T>
+              </L>
+            </V>
+            <E n="trigger_operation">AND</E>
+          </U>
+          <U>
+            <L n="at_states">
+              <T>15190<!--CommodityBasedObjectStateValue: Freshness_Spoiled--></T>
+            </L>
+            <V n="set_states" t="Set_state_list">
+              <L n="Set_state_list">
+                <T>35956<!--CommodityBasedObjectStateValue: Materialistic_Admired--></T>
+              </L>
+            </V>
+          </U>
+          <U>
+            <L n="at_states">
+              <T>125004<!--ObjectStateValue: pumpkin_Smashed_Destroyed--></T>
+            </L>
+            <V n="set_states" t="Set_state_list">
+              <L n="Set_state_list">
+                <T>98746<!--ObjectStateValue: GenericFX_Off--></T>
+              </L>
+            </V>
+          </U>
+          <U>
+            <L n="at_states">
+              <T>125004<!--ObjectStateValue: pumpkin_Smashed_Destroyed--></T>
+            </L>
+            <V n="set_states" t="Set_state_list">
+              <L n="Set_state_list">
+                <T>15190<!--CommodityBasedObjectStateValue: Freshness_Spoiled--></T>
+              </L>
+            </V>
+          </U>
+          <U>
+            <L n="at_states">
+              <T>77532<!--CommodityBasedObjectStateValue: FireState_Burn_Material_Change_Replace--></T>
+            </L>
+            <V n="set_states" t="Set_state_list">
+              <L n="Set_state_list">
+                <T>39737<!--CommodityBasedObjectStateValue: FireState_Burn_Material_Change_Not_Burning--></T>
+              </L>
+            </V>
+          </U>
+        </L>
+        <L n="states">
+          <U>
+            <L n="client_states">
+              <U>
+                <T n="key">125003<!--ObjectStateValue: pumpkin_Smashed_Fine--></T>
+              </U>
+              <U>
+                <T n="key">125004<!--ObjectStateValue: pumpkin_Smashed_Destroyed--></T>
+                <U n="value">
+                  <V t="enabled" n="change_value" />
+                  <V t="apply_new_value" n="geometry_state">
+                    <V n="apply_new_value" t="set_to_custom_value">
+                      <T n="set_to_custom_value">Smashed</T>
+                    </V>
+                  </V>
+                  <V n="toggle_footprint" t="apply_new_value">
+                    <U n="apply_new_value">
+                      <L n="toggles">
+                        <U>
+                          <T n="footprint_hash">pathingToggle_ftpShape</T>
+                        </U>
+                        <U>
+                          <T n="footprint_hash">placementPathing_ftpShape</T>
+                        </U>
+                      </L>
+                    </U>
+                  </V>
+                </U>
+              </U>
+            </L>
+            <V n="default_value" t="reference">
+              <T n="reference">125003<!--ObjectStateValue: pumpkin_Smashed_Fine--></T>
+            </V>
+          </U>
+          <U>
+            <L n="client_states">
+              <U>
+                <T n="key">125009<!--ObjectStateValue: pumpkin_Preserved_Active--></T>
+                <U n="value">
+                  <V t="apply_new_value" n="autonomy_modifiers">
+                    <V n="apply_new_value" t="apply_statistic_modifiers">
+                      <U n="apply_statistic_modifiers">
+                        <L n="autonomy_modifiers">
+                          <U>
+                            <L n="locked_stats">
+                              <T>16591<!--Commodity: commodity_freshness--></T>
+                            </L>
+                          </U>
+                        </L>
+                      </U>
+                    </V>
+                  </V>
+                </U>
+              </U>
+              <U>
+                <T n="key">125010<!--ObjectStateValue: pumpkin_Preserved_Deactive--></T>
+                <U n="value">
+                  <V n="autonomy_modifiers" t="apply_new_value">
+                    <V n="apply_new_value" t="apply_statistic_modifiers">
+                      <U n="apply_statistic_modifiers">
+                        <L n="autonomy_modifiers">
+                          <U>
+                            <L n="decay_modifiers">
+                              <U>
+                                <T n="key">16591<!--Commodity: commodity_freshness--></T>
+                                <T n="value">0.1</T>
+                              </U>
+                            </L>
+                          </U>
+                        </L>
+                      </U>
+                    </V>
+                  </V>
+                </U>
+              </U>
+            </L>
+            <V n="default_value" t="reference">
+              <T n="reference">125010<!--ObjectStateValue: pumpkin_Preserved_Deactive--></T>
+            </V>
+          </U>
+          <U>
+            <L n="client_states">
+              <U>
+                <T n="key">125006<!--ObjectStateValue: pumpkin_Light_On--></T>
+                <U n="value">
+                  <V n="light_dimmer" t="apply_new_value">
+                    <T n="apply_new_value">1</T>
+                  </V>
+                </U>
+              </U>
+              <U>
+                <T n="key">125007<!--ObjectStateValue: pumpkin_Light_Off--></T>
+                <U n="value">
+                  <V t="apply_new_value" n="light_dimmer" />
+                </U>
+              </U>
+            </L>
+            <V n="default_value" t="reference">
+              <T n="reference">125007<!--ObjectStateValue: pumpkin_Light_Off--></T>
+            </V>
+          </U>
+          <U>
+            <L n="client_states">
+              <U>
+                <T n="key">125014<!--ObjectStateValue: pumpkin_Color_Orange--></T>
+              </U>
+              <U>
+                <T n="key">125015<!--ObjectStateValue: pumpkin_Color_PaleOrange--></T>
+              </U>
+              <U>
+                <T n="key">125016<!--ObjectStateValue: pumpkin_Color_White--></T>
+              </U>
+              <U>
+                <T n="key">125017<!--ObjectStateValue: pumpkin_Color_Green--></T>
+              </U>
+            </L>
+            <V t="reference" n="default_value">
+              <T n="reference">125014<!--ObjectStateValue: pumpkin_Color_Orange--></T>
+            </V>
+          </U>
+          <U>
+            <L n="client_states">
+              <U>
+                <T n="key">125019<!--ObjectStateValue: pumpkin_EmotionalAura_Angry_01--></T>
+                <U n="value">
+                  <V n="environment_score" t="apply_new_value">
+                    <U n="apply_new_value">
+                      <U n="base_modifiers">
+                        <L n="mood_modifiers">
+                          <U>
+                            <T n="mood">14632<!--Mood: Mood_Angry--></T>
+                            <U n="modifiers">
+                              <T n="add_modifier">5</T>
+                            </U>
+                          </U>
+                        </L>
+                      </U>
+                    </U>
+                  </V>
+                </U>
+              </U>
+              <U>
+                <T n="key">125020<!--ObjectStateValue: pumpkin_EmotionalAura_Bored_01--></T>
+                <U n="value">
+                  <V n="environment_score" t="apply_new_value">
+                    <U n="apply_new_value">
+                      <U n="base_modifiers">
+                        <L n="mood_modifiers">
+                          <U>
+                            <T n="mood">14633<!--Mood: Mood_Bored--></T>
+                            <U n="modifiers">
+                              <T n="add_modifier">5</T>
+                            </U>
+                          </U>
+                        </L>
+                      </U>
+                    </U>
+                  </V>
+                </U>
+              </U>
+              <U>
+                <T n="key">125021<!--ObjectStateValue: pumpkin_EmotionalAura_Confident_01--></T>
+                <U n="value">
+                  <V n="environment_score" t="apply_new_value">
+                    <U n="apply_new_value">
+                      <U n="base_modifiers">
+                        <L n="mood_modifiers">
+                          <U>
+                            <T n="mood">14634<!--Mood: Mood_Confident--></T>
+                            <U n="modifiers">
+                              <T n="add_modifier">5</T>
+                            </U>
+                          </U>
+                        </L>
+                      </U>
+                    </U>
+                  </V>
+                </U>
+              </U>
+              <U>
+                <T n="key">125022<!--ObjectStateValue: pumpkin_EmotionalAura_Inspired_01--></T>
+                <U n="value">
+                  <V n="environment_score" t="apply_new_value">
+                    <U n="apply_new_value">
+                      <U n="base_modifiers">
+                        <L n="mood_modifiers">
+                          <U>
+                            <T n="mood">14641<!--Mood: Mood_Inspired--></T>
+                            <U n="modifiers">
+                              <T n="add_modifier">5</T>
+                            </U>
+                          </U>
+                        </L>
+                      </U>
+                    </U>
+                  </V>
+                </U>
+              </U>
+              <U>
+                <T n="key">125023<!--ObjectStateValue: pumpkin_EmotionalAura_Focused_01--></T>
+                <U n="value">
+                  <V n="environment_score" t="apply_new_value">
+                    <U n="apply_new_value">
+                      <U n="base_modifiers">
+                        <L n="mood_modifiers">
+                          <U>
+                            <T n="mood">14639<!--Mood: Mood_Focused--></T>
+                            <U n="modifiers">
+                              <T n="add_modifier">5</T>
+                            </U>
+                          </U>
+                        </L>
+                      </U>
+                    </U>
+                  </V>
+                </U>
+              </U>
+              <U>
+                <T n="key">125024<!--ObjectStateValue: pumpkin_EmotionalAura_Flirty_01--></T>
+                <U n="value">
+                  <V n="environment_score" t="apply_new_value">
+                    <U n="apply_new_value">
+                      <U n="base_modifiers">
+                        <L n="mood_modifiers">
+                          <U>
+                            <T n="mood">14638<!--Mood: Mood_Flirty--></T>
+                            <U n="modifiers">
+                              <T n="add_modifier">5</T>
+                            </U>
+                          </U>
+                        </L>
+                      </U>
+                    </U>
+                  </V>
+                </U>
+              </U>
+              <U>
+                <T n="key">125025<!--ObjectStateValue: pumpkin_EmotionalAura_Playful_01--></T>
+                <U n="value">
+                  <V n="environment_score" t="apply_new_value">
+                    <U n="apply_new_value">
+                      <U n="base_modifiers">
+                        <L n="mood_modifiers">
+                          <U>
+                            <T n="mood">14642<!--Mood: Mood_Playful--></T>
+                            <U n="modifiers">
+                              <T n="add_modifier">5</T>
+                            </U>
+                          </U>
+                        </L>
+                      </U>
+                    </U>
+                  </V>
+                </U>
+              </U>
+              <U>
+                <T n="key">125026<!--ObjectStateValue: pumpkin_EmotionalAura_Sad_01--></T>
+                <U n="value">
+                  <V n="environment_score" t="apply_new_value">
+                    <U n="apply_new_value">
+                      <U n="base_modifiers">
+                        <L n="mood_modifiers">
+                          <U>
+                            <T n="mood">14643<!--Mood: Mood_Sad--></T>
+                            <U n="modifiers">
+                              <T n="add_modifier">5</T>
+                            </U>
+                          </U>
+                        </L>
+                      </U>
+                    </U>
+                  </V>
+                </U>
+              </U>
+              <U>
+                <T n="key">125034<!--ObjectStateValue: pumpkin_EmotionalAura_None--></T>
+              </U>
+              <U>
+                <T n="key">126565<!--ObjectStateValue: pumpkin_EmotionalAura_Angry_04--></T>
+                <U n="value">
+                  <V n="environment_score" t="apply_new_value">
+                    <U n="apply_new_value">
+                      <U n="base_modifiers">
+                        <L n="mood_modifiers">
+                          <U>
+                            <T n="mood">14632<!--Mood: Mood_Angry--></T>
+                            <U n="modifiers">
+                              <T n="add_modifier">20</T>
+                            </U>
+                          </U>
+                        </L>
+                      </U>
+                    </U>
+                  </V>
+                </U>
+              </U>
+              <U>
+                <T n="key">126566<!--ObjectStateValue: pumpkin_EmotionalAura_Angry_07--></T>
+                <U n="value">
+                  <V n="environment_score" t="apply_new_value">
+                    <U n="apply_new_value">
+                      <U n="base_modifiers">
+                        <L n="mood_modifiers">
+                          <U>
+                            <T n="mood">14632<!--Mood: Mood_Angry--></T>
+                            <U n="modifiers">
+                              <T n="add_modifier">80</T>
+                            </U>
+                          </U>
+                        </L>
+                      </U>
+                    </U>
+                  </V>
+                </U>
+              </U>
+              <U>
+                <T n="key">126567<!--ObjectStateValue: pumpkin_EmotionalAura_Focused_04--></T>
+                <U n="value">
+                  <V n="environment_score" t="apply_new_value">
+                    <U n="apply_new_value">
+                      <U n="base_modifiers">
+                        <L n="mood_modifiers">
+                          <U>
+                            <T n="mood">14639<!--Mood: Mood_Focused--></T>
+                            <U n="modifiers">
+                              <T n="add_modifier">20</T>
+                            </U>
+                          </U>
+                        </L>
+                      </U>
+                    </U>
+                  </V>
+                </U>
+              </U>
+              <U>
+                <T n="key">126568<!--ObjectStateValue: pumpkin_EmotionalAura_Focused_07--></T>
+                <U n="value">
+                  <V n="environment_score" t="apply_new_value">
+                    <U n="apply_new_value">
+                      <U n="base_modifiers">
+                        <L n="mood_modifiers">
+                          <U>
+                            <T n="mood">14639<!--Mood: Mood_Focused--></T>
+                            <U n="modifiers">
+                              <T n="add_modifier">80</T>
+                            </U>
+                          </U>
+                        </L>
+                      </U>
+                    </U>
+                  </V>
+                </U>
+              </U>
+              <U>
+                <T n="key">126569<!--ObjectStateValue: pumpkin_EmotionalAura_Inspired_04--></T>
+                <U n="value">
+                  <V n="environment_score" t="apply_new_value">
+                    <U n="apply_new_value">
+                      <U n="base_modifiers">
+                        <L n="mood_modifiers">
+                          <U>
+                            <T n="mood">14641<!--Mood: Mood_Inspired--></T>
+                            <U n="modifiers">
+                              <T n="add_modifier">20</T>
+                            </U>
+                          </U>
+                        </L>
+                      </U>
+                    </U>
+                  </V>
+                </U>
+              </U>
+              <U>
+                <T n="key">126570<!--ObjectStateValue: pumpkin_EmotionalAura_Inspired_07--></T>
+                <U n="value">
+                  <V n="environment_score" t="apply_new_value">
+                    <U n="apply_new_value">
+                      <U n="base_modifiers">
+                        <L n="mood_modifiers">
+                          <U>
+                            <T n="mood">14641<!--Mood: Mood_Inspired--></T>
+                            <U n="modifiers">
+                              <T n="add_modifier">80</T>
+                            </U>
+                          </U>
+                        </L>
+                      </U>
+                    </U>
+                  </V>
+                </U>
+              </U>
+              <U>
+                <T n="key">126571<!--ObjectStateValue: pumpkin_EmotionalAura_Playful_04--></T>
+                <U n="value">
+                  <V n="environment_score" t="apply_new_value">
+                    <U n="apply_new_value">
+                      <U n="base_modifiers">
+                        <L n="mood_modifiers">
+                          <U>
+                            <T n="mood">14642<!--Mood: Mood_Playful--></T>
+                            <U n="modifiers">
+                              <T n="add_modifier">20</T>
+                            </U>
+                          </U>
+                        </L>
+                      </U>
+                    </U>
+                  </V>
+                </U>
+              </U>
+              <U>
+                <T n="key">126572<!--ObjectStateValue: pumpkin_EmotionalAura_Playful_07--></T>
+                <U n="value">
+                  <V n="environment_score" t="apply_new_value">
+                    <U n="apply_new_value">
+                      <U n="base_modifiers">
+                        <L n="mood_modifiers">
+                          <U>
+                            <T n="mood">14642<!--Mood: Mood_Playful--></T>
+                            <U n="modifiers">
+                              <T n="add_modifier">80</T>
+                            </U>
+                          </U>
+                        </L>
+                      </U>
+                    </U>
+                  </V>
+                </U>
+              </U>
+              <U>
+                <T n="key">126573<!--ObjectStateValue: pumpkin_EmotionalAura_Sad_04--></T>
+                <U n="value">
+                  <V n="environment_score" t="apply_new_value">
+                    <U n="apply_new_value">
+                      <U n="base_modifiers">
+                        <L n="mood_modifiers">
+                          <U>
+                            <T n="mood">14643<!--Mood: Mood_Sad--></T>
+                            <U n="modifiers">
+                              <T n="add_modifier">20</T>
+                            </U>
+                          </U>
+                        </L>
+                      </U>
+                    </U>
+                  </V>
+                </U>
+              </U>
+              <U>
+                <T n="key">126574<!--ObjectStateValue: pumpkin_EmotionalAura_Sad_07--></T>
+                <U n="value">
+                  <V n="environment_score" t="apply_new_value">
+                    <U n="apply_new_value">
+                      <U n="base_modifiers">
+                        <L n="mood_modifiers">
+                          <U>
+                            <T n="mood">14643<!--Mood: Mood_Sad--></T>
+                            <U n="modifiers">
+                              <T n="add_modifier">80</T>
+                            </U>
+                          </U>
+                        </L>
+                      </U>
+                    </U>
+                  </V>
+                </U>
+              </U>
+              <U>
+                <T n="key">126575<!--ObjectStateValue: pumpkin_EmotionalAura_Bored_04--></T>
+                <U n="value">
+                  <V n="environment_score" t="apply_new_value">
+                    <U n="apply_new_value">
+                      <U n="base_modifiers">
+                        <L n="mood_modifiers">
+                          <U>
+                            <T n="mood">14633<!--Mood: Mood_Bored--></T>
+                            <U n="modifiers">
+                              <T n="add_modifier">20</T>
+                            </U>
+                          </U>
+                        </L>
+                      </U>
+                    </U>
+                  </V>
+                </U>
+              </U>
+              <U>
+                <T n="key">126576<!--ObjectStateValue: pumpkin_EmotionalAura_Bored_07--></T>
+                <U n="value">
+                  <V n="environment_score" t="apply_new_value">
+                    <U n="apply_new_value">
+                      <U n="base_modifiers">
+                        <L n="mood_modifiers">
+                          <U>
+                            <T n="mood">14633<!--Mood: Mood_Bored--></T>
+                            <U n="modifiers">
+                              <T n="add_modifier">80</T>
+                            </U>
+                          </U>
+                        </L>
+                      </U>
+                    </U>
+                  </V>
+                </U>
+              </U>
+              <U>
+                <T n="key">126577<!--ObjectStateValue: pumpkin_EmotionalAura_Confident_04--></T>
+                <U n="value">
+                  <V n="environment_score" t="apply_new_value">
+                    <U n="apply_new_value">
+                      <U n="base_modifiers">
+                        <L n="mood_modifiers">
+                          <U>
+                            <T n="mood">14634<!--Mood: Mood_Confident--></T>
+                            <U n="modifiers">
+                              <T n="add_modifier">20</T>
+                            </U>
+                          </U>
+                        </L>
+                      </U>
+                    </U>
+                  </V>
+                </U>
+              </U>
+              <U>
+                <T n="key">126578<!--ObjectStateValue: pumpkin_EmotionalAura_Confident_07--></T>
+                <U n="value">
+                  <V n="environment_score" t="apply_new_value">
+                    <U n="apply_new_value">
+                      <U n="base_modifiers">
+                        <L n="mood_modifiers">
+                          <U>
+                            <T n="mood">14634<!--Mood: Mood_Confident--></T>
+                            <U n="modifiers">
+                              <T n="add_modifier">80</T>
+                            </U>
+                          </U>
+                        </L>
+                      </U>
+                    </U>
+                  </V>
+                </U>
+              </U>
+              <U>
+                <T n="key">126579<!--ObjectStateValue: pumpkin_EmotionalAura_Flirty_04--></T>
+                <U n="value">
+                  <V n="environment_score" t="apply_new_value">
+                    <U n="apply_new_value">
+                      <U n="base_modifiers">
+                        <L n="mood_modifiers">
+                          <U>
+                            <T n="mood">14638<!--Mood: Mood_Flirty--></T>
+                            <U n="modifiers">
+                              <T n="add_modifier">20</T>
+                            </U>
+                          </U>
+                        </L>
+                      </U>
+                    </U>
+                  </V>
+                </U>
+              </U>
+              <U>
+                <T n="key">126580<!--ObjectStateValue: pumpkin_EmotionalAura_Flirty_07--></T>
+                <U n="value">
+                  <V n="environment_score" t="apply_new_value">
+                    <U n="apply_new_value">
+                      <U n="base_modifiers">
+                        <L n="mood_modifiers">
+                          <U>
+                            <T n="mood">14638<!--Mood: Mood_Flirty--></T>
+                            <U n="modifiers">
+                              <T n="add_modifier">80</T>
+                            </U>
+                          </U>
+                        </L>
+                      </U>
+                    </U>
+                  </V>
+                </U>
+              </U>
+            </L>
+            <V n="default_value" t="reference">
+              <T n="reference">125034<!--ObjectStateValue: pumpkin_EmotionalAura_None--></T>
+            </V>
+          </U>
+          <U>
+            <L n="client_states">
+              <U>
+                <T n="key">15304<!--CommodityBasedObjectStateValue: Quality_Normal--></T>
+              </U>
+              <U>
+                <T n="key">15305<!--CommodityBasedObjectStateValue: Quality_Outstanding--></T>
+              </U>
+              <U>
+                <T n="key">15306<!--CommodityBasedObjectStateValue: Quality_Poor--></T>
+              </U>
+            </L>
+            <V t="reference" n="default_value">
+              <T n="reference">15304<!--CommodityBasedObjectStateValue: Quality_Normal--></T>
+            </V>
+          </U>
+          <U>
+            <L n="client_states">
+              <U>
+                <T n="key">126674<!--ObjectStateValue: pumpkin_GeoStates_Carved--></T>
+                <U n="value">
+                  <V n="geometry_state" t="apply_new_value">
+                    <V n="apply_new_value" t="set_to_custom_value">
+                      <T n="set_to_custom_value">Carved</T>
+                    </V>
+                  </V>
+                </U>
+              </U>
+              <U>
+                <T n="key">126675<!--ObjectStateValue: pumpkin_GeoStates_Fail--></T>
+                <U n="value">
+                  <V n="geometry_state" t="apply_new_value">
+                    <V n="apply_new_value" t="set_to_custom_value">
+                      <T n="set_to_custom_value">Fail</T>
+                    </V>
+                  </V>
+                </U>
+              </U>
+              <U>
+                <T n="key">126676<!--ObjectStateValue: pumpkin_GeoStates_Smash--></T>
+                <U n="value">
+                  <V t="apply_new_value" n="geometry_state">
+                    <V n="apply_new_value" t="set_to_custom_value">
+                      <T n="set_to_custom_value">Smashed</T>
+                    </V>
+                  </V>
+                </U>
+              </U>
+            </L>
+            <V n="default_value" t="reference">
+              <T n="reference">126674<!--ObjectStateValue: pumpkin_GeoStates_Carved--></T>
+            </V>
+          </U>
+          <U>
+            <L n="client_states">
+              <U>
+                <T n="key">15189<!--CommodityBasedObjectStateValue: Freshness_Fresh--></T>
+                <U n="value">
+                  <V t="apply_new_value" n="vfx_state" />
+                </U>
+              </U>
+              <U>
+                <T n="key">15190<!--CommodityBasedObjectStateValue: Freshness_Spoiled--></T>
+                <U n="value">
+                  <V n="vfx_state" t="apply_new_value">
+                    <V n="apply_new_value" t="start_vfx">
+                      <V n="start_vfx" t="single_effect">
+                        <U n="single_effect">
+                          <T n="effect_name">sp04_pumpkin_rotten</T>
+                        </U>
+                      </V>
+                    </V>
+                  </V>
+                </U>
+              </U>
+              <U>
+                <T n="key">15191<!--CommodityBasedObjectStateValue: Freshness_Untouched--></T>
+                <U n="value">
+                  <V t="apply_new_value" n="vfx_state" />
+                </U>
+              </U>
+            </L>
+            <V t="reference" n="default_value">
+              <T n="reference">15191<!--CommodityBasedObjectStateValue: Freshness_Untouched--></T>
+            </V>
+          </U>
+          <U>
+            <L n="client_states">
+              <U>
+                <T n="key">127022<!--ObjectStateValue: wornObject_Worn--></T>
+                <U n="value">
+                  <V t="apply_new_value" n="autonomy_modifiers">
+                    <V n="apply_new_value" t="apply_statistic_modifiers">
+                      <U n="apply_statistic_modifiers">
+                        <L n="autonomy_modifiers">
+                          <U>
+                            <L n="locked_stats">
+                              <T>16591<!--Commodity: commodity_freshness--></T>
+                            </L>
+                          </U>
+                        </L>
+                      </U>
+                    </V>
+                  </V>
+                  <V n="vfx_state" t="apply_new_value">
+                    <V n="apply_new_value" t="start_vfx">
+                      <V n="start_vfx" t="single_effect">
+                        <U n="single_effect">
+                          <T n="effect_name">sp04_pumpkin_possess</T>
+                        </U>
+                      </V>
+                    </V>
+                  </V>
+                </U>
+              </U>
+              <U>
+                <T n="key">127023<!--ObjectStateValue: wornObject_NotWorn--></T>
+                <U n="value">
+                  <V t="apply_new_value" n="autonomy_modifiers" />
+                  <V t="apply_new_value" n="vfx_state" />
+                </U>
+              </U>
+            </L>
+            <V n="default_value" t="reference">
+              <T n="reference">127023<!--ObjectStateValue: wornObject_NotWorn--></T>
+            </V>
+            <T n="reset_to_default">True</T>
+          </U>
+          <U>
+            <L n="client_states">
+              <U>
+                <T n="key">98745<!--ObjectStateValue: GenericFX_On--></T>
+                <U n="value">
+                  <V n="vfx_state" t="apply_new_value">
+                    <V n="apply_new_value" t="start_vfx">
+                      <V n="start_vfx" t="single_effect">
+                        <U n="single_effect">
+                          <T n="effect_name">sp04_candle_pumpkin_light</T>
+                        </U>
+                      </V>
+                    </V>
+                  </V>
+                </U>
+              </U>
+              <U>
+                <T n="key">98746<!--ObjectStateValue: GenericFX_Off--></T>
+                <U n="value">
+                  <V t="apply_new_value" n="vfx_state" />
+                </U>
+              </U>
+            </L>
+            <V t="reference" n="default_value">
+              <T n="reference">98746<!--ObjectStateValue: GenericFX_Off--></T>
+            </V>
+          </U>
+          <U>
+            <V t="reference" n="default_value">
+              <T n="reference">15248<!--ObjectStateValue: Masterwork_Normalwork--></T>
+            </V>
+            <T n="reset_to_default">False</T>
+          </U>
+          <U>
+            <L n="client_states">
+              <U>
+                <T n="key">183056<!--ObjectStateValue: globalTemp_Freezing--></T>
+                <U n="value">
+                  <V n="autonomy_modifiers" t="apply_new_value">
+                    <V n="apply_new_value" t="apply_statistic_modifiers">
+                      <U n="apply_statistic_modifiers">
+                        <L n="autonomy_modifiers">
+                          <U>
+                            <L n="decay_modifiers">
+                              <U>
+                                <T n="key">16591<!--Commodity: commodity_freshness--></T>
+                                <T n="value">0</T>
+                              </U>
+                            </L>
+                          </U>
+                        </L>
+                      </U>
+                    </V>
+                  </V>
+                </U>
+              </U>
+              <U>
+                <T n="key">183057<!--ObjectStateValue: globalTemp_Cold--></T>
+                <U n="value">
+                  <V n="autonomy_modifiers" t="apply_new_value">
+                    <V n="apply_new_value" t="apply_statistic_modifiers">
+                      <U n="apply_statistic_modifiers">
+                        <L n="autonomy_modifiers">
+                          <U>
+                            <L n="decay_modifiers">
+                              <U>
+                                <T n="key">16591<!--Commodity: commodity_freshness--></T>
+                                <T n="value">0.5</T>
+                              </U>
+                            </L>
+                          </U>
+                        </L>
+                      </U>
+                    </V>
+                  </V>
+                </U>
+              </U>
+              <U>
+                <T n="key">183058<!--ObjectStateValue: globalTemp_Cool--></T>
+                <U n="value">
+                  <V n="autonomy_modifiers" t="apply_new_value">
+                    <V n="apply_new_value" t="apply_statistic_modifiers">
+                      <U n="apply_statistic_modifiers">
+                        <L n="autonomy_modifiers">
+                          <U>
+                            <L n="decay_modifiers">
+                              <U>
+                                <T n="key">16591<!--Commodity: commodity_freshness--></T>
+                                <T n="value">1</T>
+                              </U>
+                            </L>
+                          </U>
+                        </L>
+                      </U>
+                    </V>
+                  </V>
+                </U>
+              </U>
+              <U>
+                <T n="key">183059<!--ObjectStateValue: globalTemp_Warm--></T>
+                <U n="value">
+                  <V n="autonomy_modifiers" t="apply_new_value">
+                    <V n="apply_new_value" t="apply_statistic_modifiers">
+                      <U n="apply_statistic_modifiers">
+                        <L n="autonomy_modifiers">
+                          <U>
+                            <L n="decay_modifiers">
+                              <U>
+                                <T n="key">16591<!--Commodity: commodity_freshness--></T>
+                                <T n="value">1</T>
+                              </U>
+                            </L>
+                          </U>
+                        </L>
+                      </U>
+                    </V>
+                  </V>
+                </U>
+              </U>
+              <U>
+                <T n="key">183060<!--ObjectStateValue: globalTemp_Hot--></T>
+                <U n="value">
+                  <V n="autonomy_modifiers" t="apply_new_value">
+                    <V n="apply_new_value" t="apply_statistic_modifiers">
+                      <U n="apply_statistic_modifiers">
+                        <L n="autonomy_modifiers">
+                          <U>
+                            <L n="decay_modifiers">
+                              <U>
+                                <T n="key">16591<!--Commodity: commodity_freshness--></T>
+                                <T n="value">1.5</T>
+                              </U>
+                            </L>
+                          </U>
+                        </L>
+                      </U>
+                    </V>
+                  </V>
+                </U>
+              </U>
+              <U>
+                <T n="key">183061<!--ObjectStateValue: globalTemp_Burning--></T>
+                <U n="value">
+                  <V n="autonomy_modifiers" t="apply_new_value">
+                    <V n="apply_new_value" t="apply_statistic_modifiers">
+                      <U n="apply_statistic_modifiers">
+                        <L n="autonomy_modifiers">
+                          <U>
+                            <L n="decay_modifiers">
+                              <U>
+                                <T n="key">16591<!--Commodity: commodity_freshness--></T>
+                                <T n="value">2</T>
+                              </U>
+                            </L>
+                          </U>
+                        </L>
+                      </U>
+                    </V>
+                  </V>
+                </U>
+              </U>
+            </L>
+            <V n="default_value" t="reference">
+              <T n="reference">183058<!--ObjectStateValue: globalTemp_Cool--></T>
+            </V>
+          </U>
+          <U>
+            <L n="client_states">
+              <U>
+                <T n="key">39478<!--CommodityBasedObjectStateValue: FireState_Burn_Incinerate_Burning--></T>
+              </U>
+              <U>
+                <T n="key">39479<!--CommodityBasedObjectStateValue: FireState_Burn_Incinerate--></T>
+              </U>
+              <U>
+                <T n="key">39612<!--CommodityBasedObjectStateValue: FireState_Burn_Incinerate_Not_Burning--></T>
+              </U>
+            </L>
+            <V t="reference" n="default_value">
+              <T n="reference">39612<!--CommodityBasedObjectStateValue: FireState_Burn_Incinerate_Not_Burning--></T>
+            </V>
+            <T n="reset_on_load_if_time_passes">False</T>
+            <T n="reset_to_default">False</T>
+          </U>
+          <U>
+            <L n="client_states">
+              <U>
+                <T n="key">35956<!--CommodityBasedObjectStateValue: Materialistic_Admired--></T>
+              </U>
+              <U>
+                <T n="key">35957<!--CommodityBasedObjectStateValue: Materialistic_YetToAdmire--></T>
+              </U>
+            </L>
+            <V t="reference" n="default_value">
+              <T n="reference">35957<!--CommodityBasedObjectStateValue: Materialistic_YetToAdmire--></T>
+            </V>
+          </U>
+          <U>
+            <L n="client_states">
+              <U>
+                <T n="key">100570<!--ObjectStateValue: EmotionEnvironment_Enabled--></T>
+              </U>
+              <U>
+                <T n="key">100571<!--ObjectStateValue: EmotionEnvironment_Disabled--></T>
+              </U>
+            </L>
+            <V n="default_value" t="reference">
+              <T n="reference">100571<!--ObjectStateValue: EmotionEnvironment_Disabled--></T>
+            </V>
+          </U>
+        </L>
+      </U>
+    </V>
+    <V t="enabled" n="tooltip_component">
+      <U n="enabled">
+        <L n="state_value_numbers">
+          <U>
+            <T n="number">9</T>
+            <T n="state_value">15247<!--ObjectStateValue: Masterwork_Masterwork--></T>
+          </U>
+          <U>
+            <T n="number">6</T>
+            <T n="state_value">15305<!--CommodityBasedObjectStateValue: Quality_Outstanding--></T>
+          </U>
+          <U>
+            <T n="number">2</T>
+            <T n="state_value">15306<!--CommodityBasedObjectStateValue: Quality_Poor--></T>
+          </U>
+          <U>
+            <T n="number">4</T>
+            <T n="state_value">15304<!--CommodityBasedObjectStateValue: Quality_Normal--></T>
+          </U>
+        </L>
+        <L n="state_value_strings">
+          <L>
+            <U>
+              <T n="state_value">74146<!--ObjectStateValue: CraftingEmotion_Flirty--></T>
+              <V n="text" t="single">
+                <T n="single">0x6FE66658<!--String: "Ambiente de coqueteo: {0.Number}"--></T>
+              </V>
+            </U>
+            <U>
+              <T n="state_value">74148<!--ObjectStateValue: CraftingEmotion_Angry--></T>
+              <V n="text" t="single">
+                <T n="single">0x3009EDBE<!--String: "Ambiente de enfado: {0.Number}"--></T>
+              </V>
+            </U>
+            <U>
+              <T n="state_value">74149<!--ObjectStateValue: CraftingEmotion_Confident--></T>
+              <V n="text" t="single">
+                <T n="single">0xEA42E0A3<!--String: "Ambiente de seguridad: {0.Number}"--></T>
+              </V>
+            </U>
+            <U>
+              <T n="state_value">74147<!--ObjectStateValue: CraftingEmotion_Playful--></T>
+              <V n="text" t="single">
+                <T n="single">0x8C37A724<!--String: "Ambiente vacilón: {0.Number}"--></T>
+              </V>
+            </U>
+            <U>
+              <T n="state_value">74150<!--ObjectStateValue: CraftingEmotion_Sad--></T>
+              <V n="text" t="single">
+                <T n="single">0x4C6D22B<!--String: "Ambiente de tristeza: {0.Number}"--></T>
+              </V>
+            </U>
+            <U>
+              <T n="state_value">100930<!--ObjectStateValue: CraftingEmotion_Focused--></T>
+              <V n="text" t="single">
+                <T n="single">0x1DC05282<!--String: "Ambiente de concentración: {0.Number}"--></T>
+              </V>
+            </U>
+          </L>
+        </L>
+      </U>
+    </V>
+    <V t="enabled" n="weather_aware_component">
+      <U n="enabled">
+        <L n="outside_loot">
+          <U>
+            <E n="key">Burning</E>
+            <U n="value">
+              <L n="start_loot">
+                <T>183231<!--LootActions: loot_GlobalTemp_Burning--></T>
+              </L>
+            </U>
+          </U>
+          <U>
+            <E n="key">Hot</E>
+            <U n="value">
+              <L n="start_loot">
+                <T>183230<!--LootActions: loot_GlobalTemp_Hot--></T>
+              </L>
+            </U>
+          </U>
+          <U>
+            <E n="key">Warm</E>
+            <U n="value">
+              <L n="start_loot">
+                <T>183229<!--LootActions: loot_GlobalTemp_Warm--></T>
+              </L>
+            </U>
+          </U>
+          <U>
+            <E n="key">Cool</E>
+            <U n="value">
+              <L n="start_loot">
+                <T>183228<!--LootActions: loot_GlobalTemp_Cool--></T>
+              </L>
+            </U>
+          </U>
+          <U>
+            <E n="key">Cold</E>
+            <U n="value">
+              <L n="start_loot">
+                <T>183227<!--LootActions: loot_GlobalTemp_Cold--></T>
+              </L>
+            </U>
+          </U>
+          <U>
+            <E n="key">Freezing</E>
+            <U n="value">
+              <L n="start_loot">
+                <T>183226<!--LootActions: loot_GlobalTemp_Freezing--></T>
+              </L>
+            </U>
+          </U>
+        </L>
+      </U>
+    </V>
+  </U>
+  <L n="_super_affordances">
+    <T>13328<!--ImmediateSuperInteraction: debug_Reset--></T>
+    <T>13326<!--ImmediateSuperInteraction: debug_ObjectDestroy--></T>
+    <T>103888<!--ImmediateSuperInteraction: cheat_set_as_head--></T>
+    <T>196759<!--SuperInteraction: famePerks_GoodReputation_GivingBack_DonateObject--></T>
+    <T>125038<!--ImmediateSuperInteraction: object_pumpkin_preserve--></T>
+    <T>125046<!--SuperInteraction: art_View_pumpkin--></T>
+    <T>125045<!--SuperInteraction: craftable_Pumpkin_RemovePumpkin--></T>
+    <T>125043<!--SuperInteraction: craftable_Pumpkin_Smash--></T>
+    <T>125044<!--SuperInteraction: craftable_Pumpkin_WearPumpkin--></T>
+    <T>125290<!--SuperInteraction: craftable_Pumpkin_Debug_WearPumpkin--></T>
+    <T>10028<!--ImmediateSuperInteraction: Cheat_MakeSpoiled--></T>
+    <T>126309<!--AggregateSuperInteraction: collect_Trash_Pumpkin_Aggregate--></T>
+    <T>125515<!--ImmediateSuperInteraction: pumpkin_Cheats_Carved--></T>
+    <T>125513<!--ImmediateSuperInteraction: pumpkin_Cheats_SetFailure--></T>
+    <T>125591<!--SuperInteraction: craftable_Pumpkin_Debug_RemovePumpkin--></T>
+    <T>125514<!--ImmediateSuperInteraction: pumpkin_Cheats_Smashed--></T>
+    <T>128147<!--SuperInteraction: craftable_Pumpkin_WearPumpkin_SpookyParty--></T>
+    <T>128250<!--SuperInteraction: craftable_Pumpkin_Smash_Green--></T>
+    <T>128251<!--SuperInteraction: craftable_Pumpkin_Smash_PaleOrange--></T>
+    <T>128252<!--SuperInteraction: craftable_Pumpkin_Smash_White--></T>
+    <T>102258<!--SuperInteraction: Ghost_Possess--></T>
+    <T>168502<!--SuperInteraction: Ghost_Pet_Possess--></T>
+  </L>
+  <U n="recycling_data">
+    <L n="recycling_values">
+      <U>
+        <E n="Bucks Type">RecycleBitsBucks</E>
+        <T n="Value">0.5</T>
+      </U>
+      <U>
+        <E n="Bucks Type">RecyclePiecesBucks</E>
+        <T n="Value">0.5</T>
+      </U>
+    </L>
+  </U>
+</I>

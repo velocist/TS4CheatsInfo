@@ -1,0 +1,191 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<I c="ServiceNpcSituation" i="situation" m="situations.complex.service_npc_situation" n="Gardener_Service_Situation" s="130533">
+  <U n="_service_npc_job">
+    <T n="role_state">15910<!--RoleState: service_npc_arrive_on_lot--></T>
+    <T n="situation_job">130543<!--SituationJob: job_Gardener_Service--></T>
+  </U>
+  <T n="_survives_active_household_change">True</T>
+  <T p="InGame\Audio\Bumper\bumper_event_start.propx" n="audio_sting_on_start">39b2aa4a:00000000:78b903461d47e4fc</T>
+  <E n="exclusivity">SERVICE</E>
+  <T n="fail_on_preroll_execute_failure">False</T>
+  <L n="finish_job_states">
+    <U>
+      <E n="key">ASKED_TO_HANG_OUT</E>
+      <U n="value">
+        <U n="enter_state_test">
+          <L n="affordances">
+            <T>29935<!--SocialMixerInteraction: mixer_social_NPC_AskToHangOut_targeted_Friendly_alwaysOn--></T>
+          </L>
+          <V t="enabled" n="interaction_outcome">
+            <E n="enabled">SUCCESS</E>
+          </V>
+          <E n="participant">TargetSim</E>
+        </U>
+        <V n="notification" t="enabled">
+          <V n="enabled" t="literal">
+            <U n="literal">
+              <V t="enabled" n="icon">
+                <V t="participant" n="enabled" />
+              </V>
+              <V t="disabled" n="participant" />
+              <V n="text" t="single">
+                <T n="single">0x6394632<!--String: "Pues nada, entonces lo dejo ya. Serán {0.Money}."--></T>
+              </V>
+              <E n="visual_type">SPEECH</E>
+            </U>
+          </V>
+        </V>
+        <T o="true" n="role_state" />
+      </U>
+    </U>
+    <U>
+      <E n="key">DISMISSED</E>
+      <U n="value">
+        <U n="enter_state_test">
+          <L n="affordances">
+            <T>14017<!--SocialSuperInteraction: sim_DismissServiceNPC--></T>
+          </L>
+          <E n="participant">TargetSim</E>
+        </U>
+        <V t="enabled" n="notification">
+          <V n="enabled" t="literal">
+            <U n="literal">
+              <V t="enabled" n="icon">
+                <V t="participant" n="enabled" />
+              </V>
+              <V n="text" t="single">
+                <T n="single">0xDE1C61D5<!--String: "Pues nada, supongo que he acabado aquí. Serán {0.Money}."--></T>
+              </V>
+              <E n="visual_type">SPEECH</E>
+            </U>
+          </V>
+        </V>
+        <T n="role_state">36173<!--RoleState: rolestate_tippable_maid_leave_now--></T>
+      </U>
+    </U>
+    <U>
+      <E n="key">FINISHED_WORK</E>
+      <U n="value">
+        <U n="enter_state_test">
+          <L n="affordances">
+            <T>13944<!--SuperInteraction: serviceNpc_noMoreWork--></T>
+          </L>
+        </U>
+        <V n="notification" t="enabled">
+          <V n="enabled" t="literal">
+            <U n="literal">
+              <V t="enabled" n="icon">
+                <V t="participant" n="enabled" />
+              </V>
+              <V n="text" t="single">
+                <T n="single">0x9B15ADA2<!--String: "Parece que he acabado por aquí. Serán {0.Money}."--></T>
+              </V>
+              <E n="visual_type">SPEECH</E>
+            </U>
+          </V>
+        </V>
+        <T n="role_state">36173<!--RoleState: rolestate_tippable_maid_leave_now--></T>
+      </U>
+    </U>
+    <U>
+      <E n="key">FIRED</E>
+      <U n="value">
+        <U n="enter_state_test">
+          <L n="affordances">
+            <T>14032<!--SocialSuperInteraction: sim_FireServiceNPC--></T>
+          </L>
+          <E n="participant">TargetSim</E>
+        </U>
+        <V n="notification" t="enabled">
+          <V n="enabled" t="literal">
+            <U n="literal">
+              <V t="enabled" n="icon">
+                <V t="participant" n="enabled" />
+              </V>
+              <V n="text" t="single">
+                <T n="single">0xA308BA03<!--String: "¿Ya no me necesitas? Pues nada, son {0.Money} por mis servicios de hoy."--></T>
+              </V>
+              <E n="visual_type">SPEECH</E>
+            </U>
+          </V>
+        </V>
+        <T o="true" n="role_state" />
+      </U>
+    </U>
+    <U>
+      <E n="key">NOT_PAID</E>
+      <U n="value">
+        <U n="enter_state_test">
+          <L n="affordances">
+            <T>14140<!--SocialSuperInteraction: sim_ServiceNpcNotPaid--></T>
+          </L>
+        </U>
+        <V t="enabled" n="notification">
+          <V n="enabled" t="literal">
+            <U n="literal">
+              <V t="enabled" n="icon">
+                <V t="participant" n="enabled" />
+              </V>
+              <V n="text" t="single">
+                <T n="single">0xF8FC9790<!--String: "No trabajo gratis, ¿sabes? Si alguna vez vuelves a necesitar mi ayuda, más te vale organizarte y pagar la factura de {1.Money} que te haré llegar."--></T>
+              </V>
+              <E n="visual_type">SPEECH</E>
+            </U>
+          </V>
+        </V>
+        <T o="true" n="role_state" />
+      </U>
+    </U>
+    <U>
+      <E n="key">NO_WORK_TO_DO</E>
+      <U n="value">
+        <V n="notification" t="enabled">
+          <V n="enabled" t="literal">
+            <U n="literal">
+              <V t="enabled" n="icon">
+                <V t="participant" n="enabled" />
+              </V>
+              <V t="single" n="text">
+                <T n="single">0x65442C6D<!--String: "Parece que no necesitas mis servicios hoy. Pues nada, me voy a ver al siguiente cliente."--></T>
+              </V>
+              <E n="visual_type">SPEECH</E>
+            </U>
+          </V>
+        </V>
+        <T o="true" n="role_state" />
+      </U>
+    </U>
+  </L>
+  <T p="InGame\Audio\Bumper\bumper_event_major_complete.propx" n="main_goal_audio_sting">39b2aa4a:00000000:10b476550150a33f</T>
+  <T n="max_participants">20</T>
+  <V t="enabled" n="preroll_autonomy">
+    <U n="enabled">
+      <T n="allow_unreachable_destinations">False</T>
+      <E n="preroll_priority">Low</E>
+      <E n="preroll_source">SCRIPT</E>
+      <V n="super_affordance_compatibility" t="literal">
+        <U n="literal">
+          <V n="default_inclusion" t="include_all">
+            <U n="include_all">
+              <L n="exclude_affordances">
+                <T>13944<!--SuperInteraction: serviceNpc_noMoreWork--></T>
+              </L>
+            </U>
+          </V>
+        </U>
+      </V>
+    </U>
+  </V>
+  <V n="start_work_test_and_state" t="enabled">
+    <U n="enabled">
+      <U n="enter_state_test">
+        <L n="tags">
+          <E>Interaction_VisitLot</E>
+        </L>
+      </U>
+      <T n="role_state">130540<!--RoleState: Gardener_Service_role_start--></T>
+    </U>
+  </V>
+  <V t="allow" n="time_jump" />
+  <V t="allow" n="travel_request_behavior" />
+</I>

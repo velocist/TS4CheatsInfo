@@ -1,0 +1,369 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<I c="SuperInteraction" i="interaction" m="interactions.base.super_interaction" n="tablet_SearchForInformationOnVampires" s="156059">
+  <V t="enabled" n="_affordance_key_override_for_autonomy">
+    <T n="enabled">Tablet_Fun</T>
+  </V>
+  <V t="reference" n="_animation_actor_map">
+    <T n="reference">104045<!--AnimationActorMap: PickupInteractionTarget--></T>
+  </V>
+  <V t="participant" n="_icon">
+    <U n="participant">
+      <L n="participant_type">
+        <E>Object</E>
+      </L>
+    </U>
+  </V>
+  <V t="enabled" n="_saveable" />
+  <L n="_static_commodities">
+    <U>
+      <T n="static_commodity">8800<!--StaticCommodity: StaticCommodity_UseTablet--></T>
+    </U>
+    <U>
+      <T n="static_commodity">97118<!--StaticCommodity: StaticCommodity_GrabReadingMaterialForToilet--></T>
+    </U>
+    <U>
+      <T n="static_commodity">122743<!--StaticCommodity: staticCommodity_Cafe_UseTablet--></T>
+    </U>
+  </L>
+  <T n="allow_from_sim_inventory">True</T>
+  <T n="attention_cost">1.24</T>
+  <V n="basic_content" t="flexible_length">
+    <U n="flexible_length">
+      <L n="conditional_actions">
+        <V t="list_reference">
+          <T n="list_reference">40705<!--ExitConditionList: ExitConditionList_MotivesNearFail--></T>
+        </V>
+        <V t="list_reference">
+          <T n="list_reference">33040<!--ExitConditionList: ExitConditionList_FunOrMotiveFailureExit--></T>
+        </V>
+        <V t="literal">
+          <U n="literal">
+            <L n="conditions">
+              <V t="time_based">
+                <U n="time_based">
+                  <T n="max_time">35</T>
+                  <T n="min_time">35</T>
+                </U>
+              </V>
+            </L>
+          </U>
+        </V>
+        <V t="list_reference">
+          <T n="list_reference">40144<!--ExitConditionList: ExitConditionList_EmotionMiserable--></T>
+        </V>
+        <V t="list_reference">
+          <T n="list_reference">40702<!--ExitConditionList: ExitConditionList_EmotionStressed--></T>
+        </V>
+        <V t="literal">
+          <U n="literal">
+            <L n="conditions">
+              <V t="stat_based">
+                <U n="stat_based">
+                  <T n="stat">149556<!--Skill: statistic_Skill_Hidden_VampireLore--></T>
+                  <U n="threshold">
+                    <T n="value">355</T>
+                  </U>
+                </U>
+              </V>
+            </L>
+            <E n="interaction_action">EXIT_NATURALLY</E>
+          </U>
+        </V>
+      </L>
+      <V t="staging_content" n="content">
+        <U n="staging_content">
+          <U n="content_set">
+            <L n="affordance_links">
+              <T>77202<!--MixerInteraction: mixer_Tablet_BrowseWeb--></T>
+              <T>156055<!--MixerInteraction: mixer_Tablet_VampireResearch--></T>
+              <T>156062<!--MixerInteraction: mixer_Tablet_VampireResearch_TooEasy--></T>
+            </L>
+          </U>
+        </U>
+      </V>
+      <V n="periodic_stat_change" t="enabled">
+        <U n="enabled">
+          <U n="operation_actions">
+            <L n="actions">
+              <T>104297<!--LootActions: loot_Commodity_Fireleaf_ElixirOfBurning--></T>
+            </L>
+            <T n="alarm_interval">5</T>
+          </U>
+          <L n="operations">
+            <V t="statistic_change">
+              <U n="statistic_change">
+                <T n="amount">0.5</T>
+                <E n="periodic_change_behavior">APPLY_AT_INTERVAL_ONLY</E>
+                <T n="stat">150071<!--RankedStatistic: rankedStatistic_Occult_VampireXP--></T>
+              </U>
+            </V>
+            <V t="dynamic_skill">
+              <U n="dynamic_skill">
+                <U n="skill_loot_data_override">
+                  <E n="effectiveness">StandardPeriodic</E>
+                  <V n="level_range" t="enabled">
+                    <U n="enabled">
+                      <T n="upper_bound">2</T>
+                    </U>
+                  </V>
+                  <T n="stat">149556<!--Skill: statistic_Skill_Hidden_VampireLore--></T>
+                </U>
+                <L n="tests">
+                  <L>
+                    <V t="skill_test">
+                      <U n="skill_test">
+                        <T n="skill">149556<!--Skill: statistic_Skill_Hidden_VampireLore--></T>
+                        <V n="skill_range" t="threshold">
+                          <U n="threshold">
+                            <U n="skill_threshold">
+                              <E n="comparison">LESS</E>
+                              <T n="value">2</T>
+                            </U>
+                          </U>
+                        </V>
+                      </U>
+                    </V>
+                  </L>
+                </L>
+              </U>
+            </V>
+            <V t="statistic_change">
+              <U n="statistic_change">
+                <T n="amount">-10</T>
+                <T n="stat">38437<!--Commodity: Commodity_Age_Elder--></T>
+              </U>
+            </V>
+            <V t="statistic_change">
+              <U n="statistic_change">
+                <T n="amount">10</T>
+                <T n="stat">38440<!--Commodity: Commodity_Age_Teen--></T>
+              </U>
+            </V>
+          </L>
+        </U>
+      </V>
+      <T n="start_autonomous_inertial">True</T>
+    </U>
+  </V>
+  <L n="basic_extras">
+    <V t="state_change">
+      <U n="state_change">
+        <V n="new_value" t="single_value">
+          <U n="single_value">
+            <T n="new_value">97424<!--ObjectStateValue: Tablet_Browse--></T>
+          </U>
+        </V>
+        <V t="on_xevt" n="timing">
+          <U n="on_xevt">
+            <E n="criticality">NotCritical</E>
+            <T n="xevt_id">101</T>
+          </U>
+        </V>
+      </U>
+    </V>
+    <V t="state_change">
+      <U n="state_change">
+        <V n="new_value" t="single_value">
+          <U n="single_value">
+            <T n="new_value">97428<!--ObjectStateValue: Tablet_Off--></T>
+          </U>
+        </V>
+        <V t="at_end" n="timing" />
+      </U>
+    </V>
+  </L>
+  <V t="enabled" n="canonical_animation">
+    <U n="enabled">
+      <T n="factory">12097<!--AnimationElement: Tablet_BrowseWeb_Loop--></T>
+    </U>
+  </V>
+  <V t="disabled" n="content_score" />
+  <T n="display_name">0xEAAA8217<!--String: "Buscar información sobre vampiros"--></T>
+  <V t="testable" n="display_name_overrides">
+    <U n="testable">
+      <L n="overrides">
+        <U>
+          <V n="new_display_name" t="enabled">
+            <T n="enabled">0x75C03025<!--String: "Mirar sitios web para niños"--></T>
+          </V>
+          <L n="test">
+            <L>
+              <V t="sim_info">
+                <U n="sim_info">
+                  <V t="specified" n="ages">
+                    <L n="specified">
+                      <E>CHILD</E>
+                    </L>
+                  </V>
+                </U>
+              </V>
+            </L>
+          </L>
+        </U>
+      </L>
+    </U>
+  </V>
+  <U n="display_name_text_tokens">
+    <L n="tokens">
+      <V t="participant_type">
+        <U n="participant_type">
+          <V t="from_participant" n="objects">
+            <U n="from_participant">
+              <E n="participant">Actor</E>
+            </U>
+          </V>
+        </U>
+      </V>
+      <V t="participant_type">
+        <U n="participant_type">
+          <V n="objects" t="from_participant">
+            <U n="from_participant">
+              <E n="participant">Object</E>
+            </U>
+          </V>
+        </U>
+      </V>
+    </L>
+  </U>
+  <L n="interaction_category_tags">
+    <E>Interaction_Super</E>
+    <E>Interaction_All</E>
+    <E>Interaction_Lifestyles_Indoorsy_FlexibleLength</E>
+    <E>Interaction_Lifestyles_Techie_FlexibleLength</E>
+    <E>Interaction_Lifestyles_AdrenalineSeeker_Mundane</E>
+  </L>
+  <U n="posture_preferences">
+    <T n="apply_penalties">True</T>
+  </U>
+  <V t="enabled" n="posture_target_preference">
+    <L n="enabled">
+      <U>
+        <E n="key">SEATING_BARSTOOL</E>
+        <T n="value">5</T>
+      </U>
+      <U>
+        <E n="key">SEATING_BED</E>
+        <T n="value">5</T>
+      </U>
+      <U>
+        <E n="key">SEATING_DINING</E>
+        <T n="value">5</T>
+      </U>
+      <U>
+        <E n="key">SEATING_LIVING</E>
+        <T n="value">15</T>
+      </U>
+      <U>
+        <E n="key">SEATING_LOVESEAT</E>
+        <T n="value">15</T>
+      </U>
+      <U>
+        <E n="key">SEATING_SOFA</E>
+        <T n="value">15</T>
+      </U>
+    </L>
+  </V>
+  <U n="progress_bar_enabled">
+    <T n="bar_enabled">False</T>
+  </U>
+  <V t="enabled" n="route_start_balloon">
+    <U n="enabled">
+      <U n="balloon">
+        <L n="balloon_choices">
+          <U>
+            <V n="item" t="balloon_icon">
+              <U n="balloon_icon">
+                <V t="participant" n="icon">
+                  <U n="participant">
+                    <L n="participant_type">
+                      <E>Object</E>
+                    </L>
+                  </U>
+                </V>
+              </U>
+            </V>
+          </U>
+        </L>
+        <L n="balloon_target">
+          <E>Actor</E>
+        </L>
+      </U>
+    </U>
+  </V>
+  <E n="scoring_priority">NORMAL</E>
+  <T n="subaction_selection_weight">3</T>
+  <V t="reference" n="super_affordance_compatibility">
+    <T n="reference">99144<!--AffordanceFilter: af_TabletCompatability--></T>
+  </V>
+  <E n="target_type">OBJECT</E>
+  <L n="test_globals">
+    <V t="sim_info">
+      <U n="sim_info">
+        <V t="specified" n="ages">
+          <L n="specified">
+            <E>TEEN</E>
+            <E>YOUNGADULT</E>
+            <E>ADULT</E>
+            <E>ELDER</E>
+            <E>CHILD</E>
+          </L>
+        </V>
+        <V t="specified" n="species">
+          <U n="specified">
+            <L n="species">
+              <E />
+            </L>
+          </U>
+        </V>
+        <E n="who">Actor</E>
+      </U>
+    </V>
+    <V t="buff">
+      <U n="buff">
+        <L n="blacklist">
+          <T>100122<!--Buff: buff_Object_Toilet_NoTablet--></T>
+        </L>
+      </U>
+    </V>
+    <V t="skill_test">
+      <U n="skill_test">
+        <T n="skill">149556<!--Skill: statistic_Skill_Hidden_VampireLore--></T>
+        <V n="skill_range" t="threshold">
+          <U n="threshold">
+            <U n="skill_threshold">
+              <E n="comparison">LESS</E>
+              <T n="value">2</T>
+            </U>
+          </U>
+        </V>
+      </U>
+    </V>
+    <V t="test_set_reference">
+      <T n="test_set_reference">28176<!--TestSetInstance: testSet_EmotionNotStressed--></T>
+    </V>
+    <V t="test_set_reference">
+      <T n="test_set_reference">28305<!--TestSetInstance: testSet_EmotionNotMiserable--></T>
+    </V>
+    <V t="zone">
+      <U n="zone">
+        <V n="tooltip" t="enabled">
+          <T n="enabled">0x75BE432A<!--String: "Internet no funciona sin servicios."--></T>
+        </V>
+        <U n="zone_tests">
+          <V n="zone_modifiers" t="enabled">
+            <U n="enabled">
+              <V n="blacklist" t="specify">
+                <U n="specify">
+                  <L n="blacklist">
+                    <T>206665<!--ZoneModifier: zoneModifier_lotTrait_OffTheGrid--></T>
+                  </L>
+                </U>
+              </V>
+            </U>
+          </V>
+        </U>
+      </U>
+    </V>
+  </L>
+  <T n="time_overhead">30</T>
+</I>

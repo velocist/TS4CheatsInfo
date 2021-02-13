@@ -1,0 +1,324 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<I c="DeathSuperInteraction" i="interaction" m="interactions.utils.death_interactions" n="death_Pet_AnimalCareWorker_Neglected" s="164885">
+  <V t="prohibit_cancelation" n="_cancelable_by_user" />
+  <L n="_constraints">
+    <U>
+      <L n="constraints">
+        <U>
+          <V n="value" t="facing">
+            <U n="facing">
+              <T n="range">15</T>
+            </U>
+          </V>
+        </U>
+      </L>
+    </U>
+  </L>
+  <V t="participant" n="_icon">
+    <U n="participant">
+      <L n="participant_type">
+        <E>Actor</E>
+      </L>
+    </U>
+  </V>
+  <V t="enabled" n="_saveable" />
+  <T n="allow_autonomous">True</T>
+  <T n="attention_cost">0.5</T>
+  <T n="automation">True</T>
+  <V t="one_shot" n="basic_content">
+    <U n="one_shot">
+      <U n="animation_ref">
+        <T n="factory">161418<!--AnimationElement: Pet_Quirks_Investigate--></T>
+      </U>
+    </U>
+  </V>
+  <L n="basic_extras">
+    <V t="camera_focus">
+      <U n="camera_focus">
+        <V t="at_beginning" n="timing" />
+      </U>
+    </V>
+    <V t="set_visibility_state">
+      <U n="set_visibility_state">
+        <T n="fade">True</T>
+        <V t="at_beginning" n="timing" />
+        <T n="visibility">False</T>
+      </U>
+    </V>
+    <V t="set_game_speed">
+      <U n="set_game_speed">
+        <V t="at_beginning" n="timing" />
+      </U>
+    </V>
+    <V t="notification">
+      <U n="notification">
+        <V n="dialog" t="single">
+          <V n="single" t="literal">
+            <U n="literal">
+              <V t="enabled" n="icon">
+                <V n="enabled" t="resource_key">
+                  <U n="resource_key">
+                    <T n="key" p="InEP04\UI\Icons\Headlines\headline_PetCareCrate.png">2f7d0004:00000000:8ed578de6179aad1</T>
+                  </U>
+                </V>
+              </V>
+              <V t="enabled" n="secondary_icon">
+                <V t="participant" n="enabled" />
+              </V>
+              <V n="text" t="single">
+                <T n="single">0xBC0FB9B3<!--String: "¡Los servicios de protección de mascotas se han llevado a {0.SimFirstName}!"--></T>
+              </V>
+              <E n="visual_type">SPECIAL_MOMENT</E>
+            </U>
+          </V>
+        </V>
+        <V t="at_beginning" n="timing" />
+      </U>
+    </V>
+    <V t="remove_from_ensemble">
+      <U n="remove_from_ensemble">
+        <T n="ensemble_type">127285<!--Ensemble: ensemble_Generic--></T>
+        <V t="at_beginning" n="timing" />
+      </U>
+    </V>
+    <V t="loot">
+      <U n="loot">
+        <L n="loot_list">
+          <T>215553<!--LootActions: loot_Familiars_Ressurect_Setup--></T>
+        </L>
+        <U n="success_chance">
+          <L n="multipliers">
+            <U>
+              <T n="multiplier">0</T>
+              <L n="tests">
+                <L>
+                  <V t="familiar">
+                    <U n="familiar">
+                      <T n="negate">True</T>
+                    </U>
+                  </V>
+                </L>
+              </L>
+            </U>
+            <U>
+              <T n="multiplier">0</T>
+              <L n="tests">
+                <L>
+                  <V t="buff">
+                    <U n="buff">
+                      <V n="whitelist" t="enabled">
+                        <L n="enabled">
+                          <T>215225<!--Buff: buff_Familiar_Ressurect_Cooldown--></T>
+                        </L>
+                      </V>
+                    </U>
+                  </V>
+                </L>
+              </L>
+            </U>
+          </L>
+        </U>
+        <V t="at_beginning" n="timing" />
+      </U>
+    </V>
+    <V t="broadcaster">
+      <U n="broadcaster">
+        <L n="broadcaster_types">
+          <U>
+            <T n="item">165464<!--Broadcaster: broadcaster_RescuedPet--></T>
+          </U>
+        </L>
+      </U>
+    </V>
+    <V t="audio_sting">
+      <U n="audio_sting">
+        <U n="audio_sting">
+          <T n="audio" p="InEP04\Audio\Bumpers\bumper_pet_care_worker.propx">39b2aa4a:00000000:1b6c765796fe04ff</T>
+        </U>
+      </U>
+    </V>
+    <V t="loot">
+      <U n="loot">
+        <L n="loot_list">
+          <T>184202<!--LootActions: loot_Temperature_VFX_ColdBreath_Removal--></T>
+        </L>
+        <V t="at_beginning" n="timing" />
+      </U>
+    </V>
+  </L>
+  <T n="can_shoo">False</T>
+  <T n="category">26027<!--PieMenuCategory: pieMenuCategory_Death--></T>
+  <V t="disabled" n="content_score" />
+  <U n="death_dialog">
+    <V t="enabled" n="audio_sting">
+      <U n="enabled">
+        <T n="audio" p="InGame\Audio\Bumper\bumper_game_over.propx">39b2aa4a:00000000:e4380625f832c48e</T>
+      </U>
+    </V>
+    <V t="enabled" n="icon">
+      <V n="enabled" t="resource_key">
+        <U n="resource_key">
+          <T n="key" p="InEP04\UI\Icons\Headlines\headline_PetCareCrate.png">2f7d0004:00000000:8ed578de6179aad1</T>
+        </U>
+      </V>
+    </V>
+    <U n="text">
+      <V n="empty_household" t="enabled">
+        <V n="enabled" t="single">
+          <T n="single">0x4D48CC9E<!--String: "¿Es realmente el fin? Todos los Sims de esta unidad doméstica han muerto, pero puedes crear más, elegir una unidad doméstica para jugar o trasladar una de la galería."--></T>
+        </V>
+      </V>
+      <V t="single" n="fallback">
+        <T n="single">0x290909F9<!--String: "¡Oh, no! ¡{1.SimFirstName} se ha muerto y no hay más Sims adultos vivos! Los servicios sociales pasarán a encargarse del cuidado de los niños."--></T>
+      </V>
+      <V t="enabled" n="pets">
+        <U n="enabled">
+          <V n="multiple_pets" t="single">
+            <T n="single">0xD791194F<!--String: "Los servicios de adopción se harán cargo de {0.SimFirstNameList}. Hay un montón de familias en busca de mascotas."--></T>
+          </V>
+          <V n="single_pet" t="single">
+            <T n="single">0x8AEC03D6<!--String: "Los servicios de adopción se harán cargo de {0.SimFirstName} y le buscarán una buena familia."--></T>
+          </V>
+        </U>
+      </V>
+      <V n="single_sim" t="enabled">
+        <V n="enabled" t="single">
+          <T n="single">0xEC5C00FD<!--String: "¡Oh, no! {1.SimFirstName} está {M1.muerto}{F1.muerta}. Pero no te preocupes por {0.SimFirstName}. Los servicios sociales cuidarán bien de {M0.él}{F0.ella}."--></T>
+        </V>
+      </V>
+    </U>
+    <V t="enabled" n="title">
+      <T n="enabled">0x992A95D2<!--String: "¡Fin de la partida!"--></T>
+    </V>
+    <L n="ui_responses">
+      <U>
+        <T n="text">0x2B08947E<!--String: "Guardar y gestionar mundos"--></T>
+        <E n="ui_request">TRANSITION_TO_NEIGHBORHOOD_SAVE</E>
+      </U>
+      <U>
+        <T n="text">0xF9E584E6<!--String: "Salir al menú principal"--></T>
+        <E n="ui_request">TRANSITION_TO_MAIN_MENU_NO_SAVE</E>
+      </U>
+    </L>
+  </U>
+  <U n="death_element">
+    <T n="cancel_on_destroy">False</T>
+    <T n="create_urnstone">False</T>
+    <V t="position" n="location">
+      <U n="position">
+        <T n="allow_off_lot_placement">True</T>
+        <T n="ignore_bb_footprints">False</T>
+        <U n="initial_location_offset">
+          <U n="default_offset">
+            <T n="z">0.75</T>
+          </U>
+        </U>
+        <V t="enabled" n="surface_type_override" />
+      </U>
+    </V>
+    <V t="on_xevt" n="timing">
+      <U n="on_xevt">
+        <E n="criticality">OnCancelOrException</E>
+        <T n="xevt_id">101</T>
+      </U>
+    </V>
+  </U>
+  <V t="Set_To_Minimum_LOD" n="death_info" />
+  <T n="debug">True</T>
+  <T n="display_name">0x761ED6A9<!--String: ""--></T>
+  <U n="display_name_text_tokens">
+    <L n="tokens">
+      <V t="participant_type">
+        <U n="participant_type">
+          <V t="from_participant" n="objects">
+            <U n="from_participant">
+              <E n="participant">Actor</E>
+            </U>
+          </V>
+        </U>
+      </V>
+      <V t="participant_type">
+        <U n="participant_type">
+          <V t="from_participant" n="objects">
+            <U n="from_participant">
+              <E n="participant">Object</E>
+            </U>
+          </V>
+        </U>
+      </V>
+    </L>
+  </U>
+  <L n="interaction_category_tags">
+    <E>Interaction_Death</E>
+    <E>Interaction_Super</E>
+    <E>Interaction_All</E>
+  </L>
+  <V t="enabled" n="off_lot_death_notification">
+    <U n="enabled">
+      <V t="enabled" n="icon">
+        <V t="resource_key" n="enabled">
+          <U n="resource_key">
+            <T n="key" p="InGame\UI\Icons\Headlines\Final\headline_gravestone.png">2f7d0004:00000000:7c70ef2a230cf012</T>
+          </U>
+        </V>
+      </V>
+      <V n="text" t="single">
+        <T n="single">0x2CE3AF5<!--String: "¡Oh, no! {0.SimFirstName} ha muerto lejos de casa. Su urna está en {1.String}."--></T>
+      </V>
+      <V t="enabled" n="text_tokens">
+        <U n="enabled">
+          <L n="tokens">
+            <V t="participant_type" />
+          </L>
+        </U>
+      </V>
+    </U>
+  </V>
+  <V t="single" n="outcome">
+    <U n="single">
+      <U n="actions">
+        <E n="outcome_result">FAILURE</E>
+      </U>
+    </U>
+  </V>
+  <U n="progress_bar_enabled">
+    <T n="bar_enabled">False</T>
+  </U>
+  <L n="provided_affordances" />
+  <T n="save_lock_tooltip">0xCB9BC3D7<!--String: "¡No puedes hacer esto mientras rescatan a una mascota!"--></T>
+  <E n="scoring_priority">NORMAL</E>
+  <T n="subaction_selection_weight">1</T>
+  <V t="literal" n="super_affordance_compatibility">
+    <U n="literal">
+      <V n="default_inclusion" t="exclude_all" />
+    </U>
+  </V>
+  <E n="target_type">ACTOR</E>
+  <L n="test_globals">
+    <V t="sim_info">
+      <U n="sim_info">
+        <V t="specified" n="ages">
+          <L n="specified">
+            <E>ADULT</E>
+            <E>ELDER</E>
+            <E>CHILD</E>
+          </L>
+        </V>
+        <V t="specified" n="species">
+          <U n="specified">
+            <L n="species">
+              <E>CAT</E>
+              <E>DOG</E>
+            </L>
+          </U>
+        </V>
+        <E n="who">Actor</E>
+      </U>
+    </V>
+    <V t="test_set_reference">
+      <T n="test_set_reference">228130<!--TestSetInstance: testSet_NoRobots--></T>
+    </V>
+  </L>
+  <L n="tests" />
+  <T n="time_overhead">30</T>
+</I>

@@ -1,0 +1,222 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<I c="SuperInteraction" i="interaction" m="interactions.base.super_interaction" n="spells_Effects_Steal_Fail" s="216936">
+  <V t="enabled" n="_saveable" />
+  <T n="allow_autonomous">False</T>
+  <T n="allow_user_directed">False</T>
+  <L n="appropriateness_tags">
+    <E>Appropriateness_Visitor</E>
+  </L>
+  <T n="attention_cost">0.5</T>
+  <V n="basic_content" t="one_shot">
+    <U n="one_shot">
+      <U n="animation_ref">
+        <T n="factory">213848<!--AnimationElement: spells_Spellcasting_Fail_CastForward--></T>
+      </U>
+      <V t="enabled" n="periodic_stat_change">
+        <U n="enabled">
+          <L n="operations">
+            <V t="statistic_set_max">
+              <U n="statistic_set_max">
+                <T n="advertise">False</T>
+                <T n="stat">131787<!--Commodity: commodity_Trait_Autonomy_Kleptomaniac--></T>
+                <L n="subject">
+                  <E>Actor</E>
+                </L>
+              </U>
+            </V>
+            <V t="statistic_change">
+              <U n="statistic_change">
+                <T n="advertise">False</T>
+                <T n="amount">50</T>
+                <T n="stat">16655<!--Commodity: motive_Fun--></T>
+                <L n="subject">
+                  <E>Actor</E>
+                </L>
+                <L n="tests">
+                  <L />
+                </L>
+              </U>
+            </V>
+          </L>
+          <T n="trigger_gain_on_start">True</T>
+        </U>
+      </V>
+    </U>
+  </V>
+  <L n="basic_extras">
+    <V t="buff">
+      <U n="buff">
+        <U n="buff_type">
+          <T n="buff_type">24336<!--Buff: buff_BeingInappropriate--></T>
+        </U>
+        <L n="subject">
+          <E>Actor</E>
+        </L>
+        <L n="tests">
+          <L>
+            <V t="inappropriateness" />
+          </L>
+        </L>
+      </U>
+    </V>
+    <V t="broadcaster">
+      <U n="broadcaster">
+        <L n="broadcaster_types">
+          <U>
+            <T n="item">218604<!--Broadcaster: broadcaster_Reaction_SpellSteal_StealingObject--></T>
+          </U>
+        </L>
+      </U>
+    </V>
+    <V t="loot">
+      <U n="loot">
+        <L n="loot_list">
+          <T>215302<!--LootActions: loot_WitchOccult_UseWand_Add--></T>
+        </L>
+        <V t="at_beginning" n="timing" />
+      </U>
+    </V>
+  </L>
+  <V t="disabled" n="content_score" />
+  <T n="display_name">0x6E99FE66<!--String: "<i>Exspolium</i>"--></T>
+  <U n="display_name_text_tokens">
+    <L n="tokens">
+      <V t="participant_type">
+        <U n="participant_type">
+          <V t="from_participant" n="objects">
+            <U n="from_participant">
+              <E n="participant">Actor</E>
+            </U>
+          </V>
+        </U>
+      </V>
+      <V t="participant_type">
+        <U n="participant_type">
+          <V t="from_participant" n="objects">
+            <U n="from_participant">
+              <E n="participant">Object</E>
+            </U>
+          </V>
+        </U>
+      </V>
+    </L>
+  </U>
+  <L n="interaction_category_tags">
+    <E>Interaction_Super</E>
+    <E>Interaction_All</E>
+  </L>
+  <V n="outcome" t="test_based">
+    <U n="test_based">
+      <L n="fallback_outcomes">
+        <U>
+          <U n="outcome">
+            <L n="basic_extras">
+              <V t="destroy_object" />
+              <V t="create_object">
+                <U n="create_object">
+                  <V t="definition" n="creation_data">
+                    <U n="definition">
+                      <T n="definition">42736</T>
+                    </U>
+                  </V>
+                  <V n="location" t="position">
+                    <U n="position">
+                      <T n="in_same_room">True</T>
+                      <V t="from_participant" n="initial_location">
+                        <U n="from_participant">
+                          <E n="participant">Object</E>
+                        </U>
+                      </V>
+                    </U>
+                  </V>
+                </U>
+              </V>
+              <V t="vfx">
+                <U n="vfx">
+                  <U n="vfx">
+                    <T n="effect_name">gp08_spell_casting_hit_object</T>
+                    <V t="Current_Position" n="joint_name" />
+                  </U>
+                </U>
+              </V>
+            </L>
+          </U>
+        </U>
+      </L>
+      <L n="tested_outcomes">
+        <U>
+          <L n="potential_outcomes">
+            <U>
+              <U n="outcome">
+                <L n="basic_extras">
+                  <V t="destroy_object" />
+                  <V t="create_object">
+                    <U n="create_object">
+                      <V t="definition" n="creation_data">
+                        <U n="definition">
+                          <T n="definition">42736</T>
+                        </U>
+                      </V>
+                      <V n="location" t="position">
+                        <U n="position">
+                          <T n="in_same_room">True</T>
+                          <V t="from_participant" n="initial_location">
+                            <U n="from_participant">
+                              <E n="participant">Object</E>
+                            </U>
+                          </V>
+                        </U>
+                      </V>
+                    </U>
+                  </V>
+                  <V t="vfx">
+                    <U n="vfx">
+                      <U n="vfx">
+                        <T n="effect_name">gp08_spell_casting_hit_object</T>
+                        <V t="Current_Position" n="joint_name" />
+                      </U>
+                    </U>
+                  </V>
+                </L>
+                <E n="outcome_result">FAILURE</E>
+              </U>
+            </U>
+          </L>
+          <L n="tests">
+            <L>
+              <V t="buff">
+                <U n="buff">
+                  <T n="apply_whitelist_on_individual_basis">True</T>
+                  <V n="whitelist" t="enabled">
+                    <L n="enabled">
+                      <T>218608<!--Buff: buff_Spells_Steal_CaughtStealing--></T>
+                    </L>
+                  </V>
+                </U>
+              </V>
+            </L>
+          </L>
+        </U>
+      </L>
+    </U>
+  </V>
+  <E n="scoring_priority">NORMAL</E>
+  <T n="subaction_selection_weight">1</T>
+  <E n="target_type">OBJECT</E>
+  <L n="test_globals">
+    <V t="sim_info">
+      <U n="sim_info">
+        <V t="specified" n="ages" />
+        <V t="specified" n="species">
+          <U n="specified">
+            <L n="species">
+              <E />
+            </L>
+          </U>
+        </V>
+        <E n="who">Actor</E>
+      </U>
+    </V>
+  </L>
+  <T n="time_overhead">30</T>
+</I>

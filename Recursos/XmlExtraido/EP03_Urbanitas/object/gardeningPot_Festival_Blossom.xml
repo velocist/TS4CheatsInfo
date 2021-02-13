@@ -1,0 +1,445 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<I c="GameObject" i="object" m="objects.game_object" n="gardeningPot_Festival_Blossom" s="141662">
+  <U n="_components">
+    <V t="enabled" n="affordance_tuning">
+      <U n="enabled">
+        <L n="affordance_map">
+          <U>
+            <T n="key">229799<!--SuperInteraction: gardening_CommunityLot_Gardener_Plant--></T>
+            <U n="value">
+              <L n="tests">
+                <L>
+                  <V t="slot_test">
+                    <U n="slot_test">
+                      <V n="child_slot" t="by_reference">
+                        <T n="by_reference">slot_PlantSmall</T>
+                      </V>
+                      <V n="slot_test_type" t="has_empty_slot">
+                        <U n="has_empty_slot">
+                          <T n="check_all_slots">True</T>
+                        </U>
+                      </V>
+                    </U>
+                  </V>
+                </L>
+              </L>
+            </U>
+          </U>
+        </L>
+      </U>
+    </V>
+    <V t="enabled" n="focus">
+      <U n="enabled">
+        <V n="_focus_score" t="globally">
+          <U n="globally">
+            <E n="base">NONE</E>
+          </U>
+        </V>
+      </U>
+    </V>
+    <V t="disabled" n="gardening" />
+    <V t="enabled" n="retail_component">
+      <V n="enabled" t="reference">
+        <T n="reference">110393<!--RetailComponent: retailComponent_Default--></T>
+      </V>
+    </V>
+    <V t="enabled" n="situation_scheduler_component">
+      <U n="enabled">
+        <V n="object_based_situations_schedule" t="enabled">
+          <U n="enabled">
+            <T n="consider_off_lot_objects">False</T>
+            <T n="schedule_immediate">True</T>
+            <V n="situation_schedule" t="weighted_situations">
+              <U n="weighted_situations">
+                <L n="schedule_entries">
+                  <U>
+                    <T n="affected_object_cap">3</T>
+                    <U n="days_available">
+                      <T n="0 SUNDAY">True</T>
+                      <T n="1 MONDAY">True</T>
+                      <T n="2 TUESDAY">True</T>
+                      <T n="3 WEDNESDAY">True</T>
+                      <T n="4 THURSDAY">True</T>
+                      <T n="5 FRIDAY">True</T>
+                      <T n="6 SATURDAY">True</T>
+                    </U>
+                    <T n="duration">5</T>
+                    <U n="start_time">
+                      <T n="hour">6</T>
+                    </U>
+                    <L n="weighted_situations">
+                      <U>
+                        <T n="situation">77411<!--WalkbyNobodySituation: situation_walkby_nobody--></T>
+                        <L n="tests">
+                          <L>
+                            <V t="location">
+                              <U n="location">
+                                <U n="location_tests">
+                                  <V n="is_venue_type" t="enabled">
+                                    <U n="enabled">
+                                      <T n="negate">True</T>
+                                      <T n="venue_type">223946<!--Venue: subVenue_Garden--></T>
+                                    </U>
+                                  </V>
+                                </U>
+                                <E n="subject">Lot</E>
+                              </U>
+                            </V>
+                          </L>
+                        </L>
+                      </U>
+                      <U>
+                        <T n="situation">232071<!--SingleJobSituation: situation_CommunityShared_Gardener--></T>
+                        <U n="weight_multipliers">
+                          <T n="base_value">2</T>
+                        </U>
+                      </U>
+                      <U>
+                        <T n="situation">223951<!--AggregateSingleStateSituation: situation_CommunityGarden_Gardener--></T>
+                        <L n="tests">
+                          <L>
+                            <V t="location">
+                              <U n="location">
+                                <U n="location_tests">
+                                  <V n="is_venue_type" t="enabled">
+                                    <U n="enabled">
+                                      <T n="venue_type">223946<!--Venue: subVenue_Garden--></T>
+                                    </U>
+                                  </V>
+                                </U>
+                                <E n="subject">Lot</E>
+                              </U>
+                            </V>
+                          </L>
+                        </L>
+                        <U n="weight_multipliers">
+                          <T n="base_value">4</T>
+                        </U>
+                      </U>
+                    </L>
+                  </U>
+                  <U>
+                    <T n="affected_object_cap">1</T>
+                    <U n="days_available">
+                      <T n="0 SUNDAY">True</T>
+                      <T n="1 MONDAY">True</T>
+                      <T n="2 TUESDAY">True</T>
+                      <T n="3 WEDNESDAY">True</T>
+                      <T n="4 THURSDAY">True</T>
+                      <T n="5 FRIDAY">True</T>
+                      <T n="6 SATURDAY">True</T>
+                    </U>
+                    <T n="duration">5</T>
+                    <U n="start_time">
+                      <T n="hour">11</T>
+                    </U>
+                    <L n="weighted_situations">
+                      <U>
+                        <T n="situation">77411<!--WalkbyNobodySituation: situation_walkby_nobody--></T>
+                        <L n="tests">
+                          <L>
+                            <V t="location">
+                              <U n="location">
+                                <U n="location_tests">
+                                  <V n="is_venue_type" t="enabled">
+                                    <U n="enabled">
+                                      <T n="negate">True</T>
+                                      <T n="venue_type">223946<!--Venue: subVenue_Garden--></T>
+                                    </U>
+                                  </V>
+                                </U>
+                                <E n="subject">Lot</E>
+                              </U>
+                            </V>
+                          </L>
+                        </L>
+                        <U n="weight_multipliers">
+                          <T n="base_value">4</T>
+                        </U>
+                      </U>
+                      <U>
+                        <T n="situation">232071<!--SingleJobSituation: situation_CommunityShared_Gardener--></T>
+                        <U n="weight_multipliers">
+                          <T n="base_value">2</T>
+                        </U>
+                      </U>
+                      <U>
+                        <T n="situation">223951<!--AggregateSingleStateSituation: situation_CommunityGarden_Gardener--></T>
+                        <L n="tests">
+                          <L>
+                            <V t="location">
+                              <U n="location">
+                                <U n="location_tests">
+                                  <V n="is_venue_type" t="enabled">
+                                    <U n="enabled">
+                                      <T n="venue_type">223946<!--Venue: subVenue_Garden--></T>
+                                    </U>
+                                  </V>
+                                </U>
+                                <E n="subject">Lot</E>
+                              </U>
+                            </V>
+                          </L>
+                        </L>
+                      </U>
+                    </L>
+                  </U>
+                  <U>
+                    <T n="affected_object_cap">3</T>
+                    <U n="days_available">
+                      <T n="0 SUNDAY">True</T>
+                      <T n="1 MONDAY">True</T>
+                      <T n="2 TUESDAY">True</T>
+                      <T n="3 WEDNESDAY">True</T>
+                      <T n="4 THURSDAY">True</T>
+                      <T n="5 FRIDAY">True</T>
+                      <T n="6 SATURDAY">True</T>
+                    </U>
+                    <T n="duration">5</T>
+                    <U n="start_time">
+                      <T n="hour">16</T>
+                    </U>
+                    <L n="weighted_situations">
+                      <U>
+                        <T n="situation">77411<!--WalkbyNobodySituation: situation_walkby_nobody--></T>
+                        <L n="tests">
+                          <L>
+                            <V t="location">
+                              <U n="location">
+                                <U n="location_tests">
+                                  <V n="is_venue_type" t="enabled">
+                                    <U n="enabled">
+                                      <T n="negate">True</T>
+                                      <T n="venue_type">223946<!--Venue: subVenue_Garden--></T>
+                                    </U>
+                                  </V>
+                                </U>
+                                <E n="subject">Lot</E>
+                              </U>
+                            </V>
+                          </L>
+                        </L>
+                      </U>
+                      <U>
+                        <T n="situation">232071<!--SingleJobSituation: situation_CommunityShared_Gardener--></T>
+                        <U n="weight_multipliers">
+                          <T n="base_value">2</T>
+                        </U>
+                      </U>
+                      <U>
+                        <T n="situation">223951<!--AggregateSingleStateSituation: situation_CommunityGarden_Gardener--></T>
+                        <L n="tests">
+                          <L>
+                            <V t="location">
+                              <U n="location">
+                                <U n="location_tests">
+                                  <V n="is_venue_type" t="enabled">
+                                    <U n="enabled">
+                                      <T n="venue_type">223946<!--Venue: subVenue_Garden--></T>
+                                    </U>
+                                  </V>
+                                </U>
+                                <E n="subject">Lot</E>
+                              </U>
+                            </V>
+                          </L>
+                        </L>
+                        <U n="weight_multipliers">
+                          <T n="base_value">4</T>
+                        </U>
+                      </U>
+                    </L>
+                  </U>
+                </L>
+              </U>
+            </V>
+            <E n="tag">Func_PlanterBox</E>
+            <L n="tests">
+              <L>
+                <V t="location">
+                  <U n="location">
+                    <U n="location_tests">
+                      <V n="is_venue_type" t="enabled">
+                        <U n="enabled">
+                          <T n="use_source_venue">True</T>
+                          <T n="venue_type">223944<!--Venue: venue_CommunityLot--></T>
+                        </U>
+                      </V>
+                    </U>
+                    <E n="subject">Lot</E>
+                  </U>
+                </V>
+              </L>
+            </L>
+          </U>
+        </V>
+      </U>
+    </V>
+    <V n="spawner_component" t="enabled">
+      <U n="enabled">
+        <V t="enabled" n="spawn_firemeter">
+          <V n="enabled" t="global_firemeter" />
+        </V>
+        <L n="spawner_data">
+          <V t="spawnerdata_reference">
+            <T n="spawnerdata_reference">141645<!--SpawnerTuning: spawner_Festival_GardenPot_BirdofParadise--></T>
+          </V>
+          <V t="spawnerdata_reference">
+            <T n="spawnerdata_reference">141646<!--SpawnerTuning: spawner_Festival_GardenPot_Chrysanthemum--></T>
+          </V>
+          <V t="spawnerdata_reference">
+            <T n="spawnerdata_reference">141641<!--SpawnerTuning: spawner_Festival_GardenPot_Cowplant--></T>
+          </V>
+          <V t="spawnerdata_reference">
+            <T n="spawnerdata_reference">141640<!--SpawnerTuning: spawner_Festival_GardenPot_Daisy--></T>
+          </V>
+          <V t="spawnerdata_reference">
+            <T n="spawnerdata_reference">141664<!--SpawnerTuning: spawner_Festival_GardenPot_Bonsai--></T>
+          </V>
+          <V t="spawnerdata_reference">
+            <T n="spawnerdata_reference">141636<!--SpawnerTuning: spawner_Festival_GardenPot_Alien--></T>
+          </V>
+          <V t="spawnerdata_reference">
+            <T n="spawnerdata_reference">141648<!--SpawnerTuning: spawner_Festival_GardenPot_Lily--></T>
+          </V>
+          <V t="spawnerdata_reference">
+            <T n="spawnerdata_reference">141657<!--SpawnerTuning: spawner_Festival_GardenPot_Rose--></T>
+          </V>
+          <V t="spawnerdata_reference">
+            <T n="spawnerdata_reference">141649<!--SpawnerTuning: spawner_Festival_GardenPot_SnapDragon--></T>
+          </V>
+          <V t="spawnerdata_reference">
+            <T n="spawnerdata_reference">141650<!--SpawnerTuning: spawner_Festival_GardenPot_Tulip--></T>
+          </V>
+        </L>
+      </U>
+    </V>
+    <V t="enabled" n="state">
+      <U n="enabled">
+        <L n="state_triggers">
+          <U>
+            <L n="at_states">
+              <T>77532<!--CommodityBasedObjectStateValue: FireState_Burn_Material_Change_Replace--></T>
+            </L>
+            <V n="set_states" t="Set_state_list">
+              <L n="Set_state_list">
+                <T>39737<!--CommodityBasedObjectStateValue: FireState_Burn_Material_Change_Not_Burning--></T>
+              </L>
+            </V>
+          </U>
+        </L>
+        <L n="states">
+          <U>
+            <L n="client_states">
+              <U>
+                <T n="key">35514<!--ObjectStateValue: SuperGreenThumb_NotPlantedBy--></T>
+              </U>
+              <U>
+                <T n="key">35515<!--ObjectStateValue: SuperGreenThumb_PlantedBy--></T>
+              </U>
+            </L>
+            <V n="default_value" t="reference">
+              <T n="reference">35514<!--ObjectStateValue: SuperGreenThumb_NotPlantedBy--></T>
+            </V>
+          </U>
+          <U>
+            <L n="client_states">
+              <U>
+                <T n="key">145936<!--ObjectStateValue: LotTrait_GreatSoil_0_No--></T>
+              </U>
+              <U>
+                <T n="key">145937<!--ObjectStateValue: LotTrait_GreatSoil_1_Yes--></T>
+              </U>
+            </L>
+            <V n="default_value" t="reference">
+              <T n="reference">145936<!--ObjectStateValue: LotTrait_GreatSoil_0_No--></T>
+            </V>
+          </U>
+          <U>
+            <L n="client_states">
+              <U>
+                <T n="key">230856<!--ObjectStateValue: lotTrait_TinyHome_Gardening_Increase_Great_Soil_0_No_Value--></T>
+              </U>
+              <U>
+                <T n="key">230857<!--ObjectStateValue: lotTrait_TinyHome_Gardening_Increase_Great_Soil_1_Yes_Value--></T>
+              </U>
+            </L>
+            <V n="default_value" t="reference">
+              <T n="reference">230856<!--ObjectStateValue: lotTrait_TinyHome_Gardening_Increase_Great_Soil_0_No_Value--></T>
+            </V>
+          </U>
+          <U>
+            <V n="default_value" t="reference">
+              <T n="reference">141765<!--ObjectStateValue: BlossomFestival_SpawnerValues--></T>
+            </V>
+          </U>
+          <U>
+            <L n="client_states">
+              <U>
+                <T n="key">39611<!--CommodityBasedObjectStateValue: FireState_Burn_Material_Change--></T>
+              </U>
+              <U>
+                <T n="key">39736<!--CommodityBasedObjectStateValue: FireState_Burn_Material_Change_Burning--></T>
+              </U>
+              <U>
+                <T n="key">39737<!--CommodityBasedObjectStateValue: FireState_Burn_Material_Change_Not_Burning--></T>
+              </U>
+              <U>
+                <T n="key">77532<!--CommodityBasedObjectStateValue: FireState_Burn_Material_Change_Replace--></T>
+              </U>
+            </L>
+            <V t="reference" n="default_value">
+              <T n="reference">39737<!--CommodityBasedObjectStateValue: FireState_Burn_Material_Change_Not_Burning--></T>
+            </V>
+          </U>
+        </L>
+      </U>
+    </V>
+  </U>
+  <U n="_components_native">
+    <V n="Slot" t="enabled">
+      <U n="enabled">
+        <L n="autonomy_modifiers">
+          <U>
+            <L n="decay_modifiers">
+              <U>
+                <T n="key">16573<!--Commodity: commodity_Collection_SpawnSlotObject--></T>
+                <T n="value">1.5</T>
+              </U>
+            </L>
+          </U>
+        </L>
+        <L n="state_values">
+          <T>15205<!--ObjectStateValue: GardeningContainer_Pot--></T>
+        </L>
+      </U>
+    </V>
+  </U>
+  <L n="_super_affordances">
+    <T>13328<!--ImmediateSuperInteraction: debug_Reset--></T>
+    <T>13326<!--ImmediateSuperInteraction: debug_ObjectDestroy--></T>
+    <T>103888<!--ImmediateSuperInteraction: cheat_set_as_head--></T>
+    <T>144099<!--SuperInteraction: generic_Object_Toddler_Check_Out--></T>
+    <T>156936<!--SuperInteraction: generic_Object_Toddler_Check_Out_HighChair--></T>
+    <T>151913<!--PurchasePickerInteraction: purchase_Seeds_Vampire_Plasmafruit--></T>
+    <T>151915<!--PurchasePickerInteraction: purchase_Seeds_Vampire_SixamMosquitoTrap--></T>
+    <T>151914<!--PurchasePickerInteraction: purchase_Seeds_Vampire_Wolfsbane--></T>
+    <T>153962<!--PurchasePickerInteraction: purchase_Seeds_Vampire_Garlic--></T>
+    <T>74457<!--ImmediateSuperInteraction: fire_ReplaceBurntObject--></T>
+  </L>
+  <U n="aop_forward_data">
+    <T n="should_search_forwarded_child_aop">True</T>
+  </U>
+  <U n="recycling_data">
+    <L n="recycling_values">
+      <U>
+        <E n="Bucks Type">RecycleBitsBucks</E>
+        <T n="Value">0.5</T>
+      </U>
+      <U>
+        <E n="Bucks Type">RecyclePiecesBucks</E>
+        <T n="Value">0.5</T>
+      </U>
+    </L>
+  </U>
+</I>

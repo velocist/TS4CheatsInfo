@@ -1,0 +1,259 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<I c="LootActions" i="action" m="interactions.utils.loot" n="loot_Buff_VegetarianHasEaten" s="132835">
+  <L n="loot_actions">
+    <V t="buff">
+      <U n="buff">
+        <U n="buff">
+          <V t="enabled" n="buff_reason">
+            <T n="enabled">0xCE63979E<!--String: "(Por comer algo con carne)"--></T>
+          </V>
+          <T n="buff_type">132644<!--Buff: buff_Trait_Vegetarian_TaintedWithMeat--></T>
+        </U>
+        <L n="tests">
+          <L>
+            <V t="trait">
+              <U n="trait">
+                <L n="whitelist_traits">
+                  <T>132627<!--Trait: trait_Vegetarian--></T>
+                </L>
+              </U>
+            </V>
+            <V t="object_criteria">
+              <U n="object_criteria">
+                <V n="identity_test" t="tags">
+                  <U n="tags">
+                    <L n="tag_set">
+                      <E>Food_HasMeat</E>
+                      <E>Food_HasFish</E>
+                    </L>
+                  </U>
+                </V>
+                <T n="owned">False</T>
+                <V t="single_object" n="subject_specific_tests" />
+              </U>
+            </V>
+          </L>
+        </L>
+      </U>
+    </V>
+    <V t="notification_and_dialog">
+      <U n="notification_and_dialog">
+        <V n="dialog" t="notification">
+          <U n="notification">
+            <V n="icon" t="enabled">
+              <V n="enabled" t="resource_key">
+                <U n="resource_key">
+                  <T n="key" p="InGame\UI\Icons\Notifications\notification_foodpoisoning.png">2f7d0004:00000000:02f5a99e5fd4a6d9</T>
+                </U>
+              </V>
+            </V>
+            <V t="enabled" n="secondary_icon">
+              <V t="participant" n="enabled" />
+            </V>
+            <V n="text" t="single">
+              <T n="single">0xE5490FE2<!--String: "¡A {0.SimFirstName} se le ha revuelto el estómago de repente! Debe de haber comido algo que llevaba carne."--></T>
+            </V>
+          </U>
+        </V>
+        <L n="tests">
+          <L>
+            <V t="trait">
+              <U n="trait">
+                <L n="whitelist_traits">
+                  <T>132627<!--Trait: trait_Vegetarian--></T>
+                </L>
+              </U>
+            </V>
+            <V t="buff">
+              <U n="buff">
+                <V n="whitelist" t="enabled">
+                  <L n="enabled">
+                    <T>132644<!--Buff: buff_Trait_Vegetarian_TaintedWithMeat--></T>
+                  </L>
+                </V>
+              </U>
+            </V>
+            <V t="buff">
+              <U n="buff">
+                <L n="blacklist">
+                  <T>154206<!--Buff: buff_Trait_Vegetarian_HasEaten_Hidden--></T>
+                </L>
+              </U>
+            </V>
+          </L>
+        </L>
+      </U>
+    </V>
+    <V t="buff">
+      <U n="buff">
+        <U n="buff">
+          <T n="buff_type">132738<!--Buff: buff_Trait_Vegetarian_HasEatenMeatSubstitute_Hidden--></T>
+        </U>
+        <U n="chance">
+          <T n="base_chance">100</T>
+        </U>
+        <L n="tests">
+          <L>
+            <V t="trait">
+              <U n="trait">
+                <L n="whitelist_traits">
+                  <T>132627<!--Trait: trait_Vegetarian--></T>
+                </L>
+              </U>
+            </V>
+            <V t="object_criteria">
+              <U n="object_criteria">
+                <V n="desired_state_threshold" t="enabled">
+                  <U n="enabled">
+                    <E n="comparison">LESS_OR_EQUAL</E>
+                    <T n="value">15304<!--CommodityBasedObjectStateValue: Quality_Normal--></T>
+                  </U>
+                </V>
+                <V n="identity_test" t="tags">
+                  <U n="tags">
+                    <L n="tag_set">
+                      <E>Food_HasMeatSubstitute</E>
+                    </L>
+                  </U>
+                </V>
+                <T n="owned">False</T>
+                <V t="single_object" n="subject_specific_tests" />
+              </U>
+            </V>
+          </L>
+        </L>
+      </U>
+    </V>
+    <V t="buff">
+      <U n="buff">
+        <U n="buff">
+          <V n="buff_reason" t="enabled">
+            <T n="enabled">0xFAE3136<!--String: "(Por comer un plato vegetariano estupendo)"--></T>
+          </V>
+          <T n="buff_type">132640<!--Buff: buff_Trait_Vegetarian_VegetarianApproved--></T>
+        </U>
+        <U n="chance">
+          <T n="base_chance">100</T>
+        </U>
+        <L n="tests">
+          <L>
+            <V t="trait">
+              <U n="trait">
+                <L n="whitelist_traits">
+                  <T>132627<!--Trait: trait_Vegetarian--></T>
+                </L>
+              </U>
+            </V>
+            <V t="object_criteria">
+              <U n="object_criteria">
+                <V t="enabled" n="desired_state_threshold">
+                  <U n="enabled">
+                    <E n="comparison">EQUAL</E>
+                    <T n="value">15305<!--CommodityBasedObjectStateValue: Quality_Outstanding--></T>
+                  </U>
+                </V>
+                <V t="tags" n="identity_test">
+                  <U n="tags">
+                    <L n="tag_set">
+                      <E>Food_HasMeat</E>
+                    </L>
+                    <E n="test_type">CONTAINS_NO_TAGS_IN_SET</E>
+                  </U>
+                </V>
+                <T n="owned">False</T>
+                <V t="single_object" n="subject_specific_tests" />
+              </U>
+            </V>
+            <V t="state">
+              <U n="state">
+                <E n="operator">NOTEQUAL</E>
+                <T n="value">15190<!--CommodityBasedObjectStateValue: Freshness_Spoiled--></T>
+              </U>
+            </V>
+          </L>
+        </L>
+      </U>
+    </V>
+    <V t="buff_removal">
+      <U n="buff_removal">
+        <L n="buffs_to_remove">
+          <T>102098<!--Buff: buff_Food_Ambrosia_Happy_High--></T>
+          <T>10591<!--Buff: buff_Food_Cooking_0--></T>
+          <T>27388<!--Buff: buff_Food_Cooking_0_Foodie--></T>
+          <T>10592<!--Buff: buff_Food_Cooking_1--></T>
+          <T>27387<!--Buff: buff_Food_Cooking_1_Foodie--></T>
+          <T>10593<!--Buff: buff_Food_Cooking_2--></T>
+          <T>27386<!--Buff: buff_Food_Cooking_2_Foodie--></T>
+          <T>10597<!--Buff: buff_Food_Cooking_3--></T>
+          <T>10601<!--Buff: buff_Food_Cooking_4--></T>
+          <T>27383<!--Buff: buff_Food_Cooking_4_Foodie--></T>
+          <T>10602<!--Buff: buff_Food_Cooking_5--></T>
+          <T>27384<!--Buff: buff_Food_Cooking_5_Foodie--></T>
+          <T>76399<!--Buff: buff_Food_Cooking_Ingredients_Bad--></T>
+          <T>76415<!--Buff: buff_Food_Cooking_Ingredients_Bad_Foodie--></T>
+          <T>76392<!--Buff: buff_Food_Cooking_Ingredients_Good--></T>
+          <T>76416<!--Buff: buff_Food_Cooking_Ingredients_Good_Foodie--></T>
+          <T>40894<!--Buff: buff_Food_Emotion_Angry_High--></T>
+          <T>40893<!--Buff: buff_Food_Emotion_Angry_Low--></T>
+          <T>40890<!--Buff: buff_Food_Emotion_Energized_High--></T>
+          <T>40886<!--Buff: buff_Food_Emotion_Energized_Low--></T>
+          <T>40883<!--Buff: buff_Food_Emotion_Flirty_High--></T>
+          <T>40882<!--Buff: buff_Food_Emotion_Flirty_Low--></T>
+          <T>40885<!--Buff: buff_Food_Emotion_Playful_High--></T>
+          <T>40884<!--Buff: buff_Food_Emotion_Playful_Low--></T>
+          <T>132413<!--Buff: buff_Food_HasEatenRecently--></T>
+          <T>137573<!--Buff: buff_Food_HasEatenRecently_IncludingCancel--></T>
+          <T>142689<!--Buff: buff_Food_SuppressStandardEatMixer--></T>
+          <T>143591<!--Buff: buff_SampleFoods_Cooking_5--></T>
+          <T>143589<!--Buff: buff_SampleFoods_Cooking_4--></T>
+          <T>143588<!--Buff: buff_SampleFoods_Cooking_3--></T>
+          <T>143586<!--Buff: buff_SampleFoods_Cooking_2--></T>
+          <T>143593<!--Buff: buff_SampleFoods_Cooking_Ingredients_Bad--></T>
+          <T>143582<!--Buff: buff_SampleFoods_Cooking_0--></T>
+          <T>143627<!--Buff: buff_SampleFoods_NauseousLite--></T>
+        </L>
+        <L n="tests">
+          <L>
+            <V t="buff">
+              <U n="buff">
+                <V n="whitelist" t="enabled">
+                  <L n="enabled">
+                    <T>132644<!--Buff: buff_Trait_Vegetarian_TaintedWithMeat--></T>
+                  </L>
+                </V>
+              </U>
+            </V>
+            <V t="trait">
+              <U n="trait">
+                <L n="whitelist_traits">
+                  <T>132627<!--Trait: trait_Vegetarian--></T>
+                </L>
+              </U>
+            </V>
+          </L>
+        </L>
+      </U>
+    </V>
+    <V t="buff">
+      <U n="buff">
+        <U n="buff">
+          <V t="enabled" n="buff_reason">
+            <T n="enabled">0xCE63979E<!--String: "(Por comer algo con carne)"--></T>
+          </V>
+          <T n="buff_type">154206<!--Buff: buff_Trait_Vegetarian_HasEaten_Hidden--></T>
+        </U>
+        <L n="tests">
+          <L>
+            <V t="trait">
+              <U n="trait">
+                <L n="whitelist_traits">
+                  <T>132627<!--Trait: trait_Vegetarian--></T>
+                </L>
+              </U>
+            </V>
+          </L>
+        </L>
+      </U>
+    </V>
+  </L>
+</I>

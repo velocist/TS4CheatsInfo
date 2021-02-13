@@ -1,0 +1,540 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<I c="MixerInteraction" i="interaction" m="interactions.base.mixer_interaction" n="mixer_Dolphin_Talk" s="206497">
+  <V t="resource_key" n="_icon">
+    <U n="resource_key">
+      <T n="key" p="InEP07\UI\Icons\InteractionQueueSubInteractions\icon_queuesubinteraction_talk.png">2f7d0004:00000000:76c0ca1ea1c04d65</T>
+    </U>
+  </V>
+  <T n="allow_autonomous">True</T>
+  <T n="allow_user_directed">True</T>
+  <V t="one_shot" n="basic_content">
+    <U n="one_shot">
+      <V t="enabled" n="periodic_stat_change">
+        <U n="enabled">
+          <L n="operations">
+            <V t="statistic_set_max">
+              <U n="statistic_set_max">
+                <T n="advertise">False</T>
+                <T n="stat">198823<!--Commodity: commodity_Dolphin_Existence--></T>
+                <L n="subject">
+                  <E>Object</E>
+                </L>
+              </U>
+            </V>
+          </L>
+        </U>
+      </V>
+    </U>
+  </V>
+  <L n="basic_extras">
+    <V t="balloon">
+      <U n="balloon">
+        <L n="balloon_choices">
+          <U>
+            <V n="item" t="balloon_category">
+              <T n="balloon_category">211519<!--BalloonCategory: balloonCategory_SetDolphins_Talk_Sim_speech--></T>
+            </V>
+          </U>
+        </L>
+        <L n="balloon_target">
+          <E>Actor</E>
+        </L>
+      </U>
+    </V>
+    <V t="loot">
+      <U n="loot">
+        <L n="loot_list">
+          <T>211412<!--LootActions: loot_Dolphins_Talk_Social_Gain--></T>
+        </L>
+      </U>
+    </V>
+    <V t="state_change">
+      <U n="state_change">
+        <V n="new_value" t="single_value">
+          <U n="single_value">
+            <T n="new_value">198830<!--CommodityBasedObjectStateValue: dolphin_Existence_On--></T>
+          </U>
+        </V>
+        <V t="at_end" n="timing">
+          <U n="at_end">
+            <E n="criticality">OnCancelOrException</E>
+          </U>
+        </V>
+      </U>
+    </V>
+  </L>
+  <V t="disable_focus" n="basic_focus" />
+  <T n="display_name">0x62C0611C<!--String: "Hablar con {1.ObjectName}"--></T>
+  <U n="display_name_text_tokens">
+    <L n="tokens">
+      <V t="participant_type">
+        <U n="participant_type">
+          <V t="from_participant" n="objects">
+            <U n="from_participant">
+              <E n="participant">Actor</E>
+            </U>
+          </V>
+        </U>
+      </V>
+      <V t="participant_type">
+        <U n="participant_type">
+          <V t="from_participant" n="objects">
+            <U n="from_participant">
+              <E n="participant">Object</E>
+            </U>
+          </V>
+        </U>
+      </V>
+    </L>
+  </U>
+  <L n="interaction_category_tags">
+    <E>Interaction_Mixer</E>
+    <E>Interaction_All</E>
+  </L>
+  <V n="outcome" t="test_based">
+    <U n="test_based">
+      <L n="fallback_outcomes">
+        <U>
+          <U n="outcome">
+            <V n="animation_ref" t="enabled">
+              <U n="enabled">
+                <T n="factory">207883<!--AnimationElement: dolphinWithSim_TalkTo--></T>
+                <U n="overrides">
+                  <V n="balloons" t="enabled">
+                    <L n="enabled">
+                      <U>
+                        <T n="balloon_chance">75</T>
+                        <L n="balloon_choices">
+                          <U>
+                            <V n="item" t="balloon_category">
+                              <T n="balloon_category">211519<!--BalloonCategory: balloonCategory_SetDolphins_Talk_Sim_speech--></T>
+                            </V>
+                          </U>
+                        </L>
+                        <T n="balloon_delay">0.75</T>
+                        <T n="balloon_delay_random_offset">0.25</T>
+                        <L n="balloon_target">
+                          <E>Actor</E>
+                        </L>
+                      </U>
+                      <U>
+                        <L n="balloon_choices">
+                          <U>
+                            <V n="item" t="balloon_category">
+                              <T n="balloon_category">211532<!--BalloonCategory: balloonCategory_SetDolphins_Talk_Dolphin_speech--></T>
+                            </V>
+                          </U>
+                        </L>
+                        <T n="balloon_delay">0.75</T>
+                        <T n="balloon_delay_random_offset">0.25</T>
+                        <L n="balloon_target">
+                          <E>Object</E>
+                        </L>
+                        <V t="enabled" n="balloon_view_offset">
+                          <U n="enabled">
+                            <T n="y">0.3</T>
+                            <T n="z">1</T>
+                          </U>
+                        </V>
+                      </U>
+                    </L>
+                  </V>
+                </U>
+              </U>
+            </V>
+            <L n="loot_list">
+              <T>211412<!--LootActions: loot_Dolphins_Talk_Social_Gain--></T>
+              <T>211108<!--LootActions: loot_Dolphins_Rel_Gain_Talk--></T>
+            </L>
+          </U>
+          <U n="weight">
+            <T n="base_value">3</T>
+          </U>
+        </U>
+        <U>
+          <U n="outcome">
+            <V n="animation_ref" t="enabled">
+              <U n="enabled">
+                <T n="factory">207884<!--AnimationElement: dolphinWithSim_Yes--></T>
+                <U n="overrides">
+                  <V n="balloons" t="enabled">
+                    <L n="enabled">
+                      <U>
+                        <T n="balloon_chance">50</T>
+                        <L n="balloon_choices">
+                          <U>
+                            <V n="item" t="balloon_category">
+                              <T n="balloon_category">211519<!--BalloonCategory: balloonCategory_SetDolphins_Talk_Sim_speech--></T>
+                            </V>
+                          </U>
+                        </L>
+                        <T n="balloon_delay">0.75</T>
+                        <T n="balloon_delay_random_offset">0.25</T>
+                        <L n="balloon_target">
+                          <E>Actor</E>
+                        </L>
+                      </U>
+                      <U>
+                        <T n="balloon_chance">50</T>
+                        <L n="balloon_choices">
+                          <U>
+                            <V n="item" t="balloon_category">
+                              <T n="balloon_category">211530<!--BalloonCategory: balloonCategory_SetDolphins_Talk_Dolphin_thought--></T>
+                            </V>
+                          </U>
+                        </L>
+                        <T n="balloon_delay">0.75</T>
+                        <T n="balloon_delay_random_offset">0.25</T>
+                        <L n="balloon_target">
+                          <E>Object</E>
+                        </L>
+                        <V t="enabled" n="balloon_view_offset">
+                          <U n="enabled">
+                            <T n="y">0.3</T>
+                            <T n="z">1</T>
+                          </U>
+                        </V>
+                      </U>
+                    </L>
+                  </V>
+                </U>
+              </U>
+            </V>
+            <L n="loot_list">
+              <T>211108<!--LootActions: loot_Dolphins_Rel_Gain_Talk--></T>
+            </L>
+          </U>
+        </U>
+        <U>
+          <U n="outcome">
+            <V t="enabled" n="animation_ref">
+              <U n="enabled">
+                <T n="factory">207885<!--AnimationElement: dolphinWithSim_No--></T>
+              </U>
+            </V>
+            <L n="basic_extras">
+              <V t="balloon">
+                <U n="balloon">
+                  <T n="balloon_chance">75</T>
+                  <L n="balloon_choices">
+                    <U>
+                      <V n="item" t="balloon_category">
+                        <T n="balloon_category">212498<!--BalloonCategory: balloonCategory_SetDolphins_Mean_thought--></T>
+                      </V>
+                    </U>
+                  </L>
+                  <T n="balloon_delay">0.75</T>
+                  <T n="balloon_delay_random_offset">0.25</T>
+                  <L n="balloon_target">
+                    <E>Object</E>
+                  </L>
+                  <V t="enabled" n="balloon_view_offset">
+                    <U n="enabled">
+                      <T n="y">0.3</T>
+                      <T n="z">1</T>
+                    </U>
+                  </V>
+                </U>
+              </V>
+            </L>
+            <E n="outcome_result">FAILURE</E>
+          </U>
+          <U n="weight">
+            <L n="multipliers">
+              <U>
+                <T n="multiplier">1.5</T>
+                <L n="tests">
+                  <L>
+                    <V t="object_type_relationship">
+                      <U n="object_type_relationship">
+                        <U n="required_relationship_bits">
+                          <L n="match_any">
+                            <T>207278<!--RelationshipBit: bit_Dolphin_Wary--></T>
+                          </L>
+                        </U>
+                        <L n="subject">
+                          <E>Actor</E>
+                        </L>
+                        <V t="object" n="target_type">
+                          <L n="object">
+                            <E>Object</E>
+                          </L>
+                        </V>
+                        <T n="track">207130<!--ObjectRelationshipTrack: objectRelationshipTrack_Dolphin_Standard--></T>
+                      </U>
+                    </V>
+                  </L>
+                  <L>
+                    <V t="object_type_relationship">
+                      <U n="object_type_relationship">
+                        <U n="required_relationship_bits">
+                          <L n="match_any">
+                            <T>207278<!--RelationshipBit: bit_Dolphin_Wary--></T>
+                          </L>
+                        </U>
+                        <L n="subject">
+                          <E>Actor</E>
+                        </L>
+                        <V t="object" n="target_type">
+                          <L n="object">
+                            <E>Object</E>
+                          </L>
+                        </V>
+                        <T n="track">207131<!--ObjectRelationshipTrack: objectRelationshipTrack_Dolphin_Albino--></T>
+                      </U>
+                    </V>
+                  </L>
+                  <L>
+                    <V t="object_type_relationship">
+                      <U n="object_type_relationship">
+                        <U n="required_relationship_bits">
+                          <L n="match_any">
+                            <T>207278<!--RelationshipBit: bit_Dolphin_Wary--></T>
+                          </L>
+                        </U>
+                        <L n="subject">
+                          <E>Actor</E>
+                        </L>
+                        <V t="object" n="target_type">
+                          <L n="object">
+                            <E>Object</E>
+                          </L>
+                        </V>
+                        <T n="track">207132<!--ObjectRelationshipTrack: objectRelationshipTrack_Dolphin_Merfolk--></T>
+                      </U>
+                    </V>
+                  </L>
+                </L>
+              </U>
+              <U>
+                <T n="multiplier">2</T>
+                <L n="tests">
+                  <L>
+                    <V t="object_type_relationship">
+                      <U n="object_type_relationship">
+                        <U n="required_relationship_bits">
+                          <L n="match_any">
+                            <T>207277<!--RelationshipBit: bit_Dolphin_Disliked--></T>
+                            <T>207276<!--RelationshipBit: bit_Dolphin_Feared--></T>
+                          </L>
+                        </U>
+                        <L n="subject">
+                          <E>Actor</E>
+                        </L>
+                        <V t="object" n="target_type">
+                          <L n="object">
+                            <E>Object</E>
+                          </L>
+                        </V>
+                        <T n="track">207130<!--ObjectRelationshipTrack: objectRelationshipTrack_Dolphin_Standard--></T>
+                      </U>
+                    </V>
+                  </L>
+                  <L>
+                    <V t="object_type_relationship">
+                      <U n="object_type_relationship">
+                        <U n="required_relationship_bits">
+                          <L n="match_any">
+                            <T>207277<!--RelationshipBit: bit_Dolphin_Disliked--></T>
+                            <T>207276<!--RelationshipBit: bit_Dolphin_Feared--></T>
+                          </L>
+                        </U>
+                        <L n="subject">
+                          <E>Actor</E>
+                        </L>
+                        <V t="object" n="target_type">
+                          <L n="object">
+                            <E>Object</E>
+                          </L>
+                        </V>
+                        <T n="track">207131<!--ObjectRelationshipTrack: objectRelationshipTrack_Dolphin_Albino--></T>
+                      </U>
+                    </V>
+                  </L>
+                  <L>
+                    <V t="object_type_relationship">
+                      <U n="object_type_relationship">
+                        <U n="required_relationship_bits">
+                          <L n="match_any">
+                            <T>207277<!--RelationshipBit: bit_Dolphin_Disliked--></T>
+                            <T>207276<!--RelationshipBit: bit_Dolphin_Feared--></T>
+                          </L>
+                        </U>
+                        <L n="subject">
+                          <E>Actor</E>
+                        </L>
+                        <V t="object" n="target_type">
+                          <L n="object">
+                            <E>Object</E>
+                          </L>
+                        </V>
+                        <T n="track">207132<!--ObjectRelationshipTrack: objectRelationshipTrack_Dolphin_Merfolk--></T>
+                      </U>
+                    </V>
+                  </L>
+                </L>
+              </U>
+            </L>
+          </U>
+        </U>
+        <U>
+          <U n="outcome">
+            <V n="animation_ref" t="enabled">
+              <U n="enabled">
+                <T n="factory">211602<!--AnimationElement: dolphinWithSim_ConfusedLook--></T>
+                <U n="overrides">
+                  <V n="balloons" t="enabled">
+                    <L n="enabled">
+                      <U>
+                        <T n="balloon_chance">75</T>
+                        <L n="balloon_choices">
+                          <U>
+                            <V n="item" t="balloon_icon">
+                              <U n="balloon_icon">
+                                <V n="icon" t="resource_key">
+                                  <U n="resource_key">
+                                    <T n="key" p="InGame\UI\Icons\Headlines\Final\headline_QuestionMark.png">2f7d0004:00000000:873da6c8ff732f1f</T>
+                                  </U>
+                                </V>
+                              </U>
+                            </V>
+                          </U>
+                        </L>
+                        <L n="balloon_target">
+                          <E>Actor</E>
+                        </L>
+                      </U>
+                    </L>
+                  </V>
+                </U>
+              </U>
+            </V>
+            <L n="basic_extras">
+              <V t="balloon">
+                <U n="balloon">
+                  <T n="balloon_chance">75</T>
+                  <L n="balloon_choices">
+                    <U>
+                      <V n="item" t="balloon_icon">
+                        <U n="balloon_icon">
+                          <V n="icon" t="resource_key">
+                            <U n="resource_key">
+                              <T n="key" p="InGame\UI\Icons\Headlines\Final\headline_QuestionMark.png">2f7d0004:00000000:873da6c8ff732f1f</T>
+                            </U>
+                          </V>
+                        </U>
+                      </V>
+                    </U>
+                  </L>
+                  <T n="balloon_delay">0.75</T>
+                  <T n="balloon_delay_random_offset">0.25</T>
+                  <L n="balloon_target">
+                    <E>Object</E>
+                  </L>
+                  <V t="enabled" n="balloon_view_offset">
+                    <U n="enabled">
+                      <T n="y">0.3</T>
+                      <T n="z">1</T>
+                    </U>
+                  </V>
+                </U>
+              </V>
+            </L>
+            <E n="outcome_result">FAILURE</E>
+          </U>
+          <U n="weight">
+            <L n="multipliers">
+              <U>
+                <T n="multiplier">2</T>
+                <L n="tests">
+                  <L>
+                    <V t="object_type_relationship">
+                      <U n="object_type_relationship">
+                        <U n="required_relationship_bits">
+                          <L n="match_any">
+                            <T>207280<!--RelationshipBit: bit_Dolphin_Curious--></T>
+                            <T>207279<!--RelationshipBit: bit_Dolphin_Indifferent--></T>
+                          </L>
+                        </U>
+                        <L n="subject">
+                          <E>Actor</E>
+                        </L>
+                        <V t="object" n="target_type">
+                          <L n="object">
+                            <E>Object</E>
+                          </L>
+                        </V>
+                        <T n="track">207130<!--ObjectRelationshipTrack: objectRelationshipTrack_Dolphin_Standard--></T>
+                      </U>
+                    </V>
+                  </L>
+                  <L>
+                    <V t="object_type_relationship">
+                      <U n="object_type_relationship">
+                        <U n="required_relationship_bits">
+                          <L n="match_any">
+                            <T>207280<!--RelationshipBit: bit_Dolphin_Curious--></T>
+                            <T>207279<!--RelationshipBit: bit_Dolphin_Indifferent--></T>
+                          </L>
+                        </U>
+                        <L n="subject">
+                          <E>Actor</E>
+                        </L>
+                        <V t="object" n="target_type">
+                          <L n="object">
+                            <E>Object</E>
+                          </L>
+                        </V>
+                        <T n="track">207131<!--ObjectRelationshipTrack: objectRelationshipTrack_Dolphin_Albino--></T>
+                      </U>
+                    </V>
+                  </L>
+                  <L>
+                    <V t="object_type_relationship">
+                      <U n="object_type_relationship">
+                        <U n="required_relationship_bits">
+                          <L n="match_any">
+                            <T>207280<!--RelationshipBit: bit_Dolphin_Curious--></T>
+                            <T>207279<!--RelationshipBit: bit_Dolphin_Indifferent--></T>
+                          </L>
+                        </U>
+                        <L n="subject">
+                          <E>Actor</E>
+                        </L>
+                        <V t="object" n="target_type">
+                          <L n="object">
+                            <E>Object</E>
+                          </L>
+                        </V>
+                        <T n="track">207132<!--ObjectRelationshipTrack: objectRelationshipTrack_Dolphin_Merfolk--></T>
+                      </U>
+                    </V>
+                  </L>
+                </L>
+              </U>
+            </L>
+          </U>
+        </U>
+      </L>
+    </U>
+  </V>
+  <T n="pie_menu_priority">7</T>
+  <U n="sub_action">
+    <T n="base_weight">3</T>
+    <E n="mixer_group">IDLES</E>
+  </U>
+  <E n="target_type">OBJECT</E>
+  <L n="test_globals">
+    <V t="state">
+      <U n="state">
+        <T n="value">35297<!--ObjectStateValue: GenericOnOff_Off--></T>
+      </U>
+    </V>
+    <V t="object_ownership">
+      <U n="object_ownership">
+        <T n="test_household_owner">False</T>
+      </U>
+    </V>
+  </L>
+  <T n="visible">True</T>
+</I>

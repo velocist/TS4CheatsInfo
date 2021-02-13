@@ -1,0 +1,172 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<I c="SuperInteraction" i="interaction" m="interactions.base.super_interaction" n="VampireCreation_TransformIntoVampire" s="149544">
+  <V t="participant" n="_icon">
+    <U n="participant">
+      <L n="participant_type">
+        <E>Actor</E>
+      </L>
+    </U>
+  </V>
+  <V t="enabled" n="_saveable" />
+  <T n="attention_cost">0.5</T>
+  <V n="basic_content" t="one_shot">
+    <U n="one_shot">
+      <U n="animation_ref">
+        <T n="factory">151807<!--AnimationElement: VampireCreation_Transform--></T>
+      </U>
+    </U>
+  </V>
+  <L n="basic_extras">
+    <V t="camera_focus">
+      <U n="camera_focus">
+        <V t="at_beginning" n="timing" />
+      </U>
+    </V>
+    <V t="set_game_speed">
+      <U n="set_game_speed">
+        <V t="at_beginning" n="timing" />
+      </U>
+    </V>
+    <V t="notification">
+      <U n="notification">
+        <V n="dialog" t="single">
+          <V n="single" t="literal">
+            <U n="literal">
+              <V t="enabled" n="icon">
+                <V n="enabled" t="participant" />
+              </V>
+              <V n="text" t="single">
+                <T n="single">0x826FEECF<!--String: "{0.SimName} se está transformando en {M0.vampiro}{F0.vampira}."--></T>
+              </V>
+            </U>
+          </V>
+        </V>
+        <V t="at_beginning" n="timing" />
+      </U>
+    </V>
+    <V t="broadcaster">
+      <U n="broadcaster">
+        <L n="broadcaster_types">
+          <U>
+            <T n="item">152173<!--Broadcaster: broadcaster_VampireCreation_Reactions--></T>
+          </U>
+        </L>
+      </U>
+    </V>
+    <V t="audio_sting">
+      <U n="audio_sting">
+        <U n="audio_sting">
+          <T n="audio" p="InGP04\Audio\sting\sting_vampire_turn.propx">39b2aa4a:00000000:f0df8ef466239a2f</T>
+        </U>
+        <V t="at_beginning" n="timing" />
+      </U>
+    </V>
+  </L>
+  <L n="basic_liabilities">
+    <V t="save_lock">
+      <U n="save_lock">
+        <T n="save_lock_tooltip">0xDD5D23A3<!--String: "No se puede realizar esta acción mientras un Sim se está convirtiendo en vampiro."--></T>
+      </U>
+    </V>
+  </L>
+  <V t="disabled" n="content_score" />
+  <T n="display_name">0x17DD24F4<!--String: "Transformarse en {M0.vampiro}{F0.vampira}"--></T>
+  <U n="display_name_text_tokens">
+    <L n="tokens">
+      <V t="participant_type">
+        <U n="participant_type">
+          <V t="from_participant" n="objects">
+            <U n="from_participant">
+              <E n="participant">Actor</E>
+            </U>
+          </V>
+        </U>
+      </V>
+      <V t="participant_type">
+        <U n="participant_type">
+          <V n="objects" t="from_participant">
+            <U n="from_participant">
+              <E n="participant">Object</E>
+            </U>
+          </V>
+        </U>
+      </V>
+    </L>
+  </U>
+  <L n="interaction_category_tags">
+    <E>Interaction_Super</E>
+    <E>Interaction_All</E>
+  </L>
+  <V n="outcome" t="single">
+    <U n="single">
+      <U n="actions">
+        <L n="basic_extras">
+          <V t="notification">
+            <U n="notification">
+              <V n="dialog" t="single">
+                <V n="single" t="literal">
+                  <U n="literal">
+                    <V t="enabled" n="icon">
+                      <V n="enabled" t="participant" />
+                    </V>
+                    <V n="text" t="single">
+                      <T n="single">0x3D61F551<!--String: "¡{0.SimName} se ha transformado en {M0.vampiro}{F0.vampira}! Los Sims vampiros sienten una sed irrefrenable de plasma de otros Sims."--></T>
+                    </V>
+                    <E n="visual_type">SPECIAL_MOMENT</E>
+                  </U>
+                </V>
+              </V>
+            </U>
+          </V>
+        </L>
+        <L n="continuation">
+          <U>
+            <T n="affordance">149592<!--SuperInteraction: vampireCreation_TransformIntoVampire_Cont--></T>
+            <E n="target">Invalid</E>
+          </U>
+        </L>
+        <L n="loot_list">
+          <T>149538<!--LootActions: loot_VampireCreation_NewVampire--></T>
+        </L>
+      </U>
+    </U>
+  </V>
+  <E n="scoring_priority">NORMAL</E>
+  <T n="subaction_selection_weight">1</T>
+  <V t="literal" n="super_affordance_compatibility">
+    <U n="literal">
+      <V n="default_inclusion" t="exclude_all" />
+    </U>
+  </V>
+  <E n="target_type">OBJECT</E>
+  <L n="test_globals">
+    <V t="sim_info">
+      <U n="sim_info">
+        <V t="specified" n="ages" />
+        <V t="specified" n="species">
+          <U n="specified">
+            <L n="species">
+              <E />
+            </L>
+          </U>
+        </V>
+        <E n="who">Actor</E>
+      </U>
+    </V>
+    <V t="trait">
+      <U n="trait">
+        <L n="blacklist_traits">
+          <T>153867<!--Trait: trait_OccultVampire_Manifested--></T>
+        </L>
+      </U>
+    </V>
+    <V t="trait">
+      <U n="trait">
+        <L n="blacklist_traits">
+          <T>199043<!--Trait: trait_OccultMermaid--></T>
+        </L>
+      </U>
+    </V>
+  </L>
+  <T n="time_overhead">30</T>
+</I>

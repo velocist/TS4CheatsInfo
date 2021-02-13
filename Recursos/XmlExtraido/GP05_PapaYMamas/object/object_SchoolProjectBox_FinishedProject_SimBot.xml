@@ -1,0 +1,292 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<I c="GameObject" i="object" m="objects.game_object" n="object_SchoolProjectBox_FinishedProject_SimBot" s="162593">
+  <V t="enabled" n="_anim_overrides">
+    <U n="enabled">
+      <L n="params">
+        <U>
+          <T n="name">kneelType</T>
+          <V n="value" t="string">
+            <T n="string">SchoolProjectBox</T>
+          </V>
+        </U>
+      </L>
+    </U>
+  </V>
+  <U n="_components">
+    <V t="enabled" n="focus">
+      <U n="enabled">
+        <V n="_focus_score" t="globally">
+          <U n="globally">
+            <E n="base">LOW</E>
+          </U>
+        </V>
+      </U>
+    </V>
+    <V n="idle_component" t="enabled">
+      <U n="enabled">
+        <V n="client_suppressed_state" t="enabled">
+          <T n="enabled">163372<!--ObjectStateValue: schoolProjectBox_SimBot_Activate_Idle--></T>
+        </V>
+        <L n="idle_animation_map">
+          <U>
+            <T n="key">163372<!--ObjectStateValue: schoolProjectBox_SimBot_Activate_Idle--></T>
+            <T n="value">163389<!--ObjectAnimationElement: schoolProjectBox_SimBot_Idle--></T>
+          </U>
+          <U>
+            <T n="key">163373<!--ObjectStateValue: schoolProjectBox_SimBot_Activate_Success--></T>
+            <T n="value">163391<!--ObjectAnimationElement: schoolProjectBox_SimBot_Success--></T>
+          </U>
+          <U>
+            <T n="key">163375<!--ObjectStateValue: schoolProjectBox_SimBot_Activate_Fail--></T>
+            <T n="value">163390<!--ObjectAnimationElement: schoolProjectBox_SimBot_Fail--></T>
+          </U>
+          <U>
+            <T n="key">167122<!--ObjectStateValue: schoolProjectBox_SimBot_Activate_Medium--></T>
+            <T n="value">167120<!--ObjectAnimationElement: schoolProjectBox_SimBot_Medium--></T>
+          </U>
+        </L>
+      </U>
+    </V>
+    <V t="enabled" n="inventory_item">
+      <U n="enabled">
+        <T n="skip_carry_pose">True</T>
+        <E n="stack_scheme">NONE</E>
+        <L n="valid_inventory_types">
+          <E>SIM</E>
+        </L>
+      </U>
+    </V>
+    <V t="enabled" n="ownable_component" />
+    <V t="enabled" n="retail_component">
+      <V n="enabled" t="reference">
+        <T n="reference">115301<!--RetailComponent: retailComponent_Default_LowAppeal--></T>
+      </V>
+    </V>
+    <V n="state" t="enabled">
+      <U n="enabled">
+        <L n="state_triggers">
+          <U>
+            <L n="at_states">
+              <T>163372<!--ObjectStateValue: schoolProjectBox_SimBot_Activate_Idle--></T>
+            </L>
+            <V t="Set_state_list" n="set_states">
+              <L n="Set_state_list">
+                <T>142208<!--ObjectStateValue: inventoryStorage_CanPutInInventory_True--></T>
+              </L>
+            </V>
+          </U>
+          <U>
+            <L n="at_states">
+              <T>163373<!--ObjectStateValue: schoolProjectBox_SimBot_Activate_Success--></T>
+              <T>163375<!--ObjectStateValue: schoolProjectBox_SimBot_Activate_Fail--></T>
+              <T>167122<!--ObjectStateValue: schoolProjectBox_SimBot_Activate_Medium--></T>
+            </L>
+            <V t="Set_state_list" n="set_states">
+              <L n="Set_state_list">
+                <T>142207<!--ObjectStateValue: inventoryStorage_CanPutInInventory_False--></T>
+              </L>
+            </V>
+            <E n="trigger_operation">OR</E>
+          </U>
+          <U>
+            <L n="at_states">
+              <T>77532<!--CommodityBasedObjectStateValue: FireState_Burn_Material_Change_Replace--></T>
+            </L>
+            <V n="set_states" t="Set_state_list">
+              <L n="Set_state_list">
+                <T>39737<!--CommodityBasedObjectStateValue: FireState_Burn_Material_Change_Not_Burning--></T>
+              </L>
+            </V>
+          </U>
+        </L>
+        <L n="states">
+          <U>
+            <V n="default_value" t="reference">
+              <T n="reference">163372<!--ObjectStateValue: schoolProjectBox_SimBot_Activate_Idle--></T>
+            </V>
+            <T n="reset_on_load_if_time_passes">True</T>
+            <T n="reset_to_default">True</T>
+          </U>
+          <U>
+            <L n="client_states">
+              <U>
+                <T n="key">142207<!--ObjectStateValue: inventoryStorage_CanPutInInventory_False--></T>
+              </U>
+              <U>
+                <T n="key">142208<!--ObjectStateValue: inventoryStorage_CanPutInInventory_True--></T>
+              </U>
+            </L>
+            <V n="default_value" t="reference">
+              <T n="reference">142208<!--ObjectStateValue: inventoryStorage_CanPutInInventory_True--></T>
+            </V>
+            <T n="reset_on_load_if_time_passes">True</T>
+            <T n="reset_to_default">True</T>
+          </U>
+          <U>
+            <L n="client_states">
+              <U>
+                <T n="key">39611<!--CommodityBasedObjectStateValue: FireState_Burn_Material_Change--></T>
+              </U>
+              <U>
+                <T n="key">39736<!--CommodityBasedObjectStateValue: FireState_Burn_Material_Change_Burning--></T>
+              </U>
+              <U>
+                <T n="key">39737<!--CommodityBasedObjectStateValue: FireState_Burn_Material_Change_Not_Burning--></T>
+              </U>
+              <U>
+                <T n="key">77532<!--CommodityBasedObjectStateValue: FireState_Burn_Material_Change_Replace--></T>
+              </U>
+            </L>
+            <V t="reference" n="default_value">
+              <T n="reference">39612<!--CommodityBasedObjectStateValue: FireState_Burn_Incinerate_Not_Burning--></T>
+            </V>
+          </U>
+        </L>
+        <V n="timed_state_triggers" t="enabled">
+          <L n="enabled">
+            <U>
+              <T n="key">163373<!--ObjectStateValue: schoolProjectBox_SimBot_Activate_Success--></T>
+              <U n="value">
+                <L n="ops">
+                  <U>
+                    <L n="states_to_trigger">
+                      <T>163372<!--ObjectStateValue: schoolProjectBox_SimBot_Activate_Idle--></T>
+                    </L>
+                    <T n="trigger_time">7.8</T>
+                  </U>
+                </L>
+              </U>
+            </U>
+            <U>
+              <T n="key">163375<!--ObjectStateValue: schoolProjectBox_SimBot_Activate_Fail--></T>
+              <U n="value">
+                <L n="ops">
+                  <U>
+                    <L n="states_to_trigger">
+                      <T>163372<!--ObjectStateValue: schoolProjectBox_SimBot_Activate_Idle--></T>
+                    </L>
+                    <T n="trigger_time">5.1</T>
+                  </U>
+                </L>
+              </U>
+            </U>
+            <U>
+              <T n="key">167122<!--ObjectStateValue: schoolProjectBox_SimBot_Activate_Medium--></T>
+              <U n="value">
+                <L n="ops">
+                  <U>
+                    <L n="states_to_trigger">
+                      <T>163372<!--ObjectStateValue: schoolProjectBox_SimBot_Activate_Idle--></T>
+                    </L>
+                    <T n="trigger_time">7.8</T>
+                  </U>
+                </L>
+              </U>
+            </U>
+          </L>
+        </V>
+      </U>
+    </V>
+    <V t="enabled" n="tooltip_component">
+      <U n="enabled">
+        <L n="custom_tooltips">
+          <U>
+            <L n="tooltip_fields">
+              <U>
+                <E n="key">crafted_by_text</E>
+                <U n="value">
+                  <V t="single" n="text">
+                    <T n="single">0x59021573<!--String: "Obra de: {0.SimName}"--></T>
+                  </V>
+                  <V t="enabled" n="text_tokens">
+                    <U n="enabled">
+                      <L n="tokens">
+                        <V t="participant_type">
+                          <U n="participant_type">
+                            <V n="objects" t="from_participant">
+                              <U n="from_participant">
+                                <E n="participant">OwnerSim</E>
+                              </U>
+                            </V>
+                          </U>
+                        </V>
+                      </L>
+                    </U>
+                  </V>
+                </U>
+              </U>
+              <U>
+                <E n="key">recipe_description</E>
+                <U n="value">
+                  <V t="override_component_fields" n="override_component_information" />
+                  <V n="text" t="single">
+                    <T n="single">0xDD923F8C<!--String: "{0.ObjectDescription}"--></T>
+                  </V>
+                  <V t="enabled" n="text_tokens">
+                    <U n="enabled">
+                      <L n="tokens">
+                        <V t="participant_type">
+                          <U n="participant_type">
+                            <V t="from_participant" n="objects">
+                              <U n="from_participant">
+                                <E n="participant">Object</E>
+                              </U>
+                            </V>
+                          </U>
+                        </V>
+                      </L>
+                    </U>
+                  </V>
+                </U>
+              </U>
+              <U>
+                <E n="key">recipe_name</E>
+                <U n="value">
+                  <V n="text" t="single">
+                    <T n="single">0x815C0150<!--String: "{0.ObjectName}"--></T>
+                  </V>
+                  <V t="enabled" n="text_tokens">
+                    <U n="enabled">
+                      <L n="tokens">
+                        <V t="participant_type">
+                          <U n="participant_type">
+                            <V t="from_participant" n="objects">
+                              <U n="from_participant">
+                                <E n="participant">Object</E>
+                              </U>
+                            </V>
+                          </U>
+                        </V>
+                      </L>
+                    </U>
+                  </V>
+                </U>
+              </U>
+            </L>
+          </U>
+        </L>
+      </U>
+    </V>
+  </U>
+  <L n="_super_affordances">
+    <T>13328<!--ImmediateSuperInteraction: debug_Reset--></T>
+    <T>13326<!--ImmediateSuperInteraction: debug_ObjectDestroy--></T>
+    <T>103888<!--ImmediateSuperInteraction: cheat_set_as_head--></T>
+    <T>196759<!--SuperInteraction: famePerks_GoodReputation_GivingBack_DonateObject--></T>
+    <T>13983<!--StandSuperInteraction: sim-stand--></T>
+    <T>165503<!--SuperInteraction: object_SchoolProjectBox_Finished_View--></T>
+    <T>168502<!--SuperInteraction: Ghost_Pet_Possess--></T>
+  </L>
+  <U n="recycling_data">
+    <L n="recycling_values">
+      <U>
+        <E n="Bucks Type">RecycleBitsBucks</E>
+        <T n="Value">0.5</T>
+      </U>
+      <U>
+        <E n="Bucks Type">RecyclePiecesBucks</E>
+        <T n="Value">0.5</T>
+      </U>
+    </L>
+  </U>
+</I>

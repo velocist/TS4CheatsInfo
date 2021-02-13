@@ -1,0 +1,59 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<I c="SituationGoalObjectInteraction" i="situation_goal" m="situations.situation_goal_object_interaction" n="Whim_DiscussWriting" s="34915">
+  <V n="_display_data" t="enabled">
+    <U n="enabled">
+      <V t="enabled" n="instance_display_icon">
+        <T n="enabled" p="InGame\UI\Icons\Whims\whim_Writing.png">2f7d0004:00000000:d3ba183dabaa8f5f</T>
+      </V>
+      <V n="instance_display_name" t="enabled">
+        <T n="enabled">0x2A07F2A0<!--String: "Hablar de autores favoritos"--></T>
+      </V>
+      <V n="instance_display_tooltip" t="enabled">
+        <T n="enabled">0xA87B2CE2<!--String: "Haz clic en un Sim y selecciona Hablar de autores favoritos. Los Sims pueden desbloquear esta interacción mejorando su habilidad Escritura."--></T>
+      </V>
+    </U>
+  </V>
+  <U n="_goal_test">
+    <L n="affordances">
+      <T>28043<!--SocialMixerInteraction: mixer_social_DiscussFavoriteAuthors_targeted_Friendly_alwaysOn--></T>
+      <T>30760<!--SocialMixerInteraction: mixer_social_AskAboutFavoriteAuthor_targeted_Friendly_alwaysOn_skills--></T>
+    </L>
+    <T n="consider_user_cancelled_as_failure">True</T>
+    <E n="test_event">InteractionComplete</E>
+  </U>
+  <L n="_pre_tests">
+    <V t="sim_info">
+      <U n="sim_info">
+        <V t="specified" n="ages">
+          <L n="specified">
+            <E>TEEN</E>
+            <E>YOUNGADULT</E>
+            <E>ADULT</E>
+            <E>ELDER</E>
+          </L>
+        </V>
+        <V t="specified" n="species">
+          <U n="specified">
+            <L n="species">
+              <E />
+            </L>
+          </U>
+        </V>
+      </U>
+    </V>
+    <V t="skill_test">
+      <U n="skill_test">
+        <T n="skill">16714<!--Skill: statistic_Skill_AdultMajor_Writing--></T>
+        <V t="interval" n="skill_range">
+          <U n="interval">
+            <U n="skill_interval">
+              <T n="lower_bound">2</T>
+            </U>
+          </U>
+        </V>
+      </U>
+    </V>
+  </L>
+  <T n="_score">10</T>
+  <T p="InGame\Audio\Bumper\bumper_event_goal_complete.propx" n="audio_sting_on_complete">39b2aa4a:00000000:ed52c39bcc2a7111</T>
+</I>

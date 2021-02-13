@@ -1,0 +1,59 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<I c="SituationGoalEventRanSuccessfullyTargetedSim" i="situation_goal" m="situations.situation_goal_targeted_sim" n="goal_ActorCareer_PrePerformance_PracticeScene" s="191345">
+  <V n="_display_data" t="enabled">
+    <U n="enabled">
+      <V t="enabled" n="instance_display_icon">
+        <T n="enabled" p="InEP06\UI\Icons\Events\EventGoal_PracticeActing.png">2f7d0004:00000000:02366d01f13c0efe</T>
+      </V>
+      <V n="instance_display_name" t="enabled">
+        <T n="enabled">0xD5682116<!--String: "Ensayar una escena con un coprotagonista"--></T>
+      </V>
+      <V n="instance_display_tooltip" t="enabled">
+        <T n="enabled">0xEE1B2166<!--String: "Busca y selecciona a un coprotagonista y ejecuta la interacción Ensayar escena con él.\n\nEncontrarás coprotagonistas en todas las zonas del estudio que les permitan dedicar algo de tiempo a ensayar."--></T>
+      </V>
+    </U>
+  </V>
+  <L n="_pre_tests">
+    <V t="buff">
+      <U n="buff">
+        <L n="blacklist">
+          <T>191351<!--Buff: buff_ActorCareer_ReadyToPerform--></T>
+        </L>
+      </U>
+    </V>
+    <V t="situation_running">
+      <U n="situation_running">
+        <V n="situation_blacklist" t="enabled">
+          <L n="enabled">
+            <T>193603<!--CareerEventSituation: careerSituation_ActorCareer_Commercial_Kids--></T>
+            <T>192688<!--CareerEventSituation: careerSituation_ActorCareer_Commercial_Pirate--></T>
+            <T>193599<!--CareerEventSituation: careerSituation_ActorCareer_Commercial_Western--></T>
+            <T>193620<!--CareerEventSituation: careerSituation_ActorCareer_TVLow_Kids--></T>
+          </L>
+        </V>
+      </U>
+    </V>
+  </L>
+  <T n="_select_sims_outside_of_situation">True</T>
+  <L n="test_events_to_score">
+    <U>
+      <E n="key">actorCareer_PrePerformance</E>
+      <U n="value">
+        <V n="interaction" t="enabled">
+          <T n="enabled">189332<!--SocialSuperInteraction: actorCareer_Socials_PracticeScene--></T>
+        </V>
+        <T n="score">5</T>
+      </U>
+    </U>
+    <U>
+      <E n="key">actorCareer_ReadyToPerform</E>
+      <U n="value">
+        <V n="interaction" t="enabled">
+          <T n="enabled">216553<!--ImmediateSuperInteraction: immediate_ActorCareer_ReadyToPerform--></T>
+        </V>
+        <T n="score">0</T>
+        <E n="status">CANCELED</E>
+      </U>
+    </U>
+  </L>
+</I>

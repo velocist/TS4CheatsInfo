@@ -1,0 +1,318 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<I c="GameObject" i="object" m="objects.game_object" n="object_marketStalls_CafeteriaStation" s="217834">
+  <U n="_components">
+    <V t="enabled" n="focus">
+      <U n="enabled">
+        <V n="_focus_score" t="globally">
+          <U n="globally">
+            <E n="base">LOW</E>
+          </U>
+        </V>
+      </U>
+    </V>
+    <V t="enabled" n="lighting">
+      <U n="enabled">
+        <V t="enabled" n="material_state_off" />
+        <V t="enabled" n="material_state_on" />
+      </U>
+    </V>
+    <V t="enabled" n="object_relationships">
+      <U n="enabled">
+        <V t="enabled" n="number_of_allowed_relationships" />
+        <T n="relationship_stat">132465<!--Statistic: statistic_Object_Staff_Assigned_Relationship_BG--></T>
+      </U>
+    </V>
+    <V t="enabled" n="situation_scheduler_component">
+      <U n="enabled">
+        <V n="object_based_situations_schedule" t="enabled">
+          <U n="enabled">
+            <T n="consider_off_lot_objects">False</T>
+            <T n="schedule_immediate">True</T>
+            <V n="situation_schedule" t="weighted_situations">
+              <U n="weighted_situations">
+                <L n="schedule_entries">
+                  <U>
+                    <T n="affected_object_cap">3</T>
+                    <U n="days_available">
+                      <T n="0 SUNDAY">True</T>
+                      <T n="1 MONDAY">True</T>
+                      <T n="2 TUESDAY">True</T>
+                      <T n="3 WEDNESDAY">True</T>
+                      <T n="4 THURSDAY">True</T>
+                      <T n="5 FRIDAY">True</T>
+                      <T n="6 SATURDAY">True</T>
+                    </U>
+                    <T n="duration">13</T>
+                    <U n="start_time">
+                      <T n="hour">6</T>
+                    </U>
+                    <L n="weighted_situations">
+                      <U>
+                        <T n="situation">224316<!--SingleJobSituation: venue_StallVendor--></T>
+                      </U>
+                    </L>
+                  </U>
+                  <U>
+                    <T n="affected_object_cap">1</T>
+                    <U n="days_available">
+                      <T n="0 SUNDAY">True</T>
+                      <T n="1 MONDAY">True</T>
+                      <T n="2 TUESDAY">True</T>
+                      <T n="3 WEDNESDAY">True</T>
+                      <T n="4 THURSDAY">True</T>
+                      <T n="5 FRIDAY">True</T>
+                      <T n="6 SATURDAY">True</T>
+                    </U>
+                    <T n="duration">10</T>
+                    <U n="start_time">
+                      <T n="hour">19</T>
+                    </U>
+                    <L n="weighted_situations">
+                      <U>
+                        <T n="situation">224316<!--SingleJobSituation: venue_StallVendor--></T>
+                      </U>
+                    </L>
+                  </U>
+                </L>
+              </U>
+            </V>
+            <E n="tag">Func_MarketStalls</E>
+            <L n="tests">
+              <L>
+                <V t="location">
+                  <U n="location">
+                    <U n="location_tests">
+                      <V n="is_venue_type" t="enabled">
+                        <U n="enabled">
+                          <T n="use_source_venue">True</T>
+                          <T n="venue_type">223944<!--Venue: venue_CommunityLot--></T>
+                        </U>
+                      </V>
+                    </U>
+                    <E n="subject">Lot</E>
+                  </U>
+                </V>
+              </L>
+            </L>
+          </U>
+        </V>
+      </U>
+    </V>
+    <V n="state" t="enabled">
+      <U n="enabled">
+        <V n="delinquency_state_changes" t="enabled">
+          <L n="enabled">
+            <U>
+              <E n="key">POWER</E>
+              <L n="value">
+                <T>132692<!--ObjectStateValue: marketStalls_Closed--></T>
+              </L>
+            </U>
+          </L>
+        </V>
+        <L n="state_triggers">
+          <U>
+            <L n="at_states">
+              <T>77532<!--CommodityBasedObjectStateValue: FireState_Burn_Material_Change_Replace--></T>
+            </L>
+            <V n="set_states" t="Set_state_list">
+              <L n="Set_state_list">
+                <T>39737<!--CommodityBasedObjectStateValue: FireState_Burn_Material_Change_Not_Burning--></T>
+              </L>
+            </V>
+          </U>
+        </L>
+        <L n="states">
+          <U>
+            <L n="client_states">
+              <U>
+                <T n="key">132691<!--ObjectStateValue: marketStalls_Open--></T>
+                <U n="value">
+                  <V n="geometry_state" t="apply_new_value">
+                    <V n="apply_new_value" t="set_to_custom_value">
+                      <T n="set_to_custom_value">open</T>
+                    </V>
+                  </V>
+                </U>
+              </U>
+              <U>
+                <T n="key">132692<!--ObjectStateValue: marketStalls_Closed--></T>
+                <U n="value">
+                  <V n="geometry_state" t="apply_new_value">
+                    <V n="apply_new_value" t="set_to_custom_value">
+                      <T n="set_to_custom_value">closed</T>
+                    </V>
+                  </V>
+                </U>
+              </U>
+            </L>
+            <V n="default_value" t="reference">
+              <T n="reference">132692<!--ObjectStateValue: marketStalls_Closed--></T>
+            </V>
+            <T n="reset_on_load_if_time_passes">True</T>
+          </U>
+          <U>
+            <V n="default_value" t="reference">
+              <T n="reference">227963<!--ObjectStateValue: cafeteriaStation_Values_Time_Breakfast--></T>
+            </V>
+          </U>
+          <U>
+            <L n="client_states">
+              <U>
+                <T n="key">217471<!--ObjectStateValue: cafeteriaStation_Values_Theme_Mon--></T>
+              </U>
+              <U>
+                <T n="key">217472<!--ObjectStateValue: cafeteriaStation_Values_Theme_Tue--></T>
+              </U>
+              <U>
+                <T n="key">217473<!--ObjectStateValue: cafeteriaStation_Values_Theme_Wed--></T>
+              </U>
+              <U>
+                <T n="key">217474<!--ObjectStateValue: cafeteriaStation_Values_Theme_Thu--></T>
+              </U>
+              <U>
+                <T n="key">217475<!--ObjectStateValue: cafeteriaStation_Values_Theme_Fri--></T>
+              </U>
+              <U>
+                <T n="key">217476<!--ObjectStateValue: cafeteriaStation_Values_Theme_Sat--></T>
+              </U>
+              <U>
+                <T n="key">217477<!--ObjectStateValue: cafeteriaStation_Values_Theme_Sun--></T>
+              </U>
+            </L>
+            <V n="default_value" t="reference">
+              <T n="reference">217471<!--ObjectStateValue: cafeteriaStation_Values_Theme_Mon--></T>
+            </V>
+          </U>
+          <U>
+            <L n="client_states">
+              <U>
+                <T n="key">39611<!--CommodityBasedObjectStateValue: FireState_Burn_Material_Change--></T>
+              </U>
+              <U>
+                <T n="key">39736<!--CommodityBasedObjectStateValue: FireState_Burn_Material_Change_Burning--></T>
+              </U>
+              <U>
+                <T n="key">39737<!--CommodityBasedObjectStateValue: FireState_Burn_Material_Change_Not_Burning--></T>
+              </U>
+              <U>
+                <T n="key">77532<!--CommodityBasedObjectStateValue: FireState_Burn_Material_Change_Replace--></T>
+              </U>
+            </L>
+            <V t="reference" n="default_value">
+              <T n="reference">39737<!--CommodityBasedObjectStateValue: FireState_Burn_Material_Change_Not_Burning--></T>
+            </V>
+          </U>
+        </L>
+      </U>
+    </V>
+    <V n="time_of_day_component" t="enabled">
+      <U n="enabled">
+        <L n="state_changes">
+          <U>
+            <T n="key">227966<!--ObjectState: cafeteriaStation_States_Time--></T>
+            <L n="value">
+              <U>
+                <T n="start_time">7</T>
+                <T n="value">227963<!--ObjectStateValue: cafeteriaStation_Values_Time_Breakfast--></T>
+              </U>
+              <U>
+                <T n="start_time">11</T>
+                <T n="value">230240<!--ObjectStateValue: cafeteriaStation_Values_Time_PostBreakfast--></T>
+              </U>
+              <U>
+                <T n="start_time">12</T>
+                <T n="value">227964<!--ObjectStateValue: cafeteriaStation_Values_Time_Lunch--></T>
+              </U>
+              <U>
+                <T n="start_time">15</T>
+                <T n="value">230241<!--ObjectStateValue: cafeteriaStation_Values_Time_PostLunch--></T>
+              </U>
+              <U>
+                <T n="start_time">17</T>
+                <T n="value">227965<!--ObjectStateValue: cafeteriaStation_Values_Time_Dinner--></T>
+              </U>
+              <U>
+                <T n="start_time">23</T>
+                <T n="value">230239<!--ObjectStateValue: cafeteriaStation_Values_Time_PostDinner--></T>
+              </U>
+            </L>
+          </U>
+        </L>
+      </U>
+    </V>
+  </U>
+  <L n="_part_data">
+    <U>
+      <T n="part_definition">135077<!--ObjectPart: objectPart_MarketStalls_Food--></T>
+      <V t="enabled" n="subroot_index">
+        <T n="enabled">0</T>
+      </V>
+    </U>
+    <U>
+      <T n="part_definition">139267<!--ObjectPart: objectPart_MarketStalls_OpenClose--></T>
+      <V t="enabled" n="subroot_index">
+        <T n="enabled">0</T>
+      </V>
+    </U>
+    <U>
+      <T n="part_definition">222507<!--ObjectPart: objectPart_MarketStalls_CafeteriaStation_Water--></T>
+      <V t="enabled" n="subroot_index">
+        <T n="enabled">2</T>
+      </V>
+    </U>
+    <U>
+      <T n="part_definition">222099<!--ObjectPart: objectPart_MarketStalls_CafeteriaStation_Prank--></T>
+      <V t="enabled" n="subroot_index">
+        <T n="enabled">1</T>
+      </V>
+    </U>
+  </L>
+  <L n="_preroll_super_affordances">
+    <T>133181<!--SuperInteraction: marketStalls_Open--></T>
+  </L>
+  <L n="_super_affordances">
+    <T>13328<!--ImmediateSuperInteraction: debug_Reset--></T>
+    <T>13326<!--ImmediateSuperInteraction: debug_ObjectDestroy--></T>
+    <T>103888<!--ImmediateSuperInteraction: cheat_set_as_head--></T>
+    <T>141608<!--SuperInteraction: marketStalls_ReOpen--></T>
+    <T>170243<!--SuperInteraction: marketStalls_Open_Debug--></T>
+    <T>13983<!--StandSuperInteraction: sim-stand--></T>
+    <T>133181<!--SuperInteraction: marketStalls_Open--></T>
+    <T>132736<!--ChooseDeliverySuperInteraction: marketStalls_ChooseFoodDelivery--></T>
+    <T>135091<!--CreateAndServeToSitSlotSuperInteraction: MarketStalls_CreateAndServeFoodToSitSlot--></T>
+    <T>135090<!--CreateAndServeToSlotSuperInteraction: MarketStalls_CreateAndServeFoodToSlot--></T>
+    <T>176129<!--ChooseDeliverySuperInteraction: marketStalls_ChooseFoodDelivery_PetFood--></T>
+    <T>217856<!--ImmediateSuperInteraction: cafeteriaStation_Immediate_ChangeMenu_Fri--></T>
+    <T>217850<!--ImmediateSuperInteraction: cafeteriaStation_Immediate_ChangeMenu_Mon--></T>
+    <T>217857<!--ImmediateSuperInteraction: cafeteriaStation_Immediate_ChangeMenu_Sat--></T>
+    <T>217858<!--ImmediateSuperInteraction: cafeteriaStation_Immediate_ChangeMenu_Sun--></T>
+    <T>217855<!--ImmediateSuperInteraction: cafeteriaStation_Immediate_ChangeMenu_Thu--></T>
+    <T>217853<!--ImmediateSuperInteraction: cafeteriaStation_Immediate_ChangeMenu_Tue--></T>
+    <T>217854<!--ImmediateSuperInteraction: cafeteriaStation_Immediate_ChangeMenu_Wed--></T>
+    <T>222313<!--SuperInteraction: si_JuiceKeg_ConstrainForCreate--></T>
+    <T>217902<!--SuperInteraction: si_marketStalls_CafeteriaStation_HireNPC--></T>
+    <T>227958<!--ImmediateSuperInteraction: cafeteriaStation_Immediate_OrderFood_Fake_PreBreakfast--></T>
+    <T>218615<!--StartCraftingSuperInteraction: cafeteriaStation_startCrafting_water--></T>
+    <T>218655<!--CraftingPhaseCreateCarriedObjectSuperInteraction: cafeteriaStation_createDrink--></T>
+    <T>227960<!--ImmediateSuperInteraction: cafeteriaStation_Immediate_OrderFood_Fake_PreDinner--></T>
+    <T>227959<!--ImmediateSuperInteraction: cafeteriaStation_Immediate_OrderFood_Fake_PreLunch--></T>
+    <T>74457<!--ImmediateSuperInteraction: fire_ReplaceBurntObject--></T>
+    <T>228931<!--StartCraftingAutonomouslySuperInteraction: cafeteriaStation_GetDrink_Autonomous--></T>
+  </L>
+  <U n="aop_forward_data">
+    <T n="should_search_forwarded_sim_aop">True</T>
+  </U>
+  <U n="recycling_data">
+    <L n="recycling_values">
+      <U>
+        <E n="Bucks Type">RecycleBitsBucks</E>
+        <T n="Value">0.5</T>
+      </U>
+      <U>
+        <E n="Bucks Type">RecyclePiecesBucks</E>
+        <T n="Value">0.5</T>
+      </U>
+    </L>
+  </U>
+</I>

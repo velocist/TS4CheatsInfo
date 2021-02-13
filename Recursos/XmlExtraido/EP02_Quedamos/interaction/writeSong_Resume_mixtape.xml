@@ -1,0 +1,183 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<I c="CraftingResumeInteraction" i="interaction" m="crafting.crafting_interactions" n="writeSong_Resume_mixtape" s="128229">
+  <V t="Forward" n="_forwarding" />
+  <V t="participant" n="_icon">
+    <U n="participant">
+      <L n="participant_type">
+        <E>Object</E>
+      </L>
+    </U>
+  </V>
+  <V t="enabled" n="_saveable" />
+  <L n="_static_commodities">
+    <U>
+      <T n="static_commodity">16403<!--StaticCommodity: Crafting--></T>
+    </U>
+  </L>
+  <T n="allow_autonomous">True</T>
+  <T n="allow_from_sim_inventory">True</T>
+  <T n="apply_autonomous_posture_change_cost">True</T>
+  <T n="attention_cost">1</T>
+  <V n="basic_content" t="flexible_length">
+    <U n="flexible_length">
+      <T n="start_user_directed_inertial">True</T>
+    </U>
+  </V>
+  <V t="disabled" n="content_score" />
+  <T n="disable_transitions">True</T>
+  <T n="display_name">0xFF172ED3<!--String: "Continuar {0.String|xxLower}"--></T>
+  <U n="display_name_text_tokens">
+    <L n="tokens">
+      <V t="participant_type">
+        <U n="participant_type">
+          <V n="objects" t="from_participant">
+            <U n="from_participant">
+              <E n="participant">Actor</E>
+            </U>
+          </V>
+        </U>
+      </V>
+      <V t="participant_type">
+        <U n="participant_type">
+          <V t="from_participant" n="objects">
+            <U n="from_participant">
+              <E n="participant">Object</E>
+            </U>
+          </V>
+        </U>
+      </V>
+    </L>
+  </U>
+  <V n="display_name_wrappers" t="enabled">
+    <U n="enabled">
+      <L n="wrappers">
+        <U>
+          <L n="test">
+            <L>
+              <V t="sim_info">
+                <U n="sim_info">
+                  <V t="specified" n="ages">
+                    <L n="specified">
+                      <E>TEEN</E>
+                      <E>YOUNGADULT</E>
+                      <E>ADULT</E>
+                      <E>ELDER</E>
+                    </L>
+                  </V>
+                </U>
+              </V>
+              <V t="trait">
+                <U n="trait">
+                  <L n="blacklist_traits">
+                    <T>200510<!--Trait: trait_Hidden_isDisguised--></T>
+                  </L>
+                </U>
+              </V>
+              <V t="sim_info_gameplay_options" />
+            </L>
+          </L>
+          <T n="wrapper">0xD20B3C9B<!--String: "{0.String} <font color='#199C2C'>(+▰fama)</font>"--></T>
+        </U>
+      </L>
+    </U>
+  </V>
+  <L n="interaction_category_tags">
+    <E>Interaction_Super</E>
+    <E>Interaction_All</E>
+  </L>
+  <T n="pie_menu_priority">5</T>
+  <V t="enabled" n="route_start_balloon">
+    <U n="enabled">
+      <U n="balloon">
+        <L n="balloon_choices">
+          <U>
+            <V n="item" t="balloon_icon">
+              <U n="balloon_icon">
+                <V t="participant" n="icon">
+                  <U n="participant">
+                    <L n="participant_type">
+                      <E>Object</E>
+                    </L>
+                  </U>
+                </V>
+              </U>
+            </V>
+          </U>
+        </L>
+        <L n="balloon_target">
+          <E>Actor</E>
+        </L>
+      </U>
+    </U>
+  </V>
+  <E n="scoring_priority">NORMAL</E>
+  <T n="subaction_selection_weight">1</T>
+  <V n="super_affordance_compatibility" t="literal">
+    <U n="literal">
+      <V n="default_inclusion" t="include_all">
+        <U n="include_all">
+          <L n="exclude_affordances">
+            <T>102325<!--StandSuperInteraction: sim-swim--></T>
+            <T>103790<!--GoHereSuperInteraction: terrain-Swimhere--></T>
+            <T>129587<!--GoHereSuperInteraction: terrain-Swim_andChatHere--></T>
+          </L>
+        </U>
+      </V>
+    </U>
+  </V>
+  <E n="target_type">OBJECT</E>
+  <L n="test_globals">
+    <V t="sim_info">
+      <U n="sim_info">
+        <V t="specified" n="ages" />
+        <V t="specified" n="species">
+          <U n="specified">
+            <L n="species">
+              <E />
+            </L>
+          </U>
+        </V>
+        <E n="who">Actor</E>
+      </U>
+    </V>
+    <V t="buff">
+      <U n="buff">
+        <L n="blacklist">
+          <T>123910<!--Buff: buff_Object_DJBooth_hidden_DJ_practicing--></T>
+        </L>
+      </U>
+    </V>
+    <V t="object_criteria">
+      <U n="object_criteria">
+        <V n="desired_state_threshold" t="enabled">
+          <U n="enabled">
+            <E n="comparison">EQUAL</E>
+            <T n="value">15078<!--CommodityBasedObjectStateValue: Brokenness_Unbroken--></T>
+          </U>
+        </V>
+        <V t="tags" n="identity_test">
+          <U n="tags">
+            <L n="tag_set">
+              <E>Func_DJBooth</E>
+            </L>
+          </U>
+        </V>
+        <T n="on_active_lot">True</T>
+        <V n="tooltip" t="enabled">
+          <T n="enabled">0x1509FEC5<!--String: "El objeto necesario para seguir creando no se encuentra en el solar ni en el inventario."--></T>
+        </V>
+      </U>
+    </V>
+  </L>
+  <L n="tests">
+    <L>
+      <V t="state">
+        <U n="state">
+          <V t="always_pass" n="fallback_behavior" />
+          <T n="value">30905<!--ObjectStateValue: CraftingResumeability_CanResume--></T>
+        </U>
+      </V>
+    </L>
+  </L>
+  <T n="time_overhead">30</T>
+</I>

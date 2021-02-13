@@ -1,0 +1,182 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<I c="SuperInteraction" i="interaction" m="interactions.base.super_interaction" n="activityTable_StartCraftHoliday_Gnome" s="185554">
+  <V t="enabled" n="_saveable" />
+  <T n="allow_autonomous">False</T>
+  <T n="attention_cost">0.25</T>
+  <V t="one_shot" n="basic_content" />
+  <V t="enabled" n="canonical_animation">
+    <U n="enabled">
+      <T n="factory">11153<!--AnimationElement: ActivityTable_Draw--></T>
+    </U>
+  </V>
+  <T n="category">184229<!--PieMenuCategory: pieMenuCategory_ActivityTable_CraftHoliday--></T>
+  <V t="disabled" n="content_score" />
+  <T n="display_name">0x314BABCE<!--String: "Manualidades de gnomos"--></T>
+  <V t="testable" n="display_name_overrides">
+    <U n="testable">
+      <L n="overrides">
+        <U>
+          <V t="disabled" n="new_display_name" />
+          <V t="enabled" n="new_pie_menu_icon">
+            <V t="tradition" n="enabled" />
+          </V>
+          <L n="test">
+            <L>
+              <V t="holiday_tradition">
+                <U n="holiday_tradition">
+                  <U n="tradition_filter">
+                    <V n="whitelist" t="specify">
+                      <U n="specify">
+                        <L n="whitelist">
+                          <T>185434<!--HolidayTradition: holidayTradition_ArtAndMusic--></T>
+                        </L>
+                      </U>
+                    </V>
+                  </U>
+                </U>
+              </V>
+            </L>
+          </L>
+        </U>
+      </L>
+    </U>
+  </V>
+  <U n="display_name_text_tokens">
+    <L n="tokens">
+      <V t="participant_type">
+        <U n="participant_type">
+          <V t="from_participant" n="objects">
+            <U n="from_participant">
+              <E n="participant">Actor</E>
+            </U>
+          </V>
+        </U>
+      </V>
+      <V t="participant_type">
+        <U n="participant_type">
+          <V t="from_participant" n="objects">
+            <U n="from_participant">
+              <E n="participant">Object</E>
+            </U>
+          </V>
+        </U>
+      </V>
+    </L>
+  </U>
+  <L n="interaction_category_tags">
+    <E>Interaction_Super</E>
+    <E>Interaction_All</E>
+    <E>Interaction_Festive</E>
+    <E>Interaction_Skill_Child_Creativity</E>
+  </L>
+  <V n="outcome" t="single">
+    <U n="single">
+      <U n="actions">
+        <L n="continuation">
+          <U>
+            <T n="affordance">185607<!--StartCraftingAutonomouslySuperInteraction: activityTable_StartCrafting_Holiday_Gnome--></T>
+          </U>
+        </L>
+      </U>
+    </U>
+  </V>
+  <V t="enabled" n="route_start_balloon">
+    <U n="enabled">
+      <U n="balloon">
+        <L n="balloon_choices">
+          <U>
+            <V n="item" t="balloon_icon">
+              <U n="balloon_icon">
+                <V t="participant" n="icon">
+                  <U n="participant">
+                    <L n="participant_type">
+                      <E>Object</E>
+                    </L>
+                  </U>
+                </V>
+              </U>
+            </V>
+          </U>
+        </L>
+        <L n="balloon_target">
+          <E>Actor</E>
+        </L>
+      </U>
+    </U>
+  </V>
+  <E n="scoring_priority">NORMAL</E>
+  <T n="subaction_selection_weight">1</T>
+  <V t="literal" n="super_affordance_compatibility">
+    <U n="literal">
+      <V n="default_inclusion" t="include_all">
+        <U n="include_all">
+          <L n="exclude_affordances">
+            <T>12984<!--CraftingPhaseStagingSuperInteraction: activityTable_CraftPicture_Staging--></T>
+            <T>10147<!--CraftingPhaseStagingSuperInteraction: activityTable_Craft_to_Sim--></T>
+          </L>
+          <L n="exclude_lists">
+            <T>30816<!--AffordanceList: affordanceList_FoodConsume--></T>
+          </L>
+        </U>
+      </V>
+    </U>
+  </V>
+  <E n="target_type">OBJECT</E>
+  <L n="test_globals">
+    <V t="sim_info">
+      <U n="sim_info">
+        <V t="specified" n="ages">
+          <L n="specified">
+            <E>CHILD</E>
+          </L>
+        </V>
+        <V t="specified" n="species">
+          <U n="specified">
+            <L n="species">
+              <E />
+            </L>
+          </U>
+        </V>
+        <E n="who">Actor</E>
+      </U>
+    </V>
+    <V t="test_set_reference">
+      <T n="test_set_reference">28176<!--TestSetInstance: testSet_EmotionNotStressed--></T>
+    </V>
+    <V t="test_set_reference">
+      <T n="test_set_reference">28305<!--TestSetInstance: testSet_EmotionNotMiserable--></T>
+    </V>
+  </L>
+  <L n="tests">
+    <L>
+      <V t="slot_test">
+        <U n="slot_test">
+          <V t="by_reference" n="child_slot">
+            <T n="by_reference">slot_ActivityTablePainting</T>
+          </V>
+          <V t="has_empty_slot" n="slot_test_type" />
+        </U>
+      </V>
+      <V t="slot_test">
+        <U n="slot_test">
+          <V t="by_reference" n="child_slot">
+            <T n="by_reference">slot_SitDrink</T>
+          </V>
+          <V t="has_empty_slot" n="slot_test_type" />
+        </U>
+      </V>
+    </L>
+    <L>
+      <V t="user_running_interaction">
+        <U n="user_running_interaction">
+          <L n="affordances">
+            <T>10147<!--CraftingPhaseStagingSuperInteraction: activityTable_Craft_to_Sim--></T>
+            <T>12984<!--CraftingPhaseStagingSuperInteraction: activityTable_CraftPicture_Staging--></T>
+            <T>12985<!--CraftingPhaseCreateObjectInSlotSuperInteraction: activityTable_CreatePicture--></T>
+          </L>
+        </U>
+      </V>
+    </L>
+  </L>
+  <T n="time_overhead">30</T>
+</I>

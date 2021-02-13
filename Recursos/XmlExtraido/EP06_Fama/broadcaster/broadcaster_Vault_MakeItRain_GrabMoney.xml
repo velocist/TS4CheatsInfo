@@ -1,0 +1,123 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<I c="Broadcaster" i="broadcaster" m="broadcasters.broadcaster" n="broadcaster_Vault_MakeItRain_GrabMoney" s="193813">
+  <L n="constraints">
+    <V t="circle">
+      <U n="circle">
+        <T n="radius">8</T>
+      </U>
+    </V>
+    <V t="line_of_sight">
+      <U n="line_of_sight">
+        <V t="enabled" n="temporary_los" />
+      </U>
+    </V>
+  </L>
+  <L n="effects">
+    <V t="affordance">
+      <U n="affordance">
+        <E n="affordance_priority">High</E>
+        <V t="enabled" n="affordance_run_priority">
+          <E n="enabled">High</E>
+        </V>
+        <L n="affordances">
+          <U>
+            <T n="affordance">201926<!--SuperInteraction: reactions_Generic_Heckle_MakeItTrickle--></T>
+            <T n="weight">1</T>
+          </U>
+          <U>
+            <T n="affordance">201348<!--SuperInteraction: reactions_Generic_Cheer_Money--></T>
+            <T n="weight">5</T>
+          </U>
+        </L>
+        <L n="tests">
+          <L>
+            <V t="simoleon_value">
+              <U n="simoleon_value">
+                <V t="net_worth" n="value_context" />
+                <U n="value_threshold">
+                  <E n="comparison">GREATER_OR_EQUAL</E>
+                  <T n="value">500000</T>
+                </U>
+              </U>
+            </V>
+            <V t="test_set_reference">
+              <T n="test_set_reference">202221<!--TestSetInstance: testSetInstance_ImportantJobTest--></T>
+            </V>
+          </L>
+        </L>
+      </U>
+    </V>
+    <V t="affordance">
+      <U n="affordance">
+        <E n="affordance_priority">High</E>
+        <V t="enabled" n="affordance_run_priority">
+          <E n="enabled">High</E>
+        </V>
+        <L n="affordances">
+          <U>
+            <T n="affordance">201926<!--SuperInteraction: reactions_Generic_Heckle_MakeItTrickle--></T>
+            <T n="weight">1</T>
+          </U>
+          <U>
+            <T n="affordance">201348<!--SuperInteraction: reactions_Generic_Cheer_Money--></T>
+            <T n="weight">1</T>
+          </U>
+        </L>
+        <L n="tests">
+          <L>
+            <V t="simoleon_value">
+              <U n="simoleon_value">
+                <V t="total_cash" n="value_context" />
+                <U n="value_threshold">
+                  <E n="comparison">GREATER</E>
+                  <T n="value">50000</T>
+                </U>
+              </U>
+            </V>
+            <V t="simoleon_value">
+              <U n="simoleon_value">
+                <V t="total_cash" n="value_context" />
+                <U n="value_threshold">
+                  <E n="comparison">LESS</E>
+                  <T n="value">500000</T>
+                </U>
+              </U>
+            </V>
+            <V t="test_set_reference">
+              <T n="test_set_reference">202221<!--TestSetInstance: testSetInstance_ImportantJobTest--></T>
+            </V>
+          </L>
+        </L>
+      </U>
+    </V>
+    <V t="loot">
+      <U n="loot">
+        <L n="loot_list">
+          <T>193814<!--LootActions: loot_Vault_MakeItRain_GrabMoney--></T>
+        </L>
+        <L n="tests">
+          <L>
+            <V t="test_set_reference">
+              <T n="test_set_reference">202221<!--TestSetInstance: testSetInstance_ImportantJobTest--></T>
+            </V>
+            <V t="simoleon_value">
+              <U n="simoleon_value">
+                <V t="total_cash" n="value_context" />
+                <U n="value_threshold">
+                  <E n="comparison">LESS_OR_EQUAL</E>
+                  <T n="value">50000</T>
+                </U>
+              </U>
+            </V>
+          </L>
+        </L>
+      </U>
+    </V>
+  </L>
+  <V t="on_enter" n="frequency">
+    <U n="on_enter">
+      <T n="allow_multiple">True</T>
+    </U>
+  </V>
+  <T n="immediate">True</T>
+</I>

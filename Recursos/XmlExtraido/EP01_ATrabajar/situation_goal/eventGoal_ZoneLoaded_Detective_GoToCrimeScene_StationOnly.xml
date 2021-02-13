@@ -1,0 +1,106 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<I c="SituationGoalZoneLoaded" i="situation_goal" m="situations.situation_goal_zone_loaded" n="eventGoal_ZoneLoaded_Detective_GoToCrimeScene_StationOnly" s="116196">
+  <T n="_cancel_on_travel">True</T>
+  <T n="_cooldown">120</T>
+  <V t="enabled" n="_display_data">
+    <U n="enabled">
+      <V t="enabled" n="instance_display_icon">
+        <T n="enabled" p="InEP01\UI\Icons\Events\EventGoal_theft.png">2f7d0004:00000000:fb809a01e5771b14</T>
+      </V>
+      <V n="instance_display_name" t="enabled">
+        <T n="enabled">0xBEE2579A<!--String: "Desplazarse a la escena del delito"--></T>
+      </V>
+      <V n="instance_display_tooltip" t="enabled">
+        <T n="enabled">0xBD4914D0<!--String: "Se puede utilizar el mapa del delito para ir a la escena del delito correspondiente."--></T>
+      </V>
+    </U>
+  </V>
+  <L n="_post_tests">
+    <V t="location">
+      <U n="location">
+        <U n="location_tests">
+          <V t="enabled" n="is_venue_type">
+            <U n="enabled">
+              <T n="negate">True</T>
+              <T n="venue_type">109774<!--Venue: venue_PoliceStation--></T>
+            </U>
+          </V>
+        </U>
+      </U>
+    </V>
+    <V t="situation_job">
+      <U n="situation_job">
+        <L n="situation_jobs">
+          <T>109056<!--SituationJob: situationJob_Detective_CrimeScenePlayer--></T>
+        </L>
+      </U>
+    </V>
+  </L>
+  <L n="_pre_tests">
+    <V t="situation_job">
+      <U n="situation_job">
+        <L n="situation_jobs">
+          <T>109187<!--SituationJob: situationJob_Detective_PoliceStationPlayer--></T>
+        </L>
+      </U>
+    </V>
+    <V t="situation_job">
+      <U n="situation_job">
+        <T n="negate">True</T>
+        <L n="situation_jobs">
+          <T>108029<!--SituationJob: situationJob_Detective_ApbDetective--></T>
+        </L>
+      </U>
+    </V>
+    <V t="situation_job">
+      <U n="situation_job">
+        <T n="negate">True</T>
+        <L n="situation_jobs">
+          <T>109056<!--SituationJob: situationJob_Detective_CrimeScenePlayer--></T>
+        </L>
+      </U>
+    </V>
+    <V t="situation_job">
+      <U n="situation_job">
+        <T n="negate">True</T>
+        <L n="situation_jobs">
+          <T>110742<!--SituationJob: situationJob_Detective_PatrolPlayer--></T>
+        </L>
+      </U>
+    </V>
+    <V t="detective_clues">
+      <U n="detective_clues">
+        <T n="career_reference">106132<!--DetectiveCareer: detectiveCareer_1--></T>
+        <U n="threshold">
+          <E n="comparison">LESS</E>
+          <T n="value">6</T>
+        </U>
+      </U>
+    </V>
+    <V t="statistic">
+      <U n="statistic">
+        <T n="stat">112060<!--Statistic: statistic_Career_Detective_ArrestedSuspect--></T>
+        <V t="value_threshold" n="threshold">
+          <U n="value_threshold">
+            <E n="comparison">LESS</E>
+            <T n="value">1</T>
+          </U>
+        </V>
+      </U>
+    </V>
+    <V t="career">
+      <U n="career">
+        <V n="test_type" t="days_worked">
+          <U n="days_worked">
+            <T n="career">106132<!--DetectiveCareer: detectiveCareer_1--></T>
+            <U n="threshold">
+              <E n="comparison">GREATER</E>
+              <T n="value">1</T>
+            </U>
+          </U>
+        </V>
+      </U>
+    </V>
+  </L>
+  <T n="_score">0</T>
+</I>

@@ -1,0 +1,169 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<I c="SocialMixerInteraction" i="interaction" m="interactions.social.social_mixer_interaction" n="vet_Examine_Mixers_Treatment_Autonomous_EndExam" s="176786">
+  <V t="resource_key" n="_icon">
+    <U n="resource_key">
+      <T n="key" p="InEP04\UI\Icons\InteractionQueueSubInteractions\icon_queuesubinteraction_treatment.png">2f7d0004:00000000:049dc4f064e6ee99</T>
+    </U>
+  </V>
+  <V t="enabled" n="_situation_participant_provider">
+    <U n="enabled">
+      <L n="provided_participant_type_to_job_map">
+        <U>
+          <E n="key">SituationParticipants1</E>
+          <L n="value">
+            <U>
+              <T n="job">164711<!--SituationJob: jobs_Vet_PetOwner--></T>
+              <V t="by_tags" n="situations">
+                <U n="by_tags">
+                  <L n="situation_tags">
+                    <E>Situation_Vet_SickPet</E>
+                  </L>
+                </U>
+              </V>
+            </U>
+          </L>
+        </U>
+      </L>
+    </U>
+  </V>
+  <T n="allow_autonomous">True</T>
+  <T n="allow_user_directed">False</T>
+  <V t="no_content" n="basic_content" />
+  <L n="basic_extras">
+    <V t="loot">
+      <U n="loot">
+        <L n="loot_list">
+          <T>162659<!--LootActions: loot_Commodity_Culling_GhostAdd_target--></T>
+        </L>
+      </U>
+    </V>
+    <V t="payment">
+      <U n="payment">
+        <V n="payment" t="literal">
+          <U n="literal">
+            <U n="cost_modifiers">
+              <T n="base_value">1</T>
+            </U>
+            <V t="amount" n="payment_cost">
+              <U n="amount">
+                <T n="amount">50</T>
+              </U>
+            </V>
+            <V t="business" n="payment_source">
+              <U n="business">
+                <E n="funds_category">RESTOCKING</E>
+              </U>
+            </V>
+          </U>
+        </V>
+      </U>
+    </V>
+  </L>
+  <T n="category">158996<!--PieMenuCategory: pet_Vet_Treatment--></T>
+  <T n="display_name">0x3790B2D3<!--String: "Poner inyección: carga antiviral"--></T>
+  <V t="none" n="display_name_overrides" />
+  <T n="display_name_target">0x8C71C8F7<!--String: "Escuchar la pregunta de {1.SimFirstName}"--></T>
+  <U n="display_name_text_tokens">
+    <L n="tokens">
+      <V t="participant_type">
+        <U n="participant_type">
+          <V t="from_participant" n="objects">
+            <U n="from_participant">
+              <E n="participant">Actor</E>
+            </U>
+          </V>
+        </U>
+      </V>
+      <V t="participant_type">
+        <U n="participant_type">
+          <V t="from_participant" n="objects">
+            <U n="from_participant">
+              <E n="participant">Object</E>
+            </U>
+          </V>
+        </U>
+      </V>
+    </L>
+  </U>
+  <L n="interaction_category_tags">
+    <E>Interaction_Mixer</E>
+    <E>Interaction_All</E>
+    <E>Interaction_SocialAll</E>
+    <E>Interaction_SocialMixer</E>
+    <E>Interaction_ExamTable_Exam</E>
+  </L>
+  <V n="outcome" t="single">
+    <U n="single">
+      <U n="actions">
+        <V t="disabled" n="animation_ref" />
+        <V t="enabled" n="cancel_si">
+          <L n="enabled">
+            <E>Actor</E>
+            <E>TargetSim</E>
+          </L>
+        </V>
+        <L n="loot_list" />
+      </U>
+    </U>
+  </V>
+  <V t="enabled" n="pie_menu_icon">
+    <V n="enabled" t="resource_key">
+      <U n="resource_key">
+        <T n="key" p="InGame\UI\Icons\PieMenu\SpecialInteractions\specialinteraction_unknown_piemenu.png">2f7d0004:00000000:733d9ded747a4af3</T>
+      </U>
+    </V>
+  </V>
+  <U n="skill_loot_data">
+    <V t="enabled" n="level_range">
+      <U n="enabled">
+        <T n="lower_bound">1</T>
+        <T n="upper_bound">10</T>
+      </U>
+    </V>
+    <T n="stat">161190<!--Skill: statistic_Skill_AdultMajor_Veterinarian--></T>
+  </U>
+  <U n="sub_action">
+    <T n="base_weight">2</T>
+  </U>
+  <E n="target_type">TARGET_AND_GROUP</E>
+  <L n="test_globals">
+    <V t="sim_info">
+      <U n="sim_info">
+        <V t="specified" n="species">
+          <U n="specified">
+            <L n="species">
+              <E />
+            </L>
+          </U>
+        </V>
+      </U>
+    </V>
+    <V t="sim_info">
+      <U n="sim_info">
+        <V t="enabled" n="npc">
+          <T n="enabled">True</T>
+        </V>
+        <V t="specified" n="species">
+          <U n="specified">
+            <L n="species">
+              <E>CAT</E>
+              <E>DOG</E>
+            </L>
+          </U>
+        </V>
+        <E n="who">TargetSim</E>
+      </U>
+    </V>
+    <V t="situation_job_test">
+      <U n="situation_job_test">
+        <T n="negate">True</T>
+        <E n="participant">TargetSim</E>
+        <L n="situation_jobs">
+          <T>164710<!--SituationJob: jobs_Vet_Pet--></T>
+        </L>
+      </U>
+    </V>
+  </L>
+  <L n="tests" />
+  <T n="visible">False</T>
+</I>

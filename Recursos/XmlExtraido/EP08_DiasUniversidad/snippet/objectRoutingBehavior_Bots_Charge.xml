@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<I c="ObjectRoutingBehavior" i="snippet" m="routing.object_routing.object_routing_behavior" n="objectRoutingBehavior_Bots_Charge" s="228263">
+  <L n="actions">
+    <V t="apply_loot">
+      <U n="apply_loot">
+        <L n="loot_actions">
+          <T>228264<!--LootActions: loot_Bots_State_Charge--></T>
+        </L>
+      </U>
+    </V>
+    <V t="play_animation">
+      <U n="play_animation">
+        <U n="animation">
+          <T n="loop_time">0</T>
+          <T n="reference">221030<!--ObjectAnimationElement: bots_Animations_Actions_Generic_Land--></T>
+        </U>
+      </U>
+    </V>
+    <V t="play_animation">
+      <U n="play_animation">
+        <U n="animation">
+          <L n="loop_exit_conditions">
+            <U>
+              <L n="conditions">
+                <V t="stat_based">
+                  <U n="stat_based">
+                    <T n="stat">219981<!--Commodity: commodity_Bots_Battery--></T>
+                    <U n="threshold">
+                      <T n="value">99</T>
+                    </U>
+                  </U>
+                </V>
+              </L>
+            </U>
+          </L>
+          <T n="loop_time">420</T>
+          <T n="reference">221032<!--ObjectAnimationElement: bots_Animations_Actions_Generic_OnGround--></T>
+        </U>
+      </U>
+    </V>
+  </L>
+  <L n="completion_loot">
+    <T>222538<!--LootActions: loot_Bots_Actor_Requeue--></T>
+  </L>
+  <V t="from_fgl" n="route">
+    <U n="from_fgl">
+      <V t="disabled" n="route_fail" />
+      <V t="enabled" n="surface_type_override" />
+    </U>
+  </V>
+</I>

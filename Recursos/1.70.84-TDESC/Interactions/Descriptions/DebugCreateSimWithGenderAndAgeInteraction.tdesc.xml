@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+
+<TuningRoot>
+    <Instance instance_type="interaction" class="DebugCreateSimWithGenderAndAgeInteraction" module="objects.terrain" muid="706D86E52CB8F856" description="Debug interaction to spawn a Sim with the given age and gender." instance_needs_reference="True" instance_subclasses_only="False" parents="TerrainImmediateSuperInteraction, ImmediateSuperInteraction, SuperInteraction, Interaction" path="Interactions\Descriptions" use_guid_for_reference="True">
+        <TunableEnum type="Age" name="age" class="TunableEnumEntry" default="ADULT" display="Age" muid="622D22E6067AABA0" static_entries="sims-sim_info_types.Age" description="The age of the Sim to be created." Deprecated="False" filter="0" group="General" />
+
+        <TunableVariant type="None" name="breed_picker" class="OptionalTunable" default="disabled" display="Breed Picker" muid="51A144DE9E6D0252" description="Breed picker to use if using a non-human species.&#xA;&#xA;If disabled, breed will be random." Deprecated="False" filter="0" group="General">
+            <Tunable name="disabled" class="TunableExistance" display="Disabled" muid="90028797E7045E10" />
+            <Tunable type="interaction" name="enabled" class="TunableReference" display="Enabled" muid="F9C682EC7A2BC953" allow_none="True" Deprecated="False" filter="0" group="General" restrict="BreedPickerSuperInteraction" />
+        </TunableVariant>
+
+        <TunableEnum type="Gender" name="gender" class="TunableEnumEntry" default="MALE" display="Gender" muid="28598B2A3AD6AFA9" static_entries="sims-sim_info_types.Gender" description="The gender of the Sim to be created." Deprecated="False" filter="0" group="General" />
+
+        <TunableEnum type="Species" name="species" class="TunableEnumEntry" default="HUMAN" display="Species" muid="7A1CCF7D772C460A" static_entries="sims-sim_info_types.Species" description="The species of the Sim to be created." Deprecated="False" filter="0" group="General" invalid_entries="INVALID" />
+    </Instance>
+</TuningRoot>

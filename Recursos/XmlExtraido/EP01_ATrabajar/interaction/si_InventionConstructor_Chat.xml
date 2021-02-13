@@ -1,0 +1,183 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<I c="SuperInteraction" i="interaction" m="interactions.base.super_interaction" n="si_InventionConstructor_Chat" s="109722">
+  <V n="_icon" t="resource_key">
+    <U n="resource_key">
+      <T p="InEP01\UI\Icons\Events\EventGoal_assemblyrobot.png" n="key">2f7d0004:00000000:0c9249334863f757</T>
+    </U>
+  </V>
+  <V t="enabled" n="_saveable" />
+  <L n="_static_commodities">
+    <U>
+      <T n="static_commodity">108882<!--StaticCommodity: staticCommodity_RoleAutonomy_Coworker--></T>
+    </U>
+  </L>
+  <T n="allow_autonomous">True</T>
+  <L n="appropriateness_tags">
+    <E>Appropriateness_Work_Scientist</E>
+  </L>
+  <T n="attention_cost">0.5</T>
+  <V n="basic_content" t="flexible_length">
+    <U n="flexible_length">
+      <L n="conditional_actions">
+        <V t="literal">
+          <U n="literal">
+            <L n="conditions">
+              <V t="time_based">
+                <U n="time_based">
+                  <T n="max_time">30</T>
+                  <T n="min_time">20</T>
+                </U>
+              </V>
+            </L>
+            <E n="interaction_action">EXIT_NATURALLY</E>
+            <E n="progress_bar_action">IGNORE_CONDITION</E>
+          </U>
+        </V>
+        <V t="list_reference">
+          <T n="list_reference">40144<!--ExitConditionList: ExitConditionList_EmotionMiserable--></T>
+        </V>
+        <V t="list_reference">
+          <T n="list_reference">40702<!--ExitConditionList: ExitConditionList_EmotionStressed--></T>
+        </V>
+      </L>
+      <V n="content" t="staging_content">
+        <U n="staging_content">
+          <U n="content_set">
+            <L n="affordance_links">
+              <T>109827<!--MixerInteraction: mi_InventionConstructor_SimChat--></T>
+              <T>109828<!--MixerInteraction: mi_InventionConstructor_RobotChat--></T>
+            </L>
+          </U>
+        </U>
+      </V>
+      <V n="periodic_stat_change" t="enabled">
+        <U n="enabled">
+          <L n="operations">
+            <V t="statistic_change">
+              <U n="statistic_change">
+                <T n="amount">1</T>
+                <T n="stat">16658<!--Commodity: motive_Social--></T>
+              </U>
+            </V>
+            <V t="statistic_change">
+              <U n="statistic_change">
+                <T n="amount">1</T>
+                <T n="stat">233027<!--Commodity: commodity_Utilities_Power--></T>
+                <L n="subject">
+                  <E>Lot</E>
+                </L>
+              </U>
+            </V>
+          </L>
+        </U>
+      </V>
+    </U>
+  </V>
+  <V t="enabled" n="basic_reserve_object">
+    <U n="enabled">
+      <L n="subject_list">
+        <U>
+          <V t="reserve_and_lock_all_parts" n="reserve_type" />
+        </U>
+      </L>
+    </U>
+  </V>
+  <V n="canonical_animation" t="enabled">
+    <U n="enabled">
+      <T n="factory">115390<!--AnimationElement: Canonical_InventionConstructor_Chat--></T>
+    </U>
+  </V>
+  <V t="disabled" n="content_score" />
+  <T n="display_name">0xD453665F<!--String: "Charlar con robot"--></T>
+  <U n="display_name_text_tokens">
+    <L n="tokens">
+      <V t="participant_type">
+        <U n="participant_type">
+          <V t="from_participant" n="objects">
+            <U n="from_participant">
+              <E n="participant">Actor</E>
+            </U>
+          </V>
+        </U>
+      </V>
+      <V t="participant_type">
+        <U n="participant_type">
+          <V t="from_participant" n="objects">
+            <U n="from_participant">
+              <E n="participant">Object</E>
+            </U>
+          </V>
+        </U>
+      </V>
+    </L>
+  </U>
+  <L n="interaction_category_tags">
+    <E>Interaction_Super</E>
+    <E>Interaction_All</E>
+  </L>
+  <V t="test_based" n="outcome">
+    <U n="test_based">
+      <L n="fallback_outcomes">
+        <U />
+      </L>
+    </U>
+  </V>
+  <T n="pie_menu_priority">2</T>
+  <E n="scoring_priority">NORMAL</E>
+  <T n="subaction_selection_weight">1</T>
+  <E n="target_type">OBJECT</E>
+  <L n="test_autonomous">
+    <L>
+      <V t="test_set_reference">
+        <T n="test_set_reference">126907<!--TestSetInstance: testSetInstance_InteractionIsEncouragedByClubRules--></T>
+      </V>
+    </L>
+    <L>
+      <V t="appropriateness" />
+      <V t="sim_info">
+        <U n="sim_info">
+          <V t="enabled" n="npc" />
+        </U>
+      </V>
+    </L>
+  </L>
+  <L n="test_globals">
+    <V t="sim_info">
+      <U n="sim_info">
+        <V t="specified" n="ages" />
+        <V t="specified" n="species">
+          <U n="specified">
+            <L n="species">
+              <E />
+            </L>
+          </U>
+        </V>
+        <E n="who">Actor</E>
+      </U>
+    </V>
+    <V t="test_set_reference">
+      <T n="test_set_reference">77630<!--TestSetInstance: testSet_StateNotBroken--></T>
+    </V>
+    <V t="test_set_reference">
+      <T n="test_set_reference">28176<!--TestSetInstance: testSet_EmotionNotStressed--></T>
+    </V>
+    <V t="test_set_reference">
+      <T n="test_set_reference">28305<!--TestSetInstance: testSet_EmotionNotMiserable--></T>
+    </V>
+    <V t="career_test">
+      <U n="career_test">
+        <V t="career_reference" n="test_type">
+          <U n="career_reference">
+            <V t="specific_career" n="career">
+              <T n="specific_career">107255<!--Career: career_Adult_Active_Scientist--></T>
+            </V>
+          </U>
+        </V>
+        <V n="tooltip" t="enabled">
+          <T n="enabled">0x3A4EDC57<!--String: "Solo los científicos pueden discernir cómo utilizar el creador de inventos."--></T>
+        </V>
+      </U>
+    </V>
+  </L>
+  <T n="time_overhead">30</T>
+</I>

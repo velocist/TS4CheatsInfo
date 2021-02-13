@@ -1,0 +1,107 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<I c="LootActions" i="action" m="interactions.utils.loot" n="loot_Batuu_Inspection_Fight_ActorIsFO_Lose" s="242917">
+  <L n="loot_actions">
+    <V t="destroy_situation">
+      <U n="destroy_situation">
+        <L n="required_participant">
+          <E>Actor</E>
+        </L>
+        <L n="situation_tags">
+          <E>Situation_Batuu_Inspection</E>
+        </L>
+      </U>
+    </V>
+    <V t="reaction">
+      <U n="reaction">
+        <V n="si_reaction" t="enabled">
+          <U n="enabled">
+            <T n="affordance">242737<!--SuperInteraction: batuu_KnockedOut_Stormtrooper--></T>
+            <E n="affordance_priority">High</E>
+            <V t="enabled" n="affordance_target">
+              <E n="enabled">Object</E>
+            </V>
+          </U>
+        </V>
+        <E n="subject">Actor</E>
+        <L n="tests">
+          <L>
+            <V t="trait">
+              <U n="trait">
+                <L n="whitelist_traits">
+                  <T>233346<!--Trait: trait_Batuu_FirstOrder_Identifier_Stormtrooper--></T>
+                </L>
+              </U>
+            </V>
+          </L>
+        </L>
+      </U>
+    </V>
+    <V t="reaction">
+      <U n="reaction">
+        <V t="enabled" n="si_reaction">
+          <U n="enabled">
+            <T n="affordance">242739<!--SuperInteraction: batuu_KnockedOut--></T>
+            <E n="affordance_priority">High</E>
+            <V t="enabled" n="affordance_target">
+              <E n="enabled">Object</E>
+            </V>
+          </U>
+        </V>
+        <E n="subject">Actor</E>
+        <L n="tests">
+          <L>
+            <V t="trait">
+              <U n="trait">
+                <L n="blacklist_traits">
+                  <T>233346<!--Trait: trait_Batuu_FirstOrder_Identifier_Stormtrooper--></T>
+                </L>
+              </U>
+            </V>
+          </L>
+        </L>
+      </U>
+    </V>
+    <V t="reaction">
+      <U n="reaction">
+        <V n="si_reaction" t="enabled">
+          <U n="enabled">
+            <T n="affordance">242855<!--NPCLeaveLotInteraction: npc_LeaveLot_Batuu_Inspection_Suspect--></T>
+            <E n="affordance_priority">High</E>
+            <V t="enabled" n="affordance_target">
+              <E n="enabled">Object</E>
+            </V>
+          </U>
+        </V>
+        <E n="subject">TargetSim</E>
+      </U>
+    </V>
+  </L>
+  <L n="tests">
+    <L>
+      <V t="location">
+        <U n="location">
+          <U n="location_tests">
+            <V t="enabled" n="is_venue_type">
+              <U n="enabled">
+                <T n="venue_type">233449<!--Venue: venue_OgasCantina--></T>
+              </U>
+            </V>
+          </U>
+        </U>
+      </V>
+    </L>
+    <L>
+      <V t="location">
+        <U n="location">
+          <U n="location_tests">
+            <V n="is_venue_type" t="enabled">
+              <U n="enabled">
+                <T n="venue_type">231964<!--Venue: venue_FirstOrderOutpost--></T>
+              </U>
+            </V>
+          </U>
+        </U>
+      </V>
+    </L>
+  </L>
+</I>

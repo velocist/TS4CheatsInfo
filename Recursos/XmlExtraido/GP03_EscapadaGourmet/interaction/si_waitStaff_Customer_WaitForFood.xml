@@ -1,0 +1,93 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<I c="SuperInteraction" i="interaction" m="interactions.base.super_interaction" n="si_waitStaff_Customer_WaitForFood" s="134538">
+  <V n="_cancelable_by_user" t="require_confirmation">
+    <U n="require_confirmation">
+      <V n="text" t="single">
+        <T n="single">0x57CF09A1<!--String: "Pronto te van a traer la comida. ¿Seguro que quieres cancelar el pedido?"--></T>
+      </V>
+    </U>
+  </V>
+  <V n="_icon" t="resource_key">
+    <U n="resource_key">
+      <T n="key" p="InGP03\UI\Icons\InteractionQueue\IconQueue_platefood.png">2f7d0004:00000000:abfdd68bcc96958e</T>
+    </U>
+  </V>
+  <V t="enabled" n="_saveable" />
+  <T n="_super_affordance_can_share_target">True</T>
+  <T n="allow_user_directed">False</T>
+  <T n="attention_cost">0.5</T>
+  <V n="basic_content" t="flexible_length">
+    <U n="flexible_length">
+      <L n="conditional_actions">
+        <V t="literal">
+          <U n="literal">
+            <L n="conditions">
+              <V t="buff_based">
+                <U n="buff_based">
+                  <T n="buff">134375<!--Buff: buff_Restaurants_Diner_Player_WaitForFoodFromWaitStaff--></T>
+                  <E n="timing">ON_REMOVE</E>
+                </U>
+              </V>
+            </L>
+            <E n="interaction_action">EXIT_NATURALLY</E>
+          </U>
+        </V>
+        <V t="literal">
+          <U n="literal">
+            <L n="conditions">
+              <V t="buff_based">
+                <U n="buff_based">
+                  <T n="buff">133218<!--Buff: buff_Restaurants_Diner_Player_PreplaceOrder--></T>
+                </U>
+              </V>
+            </L>
+            <E n="interaction_action">EXIT_NATURALLY</E>
+          </U>
+        </V>
+      </L>
+    </U>
+  </V>
+  <V t="disabled" n="basic_reserve_object" />
+  <V t="disabled" n="content_score" />
+  <T n="display_name">0xD7E194C5<!--String: "Esperar a que traigan el pedido"--></T>
+  <U n="display_name_text_tokens">
+    <L n="tokens">
+      <V t="participant_type">
+        <U n="participant_type">
+          <V n="objects" t="from_participant">
+            <U n="from_participant">
+              <E n="participant">Actor</E>
+            </U>
+          </V>
+        </U>
+      </V>
+      <V t="participant_type">
+        <U n="participant_type">
+          <V n="objects" t="from_participant">
+            <U n="from_participant">
+              <E n="participant">Object</E>
+            </U>
+          </V>
+        </U>
+      </V>
+    </L>
+  </U>
+  <L n="interaction_category_tags">
+    <E>Interaction_Super</E>
+    <E>Interaction_All</E>
+  </L>
+  <E n="scoring_priority">NORMAL</E>
+  <T n="subaction_selection_weight">1</T>
+  <E n="target_type">OBJECT</E>
+  <L n="test_globals">
+    <V t="situation_count_test">
+      <U n="situation_count_test">
+        <T n="situation">132213<!--WaitstaffSituation: situation_Restaurant_WaitStaff--></T>
+        <U n="test">
+          <T n="value">1</T>
+        </U>
+      </U>
+    </V>
+  </L>
+  <T n="time_overhead">30</T>
+</I>

@@ -1,0 +1,411 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<I c="SuperInteraction" i="interaction" m="interactions.base.super_interaction" n="book_Journal_Snoop" s="160100">
+  <V t="reference" n="_animation_actor_map">
+    <T n="reference">104045<!--AnimationActorMap: PickupInteractionTarget--></T>
+  </V>
+  <V t="enabled" n="_carry_transfer_animation">
+    <U n="enabled">
+      <U n="begin">
+        <T n="factory">11315<!--AnimationElementSet: Book_Read_Start_Set--></T>
+      </U>
+      <V n="end" t="enabled">
+        <U n="enabled">
+          <T n="factory">77036<!--AnimationElementSet: Book_Read_Stop_Set--></T>
+        </U>
+      </V>
+    </U>
+  </V>
+  <V t="participant" n="_icon">
+    <U n="participant">
+      <L n="participant_type">
+        <E>Object</E>
+      </L>
+    </U>
+  </V>
+  <V t="enabled" n="_saveable" />
+  <T n="allow_autonomous">False</T>
+  <T n="allow_from_object_inventory">True</T>
+  <T n="allow_from_sim_inventory">True</T>
+  <L n="appropriateness_tags">
+    <E>Appropriateness_ReadBooks</E>
+  </L>
+  <T n="attention_cost">1</T>
+  <V n="basic_content" t="flexible_length">
+    <U n="flexible_length">
+      <L n="conditional_actions">
+        <V t="list_reference">
+          <T n="list_reference">40705<!--ExitConditionList: ExitConditionList_MotivesNearFail--></T>
+        </V>
+        <V t="literal">
+          <U n="literal">
+            <L n="conditions">
+              <V t="time_based">
+                <U n="time_based">
+                  <T n="max_time">20</T>
+                  <T n="min_time">15</T>
+                </U>
+              </V>
+            </L>
+            <E n="interaction_action">EXIT_NATURALLY</E>
+          </U>
+        </V>
+        <V t="literal">
+          <U n="literal">
+            <L n="conditions">
+              <V t="buff_based">
+                <U n="buff_based">
+                  <T n="buff">160255<!--Buff: buff_CatchSnooping--></T>
+                  <E n="timing">ON_REMOVE</E>
+                </U>
+              </V>
+            </L>
+            <E n="interaction_action">EXIT_CANCEL</E>
+          </U>
+        </V>
+      </L>
+      <V n="content" t="staging_content">
+        <U n="staging_content">
+          <U n="content_set">
+            <L n="affordance_links">
+              <T>161402<!--MixerInteraction: Journal_Snoop_Active--></T>
+              <T>161403<!--MixerInteraction: Journal_Snoop_Passive--></T>
+            </L>
+          </U>
+        </U>
+      </V>
+      <V n="periodic_stat_change" t="enabled">
+        <U n="enabled">
+          <L n="operations" />
+        </U>
+      </V>
+    </U>
+  </V>
+  <L n="basic_extras">
+    <V t="loot">
+      <U n="loot">
+        <L n="loot_list">
+          <T>167850<!--LootActions: journal_Loot_JournalBeingSnooped--></T>
+        </L>
+        <V t="at_beginning" n="timing" />
+      </U>
+    </V>
+    <V t="buff">
+      <U n="buff">
+        <U n="buff_type">
+          <T n="buff_type">185734<!--Buff: buff_Umbrella_Close--></T>
+        </U>
+      </U>
+    </V>
+    <V t="balloon">
+      <U n="balloon">
+        <L n="balloon_choices">
+          <U>
+            <V n="item" t="balloon_icon">
+              <U n="balloon_icon">
+                <V n="icon" t="resource_key">
+                  <U n="resource_key">
+                    <T n="key" p="InGame\UI\Icons\Headlines\Final\headline_lockedDoor.png">2f7d0004:00000000:235fd7428b835446</T>
+                  </U>
+                </V>
+              </U>
+            </V>
+          </U>
+          <U>
+            <V n="item" t="balloon_icon">
+              <U n="balloon_icon">
+                <V n="icon" t="participant">
+                  <U n="participant">
+                    <L n="participant_type">
+                      <E>OwnerSim</E>
+                    </L>
+                  </U>
+                </V>
+              </U>
+            </V>
+          </U>
+        </L>
+        <L n="balloon_target">
+          <E>Actor</E>
+        </L>
+      </U>
+    </V>
+    <V t="broadcaster">
+      <U n="broadcaster">
+        <L n="broadcaster_types">
+          <U>
+            <T n="item">160253<!--Broadcaster: broadcaster_Journal_Snooping--></T>
+          </U>
+        </L>
+        <E n="participant">Actor</E>
+      </U>
+    </V>
+  </L>
+  <V t="do_not_change_focus" n="basic_focus" />
+  <L n="cancel_replacement_affordances">
+    <U>
+      <E n="key">BODY</E>
+      <U n="value">
+        <T n="affordance">131317<!--SuperInteraction: cancelReplacements_ReadtoCarry_fromSurface--></T>
+        <V t="enabled" n="target" />
+      </U>
+    </U>
+    <U>
+      <E n="key">CARRY</E>
+      <U n="value">
+        <T n="affordance">122714<!--SuperInteraction: cancelReplacements_ReadtoCarry--></T>
+        <V t="enabled" n="target" />
+      </U>
+    </U>
+  </L>
+  <V t="enabled" n="canonical_animation">
+    <U n="enabled">
+      <T n="factory">11313<!--AnimationElementSet: Book_Read_Active_Set--></T>
+    </U>
+  </V>
+  <V t="disabled" n="content_score" />
+  <T n="display_name">0x294C5ECE<!--String: "Fisgonear diario"--></T>
+  <U n="display_name_text_tokens">
+    <L n="tokens">
+      <V t="participant_type">
+        <U n="participant_type">
+          <V t="from_participant" n="objects">
+            <U n="from_participant">
+              <E n="participant">Actor</E>
+            </U>
+          </V>
+        </U>
+      </V>
+      <V t="participant_type">
+        <U n="participant_type">
+          <V t="from_participant" n="objects">
+            <U n="from_participant">
+              <E n="participant">Object</E>
+            </U>
+          </V>
+        </U>
+      </V>
+    </L>
+  </U>
+  <T n="force_exit_on_inertia">False</T>
+  <L n="interaction_category_tags">
+    <E>Interaction_Super</E>
+    <E>Interaction_All</E>
+  </L>
+  <L n="joinable">
+    <U>
+      <V n="join_affordance" t="affordance">
+        <U n="affordance">
+          <V n="value" t="custom">
+            <T n="custom">160254<!--SuperInteraction: book_Journal_Snoop_View--></T>
+          </V>
+        </U>
+      </V>
+      <V n="join_available" t="enabled">
+        <U n="enabled">
+          <V n="loc_custom_join_name" t="enabled">
+            <T n="enabled">0xE788AFE8<!--String: "¡Pillar a {1.SimFirstName} fisgoneando su diario!"--></T>
+          </V>
+        </U>
+      </V>
+      <E n="join_target">Actor</E>
+      <T n="link_joinable">False</T>
+    </U>
+  </L>
+  <V n="outcome" t="single">
+    <U n="single">
+      <U n="actions">
+        <L n="continuation" />
+        <V t="disabled" n="display_message" />
+        <T n="force_outcome_on_exit">False</T>
+        <L n="loot_list">
+          <T>160259<!--LootActions: journal_Loot_Snoop_Success--></T>
+          <T>167319<!--LootActions: loot_Statistic_LifeSkill_Empathy_Loss_MediumLow--></T>
+        </L>
+      </U>
+    </U>
+  </V>
+  <T n="pie_menu_priority">10</T>
+  <U n="posture_preferences">
+    <T n="apply_penalties">True</T>
+    <L n="posture_cost_overrides">
+      <U>
+        <T n="key">134340<!--Posture: posture_SitOnGround--></T>
+        <T n="value">100</T>
+      </U>
+      <U>
+        <T n="key">15527<!--Posture: posture_Kneel--></T>
+        <T n="value">40</T>
+      </U>
+      <U>
+        <T n="key">15537<!--MobilePosture: posture_Stand--></T>
+        <T n="value">30</T>
+      </U>
+    </L>
+    <T n="prefer_surface">False</T>
+  </U>
+  <V t="enabled" n="posture_target_preference">
+    <L n="enabled">
+      <U>
+        <E n="key">DINING_TABLE</E>
+        <T n="value">80</T>
+      </U>
+      <U>
+        <E n="key">SEATING_BARSTOOL</E>
+        <T n="value">80</T>
+      </U>
+      <U>
+        <E n="key">SEATING_BED</E>
+        <T n="value">5</T>
+      </U>
+      <U>
+        <E n="key">SEATING_DESK</E>
+        <T n="value">80</T>
+      </U>
+      <U>
+        <E n="key">SEATING_DINING</E>
+        <T n="value">80</T>
+      </U>
+      <U>
+        <E n="key">SEATING_LIVING</E>
+        <T n="value">0</T>
+      </U>
+      <U>
+        <E n="key">SEATING_LOVESEAT</E>
+        <T n="value">0</T>
+      </U>
+      <U>
+        <E n="key">SEATING_SOFA</E>
+        <T n="value">0</T>
+      </U>
+      <U>
+        <E n="key">SURFACE_COUNTER</E>
+        <T n="value">80</T>
+      </U>
+      <U>
+        <E n="key">SURFACE_DESK</E>
+        <T n="value">80</T>
+      </U>
+    </L>
+  </V>
+  <V t="enabled" n="route_start_balloon">
+    <U n="enabled">
+      <U n="balloon">
+        <L n="balloon_choices">
+          <U>
+            <V n="item" t="balloon_icon">
+              <U n="balloon_icon">
+                <V t="participant" n="icon">
+                  <U n="participant">
+                    <L n="participant_type">
+                      <E>Object</E>
+                    </L>
+                  </U>
+                </V>
+              </U>
+            </V>
+          </U>
+        </L>
+        <L n="balloon_target">
+          <E>Actor</E>
+        </L>
+      </U>
+    </U>
+  </V>
+  <E n="scoring_priority">NORMAL</E>
+  <V t="disabled" n="sim_affinity_posture_scoring_data" />
+  <T n="subaction_selection_weight">3</T>
+  <V t="literal" n="super_affordance_compatibility">
+    <U n="literal">
+      <V n="default_inclusion" t="exclude_all">
+        <U n="exclude_all">
+          <L n="include_affordances">
+            <T>14410<!--GoHereSuperInteraction: terrain-gohere--></T>
+            <T>102930<!--GoHereSuperInteraction: terrain-sitHere--></T>
+            <T>14434<!--SuperInteraction: toilet_TakePregnancyTest--></T>
+            <T>14427<!--SuperInteraction: toilet-use-sitting--></T>
+            <T>14434<!--SuperInteraction: toilet_TakePregnancyTest--></T>
+            <T>134251<!--SuperInteraction: TalkingToilet_UseBasic_sitting--></T>
+            <T>14428<!--SuperInteraction: toilet-use-standing--></T>
+            <T>134250<!--SuperInteraction: TalkingToilet_UseBasic_standing--></T>
+          </L>
+          <L n="include_lists">
+            <T>33624<!--AffordanceList: AffordanceList_Stereo_Listens--></T>
+          </L>
+        </U>
+      </V>
+    </U>
+  </V>
+  <V t="enabled" n="super_affordance_klobberers">
+    <V n="enabled" t="literal">
+      <U n="literal">
+        <V n="default_inclusion" t="exclude_all">
+          <U n="exclude_all">
+            <L n="include_affordances">
+              <T>182089<!--SuperInteraction: sim_CreateCarryUmbrella--></T>
+            </L>
+          </U>
+        </V>
+      </U>
+    </V>
+  </V>
+  <E n="target_type">OBJECT</E>
+  <L n="test_autonomous">
+    <L>
+      <V t="appropriateness" />
+      <V t="buff">
+        <U n="buff">
+          <L n="blacklist">
+            <T>214844<!--Buff: buff_Trait_IslandAncestors_Spirit_RoleAutonomy_PositiveJudging--></T>
+            <T>214845<!--Buff: buff_Trait_IslandAncestors_Spirit_RoleAutonomy_NegativeJudging--></T>
+          </L>
+        </U>
+      </V>
+    </L>
+  </L>
+  <L n="test_globals">
+    <V t="sim_info">
+      <U n="sim_info">
+        <V t="specified" n="ages">
+          <L n="specified">
+            <E>TEEN</E>
+            <E>YOUNGADULT</E>
+            <E>ADULT</E>
+            <E>ELDER</E>
+            <E>CHILD</E>
+          </L>
+        </V>
+        <V t="specified" n="species">
+          <U n="specified">
+            <L n="species">
+              <E />
+            </L>
+          </U>
+        </V>
+        <E n="who">Actor</E>
+      </U>
+    </V>
+  </L>
+  <L n="tests">
+    <L>
+      <V t="object_ownership">
+        <U n="object_ownership">
+          <T n="consider_renter_as_household_owner">False</T>
+          <T n="is_not_owner">True</T>
+          <T n="is_owner">False</T>
+          <T n="must_be_owned">False</T>
+          <T n="test_household_owner">False</T>
+        </U>
+      </V>
+      <V t="object_ownership">
+        <U n="object_ownership">
+          <T n="consider_renter_as_household_owner">False</T>
+          <T n="is_not_owner">False</T>
+          <T n="is_owner">False</T>
+          <T n="must_be_owned">True</T>
+          <T n="test_household_owner">False</T>
+        </U>
+      </V>
+    </L>
+  </L>
+  <T n="time_overhead">30</T>
+</I>

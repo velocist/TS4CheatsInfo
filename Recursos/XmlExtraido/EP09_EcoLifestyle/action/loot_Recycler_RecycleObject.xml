@@ -1,0 +1,176 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<I c="LootActions" i="action" m="interactions.utils.loot" n="loot_Recycler_RecycleObject" s="226043">
+  <L n="loot_actions">
+    <V t="recycling_bucks_loot">
+      <U n="recycling_bucks_loot">
+        <U n="bucks_multipliers">
+          <L n="multipliers">
+            <U>
+              <T n="multiplier">0.75</T>
+              <L n="tests">
+                <L>
+                  <V t="test_set_reference">
+                    <T n="test_set_reference">232678<!--TestSetInstance: testSet_EcoFootprint_Green--></T>
+                  </V>
+                </L>
+              </L>
+            </U>
+          </L>
+        </U>
+        <L n="bucks_types">
+          <U>
+            <U n="buck_multiplier">
+              <L n="multipliers">
+                <U>
+                  <T n="multiplier">1.5</T>
+                  <L n="tests">
+                    <L>
+                      <V t="state">
+                        <U n="state">
+                          <T n="value">232465<!--CommodityBasedObjectStateValue: upgrade_Recycler_Completed_MushFilter--></T>
+                        </U>
+                      </V>
+                    </L>
+                  </L>
+                </U>
+              </L>
+            </U>
+            <E n="buck_type">RecycleBitsBucks</E>
+          </U>
+          <U>
+            <U n="buck_multiplier">
+              <L n="multipliers">
+                <U>
+                  <T n="multiplier">1.5</T>
+                  <L n="tests">
+                    <L>
+                      <V t="state">
+                        <U n="state">
+                          <T n="value">232463<!--CommodityBasedObjectStateValue: upgrade_Recycler_Completed_GrinderGears--></T>
+                        </U>
+                      </V>
+                    </L>
+                  </L>
+                </U>
+              </L>
+            </U>
+            <E n="buck_type">RecyclePiecesBucks</E>
+          </U>
+        </L>
+        <E n="target_participant_type">PickedObject</E>
+      </U>
+    </V>
+    <V t="event">
+      <U n="event">
+        <E n="test_event">event_recycled</E>
+      </U>
+    </V>
+    <V t="actions">
+      <T n="actions">232837<!--LootActions: loot_RecycleDesciple_SalvageThrills--></T>
+    </V>
+    <V t="actions">
+      <T n="actions">235457<!--LootActions: loot_CivilDesigner_RewardTraits_EcoEngineer_AwardEcoParts--></T>
+    </V>
+    <V t="notification_and_dialog">
+      <U n="notification_and_dialog">
+        <U n="chance">
+          <L n="multipliers">
+            <U>
+              <T n="multiplier">0</T>
+              <L n="tests">
+                <L>
+                  <V t="statistic">
+                    <U n="statistic">
+                      <T n="stat">239831<!--Statistic: statistic_Lot_Recycler_FirstTimeTNS--></T>
+                      <V t="value_threshold" n="threshold">
+                        <U n="value_threshold">
+                          <T n="value">1</T>
+                        </U>
+                      </V>
+                      <E n="who">Lot</E>
+                    </U>
+                  </V>
+                </L>
+              </L>
+            </U>
+          </L>
+        </U>
+        <V n="dialog" t="notification">
+          <U n="notification">
+            <V t="enabled" n="icon">
+              <V t="resource_key" n="enabled">
+                <U n="resource_key">
+                  <T p="InEP09\UI\Icons\Headlines\Headline_recycleSymbol.png" n="key">2f7d0004:00000000:9549e3708e6244ab</T>
+                </U>
+              </V>
+            </V>
+            <V t="enabled" n="secondary_icon">
+              <V t="participant" n="enabled" />
+            </V>
+            <V n="text" t="single">
+              <T n="single">0x117B4C7E<!--String: "¡Has recibido tus primeros componentes y restos usando la recicladora! Sitúa el cursor sobre la recicladora o los fondos de la unidad doméstica para ver cuántos tienes.\n\nLos componentes y restos se usan para fabricar artículos con la máquina de fabricación y para alimentar objetos de producción de suministros como el agua o la electricidad.\n\n¡Reciclar cosas que encuentres en el vertedero es un buen modo de conseguir más componentes y restos!"--></T>
+            </V>
+          </U>
+        </V>
+      </U>
+    </V>
+    <V t="statistics">
+      <V n="statistics" t="statistic_set_max">
+        <U n="statistic_set_max">
+          <T n="stat">239831<!--Statistic: statistic_Lot_Recycler_FirstTimeTNS--></T>
+          <L n="subject">
+            <E>Lot</E>
+          </L>
+          <L n="tests">
+            <L>
+              <V t="sim_info">
+                <U n="sim_info">
+                  <V t="enabled" n="npc" />
+                </U>
+              </V>
+            </L>
+          </L>
+        </U>
+      </V>
+    </V>
+    <V t="destroy_target_objects">
+      <U n="destroy_target_objects">
+        <E n="subject">PickedObject</E>
+      </U>
+    </V>
+  </L>
+  <L n="tests">
+    <L>
+      <V t="inventory">
+        <U n="inventory">
+          <V t="has_object_of_participant_type" n="contents_check">
+            <U n="has_object_of_participant_type">
+              <E n="participant">PickedObject</E>
+            </U>
+          </V>
+          <V n="inventory_location" t="participant_inventory">
+            <U n="participant_inventory">
+              <E n="inventory">ActorHousehold</E>
+            </U>
+          </V>
+        </U>
+      </V>
+    </L>
+    <L>
+      <V t="inventory">
+        <U n="inventory">
+          <V t="has_object_of_participant_type" n="contents_check">
+            <U n="has_object_of_participant_type">
+              <E n="participant">PickedObject</E>
+            </U>
+          </V>
+          <V n="inventory_location" t="participant_inventory">
+            <U n="participant_inventory">
+              <E n="inventory">Actor</E>
+            </U>
+          </V>
+        </U>
+      </V>
+    </L>
+  </L>
+</I>

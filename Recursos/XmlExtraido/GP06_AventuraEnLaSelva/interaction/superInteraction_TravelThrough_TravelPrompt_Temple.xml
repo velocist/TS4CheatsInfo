@@ -1,0 +1,144 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<I c="SuperInteraction" i="interaction" m="interactions.base.super_interaction" n="superInteraction_TravelThrough_TravelPrompt_Temple" s="182210">
+  <V t="enabled" n="_saveable" />
+  <T n="allow_while_save_locked">False</T>
+  <T n="attention_cost">0.5</T>
+  <V t="one_shot" n="basic_content" />
+  <V n="confirmation_dialog" t="enabled">
+    <U n="enabled">
+      <V t="enabled" n="continuation_on_cancel">
+        <L n="enabled">
+          <U>
+            <T n="affordance">182929<!--SuperInteraction: pathObstacles_Reappear--></T>
+            <E n="target">Invalid</E>
+          </U>
+        </L>
+      </V>
+      <U n="dialog">
+        <V n="dialog" t="ok_cancel">
+          <U n="ok_cancel">
+            <L n="dialog_options">
+              <E>DISABLE_CLOSE_BUTTON</E>
+            </L>
+            <V n="text" t="single">
+              <T n="single">0x2B5D36CA<!--String: "¿Te gustaría enviar a {0.SimFirstName} al templo?"--></T>
+            </V>
+            <V t="enabled" n="text_tokens">
+              <U n="enabled">
+                <L n="tokens">
+                  <V t="participant_type" />
+                  <V t="participant_type">
+                    <U n="participant_type">
+                      <V t="from_participant" n="objects">
+                        <U n="from_participant">
+                          <E n="participant">Object</E>
+                        </U>
+                      </V>
+                    </U>
+                  </V>
+                </L>
+              </U>
+            </V>
+            <V n="title" t="enabled">
+              <T n="enabled">0x356A2904<!--String: "¿Ir al templo?"--></T>
+            </V>
+          </U>
+        </V>
+      </U>
+    </U>
+  </V>
+  <V t="disabled" n="content_score" />
+  <T n="display_name">0xD17433<!--String: "Ir hasta el templo"--></T>
+  <U n="display_name_text_tokens">
+    <L n="tokens">
+      <V t="participant_type">
+        <U n="participant_type">
+          <V t="from_participant" n="objects">
+            <U n="from_participant">
+              <E n="participant">Actor</E>
+            </U>
+          </V>
+        </U>
+      </V>
+      <V t="participant_type">
+        <U n="participant_type">
+          <V t="from_participant" n="objects">
+            <U n="from_participant">
+              <E n="participant">Object</E>
+            </U>
+          </V>
+        </U>
+      </V>
+    </L>
+  </U>
+  <L n="interaction_category_tags">
+    <E>Interaction_Super</E>
+    <E>Interaction_All</E>
+  </L>
+  <V n="outcome" t="test_based">
+    <U n="test_based">
+      <L n="fallback_outcomes">
+        <U>
+          <U n="outcome">
+            <L n="continuation">
+              <U>
+                <T n="affordance">181601<!--SimPickerInteraction: simPickerInteraction_PathObstacle_TravelThroughPicker_TempleTravel--></T>
+              </U>
+            </L>
+          </U>
+        </U>
+      </L>
+    </U>
+  </V>
+  <E n="scoring_priority">NORMAL</E>
+  <T n="subaction_selection_weight">1</T>
+  <E n="target_type">OBJECT</E>
+  <L n="test_globals">
+    <V t="state">
+      <U n="state">
+        <V t="always_pass" n="fallback_behavior" />
+        <T n="value">174733<!--ObjectStateValue: objectStateValue_PathObstacles_Accessible--></T>
+      </U>
+    </V>
+    <V t="statistic">
+      <U n="statistic">
+        <T n="stat">175717<!--Statistic: statistic_PathObstacle_TravelThroughAdventure--></T>
+        <V t="value_threshold" n="threshold">
+          <U n="value_threshold">
+            <E n="comparison">LESS_OR_EQUAL</E>
+          </U>
+        </V>
+        <E n="who">Object</E>
+      </U>
+    </V>
+    <V t="location">
+      <U n="location">
+        <U n="location_tests">
+          <V n="is_venue_type" t="enabled">
+            <U n="enabled">
+              <T n="negate">True</T>
+              <T n="venue_type">173492<!--Venue: venue_Temple--></T>
+            </U>
+          </V>
+        </U>
+      </U>
+    </V>
+    <V t="sim_info">
+      <U n="sim_info">
+        <V t="specified" n="ages">
+          <L n="specified">
+            <E>TEEN</E>
+            <E>YOUNGADULT</E>
+            <E>ADULT</E>
+            <E>ELDER</E>
+            <E>CHILD</E>
+          </L>
+        </V>
+        <V n="tooltip" t="enabled">
+          <T n="enabled">0x92CEDD93<!--String: "¡Los infantes no pueden desplazarse a solares nuevos!"--></T>
+        </V>
+      </U>
+    </V>
+  </L>
+  <T n="time_overhead">30</T>
+</I>

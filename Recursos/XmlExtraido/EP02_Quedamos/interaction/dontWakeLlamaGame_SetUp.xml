@@ -1,0 +1,166 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<I c="SocialMixerInteraction" i="interaction" m="interactions.social.social_mixer_interaction" n="dontWakeLlamaGame_SetUp" s="127359">
+  <V t="participant" n="_icon">
+    <U n="participant">
+      <L n="participant_type">
+        <E>TargetSim</E>
+      </L>
+    </U>
+  </V>
+  <T n="acquire_social_group_as_resource">True</T>
+  <T n="allow_user_directed">False</T>
+  <V t="one_shot" n="basic_content">
+    <U n="one_shot">
+      <U n="animation_ref">
+        <T n="factory">127348<!--AnimationElement: dontWakeLlama_Rebuild--></T>
+      </U>
+    </U>
+  </V>
+  <L n="basic_extras">
+    <V t="loot">
+      <U n="loot">
+        <L n="loot_list">
+          <T>162659<!--LootActions: loot_Commodity_Culling_GhostAdd_target--></T>
+        </L>
+      </U>
+    </V>
+    <V t="state_change">
+      <U n="state_change">
+        <V n="new_value" t="single_value">
+          <U n="single_value">
+            <T n="new_value">127184<!--ObjectStateValue: dontWakeLlama_GeoStates_TF_BF--></T>
+          </U>
+        </V>
+      </U>
+    </V>
+    <V t="state_change">
+      <U n="state_change">
+        <V n="new_value" t="single_value">
+          <U n="single_value">
+            <T n="new_value">127859<!--ObjectStateValue: dontWakeLlama_GameNotOver--></T>
+          </U>
+        </V>
+      </U>
+    </V>
+    <V t="vfx">
+      <U n="vfx">
+        <V t="from_participant" n="participant">
+          <U n="from_participant">
+            <E n="participant">ObjectParent</E>
+          </U>
+        </V>
+        <V t="on_xevt" n="timing">
+          <U n="on_xevt">
+            <E n="criticality">OnCancelOrException</E>
+            <T n="xevt_id">1002</T>
+          </U>
+        </V>
+        <U n="vfx">
+          <T n="effect_name">ep02_llama_game_wood_rebuild</T>
+          <V t="Slot" n="joint_name">
+            <T n="Slot">_FX_game_</T>
+          </V>
+        </U>
+      </U>
+    </V>
+  </L>
+  <T n="display_name_target">0x8C71C8F7<!--String: "Escuchar la pregunta de {1.SimFirstName}"--></T>
+  <U n="display_name_text_tokens">
+    <L n="tokens">
+      <V t="participant_type">
+        <U n="participant_type">
+          <V n="objects" t="from_participant">
+            <U n="from_participant">
+              <E n="participant">Actor</E>
+            </U>
+          </V>
+        </U>
+      </V>
+      <V t="participant_type">
+        <U n="participant_type">
+          <V t="from_participant" n="objects">
+            <U n="from_participant">
+              <E n="participant">Object</E>
+            </U>
+          </V>
+        </U>
+      </V>
+    </L>
+  </U>
+  <T n="ignores_greetings">True</T>
+  <L n="interaction_category_tags">
+    <E>Interaction_Mixer</E>
+    <E>Interaction_All</E>
+    <E>Interaction_SocialAll</E>
+    <E>Interaction_SocialMixer</E>
+  </L>
+  <V t="test_based" n="outcome">
+    <U n="test_based">
+      <L n="fallback_outcomes">
+        <U>
+          <U n="outcome">
+            <L n="loot_list">
+              <T>127698<!--LootActions: loot_DontWakeLlama_ResetGame--></T>
+              <T>99670<!--LootActions: loot_Game_ResetGame--></T>
+              <T>130069<!--LootActions: loot_DontWakeLlama_StopPlayingAdd--></T>
+            </L>
+          </U>
+        </U>
+      </L>
+      <L n="tested_outcomes">
+        <U>
+          <L n="potential_outcomes">
+            <U>
+              <U n="outcome">
+                <L n="loot_list">
+                  <T>127698<!--LootActions: loot_DontWakeLlama_ResetGame--></T>
+                  <T>130344<!--LootActions: loot_DontWakeLlama_StopPlayingMax--></T>
+                </L>
+              </U>
+            </U>
+          </L>
+          <L n="tests">
+            <L>
+              <V t="buff">
+                <U n="buff">
+                  <V n="whitelist" t="enabled">
+                    <L n="enabled">
+                      <T>127880<!--Buff: buff_Game_Challenged_DontWakeLlama--></T>
+                    </L>
+                  </V>
+                </U>
+              </V>
+            </L>
+          </L>
+        </U>
+      </L>
+    </U>
+  </V>
+  <U n="skill_loot_data">
+    <V t="disabled" n="level_range" />
+    <T o="true" n="stat" />
+  </U>
+  <U n="sub_action">
+    <T n="base_weight">2</T>
+  </U>
+  <E n="target_type">GROUP</E>
+  <L n="test_globals">
+    <V t="state">
+      <U n="state">
+        <T n="value">127873<!--ObjectStateValue: dontWakeLlama_GameAlmostOver--></T>
+      </U>
+    </V>
+    <V t="object_criteria">
+      <U n="object_criteria">
+        <V n="identity_test" t="definition_id">
+          <U n="definition_id">
+            <T n="actual_object">108511</T>
+          </U>
+        </V>
+        <T n="owned">False</T>
+        <V t="single_object" n="subject_specific_tests" />
+      </U>
+    </V>
+  </L>
+  <T n="visible">False</T>
+</I>

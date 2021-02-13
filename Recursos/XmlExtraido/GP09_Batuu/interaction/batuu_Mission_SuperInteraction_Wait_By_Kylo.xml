@@ -1,0 +1,209 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<I c="SuperInteraction" i="interaction" m="interactions.base.super_interaction" n="batuu_Mission_SuperInteraction_Wait_By_Kylo" s="242236">
+  <L n="_constraints">
+    <U>
+      <L n="constraints">
+        <U>
+          <V t="circle" n="value">
+            <U n="circle">
+              <T n="radius">3</T>
+            </U>
+          </V>
+        </U>
+      </L>
+    </U>
+    <U>
+      <L n="constraints">
+        <U>
+          <V t="facing" n="value" />
+        </U>
+      </L>
+    </U>
+  </L>
+  <V t="enabled" n="_saveable" />
+  <T n="_super_affordance_can_share_target">True</T>
+  <T n="attention_cost">0.5</T>
+  <V n="basic_content" t="flexible_length">
+    <U n="flexible_length">
+      <L n="conditional_actions">
+        <V t="literal">
+          <U n="literal">
+            <L n="conditions">
+              <V t="buff_based">
+                <U n="buff_based">
+                  <T n="buff">242241<!--Buff: buff_Batuu_Missions_Delivered_Spy_Success--></T>
+                </U>
+              </V>
+            </L>
+            <E n="interaction_action">EXIT_NATURALLY</E>
+          </U>
+        </V>
+        <V t="literal">
+          <U n="literal">
+            <L n="conditions">
+              <V t="buff_based">
+                <U n="buff_based">
+                  <T n="buff">248959<!--Buff: buff_Batuu_Missions_FS_7_SpyDelivered_False--></T>
+                </U>
+              </V>
+            </L>
+            <E n="interaction_action">EXIT_NATURALLY</E>
+          </U>
+        </V>
+        <V t="literal">
+          <U n="literal">
+            <L n="conditions">
+              <V t="buff_based">
+                <U n="buff_based">
+                  <T n="buff">248958<!--Buff: buff_Batuu_Missions_FS_7_SpyDelivered_True--></T>
+                </U>
+              </V>
+            </L>
+            <E n="interaction_action">EXIT_NATURALLY</E>
+          </U>
+        </V>
+      </L>
+      <V n="content" t="looping_content">
+        <U n="looping_content">
+          <U n="animation_ref">
+            <T n="factory">11858<!--AnimationElement: Soc_Friendly_NT_ExcitingStory_looping_basic--></T>
+          </U>
+        </U>
+      </V>
+    </U>
+  </V>
+  <V t="enabled" n="basic_reserve_object">
+    <U n="enabled">
+      <L n="subject_list">
+        <U>
+          <V t="multi" n="reserve_type" />
+        </U>
+      </L>
+    </U>
+  </V>
+  <V t="enabled" n="content_score">
+    <U n="enabled">
+      <T n="base_score">999999999</T>
+    </U>
+  </V>
+  <T n="display_name">0x4DCF0227<!--String: "Esperar"--></T>
+  <U n="display_name_text_tokens">
+    <L n="tokens">
+      <V t="participant_type">
+        <U n="participant_type">
+          <V n="objects" t="from_participant">
+            <U n="from_participant">
+              <E n="participant">Actor</E>
+            </U>
+          </V>
+        </U>
+      </V>
+      <V t="participant_type">
+        <U n="participant_type">
+          <V t="from_participant" n="objects">
+            <U n="from_participant">
+              <E n="participant">Object</E>
+            </U>
+          </V>
+        </U>
+      </V>
+    </L>
+  </U>
+  <L n="interaction_category_tags">
+    <E>Interaction_Super</E>
+    <E>Interaction_All</E>
+  </L>
+  <V n="outcome" t="test_based">
+    <U n="test_based">
+      <L n="fallback_outcomes">
+        <U>
+          <U n="outcome">
+            <V t="enabled" n="animation_ref">
+              <U n="enabled">
+                <T n="factory">11857<!--AnimationElement: Soc_Friendly_NT_ExcitingStory_fail_basic--></T>
+              </U>
+            </V>
+            <T n="force_outcome_on_exit">True</T>
+            <E n="outcome_result">FAILURE</E>
+          </U>
+        </U>
+      </L>
+      <L n="tested_outcomes">
+        <U>
+          <L n="potential_outcomes">
+            <U>
+              <U n="outcome">
+                <V n="animation_ref" t="enabled">
+                  <U n="enabled">
+                    <T n="factory">11859<!--AnimationElement: Soc_Friendly_NT_ExcitingStory_success_basic--></T>
+                  </U>
+                </V>
+                <L n="loot_list">
+                  <T>250235<!--LootActions: loot_Relationship_Bit_Batuu_FS7_SpecialBits_RemoveAll--></T>
+                </L>
+              </U>
+            </U>
+          </L>
+          <L n="tests">
+            <L>
+              <V t="buff">
+                <U n="buff">
+                  <V n="whitelist" t="enabled">
+                    <L n="enabled">
+                      <T>248958<!--Buff: buff_Batuu_Missions_FS_7_SpyDelivered_True--></T>
+                    </L>
+                  </V>
+                </U>
+              </V>
+            </L>
+          </L>
+        </U>
+        <U>
+          <L n="potential_outcomes">
+            <U>
+              <U n="outcome">
+                <V t="enabled" n="animation_ref">
+                  <U n="enabled">
+                    <T n="factory">11857<!--AnimationElement: Soc_Friendly_NT_ExcitingStory_fail_basic--></T>
+                  </U>
+                </V>
+              </U>
+            </U>
+          </L>
+          <L n="tests">
+            <L>
+              <V t="buff">
+                <U n="buff">
+                  <V n="whitelist" t="enabled">
+                    <L n="enabled">
+                      <T>248959<!--Buff: buff_Batuu_Missions_FS_7_SpyDelivered_False--></T>
+                    </L>
+                  </V>
+                </U>
+              </V>
+            </L>
+          </L>
+        </U>
+      </L>
+    </U>
+  </V>
+  <E n="scoring_priority">NORMAL</E>
+  <T n="subaction_selection_weight">1</T>
+  <E n="target_type">OBJECT</E>
+  <L n="test_globals">
+    <V t="sim_info">
+      <U n="sim_info">
+        <V t="specified" n="ages" />
+        <V t="specified" n="species">
+          <U n="specified">
+            <L n="species">
+              <E />
+            </L>
+          </U>
+        </V>
+        <E n="who">Actor</E>
+      </U>
+    </V>
+  </L>
+  <T n="time_overhead">30</T>
+</I>

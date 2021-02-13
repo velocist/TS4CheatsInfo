@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+
+<TuningRoot>
+    <Instance instance_type="Renderer_FadeTuning" class="Renderer.TunableFadeValues" module="client.renderer" muid="B14477BC2277A084" description="" export_modes="client_binary" path="Client_FadeTuning\Descriptions">
+        <Tunable type="float" name="DefaultBuildingFadeFinish" class="Tunable" default="None" display="Default building fade near distance" muid="CD200437974B675D" description="Distance in meters at which buildings are considered to obstruct the camera and fade out." />
+
+        <Tunable type="float" name="DefaultBuildingFadeStart" class="Tunable" default="None" display="Default building fade far distance" muid="627916E6DF649B6B" description="Distance in meters at which buildings are no longer considered to obstruct the camera and fade back in." />
+
+        <Tunable type="float" name="DefaultObjectFadeFinish" class="Tunable" default="None" display="Default object fade near distance" muid="8A87FDB6C2A8D2BC" description="Distance in meters at which objects are considered to obstruct the camera and fade out." />
+
+        <Tunable type="float" name="DefaultObjectFadeStart" class="Tunable" default="None" display="Default object fade far distance" muid="BB3A2F8FF91FAA41" description="Distance in meters at which objects are no longer considered to obstruct the camera and fade back in." />
+
+        <Tunable type="float" name="PortalMinWidth" class="Tunable" default="None" display="Object hiding Minimum Portal width" muid="2029A911286B6472" description="Minimum portal width for object hiding. Treat portal as opaque if its screen width is smaller than this." />
+
+        <Tunable type="float" name="SimFadeFinish" class="Tunable" default="None" display="Sims: Fade near distance" muid="4952D827B9708E25" description="Distance in meters at which sims are considered to obstruct the camera and fade out." />
+
+        <Tunable type="float" name="SimFadeStart" class="Tunable" default="None" display="Sims: Fade far distance" muid="8B75C5B459FC1F10" description="Distance in meters at which sims are no longer considered to obstruct the camera and fade back in." />
+
+        <TunableList name="VisualImportanceTiers" class="TunableList" muid="5017CECEDCE11F99" description="Settings to use at different levels of visual importance (high, normal, and low).">
+            <TunableTuple class="Renderer.VisualImportanceTier" muid="B7E3886FF56A36D5">
+                <Tunable type="float" name="FadeDistance" class="Tunable" default="None" display="Fade distance" muid="1B5535D10FBBF76E" description="Fade threshold, as an absolute view distance in meters. Objects in this tier are faded out entirely past this distance (subject to the size-based amount)." />
+                <Tunable type="float" name="FadeDistancePerMeter" class="Tunable" default="None" display="Fade distance by size" muid="1D60E2A70C3F5D5D" description="Fade threshold, as a relative view distance per meter of object size. A 1m wide object will fade out past this distance, while a 2m wide object will fade twice as far out (subject to the side-based amount)." />
+                <Tunable type="float" name="FadeSizeBasedAmount" class="Tunable" default="None" display="Fade size-based amount" muid="E7ACA16A7A3FCD23" description="Fraction that controls balance between the absolute and by-size threshold. 0 just uses the absolute distance, 1 only uses the by-size distance, and 0.5 is half-way between." />
+                <Tunable type="float" name="LODScaleFactor" class="Tunable" default="None" display="LOD scale factor" muid="F6764EE094D48181" description="Scale factor to apply to all LOD distances in the model. Numbers lower than 1.0 bias toward higher quality LODs, and higher than 1.0 biases toward cheaper LODs." />
+            </TunableTuple>
+        </TunableList>
+    </Instance>
+</TuningRoot>

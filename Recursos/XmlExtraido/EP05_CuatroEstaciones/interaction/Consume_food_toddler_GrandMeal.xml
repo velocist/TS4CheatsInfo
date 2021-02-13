@@ -1,0 +1,536 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<I c="SuperInteraction" i="interaction" m="interactions.base.super_interaction" n="Consume_food_toddler_GrandMeal" s="190144">
+  <V t="reference" n="_animation_actor_map">
+    <T n="reference">104045<!--AnimationActorMap: PickupInteractionTarget--></T>
+  </V>
+  <L n="_false_advertisements">
+    <V t="statistic_change">
+      <U n="statistic_change">
+        <T n="amount">3.5</T>
+        <T n="stat">16656<!--Commodity: motive_Hunger--></T>
+      </U>
+    </V>
+  </L>
+  <V t="enabled" n="_saveable" />
+  <L n="_static_commodities">
+    <U>
+      <T n="static_commodity">152657<!--StaticCommodity: StaticCommodity_ToddlerPoliteHunger--></T>
+    </U>
+  </L>
+  <T n="allow_from_object_inventory">True</T>
+  <T n="allow_from_sim_inventory">True</T>
+  <L n="appropriateness_tags">
+    <E>Appropriateness_Eating</E>
+  </L>
+  <T n="attention_cost">0.25</T>
+  <V t="enabled" n="autonomy_preference">
+    <V n="enabled" t="use_preference">
+      <U n="use_preference">
+        <U n="preference">
+          <V t="true" n="should_set">
+            <U n="true">
+              <T n="autonomous">True</T>
+            </U>
+          </V>
+          <E n="tag">Food</E>
+        </U>
+      </U>
+    </V>
+  </V>
+  <V n="basic_content" t="flexible_length">
+    <U n="flexible_length">
+      <L n="conditional_actions">
+        <V t="literal">
+          <U n="literal">
+            <L n="conditions">
+              <V t="stat_based">
+                <U n="stat_based">
+                  <T n="stat">16634<!--Commodity: commodity_Object_Consumable--></T>
+                  <U n="threshold">
+                    <E n="comparison">LESS_OR_EQUAL</E>
+                  </U>
+                  <E n="who">Object</E>
+                </U>
+              </V>
+            </L>
+            <E n="interaction_action">EXIT_NATURALLY</E>
+          </U>
+        </V>
+        <V t="literal">
+          <U n="literal">
+            <L n="conditions">
+              <V t="stat_based">
+                <U n="stat_based">
+                  <T n="stat">176981<!--Statistic: statistic_LocalCultureSkill_FoodTolerance--></T>
+                  <U n="threshold">
+                    <T n="value">4</T>
+                  </U>
+                </U>
+              </V>
+            </L>
+            <E n="interaction_action">EXIT_CANCEL</E>
+            <L n="loot_actions">
+              <T>176933<!--LootActions: loot_LocalCultureSkill_FoodTolerance_Buff--></T>
+            </L>
+          </U>
+        </V>
+        <V t="literal">
+          <U n="literal">
+            <L n="conditions">
+              <V t="buff_based">
+                <U n="buff_based">
+                  <T n="buff">143923<!--Buff: buff_Food_Toddler_MessyQuit--></T>
+                </U>
+              </V>
+            </L>
+            <E n="interaction_action">EXIT_CANCEL</E>
+            <L n="tests">
+              <L>
+                <V t="posture">
+                  <U n="posture">
+                    <L n="required_postures">
+                      <T>135522<!--Posture: posture_SitInToddlerHighChair--></T>
+                    </L>
+                  </U>
+                </V>
+              </L>
+            </L>
+          </U>
+        </V>
+        <V t="literal">
+          <U n="literal">
+            <L n="conditions">
+              <V t="buff_based">
+                <U n="buff_based">
+                  <T n="buff">144745<!--Buff: buff_Toddler_AutonomyMod_InHighChair--></T>
+                  <E n="participant">Actor</E>
+                  <E n="timing">ON_REMOVE</E>
+                </U>
+              </V>
+            </L>
+            <E n="interaction_action">EXIT_CANCEL</E>
+            <L n="tests">
+              <L>
+                <V t="posture">
+                  <U n="posture">
+                    <L n="required_postures">
+                      <T>135522<!--Posture: posture_SitInToddlerHighChair--></T>
+                    </L>
+                  </U>
+                </V>
+              </L>
+            </L>
+          </U>
+        </V>
+        <V t="literal">
+          <U n="literal">
+            <L n="conditions">
+              <V t="time_based">
+                <U n="time_based">
+                  <T n="max_time">40</T>
+                  <T n="min_time">40</T>
+                </U>
+              </V>
+            </L>
+          </U>
+        </V>
+      </L>
+      <V n="content" t="staging_content">
+        <U n="staging_content">
+          <U n="content_set">
+            <L n="affordance_links">
+              <T>156415<!--MixerInteraction: food_Eat_Active_Toddler_Blob--></T>
+              <T>156436<!--MixerInteraction: food_Eat_Passive_Toddler_Blob--></T>
+              <T>156416<!--MixerInteraction: food_Eat_Active_Toddler_Spork--></T>
+              <T>156438<!--MixerInteraction: food_Eat_Passive_Toddler_Spork--></T>
+              <T>156417<!--MixerInteraction: food_Eat_Active_Toddler_SmallerProp--></T>
+              <T>156437<!--MixerInteraction: food_Eat_Passive_Toddler_SmallerProp--></T>
+              <T>143903<!--MixerInteraction: food_Eat_Active_Toddler--></T>
+              <T>143918<!--MixerInteraction: Food_Eat_Passive_Toddler--></T>
+              <T>157403<!--MixerInteraction: food_Eat_Passive_Toddler_Blob_Applesauce--></T>
+              <T>157277<!--MixerInteraction: food_Eat_Active_Toddler_Blob_Applesauce--></T>
+              <T>157278<!--MixerInteraction: food_Eat_Active_Toddler_Blob_FruitSalad--></T>
+              <T>157282<!--MixerInteraction: food_Eat_Active_Toddler_Blob_MacCheese--></T>
+              <T>157279<!--MixerInteraction: food_Eat_Active_Toddler_Blob_Minestrone--></T>
+              <T>157281<!--MixerInteraction: food_Eat_Active_Toddler_Blob_Oatmeal--></T>
+              <T>157283<!--MixerInteraction: food_Eat_Active_Toddler_Blob_Peas--></T>
+              <T>157280<!--MixerInteraction: food_Eat_Active_Toddler_Blob_Yogurt--></T>
+              <T>157404<!--MixerInteraction: food_Eat_Passive_Toddler_Blob_FruitSalad--></T>
+              <T>157405<!--MixerInteraction: food_Eat_Passive_Toddler_Blob_MacCheese--></T>
+              <T>157409<!--MixerInteraction: food_Eat_Passive_Toddler_Blob_Minestrone--></T>
+              <T>157408<!--MixerInteraction: food_Eat_Passive_Toddler_Blob_Oatmeal--></T>
+              <T>157406<!--MixerInteraction: food_Eat_Passive_Toddler_Blob_Peas--></T>
+              <T>157407<!--MixerInteraction: food_Eat_Passive_Toddler_Blob_Yogurt--></T>
+              <T>157546<!--MixerInteraction: food_Eat_MakeMess_Toddler--></T>
+            </L>
+          </U>
+        </U>
+      </V>
+      <V n="periodic_stat_change" t="enabled">
+        <U n="enabled">
+          <L n="operations">
+            <V t="statistic_change">
+              <U n="statistic_change">
+                <T n="advertise">False</T>
+                <T n="amount">-0.5</T>
+                <T n="exclusive_to_owning_si">False</T>
+                <E n="periodic_change_behavior">APPLY_AT_START_ONLY</E>
+                <T n="stat">16575<!--Commodity: commodity_dirtiness--></T>
+                <L n="subject">
+                  <E>ObjectParent</E>
+                </L>
+                <L n="tests">
+                  <L>
+                    <V t="posture">
+                      <U n="posture">
+                        <L n="required_postures">
+                          <T>135522<!--Posture: posture_SitInToddlerHighChair--></T>
+                        </L>
+                      </U>
+                    </V>
+                  </L>
+                </L>
+              </U>
+            </V>
+          </L>
+        </U>
+      </V>
+      <T n="start_autonomous_inertial">False</T>
+    </U>
+  </V>
+  <L n="basic_extras">
+    <V t="buff">
+      <U n="buff">
+        <U n="buff_type">
+          <T n="buff_type">9273<!--Buff: buff_Sim_IsEating--></T>
+        </U>
+        <L n="subject">
+          <E>Actor</E>
+        </L>
+      </U>
+    </V>
+    <V t="state_change">
+      <U n="state_change">
+        <V n="new_value" t="single_value">
+          <U n="single_value">
+            <T n="new_value">28125<!--ObjectStateValue: Consuming_Eating--></T>
+          </U>
+        </V>
+        <V t="immediately" n="timing" />
+      </U>
+    </V>
+    <V t="state_change">
+      <U n="state_change">
+        <V t="single_value" n="new_value">
+          <U n="single_value">
+            <T n="new_value">28126<!--ObjectStateValue: Consuming_NotEating--></T>
+          </U>
+        </V>
+        <V t="at_end" n="timing">
+          <U n="at_end">
+            <E n="criticality">OnCancelOrException</E>
+          </U>
+        </V>
+      </U>
+    </V>
+    <V t="loot">
+      <U n="loot">
+        <V t="at_beginning" n="timing" />
+      </U>
+    </V>
+    <V t="loot">
+      <U n="loot">
+        <L n="loot_list">
+          <T>144665<!--LootActions: loot_Buff_Toddler_FoodBuffs--></T>
+        </L>
+      </U>
+    </V>
+    <V t="loot">
+      <U n="loot">
+        <V t="at_end" n="timing">
+          <U n="at_end">
+            <E n="criticality">OnCancelOrException</E>
+          </U>
+        </V>
+      </U>
+    </V>
+    <V t="broadcaster">
+      <U n="broadcaster">
+        <L n="broadcaster_types">
+          <U>
+            <T n="item">148042<!--Broadcaster: broadcaster_Misbehavior_BegForFood--></T>
+          </U>
+        </L>
+      </U>
+    </V>
+  </L>
+  <L n="cancel_replacement_affordances">
+    <U>
+      <E n="key">CARRY</E>
+      <U n="value">
+        <T n="affordance">74855<!--SuperInteraction: cancel_replacement_eat_to_clean--></T>
+        <V t="enabled" n="target">
+          <E n="enabled">Object</E>
+        </V>
+      </U>
+    </U>
+  </L>
+  <V t="enabled" n="canonical_animation">
+    <U n="enabled">
+      <T n="factory">157570<!--AnimationElementSet: Food_Eat_Toddler_Canonical_Set--></T>
+    </U>
+  </V>
+  <T n="collapsible">True</T>
+  <V t="disabled" n="content_score" />
+  <T n="display_name">0x4105AA3F<!--String: "Comer {1.ObjectName|xxLower}"--></T>
+  <U n="display_name_text_tokens">
+    <L n="tokens">
+      <V t="participant_type">
+        <U n="participant_type">
+          <V t="from_participant" n="objects">
+            <U n="from_participant">
+              <E n="participant">Actor</E>
+            </U>
+          </V>
+        </U>
+      </V>
+      <V t="participant_type">
+        <U n="participant_type">
+          <V t="from_participant" n="objects">
+            <U n="from_participant">
+              <E n="participant">Object</E>
+            </U>
+          </V>
+        </U>
+      </V>
+    </L>
+  </U>
+  <V t="enabled" n="goal_height_limit" />
+  <L n="interaction_category_tags">
+    <E>Interaction_Consume</E>
+    <E>Interaction_Super</E>
+    <E>Interaction_All</E>
+    <E>Food_Any</E>
+  </L>
+  <V t="test_based" n="outcome">
+    <U n="test_based">
+      <L n="fallback_outcomes">
+        <U />
+      </L>
+    </U>
+  </V>
+  <T n="pie_menu_priority">10</T>
+  <U n="posture_preferences">
+    <T n="apply_penalties">True</T>
+    <L n="posture_cost_overrides">
+      <U>
+        <T n="key">117257<!--Posture: posture_HotTubSit--></T>
+        <T n="value">100</T>
+      </U>
+    </L>
+    <T n="prefer_surface">True</T>
+  </U>
+  <V t="disabled" n="posture_surface_slotted_object_preference" />
+  <V t="enabled" n="posture_target_preference">
+    <L n="enabled">
+      <U>
+        <E n="key">DINING_TABLE</E>
+        <T n="value">0</T>
+      </U>
+      <U>
+        <E n="key">SEATING_BARSTOOL</E>
+        <T n="value">2</T>
+      </U>
+      <U>
+        <E n="key">SEATING_BED</E>
+        <T n="value">0</T>
+      </U>
+      <U>
+        <E n="key">SEATING_DESK</E>
+        <T n="value">2</T>
+      </U>
+      <U>
+        <E n="key">SEATING_DINING</E>
+        <T n="value">4</T>
+      </U>
+      <U>
+        <E n="key">SEATING_LIVING</E>
+        <T n="value">4</T>
+      </U>
+      <U>
+        <E n="key">SEATING_LOVESEAT</E>
+        <T n="value">4</T>
+      </U>
+      <U>
+        <E n="key">SEATING_SOFA</E>
+        <T n="value">4</T>
+      </U>
+      <U>
+        <E n="key">SURFACE_COUNTER</E>
+        <T n="value">5</T>
+      </U>
+    </L>
+  </V>
+  <U n="progress_bar_enabled">
+    <V n="force_listen_statistic" t="enabled">
+      <U n="enabled">
+        <T n="statistic">16634<!--Commodity: commodity_Object_Consumable--></T>
+        <E n="subject">Object</E>
+        <U n="target_value">
+          <E n="comparison">GREATER</E>
+          <T n="value">0</T>
+        </U>
+      </U>
+    </V>
+  </U>
+  <V t="enabled" n="route_start_balloon">
+    <U n="enabled">
+      <U n="balloon">
+        <L n="balloon_choices">
+          <U>
+            <V n="item" t="balloon_icon">
+              <U n="balloon_icon">
+                <V t="participant" n="icon">
+                  <U n="participant">
+                    <L n="participant_type">
+                      <E>Object</E>
+                    </L>
+                  </U>
+                </V>
+              </U>
+            </V>
+          </U>
+        </L>
+        <L n="balloon_target">
+          <E>Actor</E>
+        </L>
+      </U>
+    </U>
+  </V>
+  <E n="scoring_priority">VERY HIGH</E>
+  <V t="enabled" n="sim_affinity_posture_scoring_data">
+    <U n="enabled">
+      <L n="my_scoring">
+        <U>
+          <V t="relationship_based" n="affinity_strategy" />
+          <T n="negate_tag">True</T>
+          <E n="running_interaction_tag">Sleeping</E>
+        </U>
+      </L>
+    </U>
+  </V>
+  <T n="sim_affinity_use_current_position_for_none">True</T>
+  <T n="subaction_selection_weight">15</T>
+  <V n="super_affordance_compatibility" t="literal">
+    <U n="literal">
+      <V n="default_inclusion" t="include_all">
+        <U n="include_all">
+          <L n="exclude_affordances">
+            <T>14431<!--SuperInteraction: toilet_Clean--></T>
+            <T>10456<!--SuperInteraction: toilet_Clean_Energized--></T>
+            <T>103790<!--GoHereSuperInteraction: terrain-Swimhere--></T>
+            <T>104856<!--WaypointInteraction: pool-swim--></T>
+            <T>129587<!--GoHereSuperInteraction: terrain-Swim_andChatHere--></T>
+            <T>144099<!--SuperInteraction: generic_Object_Toddler_Check_Out--></T>
+            <T>144287<!--SuperInteraction: toddler_Watch_Thinking--></T>
+            <T>153191<!--SuperInteraction: toddler_Watch_Performance--></T>
+            <T>156936<!--SuperInteraction: generic_Object_Toddler_Check_Out_HighChair--></T>
+          </L>
+          <L n="exclude_lists">
+            <T>30642<!--AffordanceList: AffordanceList_Phone--></T>
+            <T>101203<!--AffordanceList: affordanceList_ActivityTable--></T>
+          </L>
+        </U>
+      </V>
+    </U>
+  </V>
+  <E n="target_type">OBJECT</E>
+  <L n="test_autonomous">
+    <L>
+      <V t="buff">
+        <U n="buff">
+          <L n="blacklist">
+            <T>144745<!--Buff: buff_Toddler_AutonomyMod_InHighChair--></T>
+          </L>
+        </U>
+      </V>
+      <V t="statistic">
+        <U n="statistic">
+          <T n="stat">16591<!--Commodity: commodity_freshness--></T>
+          <V t="value_threshold" n="threshold">
+            <U n="value_threshold">
+              <E n="comparison">GREATER</E>
+              <T n="value">0</T>
+            </U>
+          </V>
+          <E n="who">Object</E>
+        </U>
+      </V>
+    </L>
+    <L>
+      <V t="buff">
+        <U n="buff">
+          <V n="whitelist" t="enabled">
+            <L n="enabled">
+              <T>144745<!--Buff: buff_Toddler_AutonomyMod_InHighChair--></T>
+            </L>
+          </V>
+        </U>
+      </V>
+      <V t="statistic">
+        <U n="statistic">
+          <T n="stat">16591<!--Commodity: commodity_freshness--></T>
+          <V t="value_threshold" n="threshold">
+            <U n="value_threshold">
+              <E n="comparison">GREATER</E>
+              <T n="value">0</T>
+            </U>
+          </V>
+          <E n="who">Object</E>
+        </U>
+      </V>
+      <V t="has_parent_object">
+        <U n="has_parent_object">
+          <V n="parent_object" t="enabled">
+            <E n="enabled">ActorPostureTarget</E>
+          </V>
+          <E n="targets">Object</E>
+        </U>
+      </V>
+    </L>
+  </L>
+  <V t="enabled" n="test_disallow_while_running">
+    <U n="enabled">
+      <L n="affordances">
+        <T>142865<!--SuperInteraction: generic_consume_food_toddler--></T>
+      </L>
+      <T n="test_self">True</T>
+    </U>
+  </V>
+  <L n="test_globals">
+    <V t="sim_info">
+      <U n="sim_info">
+        <V t="specified" n="ages">
+          <L n="specified">
+            <E>TODDLER</E>
+          </L>
+        </V>
+        <V t="specified" n="species">
+          <U n="specified">
+            <L n="species">
+              <E />
+            </L>
+          </U>
+        </V>
+        <E n="who">Actor</E>
+      </U>
+    </V>
+    <V t="state">
+      <U n="state">
+        <E n="operator">NOTEQUAL</E>
+        <T n="value">15108<!--CommodityBasedObjectStateValue: Consumable_Empty--></T>
+      </U>
+    </V>
+  </L>
+  <T n="time_overhead">30</T>
+</I>

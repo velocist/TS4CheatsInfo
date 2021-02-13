@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+
+<TuningRoot>
+    <Instance instance_type="snippet" class="FishingData" module="snippets" muid="EFF89D305D5395AD" instance_needs_reference="True" instance_subclasses_only="False" path="Snippets\Descriptions" use_guid_for_reference="True">
+        <TunableTuple name="value" class="TunableFishingData" display="Value" muid="C7C6F64F2ABCCC8" description="Manage all of the data for a particular fishing location." Deprecated="False" filter="0" group="General">
+            <TunableList name="possible_fish" class="TunableList" display="Possible Fish" muid="4CFC0623284852DD" min="1" description="If the Sim catches a fish, we'll pick one of these based on their weights.&#xA;Higher weighted fish have a higher chance of being caught." Deprecated="False" filter="0" group="General">
+                <TunableTuple class="TunableTuple" muid="78D8336C026C39D3" Deprecated="False" filter="0" group="General">
+                    <Tunable type="object" name="fish" class="TunableReference" display="Fish" muid="29684A1679A0AFEF" allow_none="False" Deprecated="False" filter="0" group="General" pack_safe="True" />
+                    <TunableTuple name="weight" class="TunableTunableMultiplier" display="Weight" muid="9D957CF739B8ABFE" description="A construct that determines a total multiplier value based on tunable tests." Deprecated="False" filter="0" group="General">
+                        <Tunable type="float" name="base_value" class="Tunable" default="1" display="Base Value" muid="3D5038C88CB6C432" description="The basic value to return if no modifications are applied." tuning_state="NeedsTuning" Deprecated="False" filter="0" group="General" />
+                        <TunableList name="multipliers" class="TunableList" display="Multipliers" muid="2F675852AC21A4A9" description="A list of multipliers to apply to base_value." Deprecated="False" filter="0" group="General">
+                            <TunableTuple class="TunableTuple" muid="D06ABA3D2D628B97" Deprecated="False" filter="0" group="General">
+                                <Tunable type="float" name="multiplier" class="TunableRange" default="1" display="Multiplier" muid="CE4DF919E604F77D" min="0" max="None" description="The multiplier to apply to base_value if the associated&#xA;tests pass." tuning_state="NeedsTuning" Deprecated="False" filter="0" group="General" />
+                                <TdescFragTag name="tests" class="TunableTestSet" display="Tests" muid="2B796A3B1ECBF2B2" description="A series of tests that must pass in order for multiplier to&#xA;be applied." filter="0" group="General" />
+                            </TunableTuple>
+                        </TunableList>
+                    </TunableTuple>
+                </TunableTuple>
+            </TunableList>
+            <TunableList name="possible_treasures" class="TunableList" display="Possible Treasures" muid="645840A390DF5F27" description="If the Sim catches a treasure, we'll pick one of these based on their weights.&#xA;Higher weighted treasures have a higher chance of being caught." Deprecated="False" filter="0" group="General">
+                <TunableTuple class="TunableTuple" muid="FA43FE12C56B5597" Deprecated="False" filter="0" group="General">
+                    <Tunable type="object" name="treasure" class="TunableReference" display="Treasure" muid="9235DCD24D22BDB9" allow_none="False" Deprecated="False" filter="0" group="General" pack_safe="True" />
+                    <TunableTuple name="weight" class="TunableTunableMultiplier" display="Weight" muid="E9FB9C20162B0488" description="A construct that determines a total multiplier value based on tunable tests." Deprecated="False" filter="0" group="General">
+                        <Tunable type="float" name="base_value" class="Tunable" default="1" display="Base Value" muid="2A750B3F371BB08D" description="The basic value to return if no modifications are applied." tuning_state="NeedsTuning" Deprecated="False" filter="0" group="General" />
+                        <TunableList name="multipliers" class="TunableList" display="Multipliers" muid="5340CE88DD511413" description="A list of multipliers to apply to base_value." Deprecated="False" filter="0" group="General">
+                            <TunableTuple class="TunableTuple" muid="D37F5D7BC70EC177" Deprecated="False" filter="0" group="General">
+                                <Tunable type="float" name="multiplier" class="TunableRange" default="1" display="Multiplier" muid="4742ACDE9FDC9631" min="0" max="None" description="The multiplier to apply to base_value if the associated&#xA;tests pass." tuning_state="NeedsTuning" Deprecated="False" filter="0" group="General" />
+                                <TdescFragTag name="tests" class="TunableTestSet" display="Tests" muid="611E3A8F59B12159" description="A series of tests that must pass in order for multiplier to&#xA;be applied." filter="0" group="General" />
+                            </TunableTuple>
+                        </TunableList>
+                    </TunableTuple>
+                </TunableTuple>
+            </TunableList>
+            <TunableTuple name="weight_fish" class="TunableTunableMultiplier" display="Weight Fish" muid="DAE46A82FEAEB9FD" description="A tunable list of tests and multipliers to apply to the weight &#xA;used to determine if the Sim will catch a fish instead of treasure &#xA;or junk. This will be used in conjunction with the Weight Junk and &#xA;Weight Treasure." Deprecated="False" filter="0" group="General">
+                <Tunable type="float" name="base_value" class="Tunable" default="1" display="Base Value" muid="7CBAD0852F0957CA" description="The basic value to return if no modifications are applied." tuning_state="NeedsTuning" Deprecated="False" filter="0" group="General" />
+                <TunableList name="multipliers" class="TunableList" display="Multipliers" muid="59DDDC31ABA06776" description="A list of multipliers to apply to base_value." Deprecated="False" filter="0" group="General">
+                    <TunableTuple class="TunableTuple" muid="BC38F77AA31E87F0" Deprecated="False" filter="0" group="General">
+                        <Tunable type="float" name="multiplier" class="TunableRange" default="1" display="Multiplier" muid="BA2D514C9C6BF3E" min="0" max="None" description="The multiplier to apply to base_value if the associated&#xA;tests pass." tuning_state="NeedsTuning" Deprecated="False" filter="0" group="General" />
+                        <TdescFragTag name="tests" class="TunableTestSet" display="Tests" muid="5F73C68C5A60A90" description="A series of tests that must pass in order for multiplier to&#xA;be applied." filter="0" group="General" />
+                    </TunableTuple>
+                </TunableList>
+            </TunableTuple>
+            <TunableTuple name="weight_junk" class="TunableTunableMultiplier" display="Weight Junk" muid="C965C992AC320" description="A tunable list of tests and multipliers to apply to the weight&#xA;used to determine if the Sim will catch junk instead of a fish or &#xA;treasure. This will be used in conjunction with the Weight Fish and &#xA;Weight Treasure." Deprecated="False" filter="0" group="General">
+                <Tunable type="float" name="base_value" class="Tunable" default="1" display="Base Value" muid="799D546DCA1E270A" description="The basic value to return if no modifications are applied." tuning_state="NeedsTuning" Deprecated="False" filter="0" group="General" />
+                <TunableList name="multipliers" class="TunableList" display="Multipliers" muid="C9AF1476191D301E" description="A list of multipliers to apply to base_value." Deprecated="False" filter="0" group="General">
+                    <TunableTuple class="TunableTuple" muid="D078A170BE6F19C1" Deprecated="False" filter="0" group="General">
+                        <Tunable type="float" name="multiplier" class="TunableRange" default="1" display="Multiplier" muid="5CB7C98ED3134B2A" min="0" max="None" description="The multiplier to apply to base_value if the associated&#xA;tests pass." tuning_state="NeedsTuning" Deprecated="False" filter="0" group="General" />
+                        <TdescFragTag name="tests" class="TunableTestSet" display="Tests" muid="384BE549286C953D" description="A series of tests that must pass in order for multiplier to&#xA;be applied." filter="0" group="General" />
+                    </TunableTuple>
+                </TunableList>
+            </TunableTuple>
+            <TunableTuple name="weight_treasure" class="TunableTunableMultiplier" display="Weight Treasure" muid="B56E928B878BC813" description="A tunable list of tests and multipliers to apply to the weight&#xA;used to determine if the Sim will catch a treasure instead of fish &#xA;or junk. This will be used in conjunction with the Weight Fish and &#xA;Weight Junk." Deprecated="False" filter="0" group="General">
+                <Tunable type="float" name="base_value" class="Tunable" default="1" display="Base Value" muid="85C902464A6E9AFE" description="The basic value to return if no modifications are applied." tuning_state="NeedsTuning" Deprecated="False" filter="0" group="General" />
+                <TunableList name="multipliers" class="TunableList" display="Multipliers" muid="8001133414608D71" description="A list of multipliers to apply to base_value." Deprecated="False" filter="0" group="General">
+                    <TunableTuple class="TunableTuple" muid="23B7EF4782A833EA" Deprecated="False" filter="0" group="General">
+                        <Tunable type="float" name="multiplier" class="TunableRange" default="1" display="Multiplier" muid="F976EF919E4C201A" min="0" max="None" description="The multiplier to apply to base_value if the associated&#xA;tests pass." tuning_state="NeedsTuning" Deprecated="False" filter="0" group="General" />
+                        <TdescFragTag name="tests" class="TunableTestSet" display="Tests" muid="E122F19D6899FF19" description="A series of tests that must pass in order for multiplier to&#xA;be applied." filter="0" group="General" />
+                    </TunableTuple>
+                </TunableList>
+            </TunableTuple>
+        </TunableTuple>
+    </Instance>
+
+    <VersionHistory>
+        <ActionList>
+            <Action type="kRename" old_muid="3B7E17052CFC868" new_muid="3D5038C88CB6C432" />
+            <Action type="kRename" old_muid="2C4E465735933781" new_muid="2A750B3F371BB08D" />
+            <Action type="kRename" old_muid="9A98A72E9094468" new_muid="7CBAD0852F0957CA" />
+            <Action type="kRename" old_muid="DA0364DB7C0A07B1" new_muid="799D546DCA1E270A" />
+            <Action type="kRename" old_muid="BE885AC259E9AD65" new_muid="85C902464A6E9AFE" />
+        </ActionList>
+    </VersionHistory>
+</TuningRoot>

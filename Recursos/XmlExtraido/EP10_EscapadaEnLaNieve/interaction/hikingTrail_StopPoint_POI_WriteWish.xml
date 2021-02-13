@@ -1,0 +1,180 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<I c="SuperInteraction" i="interaction" m="interactions.base.super_interaction" n="hikingTrail_StopPoint_POI_WriteWish" s="246318">
+  <L n="_constraints">
+    <U>
+      <L n="constraints">
+        <U>
+          <V t="facing" n="value" />
+        </U>
+        <U>
+          <V n="value" t="cone">
+            <U n="cone">
+              <T n="max_radius">1.5</T>
+              <T n="min_radius">0.5</T>
+            </U>
+          </V>
+        </U>
+      </L>
+    </U>
+  </L>
+  <V t="enabled" n="_saveable" />
+  <T n="allow_autonomous">False</T>
+  <T n="allow_teleport_style_injection">False</T>
+  <T n="allow_user_directed">True</T>
+  <T n="attention_cost">0.5</T>
+  <V n="basic_content" t="one_shot">
+    <U n="one_shot">
+      <U n="animation_ref">
+        <T n="factory">251060<!--AnimationElement: hikingTrail_WriteWish--></T>
+        <U n="overrides">
+          <V n="balloons" t="enabled">
+            <L n="enabled">
+              <U>
+                <L n="balloon_choices">
+                  <U>
+                    <V n="item" t="balloon_icon">
+                      <U n="balloon_icon">
+                        <V t="participant" n="icon">
+                          <U n="participant">
+                            <L n="participant_type">
+                              <E>Object</E>
+                            </L>
+                          </U>
+                        </V>
+                      </U>
+                    </V>
+                  </U>
+                </L>
+                <L n="balloon_target">
+                  <E>Actor</E>
+                </L>
+              </U>
+            </L>
+          </V>
+        </U>
+      </U>
+    </U>
+  </V>
+  <V t="disabled" n="basic_reserve_object" />
+  <V t="disabled" n="content_score" />
+  <T n="display_name">0x8F481164<!--String: "Escribir deseo"--></T>
+  <U n="display_name_text_tokens">
+    <L n="tokens">
+      <V t="participant_type">
+        <U n="participant_type">
+          <V t="from_participant" n="objects">
+            <U n="from_participant">
+              <E n="participant">Actor</E>
+            </U>
+          </V>
+        </U>
+      </V>
+      <V t="participant_type">
+        <U n="participant_type">
+          <V t="from_participant" n="objects">
+            <U n="from_participant">
+              <E n="participant">Object</E>
+            </U>
+          </V>
+        </U>
+      </V>
+    </L>
+  </U>
+  <L n="interaction_category_tags">
+    <E>Interaction_Super</E>
+    <E>Interaction_All</E>
+    <E>Interaction_Lifestyles_FrequentTraveler_OneShot</E>
+  </L>
+  <V n="outcome" t="test_based">
+    <U n="test_based">
+      <L n="fallback_outcomes">
+        <U>
+          <U n="outcome">
+            <L n="basic_extras">
+              <V t="buff_fire_and_forget">
+                <U n="buff_fire_and_forget">
+                  <U n="buff">
+                    <V t="enabled" n="buff_reason">
+                      <T n="enabled">0x85FAF0A4<!--String: "(Por escribir un deseo en una tablilla ema)"--></T>
+                    </V>
+                    <T n="buff_type">249889<!--Buff: buff_HikingTrail_POI_Wish_Happy--></T>
+                  </U>
+                </U>
+              </V>
+            </L>
+            <L n="events_to_send">
+              <E>event_hikingtrail_20pts</E>
+            </L>
+            <E n="outcome_result">SUCCESS</E>
+          </U>
+          <U n="weight">
+            <T n="base_value">3</T>
+          </U>
+        </U>
+        <U>
+          <U n="outcome">
+            <L n="basic_extras">
+              <V t="buff_fire_and_forget">
+                <U n="buff_fire_and_forget">
+                  <U n="buff">
+                    <V t="enabled" n="buff_reason">
+                      <T n="enabled">0x85FAF0A4<!--String: "(Por escribir un deseo en una tablilla ema)"--></T>
+                    </V>
+                    <T n="buff_type">249888<!--Buff: buff_HikingTrail_POI_Wish_Sad--></T>
+                  </U>
+                </U>
+              </V>
+            </L>
+            <L n="events_to_send">
+              <E>event_hikingtrail_15pts</E>
+            </L>
+            <E n="outcome_result">FAILURE</E>
+          </U>
+          <U n="weight">
+            <T n="base_value">3</T>
+            <L n="multipliers">
+              <U>
+                <T n="multiplier">2.5</T>
+                <L n="tests">
+                  <L>
+                    <V t="test_set_reference">
+                      <T n="test_set_reference">179130<!--TestSetInstance: testSetInstance_EmotionNegative_MoodBuffs_Actor--></T>
+                    </V>
+                  </L>
+                </L>
+              </U>
+            </L>
+          </U>
+        </U>
+      </L>
+      <L n="tested_outcomes" />
+    </U>
+  </V>
+  <E n="scoring_priority">NORMAL</E>
+  <T n="subaction_selection_weight">1</T>
+  <E n="target_type">OBJECT</E>
+  <L n="test_globals">
+    <V t="sim_info">
+      <U n="sim_info">
+        <V t="specified" n="ages">
+          <L n="specified">
+            <E>TEEN</E>
+            <E>YOUNGADULT</E>
+            <E>ADULT</E>
+            <E>ELDER</E>
+            <E>CHILD</E>
+          </L>
+        </V>
+        <V t="specified" n="species">
+          <U n="specified">
+            <L n="species">
+              <E />
+            </L>
+          </U>
+        </V>
+        <E n="who">Actor</E>
+      </U>
+    </V>
+  </L>
+  <T n="time_overhead">30</T>
+</I>

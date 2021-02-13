@@ -1,0 +1,156 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<I c="SuperInteraction" i="interaction" m="interactions.base.super_interaction" n="ancientArtifact_MuseumPatron_DonateToMuseum" s="179093">
+  <L n="_constraints">
+    <U>
+      <L n="constraints">
+        <U>
+          <V n="value" t="circle" />
+        </U>
+      </L>
+    </U>
+    <U>
+      <L n="constraints">
+        <U>
+          <V n="value" t="facing" />
+        </U>
+      </L>
+    </U>
+  </L>
+  <V t="enabled" n="_saveable" />
+  <T n="allow_autonomous">False</T>
+  <T n="allow_from_sim_inventory">True</T>
+  <T n="attention_cost">0.5</T>
+  <V t="one_shot" n="basic_content">
+    <U n="one_shot">
+      <U n="animation_ref">
+        <T n="factory">23926<!--AnimationElement: Generic_PickUp--></T>
+      </U>
+    </U>
+  </V>
+  <L n="basic_extras">
+    <V t="destroy_object">
+      <U n="destroy_object">
+        <V t="from_participant" n="objects_to_destroy">
+          <U n="from_participant">
+            <E n="participant">Object</E>
+          </U>
+        </V>
+        <V t="at_end" n="timing">
+          <U n="at_end">
+            <E n="criticality">NotCritical</E>
+          </U>
+        </V>
+      </U>
+    </V>
+    <V t="notification">
+      <U n="notification">
+        <V n="dialog" t="single">
+          <V n="single" t="literal">
+            <U n="literal">
+              <V t="enabled" n="icon">
+                <V t="participant" n="enabled">
+                  <U n="participant">
+                    <L n="participant_type">
+                      <E>Object</E>
+                    </L>
+                  </U>
+                </V>
+              </V>
+              <V t="enabled" n="secondary_icon">
+                <V n="enabled" t="participant" />
+              </V>
+              <V n="text" t="single">
+                <T n="single">0x7AC384BC<!--String: "¡Has donado un objeto antiguo al museo!"--></T>
+              </V>
+            </U>
+          </V>
+        </V>
+        <V t="at_end" n="timing" />
+      </U>
+    </V>
+  </L>
+  <V t="disabled" n="content_score" />
+  <T n="display_name">0x1BC1A792<!--String: "Donar al museo"--></T>
+  <U n="display_name_text_tokens">
+    <L n="tokens">
+      <V t="participant_type">
+        <U n="participant_type">
+          <V t="from_participant" n="objects">
+            <U n="from_participant">
+              <E n="participant">Actor</E>
+            </U>
+          </V>
+        </U>
+      </V>
+      <V t="participant_type">
+        <U n="participant_type">
+          <V t="from_participant" n="objects">
+            <U n="from_participant">
+              <E n="participant">Object</E>
+            </U>
+          </V>
+        </U>
+      </V>
+    </L>
+  </U>
+  <V t="enabled" n="display_name_wrappers">
+    <U n="enabled">
+      <L n="wrappers">
+        <U>
+          <L n="test">
+            <L>
+              <V t="trait">
+                <U n="trait">
+                  <L n="blacklist_traits">
+                    <T>200510<!--Trait: trait_Hidden_isDisguised--></T>
+                  </L>
+                </U>
+              </V>
+              <V t="sim_info_gameplay_options" />
+            </L>
+          </L>
+          <T n="wrapper">0xD20B3C9B<!--String: "{0.String} <font color='#199C2C'>(+▰fama)</font>"--></T>
+        </U>
+      </L>
+    </U>
+  </V>
+  <L n="interaction_category_tags">
+    <E>Interaction_Super</E>
+    <E>Interaction_All</E>
+  </L>
+  <V n="outcome" t="single">
+    <U n="single">
+      <U n="actions">
+        <L n="loot_list">
+          <T>179094<!--LootActions: loot_MuseumPatron_DonateToMuseum--></T>
+          <T>188892<!--LootActions: loot_Fame_Actor_Large--></T>
+        </L>
+      </U>
+    </U>
+  </V>
+  <E n="scoring_priority">NORMAL</E>
+  <T n="subaction_selection_weight">1</T>
+  <E n="target_type">OBJECT</E>
+  <L n="test_globals">
+    <V t="sim_info">
+      <U n="sim_info">
+        <V t="specified" n="ages" />
+        <V t="specified" n="species">
+          <U n="specified">
+            <L n="species">
+              <E />
+            </L>
+          </U>
+        </V>
+        <E n="who">Actor</E>
+      </U>
+    </V>
+    <V t="test_set_reference">
+      <T n="test_set_reference">180373<!--TestSetInstance: testSet_MuseumPatron_DonateToMuseum--></T>
+    </V>
+    <V t="test_set_reference">
+      <T n="test_set_reference">101205<!--TestSetInstance: testSet_LotOwner_ActiveLot--></T>
+    </V>
+  </L>
+  <T n="time_overhead">30</T>
+</I>

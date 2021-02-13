@@ -1,0 +1,153 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<I c="NPCInviteSituationDramaNode" i="drama_node" m="drama_scheduler.npc_invite_situation_drama_node" n="dramaNode_NPCInvite_ClubFriends" s="126452">
+  <V n="_NPC_host_job" t="enabled">
+    <T n="enabled">126457<!--SituationJob: job_ClubParty_NPC_Invite--></T>
+  </V>
+  <V n="_NPC_hosted_situation_player_job" t="enabled">
+    <T n="enabled">126458<!--SituationJob: job_ClubParty_Actor_Target--></T>
+  </V>
+  <L n="_NPC_hosted_situation_start_messages">
+    <U>
+      <U n="dialog">
+        <V n="bring_other_sims" t="enabled">
+          <U n="enabled">
+            <U n="picker_dialog">
+              <V t="static_count" n="max_selectable">
+                <U n="static_count">
+                  <T n="number_selectable">7</T>
+                </U>
+              </V>
+              <T n="min_selectable">0</T>
+              <V n="text" t="enabled">
+                <V n="enabled" t="single">
+                  <T n="single">0xB4A28BA2<!--String: "Pasar el rato con amigos del club"--></T>
+                </V>
+              </V>
+              <T n="text_cancel">0x30DC415C<!--String: "Declinar"--></T>
+              <T n="text_ok">0xC15E5348<!--String: "Aceptar"--></T>
+              <V t="enabled" n="title">
+                <T n="enabled">0x415BA726<!--String: "Seleccionar acompañantes"--></T>
+              </V>
+            </U>
+            <T n="situation_job">126658<!--SituationJob: job_ClubParty_Invite_SimPicker--></T>
+            <T n="text">0x41CD82EF<!--String: "Aceptar y seleccionar acompañantes"--></T>
+            <T n="travel_with_filter">109049<!--TunableSimFilter: filter_HasMet_ctyae_NotBusy--></T>
+          </U>
+        </V>
+        <E n="phone_ring_type">BUZZ</E>
+        <V n="text" t="single">
+          <T n="single">0x34E89C5F<!--String: "Hola, {0.SimFirstName}, soy {1.SimFirstName}. ¿Te apetece quedar esta noche?"--></T>
+        </V>
+        <V t="enabled" n="text_tokens">
+          <U n="enabled">
+            <L n="tokens">
+              <V t="participant_type" />
+              <V t="participant_type">
+                <U n="participant_type">
+                  <V t="from_participant" n="objects">
+                    <U n="from_participant">
+                      <E n="participant">TargetSim</E>
+                    </U>
+                  </V>
+                </U>
+              </V>
+            </L>
+          </U>
+        </V>
+        <T n="zone_title">0xC79595F2<!--String: "{0.String}: {1.String}"--></T>
+      </U>
+    </U>
+  </L>
+  <T n="_situation_to_run">126453<!--SituationSimple: situation_NPCInvites_ClubParty--></T>
+  <T n="allow_during_work_hours">False</T>
+  <V t="node_cooldown" n="cooldown_data">
+    <U n="node_cooldown">
+      <V n="duration" t="duration">
+        <T n="duration">4</T>
+      </V>
+    </U>
+  </V>
+  <U n="min_and_max_times">
+    <T n="lower_bound">0</T>
+    <T n="upper_bound">24</T>
+  </U>
+  <L n="pretests">
+    <L />
+  </L>
+  <L n="receiver_sim_pretests">
+    <L>
+      <V t="sim_info">
+        <U n="sim_info">
+          <V t="specified" n="ages">
+            <L n="specified">
+              <E>TEEN</E>
+              <E>YOUNGADULT</E>
+              <E>ADULT</E>
+              <E>ELDER</E>
+            </L>
+          </V>
+          <V t="specified" n="species">
+            <U n="specified">
+              <L n="species">
+                <E />
+              </L>
+            </U>
+          </V>
+        </U>
+      </V>
+    </L>
+  </L>
+  <L n="run_tests">
+    <L>
+      <V t="relationship">
+        <U n="relationship">
+          <U n="prohibited_relationship_bits">
+            <L n="match_any">
+              <T>240110<!--RelationshipBitCollection: rbc_Sentiment_Negative--></T>
+            </L>
+          </U>
+          <L n="subject">
+            <E>Actor</E>
+          </L>
+          <L n="target_sim">
+            <E>TargetSim</E>
+          </L>
+        </U>
+      </V>
+    </L>
+  </L>
+  <V t="enabled" n="scoring">
+    <U n="enabled">
+      <T n="base_score">20</T>
+    </U>
+  </V>
+  <V n="sender_sim_info" t="sim_filter">
+    <U n="sim_filter">
+      <L n="blacklist_participants">
+        <E />
+      </L>
+      <T n="sim_filter">126450<!--TunableSimFilter: filter_SimFriendInSameClub--></T>
+    </U>
+  </V>
+  <V t="schedule" n="time_option">
+    <U n="schedule">
+      <L n="valid_times">
+        <U>
+          <U n="days_available">
+            <T n="0 SUNDAY">True</T>
+            <T n="1 MONDAY">True</T>
+            <T n="2 TUESDAY">True</T>
+            <T n="3 WEDNESDAY">True</T>
+            <T n="4 THURSDAY">True</T>
+            <T n="5 FRIDAY">True</T>
+            <T n="6 SATURDAY">True</T>
+          </U>
+          <T n="duration">10</T>
+          <U n="start_time">
+            <T n="hour">10</T>
+          </U>
+        </U>
+      </L>
+    </U>
+  </V>
+</I>

@@ -1,0 +1,634 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<I c="SuperInteraction" i="interaction" m="interactions.base.super_interaction" n="beachCave_Content_TravelCaveWaters" s="209081">
+  <V t="resource_key" n="_icon">
+    <U n="resource_key">
+      <T n="key" p="InGame\UI\Icons\InteractionQueue\IconQueue_Cave.png">2f7d0004:00000000:2fed736173f14895</T>
+    </U>
+  </V>
+  <V t="enabled" n="_saveable" />
+  <T n="attention_cost">0.5</T>
+  <V t="flexible_length" n="basic_content">
+    <U n="flexible_length">
+      <L n="conditional_actions">
+        <V t="literal">
+          <U n="literal">
+            <L n="conditions">
+              <V t="time_based">
+                <U n="time_based">
+                  <T n="max_time">30</T>
+                  <T n="min_time">20</T>
+                </U>
+              </V>
+            </L>
+            <E n="interaction_action">EXIT_NATURALLY</E>
+          </U>
+        </V>
+      </L>
+      <V t="looping_content" n="content">
+        <U n="looping_content">
+          <U n="animation_ref">
+            <T n="factory">210416<!--AnimationElement: postureIdle_BeachCave--></T>
+          </U>
+        </U>
+      </V>
+      <V n="periodic_stat_change" t="enabled">
+        <U n="enabled">
+          <L n="operations">
+            <V t="reference">
+              <T n="reference">248870<!--PeriodicStatChangeOperation: periodicStatChangeOperation_Lifestyles_Progress_FrequentTraveler--></T>
+            </V>
+            <V t="reference">
+              <T n="reference">249770<!--PeriodicStatChangeOperation: periodicStatChangeOperation_Lifestyles_Liked_AdrenalineSeeker--></T>
+            </V>
+            <V t="reference">
+              <T n="reference">249762<!--PeriodicStatChangeOperation: periodicStatChangeOperation_Lifestyles_Progress_AdrenalineSeeker--></T>
+            </V>
+            <V t="reference">
+              <T n="reference">252299<!--PeriodicStatChangeOperation: periodictStatChange_Adventurous_Adventuring--></T>
+            </V>
+          </L>
+        </U>
+      </V>
+    </U>
+  </V>
+  <V t="disabled" n="content_score" />
+  <T n="counts_as_inside">True</T>
+  <T n="display_name">0xD2D60C37<!--String: "Recorrer las aguas de la cueva"--></T>
+  <U n="display_name_text_tokens">
+    <L n="tokens">
+      <V t="participant_type">
+        <U n="participant_type">
+          <V t="from_participant" n="objects">
+            <U n="from_participant">
+              <E n="participant">Actor</E>
+            </U>
+          </V>
+        </U>
+      </V>
+      <V t="participant_type">
+        <U n="participant_type">
+          <V t="from_participant" n="objects">
+            <U n="from_participant">
+              <E n="participant">Object</E>
+            </U>
+          </V>
+        </U>
+      </V>
+    </L>
+  </U>
+  <L n="interaction_category_tags">
+    <E>Interaction_Super</E>
+    <E>Interaction_All</E>
+    <E>Interaction_Lifestyles_FrequentTraveler_FlexibleLength</E>
+    <E>Interaction_Lifestyles_AdrenalineSeeker_FlexibleLength</E>
+  </L>
+  <V n="outcome" t="test_based">
+    <U n="test_based">
+      <L n="fallback_outcomes">
+        <U>
+          <U n="outcome">
+            <L n="basic_extras">
+              <V t="notification">
+                <U n="notification">
+                  <V n="dialog" t="single">
+                    <V n="single" t="literal">
+                      <U n="literal">
+                        <V t="enabled" n="icon">
+                          <V n="enabled" t="resource_key">
+                            <U n="resource_key">
+                              <T n="key" p="InEP07\UI\Icons\Notifications\notification_cave.png">2f7d0004:00000000:74bde32cc38b5600</T>
+                            </U>
+                          </V>
+                        </V>
+                        <V t="enabled" n="secondary_icon">
+                          <V n="enabled" t="participant" />
+                        </V>
+                        <V n="text" t="single">
+                          <T n="single">0x58B18956<!--String: "Mientras {0.SimFirstName} recorría la caverna con una linterna, vio algo resplandeciente en las rocas de la parte superior y decidió escalar los resbaladizos muros de piedra para echar un vistazo.\n\nTomándose su tiempo y recomponiéndose tras unos cuantos pasos en falso, {0.SimFirstName} consiguió hacerse con el alejado objeto."--></T>
+                        </V>
+                        <V t="enabled" n="title">
+                          <T n="enabled">0x46123038<!--String: "Destello fuera del alcance"--></T>
+                        </V>
+                      </U>
+                    </V>
+                  </V>
+                </U>
+              </V>
+            </L>
+            <L n="continuation">
+              <U>
+                <T n="affordance">210447<!--SuperInteraction: beachCave_Exit--></T>
+              </U>
+            </L>
+            <L n="loot_list">
+              <T>209127<!--LootActions: loot_BeachCave_GlintOutOfReach_Outcome1--></T>
+              <T>209468<!--LootActions: loot_IslandConservation_Progression_1--></T>
+            </L>
+          </U>
+          <U n="weight">
+            <L n="multipliers">
+              <U>
+                <T n="multiplier">2</T>
+                <L n="tests">
+                  <L>
+                    <V t="skill_test">
+                      <U n="skill_test">
+                        <T n="skill">16659<!--Skill: skill_Fitness--></T>
+                        <V n="skill_range" t="interval">
+                          <U n="interval">
+                            <U n="skill_interval">
+                              <T n="lower_bound">3</T>
+                              <T n="upper_bound">10</T>
+                            </U>
+                          </U>
+                        </V>
+                      </U>
+                    </V>
+                  </L>
+                </L>
+              </U>
+              <U>
+                <T n="multiplier">9</T>
+                <L n="tests">
+                  <L>
+                    <V t="career_gig_test">
+                      <U n="career_gig_test">
+                        <T n="career">207004<!--Career: career_OddJob--></T>
+                        <V n="test_type" t="specific_gigs">
+                          <U n="specific_gigs">
+                            <L n="gigs">
+                              <T>208950<!--HomeAssignmentGig: homeAssignmentGig_OddJob_Treasure--></T>
+                            </L>
+                          </U>
+                        </V>
+                      </U>
+                    </V>
+                  </L>
+                </L>
+              </U>
+            </L>
+          </U>
+        </U>
+        <U>
+          <U n="outcome">
+            <L n="basic_extras">
+              <V t="notification">
+                <U n="notification">
+                  <V n="dialog" t="single">
+                    <V n="single" t="literal">
+                      <U n="literal">
+                        <V t="enabled" n="icon">
+                          <V n="enabled" t="resource_key">
+                            <U n="resource_key">
+                              <T n="key" p="InEP07\UI\Icons\Notifications\notification_cave.png">2f7d0004:00000000:74bde32cc38b5600</T>
+                            </U>
+                          </V>
+                        </V>
+                        <V t="enabled" n="secondary_icon">
+                          <V n="enabled" t="participant" />
+                        </V>
+                        <V n="text" t="single">
+                          <T n="single">0xFDB4075E<!--String: "Mientras {0.SimFirstName} recorría la caverna con una linterna, vio algo resplandeciente en las rocas de la parte superior y decidió escalar los resbaladizos muros de piedra para echar un vistazo.\n\nAunque no tardó en llegar arriba, justo cuando iba a alcanzar lo que había visto desde abajo, le falló la pierna y se pegó un batacazo contra el suelo.\n\nPor suerte, no se rompió nada, aunque su orgullo sí que salió algo maltrecho."--></T>
+                        </V>
+                        <V t="enabled" n="title">
+                          <T n="enabled">0x46123038<!--String: "Destello fuera del alcance"--></T>
+                        </V>
+                      </U>
+                    </V>
+                  </V>
+                </U>
+              </V>
+            </L>
+            <L n="continuation">
+              <U>
+                <T n="affordance">210447<!--SuperInteraction: beachCave_Exit--></T>
+              </U>
+            </L>
+            <L n="loot_list">
+              <T>209135<!--LootActions: loot_BeachCave_GlintOutOfReach_Outcome2--></T>
+            </L>
+          </U>
+        </U>
+        <U>
+          <U n="outcome">
+            <L n="basic_extras">
+              <V t="notification">
+                <U n="notification">
+                  <V n="dialog" t="single">
+                    <V n="single" t="literal">
+                      <U n="literal">
+                        <V t="enabled" n="icon">
+                          <V n="enabled" t="resource_key">
+                            <U n="resource_key">
+                              <T n="key" p="InEP07\UI\Icons\Notifications\notification_cave.png">2f7d0004:00000000:74bde32cc38b5600</T>
+                            </U>
+                          </V>
+                        </V>
+                        <V t="enabled" n="secondary_icon">
+                          <V n="enabled" t="participant" />
+                        </V>
+                        <V n="text" t="single">
+                          <T n="single">0xC576E14C<!--String: "Mientras nadaba por los múltiples pasadizos acuáticos de la cueva, {0.SimFirstName} divisó algo en el fondo de uno de los estanques poco profundos de las cavernas.\n\nSumergiéndose en busca de su presa, {0.SimFirstName} logró echarle el guante a una cartera vieja.\n\nCon la convicción de que llevaba allí mucho, mucho tiempo, {0.SimFirstName} se guardó su contenido y siguió adelante con su aventura."--></T>
+                        </V>
+                        <V t="enabled" n="title">
+                          <T n="enabled">0x331A770<!--String: "Piscinas subterráneas"--></T>
+                        </V>
+                      </U>
+                    </V>
+                  </V>
+                </U>
+              </V>
+            </L>
+            <L n="continuation">
+              <U>
+                <T n="affordance">210447<!--SuperInteraction: beachCave_Exit--></T>
+              </U>
+            </L>
+            <L n="loot_list">
+              <T>209145<!--LootActions: loot_BeachCave_UndergroundPools_Outcome1--></T>
+              <T>209468<!--LootActions: loot_IslandConservation_Progression_1--></T>
+            </L>
+          </U>
+          <U n="weight">
+            <L n="multipliers">
+              <U>
+                <T n="multiplier">2</T>
+                <L n="tests">
+                  <L>
+                    <V t="skill_test">
+                      <U n="skill_test">
+                        <T n="skill">16659<!--Skill: skill_Fitness--></T>
+                        <V n="skill_range" t="interval">
+                          <U n="interval">
+                            <U n="skill_interval">
+                              <T n="lower_bound">5</T>
+                            </U>
+                          </U>
+                        </V>
+                      </U>
+                    </V>
+                  </L>
+                </L>
+              </U>
+            </L>
+          </U>
+        </U>
+        <U>
+          <U n="outcome">
+            <L n="basic_extras">
+              <V t="notification">
+                <U n="notification">
+                  <V n="dialog" t="single">
+                    <V n="single" t="literal">
+                      <U n="literal">
+                        <V t="enabled" n="icon">
+                          <V n="enabled" t="resource_key">
+                            <U n="resource_key">
+                              <T n="key" p="InEP07\UI\Icons\Notifications\notification_cave.png">2f7d0004:00000000:74bde32cc38b5600</T>
+                            </U>
+                          </V>
+                        </V>
+                        <V t="enabled" n="secondary_icon">
+                          <V n="enabled" t="participant" />
+                        </V>
+                        <V n="text" t="single">
+                          <T n="single">0x2D0E313C<!--String: "Mientras nadaba por los múltiples pasadizos acuáticos de la cueva, {0.SimFirstName} divisó algo en el fondo de uno de los estanques poco profundos de las cavernas.\n\nTras sumergirse en busca de su presa, {0.SimFirstName} descubrió que le había echado el guante a un puñado de algas que la marea habría arrastrado a la superficie en algún momento.\n\n{M0.Decepcionado}{F0.Decepcionada}, decidió poner fin a su exploración, contentándose con lo que había encontrado."--></T>
+                        </V>
+                        <V t="enabled" n="title">
+                          <T n="enabled">0x331A770<!--String: "Piscinas subterráneas"--></T>
+                        </V>
+                      </U>
+                    </V>
+                  </V>
+                </U>
+              </V>
+            </L>
+            <L n="continuation">
+              <U>
+                <T n="affordance">210447<!--SuperInteraction: beachCave_Exit--></T>
+              </U>
+            </L>
+            <L n="loot_list">
+              <T>210482<!--LootActions: loot_BeachCave_UndergroundPools_Outcome2--></T>
+            </L>
+          </U>
+          <U n="weight">
+            <L n="multipliers">
+              <U>
+                <T n="multiplier">1.5</T>
+                <L n="tests">
+                  <L>
+                    <V t="skill_test">
+                      <U n="skill_test">
+                        <T n="skill">16659<!--Skill: skill_Fitness--></T>
+                        <V n="skill_range" t="interval">
+                          <U n="interval">
+                            <U n="skill_interval">
+                              <T n="lower_bound">5</T>
+                            </U>
+                          </U>
+                        </V>
+                      </U>
+                    </V>
+                  </L>
+                </L>
+              </U>
+            </L>
+          </U>
+        </U>
+        <U>
+          <U n="outcome">
+            <L n="basic_extras">
+              <V t="notification">
+                <U n="notification">
+                  <V n="dialog" t="single">
+                    <V n="single" t="literal">
+                      <U n="literal">
+                        <V t="enabled" n="icon">
+                          <V n="enabled" t="resource_key">
+                            <U n="resource_key">
+                              <T n="key" p="InEP07\UI\Icons\Notifications\notification_cave.png">2f7d0004:00000000:74bde32cc38b5600</T>
+                            </U>
+                          </V>
+                        </V>
+                        <V t="enabled" n="secondary_icon">
+                          <V n="enabled" t="participant" />
+                        </V>
+                        <V n="text" t="single">
+                          <T n="single">0x6D62517D<!--String: "{0.SimFirstName} se pasó su incursión a la cueva navegando las aguas de los numerosos tubos de lava originados durante la formación de la isla.\n\nEn uno de ellos, dio con un conglomerado de cristales inusuales que sobresalía de los muros. Tentando a la suerte, logró desprender unos cuantos y se los llevó de vuelta a la superficie."--></T>
+                        </V>
+                        <V t="enabled" n="title">
+                          <T n="enabled">0xB757FFBF<!--String: "Tubos de lava"--></T>
+                        </V>
+                      </U>
+                    </V>
+                  </V>
+                </U>
+              </V>
+            </L>
+            <L n="continuation">
+              <U>
+                <T n="affordance">210447<!--SuperInteraction: beachCave_Exit--></T>
+              </U>
+            </L>
+            <L n="loot_list">
+              <T>209151<!--LootActions: loot_BeachCave_LavaTubes_Outcome1--></T>
+            </L>
+          </U>
+          <U n="weight">
+            <L n="multipliers">
+              <U>
+                <T n="multiplier">2</T>
+                <L n="tests">
+                  <L>
+                    <V t="skill_test">
+                      <U n="skill_test">
+                        <T n="skill">16659<!--Skill: skill_Fitness--></T>
+                        <V n="skill_range" t="interval">
+                          <U n="interval">
+                            <U n="skill_interval">
+                              <T n="lower_bound">5</T>
+                            </U>
+                          </U>
+                        </V>
+                      </U>
+                    </V>
+                  </L>
+                </L>
+              </U>
+            </L>
+          </U>
+        </U>
+        <U>
+          <U n="outcome">
+            <L n="basic_extras">
+              <V t="notification">
+                <U n="notification">
+                  <V n="dialog" t="single">
+                    <V n="single" t="literal">
+                      <U n="literal">
+                        <V t="enabled" n="icon">
+                          <V n="enabled" t="resource_key">
+                            <U n="resource_key">
+                              <T n="key" p="InEP07\UI\Icons\Notifications\notification_cave.png">2f7d0004:00000000:74bde32cc38b5600</T>
+                            </U>
+                          </V>
+                        </V>
+                        <V t="enabled" n="secondary_icon">
+                          <V n="enabled" t="participant" />
+                        </V>
+                        <V n="text" t="single">
+                          <T n="single">0x812B8177<!--String: "{0.SimFirstName} se pasó su incursión a la cueva navegando las aguas de los numerosos tubos de lava originados durante la formación de la isla.\n\nEn uno de ellos, sintió el roce de algo en su pierna: un largo tentáculo que salía de otro de los pasajes estaba intentando {M0.agarrarlo}{F0.agarrarla}.\n\nTras dar un tirón para liberarse del apéndice, {0.SimFirstName} volvió como alma que lleva el diablo al lugar por el que había entrado a los tubos. No queriendo arriesgarse a que el depredador contara con un segundo intento, decidió dar por terminada la excursión y volver a la entrada de la cueva."--></T>
+                        </V>
+                        <V t="enabled" n="title">
+                          <T n="enabled">0xB757FFBF<!--String: "Tubos de lava"--></T>
+                        </V>
+                      </U>
+                    </V>
+                  </V>
+                </U>
+              </V>
+            </L>
+            <L n="continuation">
+              <U>
+                <T n="affordance">210449<!--SuperInteraction: beachCave_Exit_Failure--></T>
+              </U>
+            </L>
+            <L n="loot_list">
+              <T>209158<!--LootActions: loot_BeachCave_LavaTubes_Outcome2--></T>
+            </L>
+          </U>
+        </U>
+        <U>
+          <U n="outcome">
+            <L n="basic_extras">
+              <V t="notification">
+                <U n="notification">
+                  <V n="dialog" t="single">
+                    <V n="single" t="literal">
+                      <U n="literal">
+                        <V t="enabled" n="icon">
+                          <V n="enabled" t="resource_key">
+                            <U n="resource_key">
+                              <T n="key" p="InEP07\UI\Icons\Notifications\notification_cave.png">2f7d0004:00000000:74bde32cc38b5600</T>
+                            </U>
+                          </V>
+                        </V>
+                        <V t="enabled" n="secondary_icon">
+                          <V n="enabled" t="participant" />
+                        </V>
+                        <V n="text" t="single">
+                          <T n="single">0x52F98D0A<!--String: "Explorando las profundidades de la cueva, {0.SimFirstName} descubrió una playa subterránea ocupada por los restos de un antiguo naufragio.\n\nTras invertir algo de tiempo en explorar el dilapidado navío, {0.SimFirstName} decidió llevarse de vuelta un souvenir de su descubrimiento."--></T>
+                        </V>
+                        <V t="enabled" n="title">
+                          <T n="enabled">0xED925D44<!--String: "Restos de naufragio"--></T>
+                        </V>
+                      </U>
+                    </V>
+                  </V>
+                </U>
+              </V>
+            </L>
+            <L n="continuation">
+              <U>
+                <T n="affordance">210447<!--SuperInteraction: beachCave_Exit--></T>
+              </U>
+            </L>
+            <L n="loot_list">
+              <T>209170<!--LootActions: loot_BeachCave_AncientWreck_Outcome1--></T>
+            </L>
+          </U>
+          <U n="weight">
+            <L n="multipliers">
+              <U>
+                <T n="multiplier">2</T>
+                <L n="tests">
+                  <L>
+                    <V t="day_and_time">
+                      <U n="day_and_time">
+                        <V t="enabled" n="is_day">
+                          <T n="enabled">False</T>
+                        </V>
+                      </U>
+                    </V>
+                  </L>
+                </L>
+              </U>
+              <U>
+                <T n="multiplier">11</T>
+                <L n="tests">
+                  <L>
+                    <V t="career_gig_test">
+                      <U n="career_gig_test">
+                        <T n="career">207004<!--Career: career_OddJob--></T>
+                        <V n="test_type" t="specific_gigs">
+                          <U n="specific_gigs">
+                            <L n="gigs">
+                              <T>208950<!--HomeAssignmentGig: homeAssignmentGig_OddJob_Treasure--></T>
+                            </L>
+                          </U>
+                        </V>
+                      </U>
+                    </V>
+                  </L>
+                </L>
+              </U>
+            </L>
+          </U>
+        </U>
+        <U>
+          <U n="outcome">
+            <L n="basic_extras">
+              <V t="notification">
+                <U n="notification">
+                  <V n="dialog" t="single">
+                    <V n="single" t="literal">
+                      <U n="literal">
+                        <V t="enabled" n="icon">
+                          <V n="enabled" t="resource_key">
+                            <U n="resource_key">
+                              <T n="key" p="InEP07\UI\Icons\Notifications\notification_cave.png">2f7d0004:00000000:74bde32cc38b5600</T>
+                            </U>
+                          </V>
+                        </V>
+                        <V t="enabled" n="secondary_icon">
+                          <V n="enabled" t="participant" />
+                        </V>
+                        <V n="text" t="single">
+                          <T n="single">0x7E7E422<!--String: "Explorando las profundidades de la cueva, {0.SimFirstName} descubrió una playa subterránea ocupada por un antiguo naufragio.\n\nMientras inspeccionaba los restos del navío, la madera podrida comenzó a bambolearse con el vaivén del oleaje de la cala, anunciando la subida de la marea.\n\nAl darse cuenta de que aquello se iba a inundar en un periquete, {0.SimFirstName} huyó de allí y volvió a los túneles de la cueva, dejando atrás su hallazgo."--></T>
+                        </V>
+                        <V t="enabled" n="title">
+                          <T n="enabled">0xED925D44<!--String: "Restos de naufragio"--></T>
+                        </V>
+                      </U>
+                    </V>
+                  </V>
+                </U>
+              </V>
+            </L>
+            <L n="continuation">
+              <U>
+                <T n="affordance">210447<!--SuperInteraction: beachCave_Exit--></T>
+              </U>
+            </L>
+            <L n="loot_list">
+              <T>209172<!--LootActions: loot_BeachCave_AncientWreck_Outcome2--></T>
+            </L>
+          </U>
+          <U n="weight">
+            <L n="multipliers">
+              <U>
+                <T n="multiplier">1.5</T>
+                <L n="tests">
+                  <L>
+                    <V t="day_and_time">
+                      <U n="day_and_time">
+                        <V t="enabled" n="is_day">
+                          <T n="enabled">False</T>
+                        </V>
+                      </U>
+                    </V>
+                  </L>
+                </L>
+              </U>
+              <U>
+                <T n="multiplier">9</T>
+                <L n="tests">
+                  <L>
+                    <V t="career_gig_test">
+                      <U n="career_gig_test">
+                        <T n="career">207004<!--Career: career_OddJob--></T>
+                        <V n="test_type" t="specific_gigs">
+                          <U n="specific_gigs">
+                            <L n="gigs">
+                              <T>208950<!--HomeAssignmentGig: homeAssignmentGig_OddJob_Treasure--></T>
+                            </L>
+                          </U>
+                        </V>
+                      </U>
+                    </V>
+                  </L>
+                </L>
+              </U>
+            </L>
+          </U>
+        </U>
+      </L>
+    </U>
+  </V>
+  <E n="scoring_priority">NORMAL</E>
+  <T n="subaction_selection_weight">1</T>
+  <E n="target_type">OBJECT</E>
+  <L n="test_globals">
+    <V t="sim_info">
+      <U n="sim_info">
+        <V t="specified" n="ages">
+          <L n="specified">
+            <E>TEEN</E>
+            <E>YOUNGADULT</E>
+            <E>ADULT</E>
+            <E>ELDER</E>
+            <E>CHILD</E>
+          </L>
+        </V>
+        <V t="specified" n="species">
+          <U n="specified">
+            <L n="species">
+              <E />
+            </L>
+          </U>
+        </V>
+        <E n="who">Actor</E>
+      </U>
+    </V>
+    <V t="in_use">
+      <U n="in_use">
+        <T n="negate">True</T>
+        <V n="tooltip" t="enabled">
+          <T n="enabled">0x91E86BD9<!--String: "Este objeto está en uso."--></T>
+        </V>
+      </U>
+    </V>
+  </L>
+  <T n="time_overhead">30</T>
+</I>

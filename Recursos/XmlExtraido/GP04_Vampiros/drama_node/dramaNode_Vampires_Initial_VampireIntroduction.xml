@@ -1,0 +1,113 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<I c="DialogDramaNode" i="drama_node" m="drama_scheduler.dialog_drama_node" n="dramaNode_Vampires_Initial_VampireIntroduction" s="155260">
+  <V t="node_cooldown" n="cooldown_data">
+    <U n="node_cooldown">
+      <V t="permanent" n="duration" />
+    </U>
+  </V>
+  <V n="dialog_and_loot" t="dialog_ok">
+    <U n="dialog_ok">
+      <U n="dialog">
+        <E n="phone_ring_type">BUZZ</E>
+        <V n="text" t="single">
+          <T n="single">0x11947909<!--String: "Hola, solo quería darte la bienvenida a la comunidad y... madre mía, qué cuello más bonito tienes."--></T>
+        </V>
+      </U>
+      <L n="on_dialog_complete_loot_list">
+        <T>157977<!--LootActions: loot_Vampire_InviteNPCOver_Initial--></T>
+        <T>155261<!--LootActions: loot_Vampires_Initial_ScheduleNighttimeVisit--></T>
+      </L>
+    </U>
+  </V>
+  <U n="min_and_max_times">
+    <T n="lower_bound">10</T>
+    <T n="upper_bound">24</T>
+  </U>
+  <L n="pretests">
+    <L>
+      <V t="trait">
+        <U n="trait">
+          <L n="blacklist_traits">
+            <T>153867<!--Trait: trait_OccultVampire_Manifested--></T>
+          </L>
+        </U>
+      </V>
+      <V t="statistic">
+        <U n="statistic">
+          <T n="stat">233817<!--Statistic: statistic_Situations_Disallow_Vampires--></T>
+          <V n="threshold" t="value_threshold">
+            <U n="value_threshold">
+              <E n="comparison">EQUAL</E>
+              <T n="value">0</T>
+            </U>
+          </V>
+          <E n="who">Lot</E>
+        </U>
+      </V>
+    </L>
+  </L>
+  <L n="receiver_sim_pretests">
+    <L>
+      <V t="sim_info">
+        <U n="sim_info">
+          <V t="specified" n="ages">
+            <L n="specified">
+              <E>TEEN</E>
+              <E>YOUNGADULT</E>
+              <E>ADULT</E>
+              <E>ELDER</E>
+            </L>
+          </V>
+          <V t="specified" n="species">
+            <U n="specified">
+              <L n="species">
+                <E />
+              </L>
+            </U>
+          </V>
+        </U>
+      </V>
+    </L>
+  </L>
+  <L n="run_tests">
+    <L>
+      <V t="lot_owner">
+        <U n="lot_owner">
+          <T n="consider_rented_lot_as_owned">False</T>
+        </U>
+      </V>
+    </L>
+  </L>
+  <V n="scoring" t="enabled">
+    <U n="enabled">
+      <T n="base_score">100</T>
+    </U>
+  </V>
+  <V t="sim_filter" n="sender_sim_info">
+    <U n="sim_filter">
+      <T n="sim_filter">154811<!--TunableSimFilter: filter_Vampires_IntroToVampire_Caller--></T>
+    </U>
+  </V>
+  <E n="sender_sim_info_type">INSTANCED_ALLOWED</E>
+  <V t="schedule" n="time_option">
+    <U n="schedule">
+      <L n="valid_times">
+        <U>
+          <U n="days_available">
+            <T n="0 SUNDAY">True</T>
+            <T n="1 MONDAY">True</T>
+            <T n="2 TUESDAY">True</T>
+            <T n="3 WEDNESDAY">True</T>
+            <T n="4 THURSDAY">True</T>
+            <T n="5 FRIDAY">True</T>
+            <T n="6 SATURDAY">True</T>
+          </U>
+          <T n="duration">7</T>
+          <U n="start_time">
+            <T n="hour">22</T>
+          </U>
+        </U>
+      </L>
+    </U>
+  </V>
+</I>

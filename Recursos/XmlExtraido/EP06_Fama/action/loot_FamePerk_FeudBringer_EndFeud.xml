@@ -1,0 +1,124 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<I c="LootActions" i="action" m="interactions.utils.loot" n="loot_FamePerk_FeudBringer_EndFeud" s="193875">
+  <L n="loot_actions">
+    <V t="buff">
+      <U n="buff">
+        <U n="buff">
+          <T n="buff_type">193874<!--Buff: buff_FamePerk_FeudBringer_Hidden_EndFeud--></T>
+        </U>
+      </U>
+    </V>
+    <V t="buff">
+      <U n="buff">
+        <U n="buff">
+          <V t="enabled" n="buff_reason">
+            <T n="enabled">0x65FE171D<!--String: "(Por pique de famosos) "--></T>
+          </V>
+          <T n="buff_type">200325<!--Buff: buff_FamePerk_FeudBringer_LostFeud--></T>
+        </U>
+        <L n="tests">
+          <L>
+            <V t="relationship">
+              <U n="relationship">
+                <U n="relationship_score_interval">
+                  <T n="upper_bound">-1</T>
+                </U>
+                <L n="target_sim">
+                  <E>ActorFeudTarget</E>
+                </L>
+                <T n="track">193901<!--RelationshipTrack: LTR_Feud_Main--></T>
+              </U>
+            </V>
+          </L>
+        </L>
+      </U>
+    </V>
+    <V t="buff_removal">
+      <U n="buff_removal">
+        <L n="buffs_to_remove">
+          <T>193851<!--Buff: buff_FamePerk_FeudBringer_Hidden_FeudCheck--></T>
+        </L>
+      </U>
+    </V>
+    <V t="notification_and_dialog">
+      <U n="notification_and_dialog">
+        <V n="dialog" t="notification">
+          <U n="notification">
+            <V t="enabled" n="icon">
+              <V t="participant" n="enabled">
+                <U n="participant">
+                  <L n="participant_type">
+                    <E>TargetSim</E>
+                  </L>
+                </U>
+              </V>
+            </V>
+            <V t="enabled" n="secondary_icon">
+              <V t="participant" n="enabled" />
+            </V>
+            <V n="text" t="single">
+              <T n="single">0x3DFEBF9<!--String: "{0.SimFirstName} ha puesto fin a su pique con {1.SimFirstName}. ¿Quién será la siguiente víctima de su ira?"--></T>
+            </V>
+            <V t="enabled" n="text_tokens">
+              <U n="enabled">
+                <L n="tokens">
+                  <V t="participant_type" />
+                  <V t="participant_type">
+                    <U n="participant_type">
+                      <V t="from_participant" n="objects">
+                        <U n="from_participant">
+                          <E n="participant">TargetSim</E>
+                        </U>
+                      </V>
+                    </U>
+                  </V>
+                </L>
+              </U>
+            </V>
+          </U>
+        </V>
+      </U>
+    </V>
+    <V t="trait_remove">
+      <U n="trait_remove">
+        <V t="specific_trait" n="trait">
+          <U n="specific_trait">
+            <T n="specific_trait">200795<!--Trait: trait_Perk_FeudTarget--></T>
+          </U>
+        </V>
+      </U>
+    </V>
+    <V t="trait_remove">
+      <U n="trait_remove">
+        <E n="subject">TargetSim</E>
+        <V t="specific_trait" n="trait">
+          <U n="specific_trait">
+            <T n="specific_trait">200795<!--Trait: trait_Perk_FeudTarget--></T>
+          </U>
+        </V>
+      </U>
+    </V>
+    <V t="statistics">
+      <V n="statistics" t="relationship_set">
+        <U n="relationship_set">
+          <L n="target_participant_type">
+            <E>ActorFeudTarget</E>
+          </L>
+          <T n="track">193901<!--RelationshipTrack: LTR_Feud_Main--></T>
+        </U>
+      </V>
+    </V>
+    <V t="relationship_bits_loot">
+      <U n="relationship_bits_loot">
+        <L n="bit_operations">
+          <U>
+            <T n="bit">193944<!--RelationshipBit: relationshipBit_Feud_Target--></T>
+            <E n="operation">REMOVE</E>
+            <E n="recipients">Actor</E>
+            <E n="targets">TargetSim</E>
+          </U>
+        </L>
+      </U>
+    </V>
+  </L>
+</I>

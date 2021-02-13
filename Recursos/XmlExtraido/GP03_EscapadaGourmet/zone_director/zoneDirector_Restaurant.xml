@@ -1,0 +1,1899 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<I c="RestaurantZoneDirector" i="zone_director" m="restaurants.restaurant_zone_director" n="zoneDirector_Restaurant" s="131555">
+  <L n="all_in_one_table_parts">
+    <T>38480<!--ObjectPart: part_Surface_Seat_Picnic--></T>
+  </L>
+  <U n="business_chef_employee_type_and_situation">
+    <E n="employee_type">RESTAURANT_CHEF</E>
+    <L n="situation_list">
+      <T>131068<!--ChefSituation: chefSituation--></T>
+    </L>
+  </U>
+  <U n="business_host_employee_type_and_situation">
+    <E n="employee_type">RESTAURANT_HOST</E>
+    <L n="situation_list">
+      <T>132187<!--HostSituation: hostSituation_1--></T>
+    </L>
+  </U>
+  <U n="business_waitstaff_employee_type_and_situation">
+    <E n="employee_type">RESTAURANT_WAITSTAFF</E>
+    <L n="situation_list">
+      <T>132213<!--WaitstaffSituation: situation_Restaurant_WaitStaff--></T>
+    </L>
+  </U>
+  <U n="customer_situation_type_curve">
+    <L n="entries">
+      <U>
+        <U n="days_of_the_week">
+          <T n="0 SUNDAY">True</T>
+          <T n="1 MONDAY">True</T>
+          <T n="2 TUESDAY">True</T>
+          <T n="3 WEDNESDAY">True</T>
+          <T n="4 THURSDAY">True</T>
+          <T n="5 FRIDAY">True</T>
+          <T n="6 SATURDAY">True</T>
+        </U>
+        <L n="walkby_desire_by_time_of_day">
+          <U>
+            <T n="hour_of_day">4</T>
+            <U n="desired_walkby_situations">
+              <V n="desired_sim_count" t="random_in_range">
+                <U n="random_in_range">
+                  <T n="lower_bound">0</T>
+                  <T n="upper_bound">3</T>
+                </U>
+              </V>
+              <L n="weighted_situations">
+                <U>
+                  <T n="situation">132776<!--RestaurantDinerBackGroundSituation: restaurantDinerBackground_NPC_EarlyBirds--></T>
+                  <T n="weight">2</T>
+                </U>
+                <U>
+                  <T n="situation">196203<!--RestaurantDinerBackGroundSituation: restaurantDinerBackground_NPC_Celebrity_LowFame--></T>
+                  <L n="tests">
+                    <L>
+                      <V t="zone">
+                        <U n="zone">
+                          <U n="zone_tests">
+                            <V n="zone_modifiers" t="enabled">
+                              <U n="enabled">
+                                <V n="whitelist" t="specify">
+                                  <U n="specify">
+                                    <L n="whitelist">
+                                      <T>191708<!--ZoneModifier: zoneModifier_lotTrait_CelebrityHangOut_LowFame--></T>
+                                      <T>191710<!--ZoneModifier: zoneModifier_lotTrait_CelebrityHangOut_HighFame--></T>
+                                    </L>
+                                  </U>
+                                </V>
+                              </U>
+                            </V>
+                          </U>
+                        </U>
+                      </V>
+                    </L>
+                  </L>
+                  <T n="weight">1</T>
+                </U>
+                <U>
+                  <T n="situation">196202<!--RestaurantDinerBackGroundSituation: restaurantDinerBackground_NPC_Celebrity_HighFame--></T>
+                  <L n="tests">
+                    <L>
+                      <V t="zone">
+                        <U n="zone">
+                          <U n="zone_tests">
+                            <V n="zone_modifiers" t="enabled">
+                              <U n="enabled">
+                                <V n="whitelist" t="specify">
+                                  <U n="specify">
+                                    <L n="whitelist">
+                                      <T>191710<!--ZoneModifier: zoneModifier_lotTrait_CelebrityHangOut_HighFame--></T>
+                                    </L>
+                                  </U>
+                                </V>
+                              </U>
+                            </V>
+                          </U>
+                        </U>
+                      </V>
+                    </L>
+                  </L>
+                  <T n="weight">1</T>
+                </U>
+              </L>
+            </U>
+          </U>
+          <U>
+            <T n="hour_of_day">6</T>
+            <U n="desired_walkby_situations">
+              <V t="random_in_range" n="desired_sim_count">
+                <U n="random_in_range">
+                  <T n="lower_bound">3</T>
+                  <T n="upper_bound">5</T>
+                </U>
+              </V>
+              <L n="weighted_situations">
+                <U>
+                  <T n="situation">132428<!--RestaurantDinerBackGroundSituation: RestaurantDinerBackground_NPC_Standard--></T>
+                  <L n="tests">
+                    <L>
+                      <V t="zone">
+                        <U n="zone">
+                          <U n="zone_tests">
+                            <V n="zone_modifiers" t="enabled">
+                              <U n="enabled">
+                                <V n="blacklist" t="specify">
+                                  <U n="specify">
+                                    <L n="blacklist">
+                                      <T>191710<!--ZoneModifier: zoneModifier_lotTrait_CelebrityHangOut_HighFame--></T>
+                                      <T>191708<!--ZoneModifier: zoneModifier_lotTrait_CelebrityHangOut_LowFame--></T>
+                                    </L>
+                                  </U>
+                                </V>
+                              </U>
+                            </V>
+                          </U>
+                        </U>
+                      </V>
+                    </L>
+                  </L>
+                  <T n="weight">67</T>
+                </U>
+                <U>
+                  <T n="situation">132887<!--RestaurantDinerBackGroundSituation: restaurantDinerBackground_NPC_FamilyMeal--></T>
+                  <T n="weight">30</T>
+                </U>
+                <U>
+                  <T n="situation">141385<!--RestaurantDinerBackGroundSituation: restaurantDinerBackground_NPC_Critic--></T>
+                  <T n="weight">3</T>
+                  <U n="weight_multipliers">
+                    <L n="multipliers">
+                      <U>
+                        <T n="multiplier">2</T>
+                        <L n="tests">
+                          <L>
+                            <V t="zone">
+                              <U n="zone">
+                                <U n="zone_tests">
+                                  <V n="zone_modifiers" t="enabled">
+                                    <U n="enabled">
+                                      <V n="whitelist" t="specify">
+                                        <U n="specify">
+                                          <L n="whitelist">
+                                            <T>191710<!--ZoneModifier: zoneModifier_lotTrait_CelebrityHangOut_HighFame--></T>
+                                          </L>
+                                        </U>
+                                      </V>
+                                    </U>
+                                  </V>
+                                </U>
+                              </U>
+                            </V>
+                          </L>
+                        </L>
+                      </U>
+                    </L>
+                  </U>
+                </U>
+                <U>
+                  <T n="situation">196203<!--RestaurantDinerBackGroundSituation: restaurantDinerBackground_NPC_Celebrity_LowFame--></T>
+                  <L n="tests">
+                    <L>
+                      <V t="zone">
+                        <U n="zone">
+                          <U n="zone_tests">
+                            <V n="zone_modifiers" t="enabled">
+                              <U n="enabled">
+                                <V n="whitelist" t="specify">
+                                  <U n="specify">
+                                    <L n="whitelist">
+                                      <T>191708<!--ZoneModifier: zoneModifier_lotTrait_CelebrityHangOut_LowFame--></T>
+                                      <T>191710<!--ZoneModifier: zoneModifier_lotTrait_CelebrityHangOut_HighFame--></T>
+                                    </L>
+                                  </U>
+                                </V>
+                              </U>
+                            </V>
+                          </U>
+                        </U>
+                      </V>
+                    </L>
+                  </L>
+                  <T n="weight">67</T>
+                </U>
+                <U>
+                  <T n="situation">196202<!--RestaurantDinerBackGroundSituation: restaurantDinerBackground_NPC_Celebrity_HighFame--></T>
+                  <L n="tests">
+                    <L>
+                      <V t="zone">
+                        <U n="zone">
+                          <U n="zone_tests">
+                            <V n="zone_modifiers" t="enabled">
+                              <U n="enabled">
+                                <V n="whitelist" t="specify">
+                                  <U n="specify">
+                                    <L n="whitelist">
+                                      <T>191710<!--ZoneModifier: zoneModifier_lotTrait_CelebrityHangOut_HighFame--></T>
+                                    </L>
+                                  </U>
+                                </V>
+                              </U>
+                            </V>
+                          </U>
+                        </U>
+                      </V>
+                    </L>
+                  </L>
+                  <T n="weight">67</T>
+                </U>
+              </L>
+            </U>
+          </U>
+          <U>
+            <T n="hour_of_day">10</T>
+            <U n="desired_walkby_situations">
+              <V n="desired_sim_count" t="random_in_range">
+                <U n="random_in_range">
+                  <T n="lower_bound">1</T>
+                  <T n="upper_bound">3</T>
+                </U>
+              </V>
+              <L n="weighted_situations">
+                <U>
+                  <T n="situation">132887<!--RestaurantDinerBackGroundSituation: restaurantDinerBackground_NPC_FamilyMeal--></T>
+                </U>
+                <U>
+                  <T n="situation">132776<!--RestaurantDinerBackGroundSituation: restaurantDinerBackground_NPC_EarlyBirds--></T>
+                  <T n="weight">3</T>
+                </U>
+                <U>
+                  <T n="situation">196203<!--RestaurantDinerBackGroundSituation: restaurantDinerBackground_NPC_Celebrity_LowFame--></T>
+                  <L n="tests">
+                    <L>
+                      <V t="zone">
+                        <U n="zone">
+                          <U n="zone_tests">
+                            <V n="zone_modifiers" t="enabled">
+                              <U n="enabled">
+                                <V n="whitelist" t="specify">
+                                  <U n="specify">
+                                    <L n="whitelist">
+                                      <T>191708<!--ZoneModifier: zoneModifier_lotTrait_CelebrityHangOut_LowFame--></T>
+                                      <T>191710<!--ZoneModifier: zoneModifier_lotTrait_CelebrityHangOut_HighFame--></T>
+                                    </L>
+                                  </U>
+                                </V>
+                              </U>
+                            </V>
+                          </U>
+                        </U>
+                      </V>
+                    </L>
+                  </L>
+                  <T n="weight">2</T>
+                </U>
+                <U>
+                  <T n="situation">196202<!--RestaurantDinerBackGroundSituation: restaurantDinerBackground_NPC_Celebrity_HighFame--></T>
+                  <L n="tests">
+                    <L>
+                      <V t="zone">
+                        <U n="zone">
+                          <U n="zone_tests">
+                            <V n="zone_modifiers" t="enabled">
+                              <U n="enabled">
+                                <V n="whitelist" t="specify">
+                                  <U n="specify">
+                                    <L n="whitelist">
+                                      <T>191710<!--ZoneModifier: zoneModifier_lotTrait_CelebrityHangOut_HighFame--></T>
+                                    </L>
+                                  </U>
+                                </V>
+                              </U>
+                            </V>
+                          </U>
+                        </U>
+                      </V>
+                    </L>
+                  </L>
+                  <T n="weight">2</T>
+                </U>
+              </L>
+            </U>
+          </U>
+          <U>
+            <T n="hour_of_day">11</T>
+            <U n="desired_walkby_situations">
+              <V t="random_in_range" n="desired_sim_count">
+                <U n="random_in_range">
+                  <T n="lower_bound">3</T>
+                  <T n="upper_bound">5</T>
+                </U>
+              </V>
+              <L n="weighted_situations">
+                <U>
+                  <T n="situation">132428<!--RestaurantDinerBackGroundSituation: RestaurantDinerBackground_NPC_Standard--></T>
+                  <L n="tests">
+                    <L>
+                      <V t="zone">
+                        <U n="zone">
+                          <U n="zone_tests">
+                            <V n="zone_modifiers" t="enabled">
+                              <U n="enabled">
+                                <V n="blacklist" t="specify">
+                                  <U n="specify">
+                                    <L n="blacklist">
+                                      <T>191710<!--ZoneModifier: zoneModifier_lotTrait_CelebrityHangOut_HighFame--></T>
+                                      <T>191708<!--ZoneModifier: zoneModifier_lotTrait_CelebrityHangOut_LowFame--></T>
+                                    </L>
+                                  </U>
+                                </V>
+                              </U>
+                            </V>
+                          </U>
+                        </U>
+                      </V>
+                    </L>
+                  </L>
+                  <T n="weight">60</T>
+                </U>
+                <U>
+                  <T n="situation">132887<!--RestaurantDinerBackGroundSituation: restaurantDinerBackground_NPC_FamilyMeal--></T>
+                  <T n="weight">15</T>
+                </U>
+                <U>
+                  <T n="situation">132752<!--RestaurantDinerBackGroundSituation: restaurantDinerBackground_NPC_BadDate--></T>
+                  <T n="weight">8</T>
+                </U>
+                <U>
+                  <T n="situation">132672<!--RestaurantDinerBackGroundSituation: restaurantDinerBackground_NPC_HappyDate--></T>
+                  <T n="weight">14</T>
+                </U>
+                <U>
+                  <T n="situation">141385<!--RestaurantDinerBackGroundSituation: restaurantDinerBackground_NPC_Critic--></T>
+                  <T n="weight">3</T>
+                  <U n="weight_multipliers">
+                    <L n="multipliers">
+                      <U>
+                        <T n="multiplier">2</T>
+                        <L n="tests">
+                          <L>
+                            <V t="zone">
+                              <U n="zone">
+                                <U n="zone_tests">
+                                  <V n="zone_modifiers" t="enabled">
+                                    <U n="enabled">
+                                      <V n="whitelist" t="specify">
+                                        <U n="specify">
+                                          <L n="whitelist">
+                                            <T>191710<!--ZoneModifier: zoneModifier_lotTrait_CelebrityHangOut_HighFame--></T>
+                                          </L>
+                                        </U>
+                                      </V>
+                                    </U>
+                                  </V>
+                                </U>
+                              </U>
+                            </V>
+                          </L>
+                        </L>
+                      </U>
+                    </L>
+                  </U>
+                </U>
+                <U>
+                  <T n="situation">196203<!--RestaurantDinerBackGroundSituation: restaurantDinerBackground_NPC_Celebrity_LowFame--></T>
+                  <L n="tests">
+                    <L>
+                      <V t="zone">
+                        <U n="zone">
+                          <U n="zone_tests">
+                            <V n="zone_modifiers" t="enabled">
+                              <U n="enabled">
+                                <V n="whitelist" t="specify">
+                                  <U n="specify">
+                                    <L n="whitelist">
+                                      <T>191708<!--ZoneModifier: zoneModifier_lotTrait_CelebrityHangOut_LowFame--></T>
+                                      <T>191710<!--ZoneModifier: zoneModifier_lotTrait_CelebrityHangOut_HighFame--></T>
+                                    </L>
+                                  </U>
+                                </V>
+                              </U>
+                            </V>
+                          </U>
+                        </U>
+                      </V>
+                    </L>
+                  </L>
+                  <T n="weight">60</T>
+                </U>
+                <U>
+                  <T n="situation">196202<!--RestaurantDinerBackGroundSituation: restaurantDinerBackground_NPC_Celebrity_HighFame--></T>
+                  <L n="tests">
+                    <L>
+                      <V t="zone">
+                        <U n="zone">
+                          <U n="zone_tests">
+                            <V n="zone_modifiers" t="enabled">
+                              <U n="enabled">
+                                <V n="whitelist" t="specify">
+                                  <U n="specify">
+                                    <L n="whitelist">
+                                      <T>191710<!--ZoneModifier: zoneModifier_lotTrait_CelebrityHangOut_HighFame--></T>
+                                    </L>
+                                  </U>
+                                </V>
+                              </U>
+                            </V>
+                          </U>
+                        </U>
+                      </V>
+                    </L>
+                  </L>
+                  <T n="weight">67</T>
+                </U>
+              </L>
+            </U>
+          </U>
+          <U>
+            <T n="hour_of_day">15</T>
+            <U n="desired_walkby_situations">
+              <V n="desired_sim_count" t="random_in_range">
+                <U n="random_in_range">
+                  <T n="lower_bound">2</T>
+                  <T n="upper_bound">4</T>
+                </U>
+              </V>
+              <L n="weighted_situations">
+                <U>
+                  <T n="situation">132776<!--RestaurantDinerBackGroundSituation: restaurantDinerBackground_NPC_EarlyBirds--></T>
+                  <T n="weight">3</T>
+                </U>
+                <U>
+                  <T n="situation">132428<!--RestaurantDinerBackGroundSituation: RestaurantDinerBackground_NPC_Standard--></T>
+                  <L n="tests">
+                    <L>
+                      <V t="zone">
+                        <U n="zone">
+                          <U n="zone_tests">
+                            <V n="zone_modifiers" t="enabled">
+                              <U n="enabled">
+                                <V n="blacklist" t="specify">
+                                  <U n="specify">
+                                    <L n="blacklist">
+                                      <T>191710<!--ZoneModifier: zoneModifier_lotTrait_CelebrityHangOut_HighFame--></T>
+                                      <T>191708<!--ZoneModifier: zoneModifier_lotTrait_CelebrityHangOut_LowFame--></T>
+                                    </L>
+                                  </U>
+                                </V>
+                              </U>
+                            </V>
+                          </U>
+                        </U>
+                      </V>
+                    </L>
+                  </L>
+                  <T n="weight">1</T>
+                </U>
+                <U>
+                  <T n="situation">196203<!--RestaurantDinerBackGroundSituation: restaurantDinerBackground_NPC_Celebrity_LowFame--></T>
+                  <L n="tests">
+                    <L>
+                      <V t="zone">
+                        <U n="zone">
+                          <U n="zone_tests">
+                            <V n="zone_modifiers" t="enabled">
+                              <U n="enabled">
+                                <V n="whitelist" t="specify">
+                                  <U n="specify">
+                                    <L n="whitelist">
+                                      <T>191708<!--ZoneModifier: zoneModifier_lotTrait_CelebrityHangOut_LowFame--></T>
+                                      <T>191710<!--ZoneModifier: zoneModifier_lotTrait_CelebrityHangOut_HighFame--></T>
+                                    </L>
+                                  </U>
+                                </V>
+                              </U>
+                            </V>
+                          </U>
+                        </U>
+                      </V>
+                    </L>
+                  </L>
+                  <T n="weight">1</T>
+                </U>
+                <U>
+                  <T n="situation">196202<!--RestaurantDinerBackGroundSituation: restaurantDinerBackground_NPC_Celebrity_HighFame--></T>
+                  <L n="tests">
+                    <L>
+                      <V t="zone">
+                        <U n="zone">
+                          <U n="zone_tests">
+                            <V n="zone_modifiers" t="enabled">
+                              <U n="enabled">
+                                <V n="whitelist" t="specify">
+                                  <U n="specify">
+                                    <L n="whitelist">
+                                      <T>191710<!--ZoneModifier: zoneModifier_lotTrait_CelebrityHangOut_HighFame--></T>
+                                    </L>
+                                  </U>
+                                </V>
+                              </U>
+                            </V>
+                          </U>
+                        </U>
+                      </V>
+                    </L>
+                  </L>
+                  <T n="weight">2</T>
+                </U>
+              </L>
+            </U>
+          </U>
+          <U>
+            <T n="hour_of_day">16</T>
+            <U n="desired_walkby_situations">
+              <V t="random_in_range" n="desired_sim_count">
+                <U n="random_in_range">
+                  <T n="lower_bound">3</T>
+                  <T n="upper_bound">6</T>
+                </U>
+              </V>
+              <L n="weighted_situations">
+                <U>
+                  <T n="situation">132428<!--RestaurantDinerBackGroundSituation: RestaurantDinerBackground_NPC_Standard--></T>
+                  <L n="tests">
+                    <L>
+                      <V t="zone">
+                        <U n="zone">
+                          <U n="zone_tests">
+                            <V n="zone_modifiers" t="enabled">
+                              <U n="enabled">
+                                <V n="blacklist" t="specify">
+                                  <U n="specify">
+                                    <L n="blacklist">
+                                      <T>191710<!--ZoneModifier: zoneModifier_lotTrait_CelebrityHangOut_HighFame--></T>
+                                      <T>191708<!--ZoneModifier: zoneModifier_lotTrait_CelebrityHangOut_LowFame--></T>
+                                    </L>
+                                  </U>
+                                </V>
+                              </U>
+                            </V>
+                          </U>
+                        </U>
+                      </V>
+                    </L>
+                  </L>
+                  <T n="weight">60</T>
+                </U>
+                <U>
+                  <T n="situation">132887<!--RestaurantDinerBackGroundSituation: restaurantDinerBackground_NPC_FamilyMeal--></T>
+                  <T n="weight">12</T>
+                </U>
+                <U>
+                  <T n="situation">132752<!--RestaurantDinerBackGroundSituation: restaurantDinerBackground_NPC_BadDate--></T>
+                  <T n="weight">8</T>
+                </U>
+                <U>
+                  <T n="situation">132672<!--RestaurantDinerBackGroundSituation: restaurantDinerBackground_NPC_HappyDate--></T>
+                  <T n="weight">15</T>
+                </U>
+                <U>
+                  <T n="situation">141385<!--RestaurantDinerBackGroundSituation: restaurantDinerBackground_NPC_Critic--></T>
+                  <T n="weight">5</T>
+                  <U n="weight_multipliers">
+                    <L n="multipliers">
+                      <U>
+                        <T n="multiplier">2</T>
+                        <L n="tests">
+                          <L>
+                            <V t="zone">
+                              <U n="zone">
+                                <U n="zone_tests">
+                                  <V n="zone_modifiers" t="enabled">
+                                    <U n="enabled">
+                                      <V n="whitelist" t="specify">
+                                        <U n="specify">
+                                          <L n="whitelist">
+                                            <T>191710<!--ZoneModifier: zoneModifier_lotTrait_CelebrityHangOut_HighFame--></T>
+                                          </L>
+                                        </U>
+                                      </V>
+                                    </U>
+                                  </V>
+                                </U>
+                              </U>
+                            </V>
+                          </L>
+                        </L>
+                      </U>
+                    </L>
+                  </U>
+                </U>
+                <U>
+                  <T n="situation">196203<!--RestaurantDinerBackGroundSituation: restaurantDinerBackground_NPC_Celebrity_LowFame--></T>
+                  <L n="tests">
+                    <L>
+                      <V t="zone">
+                        <U n="zone">
+                          <U n="zone_tests">
+                            <V n="zone_modifiers" t="enabled">
+                              <U n="enabled">
+                                <V n="whitelist" t="specify">
+                                  <U n="specify">
+                                    <L n="whitelist">
+                                      <T>191708<!--ZoneModifier: zoneModifier_lotTrait_CelebrityHangOut_LowFame--></T>
+                                      <T>191710<!--ZoneModifier: zoneModifier_lotTrait_CelebrityHangOut_HighFame--></T>
+                                    </L>
+                                  </U>
+                                </V>
+                              </U>
+                            </V>
+                          </U>
+                        </U>
+                      </V>
+                    </L>
+                  </L>
+                  <T n="weight">60</T>
+                </U>
+                <U>
+                  <T n="situation">196202<!--RestaurantDinerBackGroundSituation: restaurantDinerBackground_NPC_Celebrity_HighFame--></T>
+                  <L n="tests">
+                    <L>
+                      <V t="zone">
+                        <U n="zone">
+                          <U n="zone_tests">
+                            <V n="zone_modifiers" t="enabled">
+                              <U n="enabled">
+                                <V n="whitelist" t="specify">
+                                  <U n="specify">
+                                    <L n="whitelist">
+                                      <T>191710<!--ZoneModifier: zoneModifier_lotTrait_CelebrityHangOut_HighFame--></T>
+                                    </L>
+                                  </U>
+                                </V>
+                              </U>
+                            </V>
+                          </U>
+                        </U>
+                      </V>
+                    </L>
+                  </L>
+                  <T n="weight">67</T>
+                </U>
+              </L>
+            </U>
+          </U>
+          <U>
+            <T n="hour_of_day">21</T>
+            <U n="desired_walkby_situations">
+              <V n="desired_sim_count" t="random_in_range">
+                <U n="random_in_range">
+                  <T n="lower_bound">1</T>
+                  <T n="upper_bound">2</T>
+                </U>
+              </V>
+              <L n="weighted_situations">
+                <U>
+                  <T n="situation">132428<!--RestaurantDinerBackGroundSituation: RestaurantDinerBackground_NPC_Standard--></T>
+                  <L n="tests">
+                    <L>
+                      <V t="zone">
+                        <U n="zone">
+                          <U n="zone_tests">
+                            <V n="zone_modifiers" t="enabled">
+                              <U n="enabled">
+                                <V n="blacklist" t="specify">
+                                  <U n="specify">
+                                    <L n="blacklist">
+                                      <T>191710<!--ZoneModifier: zoneModifier_lotTrait_CelebrityHangOut_HighFame--></T>
+                                      <T>191708<!--ZoneModifier: zoneModifier_lotTrait_CelebrityHangOut_LowFame--></T>
+                                    </L>
+                                  </U>
+                                </V>
+                              </U>
+                            </V>
+                          </U>
+                        </U>
+                      </V>
+                    </L>
+                  </L>
+                  <T n="weight">10</T>
+                </U>
+                <U>
+                  <T n="situation">132752<!--RestaurantDinerBackGroundSituation: restaurantDinerBackground_NPC_BadDate--></T>
+                </U>
+                <U>
+                  <T n="situation">132672<!--RestaurantDinerBackGroundSituation: restaurantDinerBackground_NPC_HappyDate--></T>
+                  <T n="weight">2</T>
+                </U>
+                <U>
+                  <T n="situation">196203<!--RestaurantDinerBackGroundSituation: restaurantDinerBackground_NPC_Celebrity_LowFame--></T>
+                  <L n="tests">
+                    <L>
+                      <V t="zone">
+                        <U n="zone">
+                          <U n="zone_tests">
+                            <V n="zone_modifiers" t="enabled">
+                              <U n="enabled">
+                                <V n="whitelist" t="specify">
+                                  <U n="specify">
+                                    <L n="whitelist">
+                                      <T>191708<!--ZoneModifier: zoneModifier_lotTrait_CelebrityHangOut_LowFame--></T>
+                                      <T>191710<!--ZoneModifier: zoneModifier_lotTrait_CelebrityHangOut_HighFame--></T>
+                                    </L>
+                                  </U>
+                                </V>
+                              </U>
+                            </V>
+                          </U>
+                        </U>
+                      </V>
+                    </L>
+                  </L>
+                  <T n="weight">7</T>
+                </U>
+                <U>
+                  <T n="situation">196202<!--RestaurantDinerBackGroundSituation: restaurantDinerBackground_NPC_Celebrity_HighFame--></T>
+                  <L n="tests">
+                    <L>
+                      <V t="zone">
+                        <U n="zone">
+                          <U n="zone_tests">
+                            <V n="zone_modifiers" t="enabled">
+                              <U n="enabled">
+                                <V n="whitelist" t="specify">
+                                  <U n="specify">
+                                    <L n="whitelist">
+                                      <T>191710<!--ZoneModifier: zoneModifier_lotTrait_CelebrityHangOut_HighFame--></T>
+                                    </L>
+                                  </U>
+                                </V>
+                              </U>
+                            </V>
+                          </U>
+                        </U>
+                      </V>
+                    </L>
+                  </L>
+                  <T n="weight">7</T>
+                </U>
+              </L>
+            </U>
+          </U>
+        </L>
+      </U>
+    </L>
+  </U>
+  <L n="employee_situation_data">
+    <U>
+      <E n="Business_Employee_Type">RESTAURANT_CHEF</E>
+      <U n="Employee_Situation_Data">
+        <V n="npc_employee_situation_count" t="tuned_count">
+          <T n="tuned_count">2</T>
+        </V>
+        <T n="situation_job">130833<!--SituationJob: jobs_Venue_Chef--></T>
+      </U>
+    </U>
+    <U>
+      <E n="Business_Employee_Type">RESTAURANT_HOST</E>
+      <U n="Employee_Situation_Data">
+        <V n="npc_employee_situation_count" t="tuned_count">
+          <T n="tuned_count">1</T>
+        </V>
+        <T n="situation_job">131306<!--SituationJob: jobs_Venue_Host--></T>
+      </U>
+    </U>
+    <U>
+      <E n="Business_Employee_Type">RESTAURANT_WAITSTAFF</E>
+      <U n="Employee_Situation_Data">
+        <T n="situation_job">130418<!--SituationJob: jobs_Venue_Waiter--></T>
+      </U>
+    </U>
+  </L>
+  <V t="disabled" n="fan_situation_support" />
+  <T n="food_reaction_affordance">132605<!--SuperInteraction: si_waitStaff_Customer_FoodServeReactions--></T>
+  <E n="not_a_table_tag">Func_Restaurant_Not_A_Table</E>
+  <T n="place_all_user_sims_in_same_arrival_situation">False</T>
+  <T n="place_travel_companion_in_same_arrival_situation">False</T>
+  <L n="situation_shifts">
+    <U>
+      <V n="shift_curve" t="curve_based">
+        <U n="curve_based">
+          <U n="desired_sim_count_multipliers">
+            <L n="multipliers">
+              <U>
+                <L n="tests">
+                  <L>
+                    <V t="trait">
+                      <U n="trait">
+                        <T n="apply_thresholds_on_individual_basis">False</T>
+                        <L n="blacklist_traits">
+                          <T>191817<!--Trait: fameTrait_Level4--></T>
+                          <T>191818<!--Trait: fameTrait_Level5--></T>
+                        </L>
+                        <E n="subject">AllInstancedSims</E>
+                        <L n="whitelist_traits">
+                          <T>191820<!--Trait: fameTrait_Level3--></T>
+                        </L>
+                      </U>
+                    </V>
+                  </L>
+                </L>
+              </U>
+              <U>
+                <T n="multiplier">2</T>
+                <L n="tests">
+                  <L>
+                    <V t="trait">
+                      <U n="trait">
+                        <T n="apply_thresholds_on_individual_basis">False</T>
+                        <L n="blacklist_traits">
+                          <T>191818<!--Trait: fameTrait_Level5--></T>
+                        </L>
+                        <E n="subject">AllInstancedSims</E>
+                        <L n="whitelist_traits">
+                          <T>191817<!--Trait: fameTrait_Level4--></T>
+                        </L>
+                      </U>
+                    </V>
+                  </L>
+                </L>
+              </U>
+              <U>
+                <T n="multiplier">3</T>
+                <L n="tests">
+                  <L>
+                    <V t="trait">
+                      <U n="trait">
+                        <T n="apply_thresholds_on_individual_basis">False</T>
+                        <E n="subject">AllInstancedSims</E>
+                        <L n="whitelist_traits">
+                          <T>191818<!--Trait: fameTrait_Level5--></T>
+                        </L>
+                      </U>
+                    </V>
+                  </L>
+                </L>
+              </U>
+              <U>
+                <T n="multiplier">2</T>
+                <L n="tests">
+                  <L>
+                    <V t="buff">
+                      <U n="buff">
+                        <T n="apply_whitelist_on_individual_basis">False</T>
+                        <E n="subject">ActiveHousehold</E>
+                        <V n="whitelist" t="enabled">
+                          <L n="enabled">
+                            <T>192859<!--Buff: buff_Fame_Quirk_PaparazziDarling--></T>
+                          </L>
+                        </V>
+                      </U>
+                    </V>
+                  </L>
+                </L>
+              </U>
+              <U>
+                <T n="multiplier">0</T>
+                <L n="tests">
+                  <L>
+                    <V t="test_set_reference">
+                      <T n="test_set_reference">207177<!--TestSetInstance: testSet_FamousSimEntourage_PaparazziNotAllowed--></T>
+                    </V>
+                  </L>
+                </L>
+              </U>
+              <U>
+                <T n="multiplier">0.5</T>
+                <L n="tests">
+                  <L>
+                    <V t="test_set_reference">
+                      <T n="test_set_reference">213934<!--TestSetInstance: testSet_FamousSimEntourage_PaparazziSlightlyDiscouraged--></T>
+                    </V>
+                  </L>
+                </L>
+              </U>
+              <U>
+                <T n="multiplier">0.25</T>
+                <L n="tests">
+                  <L>
+                    <V t="test_set_reference">
+                      <T n="test_set_reference">213931<!--TestSetInstance: testSet_FamousSimEntourage_PaparazziDiscouraged--></T>
+                    </V>
+                  </L>
+                </L>
+              </U>
+            </L>
+          </U>
+          <L n="entries">
+            <U>
+              <U n="days_of_the_week">
+                <T n="0 SUNDAY">True</T>
+                <T n="1 MONDAY">True</T>
+                <T n="2 TUESDAY">True</T>
+                <T n="3 WEDNESDAY">True</T>
+                <T n="4 THURSDAY">True</T>
+                <T n="5 FRIDAY">True</T>
+                <T n="6 SATURDAY">True</T>
+              </U>
+              <L n="walkby_desire_by_time_of_day">
+                <U>
+                  <T n="hour_of_day">8</T>
+                  <U n="desired_walkby_situations">
+                    <V t="literal" n="desired_sim_count">
+                      <U n="literal">
+                        <T n="value">1</T>
+                      </U>
+                    </V>
+                    <L n="weighted_situations">
+                      <U>
+                        <T n="situation">200991<!--PaparazziSituation: paparazziSituation_Paparazzi_Unlocked--></T>
+                        <L n="tests">
+                          <L>
+                            <V t="trait">
+                              <U n="trait">
+                                <T n="apply_thresholds_on_individual_basis">False</T>
+                                <E n="subject">AllInstancedSims</E>
+                                <L n="whitelist_traits">
+                                  <T>191820<!--Trait: fameTrait_Level3--></T>
+                                  <T>191817<!--Trait: fameTrait_Level4--></T>
+                                  <T>191818<!--Trait: fameTrait_Level5--></T>
+                                </L>
+                              </U>
+                            </V>
+                          </L>
+                        </L>
+                      </U>
+                    </L>
+                  </U>
+                </U>
+                <U>
+                  <T n="hour_of_day">12</T>
+                  <U n="desired_walkby_situations">
+                    <V t="literal" n="desired_sim_count">
+                      <U n="literal">
+                        <T n="value">1</T>
+                      </U>
+                    </V>
+                    <L n="weighted_situations">
+                      <U>
+                        <T n="situation">200991<!--PaparazziSituation: paparazziSituation_Paparazzi_Unlocked--></T>
+                        <L n="tests">
+                          <L>
+                            <V t="trait">
+                              <U n="trait">
+                                <T n="apply_thresholds_on_individual_basis">False</T>
+                                <E n="subject">AllInstancedSims</E>
+                                <L n="whitelist_traits">
+                                  <T>191820<!--Trait: fameTrait_Level3--></T>
+                                  <T>191817<!--Trait: fameTrait_Level4--></T>
+                                  <T>191818<!--Trait: fameTrait_Level5--></T>
+                                </L>
+                              </U>
+                            </V>
+                          </L>
+                        </L>
+                      </U>
+                    </L>
+                  </U>
+                </U>
+                <U>
+                  <T n="hour_of_day">16</T>
+                  <U n="desired_walkby_situations">
+                    <V t="literal" n="desired_sim_count">
+                      <U n="literal">
+                        <T n="value">1</T>
+                      </U>
+                    </V>
+                    <L n="weighted_situations">
+                      <U>
+                        <T n="situation">200991<!--PaparazziSituation: paparazziSituation_Paparazzi_Unlocked--></T>
+                        <L n="tests">
+                          <L>
+                            <V t="trait">
+                              <U n="trait">
+                                <T n="apply_thresholds_on_individual_basis">False</T>
+                                <E n="subject">AllInstancedSims</E>
+                                <L n="whitelist_traits">
+                                  <T>191820<!--Trait: fameTrait_Level3--></T>
+                                  <T>191817<!--Trait: fameTrait_Level4--></T>
+                                  <T>191818<!--Trait: fameTrait_Level5--></T>
+                                </L>
+                              </U>
+                            </V>
+                          </L>
+                        </L>
+                      </U>
+                    </L>
+                  </U>
+                </U>
+                <U>
+                  <T n="hour_of_day">20</T>
+                  <U n="desired_walkby_situations">
+                    <V t="literal" n="desired_sim_count">
+                      <U n="literal">
+                        <T n="value">1</T>
+                      </U>
+                    </V>
+                    <L n="weighted_situations">
+                      <U>
+                        <T n="situation">200991<!--PaparazziSituation: paparazziSituation_Paparazzi_Unlocked--></T>
+                        <L n="tests">
+                          <L>
+                            <V t="trait">
+                              <U n="trait">
+                                <T n="apply_thresholds_on_individual_basis">False</T>
+                                <E n="subject">AllInstancedSims</E>
+                                <L n="whitelist_traits">
+                                  <T>191820<!--Trait: fameTrait_Level3--></T>
+                                  <T>191817<!--Trait: fameTrait_Level4--></T>
+                                  <T>191818<!--Trait: fameTrait_Level5--></T>
+                                </L>
+                              </U>
+                            </V>
+                          </L>
+                        </L>
+                      </U>
+                    </L>
+                  </U>
+                </U>
+              </L>
+            </U>
+          </L>
+        </U>
+      </V>
+    </U>
+    <U>
+      <V n="shift_curve" t="shiftless">
+        <U n="shiftless">
+          <U n="_desired_siutations">
+            <V n="desired_sim_count" t="literal">
+              <U n="literal">
+                <T n="value">3</T>
+              </U>
+            </V>
+            <L n="weighted_situations">
+              <U>
+                <T n="situation">132213<!--WaitstaffSituation: situation_Restaurant_WaitStaff--></T>
+              </U>
+            </L>
+          </U>
+        </U>
+      </V>
+    </U>
+    <U>
+      <V n="shift_curve" t="shiftless">
+        <U n="shiftless">
+          <U n="_desired_siutations">
+            <V t="literal" n="desired_sim_count">
+              <U n="literal">
+                <T n="value">1</T>
+              </U>
+            </V>
+            <L n="weighted_situations">
+              <U>
+                <T n="situation">134881<!--StaffMemberSituation: situation_Bartender_Restaurant--></T>
+              </U>
+            </L>
+          </U>
+        </U>
+      </V>
+    </U>
+    <U>
+      <V n="shift_curve" t="shiftless">
+        <U n="shiftless">
+          <U n="_desired_siutations">
+            <V t="literal" n="desired_sim_count">
+              <U n="literal">
+                <T n="value">1</T>
+              </U>
+            </V>
+            <L n="weighted_situations">
+              <U>
+                <T n="situation">132187<!--HostSituation: hostSituation_1--></T>
+              </U>
+            </L>
+          </U>
+        </U>
+      </V>
+    </U>
+    <U>
+      <V n="shift_curve" t="shiftless">
+        <U n="shiftless">
+          <U n="_desired_siutations">
+            <V n="desired_sim_count" t="literal">
+              <U n="literal">
+                <T n="value">2</T>
+              </U>
+            </V>
+            <L n="weighted_situations">
+              <U>
+                <T n="situation">131068<!--ChefSituation: chefSituation--></T>
+              </U>
+            </L>
+          </U>
+        </U>
+      </V>
+    </U>
+    <U>
+      <V n="shift_curve" t="curve_based">
+        <U n="curve_based">
+          <L n="entries">
+            <U>
+              <U n="days_of_the_week">
+                <T n="0 SUNDAY">True</T>
+                <T n="1 MONDAY">True</T>
+                <T n="2 TUESDAY">True</T>
+                <T n="3 WEDNESDAY">True</T>
+                <T n="4 THURSDAY">True</T>
+                <T n="5 FRIDAY">True</T>
+                <T n="6 SATURDAY">True</T>
+              </U>
+              <L n="walkby_desire_by_time_of_day">
+                <U>
+                  <T n="hour_of_day">4</T>
+                  <U n="desired_walkby_situations">
+                    <V n="desired_sim_count" t="random_in_range">
+                      <U n="random_in_range">
+                        <T n="lower_bound">0</T>
+                        <T n="upper_bound">3</T>
+                      </U>
+                    </V>
+                    <L n="weighted_situations">
+                      <U>
+                        <T n="situation">132776<!--RestaurantDinerBackGroundSituation: restaurantDinerBackground_NPC_EarlyBirds--></T>
+                        <T n="weight">2</T>
+                      </U>
+                      <U>
+                        <T n="situation">196203<!--RestaurantDinerBackGroundSituation: restaurantDinerBackground_NPC_Celebrity_LowFame--></T>
+                        <L n="tests">
+                          <L>
+                            <V t="zone">
+                              <U n="zone">
+                                <U n="zone_tests">
+                                  <V n="zone_modifiers" t="enabled">
+                                    <U n="enabled">
+                                      <V n="whitelist" t="specify">
+                                        <U n="specify">
+                                          <L n="whitelist">
+                                            <T>191708<!--ZoneModifier: zoneModifier_lotTrait_CelebrityHangOut_LowFame--></T>
+                                            <T>191710<!--ZoneModifier: zoneModifier_lotTrait_CelebrityHangOut_HighFame--></T>
+                                          </L>
+                                        </U>
+                                      </V>
+                                    </U>
+                                  </V>
+                                </U>
+                              </U>
+                            </V>
+                          </L>
+                        </L>
+                        <T n="weight">1</T>
+                      </U>
+                      <U>
+                        <T n="situation">196202<!--RestaurantDinerBackGroundSituation: restaurantDinerBackground_NPC_Celebrity_HighFame--></T>
+                        <L n="tests">
+                          <L>
+                            <V t="zone">
+                              <U n="zone">
+                                <U n="zone_tests">
+                                  <V n="zone_modifiers" t="enabled">
+                                    <U n="enabled">
+                                      <V n="whitelist" t="specify">
+                                        <U n="specify">
+                                          <L n="whitelist">
+                                            <T>191710<!--ZoneModifier: zoneModifier_lotTrait_CelebrityHangOut_HighFame--></T>
+                                          </L>
+                                        </U>
+                                      </V>
+                                    </U>
+                                  </V>
+                                </U>
+                              </U>
+                            </V>
+                          </L>
+                        </L>
+                        <T n="weight">1</T>
+                      </U>
+                    </L>
+                  </U>
+                </U>
+                <U>
+                  <T n="hour_of_day">6</T>
+                  <U n="desired_walkby_situations">
+                    <V t="random_in_range" n="desired_sim_count">
+                      <U n="random_in_range">
+                        <T n="lower_bound">3</T>
+                        <T n="upper_bound">5</T>
+                      </U>
+                    </V>
+                    <L n="weighted_situations">
+                      <U>
+                        <T n="situation">132428<!--RestaurantDinerBackGroundSituation: RestaurantDinerBackground_NPC_Standard--></T>
+                        <L n="tests">
+                          <L>
+                            <V t="zone">
+                              <U n="zone">
+                                <U n="zone_tests">
+                                  <V n="zone_modifiers" t="enabled">
+                                    <U n="enabled">
+                                      <V n="blacklist" t="specify">
+                                        <U n="specify">
+                                          <L n="blacklist">
+                                            <T>191710<!--ZoneModifier: zoneModifier_lotTrait_CelebrityHangOut_HighFame--></T>
+                                            <T>191708<!--ZoneModifier: zoneModifier_lotTrait_CelebrityHangOut_LowFame--></T>
+                                          </L>
+                                        </U>
+                                      </V>
+                                    </U>
+                                  </V>
+                                </U>
+                              </U>
+                            </V>
+                          </L>
+                        </L>
+                        <T n="weight">67</T>
+                      </U>
+                      <U>
+                        <T n="situation">132887<!--RestaurantDinerBackGroundSituation: restaurantDinerBackground_NPC_FamilyMeal--></T>
+                        <T n="weight">30</T>
+                      </U>
+                      <U>
+                        <T n="situation">141385<!--RestaurantDinerBackGroundSituation: restaurantDinerBackground_NPC_Critic--></T>
+                        <T n="weight">3</T>
+                        <U n="weight_multipliers">
+                          <L n="multipliers">
+                            <U>
+                              <T n="multiplier">2</T>
+                              <L n="tests">
+                                <L>
+                                  <V t="zone">
+                                    <U n="zone">
+                                      <U n="zone_tests">
+                                        <V n="zone_modifiers" t="enabled">
+                                          <U n="enabled">
+                                            <V n="whitelist" t="specify">
+                                              <U n="specify">
+                                                <L n="whitelist">
+                                                  <T>191710<!--ZoneModifier: zoneModifier_lotTrait_CelebrityHangOut_HighFame--></T>
+                                                </L>
+                                              </U>
+                                            </V>
+                                          </U>
+                                        </V>
+                                      </U>
+                                    </U>
+                                  </V>
+                                </L>
+                              </L>
+                            </U>
+                          </L>
+                        </U>
+                      </U>
+                      <U>
+                        <T n="situation">196203<!--RestaurantDinerBackGroundSituation: restaurantDinerBackground_NPC_Celebrity_LowFame--></T>
+                        <L n="tests">
+                          <L>
+                            <V t="zone">
+                              <U n="zone">
+                                <U n="zone_tests">
+                                  <V n="zone_modifiers" t="enabled">
+                                    <U n="enabled">
+                                      <V n="whitelist" t="specify">
+                                        <U n="specify">
+                                          <L n="whitelist">
+                                            <T>191708<!--ZoneModifier: zoneModifier_lotTrait_CelebrityHangOut_LowFame--></T>
+                                            <T>191710<!--ZoneModifier: zoneModifier_lotTrait_CelebrityHangOut_HighFame--></T>
+                                          </L>
+                                        </U>
+                                      </V>
+                                    </U>
+                                  </V>
+                                </U>
+                              </U>
+                            </V>
+                          </L>
+                        </L>
+                        <T n="weight">67</T>
+                      </U>
+                      <U>
+                        <T n="situation">196202<!--RestaurantDinerBackGroundSituation: restaurantDinerBackground_NPC_Celebrity_HighFame--></T>
+                        <L n="tests">
+                          <L>
+                            <V t="zone">
+                              <U n="zone">
+                                <U n="zone_tests">
+                                  <V n="zone_modifiers" t="enabled">
+                                    <U n="enabled">
+                                      <V n="whitelist" t="specify">
+                                        <U n="specify">
+                                          <L n="whitelist">
+                                            <T>191710<!--ZoneModifier: zoneModifier_lotTrait_CelebrityHangOut_HighFame--></T>
+                                          </L>
+                                        </U>
+                                      </V>
+                                    </U>
+                                  </V>
+                                </U>
+                              </U>
+                            </V>
+                          </L>
+                        </L>
+                        <T n="weight">67</T>
+                      </U>
+                    </L>
+                  </U>
+                </U>
+                <U>
+                  <T n="hour_of_day">10</T>
+                  <U n="desired_walkby_situations">
+                    <V n="desired_sim_count" t="random_in_range">
+                      <U n="random_in_range">
+                        <T n="lower_bound">1</T>
+                        <T n="upper_bound">3</T>
+                      </U>
+                    </V>
+                    <L n="weighted_situations">
+                      <U>
+                        <T n="situation">132887<!--RestaurantDinerBackGroundSituation: restaurantDinerBackground_NPC_FamilyMeal--></T>
+                      </U>
+                      <U>
+                        <T n="situation">132776<!--RestaurantDinerBackGroundSituation: restaurantDinerBackground_NPC_EarlyBirds--></T>
+                        <T n="weight">3</T>
+                      </U>
+                      <U>
+                        <T n="situation">196203<!--RestaurantDinerBackGroundSituation: restaurantDinerBackground_NPC_Celebrity_LowFame--></T>
+                        <L n="tests">
+                          <L>
+                            <V t="zone">
+                              <U n="zone">
+                                <U n="zone_tests">
+                                  <V n="zone_modifiers" t="enabled">
+                                    <U n="enabled">
+                                      <V n="whitelist" t="specify">
+                                        <U n="specify">
+                                          <L n="whitelist">
+                                            <T>191708<!--ZoneModifier: zoneModifier_lotTrait_CelebrityHangOut_LowFame--></T>
+                                            <T>191710<!--ZoneModifier: zoneModifier_lotTrait_CelebrityHangOut_HighFame--></T>
+                                          </L>
+                                        </U>
+                                      </V>
+                                    </U>
+                                  </V>
+                                </U>
+                              </U>
+                            </V>
+                          </L>
+                        </L>
+                        <T n="weight">2</T>
+                      </U>
+                      <U>
+                        <T n="situation">196202<!--RestaurantDinerBackGroundSituation: restaurantDinerBackground_NPC_Celebrity_HighFame--></T>
+                        <L n="tests">
+                          <L>
+                            <V t="zone">
+                              <U n="zone">
+                                <U n="zone_tests">
+                                  <V n="zone_modifiers" t="enabled">
+                                    <U n="enabled">
+                                      <V n="whitelist" t="specify">
+                                        <U n="specify">
+                                          <L n="whitelist">
+                                            <T>191710<!--ZoneModifier: zoneModifier_lotTrait_CelebrityHangOut_HighFame--></T>
+                                          </L>
+                                        </U>
+                                      </V>
+                                    </U>
+                                  </V>
+                                </U>
+                              </U>
+                            </V>
+                          </L>
+                        </L>
+                        <T n="weight">2</T>
+                      </U>
+                    </L>
+                  </U>
+                </U>
+                <U>
+                  <T n="hour_of_day">11</T>
+                  <U n="desired_walkby_situations">
+                    <V t="random_in_range" n="desired_sim_count">
+                      <U n="random_in_range">
+                        <T n="lower_bound">3</T>
+                        <T n="upper_bound">5</T>
+                      </U>
+                    </V>
+                    <L n="weighted_situations">
+                      <U>
+                        <T n="situation">132428<!--RestaurantDinerBackGroundSituation: RestaurantDinerBackground_NPC_Standard--></T>
+                        <L n="tests">
+                          <L>
+                            <V t="zone">
+                              <U n="zone">
+                                <U n="zone_tests">
+                                  <V n="zone_modifiers" t="enabled">
+                                    <U n="enabled">
+                                      <V n="blacklist" t="specify">
+                                        <U n="specify">
+                                          <L n="blacklist">
+                                            <T>191710<!--ZoneModifier: zoneModifier_lotTrait_CelebrityHangOut_HighFame--></T>
+                                            <T>191708<!--ZoneModifier: zoneModifier_lotTrait_CelebrityHangOut_LowFame--></T>
+                                          </L>
+                                        </U>
+                                      </V>
+                                    </U>
+                                  </V>
+                                </U>
+                              </U>
+                            </V>
+                          </L>
+                        </L>
+                        <T n="weight">45</T>
+                      </U>
+                      <U>
+                        <T n="situation">132887<!--RestaurantDinerBackGroundSituation: restaurantDinerBackground_NPC_FamilyMeal--></T>
+                        <T n="weight">30</T>
+                      </U>
+                      <U>
+                        <T n="situation">132752<!--RestaurantDinerBackGroundSituation: restaurantDinerBackground_NPC_BadDate--></T>
+                        <T n="weight">8</T>
+                      </U>
+                      <U>
+                        <T n="situation">132672<!--RestaurantDinerBackGroundSituation: restaurantDinerBackground_NPC_HappyDate--></T>
+                        <T n="weight">14</T>
+                      </U>
+                      <U>
+                        <T n="situation">141385<!--RestaurantDinerBackGroundSituation: restaurantDinerBackground_NPC_Critic--></T>
+                        <T n="weight">3</T>
+                        <U n="weight_multipliers">
+                          <L n="multipliers">
+                            <U>
+                              <T n="multiplier">2</T>
+                              <L n="tests">
+                                <L>
+                                  <V t="zone">
+                                    <U n="zone">
+                                      <U n="zone_tests">
+                                        <V n="zone_modifiers" t="enabled">
+                                          <U n="enabled">
+                                            <V n="whitelist" t="specify">
+                                              <U n="specify">
+                                                <L n="whitelist">
+                                                  <T>191710<!--ZoneModifier: zoneModifier_lotTrait_CelebrityHangOut_HighFame--></T>
+                                                </L>
+                                              </U>
+                                            </V>
+                                          </U>
+                                        </V>
+                                      </U>
+                                    </U>
+                                  </V>
+                                </L>
+                              </L>
+                            </U>
+                          </L>
+                        </U>
+                      </U>
+                      <U>
+                        <T n="situation">196203<!--RestaurantDinerBackGroundSituation: restaurantDinerBackground_NPC_Celebrity_LowFame--></T>
+                        <L n="tests">
+                          <L>
+                            <V t="zone">
+                              <U n="zone">
+                                <U n="zone_tests">
+                                  <V n="zone_modifiers" t="enabled">
+                                    <U n="enabled">
+                                      <V n="whitelist" t="specify">
+                                        <U n="specify">
+                                          <L n="whitelist">
+                                            <T>191708<!--ZoneModifier: zoneModifier_lotTrait_CelebrityHangOut_LowFame--></T>
+                                            <T>191710<!--ZoneModifier: zoneModifier_lotTrait_CelebrityHangOut_HighFame--></T>
+                                          </L>
+                                        </U>
+                                      </V>
+                                    </U>
+                                  </V>
+                                </U>
+                              </U>
+                            </V>
+                          </L>
+                        </L>
+                        <T n="weight">45</T>
+                      </U>
+                      <U>
+                        <T n="situation">196202<!--RestaurantDinerBackGroundSituation: restaurantDinerBackground_NPC_Celebrity_HighFame--></T>
+                        <L n="tests">
+                          <L>
+                            <V t="zone">
+                              <U n="zone">
+                                <U n="zone_tests">
+                                  <V n="zone_modifiers" t="enabled">
+                                    <U n="enabled">
+                                      <V n="whitelist" t="specify">
+                                        <U n="specify">
+                                          <L n="whitelist">
+                                            <T>191710<!--ZoneModifier: zoneModifier_lotTrait_CelebrityHangOut_HighFame--></T>
+                                          </L>
+                                        </U>
+                                      </V>
+                                    </U>
+                                  </V>
+                                </U>
+                              </U>
+                            </V>
+                          </L>
+                        </L>
+                        <T n="weight">67</T>
+                      </U>
+                    </L>
+                  </U>
+                </U>
+                <U>
+                  <T n="hour_of_day">15</T>
+                  <U n="desired_walkby_situations">
+                    <V n="desired_sim_count" t="random_in_range">
+                      <U n="random_in_range">
+                        <T n="lower_bound">2</T>
+                        <T n="upper_bound">4</T>
+                      </U>
+                    </V>
+                    <L n="weighted_situations">
+                      <U>
+                        <T n="situation">132776<!--RestaurantDinerBackGroundSituation: restaurantDinerBackground_NPC_EarlyBirds--></T>
+                        <T n="weight">3</T>
+                      </U>
+                      <U>
+                        <T n="situation">132428<!--RestaurantDinerBackGroundSituation: RestaurantDinerBackground_NPC_Standard--></T>
+                        <L n="tests">
+                          <L>
+                            <V t="zone">
+                              <U n="zone">
+                                <U n="zone_tests">
+                                  <V n="zone_modifiers" t="enabled">
+                                    <U n="enabled">
+                                      <V n="blacklist" t="specify">
+                                        <U n="specify">
+                                          <L n="blacklist">
+                                            <T>191710<!--ZoneModifier: zoneModifier_lotTrait_CelebrityHangOut_HighFame--></T>
+                                            <T>191708<!--ZoneModifier: zoneModifier_lotTrait_CelebrityHangOut_LowFame--></T>
+                                          </L>
+                                        </U>
+                                      </V>
+                                    </U>
+                                  </V>
+                                </U>
+                              </U>
+                            </V>
+                          </L>
+                        </L>
+                        <T n="weight">1</T>
+                      </U>
+                      <U>
+                        <T n="situation">196203<!--RestaurantDinerBackGroundSituation: restaurantDinerBackground_NPC_Celebrity_LowFame--></T>
+                        <L n="tests">
+                          <L>
+                            <V t="zone">
+                              <U n="zone">
+                                <U n="zone_tests">
+                                  <V n="zone_modifiers" t="enabled">
+                                    <U n="enabled">
+                                      <V n="whitelist" t="specify">
+                                        <U n="specify">
+                                          <L n="whitelist">
+                                            <T>191708<!--ZoneModifier: zoneModifier_lotTrait_CelebrityHangOut_LowFame--></T>
+                                            <T>191710<!--ZoneModifier: zoneModifier_lotTrait_CelebrityHangOut_HighFame--></T>
+                                          </L>
+                                        </U>
+                                      </V>
+                                    </U>
+                                  </V>
+                                </U>
+                              </U>
+                            </V>
+                          </L>
+                        </L>
+                        <T n="weight">1</T>
+                      </U>
+                      <U>
+                        <T n="situation">196202<!--RestaurantDinerBackGroundSituation: restaurantDinerBackground_NPC_Celebrity_HighFame--></T>
+                        <L n="tests">
+                          <L>
+                            <V t="zone">
+                              <U n="zone">
+                                <U n="zone_tests">
+                                  <V n="zone_modifiers" t="enabled">
+                                    <U n="enabled">
+                                      <V n="whitelist" t="specify">
+                                        <U n="specify">
+                                          <L n="whitelist">
+                                            <T>191710<!--ZoneModifier: zoneModifier_lotTrait_CelebrityHangOut_HighFame--></T>
+                                          </L>
+                                        </U>
+                                      </V>
+                                    </U>
+                                  </V>
+                                </U>
+                              </U>
+                            </V>
+                          </L>
+                        </L>
+                        <T n="weight">2</T>
+                      </U>
+                    </L>
+                  </U>
+                </U>
+                <U>
+                  <T n="hour_of_day">16</T>
+                  <U n="desired_walkby_situations">
+                    <V t="random_in_range" n="desired_sim_count">
+                      <U n="random_in_range">
+                        <T n="lower_bound">3</T>
+                        <T n="upper_bound">6</T>
+                      </U>
+                    </V>
+                    <L n="weighted_situations">
+                      <U>
+                        <T n="situation">132428<!--RestaurantDinerBackGroundSituation: RestaurantDinerBackground_NPC_Standard--></T>
+                        <L n="tests">
+                          <L>
+                            <V t="zone">
+                              <U n="zone">
+                                <U n="zone_tests">
+                                  <V n="zone_modifiers" t="enabled">
+                                    <U n="enabled">
+                                      <V n="blacklist" t="specify">
+                                        <U n="specify">
+                                          <L n="blacklist">
+                                            <T>191710<!--ZoneModifier: zoneModifier_lotTrait_CelebrityHangOut_HighFame--></T>
+                                            <T>191708<!--ZoneModifier: zoneModifier_lotTrait_CelebrityHangOut_LowFame--></T>
+                                          </L>
+                                        </U>
+                                      </V>
+                                    </U>
+                                  </V>
+                                </U>
+                              </U>
+                            </V>
+                          </L>
+                        </L>
+                        <T n="weight">48</T>
+                      </U>
+                      <U>
+                        <T n="situation">132887<!--RestaurantDinerBackGroundSituation: restaurantDinerBackground_NPC_FamilyMeal--></T>
+                        <T n="weight">24</T>
+                      </U>
+                      <U>
+                        <T n="situation">132752<!--RestaurantDinerBackGroundSituation: restaurantDinerBackground_NPC_BadDate--></T>
+                        <T n="weight">8</T>
+                      </U>
+                      <U>
+                        <T n="situation">132672<!--RestaurantDinerBackGroundSituation: restaurantDinerBackground_NPC_HappyDate--></T>
+                        <T n="weight">15</T>
+                      </U>
+                      <U>
+                        <T n="situation">141385<!--RestaurantDinerBackGroundSituation: restaurantDinerBackground_NPC_Critic--></T>
+                        <T n="weight">5</T>
+                        <U n="weight_multipliers">
+                          <L n="multipliers">
+                            <U>
+                              <T n="multiplier">2</T>
+                              <L n="tests">
+                                <L>
+                                  <V t="zone">
+                                    <U n="zone">
+                                      <U n="zone_tests">
+                                        <V n="zone_modifiers" t="enabled">
+                                          <U n="enabled">
+                                            <V n="whitelist" t="specify">
+                                              <U n="specify">
+                                                <L n="whitelist">
+                                                  <T>191710<!--ZoneModifier: zoneModifier_lotTrait_CelebrityHangOut_HighFame--></T>
+                                                </L>
+                                              </U>
+                                            </V>
+                                          </U>
+                                        </V>
+                                      </U>
+                                    </U>
+                                  </V>
+                                </L>
+                              </L>
+                            </U>
+                          </L>
+                        </U>
+                      </U>
+                      <U>
+                        <T n="situation">196203<!--RestaurantDinerBackGroundSituation: restaurantDinerBackground_NPC_Celebrity_LowFame--></T>
+                        <L n="tests">
+                          <L>
+                            <V t="zone">
+                              <U n="zone">
+                                <U n="zone_tests">
+                                  <V n="zone_modifiers" t="enabled">
+                                    <U n="enabled">
+                                      <V n="whitelist" t="specify">
+                                        <U n="specify">
+                                          <L n="whitelist">
+                                            <T>191708<!--ZoneModifier: zoneModifier_lotTrait_CelebrityHangOut_LowFame--></T>
+                                            <T>191710<!--ZoneModifier: zoneModifier_lotTrait_CelebrityHangOut_HighFame--></T>
+                                          </L>
+                                        </U>
+                                      </V>
+                                    </U>
+                                  </V>
+                                </U>
+                              </U>
+                            </V>
+                          </L>
+                        </L>
+                        <T n="weight">48</T>
+                      </U>
+                      <U>
+                        <T n="situation">196202<!--RestaurantDinerBackGroundSituation: restaurantDinerBackground_NPC_Celebrity_HighFame--></T>
+                        <L n="tests">
+                          <L>
+                            <V t="zone">
+                              <U n="zone">
+                                <U n="zone_tests">
+                                  <V n="zone_modifiers" t="enabled">
+                                    <U n="enabled">
+                                      <V n="whitelist" t="specify">
+                                        <U n="specify">
+                                          <L n="whitelist">
+                                            <T>191710<!--ZoneModifier: zoneModifier_lotTrait_CelebrityHangOut_HighFame--></T>
+                                          </L>
+                                        </U>
+                                      </V>
+                                    </U>
+                                  </V>
+                                </U>
+                              </U>
+                            </V>
+                          </L>
+                        </L>
+                        <T n="weight">67</T>
+                      </U>
+                    </L>
+                  </U>
+                </U>
+                <U>
+                  <T n="hour_of_day">21</T>
+                  <U n="desired_walkby_situations">
+                    <V n="desired_sim_count" t="random_in_range">
+                      <U n="random_in_range">
+                        <T n="lower_bound">1</T>
+                        <T n="upper_bound">2</T>
+                      </U>
+                    </V>
+                    <L n="weighted_situations">
+                      <U>
+                        <T n="situation">132428<!--RestaurantDinerBackGroundSituation: RestaurantDinerBackground_NPC_Standard--></T>
+                        <L n="tests">
+                          <L>
+                            <V t="zone">
+                              <U n="zone">
+                                <U n="zone_tests">
+                                  <V n="zone_modifiers" t="enabled">
+                                    <U n="enabled">
+                                      <V n="blacklist" t="specify">
+                                        <U n="specify">
+                                          <L n="blacklist">
+                                            <T>191710<!--ZoneModifier: zoneModifier_lotTrait_CelebrityHangOut_HighFame--></T>
+                                            <T>191708<!--ZoneModifier: zoneModifier_lotTrait_CelebrityHangOut_LowFame--></T>
+                                          </L>
+                                        </U>
+                                      </V>
+                                    </U>
+                                  </V>
+                                </U>
+                              </U>
+                            </V>
+                          </L>
+                        </L>
+                        <T n="weight">10</T>
+                      </U>
+                      <U>
+                        <T n="situation">132752<!--RestaurantDinerBackGroundSituation: restaurantDinerBackground_NPC_BadDate--></T>
+                      </U>
+                      <U>
+                        <T n="situation">132672<!--RestaurantDinerBackGroundSituation: restaurantDinerBackground_NPC_HappyDate--></T>
+                        <T n="weight">2</T>
+                      </U>
+                      <U>
+                        <T n="situation">196203<!--RestaurantDinerBackGroundSituation: restaurantDinerBackground_NPC_Celebrity_LowFame--></T>
+                        <L n="tests">
+                          <L>
+                            <V t="zone">
+                              <U n="zone">
+                                <U n="zone_tests">
+                                  <V n="zone_modifiers" t="enabled">
+                                    <U n="enabled">
+                                      <V n="whitelist" t="specify">
+                                        <U n="specify">
+                                          <L n="whitelist">
+                                            <T>191708<!--ZoneModifier: zoneModifier_lotTrait_CelebrityHangOut_LowFame--></T>
+                                            <T>191710<!--ZoneModifier: zoneModifier_lotTrait_CelebrityHangOut_HighFame--></T>
+                                          </L>
+                                        </U>
+                                      </V>
+                                    </U>
+                                  </V>
+                                </U>
+                              </U>
+                            </V>
+                          </L>
+                        </L>
+                        <T n="weight">7</T>
+                      </U>
+                      <U>
+                        <T n="situation">196202<!--RestaurantDinerBackGroundSituation: restaurantDinerBackground_NPC_Celebrity_HighFame--></T>
+                        <L n="tests">
+                          <L>
+                            <V t="zone">
+                              <U n="zone">
+                                <U n="zone_tests">
+                                  <V n="zone_modifiers" t="enabled">
+                                    <U n="enabled">
+                                      <V n="whitelist" t="specify">
+                                        <U n="specify">
+                                          <L n="whitelist">
+                                            <T>191710<!--ZoneModifier: zoneModifier_lotTrait_CelebrityHangOut_HighFame--></T>
+                                          </L>
+                                        </U>
+                                      </V>
+                                    </U>
+                                  </V>
+                                </U>
+                              </U>
+                            </V>
+                          </L>
+                        </L>
+                        <T n="weight">7</T>
+                      </U>
+                    </L>
+                  </U>
+                </U>
+              </L>
+            </U>
+          </L>
+        </U>
+      </V>
+      <E n="shift_strictness">OVERLAP</E>
+    </U>
+  </L>
+  <T n="use_object_provided_situations_schedule">False</T>
+  <T n="user_sim_arrival_situation">135258<!--SituationSimple: Situation_Restaurant_PlayerGroup_Idle--></T>
+  <U n="venue_owed_payment_data">
+    <V n="payment_fail_notification" t="enabled">
+      <V n="enabled" t="literal">
+        <U n="literal">
+          <V t="enabled" n="icon">
+            <V n="enabled" t="resource_key">
+              <U n="resource_key">
+                <T n="key" p="InGP03\UI\Icons\Headlines\headline_EatingatRestaurant.png">2f7d0004:00000000:e2a7f763e23b33bc</T>
+              </U>
+            </V>
+          </V>
+          <V n="text" t="single">
+            <T n="single">0xBE87F79C<!--String: "¡Eh! Te has ido sin pagar la cuenta, cuyo importe era de {0.Money}, pero como parece que la suerte no te sonríe últimamente, no te preocupes. ¡Invita la casa!"--></T>
+          </V>
+        </U>
+      </V>
+    </V>
+    <V n="payment_succeed_notification" t="enabled">
+      <V n="enabled" t="literal">
+        <U n="literal">
+          <V t="enabled" n="icon">
+            <V n="enabled" t="resource_key">
+              <U n="resource_key">
+                <T n="key" p="InGP03\UI\Icons\Headlines\headline_EatingatRestaurant.png">2f7d0004:00000000:e2a7f763e23b33bc</T>
+              </U>
+            </V>
+          </V>
+          <V n="text" t="single">
+            <T n="single">0xE3A6F074<!--String: "¡Eh! Te has ido sin pagar la cuenta, así que te hemos cargado el importe, que era de {0.Money}. ¡Que no se te vuelva a olvidar!"--></T>
+          </V>
+        </U>
+      </V>
+    </V>
+  </U>
+</I>

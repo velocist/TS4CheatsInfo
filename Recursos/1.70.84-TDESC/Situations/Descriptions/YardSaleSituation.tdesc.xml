@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+
+<TuningRoot>
+    <Instance instance_type="situation" class="YardSaleSituation" module="situations.ambient.yard_sale_situation" muid="925880E701FE929E" description="Yard Sale Situation for the player to pull customers from the open street&#xA;to come and purchase items on the craft sales table." instance_subclasses_only="False" parents="SituationComplexCommon, SituationComplex, Situation" path="Situations\Descriptions" use_guid_for_reference="True">
+        <Deleted name="_implies_greeted_status" muid="30B27CC0F152E794" />
+
+        <Deleted name="creation_ui_option" muid="DF581A96AE132B2A" />
+
+        <Tunable type="situation" name="customer_situation" class="TunableReference" display="Customer Situation" muid="8C596BE0313C5AA2" description="Customer Situation to spawn that will pull customers to purchase&#xA;items from the craft sales table." allow_none="False" Deprecated="False" filter="0" group="General" restrict="YardSaleCustomerSituation" />
+
+        <Deleted name="exclusivity" muid="11EEC5CA4BB838E7" />
+
+        <TunableTuple name="manage_customers_state" class="TunableManageCustomersState" display="Manage Customers State" muid="B1FB9237CF759A82" description="Situation State to bring customers by putting them in&#xA;SalesTableCustomerSituations." Deprecated="False" filter="0" group="Situation State">
+            <Tunable type="bool" name="allow_join_situation" class="Tunable" default="True" display="Allow Join Situation" muid="51A3D6672775D348" description="Whether the situation is allowed to join at this state." Deprecated="False" filter="0" group="General" />
+            <TunableList name="job_and_role_changes" class="TunableMapping" display="Job And Role Changes" muid="36A2E8EDAA3B5E57" mapping_key="Situation Job" mapping_value="Role State" description="A mapping between situation jobs and role states that defines&#xA;what role states we want to switch to for sims on which jobs&#xA;when this situation state is entered." Deprecated="False" filter="0" group="General">
+                <TunableTuple class="TunableTuple" muid="946CACC95AFA9953" Deprecated="False" filter="0" group="General">
+                    <Tunable type="role_state" name="Role State" class="TunableReference" display="Role State" muid="CC7EDAAD1E8FFBBA" description="The role state that we will switch sims of the linked job&#xA;into." allow_none="False" Deprecated="False" filter="0" group="General" />
+                    <Tunable type="situation_job" name="Situation Job" class="TunableReference" display="Situation Job" muid="5ADBCBC09D4C7564" description="A reference to a SituationJob that we will use to change&#xA;sim's role state." allow_none="False" Deprecated="False" filter="0" group="General" />
+                </TunableTuple>
+            </TunableList>
+            <Tunable type="float" name="time_between_customer_checks" class="TunableSimMinute" default="10" display="Time Between Customer Checks" muid="1CF1440EFFF0DD0A" min="None" max="None" description="Time in Sim minutes between situation checks to see if we need to add&#xA;more Sims to be customers." tuning_state="NeedsTuning" Deprecated="False" filter="0" group="General" />
+            <TunableVariant type="None" name="time_out" class="OptionalTunable" default="disabled" display="Time Out" muid="F245CB3041F1322B" description="How long this state will last before time expired. Please talk to the GPE who implemented the specific&#xA;situation to see what the state will do on time expired." Deprecated="False" filter="0" group="General">
+                <Tunable name="disabled" class="TunableExistance" display="Disabled" muid="27BA05D1C3971A9A" />
+                <Tunable type="float" name="enabled" class="TunableSimMinute" default="15" display="Enabled" muid="5F443D0E010693A0" min="1" max="None" tuning_state="NeedsTuning" Deprecated="False" filter="0" group="General" />
+            </TunableVariant>
+        </TunableTuple>
+
+        <TunableTuple name="number_of_expected_customers" class="TunableInterval" display="Number Of Expected Customers" muid="8F6AF091957D86" description="The number of customers we expect to have at any given time the&#xA;yard sale is running. The yard sale will attempt to manage this&#xA;many customer situations at any given time." Deprecated="False" filter="0" group="General">
+            <Tunable type="int" name="lower_bound" class="TunableRange" default="0" display="Lower Bound" muid="3E16C567495EBCAF" min="0" max="None" description="The lower bound of the interval." tuning_state="NeedsTuning" Deprecated="False" filter="0" group="General" />
+            <Tunable type="int" name="upper_bound" class="TunableRange" default="10" display="Upper Bound" muid="63B51A5C2DA915F5" min="None" max="10" description="The upper bound of the interval." tuning_state="NeedsTuning" Deprecated="False" filter="0" group="General" />
+        </TunableTuple>
+
+        <TunableTuple name="user_job" class="TunableTuple" display="User Job" muid="B127366684350411" description="The job and role which the Sim is placed into." Deprecated="False" filter="0" group="General">
+            <Tunable type="role_state" name="role_state" class="TunableReference" display="Role State" muid="D06D7B74617A8C4F" description="A role state the sim assigned to the job will perform." allow_none="False" Deprecated="False" filter="0" group="General" restrict="RoleState" />
+            <Tunable type="situation_job" name="situation_job" class="TunableReference" display="Situation Job" muid="F974B4436676842E" description="A reference to a SituationJob that can be performed at this Situation." allow_none="False" Deprecated="False" filter="0" group="General" restrict="SituationJob" />
+        </TunableTuple>
+    </Instance>
+</TuningRoot>

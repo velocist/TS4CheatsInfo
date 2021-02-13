@@ -1,0 +1,195 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<I c="MixerInteraction" i="interaction" m="interactions.base.mixer_interaction" n="excavationPile_Dig_Hammer" s="177067">
+  <T n="allow_user_directed">False</T>
+  <V t="one_shot" n="basic_content">
+    <U n="one_shot">
+      <U n="animation_ref">
+        <T o="true" n="factory" />
+        <U n="overrides">
+          <V t="disabled" n="balloons" />
+        </U>
+      </U>
+    </U>
+  </V>
+  <V t="disable_focus" n="basic_focus" />
+  <U n="display_name_text_tokens">
+    <L n="tokens">
+      <V t="participant_type">
+        <U n="participant_type">
+          <V t="from_participant" n="objects">
+            <U n="from_participant">
+              <E n="participant">Actor</E>
+            </U>
+          </V>
+        </U>
+      </V>
+      <V t="participant_type">
+        <U n="participant_type">
+          <V t="from_participant" n="objects">
+            <U n="from_participant">
+              <E n="participant">Object</E>
+            </U>
+          </V>
+        </U>
+      </V>
+    </L>
+  </U>
+  <L n="interaction_category_tags">
+    <E>Interaction_Mixer</E>
+    <E>Interaction_All</E>
+  </L>
+  <V t="enabled" n="lock_out_time">
+    <U n="enabled">
+      <U n="interval">
+        <T n="lower_bound">2</T>
+        <T n="upper_bound">2</T>
+      </U>
+    </U>
+  </V>
+  <V n="outcome" t="test_based">
+    <U n="test_based">
+      <L n="fallback_outcomes">
+        <U>
+          <U n="outcome">
+            <V n="animation_ref" t="enabled">
+              <U n="enabled">
+                <T n="factory">177059<!--AnimationElement: ExcavationPile_Dig_Hammer--></T>
+              </U>
+            </V>
+          </U>
+          <U n="weight">
+            <L n="multipliers">
+              <U>
+                <T n="multiplier">3</T>
+                <L n="tests">
+                  <L>
+                    <V t="skill_test">
+                      <U n="skill_test">
+                        <T n="skill">174237<!--Skill: statistic_Skill_AdultMajor_Archaeology--></T>
+                        <V t="interval" n="skill_range">
+                          <U n="interval">
+                            <U n="skill_interval">
+                              <T n="lower_bound">3</T>
+                              <T n="upper_bound">4</T>
+                            </U>
+                          </U>
+                        </V>
+                      </U>
+                    </V>
+                  </L>
+                </L>
+              </U>
+            </L>
+          </U>
+        </U>
+        <U>
+          <U n="weight">
+            <T n="base_value">1</T>
+            <L n="multipliers">
+              <U>
+                <T n="multiplier">0</T>
+                <L n="tests">
+                  <L>
+                    <V t="sim_info">
+                      <U n="sim_info">
+                        <V t="specified" n="ages">
+                          <L n="specified">
+                            <E>CHILD</E>
+                          </L>
+                        </V>
+                      </U>
+                    </V>
+                  </L>
+                  <L>
+                    <V t="skill_test">
+                      <U n="skill_test">
+                        <T n="skill">174237<!--Skill: statistic_Skill_AdultMajor_Archaeology--></T>
+                        <V t="interval" n="skill_range">
+                          <U n="interval">
+                            <U n="skill_interval">
+                              <T n="lower_bound">0</T>
+                              <T n="upper_bound">2</T>
+                            </U>
+                          </U>
+                        </V>
+                      </U>
+                    </V>
+                  </L>
+                </L>
+              </U>
+              <U>
+                <T n="multiplier">3</T>
+                <L n="tests">
+                  <L>
+                    <V t="skill_test">
+                      <U n="skill_test">
+                        <T n="skill">174237<!--Skill: statistic_Skill_AdultMajor_Archaeology--></T>
+                        <V n="skill_range" t="threshold">
+                          <U n="threshold">
+                            <U n="skill_threshold">
+                              <E n="comparison">EQUAL</E>
+                              <T n="value">7</T>
+                            </U>
+                          </U>
+                        </V>
+                      </U>
+                    </V>
+                  </L>
+                </L>
+              </U>
+            </L>
+          </U>
+        </U>
+      </L>
+    </U>
+  </V>
+  <U n="sub_action">
+    <T n="base_weight">2</T>
+  </U>
+  <E n="target_type">OBJECT</E>
+  <L n="test_globals">
+    <V t="state_white_black">
+      <U n="state_white_black">
+        <U n="states">
+          <V n="blacklist" t="specify">
+            <U n="specify">
+              <L n="blacklist">
+                <T>177107<!--CommodityBasedObjectStateValue: excavationPile_Empty--></T>
+                <T>183742<!--CommodityBasedObjectStateValue: templeExcavationSite_Empty--></T>
+              </L>
+            </U>
+          </V>
+        </U>
+      </U>
+    </V>
+  </L>
+  <L n="tests">
+    <L>
+      <V t="sim_info">
+        <U n="sim_info">
+          <V t="specified" n="ages">
+            <L n="specified">
+              <E>CHILD</E>
+            </L>
+          </V>
+        </U>
+      </V>
+    </L>
+    <L>
+      <V t="skill_test">
+        <U n="skill_test">
+          <T n="skill">174237<!--Skill: statistic_Skill_AdultMajor_Archaeology--></T>
+          <V n="skill_range" t="threshold">
+            <U n="threshold">
+              <U n="skill_threshold">
+                <E n="comparison">LESS</E>
+                <T n="value">8</T>
+              </U>
+            </U>
+          </V>
+        </U>
+      </V>
+    </L>
+  </L>
+  <T n="visible">False</T>
+</I>

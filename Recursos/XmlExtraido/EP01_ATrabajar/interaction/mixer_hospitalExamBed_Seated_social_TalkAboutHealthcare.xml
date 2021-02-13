@@ -1,0 +1,148 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<I c="MixerInteraction" i="interaction" m="interactions.base.mixer_interaction" n="mixer_hospitalExamBed_Seated_social_TalkAboutHealthcare" s="116412">
+  <V t="resource_key" n="_icon">
+    <U n="resource_key">
+      <T p="InGame\UI\Icons\Headlines\Final\headline_caduceus.png" n="key">2f7d0004:00000000:35dbb687e5900e65</T>
+    </U>
+  </V>
+  <L n="_static_commodities">
+    <U>
+      <T n="desire">0.2</T>
+      <T n="static_commodity">112248<!--StaticCommodity: commodity_RoleAutonomy_DoctorCareer_Orderly--></T>
+    </U>
+    <U>
+      <T n="desire">4</T>
+      <T n="static_commodity">112234<!--StaticCommodity: commodity_RoleAutonomy_DoctorCareer_Nurse--></T>
+    </U>
+    <U>
+      <T n="desire">4</T>
+      <T n="static_commodity">115780<!--StaticCommodity: commodity_RoleAutonomy_DoctorCareer_NPC_Doctor--></T>
+    </U>
+    <U>
+      <T n="desire">2</T>
+      <T n="static_commodity">116258<!--StaticCommodity: commodity_RoleAutonomy_DoctorCareer_NPC_Doctor_diagnoser--></T>
+    </U>
+  </L>
+  <T n="allow_user_directed">False</T>
+  <V n="basic_content" t="one_shot">
+    <U n="one_shot">
+      <U n="animation_ref">
+        <T n="factory">107418<!--AnimationElement: object_HospitalExamBed_Patient_Soc_SitActions_DiscussHealth--></T>
+        <U n="overrides">
+          <V n="balloons" t="enabled">
+            <L n="enabled">
+              <U>
+                <T n="balloon_chance">66</T>
+                <L n="balloon_choices">
+                  <U>
+                    <V n="item" t="balloon_category">
+                      <T n="balloon_category">116645<!--BalloonCategory: balloonCategory_CareerDoctor_DiscussHealthcare_speech--></T>
+                    </V>
+                  </U>
+                </L>
+                <T n="balloon_delay">0.75</T>
+                <T n="balloon_delay_random_offset">0.25</T>
+                <L n="balloon_target">
+                  <E>Actor</E>
+                </L>
+              </U>
+              <U>
+                <T n="balloon_chance">33</T>
+                <L n="balloon_choices">
+                  <U>
+                    <V t="balloon_category" n="item">
+                      <T n="balloon_category">107017<!--BalloonCategory: balloonCategory_SicknessSystem_MedicalAdvice_Good_Doctor--></T>
+                    </V>
+                  </U>
+                </L>
+                <T n="balloon_delay">1</T>
+                <T n="balloon_delay_random_offset">0.25</T>
+                <L n="balloon_target">
+                  <E>TargetSim</E>
+                </L>
+              </U>
+            </L>
+          </V>
+        </U>
+      </U>
+    </U>
+  </V>
+  <V t="disable_focus" n="basic_focus" />
+  <T n="category">111235<!--PieMenuCategory: pieMenuCategories_SicknessSystem_ExaminePatient--></T>
+  <T n="display_name">0x37495E66<!--String: "Hablar de sanidad"--></T>
+  <U n="display_name_text_tokens">
+    <L n="tokens">
+      <V t="participant_type">
+        <U n="participant_type">
+          <V t="from_participant" n="objects">
+            <U n="from_participant">
+              <E n="participant">Actor</E>
+            </U>
+          </V>
+        </U>
+      </V>
+      <V t="participant_type">
+        <U n="participant_type">
+          <V t="from_participant" n="objects">
+            <U n="from_participant">
+              <E n="participant">Object</E>
+            </U>
+          </V>
+        </U>
+      </V>
+    </L>
+  </U>
+  <L n="interaction_category_tags">
+    <E>Interaction_Mixer</E>
+    <E>Interaction_All</E>
+  </L>
+  <V t="enabled" n="lock_out_time">
+    <U n="enabled">
+      <U n="interval">
+        <T n="lower_bound">5</T>
+        <T n="upper_bound">10</T>
+      </U>
+    </U>
+  </V>
+  <V t="single" n="outcome">
+    <U n="single">
+      <U n="actions">
+        <L n="loot_list" />
+      </U>
+    </U>
+  </V>
+  <V t="enabled" n="pie_menu_icon">
+    <V t="resource_key" n="enabled">
+      <U n="resource_key">
+        <T p="InGame\UI\Icons\Headlines\Final\headline_stethoscope.png" n="key">2f7d0004:00000000:64fae0686643d1d7</T>
+      </U>
+    </V>
+  </V>
+  <T n="pie_menu_priority">7</T>
+  <U n="sub_action">
+    <T n="base_weight">2</T>
+  </U>
+  <E n="target_type">OBJECT</E>
+  <L n="test_globals">
+    <V t="test_set_reference">
+      <T n="test_set_reference">115422<!--TestSetInstance: testSet_Doctor_CareerEvent_Target_isPatient_notPregnant--></T>
+    </V>
+    <V t="buff">
+      <U n="buff">
+        <L n="blacklist">
+          <T>114415<!--Buff: buff_Role_DoctorCareer_PatientState_Treated--></T>
+        </L>
+        <E n="subject">TargetSim</E>
+      </U>
+    </V>
+    <V t="posture">
+      <U n="posture">
+        <L n="required_postures">
+          <T>107793<!--Posture: posture_hospitalExamBed_Sit--></T>
+        </L>
+        <E n="subject">TargetSim</E>
+      </U>
+    </V>
+  </L>
+  <T n="visible">True</T>
+</I>

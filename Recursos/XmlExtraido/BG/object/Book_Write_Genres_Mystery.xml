@@ -1,0 +1,497 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<I c="GameObject" i="object" m="objects.game_object" n="Book_Write_Genres_Mystery" s="100069">
+  <V t="enabled" n="_anim_overrides">
+    <U n="enabled">
+      <L n="params">
+        <U>
+          <T n="name">carryObject</T>
+          <V t="string" n="value">
+            <T n="string">book</T>
+          </V>
+        </U>
+        <U>
+          <T n="name">objectType</T>
+          <V t="string" n="value">
+            <T n="string">book</T>
+          </V>
+        </U>
+      </L>
+    </U>
+  </V>
+  <U n="_components">
+    <V t="enabled" n="affordance_tuning">
+      <U n="enabled">
+        <L n="affordance_map">
+          <U>
+            <T n="key">13117<!--SuperInteraction: book_read--></T>
+            <U n="value">
+              <V n="basic_content" t="flexible_length">
+                <U n="flexible_length">
+                  <L n="conditional_actions">
+                    <V t="literal">
+                      <U n="literal">
+                        <L n="conditions">
+                          <V t="time_based">
+                            <U n="time_based">
+                              <T n="max_time">3000</T>
+                              <T n="min_time">3000</T>
+                            </U>
+                          </V>
+                        </L>
+                      </U>
+                    </V>
+                    <V t="list_reference">
+                      <T n="list_reference">33040<!--ExitConditionList: ExitConditionList_FunOrMotiveFailureExit--></T>
+                    </V>
+                    <V t="literal">
+                      <U n="literal">
+                        <L n="conditions">
+                          <V t="object_relationship_based">
+                            <U n="object_relationship_based">
+                              <U n="threshold">
+                                <T n="value">100</T>
+                              </U>
+                            </U>
+                          </V>
+                        </L>
+                        <E n="interaction_action">EXIT_NATURALLY</E>
+                        <L n="tests">
+                          <L>
+                            <V t="object_relationship">
+                              <U n="object_relationship">
+                                <V t="disabled" n="can_add_relationship" />
+                                <V n="relationship_status" t="relationship_range">
+                                  <U n="relationship_range">
+                                    <T n="use_default_value_if_no_relationship">False</T>
+                                    <U n="value_interval">
+                                      <T n="lower_bound">-100</T>
+                                      <T n="upper_bound">99</T>
+                                    </U>
+                                  </U>
+                                </V>
+                                <E n="sims">Actor</E>
+                                <E n="targets">Object</E>
+                              </U>
+                            </V>
+                          </L>
+                          <L>
+                            <V t="object_relationship">
+                              <U n="object_relationship">
+                                <V t="disabled" n="can_add_relationship" />
+                                <V t="no_relationship_exists" n="relationship_status" />
+                                <E n="sims">Actor</E>
+                                <E n="targets">Object</E>
+                              </U>
+                            </V>
+                          </L>
+                        </L>
+                      </U>
+                    </V>
+                  </L>
+                  <T n="start_autonomous_inertial">False</T>
+                </U>
+              </V>
+            </U>
+          </U>
+          <U>
+            <T n="key">13120<!--MixerInteraction: Book_Read_Active--></T>
+            <U n="value">
+              <V t="one_shot" n="basic_content">
+                <U n="one_shot">
+                  <U n="animation_ref">
+                    <T n="factory">11313<!--AnimationElementSet: Book_Read_Active_Set--></T>
+                    <U n="overrides">
+                      <V n="balloons" t="enabled">
+                        <L n="enabled">
+                          <U>
+                            <L n="balloon_choices">
+                              <U>
+                                <V n="item" t="balloon_category">
+                                  <T n="balloon_category">12271<!--BalloonCategory: balloon_Book_Fun--></T>
+                                </V>
+                              </U>
+                            </L>
+                            <T n="balloon_delay">0.5</T>
+                            <T n="balloon_delay_random_offset">1</T>
+                            <L n="balloon_target">
+                              <E>Actor</E>
+                            </L>
+                          </U>
+                        </L>
+                      </V>
+                    </U>
+                  </U>
+                </U>
+              </V>
+            </U>
+          </U>
+        </L>
+      </U>
+    </V>
+    <V t="enabled" n="carryable">
+      <U n="enabled">
+        <V t="reference" n="put_down_tuning">
+          <L n="reference">
+            <U>
+              <T n="value">77819<!--PutDownStrategy: PutDownStrategy_Book--></T>
+            </U>
+          </L>
+        </V>
+      </U>
+    </V>
+    <V t="enabled" n="focus">
+      <U n="enabled">
+        <V n="_focus_score" t="globally">
+          <U n="globally">
+            <E n="base">MEDIUM</E>
+          </U>
+        </V>
+      </U>
+    </V>
+    <V t="enabled" n="inventory_item">
+      <U n="enabled">
+        <V t="enabled" n="register_with_lost_and_found" />
+        <E n="stack_scheme">DEFINITION</E>
+        <L n="valid_inventory_types">
+          <E>SIM</E>
+          <E>BOOKSHELF</E>
+          <E>RETAIL_SHELF</E>
+          <E>CRAFT_SALES_TABLE_EP03</E>
+          <E>STORAGE_CHEST</E>
+          <E>STORAGE_CHEST_DORM</E>
+        </L>
+      </U>
+    </V>
+    <V n="name" t="enabled">
+      <U n="enabled">
+        <V t="enabled" n="affordance">
+          <T n="enabled">13886<!--RenameImmediateInteraction: rename_Book--></T>
+        </V>
+        <T n="allow_description">True</T>
+        <L n="templates">
+          <U>
+            <T n="template_description">0xC5FBB9BB<!--String: "Esto es un libro de misterio."--></T>
+            <T n="template_name">0xAF365A1A<!--String: "Los zapatos desaparecidos"--></T>
+          </U>
+          <U>
+            <T n="template_description">0xC5FBB9BB<!--String: "Esto es un libro de misterio."--></T>
+            <T n="template_name">0x20A1D238<!--String: "Todos los Sims del lugar"--></T>
+          </U>
+          <U>
+            <T n="template_description">0xC5FBB9BB<!--String: "Esto es un libro de misterio."--></T>
+            <T n="template_name">0x61CC023B<!--String: "Plaga"--></T>
+          </U>
+          <U>
+            <T n="template_description">0xC5FBB9BB<!--String: "Esto es un libro de misterio."--></T>
+            <T n="template_name">0x5BDB937B<!--String: "La escalera desaparecida"--></T>
+          </U>
+          <U>
+            <T n="template_description">0xC5FBB9BB<!--String: "Esto es un libro de misterio."--></T>
+            <T n="template_name">0x413A6DB0<!--String: "Sin entrada"--></T>
+          </U>
+        </L>
+      </U>
+    </V>
+    <V t="enabled" n="object_relationships">
+      <U n="enabled">
+        <T n="relationship_stat">36408<!--Statistic: Statistic_Object_BookProgress--></T>
+      </U>
+    </V>
+    <V t="enabled" n="ownable_component" />
+    <V t="enabled" n="retail_component">
+      <V n="enabled" t="reference">
+        <T n="reference">115301<!--RetailComponent: retailComponent_Default_LowAppeal--></T>
+      </V>
+    </V>
+    <V n="state" t="enabled">
+      <U n="enabled">
+        <L n="states">
+          <U>
+            <L n="client_states">
+              <U>
+                <T n="key">15304<!--CommodityBasedObjectStateValue: Quality_Normal--></T>
+              </U>
+              <U>
+                <T n="key">15305<!--CommodityBasedObjectStateValue: Quality_Outstanding--></T>
+              </U>
+              <U>
+                <T n="key">15306<!--CommodityBasedObjectStateValue: Quality_Poor--></T>
+              </U>
+            </L>
+            <V t="reference" n="default_value">
+              <T n="reference">15304<!--CommodityBasedObjectStateValue: Quality_Normal--></T>
+            </V>
+          </U>
+          <U>
+            <L n="client_states">
+              <U>
+                <T n="key">10412<!--ObjectStateValue: CraftingSkill_01--></T>
+              </U>
+              <U>
+                <T n="key">10413<!--ObjectStateValue: CraftingSkill_04--></T>
+              </U>
+              <U>
+                <T n="key">10414<!--ObjectStateValue: CraftingSkill_07--></T>
+              </U>
+            </L>
+            <V t="reference" n="default_value">
+              <T n="reference">10412<!--ObjectStateValue: CraftingSkill_01--></T>
+            </V>
+          </U>
+          <U>
+            <L n="client_states">
+              <U>
+                <T n="key">32305<!--ObjectStateValue: Marketable_HigherValue--></T>
+              </U>
+              <U>
+                <T n="key">32313<!--ObjectStateValue: Marketable_NormalValue--></T>
+              </U>
+            </L>
+            <V n="default_value" t="reference">
+              <T n="reference">32313<!--ObjectStateValue: Marketable_NormalValue--></T>
+            </V>
+          </U>
+          <U>
+            <L n="client_states">
+              <U>
+                <T n="key">15247<!--ObjectStateValue: Masterwork_Masterwork--></T>
+              </U>
+              <U>
+                <T n="key">15248<!--ObjectStateValue: Masterwork_Normalwork--></T>
+              </U>
+            </L>
+            <V t="reference" n="default_value">
+              <T n="reference">15248<!--ObjectStateValue: Masterwork_Normalwork--></T>
+            </V>
+          </U>
+          <U>
+            <L n="client_states">
+              <U>
+                <T n="key">115766<!--ObjectStateValue: displayComponent_Values_NoInventory--></T>
+                <U n="value">
+                  <V t="apply_new_value" n="geometry_state" />
+                  <V t="apply_new_value" n="model" />
+                </U>
+              </U>
+              <U>
+                <T n="key">115768<!--ObjectStateValue: displayComponent_Values_SmallQuantity--></T>
+                <U n="value">
+                  <V t="apply_new_value" n="geometry_state">
+                    <V n="apply_new_value" t="set_to_custom_value">
+                      <T n="set_to_custom_value">mesh_gS_single</T>
+                    </V>
+                  </V>
+                  <V t="apply_new_value" n="material_state">
+                    <U n="apply_new_value">
+                      <V t="set_to_custom_value" n="state_name">
+                        <T n="set_to_custom_value">Cover01</T>
+                      </V>
+                    </U>
+                  </V>
+                  <V n="model" t="apply_new_value">
+                    <V n="apply_new_value" t="set_to_custom_model">
+                      <U n="set_to_custom_model">
+                        <V n="model" t="from_definition">
+                          <U n="from_definition">
+                            <T n="definition">84023</T>
+                          </U>
+                        </V>
+                      </U>
+                    </V>
+                  </V>
+                </U>
+              </U>
+            </L>
+            <V t="reference" n="default_value">
+              <T n="reference">115766<!--ObjectStateValue: displayComponent_Values_NoInventory--></T>
+            </V>
+          </U>
+          <U>
+            <L n="client_states">
+              <U>
+                <T n="key">131794<!--ObjectStateValue: Kelpto_Stolen_Object--></T>
+              </U>
+              <U>
+                <T n="key">131795<!--ObjectStateValue: Klepto_Not_Stolen_Object--></T>
+              </U>
+            </L>
+            <V n="default_value" t="reference">
+              <T n="reference">131795<!--ObjectStateValue: Klepto_Not_Stolen_Object--></T>
+            </V>
+          </U>
+          <U>
+            <L n="client_states">
+              <U>
+                <T n="key">115972<!--ObjectStateValue: copiedBook_Original--></T>
+              </U>
+              <U>
+                <T n="key">115973<!--ObjectStateValue: copiedBook_Copy--></T>
+              </U>
+            </L>
+            <V n="default_value" t="reference">
+              <T n="reference">115972<!--ObjectStateValue: copiedBook_Original--></T>
+            </V>
+          </U>
+          <U>
+            <L n="client_states">
+              <U>
+                <T n="key">208254<!--ObjectStateValue: freelancer_Careeers_Approval_Values_None--></T>
+              </U>
+              <U>
+                <T n="key">208255<!--ObjectStateValue: freelancer_Careeers_Approval_Values_Rejected--></T>
+              </U>
+            </L>
+            <V n="default_value" t="reference">
+              <T n="reference">208254<!--ObjectStateValue: freelancer_Careeers_Approval_Values_None--></T>
+            </V>
+          </U>
+          <U>
+            <L n="client_states">
+              <U>
+                <T n="key">74058<!--ObjectStateValue: ModelVariant_Values_00--></T>
+                <U n="value">
+                  <V t="apply_new_value" n="material_state">
+                    <U n="apply_new_value">
+                      <V t="set_to_custom_value" n="state_name">
+                        <T n="set_to_custom_value">Cover01</T>
+                      </V>
+                    </U>
+                  </V>
+                </U>
+              </U>
+              <U>
+                <T n="key">74059<!--ObjectStateValue: ModelVariant_Values_01--></T>
+                <U n="value">
+                  <V t="apply_new_value" n="material_state">
+                    <U n="apply_new_value">
+                      <V n="state_name" t="set_to_custom_value">
+                        <T n="set_to_custom_value">Cover02</T>
+                      </V>
+                    </U>
+                  </V>
+                </U>
+              </U>
+            </L>
+            <V t="random" n="default_value">
+              <L n="random">
+                <U>
+                  <T n="state">74058<!--ObjectStateValue: ModelVariant_Values_00--></T>
+                </U>
+              </L>
+            </V>
+          </U>
+          <U>
+            <L n="client_states">
+              <U>
+                <T n="key">101333<!--ObjectStateValue: BookPublished_Digest_NotSold--></T>
+              </U>
+              <U>
+                <T n="key">101334<!--ObjectStateValue: BookPublished_Digest_Sold--></T>
+              </U>
+            </L>
+            <V n="default_value" t="reference">
+              <T n="reference">101333<!--ObjectStateValue: BookPublished_Digest_NotSold--></T>
+            </V>
+          </U>
+          <U>
+            <L n="client_states">
+              <U>
+                <T n="key">101239<!--ObjectStateValue: BookPublished_Published--></T>
+              </U>
+              <U>
+                <T n="key">101240<!--ObjectStateValue: BookPublished_Unpublished--></T>
+              </U>
+            </L>
+            <V n="default_value" t="reference">
+              <T n="reference">101240<!--ObjectStateValue: BookPublished_Unpublished--></T>
+            </V>
+          </U>
+          <U>
+            <L n="client_states">
+              <U>
+                <T n="key">39478<!--CommodityBasedObjectStateValue: FireState_Burn_Incinerate_Burning--></T>
+              </U>
+              <U>
+                <T n="key">39479<!--CommodityBasedObjectStateValue: FireState_Burn_Incinerate--></T>
+              </U>
+              <U>
+                <T n="key">39612<!--CommodityBasedObjectStateValue: FireState_Burn_Incinerate_Not_Burning--></T>
+              </U>
+            </L>
+            <V t="reference" n="default_value">
+              <T n="reference">39612<!--CommodityBasedObjectStateValue: FireState_Burn_Incinerate_Not_Burning--></T>
+            </V>
+          </U>
+        </L>
+      </U>
+    </V>
+    <V t="enabled" n="tooltip_component">
+      <U n="enabled">
+        <L n="custom_tooltips">
+          <U>
+            <L n="tooltip_fields">
+              <U>
+                <E n="key">crafted_by_text</E>
+                <U n="value">
+                  <V t="concatenate_with_component_fields" n="override_component_information" />
+                  <V n="text" t="single">
+                    <T n="single">0xFC089996<!--String: "{0.String}"--></T>
+                  </V>
+                  <V n="text_tokens" t="enabled">
+                    <U n="enabled">
+                      <L n="tokens">
+                        <V t="object_property">
+                          <U n="object_property">
+                            <E n="obj_property">GENRE</E>
+                          </U>
+                        </V>
+                      </L>
+                    </U>
+                  </V>
+                </U>
+              </U>
+            </L>
+            <E n="tooltip_style">HOVER_TIP_CONSUMABLE_CRAFTABLE</E>
+          </U>
+        </L>
+        <L n="state_value_strings">
+          <L>
+            <U>
+              <T n="state_value">115973<!--ObjectStateValue: copiedBook_Copy--></T>
+              <V n="text" t="single">
+                <T n="single">0x10114734<!--String: "Este libro es una copia del original y, por tanto, no puede publicarse."--></T>
+              </V>
+            </U>
+          </L>
+        </L>
+      </U>
+    </V>
+  </U>
+  <L n="_super_affordances">
+    <T>13117<!--SuperInteraction: book_read--></T>
+    <T>13328<!--ImmediateSuperInteraction: debug_Reset--></T>
+    <T>13326<!--ImmediateSuperInteraction: debug_ObjectDestroy--></T>
+    <T>103888<!--ImmediateSuperInteraction: cheat_set_as_head--></T>
+    <T>122714<!--SuperInteraction: cancelReplacements_ReadtoCarry--></T>
+    <T>115791<!--SuperInteraction: object_CopyCraftable_toSimInventory--></T>
+    <T>28625<!--SuperInteraction: book_analyze--></T>
+    <T>106859<!--SuperInteraction: simRay_Transform_Object--></T>
+    <T>29763<!--PutAwayInteraction: maid_PutAwayItem--></T>
+    <T>37819<!--PutAwayInteraction: Put_Away_Books--></T>
+    <T>13116<!--SimPickerInteraction: book_Picker_Read_To_Children--></T>
+    <T>76988<!--SuperInteraction: book_read_browse--></T>
+    <T>34322<!--SuperInteraction: book_read_ReadForReference--></T>
+  </L>
+  <U n="recycling_data">
+    <L n="recycling_values">
+      <U>
+        <E n="Bucks Type">RecycleBitsBucks</E>
+        <T n="Value">0.5</T>
+      </U>
+      <U>
+        <E n="Bucks Type">RecyclePiecesBucks</E>
+        <T n="Value">0.5</T>
+      </U>
+    </L>
+  </U>
+</I>

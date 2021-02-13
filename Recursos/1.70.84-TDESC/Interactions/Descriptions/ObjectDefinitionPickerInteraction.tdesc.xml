@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+
+<TuningRoot>
+    <Instance instance_type="interaction" class="ObjectDefinitionPickerInteraction" module="objects.definition_picker_interaction" muid="99F6BFC1192A8106" description="Interaction that allows a player to pick an object based on tag/definition." instance_needs_reference="True" instance_subclasses_only="False" parents="ObjectPickerInteraction, PickerSingleChoiceSuperInteraction, PickerSuperInteraction, ImmediateSuperInteraction, SuperInteraction, Interaction" path="Interactions\Descriptions" use_guid_for_reference="True">
+        <TunableList name="definition_to_loot" class="TunableList" display="Definition To Loot" muid="766E206FE5439D7F" description="Does a definition test to see loot should be applied to subjects." Deprecated="False" filter="0" group="Picker Tuning">
+            <TunableTuple class="TunableTuple" muid="2103BB6E7E94EAFC" description="Loot to apply if definition id passes." Deprecated="False" filter="0" group="General">
+                <TunableTuple name="definition_id_test" class="TunableDefinitionIdFilter" display="Definition Id Test" muid="45EDE11AFA62104" description="Definition to test for." Deprecated="False" filter="0" group="General">
+                    <Tunable type="object" name="definition" class="TunableReference" display="Definition" muid="A358049ED33C7EE0" description="The object must have this definition." allow_none="False" Deprecated="False" filter="0" group="General" />
+                </TunableTuple>
+                <Tunable type="action" name="loot_to_apply" class="TunableReference" display="Loot To Apply" muid="417075BF64C89889" description="Loot to apply." allow_none="False" Deprecated="False" filter="0" group="General" restrict="LootActions" />
+            </TunableTuple>
+        </TunableList>
+
+        <TunableVariant type="None" name="object_tags_or_definition" class="TunableVariant" default="none" display="Object Tags Or Definition" muid="A72165CBA19EF207" description="The method that will be used to generate the list of objects that&#xA;will populate the picker." Deprecated="False" filter="0" group="Picker Tuning">
+            <TunableTuple name="all_items" class="TunableDefinitionsFromTags" display="All Items" muid="A28907895C775FF5" description="Look through all the items and populate any with these tags.&#xA;&#xA;This should be accompanied with specific filtering tags in&#xA;Object Populate Filter to get a good result." Deprecated="False" filter="0" group="General">
+                <TunableVariant type="None" name="filter_tags" class="OptionalTunable" default="all_definitions" display="Filter Tags" muid="97C7D8F93FD0BD9C" description="An optional filter that if enabled will filter out the allowed items&#xA;based on the filter." Deprecated="False" filter="0" group="General">
+                    <Tunable name="all_definitions" class="TunableExistance" display="All Definitions" muid="9A537F95410AE6AA" />
+                    <TunableList name="specific_definitions" class="TunableSet" display="Specific Definitions" muid="5FB059ADA72CD939" min="1" description="A list of category tags to to search to build object picker&#xA;list." Deprecated="False" filter="0" group="General" unique_entries="true">
+                        <TunableEnum type="Tag" class="TunableEnumEntry" default="INVALID" muid="FC97E6EF30F9B9EF" dynamic_entries="tag.Tag._elements" static_entries="tag.Tag" description="What tag to test for" Deprecated="False" filter="0" group="General" />
+                    </TunableList>
+                </TunableVariant>
+            </TunableTuple>
+            <Tunable name="none" class="TunableExistance" display="None" muid="F4CEE6C8AA9B6458" />
+            <TunableTuple name="specific_items" class="TunableDefinitionsExplicit" display="Specific Items" muid="F2CC6953B51021A0" description="A list of specific items that is populated in this&#xA;dialog." Deprecated="False" filter="0" group="General">
+                <TunableList name="item_list" class="TunableSet" display="Item List" muid="424D22B06D0AB86E" min="1" description="The list of items available for purchase." Deprecated="False" filter="0" group="General" unique_entries="true">
+                    <Tunable type="object" class="TunableReference" muid="82BF34C6B9FB55CC" allow_none="False" Deprecated="False" filter="0" group="General" pack_safe="True" />
+                </TunableList>
+            </TunableTuple>
+        </TunableVariant>
+    </Instance>
+</TuningRoot>

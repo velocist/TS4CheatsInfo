@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+
+<TuningRoot>
+    <Instance instance_type="situation" class="FireBrigadeSituation" module="situations.complex.fire_brigade_situation" muid="82DA411E7E680A82" description="Situation used to control the behavior of Sims during a fire." instance_subclasses_only="False" parents="SituationComplexCommon, SituationComplex, Situation" path="Situations\Descriptions" use_guid_for_reference="True">
+        <TunableTuple name="_find_fire_state" class="Tunable_FindFireState" display="Find Fire State" muid="341B6EA8B5B192A6" description="The situation state used to put the fire brigade volunteers in&#xA;the role that directs them to put out active fires." Deprecated="False" filter="0" group="Situation State">
+            <Tunable type="bool" name="allow_join_situation" class="Tunable" default="True" display="Allow Join Situation" muid="590B09C81FFF39FB" description="Whether the situation is allowed to join at this state." Deprecated="False" filter="0" group="General" />
+            <TunableList name="job_and_role_changes" class="TunableMapping" display="Job And Role Changes" muid="73D3026C11F0FAB0" mapping_key="Situation Job" mapping_value="Role State" description="A mapping between situation jobs and role states that defines&#xA;what role states we want to switch to for sims on which jobs&#xA;when this situation state is entered." Deprecated="False" filter="0" group="General">
+                <TunableTuple class="TunableTuple" muid="CB8DE2F7950628BE" Deprecated="False" filter="0" group="General">
+                    <Tunable type="role_state" name="Role State" class="TunableReference" display="Role State" muid="3D39E3AEA502953" description="The role state that we will switch sims of the linked job&#xA;into." allow_none="False" Deprecated="False" filter="0" group="General" />
+                    <Tunable type="situation_job" name="Situation Job" class="TunableReference" display="Situation Job" muid="40AD2680CA9120A2" description="A reference to a SituationJob that we will use to change&#xA;sim's role state." allow_none="False" Deprecated="False" filter="0" group="General" />
+                </TunableTuple>
+            </TunableList>
+            <TunableVariant type="None" name="time_out" class="OptionalTunable" default="disabled" display="Time Out" muid="77C9645BF7528BFB" description="How long this state will last before time expired. Please talk to the GPE who implemented the specific&#xA;situation to see what the state will do on time expired." Deprecated="False" filter="0" group="General">
+                <Tunable name="disabled" class="TunableExistance" display="Disabled" muid="E1E024F15A0FEB91" />
+                <Tunable type="float" name="enabled" class="TunableSimMinute" default="15" display="Enabled" muid="9FA2758440F9C693" min="1" max="None" tuning_state="NeedsTuning" Deprecated="False" filter="0" group="General" />
+            </TunableVariant>
+        </TunableTuple>
+
+        <Tunable type="situation_job" name="fire_brigade_job" class="TunableReference" display="Fire Brigade Job" muid="7D5DE39094BBA285" description="The job that a fire brigade volunteer will use." allow_none="False" Deprecated="False" filter="0" group="Roles" />
+
+        <TunableList name="fire_panic_interactions" class="TunableList" display="Fire Panic Interactions" muid="11BFCB40120D1733" description="A list of interactions that, if completed by the fire brigade volunteer,&#xA;marks that the volunteers have helped to put out the fire. If the volunteer&#xA;completes a fire-panic-interaction by the time the situation ends&#xA;every instanced member of the active household will get the &#xA;helped-by-neighbor buff." Deprecated="False" filter="0" group="Situation">
+            <TunableTuple class="TunableParticipantRanInteractionTest" muid="8E4C1F4E9E7B1084" description="Check to see if the Sim ran an affordance as a particular actor" Deprecated="False" filter="0" group="General">
+                <TunableList name="affordance_lists" class="TunableSet" display="Affordance Lists" muid="64E0FD4F40E020CC" description="The Sim must have run either any affordance or have a proxied affordance&#xA;in Affordances or these Affordance Lists, or an interaction matching&#xA;one of the tags in this tunable's Tags field." Deprecated="False" filter="0" group="General" unique_entries="true">
+                    <Tunable type="snippet" class="TunableReference" muid="D17EB0B90B1F58CC" description="A reference to a AffordanceList tuning snippet." allow_none="False" Deprecated="False" filter="0" group="General" restrict="AffordanceList" />
+                </TunableList>
+                <TunableList name="affordances" class="TunableSet" display="Affordances" muid="B6FBC2EC0B7F7D2B" description="The Sim must have run either any affordance or have a proxied affordance&#xA;in this list or Affordance Lists, or an interaction matching&#xA;one of the tags in this tunable's Tags field." Deprecated="False" filter="0" group="General" unique_entries="true">
+                    <Tunable type="interaction" class="TunableReference" muid="F140F71FB1FC302F" allow_none="False" Deprecated="False" filter="0" group="General" pack_safe="True" />
+                </TunableList>
+                <Tunable type="bool" name="consider_all_cancelled_as_failure" class="Tunable" default="False" display="Consider All Cancelled As Failure" muid="805C3FC23C49C18D" description="If True, test will consider the interaction outcome to be Failure if&#xA;canceled for any reason. If this box is checked and&#xA;consider_user_cancelled_as_failure is not checked, user cancel's&#xA;will still be treated as failures." Deprecated="False" filter="0" group="General" />
+                <Tunable type="bool" name="consider_user_cancelled_as_failure" class="Tunable" default="True" display="Consider User Cancelled As Failure" muid="12605E98996C2B4F" description="If True, test will consider the interaction outcome to be Failure if&#xA;canceled by the user." Deprecated="False" filter="0" group="General" />
+                <TunableVariant type="None" name="interaction_outcome" class="OptionalTunable" default="disabled" display="Interaction Outcome" muid="41C7CC1D93C97FA6" description="The interaction's outcome must match the outcome tuned here to pass this test." Deprecated="False" filter="0" group="General">
+                    <Tunable name="disabled" class="TunableExistance" display="Disabled" muid="18CDD445368481D0" />
+                    <TunableEnum type="OutcomeResult" name="enabled" class="TunableEnumEntry" default="NONE" display="Enabled" muid="C4AE0E83711FE4E" dynamic_entries="interactions-utils-outcome_enums.OutcomeResult._elements" static_entries="interactions-utils-outcome_enums.OutcomeResult" Deprecated="False" filter="0" group="General" />
+                </TunableVariant>
+                <TunableEnum type="ParticipantType" name="participant" class="TunableEnumEntry" default="Actor" display="Participant" muid="BA77F845162EBCB9" static_entries="interactions.ParticipantType" description="This is the role the sim in question should be to pass." Deprecated="False" filter="0" group="General" />
+                <TunableVariant type="None" name="running_time" class="OptionalTunable" default="disabled" display="Running Time" muid="6114D1ADE3FBD122" description="Amount of time in sim minutes that this interaction needs to&#xA;have been running for for this test to pass true. This time is how&#xA;long the interaction has been in the SI State.&#xA;&#xA;If your setting this, you probably want Test Event to be set to&#xA;InteractionUpdate." Deprecated="False" filter="0" group="General">
+                    <Tunable name="disabled" class="TunableExistance" display="Disabled" muid="B5CA4634C58A0C28" />
+                    <Tunable type="float" name="enabled" class="TunableSimMinute" default="10" display="Enabled" muid="5E50EEA9C31DDCAF" min="0" max="None" description="Amount of time in sim minutes that this interaction needs to&#xA;have been running for for this test to pass true. This time is how&#xA;long the interaction has been in the SI State.&#xA;&#xA;If your setting this, you probably want Test Event to be set to&#xA;InteractionUpdate." tuning_state="NeedsTuning" Deprecated="False" filter="0" group="General" />
+                </TunableVariant>
+                <TunableList name="skill_tags" class="TunableSet" display="Skill Tags" muid="8D92D1699AD715B0" description="Skill tags to check against skill attached to the interaction,&#xA;determined by if the interaction identifies it in skill  &#xA;loot data, or if it is an associated skill in the outcome.&#xA;&#xA;If you are setting this and are not using affordances or lists &#xA;for filtering, you probably want to ensure that you set&#xA;interaction tags that are more or equally restrictive to either &#xA;one of Interaction_Super or Interaction_Mixer.  And do not&#xA;use Interaction_All, unless you really want to trigger &#xA;for both mixers and super interactions." Deprecated="False" filter="0" group="General" unique_entries="true">
+                    <TunableEnum type="Tag" class="TunableEnumWithFilter" default="INVALID" muid="F299B6C1F23BF40" dynamic_entries="tag.Tag._elements" static_entries="tag.Tag" Deprecated="False" dynamic_entries_prefix="skill" filter="0" group="General" />
+                </TunableList>
+                <TunableList name="tags" class="TunableSet" display="Tags" muid="854A349855A55D57" description="The Sim must have run either an interaction matching one of these Tags &#xA;or an affordance from the list of Affordances in this tunable." Deprecated="False" filter="0" group="General" unique_entries="true">
+                    <TunableEnum type="Tag" class="TunableEnumEntry" default="INVALID" muid="7034E4F757DD8E5C" dynamic_entries="tag.Tag._elements" static_entries="tag.Tag" Deprecated="False" filter="0" group="General" />
+                </TunableList>
+                <TunableTuple name="target_filters" class="TunableTuple" display="Target Filters" muid="CB27FA166DDB025E" description="Restrictions on the target of this interaction." Deprecated="False" filter="0" group="General">
+                    <TunableVariant type="None" name="object_states" class="OptionalTunable" default="disabled" display="Object States" muid="D2D940F62AC88B8E" description="Limit test success only to target objects that are in certain states" Deprecated="False" filter="0" group="General">
+                        <Tunable name="disabled" class="TunableExistance" display="Disabled" muid="605A83210DDB6D69" />
+                        <TunableTuple name="enabled" class="BasicStateCheckFactory" display="Enabled" muid="DCEF8BBEBA34063A" description="This option tests crafted item's tags against a list of possible&#xA;tags." Deprecated="False" filter="0" group="General">
+                            <TunableVariant type="None" name="object_requirement" class="TunableVariant" default="any_object" display="Object Requirement" muid="8E6971ACCDFF173C" Deprecated="False" filter="0" group="General">
+                                <Tunable name="any_object" class="TunableExistance" display="Any Object" muid="C733122F2A839CE5" />
+                                <TunableTuple name="definition" class="TunableTuple" display="Definition" muid="839874EE15967F29" Deprecated="False" filter="0" group="General">
+                                    <Tunable type="object" name="definition" class="TunableReference" display="Definition" muid="AA749857671828E4" description="The object must have this definition." allow_none="False" Deprecated="False" filter="0" group="General" />
+                                </TunableTuple>
+                                <TunableTuple name="tag" class="TunableTuple" display="Tag" muid="154E426E522F21E9" Deprecated="False" filter="0" group="General">
+                                    <TunableTuple name="tag" class="CraftTaggedItemFactory" display="Tag" muid="316C973635A3FB2A" description="The object must have this tag." Deprecated="False" filter="0" group="General">
+                                        <TunableList name="tag_set" class="TunableSet" display="Tag Set" muid="51FF6E91E1A3E0EF" description="The tag of objects we want to test ownership of" Deprecated="False" filter="0" group="General" unique_entries="true">
+                                            <TunableEnum type="Tag" class="TunableEnumEntry" default="INVALID" muid="E1A66555D3BEA25B" dynamic_entries="tag.Tag._elements" static_entries="tag.Tag" description="What tag to test for" Deprecated="False" filter="0" group="General" pack_safe="True" />
+                                        </TunableList>
+                                        <TunableEnum type="TagTestType" name="test_type" class="TunableEnumEntry" default="CONTAINS_ANY_TAG_IN_SET" display="Test Type" muid="1FA4D3998968508F" static_entries="objects-object_tests.TagTestType" description="How to test the tags in the tag set against the objects on the lot." Deprecated="False" filter="0" group="General" />
+                                    </TunableTuple>
+                                </TunableTuple>
+                            </TunableVariant>
+                            <TunableList name="state_set" class="TunableSet" display="State Set" muid="FEE5AAA646A0266E" Deprecated="False" filter="0" group="General" unique_entries="true">
+                                <Tunable type="object_state" class="TunableReference" muid="825EF0BCD3B644CC" description="What state to test for." allow_none="False" Deprecated="False" filter="0" group="General" />
+                            </TunableList>
+                            <TunableEnum type="StateTestType" name="test_type" class="TunableEnumEntry" default="CONTAINS_ANY_STATE_IN_SET" display="Test Type" muid="9E5CEF7DCC59035D" static_entries="objects-object_tests.StateTestType" description="How to test the states in the state set against the objects in&#xA;the inventory." Deprecated="False" filter="0" group="General" />
+                        </TunableTuple>
+                    </TunableVariant>
+                    <TunableVariant type="None" name="object_tags" class="OptionalTunable" default="disabled" display="Object Tags" muid="5AEFD434BA7FAAA9" description="Object tags for limiting test success to a subset of target &#xA;objects." Deprecated="False" filter="0" group="General">
+                        <Tunable name="disabled" class="TunableExistance" display="Disabled" muid="EB8FE3923259E8D" />
+                        <TunableTuple name="enabled" class="TunableTuple" display="Enabled" muid="604ADCC2532B9669" description="Target object tags and how they are tested." Deprecated="False" filter="0" group="General">
+                            <TunableList name="tag_set" class="TunableSet" display="Tag Set" muid="79FEA83AC5B7DEE7" description="A set of tags to test the target object for." Deprecated="False" filter="0" group="General" unique_entries="true">
+                                <TunableEnum type="Tag" class="TunableEnumEntry" default="INVALID" muid="5A9164D612CE863F" dynamic_entries="tag.Tag._elements" static_entries="tag.Tag" description="A tag to test the target object for." Deprecated="False" filter="0" group="General" />
+                            </TunableList>
+                            <TunableEnum type="TagTestType" name="test_type" class="TunableEnumEntry" default="CONTAINS_ANY_TAG_IN_SET" display="Test Type" muid="8F92E31FDA755155" static_entries="objects-object_tests.TagTestType" description="How to test the tags in the tag set against the &#xA;target object." Deprecated="False" filter="0" group="General" />
+                        </TunableTuple>
+                    </TunableVariant>
+                </TunableTuple>
+                <TunableEnum type="InteractionTestEvents" name="test_event" class="TunableEnumEntry" default="InteractionComplete" display="Test Event" muid="5FF7ABD1BE1E29E4" static_entries="event_testing-tests_with_data.InteractionTestEvents" description="The event that we want to trigger this instance of the tuned&#xA;test on.&#xA;InteractionStart: Triggers when the interaction starts.&#xA;InteractionComplete: Triggers when the interaction ends. This is best&#xA;used with a one shot interaction. It will not get called if an interaction&#xA;is canceled. If you have a Sim parked in an interaction that you can&#xA;only exit via cancel, you will not hit this.&#xA;InteractionUpdate: Triggers on a 15 sim minute cadence from the&#xA;start of the interaction.  If the interaction ends before a cycle&#xA;is up it does not trigger.  Do not use this for short interactions&#xA;as it has a possibility of never getting an update for an&#xA;interaction." Deprecated="False" filter="0" group="General" />
+                <TunableVariant type="None" name="tooltip" class="OptionalTunable" default="disabled" display="Tooltip" muid="9BED0CF70BE107DE" description="Reason of failure." Deprecated="False" filter="0" group="General">
+                    <Tunable name="disabled" class="TunableExistance" display="Disabled" muid="9E9739A727D3E124" />
+                    <Tunable type="int" name="enabled" class="TunableLocalizedString" default="0x0" display="Enabled" muid="87F7A3BEDE17A874" description="Reason of failure." Deprecated="False" filter="0" group="General" />
+                </TunableVariant>
+            </TunableTuple>
+        </TunableList>
+
+        <TunableTuple name="neighor_saved_me_buff" class="TunablePackSafeBuffReference" display="Neighor Saved Me Buff" muid="118749343F63AF71" description="The buff given to all members of the active household once the fire&#xA;situation has finished. The buff is given only if a fire brigade&#xA;member helped put out the fire.                    " Deprecated="False" filter="0" group="Situation">
+            <TunableVariant type="None" name="buff_reason" class="OptionalTunable" default="disabled" display="Buff Reason" muid="AE01B1857C05314C" description="If set, specify a reason why the buff was added." Deprecated="False" filter="0" group="General">
+                <Tunable name="disabled" class="TunableExistance" display="Disabled" muid="740B4E5C7869500E" />
+                <Tunable type="int" name="enabled" class="TunableLocalizedString" default="0x0" display="Enabled" muid="86C8B61CBF0D873A" description="The reason the buff was added. This will be displayed in the&#xA;buff tooltip." Deprecated="False" filter="0" group="General" />
+            </TunableVariant>
+            <Tunable type="buff" name="buff_type" class="TunableReference" display="Buff Type" muid="E554EB3E2DB0FC8B" description="Buff that will get added to sim." allow_none="False" Deprecated="False" filter="0" group="General" pack_safe="True" />
+        </TunableTuple>
+
+        <Tunable type="int" name="number_of_volunteers" class="TunableRange" default="2" display="Number Of Volunteers" muid="EF548DF9686FD3B5" min="0" max="None" description="The number of brigade volunteers the situation will attempt&#xA;to get when creating the fire service." tuning_state="NeedsTuning" Deprecated="False" filter="0" group="Situation" />
+
+        <Tunable type="bool" name="visit_afterwards" class="Tunable" default="False" display="Visit Afterwards" muid="CFEF1CD516D23CF" description="Boolean to control whether sim will visit after the fire is out or not.             " Deprecated="False" filter="0" group="General" />
+    </Instance>
+
+    <VersionHistory>
+        <ActionList>
+            <Action type="kRename" old_muid="A16E3FD853D20990" new_muid="12605E98996C2B4F" />
+        </ActionList>
+
+        <ActionList>
+            <Action type="kRemove" old_muid="8F05E8BAA060D85D" />
+        </ActionList>
+
+        <ActionList>
+            <Action type="kRemove" old_muid="DA58F61FE6A1C900" />
+        </ActionList>
+
+        <ActionList>
+            <Action type="kRemove" old_muid="53C250578082E57F" />
+            <Action type="kRemove" old_muid="92DE93F5CBCEF31B" />
+        </ActionList>
+
+        <ActionList>
+            <Action type="kRemove" old_muid="23ED4D086DEA3436" />
+        </ActionList>
+
+        <ActionList>
+            <Action type="kRemove" old_muid="B82A14E6578812C4" />
+        </ActionList>
+
+        <ActionList>
+            <Action type="kRemove" old_muid="31A76D6A0CC53F9D" />
+        </ActionList>
+    </VersionHistory>
+</TuningRoot>

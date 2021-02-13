@@ -1,0 +1,458 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<I c="SuperInteraction" i="interaction" m="interactions.base.super_interaction" n="bed_Monster_Talk" s="134315">
+  <L n="_constraints">
+    <U>
+      <L n="constraints">
+        <U>
+          <V n="value" t="cone">
+            <U n="cone">
+              <T n="angle">180</T>
+              <T n="max_radius">2</T>
+              <T n="min_radius">1</T>
+            </U>
+          </V>
+        </U>
+      </L>
+    </U>
+    <U>
+      <L n="constraints">
+        <U>
+          <V t="facing" n="value" />
+        </U>
+      </L>
+    </U>
+  </L>
+  <V t="enabled" n="_saveable" />
+  <T n="attention_cost">0.5</T>
+  <V t="one_shot" n="basic_content">
+    <U n="one_shot">
+      <U n="animation_ref">
+        <T n="factory">11557<!--AnimationElement: Idle_Kneel_basic--></T>
+      </U>
+      <V n="periodic_stat_change" t="enabled">
+        <U n="enabled">
+          <L n="operations">
+            <V t="statistic_change">
+              <U n="statistic_change">
+                <T n="amount">2</T>
+                <E n="periodic_change_behavior">APPLY_AT_INTERVAL_ONLY</E>
+                <T n="stat">16655<!--Commodity: motive_Fun--></T>
+              </U>
+            </V>
+            <V t="statistic_change">
+              <U n="statistic_change">
+                <T n="amount">2</T>
+                <E n="periodic_change_behavior">APPLY_AT_INTERVAL_ONLY</E>
+                <T n="stat">16658<!--Commodity: motive_Social--></T>
+              </U>
+            </V>
+          </L>
+          <T n="trigger_gain_on_start">True</T>
+        </U>
+      </V>
+    </U>
+  </V>
+  <V t="enabled" n="basic_reserve_object">
+    <U n="enabled">
+      <L n="subject_list">
+        <U>
+          <V t="reserve_and_lock_all_parts" n="reserve_type" />
+        </U>
+      </L>
+    </U>
+  </V>
+  <T n="category">137476<!--PieMenuCategory: MonsterUnderBedTalk_Category--></T>
+  <V t="disabled" n="content_score" />
+  <T n="display_name">0x77FDA71A<!--String: "Hablar con el monstruo de debajo de la cama"--></T>
+  <U n="display_name_text_tokens">
+    <L n="tokens">
+      <V t="participant_type">
+        <U n="participant_type">
+          <V t="from_participant" n="objects">
+            <U n="from_participant">
+              <E n="participant">Actor</E>
+            </U>
+          </V>
+        </U>
+      </V>
+      <V t="participant_type">
+        <U n="participant_type">
+          <V t="from_participant" n="objects">
+            <U n="from_participant">
+              <E n="participant">Object</E>
+            </U>
+          </V>
+        </U>
+      </V>
+    </L>
+  </U>
+  <L n="interaction_category_tags">
+    <E>Interaction_Super</E>
+    <E>Interaction_All</E>
+  </L>
+  <V n="outcome" t="test_based">
+    <U n="test_based">
+      <L n="fallback_outcomes">
+        <U>
+          <U n="outcome">
+            <V t="enabled" n="animation_ref">
+              <U n="enabled">
+                <T n="factory">11853<!--AnimationElement: Soc_Friendly_NT_askQuestionFriendly_fail_basic--></T>
+              </U>
+            </V>
+            <L n="continuation">
+              <U>
+                <T n="affordance">133632<!--SuperInteraction: reactions_Scared_Monster_Panic--></T>
+                <E n="target">Actor</E>
+              </U>
+            </L>
+            <L n="loot_list">
+              <T>136463<!--LootActions: loot_MonsterUnderBed_Relationship_Add--></T>
+            </L>
+          </U>
+        </U>
+      </L>
+      <L n="tested_outcomes">
+        <U>
+          <L n="potential_outcomes">
+            <U>
+              <U n="outcome">
+                <V t="enabled" n="animation_ref">
+                  <U n="enabled">
+                    <T n="factory">11847<!--AnimationElement: Soc_Entertain_TellStory_Succeed_basic--></T>
+                  </U>
+                </V>
+                <L n="basic_extras">
+                  <V t="notification">
+                    <U n="notification">
+                      <V n="dialog" t="single">
+                        <V n="single" t="literal">
+                          <U n="literal">
+                            <V t="enabled" n="icon">
+                              <V t="resource_key" n="enabled">
+                                <U n="resource_key">
+                                  <T n="key" p="InGame\UI\Icons\Headlines\Final\headline_creepy.png">2f7d0004:00000000:63a0af85970e0e10</T>
+                                </U>
+                              </V>
+                            </V>
+                            <V t="enabled" n="secondary_icon">
+                              <V t="participant" n="enabled" />
+                            </V>
+                            <V t="single" n="text">
+                              <T n="single">0x69804C62<!--String: "¡{0.SimFirstName} acaba de hacerse {M0.amigo}{F0.amiga} del monstruo de debajo de la cama! ¡Está impaciente por descubrir más cosas sobre él!"--></T>
+                            </V>
+                          </U>
+                        </V>
+                      </V>
+                      <U n="success_chance">
+                        <L n="multipliers">
+                          <U>
+                            <T n="multiplier">0</T>
+                            <L n="tests">
+                              <L>
+                                <V t="trait">
+                                  <U n="trait">
+                                    <L n="whitelist_traits">
+                                      <T>139186<!--Trait: trait_Hidden_HasMonsterFriend--></T>
+                                    </L>
+                                  </U>
+                                </V>
+                              </L>
+                            </L>
+                          </U>
+                        </L>
+                      </U>
+                    </U>
+                  </V>
+                </L>
+                <L n="loot_list">
+                  <T>136464<!--LootActions: loot_MonsterUnderBed_Relationship_Small--></T>
+                  <T>139185<!--LootActions: loot_MonsterUnderBed_Relationship_Friends_WithMonster--></T>
+                </L>
+              </U>
+            </U>
+          </L>
+          <L n="tests">
+            <L>
+              <V t="statistic">
+                <U n="statistic">
+                  <T n="stat">136457<!--Commodity: commodity_Bed_Monster_Under_Rel_Tracker--></T>
+                  <V t="value_threshold" n="threshold">
+                    <U n="value_threshold">
+                      <E n="comparison">GREATER</E>
+                      <T n="value">10</T>
+                    </U>
+                  </V>
+                </U>
+              </V>
+            </L>
+          </L>
+        </U>
+        <U>
+          <L n="potential_outcomes">
+            <U>
+              <U n="outcome">
+                <V t="enabled" n="animation_ref">
+                  <U n="enabled">
+                    <T n="factory">11853<!--AnimationElement: Soc_Friendly_NT_askQuestionFriendly_fail_basic--></T>
+                  </U>
+                </V>
+                <L n="basic_extras">
+                  <V t="notification">
+                    <U n="notification">
+                      <V n="dialog" t="single">
+                        <V n="single" t="literal">
+                          <U n="literal">
+                            <V t="enabled" n="icon">
+                              <V t="resource_key" n="enabled">
+                                <U n="resource_key">
+                                  <T n="key" p="InGame\UI\Icons\Headlines\Final\headline_creepy.png">2f7d0004:00000000:63a0af85970e0e10</T>
+                                </U>
+                              </V>
+                            </V>
+                            <V t="enabled" n="secondary_icon">
+                              <V t="participant" n="enabled" />
+                            </V>
+                            <V n="text" t="single">
+                              <T n="single">0xDFDE0051<!--String: "El intento de {0.SimFirstName} de comunicarse con el monstruo de debajo de su cama ha sido un fracaso. Parece que ahora mismo no quiere ser su amigo."--></T>
+                            </V>
+                          </U>
+                        </V>
+                      </V>
+                    </U>
+                  </V>
+                </L>
+                <L n="continuation">
+                  <U>
+                    <T n="affordance">133632<!--SuperInteraction: reactions_Scared_Monster_Panic--></T>
+                    <E n="target">Actor</E>
+                  </U>
+                </L>
+                <L n="loot_list">
+                  <T>136463<!--LootActions: loot_MonsterUnderBed_Relationship_Add--></T>
+                </L>
+                <E n="outcome_result">FAILURE</E>
+              </U>
+            </U>
+            <U>
+              <U n="outcome">
+                <V t="enabled" n="animation_ref">
+                  <U n="enabled">
+                    <T n="factory">11853<!--AnimationElement: Soc_Friendly_NT_askQuestionFriendly_fail_basic--></T>
+                  </U>
+                </V>
+                <L n="basic_extras">
+                  <V t="notification">
+                    <U n="notification">
+                      <V n="dialog" t="single">
+                        <V n="single" t="literal">
+                          <U n="literal">
+                            <V t="enabled" n="icon">
+                              <V t="resource_key" n="enabled">
+                                <U n="resource_key">
+                                  <T n="key" p="InGame\UI\Icons\Headlines\Final\headline_creepy.png">2f7d0004:00000000:63a0af85970e0e10</T>
+                                </U>
+                              </V>
+                            </V>
+                            <V t="enabled" n="secondary_icon">
+                              <V t="participant" n="enabled" />
+                            </V>
+                            <V n="text" t="single">
+                              <T n="single">0xDFDE0051<!--String: "El intento de {0.SimFirstName} de comunicarse con el monstruo de debajo de su cama ha sido un fracaso. Parece que ahora mismo no quiere ser su amigo."--></T>
+                            </V>
+                          </U>
+                        </V>
+                      </V>
+                    </U>
+                  </V>
+                </L>
+                <L n="continuation">
+                  <U>
+                    <T n="affordance">133632<!--SuperInteraction: reactions_Scared_Monster_Panic--></T>
+                    <E n="target">Actor</E>
+                  </U>
+                </L>
+                <L n="loot_list">
+                  <T>136464<!--LootActions: loot_MonsterUnderBed_Relationship_Small--></T>
+                </L>
+                <E n="outcome_result">FAILURE</E>
+              </U>
+              <U n="weight">
+                <L n="multipliers">
+                  <U>
+                    <T n="multiplier">2</T>
+                    <L n="tests">
+                      <L>
+                        <V t="statistic">
+                          <U n="statistic">
+                            <T n="must_have_stat">True</T>
+                            <T n="stat">136457<!--Commodity: commodity_Bed_Monster_Under_Rel_Tracker--></T>
+                          </U>
+                        </V>
+                      </L>
+                    </L>
+                  </U>
+                </L>
+              </U>
+            </U>
+            <U>
+              <U n="outcome">
+                <V t="enabled" n="animation_ref">
+                  <U n="enabled">
+                    <T n="factory">11847<!--AnimationElement: Soc_Entertain_TellStory_Succeed_basic--></T>
+                  </U>
+                </V>
+                <L n="basic_extras">
+                  <V t="notification">
+                    <U n="notification">
+                      <V n="dialog" t="single">
+                        <V n="single" t="literal">
+                          <U n="literal">
+                            <L n="dialog_options">
+                              <E>DISABLE_CLOSE_BUTTON</E>
+                            </L>
+                            <V t="enabled" n="icon">
+                              <V t="resource_key" n="enabled">
+                                <U n="resource_key">
+                                  <T n="key" p="InGame\UI\Icons\Headlines\Final\headline_creepy.png">2f7d0004:00000000:63a0af85970e0e10</T>
+                                </U>
+                              </V>
+                            </V>
+                            <V t="enabled" n="secondary_icon">
+                              <V t="participant" n="enabled">
+                                <U n="participant">
+                                  <L n="participant_type">
+                                    <E>Actor</E>
+                                  </L>
+                                </U>
+                              </V>
+                            </V>
+                            <V t="single" n="text">
+                              <T n="single">0x69804C62<!--String: "¡{0.SimFirstName} acaba de hacerse {M0.amigo}{F0.amiga} del monstruo de debajo de la cama! ¡Está impaciente por descubrir más cosas sobre él!"--></T>
+                            </V>
+                          </U>
+                        </V>
+                      </V>
+                      <U n="success_chance">
+                        <L n="multipliers">
+                          <U>
+                            <T n="multiplier">0</T>
+                            <L n="tests">
+                              <L>
+                                <V t="trait">
+                                  <U n="trait">
+                                    <L n="whitelist_traits">
+                                      <T>139186<!--Trait: trait_Hidden_HasMonsterFriend--></T>
+                                    </L>
+                                  </U>
+                                </V>
+                              </L>
+                            </L>
+                          </U>
+                        </L>
+                      </U>
+                    </U>
+                  </V>
+                  <V t="state_change">
+                    <U n="state_change">
+                      <V n="new_value" t="single_value">
+                        <U n="single_value">
+                          <T n="new_value">133684<!--ObjectStateValue: bed_MonsterUnder_Not_Active--></T>
+                        </U>
+                      </V>
+                      <V t="immediately" n="timing" />
+                    </U>
+                  </V>
+                </L>
+                <L n="loot_list">
+                  <T>136464<!--LootActions: loot_MonsterUnderBed_Relationship_Small--></T>
+                  <T>139185<!--LootActions: loot_MonsterUnderBed_Relationship_Friends_WithMonster--></T>
+                </L>
+              </U>
+            </U>
+          </L>
+          <L n="tests">
+            <L>
+              <V t="statistic">
+                <U n="statistic">
+                  <T n="stat">136457<!--Commodity: commodity_Bed_Monster_Under_Rel_Tracker--></T>
+                  <V t="value_threshold" n="threshold">
+                    <U n="value_threshold">
+                      <E n="comparison">LESS</E>
+                      <T n="value">10</T>
+                    </U>
+                  </V>
+                </U>
+              </V>
+            </L>
+          </L>
+        </U>
+      </L>
+    </U>
+  </V>
+  <V t="enabled" n="route_start_balloon">
+    <U n="enabled">
+      <U n="balloon">
+        <L n="balloon_choices">
+          <U>
+            <V n="item" t="balloon_icon">
+              <U n="balloon_icon">
+                <V t="participant" n="icon">
+                  <U n="participant">
+                    <L n="participant_type">
+                      <E>Object</E>
+                    </L>
+                  </U>
+                </V>
+              </U>
+            </V>
+          </U>
+        </L>
+        <L n="balloon_target">
+          <E>Actor</E>
+        </L>
+      </U>
+    </U>
+  </V>
+  <E n="scoring_priority">NORMAL</E>
+  <T n="subaction_selection_weight">1</T>
+  <E n="target_type">OBJECT</E>
+  <L n="test_globals">
+    <V t="sim_info">
+      <U n="sim_info">
+        <V t="specified" n="ages">
+          <L n="specified">
+            <E>CHILD</E>
+          </L>
+        </V>
+        <V t="specified" n="species">
+          <U n="specified">
+            <L n="species">
+              <E />
+            </L>
+          </U>
+        </V>
+        <E n="who">Actor</E>
+      </U>
+    </V>
+    <V t="sim_info">
+      <U n="sim_info">
+        <V t="specified" n="ages">
+          <L n="specified">
+            <E>CHILD</E>
+            <E>TODDLER</E>
+          </L>
+        </V>
+        <E n="match_type">MATCH_ANY</E>
+        <E n="who">ActiveHousehold</E>
+      </U>
+    </V>
+    <V t="state">
+      <U n="state">
+        <T n="value">133683<!--ObjectStateValue: bed_MonsterUnder_Active--></T>
+      </U>
+    </V>
+  </L>
+  <T n="time_overhead">30</T>
+  <E n="visual_type_override">SIMPLE</E>
+</I>

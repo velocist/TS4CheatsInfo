@@ -1,0 +1,163 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<I c="SuperInteraction" i="interaction" m="interactions.base.super_interaction" n="si_BeeSwarm_Start_Fetch" s="186518">
+  <V t="Forward" n="_forwarding">
+    <U n="Forward">
+      <V n="object_filter" t="filter_by_sim" />
+    </U>
+  </V>
+  <V t="resource_key" n="_icon">
+    <U n="resource_key">
+      <T n="key" p="InEP05\UI\Icons\InteractionQueue\IconQueueBeeHappy.png">2f7d0004:00000000:add4e6dcb1adc831</T>
+    </U>
+  </V>
+  <V t="enabled" n="_saveable" />
+  <T n="allow_autonomous">False</T>
+  <T n="allow_from_sim_inventory">True</T>
+  <T n="allow_from_world">False</T>
+  <T n="allow_user_directed">True</T>
+  <T n="attention_cost">0.5</T>
+  <V n="basic_content" t="flexible_length">
+    <U n="flexible_length">
+      <L n="conditional_actions">
+        <V t="literal">
+          <U n="literal">
+            <L n="conditions">
+              <V t="time_based">
+                <U n="time_based">
+                  <T n="max_time">9</T>
+                  <T n="min_time">6</T>
+                </U>
+              </V>
+            </L>
+            <E n="interaction_action">EXIT_NATURALLY</E>
+          </U>
+        </V>
+      </L>
+      <V n="content" t="staging_content">
+        <U n="staging_content">
+          <V n="animation_ref" t="enabled">
+            <U n="enabled">
+              <T n="factory">186523<!--AnimationElement: beeSwarm_Command_Friendly--></T>
+            </U>
+          </V>
+        </U>
+      </V>
+    </U>
+  </V>
+  <V t="disabled" n="basic_reserve_object" />
+  <V t="disabled" n="content_score" />
+  <T n="display_name">0x4C237D4A<!--String: "Enviar a buscar regalo"--></T>
+  <U n="display_name_text_tokens">
+    <L n="tokens">
+      <V t="participant_type">
+        <U n="participant_type">
+          <V t="from_participant" n="objects">
+            <U n="from_participant">
+              <E n="participant">Actor</E>
+            </U>
+          </V>
+        </U>
+      </V>
+      <V t="participant_type">
+        <U n="participant_type">
+          <V t="from_participant" n="objects">
+            <U n="from_participant">
+              <E n="participant">Object</E>
+            </U>
+          </V>
+        </U>
+      </V>
+    </L>
+  </U>
+  <L n="interaction_category_tags">
+    <E>Interaction_Super</E>
+    <E>Interaction_All</E>
+  </L>
+  <V n="outcome" t="single">
+    <U n="single">
+      <U n="actions">
+        <V n="animation_ref" t="enabled">
+          <U n="enabled">
+            <T n="factory">186554<!--AnimationElement: beeSwarm_Target_Actions_ReceiveGift--></T>
+          </U>
+        </V>
+        <L n="basic_extras">
+          <V t="destroy_specified_objects_from_target_inventory">
+            <U n="destroy_specified_objects_from_target_inventory">
+              <V t="number" n="count" />
+              <E n="inventory_owner">Actor</E>
+              <L n="loots_to_run_before_destroy">
+                <T>186708<!--LootActions: loot_BeeBox_BeeSwarm_TurnOffVFX--></T>
+              </L>
+              <L n="object_tests">
+                <L>
+                  <V t="object_criteria">
+                    <U n="object_criteria">
+                      <V n="desired_state_threshold" t="enabled">
+                        <U n="enabled">
+                          <E n="comparison">EQUAL</E>
+                          <T n="value">190147<!--ObjectStateValue: beeSwarm_Disperse_Off--></T>
+                        </U>
+                      </V>
+                      <V t="tags" n="identity_test">
+                        <U n="tags">
+                          <L n="tag_set">
+                            <E>Func_BeeSwarm</E>
+                          </L>
+                        </U>
+                      </V>
+                      <T n="owned">False</T>
+                      <V t="single_object" n="subject_specific_tests" />
+                    </U>
+                  </V>
+                </L>
+              </L>
+            </U>
+          </V>
+        </L>
+        <L n="loot_list">
+          <T>186572<!--String: "Iniciar un incendio con fuegos artificiales"--><!--LootActions: loot_BeeBox_BeeSwarm_ReceiveGift--></T>
+        </L>
+      </U>
+    </U>
+  </V>
+  <E n="scoring_priority">NORMAL</E>
+  <T n="subaction_selection_weight">1</T>
+  <E n="target_type">ACTOR</E>
+  <L n="test_globals">
+    <V t="sim_info">
+      <U n="sim_info">
+        <V t="specified" n="ages" />
+        <V t="specified" n="species">
+          <U n="specified">
+            <L n="species">
+              <E />
+            </L>
+          </U>
+        </V>
+        <E n="who">Actor</E>
+      </U>
+    </V>
+    <V t="inventory">
+      <U n="inventory">
+        <V n="contents_check" t="has_object_with_states">
+          <U n="has_object_with_states">
+            <V n="object_requirement" t="tag">
+              <U n="tag">
+                <U n="tag">
+                  <L n="tag_set">
+                    <E>Func_BeeSwarm</E>
+                  </L>
+                </U>
+              </U>
+            </V>
+            <L n="state_set">
+              <T>190147<!--ObjectStateValue: beeSwarm_Disperse_Off--></T>
+            </L>
+          </U>
+        </V>
+      </U>
+    </V>
+  </L>
+  <T n="time_overhead">30</T>
+</I>

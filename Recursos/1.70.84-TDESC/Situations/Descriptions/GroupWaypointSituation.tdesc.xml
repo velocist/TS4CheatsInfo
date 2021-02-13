@@ -1,0 +1,217 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+
+<TuningRoot>
+    <Instance instance_type="situation" class="GroupWaypointSituation" module="situations.complex.group_waypoint_situation" muid="B45543817F6DC3A7" description="Group Waypoint Situations entail forming a social group, then travelling together with that group to various points&#xA;of interest and interacting with them." instance_subclasses_only="False" parents="SituationComplexCommon, SituationComplex, Situation" path="Situations\Descriptions" use_guid_for_reference="True">
+        <Deleted name="creation_ui_option" muid="F01BC71A561A663F" />
+
+        <TunableList name="ending_waypoints" class="TunableSet" display="Ending Waypoints" muid="5811EDBB0B48A7EE" description="Waypoints to end at.  Will end at the first one encountered after &#xA;meeting the tuned minimum number of waypoints." Deprecated="False" filter="0" group="Routing" unique_entries="true">
+            <Tunable type="locator" class="TunableReference" muid="C9324D0B072BD1BD" description="Waypoint reference." Deprecated="False" filter="0" group="General" />
+        </TunableList>
+
+        <Deleted name="exclusivity" muid="71E74FA629AEA678" />
+
+        <TunableTuple name="interact_state" class="Tunable_GroupWaypointInteractState" display="3. Interact State" muid="7C6A19FC26DBAD3E" description="State that runs while the Sims are interacting with a point-of-interest at a waypoint." Deprecated="False" filter="0" group="Situation State">
+            <Tunable type="bool" name="allow_join_situation" class="Tunable" default="True" display="Allow Join Situation" muid="DAF347A7F453186B" description="Whether the situation is allowed to join at this state." Deprecated="False" filter="0" group="General" />
+            <TunableList name="job_and_role_changes" class="TunableMapping" display="Job And Role Changes" muid="2E734D9C4C9E213A" mapping_key="Situation Job" mapping_value="Role State" description="A mapping between situation jobs and role states that defines&#xA;what role states we want to switch to for sims on which jobs&#xA;when this situation state is entered." Deprecated="False" filter="0" group="General">
+                <TunableTuple class="TunableTuple" muid="DFA07D8FA9C89856" Deprecated="False" filter="0" group="General">
+                    <Tunable type="role_state" name="Role State" class="TunableReference" display="Role State" muid="ABCE14155550DC29" description="The role state that we will switch sims of the linked job&#xA;into." allow_none="False" Deprecated="False" filter="0" group="General" />
+                    <Tunable type="situation_job" name="Situation Job" class="TunableReference" display="Situation Job" muid="D1AE5DE893D16691" description="A reference to a SituationJob that we will use to change&#xA;sim's role state." allow_none="False" Deprecated="False" filter="0" group="General" />
+                </TunableTuple>
+            </TunableList>
+            <TunableVariant type="None" name="time_out" class="OptionalTunable" default="disabled" display="Time Out" muid="9340338C016EF8C1" description="How long this state will last before time expired. Please talk to the GPE who implemented the specific&#xA;situation to see what the state will do on time expired." Deprecated="False" filter="0" group="General">
+                <Tunable name="disabled" class="TunableExistance" display="Disabled" muid="B2A26AAC13CE14B8" />
+                <Tunable type="float" name="enabled" class="TunableSimMinute" default="15" display="Enabled" muid="F580FB39697AB7C6" min="1" max="None" tuning_state="NeedsTuning" Deprecated="False" filter="0" group="General" />
+            </TunableVariant>
+        </TunableTuple>
+
+        <TunableList name="interaction_tuning" class="TunableMapping" display="Interaction Tuning" muid="998D922208D3C2A8" mapping_key="waypoint_id" mapping_value="interactions" description="Mapping of waypoint ids to groups interactions to run at them. Interactions can be tuned for the leader,&#xA;members, or both, along with an optional delay to pause before resuming routing. Also able to specify a&#xA;weight for each choice so tested and weighted choices can be made. " Deprecated="False" filter="0" group="General">
+            <TunableTuple class="TunableTuple" muid="D42042C12E524AFD" Deprecated="False" filter="0" group="General">
+                <TunableList name="interactions" class="TunableList" display="Interactions" muid="AE7AB4F54499F983" description="List of one or more interactions to perform at this waypoint." Deprecated="False" filter="0" group="General">
+                    <TunableTuple class="TunableTuple" muid="CDB162A34AFC9E4D" description="Defines interaction behavior at this waypoint, along with a weight for choosing." Deprecated="False" filter="0" group="General">
+                        <TunableVariant type="None" name="leader_interaction" class="OptionalTunable" default="disabled" display="Leader Interaction" muid="CE1D92FCB39A3070" description="Optional interaction to push on the leader of the group." Deprecated="False" filter="0" group="General">
+                            <Tunable name="disabled" class="TunableExistance" display="Disabled" muid="6F12DA864AC2ECD8" />
+                            <Tunable type="interaction" name="enabled" class="TunableReference" display="Enabled" muid="ABCA41FE8204DCD5" description="Interaction to push on the leader of the group." allow_none="False" Deprecated="False" filter="0" group="General" restrict="SuperInteraction" />
+                        </TunableVariant>
+                        <TunableVariant type="None" name="member_interaction" class="OptionalTunable" default="disabled" display="Member Interaction" muid="218D710A143F59D2" description="Optional interaction to push on the members of the group (excluding the leader)." Deprecated="False" filter="0" group="General">
+                            <Tunable name="disabled" class="TunableExistance" display="Disabled" muid="153813734F3BEC1" />
+                            <Tunable type="interaction" name="enabled" class="TunableReference" display="Enabled" muid="12F6AA8ECB1A9AF7" description="Interaction to push on the members of the group (excluding the leader)." allow_none="False" Deprecated="False" filter="0" group="General" restrict="SuperInteraction" />
+                        </TunableVariant>
+                        <Tunable type="float" name="post_interaction_delay" class="TunableSimMinute" default="0" display="Post Interaction Delay" muid="B275EC94A1F46B0A" min="0" max="None" description="How long to wait after the interaction(s) complete before moving on to the next waypoint.&#xA;0 means no delay." tuning_state="NeedsTuning" Deprecated="False" filter="0" group="General" />
+                        <TunableVariant type="None" name="target_object_definition" class="OptionalTunable" default="disabled" display="Target Object Definition" muid="E12690773B2990AE" description="If enabled, gives a target object for the leader&#xA;and member interactions." Deprecated="False" filter="0" group="General">
+                            <Tunable name="disabled" class="TunableExistance" display="Disabled" muid="E895A772E2181CDF" />
+                            <Tunable type="object" name="enabled" class="TunableReference" display="Enabled" muid="16B758C0FF894522" description="A target object for the leader and member &#xA;interactions." allow_none="False" Deprecated="False" filter="0" group="General" />
+                        </TunableVariant>
+                        <TunableTuple name="weight" class="TunableTunableMultiplier" display="Weight" muid="74DE3BE3433E0943" description="A weight with testable multipliers that is used to &#xA;determine how likely this entry is to be picked when &#xA;selecting randomly." Deprecated="False" filter="0" group="General">
+                            <Tunable type="float" name="base_value" class="Tunable" default="1" display="Base Value" muid="948405282A15926B" description="The basic value to return if no modifications are applied." tuning_state="NeedsTuning" Deprecated="False" filter="0" group="General" />
+                            <TunableList name="multipliers" class="TunableList" display="Multipliers" muid="430EDAE67755CD08" description="A list of multipliers to apply to base_value." Deprecated="False" filter="0" group="General">
+                                <TunableTuple class="TunableTuple" muid="4CEBDCE60469A75E" Deprecated="False" filter="0" group="General">
+                                    <Tunable type="float" name="multiplier" class="TunableRange" default="1" display="Multiplier" muid="7FB31B4C7241DFFE" min="0" max="None" description="The multiplier to apply to base_value if the associated&#xA;tests pass." tuning_state="NeedsTuning" Deprecated="False" filter="0" group="General" />
+                                    <TdescFragTag name="tests" class="TunableTestSet" display="Tests" muid="D218EEE27E534C8A" description="A series of tests that must pass in order for multiplier to&#xA;be applied." filter="0" group="General" />
+                                </TunableTuple>
+                            </TunableList>
+                        </TunableTuple>
+                    </TunableTuple>
+                </TunableList>
+                <Tunable type="locator" name="waypoint_id" class="TunableReference" display="Waypoint Id" muid="56D0C97269816E4A" Deprecated="False" filter="0" group="General" />
+            </TunableTuple>
+        </TunableList>
+
+        <TunableTuple name="leader_job_and_role" class="TunableSituationJobAndRoleState" display="Leader Job And Role" muid="22F4079A33A51E0B" description="The job and role state for the leader." Deprecated="False" filter="0" group="General">
+            <Tunable type="role_state" name="role_state" class="TunableReference" display="Role State" muid="DD11FCD72B337B8D" description="A role state the sim assigned to the job will perform" allow_none="False" Deprecated="False" filter="0" group="General" />
+            <Tunable type="situation_job" name="situation_job" class="TunableReference" display="Situation Job" muid="CE3F75D00D1B04F2" description="A reference to a SituationJob that can be performed at this Situation." allow_none="False" Deprecated="False" filter="0" group="General" />
+        </TunableTuple>
+
+        <Tunable type="int" name="max_waypoints" class="TunableRange" default="0" display="Max Waypoints" muid="7DA11CD623FF4E6" min="0" max="100" description="The maximum number of waypoints to visit. Set to 0 to keep going until and ending_waypoint is reached." tuning_state="NeedsTuning" Deprecated="False" filter="0" group="Routing" />
+
+        <Tunable type="int" name="max_waypoints_per_route" class="TunableRange" default="4" display="Max Waypoints Per Route" muid="66D6711CB2022506" min="1" max="None" description="If there is no interaction available at the next waypoint, the&#xA;situation will try to build a route through that waypoint rather &#xA;than ending the route at that waypoint. This tunable puts a limit&#xA;on how many waypoints the situation will try to stitch together&#xA;into a single route. Without this limit, the situation could enter&#xA;an endless loop. " tuning_state="NeedsTuning" Deprecated="False" filter="0" group="Routing" />
+
+        <TunableTuple name="member_job_and_role" class="TunableSituationJobAndRoleState" display="Member Job And Role" muid="1D5525FA5F074CA4" description="The job and role state for the (non-leader) group members." Deprecated="False" filter="0" group="General">
+            <Tunable type="role_state" name="role_state" class="TunableReference" display="Role State" muid="11C01F63BD689ECB" description="A role state the sim assigned to the job will perform" allow_none="False" Deprecated="False" filter="0" group="General" />
+            <Tunable type="situation_job" name="situation_job" class="TunableReference" display="Situation Job" muid="B6EA4D118E8EDACB" description="A reference to a SituationJob that can be performed at this Situation." allow_none="False" Deprecated="False" filter="0" group="General" />
+        </TunableTuple>
+
+        <Tunable type="int" name="min_waypoints" class="TunableRange" default="2" display="Min Waypoints" muid="7904224E15555A5E" min="2" max="None" description="The minimum number of waypoints to visit.  Won't stop at reaching&#xA;an ending waypoint until visited minimum number of waypoints.&#xA;(Unless fails to connect from there to another waypoint)" tuning_state="NeedsTuning" Deprecated="False" filter="0" group="Routing" />
+
+        <TunableVariant type="None" name="npc_go_home_interaction" class="OptionalTunable" default="disabled" display="Npc Go Home Interaction" muid="53A843973C6D5327" description="Optional interaction to push on NPCs to send them &quot;home&quot; when the situation ends." Deprecated="False" filter="0" group="General">
+            <Tunable name="disabled" class="TunableExistance" display="Disabled" muid="83AF54B5FF2AE4C3" />
+            <Tunable type="interaction" name="enabled" class="TunableReference" display="Enabled" muid="453009579259F2D6" description="Interaction to push on NPCs to send them &quot;home&quot; when the situation ends." allow_none="False" Deprecated="False" filter="0" group="General" restrict="SuperInteraction" />
+        </TunableVariant>
+
+        <TunableTuple name="route_state" class="Tunable_GroupWaypointRouteState" display="2. Route State" muid="38F41EDAA3D62DA3" description="State that runs while the Sims are routing to the next waypoint." Deprecated="False" filter="0" group="Situation State">
+            <Tunable type="bool" name="allow_join_situation" class="Tunable" default="True" display="Allow Join Situation" muid="BCA7CDD524587362" description="Whether the situation is allowed to join at this state." Deprecated="False" filter="0" group="General" />
+            <TunableList name="job_and_role_changes" class="TunableMapping" display="Job And Role Changes" muid="3ADF4AD8D1E22839" mapping_key="Situation Job" mapping_value="Role State" description="A mapping between situation jobs and role states that defines&#xA;what role states we want to switch to for sims on which jobs&#xA;when this situation state is entered." Deprecated="False" filter="0" group="General">
+                <TunableTuple class="TunableTuple" muid="887B2BCEF6F39DAF" Deprecated="False" filter="0" group="General">
+                    <Tunable type="role_state" name="Role State" class="TunableReference" display="Role State" muid="C22CF1ED61D9E0FC" description="The role state that we will switch sims of the linked job&#xA;into." allow_none="False" Deprecated="False" filter="0" group="General" />
+                    <Tunable type="situation_job" name="Situation Job" class="TunableReference" display="Situation Job" muid="E0A25093F5DEAAFE" description="A reference to a SituationJob that we will use to change&#xA;sim's role state." allow_none="False" Deprecated="False" filter="0" group="General" />
+                </TunableTuple>
+            </TunableList>
+            <TunableVariant type="None" name="time_out" class="OptionalTunable" default="disabled" display="Time Out" muid="3BD4C98E62F6C643" description="How long this state will last before time expired. Please talk to the GPE who implemented the specific&#xA;situation to see what the state will do on time expired." Deprecated="False" filter="0" group="General">
+                <Tunable name="disabled" class="TunableExistance" display="Disabled" muid="5DE6A0B9F8EA6C23" />
+                <Tunable type="float" name="enabled" class="TunableSimMinute" default="15" display="Enabled" muid="9E01D58479CCD4C2" min="1" max="None" tuning_state="NeedsTuning" Deprecated="False" filter="0" group="General" />
+            </TunableVariant>
+        </TunableTuple>
+
+        <TunableTuple name="solo_waypoint_generator" class="TunableLocatorIdToWaypointGenerator" display="Solo Waypoint Generator" muid="1DAE7EA24692FD7D" description="Waypoint generator for interaction that routes a solo sim from &#xA;point to point." Deprecated="False" filter="0" group="General">
+            <Tunable type="int" name="_loops" class="TunableRange" default="1" display="Loops" muid="622BB7C0EC31B706" min="1" max="None" description="The number of loops we want to perform per route." tuning_state="NeedsTuning" Deprecated="False" filter="0" group="General" />
+            <TunableVariant type="None" name="mobile_posture_override" class="OptionalTunable" default="disabled" display="Mobile Posture Override" muid="2FA5EFE684FCAD00" description="If enabled, the mobile posture specified would require the sim to&#xA;be in this posture to begin the route. This allows us to make the&#xA;Sim Swim or Ice Skate instead of walk/run." Deprecated="False" filter="0" group="General">
+                <Tunable name="disabled" class="TunableExistance" display="Disabled" muid="861FEFA1C37A90FD" />
+                <Tunable type="posture" name="enabled" class="TunableReference" display="Enabled" muid="7B5DCBCA2A9549AA" description="The mobile posture we want to use." allow_none="False" Deprecated="False" filter="0" group="General" restrict="MobilePosture" />
+            </TunableVariant>
+            <Tunable type="bool" name="use_provided_routing_surface" class="Tunable" default="False" display="Use Provided Routing Surface" muid="9A920571F6A625B5" description="If enabled, we will use the target's provided routing surface if it&#xA;has one." Deprecated="False" filter="0" group="General" />
+        </TunableTuple>
+
+        <Tunable type="interaction" name="solo_waypoint_interaction" class="TunableReference" display="Solo Waypoint Interaction" muid="BB530C4FE2C80CD" description="Interaction that routes a solo sim from point to point when they&#xA;are not in a group." allow_none="False" Deprecated="False" filter="0" group="General" restrict="WaypointInteraction" />
+
+        <TunableTuple name="starting_state" class="Tunable_GroupWaypointStartState" display="1. Start State" muid="EA57B02458444FB" description="State that runs while the Sims are routing to the next waypoint." Deprecated="False" filter="0" group="Situation State">
+            <Tunable type="bool" name="allow_join_situation" class="Tunable" default="True" display="Allow Join Situation" muid="180017B93EB14556" description="Whether the situation is allowed to join at this state." Deprecated="False" filter="0" group="General" />
+            <TunableTuple name="interaction_of_interest" class="TunableInteractionOfInterest" display="Interaction Of Interest" muid="C58C9B7F49191D1B" description="The interaction that when run will cause GPE defined behavior&#xA;to run." Deprecated="False" filter="0" group="General">
+                <TunableList name="affordances" class="TunableList" display="Affordances" muid="2EE68BECB45768C3" description="The Sim must have started either any affordance in this list or an&#xA;interaction matching one of the tags in this tunable's Tags&#xA;field." Deprecated="False" filter="0" group="General">
+                    <Tunable type="interaction" class="TunableReference" muid="7C9A57F23063B83" allow_none="False" Deprecated="False" filter="0" group="General" pack_safe="True" />
+                </TunableList>
+                <TunableList name="tags" class="TunableSet" display="Tags" muid="B4BF47F8034A793B" description="The Sim must have run either an interaction matching one of these&#xA;Tags or an affordance from the list of Affordances in this&#xA;tunable." Deprecated="False" filter="0" group="General" unique_entries="true">
+                    <TunableEnum type="Tag" class="TunableEnumEntry" default="INVALID" muid="867C7696AD61999B" dynamic_entries="tag.Tag._elements" static_entries="tag.Tag" Deprecated="False" filter="0" group="General" />
+                </TunableList>
+            </TunableTuple>
+            <TunableList name="job_and_role_changes" class="TunableMapping" display="Job And Role Changes" muid="64160EBA72E47368" mapping_key="Situation Job" mapping_value="Role State" description="A mapping between situation jobs and role states that defines&#xA;what role states we want to switch to for sims on which jobs&#xA;when this situation state is entered." Deprecated="False" filter="0" group="General">
+                <TunableTuple class="TunableTuple" muid="DA741241AA6E2C5B" Deprecated="False" filter="0" group="General">
+                    <Tunable type="role_state" name="Role State" class="TunableReference" display="Role State" muid="215A5B6A61263FC" description="The role state that we will switch sims of the linked job&#xA;into." allow_none="False" Deprecated="False" filter="0" group="General" />
+                    <Tunable type="situation_job" name="Situation Job" class="TunableReference" display="Situation Job" muid="2FD699B0A7C5196E" description="A reference to a SituationJob that we will use to change&#xA;sim's role state." allow_none="False" Deprecated="False" filter="0" group="General" />
+                </TunableTuple>
+            </TunableList>
+            <TunableVariant type="None" name="time_out" class="OptionalTunable" default="disabled" display="Time Out" muid="3616A33CE9E10C26" description="How long this state will last before time expired. Please talk to the GPE who implemented the specific&#xA;situation to see what the state will do on time expired." Deprecated="False" filter="0" group="General">
+                <Tunable name="disabled" class="TunableExistance" display="Disabled" muid="FAAFE6F730EB0881" />
+                <Tunable type="float" name="enabled" class="TunableSimMinute" default="15" display="Enabled" muid="E81C172D2304DB33" min="1" max="None" tuning_state="NeedsTuning" Deprecated="False" filter="0" group="General" />
+            </TunableVariant>
+        </TunableTuple>
+
+        <TunableTuple name="starting_waypoint" class="TunableTunableWaypointWeightedSet" display="Starting Waypoint" muid="309E12BF14F992AA" description="Waypoint for the generator to start at (will choose one based on the tests/weights)." Deprecated="False" filter="0" group="Routing">
+            <TunableList name="connections" class="TunableList" display="Connections" muid="FB83DD4165470DB3" description="List of connected waypoints." Deprecated="False" filter="0" group="General">
+                <TunableTuple class="TunableTuple" muid="64B2DF6E8CB96244" description="Pair of waypoint and a tested weight." Deprecated="False" filter="0" group="General">
+                    <Tunable type="locator" name="connected_waypoint" class="TunableReference" display="Connected Waypoint" muid="D02DD46AC20D0735" description="Waypoint reference." Deprecated="False" filter="0" group="General" />
+                    <TunableTuple name="weight" class="TunableTunableMultiplier" display="Weight" muid="6C945B80C45B8ADF" description="A weight with testable multipliers that is used to &#xA;determine how likely this entry is to be picked when &#xA;selecting randomly." Deprecated="False" filter="0" group="General">
+                        <Tunable type="float" name="base_value" class="Tunable" default="1" display="Base Value" muid="820EB711E73D010C" description="The basic value to return if no modifications are applied." tuning_state="NeedsTuning" Deprecated="False" filter="0" group="General" />
+                        <TunableList name="multipliers" class="TunableList" display="Multipliers" muid="35D502DD79CA519B" description="A list of multipliers to apply to base_value." Deprecated="False" filter="0" group="General">
+                            <TunableTuple class="TunableTuple" muid="CA004852F80DA7F" Deprecated="False" filter="0" group="General">
+                                <Tunable type="float" name="multiplier" class="TunableRange" default="1" display="Multiplier" muid="A1A4CDFAF5F43FC5" min="0" max="None" description="The multiplier to apply to base_value if the associated&#xA;tests pass." tuning_state="NeedsTuning" Deprecated="False" filter="0" group="General" />
+                                <TdescFragTag name="tests" class="TunableTestSet" display="Tests" muid="3CAACE351A14199D" description="A series of tests that must pass in order for multiplier to&#xA;be applied." filter="0" group="General" />
+                            </TunableTuple>
+                        </TunableList>
+                    </TunableTuple>
+                </TunableTuple>
+            </TunableList>
+        </TunableTuple>
+
+        <TunableVariant type="None" name="waypoint_graph" class="TunableWaypointGraphSnippet" default="literal" display="Waypoint Graph" muid="DD676870C16B17A1" description="Defines the waypoints and connections between them.&#xA; (This may be tuned in place here using 'literal' or as a reference to a WaypointGraph tuning snippet.)" Deprecated="False" filter="0" group="Routing">
+            <TunableTuple name="literal" class="TunableTunableWaypointGraph" display="Literal" muid="C8D7F8C46E3C2B3C" description="Tuning for defining a graph of connected waypoints (locators)." Deprecated="False" filter="0" group="General">
+                <TunableList name="connections" class="TunableMapping" display="Connections" muid="5989EC7A7BC7AE13" mapping_key="waypoint" mapping_value="connections" description="Defines the connections between waypoints in this graph." Deprecated="False" filter="0" group="General">
+                    <TunableTuple class="TunableTuple" muid="62B80A01902A80CC" Deprecated="False" filter="0" group="General">
+                        <TunableTuple name="connections" class="TunableTunableWaypointWeightedSet" display="Connections" muid="B72F039342945F" description="Tuning for a weighted list of connections (linked waypoint locators)." Deprecated="False" filter="0" group="General">
+                            <TunableList name="connections" class="TunableList" display="Connections" muid="CBA3C4B7D19631D5" description="List of connected waypoints." Deprecated="False" filter="0" group="General">
+                                <TunableTuple class="TunableTuple" muid="5C68448AB7BA0AAC" description="Pair of waypoint and a tested weight." Deprecated="False" filter="0" group="General">
+                                    <Tunable type="locator" name="connected_waypoint" class="TunableReference" display="Connected Waypoint" muid="C8BBF96FFB85B11A" description="Waypoint reference." Deprecated="False" filter="0" group="General" />
+                                    <TunableTuple name="weight" class="TunableTunableMultiplier" display="Weight" muid="AAB0D1FEE0F03BD6" description="A weight with testable multipliers that is used to &#xA;determine how likely this entry is to be picked when &#xA;selecting randomly." Deprecated="False" filter="0" group="General">
+                                        <Tunable type="float" name="base_value" class="Tunable" default="1" display="Base Value" muid="604E35D5CD8A14DF" description="The basic value to return if no modifications are applied." tuning_state="NeedsTuning" Deprecated="False" filter="0" group="General" />
+                                        <TunableList name="multipliers" class="TunableList" display="Multipliers" muid="45324F40D1C53ADB" description="A list of multipliers to apply to base_value." Deprecated="False" filter="0" group="General">
+                                            <TunableTuple class="TunableTuple" muid="F77386BC6A0DB6DD" Deprecated="False" filter="0" group="General">
+                                                <Tunable type="float" name="multiplier" class="TunableRange" default="1" display="Multiplier" muid="73159D055B0B234B" min="0" max="None" description="The multiplier to apply to base_value if the associated&#xA;tests pass." tuning_state="NeedsTuning" Deprecated="False" filter="0" group="General" />
+                                                <TdescFragTag name="tests" class="TunableTestSet" display="Tests" muid="4D30101DA46A8F1E" description="A series of tests that must pass in order for multiplier to&#xA;be applied." filter="0" group="General" />
+                                            </TunableTuple>
+                                        </TunableList>
+                                    </TunableTuple>
+                                </TunableTuple>
+                            </TunableList>
+                        </TunableTuple>
+                        <Tunable type="locator" name="waypoint" class="TunableReference" display="Waypoint" muid="7649866CA9ACC13" description="Waypoint reference." Deprecated="False" filter="0" group="General" />
+                    </TunableTuple>
+                </TunableList>
+                <Tunable type="float" name="constraint_radius" class="TunableRange" default="1.5" display="Constraint Radius" muid="366D53992F421B03" min="0" max="None" description="The radius, in meters, for each of the generated waypoint&#xA;constraints." tuning_state="NeedsTuning" Deprecated="False" filter="0" group="General" />
+            </TunableTuple>
+            <Tunable type="snippet" name="reference" class="TunableReference" display="Reference" muid="A0B6EFBB4E0C9C5F" description="A reference to a WaypointGraph tuning snippet." allow_none="False" Deprecated="False" filter="0" group="General" restrict="WaypointGraph" />
+        </TunableVariant>
+    </Instance>
+
+    <VersionHistory>
+        <ActionList>
+            <Action type="kRemove" old_muid="48CEF55497C2DA81" />
+        </ActionList>
+
+        <ActionList>
+            <Action type="kRemove" old_muid="BC530F84B475338F" />
+        </ActionList>
+
+        <ActionList>
+            <Action type="kRemove" old_muid="D15B5D4D36106044" />
+            <Action type="kRemove" old_muid="1D8BE1100E73B12A" />
+        </ActionList>
+
+        <ActionList>
+            <Action type="kRename" old_muid="CE2A7BF34B873B3E" new_muid="7C6A19FC26DBAD3E" />
+            <Action type="kRename" old_muid="D0F5D0A675C42E66" new_muid="38F41EDAA3D62DA3" />
+        </ActionList>
+
+        <ActionList>
+            <Action type="kRemove" old_muid="F0C98AB716B09042" />
+        </ActionList>
+
+        <ActionList />
+
+        <ActionList>
+            <Action type="kRename" old_muid="B280663246DDCE1" new_muid="CE1D92FCB39A3070" />
+            <Action type="kRename" old_muid="994FD2E65F0F3794" new_muid="218D710A143F59D2" />
+            <Action type="kRename" old_muid="6EFA1DB7681E0CC2" new_muid="53A843973C6D5327" />
+        </ActionList>
+
+        <ActionList>
+            <Action type="kRename" old_muid="534C194CE5EFA11E" new_muid="BB530C4FE2C80CD" />
+        </ActionList>
+
+        <ActionList>
+            <Action type="kRename" old_muid="E43845F1196BD187" new_muid="1DAE7EA24692FD7D" />
+        </ActionList>
+
+        <ActionList>
+            <Action type="kRename" old_muid="DF731B5F9F69F7EE" new_muid="C9324D0B072BD1BD" />
+            <Action type="kRemove" old_muid="AC268E7251D9954A" />
+        </ActionList>
+    </VersionHistory>
+</TuningRoot>

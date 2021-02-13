@@ -1,0 +1,474 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<I c="SuperInteraction" i="interaction" m="interactions.base.super_interaction" n="paparazzi_Photo_Covert" s="192664">
+  <L n="_constraints">
+    <U>
+      <L n="constraints">
+        <U>
+          <V t="cone" n="value">
+            <U n="cone">
+              <T n="max_radius">7</T>
+              <T n="min_radius">7</T>
+            </U>
+          </V>
+        </U>
+        <U>
+          <V t="facing" n="value" />
+        </U>
+        <U>
+          <V t="line_of_sight" n="value" />
+        </U>
+        <U>
+          <V n="value" t="water_depth">
+            <U n="water_depth">
+              <V n="max_water_depth" t="enabled">
+                <T n="enabled">0.3</T>
+              </V>
+            </U>
+          </V>
+        </U>
+      </L>
+    </U>
+  </L>
+  <V t="enabled" n="_saveable" />
+  <L n="_static_commodities">
+    <U>
+      <T n="desire">256</T>
+      <T n="static_commodity">191793<!--StaticCommodity: staticCommodity_Paparazzi_TakePhoto--></T>
+    </U>
+  </L>
+  <T n="allow_user_directed">False</T>
+  <T n="allowed_to_combine">False</T>
+  <T n="attention_cost">0.5</T>
+  <V n="basic_content" t="flexible_length">
+    <U n="flexible_length">
+      <L n="conditional_actions">
+        <V t="literal">
+          <U n="literal">
+            <L n="conditions">
+              <V t="buff_based">
+                <U n="buff_based">
+                  <T n="buff">197103<!--Buff: buff_Paparazzi_PhotoOpportunity--></T>
+                  <E n="participant">TargetSim</E>
+                  <E n="timing">HAS_BUFF</E>
+                </U>
+              </V>
+            </L>
+            <E n="interaction_action">EXIT_NATURALLY</E>
+          </U>
+        </V>
+        <V t="literal">
+          <U n="literal">
+            <L n="conditions">
+              <V t="constraint_based">
+                <U n="constraint_based">
+                  <V n="constraints_to_use" t="use_custom_constraints">
+                    <U n="use_custom_constraints">
+                      <L n="_constraints">
+                        <U>
+                          <E n="constrained_participant">Actor</E>
+                          <L n="constraints">
+                            <V t="cone">
+                              <U n="cone">
+                                <T n="max_radius">7</T>
+                                <T n="min_radius">7</T>
+                              </U>
+                            </V>
+                          </L>
+                        </U>
+                      </L>
+                    </U>
+                  </V>
+                </U>
+              </V>
+            </L>
+            <E n="interaction_action">EXIT_NATURALLY</E>
+          </U>
+        </V>
+        <V t="literal">
+          <U n="literal">
+            <L n="conditions">
+              <V t="buff_based">
+                <U n="buff_based">
+                  <T n="buff">128807<!--ClothingBuff: buff_Clothing_Nude--></T>
+                  <E n="participant">TargetSim</E>
+                  <E n="timing">HAS_BUFF</E>
+                </U>
+              </V>
+            </L>
+            <E n="interaction_action">EXIT_NATURALLY</E>
+          </U>
+        </V>
+        <V t="literal">
+          <U n="literal">
+            <L n="conditions">
+              <V t="time_based">
+                <U n="time_based">
+                  <T n="max_time">12</T>
+                  <T n="min_time">9</T>
+                </U>
+              </V>
+            </L>
+            <E n="interaction_action">EXIT_NATURALLY</E>
+          </U>
+        </V>
+      </L>
+      <V n="content" t="looping_content">
+        <U n="looping_content">
+          <U n="animation_ref">
+            <T n="factory">192607<!--AnimationElement: celebrity_Paparazzi_Covert--></T>
+          </U>
+        </U>
+      </V>
+      <V n="periodic_stat_change" t="enabled">
+        <U n="enabled">
+          <L n="operations">
+            <V t="statistic_change">
+              <U n="statistic_change">
+                <T n="advertise">False</T>
+                <T n="amount">3</T>
+                <T n="stat">191956<!--Commodity: Commodity_Paparazzi_Meltdown--></T>
+                <L n="subject">
+                  <E>TargetSim</E>
+                </L>
+                <L n="tests">
+                  <L>
+                    <V t="bucks_perks_test">
+                      <U n="bucks_perks_test">
+                        <T n="bucks_perk">192803<!--BucksPerk: famePerks_Quirks_PaparazziDarling--></T>
+                        <E n="participant">TargetSim</E>
+                        <T n="test_if_unlocked">False</T>
+                      </U>
+                    </V>
+                    <V t="relationship">
+                      <U n="relationship">
+                        <U n="relationship_score_interval">
+                          <T n="lower_bound">-100</T>
+                          <T n="upper_bound">35</T>
+                        </U>
+                        <L n="subject">
+                          <E>Actor</E>
+                        </L>
+                        <L n="target_sim">
+                          <E>TargetSim</E>
+                        </L>
+                        <T n="track">16650<!--RelationshipTrack: LTR_Friendship_Main--></T>
+                      </U>
+                    </V>
+                    <V t="trait">
+                      <U n="trait">
+                        <L n="blacklist_traits">
+                          <T>192900<!--Trait: trait_UnstoppableFame--></T>
+                        </L>
+                        <E n="subject">TargetSim</E>
+                      </U>
+                    </V>
+                  </L>
+                </L>
+              </U>
+            </V>
+            <V t="statistic_change">
+              <U n="statistic_change">
+                <T n="advertise">False</T>
+                <T n="amount">1</T>
+                <T n="stat">196693<!--Commodity: commodity_Paparazzi_Fulfilment--></T>
+              </U>
+            </V>
+            <V t="statistic_change">
+              <U n="statistic_change">
+                <T n="advertise">False</T>
+                <T n="amount">0.23</T>
+                <T n="stat">191956<!--Commodity: Commodity_Paparazzi_Meltdown--></T>
+                <L n="subject">
+                  <E>TargetSim</E>
+                </L>
+                <L n="tests">
+                  <L>
+                    <V t="bucks_perks_test">
+                      <U n="bucks_perks_test">
+                        <T n="bucks_perk">192803<!--BucksPerk: famePerks_Quirks_PaparazziDarling--></T>
+                        <E n="participant">TargetSim</E>
+                        <T n="test_if_unlocked">False</T>
+                      </U>
+                    </V>
+                    <V t="relationship">
+                      <U n="relationship">
+                        <U n="relationship_score_interval">
+                          <T n="lower_bound">-100</T>
+                          <T n="upper_bound">35</T>
+                        </U>
+                        <L n="subject">
+                          <E>Actor</E>
+                        </L>
+                        <L n="target_sim">
+                          <E>TargetSim</E>
+                        </L>
+                        <T n="track">16650<!--RelationshipTrack: LTR_Friendship_Main--></T>
+                      </U>
+                    </V>
+                    <V t="trait">
+                      <U n="trait">
+                        <L n="blacklist_traits">
+                          <T>192900<!--Trait: trait_UnstoppableFame--></T>
+                        </L>
+                        <E n="subject">TargetSim</E>
+                      </U>
+                    </V>
+                    <V t="mood">
+                      <U n="mood">
+                        <T n="mood">14632<!--Mood: Mood_Angry--></T>
+                        <E n="who">Actor</E>
+                      </U>
+                    </V>
+                  </L>
+                  <L>
+                    <V t="bucks_perks_test">
+                      <U n="bucks_perks_test">
+                        <T n="bucks_perk">192803<!--BucksPerk: famePerks_Quirks_PaparazziDarling--></T>
+                        <E n="participant">TargetSim</E>
+                        <T n="test_if_unlocked">False</T>
+                      </U>
+                    </V>
+                    <V t="relationship">
+                      <U n="relationship">
+                        <U n="relationship_score_interval">
+                          <T n="lower_bound">-100</T>
+                          <T n="upper_bound">35</T>
+                        </U>
+                        <L n="subject">
+                          <E>Actor</E>
+                        </L>
+                        <L n="target_sim">
+                          <E>TargetSim</E>
+                        </L>
+                        <T n="track">16650<!--RelationshipTrack: LTR_Friendship_Main--></T>
+                      </U>
+                    </V>
+                    <V t="trait">
+                      <U n="trait">
+                        <L n="blacklist_traits">
+                          <T>192900<!--Trait: trait_UnstoppableFame--></T>
+                        </L>
+                        <E n="subject">TargetSim</E>
+                      </U>
+                    </V>
+                    <V t="mood">
+                      <U n="mood">
+                        <T n="mood">14646<!--Mood: Mood_Uncomfortable--></T>
+                        <E n="who">Actor</E>
+                      </U>
+                    </V>
+                  </L>
+                </L>
+              </U>
+            </V>
+          </L>
+        </U>
+      </V>
+    </U>
+  </V>
+  <L n="basic_extras">
+    <V t="loot">
+      <U n="loot">
+        <L n="loot_list">
+          <T>196694<!--LootActions: loot_Paparazzi_Leave--></T>
+        </L>
+      </U>
+    </V>
+    <V t="loot">
+      <U n="loot">
+        <L n="loot_list">
+          <T>201577<!--LootActions: loot_Paparazzi_Idle--></T>
+        </L>
+        <V t="at_beginning" n="timing" />
+      </U>
+    </V>
+  </L>
+  <V t="disabled" n="content_score" />
+  <U n="display_name_text_tokens">
+    <L n="tokens">
+      <V t="participant_type">
+        <U n="participant_type">
+          <V t="from_participant" n="objects">
+            <U n="from_participant">
+              <E n="participant">Actor</E>
+            </U>
+          </V>
+        </U>
+      </V>
+      <V t="participant_type">
+        <U n="participant_type">
+          <V t="from_participant" n="objects">
+            <U n="from_participant">
+              <E n="participant">Object</E>
+            </U>
+          </V>
+        </U>
+      </V>
+    </L>
+  </U>
+  <L n="interaction_category_tags">
+    <E>Interaction_Super</E>
+    <E>Interaction_All</E>
+  </L>
+  <V n="outcome" t="test_based">
+    <U n="test_based">
+      <L n="fallback_outcomes">
+        <U>
+          <U n="outcome">
+            <V n="animation_ref" t="enabled">
+              <U n="enabled">
+                <T n="factory">192606<!--AnimationElement: celebrity_Paparazzi_Exit--></T>
+              </U>
+            </V>
+            <L n="basic_extras">
+              <V t="loot">
+                <U n="loot">
+                  <L n="loot_list">
+                    <T>191865<!--LootActions: loot_Paparazzi_Reaction--></T>
+                  </L>
+                </U>
+              </V>
+            </L>
+          </U>
+        </U>
+      </L>
+      <L n="tested_outcomes">
+        <U>
+          <L n="potential_outcomes">
+            <U>
+              <U n="outcome">
+                <V n="animation_ref" t="enabled">
+                  <U n="enabled">
+                    <T n="factory">196343<!--AnimationElement: celebrity_Paparazzi_Covert_Embarrassing--></T>
+                  </U>
+                </V>
+                <L n="basic_extras">
+                  <V t="loot">
+                    <U n="loot">
+                      <L n="loot_list">
+                        <T>191865<!--LootActions: loot_Paparazzi_Reaction--></T>
+                        <T>196747<!--LootActions: loot_Paparazzi_Embarrassed--></T>
+                      </L>
+                    </U>
+                  </V>
+                </L>
+              </U>
+            </U>
+          </L>
+          <L n="tests">
+            <L>
+              <V t="mood">
+                <U n="mood">
+                  <T n="mood">14632<!--Mood: Mood_Angry--></T>
+                  <E n="who">TargetSim</E>
+                </U>
+              </V>
+              <V t="relationship">
+                <U n="relationship">
+                  <U n="relationship_score_interval">
+                    <T n="lower_bound">-100</T>
+                    <T n="upper_bound">35</T>
+                  </U>
+                  <L n="subject">
+                    <E>Actor</E>
+                  </L>
+                  <L n="target_sim">
+                    <E>TargetSim</E>
+                  </L>
+                  <T n="track">16650<!--RelationshipTrack: LTR_Friendship_Main--></T>
+                </U>
+              </V>
+            </L>
+            <L>
+              <V t="buff">
+                <U n="buff">
+                  <E n="subject">TargetSim</E>
+                  <V n="whitelist" t="enabled">
+                    <L n="enabled">
+                      <T>197103<!--Buff: buff_Paparazzi_PhotoOpportunity--></T>
+                    </L>
+                  </V>
+                </U>
+              </V>
+              <V t="relationship">
+                <U n="relationship">
+                  <U n="relationship_score_interval">
+                    <T n="lower_bound">-100</T>
+                    <T n="upper_bound">35</T>
+                  </U>
+                  <L n="subject">
+                    <E>Actor</E>
+                  </L>
+                  <L n="target_sim">
+                    <E>TargetSim</E>
+                  </L>
+                  <T n="track">16650<!--RelationshipTrack: LTR_Friendship_Main--></T>
+                </U>
+              </V>
+            </L>
+            <L>
+              <V t="buff">
+                <U n="buff">
+                  <E n="subject">TargetSim</E>
+                  <V n="whitelist" t="enabled">
+                    <L n="enabled">
+                      <T>128807<!--ClothingBuff: buff_Clothing_Nude--></T>
+                    </L>
+                  </V>
+                </U>
+              </V>
+              <V t="relationship">
+                <U n="relationship">
+                  <U n="relationship_score_interval">
+                    <T n="lower_bound">-100</T>
+                    <T n="upper_bound">35</T>
+                  </U>
+                  <L n="subject">
+                    <E>Actor</E>
+                  </L>
+                  <L n="target_sim">
+                    <E>TargetSim</E>
+                  </L>
+                  <T n="track">16650<!--RelationshipTrack: LTR_Friendship_Main--></T>
+                </U>
+              </V>
+            </L>
+          </L>
+        </U>
+      </L>
+    </U>
+  </V>
+  <E n="scoring_priority">NORMAL</E>
+  <T n="subaction_selection_weight">1</T>
+  <E n="target_type">OBJECT</E>
+  <L n="test_globals">
+    <V t="trait">
+      <U n="trait">
+        <L n="blacklist_traits">
+          <T>200510<!--Trait: trait_Hidden_isDisguised--></T>
+        </L>
+        <E n="subject">TargetSim</E>
+      </U>
+    </V>
+    <V t="location">
+      <U n="location">
+        <U n="location_tests">
+          <V t="enabled" n="is_outside" />
+        </U>
+        <E n="subject">TargetSim</E>
+      </U>
+    </V>
+    <V t="trait">
+      <U n="trait">
+        <E n="subject">TargetSim</E>
+        <L n="whitelist_traits">
+          <T>191820<!--Trait: fameTrait_Level3--></T>
+          <T>191817<!--Trait: fameTrait_Level4--></T>
+          <T>191818<!--Trait: fameTrait_Level5--></T>
+        </L>
+      </U>
+    </V>
+  </L>
+  <T n="time_overhead">30</T>
+  <T n="visible">False</T>
+</I>

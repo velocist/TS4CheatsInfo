@@ -1,0 +1,209 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<I c="GameObject" i="object" m="objects.game_object" n="object_TrainingDummy" s="203203">
+  <U n="_components">
+    <V t="enabled" n="focus">
+      <U n="enabled">
+        <V n="_focus_score" t="globally">
+          <U n="globally">
+            <E n="base">LOW</E>
+          </U>
+        </V>
+      </U>
+    </V>
+    <V n="idle_component" t="enabled">
+      <U n="enabled">
+        <L n="idle_animation_map">
+          <U>
+            <T n="key">203243<!--ObjectStateValue: trainingDummy_Idles_Idle--></T>
+            <T n="value">203238<!--ObjectAnimationElement: trainingDummy_Responses_Idle--></T>
+          </U>
+          <U>
+            <T n="key">203244<!--ObjectStateValue: trainingDummy_Idles_ReactPositive--></T>
+            <T n="value">203236<!--ObjectAnimationElement: trainingDummy_Responses_Positive--></T>
+          </U>
+          <U>
+            <T n="key">203245<!--ObjectStateValue: trainingDummy_Idles_ReactNegative--></T>
+            <T n="value">203235<!--ObjectAnimationElement: trainingDummy_Responses_Negative--></T>
+          </U>
+        </L>
+      </U>
+    </V>
+    <V t="enabled" n="retail_component">
+      <V n="enabled" t="reference">
+        <T n="reference">115301<!--RetailComponent: retailComponent_Default_LowAppeal--></T>
+      </V>
+    </V>
+    <V n="state" t="enabled">
+      <U n="enabled">
+        <L n="state_triggers">
+          <U>
+            <L n="at_states">
+              <T>77532<!--CommodityBasedObjectStateValue: FireState_Burn_Material_Change_Replace--></T>
+            </L>
+            <V n="set_states" t="Set_state_list">
+              <L n="Set_state_list">
+                <T>39737<!--CommodityBasedObjectStateValue: FireState_Burn_Material_Change_Not_Burning--></T>
+              </L>
+            </V>
+          </U>
+        </L>
+        <L n="states">
+          <U>
+            <V n="default_value" t="reference">
+              <T n="reference">203243<!--ObjectStateValue: trainingDummy_Idles_Idle--></T>
+            </V>
+            <T n="reset_on_load_if_time_passes">True</T>
+            <T n="reset_to_default">True</T>
+          </U>
+          <U>
+            <L n="client_states">
+              <U>
+                <T n="key">39611<!--CommodityBasedObjectStateValue: FireState_Burn_Material_Change--></T>
+              </U>
+              <U>
+                <T n="key">39736<!--CommodityBasedObjectStateValue: FireState_Burn_Material_Change_Burning--></T>
+              </U>
+              <U>
+                <T n="key">39737<!--CommodityBasedObjectStateValue: FireState_Burn_Material_Change_Not_Burning--></T>
+              </U>
+              <U>
+                <T n="key">77532<!--CommodityBasedObjectStateValue: FireState_Burn_Material_Change_Replace--></T>
+              </U>
+            </L>
+            <V n="default_value" t="reference">
+              <T n="reference">39737<!--CommodityBasedObjectStateValue: FireState_Burn_Material_Change_Not_Burning--></T>
+            </V>
+          </U>
+          <U>
+            <L n="client_states">
+              <U>
+                <T n="key">151675<!--ObjectStateValue: generic_ObjectInUse_True--></T>
+                <U n="value">
+                  <V n="toggle_footprint" t="apply_new_value">
+                    <U n="apply_new_value">
+                      <L n="toggles">
+                        <U>
+                          <T n="enable">True</T>
+                          <T n="footprint_hash">ftp_discouragement_ftpShape</T>
+                        </U>
+                      </L>
+                    </U>
+                  </V>
+                </U>
+              </U>
+              <U>
+                <T n="key">151677<!--ObjectStateValue: generic_ObjectInUse_False--></T>
+                <U n="value">
+                  <V n="toggle_footprint" t="apply_new_value">
+                    <U n="apply_new_value">
+                      <L n="toggles">
+                        <U>
+                          <T n="footprint_hash">ftp_discouragement_ftpShape</T>
+                          <T n="push_sims">False</T>
+                        </U>
+                      </L>
+                    </U>
+                  </V>
+                </U>
+              </U>
+            </L>
+            <V n="default_value" t="reference">
+              <T n="reference">151677<!--ObjectStateValue: generic_ObjectInUse_False--></T>
+            </V>
+          </U>
+          <U>
+            <L n="client_states">
+              <U>
+                <T n="key">224553<!--ObjectStateValue: utilities_Power_Consumption_On--></T>
+                <U n="value">
+                  <V n="autonomy_modifiers" t="apply_new_value">
+                    <V n="apply_new_value" t="apply_statistic_modifiers">
+                      <U n="apply_statistic_modifiers">
+                        <L n="lot_statistic_modifiers">
+                          <U>
+                            <V n="modifier" t="multipliers">
+                              <U n="multipliers">
+                                <U n="value">
+                                  <T n="base_value">-0.00694</T>
+                                  <L n="multipliers">
+                                    <U>
+                                      <T n="multiplier">0.8</T>
+                                      <L n="tests">
+                                        <L>
+                                          <V t="statistic">
+                                            <U n="statistic">
+                                              <T n="stat">187710<!--Statistic: statistic_Object_Thermostat_LotStat_Setting--></T>
+                                              <V n="threshold" t="value_threshold">
+                                                <U n="value_threshold">
+                                                  <E n="comparison">LESS_OR_EQUAL</E>
+                                                  <T n="value">-1</T>
+                                                </U>
+                                              </V>
+                                              <E n="who">Lot</E>
+                                            </U>
+                                          </V>
+                                        </L>
+                                      </L>
+                                    </U>
+                                  </L>
+                                </U>
+                              </U>
+                            </V>
+                            <T n="statistic">233027<!--Commodity: commodity_Utilities_Power--></T>
+                          </U>
+                        </L>
+                        <U n="periodic_statistic_change">
+                          <T n="interval">10</T>
+                          <L n="operations" />
+                        </U>
+                      </U>
+                    </V>
+                  </V>
+                </U>
+              </U>
+              <U>
+                <T n="key">224564<!--ObjectStateValue: utilities_Power_Consumption_Off--></T>
+                <U n="value">
+                  <V t="apply_new_value" n="autonomy_modifiers" />
+                </U>
+              </U>
+            </L>
+            <V n="default_value" t="reference">
+              <T n="reference">224564<!--ObjectStateValue: utilities_Power_Consumption_Off--></T>
+            </V>
+          </U>
+        </L>
+      </U>
+    </V>
+  </U>
+  <L n="_super_affordances">
+    <T>13328<!--ImmediateSuperInteraction: debug_Reset--></T>
+    <T>13326<!--ImmediateSuperInteraction: debug_ObjectDestroy--></T>
+    <T>103888<!--ImmediateSuperInteraction: cheat_set_as_head--></T>
+    <T>203185<!--SuperInteraction: si_TrainingDummy_PracticeFighting--></T>
+    <T>13983<!--StandSuperInteraction: sim-stand--></T>
+    <T>203220<!--SuperInteraction: si_TrainingDummy_PracticeFightingWith_Fight_Fighter1--></T>
+    <T>203225<!--SuperInteraction: si_TrainingDummy_PracticeFightingWith_FightResults_Final--></T>
+    <T>203221<!--SuperInteraction: si_TrainingDummy_PracticeFightingWith_Watch--></T>
+    <T>203224<!--SuperInteraction: si_TrainingDummy_PracticeFightingWith_Gather--></T>
+    <T>203186<!--SuperInteraction: si_TrainingDummy_PracticeOrderingAround--></T>
+    <T>203267<!--SimPickerInteraction: simPicker_TrainingDummy_PracticeFightingWith--></T>
+    <T>203299<!--SuperInteraction: si_TrainingDummy_PracticeFightingWith_StartSituation--></T>
+    <T>203249<!--SuperInteraction: si_TrainingDummy_PracticeFightingWith_FightResultsWatcher--></T>
+    <T>203302<!--SuperInteraction: si_TrainingDummy_PracticeFightingWith_Fight_Fighter2--></T>
+    <T>203248<!--SuperInteraction: si_TrainingDummy_PracticeFightingWith_FightResults--></T>
+    <T>74457<!--ImmediateSuperInteraction: fire_ReplaceBurntObject--></T>
+  </L>
+  <U n="recycling_data">
+    <L n="recycling_values">
+      <U>
+        <E n="Bucks Type">RecycleBitsBucks</E>
+        <T n="Value">0.5</T>
+      </U>
+      <U>
+        <E n="Bucks Type">RecyclePiecesBucks</E>
+        <T n="Value">0.5</T>
+      </U>
+    </L>
+  </U>
+</I>

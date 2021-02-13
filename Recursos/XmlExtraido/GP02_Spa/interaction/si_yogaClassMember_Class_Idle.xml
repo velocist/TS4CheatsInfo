@@ -1,0 +1,307 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<I c="SuperInteraction" i="interaction" m="interactions.base.super_interaction" n="si_yogaClassMember_Class_Idle" s="118700">
+  <V t="participant" n="_icon">
+    <U n="participant">
+      <L n="participant_type">
+        <E>Object</E>
+      </L>
+    </U>
+  </V>
+  <T n="_report_running_time">True</T>
+  <V t="enabled" n="_saveable" />
+  <L n="_static_commodities" />
+  <T n="allow_autonomous">True</T>
+  <T n="allow_user_directed">False</T>
+  <V t="enabled" n="animation_stat">
+    <U n="enabled">
+      <V t="enabled" n="actor_stat">
+        <V n="enabled" t="single">
+          <U n="single">
+            <T n="item">117858<!--Skill: statistic_Skill_AdultMajor_Wellness--></T>
+          </U>
+        </V>
+      </V>
+    </U>
+  </V>
+  <T n="attention_cost">0.5</T>
+  <V n="basic_content" t="flexible_length">
+    <U n="flexible_length">
+      <L n="conditional_actions">
+        <V t="list_reference">
+          <T n="list_reference">40705<!--ExitConditionList: ExitConditionList_MotivesNearFail--></T>
+        </V>
+        <V t="literal">
+          <U n="literal">
+            <L n="conditions">
+              <V t="buff_based">
+                <U n="buff_based">
+                  <T n="buff">119972<!--Buff: buff_situation_YogaClass_PostClass--></T>
+                </U>
+              </V>
+            </L>
+            <E n="interaction_action">EXIT_NATURALLY</E>
+          </U>
+        </V>
+      </L>
+      <V t="staging_content" n="content">
+        <U n="staging_content">
+          <V t="enabled" n="animation_ref">
+            <U n="enabled">
+              <T n="factory">117432<!--AnimationElement: object_YogaMat_Idle--></T>
+            </U>
+          </V>
+          <U n="content_set">
+            <V t="enabled" n="phase_tuning">
+              <U n="enabled">
+                <T n="turn_statistic">16726<!--Statistic: statistic_turns--></T>
+              </U>
+            </V>
+          </U>
+        </U>
+      </V>
+      <V n="periodic_stat_change" t="enabled">
+        <U n="enabled">
+          <U n="operation_actions">
+            <L n="actions">
+              <T>120037<!--LootActions: loot_Buff_YogaMat_Remove_ClassMemberRole--></T>
+            </L>
+          </U>
+          <L n="operations">
+            <V t="statistic_change">
+              <U n="statistic_change">
+                <T n="advertise">False</T>
+                <T n="amount">0.19</T>
+                <T n="stat">16655<!--Commodity: motive_Fun--></T>
+              </U>
+            </V>
+            <V t="statistic_change">
+              <U n="statistic_change">
+                <T n="advertise">False</T>
+                <T n="amount">-0.5</T>
+                <T n="stat">16657<!--Commodity: motive_Hygiene--></T>
+              </U>
+            </V>
+            <V t="statistic_change">
+              <U n="statistic_change">
+                <T n="advertise">False</T>
+                <T n="amount">-0.05</T>
+                <T n="stat">16589<!--Commodity: commodity_Fitness_Fat--></T>
+                <L n="tests">
+                  <L>
+                    <V t="statistic">
+                      <U n="statistic">
+                        <T n="stat">16589<!--Commodity: commodity_Fitness_Fat--></T>
+                        <V n="threshold" t="value_threshold">
+                          <U n="value_threshold">
+                            <E n="comparison">GREATER</E>
+                            <T n="value">-40</T>
+                          </U>
+                        </V>
+                      </U>
+                    </V>
+                  </L>
+                </L>
+              </U>
+            </V>
+            <V t="statistic_change">
+              <U n="statistic_change">
+                <T n="advertise">False</T>
+                <T n="amount">0.075</T>
+                <T n="stat">16590<!--Commodity: commodity_Fitness_Fit--></T>
+                <L n="tests">
+                  <L>
+                    <V t="statistic">
+                      <U n="statistic">
+                        <T n="stat">16590<!--Commodity: commodity_Fitness_Fit--></T>
+                        <V n="threshold" t="value_threshold">
+                          <U n="value_threshold">
+                            <E n="comparison">LESS</E>
+                            <T n="value">50</T>
+                          </U>
+                        </V>
+                      </U>
+                    </V>
+                  </L>
+                </L>
+              </U>
+            </V>
+            <V t="dynamic_skill">
+              <U n="dynamic_skill">
+                <U n="skill_loot_data_override">
+                  <E n="effectiveness">StandardPeriodic</E>
+                </U>
+              </U>
+            </V>
+            <V t="reference">
+              <T n="reference">249740<!--PeriodicStatChangeOperation: periodicStatChangeOperation_Lifestyles_Liked_Energetic--></T>
+            </V>
+            <V t="reference">
+              <T n="reference">249720<!--PeriodicStatChangeOperation: periodicStatChangeOperation_Lifestyles_Progress_Energetic--></T>
+            </V>
+          </L>
+        </U>
+      </V>
+      <T n="start_autonomous_inertial">False</T>
+      <V t="enabled" n="statistic_reduction_by_category">
+        <U n="enabled">
+          <L n="categories">
+            <E>Stressed_Buffs</E>
+          </L>
+          <T n="rate">3</T>
+        </U>
+      </V>
+    </U>
+  </V>
+  <L n="basic_extras">
+    <V t="leave_situation">
+      <U n="leave_situation">
+        <L n="situation_types">
+          <T>118796<!--YogaClassSituation: situation_yogaClass_BrainBoosting--></T>
+        </L>
+        <V t="at_end" n="timing">
+          <U n="at_end">
+            <E n="criticality">OnCancelOrException</E>
+          </U>
+        </V>
+      </U>
+    </V>
+    <V t="leave_situation">
+      <U n="leave_situation">
+        <L n="situation_types">
+          <T>118132<!--YogaClassSituation: situation_yogaClass_EnergyCentering--></T>
+        </L>
+        <V t="at_end" n="timing">
+          <U n="at_end">
+            <E n="criticality">OnCancelOrException</E>
+          </U>
+        </V>
+      </U>
+    </V>
+    <V t="leave_situation">
+      <U n="leave_situation">
+        <L n="situation_types">
+          <T>118797<!--YogaClassSituation: situation_yogaClass_MindConcentrating--></T>
+        </L>
+        <V t="at_end" n="timing">
+          <U n="at_end">
+            <E n="criticality">OnCancelOrException</E>
+          </U>
+        </V>
+      </U>
+    </V>
+    <V t="create_situation">
+      <U n="create_situation">
+        <V n="create_situation" t="situation_start">
+          <U n="situation_start">
+            <V t="specify_job" n="actor_init_job">
+              <T n="specify_job">118131<!--SituationJob: Job_yoga_classMember--></T>
+            </V>
+            <T n="invite_picked_sims">False</T>
+            <T n="invite_target_sim">False</T>
+            <T n="situation">122121<!--SituationSimple: Situation_YogaClass_PostHangout--></T>
+            <T n="user_facing">False</T>
+          </U>
+        </V>
+      </U>
+    </V>
+  </L>
+  <V t="enabled" n="canonical_animation">
+    <U n="enabled">
+      <T n="factory">117432<!--AnimationElement: object_YogaMat_Idle--></T>
+    </U>
+  </V>
+  <V t="disabled" n="content_score" />
+  <T n="display_name">0x51CEEA96<!--String: "Participar en clase de yoga"--></T>
+  <V t="none" n="display_name_overrides" />
+  <U n="display_name_text_tokens">
+    <L n="tokens">
+      <V t="participant_type">
+        <U n="participant_type">
+          <V t="from_participant" n="objects">
+            <U n="from_participant">
+              <E n="participant">Actor</E>
+            </U>
+          </V>
+        </U>
+      </V>
+      <V t="participant_type">
+        <U n="participant_type">
+          <V t="from_participant" n="objects">
+            <U n="from_participant">
+              <E n="participant">Object</E>
+            </U>
+          </V>
+        </U>
+      </V>
+    </L>
+  </U>
+  <V t="enabled" n="idle_animation">
+    <U n="enabled">
+      <T n="factory">117432<!--AnimationElement: object_YogaMat_Idle--></T>
+    </U>
+  </V>
+  <L n="interaction_category_tags">
+    <E>Interaction_Super</E>
+    <E>Interaction_All</E>
+    <E>Interaction_Skill_Wellness</E>
+    <E>Interaction_Skill_Wellness_BG</E>
+    <E>Interaction_Lifestyles_Energetic_FlexibleLength</E>
+  </L>
+  <L n="mood_list">
+    <T>14639<!--Mood: Mood_Focused--></T>
+  </L>
+  <E n="scoring_priority">NORMAL</E>
+  <V t="enabled" n="sim_affinity_posture_scoring_data">
+    <U n="enabled">
+      <L n="my_scoring">
+        <U>
+          <V n="affinity_strategy" t="avoid" />
+          <E n="running_interaction_tag">Very_Loud</E>
+        </U>
+      </L>
+      <L n="my_tags">
+        <E>Quiet</E>
+      </L>
+    </U>
+  </V>
+  <U n="skill_loot_data">
+    <E n="effectiveness">StandardPeriodic</E>
+    <T n="stat">117858<!--Skill: statistic_Skill_AdultMajor_Wellness--></T>
+  </U>
+  <T n="subaction_selection_weight">1</T>
+  <E n="target_type">OBJECT</E>
+  <L n="test_autonomous" />
+  <L n="test_globals">
+    <V t="sim_info">
+      <U n="sim_info">
+        <V t="specified" n="ages" />
+        <V t="specified" n="species">
+          <U n="specified">
+            <L n="species">
+              <E />
+            </L>
+          </U>
+        </V>
+        <E n="who">Actor</E>
+      </U>
+    </V>
+    <V t="situation_job_test">
+      <U n="situation_job_test">
+        <T n="negate">True</T>
+        <L n="situation_jobs">
+          <T>118373<!--SituationJob: job_yoga_instructor_idle--></T>
+          <T>118130<!--SituationJob: job_yoga_instructor--></T>
+        </L>
+      </U>
+    </V>
+    <V t="test_set_reference">
+      <T n="test_set_reference">25731<!--TestSetInstance: testSet_PregnantDisallow--></T>
+    </V>
+  </L>
+  <T n="time_overhead">30</T>
+  <U n="visual_type_override_data">
+    <E n="group_cancel_behavior">ALL</E>
+    <T n="group_priority">2</T>
+    <E n="group_tag">Interaction_YogaClassMember</E>
+  </U>
+</I>

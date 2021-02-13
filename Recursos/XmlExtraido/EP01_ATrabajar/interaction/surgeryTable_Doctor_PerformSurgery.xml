@@ -1,0 +1,508 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<I c="SuperInteraction" i="interaction" m="interactions.base.super_interaction" n="surgeryTable_Doctor_PerformSurgery" s="110024">
+  <V t="participant" n="_icon">
+    <U n="participant">
+      <L n="participant_type">
+        <E>TargetSim</E>
+      </L>
+    </U>
+  </V>
+  <V t="enabled" n="_saveable" />
+  <T n="allow_autonomous">False</T>
+  <T n="allow_user_directed">False</T>
+  <T n="attention_cost">0.5</T>
+  <V n="basic_content" t="flexible_length">
+    <U n="flexible_length">
+      <L n="conditional_actions">
+        <V t="list_reference">
+          <T n="list_reference">40705<!--ExitConditionList: ExitConditionList_MotivesNearFail--></T>
+        </V>
+        <V t="literal">
+          <U n="literal">
+            <L n="conditions">
+              <V t="state_based">
+                <U n="state_based">
+                  <V n="state" t="on_trigger">
+                    <T n="on_trigger">110030<!--ObjectStateValue: surgeryTable_Patient_Occupany_completed_Success--></T>
+                  </V>
+                  <E n="subject">ActorPostureTarget</E>
+                </U>
+              </V>
+            </L>
+            <E n="interaction_action">EXIT_NATURALLY</E>
+          </U>
+        </V>
+        <V t="literal">
+          <U n="literal">
+            <L n="conditions">
+              <V t="state_based">
+                <U n="state_based">
+                  <V n="state" t="on_trigger">
+                    <T n="on_trigger">110031<!--ObjectStateValue: surgeryTable_Patient_Occupany_completed_Fail--></T>
+                  </V>
+                  <E n="subject">ActorPostureTarget</E>
+                </U>
+              </V>
+            </L>
+            <E n="interaction_action">EXIT_NATURALLY</E>
+          </U>
+        </V>
+        <V t="literal">
+          <U n="literal">
+            <L n="conditions">
+              <V t="state_based">
+                <U n="state_based">
+                  <V n="state" t="on_trigger">
+                    <T n="on_trigger">111843<!--ObjectStateValue: surgeryTable_Patient_Occupany_completed_default--></T>
+                  </V>
+                  <E n="subject">ActorPostureTarget</E>
+                </U>
+              </V>
+            </L>
+            <E n="interaction_action">EXIT_NATURALLY</E>
+          </U>
+        </V>
+      </L>
+      <V n="content" t="looping_content">
+        <U n="looping_content">
+          <U n="animation_ref">
+            <T n="factory">108738<!--AnimationElement: object_SurgeryTable_Doctor_Standing_Idles--></T>
+          </U>
+        </U>
+      </V>
+      <V n="periodic_stat_change" t="enabled">
+        <U n="enabled">
+          <L n="operations">
+            <V t="statistic_change">
+              <U n="statistic_change">
+                <T n="advertise">False</T>
+                <T n="amount">0.25</T>
+                <T n="stat">16657<!--Commodity: motive_Hygiene--></T>
+              </U>
+            </V>
+          </L>
+        </U>
+      </V>
+    </U>
+  </V>
+  <L n="basic_extras">
+    <V t="state_change">
+      <U n="state_change">
+        <V n="new_value" t="single_value">
+          <U n="single_value">
+            <T n="new_value">110029<!--ObjectStateValue: surgeryTable_Doctor_Occupancy_tended--></T>
+          </U>
+        </V>
+        <E n="state_change_target">ActorPostureTarget</E>
+        <V t="immediately" n="timing" />
+      </U>
+    </V>
+    <V t="state_change">
+      <U n="state_change">
+        <V n="new_value" t="single_value">
+          <U n="single_value">
+            <T n="new_value">112145<!--VideoChannel: surgeryTable_Operation--></T>
+          </U>
+        </V>
+        <E n="state_change_target">ActorPostureTarget</E>
+        <V t="immediately" n="timing" />
+      </U>
+    </V>
+    <V t="state_change">
+      <U n="state_change">
+        <V n="new_value" t="single_value">
+          <U n="single_value">
+            <T n="new_value">108729<!--ObjectStateValue: surgeryTable_PatientOccupancy_empty--></T>
+          </U>
+        </V>
+        <E n="state_change_target">ActorPostureTarget</E>
+      </U>
+    </V>
+    <V t="state_change">
+      <U n="state_change">
+        <V n="new_value" t="single_value">
+          <U n="single_value">
+            <T n="new_value">110028<!--ObjectStateValue: surgeryTable_Doctor_Occupany_untended--></T>
+          </U>
+        </V>
+        <E n="state_change_target">ActorPostureTarget</E>
+      </U>
+    </V>
+    <V t="state_change">
+      <U n="state_change">
+        <V n="new_value" t="single_value">
+          <U n="single_value">
+            <T n="new_value">112144<!--VideoChannel: surgeryTable_Off--></T>
+          </U>
+        </V>
+        <E n="state_change_target">ActorPostureTarget</E>
+      </U>
+    </V>
+    <V t="loot">
+      <U n="loot">
+        <L n="loot_list">
+          <T>192938<!--LootActions: loot_Reputation_Gain_Small--></T>
+        </L>
+      </U>
+    </V>
+  </L>
+  <T n="can_shoo">False</T>
+  <V t="disabled" n="content_score" />
+  <T n="display_name">0x489037C7<!--String: "Realizando cirugía"--></T>
+  <V n="display_name_overrides" t="testable">
+    <U n="testable">
+      <L n="overrides">
+        <U>
+          <V n="new_display_name" t="enabled">
+            <T n="enabled">0xEE0F0610<!--String: "Operación de ardor de estómago"--></T>
+          </V>
+          <L n="test">
+            <L>
+              <V t="buff">
+                <U n="buff">
+                  <E n="subject">TargetSim</E>
+                  <V t="enabled" n="whitelist">
+                    <L n="enabled">
+                      <T>108170<!--Buff: buff_SicknessSystem_Diagnosed_BurningTummy--></T>
+                    </L>
+                  </V>
+                </U>
+              </V>
+            </L>
+          </L>
+        </U>
+        <U>
+          <V n="new_display_name" t="enabled">
+            <T n="enabled">0x213932DC<!--String: "Operación de Plumbob irritado"--></T>
+          </V>
+          <L n="test">
+            <L>
+              <V t="buff">
+                <U n="buff">
+                  <E n="subject">TargetSim</E>
+                  <V t="enabled" n="whitelist">
+                    <L n="enabled">
+                      <T>108172<!--Buff: buff_SicknessSystem_Diagnosed_ItchyPlumbob--></T>
+                    </L>
+                  </V>
+                </U>
+              </V>
+            </L>
+          </L>
+        </U>
+        <U>
+          <V n="new_display_name" t="enabled">
+            <T n="enabled">0x52BF3FDE<!--String: "Operación de triple amenaza"--></T>
+          </V>
+          <L n="test">
+            <L>
+              <V t="buff">
+                <U n="buff">
+                  <E n="subject">TargetSim</E>
+                  <V t="enabled" n="whitelist">
+                    <L n="enabled">
+                      <T>108175<!--Buff: buff_SicknessSystem_Diagnosed_TripleThreat--></T>
+                    </L>
+                  </V>
+                </U>
+              </V>
+            </L>
+          </L>
+        </U>
+      </L>
+    </U>
+  </V>
+  <U n="display_name_text_tokens">
+    <L n="tokens">
+      <V t="participant_type">
+        <U n="participant_type">
+          <V t="from_participant" n="objects">
+            <U n="from_participant">
+              <E n="participant">Actor</E>
+            </U>
+          </V>
+        </U>
+      </V>
+      <V t="participant_type">
+        <U n="participant_type">
+          <V t="from_participant" n="objects">
+            <U n="from_participant">
+              <E n="participant">Object</E>
+            </U>
+          </V>
+        </U>
+      </V>
+    </L>
+  </U>
+  <L n="interaction_category_tags">
+    <E>Interaction_Super</E>
+    <E>Interaction_All</E>
+  </L>
+  <V n="outcome" t="test_based">
+    <U n="test_based">
+      <L n="fallback_outcomes">
+        <U>
+          <U n="outcome">
+            <L n="continuation">
+              <U>
+                <T n="affordance">96787<!--SuperInteraction: sim_doStretching--></T>
+              </U>
+            </L>
+            <T n="force_outcome_on_exit">True</T>
+            <E n="outcome_result">NONE</E>
+          </U>
+        </U>
+      </L>
+      <L n="tested_outcomes">
+        <U>
+          <L n="potential_outcomes">
+            <U>
+              <U n="outcome">
+                <L n="basic_extras">
+                  <V t="notification">
+                    <U n="notification">
+                      <V n="dialog" t="single">
+                        <V n="single" t="literal">
+                          <U n="literal">
+                            <V t="enabled" n="icon">
+                              <V t="participant" n="enabled">
+                                <U n="participant">
+                                  <L n="participant_type">
+                                    <E>TargetSim</E>
+                                  </L>
+                                </U>
+                              </V>
+                            </V>
+                            <V t="enabled" n="secondary_icon">
+                              <V t="participant" n="enabled" />
+                            </V>
+                            <V n="text" t="single">
+                              <T n="single">0x5B09F576<!--String: "Con el diagnóstico correcto, {0.SimFirstName} ha tratado de forma efectiva la dolencia de {1.SimName} mediante cirugía en la mesa de operaciones."--></T>
+                            </V>
+                            <V t="enabled" n="text_tokens">
+                              <U n="enabled">
+                                <L n="tokens">
+                                  <V t="participant_type" />
+                                  <V t="participant_type">
+                                    <U n="participant_type">
+                                      <V t="from_participant" n="objects">
+                                        <U n="from_participant">
+                                          <E n="participant">TargetSim</E>
+                                        </U>
+                                      </V>
+                                    </U>
+                                  </V>
+                                </L>
+                              </U>
+                            </V>
+                            <V n="title" t="enabled">
+                              <T n="enabled">0x3E6D5E90<!--String: "¡La operación quirúrgica ha sido un éxito!"--></T>
+                            </V>
+                          </U>
+                        </V>
+                      </V>
+                    </U>
+                  </V>
+                </L>
+                <L n="continuation">
+                  <U>
+                    <T n="affordance">13983<!--StandSuperInteraction: sim-stand--></T>
+                  </U>
+                </L>
+                <L n="loot_list">
+                  <T>115286<!--LootActions: Rel_Gain_Small_target--></T>
+                  <T>111150<!--LootActions: loot_Commodity_SicknessSystem_Patient_Illness_Cured_target--></T>
+                  <T>116217<!--LootActions: loot_SicknessSystem_Symptom_Remove_target--></T>
+                  <T>114419<!--LootActions: loot_Career_Doctor_RoleState_Patient_Treated--></T>
+                  <T>109499<!--LootActions: loot_JobPerformance_Gain_Medium_Doctor--></T>
+                  <T>112638<!--LootActions: loot_Buff_DoctorCareer_PatientTreated_MedRecord--></T>
+                </L>
+                <V n="response" t="enabled">
+                  <V n="enabled" t="individual">
+                    <U n="individual">
+                      <L n="animations">
+                        <U>
+                          <E n="target">Actor</E>
+                          <U n="animation">
+                            <T n="factory">28378<!--AnimationElement: Socials_Responses_Miscellaneous_Inspired--></T>
+                          </U>
+                        </U>
+                      </L>
+                    </U>
+                  </V>
+                </V>
+              </U>
+            </U>
+          </L>
+          <L n="tests">
+            <L>
+              <V t="state">
+                <U n="state">
+                  <T n="value">110030<!--ObjectStateValue: surgeryTable_Patient_Occupany_completed_Success--></T>
+                  <E n="who">ActorPostureTarget</E>
+                </U>
+              </V>
+            </L>
+          </L>
+        </U>
+        <U>
+          <L n="potential_outcomes">
+            <U>
+              <U n="outcome">
+                <L n="basic_extras">
+                  <V t="notification">
+                    <U n="notification">
+                      <T n="allow_autonomous">False</T>
+                      <V n="dialog" t="single">
+                        <V n="single" t="literal">
+                          <U n="literal">
+                            <V t="enabled" n="icon">
+                              <V t="participant" n="enabled">
+                                <U n="participant">
+                                  <L n="participant_type">
+                                    <E>TargetSim</E>
+                                  </L>
+                                </U>
+                              </V>
+                            </V>
+                            <V t="enabled" n="secondary_icon">
+                              <V t="participant" n="enabled" />
+                            </V>
+                            <V n="text" t="single">
+                              <T n="single">0xDAEB70CC<!--String: "{0.SimFirstName} ha operado a {1.SimName} basándose en un diagnóstico erróneo y no ha logrado curar su enfermedad en la mesa de operaciones. Esto podría perjudicarle en su evaluación laboral."--></T>
+                            </V>
+                            <V t="enabled" n="text_tokens">
+                              <U n="enabled">
+                                <L n="tokens">
+                                  <V t="participant_type" />
+                                  <V t="participant_type">
+                                    <U n="participant_type">
+                                      <V t="from_participant" n="objects">
+                                        <U n="from_participant">
+                                          <E n="participant">TargetSim</E>
+                                        </U>
+                                      </V>
+                                    </U>
+                                  </V>
+                                </L>
+                              </U>
+                            </V>
+                            <V n="title" t="enabled">
+                              <T n="enabled">0x65CD0F2A<!--String: "Tratamiento fallido..."--></T>
+                            </V>
+                          </U>
+                        </V>
+                      </V>
+                    </U>
+                  </V>
+                </L>
+                <L n="continuation">
+                  <U>
+                    <T n="affordance">13983<!--StandSuperInteraction: sim-stand--></T>
+                  </U>
+                </L>
+                <L n="loot_list">
+                  <T>115288<!--LootActions: Rel_Loss_Medium_target--></T>
+                  <T>114419<!--LootActions: loot_Career_Doctor_RoleState_Patient_Treated--></T>
+                  <T>113326<!--LootActions: loot_JobPerformance_Loss_MediumSmall_Doctor_tested--></T>
+                  <T>112638<!--LootActions: loot_Buff_DoctorCareer_PatientTreated_MedRecord--></T>
+                </L>
+                <E n="outcome_result">FAILURE</E>
+                <V n="response" t="enabled">
+                  <V n="enabled" t="individual">
+                    <U n="individual">
+                      <L n="animations">
+                        <U>
+                          <E n="target">Actor</E>
+                          <U n="animation">
+                            <T n="factory">28357<!--AnimationElement: Socials_Responses_Embarrassed_HighIntensity--></T>
+                          </U>
+                        </U>
+                      </L>
+                    </U>
+                  </V>
+                </V>
+              </U>
+            </U>
+          </L>
+          <L n="tests">
+            <L>
+              <V t="state">
+                <U n="state">
+                  <T n="value">110031<!--ObjectStateValue: surgeryTable_Patient_Occupany_completed_Fail--></T>
+                  <E n="who">ActorPostureTarget</E>
+                </U>
+              </V>
+            </L>
+          </L>
+        </U>
+        <U>
+          <L n="potential_outcomes">
+            <U>
+              <U n="outcome">
+                <L n="basic_extras">
+                  <V t="notification">
+                    <U n="notification">
+                      <V n="dialog" t="single">
+                        <V n="single" t="literal">
+                          <U n="literal">
+                            <V n="text" t="single">
+                              <T n="single">0x1F815FA3<!--String: ""--></T>
+                            </V>
+                          </U>
+                        </V>
+                      </V>
+                    </U>
+                  </V>
+                </L>
+                <L n="continuation">
+                  <U>
+                    <T n="affordance">13983<!--StandSuperInteraction: sim-stand--></T>
+                  </U>
+                </L>
+                <L n="loot_list">
+                  <T>112638<!--LootActions: loot_Buff_DoctorCareer_PatientTreated_MedRecord--></T>
+                </L>
+                <E n="outcome_result">NONE</E>
+              </U>
+            </U>
+          </L>
+          <L n="tests">
+            <L>
+              <V t="state">
+                <U n="state">
+                  <T n="value">111843<!--ObjectStateValue: surgeryTable_Patient_Occupany_completed_default--></T>
+                  <E n="who">ActorPostureTarget</E>
+                </U>
+              </V>
+            </L>
+          </L>
+        </U>
+      </L>
+    </U>
+  </V>
+  <E n="scoring_priority">NORMAL</E>
+  <T n="subaction_selection_weight">1</T>
+  <V t="literal" n="super_affordance_compatibility">
+    <U n="literal">
+      <V n="default_inclusion" t="exclude_all" />
+    </U>
+  </V>
+  <E n="target_type">OBJECT</E>
+  <L n="test_globals">
+    <V t="sim_info">
+      <U n="sim_info">
+        <V t="specified" n="ages" />
+        <V t="specified" n="species">
+          <U n="specified">
+            <L n="species">
+              <E />
+            </L>
+          </U>
+        </V>
+        <E n="who">Actor</E>
+      </U>
+    </V>
+  </L>
+  <T n="time_overhead">30</T>
+</I>

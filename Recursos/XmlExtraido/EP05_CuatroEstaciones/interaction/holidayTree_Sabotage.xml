@@ -1,0 +1,411 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<I c="SuperInteraction" i="interaction" m="interactions.base.super_interaction" n="holidayTree_Sabotage" s="181887">
+  <L n="_constraints">
+    <U>
+      <L n="constraints">
+        <U>
+          <V n="value" t="circle">
+            <U n="circle">
+              <T n="radius">2</T>
+            </U>
+          </V>
+        </U>
+        <U>
+          <V n="value" t="facing" />
+        </U>
+      </L>
+    </U>
+  </L>
+  <V t="enabled" n="_saveable" />
+  <T n="allow_autonomous">False</T>
+  <T n="attention_cost">0.5</T>
+  <V n="basic_content" t="flexible_length">
+    <U n="flexible_length">
+      <L n="conditional_actions">
+        <V t="literal">
+          <U n="literal">
+            <L n="conditions">
+              <V t="time_based">
+                <U n="time_based">
+                  <T n="max_time">3</T>
+                  <T n="min_time">2</T>
+                </U>
+              </V>
+            </L>
+            <E n="interaction_action">EXIT_NATURALLY</E>
+          </U>
+        </V>
+      </L>
+      <V n="content" t="looping_content">
+        <U n="looping_content">
+          <U n="animation_ref">
+            <T n="factory">181888<!--AnimationElement: holidayTree_Decorate--></T>
+          </U>
+        </U>
+      </V>
+      <V n="periodic_stat_change" t="enabled">
+        <U n="enabled">
+          <L n="operations">
+            <V t="dynamic_skill">
+              <U n="dynamic_skill">
+                <U n="skill_loot_data_override">
+                  <E n="effectiveness">StandardPeriodic</E>
+                  <T n="stat">16707<!--Skill: statistic_Skill_AdultMajor_Mischief--></T>
+                </U>
+                <L n="tests">
+                  <L>
+                    <V t="sim_info">
+                      <U n="sim_info">
+                        <V t="specified" n="ages" />
+                      </U>
+                    </V>
+                  </L>
+                </L>
+              </U>
+            </V>
+          </L>
+        </U>
+      </V>
+    </U>
+  </V>
+  <L n="basic_extras">
+    <V t="loot">
+      <U n="loot">
+        <L n="loot_list">
+          <T>183600<!--LootActions: loot_HolidayTree_Sabotage--></T>
+          <T>161598<!--LootActions: loot_Statistic_LifeSkill_Empathy_Loss_Small--></T>
+        </L>
+      </U>
+    </V>
+    <V t="broadcaster">
+      <U n="broadcaster">
+        <L n="broadcaster_types">
+          <U>
+            <T n="item">202617<!--Broadcaster: broadcaster_Reputation_SeenLoot_Looping_Loss_Misc_OffLot--></T>
+          </U>
+        </L>
+      </U>
+    </V>
+  </L>
+  <V t="disabled" n="content_score" />
+  <T n="display_name">0xEB58805A<!--String: "Sabotear árbol"--></T>
+  <V t="testable" n="display_name_overrides">
+    <U n="testable">
+      <L n="overrides">
+        <U>
+          <V t="disabled" n="new_display_name" />
+          <V t="enabled" n="new_pie_menu_icon">
+            <V t="tradition" n="enabled" />
+          </V>
+          <L n="test">
+            <L>
+              <V t="holiday_tradition">
+                <U n="holiday_tradition">
+                  <U n="tradition_filter">
+                    <V n="whitelist" t="specify">
+                      <U n="specify">
+                        <L n="whitelist">
+                          <T>182110<!--HolidayTradition: holidayTradition_BeFestive--></T>
+                        </L>
+                      </U>
+                    </V>
+                  </U>
+                </U>
+              </V>
+            </L>
+          </L>
+        </U>
+      </L>
+    </U>
+  </V>
+  <U n="display_name_text_tokens">
+    <L n="tokens">
+      <V t="participant_type">
+        <U n="participant_type">
+          <V t="from_participant" n="objects">
+            <U n="from_participant">
+              <E n="participant">Actor</E>
+            </U>
+          </V>
+        </U>
+      </V>
+      <V t="participant_type">
+        <U n="participant_type">
+          <V t="from_participant" n="objects">
+            <U n="from_participant">
+              <E n="participant">Object</E>
+            </U>
+          </V>
+        </U>
+      </V>
+    </L>
+  </U>
+  <L n="interaction_category_tags">
+    <E>Interaction_Super</E>
+    <E>Interaction_All</E>
+    <E>Interaction_Festive</E>
+    <E>Interaction_Skill_Mischief</E>
+  </L>
+  <V n="outcome" t="test_based">
+    <U n="test_based">
+      <L n="fallback_outcomes">
+        <U>
+          <U n="outcome">
+            <L n="basic_extras">
+              <V t="state_change">
+                <U n="state_change">
+                  <V t="single_value" n="new_value">
+                    <U n="single_value">
+                      <T n="new_value">181643<!--ObjectStateValue: holidayTree_TreeGeo_Fail--></T>
+                    </U>
+                  </V>
+                </U>
+              </V>
+              <V t="create_object">
+                <U n="create_object">
+                  <V t="definition" n="creation_data">
+                    <U n="definition">
+                      <T n="definition">190464</T>
+                    </U>
+                  </V>
+                  <L n="initial_states">
+                    <U>
+                      <T n="state">181891<!--ObjectStateValue: holidayTree_Objects_Fail--></T>
+                    </U>
+                  </L>
+                  <V t="slot" n="location">
+                    <U n="slot">
+                      <V t="by_reference" n="parent_slot">
+                        <T n="by_reference">slot_HolidayTree_Decoration_Garland</T>
+                      </V>
+                    </U>
+                  </V>
+                </U>
+              </V>
+              <V t="state_change">
+                <U n="state_change">
+                  <V n="new_value" t="single_value">
+                    <U n="single_value">
+                      <T n="new_value">180366<!--CommodityBasedObjectStateValue: holidayTree_Garland_Done--></T>
+                    </U>
+                  </V>
+                </U>
+              </V>
+            </L>
+          </U>
+        </U>
+        <U>
+          <U n="outcome">
+            <L n="basic_extras">
+              <V t="state_change">
+                <U n="state_change">
+                  <V t="single_value" n="new_value">
+                    <U n="single_value">
+                      <T n="new_value">181643<!--ObjectStateValue: holidayTree_TreeGeo_Fail--></T>
+                    </U>
+                  </V>
+                </U>
+              </V>
+              <V t="create_object">
+                <U n="create_object">
+                  <V t="definition" n="creation_data">
+                    <U n="definition">
+                      <T n="definition">190465</T>
+                    </U>
+                  </V>
+                  <L n="initial_states">
+                    <U>
+                      <T n="state">181891<!--ObjectStateValue: holidayTree_Objects_Fail--></T>
+                    </U>
+                  </L>
+                  <V t="slot" n="location">
+                    <U n="slot">
+                      <V t="by_reference" n="parent_slot">
+                        <T n="by_reference">slot_HolidayTree_Decoration_Ornament</T>
+                      </V>
+                    </U>
+                  </V>
+                </U>
+              </V>
+              <V t="state_change">
+                <U n="state_change">
+                  <V n="new_value" t="single_value">
+                    <U n="single_value">
+                      <T n="new_value">180362<!--CommodityBasedObjectStateValue: holidayTree_Ornaments_Done--></T>
+                    </U>
+                  </V>
+                </U>
+              </V>
+            </L>
+          </U>
+        </U>
+        <U>
+          <U n="outcome">
+            <L n="basic_extras">
+              <V t="state_change">
+                <U n="state_change">
+                  <V t="single_value" n="new_value">
+                    <U n="single_value">
+                      <T n="new_value">181643<!--ObjectStateValue: holidayTree_TreeGeo_Fail--></T>
+                    </U>
+                  </V>
+                </U>
+              </V>
+              <V t="create_object">
+                <U n="create_object">
+                  <V t="definition" n="creation_data">
+                    <U n="definition">
+                      <T n="definition">190466</T>
+                    </U>
+                  </V>
+                  <L n="initial_states">
+                    <U>
+                      <T n="state">181891<!--ObjectStateValue: holidayTree_Objects_Fail--></T>
+                    </U>
+                  </L>
+                  <V t="slot" n="location">
+                    <U n="slot">
+                      <V t="by_reference" n="parent_slot">
+                        <T n="by_reference">slot_HolidayTree_Decoration_Skirt</T>
+                      </V>
+                    </U>
+                  </V>
+                </U>
+              </V>
+              <V t="state_change">
+                <U n="state_change">
+                  <V n="new_value" t="single_value">
+                    <U n="single_value">
+                      <T n="new_value">181639<!--CommodityBasedObjectStateValue: holidayTree_Skirt_Done--></T>
+                    </U>
+                  </V>
+                </U>
+              </V>
+            </L>
+          </U>
+        </U>
+        <U>
+          <U n="outcome">
+            <L n="basic_extras">
+              <V t="state_change">
+                <U n="state_change">
+                  <V t="single_value" n="new_value">
+                    <U n="single_value">
+                      <T n="new_value">181643<!--ObjectStateValue: holidayTree_TreeGeo_Fail--></T>
+                    </U>
+                  </V>
+                </U>
+              </V>
+              <V t="create_object">
+                <U n="create_object">
+                  <V t="definition" n="creation_data">
+                    <U n="definition">
+                      <T n="definition">190467</T>
+                    </U>
+                  </V>
+                  <L n="initial_states">
+                    <U>
+                      <T n="state">181891<!--ObjectStateValue: holidayTree_Objects_Fail--></T>
+                    </U>
+                  </L>
+                  <V t="slot" n="location">
+                    <U n="slot">
+                      <V t="by_reference" n="parent_slot">
+                        <T n="by_reference">slot_HolidayTree_Decoration_Topper</T>
+                      </V>
+                    </U>
+                  </V>
+                </U>
+              </V>
+              <V t="state_change">
+                <U n="state_change">
+                  <V n="new_value" t="single_value">
+                    <U n="single_value">
+                      <T n="new_value">180364<!--CommodityBasedObjectStateValue: holidayTree_Topper_Done--></T>
+                    </U>
+                  </V>
+                </U>
+              </V>
+            </L>
+          </U>
+        </U>
+      </L>
+      <L n="tested_outcomes">
+        <U>
+          <L n="potential_outcomes">
+            <U>
+              <U n="outcome">
+                <L n="basic_extras">
+                  <V t="state_change">
+                    <U n="state_change">
+                      <V t="single_value" n="new_value">
+                        <U n="single_value">
+                          <T n="new_value">181643<!--ObjectStateValue: holidayTree_TreeGeo_Fail--></T>
+                        </U>
+                      </V>
+                    </U>
+                  </V>
+                  <V t="state_change">
+                    <U n="state_change">
+                      <V n="new_value" t="single_value">
+                        <U n="single_value">
+                          <T n="new_value">181891<!--ObjectStateValue: holidayTree_Objects_Fail--></T>
+                        </U>
+                      </V>
+                      <E n="state_change_target">ObjectChildren</E>
+                    </U>
+                  </V>
+                </L>
+              </U>
+            </U>
+          </L>
+          <L n="tests">
+            <L>
+              <V t="has_child_of_type">
+                <U n="has_child_of_type">
+                  <L n="object_type_tags">
+                    <E>Func_HoildayTree_Ornaments</E>
+                    <E>Func_HolidayTree_Garland</E>
+                    <E>Func_HolidayTree_Skirt</E>
+                    <E>Func_HolidayTree_Topper</E>
+                  </L>
+                </U>
+              </V>
+            </L>
+          </L>
+        </U>
+      </L>
+    </U>
+  </V>
+  <E n="scoring_priority">NORMAL</E>
+  <U n="skill_loot_data">
+    <E n="effectiveness">Small</E>
+    <T n="stat">16707<!--Skill: statistic_Skill_AdultMajor_Mischief--></T>
+  </U>
+  <T n="subaction_selection_weight">1</T>
+  <E n="target_type">OBJECT</E>
+  <L n="test_globals">
+    <V t="sim_info">
+      <U n="sim_info">
+        <V t="specified" n="ages">
+          <L n="specified">
+            <E>TEEN</E>
+            <E>YOUNGADULT</E>
+            <E>ADULT</E>
+            <E>ELDER</E>
+            <E>CHILD</E>
+          </L>
+        </V>
+        <V t="specified" n="species">
+          <U n="specified">
+            <L n="species">
+              <E />
+            </L>
+          </U>
+        </V>
+        <E n="who">Actor</E>
+      </U>
+    </V>
+  </L>
+  <T n="time_overhead">30</T>
+</I>

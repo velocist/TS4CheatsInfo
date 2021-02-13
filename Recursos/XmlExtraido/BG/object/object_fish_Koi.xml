@@ -1,0 +1,385 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<I c="Fish" i="object" m="fishing.fish_object" n="object_fish_Koi" s="76082">
+  <U n="_components">
+    <V t="enabled" n="collectable" />
+    <V t="enabled" n="focus">
+      <U n="enabled">
+        <V t="globally" n="_focus_score">
+          <U n="globally">
+            <E n="base">LOW</E>
+          </U>
+        </V>
+      </U>
+    </V>
+    <V t="enabled" n="inventory_item">
+      <U n="enabled">
+        <T n="inventory_only">True</T>
+        <L n="valid_inventory_types">
+          <E>SIM</E>
+          <E>FISHBOWL</E>
+          <E>FRIDGE</E>
+          <E>AQUARIUM_STANDARD</E>
+          <E>RETAIL_SHELF</E>
+          <E>STORAGE_CHEST</E>
+          <E>FISH_TRAP</E>
+          <E>CRAFT_SALES_TABLE_EP03</E>
+          <E>STORAGE_CHEST_DORM</E>
+        </L>
+      </U>
+    </V>
+    <V t="enabled" n="name">
+      <U n="enabled">
+        <V n="affordance" t="enabled">
+          <T n="enabled">76790<!--RenameImmediateInteraction: rename_Fish--></T>
+        </V>
+        <T n="allow_description">False</T>
+      </U>
+    </V>
+    <V t="enabled" n="ownable_component" />
+    <V t="enabled" n="retail_component">
+      <V n="enabled" t="reference">
+        <T n="reference">115301<!--RetailComponent: retailComponent_Default_LowAppeal--></T>
+      </V>
+    </V>
+    <V n="state" t="enabled">
+      <U n="enabled">
+        <L n="states">
+          <U>
+            <L n="client_states">
+              <U>
+                <T n="key">77030<!--CommodityBasedObjectStateValue: FishFreshness_Excellent--></T>
+              </U>
+              <U>
+                <T n="key">77031<!--CommodityBasedObjectStateValue: FishFreshness_Great--></T>
+              </U>
+              <U>
+                <T n="key">77032<!--CommodityBasedObjectStateValue: FishFreshness_Good--></T>
+              </U>
+              <U>
+                <T n="key">77033<!--CommodityBasedObjectStateValue: FishFreshness_Average--></T>
+              </U>
+              <U>
+                <T n="key">77034<!--CommodityBasedObjectStateValue: FishFreshness_Poor--></T>
+              </U>
+              <U>
+                <T n="key">77035<!--CommodityBasedObjectStateValue: FishFreshness_Foul--></T>
+              </U>
+            </L>
+            <V n="default_value" t="reference">
+              <T n="reference">77032<!--CommodityBasedObjectStateValue: FishFreshness_Good--></T>
+            </V>
+          </U>
+          <U>
+            <L n="client_states">
+              <U>
+                <T n="key">115766<!--ObjectStateValue: displayComponent_Values_NoInventory--></T>
+              </U>
+              <U>
+                <T n="key">115768<!--ObjectStateValue: displayComponent_Values_SmallQuantity--></T>
+                <U n="value">
+                  <V n="model" t="apply_new_value">
+                    <V n="apply_new_value" t="set_to_custom_model">
+                      <U n="set_to_custom_model">
+                        <V n="model" t="from_definition">
+                          <U n="from_definition">
+                            <T n="definition">83896</T>
+                          </U>
+                        </V>
+                      </U>
+                    </V>
+                  </V>
+                </U>
+              </U>
+            </L>
+            <V t="reference" n="default_value">
+              <T n="reference">115766<!--ObjectStateValue: displayComponent_Values_NoInventory--></T>
+            </V>
+          </U>
+          <U>
+            <L n="client_states">
+              <U>
+                <T n="key">144901<!--ObjectStateValue: collectible_Rarity_Uncommon--></T>
+              </U>
+              <U>
+                <T n="key">144904<!--ObjectStateValue: collectible_Rarity_Common--></T>
+              </U>
+              <U>
+                <T n="key">144905<!--ObjectStateValue: collectible_Rarity_Rare--></T>
+              </U>
+            </L>
+            <V n="default_value" t="reference">
+              <T n="reference">144904<!--ObjectStateValue: collectible_Rarity_Common--></T>
+            </V>
+          </U>
+        </L>
+        <V t="enabled" n="unique_state_changes">
+          <U n="enabled">
+            <T n="inside_placement_state">115768<!--ObjectStateValue: displayComponent_Values_SmallQuantity--></T>
+            <T n="outside_placement_state">115768<!--ObjectStateValue: displayComponent_Values_SmallQuantity--></T>
+          </U>
+        </V>
+      </U>
+    </V>
+    <V t="enabled" n="tooltip_component">
+      <U n="enabled">
+        <L n="custom_tooltips">
+          <U>
+            <L n="tooltip_fields">
+              <U>
+                <E n="key">crafted_by_text</E>
+                <U n="value">
+                  <V n="text" t="single">
+                    <T n="single">0x7EB9B788<!--String: "Tipo: {0.ObjectCatalogName|xxLower}\nPesca de: {1.SimName}"--></T>
+                  </V>
+                  <V n="text_tokens" t="enabled">
+                    <U n="enabled">
+                      <L n="tokens">
+                        <V t="participant_type">
+                          <U n="participant_type">
+                            <V t="from_participant" n="objects">
+                              <U n="from_participant">
+                                <E n="participant">Object</E>
+                              </U>
+                            </V>
+                          </U>
+                        </V>
+                        <V t="participant_type">
+                          <U n="participant_type">
+                            <V n="objects" t="from_participant">
+                              <U n="from_participant">
+                                <E n="participant">OwnerSim</E>
+                              </U>
+                            </V>
+                          </U>
+                        </V>
+                      </L>
+                    </U>
+                  </V>
+                </U>
+              </U>
+              <U>
+                <E n="key">quality_description</E>
+                <U n="value">
+                  <V n="text" t="single">
+                    <T n="single">0x54DDA26<!--String: "{0.String}"--></T>
+                  </V>
+                  <V n="text_tokens" t="enabled">
+                    <U n="enabled">
+                      <L n="tokens">
+                        <V t="object_property">
+                          <U n="object_property">
+                            <E n="obj_property">FISH_FRESHNESS</E>
+                          </U>
+                        </V>
+                      </L>
+                    </U>
+                  </V>
+                </U>
+              </U>
+              <U>
+                <E n="key">rarity_text</E>
+                <U n="value">
+                  <V n="text" t="single">
+                    <T n="single">0x499D574<!--String: "Rareza: {0.String}"--></T>
+                  </V>
+                  <V n="text_tokens" t="enabled">
+                    <U n="enabled">
+                      <L n="tokens">
+                        <V t="object_property">
+                          <U n="object_property">
+                            <E n="obj_property">RARITY</E>
+                          </U>
+                        </V>
+                      </L>
+                    </U>
+                  </V>
+                </U>
+              </U>
+              <U>
+                <E n="key">recipe_description</E>
+                <U n="value">
+                  <V n="text" t="single">
+                    <T n="single">0xE2E9872D<!--String: "{0.ObjectDescription}"--></T>
+                  </V>
+                  <V t="enabled" n="text_tokens">
+                    <U n="enabled">
+                      <L n="tokens">
+                        <V t="participant_type">
+                          <U n="participant_type">
+                            <V t="from_participant" n="objects">
+                              <U n="from_participant">
+                                <E n="participant">Object</E>
+                              </U>
+                            </V>
+                          </U>
+                        </V>
+                      </L>
+                    </U>
+                  </V>
+                </U>
+              </U>
+              <U>
+                <E n="key">recipe_name</E>
+                <U n="value">
+                  <V t="single" n="text">
+                    <T n="single">0x4F918F8<!--String: "{0.ObjectName}"--></T>
+                  </V>
+                  <V t="enabled" n="text_tokens">
+                    <U n="enabled">
+                      <L n="tokens">
+                        <V t="participant_type">
+                          <U n="participant_type">
+                            <V t="from_participant" n="objects">
+                              <U n="from_participant">
+                                <E n="participant">Object</E>
+                              </U>
+                            </V>
+                          </U>
+                        </V>
+                      </L>
+                    </U>
+                  </V>
+                </U>
+              </U>
+              <U>
+                <E n="key">simoleon_text</E>
+                <U n="value">
+                  <V n="text" t="single">
+                    <T n="single">0xA795DBC4<!--String: "{0.Money}"--></T>
+                  </V>
+                  <V t="enabled" n="text_tokens">
+                    <U n="enabled">
+                      <L n="tokens">
+                        <V t="object_property">
+                          <U n="object_property">
+                            <E n="obj_property">MODIFIED_PRICE</E>
+                          </U>
+                        </V>
+                      </L>
+                    </U>
+                  </V>
+                </U>
+              </U>
+              <U>
+                <E n="key">subtext</E>
+                <U n="value">
+                  <V n="text" t="single">
+                    <T n="single">0xDFE450C5<!--String: "Peso: {0.Number} kg (pez mediano)"--></T>
+                  </V>
+                  <V t="enabled" n="text_tokens">
+                    <U n="enabled">
+                      <L n="tokens">
+                        <V t="statistic_value">
+                          <U n="statistic_value">
+                            <E n="participant">Object</E>
+                            <T n="statistic">76023<!--Statistic: statistic_Fishing_Weight--></T>
+                          </U>
+                        </V>
+                      </L>
+                    </U>
+                  </V>
+                </U>
+              </U>
+            </L>
+            <E n="tooltip_style">HOVER_TIP_COLLECTION</E>
+          </U>
+        </L>
+      </U>
+    </V>
+  </U>
+  <L n="_super_affordances">
+    <T>75180<!--MountFishSuperInteraction: fish_MountFish--></T>
+    <T>13328<!--ImmediateSuperInteraction: debug_Reset--></T>
+    <T>13326<!--ImmediateSuperInteraction: debug_ObjectDestroy--></T>
+    <T>103888<!--ImmediateSuperInteraction: cheat_set_as_head--></T>
+    <T>76963<!--ImmediateSuperInteraction: FishBowl_Transfer_ObjectInventory_To_SimInventory--></T>
+    <T>153478<!--ImmediateSuperInteraction: plasmaPack_Create_Fish--></T>
+  </L>
+  <L n="buffs_on_catch">
+    <U>
+      <T n="buff_type">76816<!--Buff: Buff_Skill_Fishing_CaughtFish--></T>
+    </U>
+  </L>
+  <L n="catchable_tests">
+    <L>
+      <V t="skill_test">
+        <U n="skill_test">
+          <T n="skill">39397<!--Skill: statistic_Skill_AdultMajor_Fishing--></T>
+          <V t="threshold" n="skill_range">
+            <U n="threshold">
+              <U n="skill_threshold">
+                <T n="value">2</T>
+              </U>
+            </U>
+          </V>
+          <T n="use_effective_skill_level">True</T>
+        </U>
+      </V>
+      <V t="buff">
+        <U n="buff">
+          <L n="blacklist">
+            <T>208732<!--Buff: buff_Skill_Fishing_AngleForBigCatch--></T>
+          </L>
+        </U>
+      </V>
+    </L>
+  </L>
+  <L n="environment_score_trait_modifiers">
+    <U>
+      <T n="trait">102336<!--Trait: trait_Squeamish--></T>
+      <U n="modifiers">
+        <V t="enabled" n="negative_modifiers">
+          <U n="enabled">
+            <T n="add_modifier">5</T>
+          </U>
+        </V>
+        <V t="enabled" n="positive_modifiers">
+          <U n="enabled">
+            <T n="multiply_modifier">0</T>
+          </U>
+        </V>
+      </U>
+    </U>
+  </L>
+  <T n="fish_type">medium</T>
+  <T n="fishbowl_vfx">s40_fishbowl_koi</T>
+  <T n="fishing_hole_vfx">s40_fishingHoleFish_swim_koi</T>
+  <T n="fishing_spot_vfx">s40_fishingSpotFish_swim_koi</T>
+  <L n="inventory_to_fish_vfx">
+    <U>
+      <E n="inventory_type">AQUARIUM_STANDARD</E>
+      <U n="base vfx name">
+        <T n="vfx_name">koi</T>
+      </U>
+    </U>
+  </L>
+  <T n="mean_weight_deviation">0.5</T>
+  <U n="recycling_data">
+    <L n="recycling_values">
+      <U>
+        <E n="Bucks Type">RecycleBitsBucks</E>
+        <T n="Value">0.5</T>
+      </U>
+      <U>
+        <E n="Bucks Type">RecyclePiecesBucks</E>
+        <T n="Value">0.5</T>
+      </U>
+    </L>
+  </U>
+  <L n="skill_weight_curve">
+    <U>
+      <T n="x">1</T>
+      <T n="y">3.5</T>
+    </U>
+    <U>
+      <T n="x">10</T>
+      <T n="y">9</T>
+    </U>
+    <U>
+      <T n="x">20</T>
+      <T n="y">27</T>
+    </U>
+  </L>
+  <T n="wall_mounted_object">45544</T>
+  <T n="weight_money_multiplier">1.25</T>
+</I>

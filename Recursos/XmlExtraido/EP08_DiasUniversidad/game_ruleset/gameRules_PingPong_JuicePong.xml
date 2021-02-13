@@ -1,0 +1,119 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<I c="GameRules" i="game_ruleset" m="objects.components.game_component" n="gameRules_PingPong_JuicePong" s="212556">
+  <V n="additional_game_behavior" t="enabled">
+    <V n="enabled" t="create_object">
+      <U n="create_object">
+        <L n="objects">
+          <U>
+            <T n="key">221916<!--AnimationElement: spells_WildMagic_React--></T>
+            <V n="value" t="by_reference">
+              <T n="by_reference">slot_PingPongCup</T>
+            </V>
+          </U>
+        </L>
+      </U>
+    </V>
+  </V>
+  <T n="clear_score_on_player_join">True</T>
+  <V n="game_over_notification" t="enabled">
+    <U n="enabled">
+      <V n="many_v_many" t="literal">
+        <U n="literal">
+          <L n="dialog_options">
+            <E>DISABLE_CLOSE_BUTTON</E>
+          </L>
+          <V t="enabled" n="icon">
+            <V t="participant" n="enabled">
+              <U n="participant">
+                <L n="participant_type">
+                  <E>Object</E>
+                </L>
+              </U>
+            </V>
+          </V>
+          <V n="text" t="single">
+            <T n="single">0xDE8C8DB7<!--String: "¡Se acabó el zumopón! ¡Qué juego más divertido!\n\nGanan: {1.String}\nPierden: {2.String}\nPuntuación final: {3.Number} a {4.Number}"--></T>
+          </V>
+        </U>
+      </V>
+      <V n="one_v_many_loser" t="literal">
+        <U n="literal">
+          <L n="dialog_options">
+            <E>DISABLE_CLOSE_BUTTON</E>
+          </L>
+          <V t="enabled" n="icon">
+            <V t="participant" n="enabled">
+              <U n="participant">
+                <L n="participant_type">
+                  <E>Object</E>
+                </L>
+              </U>
+            </V>
+          </V>
+          <V n="text" t="single">
+            <T n="single">0x2FFEC278<!--String: "¡Se acabó el zumopón! ¡Qué juego más divertido!\n\nGanan: {1.String}\nPierde:{2.SimName}\nPuntuación final: {3.Number} a {4.Number}"--></T>
+          </V>
+        </U>
+      </V>
+      <V n="one_v_many_winner" t="literal">
+        <U n="literal">
+          <L n="dialog_options">
+            <E>DISABLE_CLOSE_BUTTON</E>
+          </L>
+          <V t="enabled" n="icon">
+            <V t="participant" n="enabled">
+              <U n="participant">
+                <L n="participant_type">
+                  <E>Object</E>
+                </L>
+              </U>
+            </V>
+          </V>
+          <V n="text" t="single">
+            <T n="single">0xFF07CE90<!--String: "¡Se acabó el zumopón! ¡Qué juego más divertido!\n\nGana: {1.SimName}\nPierden: {2.String}\nPuntuación final: {3.Number} a {4.Number}"--></T>
+          </V>
+        </U>
+      </V>
+      <V n="one_v_one" t="literal">
+        <U n="literal">
+          <L n="dialog_options">
+            <E>DISABLE_CLOSE_BUTTON</E>
+          </L>
+          <V t="enabled" n="icon">
+            <V t="participant" n="enabled">
+              <U n="participant">
+                <L n="participant_type">
+                  <E>Object</E>
+                </L>
+              </U>
+            </V>
+          </V>
+          <V n="text" t="single">
+            <T n="single">0xCF5D0E21<!--String: "¡Yyy hasta aquí el zumopón! ¡Un partido muy emocionante!\n\n¡Victoria para {1.SimName} con una puntuación de {3.Number}!\n\n¡Una pena, {2.SimName}! A ver si tienes más suerte para la próxima.\n\nEl marcador final ha sido de {3.Number} a {4.Number}."--></T>
+          </V>
+        </U>
+      </V>
+    </U>
+  </V>
+  <U n="players_per_game">
+    <T n="lower_bound">2</T>
+    <T n="upper_bound">4</T>
+  </U>
+  <U n="score_info">
+    <V n="ending_condition" t="score_based">
+      <U n="score_based">
+        <T n="winning_score">4</T>
+      </U>
+    </V>
+    <U n="score_increase">
+      <T n="lower_bound">1</T>
+      <T n="upper_bound">1</T>
+    </U>
+  </U>
+  <V n="team_strategy" t="part_driven">
+    <U n="part_driven">
+      <T n="_team_determines_part">False</T>
+      <V n="part_requirement" t="adjacent" />
+    </U>
+  </V>
+</I>

@@ -1,0 +1,200 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<I c="LootActions" i="action" m="interactions.utils.loot" n="lootActions_SnowSportsSlope_Rental_Snowboard" s="248707">
+  <L n="loot_actions">
+    <V t="notification_and_dialog">
+      <U n="notification_and_dialog">
+        <V n="dialog" t="notification">
+          <U n="notification">
+            <V n="icon" t="enabled">
+              <V n="enabled" t="resource_key">
+                <U n="resource_key">
+                  <T n="key" p="InEP10\UI\Icons\Notifications\Notification_snowBoard.png">2f7d0004:00000000:a2a07ff291521f1e</T>
+                </U>
+              </V>
+            </V>
+            <V t="enabled" n="secondary_icon">
+              <V t="participant" n="enabled" />
+            </V>
+            <V n="text" t="single">
+              <T n="single">0x17A2CA47<!--String: "{0.SimFirstName} ha alquilado una tabla de snow del albergue de momento, pero está un poco hecha polvo y no le va demasiado bien.\n\nCómprale una tabla de snow nueva en la máquina expendedora Utensilios Útiles para que se sienta más {M0.cómodo}{F0.cómoda}."--></T>
+            </V>
+          </U>
+        </V>
+        <L n="tests">
+          <L>
+            <V t="sim_info">
+              <U n="sim_info">
+                <V t="specified" n="ages" />
+              </U>
+            </V>
+            <V t="inventory">
+              <U n="inventory">
+                <V n="contents_check" t="has_object_with_tag">
+                  <U n="has_object_with_tag">
+                    <L n="tag_set">
+                      <E>Func_SnowSportsSlope_Snowboard_Adult</E>
+                    </L>
+                  </U>
+                </V>
+                <U n="required_count">
+                  <E n="comparison">EQUAL</E>
+                  <T n="value">0</T>
+                </U>
+              </U>
+            </V>
+          </L>
+          <L>
+            <V t="sim_info">
+              <U n="sim_info">
+                <V t="specified" n="ages">
+                  <L n="specified">
+                    <E>CHILD</E>
+                  </L>
+                </V>
+              </U>
+            </V>
+            <V t="inventory">
+              <U n="inventory">
+                <V n="contents_check" t="has_object_with_tag">
+                  <U n="has_object_with_tag">
+                    <L n="tag_set">
+                      <E>Func_SnowSportsSlope_Snowboard_Child</E>
+                    </L>
+                  </U>
+                </V>
+                <U n="required_count">
+                  <E n="comparison">EQUAL</E>
+                  <T n="value">0</T>
+                </U>
+              </U>
+            </V>
+          </L>
+        </L>
+      </U>
+    </V>
+    <V t="create_object">
+      <U n="create_object">
+        <V n="creation_data" t="random_by_tags">
+          <U n="random_by_tags">
+            <L n="filter_tags">
+              <E>Func_SnowSportsSlope_Snowboard_Adult_Rentable</E>
+            </L>
+          </U>
+        </V>
+        <L n="initial_states">
+          <U>
+            <T n="state">161251<!--ObjectStateValue: GenericOwned_NotOwned--></T>
+          </U>
+        </L>
+        <V t="inventory" n="location" />
+        <T n="require_claim">True</T>
+        <V n="temporary_tags" t="enabled">
+          <L n="enabled">
+            <E>Func_SnowSportsSlope_Snowboard_Rented</E>
+          </L>
+        </V>
+        <L n="tests">
+          <L>
+            <V t="sim_info">
+              <U n="sim_info">
+                <V t="specified" n="ages" />
+              </U>
+            </V>
+            <V t="inventory">
+              <U n="inventory">
+                <V n="contents_check" t="has_object_with_tag">
+                  <U n="has_object_with_tag">
+                    <L n="tag_set">
+                      <E>Func_SnowSportsSlope_Snowboard_Adult</E>
+                    </L>
+                  </U>
+                </V>
+                <U n="required_count">
+                  <E n="comparison">EQUAL</E>
+                  <T n="value">0</T>
+                </U>
+              </U>
+            </V>
+          </L>
+        </L>
+      </U>
+    </V>
+    <V t="create_object">
+      <U n="create_object">
+        <V n="creation_data" t="random_by_tags">
+          <U n="random_by_tags">
+            <L n="filter_tags">
+              <E>Func_SnowSportsSlope_Snowboard_Child_Rentable</E>
+            </L>
+          </U>
+        </V>
+        <L n="initial_states">
+          <U>
+            <T n="state">161251<!--ObjectStateValue: GenericOwned_NotOwned--></T>
+          </U>
+        </L>
+        <V t="inventory" n="location" />
+        <T n="require_claim">True</T>
+        <V t="enabled" n="temporary_tags">
+          <L n="enabled">
+            <E>Func_SnowSportsSlope_Skis_Rented</E>
+          </L>
+        </V>
+        <L n="tests">
+          <L>
+            <V t="sim_info">
+              <U n="sim_info">
+                <V t="specified" n="ages">
+                  <L n="specified">
+                    <E>CHILD</E>
+                  </L>
+                </V>
+              </U>
+            </V>
+            <V t="inventory">
+              <U n="inventory">
+                <V n="contents_check" t="has_object_with_tag">
+                  <U n="has_object_with_tag">
+                    <L n="tag_set">
+                      <E>Func_SnowSportsSlope_Snowboard_Child</E>
+                    </L>
+                  </U>
+                </V>
+                <U n="required_count">
+                  <E n="comparison">EQUAL</E>
+                  <T n="value">0</T>
+                </U>
+              </U>
+            </V>
+          </L>
+        </L>
+      </U>
+    </V>
+    <V t="buff">
+      <U n="buff">
+        <U n="buff">
+          <T n="buff_type">253784<!--Buff: buff_SnowSportsSlope_RentalGear--></T>
+        </U>
+        <L n="tests">
+          <L>
+            <V t="inventory">
+              <U n="inventory">
+                <V n="contents_check" t="has_object_with_tag">
+                  <U n="has_object_with_tag">
+                    <L n="tag_set">
+                      <E>Func_SnowSportsSlope_Snowboard_Rented</E>
+                    </L>
+                  </U>
+                </V>
+                <U n="required_count">
+                  <E n="comparison">GREATER</E>
+                  <T n="value">0</T>
+                </U>
+              </U>
+            </V>
+          </L>
+        </L>
+      </U>
+    </V>
+  </L>
+</I>

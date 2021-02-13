@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+
+<TuningRoot>
+    <Instance instance_type="situation" class="NeighborChatSituation" module="apartments.situations.neighbor_chat_situation" muid="6D11F973E9069ED4" description="A Situation for a neighbor to spawn behind their apartment door and&#xA;respond to the player's Sim." instance_subclasses_only="False" parents="SituationComplexCommon, SituationComplex, Situation" path="Situations\Descriptions" use_guid_for_reference="True">
+        <Deleted name="_buff" muid="BA88DE4CC018FD33" />
+
+        <Deleted name="_cost" muid="A99E9568D18606DC" />
+
+        <Deleted name="_display_name" muid="5D2147A0CCC83AD7" />
+
+        <Deleted name="_icon" muid="1990D6C8ABBDB57A" />
+
+        <Deleted name="_implies_greeted_status" muid="804E5EB97E289C1" />
+
+        <Deleted name="_initiating_sim_tests" muid="AF2EEFA27D218DB4" />
+
+        <Deleted name="_level_data" muid="D8F70AE640B2EF16" />
+
+        <Deleted name="_main_goal_visibility_test" muid="734D58DF0C412F5C" />
+
+        <Deleted name="_relationship_between_job_members" muid="FC9E40FCEAC39C5A" />
+
+        <Deleted name="_resident_job" muid="5CC1D229B726FE6" />
+
+        <TunableTuple name="answer_door_state" class="Tunable_AnswerDoorState" display="01_answer_door_situation_state" muid="D0BB2A3753EA036" description="The situation state for the neighbor to answer the door." Deprecated="False" filter="0" group="Situation State">
+            <Tunable type="bool" name="allow_join_situation" class="Tunable" default="True" display="Allow Join Situation" muid="6876457BAD02DF88" description="Whether the situation is allowed to join at this state." Deprecated="False" filter="0" group="General" />
+            <Tunable type="interaction" name="interaction_to_push" class="TunableReference" display="Interaction To Push" muid="B8335BBC10098781" description="The interaction that will be pushed on the neighbor targeting the&#xA;knocker Sim." allow_none="False" Deprecated="False" filter="0" group="General" />
+            <TunableList name="job_and_role_changes" class="TunableMapping" display="Job And Role Changes" muid="93DCB45E85E409D6" mapping_key="Situation Job" mapping_value="Role State" description="A mapping between situation jobs and role states that defines&#xA;what role states we want to switch to for sims on which jobs&#xA;when this situation state is entered." Deprecated="False" filter="0" group="General">
+                <TunableTuple class="TunableTuple" muid="A231598DE08DDC55" Deprecated="False" filter="0" group="General">
+                    <Tunable type="role_state" name="Role State" class="TunableReference" display="Role State" muid="C111548FA3150589" description="The role state that we will switch sims of the linked job&#xA;into." allow_none="False" Deprecated="False" filter="0" group="General" />
+                    <Tunable type="situation_job" name="Situation Job" class="TunableReference" display="Situation Job" muid="B9CF511358778252" description="A reference to a SituationJob that we will use to change&#xA;sim's role state." allow_none="False" Deprecated="False" filter="0" group="General" />
+                </TunableTuple>
+            </TunableList>
+            <TunableVariant type="None" name="time_out" class="OptionalTunable" default="disabled" display="Time Out" muid="E2F4F93E728A91F4" description="How long this state will last before time expired. Please talk to the GPE who implemented the specific&#xA;situation to see what the state will do on time expired." Deprecated="False" filter="0" group="General">
+                <Tunable name="disabled" class="TunableExistance" display="Disabled" muid="8A7C2112ED6ABB22" />
+                <Tunable type="float" name="enabled" class="TunableSimMinute" default="15" display="Enabled" muid="1139F56F2697F34C" min="1" max="None" tuning_state="NeedsTuning" Deprecated="False" filter="0" group="General" />
+            </TunableVariant>
+        </TunableTuple>
+
+        <Deleted name="audio_sting_on_start" muid="B1EBC5269EF3BC9D" />
+
+        <Deleted name="background_audio" muid="148CD99500681F4C" />
+
+        <Deleted name="category" muid="A7FF6134266B940B" />
+
+        <Deleted name="compatible_venues" muid="409B0DE4BC13AA66" />
+
+        <Deleted name="creation_ui_option" muid="7A3A6AB73AB8220B" />
+
+        <Deleted name="entitlement" muid="949445A600D11C5D" />
+
+        <Deleted name="exclusivity" muid="7D81A946A1A51475" />
+
+        <Deleted name="force_invite_only" muid="7A803B1C737CFDEB" />
+
+        <Deleted name="goal_button_text" muid="9B8D1CC5D645F726" />
+
+        <Deleted name="goal_sub_text" muid="967B70A576E9FBE4" />
+
+        <Deleted name="highlight_first_incomplete_minor_goal" muid="8644985E68F82F16" />
+
+        <Deleted name="job_display_ordering" muid="DDC99A1A73AC46CE" />
+
+        <TunableTuple name="knocker_job_and_role_state" class="TunableSituationJobAndRoleState" display="Knocker Job And Role State" muid="692592E9E4948243" description="The job and role state of the Sim that knocked." Deprecated="False" filter="0" group="General">
+            <Tunable type="role_state" name="role_state" class="TunableReference" display="Role State" muid="7510B9565EE9517B" description="A role state the sim assigned to the job will perform" allow_none="False" Deprecated="False" filter="0" group="General" />
+            <Tunable type="situation_job" name="situation_job" class="TunableReference" display="Situation Job" muid="7C6C470AEC1651C8" description="A reference to a SituationJob that can be performed at this Situation." allow_none="False" Deprecated="False" filter="0" group="General" />
+        </TunableTuple>
+
+        <Deleted name="main_goal" muid="A4CF9CD05EC384EC" />
+
+        <Deleted name="main_goal_audio_sting" muid="71D7CA8A3AC7CA1F" />
+
+        <Deleted name="max_participants" muid="857E12D982AB930B" />
+
+        <Deleted name="minor_goal_chains" muid="F0808EFC6C6C1AAF" />
+
+        <TunableTuple name="neighbor_job_and_role_state" class="TunableSituationJobAndRoleState" display="Neighbor Job And Role State" muid="8789BD2F334C1B1A" description="The job and role state of the neighbor." Deprecated="False" filter="0" group="General">
+            <Tunable type="role_state" name="role_state" class="TunableReference" display="Role State" muid="3F0521CB79C7A66E" description="A role state the sim assigned to the job will perform" allow_none="False" Deprecated="False" filter="0" group="General" />
+            <Tunable type="situation_job" name="situation_job" class="TunableReference" display="Situation Job" muid="3BE1352749B0734B" description="A reference to a SituationJob that can be performed at this Situation." allow_none="False" Deprecated="False" filter="0" group="General" />
+        </TunableTuple>
+
+        <Deleted name="recommended_job_object_notification" muid="C2A8915FD552796A" />
+
+        <Deleted name="recommended_job_object_text" muid="BF1D80C6A77BD3F0" />
+
+        <Deleted name="screen_slam_bronze" muid="92DEB9345340C7" />
+
+        <Deleted name="screen_slam_gold" muid="672DFE3F0CB32754" />
+
+        <Deleted name="screen_slam_no_medal" muid="278B81B30B19E132" />
+
+        <Deleted name="screen_slam_silver" muid="C5AD750D38F87DC7" />
+
+        <Deleted name="situation_description" muid="853855E78A3F44BC" />
+
+        <Deleted name="suppress_scoring_progress_bar" muid="BE059D8073ACAE17" />
+
+        <Deleted name="targeted_situation" muid="1966760DE39F37D6" />
+
+        <Deleted name="travel_request_behavior" muid="2978E4C1D604EDCC" />
+
+        <Deleted name="venue_invitation_message" muid="11D5DA77C08FA104" />
+
+        <Deleted name="venue_situation_player_job" muid="E7B6CBE1FEADCCA5" />
+    </Instance>
+
+    <VersionHistory>
+        <ActionList>
+            <Action type="kRemove" old_muid="937CF6B95C77173D" />
+        </ActionList>
+
+        <ActionList>
+            <Action type="kRename" old_muid="6D82C5872066298C" new_muid="409B0DE4BC13AA66" />
+        </ActionList>
+
+        <ActionList>
+            <Action type="kRemove" old_muid="9D368E824C2DD0B" />
+            <Action type="kRemove" old_muid="8E0CCCD9580398C1" />
+        </ActionList>
+    </VersionHistory>
+</TuningRoot>

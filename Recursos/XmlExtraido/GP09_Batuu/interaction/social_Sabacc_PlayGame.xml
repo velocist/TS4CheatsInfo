@@ -1,0 +1,874 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<I c="SocialSuperInteraction" i="interaction" m="interactions.social.social_super_interaction" n="social_Sabacc_PlayGame" s="230949">
+  <T n="_acquire_listeners_as_resource">True</T>
+  <L n="_constraints" />
+  <V t="participant" n="_icon">
+    <U n="participant">
+      <L n="participant_type">
+        <E>Object</E>
+      </L>
+    </U>
+  </V>
+  <L n="_party_size_weight_tuning">
+    <U>
+      <T n="y">100</T>
+    </U>
+    <U>
+      <T n="x">1</T>
+      <T n="y">100</T>
+    </U>
+    <U>
+      <T n="x">2</T>
+      <T n="y">50</T>
+    </U>
+    <U>
+      <T n="x">3</T>
+      <T n="y">0</T>
+    </U>
+    <U>
+      <T n="x">4</T>
+    </U>
+  </L>
+  <U n="_preserve_held_props">
+    <T n="preserve_during_other_si">True</T>
+  </U>
+  <V t="disabled" n="_saveable" />
+  <T n="_social_group_type">16391<!--GameGroup: group_Cards--></T>
+  <T n="_super_affordance_can_share_target">True</T>
+  <V t="push_self_or_none" n="affordance_to_push_on_target">
+    <T n="push_self_or_none">False</T>
+  </V>
+  <T n="attention_cost">0</T>
+  <V n="basic_content" t="flexible_length">
+    <U n="flexible_length">
+      <L n="conditional_actions">
+        <V t="literal">
+          <U n="literal">
+            <L n="conditions">
+              <V t="state_based">
+                <U n="state_based">
+                  <V n="state" t="on_trigger">
+                    <T n="on_trigger">235367<!--ObjectStateValue: sabaccTable_StateValues_Game_CooldownPhase--></T>
+                  </V>
+                </U>
+              </V>
+            </L>
+            <E n="interaction_action">EXIT_NATURALLY</E>
+            <L n="loot_actions">
+              <T>251713<!--LootActions: loot_SabaccTable_TrackBetweenRounds--></T>
+            </L>
+          </U>
+        </V>
+        <V t="literal">
+          <U n="literal">
+            <L n="conditions">
+              <V t="stat_based">
+                <U n="stat_based">
+                  <T n="stat">234172<!--Commodity: commodity_SabaccTable_PlayerCount--></T>
+                  <U n="threshold">
+                    <E n="comparison">LESS_OR_EQUAL</E>
+                    <T n="value">1</T>
+                  </U>
+                  <E n="who">Object</E>
+                </U>
+              </V>
+              <V t="time_based">
+                <U n="time_based">
+                  <T n="max_time">15</T>
+                  <T n="min_time">15</T>
+                </U>
+              </V>
+            </L>
+            <E n="interaction_action">EXIT_CANCEL</E>
+            <L n="loot_actions">
+              <T>251713<!--LootActions: loot_SabaccTable_TrackBetweenRounds--></T>
+            </L>
+          </U>
+        </V>
+        <V t="literal">
+          <U n="literal">
+            <L n="conditions">
+              <V t="buff_based">
+                <U n="buff_based">
+                  <T n="buff">241791<!--Buff: buff_SabaccTable_AccuseOfCheating_Accuser--></T>
+                </U>
+              </V>
+            </L>
+            <E n="interaction_action">NO_ACTION</E>
+            <L n="loot_actions">
+              <T>242092<!--LootActions: loot_SabaccTable_AccuseOfCheating_SetTableState--></T>
+            </L>
+          </U>
+        </V>
+        <V t="literal">
+          <U n="literal">
+            <L n="conditions">
+              <V t="buff_based">
+                <U n="buff_based">
+                  <T n="buff">241815<!--Buff: buff_SabaccTable_AccuseOfCheating_Accused--></T>
+                </U>
+              </V>
+            </L>
+            <E n="interaction_action">EXIT_NATURALLY</E>
+          </U>
+        </V>
+        <V t="literal">
+          <U n="literal">
+            <L n="conditions">
+              <V t="state_based">
+                <U n="state_based">
+                  <V n="state" t="on_trigger">
+                    <T n="on_trigger">234580<!--ObjectStateValue: sabaccTable_StateValues_Game_DealingPhase--></T>
+                  </V>
+                </U>
+              </V>
+            </L>
+            <E n="interaction_action">EXIT_CANCEL</E>
+            <L n="loot_actions">
+              <T>251713<!--LootActions: loot_SabaccTable_TrackBetweenRounds--></T>
+            </L>
+          </U>
+        </V>
+        <V t="literal">
+          <U n="literal">
+            <L n="conditions">
+              <V t="state_based">
+                <U n="state_based">
+                  <V n="state" t="on_trigger">
+                    <T n="on_trigger">245558<!--ObjectStateValue: sabaccTable_StateValues_Reserved_Mission--></T>
+                  </V>
+                </U>
+              </V>
+            </L>
+            <E n="interaction_action">EXIT_CANCEL</E>
+          </U>
+        </V>
+        <V t="literal">
+          <U n="literal">
+            <L n="conditions">
+              <V t="buff_based">
+                <U n="buff_based">
+                  <T n="buff">244411<!--Buff: buff_Batuu_Missions_Played_Sabacc_Tournament_1st_Opponent_R8--></T>
+                </U>
+              </V>
+            </L>
+            <E n="interaction_action">EXIT_NATURALLY</E>
+          </U>
+        </V>
+        <V t="literal">
+          <U n="literal">
+            <L n="conditions">
+              <V t="buff_based">
+                <U n="buff_based">
+                  <T n="buff">244412<!--Buff: buff_Batuu_Missions_Played_Sabacc_Tournament_2nd_Opponent_SR8--></T>
+                </U>
+              </V>
+            </L>
+            <E n="interaction_action">EXIT_NATURALLY</E>
+          </U>
+        </V>
+        <V t="literal">
+          <U n="literal">
+            <L n="conditions">
+              <V t="buff_based">
+                <U n="buff_based">
+                  <T n="buff">250860<!--Buff: buff_SabaccTable_End--></T>
+                </U>
+              </V>
+            </L>
+            <E n="interaction_action">EXIT_CANCEL</E>
+            <L n="loot_actions">
+              <T>251713<!--LootActions: loot_SabaccTable_TrackBetweenRounds--></T>
+            </L>
+          </U>
+        </V>
+      </L>
+      <V n="content" t="staging_content">
+        <U n="staging_content">
+          <V n="animation_ref" t="enabled">
+            <U n="enabled">
+              <T n="factory">239412<!--AnimationElement: Sabacc_StartStop_HoldCards--></T>
+              <U n="overrides">
+                <L n="props">
+                  <U>
+                    <T n="key">cardHand</T>
+                    <U n="value">
+                      <T n="definition">246407</T>
+                    </U>
+                  </U>
+                </L>
+              </U>
+            </U>
+          </V>
+          <U n="content_set">
+            <L n="affordance_links">
+              <T>239055<!--MixerInteraction: mixer_Sabacc_WaitForTurn_Confident--></T>
+              <T>235128<!--SocialMixerInteraction: socialMixer_Sabacc_CallSabacc--></T>
+              <T>233814<!--SocialMixerInteraction: socialMixer_Sabacc_GG_Winner--></T>
+              <T>234332<!--SocialMixerInteraction: socialMixer_Sabacc_EveryoneFolded--></T>
+              <T>234316<!--SocialMixerInteraction: socialMixer_Sabacc_Fold--></T>
+              <T>233812<!--SocialMixerInteraction: socialMixer_Sabacc_Folded_Skip--></T>
+              <T>242356<!--SocialMixerInteraction: socialMixer_Sabacc_Raise_Credits--></T>
+              <T>234315<!--SocialMixerInteraction: socialMixer_Sabacc_Raise--></T>
+              <T>235099<!--MixerInteraction: mixer_Sabacc_WaitForTurn--></T>
+              <T>245517<!--MixerInteraction: mixer_Sabacc_Idle--></T>
+              <T>237265<!--MixerInteraction: mixer_Sabacc_Cheat--></T>
+              <T>237314<!--MixerInteraction: mixer_Sabacc_CallSabacc_RNG--></T>
+              <T>239056<!--MixerInteraction: mixer_Sabacc_WaitForTurn_Logical--></T>
+              <T>247793<!--SocialMixerInteraction: socialMixer_Sabacc_GG_Loser--></T>
+            </L>
+          </U>
+        </U>
+      </V>
+      <V n="periodic_stat_change" t="enabled">
+        <U n="enabled">
+          <L n="operations">
+            <V t="statistic_change">
+              <U n="statistic_change">
+                <T n="amount">0.83</T>
+                <E n="periodic_change_behavior">APPLY_AT_INTERVAL_ONLY</E>
+                <T n="stat">16655<!--Commodity: motive_Fun--></T>
+              </U>
+            </V>
+          </L>
+        </U>
+      </V>
+      <T n="start_autonomous_inertial">False</T>
+    </U>
+  </V>
+  <L n="basic_extras">
+    <V t="loot">
+      <U n="loot">
+        <L n="loot_list">
+          <T>162659<!--LootActions: loot_Commodity_Culling_GhostAdd_target--></T>
+        </L>
+      </U>
+    </V>
+    <V t="buff">
+      <U n="buff">
+        <U n="buff_type">
+          <T n="buff_type">230955<!--Buff: buff_SabaccTable_InGame--></T>
+        </U>
+      </U>
+    </V>
+    <V t="join_game">
+      <U n="join_game">
+        <T n="ensure_setup">True</T>
+        <L n="game_affordances">
+          <T>241740<!--SocialSuperInteraction: social_Sabacc_AccuseofCheating--></T>
+          <T>230949<!--SocialSuperInteraction: social_Sabacc_PlayGame--></T>
+          <T>243179<!--SuperInteraction: sabaccTable_Cheat--></T>
+          <T>243181<!--ImmediateSuperInteraction: sabacc_Immediate_DeleteCreditPile--></T>
+        </L>
+        <T n="game_type">232782<!--GameRules: Sabacc_Game--></T>
+      </U>
+    </V>
+    <V t="loot">
+      <U n="loot">
+        <L n="loot_list">
+          <T>234132<!--LootActions: loot_SabaccTable_JoinedGame--></T>
+          <T>239484<!--LootActions: loot_SabaccTable_Spawn_ChipPile--></T>
+          <T>233823<!--LootActions: loot_SabaccTable_GrabbedCards--></T>
+        </L>
+        <V t="at_beginning" n="timing" />
+      </U>
+    </V>
+    <V t="loot">
+      <U n="loot">
+        <L n="loot_list">
+          <T>234175<!--LootActions: loot_SabaccTable_ExitGame--></T>
+        </L>
+        <V t="at_end" n="timing">
+          <U n="at_end">
+            <E n="criticality">OnCancelOrException</E>
+          </U>
+        </V>
+      </U>
+    </V>
+    <V t="buff_fire_and_forget">
+      <U n="buff_fire_and_forget">
+        <U n="buff">
+          <T n="buff_type">251712<!--Buff: buff_SabaccTable_BetweenBettingPhases--></T>
+        </U>
+        <E n="participant">Actor</E>
+        <V t="at_beginning" n="timing" />
+      </U>
+    </V>
+    <V t="payment">
+      <U n="payment">
+        <T n="include_in_total">False</T>
+        <V n="payment" t="literal">
+          <U n="literal">
+            <U n="cost_modifiers">
+              <T n="base_value">1</T>
+              <L n="multipliers">
+                <U>
+                  <T n="multiplier">0</T>
+                  <L n="tests">
+                    <L>
+                      <V t="region">
+                        <U n="region">
+                          <V t="enabled" n="whitelist">
+                            <L n="enabled">
+                              <T>231104<!--Region: region_Destination_Batuu--></T>
+                            </L>
+                          </V>
+                        </U>
+                      </V>
+                    </L>
+                  </L>
+                </U>
+              </L>
+            </U>
+            <V t="amount" n="payment_cost">
+              <U n="amount">
+                <T n="amount">10</T>
+              </U>
+            </V>
+          </U>
+        </V>
+        <V t="at_beginning" n="timing" />
+      </U>
+    </V>
+    <V t="payment">
+      <U n="payment">
+        <T n="include_in_total">False</T>
+        <V n="payment" t="literal">
+          <U n="literal">
+            <U n="cost_modifiers">
+              <T n="base_value">1</T>
+              <L n="multipliers">
+                <U>
+                  <T n="multiplier">0</T>
+                  <L n="tests">
+                    <L>
+                      <V t="region">
+                        <U n="region">
+                          <V n="whitelist" t="enabled">
+                            <L n="enabled">
+                              <T>104096<!--Region: region_Destination_CampingForest--></T>
+                              <T>104062<!--Region: region_Hidden_ForgottenGrotto--></T>
+                              <T>219134<!--Region: region_Hidden_Magic_Venue--></T>
+                              <T>104063<!--Region: region_Hidden_SlyvanGlade--></T>
+                              <T>190064<!--Region: region_Hidden_ActingStudio--></T>
+                              <T>173593<!--Region: region_Destination_Jungle--></T>
+                              <T>119917<!--Region: region_Residential_Newcrest--></T>
+                              <T>104065<!--Region: region_Residential_OasisSprings--></T>
+                              <T>104064<!--Region: region_Residential_WillowCreek--></T>
+                              <T>123129<!--Region: region_Residential_NorthEurope--></T>
+                              <T>152175<!--Region: region_Residential_VampireWorld--></T>
+                              <T>201699<!--Region: region_Residential_Strangetown--></T>
+                              <T>216626<!--Region: region_Residential_Magic--></T>
+                              <T>134252<!--Region: region_Residential_CityLife--></T>
+                              <T>166547<!--Region: region_Residential_PetWorld--></T>
+                              <T>195493<!--Region: region_Residential_FameWorld--></T>
+                              <T>208308<!--Region: region_Residential_IslandWorld--></T>
+                              <T>208814<!--Region: region_Residential_UniversityWorld--></T>
+                              <T>228200<!--Region: region_Residential_EcoWorld--></T>
+                              <T>108705<!--Region: region_Career_AlienWorld--></T>
+                              <T>108704<!--Region: region_Career_Retail--></T>
+                            </L>
+                          </V>
+                        </U>
+                      </V>
+                    </L>
+                  </L>
+                </U>
+              </L>
+            </U>
+            <V t="amount" n="payment_cost">
+              <U n="amount">
+                <T n="amount">10</T>
+              </U>
+            </V>
+            <V t="bucks" n="payment_source">
+              <U n="bucks">
+                <E n="bucks_type">GalacticCredits</E>
+              </U>
+            </V>
+          </U>
+        </V>
+        <V t="at_beginning" n="timing" />
+      </U>
+    </V>
+  </L>
+  <L n="basic_liabilities">
+    <V t="user_cancelable_chain" />
+    <V t="critical_priority">
+      <U n="critical_priority">
+        <E n="priority_on_push">High</E>
+        <E n="priority_on_run">High</E>
+      </U>
+    </V>
+  </L>
+  <V t="enabled" n="basic_reserve_object" />
+  <V t="disabled" n="canonical_animation" />
+  <V t="disabled" n="content_score" />
+  <T n="display_name">0x36A50963<!--String: "Jugar al sabacc con"--></T>
+  <V t="enabled" n="display_name_in_queue">
+    <T n="enabled">0x79AE8F7C<!--String: "Sabacc"--></T>
+  </V>
+  <U n="display_name_text_tokens">
+    <L n="tokens">
+      <V t="participant_type">
+        <U n="participant_type">
+          <V n="objects" t="from_participant">
+            <U n="from_participant">
+              <E n="participant">Actor</E>
+            </U>
+          </V>
+        </U>
+      </V>
+      <V t="participant_type">
+        <U n="participant_type">
+          <V t="from_participant" n="objects">
+            <U n="from_participant">
+              <E n="participant">Object</E>
+            </U>
+          </V>
+        </U>
+      </V>
+    </L>
+  </U>
+  <V t="enabled" n="idle_animation">
+    <U n="enabled">
+      <T n="factory">11570<!--AnimationElement: Listen_Listen_Looping_basic--></T>
+    </U>
+  </V>
+  <T n="ignore_group_socials">False</T>
+  <L n="interaction_category_tags">
+    <E>Interaction_SocialSuper</E>
+    <E>Interaction_Super</E>
+    <E>Interaction_All</E>
+    <E>Interaction_SocialAll</E>
+    <E>Interaction_PlayGame</E>
+    <E />
+    <E>Interaction_Social_Contagious</E>
+  </L>
+  <T n="invite_in_after_interaction">True</T>
+  <U n="listen_animation">
+    <T n="factory">11570<!--AnimationElement: Listen_Listen_Looping_basic--></T>
+  </U>
+  <V n="outcome" t="test_based">
+    <U n="test_based">
+      <L n="fallback_outcomes">
+        <U>
+          <U n="outcome">
+            <V t="enabled" n="animation_ref">
+              <U n="enabled">
+                <T n="factory">242017<!--AnimationElement: sabacc_StartStop_Exit--></T>
+              </U>
+            </V>
+            <L n="basic_extras">
+              <V t="destroy_object">
+                <U n="destroy_object">
+                  <V t="from_participant" n="objects_to_destroy">
+                    <U n="from_participant">
+                      <E n="participant">ObjectChildren</E>
+                    </U>
+                  </V>
+                  <V t="add_restriction" n="tag_restriction">
+                    <L n="add_restriction">
+                      <E>Func_Sabacc_ChipPile</E>
+                    </L>
+                  </V>
+                  <L n="tests">
+                    <L>
+                      <V t="statistic">
+                        <U n="statistic">
+                          <T n="must_have_stat">True</T>
+                          <V n="score_to_use" t="user_value" />
+                          <T n="stat">234172<!--Commodity: commodity_SabaccTable_PlayerCount--></T>
+                          <V t="value_threshold" n="threshold">
+                            <U n="value_threshold">
+                              <E n="comparison">LESS_OR_EQUAL</E>
+                              <T n="value">1</T>
+                            </U>
+                          </V>
+                          <E n="who">ObjectParent</E>
+                        </U>
+                      </V>
+                    </L>
+                  </L>
+                  <V t="at_beginning" n="timing" />
+                </U>
+              </V>
+              <V t="buff_fire_and_forget">
+                <U n="buff_fire_and_forget">
+                  <U n="buff">
+                    <T n="buff_type">251746<!--Buff: buff_SabaccTable_Cancelled--></T>
+                  </U>
+                </U>
+              </V>
+            </L>
+            <T n="force_outcome_on_exit">False</T>
+          </U>
+        </U>
+      </L>
+      <L n="tested_outcomes">
+        <U>
+          <L n="potential_outcomes">
+            <U>
+              <U n="outcome">
+                <V n="animation_ref" t="enabled">
+                  <U n="enabled">
+                    <T n="factory">237256<!--AnimationElement: sabacc_CollectWinnings--></T>
+                  </U>
+                </V>
+                <L n="basic_extras">
+                  <V t="balloon">
+                    <U n="balloon">
+                      <L n="balloon_choices">
+                        <U>
+                          <V n="item" t="balloon_icon">
+                            <U n="balloon_icon">
+                              <V n="category_icon" t="show_category_icon">
+                                <V n="show_category_icon" t="resource_key">
+                                  <U n="resource_key">
+                                    <T n="key" p="InGame\UI\Icons\Headlines\Final\icon_headline_trophy.png">2f7d0004:00000000:9832a0853d59f942</T>
+                                  </U>
+                                </V>
+                              </V>
+                              <V t="resource_key" n="icon">
+                                <U n="resource_key">
+                                  <T n="key" p="InGP09\UI\Icons\Headlines\Headline_sabaccChips.png">2f7d0004:00000000:0cc8999b0046a3fa</T>
+                                </U>
+                              </V>
+                            </U>
+                          </V>
+                        </U>
+                      </L>
+                      <L n="balloon_target">
+                        <E>Actor</E>
+                      </L>
+                    </U>
+                  </V>
+                  <V t="destroy_object">
+                    <U n="destroy_object">
+                      <V t="from_participant" n="objects_to_destroy">
+                        <U n="from_participant">
+                          <E n="participant">ObjectChildren</E>
+                        </U>
+                      </V>
+                      <V t="add_restriction" n="tag_restriction">
+                        <L n="add_restriction">
+                          <E>Func_Sabacc_ChipPile</E>
+                        </L>
+                      </V>
+                      <V t="at_end" n="timing">
+                        <U n="at_end">
+                          <E n="criticality">OnCancelOrException</E>
+                        </U>
+                      </V>
+                    </U>
+                  </V>
+                </L>
+                <L n="continuation">
+                  <U>
+                    <T n="affordance">243181<!--ImmediateSuperInteraction: sabacc_Immediate_DeleteCreditPile--></T>
+                  </U>
+                </L>
+                <T n="force_outcome_on_exit">True</T>
+                <L n="loot_list">
+                  <T>235373<!--LootActions: loot_SabaccTable_GameEnd_Payout--></T>
+                  <T>243386<!--RandomWeightedLoot: random_SabaccTable_GameEnd_Buffs_Winner--></T>
+                </L>
+              </U>
+            </U>
+          </L>
+          <L n="tests">
+            <L>
+              <V t="buff">
+                <U n="buff">
+                  <V n="whitelist" t="enabled">
+                    <L n="enabled">
+                      <T>243664<!--Buff: buff_SabaccTable_EveryoneFolded_IWin--></T>
+                    </L>
+                  </V>
+                </U>
+              </V>
+            </L>
+          </L>
+        </U>
+        <U>
+          <L n="potential_outcomes">
+            <U>
+              <U n="outcome">
+                <V n="animation_ref" t="enabled">
+                  <U n="enabled">
+                    <T n="factory">239470<!--AnimationElement: sabacc_StartStop_LoseGame--></T>
+                  </U>
+                </V>
+                <L n="basic_extras">
+                  <V t="balloon">
+                    <U n="balloon">
+                      <L n="balloon_choices">
+                        <U>
+                          <V n="item" t="balloon_icon">
+                            <U n="balloon_icon">
+                              <V t="resource_key" n="icon">
+                                <U n="resource_key">
+                                  <T n="key" p="InGP09\UI\Icons\Headlines\Headline_sabaccChips.png">2f7d0004:00000000:0cc8999b0046a3fa</T>
+                                </U>
+                              </V>
+                              <T p="InGame\UI\Icons\Headlines\Final\headline_Prohibit.png" n="overlay">2f7d0004:00000000:ab4a67c934164fb1</T>
+                            </U>
+                          </V>
+                        </U>
+                      </L>
+                      <L n="balloon_target">
+                        <E>Actor</E>
+                      </L>
+                    </U>
+                  </V>
+                </L>
+                <L n="continuation">
+                  <U>
+                    <T n="affordance">239200<!--SocialSuperInteraction: social_Sabacc_DealCards--></T>
+                  </U>
+                </L>
+                <T n="force_outcome_on_exit">True</T>
+                <L n="loot_list">
+                  <T>234915<!--LootActions: loot_SabaccTable_RoundReset--></T>
+                  <T>243387<!--RandomWeightedLoot: random_SabaccTable_GameEnd_Buffs_Loser--></T>
+                </L>
+                <E n="outcome_result">FAILURE</E>
+                <V n="response" t="enabled">
+                  <V n="enabled" t="individual">
+                    <U n="individual">
+                      <L n="animations">
+                        <U>
+                          <E n="target">Actor</E>
+                          <U n="animation">
+                            <T n="factory">28387<!--AnimationElement: Socials_Responses_Sad_LowIntensity--></T>
+                          </U>
+                        </U>
+                      </L>
+                    </U>
+                  </V>
+                </V>
+              </U>
+            </U>
+          </L>
+          <L n="tests">
+            <L>
+              <V t="buff">
+                <U n="buff">
+                  <L n="blacklist">
+                    <T>243664<!--Buff: buff_SabaccTable_EveryoneFolded_IWin--></T>
+                  </L>
+                </U>
+              </V>
+            </L>
+          </L>
+        </U>
+        <U>
+          <L n="potential_outcomes">
+            <U>
+              <U n="outcome">
+                <V t="enabled" n="animation_ref">
+                  <U n="enabled">
+                    <T n="factory">242017<!--AnimationElement: sabacc_StartStop_Exit--></T>
+                  </U>
+                </V>
+                <L n="continuation">
+                  <U>
+                    <T n="affordance">242088<!--SuperInteraction: SabaccTable_WhileNoonesWatching--></T>
+                  </U>
+                </L>
+                <T n="force_outcome_on_exit">True</T>
+              </U>
+              <U n="weight">
+                <T n="base_value">1</T>
+              </U>
+            </U>
+            <U>
+              <U n="outcome">
+                <V t="enabled" n="animation_ref">
+                  <U n="enabled">
+                    <T n="factory">242017<!--AnimationElement: sabacc_StartStop_Exit--></T>
+                  </U>
+                </V>
+                <T n="force_outcome_on_exit">True</T>
+              </U>
+              <U n="weight">
+                <T n="base_value">1</T>
+              </U>
+            </U>
+          </L>
+          <L n="tests">
+            <L>
+              <V t="buff">
+                <U n="buff">
+                  <L n="blacklist">
+                    <T>241815<!--Buff: buff_SabaccTable_AccuseOfCheating_Accused--></T>
+                    <T>241791<!--Buff: buff_SabaccTable_AccuseOfCheating_Accuser--></T>
+                    <T>233815<!--Buff: buff_SabaccTable_Folded--></T>
+                  </L>
+                </U>
+              </V>
+              <V t="statistic">
+                <U n="statistic">
+                  <T n="stat">234172<!--Commodity: commodity_SabaccTable_PlayerCount--></T>
+                  <V n="threshold" t="value_threshold">
+                    <U n="value_threshold">
+                      <E n="comparison">LESS_OR_EQUAL</E>
+                      <T n="value">3</T>
+                    </U>
+                  </V>
+                  <E n="who">Object</E>
+                </U>
+              </V>
+              <V t="state">
+                <U n="state">
+                  <T n="value">242091<!--ObjectStateValue: sabaccTable_StateValues_Cheater_Accused--></T>
+                </U>
+              </V>
+            </L>
+          </L>
+        </U>
+        <U>
+          <L n="potential_outcomes">
+            <U>
+              <U n="outcome">
+                <V t="enabled" n="animation_ref">
+                  <U n="enabled">
+                    <T n="factory">242017<!--AnimationElement: sabacc_StartStop_Exit--></T>
+                  </U>
+                </V>
+                <T n="force_outcome_on_exit">True</T>
+              </U>
+              <U n="weight">
+                <T n="base_value">1</T>
+              </U>
+            </U>
+          </L>
+          <L n="tests">
+            <L>
+              <V t="buff">
+                <U n="buff">
+                  <E n="subject">AllInstancedActiveHouseholdSims</E>
+                  <V n="whitelist" t="enabled">
+                    <L n="enabled">
+                      <T>244411<!--Buff: buff_Batuu_Missions_Played_Sabacc_Tournament_1st_Opponent_R8--></T>
+                      <T>244412<!--Buff: buff_Batuu_Missions_Played_Sabacc_Tournament_2nd_Opponent_SR8--></T>
+                      <T>244413<!--Buff: buff_Batuu_Missions_Played_Sabacc_Tournament_Final_Opponent_SR8--></T>
+                    </L>
+                  </V>
+                </U>
+              </V>
+            </L>
+          </L>
+        </U>
+      </L>
+    </U>
+  </V>
+  <U n="posture_preferences">
+    <T n="prefer_clicked_part">False</T>
+  </U>
+  <U n="progress_bar_enabled">
+    <T n="bar_enabled">True</T>
+    <V n="force_listen_statistic" t="enabled">
+      <U n="enabled">
+        <T n="statistic">235228<!--Commodity: commodity_SabaccTable_TurnsTaken--></T>
+        <E n="subject">Object</E>
+        <U n="target_value">
+          <E n="comparison">EQUAL</E>
+          <T n="value">12</T>
+        </U>
+      </U>
+    </V>
+  </U>
+  <L n="rallyable">
+    <U>
+      <V n="behavior" t="push_affordance">
+        <U n="push_affordance">
+          <T n="affordance">230949<!--SocialSuperInteraction: social_Sabacc_PlayGame--></T>
+        </U>
+      </V>
+    </U>
+  </L>
+  <T n="relationship_scoring">True</T>
+  <E n="scoring_priority">NORMAL</E>
+  <V t="disabled" n="sim_affinity_posture_scoring_data" />
+  <U n="skill_loot_data">
+    <E n="effectiveness">SmallPeriodic</E>
+    <V t="enabled" n="level_range">
+      <U n="enabled">
+        <T n="upper_bound">10</T>
+      </U>
+    </V>
+  </U>
+  <T n="subaction_selection_weight">1</T>
+  <V n="super_affordance_compatibility" t="literal">
+    <U n="literal">
+      <V n="default_inclusion" t="exclude_all">
+        <U n="exclude_all">
+          <L n="include_affordances">
+            <T>241740<!--SocialSuperInteraction: social_Sabacc_AccuseofCheating--></T>
+            <T>242356<!--SocialMixerInteraction: socialMixer_Sabacc_Raise_Credits--></T>
+            <T>243179<!--SuperInteraction: sabaccTable_Cheat--></T>
+            <T>243181<!--ImmediateSuperInteraction: sabacc_Immediate_DeleteCreditPile--></T>
+            <T>235128<!--SocialMixerInteraction: socialMixer_Sabacc_CallSabacc--></T>
+            <T>233810<!--SocialMixerInteraction: socialMixer_Sabacc_DealHand--></T>
+            <T>234332<!--SocialMixerInteraction: socialMixer_Sabacc_EveryoneFolded--></T>
+            <T>234316<!--SocialMixerInteraction: socialMixer_Sabacc_Fold--></T>
+            <T>233812<!--SocialMixerInteraction: socialMixer_Sabacc_Folded_Skip--></T>
+            <T>233814<!--SocialMixerInteraction: socialMixer_Sabacc_GG_Winner--></T>
+            <T>234315<!--SocialMixerInteraction: socialMixer_Sabacc_Raise--></T>
+            <T>237314<!--MixerInteraction: mixer_Sabacc_CallSabacc_RNG--></T>
+            <T>237265<!--MixerInteraction: mixer_Sabacc_Cheat--></T>
+            <T>235099<!--MixerInteraction: mixer_Sabacc_WaitForTurn--></T>
+            <T>239055<!--MixerInteraction: mixer_Sabacc_WaitForTurn_Confident--></T>
+            <T>239056<!--MixerInteraction: mixer_Sabacc_WaitForTurn_Logical--></T>
+            <T>237786<!--AutonomousSimPickerSuperInteraction: autonomousSimPicker_PlaySabacc--></T>
+            <T>237235<!--ImmediateSuperInteraction: sabacc_Immediate_PlayConfidently--></T>
+            <T>237234<!--ImmediateSuperInteraction: sabacc_Immediate_PlayLogically--></T>
+            <T>237243<!--ImmediateSuperInteraction: sabacc_Immediate_PlayNormally--></T>
+            <T>239200<!--SocialSuperInteraction: social_Sabacc_DealCards--></T>
+            <T>237791<!--SocialSuperInteraction: social_Sabacc_JoinGame--></T>
+            <T>230949<!--SocialSuperInteraction: social_Sabacc_PlayGame--></T>
+            <T>230913<!--SimPickerInteraction: simPicker_SabaccGame_ChooseOpponent--></T>
+          </L>
+        </U>
+      </V>
+    </U>
+  </V>
+  <V t="enabled" n="super_affordance_klobberers">
+    <V t="literal" n="enabled">
+      <U n="literal">
+        <V n="default_inclusion" t="include_all" />
+      </U>
+    </V>
+  </V>
+  <E n="target_type">OBJECT</E>
+  <V t="enabled" n="test_disallow_while_running">
+    <U n="enabled">
+      <T n="test_self">True</T>
+    </U>
+  </V>
+  <L n="test_globals">
+    <V t="sim_info">
+      <U n="sim_info">
+        <V t="specified" n="ages" />
+        <V t="specified" n="species">
+          <U n="specified">
+            <L n="species">
+              <E />
+            </L>
+          </U>
+        </V>
+        <E n="who">Actor</E>
+      </U>
+    </V>
+    <V t="trait">
+      <U n="trait">
+        <L n="blacklist_traits">
+          <T>243568<!--Trait: trait_Batuu_Mission_Traits_Defector--></T>
+          <T>243985<!--Trait: trait_Batuu_Mission_Traits_Stormtrooper_CheckID--></T>
+        </L>
+      </U>
+    </V>
+  </L>
+  <T n="time_overhead">30</T>
+</I>

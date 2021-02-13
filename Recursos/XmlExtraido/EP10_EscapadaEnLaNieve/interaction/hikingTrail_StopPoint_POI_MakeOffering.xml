@@ -1,0 +1,402 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<I c="SuperInteraction" i="interaction" m="interactions.base.super_interaction" n="hikingTrail_StopPoint_POI_MakeOffering" s="246316">
+  <L n="_constraints">
+    <U>
+      <L n="constraints">
+        <U>
+          <V t="facing" n="value" />
+        </U>
+        <U>
+          <V n="value" t="cone">
+            <U n="cone">
+              <T n="max_radius">2</T>
+              <T n="min_radius">1</T>
+            </U>
+          </V>
+        </U>
+      </L>
+    </U>
+  </L>
+  <V t="enabled" n="_saveable" />
+  <T n="allow_autonomous">False</T>
+  <T n="allow_teleport_style_injection">False</T>
+  <T n="allow_user_directed">False</T>
+  <T n="attention_cost">0.5</T>
+  <V n="basic_content" t="one_shot">
+    <U n="one_shot">
+      <U n="animation_ref">
+        <T n="factory">230308<!--AnimationElement: generic_PutDown_StandOnly--></T>
+        <U n="overrides">
+          <V n="balloons" t="enabled">
+            <L n="enabled">
+              <U>
+                <L n="balloon_choices">
+                  <U>
+                    <V n="item" t="balloon_icon">
+                      <U n="balloon_icon">
+                        <V t="participant" n="icon">
+                          <U n="participant">
+                            <L n="participant_type">
+                              <E>Object</E>
+                            </L>
+                          </U>
+                        </V>
+                      </U>
+                    </V>
+                  </U>
+                </L>
+                <L n="balloon_target">
+                  <E>Actor</E>
+                </L>
+              </U>
+            </L>
+          </V>
+        </U>
+      </U>
+    </U>
+  </V>
+  <L n="basic_extras">
+    <V t="create_object">
+      <U n="create_object">
+        <V n="creation_data" t="definition">
+          <U n="definition">
+            <T n="definition">208289</T>
+          </U>
+        </V>
+        <V n="location" t="position">
+          <U n="position">
+            <T n="allow_off_lot_placement">True</T>
+            <U n="initial_location_offset">
+              <U n="default_offset">
+                <T n="z">0.5</T>
+              </U>
+            </U>
+            <T n="perform_fgl_check">False</T>
+            <T n="randomize_orientation">False</T>
+            <T n="stay_in_connected_connectivity_group">False</T>
+          </U>
+        </V>
+        <V t="at_beginning" n="timing" />
+      </U>
+    </V>
+    <V t="destroy_object">
+      <U n="destroy_object">
+        <V n="objects_to_destroy" t="from_participant">
+          <U n="from_participant">
+            <E n="participant">PickedObject</E>
+          </U>
+        </V>
+      </U>
+    </V>
+  </L>
+  <V t="disabled" n="basic_reserve_object" />
+  <V t="disabled" n="content_score" />
+  <T n="display_name">0xDC209E1E<!--String: "Hacer ofrenda de buena fortuna"--></T>
+  <U n="display_name_text_tokens">
+    <L n="tokens">
+      <V t="participant_type">
+        <U n="participant_type">
+          <V t="from_participant" n="objects">
+            <U n="from_participant">
+              <E n="participant">Actor</E>
+            </U>
+          </V>
+        </U>
+      </V>
+      <V t="participant_type">
+        <U n="participant_type">
+          <V t="from_participant" n="objects">
+            <U n="from_participant">
+              <E n="participant">Object</E>
+            </U>
+          </V>
+        </U>
+      </V>
+    </L>
+  </U>
+  <L n="interaction_category_tags">
+    <E>Interaction_Super</E>
+    <E>Interaction_All</E>
+    <E>Interaction_Lifestyles_FrequentTraveler_OneShot</E>
+  </L>
+  <V n="outcome" t="test_based">
+    <U n="test_based">
+      <L n="fallback_outcomes" />
+      <L n="tested_outcomes">
+        <U>
+          <L n="potential_outcomes">
+            <U>
+              <U n="outcome">
+                <L n="basic_extras">
+                  <V t="buff_fire_and_forget">
+                    <U n="buff_fire_and_forget">
+                      <U n="buff">
+                        <V n="buff_reason" t="enabled">
+                          <T n="enabled">0x1B72EDF2<!--String: "(Por hacer una ofrenda generosa)"--></T>
+                        </V>
+                        <T n="buff_type">249884<!--Buff: buff_HikingTrail_POI_Offering_HighValue--></T>
+                      </U>
+                    </U>
+                  </V>
+                  <V t="destroy_object">
+                    <U n="destroy_object">
+                      <V n="objects_to_destroy" t="from_participant">
+                        <U n="from_participant">
+                          <E n="participant">CreatedObject</E>
+                        </U>
+                      </V>
+                    </U>
+                  </V>
+                </L>
+              </U>
+            </U>
+          </L>
+          <L n="tests">
+            <L>
+              <V t="object_criteria">
+                <U n="object_criteria">
+                  <T n="owned">False</T>
+                  <V t="single_object" n="subject_specific_tests">
+                    <U n="single_object">
+                      <E n="target">PickedObject</E>
+                    </U>
+                  </V>
+                  <V n="value" t="enabled">
+                    <U n="enabled">
+                      <U n="threshold">
+                        <E n="comparison">GREATER</E>
+                        <T n="value">600</T>
+                      </U>
+                      <V t="current_value" n="value_to_check" />
+                    </U>
+                  </V>
+                </U>
+              </V>
+            </L>
+          </L>
+        </U>
+        <U>
+          <L n="potential_outcomes">
+            <U>
+              <U n="outcome">
+                <L n="basic_extras">
+                  <V t="buff_fire_and_forget">
+                    <U n="buff_fire_and_forget">
+                      <U n="buff">
+                        <V n="buff_reason" t="enabled">
+                          <T n="enabled">0xC46AAC20<!--String: "(Por hacer una buena ofrenda)"--></T>
+                        </V>
+                        <T n="buff_type">249885<!--Buff: buff_HikingTrail_POI_Offering_NormalValue--></T>
+                      </U>
+                    </U>
+                  </V>
+                  <V t="destroy_object">
+                    <U n="destroy_object">
+                      <V n="objects_to_destroy" t="from_participant">
+                        <U n="from_participant">
+                          <E n="participant">CreatedObject</E>
+                        </U>
+                      </V>
+                    </U>
+                  </V>
+                </L>
+              </U>
+            </U>
+          </L>
+          <L n="tests">
+            <L>
+              <V t="object_criteria">
+                <U n="object_criteria">
+                  <T n="owned">False</T>
+                  <V t="single_object" n="subject_specific_tests">
+                    <U n="single_object">
+                      <E n="target">PickedObject</E>
+                    </U>
+                  </V>
+                  <V n="value" t="enabled">
+                    <U n="enabled">
+                      <U n="threshold">
+                        <E n="comparison">GREATER</E>
+                        <T n="value">150</T>
+                      </U>
+                      <V t="current_value" n="value_to_check" />
+                    </U>
+                  </V>
+                </U>
+              </V>
+              <V t="object_criteria">
+                <U n="object_criteria">
+                  <T n="owned">False</T>
+                  <V t="single_object" n="subject_specific_tests">
+                    <U n="single_object">
+                      <E n="target">PickedObject</E>
+                    </U>
+                  </V>
+                  <V n="value" t="enabled">
+                    <U n="enabled">
+                      <U n="threshold">
+                        <E n="comparison">LESS_OR_EQUAL</E>
+                        <T n="value">600</T>
+                      </U>
+                      <V t="current_value" n="value_to_check" />
+                    </U>
+                  </V>
+                </U>
+              </V>
+            </L>
+          </L>
+        </U>
+        <U>
+          <L n="potential_outcomes">
+            <U>
+              <U n="outcome">
+                <L n="basic_extras">
+                  <V t="buff_fire_and_forget">
+                    <U n="buff_fire_and_forget">
+                      <U n="buff">
+                        <V n="buff_reason" t="enabled">
+                          <T n="enabled">0x43690663<!--String: "(Por hacer una ofrenda pobre)"--></T>
+                        </V>
+                        <T n="buff_type">249887<!--Buff: buff_HikingTrail_POI_Offering_PoorItem--></T>
+                      </U>
+                    </U>
+                  </V>
+                  <V t="destroy_object">
+                    <U n="destroy_object">
+                      <V n="objects_to_destroy" t="from_participant">
+                        <U n="from_participant">
+                          <E n="participant">CreatedObject</E>
+                        </U>
+                      </V>
+                    </U>
+                  </V>
+                </L>
+              </U>
+            </U>
+          </L>
+          <L n="tests">
+            <L>
+              <V t="object_criteria">
+                <U n="object_criteria">
+                  <T n="owned">False</T>
+                  <V t="single_object" n="subject_specific_tests">
+                    <U n="single_object">
+                      <E n="target">PickedObject</E>
+                    </U>
+                  </V>
+                  <V n="value" t="enabled">
+                    <U n="enabled">
+                      <U n="threshold">
+                        <E n="comparison">GREATER</E>
+                        <T n="value">50</T>
+                      </U>
+                      <V t="current_value" n="value_to_check" />
+                    </U>
+                  </V>
+                </U>
+              </V>
+              <V t="object_criteria">
+                <U n="object_criteria">
+                  <T n="owned">False</T>
+                  <V t="single_object" n="subject_specific_tests">
+                    <U n="single_object">
+                      <E n="target">PickedObject</E>
+                    </U>
+                  </V>
+                  <V n="value" t="enabled">
+                    <U n="enabled">
+                      <U n="threshold">
+                        <E n="comparison">LESS_OR_EQUAL</E>
+                        <T n="value">150</T>
+                      </U>
+                      <V t="current_value" n="value_to_check" />
+                    </U>
+                  </V>
+                </U>
+              </V>
+            </L>
+          </L>
+        </U>
+        <U>
+          <L n="potential_outcomes">
+            <U>
+              <U n="outcome">
+                <L n="basic_extras">
+                  <V t="buff_fire_and_forget">
+                    <U n="buff_fire_and_forget">
+                      <U n="buff">
+                        <V n="buff_reason" t="enabled">
+                          <T n="enabled">0x518978AB<!--String: "(Por hacer una ofrenda muy pobre)"--></T>
+                        </V>
+                        <T n="buff_type">249886<!--Buff: buff_HikingTrail_POI_Offering_VeryPoorValue--></T>
+                      </U>
+                    </U>
+                  </V>
+                  <V t="destroy_object">
+                    <U n="destroy_object">
+                      <V n="objects_to_destroy" t="from_participant">
+                        <U n="from_participant">
+                          <E n="participant">CreatedObject</E>
+                        </U>
+                      </V>
+                    </U>
+                  </V>
+                </L>
+              </U>
+            </U>
+          </L>
+          <L n="tests">
+            <L>
+              <V t="object_criteria">
+                <U n="object_criteria">
+                  <T n="owned">False</T>
+                  <V t="single_object" n="subject_specific_tests">
+                    <U n="single_object">
+                      <E n="target">PickedObject</E>
+                    </U>
+                  </V>
+                  <V n="value" t="enabled">
+                    <U n="enabled">
+                      <U n="threshold">
+                        <E n="comparison">LESS_OR_EQUAL</E>
+                        <T n="value">50</T>
+                      </U>
+                      <V t="current_value" n="value_to_check" />
+                    </U>
+                  </V>
+                </U>
+              </V>
+            </L>
+          </L>
+        </U>
+      </L>
+    </U>
+  </V>
+  <E n="scoring_priority">NORMAL</E>
+  <T n="subaction_selection_weight">1</T>
+  <E n="target_type">OBJECT</E>
+  <L n="test_globals">
+    <V t="sim_info">
+      <U n="sim_info">
+        <V t="specified" n="ages">
+          <L n="specified">
+            <E>TEEN</E>
+            <E>YOUNGADULT</E>
+            <E>ADULT</E>
+            <E>ELDER</E>
+            <E>CHILD</E>
+          </L>
+        </V>
+        <V t="specified" n="species">
+          <U n="specified">
+            <L n="species">
+              <E />
+            </L>
+          </U>
+        </V>
+        <E n="who">Actor</E>
+      </U>
+    </V>
+  </L>
+  <T n="time_overhead">30</T>
+</I>

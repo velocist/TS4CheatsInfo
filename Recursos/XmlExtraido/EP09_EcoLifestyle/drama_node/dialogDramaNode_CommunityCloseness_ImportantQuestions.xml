@@ -1,0 +1,116 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<I c="DialogDramaNode" i="drama_node" m="drama_scheduler.dialog_drama_node" n="dialogDramaNode_CommunityCloseness_ImportantQuestions" s="231581">
+  <T n="allow_during_work_hours">False</T>
+  <V t="group_cooldown" n="cooldown_data">
+    <U n="group_cooldown">
+      <E n="group">CommunityClosenessCooldown</E>
+    </U>
+  </V>
+  <V n="dialog_and_loot" t="dialog_multi_response">
+    <U n="dialog_multi_response">
+      <U n="dialog">
+        <E n="phone_ring_type">RING</E>
+        <V n="text" t="variation">
+          <U n="variation">
+            <L n="variations">
+              <T>0x53F330EF<!--String: "Tengo que hacerte una de las preguntas más importantes de nuestro tiempo. ¿{M0.Preparado}{F0.Preparada}? Pues aquí va: \n\n¿Perrito caliente o sándwich?"--></T>
+              <T>0x40C0D33D<!--String: "Voy a hacerte una pregunta... vital. A ver, prepárate.\n\n¿Los cereales con leche cuentan como sopa?"--></T>
+              <T>0x50A9D53<!--String: "Tengo que hacerte una pregunta muy importante, ¿vale? Que voy... \n\n¿El agua está mojada?"--></T>
+              <T>0xDEC52F87<!--String: "Oye, hay una cosa que necesito saber sobre ti, ¿vale? Podría ser determinante para nuestra amistad:\n\n¿Cómo pronuncias GIF, con "g" o con "j"?"--></T>
+              <T>0xD3916E7B<!--String: "Quería preguntarte una cosa. Para mí, la respuesta es superobvia..., pero quiero saber tu opinión.\n\n¿Crees que estamos en una simulación ahora mismo?"--></T>
+            </L>
+          </U>
+        </V>
+      </U>
+      <L n="possible_responses">
+        <U>
+          <U n="item">
+            <L n="loot">
+              <T>232852<!--LootActions: loot_DramaNode_CommunityCloseness_ImportantQuestions_No_Base--></T>
+            </L>
+            <T n="text">0x5417A823<!--String: "No."--></T>
+          </U>
+        </U>
+        <U>
+          <U n="item">
+            <L n="loot">
+              <T>232853<!--LootActions: loot_DramaNode_CommunityCloseness_ImportantQuestions_Yes_Base--></T>
+            </L>
+            <T n="text">0x4E5E40BB<!--String: "Sí."--></T>
+          </U>
+        </U>
+      </L>
+    </U>
+  </V>
+  <U n="min_and_max_times">
+    <T n="lower_bound">1</T>
+    <T n="upper_bound">72</T>
+  </U>
+  <L n="receiver_sim_pretests">
+    <L>
+      <V t="sim_info">
+        <U n="sim_info">
+          <V t="specified" n="ages">
+            <L n="specified">
+              <E>TEEN</E>
+              <E>YOUNGADULT</E>
+              <E>ADULT</E>
+              <E>ELDER</E>
+              <E>CHILD</E>
+            </L>
+          </V>
+          <V t="specified" n="species">
+            <U n="specified">
+              <L n="species">
+                <E>HUMAN</E>
+              </L>
+            </U>
+          </V>
+        </U>
+      </V>
+    </L>
+  </L>
+  <L n="run_tests">
+    <L>
+      <V t="buff">
+        <U n="buff">
+          <L n="blacklist">
+            <T>10094<!--Buff: buff_Sim_IsSleeping--></T>
+          </L>
+        </U>
+      </V>
+    </L>
+  </L>
+  <V t="enabled" n="scoring">
+    <U n="enabled">
+      <T n="base_score">100</T>
+      <E n="bucket">CommunityClosenessCalls</E>
+    </U>
+  </V>
+  <V n="sender_sim_info" t="sim_filter">
+    <U n="sim_filter">
+      <T n="sim_filter">234665<!--TunableSimFilter: dramaNodeFilters_CommunityCloseness_ImportantQuestion--></T>
+    </U>
+  </V>
+  <V t="schedule" n="time_option">
+    <U n="schedule">
+      <L n="valid_times">
+        <U>
+          <U n="days_available">
+            <T n="0 SUNDAY">True</T>
+            <T n="1 MONDAY">True</T>
+            <T n="2 TUESDAY">True</T>
+            <T n="3 WEDNESDAY">True</T>
+            <T n="4 THURSDAY">True</T>
+            <T n="5 FRIDAY">True</T>
+            <T n="6 SATURDAY">True</T>
+          </U>
+          <T n="duration">8</T>
+          <U n="start_time">
+            <T n="hour">12</T>
+          </U>
+        </U>
+      </L>
+    </U>
+  </V>
+</I>

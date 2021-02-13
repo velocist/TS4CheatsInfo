@@ -1,0 +1,208 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<I c="SuperInteraction" i="interaction" m="interactions.base.super_interaction" n="superInteraction_MagicHQ_BrowseBooks_Autonomous" s="216125">
+  <L n="_constraints">
+    <U>
+      <L n="constraints">
+        <U>
+          <V n="value" t="circle">
+            <U n="circle">
+              <T n="radius">2</T>
+            </U>
+          </V>
+        </U>
+        <U>
+          <V n="value" t="facing" />
+        </U>
+      </L>
+    </U>
+  </L>
+  <V t="enabled" n="_saveable" />
+  <L n="_static_commodities">
+    <U>
+      <T n="static_commodity">216109<!--StaticCommodity: staticCommodity_MagicSage_Mischief--></T>
+    </U>
+    <U>
+      <T n="static_commodity">216110<!--StaticCommodity: staticCommodity_MagicSage_Practical--></T>
+    </U>
+    <U>
+      <T n="static_commodity">216111<!--StaticCommodity: staticCommodity_MagicSage_Untamed--></T>
+    </U>
+    <U>
+      <T n="static_commodity">218699<!--StaticCommodity: staticCommodity_MagicVenueNPC_Start--></T>
+    </U>
+  </L>
+  <T n="allow_user_directed">False</T>
+  <T n="attention_cost">0.5</T>
+  <V n="basic_content" t="flexible_length">
+    <U n="flexible_length">
+      <L n="conditional_actions">
+        <V t="literal">
+          <U n="literal">
+            <L n="conditions">
+              <V t="time_based">
+                <U n="time_based">
+                  <T n="max_time">25</T>
+                  <T n="min_time">15</T>
+                </U>
+              </V>
+            </L>
+            <E n="interaction_action">EXIT_NATURALLY</E>
+          </U>
+        </V>
+      </L>
+      <V t="looping_content" n="content">
+        <U n="looping_content">
+          <U n="animation_ref">
+            <T n="factory">214906<!--AnimationElement: spells_SearchForTomes--></T>
+          </U>
+        </U>
+      </V>
+      <V n="periodic_stat_change" t="enabled">
+        <U n="enabled">
+          <L n="operations">
+            <V t="statistic_set_max">
+              <U n="statistic_set_max">
+                <T n="stat">222442<!--Commodity: commodity_MagicVenueNPC_Autonomy--></T>
+              </U>
+            </V>
+          </L>
+        </U>
+      </V>
+    </U>
+  </V>
+  <L n="basic_extras">
+    <V t="balloon">
+      <U n="balloon">
+        <T n="balloon_chance">75</T>
+        <L n="balloon_choices">
+          <U>
+            <V n="item" t="balloon_category">
+              <T n="balloon_category">222087<!--BalloonCategory: balloonCategory_Spellcasters_Spells_Mischief_thought--></T>
+            </V>
+            <L n="tests">
+              <L>
+                <V t="trait">
+                  <U n="trait">
+                    <L n="blacklist_traits">
+                      <T>212850<!--Trait: trait_MagicSage_Practical--></T>
+                      <T>212851<!--Trait: trait_MagicSage_Untamed--></T>
+                    </L>
+                    <T n="num_whitelist_required">0</T>
+                  </U>
+                </V>
+              </L>
+            </L>
+          </U>
+          <U>
+            <V n="item" t="balloon_category">
+              <T n="balloon_category">222077<!--BalloonCategory: balloonCategory_Spellcasters_Spells_Practical_thought--></T>
+            </V>
+            <L n="tests">
+              <L>
+                <V t="trait">
+                  <U n="trait">
+                    <L n="blacklist_traits">
+                      <T>212849<!--Trait: trait_MagicSage_Mischief--></T>
+                      <T>212851<!--Trait: trait_MagicSage_Untamed--></T>
+                    </L>
+                    <T n="num_whitelist_required">0</T>
+                  </U>
+                </V>
+              </L>
+            </L>
+          </U>
+          <U>
+            <V n="item" t="balloon_category">
+              <T n="balloon_category">222094<!--BalloonCategory: balloonCategory_Spellcasters_Spells_Untamed_thought--></T>
+            </V>
+            <L n="tests">
+              <L>
+                <V t="trait">
+                  <U n="trait">
+                    <L n="blacklist_traits">
+                      <T>212850<!--Trait: trait_MagicSage_Practical--></T>
+                      <T>212849<!--Trait: trait_MagicSage_Mischief--></T>
+                    </L>
+                    <T n="num_whitelist_required">0</T>
+                  </U>
+                </V>
+              </L>
+            </L>
+          </U>
+        </L>
+        <T n="balloon_delay">0</T>
+        <T n="balloon_delay_random_offset">5</T>
+        <L n="balloon_target">
+          <E>Actor</E>
+        </L>
+      </U>
+    </V>
+    <V t="buff_fire_and_forget">
+      <U n="buff_fire_and_forget">
+        <U n="buff">
+          <T n="buff_type">222436<!--Buff: buff_MagicHQ_BrowseBooks_Cooldown--></T>
+        </U>
+        <V t="at_end" n="timing">
+          <U n="at_end">
+            <E n="criticality">OnCancelOrException</E>
+          </U>
+        </V>
+      </U>
+    </V>
+  </L>
+  <V t="disabled" n="content_score" />
+  <T n="display_name">0x155EC192<!--String: "Examinar libros"--></T>
+  <U n="display_name_text_tokens">
+    <L n="tokens">
+      <V t="participant_type">
+        <U n="participant_type">
+          <V t="from_participant" n="objects">
+            <U n="from_participant">
+              <E n="participant">Actor</E>
+            </U>
+          </V>
+        </U>
+      </V>
+      <V t="participant_type">
+        <U n="participant_type">
+          <V t="from_participant" n="objects">
+            <U n="from_participant">
+              <E n="participant">Object</E>
+            </U>
+          </V>
+        </U>
+      </V>
+    </L>
+  </U>
+  <E n="duplicate_affordance_group">DuplicateAffordance_MagicHQ_BrowseBooks</E>
+  <L n="interaction_category_tags">
+    <E>Interaction_Super</E>
+    <E>Interaction_All</E>
+  </L>
+  <E n="scoring_priority">NORMAL</E>
+  <T n="subaction_selection_weight">1</T>
+  <E n="target_type">OBJECT</E>
+  <L n="test_globals">
+    <V t="sim_info">
+      <U n="sim_info">
+        <V t="specified" n="ages" />
+        <V t="specified" n="species">
+          <U n="specified">
+            <L n="species">
+              <E />
+            </L>
+          </U>
+        </V>
+        <E n="who">Actor</E>
+      </U>
+    </V>
+    <V t="buff">
+      <U n="buff">
+        <L n="blacklist">
+          <T>222436<!--Buff: buff_MagicHQ_BrowseBooks_Cooldown--></T>
+        </L>
+      </U>
+    </V>
+  </L>
+  <T n="time_overhead">30</T>
+</I>

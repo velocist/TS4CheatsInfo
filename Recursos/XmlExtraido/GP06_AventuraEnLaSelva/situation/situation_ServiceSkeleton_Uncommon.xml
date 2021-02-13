@@ -1,0 +1,186 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<I c="SkeletonNPCSituation" i="situation" m="situations.complex.skeleton_npc_situation" n="situation_ServiceSkeleton_Uncommon" s="177858">
+  <T n="_implies_greeted_status">True</T>
+  <U n="be_skeleton_state">
+    <L n="job_and_role_changes">
+      <U>
+        <T n="Situation Job">177648<!--SituationJob: situationJob_ServiceSkeleton--></T>
+        <T n="Role State">177860<!--RoleState: role_ServiceSkeleton_Uncommon--></T>
+      </U>
+    </L>
+    <V n="time_out" t="enabled">
+      <T n="enabled">720</T>
+    </V>
+  </U>
+  <E n="creation_ui_option">NOT_AVAILABLE</E>
+  <T n="duration">0</T>
+  <U n="end_skeleton_state">
+    <U n="interaction_of_interest">
+      <L n="affordances">
+        <T>180338<!--NPCLeaveLotInteraction: solo_Skeleton_ServiceSkeleton_Collapse--></T>
+      </L>
+    </U>
+    <L n="job_and_role_changes">
+      <U>
+        <T n="Situation Job">177648<!--SituationJob: situationJob_ServiceSkeleton--></T>
+        <T n="Role State">178959<!--RoleState: role_ServiceSkeleton_Leave--></T>
+      </U>
+    </L>
+    <V n="leaving_notification" t="literal">
+      <U n="literal">
+        <V n="text" t="single">
+          <T n="single">0xE066BFB1<!--String: "{0.SimFirstName} ha terminado su período como {M0.sirviente místico no muerto}{F0.sirvienta mística no muerta} y ahora volverá a descansar en paz."--></T>
+        </V>
+      </U>
+    </V>
+  </U>
+  <U n="fake_perform_job">
+    <L n="modifications">
+      <U>
+        <V n="action" t="set_state">
+          <U n="set_state">
+            <T n="action_value">15132<!--CommodityBasedObjectStateValue: Dirty_Clean--></T>
+          </U>
+        </V>
+        <L n="tests">
+          <L>
+            <V t="state">
+              <U n="state">
+                <E n="operator">LESS_OR_EQUAL</E>
+                <T n="value">15133<!--CommodityBasedObjectStateValue: Dirty_Dirty--></T>
+              </U>
+            </V>
+          </L>
+        </L>
+      </U>
+      <U>
+        <V n="action" t="set_state">
+          <U n="set_state">
+            <T n="action_value">15320<!--CommodityBasedObjectStateValue: Servings_Empty--></T>
+          </U>
+        </V>
+        <L n="tests">
+          <L>
+            <V t="object_definition">
+              <U n="object_definition">
+                <V n="item" t="tagged_item">
+                  <U n="tagged_item">
+                    <L n="tag_set">
+                      <E>Func_PopcornPopper</E>
+                      <E>Func_CoffeeMaker</E>
+                      <E>Func_Tea</E>
+                    </L>
+                  </U>
+                </V>
+              </U>
+            </V>
+            <V t="state">
+              <U n="state">
+                <T n="value">15190<!--CommodityBasedObjectStateValue: Freshness_Spoiled--></T>
+              </U>
+            </V>
+          </L>
+        </L>
+      </U>
+      <U>
+        <V n="action" t="set_state">
+          <U n="set_state">
+            <T n="action_value">15191<!--CommodityBasedObjectStateValue: Freshness_Untouched--></T>
+          </U>
+        </V>
+        <L n="tests">
+          <L>
+            <V t="object_definition">
+              <U n="object_definition">
+                <V n="item" t="tagged_item">
+                  <U n="tagged_item">
+                    <L n="tag_set">
+                      <E>Func_PopcornPopper</E>
+                      <E>Func_CoffeeMaker</E>
+                      <E>Func_Tea</E>
+                    </L>
+                  </U>
+                </V>
+              </U>
+            </V>
+            <V t="state">
+              <U n="state">
+                <T n="value">15190<!--CommodityBasedObjectStateValue: Freshness_Spoiled--></T>
+              </U>
+            </V>
+          </L>
+        </L>
+      </U>
+      <U>
+        <V t="destroy_object" n="action" />
+        <L n="tests">
+          <L>
+            <V t="state">
+              <U n="state">
+                <T n="value">15108<!--CommodityBasedObjectStateValue: Consumable_Empty--></T>
+              </U>
+            </V>
+            <V t="consumable_test">
+              <U n="consumable_test">
+                <U n="bites_left">
+                  <E n="operator">LESS_OR_EQUAL</E>
+                </U>
+              </U>
+            </V>
+          </L>
+          <L>
+            <V t="state">
+              <U n="state">
+                <T n="value">15190<!--CommodityBasedObjectStateValue: Freshness_Spoiled--></T>
+              </U>
+            </V>
+          </L>
+          <L>
+            <V t="object_definition">
+              <U n="object_definition">
+                <V n="item" t="tagged_item">
+                  <U n="tagged_item">
+                    <L n="tag_set">
+                      <E>Func_TrashPile</E>
+                      <E>Func_Puddle</E>
+                      <E>Func_Laundry_Pile</E>
+                    </L>
+                  </U>
+                </V>
+              </U>
+            </V>
+          </L>
+        </L>
+      </U>
+      <U>
+        <V n="action" t="set_state">
+          <U n="set_state">
+            <T n="action_value">175576<!--CommodityBasedObjectStateValue: laundry_Hamper_Capacity_Values_Empty--></T>
+          </U>
+        </V>
+        <L n="tests">
+          <L>
+            <V t="state">
+              <U n="state">
+                <E n="operator">NOTEQUAL</E>
+                <T n="value">175576<!--CommodityBasedObjectStateValue: laundry_Hamper_Capacity_Values_Empty--></T>
+              </U>
+            </V>
+          </L>
+        </L>
+      </U>
+    </L>
+  </U>
+  <U n="skeleton_job_and_role_state">
+    <T n="role_state">177860<!--RoleState: role_ServiceSkeleton_Uncommon--></T>
+    <T n="situation_job">177648<!--SituationJob: situationJob_ServiceSkeleton--></T>
+  </U>
+  <U n="skeleton_spawn_point">
+    <T n="distance_to_participant">2</T>
+    <E n="participant">Actor</E>
+    <L n="tags">
+      <E>Spawn_SkeletonArrival</E>
+    </L>
+  </U>
+  <V t="simulate" n="time_jump" />
+</I>

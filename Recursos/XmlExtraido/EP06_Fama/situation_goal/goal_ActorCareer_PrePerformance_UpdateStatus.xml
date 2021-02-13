@@ -1,0 +1,58 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<I c="SituationGoalEventRanSuccessfullyTargetedSim" i="situation_goal" m="situations.situation_goal_targeted_sim" n="goal_ActorCareer_PrePerformance_UpdateStatus" s="199833">
+  <V n="_display_data" t="enabled">
+    <U n="enabled">
+      <V t="enabled" n="instance_display_icon">
+        <T n="enabled" p="InGame\UI\Icons\Events\EventGoal_cellphone.png">2f7d0004:00000000:730921a6799dc36f</T>
+      </V>
+      <V n="instance_display_name" t="enabled">
+        <T n="enabled">0x3B5DBF2C<!--String: "Actualizar el estado en redes sociales"--></T>
+      </V>
+      <V n="instance_display_tooltip" t="enabled">
+        <T n="enabled">0x90E7F64C<!--String: "Haz clic en tu teléfono, luego en la pestaña Interacción social y después en Actualizar estado en redes sociales."--></T>
+      </V>
+    </U>
+  </V>
+  <L n="_pre_tests">
+    <V t="buff">
+      <U n="buff">
+        <L n="blacklist">
+          <T>191351<!--Buff: buff_ActorCareer_ReadyToPerform--></T>
+        </L>
+      </U>
+    </V>
+    <V t="statistic">
+      <U n="statistic">
+        <T n="stat">31166<!--Statistic: statistic_Object_Computer_SocialNetwork_On--></T>
+        <V t="value_threshold" n="threshold">
+          <U n="value_threshold">
+            <E n="comparison">EQUAL</E>
+            <T n="value">1</T>
+          </U>
+        </V>
+      </U>
+    </V>
+  </L>
+  <T n="_select_sims_outside_of_situation">True</T>
+  <L n="test_events_to_score">
+    <U>
+      <E n="key">actorCareer_PrePerformance</E>
+      <U n="value">
+        <V n="interaction" t="enabled">
+          <T n="enabled">200200<!--SuperInteraction: phone_SocialNetwork_Update--></T>
+        </V>
+        <T n="score">5</T>
+      </U>
+    </U>
+    <U>
+      <E n="key">actorCareer_ReadyToPerform</E>
+      <U n="value">
+        <V n="interaction" t="enabled">
+          <T n="enabled">216553<!--ImmediateSuperInteraction: immediate_ActorCareer_ReadyToPerform--></T>
+        </V>
+        <T n="score">0</T>
+        <E n="status">CANCELED</E>
+      </U>
+    </U>
+  </L>
+</I>

@@ -1,0 +1,415 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<I c="SuperInteraction" i="interaction" m="interactions.base.super_interaction" n="xrayMachine_Calibrate" s="105841">
+  <V t="participant" n="_icon">
+    <U n="participant">
+      <L n="participant_type">
+        <E>Object</E>
+      </L>
+    </U>
+  </V>
+  <V t="enabled" n="_saveable" />
+  <T n="allow_autonomous">False</T>
+  <T n="attention_cost">0.5</T>
+  <V n="basic_content" t="flexible_length">
+    <U n="flexible_length">
+      <L n="conditional_actions">
+        <V t="literal">
+          <U n="literal">
+            <L n="conditions">
+              <V t="time_based">
+                <U n="time_based">
+                  <T n="max_time">25</T>
+                  <T n="min_time">20</T>
+                </U>
+              </V>
+            </L>
+            <E n="interaction_action">EXIT_NATURALLY</E>
+          </U>
+        </V>
+      </L>
+      <V n="content" t="looping_content">
+        <U n="looping_content">
+          <U n="animation_ref">
+            <T n="factory">105788<!--AnimationElement: object_XrayMachine_Calibrate--></T>
+            <U n="overrides">
+              <V n="balloons" t="enabled">
+                <L n="enabled">
+                  <U>
+                    <L n="balloon_choices">
+                      <U>
+                        <V n="item" t="balloon_category">
+                          <T n="balloon_category">114276<!--BalloonCategory: balloonCategory_CareerDoctor_Xray_Modify--></T>
+                        </V>
+                      </U>
+                    </L>
+                    <T n="balloon_delay">2</T>
+                    <T n="balloon_delay_random_offset">1</T>
+                    <L n="balloon_target">
+                      <E>Actor</E>
+                    </L>
+                  </U>
+                </L>
+              </V>
+            </U>
+          </U>
+        </U>
+      </V>
+    </U>
+  </V>
+  <L n="basic_extras">
+    <V t="state_change">
+      <U n="state_change">
+        <V t="single_value" n="new_value">
+          <U n="single_value">
+            <T n="new_value">106059<!--ObjectStateValue: xrayMachine_Scan_Doctor_inprogress--></T>
+          </U>
+        </V>
+        <V t="immediately" n="timing" />
+      </U>
+    </V>
+    <V t="state_change">
+      <U n="state_change">
+        <V n="new_value" t="single_value">
+          <U n="single_value">
+            <T n="new_value">112139<!--VideoChannel: XrayMachine_Calibrate--></T>
+          </U>
+        </V>
+        <V t="immediately" n="timing" />
+      </U>
+    </V>
+    <V t="state_change">
+      <U n="state_change">
+        <V t="single_value" n="new_value">
+          <U n="single_value">
+            <T n="new_value">106060<!--ObjectStateValue: xrayMachine_Scan_Doctor_untended--></T>
+          </U>
+        </V>
+      </U>
+    </V>
+    <V t="state_change">
+      <U n="state_change">
+        <V t="single_value" n="new_value">
+          <U n="single_value">
+            <T n="new_value">112141<!--VideoChannel: XrayMachine_Off--></T>
+          </U>
+        </V>
+      </U>
+    </V>
+  </L>
+  <V t="disabled" n="content_score" />
+  <T n="display_name">0xCDF13398<!--String: "Calibrar"--></T>
+  <U n="display_name_text_tokens">
+    <L n="tokens">
+      <V t="participant_type">
+        <U n="participant_type">
+          <V t="from_participant" n="objects">
+            <U n="from_participant">
+              <E n="participant">Actor</E>
+            </U>
+          </V>
+        </U>
+      </V>
+      <V t="participant_type">
+        <U n="participant_type">
+          <V t="from_participant" n="objects">
+            <U n="from_participant">
+              <E n="participant">Object</E>
+            </U>
+          </V>
+        </U>
+      </V>
+    </L>
+  </U>
+  <L n="interaction_category_tags">
+    <E>Interaction_Super</E>
+    <E>Interaction_All</E>
+  </L>
+  <V n="outcome" t="test_based">
+    <U n="test_based">
+      <L n="fallback_outcomes">
+        <U>
+          <U n="outcome">
+            <V t="enabled" n="animation_ref">
+              <U n="enabled">
+                <T n="factory">108740<!--AnimationElement: object_XrayMachine_Calibrate_success--></T>
+              </U>
+            </V>
+            <T n="force_outcome_on_exit">True</T>
+            <E n="outcome_result">NONE</E>
+          </U>
+        </U>
+      </L>
+      <L n="tested_outcomes">
+        <U>
+          <L n="potential_outcomes">
+            <U>
+              <U n="outcome">
+                <V t="enabled" n="animation_ref">
+                  <U n="enabled">
+                    <T n="factory">108740<!--AnimationElement: object_XrayMachine_Calibrate_success--></T>
+                  </U>
+                </V>
+                <L n="basic_extras">
+                  <V t="state_change">
+                    <U n="state_change">
+                      <V n="new_value" t="single_value">
+                        <U n="single_value">
+                          <T n="new_value">115397<!--VideoChannel: xrayMachine_CalibrateSuccess--></T>
+                        </U>
+                      </V>
+                      <V t="immediately" n="timing" />
+                    </U>
+                  </V>
+                  <V t="notification">
+                    <U n="notification">
+                      <V n="dialog" t="single">
+                        <V n="single" t="literal">
+                          <U n="literal">
+                            <V t="enabled" n="icon">
+                              <V t="participant" n="enabled">
+                                <U n="participant">
+                                  <L n="participant_type">
+                                    <E>Object</E>
+                                  </L>
+                                </U>
+                              </V>
+                            </V>
+                            <V t="enabled" n="secondary_icon">
+                              <V t="participant" n="enabled">
+                                <U n="participant">
+                                  <L n="participant_type">
+                                    <E>Actor</E>
+                                  </L>
+                                </U>
+                              </V>
+                            </V>
+                            <V n="text" t="single">
+                              <T n="single">0xED1E00C<!--String: "{0.SimFirstName} ya ha calibrado debidamente el escáner de rayos X para que realice escaneos más eficientes."--></T>
+                            </V>
+                            <V t="enabled" n="text_tokens">
+                              <U n="enabled">
+                                <L n="tokens">
+                                  <V t="participant_type" />
+                                </L>
+                              </U>
+                            </V>
+                          </U>
+                        </V>
+                      </V>
+                    </U>
+                  </V>
+                </L>
+                <L n="loot_list">
+                  <T>115549<!--LootActions: loot_Statistic_XrayMachine_Calibrate_set--></T>
+                  <T>105941<!--LootActions: loot_Buff_Add_XrayMachine_LaserPrecision--></T>
+                  <T>109497<!--LootActions: loot_JobPerformance_Gain_Small_Doctor--></T>
+                </L>
+              </U>
+              <U n="weight">
+                <T n="base_value">85</T>
+                <L n="multipliers">
+                  <U>
+                    <T n="multiplier">2</T>
+                    <L n="tests">
+                      <L>
+                        <V t="skill_test">
+                          <U n="skill_test">
+                            <T n="skill">16704<!--Skill: statistic_Skill_AdultMajor_Handiness--></T>
+                            <V n="skill_range" t="interval">
+                              <U n="interval">
+                                <U n="skill_interval">
+                                  <T n="lower_bound">5</T>
+                                  <T n="upper_bound">11</T>
+                                </U>
+                              </U>
+                            </V>
+                            <T n="use_effective_skill_level">True</T>
+                          </U>
+                        </V>
+                      </L>
+                    </L>
+                  </U>
+                  <U>
+                    <T n="multiplier">0.25</T>
+                    <L n="tests">
+                      <L>
+                        <V t="mood">
+                          <U n="mood">
+                            <T n="mood">14645<!--Mood: Mood_Stressed--></T>
+                          </U>
+                        </V>
+                      </L>
+                      <L>
+                        <V t="mood">
+                          <U n="mood">
+                            <T n="mood">14646<!--Mood: Mood_Uncomfortable--></T>
+                          </U>
+                        </V>
+                      </L>
+                      <L>
+                        <V t="mood">
+                          <U n="mood">
+                            <T n="mood">14644<!--Mood: Mood_Dazed--></T>
+                          </U>
+                        </V>
+                      </L>
+                    </L>
+                  </U>
+                </L>
+              </U>
+            </U>
+            <U>
+              <U n="outcome">
+                <V n="animation_ref" t="enabled">
+                  <U n="enabled">
+                    <T n="factory">108741<!--AnimationElement: object_XrayMachine_Calibrate_failure--></T>
+                  </U>
+                </V>
+                <L n="basic_extras">
+                  <V t="notification">
+                    <U n="notification">
+                      <T n="allow_autonomous">False</T>
+                      <V n="dialog" t="single">
+                        <V n="single" t="literal">
+                          <U n="literal">
+                            <V t="enabled" n="icon">
+                              <V t="participant" n="enabled">
+                                <U n="participant">
+                                  <L n="participant_type">
+                                    <E>Object</E>
+                                  </L>
+                                </U>
+                              </V>
+                            </V>
+                            <V t="enabled" n="secondary_icon">
+                              <V t="participant" n="enabled">
+                                <U n="participant">
+                                  <L n="participant_type">
+                                    <E>Actor</E>
+                                  </L>
+                                </U>
+                              </V>
+                            </V>
+                            <V n="text" t="single">
+                              <T n="single">0x1BB92BDB<!--String: "{0.SimFirstName} no ha podido calibrar el escáner de rayos X."--></T>
+                            </V>
+                            <V t="enabled" n="text_tokens">
+                              <U n="enabled">
+                                <L n="tokens">
+                                  <V t="participant_type">
+                                    <U n="participant_type">
+                                      <V t="from_participant" n="objects">
+                                        <U n="from_participant">
+                                          <E n="participant">Actor</E>
+                                        </U>
+                                      </V>
+                                    </U>
+                                  </V>
+                                </L>
+                              </U>
+                            </V>
+                          </U>
+                        </V>
+                      </V>
+                      <V t="at_end" n="timing">
+                        <U n="at_end">
+                          <E n="criticality">NotCritical</E>
+                        </U>
+                      </V>
+                    </U>
+                  </V>
+                  <V t="state_change">
+                    <U n="state_change">
+                      <V n="new_value" t="single_value">
+                        <U n="single_value">
+                          <T n="new_value">115398<!--VideoChannel: xrayMachine_CalibrateFail--></T>
+                        </U>
+                      </V>
+                      <V t="immediately" n="timing" />
+                    </U>
+                  </V>
+                </L>
+                <L n="loot_list">
+                  <T>105940<!--LootActions: loot_Statistic_Breakage_XrayMachine_Calibrate_failure--></T>
+                </L>
+                <E n="outcome_result">FAILURE</E>
+              </U>
+              <U n="weight">
+                <T n="base_value">15</T>
+              </U>
+            </U>
+          </L>
+          <L n="tests">
+            <L>
+              <V t="state">
+                <U n="state">
+                  <V t="always_pass" n="fallback_behavior" />
+                  <E n="operator">NOTEQUAL</E>
+                  <T n="value">15080<!--ObjectStateValue: BrokenState_Broken--></T>
+                </U>
+              </V>
+            </L>
+          </L>
+        </U>
+      </L>
+    </U>
+  </V>
+  <E n="scoring_priority">NORMAL</E>
+  <T n="subaction_selection_weight">1</T>
+  <E n="target_type">OBJECT</E>
+  <L n="test_globals">
+    <V t="sim_info">
+      <U n="sim_info">
+        <V t="specified" n="ages" />
+        <V t="specified" n="species">
+          <U n="specified">
+            <L n="species">
+              <E />
+            </L>
+          </U>
+        </V>
+        <E n="who">Actor</E>
+      </U>
+    </V>
+    <V t="test_set_reference">
+      <T n="test_set_reference">77630<!--TestSetInstance: testSet_StateNotBroken--></T>
+    </V>
+    <V t="career_test">
+      <U n="career_test">
+        <V t="career_reference" n="test_type">
+          <U n="career_reference">
+            <V t="specific_career" n="career">
+              <T n="specific_career">107230<!--Career: career_Adult_Active_Doctor--></T>
+            </V>
+            <V t="enabled" n="user_level">
+              <U n="enabled">
+                <T n="lower_bound">3</T>
+              </U>
+            </V>
+          </U>
+        </V>
+        <V n="tooltip" t="enabled">
+          <T n="enabled">0x74CB89D7<!--String: "Se requiere un nivel mayor en la profesión médica para realizar esta interacción."--></T>
+        </V>
+      </U>
+    </V>
+    <V t="state">
+      <U n="state">
+        <E n="operator">NOTEQUAL</E>
+        <V n="tooltip" t="enabled">
+          <T n="enabled">0x99DB8187<!--String: "Este escáner de rayos X ahora cuenta con la mejora de autocalibrado."--></T>
+        </V>
+        <T n="value">109295<!--CommodityBasedObjectStateValue: upgrade_XrayMachine_AutoCalibrate_Completed--></T>
+      </U>
+    </V>
+    <V t="state">
+      <U n="state">
+        <V n="tooltip" t="enabled">
+          <T n="enabled">0xD15DBD30<!--String: "Este objeto se ha calibrado recientemente."--></T>
+        </V>
+        <T n="value">105758<!--CommodityBasedObjectStateValue: xrayMachine_Calibrate_Uncalibrated--></T>
+      </U>
+    </V>
+  </L>
+  <T n="time_overhead">25</T>
+</I>

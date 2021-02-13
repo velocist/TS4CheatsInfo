@@ -1,0 +1,131 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<I c="RunAffordanceDramaNode" i="drama_node" m="drama_scheduler.interaction_drama_node" n="runAffordanceDramaNode_Phone_FeudBringer_DiscussFeud" s="193812">
+  <T n="affordance">193954<!--SuperInteraction: phone_NPC_Call_PC_DiscussFeud--></T>
+  <V n="cooldown_data" t="node_cooldown">
+    <U n="node_cooldown">
+      <V n="duration" t="duration">
+        <T n="duration">18</T>
+      </V>
+    </U>
+  </V>
+  <U n="dialog">
+    <V t="enabled" n="icon">
+      <V t="participant" n="enabled" />
+    </V>
+    <E n="phone_ring_type">RING</E>
+    <V n="text" t="single">
+      <T n="single">0x69D4B772<!--String: "{0.SimFirstName}, soy {2.SimName} y llamo de parte de Paparazzi Press por si quieres hacer algún comentario sobre tu pique con {1.SimName}. ¿Te gustaría hacer alguna declaración oficial?"--></T>
+    </V>
+    <T n="text_cancel">0x779A516E<!--String: "Colgarle a {2.SimFirstName}"--></T>
+    <T n="text_ok">0x82954746<!--String: "Poner por los suelos a {1.SimFirstName}"--></T>
+    <V n="text_tokens" t="enabled">
+      <U n="enabled">
+        <L n="tokens">
+          <V t="participant_type">
+            <U n="participant_type">
+              <V t="from_participant" n="objects">
+                <U n="from_participant">
+                  <E n="participant">Actor</E>
+                </U>
+              </V>
+            </U>
+          </V>
+          <V t="participant_type">
+            <U n="participant_type">
+              <V n="objects" t="from_participant">
+                <U n="from_participant">
+                  <E n="participant">ActorFeudTarget</E>
+                </U>
+              </V>
+            </U>
+          </V>
+          <V t="participant_type">
+            <U n="participant_type">
+              <V t="from_participant" n="objects">
+                <U n="from_participant">
+                  <E n="participant">TargetSim</E>
+                </U>
+              </V>
+            </U>
+          </V>
+        </L>
+      </U>
+    </V>
+    <V t="enabled" n="title">
+      <T n="enabled">0x36795024<!--String: "Llamada entrante"--></T>
+    </V>
+  </U>
+  <U n="min_and_max_times">
+    <T n="lower_bound">0</T>
+    <T n="upper_bound">24</T>
+  </U>
+  <V n="picked_sim_info" t="participant_type">
+    <U n="participant_type">
+      <E n="participant_type">ActorFeudTarget</E>
+    </U>
+  </V>
+  <L n="pretests">
+    <L>
+      <V t="relationship">
+        <U n="relationship">
+          <U n="required_relationship_bits">
+            <L n="match_any">
+              <T>193944<!--RelationshipBit: relationshipBit_Feud_Target--></T>
+            </L>
+          </U>
+          <L n="target_sim">
+            <E>ActorFeudTarget</E>
+          </L>
+        </U>
+      </V>
+    </L>
+  </L>
+  <L n="receiver_sim_pretests">
+    <L>
+      <V t="sim_info">
+        <U n="sim_info">
+          <V t="specified" n="ages" />
+          <V t="specified" n="species">
+            <U n="specified">
+              <L n="species">
+                <E />
+              </L>
+            </U>
+          </V>
+        </U>
+      </V>
+    </L>
+  </L>
+  <V n="scoring" t="enabled">
+    <U n="enabled">
+      <T n="base_score">25</T>
+      <E n="bucket">DEFAULT</E>
+    </U>
+  </V>
+  <V n="sender_sim_info" t="sim_filter">
+    <U n="sim_filter">
+      <T n="sim_filter">199058<!--TunableSimFilter: filter_Feud_Reporter--></T>
+    </U>
+  </V>
+  <V n="time_option" t="schedule">
+    <U n="schedule">
+      <L n="valid_times">
+        <U>
+          <U n="days_available">
+            <T n="0 SUNDAY">True</T>
+            <T n="1 MONDAY">True</T>
+            <T n="2 TUESDAY">True</T>
+            <T n="3 WEDNESDAY">True</T>
+            <T n="4 THURSDAY">True</T>
+            <T n="5 FRIDAY">True</T>
+            <T n="6 SATURDAY">True</T>
+          </U>
+          <T n="duration">10</T>
+          <U n="start_time">
+            <T n="hour">10</T>
+          </U>
+        </U>
+      </L>
+    </U>
+  </V>
+</I>

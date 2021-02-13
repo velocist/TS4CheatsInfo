@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+
+<TuningRoot>
+    <Instance instance_type="situation" class="NeighborResponseSituation" module="apartments.situations.neighbor_complaint_response" muid="2F9B1D283AB35F4" description="A Situation for the loud neighbor to spawn behind their apartment door and&#xA;respond to the player's complaint." instance_subclasses_only="False" parents="SituationComplexCommon, SituationComplex, Situation" path="Situations\Descriptions" use_guid_for_reference="True">
+        <Deleted name="_implies_greeted_status" muid="924BDCBD9D1CDB0E" />
+
+        <TunableTuple name="answer_door_state" class="Tunable_AnswerDoorState" display="01_answer_door_situation_state" muid="DFF83BDEC6480C63" description="The situation state for the loud neighbor to answer the door." Deprecated="False" filter="0" group="Situation State">
+            <Tunable type="bool" name="allow_join_situation" class="Tunable" default="True" display="Allow Join Situation" muid="FC5BAA8978E6A38D" description="Whether the situation is allowed to join at this state." Deprecated="False" filter="0" group="General" />
+            <Tunable type="interaction" name="interaction_to_push" class="TunableReference" display="Interaction To Push" muid="3EAA800552875936" description="The interaction that will be pushed on all non-selectable sims&#xA;when this situation state begins if there is a front door." allow_none="False" Deprecated="False" filter="0" group="General" />
+            <TunableList name="job_and_role_changes" class="TunableMapping" display="Job And Role Changes" muid="95F45AE8CE473325" mapping_key="Situation Job" mapping_value="Role State" description="A mapping between situation jobs and role states that defines&#xA;what role states we want to switch to for sims on which jobs&#xA;when this situation state is entered." Deprecated="False" filter="0" group="General">
+                <TunableTuple class="TunableTuple" muid="F4160479D78C4F11" Deprecated="False" filter="0" group="General">
+                    <Tunable type="role_state" name="Role State" class="TunableReference" display="Role State" muid="C710B06C443901AE" description="The role state that we will switch sims of the linked job&#xA;into." allow_none="False" Deprecated="False" filter="0" group="General" />
+                    <Tunable type="situation_job" name="Situation Job" class="TunableReference" display="Situation Job" muid="377915C0FAF4E1F4" description="A reference to a SituationJob that we will use to change&#xA;sim's role state." allow_none="False" Deprecated="False" filter="0" group="General" />
+                </TunableTuple>
+            </TunableList>
+            <TunableVariant type="None" name="time_out" class="OptionalTunable" default="disabled" display="Time Out" muid="40BD90319DD87C9C" description="How long this state will last before time expired. Please talk to the GPE who implemented the specific&#xA;situation to see what the state will do on time expired." Deprecated="False" filter="0" group="General">
+                <Tunable name="disabled" class="TunableExistance" display="Disabled" muid="2D5A044AF2D6EF83" />
+                <Tunable type="float" name="enabled" class="TunableSimMinute" default="15" display="Enabled" muid="C2B931013AF5E324" min="1" max="None" tuning_state="NeedsTuning" Deprecated="False" filter="0" group="General" />
+            </TunableVariant>
+        </TunableTuple>
+
+        <Deleted name="exclusivity" muid="719045694D44C3B4" />
+
+        <TunableTuple name="loud_neighbor_job_and_role_state" class="TunableSituationJobAndRoleState" display="Loud Neighbor Job And Role State" muid="BAFEC3A3FDF33876" description="The job and role state of the loud neighbor." Deprecated="False" filter="0" group="General">
+            <Tunable type="role_state" name="role_state" class="TunableReference" display="Role State" muid="59D37CFE911C6D6C" description="A role state the sim assigned to the job will perform" allow_none="False" Deprecated="False" filter="0" group="General" />
+            <Tunable type="situation_job" name="situation_job" class="TunableReference" display="Situation Job" muid="9FAB0917F160A0CD" description="A reference to a SituationJob that can be performed at this Situation." allow_none="False" Deprecated="False" filter="0" group="General" />
+        </TunableTuple>
+    </Instance>
+</TuningRoot>

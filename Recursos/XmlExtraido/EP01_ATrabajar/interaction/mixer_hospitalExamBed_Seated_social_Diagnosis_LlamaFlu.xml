@@ -1,0 +1,553 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<I c="MixerInteraction" i="interaction" m="interactions.base.mixer_interaction" n="mixer_hospitalExamBed_Seated_social_Diagnosis_LlamaFlu" s="110984">
+  <V t="resource_key" n="_icon">
+    <U n="resource_key">
+      <T p="InEP01\UI\Icons\InteractionQueue\IconQueueDiagnosis.png" n="key">2f7d0004:00000000:dc589f862e84016e</T>
+    </U>
+  </V>
+  <T n="allow_autonomous">False</T>
+  <T n="allow_user_directed">True</T>
+  <V t="one_shot" n="basic_content" />
+  <V t="disable_focus" n="basic_focus" />
+  <T n="category">109509<!--PieMenuCategory: pieMenuCategories_SicknessSystem_DiagnosePatient--></T>
+  <T n="display_name">0xD9EA6175<!--String: "Gripe de la llama"--></T>
+  <V n="display_name_overrides" t="testable">
+    <U n="testable">
+      <L n="overrides">
+        <U>
+          <V t="enabled" n="new_display_name">
+            <T n="enabled">0xD9EA6175<!--String: "Gripe de la llama"--></T>
+          </V>
+          <V t="enabled" n="new_display_tooltip">
+            <T n="enabled">0x9D32934D<!--String: "Tras examinar a {1.SimName}, ya hay un mínimo de datos sobre {M1.él}{F1.ella}. {0.SimName} puede intentar diagnosticar lo que le ocurre en una camilla o realizar más pruebas para alcanzar un diagnóstico mejor."--></T>
+          </V>
+          <T n="new_pie_menu_category">115393<!--PieMenuCategory: pieMenuCategories_DoctorCareer_DiagnosePatient_weak--></T>
+          <L n="test">
+            <L>
+              <V t="buff">
+                <U n="buff">
+                  <E n="subject">TargetSim</E>
+                  <V t="enabled" n="whitelist">
+                    <L n="enabled">
+                      <T>109564<!--Buff: buff_SicknessSystem_PatientDiagnosis_Commodity_State_Stage1--></T>
+                    </L>
+                  </V>
+                </U>
+              </V>
+            </L>
+          </L>
+        </U>
+        <U>
+          <V t="enabled" n="new_display_name">
+            <T n="enabled">0xD9EA6175<!--String: "Gripe de la llama"--></T>
+          </V>
+          <T n="new_pie_menu_category">115392<!--PieMenuCategory: pieMenuCategories_DoctorCareer_DiagnosePatient_strong--></T>
+          <L n="test">
+            <L>
+              <V t="buff">
+                <U n="buff">
+                  <E n="subject">TargetSim</E>
+                  <V n="whitelist" t="enabled">
+                    <L n="enabled">
+                      <T>109565<!--Buff: buff_SicknessSystem_PatientDiagnosis_Commodity_State_Stage2--></T>
+                      <T>109566<!--Buff: buff_SicknessSystem_PatientDiagnosis_Commodity_State_Stage3--></T>
+                    </L>
+                  </V>
+                </U>
+              </V>
+            </L>
+          </L>
+        </U>
+        <U>
+          <V t="enabled" n="new_display_name">
+            <T n="enabled">0xD9EA6175<!--String: "Gripe de la llama"--></T>
+          </V>
+          <V t="enabled" n="new_display_tooltip">
+            <T n="enabled">0x77231CF<!--String: "¡Todos los resultados obtenidos tras examinar a {1.SimName} son concluyentes! {0.SimName} puede ahora {M1.diagnosticarlo}{F1.diagnosticarla} en la camilla."--></T>
+          </V>
+          <T n="new_pie_menu_category">115394<!--PieMenuCategory: pieMenuCategories_DoctorCareer_DiagnosePatient_certain--></T>
+          <L n="test">
+            <L>
+              <V t="buff">
+                <U n="buff">
+                  <E n="subject">TargetSim</E>
+                  <V t="enabled" n="whitelist">
+                    <L n="enabled">
+                      <T>109567<!--Buff: buff_SicknessSystem_PatientDiagnosis_Commodity_State_Stage4--></T>
+                    </L>
+                  </V>
+                </U>
+              </V>
+            </L>
+          </L>
+        </U>
+      </L>
+    </U>
+  </V>
+  <U n="display_name_text_tokens">
+    <L n="tokens">
+      <V t="participant_type">
+        <U n="participant_type">
+          <V t="from_participant" n="objects">
+            <U n="from_participant">
+              <E n="participant">Actor</E>
+            </U>
+          </V>
+        </U>
+      </V>
+      <V t="participant_type">
+        <U n="participant_type">
+          <V t="from_participant" n="objects">
+            <U n="from_participant">
+              <E n="participant">TargetSim</E>
+            </U>
+          </V>
+        </U>
+      </V>
+    </L>
+  </U>
+  <L n="interaction_category_tags">
+    <E>Interaction_Mixer</E>
+    <E>Interaction_All</E>
+  </L>
+  <V n="outcome" t="test_based">
+    <U n="test_based">
+      <L n="fallback_outcomes">
+        <U>
+          <U n="outcome">
+            <L n="basic_extras">
+              <V t="notification">
+                <U n="notification">
+                  <T n="allow_autonomous">False</T>
+                  <V n="dialog" t="single">
+                    <V n="single" t="literal">
+                      <U n="literal">
+                        <V n="icon" t="enabled">
+                          <V t="resource_key" n="enabled">
+                            <U n="resource_key">
+                              <T n="key" p="InGame\UI\Icons\Headlines\Final\headline_Curious.png">2f7d0004:00000000:74883bd1045f7136</T>
+                            </U>
+                          </V>
+                        </V>
+                        <V t="enabled" n="secondary_icon">
+                          <V t="participant" n="enabled" />
+                        </V>
+                        <V n="text" t="single">
+                          <T n="single">0xFC31206C<!--String: "Aun con los resultados de las pruebas de {1.SimName}, {0.SimFirstName} no estaba {M0.preparado}{F0.preparada} para emitir un diagnóstico definitivo."--></T>
+                        </V>
+                        <V t="enabled" n="text_tokens">
+                          <U n="enabled">
+                            <L n="tokens">
+                              <V t="participant_type" />
+                              <V t="participant_type">
+                                <U n="participant_type">
+                                  <V t="from_participant" n="objects">
+                                    <U n="from_participant">
+                                      <E n="participant">TargetSim</E>
+                                    </U>
+                                  </V>
+                                </U>
+                              </V>
+                            </L>
+                          </U>
+                        </V>
+                      </U>
+                    </V>
+                  </V>
+                </U>
+              </V>
+            </L>
+            <T n="force_outcome_on_exit">True</T>
+            <E n="outcome_result">NONE</E>
+          </U>
+        </U>
+      </L>
+      <L n="tested_outcomes">
+        <U>
+          <L n="potential_outcomes">
+            <U>
+              <U n="outcome">
+                <V t="enabled" n="animation_ref">
+                  <U n="enabled">
+                    <T n="factory">107432<!--AnimationElement: object_HospitalExamBed_Patient_Soc_SitActions_GiveResults_Success--></T>
+                  </U>
+                </V>
+                <L n="basic_extras">
+                  <V t="notification">
+                    <U n="notification">
+                      <V n="dialog" t="tested">
+                        <U n="tested">
+                          <L n="records">
+                            <U>
+                              <V n="item" t="literal">
+                                <U n="literal">
+                                  <V t="enabled" n="icon">
+                                    <V t="resource_key" n="enabled">
+                                      <U n="resource_key">
+                                        <T p="InGame\UI\Icons\Headlines\Final\headline_caduceus.png" n="key">2f7d0004:00000000:35dbb687e5900e65</T>
+                                      </U>
+                                    </V>
+                                  </V>
+                                  <V t="enabled" n="secondary_icon">
+                                    <V t="participant" n="enabled" />
+                                  </V>
+                                  <V n="text" t="single">
+                                    <T n="single">0x8F2D0410<!--String: "Ahora que {0.SimFirstName} ha diagnosticado la enfermedad de {1.SimName}, puede proceder a ponerle una inyección en la camilla."--></T>
+                                  </V>
+                                  <V t="enabled" n="text_tokens">
+                                    <U n="enabled">
+                                      <L n="tokens">
+                                        <V t="participant_type" />
+                                        <V t="participant_type">
+                                          <U n="participant_type">
+                                            <V t="from_participant" n="objects">
+                                              <U n="from_participant">
+                                                <E n="participant">TargetSim</E>
+                                              </U>
+                                            </V>
+                                          </U>
+                                        </V>
+                                      </L>
+                                    </U>
+                                  </V>
+                                  <V t="enabled" n="title">
+                                    <T n="enabled">0x7C30917B<!--String: "Diagnóstico alcanzado"--></T>
+                                  </V>
+                                </U>
+                              </V>
+                            </U>
+                          </L>
+                        </U>
+                      </V>
+                      <V t="at_end" n="timing">
+                        <U n="at_end">
+                          <E n="criticality">NotCritical</E>
+                        </U>
+                      </V>
+                    </U>
+                  </V>
+                </L>
+                <L n="loot_list">
+                  <T>115796<!--LootActions: loot_Career_Doctor_RoleState_Patient_needsTreatment--></T>
+                  <T>109531<!--LootActions: loot_Buff_SicknessSystem_IllnessDiagnosis_LlamaFlu--></T>
+                  <T>109836<!--LootActions: loot_Buff_SicknessSystem_Doctor_BedsideManner_Good--></T>
+                </L>
+              </U>
+              <U n="weight">
+                <L n="multipliers">
+                  <U>
+                    <T n="multiplier">2</T>
+                    <L n="tests">
+                      <L>
+                        <V t="buff">
+                          <U n="buff">
+                            <V n="whitelist" t="enabled">
+                              <L n="enabled">
+                                <T>12830<!--Buff: MoodBuff_Hidden_Confident--></T>
+                                <T>12814<!--Buff: MoodBuff_Hidden_Fearless--></T>
+                                <T>12834<!--Buff: MoodBuff_Hidden_Elated--></T>
+                                <T>12841<!--Buff: MoodBuff_Hidden_Happy--></T>
+                                <T>12843<!--Buff: MoodBuff_Hidden_Hysterical--></T>
+                                <T>12851<!--Buff: MoodBuff_Hidden_Playful--></T>
+                                <T>12854<!--Buff: MoodBuff_Hidden_Silly--></T>
+                              </L>
+                            </V>
+                          </U>
+                        </V>
+                      </L>
+                    </L>
+                  </U>
+                  <U>
+                    <T n="multiplier">1.5</T>
+                    <L n="tests">
+                      <L>
+                        <V t="career_test">
+                          <U n="career_test">
+                            <V t="career_reference" n="test_type">
+                              <U n="career_reference">
+                                <V t="specific_career" n="career">
+                                  <T n="specific_career">107230<!--Career: career_Adult_Active_Doctor--></T>
+                                </V>
+                                <V t="enabled" n="user_level">
+                                  <U n="enabled">
+                                    <T n="lower_bound">8</T>
+                                  </U>
+                                </V>
+                              </U>
+                            </V>
+                          </U>
+                        </V>
+                      </L>
+                    </L>
+                  </U>
+                  <U>
+                    <T n="multiplier">1.5</T>
+                    <L n="tests">
+                      <L>
+                        <V t="skill_test">
+                          <U n="skill_test">
+                            <T n="skill">16699<!--Skill: statistic_Skill_AdultMajor_Charisma--></T>
+                            <V n="skill_range" t="interval">
+                              <U n="interval">
+                                <U n="skill_interval">
+                                  <T n="lower_bound">6</T>
+                                  <T n="upper_bound">11</T>
+                                </U>
+                              </U>
+                            </V>
+                            <T n="use_effective_skill_level">True</T>
+                          </U>
+                        </V>
+                      </L>
+                    </L>
+                  </U>
+                  <U>
+                    <T n="multiplier">3</T>
+                    <L n="tests">
+                      <L>
+                        <V t="trait">
+                          <U n="trait">
+                            <L n="blacklist_traits">
+                              <T>9332<!--Trait: trait_Gloomy--></T>
+                              <T>16845<!--Trait: trait_HotHeaded--></T>
+                              <T>16857<!--Trait: trait_Mean--></T>
+                              <T>16836<!--Trait: trait_Evil--></T>
+                              <T>27084<!--Trait: trait_Dastardly--></T>
+                              <T>188801<!--Trait: trait_Evil_BegoniaScent--></T>
+                            </L>
+                            <E n="subject">TargetSim</E>
+                            <L n="whitelist_traits">
+                              <T>9322<!--Trait: trait_Cheerful--></T>
+                              <T>27915<!--Trait: trait_Good--></T>
+                              <T>26388<!--Trait: trait_Antiseptic--></T>
+                              <T>26476<!--Trait: trait_Carefree--></T>
+                              <T>16824<!--Trait: trait_SelfAssured--></T>
+                            </L>
+                          </U>
+                        </V>
+                      </L>
+                    </L>
+                  </U>
+                </L>
+              </U>
+            </U>
+            <U>
+              <U n="outcome">
+                <V t="enabled" n="animation_ref">
+                  <U n="enabled">
+                    <T n="factory">107433<!--AnimationElement: object_HospitalExamBed_Patient_Soc_SitActions_GiveResults_Failure--></T>
+                  </U>
+                </V>
+                <L n="basic_extras">
+                  <V t="notification">
+                    <U n="notification">
+                      <V n="dialog" t="tested">
+                        <U n="tested">
+                          <L n="records">
+                            <U>
+                              <V n="item" t="literal">
+                                <U n="literal">
+                                  <V t="enabled" n="icon">
+                                    <V t="resource_key" n="enabled">
+                                      <U n="resource_key">
+                                        <T p="InGame\UI\Icons\Headlines\Final\headline_caduceus.png" n="key">2f7d0004:00000000:35dbb687e5900e65</T>
+                                      </U>
+                                    </V>
+                                  </V>
+                                  <V t="enabled" n="secondary_icon">
+                                    <V t="participant" n="enabled" />
+                                  </V>
+                                  <V n="text" t="single">
+                                    <T n="single">0x8F2D0410<!--String: "Ahora que {0.SimFirstName} ha diagnosticado la enfermedad de {1.SimName}, puede proceder a ponerle una inyección en la camilla."--></T>
+                                  </V>
+                                  <V t="enabled" n="text_tokens">
+                                    <U n="enabled">
+                                      <L n="tokens">
+                                        <V t="participant_type" />
+                                        <V t="participant_type">
+                                          <U n="participant_type">
+                                            <V t="from_participant" n="objects">
+                                              <U n="from_participant">
+                                                <E n="participant">TargetSim</E>
+                                              </U>
+                                            </V>
+                                          </U>
+                                        </V>
+                                      </L>
+                                    </U>
+                                  </V>
+                                  <V t="enabled" n="title">
+                                    <T n="enabled">0x7C30917B<!--String: "Diagnóstico alcanzado"--></T>
+                                  </V>
+                                </U>
+                              </V>
+                            </U>
+                          </L>
+                        </U>
+                      </V>
+                      <V t="at_end" n="timing">
+                        <U n="at_end">
+                          <E n="criticality">NotCritical</E>
+                        </U>
+                      </V>
+                    </U>
+                  </V>
+                </L>
+                <L n="loot_list">
+                  <T>115796<!--LootActions: loot_Career_Doctor_RoleState_Patient_needsTreatment--></T>
+                  <T>109531<!--LootActions: loot_Buff_SicknessSystem_IllnessDiagnosis_LlamaFlu--></T>
+                </L>
+                <E n="outcome_result">FAILURE</E>
+              </U>
+              <U n="weight">
+                <L n="multipliers">
+                  <U>
+                    <T n="multiplier">2</T>
+                    <L n="tests">
+                      <L>
+                        <V t="buff">
+                          <U n="buff">
+                            <V n="whitelist" t="enabled">
+                              <L n="enabled">
+                                <T>12831<!--Buff: MoodBuff_Hidden_Angry--></T>
+                                <T>12840<!--Buff: MoodBuff_Hidden_Enraged--></T>
+                                <T>12827<!--Buff: MoodBuff_Hidden_Furious--></T>
+                                <T>12829<!--Buff: MoodBuff_Hidden_Bored--></T>
+                                <T>12848<!--Buff: MoodBuff_Hidden_Mortified--></T>
+                                <T>12842<!--Buff: MoodBuff_Hidden_Humiliated--></T>
+                                <T>12835<!--Buff: MoodBuff_Hidden_Embarrassed--></T>
+                                <T>12832<!--Buff: MoodBuff_Hidden_Depressed--></T>
+                                <T>27155<!--Buff: MoodBuff_Hidden_Gloomier--></T>
+                                <T>27154<!--Buff: MoodBuff_Hidden_Gloomy--></T>
+                                <T>12853<!--Buff: MoodBuff_Hidden_Sad--></T>
+                                <T>12855<!--Buff: MoodBuff_Hidden_Sloshed--></T>
+                                <T>12847<!--Buff: MoodBuff_Hidden_Miserable--></T>
+                                <T>12857<!--Buff: MoodBuff_Hidden_Tense--></T>
+                                <T>12856<!--Buff: MoodBuff_Hidden_Stressed--></T>
+                              </L>
+                            </V>
+                          </U>
+                        </V>
+                      </L>
+                    </L>
+                  </U>
+                  <U>
+                    <T n="multiplier">1.5</T>
+                    <L n="tests">
+                      <L>
+                        <V t="career_test">
+                          <U n="career_test">
+                            <V n="test_type" t="career_reference">
+                              <U n="career_reference">
+                                <V t="specific_career" n="career">
+                                  <T n="specific_career">107230<!--Career: career_Adult_Active_Doctor--></T>
+                                </V>
+                                <V t="enabled" n="user_level">
+                                  <U n="enabled">
+                                    <T n="upper_bound">4</T>
+                                  </U>
+                                </V>
+                              </U>
+                            </V>
+                          </U>
+                        </V>
+                      </L>
+                    </L>
+                  </U>
+                  <U>
+                    <T n="multiplier">3</T>
+                    <L n="tests">
+                      <L>
+                        <V t="trait">
+                          <U n="trait">
+                            <L n="blacklist_traits">
+                              <T>9322<!--Trait: trait_Cheerful--></T>
+                              <T>27915<!--Trait: trait_Good--></T>
+                              <T>26388<!--Trait: trait_Antiseptic--></T>
+                              <T>26476<!--Trait: trait_Carefree--></T>
+                              <T>16824<!--Trait: trait_SelfAssured--></T>
+                            </L>
+                            <E n="subject">TargetSim</E>
+                            <L n="whitelist_traits">
+                              <T>9332<!--Trait: trait_Gloomy--></T>
+                              <T>16845<!--Trait: trait_HotHeaded--></T>
+                              <T>16857<!--Trait: trait_Mean--></T>
+                              <T>16836<!--Trait: trait_Evil--></T>
+                              <T>27084<!--Trait: trait_Dastardly--></T>
+                              <T>188801<!--Trait: trait_Evil_BegoniaScent--></T>
+                            </L>
+                          </U>
+                        </V>
+                      </L>
+                    </L>
+                  </U>
+                </L>
+              </U>
+            </U>
+          </L>
+        </U>
+      </L>
+    </U>
+  </V>
+  <V t="enabled" n="pie_menu_icon">
+    <V t="resource_key" n="enabled">
+      <U n="resource_key">
+        <T p="InEP01\UI\Icons\InteractionQueue\IconQueueDiagnosis.png" n="key">2f7d0004:00000000:dc589f862e84016e</T>
+      </U>
+    </V>
+  </V>
+  <T n="pie_menu_priority">8</T>
+  <U n="sub_action">
+    <T n="base_weight">2</T>
+  </U>
+  <E n="target_type">OBJECT</E>
+  <L n="test_globals">
+    <V t="test_set_reference">
+      <T n="test_set_reference">115422<!--TestSetInstance: testSet_Doctor_CareerEvent_Target_isPatient_notPregnant--></T>
+    </V>
+    <V t="buff">
+      <U n="buff">
+        <L n="blacklist">
+          <T>114415<!--Buff: buff_Role_DoctorCareer_PatientState_Treated--></T>
+        </L>
+        <E n="subject">TargetSim</E>
+      </U>
+    </V>
+    <V t="buff">
+      <U n="buff">
+        <L n="blacklist">
+          <T>109669<!--Buff: buff_SicknessSystem_Diagnosed_0_None--></T>
+          <T>108169<!--Buff: buff_SicknessSystem_Diagnosed_BloatyHead--></T>
+          <T>108170<!--Buff: buff_SicknessSystem_Diagnosed_BurningTummy--></T>
+          <T>108171<!--Buff: buff_SicknessSystem_Diagnosed_GasAndGiggles--></T>
+          <T>108172<!--Buff: buff_SicknessSystem_Diagnosed_ItchyPlumbob--></T>
+          <T>108173<!--Buff: buff_SicknessSystem_Diagnosed_LlamaFlu--></T>
+          <T>108174<!--Buff: buff_SicknessSystem_Diagnosed_StarryEyes--></T>
+          <T>108176<!--Buff: buff_SicknessSystem_Diagnosed_SweatyShivers--></T>
+          <T>108175<!--Buff: buff_SicknessSystem_Diagnosed_TripleThreat--></T>
+        </L>
+        <E n="subject">TargetSim</E>
+      </U>
+    </V>
+    <V t="career_test">
+      <U n="career_test">
+        <V t="career_reference" n="test_type">
+          <U n="career_reference">
+            <V t="specific_career" n="career">
+              <T n="specific_career">107230<!--Career: career_Adult_Active_Doctor--></T>
+            </V>
+            <V t="enabled" n="user_level">
+              <U n="enabled">
+                <T n="lower_bound">4</T>
+              </U>
+            </V>
+          </U>
+        </V>
+      </U>
+    </V>
+    <V t="test_set_reference">
+      <T n="test_set_reference">109622<!--TestSetInstance: testSet_SicknessSystem_IllnessDiagnosis_LlamaFlu--></T>
+    </V>
+  </L>
+  <T n="visible">True</T>
+</I>

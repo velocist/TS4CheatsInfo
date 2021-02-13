@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+
+<TuningRoot>
+    <Instance instance_type="cascameratuning" class="Client_CASCameraTuning" module="cascameratuning.Client_CASCameraTuning" muid="EB862D6050AE442E" description="CAS camera tuning." export_modes="client_binary" path="Client_CASCameraTuning\Descriptions">
+        <TunableList name="Ages" class="TunableSet" display="Ages" muid="EB285782FC33674D" description="Trait allowed ages, empty set means not specified" filter="0" group="General" unique_entries="true">
+            <TunableEnum type="Age" class="TunableEnumEntry" default="None" muid="198BD98138AEA2" static_entries="sims-sim_info_types.Age" export_modes="client_binary" filter="0" group="General" />
+        </TunableList>
+
+        <TunableList name="Cameras" class="TunableList" display="CameraList" muid="EFFCEC6CC57FDAA" description="List of CAS cameras.">
+            <TunableTuple name="CameraData" class="Client_CASCameraTuning.CameraData" muid="E25E266C56B81030" description="Parameters for a CAS camera.">
+                <TunableEnum type="CASCameraRegion" name="CameraRegion" class="TunableEnumEntry" default="Invalid" display="Camera Region" muid="DF19CFA6AD3E9EC2" dynamic_entries="cascameraregions.CASCameraRegion._elements" static_entries="cascameraregions.CASCameraRegion" description="The unique id of the camera region." export_modes="client_binary" filter="0" group="General" />
+                <TunableTuple name="CameraTarget" class="TunableVector3" muid="353CE9DFAA82B30A" description="Camera Look-At Target.">
+                    <Tunable type="float" name="x" class="Tunable" default="0.0" muid="D2E6137A55E6456C" description="X Position." export_modes="client_binary" filter="0" group="General" />
+                    <Tunable type="float" name="y" class="Tunable" default="0.0" muid="1E97BA382B864546" description="Y Position." export_modes="client_binary" filter="0" group="General" />
+                    <Tunable type="float" name="z" class="Tunable" default="0.0" muid="63B2E090022683FE" description="Z Position." export_modes="client_binary" filter="0" group="General" />
+                </TunableTuple>
+                <Tunable type="float" name="Distance" class="Tunable" default="0.0" muid="34CEDA8551A4B473" description="Distance from target." />
+                <Tunable type="float" name="FOV" class="Tunable" default="57.25" muid="F115FF0975965D5C" description="Field of view angle (degrees)." />
+                <Tunable type="float" name="OrbitalRotation" class="Tunable" default="0.0" muid="2ACFED2AD6817183" description="Orbital rotation angle around target (degrees)." />
+                <Tunable type="float" name="Pitch" class="Tunable" default="0.0" muid="BBB3736109BC69C9" description="Pitch angle (degrees)." />
+            </TunableTuple>
+        </TunableList>
+
+        <Tunable type="float" name="EaseInPt" class="Tunable" default="0.02" muid="7A5FE70506F94C7C" description="This is a 0-1 value along the camera rail where a lerp takes over for the velocity based camera to ease it into the final resting position furthest from the sim." export_modes="client_binary" filter="0" group="Velocity Camera Controls" />
+
+        <Tunable type="float" name="EaseOutPt" class="Tunable" default="0.98" muid="8271F6ECB3D71F8C" description="This is a 0-1 value along the camera rail where a lerp takes over for the velocity based camera to ease it into the final resting position (close to the sim)." export_modes="client_binary" filter="0" group="Velocity Camera Controls" />
+
+        <Tunable type="float" name="KeyZoomSpeedLerp" class="Tunable" default="1.0" muid="AB55A99293114917" description="Zoom speed by key input for camera Lerp." export_modes="client_binary" filter="0" group="Lerp Camera Controls" />
+
+        <Tunable type="float" name="KeyZoomSpeedVelocity" class="Tunable" default="1.0" muid="DEAE3A111419A5A4" description="Zoom speed by key input for velocity based camera movement." export_modes="client_binary" filter="0" group="Velocity Camera Controls" />
+
+        <Tunable type="float" name="LateralLerpDuration" class="Tunable" default="1.0" muid="E7173DAC30B9DE1C" description="The lateral lerp duration for camera adjusting sim position due to UI opening and closing panels." export_modes="client_binary" filter="0" group="Velocity Camera Controls" />
+
+        <Tunable type="float" name="LateralLerpEaseInOut" class="Tunable" default="3.0" muid="97BE7A47BD6966BB" description="The ease in-out value for lateral lerp when adjusting for changed UI: higher values give slower start and finish." export_modes="client_binary" filter="0" group="Velocity Camera Controls" />
+
+        <Tunable type="float" name="MouseWheelZoomSpeedLerp" class="Tunable" default="15.0" muid="8B81042D6DA80DCC" description="Mouse wheel zoom speed for camera Lerp." export_modes="client_binary" filter="0" group="Lerp Camera Controls" />
+
+        <Tunable type="float" name="MouseWheelZoomSpeedVelocity" class="Tunable" default="15.0" muid="1BAFE4D2A5C30A63" description="Mouse wheel zoom speed for velocity based camera movement." export_modes="client_binary" filter="0" group="Velocity Camera Controls" />
+
+        <TunableList name="Occult" class="TunableSet" display="Occult" muid="9D5D669375FEDA2B" description="Allowed occults" filter="0" group="General" unique_entries="true">
+            <TunableEnum type="OccultType" class="TunableEnumEntry" default="None" muid="1AD7E5ACDEE05F1C" static_entries="sims-occult-occult_enums.OccultType" export_modes="client_binary" filter="0" group="General" />
+        </TunableList>
+
+        <TunableList name="Species" class="TunableSet" display="Species" muid="486B7DC17DE56917" description="Allowed species" filter="0" group="General" unique_entries="true">
+            <TunableEnum type="SpeciesExtended" class="TunableEnumEntry" default="None" muid="21F6516088BDB612" static_entries="sims-sim_info_types.SpeciesExtended" export_modes="client_binary" filter="0" group="General" />
+        </TunableList>
+
+        <Tunable type="bool" name="UseLerpCamera" class="Tunable" default="False" muid="34D6D0FCEE773076" description="Use the old camera LERP movement." export_modes="client_binary" filter="0" group="Lerp Camera Controls" />
+
+        <Tunable type="float" name="VelocityCap" class="Tunable" default="2.5" muid="FFC24423FFC5D8F8" description="Max speed for how fast our camera can zoom in/out" export_modes="client_binary" filter="0" group="Velocity Camera Controls" />
+
+        <Tunable type="float" name="VelocityLossRate" class="Tunable" default="10.0" muid="D62D17D82A137B49" description="Dampening amount for velocity" export_modes="client_binary" filter="0" group="Velocity Camera Controls" />
+    </Instance>
+</TuningRoot>

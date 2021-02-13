@@ -1,0 +1,77 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<I c="SituationGoalObjectInteraction" i="situation_goal" m="situations.situation_goal_object_interaction" n="careerDetective_Goals_CrimeScene_GetEvidence3" s="116035">
+  <T n="_cancel_on_travel">True</T>
+  <T n="_cooldown">180</T>
+  <V t="enabled" n="_display_data">
+    <U n="enabled">
+      <V t="enabled" n="instance_display_icon">
+        <T p="InEP01\UI\Icons\Events\EventGoal_clue_objects.png" n="enabled">2f7d0004:00000000:45ec32f536706267</T>
+      </V>
+      <V n="instance_display_name" t="enabled">
+        <T n="enabled">0xE8C4F5A7<!--String: "Reunir más pistas en la escena del delito"--></T>
+      </V>
+      <V t="enabled" n="instance_display_tooltip">
+        <T n="enabled">0x9F4FBE53<!--String: "Reúne muestras de pruebas o busca huellas para dar con pistas que puedan ayudar a resolver el caso."--></T>
+      </V>
+    </U>
+  </V>
+  <U n="_goal_test">
+    <L n="affordances">
+      <T>108781<!--SuperInteraction: crimeScene_CollectSample--></T>
+      <T>108780<!--SuperInteraction: crimeScene_DustForPrints--></T>
+    </L>
+    <E n="test_event">InteractionComplete</E>
+  </U>
+  <L n="_post_tests">
+    <V t="situation_job">
+      <U n="situation_job">
+        <L n="situation_jobs">
+          <T>109056<!--SituationJob: situationJob_Detective_CrimeScenePlayer--></T>
+        </L>
+      </U>
+    </V>
+  </L>
+  <L n="_pre_tests">
+    <V t="situation_job">
+      <U n="situation_job">
+        <L n="situation_jobs">
+          <T>109056<!--SituationJob: situationJob_Detective_CrimeScenePlayer--></T>
+        </L>
+      </U>
+    </V>
+    <V t="statistic">
+      <U n="statistic">
+        <T n="stat">112059<!--Statistic: statistic_Career_Detective_HasCase--></T>
+        <V t="value_threshold" n="threshold">
+          <U n="value_threshold">
+            <E n="comparison">GREATER_OR_EQUAL</E>
+            <T n="value">1</T>
+          </U>
+        </V>
+      </U>
+    </V>
+    <V t="statistic">
+      <U n="statistic">
+        <T n="stat">116377<!--Statistic: statistic_Career_Detective_SingleDayGoalTracking_EvidenceCollected--></T>
+        <V t="value_threshold" n="threshold">
+          <U n="value_threshold">
+            <E n="comparison">GREATER</E>
+          </U>
+        </V>
+      </U>
+    </V>
+    <V t="statistic">
+      <U n="statistic">
+        <T n="stat">116377<!--Statistic: statistic_Career_Detective_SingleDayGoalTracking_EvidenceCollected--></T>
+        <V t="value_threshold" n="threshold">
+          <U n="value_threshold">
+            <E n="comparison">LESS</E>
+            <T n="value">3</T>
+          </U>
+        </V>
+      </U>
+    </V>
+  </L>
+  <T n="_score">6</T>
+  <T p="InGame\Audio\Bumper\bumper_event_goal_complete.propx" n="audio_sting_on_complete">39b2aa4a:00000000:ed52c39bcc2a7111</T>
+</I>

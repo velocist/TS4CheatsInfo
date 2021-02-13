@@ -1,0 +1,263 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<I c="ClubSocialSuperInteraction" i="interaction" m="clubs.club_tuning" n="clubSocialSuperInteraction_Autonomous_KickOutOfClub" s="129835">
+  <L n="_false_advertisements">
+    <V t="statistic_change">
+      <U n="statistic_change">
+        <T n="amount">6</T>
+        <T n="stat">16658<!--Commodity: motive_Social--></T>
+      </U>
+    </V>
+  </L>
+  <V t="participant" n="_icon">
+    <U n="participant">
+      <L n="participant_type">
+        <E>TargetSim</E>
+      </L>
+    </U>
+  </V>
+  <T n="_social_group_type">121548<!--SocialGroup: clubChat--></T>
+  <V t="enabled" n="additional_social_to_run_on_both">
+    <T n="enabled">13998<!--SocialSuperInteraction: sim_Chat--></T>
+  </V>
+  <V t="push_self_or_none" n="affordance_to_push_on_target">
+    <T n="push_self_or_none">False</T>
+  </V>
+  <T n="allow_autonomous">True</T>
+  <T n="allow_user_directed">False</T>
+  <T n="attention_cost">1</T>
+  <V t="one_shot" n="basic_content" />
+  <V t="disabled" n="content_score" />
+  <T n="display_name">0x2BB06903<!--String: "Echar de {0.String}"--></T>
+  <U n="display_name_text_tokens">
+    <L n="tokens">
+      <V t="associated_club" />
+    </L>
+  </U>
+  <L n="interaction_category_tags">
+    <E>Interaction_Super</E>
+    <E>Interaction_All</E>
+    <E>Interaction_SocialAll</E>
+    <E>Interaction_SocialSuper</E>
+  </L>
+  <V n="outcome" t="single">
+    <U n="single">
+      <U n="actions">
+        <V n="animation_ref" t="enabled">
+          <U n="enabled">
+            <T n="factory">11963<!--AnimationElement: Soc_Mischief_NT_yellAt_Angry_success_basic--></T>
+            <U n="overrides">
+              <V n="balloons" t="enabled">
+                <L n="enabled">
+                  <U>
+                    <L n="balloon_choices">
+                      <U>
+                        <V n="item" t="balloon_icon">
+                          <U n="balloon_icon">
+                            <E n="balloon_type">SPEECH</E>
+                            <V t="participant" n="icon">
+                              <U n="participant">
+                                <L n="participant_type">
+                                  <E>TargetSim</E>
+                                </L>
+                              </U>
+                            </V>
+                            <T p="InGame\UI\Icons\Headlines\Final\headline_Prohibit.png" n="overlay">2f7d0004:00000000:ab4a67c934164fb1</T>
+                          </U>
+                        </V>
+                      </U>
+                      <U>
+                        <V n="item" t="balloon_icon">
+                          <U n="balloon_icon">
+                            <E n="balloon_type">SPEECH</E>
+                            <V n="icon" t="resource_key">
+                              <U n="resource_key">
+                                <T p="InEP02\UI\Icons\Headlines\headline_club.png" n="key">2f7d0004:00000000:81df7ed8a83f0c34</T>
+                              </U>
+                            </V>
+                            <T p="InGame\UI\Icons\Headlines\Final\headline_Prohibit.png" n="overlay">2f7d0004:00000000:ab4a67c934164fb1</T>
+                          </U>
+                        </V>
+                      </U>
+                    </L>
+                    <L n="balloon_target">
+                      <E>Actor</E>
+                    </L>
+                  </U>
+                </L>
+              </V>
+            </U>
+          </U>
+        </V>
+        <L n="basic_extras">
+          <V t="do_command">
+            <U n="do_command">
+              <L n="arguments">
+                <V t="participant">
+                  <U n="participant">
+                    <E n="argument">TargetSim</E>
+                  </U>
+                </V>
+                <V t="participant">
+                  <U n="participant">
+                    <E n="argument">AssociatedClub</E>
+                  </U>
+                </V>
+              </L>
+              <T n="command">clubs.remove_sim_from_club_by_id</T>
+            </U>
+          </V>
+          <V t="audio_sting">
+            <U n="audio_sting">
+              <U n="audio_sting">
+                <T n="audio" p="InEP02\Audio\Sting\sting_club_kickout.propx">39b2aa4a:00000000:b98c558b7d13728c</T>
+              </U>
+              <E n="subject">TargetSim</E>
+            </U>
+          </V>
+          <V t="notification">
+            <U n="notification">
+              <V n="dialog" t="single">
+                <V n="single" t="literal">
+                  <U n="literal">
+                    <V t="enabled" n="icon">
+                      <V t="participant" n="enabled" />
+                    </V>
+                    <V t="enabled" n="secondary_icon">
+                      <V t="participant" n="enabled">
+                        <U n="participant">
+                          <L n="participant_type">
+                            <E>TargetSim</E>
+                          </L>
+                        </U>
+                      </V>
+                    </V>
+                    <V n="text" t="single">
+                      <T n="single">0xDDCA534B<!--String: "Lo de {1.SimFirstName} con {0.String} no ha terminado de cuajar. ¡Al parecer, {M1.lo}{F1.la} han echado del club!"--></T>
+                    </V>
+                    <V n="text_tokens" t="enabled">
+                      <U n="enabled">
+                        <L n="tokens">
+                          <V t="associated_club" />
+                          <V t="participant_type">
+                            <U n="participant_type">
+                              <V t="from_participant" n="objects">
+                                <U n="from_participant">
+                                  <E n="participant">TargetSim</E>
+                                </U>
+                              </V>
+                            </U>
+                          </V>
+                        </L>
+                      </U>
+                    </V>
+                  </U>
+                </V>
+              </V>
+              <E n="recipient_subject">TargetSim</E>
+            </U>
+          </V>
+        </L>
+        <L n="loot_list">
+          <T>10955<!--LootActions: Loot_ForSocialsSocialMotiveSmall--></T>
+          <T>123954<!--LootActions: loot_Buff_Clubs_Rejected--></T>
+          <T>11038<!--LootActions: Rel_Loss_Large--></T>
+        </L>
+        <V n="response" t="enabled">
+          <V n="enabled" t="individual">
+            <U n="individual">
+              <L n="animations">
+                <U>
+                  <E n="target">TargetSim</E>
+                  <U n="animation">
+                    <T n="factory">28388<!--AnimationElement: Socials_Responses_Sad_HighIntensity--></T>
+                  </U>
+                </U>
+              </L>
+            </U>
+          </V>
+        </V>
+      </U>
+    </U>
+  </V>
+  <T n="relationship_scoring">True</T>
+  <E n="scoring_priority">HIGH</E>
+  <T n="subaction_selection_weight">4</T>
+  <E n="target_type">TARGET</E>
+  <L n="test_globals">
+    <V t="sim_info">
+      <U n="sim_info">
+        <V t="specified" n="ages" />
+        <V t="specified" n="species">
+          <U n="specified">
+            <L n="species">
+              <E />
+            </L>
+          </U>
+        </V>
+        <E n="who">Actor</E>
+      </U>
+    </V>
+    <V t="test_set_reference">
+      <T n="test_set_reference">129700<!--TestSetInstance: testSet_HasMet--></T>
+    </V>
+    <V t="club_test">
+      <U n="club_test">
+        <V t="enabled" n="club_status">
+          <V n="enabled" t="Leader" />
+        </V>
+      </U>
+    </V>
+    <V t="club_test">
+      <U n="club_test">
+        <V t="enabled" n="club_status">
+          <V n="enabled" t="Member" />
+        </V>
+        <E n="subject">TargetSim</E>
+      </U>
+    </V>
+    <V t="relationship">
+      <U n="relationship">
+        <T n="num_relations">1</T>
+        <U n="relationship_score_interval">
+          <T n="upper_bound">-70</T>
+        </U>
+        <T n="track">16650<!--RelationshipTrack: LTR_Friendship_Main--></T>
+      </U>
+    </V>
+    <V t="sim_info">
+      <U n="sim_info">
+        <V t="enabled" n="npc" />
+        <E n="who">TargetSim</E>
+      </U>
+    </V>
+    <V t="sim_info">
+      <U n="sim_info">
+        <V t="enabled" n="npc">
+          <T n="enabled">True</T>
+        </V>
+      </U>
+    </V>
+    <V t="club_gathering_test">
+      <U n="club_gathering_test">
+        <V t="enabled" n="club_gathering_status">
+          <V n="enabled" t="Gathering Exists" />
+        </V>
+        <V t="enabled" n="subject_club_gathering_status">
+          <V n="enabled" t="In Gathering" />
+        </V>
+        <V t="enabled" n="target_club_gathering_status">
+          <V n="enabled" t="In Gathering" />
+        </V>
+      </U>
+    </V>
+    <V t="buff">
+      <U n="buff">
+        <L n="blacklist">
+          <T>123820<!--Buff: buff_Clubs_PassedTheTorch--></T>
+        </L>
+        <E n="subject">TargetSim</E>
+      </U>
+    </V>
+  </L>
+  <T n="time_overhead">8</T>
+</I>

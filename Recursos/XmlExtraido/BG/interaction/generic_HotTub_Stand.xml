@@ -1,0 +1,292 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<I c="SuperInteraction" i="interaction" m="interactions.base.super_interaction" n="generic_HotTub_Stand" s="117264">
+  <V t="resource_key" n="_icon">
+    <U n="resource_key">
+      <T p="InGame\UI\Icons\InteractionQueue\IconQueueSitting.png" n="key">2f7d0004:00000000:1150bb0e5d1ff959</T>
+    </U>
+  </V>
+  <T n="_provided_posture_type">117256<!--Posture: posture_HotTubStand--></T>
+  <V t="disabled" n="_saveable" />
+  <T n="allow_autonomous">False</T>
+  <T n="allow_user_directed">False</T>
+  <T n="attention_cost">0.5</T>
+  <V n="basic_content" t="flexible_length">
+    <U n="flexible_length">
+      <L n="conditional_actions">
+        <V t="literal">
+          <U n="literal">
+            <L n="conditions">
+              <V t="state_based">
+                <U n="state_based">
+                  <V n="state" t="on_trigger">
+                    <T n="on_trigger">15080<!--ObjectStateValue: BrokenState_Broken--></T>
+                  </V>
+                </U>
+              </V>
+            </L>
+            <E n="interaction_action">EXIT_NATURALLY</E>
+          </U>
+        </V>
+        <V t="literal">
+          <U n="literal">
+            <L n="conditions">
+              <V t="time_based">
+                <U n="time_based">
+                  <T n="max_time">1</T>
+                </U>
+              </V>
+            </L>
+          </U>
+        </V>
+        <V t="literal">
+          <U n="literal">
+            <L n="conditions">
+              <V t="buff_based">
+                <U n="buff_based">
+                  <T n="buff">26171<!--Buff: buff_Sim_IsDying--></T>
+                  <E n="timing">HAS_BUFF</E>
+                </U>
+              </V>
+            </L>
+            <E n="interaction_action">EXIT_NATURALLY</E>
+          </U>
+        </V>
+      </L>
+      <V t="enabled" n="periodic_stat_change">
+        <U n="enabled">
+          <U n="operation_actions">
+            <L n="actions">
+              <T>120200<!--LootActions: loot_Buff_HotTub_SignedRemoval--></T>
+            </L>
+          </U>
+          <L n="operations">
+            <V t="statistic_change">
+              <U n="statistic_change">
+                <T n="amount">2</T>
+                <E n="periodic_change_behavior">RETEST_ON_INTERVAL</E>
+                <T n="stat">118694<!--Commodity: commodity_Buff_Object_HotTub_Aromatherapy_Jasmine--></T>
+                <L n="tests">
+                  <L>
+                    <V t="state">
+                      <U n="state">
+                        <T n="value">118527<!--ObjectStateValue: aromatherapy_Jasmine--></T>
+                      </U>
+                    </V>
+                  </L>
+                </L>
+              </U>
+            </V>
+            <V t="statistic_change">
+              <U n="statistic_change">
+                <T n="amount">2</T>
+                <E n="periodic_change_behavior">RETEST_ON_INTERVAL</E>
+                <T n="stat">118693<!--Commodity: commodity_Buff_Object_HotTub_Aromatherapy_Lemon--></T>
+                <L n="tests">
+                  <L>
+                    <V t="state">
+                      <U n="state">
+                        <T n="value">118526<!--ObjectStateValue: aromatherapy_Lemon--></T>
+                      </U>
+                    </V>
+                  </L>
+                </L>
+              </U>
+            </V>
+            <V t="statistic_change">
+              <U n="statistic_change">
+                <T n="amount">2</T>
+                <E n="periodic_change_behavior">RETEST_ON_INTERVAL</E>
+                <T n="stat">118696<!--Commodity: commodity_Buff_Object_HotTub_Aromatherapy_Peppermint--></T>
+                <L n="tests">
+                  <L>
+                    <V t="state">
+                      <U n="state">
+                        <T n="value">118529<!--ObjectStateValue: aromatherapy_Peppermint--></T>
+                      </U>
+                    </V>
+                  </L>
+                </L>
+              </U>
+            </V>
+            <V t="statistic_change">
+              <U n="statistic_change">
+                <T n="amount">2</T>
+                <E n="periodic_change_behavior">RETEST_ON_INTERVAL</E>
+                <T n="stat">118695<!--Commodity: commodity_Buff_Object_HotTub_Aromatherapy_Sage--></T>
+                <L n="tests">
+                  <L>
+                    <V t="state">
+                      <U n="state">
+                        <T n="value">118528<!--ObjectStateValue: aromatherapy_Sage--></T>
+                      </U>
+                    </V>
+                  </L>
+                </L>
+              </U>
+            </V>
+            <V t="statistic_change">
+              <U n="statistic_change">
+                <T n="amount">0.07</T>
+                <T n="stat">16657<!--Commodity: motive_Hygiene--></T>
+              </U>
+            </V>
+            <V t="statistic_change_by_category">
+              <U n="statistic_change_by_category">
+                <V t="stat_change" n="change">
+                  <U n="stat_change">
+                    <T n="change_amout">-2</T>
+                  </U>
+                </V>
+                <E n="statistic_category">Sad_Buffs</E>
+                <L n="tests">
+                  <L>
+                    <V t="state">
+                      <U n="state">
+                        <T n="value">118527<!--ObjectStateValue: aromatherapy_Jasmine--></T>
+                      </U>
+                    </V>
+                  </L>
+                </L>
+              </U>
+            </V>
+            <V t="statistic_change_by_category">
+              <U n="statistic_change_by_category">
+                <V t="stat_change" n="change">
+                  <U n="stat_change">
+                    <T n="change_amout">-2</T>
+                  </U>
+                </V>
+                <E n="statistic_category">Stressed_Buffs</E>
+                <L n="tests">
+                  <L>
+                    <V t="state">
+                      <U n="state">
+                        <T n="value">118526<!--ObjectStateValue: aromatherapy_Lemon--></T>
+                      </U>
+                    </V>
+                  </L>
+                </L>
+              </U>
+            </V>
+            <V t="statistic_change_by_category">
+              <U n="statistic_change_by_category">
+                <V t="stat_change" n="change">
+                  <U n="stat_change">
+                    <T n="change_amout">-2</T>
+                  </U>
+                </V>
+                <E n="statistic_category">Bored_Buffs</E>
+                <L n="tests">
+                  <L>
+                    <V t="state">
+                      <U n="state">
+                        <T n="value">118528<!--ObjectStateValue: aromatherapy_Sage--></T>
+                      </U>
+                    </V>
+                  </L>
+                </L>
+              </U>
+            </V>
+            <V t="statistic_change_by_category">
+              <U n="statistic_change_by_category">
+                <V t="stat_change" n="change">
+                  <U n="stat_change">
+                    <T n="change_amout">-2</T>
+                  </U>
+                </V>
+                <E n="statistic_category">Uncomfortable_Buffs</E>
+                <L n="tests">
+                  <L>
+                    <V t="state">
+                      <U n="state">
+                        <T n="value">118529<!--ObjectStateValue: aromatherapy_Peppermint--></T>
+                      </U>
+                    </V>
+                  </L>
+                </L>
+              </U>
+            </V>
+          </L>
+        </U>
+      </V>
+    </U>
+  </V>
+  <L n="basic_extras">
+    <V t="buff">
+      <U n="buff">
+        <U n="buff_type">
+          <T n="buff_type">190198<!--Buff: buff_Wetness_Immune--></T>
+        </U>
+        <L n="subject">
+          <E>Actor</E>
+        </L>
+      </U>
+    </V>
+  </L>
+  <V t="disabled" n="content_score" />
+  <U n="display_name_text_tokens">
+    <L n="tokens">
+      <V t="participant_type">
+        <U n="participant_type">
+          <V t="from_participant" n="objects">
+            <U n="from_participant">
+              <E n="participant">Actor</E>
+            </U>
+          </V>
+        </U>
+      </V>
+      <V t="participant_type">
+        <U n="participant_type">
+          <V t="from_participant" n="objects">
+            <U n="from_participant">
+              <E n="participant">Object</E>
+            </U>
+          </V>
+        </U>
+      </V>
+    </L>
+  </U>
+  <T n="ignore_group_socials">False</T>
+  <L n="interaction_category_tags">
+    <E>Interaction_Super</E>
+    <E>Interaction_All</E>
+  </L>
+  <E n="scoring_priority">NORMAL</E>
+  <T n="subaction_selection_weight">1</T>
+  <E n="target_type">OBJECT</E>
+  <L n="test_globals">
+    <V t="sim_info">
+      <U n="sim_info">
+        <V t="specified" n="ages">
+          <L n="specified">
+            <E>CHILD</E>
+            <E>TEEN</E>
+            <E>YOUNGADULT</E>
+            <E>ADULT</E>
+            <E>ELDER</E>
+          </L>
+        </V>
+        <V t="specified" n="species">
+          <U n="specified">
+            <L n="species">
+              <E />
+            </L>
+          </U>
+        </V>
+        <E n="who">Actor</E>
+      </U>
+    </V>
+  </L>
+  <T n="time_overhead">30</T>
+  <V t="enabled" n="utility_info">
+    <L n="enabled">
+      <U>
+        <E n="key">POWER</E>
+      </U>
+      <U>
+        <E n="key">WATER</E>
+      </U>
+    </L>
+  </V>
+  <T n="visible">False</T>
+</I>

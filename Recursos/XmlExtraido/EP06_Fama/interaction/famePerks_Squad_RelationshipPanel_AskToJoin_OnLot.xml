@@ -1,0 +1,191 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<I c="SuperInteraction" i="interaction" m="interactions.base.super_interaction" n="famePerks_Squad_RelationshipPanel_AskToJoin_OnLot" s="202050">
+  <V t="participant" n="_icon">
+    <U n="participant">
+      <L n="participant_type">
+        <E>PickedSim</E>
+      </L>
+    </U>
+  </V>
+  <V t="enabled" n="_saveable" />
+  <T n="attention_cost">0.5</T>
+  <V t="one_shot" n="basic_content" />
+  <L n="basic_extras">
+    <V t="join_situation">
+      <U n="join_situation">
+        <V t="specify_job" n="situation_job">
+          <T n="specify_job">195505<!--SituationJob: situationJob_SquadPerk_SquadMember--></T>
+        </V>
+        <T n="situation_type">196099<!--SquadSituation: situation_squad_gathering--></T>
+        <L n="subject">
+          <E>PickedSim</E>
+        </L>
+        <U n="success_chance">
+          <L n="multipliers">
+            <U>
+              <T n="multiplier">0</T>
+              <L n="tests">
+                <L>
+                  <V t="situation_running_test">
+                    <U n="situation_running_test">
+                      <T n="check_for_initiating_sim">True</T>
+                      <V t="enabled" n="participant" />
+                      <V t="enabled" n="situation_blacklist">
+                        <L n="enabled">
+                          <T>196099<!--SquadSituation: situation_squad_gathering--></T>
+                        </L>
+                      </V>
+                      <E n="test_event">SituationStarted</E>
+                    </U>
+                  </V>
+                </L>
+              </L>
+            </U>
+          </L>
+        </U>
+      </U>
+    </V>
+  </L>
+  <V t="disabled" n="content_score" />
+  <T n="display_name">0xF7BF4501<!--String: "Añadir al séquito"--></T>
+  <U n="display_name_text_tokens">
+    <L n="tokens">
+      <V t="participant_type">
+        <U n="participant_type">
+          <V t="from_participant" n="objects">
+            <U n="from_participant">
+              <E n="participant">Actor</E>
+            </U>
+          </V>
+        </U>
+      </V>
+      <V t="participant_type">
+        <U n="participant_type">
+          <V t="from_participant" n="objects">
+            <U n="from_participant">
+              <E n="participant">Object</E>
+            </U>
+          </V>
+        </U>
+      </V>
+    </L>
+  </U>
+  <L n="interaction_category_tags">
+    <E>Interaction_Super</E>
+    <E>Interaction_All</E>
+  </L>
+  <V n="outcome" t="single">
+    <U n="single">
+      <U n="actions">
+        <L n="continuation">
+          <U>
+            <T n="affordance">196105<!--SocialSuperInteraction: famePerk_Squad_AskToJoinSquad--></T>
+            <E n="target">PickedSim</E>
+          </U>
+        </L>
+        <L n="loot_list" />
+      </U>
+    </U>
+  </V>
+  <V t="enabled" n="pie_menu_icon">
+    <V n="enabled" t="resource_key">
+      <U n="resource_key">
+        <T n="key" p="InGame\UI\Icons\PieMenu\Interactions\SpecialSocials.png">2f7d0004:00000000:44a83aef06bec066</T>
+      </U>
+    </V>
+  </V>
+  <E n="scoring_priority">NORMAL</E>
+  <T n="subaction_selection_weight">1</T>
+  <E n="target_type">ACTOR</E>
+  <L n="test_globals">
+    <V t="sim_info">
+      <U n="sim_info">
+        <V t="specified" n="species">
+          <U n="specified">
+            <L n="species">
+              <E />
+            </L>
+          </U>
+        </V>
+        <E n="who">PickedSim</E>
+      </U>
+    </V>
+    <V t="sim_info">
+      <U n="sim_info">
+        <V t="specified" n="ages" />
+        <V t="specified" n="species">
+          <U n="specified">
+            <L n="species">
+              <E />
+            </L>
+          </U>
+        </V>
+        <E n="who">Actor</E>
+      </U>
+    </V>
+    <V t="sim_info">
+      <U n="sim_info">
+        <V t="specified" n="ages" />
+        <E n="who">PickedSim</E>
+      </U>
+    </V>
+    <V t="routability">
+      <U n="routability">
+        <T n="negate">False</T>
+        <E n="subject">Actor</E>
+        <E n="target">PickedSim</E>
+      </U>
+    </V>
+    <V t="relationship">
+      <U n="relationship">
+        <U n="prohibited_relationship_bits">
+          <L n="match_any">
+            <T>196234<!--RelationshipBit: relationshipBit_Squad_Member--></T>
+          </L>
+        </U>
+        <L n="subject">
+          <E>Actor</E>
+        </L>
+        <L n="target_sim">
+          <E>PickedSim</E>
+        </L>
+      </U>
+    </V>
+    <V t="bucks_perks_test">
+      <U n="bucks_perks_test">
+        <T n="bucks_perk">193747<!--BucksPerk: famePerks_RelationshipGame_Squad--></T>
+      </U>
+    </V>
+    <V t="count">
+      <U n="count">
+        <V t="from_participant" n="participant">
+          <U n="from_participant">
+            <E n="participant">ActorSquadMembers</E>
+          </U>
+        </V>
+        <V n="threshold" t="from_value">
+          <U n="from_value">
+            <E n="comparison">LESS</E>
+            <T n="value">7</T>
+          </U>
+        </V>
+        <V t="enabled" n="tooltip">
+          <T n="enabled">0x52E8595B<!--String: "El séquito de {0.SimFirstName} está lleno. Pide a uno de los miembros que se vaya antes de añadir a otro."--></T>
+        </V>
+      </U>
+    </V>
+    <V t="distance">
+      <U n="distance">
+        <E n="target">PickedSim</E>
+        <U n="threshold">
+          <E n="comparison">LESS</E>
+          <T n="value">20</T>
+        </U>
+        <V t="enabled" n="tooltip">
+          <T n="enabled">0xBE0916BF<!--String: "¡Tienes a {1.SimFirstName} al lado!"--></T>
+        </V>
+      </U>
+    </V>
+  </L>
+  <T n="time_overhead">30</T>
+</I>

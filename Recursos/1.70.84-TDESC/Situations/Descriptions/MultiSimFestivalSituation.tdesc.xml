@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+
+<TuningRoot>
+    <Instance instance_type="situation" class="MultiSimFestivalSituation" module="open_street_director.festival_situations" muid="13B74EC876E90649" description="A festival situation that uses an aggregate filter to find the Sims for it." instance_subclasses_only="False" parents="BaseGenericFestivalSituation, SituationComplexCommon, SituationComplex, Situation" path="Situations\Descriptions" use_guid_for_reference="True">
+        <Deleted name="_implies_greeted_status" muid="A6024716F9C2502A" />
+
+        <Tunable type="situation_job" name="blacklist_job" class="TunableReference" display="Blacklist Job" muid="257904B75FF0FEAC" description="The default job used for blacklisting Sims from coming back as&#xA;festival goers." allow_none="False" Deprecated="False" filter="0" group="General" restrict="SituationJob" />
+
+        <Deleted name="creation_ui_option" muid="7E93666790DE6124" />
+
+        <Tunable type="sim_filter" name="group_filter" class="TunableReference" display="Group Filter" muid="F0E982F40B7BE746" description="The aggregate filter that we use to find the sims for this&#xA;situation." allow_none="False" Deprecated="False" filter="0" group="General" restrict="TunableAggregateFilter" />
+
+        <TunableTuple name="initial_state" class="TunableMultiSimStartingFestivalSituationState" display="Initial State" muid="ED2DEA5980230FC1" description="The first state that the Sims will be put into when this Situation&#xA;Starts." Deprecated="False" filter="0" group="Situation State">
+            <TunableList name="job_and_role_changes" class="TunableMapping" display="Job And Role Changes" muid="F0DC811F2B916128" mapping_key="Situation Job" mapping_value="Role State" description="A mapping between situation jobs and role states that defines&#xA;what role states we want to switch to for sims on which jobs&#xA;when this situation state is entered." Deprecated="False" filter="0" group="General">
+                <TunableTuple class="TunableTuple" muid="AB0320BE6399C6B0" Deprecated="False" filter="0" group="General">
+                    <Tunable type="role_state" name="Role State" class="TunableReference" display="Role State" muid="ADE2C8849B153F04" description="The role state that we will switch sims of the linked job&#xA;into." allow_none="False" Deprecated="False" filter="0" group="General" />
+                    <Tunable type="situation_job" name="Situation Job" class="TunableReference" display="Situation Job" muid="36D6A728350AA55F" description="A reference to a SituationJob that we will use to change&#xA;sim's role state." allow_none="False" Deprecated="False" filter="0" group="General" />
+                </TunableTuple>
+            </TunableList>
+        </TunableTuple>
+
+        <TunableList name="situation_job_mapping" class="TunableMapping" display="Situation Job Mapping" muid="79DEB6FEE8BF5C51" mapping_key="filter_tag" mapping_value="job" description="A mapping of filter term tag to situation job.&#xA;&#xA;The filter term tag is returned as part of the sim filters used to &#xA;create the guest list for this particular background situation.&#xA;&#xA;The situation job is the job that the Sim will be assigned to in&#xA;the background situation." Deprecated="False" filter="0" group="General">
+            <TunableTuple class="TunableTuple" muid="F38D954F8B52101A" Deprecated="False" filter="0" group="General">
+                <TunableEnum type="FilterTermTag" name="filter_tag" class="TunableEnumEntry" default="NO_TAG" display="Filter Tag" muid="10CCBC8AB5645D6F" dynamic_entries="filters-tunable.FilterTermTag._elements" static_entries="filters-tunable.FilterTermTag" description="The filter term tag returned with the filter results." Deprecated="False" filter="0" group="General" />
+                <Tunable type="situation_job" name="job" class="TunableReference" display="Job" muid="FB865A09559C883A" description="The job the Sim will receive when added to the this situation." allow_none="False" Deprecated="False" filter="0" group="General" />
+            </TunableTuple>
+        </TunableList>
+    </Instance>
+</TuningRoot>

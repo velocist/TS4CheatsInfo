@@ -1,0 +1,174 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<I c="ServiceNpcButlerSituation" i="situation" m="situations.service_npcs.butler.service_npc_butler_situation" n="butler_situation" s="145804">
+  <U n="_butler_job">
+    <T n="role_state">145807<!--RoleState: butler_Roles_start--></T>
+    <T n="situation_job">145805<!--SituationJob: job_Butler--></T>
+  </U>
+  <T n="_implies_greeted_status">True</T>
+  <T n="_maintain_sims_consistency">True</T>
+  <T n="_survives_active_household_change">False</T>
+  <U n="butler_states">
+    <U n="childcare_state">
+      <L n="job_and_role_changes">
+        <U>
+          <T n="Situation Job">145805<!--SituationJob: job_Butler--></T>
+          <T n="Role State">147047<!--RoleState: butler_Roles_Nanny_Start--></T>
+        </U>
+      </L>
+      <V t="enabled" n="time_out">
+        <T n="enabled">15</T>
+      </V>
+    </U>
+    <U n="cleaning_state">
+      <L n="job_and_role_changes">
+        <U>
+          <T n="Situation Job">145805<!--SituationJob: job_Butler--></T>
+          <T n="Role State">147044<!--RoleState: butler_Roles_Maid_start--></T>
+        </U>
+      </L>
+      <V t="enabled" n="time_out">
+        <T n="enabled">15</T>
+      </V>
+    </U>
+    <U n="default_state">
+      <L n="job_and_role_changes">
+        <U>
+          <T n="Situation Job">145805<!--SituationJob: job_Butler--></T>
+          <T n="Role State">145807<!--RoleState: butler_Roles_start--></T>
+        </U>
+      </L>
+      <V t="enabled" n="time_out">
+        <T n="enabled">1</T>
+      </V>
+    </U>
+    <U n="gardening_state">
+      <L n="job_and_role_changes">
+        <U>
+          <T n="Situation Job">145805<!--SituationJob: job_Butler--></T>
+          <T n="Role State">147045<!--RoleState: butler_Roles_Gardener_Start--></T>
+        </U>
+      </L>
+      <V t="enabled" n="time_out">
+        <T n="enabled">15</T>
+      </V>
+    </U>
+    <U n="repair_state">
+      <L n="job_and_role_changes">
+        <U>
+          <T n="Situation Job">145805<!--SituationJob: job_Butler--></T>
+          <T n="Role State">147046<!--RoleState: butler_Roles_RepairMan_start--></T>
+        </U>
+      </L>
+      <V t="enabled" n="time_out">
+        <T n="enabled">15</T>
+      </V>
+    </U>
+  </U>
+  <T n="duration">0</T>
+  <E n="exclusivity">SERVICE</E>
+  <L n="finish_job_states">
+    <U>
+      <E n="key">DISMISSED</E>
+      <U n="value">
+        <U n="enter_state_test">
+          <L n="affordances">
+            <T>14017<!--SocialSuperInteraction: sim_DismissServiceNPC--></T>
+          </L>
+        </U>
+        <V t="enabled" n="notification">
+          <V n="enabled" t="literal">
+            <U n="literal">
+              <L n="dialog_options">
+                <E>DISABLE_CLOSE_BUTTON</E>
+              </L>
+              <V t="enabled" n="icon">
+                <V t="participant" n="enabled">
+                  <U n="participant">
+                    <L n="participant_type">
+                      <E>Actor</E>
+                    </L>
+                  </U>
+                </V>
+              </V>
+              <V n="text" t="single">
+                <T n="single">0xA308BA03<!--String: "¿Ya no me necesitas? Pues nada, son {0.Money} por mis servicios de hoy."--></T>
+              </V>
+              <E n="visual_type">SPEECH</E>
+            </U>
+          </V>
+        </V>
+      </U>
+    </U>
+    <U>
+      <E n="key">FIRED</E>
+      <U n="value">
+        <U n="enter_state_test">
+          <L n="affordances">
+            <T>145841<!--SocialSuperInteraction: sim_FireButlerNPC--></T>
+          </L>
+          <E n="participant">TargetSim</E>
+        </U>
+        <V t="enabled" n="notification">
+          <V n="enabled" t="literal">
+            <U n="literal">
+              <L n="dialog_options">
+                <E>DISABLE_CLOSE_BUTTON</E>
+              </L>
+              <V t="enabled" n="icon">
+                <V t="participant" n="enabled">
+                  <U n="participant">
+                    <L n="participant_type">
+                      <E>Actor</E>
+                    </L>
+                  </U>
+                </V>
+              </V>
+              <V n="text" t="single">
+                <T n="single">0xA308BA03<!--String: "¿Ya no me necesitas? Pues nada, son {0.Money} por mis servicios de hoy."--></T>
+              </V>
+              <E n="visual_type">SPEECH</E>
+            </U>
+          </V>
+        </V>
+      </U>
+    </U>
+    <U>
+      <E n="key">NOT_PAID</E>
+      <U n="value">
+        <U n="enter_state_test">
+          <L n="affordances">
+            <T>148816<!--SocialSuperInteraction: sim_Butler_Quit--></T>
+          </L>
+          <E n="participant">TargetSim</E>
+        </U>
+        <V n="notification" t="enabled">
+          <V n="enabled" t="literal">
+            <U n="literal">
+              <L n="dialog_options">
+                <E>DISABLE_CLOSE_BUTTON</E>
+              </L>
+              <V t="enabled" n="icon">
+                <V t="participant" n="enabled">
+                  <U n="participant">
+                    <L n="participant_type">
+                      <E>Actor</E>
+                    </L>
+                  </U>
+                </V>
+              </V>
+              <V n="text" t="single">
+                <T n="single">0x336B7DF<!--String: "¡No aguanto más! ¡LO DEJO! Nunca había trabajado para alguien tan maleducado y hostil. Si quieres contratar a otro mayordomo, puedes llamar a la Academia de Mayordomos de Windenburg, pero te recomiendo cambiar antes de actitud.\n\nAh, y por cierto, pienso cobrarme el finiquito que me corresponde, según lo estipulado en letra pequeña en el contrato."--></T>
+              </V>
+              <E n="urgency">URGENT</E>
+              <E n="visual_type">SPEECH</E>
+            </U>
+          </V>
+        </V>
+      </U>
+    </U>
+  </L>
+  <L n="tags">
+    <E>Situation_Butler</E>
+  </L>
+  <V n="time_jump" t="allow" />
+</I>

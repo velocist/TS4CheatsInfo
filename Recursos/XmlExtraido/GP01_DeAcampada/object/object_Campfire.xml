@@ -1,0 +1,482 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<I c="GameObject" i="object" m="objects.game_object" n="object_Campfire" s="101936">
+  <U n="_components">
+    <V n="affordance_tuning" t="enabled">
+      <U n="enabled">
+        <L n="affordance_map">
+          <U>
+            <T n="key">102258<!--SuperInteraction: Ghost_Possess--></T>
+            <U n="value">
+              <L n="basic_extras">
+                <V t="loot">
+                  <U n="loot">
+                    <L n="loot_list">
+                      <T>185053<!--LootActions: loot_Campfire_FrozenGhost_TurnOffFire--></T>
+                    </L>
+                    <V t="at_beginning" n="timing" />
+                  </U>
+                </V>
+              </L>
+            </U>
+          </U>
+          <U>
+            <T n="key">165966<!--SuperInteraction: pet_Nap_Near--></T>
+            <U n="value">
+              <L n="tests">
+                <L>
+                  <V t="state">
+                    <U n="state">
+                      <V t="always_pass" n="fallback_behavior" />
+                      <T n="value">35296<!--ObjectStateValue: GenericOnOff_On--></T>
+                    </U>
+                  </V>
+                </L>
+              </L>
+            </U>
+          </U>
+          <U>
+            <T n="key">165968<!--SuperInteraction: pet_Laze_Near--></T>
+            <U n="value">
+              <L n="tests">
+                <L>
+                  <V t="state">
+                    <U n="state">
+                      <V t="always_pass" n="fallback_behavior" />
+                      <T n="value">35296<!--ObjectStateValue: GenericOnOff_On--></T>
+                    </U>
+                  </V>
+                </L>
+              </L>
+            </U>
+          </U>
+          <U>
+            <T n="key">170957<!--SuperInteraction: pet_Laze_Near_Dog--></T>
+            <U n="value">
+              <L n="tests">
+                <L>
+                  <V t="state">
+                    <U n="state">
+                      <V t="always_pass" n="fallback_behavior" />
+                      <T n="value">35296<!--ObjectStateValue: GenericOnOff_On--></T>
+                    </U>
+                  </V>
+                </L>
+              </L>
+            </U>
+          </U>
+          <U>
+            <T n="key">171004<!--SuperInteraction: pet_Nap_Near_Dog--></T>
+            <U n="value">
+              <L n="tests">
+                <L>
+                  <V t="state">
+                    <U n="state">
+                      <V t="always_pass" n="fallback_behavior" />
+                      <T n="value">35296<!--ObjectStateValue: GenericOnOff_On--></T>
+                    </U>
+                  </V>
+                </L>
+              </L>
+            </U>
+          </U>
+        </L>
+      </U>
+    </V>
+    <V n="crafting_station" t="enabled">
+      <U n="enabled">
+        <L n="crafting_station_types">
+          <T>105158<!--CraftingObjectType: craftingObjectType_Campfire--></T>
+        </L>
+      </U>
+    </V>
+    <V t="enabled" n="focus">
+      <U n="enabled">
+        <V n="_focus_score" t="globally">
+          <U n="globally">
+            <E n="base">HIGH</E>
+          </U>
+        </V>
+      </U>
+    </V>
+    <V n="inventory_item" t="enabled">
+      <U n="enabled">
+        <T n="can_place_in_world">True</T>
+        <V n="no_carry_add_to_sim_inventory_affordances" t="OVERRIDE">
+          <L n="OVERRIDE">
+            <T>111165<!--SuperInteraction: si_SwipeIntoSimInventory_Campfire--></T>
+          </L>
+        </V>
+        <V n="put_away_affordance" t="OVERRIDE">
+          <T n="OVERRIDE">111165<!--SuperInteraction: si_SwipeIntoSimInventory_Campfire--></T>
+        </V>
+        <T n="skip_carry_pose">True</T>
+        <L n="valid_inventory_types">
+          <E>SIM</E>
+          <E>STORAGE_CHEST_DORM</E>
+        </L>
+      </U>
+    </V>
+    <V t="enabled" n="lighting" />
+    <V n="live_drag_target" t="enabled">
+      <U n="enabled">
+        <L n="drop_tests_and_actions">
+          <U>
+            <E n="drop_type">SIM</E>
+            <L n="test_set">
+              <V t="object_has_no_children">
+                <U n="object_has_no_children">
+                  <T n="consider_bb_only_children">True</T>
+                </U>
+              </V>
+              <V t="state">
+                <U n="state">
+                  <T n="value">101810<!--CommodityBasedObjectStateValue: Campfire_FireIntensity_Unlit--></T>
+                </U>
+              </V>
+            </L>
+          </U>
+        </L>
+      </U>
+    </V>
+    <V t="enabled" n="retail_component">
+      <V n="enabled" t="reference">
+        <T n="reference">115301<!--RetailComponent: retailComponent_Default_LowAppeal--></T>
+      </V>
+    </V>
+    <V n="state" t="enabled">
+      <U n="enabled">
+        <L n="state_triggers">
+          <U>
+            <L n="at_states">
+              <T>101815<!--CommodityBasedObjectStateValue: Campfire_FireIntensity_High--></T>
+              <T>101813<!--CommodityBasedObjectStateValue: Campfire_FireIntensity_Low--></T>
+              <T>101814<!--CommodityBasedObjectStateValue: Campfire_FireIntensity_Med--></T>
+            </L>
+            <V n="set_states" t="Set_state_list">
+              <L n="Set_state_list">
+                <T>35296<!--ObjectStateValue: GenericOnOff_On--></T>
+              </L>
+            </V>
+            <E n="trigger_operation">OR</E>
+          </U>
+          <U>
+            <L n="at_states">
+              <T>101810<!--CommodityBasedObjectStateValue: Campfire_FireIntensity_Unlit--></T>
+            </L>
+            <V n="set_states" t="Set_state_list">
+              <L n="Set_state_list">
+                <T>35297<!--ObjectStateValue: GenericOnOff_Off--></T>
+              </L>
+            </V>
+          </U>
+          <U>
+            <L n="at_states">
+              <T>77532<!--CommodityBasedObjectStateValue: FireState_Burn_Material_Change_Replace--></T>
+            </L>
+            <V n="set_states" t="Set_state_list">
+              <L n="Set_state_list">
+                <T>39737<!--CommodityBasedObjectStateValue: FireState_Burn_Material_Change_Not_Burning--></T>
+              </L>
+            </V>
+          </U>
+        </L>
+        <L n="states">
+          <U>
+            <L n="client_states">
+              <U>
+                <T n="key">35296<!--ObjectStateValue: GenericOnOff_On--></T>
+                <U n="value">
+                  <V n="autonomy_modifiers" t="apply_new_value">
+                    <V n="apply_new_value" t="apply_statistic_modifiers">
+                      <U n="apply_statistic_modifiers">
+                        <L n="lot_statistic_modifiers">
+                          <U>
+                            <V n="modifier" t="basic_value">
+                              <U n="basic_value">
+                                <T n="value">0.035</T>
+                              </U>
+                            </V>
+                            <T n="statistic">233233<!--Commodity: commodity_EcoFootprint_Lot--></T>
+                          </U>
+                        </L>
+                      </U>
+                    </V>
+                  </V>
+                  <V n="broadcaster" t="apply_new_value">
+                    <V n="apply_new_value" t="start_broadcaster">
+                      <U n="start_broadcaster">
+                        <L n="broadcaster_types">
+                          <U>
+                            <T n="item">188737<!--Broadcaster: Broadcaster_Snowmelt--></T>
+                          </U>
+                          <U>
+                            <T n="item">159379<!--Broadcaster: broadcaster_Fear_Pet_FirePlace--></T>
+                          </U>
+                        </L>
+                      </U>
+                    </V>
+                  </V>
+                </U>
+              </U>
+              <U>
+                <T n="key">35297<!--ObjectStateValue: GenericOnOff_Off--></T>
+                <U n="value">
+                  <V t="apply_new_value" n="autonomy_modifiers" />
+                </U>
+              </U>
+            </L>
+            <V n="default_value" t="reference">
+              <T n="reference">35297<!--ObjectStateValue: GenericOnOff_Off--></T>
+            </V>
+          </U>
+          <U>
+            <L n="client_states">
+              <U>
+                <T n="key">101810<!--CommodityBasedObjectStateValue: Campfire_FireIntensity_Unlit--></T>
+              </U>
+              <U>
+                <T n="key">101813<!--CommodityBasedObjectStateValue: Campfire_FireIntensity_Low--></T>
+              </U>
+              <U>
+                <T n="key">101814<!--CommodityBasedObjectStateValue: Campfire_FireIntensity_Med--></T>
+              </U>
+              <U>
+                <T n="key">101815<!--CommodityBasedObjectStateValue: Campfire_FireIntensity_High--></T>
+              </U>
+            </L>
+            <V n="default_value" t="reference">
+              <T n="reference">101810<!--CommodityBasedObjectStateValue: Campfire_FireIntensity_Unlit--></T>
+            </V>
+          </U>
+          <U>
+            <L n="client_states">
+              <U>
+                <T n="key">184455<!--ObjectStateValue: weather_Values_RainedOn--></T>
+                <U n="value">
+                  <V n="autonomy_modifiers" t="apply_new_value">
+                    <V n="apply_new_value" t="apply_statistic_modifiers">
+                      <U n="apply_statistic_modifiers">
+                        <L n="autonomy_modifiers">
+                          <U>
+                            <L n="decay_modifiers">
+                              <U>
+                                <T n="key">101759<!--Commodity: commodity_Campfire_FireIntensity--></T>
+                                <T n="value">10</T>
+                              </U>
+                            </L>
+                          </U>
+                        </L>
+                      </U>
+                    </V>
+                  </V>
+                </U>
+              </U>
+              <U>
+                <T n="key">184458<!--ObjectStateValue: weather_Values_NotRainedOn--></T>
+                <U n="value">
+                  <V n="autonomy_modifiers" t="apply_new_value">
+                    <V n="apply_new_value" t="apply_statistic_modifiers">
+                      <U n="apply_statistic_modifiers">
+                        <L n="autonomy_modifiers">
+                          <U>
+                            <L n="decay_modifiers">
+                              <U>
+                                <T n="key">101759<!--Commodity: commodity_Campfire_FireIntensity--></T>
+                                <T n="value">1</T>
+                              </U>
+                            </L>
+                          </U>
+                        </L>
+                      </U>
+                    </V>
+                  </V>
+                </U>
+              </U>
+            </L>
+            <V t="reference" n="default_value">
+              <T n="reference">184458<!--ObjectStateValue: weather_Values_NotRainedOn--></T>
+            </V>
+            <T n="reset_on_load_if_time_passes">True</T>
+          </U>
+          <U>
+            <L n="client_states">
+              <U>
+                <T n="key">39611<!--CommodityBasedObjectStateValue: FireState_Burn_Material_Change--></T>
+              </U>
+              <U>
+                <T n="key">39736<!--CommodityBasedObjectStateValue: FireState_Burn_Material_Change_Burning--></T>
+              </U>
+              <U>
+                <T n="key">39737<!--CommodityBasedObjectStateValue: FireState_Burn_Material_Change_Not_Burning--></T>
+              </U>
+              <U>
+                <T n="key">77532<!--CommodityBasedObjectStateValue: FireState_Burn_Material_Change_Replace--></T>
+              </U>
+            </L>
+            <V n="default_value" t="reference">
+              <T n="reference">39737<!--CommodityBasedObjectStateValue: FireState_Burn_Material_Change_Not_Burning--></T>
+            </V>
+          </U>
+          <U>
+            <L n="client_states">
+              <U>
+                <T n="key">35956<!--CommodityBasedObjectStateValue: Materialistic_Admired--></T>
+              </U>
+              <U>
+                <T n="key">35957<!--CommodityBasedObjectStateValue: Materialistic_YetToAdmire--></T>
+              </U>
+            </L>
+            <V n="default_value" t="reference">
+              <T n="reference">35957<!--CommodityBasedObjectStateValue: Materialistic_YetToAdmire--></T>
+            </V>
+          </U>
+        </L>
+      </U>
+    </V>
+    <V n="tooltip_component" t="enabled">
+      <U n="enabled">
+        <L n="custom_tooltips">
+          <U>
+            <L n="object_tests">
+              <L>
+                <V t="game_option">
+                  <U n="game_option">
+                    <E n="gameplay_option">ECO_FOOTPRINT_GAMEPLAY</E>
+                  </U>
+                </V>
+                <V t="state">
+                  <U n="state">
+                    <T n="value">35296<!--ObjectStateValue: GenericOnOff_On--></T>
+                  </U>
+                </V>
+              </L>
+            </L>
+            <L n="tooltip_fields">
+              <U>
+                <E n="key">header</E>
+                <U n="value">
+                  <V n="override_component_information" t="concatenate_with_component_fields" />
+                  <V n="text" t="single">
+                    <T n="single">0xE6403AD8<!--String: "<font color='#C9A927'>+ huella ecológica industrial</font>"--></T>
+                  </V>
+                </U>
+              </U>
+            </L>
+          </U>
+          <U>
+            <L n="object_tests">
+              <L>
+                <V t="in_inventory" />
+              </L>
+            </L>
+            <L n="tooltip_fields">
+              <U>
+                <E n="key">recipe_name</E>
+                <U n="value">
+                  <V n="text" t="single">
+                    <T n="single">0xED5AFE5F<!--String: "{0.ObjectName}"--></T>
+                  </V>
+                  <V t="enabled" n="text_tokens">
+                    <U n="enabled">
+                      <L n="tokens">
+                        <V t="participant_type">
+                          <U n="participant_type">
+                            <V n="objects" t="from_participant">
+                              <U n="from_participant">
+                                <E n="participant">Object</E>
+                              </U>
+                            </V>
+                          </U>
+                        </V>
+                      </L>
+                    </U>
+                  </V>
+                </U>
+              </U>
+            </L>
+          </U>
+        </L>
+        <T n="update_on_game_option_changed">True</T>
+      </U>
+    </V>
+    <V n="weather_aware_component" t="enabled">
+      <U n="enabled">
+        <L n="outside_loot">
+          <U>
+            <E n="key">Rain_Heavy</E>
+            <U n="value">
+              <L n="end_loot">
+                <T>184449<!--LootActions: loot_Weather_NotRainedOn--></T>
+              </L>
+              <L n="start_loot">
+                <T>184448<!--LootActions: loot_Weather_RainedOn--></T>
+              </L>
+            </U>
+          </U>
+          <U>
+            <E n="key">Rain_Storm</E>
+            <U n="value">
+              <L n="end_loot">
+                <T>184449<!--LootActions: loot_Weather_NotRainedOn--></T>
+              </L>
+              <L n="start_loot">
+                <T>184448<!--LootActions: loot_Weather_RainedOn--></T>
+              </L>
+            </U>
+          </U>
+        </L>
+      </U>
+    </V>
+  </U>
+  <L n="_super_affordances">
+    <T>13328<!--ImmediateSuperInteraction: debug_Reset--></T>
+    <T>13326<!--ImmediateSuperInteraction: debug_ObjectDestroy--></T>
+    <T>103888<!--ImmediateSuperInteraction: cheat_set_as_head--></T>
+    <T>196759<!--SuperInteraction: famePerks_GoodReputation_GivingBack_DonateObject--></T>
+    <T>159863<!--SuperInteraction: petInvestigate_Obsess_Watch_Fire--></T>
+    <T>158379<!--SuperInteraction: TV_Cat_WatchWary--></T>
+    <T>159884<!--SuperInteraction: PetInvestigate_Fear_Fire--></T>
+    <T>201643<!--SuperInteraction: vault_BurnMoney_Campfire--></T>
+    <T>105231<!--SuperInteraction: campfire_RoastMarshmallows--></T>
+    <T>105186<!--SimPickerInteraction: campfire_InviteToGatherAround--></T>
+    <T>105179<!--CraftingPhaseCreateCarriedObjectSuperInteraction: campfire_CreateFood--></T>
+    <T>105181<!--CraftingPhaseStagingSuperInteraction: campfire_MakeRecipe_Staging--></T>
+    <T>13983<!--StandSuperInteraction: sim-stand--></T>
+    <T>105165<!--StartCraftingSuperInteraction: campfire_startCrafting--></T>
+    <T>105496<!--SimPickerInteraction: tellGroupStory_Picker_Adventure_Campfire--></T>
+    <T>105498<!--SimPickerInteraction: tellGroupStory_Picker_Fairy_Campfire--></T>
+    <T>105500<!--SimPickerInteraction: tellGroupStory_Picker_Ghost_Campfire--></T>
+    <T>105490<!--SocialSuperInteraction: groupStory_PerformAdventureStory_Campfire--></T>
+    <T>105492<!--SocialSuperInteraction: groupStory_PerformFairyTale_Campfire--></T>
+    <T>105494<!--SocialSuperInteraction: groupStory_PerformGhostStory_Campfire--></T>
+    <T>105569<!--CraftingPhaseCreateObjectInInventorySuperInteraction: campfire_CreateTool--></T>
+    <T>105674<!--CraftingPhaseStagingSuperInteraction: campfire_DestroyCookingTool--></T>
+    <T>105706<!--CraftingPhaseCreateObjectInInventorySuperInteraction: campfire_CreateTool_HotDog--></T>
+    <T>105708<!--CraftingPhaseCreateObjectInInventorySuperInteraction: campfire_CreateTool_Beetle--></T>
+    <T>105709<!--CraftingPhaseCreateObjectInInventorySuperInteraction: campfire_CreateTool_Fish--></T>
+    <T>105707<!--CraftingPhaseCreateObjectInInventorySuperInteraction: campfire_CreateTool_VeggieDog--></T>
+    <T>105902<!--StartCraftingAutonomouslySuperInteraction: campfire_StartCraftingAutonomously--></T>
+    <T>190901<!--SimPickerInteraction: tellGroupStory_Picker_Ghost_HolidayCampfire--></T>
+    <T>190900<!--SimPickerInteraction: tellGroupStory_Picker_Ghost_Holiday--></T>
+    <T>190898<!--SimPickerInteraction: tellGroupStory_Picker_Fairy_Holiday--></T>
+    <T>190899<!--SimPickerInteraction: tellGroupStory_Picker_Fairy_HolidayCampfire--></T>
+    <T>190896<!--SimPickerInteraction: tellGroupStory_Picker_Adventure_Holiday--></T>
+    <T>190897<!--SimPickerInteraction: tellGroupStory_Picker_Adventure_HolidayCampfire--></T>
+    <T>74457<!--ImmediateSuperInteraction: fire_ReplaceBurntObject--></T>
+    <T>102258<!--SuperInteraction: Ghost_Possess--></T>
+    <T>168502<!--SuperInteraction: Ghost_Pet_Possess--></T>
+  </L>
+  <T n="fire_retardant">True</T>
+  <U n="recycling_data">
+    <L n="recycling_values">
+      <U>
+        <E n="Bucks Type">RecycleBitsBucks</E>
+        <T n="Value">0.25</T>
+      </U>
+      <U>
+        <E n="Bucks Type">RecyclePiecesBucks</E>
+        <T n="Value">0.75</T>
+      </U>
+    </L>
+  </U>
+</I>

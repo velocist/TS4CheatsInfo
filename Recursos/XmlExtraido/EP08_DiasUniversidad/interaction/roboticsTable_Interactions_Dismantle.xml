@@ -1,0 +1,131 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<I c="SuperInteraction" i="interaction" m="interactions.base.super_interaction" n="roboticsTable_Interactions_Dismantle" s="222773">
+  <V t="Forward" n="_forwarding" />
+  <V t="enabled" n="_saveable" />
+  <T n="attention_cost">0.5</T>
+  <V t="one_shot" n="basic_content">
+    <U n="one_shot">
+      <U n="animation_ref">
+        <T n="factory">222006<!--AnimationElement: RoboticsTable_Hammer_Succeed--></T>
+      </U>
+    </U>
+  </V>
+  <V t="enabled" n="canonical_animation">
+    <U n="enabled">
+      <T n="factory">222008<!--AnimationElement: RoboticsTable_Passive_Actions--></T>
+    </U>
+  </V>
+  <V t="disabled" n="content_score" />
+  <T n="display_name">0x667B7910<!--String: "Desmontar a {1.ObjectName}"--></T>
+  <U n="display_name_text_tokens">
+    <L n="tokens">
+      <V t="participant_type">
+        <U n="participant_type">
+          <V n="objects" t="from_participant">
+            <U n="from_participant">
+              <E n="participant">Actor</E>
+            </U>
+          </V>
+        </U>
+      </V>
+      <V t="participant_type">
+        <U n="participant_type">
+          <V t="from_participant" n="objects">
+            <U n="from_participant">
+              <E n="participant">Object</E>
+            </U>
+          </V>
+        </U>
+      </V>
+    </L>
+  </U>
+  <L n="interaction_category_tags">
+    <E>Interaction_Super</E>
+    <E>Interaction_All</E>
+  </L>
+  <V n="outcome" t="single">
+    <U n="single">
+      <U n="actions">
+        <L n="basic_extras">
+          <V t="vfx">
+            <U n="vfx">
+              <V t="from_participant" n="participant">
+                <U n="from_participant">
+                  <E n="participant">ObjectParent</E>
+                </U>
+              </V>
+              <V t="at_beginning" n="timing" />
+              <U n="vfx">
+                <T n="effect_name">ep08_bot_dismantle</T>
+              </U>
+            </U>
+          </V>
+          <V t="destroy_object" />
+        </L>
+        <L n="loot_list">
+          <T>223722<!--LootActions: loot_RoboticsTable_Dismantle--></T>
+        </L>
+      </U>
+    </U>
+  </V>
+  <E n="scoring_priority">NORMAL</E>
+  <T n="subaction_selection_weight">1</T>
+  <E n="target_type">OBJECT</E>
+  <L n="test_globals">
+    <V t="sim_info">
+      <U n="sim_info">
+        <V t="specified" n="ages" />
+        <V t="specified" n="species">
+          <U n="specified">
+            <L n="species">
+              <E />
+            </L>
+          </U>
+        </V>
+        <E n="who">Actor</E>
+      </U>
+    </V>
+    <V t="object_ownership" />
+  </L>
+  <L n="tests">
+    <L>
+      <V t="location">
+        <U n="location">
+          <U n="location_tests">
+            <V n="is_in_slot" t="enabled">
+              <U n="enabled">
+                <V n="slot_test_type" t="specific_slot">
+                  <U n="specific_slot">
+                    <T n="require_slotted">True</T>
+                    <T n="specific_slot_set">objectSet_craftRobotics</T>
+                  </U>
+                </V>
+              </U>
+            </V>
+          </U>
+          <E n="subject">Object</E>
+        </U>
+      </V>
+    </L>
+    <L>
+      <V t="location">
+        <U n="location">
+          <U n="location_tests">
+            <V n="is_in_slot" t="enabled">
+              <U n="enabled">
+                <V n="slot_test_type" t="specific_slot">
+                  <U n="specific_slot">
+                    <T n="require_slotted">True</T>
+                    <T n="specific_slot_set">objectSet_humanoidBot</T>
+                  </U>
+                </V>
+              </U>
+            </V>
+          </U>
+          <E n="subject">Object</E>
+        </U>
+      </V>
+    </L>
+  </L>
+  <T n="time_overhead">30</T>
+</I>

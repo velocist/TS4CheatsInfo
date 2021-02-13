@@ -1,0 +1,172 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<I c="ImmediateSuperInteraction" i="interaction" m="interactions.base.immediate_interaction" n="spells_Sim_Pusher_BindFamiliar" s="215471">
+  <V t="disabled" n="_saveable" />
+  <T n="category">215833<!--PieMenuCategory: pieMenuCategory_Spells--></T>
+  <V t="disabled" n="content_score" />
+  <T n="display_name">0xE4162773<!--String: "Vincular mascota como espíritu familiar"--></T>
+  <U n="display_name_text_tokens">
+    <L n="tokens">
+      <V t="participant_type">
+        <U n="participant_type">
+          <V t="from_participant" n="objects">
+            <U n="from_participant">
+              <E n="participant">Actor</E>
+            </U>
+          </V>
+        </U>
+      </V>
+      <V t="participant_type">
+        <U n="participant_type">
+          <V t="from_participant" n="objects">
+            <U n="from_participant">
+              <E n="participant">Object</E>
+            </U>
+          </V>
+        </U>
+      </V>
+    </L>
+  </U>
+  <L n="interaction_category_tags">
+    <E>INVALID</E>
+  </L>
+  <V n="outcome" t="single">
+    <U n="single">
+      <U n="actions">
+        <L n="continuation">
+          <U>
+            <T n="affordance">215469<!--SuperInteraction: spells_Sim_FamiliarBind--></T>
+          </U>
+          <U>
+            <E n="actor">TargetSim</E>
+            <T n="affordance">213311<!--SuperInteraction: spells_StopTarget--></T>
+            <E n="target">Invalid</E>
+          </U>
+          <U>
+            <T n="affordance">216900<!--SuperInteraction: spells_Sim_FamiliarBind_SpectralReach--></T>
+          </U>
+        </L>
+      </U>
+    </U>
+  </V>
+  <U n="progress_bar_enabled">
+    <T n="bar_enabled">False</T>
+  </U>
+  <E n="target_type">OBJECT</E>
+  <L n="test_globals">
+    <V t="trait">
+      <U n="trait">
+        <L n="whitelist_traits">
+          <T>213061<!--Trait: trait_Occult_WitchOccult_Manifested--></T>
+        </L>
+      </U>
+    </V>
+    <V t="region">
+      <U n="region">
+        <V n="blacklist" t="enabled">
+          <L n="enabled">
+            <T>231104<!--Region: region_Destination_Batuu--></T>
+          </L>
+        </V>
+      </U>
+    </V>
+    <V t="sim_info">
+      <U n="sim_info">
+        <V t="specified" n="ages">
+          <L n="specified">
+            <E>TEEN</E>
+            <E>YOUNGADULT</E>
+            <E>ADULT</E>
+            <E>ELDER</E>
+            <E>CHILD</E>
+          </L>
+        </V>
+        <V n="species" t="specified">
+          <U n="specified">
+            <L n="species">
+              <E>CAT</E>
+              <E>DOG</E>
+            </L>
+          </U>
+        </V>
+        <E n="who">TargetSim</E>
+      </U>
+    </V>
+    <V t="wading_interval_test">
+      <U n="wading_interval_test">
+        <T n="negate">True</T>
+        <E n="target">Actor</E>
+        <V t="custom" n="test">
+          <U n="custom">
+            <U n="height_range">
+              <T n="lower_bound">0.5</T>
+            </U>
+          </U>
+        </V>
+      </U>
+    </V>
+    <V t="wading_interval_test">
+      <U n="wading_interval_test">
+        <T n="negate">True</T>
+        <E n="target">TargetSim</E>
+        <V t="custom" n="test">
+          <U n="custom">
+            <U n="height_range">
+              <T n="lower_bound">0.5</T>
+            </U>
+          </U>
+        </V>
+      </U>
+    </V>
+    <V t="participant_running_interaction">
+      <U n="participant_running_interaction">
+        <L n="affordance_lists">
+          <T>231133<!--AffordanceList: affordanceList_PassOut_SIs--></T>
+        </L>
+        <E n="participant">TargetSim</E>
+        <T n="test_for_not_running">True</T>
+      </U>
+    </V>
+    <V t="relationship">
+      <U n="relationship">
+        <U n="required_relationship_bits">
+          <L n="match_any">
+            <T>148063<!--RelationshipBit: relationshipBit_CatOwned--></T>
+            <T>148061<!--RelationshipBit: relationshipBit_DogOwned--></T>
+          </L>
+        </U>
+      </U>
+    </V>
+    <V t="relationship">
+      <U n="relationship">
+        <U n="prohibited_relationship_bits">
+          <L n="match_all">
+            <T>215119<!--RelationshipBit: relationshipBit_Familiar--></T>
+          </L>
+        </U>
+        <L n="subject">
+          <E>TargetSim</E>
+        </L>
+        <L n="target_sim">
+          <E>AllRelationships</E>
+        </L>
+        <V n="tooltip" t="enabled">
+          <T n="enabled">0x34A2B149<!--String: "Esta mascota ya es un espíritu familiar."--></T>
+        </V>
+      </U>
+    </V>
+    <V t="test_set_reference">
+      <T n="test_set_reference">220514<!--TestSetInstance: testSet_Spells_SimInWater--></T>
+    </V>
+    <V t="buff">
+      <U n="buff">
+        <L n="blacklist">
+          <T>136193<!--Buff: buff_AutonomyMod_MarketStall_VendorNPC--></T>
+        </L>
+        <E n="subject">TargetSim</E>
+        <V n="tooltip" t="enabled">
+          <T n="enabled">0x1DDF5773<!--String: "Una extraña fuerza impide que se lancen hechizos a los vendedores."--></T>
+        </V>
+      </U>
+    </V>
+  </L>
+</I>

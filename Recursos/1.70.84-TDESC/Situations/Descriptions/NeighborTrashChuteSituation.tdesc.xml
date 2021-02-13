@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+
+<TuningRoot>
+    <Instance instance_type="situation" class="NeighborTrashChuteSituation" module="apartments.situations.neighbor_trash_chute" muid="5905E08CFBD408D8" description="Situation for an apartment neighbor that wants to take out their trash.&#xA;Trash will be created and placed in their hand." instance_subclasses_only="False" parents="SituationComplexCommon, SituationComplex, Situation" path="Situations\Descriptions" use_guid_for_reference="True">
+        <Deleted name="_buff" muid="ABA4421EEF743D92" />
+
+        <Deleted name="_cost" muid="B934C68DD01F93F0" />
+
+        <Deleted name="_display_name" muid="7940BADFB1156580" />
+
+        <Deleted name="_icon" muid="F7D720083F8DFC07" />
+
+        <Deleted name="_implies_greeted_status" muid="DC422FC10C7874B0" />
+
+        <Deleted name="_initiating_sim_tests" muid="E4E1BA1023B83034" />
+
+        <Deleted name="_level_data" muid="81537043C59A8ADC" />
+
+        <Deleted name="_main_goal_visibility_test" muid="7AA46B72A1CE9372" />
+
+        <Deleted name="_relationship_between_job_members" muid="C45C43DA928C32F3" />
+
+        <Deleted name="_resident_job" muid="C322BF74874ADAF2" />
+
+        <Deleted name="audio_sting_on_start" muid="E1CF1A5D8F0A24C1" />
+
+        <Deleted name="background_audio" muid="A60DFE1E3DF30058" />
+
+        <Deleted name="category" muid="B47777AF45333264" />
+
+        <Deleted name="compatible_venues" muid="76A414810D392A08" />
+
+        <Deleted name="creation_ui_option" muid="1F4AB59AED4F41A1" />
+
+        <Deleted name="entitlement" muid="AF607CD38D65E66" />
+
+        <Deleted name="exclusivity" muid="3108D919E7B59D58" />
+
+        <Deleted name="force_invite_only" muid="2B3FE745B3E08EF6" />
+
+        <Deleted name="goal_button_text" muid="41097230BF5CA0A6" />
+
+        <Deleted name="goal_sub_text" muid="3983F6EBA8ABD740" />
+
+        <Deleted name="highlight_first_incomplete_minor_goal" muid="2D3C41D25B13DC33" />
+
+        <Deleted name="job_display_ordering" muid="F3CF327E170E7709" />
+
+        <Deleted name="main_goal" muid="4A152D6BA8543CB5" />
+
+        <Deleted name="main_goal_audio_sting" muid="72C6F899ADE58DAD" />
+
+        <Deleted name="max_participants" muid="C3663B22B90CAA2A" />
+
+        <Deleted name="minor_goal_chains" muid="2CD908276DC28BA6" />
+
+        <TunableTuple name="neighbor_job_and_role_state" class="TunableSituationJobAndRoleState" display="Neighbor Job And Role State" muid="46225B0A4C1530BD" description="Job and Role State for the neighbor." Deprecated="False" filter="0" group="General">
+            <Tunable type="role_state" name="role_state" class="TunableReference" display="Role State" muid="DFFE9689669F7CCB" description="A role state the sim assigned to the job will perform" allow_none="False" Deprecated="False" filter="0" group="General" />
+            <Tunable type="situation_job" name="situation_job" class="TunableReference" display="Situation Job" muid="2B915CC0BED4DDD4" description="A reference to a SituationJob that can be performed at this Situation." allow_none="False" Deprecated="False" filter="0" group="General" />
+        </TunableTuple>
+
+        <Deleted name="recommended_job_object_notification" muid="56167E7CD59C0F85" />
+
+        <Deleted name="recommended_job_object_text" muid="C57F774B5420AFEE" />
+
+        <Deleted name="screen_slam_bronze" muid="21A4F2D8482F46F7" />
+
+        <Deleted name="screen_slam_gold" muid="44DDE74644117582" />
+
+        <Deleted name="screen_slam_no_medal" muid="F3C9E03536785B99" />
+
+        <Deleted name="screen_slam_silver" muid="B17125A2C944B37" />
+
+        <Deleted name="situation_description" muid="B398C6F65D5F49E7" />
+
+        <Deleted name="suppress_scoring_progress_bar" muid="7652F25B05AC5021" />
+
+        <TunableTuple name="take_out_trash_state" class="Tunable_TakeOutTrashState" display="Take Out Trash State" muid="D03A6B95E787A1A" description="Situation State for the Sim to take out the trash." Deprecated="False" filter="0" group="General">
+            <Tunable type="bool" name="allow_join_situation" class="Tunable" default="True" display="Allow Join Situation" muid="4067022182CF5DA8" description="Whether the situation is allowed to join at this state." Deprecated="False" filter="0" group="General" />
+            <TunableList name="job_and_role_changes" class="TunableMapping" display="Job And Role Changes" muid="42DEEE511C26CFDD" mapping_key="Situation Job" mapping_value="Role State" description="A mapping between situation jobs and role states that defines&#xA;what role states we want to switch to for sims on which jobs&#xA;when this situation state is entered." Deprecated="False" filter="0" group="General">
+                <TunableTuple class="TunableTuple" muid="CB6C6541FA89046F" Deprecated="False" filter="0" group="General">
+                    <Tunable type="role_state" name="Role State" class="TunableReference" display="Role State" muid="65F84D1FB9E94F3E" description="The role state that we will switch sims of the linked job&#xA;into." allow_none="False" Deprecated="False" filter="0" group="General" />
+                    <Tunable type="situation_job" name="Situation Job" class="TunableReference" display="Situation Job" muid="ED409F9A36449452" description="A reference to a SituationJob that we will use to change&#xA;sim's role state." allow_none="False" Deprecated="False" filter="0" group="General" />
+                </TunableTuple>
+            </TunableList>
+            <TunableVariant type="None" name="time_out" class="OptionalTunable" default="disabled" display="Time Out" muid="D6C38A3162A49F17" description="How long this state will last before time expired. Please talk to the GPE who implemented the specific&#xA;situation to see what the state will do on time expired." Deprecated="False" filter="0" group="General">
+                <Tunable name="disabled" class="TunableExistance" display="Disabled" muid="8B92C219B352BB72" />
+                <Tunable type="float" name="enabled" class="TunableSimMinute" default="15" display="Enabled" muid="1F133FF56CD07B14" min="1" max="None" tuning_state="NeedsTuning" Deprecated="False" filter="0" group="General" />
+            </TunableVariant>
+        </TunableTuple>
+
+        <Deleted name="targeted_situation" muid="9EC15FB5DDBE9498" />
+
+        <TunableList name="trash_objects_to_create" class="TunableList" display="Trash Objects To Create" muid="5A259E67E03CA665" description="A list of objects to randomly pick from for this type of neighbor. When&#xA;the neighbor enters the state to take out trash, we randomly create one&#xA;of these objects and pass it to the role affordances as the target." Deprecated="False" filter="0" group="General">
+            <Tunable type="object" class="TunableReference" muid="4A88FD66BF1039EB" description="An object to create." allow_none="False" Deprecated="False" filter="0" group="General" />
+        </TunableList>
+
+        <Deleted name="travel_request_behavior" muid="DBE284ECB62C91F8" />
+
+        <Deleted name="venue_invitation_message" muid="9C1230C6E2811753" />
+
+        <Deleted name="venue_situation_player_job" muid="CB2F8ABCD1090927" />
+    </Instance>
+
+    <VersionHistory>
+        <ActionList>
+            <Action type="kRemove" old_muid="937CF6B95C77173D" />
+        </ActionList>
+
+        <ActionList>
+            <Action type="kRename" old_muid="7DE329AF30080C3C" new_muid="76A414810D392A08" />
+        </ActionList>
+
+        <ActionList>
+            <Action type="kRemove" old_muid="9D368E824C2DD0B" />
+            <Action type="kRemove" old_muid="8E0CCCD9580398C1" />
+        </ActionList>
+    </VersionHistory>
+</TuningRoot>

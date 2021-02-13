@@ -1,0 +1,337 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<I c="SuperInteraction" i="interaction" m="interactions.base.super_interaction" n="TalkingToilet_Socialize_staging" s="134160">
+  <L n="_constraints">
+    <U>
+      <L n="constraints">
+        <U>
+          <V t="circle" n="value">
+            <U n="circle">
+              <T n="radius">4</T>
+            </U>
+          </V>
+        </U>
+      </L>
+    </U>
+    <U>
+      <L n="constraints">
+        <U>
+          <V n="value" t="facing">
+            <U n="facing">
+              <T n="inner_radius">1</T>
+            </U>
+          </V>
+        </U>
+      </L>
+    </U>
+  </L>
+  <V t="enabled" n="_saveable" />
+  <T n="_super_affordance_can_share_target">True</T>
+  <T n="allow_autonomous">True</T>
+  <T n="allow_user_directed">False</T>
+  <T n="attention_cost">0.5</T>
+  <V n="basic_content" t="flexible_length">
+    <U n="flexible_length">
+      <L n="conditional_actions">
+        <V t="list_reference">
+          <T n="list_reference">119540<!--ExitConditionList: ExitConditionList_MotivesNearFail_MinusBladderFailure--></T>
+        </V>
+        <V t="literal">
+          <U n="literal">
+            <L n="conditions">
+              <V t="time_based">
+                <U n="time_based">
+                  <T n="max_time">30</T>
+                  <T n="min_time">15</T>
+                </U>
+              </V>
+            </L>
+            <E n="interaction_action">EXIT_NATURALLY</E>
+            <L n="tests">
+              <L>
+                <V t="statistic">
+                  <U n="statistic">
+                    <T n="stat">134821<!--Statistic: statistic_Sim_objectFamiliarity_TalkingToilet--></T>
+                    <V n="threshold" t="value_threshold">
+                      <U n="value_threshold">
+                        <E n="comparison">LESS</E>
+                        <T n="value">10</T>
+                      </U>
+                    </V>
+                  </U>
+                </V>
+              </L>
+            </L>
+          </U>
+        </V>
+        <V t="literal">
+          <U n="literal">
+            <L n="conditions">
+              <V t="time_based">
+                <U n="time_based">
+                  <T n="max_time">45</T>
+                  <T n="min_time">30</T>
+                </U>
+              </V>
+            </L>
+            <E n="interaction_action">EXIT_NATURALLY</E>
+            <L n="tests">
+              <L>
+                <V t="statistic">
+                  <U n="statistic">
+                    <T n="must_have_stat">True</T>
+                    <T n="stat">134821<!--Statistic: statistic_Sim_objectFamiliarity_TalkingToilet--></T>
+                    <V t="value_threshold" n="threshold">
+                      <U n="value_threshold">
+                        <E n="comparison">GREATER_OR_EQUAL</E>
+                        <T n="value">10</T>
+                      </U>
+                    </V>
+                  </U>
+                </V>
+                <V t="object_relationship">
+                  <U n="object_relationship">
+                    <V n="relationship_status" t="relationship_range">
+                      <U n="relationship_range">
+                        <T n="use_default_value_if_no_relationship">True</T>
+                        <U n="value_interval">
+                          <T n="upper_bound">50</T>
+                        </U>
+                      </U>
+                    </V>
+                  </U>
+                </V>
+              </L>
+            </L>
+          </U>
+        </V>
+        <V t="literal">
+          <U n="literal">
+            <L n="conditions">
+              <V t="time_based">
+                <U n="time_based">
+                  <T n="max_time">60</T>
+                  <T n="min_time">45</T>
+                </U>
+              </V>
+            </L>
+            <L n="tests">
+              <L>
+                <V t="statistic">
+                  <U n="statistic">
+                    <T n="stat">134821<!--Statistic: statistic_Sim_objectFamiliarity_TalkingToilet--></T>
+                    <V t="value_threshold" n="threshold">
+                      <U n="value_threshold">
+                        <E n="comparison">GREATER_OR_EQUAL</E>
+                        <T n="value">10</T>
+                      </U>
+                    </V>
+                  </U>
+                </V>
+                <V t="object_relationship">
+                  <U n="object_relationship">
+                    <V n="relationship_status" t="relationship_range">
+                      <U n="relationship_range">
+                        <T n="use_default_value_if_no_relationship">False</T>
+                        <U n="value_interval">
+                          <T n="lower_bound">50</T>
+                        </U>
+                      </U>
+                    </V>
+                  </U>
+                </V>
+              </L>
+            </L>
+          </U>
+        </V>
+      </L>
+      <V n="content" t="staging_content">
+        <U n="staging_content">
+          <U n="content_set">
+            <L n="affordance_links">
+              <T>140496<!--MixerInteraction: Toilet_Talking_soc_mixer_Idle--></T>
+              <T>134178<!--MixerInteraction: Toilet_Talking_soc_mixer_Friendly_askQuestion--></T>
+              <T>141728<!--MixerInteraction: Toilet_Talking_soc_mixer_Friendly_askQuestion_autonomous--></T>
+              <T>136729<!--MixerInteraction: Toilet_Talking_soc_mixer_Friendly_begForgiveness--></T>
+              <T>136728<!--MixerInteraction: Toilet_Talking_soc_mixer_Friendly_compliment--></T>
+              <T>141727<!--MixerInteraction: Toilet_Talking_soc_mixer_Friendly_compliment_autonomous--></T>
+              <T>136727<!--MixerInteraction: Toilet_Talking_soc_mixer_Friendly_discussTopic--></T>
+              <T>141563<!--MixerInteraction: Toilet_Talking_soc_mixer_Friendly_discussTopic_chitChat_autonomous--></T>
+              <T>136726<!--MixerInteraction: Toilet_Talking_soc_mixer_Friendly_enthuseAbout--></T>
+              <T>141564<!--MixerInteraction: Toilet_Talking_soc_mixer_Friendly_enthuseAbout_autonomous--></T>
+              <T>136725<!--MixerInteraction: Toilet_Talking_soc_mixer_Friendly_tellJoke--></T>
+              <T>141737<!--MixerInteraction: toilet_Talking_soc_mixer_Friendly_tellJoke_autonomous--></T>
+              <T>136724<!--MixerInteraction: Toilet_Talking_soc_mixer_Mean_blahBlah--></T>
+              <T>141562<!--MixerInteraction: Toilet_Talking_soc_mixer_Mean_blahBlah_autonomous--></T>
+              <T>136723<!--MixerInteraction: Toilet_Talking_soc_mixer_Mean_genericInsult--></T>
+              <T>141739<!--MixerInteraction: Toilet_Talking_soc_mixer_Mean_genericInsult_autonomous--></T>
+              <T>136722<!--MixerInteraction: Toilet_Talking_soc_mixer_Mean_imitateMock--></T>
+              <T>141742<!--MixerInteraction: Toilet_Talking_soc_mixer_Mean_imitateMock_autonomous--></T>
+              <T>134800<!--MixerInteraction: Toilet_Talking_soc_mixer_Mean_thumbsDown--></T>
+              <T>141740<!--MixerInteraction: Toilet_Talking_soc_mixer_Mean_thumbsDown_autonomous--></T>
+              <T>152359<!--MixerInteraction: Toilet_Talking_soc_mixers_Mean_spray--></T>
+              <T>136721<!--MixerInteraction: Toilet_Talking_soc_mixer_Sad_apologizePlead--></T>
+              <T>136720<!--MixerInteraction: Toilet_Talking_soc_mixer_Sad_shareBadNews--></T>
+              <T>141815<!--MixerInteraction: Toilet_Talking_soc_mixer_Sad_shareBadNews_autonomous--></T>
+            </L>
+          </U>
+        </U>
+      </V>
+      <V n="periodic_stat_change" t="enabled">
+        <U n="enabled">
+          <U n="operation_actions">
+            <L n="actions">
+              <T>136829<!--LootActions: loot_Statistic_Toilet_Talking_Breakage_Electronic_Tiny--></T>
+            </L>
+          </U>
+          <L n="operations">
+            <V t="statistic_change">
+              <U n="statistic_change">
+                <T n="amount">0.2</T>
+                <E n="periodic_change_behavior">APPLY_AT_INTERVAL_ONLY</E>
+                <T n="stat">16658<!--Commodity: motive_Social--></T>
+              </U>
+            </V>
+            <V t="statistic_change">
+              <U n="statistic_change">
+                <T n="amount">0.05</T>
+                <E n="periodic_change_behavior">APPLY_AT_INTERVAL_ONLY</E>
+                <T n="stat">16658<!--Commodity: motive_Social--></T>
+                <L n="tests">
+                  <L>
+                    <V t="trait">
+                      <U n="trait">
+                        <L n="whitelist_traits">
+                          <T>16841<!--Trait: trait_Geek--></T>
+                          <T>27917<!--Trait: trait_Genius--></T>
+                          <T>9602<!--Trait: trait_Loner--></T>
+                        </L>
+                      </U>
+                    </V>
+                  </L>
+                  <L>
+                    <V t="object_relationship">
+                      <U n="object_relationship">
+                        <V n="relationship_status" t="relationship_range">
+                          <U n="relationship_range">
+                            <U n="value_interval">
+                              <T n="lower_bound">75</T>
+                            </U>
+                          </U>
+                        </V>
+                      </U>
+                    </V>
+                  </L>
+                </L>
+              </U>
+            </V>
+            <V t="statistic_change">
+              <U n="statistic_change">
+                <T n="amount">-0.05</T>
+                <E n="periodic_change_behavior">APPLY_AT_INTERVAL_ONLY</E>
+                <T n="stat">132902<!--Commodity: commodity_Object_TalkingToilet_Brokenness_electronic--></T>
+                <L n="subject">
+                  <E>Object</E>
+                </L>
+              </U>
+            </V>
+            <V t="statistic_change">
+              <U n="statistic_change">
+                <T n="amount">-0.00278</T>
+                <T n="stat">233027<!--Commodity: commodity_Utilities_Power--></T>
+                <L n="subject">
+                  <E>Lot</E>
+                </L>
+              </U>
+            </V>
+          </L>
+        </U>
+      </V>
+    </U>
+  </V>
+  <L n="basic_liabilities" />
+  <V t="enabled" n="basic_reserve_object">
+    <U n="enabled">
+      <L n="subject_list">
+        <U>
+          <V t="multi" n="reserve_type" />
+        </U>
+      </L>
+    </U>
+  </V>
+  <V n="canonical_animation" t="enabled">
+    <U n="enabled">
+      <T n="factory">134155<!--AnimationElement: Toilet_Talking_soc_Friendly_askQuestion--></T>
+    </U>
+  </V>
+  <V t="disabled" n="content_score" />
+  <T n="display_name">0xDD8C8232<!--String: "Conversar"--></T>
+  <U n="display_name_text_tokens">
+    <L n="tokens">
+      <V t="participant_type">
+        <U n="participant_type">
+          <V t="from_participant" n="objects">
+            <U n="from_participant">
+              <E n="participant">Actor</E>
+            </U>
+          </V>
+        </U>
+      </V>
+      <V t="participant_type">
+        <U n="participant_type">
+          <V t="from_participant" n="objects">
+            <U n="from_participant">
+              <E n="participant">Object</E>
+            </U>
+          </V>
+        </U>
+      </V>
+    </L>
+  </U>
+  <T n="ignore_group_socials">False</T>
+  <L n="interaction_category_tags">
+    <E>Interaction_Super</E>
+    <E>Interaction_All</E>
+  </L>
+  <U n="posture_preferences">
+    <T n="disable_all_scoring">True</T>
+  </U>
+  <U n="progress_bar_enabled">
+    <T n="bar_enabled">False</T>
+  </U>
+  <V t="disabled" n="route_start_balloon" />
+  <E n="scoring_priority">NORMAL</E>
+  <T n="subaction_selection_weight">1</T>
+  <V t="literal" n="super_affordance_compatibility">
+    <U n="literal">
+      <V n="default_inclusion" t="include_all">
+        <U n="include_all">
+          <L n="exclude_lists">
+            <T>154862<!--AffordanceList: affordanceList_Mural_startPaint--></T>
+            <T>16388<!--AffordanceList: TV_All--></T>
+          </L>
+        </U>
+      </V>
+    </U>
+  </V>
+  <E n="target_type">OBJECT</E>
+  <V t="disabled" n="test_disallow_while_running" />
+  <L n="test_globals">
+    <V t="state">
+      <U n="state">
+        <E n="operator">NOTEQUAL</E>
+        <V n="tooltip" t="enabled">
+          <T n="enabled">0x3A22B411<!--String: "No se puede realizar esta interacción en un objeto con la electrónica averiada. Repáralo antes."--></T>
+        </V>
+        <T n="value">132907<!--CommodityBasedObjectStateValue: Brokenness_TalkingToilet_electronic_3_Broken--></T>
+      </U>
+    </V>
+  </L>
+  <T n="time_overhead">30</T>
+  <V t="enabled" n="utility_info">
+    <L n="enabled">
+      <U>
+        <E n="key">POWER</E>
+      </U>
+    </L>
+  </V>
+</I>

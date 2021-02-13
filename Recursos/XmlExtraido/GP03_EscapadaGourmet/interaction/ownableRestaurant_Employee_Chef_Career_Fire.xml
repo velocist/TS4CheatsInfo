@@ -1,0 +1,173 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<I c="SuperInteraction" i="interaction" m="interactions.base.super_interaction" n="ownableRestaurant_Employee_Chef_Career_Fire" s="142601">
+  <L n="_constraints">
+    <U>
+      <E n="constrained_participant">Actor</E>
+      <L n="constraints">
+        <U>
+          <V n="value" t="circle">
+            <U n="circle">
+              <T n="ideal_radius">2</T>
+              <T n="ideal_radius_width">1</T>
+              <T n="radius">2</T>
+            </U>
+          </V>
+        </U>
+      </L>
+    </U>
+    <U>
+      <L n="constraints">
+        <U>
+          <V n="value" t="facing" />
+        </U>
+      </L>
+    </U>
+  </L>
+  <V t="enabled" n="_saveable" />
+  <T n="allow_autonomous">False</T>
+  <T n="attention_cost">0.5</T>
+  <V t="one_shot" n="basic_content">
+    <U n="one_shot">
+      <U n="animation_ref">
+        <T n="factory">11947<!--AnimationElement: Soc_Mischief_NT_Insult_Succeed_basic--></T>
+      </U>
+    </U>
+  </V>
+  <L n="basic_extras">
+    <V t="business_employee_action">
+      <U n="business_employee_action">
+        <V n="action" t="fire" />
+        <E n="employee">TargetSim</E>
+      </U>
+    </V>
+    <V t="notification">
+      <U n="notification">
+        <V n="dialog" t="single">
+          <V n="single" t="literal">
+            <U n="literal">
+              <V t="enabled" n="audio_sting">
+                <U n="enabled">
+                  <T n="audio" p="InGame\Audio\Bumper\bumper_tns_negative.propx">39b2aa4a:00000000:4ff5444df03530b2</T>
+                </U>
+              </V>
+              <V t="enabled" n="icon">
+                <V t="participant" n="enabled">
+                  <U n="participant">
+                    <L n="participant_type">
+                      <E>TargetSim</E>
+                    </L>
+                  </U>
+                </V>
+              </V>
+              <V t="enabled" n="secondary_icon">
+                <V t="participant" n="enabled" />
+              </V>
+              <V n="text" t="single">
+                <T n="single">0xF7FBF90<!--String: "{0.SimFirstName} ha despedido a {1.SimFirstName}, que ya no volverá a ir a trabajar y se ha llevado un buen disgusto."--></T>
+              </V>
+              <V t="enabled" n="text_tokens">
+                <U n="enabled">
+                  <L n="tokens">
+                    <V t="participant_type" />
+                    <V t="participant_type">
+                      <U n="participant_type">
+                        <V n="objects" t="from_participant">
+                          <U n="from_participant">
+                            <E n="participant">TargetSim</E>
+                          </U>
+                        </V>
+                      </U>
+                    </V>
+                  </L>
+                </U>
+              </V>
+            </U>
+          </V>
+        </V>
+      </U>
+    </V>
+  </L>
+  <V t="disabled" n="basic_reserve_object" />
+  <T n="category">137590<!--PieMenuCategory: pieMenuCategorty_OwnableBusiness_EmployeeActions--></T>
+  <V t="disabled" n="content_score" />
+  <T n="display_name">0x29F86A2A<!--String: "Despedir"--></T>
+  <V t="none" n="display_name_overrides" />
+  <U n="display_name_text_tokens">
+    <L n="tokens">
+      <V t="participant_type">
+        <U n="participant_type">
+          <V n="objects" t="from_participant">
+            <U n="from_participant">
+              <E n="participant">Actor</E>
+            </U>
+          </V>
+        </U>
+      </V>
+      <V t="participant_type">
+        <U n="participant_type">
+          <V n="objects" t="from_participant">
+            <U n="from_participant">
+              <E n="participant">Object</E>
+            </U>
+          </V>
+        </U>
+      </V>
+    </L>
+  </U>
+  <T n="ignore_group_socials">False</T>
+  <L n="interaction_category_tags">
+    <E>Interaction_Super</E>
+    <E>Interaction_All</E>
+  </L>
+  <V n="outcome" t="single">
+    <U n="single">
+      <U n="actions">
+        <L n="loot_list">
+          <T>10954<!--LootActions: Loot_ForSocialsSocialMotiveMedium--></T>
+          <T>11044<!--LootActions: Rel_Loss_TankRel--></T>
+          <T>143889<!--LootActions: loot_OwnableBusiness_Employee_Fired--></T>
+        </L>
+      </U>
+    </U>
+  </V>
+  <V t="enabled" n="pie_menu_icon">
+    <V n="enabled" t="resource_key">
+      <U n="resource_key">
+        <T n="key" p="InGame\UI\Icons\PieMenu\Interactions\icon_pieMenu_Manager.png">2f7d0004:00000000:d1035226ed9f08bc</T>
+      </U>
+    </V>
+  </V>
+  <E n="scoring_priority">NORMAL</E>
+  <T n="subaction_selection_weight">1</T>
+  <E n="target_type">OBJECT</E>
+  <L n="test_globals">
+    <V t="sim_info">
+      <U n="sim_info">
+        <V t="specified" n="ages" />
+        <V t="specified" n="species">
+          <U n="specified">
+            <L n="species">
+              <E />
+            </L>
+          </U>
+        </V>
+        <E n="who">Actor</E>
+      </U>
+    </V>
+    <V t="test_set_reference">
+      <T n="test_set_reference">137875<!--TestSetInstance: testSetInstance_OwnableBusiness_Employee_Fire--></T>
+    </V>
+    <V t="location">
+      <U n="location">
+        <U n="location_tests">
+          <V t="enabled" n="is_venue_type">
+            <U n="enabled">
+              <T n="venue_type">130713<!--Venue: venue_Restaurant--></T>
+            </U>
+          </V>
+        </U>
+      </U>
+    </V>
+  </L>
+  <T n="time_overhead">30</T>
+</I>

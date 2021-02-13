@@ -1,0 +1,477 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<I c="GameObject" i="object" m="objects.game_object" n="object_familyBulletinBoard" s="161003">
+  <U n="_components">
+    <V n="curfew" t="enabled">
+      <U n="enabled">
+        <T n="curfew_not_set">168624<!--ObjectStateValue: familyBulletinBoard_CurfewColors_Intermediate_Off--></T>
+        <T n="curfew_on_state">168625<!--ObjectStateValue: familyBulletinBoard_CurfewColors_Intermediate_On--></T>
+        <T n="curfew_past_state">168626<!--ObjectStateValue: familyBulletinBoard_CurfewColors_Intermediate_Past--></T>
+        <T n="curfew_state_reference">168621<!--ObjectState: familyBulletinBoard_CurfewColors_Intermediate--></T>
+        <T n="curfew_warning_state">168623<!--ObjectStateValue: familyBulletinBoard_CurfewColors_Intermediate_Near--></T>
+        <T n="not_set_state">161011<!--ObjectStateValue: familyBulletinBoard_CurfewTime_Off--></T>
+        <L n="times_set">
+          <U>
+            <T n="key">19</T>
+            <T n="value">161012<!--ObjectStateValue: familyBulletinBoard_CurfewTime_Early--></T>
+          </U>
+          <U>
+            <T n="key">21</T>
+            <T n="value">161013<!--ObjectStateValue: familyBulletinBoard_CurfewTime_Medium--></T>
+          </U>
+          <U>
+            <T n="key">23</T>
+            <T n="value">161014<!--ObjectStateValue: familyBulletinBoard_CurfewTime_Late--></T>
+          </U>
+        </L>
+        <T n="times_state_reference">161016<!--ObjectState: familyBulletinBoard_CurfewTime--></T>
+      </U>
+    </V>
+    <V t="enabled" n="focus">
+      <U n="enabled">
+        <V n="_focus_score" t="globally">
+          <U n="globally">
+            <E n="base">LOW</E>
+          </U>
+        </V>
+      </U>
+    </V>
+    <V n="retail_component" t="enabled">
+      <V n="enabled" t="reference">
+        <T n="reference">116005<!--RetailComponent: retailComponent_WallMirror--></T>
+      </V>
+    </V>
+    <V n="state" t="enabled">
+      <U n="enabled">
+        <L n="state_triggers">
+          <U>
+            <L n="at_states">
+              <T>39611<!--CommodityBasedObjectStateValue: FireState_Burn_Material_Change--></T>
+            </L>
+            <V n="set_states" t="Set_state_list">
+              <L n="Set_state_list">
+                <T>168627<!--ObjectStateValue: familyBulletinBoard_Burnt--></T>
+                <T>168658<!--ObjectStateValue: familyBulletinBoard_CurfewColors_Intermediate_Burnt--></T>
+              </L>
+            </V>
+            <E n="trigger_operation">AND</E>
+          </U>
+          <U>
+            <L n="at_states">
+              <T>39736<!--CommodityBasedObjectStateValue: FireState_Burn_Material_Change_Burning--></T>
+              <T>39737<!--CommodityBasedObjectStateValue: FireState_Burn_Material_Change_Not_Burning--></T>
+            </L>
+            <V n="set_states" t="Set_state_list">
+              <L n="Set_state_list">
+                <T>168631<!--ObjectStateValue: familyBulletinBoard_NotBurnt--></T>
+              </L>
+            </V>
+            <E n="trigger_operation">OR</E>
+          </U>
+          <U>
+            <L n="at_states">
+              <T>168627<!--ObjectStateValue: familyBulletinBoard_Burnt--></T>
+              <T>168623<!--ObjectStateValue: familyBulletinBoard_CurfewColors_Intermediate_Near--></T>
+            </L>
+            <V t="Set_state_list" n="set_states">
+              <L n="Set_state_list">
+                <T>39611<!--CommodityBasedObjectStateValue: FireState_Burn_Material_Change--></T>
+              </L>
+            </V>
+          </U>
+          <U>
+            <L n="at_states">
+              <T>168627<!--ObjectStateValue: familyBulletinBoard_Burnt--></T>
+              <T>168624<!--ObjectStateValue: familyBulletinBoard_CurfewColors_Intermediate_Off--></T>
+            </L>
+            <V t="Set_state_list" n="set_states">
+              <L n="Set_state_list">
+                <T>39611<!--CommodityBasedObjectStateValue: FireState_Burn_Material_Change--></T>
+              </L>
+            </V>
+          </U>
+          <U>
+            <L n="at_states">
+              <T>168627<!--ObjectStateValue: familyBulletinBoard_Burnt--></T>
+              <T>168625<!--ObjectStateValue: familyBulletinBoard_CurfewColors_Intermediate_On--></T>
+            </L>
+            <V t="Set_state_list" n="set_states">
+              <L n="Set_state_list">
+                <T>39611<!--CommodityBasedObjectStateValue: FireState_Burn_Material_Change--></T>
+              </L>
+            </V>
+          </U>
+          <U>
+            <L n="at_states">
+              <T>168627<!--ObjectStateValue: familyBulletinBoard_Burnt--></T>
+              <T>168626<!--ObjectStateValue: familyBulletinBoard_CurfewColors_Intermediate_Past--></T>
+            </L>
+            <V t="Set_state_list" n="set_states">
+              <L n="Set_state_list">
+                <T>39611<!--CommodityBasedObjectStateValue: FireState_Burn_Material_Change--></T>
+              </L>
+            </V>
+          </U>
+          <U>
+            <L n="at_states">
+              <T>168631<!--ObjectStateValue: familyBulletinBoard_NotBurnt--></T>
+              <T>168626<!--ObjectStateValue: familyBulletinBoard_CurfewColors_Intermediate_Past--></T>
+            </L>
+            <V n="set_states" t="Set_state_list">
+              <L n="Set_state_list">
+                <T>161008<!--ObjectStateValue: familyBulletinBoard_CurfewColors_Past--></T>
+              </L>
+            </V>
+          </U>
+          <U>
+            <L n="at_states">
+              <T>168631<!--ObjectStateValue: familyBulletinBoard_NotBurnt--></T>
+              <T>168624<!--ObjectStateValue: familyBulletinBoard_CurfewColors_Intermediate_Off--></T>
+            </L>
+            <V n="set_states" t="Set_state_list">
+              <L n="Set_state_list">
+                <T>161010<!--ObjectStateValue: familyBulletinBoard_CurfewColors_Off--></T>
+              </L>
+            </V>
+          </U>
+          <U>
+            <L n="at_states">
+              <T>168631<!--ObjectStateValue: familyBulletinBoard_NotBurnt--></T>
+              <T>168625<!--ObjectStateValue: familyBulletinBoard_CurfewColors_Intermediate_On--></T>
+            </L>
+            <V n="set_states" t="Set_state_list">
+              <L n="Set_state_list">
+                <T>161007<!--ObjectStateValue: familyBulletinBoard_CurfewColors_On--></T>
+              </L>
+            </V>
+          </U>
+          <U>
+            <L n="at_states">
+              <T>168631<!--ObjectStateValue: familyBulletinBoard_NotBurnt--></T>
+              <T>168623<!--ObjectStateValue: familyBulletinBoard_CurfewColors_Intermediate_Near--></T>
+            </L>
+            <V n="set_states" t="Set_state_list">
+              <L n="Set_state_list">
+                <T>161009<!--ObjectStateValue: familyBulletinBoard_CurfewColors_Near--></T>
+              </L>
+            </V>
+          </U>
+          <U>
+            <L n="at_states">
+              <T>168658<!--ObjectStateValue: familyBulletinBoard_CurfewColors_Intermediate_Burnt--></T>
+            </L>
+            <V n="set_states" t="Set_state_list">
+              <L n="Set_state_list">
+                <T>168657<!--ObjectStateValue: familyBulletinBoard_CurfewColors_Burnt--></T>
+              </L>
+            </V>
+          </U>
+          <U>
+            <L n="at_states">
+              <T>77532<!--CommodityBasedObjectStateValue: FireState_Burn_Material_Change_Replace--></T>
+            </L>
+            <V n="set_states" t="Set_state_list">
+              <L n="Set_state_list">
+                <T>39737<!--CommodityBasedObjectStateValue: FireState_Burn_Material_Change_Not_Burning--></T>
+              </L>
+            </V>
+          </U>
+        </L>
+        <L n="states">
+          <U>
+            <L n="client_states">
+              <U>
+                <T n="key">161007<!--ObjectStateValue: familyBulletinBoard_CurfewColors_On--></T>
+                <U n="value">
+                  <V n="material_state" t="apply_new_value">
+                    <U n="apply_new_value">
+                      <V n="state_name" t="set_to_custom_value">
+                        <T n="set_to_custom_value">curfewOn</T>
+                      </V>
+                    </U>
+                  </V>
+                </U>
+              </U>
+              <U>
+                <T n="key">161008<!--ObjectStateValue: familyBulletinBoard_CurfewColors_Past--></T>
+                <U n="value">
+                  <V n="material_state" t="apply_new_value">
+                    <U n="apply_new_value">
+                      <V n="state_name" t="set_to_custom_value">
+                        <T n="set_to_custom_value">curfewPast</T>
+                      </V>
+                    </U>
+                  </V>
+                </U>
+              </U>
+              <U>
+                <T n="key">161009<!--ObjectStateValue: familyBulletinBoard_CurfewColors_Near--></T>
+                <U n="value">
+                  <V n="material_state" t="apply_new_value">
+                    <U n="apply_new_value">
+                      <V n="state_name" t="set_to_custom_value">
+                        <T n="set_to_custom_value">curfewNear</T>
+                      </V>
+                    </U>
+                  </V>
+                </U>
+              </U>
+              <U>
+                <T n="key">161010<!--ObjectStateValue: familyBulletinBoard_CurfewColors_Off--></T>
+                <U n="value">
+                  <V n="material_state" t="apply_new_value">
+                    <U n="apply_new_value">
+                      <V n="state_name" t="set_to_custom_value">
+                        <T n="set_to_custom_value">curfewOff</T>
+                      </V>
+                    </U>
+                  </V>
+                </U>
+              </U>
+            </L>
+            <V n="default_value" t="reference">
+              <T n="reference">161010<!--ObjectStateValue: familyBulletinBoard_CurfewColors_Off--></T>
+            </V>
+          </U>
+          <U>
+            <L n="client_states">
+              <U>
+                <T n="key">161011<!--ObjectStateValue: familyBulletinBoard_CurfewTime_Off--></T>
+                <U n="value">
+                  <V n="geometry_state" t="apply_new_value">
+                    <V n="apply_new_value" t="set_to_custom_value">
+                      <T n="set_to_custom_value">noCurfew</T>
+                    </V>
+                  </V>
+                </U>
+              </U>
+              <U>
+                <T n="key">161012<!--ObjectStateValue: familyBulletinBoard_CurfewTime_Early--></T>
+                <U n="value">
+                  <V n="geometry_state" t="apply_new_value">
+                    <V n="apply_new_value" t="set_to_custom_value">
+                      <T n="set_to_custom_value">curfew7</T>
+                    </V>
+                  </V>
+                </U>
+              </U>
+              <U>
+                <T n="key">161013<!--ObjectStateValue: familyBulletinBoard_CurfewTime_Medium--></T>
+                <U n="value">
+                  <V n="geometry_state" t="apply_new_value">
+                    <V n="apply_new_value" t="set_to_custom_value">
+                      <T n="set_to_custom_value">curfew9</T>
+                    </V>
+                  </V>
+                </U>
+              </U>
+              <U>
+                <T n="key">161014<!--ObjectStateValue: familyBulletinBoard_CurfewTime_Late--></T>
+                <U n="value">
+                  <V n="geometry_state" t="apply_new_value">
+                    <V n="apply_new_value" t="set_to_custom_value">
+                      <T n="set_to_custom_value">curfew11</T>
+                    </V>
+                  </V>
+                </U>
+              </U>
+            </L>
+            <V n="default_value" t="reference">
+              <T n="reference">161011<!--ObjectStateValue: familyBulletinBoard_CurfewTime_Off--></T>
+            </V>
+          </U>
+          <U>
+            <L n="client_states">
+              <U>
+                <T n="key">168623<!--ObjectStateValue: familyBulletinBoard_CurfewColors_Intermediate_Near--></T>
+              </U>
+              <U>
+                <T n="key">168624<!--ObjectStateValue: familyBulletinBoard_CurfewColors_Intermediate_Off--></T>
+              </U>
+              <U>
+                <T n="key">168625<!--ObjectStateValue: familyBulletinBoard_CurfewColors_Intermediate_On--></T>
+              </U>
+              <U>
+                <T n="key">168626<!--ObjectStateValue: familyBulletinBoard_CurfewColors_Intermediate_Past--></T>
+              </U>
+            </L>
+            <V n="default_value" t="reference">
+              <T n="reference">168624<!--ObjectStateValue: familyBulletinBoard_CurfewColors_Intermediate_Off--></T>
+            </V>
+          </U>
+          <U>
+            <L n="client_states">
+              <U>
+                <T n="key">168627<!--ObjectStateValue: familyBulletinBoard_Burnt--></T>
+              </U>
+              <U>
+                <T n="key">168631<!--ObjectStateValue: familyBulletinBoard_NotBurnt--></T>
+              </U>
+            </L>
+            <V n="default_value" t="reference">
+              <T n="reference">168631<!--ObjectStateValue: familyBulletinBoard_NotBurnt--></T>
+            </V>
+          </U>
+          <U>
+            <L n="client_states">
+              <U>
+                <T n="key">39611<!--CommodityBasedObjectStateValue: FireState_Burn_Material_Change--></T>
+              </U>
+              <U>
+                <T n="key">39736<!--CommodityBasedObjectStateValue: FireState_Burn_Material_Change_Burning--></T>
+              </U>
+              <U>
+                <T n="key">39737<!--CommodityBasedObjectStateValue: FireState_Burn_Material_Change_Not_Burning--></T>
+              </U>
+              <U>
+                <T n="key">77532<!--CommodityBasedObjectStateValue: FireState_Burn_Material_Change_Replace--></T>
+              </U>
+            </L>
+            <V n="default_value" t="reference">
+              <T n="reference">39737<!--CommodityBasedObjectStateValue: FireState_Burn_Material_Change_Not_Burning--></T>
+            </V>
+          </U>
+          <U>
+            <L n="client_states">
+              <U>
+                <T n="key">35956<!--CommodityBasedObjectStateValue: Materialistic_Admired--></T>
+              </U>
+              <U>
+                <T n="key">35957<!--CommodityBasedObjectStateValue: Materialistic_YetToAdmire--></T>
+              </U>
+            </L>
+            <V n="default_value" t="reference">
+              <T n="reference">35957<!--CommodityBasedObjectStateValue: Materialistic_YetToAdmire--></T>
+            </V>
+          </U>
+        </L>
+      </U>
+    </V>
+    <V n="tooltip_component" t="enabled">
+      <U n="enabled">
+        <L n="custom_tooltips">
+          <U>
+            <L n="object_tests">
+              <L>
+                <V t="state">
+                  <U n="state">
+                    <T n="value">161012<!--ObjectStateValue: familyBulletinBoard_CurfewTime_Early--></T>
+                  </U>
+                </V>
+              </L>
+            </L>
+            <L n="tooltip_fields">
+              <U>
+                <E n="key">recipe_description</E>
+                <U n="value">
+                  <V n="text" t="single">
+                    <T n="single">0x3E9C88AF<!--String: "El toque de queda es a las 19:00."--></T>
+                  </V>
+                </U>
+              </U>
+            </L>
+          </U>
+          <U>
+            <L n="object_tests">
+              <L>
+                <V t="state">
+                  <U n="state">
+                    <T n="value">161013<!--ObjectStateValue: familyBulletinBoard_CurfewTime_Medium--></T>
+                  </U>
+                </V>
+              </L>
+            </L>
+            <L n="tooltip_fields">
+              <U>
+                <E n="key">recipe_description</E>
+                <U n="value">
+                  <V n="text" t="single">
+                    <T n="single">0x28CFB240<!--String: "El toque de queda es a las 21:00."--></T>
+                  </V>
+                </U>
+              </U>
+            </L>
+          </U>
+          <U>
+            <L n="object_tests">
+              <L>
+                <V t="state">
+                  <U n="state">
+                    <T n="value">161014<!--ObjectStateValue: familyBulletinBoard_CurfewTime_Late--></T>
+                  </U>
+                </V>
+              </L>
+            </L>
+            <L n="tooltip_fields">
+              <U>
+                <E n="key">recipe_description</E>
+                <U n="value">
+                  <V n="text" t="single">
+                    <T n="single">0xBE783E31<!--String: "El toque de queda es a las 23:00."--></T>
+                  </V>
+                </U>
+              </U>
+            </L>
+          </U>
+          <U>
+            <L n="object_tests">
+              <L>
+                <V t="state">
+                  <U n="state">
+                    <T n="value">161011<!--ObjectStateValue: familyBulletinBoard_CurfewTime_Off--></T>
+                  </U>
+                </V>
+              </L>
+            </L>
+            <L n="tooltip_fields">
+              <U>
+                <E n="key">recipe_description</E>
+                <U n="value">
+                  <V n="text" t="single">
+                    <T n="single">0x559F1E73<!--String: "No hay toque de queda establecido."--></T>
+                  </V>
+                </U>
+              </U>
+            </L>
+          </U>
+        </L>
+      </U>
+    </V>
+  </U>
+  <L n="_super_affordances">
+    <T>13328<!--ImmediateSuperInteraction: debug_Reset--></T>
+    <T>13326<!--ImmediateSuperInteraction: debug_ObjectDestroy--></T>
+    <T>103888<!--ImmediateSuperInteraction: cheat_set_as_head--></T>
+    <T>196759<!--SuperInteraction: famePerks_GoodReputation_GivingBack_DonateObject--></T>
+    <T>161020<!--SuperInteraction: familyBulletinBoard_SetCurfew_Early--></T>
+    <T>161022<!--SuperInteraction: familyBulletinBoard_SetCurfew_Late--></T>
+    <T>161021<!--SuperInteraction: familyBulletinBoard_SetCurfew_Medium--></T>
+    <T>161023<!--SuperInteraction: familyBulletinBoard_SetCurfew_Off--></T>
+    <T>159580<!--SimPickerInteraction: FamilyBulletinBoard_WriteNoteFor--></T>
+    <T>161041<!--SimPickerInteraction: familyBulletinBoard_WriteNoteFor_Angry--></T>
+    <T>161087<!--SimPickerInteraction: FamilyBulletinBoard_PutUpDrawing_SelectTarget--></T>
+    <T>161121<!--AutonomousSimPickerSuperInteraction: FamilyBulletinBoard_WriteNoteFor_Angry_auto--></T>
+    <T>161119<!--AutonomousSimPickerSuperInteraction: FamilyBulletinBoard_WriteNoteFor_auto--></T>
+    <T>161102<!--SimPickerInteraction: familyBulletinBoard_CreateDrawingFor--></T>
+    <T>161317<!--SuperInteraction: familyBulletinBoard_ClearBoard--></T>
+    <T>161363<!--AutonomousSimPickerSuperInteraction: familyBulletinBoard_CreateDrawingFor_auto--></T>
+    <T>162455<!--SuperInteraction: familyBulletinBoard_Read_Positive--></T>
+    <T>162722<!--SuperInteraction: familyBulletinBoard_LookAtDrawing--></T>
+    <T>166714<!--SuperInteraction: familyBulletinBoard_View_auto--></T>
+    <T>106859<!--SuperInteraction: simRay_Transform_Object--></T>
+    <T>74457<!--ImmediateSuperInteraction: fire_ReplaceBurntObject--></T>
+    <T>102258<!--SuperInteraction: Ghost_Possess--></T>
+    <T>168502<!--SuperInteraction: Ghost_Pet_Possess--></T>
+  </L>
+  <U n="recycling_data">
+    <L n="recycling_values">
+      <U>
+        <E n="Bucks Type">RecycleBitsBucks</E>
+        <T n="Value">0.5</T>
+      </U>
+      <U>
+        <E n="Bucks Type">RecyclePiecesBucks</E>
+        <T n="Value">0.5</T>
+      </U>
+    </L>
+  </U>
+</I>

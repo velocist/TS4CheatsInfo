@@ -1,0 +1,130 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<I c="SuperInteraction" i="interaction" m="interactions.base.super_interaction" n="laundry_ClothesLine_PutIn" s="176492">
+  <V t="reference" n="_animation_actor_map">
+    <T n="reference">104104<!--AnimationActorMap: AlreadyCarryingCarryTarget--></T>
+  </V>
+  <V t="enabled" n="_saveable" />
+  <L n="_static_commodities">
+    <U>
+      <T n="static_commodity">176495<!--StaticCommodity: staticCommodity_PutIn_ClothesLine_Laundry--></T>
+    </U>
+  </L>
+  <T n="allow_user_directed">False</T>
+  <T n="attention_cost">0.5</T>
+  <V n="basic_content" t="one_shot">
+    <U n="one_shot">
+      <U n="animation_ref">
+        <T n="factory">176605<!--AnimationElement: laundry_Clothesline_Load--></T>
+      </U>
+    </U>
+  </V>
+  <L n="basic_extras">
+    <V t="loot">
+      <U n="loot">
+        <L n="loot_list">
+          <T>175452<!--LootActions: loot_Laundry_Transfer_PutDown--></T>
+        </L>
+        <V n="timing" t="on_xevt">
+          <U n="on_xevt">
+            <T n="xevt_id">102</T>
+          </U>
+        </V>
+      </U>
+    </V>
+    <V t="transience_change">
+      <U n="transience_change">
+        <V n="new_value_beginning" t="make_transient" />
+        <E n="who">CarriedObject</E>
+      </U>
+    </V>
+    <V t="exit_carry_while_holding" />
+  </L>
+  <V t="enabled" n="basic_reserve_object">
+    <U n="enabled">
+      <L n="subject_list">
+        <U>
+          <V n="reserve_type" t="reserve_and_lock_all_parts" />
+        </U>
+      </L>
+    </U>
+  </V>
+  <V t="disabled" n="content_score" />
+  <T n="display_name">0xD85C7ACB<!--String: "Colgar ropa a secar"--></T>
+  <U n="display_name_text_tokens">
+    <L n="tokens">
+      <V t="participant_type">
+        <U n="participant_type">
+          <V t="from_participant" n="objects">
+            <U n="from_participant">
+              <E n="participant">Actor</E>
+            </U>
+          </V>
+        </U>
+      </V>
+      <V t="participant_type">
+        <U n="participant_type">
+          <V t="from_participant" n="objects">
+            <U n="from_participant">
+              <E n="participant">Object</E>
+            </U>
+          </V>
+        </U>
+      </V>
+    </L>
+  </U>
+  <L n="interaction_category_tags">
+    <E>Interaction_Super</E>
+    <E>Interaction_All</E>
+  </L>
+  <V n="outcome" t="single">
+    <U n="single">
+      <U n="actions">
+        <L n="basic_extras">
+          <V t="state_change">
+            <U n="state_change">
+              <V n="new_value" t="single_value">
+                <U n="single_value">
+                  <T n="new_value">176489<!--ObjectStateValue: laundry_ClothesLine_LineLoad_Values_Full--></T>
+                </U>
+              </V>
+            </U>
+          </V>
+        </L>
+      </U>
+    </U>
+  </V>
+  <E n="scoring_priority">NORMAL</E>
+  <T n="subaction_selection_weight">1</T>
+  <E n="target_type">OBJECT</E>
+  <L n="test_globals">
+    <V t="state">
+      <U n="state">
+        <E n="operator">NOTEQUAL</E>
+        <T n="value">15080<!--ObjectStateValue: BrokenState_Broken--></T>
+      </U>
+    </V>
+    <V t="sim_info">
+      <U n="sim_info">
+        <V t="specified" n="ages">
+          <L n="specified">
+            <E>TEEN</E>
+            <E>YOUNGADULT</E>
+            <E>ADULT</E>
+            <E>ELDER</E>
+          </L>
+        </V>
+        <V t="specified" n="species">
+          <U n="specified">
+            <L n="species">
+              <E />
+            </L>
+          </U>
+        </V>
+        <V t="enabled" n="tooltip">
+          <T n="enabled">0x75947D73<!--String: "Los niños son demasiado bajitos para interactuar con esto."--></T>
+        </V>
+      </U>
+    </V>
+  </L>
+  <T n="time_overhead">30</T>
+</I>

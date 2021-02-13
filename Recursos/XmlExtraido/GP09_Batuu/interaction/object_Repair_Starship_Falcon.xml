@@ -1,0 +1,404 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<I c="SuperInteraction" i="interaction" m="interactions.base.super_interaction" n="object_Repair_Starship_Falcon" s="238645">
+  <L n="_constraints">
+    <U>
+      <L n="constraints">
+        <U>
+          <V t="circle" n="value">
+            <U n="circle">
+              <T n="radius">20</T>
+            </U>
+          </V>
+        </U>
+      </L>
+    </U>
+  </L>
+  <V t="participant" n="_icon">
+    <U n="participant">
+      <L n="participant_type">
+        <E>Object</E>
+      </L>
+    </U>
+  </V>
+  <V t="enabled" n="_saveable" />
+  <L n="_static_commodities">
+    <U>
+      <T n="static_commodity">101383<!--StaticCommodity: StaticCommodity_HandymanRepair--></T>
+    </U>
+    <U>
+      <T n="static_commodity">250634<!--StaticCommodity: staticCommodity_OnsenVenue_Employee_WorkingRepair--></T>
+    </U>
+  </L>
+  <T n="attention_cost">0.75</T>
+  <V n="basic_content" t="flexible_length">
+    <U n="flexible_length">
+      <L n="conditional_actions">
+        <V t="list_reference">
+          <T n="list_reference">40705<!--ExitConditionList: ExitConditionList_MotivesNearFail--></T>
+        </V>
+        <V t="literal">
+          <U n="literal">
+            <L n="conditions">
+              <V t="state_based">
+                <U n="state_based">
+                  <V n="state" t="on_trigger">
+                    <T n="on_trigger">15078<!--CommodityBasedObjectStateValue: Brokenness_Unbroken--></T>
+                  </V>
+                </U>
+              </V>
+            </L>
+            <E n="interaction_action">EXIT_NATURALLY</E>
+          </U>
+        </V>
+      </L>
+      <V n="content" t="looping_content">
+        <U n="looping_content">
+          <U n="animation_ref">
+            <T n="factory">238623<!--AnimationElement: starship_Falcon_Repair--></T>
+          </U>
+        </U>
+      </V>
+      <V t="enabled" n="periodic_stat_change">
+        <U n="enabled">
+          <L n="operations">
+            <V t="dynamic_skill">
+              <U n="dynamic_skill">
+                <U n="skill_loot_data_override">
+                  <E n="effectiveness">LargePeriodic</E>
+                </U>
+              </U>
+            </V>
+            <V t="statistic_change">
+              <U n="statistic_change">
+                <T n="advertise">False</T>
+                <T n="amount">5</T>
+                <T n="stat">28786<!--Commodity: commodity_Trait_Genius_MentalStimulation--></T>
+              </U>
+            </V>
+            <V t="statistic_change">
+              <U n="statistic_change">
+                <T n="advertise">False</T>
+                <T n="amount">25</T>
+                <T n="stat">16633<!--Commodity: commodity_Object_Brokenness--></T>
+                <L n="tests">
+                  <L>
+                    <V t="buff">
+                      <U n="buff">
+                        <V n="whitelist" t="enabled">
+                          <L n="enabled">
+                            <T>146340<!--Buff: buff_Role_Butler_BeenPraised--></T>
+                          </L>
+                        </V>
+                      </U>
+                    </V>
+                  </L>
+                </L>
+              </U>
+            </V>
+            <V t="statistic_change">
+              <U n="statistic_change">
+                <T n="advertise">False</T>
+                <T n="amount">0.09047619</T>
+                <T n="stat">161615<!--LifeSkillStatistic: lifeSkillStatistic_Responsibility--></T>
+                <L n="tests">
+                  <L>
+                    <V t="sim_info">
+                      <U n="sim_info">
+                        <V t="specified" n="ages">
+                          <L n="specified">
+                            <E>TEEN</E>
+                          </L>
+                        </V>
+                      </U>
+                    </V>
+                  </L>
+                </L>
+              </U>
+            </V>
+            <V t="statistic_set_max">
+              <U n="statistic_set_max">
+                <T n="stat">163754<!--Commodity: commodity_LifeSkills_Autonomy_Responsibility_Positive--></T>
+              </U>
+            </V>
+            <V t="statistic_change">
+              <U n="statistic_change">
+                <T n="amount">-5</T>
+                <T n="stat">16616<!--Commodity: commodity_Motive_HygieneHands--></T>
+              </U>
+            </V>
+          </L>
+        </U>
+      </V>
+      <V t="enabled" n="progressive_stat_change">
+        <U n="enabled">
+          <V n="goal_completion_time" t="skill_based_curve">
+            <U n="skill_based_curve">
+              <L n="curve">
+                <U>
+                  <T n="x">1</T>
+                  <T n="y">120</T>
+                </U>
+                <U>
+                  <T n="x">4</T>
+                  <T n="y">40</T>
+                </U>
+                <U>
+                  <T n="x">15</T>
+                  <T n="y">10</T>
+                </U>
+              </L>
+              <T n="skill">16704<!--Skill: statistic_Skill_AdultMajor_Handiness--></T>
+            </U>
+          </V>
+          <V t="disabled" n="goal_exit_condition" />
+          <V n="goal_value" t="maximum_value">
+            <U n="maximum_value">
+              <T n="stat">16633<!--Commodity: commodity_Object_Brokenness--></T>
+            </U>
+          </V>
+          <E n="subject">Object</E>
+        </U>
+      </V>
+      <T n="start_autonomous_inertial">False</T>
+    </U>
+  </V>
+  <L n="basic_extras">
+    <V t="broadcaster">
+      <U n="broadcaster">
+        <L n="broadcaster_types">
+          <U>
+            <T n="item">201717<!--Broadcaster: broadcaster_Reputation_SeenLoot_Looping_Gain_Misc_Offlot_Long--></T>
+          </U>
+        </L>
+      </U>
+    </V>
+  </L>
+  <V t="disabled" n="content_score" />
+  <T n="display_name">0x83DE8701<!--String: "Reparar"--></T>
+  <V t="testable" n="display_name_overrides">
+    <U n="testable">
+      <L n="overrides">
+        <U>
+          <V n="new_display_name" t="enabled">
+            <T n="enabled">0xD23A7CD<!--String: "Reparación experta"--></T>
+          </V>
+          <L n="test">
+            <L>
+              <V t="buff">
+                <U n="buff">
+                  <V n="whitelist" t="enabled">
+                    <L n="enabled">
+                      <T>109673<!--Buff: buff_Career_Scientist_Expert_Repair--></T>
+                    </L>
+                  </V>
+                </U>
+              </V>
+            </L>
+          </L>
+        </U>
+        <U>
+          <V n="new_display_name" t="enabled">
+            <T n="enabled">0x7F6812F8<!--String: "Reparar"--></T>
+          </V>
+          <V n="new_display_tooltip" t="enabled">
+            <T n="enabled">0x2AD2AC0C<!--String: "Realizar reparaciones estando centrado reduce el tiempo necesario para llevarlas a cabo."--></T>
+          </V>
+          <L n="test">
+            <L>
+              <V t="mood">
+                <U n="mood">
+                  <T n="mood">14639<!--Mood: Mood_Focused--></T>
+                </U>
+              </V>
+            </L>
+          </L>
+        </U>
+      </L>
+    </U>
+  </V>
+  <U n="display_name_text_tokens">
+    <L n="tokens">
+      <V t="participant_type">
+        <U n="participant_type">
+          <V n="objects" t="from_participant">
+            <U n="from_participant">
+              <E n="participant">Actor</E>
+            </U>
+          </V>
+        </U>
+      </V>
+      <V t="participant_type">
+        <U n="participant_type">
+          <V t="from_participant" n="objects">
+            <U n="from_participant">
+              <E n="participant">Object</E>
+            </U>
+          </V>
+        </U>
+      </V>
+    </L>
+  </U>
+  <L n="interaction_category_tags">
+    <E>Interaction_Repair</E>
+    <E>Interaction_Super</E>
+    <E>Interaction_All</E>
+    <E>Interaction_Skill_Handiness</E>
+  </L>
+  <L n="joinable">
+    <U>
+      <V n="invite_available" t="enabled">
+        <U n="enabled">
+          <V n="loc_custom_invite_name" t="enabled">
+            <T n="enabled">0x2898B0EE<!--String: "Pedirle a {1.SimFirstName} {0.String|xxLower}"--></T>
+          </V>
+        </U>
+      </V>
+      <V n="join_affordance" t="affordance">
+        <U n="affordance">
+          <V n="value" t="custom">
+            <T n="custom">38431<!--SuperInteraction: mentor_Repair--></T>
+          </V>
+        </U>
+      </V>
+      <V n="join_available" t="enabled">
+        <U n="enabled">
+          <V n="loc_custom_join_name" t="enabled">
+            <T n="enabled">0xF80506D0<!--String: "{0.String}"--></T>
+          </V>
+        </U>
+      </V>
+      <E n="join_target">Actor</E>
+      <T n="link_joinable">True</T>
+    </U>
+  </L>
+  <L n="mood_list">
+    <T>14639<!--Mood: Mood_Focused--></T>
+  </L>
+  <V t="single" n="outcome">
+    <U n="single">
+      <U n="actions">
+        <L n="basic_extras">
+          <V t="create_object">
+            <U n="create_object">
+              <V n="creation_data" t="definition">
+                <U n="definition">
+                  <T n="definition">22672</T>
+                </U>
+              </V>
+              <T n="destroy_on_placement_failure">True</T>
+              <V n="location" t="position">
+                <U n="position">
+                  <T n="ignore_bb_footprints">False</T>
+                  <V t="from_participant" n="initial_location">
+                    <U n="from_participant">
+                      <E n="participant">Object</E>
+                    </U>
+                  </V>
+                </U>
+              </V>
+            </U>
+          </V>
+          <V t="leave_situation">
+            <U n="leave_situation">
+              <L n="situation_types">
+                <T>239175<!--SingleJobSituation: situation_Batuu_Starship_Repair_Falcon--></T>
+                <T>239174<!--SingleJobSituation: situation_Batuu_Starship_Repair_Tie--></T>
+                <T>239176<!--SingleJobSituation: situation_Batuu_Starship_Repair_XWing--></T>
+              </L>
+            </U>
+          </V>
+        </L>
+        <L n="loot_list">
+          <T>28446<!--LootActions: loot_Buff_Skill_Handiness_Ouch_Repair--></T>
+          <T>10944<!--LootActions: Loot_Repair_ScaledByHandiness--></T>
+        </L>
+      </U>
+    </U>
+  </V>
+  <T n="pie_menu_priority">10</T>
+  <U n="progress_bar_enabled">
+    <V n="blacklist_statistics" t="specify_blacklist_statistics">
+      <L n="specify_blacklist_statistics">
+        <T>8935<!--Commodity: Commodity_Death_Electrocution_Tracker--></T>
+      </L>
+    </V>
+  </U>
+  <V t="enabled" n="provided_template_affordances">
+    <U n="enabled">
+      <L n="template_affordances">
+        <V t="discipline">
+          <U n="discipline">
+            <T n="display_name_override">0xF402E73<!--String: "Alentar a reparar"--></T>
+            <L n="outcome_basic_extras">
+              <V t="loot">
+                <U n="loot">
+                  <L n="loot_list">
+                    <T>167162<!--LootActions: loot_Statistic_LifeSkill_Responsibility_Target_Discipline_EncourageGain--></T>
+                    <T>130279<!--LootActions: rel_Gain_Small_TargetSim--></T>
+                    <T>163075<!--LootActions: loot_ParentingSkill_Discipline_Encourage--></T>
+                  </L>
+                </U>
+              </V>
+            </L>
+            <T n="template_affordance">163026<!--DisciplineTemplateSuperInteraction: disciplineTemplate_Encourage--></T>
+          </U>
+        </V>
+      </L>
+    </U>
+  </V>
+  <E n="scoring_priority">NORMAL</E>
+  <U n="skill_loot_data">
+    <E n="effectiveness">StandardPeriodic</E>
+    <V n="level_range" t="enabled">
+      <U n="enabled">
+        <T n="lower_bound">1</T>
+        <T n="upper_bound">4</T>
+      </U>
+    </V>
+    <T n="stat">16704<!--Skill: statistic_Skill_AdultMajor_Handiness--></T>
+  </U>
+  <T n="subaction_selection_weight">1</T>
+  <V t="literal" n="super_affordance_compatibility">
+    <U n="literal">
+      <V n="default_inclusion" t="include_all">
+        <U n="include_all">
+          <L n="exclude_affordances">
+            <T>13433<!--SuperInteraction: generic_consume_food--></T>
+            <T>75561<!--SuperInteraction: generic_consume_foodBall--></T>
+            <T>37313<!--SuperInteraction: rummaged_consume_food--></T>
+            <T>13431<!--SuperInteraction: generic_consume_drink_bar--></T>
+            <T>13347<!--SuperInteraction: drink_Coffee_Generic_Consume--></T>
+            <T>8392<!--SuperInteraction: drink_Tea_Generic_Consume--></T>
+            <T>13432<!--SuperInteraction: generic_consume_drink_nonbar--></T>
+          </L>
+        </U>
+      </V>
+    </U>
+  </V>
+  <E n="target_type">OBJECT</E>
+  <L n="test_globals">
+    <V t="sim_info">
+      <U n="sim_info">
+        <V t="specified" n="ages" />
+        <V t="specified" n="species">
+          <U n="specified">
+            <L n="species">
+              <E />
+            </L>
+          </U>
+        </V>
+        <E n="who">Actor</E>
+      </U>
+    </V>
+    <V t="test_set_reference">
+      <T n="test_set_reference">33738<!--TestSetInstance: testSet_StateBroken--></T>
+    </V>
+    <V t="test_set_reference">
+      <T n="test_set_reference">244942<!--TestSetInstance: testSet_Batuu_FactionReputation_Scoundrel_GreaterOrEqual_Rank+1--></T>
+    </V>
+    <V t="test_set_reference">
+      <T n="test_set_reference">28305<!--TestSetInstance: testSet_EmotionNotMiserable--></T>
+    </V>
+  </L>
+  <T n="time_overhead">60</T>
+</I>

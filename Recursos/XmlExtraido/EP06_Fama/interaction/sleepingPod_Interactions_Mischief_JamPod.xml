@@ -1,0 +1,341 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<I c="SuperInteraction" i="interaction" m="interactions.base.super_interaction" n="sleepingPod_Interactions_Mischief_JamPod" s="200270">
+  <L n="_constraints">
+    <U>
+      <L n="constraints">
+        <U>
+          <V n="value" t="circle">
+            <U n="circle">
+              <T n="radius">2</T>
+            </U>
+          </V>
+        </U>
+      </L>
+    </U>
+  </L>
+  <V t="resource_key" n="_icon">
+    <U n="resource_key">
+      <T p="InGame\UI\Icons\PieMenu\Category\icon_piemenu_category_mischief.png" n="key">2f7d0004:00000000:62b3fbda5ed9d57e</T>
+    </U>
+  </V>
+  <T n="_require_current_posture">False</T>
+  <V t="enabled" n="_saveable" />
+  <T n="allow_autonomous">False</T>
+  <T n="allow_while_save_locked">True</T>
+  <T n="attention_cost">0.5</T>
+  <V n="basic_content" t="flexible_length">
+    <U n="flexible_length">
+      <L n="conditional_actions">
+        <V t="literal">
+          <U n="literal">
+            <L n="conditions">
+              <V t="time_based">
+                <U n="time_based">
+                  <T n="max_time">15</T>
+                  <T n="min_time">10</T>
+                </U>
+              </V>
+            </L>
+          </U>
+        </V>
+        <V t="literal">
+          <U n="literal">
+            <L n="conditions">
+              <V t="buff_based">
+                <U n="buff_based">
+                  <T n="buff">200895<!--Buff: buff_SleepingPod_Mischief_Caught_Negative--></T>
+                </U>
+              </V>
+            </L>
+            <E n="interaction_action">EXIT_CANCEL</E>
+          </U>
+        </V>
+        <V t="literal">
+          <U n="literal">
+            <L n="conditions">
+              <V t="state_based">
+                <U n="state_based">
+                  <V n="state" t="on_trigger">
+                    <T n="on_trigger">199595<!--ObjectStateValue: sleepingPod_StateValues_Vacant--></T>
+                  </V>
+                </U>
+              </V>
+            </L>
+            <E n="interaction_action">EXIT_CANCEL</E>
+          </U>
+        </V>
+      </L>
+      <V t="looping_content" n="content">
+        <U n="looping_content">
+          <U n="animation_ref">
+            <T n="factory">34905<!--AnimationElement: Handiness_Upgrade_Repair_StereoTV--></T>
+          </U>
+        </U>
+      </V>
+      <V n="periodic_stat_change" t="enabled">
+        <U n="enabled">
+          <L n="operations">
+            <V t="dynamic_skill">
+              <U n="dynamic_skill">
+                <U n="skill_loot_data_override">
+                  <E n="effectiveness">SmallPeriodic</E>
+                  <T n="stat">16707<!--Skill: statistic_Skill_AdultMajor_Mischief--></T>
+                </U>
+              </U>
+            </V>
+          </L>
+        </U>
+      </V>
+    </U>
+  </V>
+  <L n="basic_extras">
+    <V t="broadcaster">
+      <U n="broadcaster">
+        <L n="broadcaster_types">
+          <U>
+            <T n="item">200899<!--Broadcaster: broadcaster_Reaction_SleepingPod_Attempt_Mischief--></T>
+          </U>
+        </L>
+      </U>
+    </V>
+  </L>
+  <V t="disabled" n="basic_reserve_object" />
+  <T n="category">202603<!--PieMenuCategory: pieMenuCategory_SleepingPod_Mischief--></T>
+  <V t="disabled" n="content_score" />
+  <T n="display_name">0xF25B77A<!--String: "Encerrar en cápsula"--></T>
+  <V n="display_name_overrides" t="testable">
+    <U n="testable">
+      <L n="overrides">
+        <U>
+          <V t="disabled" n="new_display_name" />
+          <V t="enabled" n="new_pie_menu_icon">
+            <V n="enabled" t="resource_key">
+              <U n="resource_key">
+                <T n="key" p="InGame\UI\Icons\Clubs\DropDownIcons\icon_do_this.png">2f7d0004:00000000:7d6ce658c6cde7a9</T>
+              </U>
+            </V>
+          </V>
+          <L n="test">
+            <L>
+              <V t="state">
+                <U n="state">
+                  <T n="value">199474<!--ObjectStateValue: sleepingPod_StateValues_Mischief_Jammed_True--></T>
+                </U>
+              </V>
+            </L>
+          </L>
+        </U>
+      </L>
+    </U>
+  </V>
+  <U n="display_name_text_tokens">
+    <L n="tokens">
+      <V t="participant_type">
+        <U n="participant_type">
+          <V t="from_participant" n="objects">
+            <U n="from_participant">
+              <E n="participant">Actor</E>
+            </U>
+          </V>
+        </U>
+      </V>
+      <V t="participant_type">
+        <U n="participant_type">
+          <V t="from_participant" n="objects">
+            <U n="from_participant">
+              <E n="participant">Object</E>
+            </U>
+          </V>
+        </U>
+      </V>
+    </L>
+  </U>
+  <L n="interaction_category_tags">
+    <E>Interaction_Super</E>
+    <E>Interaction_All</E>
+    <E>Interaction_OldDay_Fine</E>
+  </L>
+  <V n="outcome" t="test_based">
+    <U n="test_based">
+      <L n="fallback_outcomes">
+        <U>
+          <U n="outcome">
+            <V n="animation_ref" t="enabled">
+              <U n="enabled">
+                <T n="factory">202336<!--AnimationElement: handiness_Upgrade_Repair_StereoTV_Exit--></T>
+              </U>
+            </V>
+            <T n="force_outcome_on_exit">True</T>
+          </U>
+        </U>
+      </L>
+      <L n="tested_outcomes">
+        <U>
+          <L n="potential_outcomes">
+            <U>
+              <U n="outcome">
+                <V n="animation_ref" t="enabled">
+                  <U n="enabled">
+                    <T n="factory">12067<!--AnimationElement: Soc_Solo_NT_EmbarrassedTurn_Succeed_basic--></T>
+                  </U>
+                </V>
+              </U>
+            </U>
+          </L>
+          <L n="tests">
+            <L>
+              <V t="buff">
+                <U n="buff">
+                  <V n="whitelist" t="enabled">
+                    <L n="enabled">
+                      <T>200895<!--Buff: buff_SleepingPod_Mischief_Caught_Negative--></T>
+                    </L>
+                  </V>
+                </U>
+              </V>
+            </L>
+          </L>
+        </U>
+        <U>
+          <L n="potential_outcomes">
+            <U>
+              <U n="outcome">
+                <V t="enabled" n="animation_ref">
+                  <U n="enabled">
+                    <T n="factory">77073<!--AnimationElement: Trait_Idle_Evil--></T>
+                  </U>
+                </V>
+                <L n="basic_extras">
+                  <V t="state_change">
+                    <U n="state_change">
+                      <V n="new_value" t="single_value">
+                        <U n="single_value">
+                          <T n="new_value">199474<!--ObjectStateValue: sleepingPod_StateValues_Mischief_Jammed_True--></T>
+                        </U>
+                      </V>
+                    </U>
+                  </V>
+                </L>
+                <L n="loot_list">
+                  <T>200953<!--LootActions: loot_SleepingPod_DreamBuffs_Mischief_SuccessfulSabotage--></T>
+                </L>
+              </U>
+            </U>
+          </L>
+          <L n="tests">
+            <L>
+              <V t="buff">
+                <U n="buff">
+                  <L n="blacklist">
+                    <T>200895<!--Buff: buff_SleepingPod_Mischief_Caught_Negative--></T>
+                  </L>
+                </U>
+              </V>
+            </L>
+          </L>
+        </U>
+      </L>
+    </U>
+  </V>
+  <T n="pie_menu_priority">5</T>
+  <E n="scoring_priority">NORMAL</E>
+  <T n="subaction_selection_weight">1</T>
+  <E n="target_type">OBJECT</E>
+  <L n="test_globals">
+    <V t="sim_info">
+      <U n="sim_info">
+        <V t="specified" n="ages">
+          <L n="specified">
+            <E>TEEN</E>
+            <E>YOUNGADULT</E>
+            <E>ADULT</E>
+            <E>ELDER</E>
+          </L>
+        </V>
+        <V t="specified" n="species">
+          <U n="specified">
+            <L n="species">
+              <E />
+            </L>
+          </U>
+        </V>
+        <E n="who">Actor</E>
+      </U>
+    </V>
+    <V t="state">
+      <U n="state">
+        <T n="value">200610<!--ObjectStateValue: sleepingPod_StateValues_Woohoo_False--></T>
+      </U>
+    </V>
+    <V t="state">
+      <U n="state">
+        <E n="operator">NOTEQUAL</E>
+        <T n="value">15080<!--ObjectStateValue: BrokenState_Broken--></T>
+      </U>
+    </V>
+    <V t="posture">
+      <U n="posture">
+        <L n="prohibited_postures">
+          <T>200051<!--Posture: SleepingPod_Sleep--></T>
+          <T>200543<!--IntimatePartPosture: posture_SleepingPodWooHoo--></T>
+        </L>
+      </U>
+    </V>
+    <V t="skill_test">
+      <U n="skill_test">
+        <T n="skill">16707<!--Skill: statistic_Skill_AdultMajor_Mischief--></T>
+        <V t="interval" n="skill_range">
+          <U n="interval">
+            <U n="skill_interval">
+              <T n="lower_bound">3</T>
+            </U>
+          </U>
+        </V>
+      </U>
+    </V>
+    <V t="state">
+      <U n="state">
+        <E n="operator">NOTEQUAL</E>
+        <V t="enabled" n="tooltip">
+          <T n="enabled">0xE129AA9B<!--String: "¡La cápsula de descanso ya se ha manipulado!"--></T>
+        </V>
+        <T n="value">199472<!--ObjectStateValue: sleepingPod_StateValues_Mischief_Hacked_True--></T>
+      </U>
+    </V>
+    <V t="state">
+      <U n="state">
+        <E n="operator">NOTEQUAL</E>
+        <V t="enabled" n="tooltip">
+          <T n="enabled">0xAD99589<!--String: "Configuración actual"--></T>
+        </V>
+        <T n="value">199474<!--ObjectStateValue: sleepingPod_StateValues_Mischief_Jammed_True--></T>
+      </U>
+    </V>
+    <V t="state">
+      <U n="state">
+        <E n="operator">NOTEQUAL</E>
+        <V t="enabled" n="tooltip">
+          <T n="enabled">0xE129AA9B<!--String: "¡La cápsula de descanso ya se ha manipulado!"--></T>
+        </V>
+        <T n="value">97754<!--CommodityBasedObjectStateValue: Brokenness_Broken_Sabotage--></T>
+      </U>
+    </V>
+    <V t="state">
+      <U n="state">
+        <V n="tooltip" t="enabled">
+          <T n="enabled">0xBEDC2335<!--String: "¡Para poder encerrar a alguien en la cápsula esta debe estar ocupada! "--></T>
+        </V>
+        <T n="value">199594<!--ObjectStateValue: sleepingPod_StateValues_Occupied--></T>
+      </U>
+    </V>
+  </L>
+  <T n="time_overhead">30</T>
+  <V t="enabled" n="utility_info">
+    <L n="enabled">
+      <U>
+        <E n="key">POWER</E>
+      </U>
+    </L>
+  </V>
+  <T n="visible">True</T>
+</I>

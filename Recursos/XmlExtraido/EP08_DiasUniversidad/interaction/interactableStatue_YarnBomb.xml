@@ -1,0 +1,300 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<I c="SuperInteraction" i="interaction" m="interactions.base.super_interaction" n="interactableStatue_YarnBomb" s="224490">
+  <L n="_constraints">
+    <U>
+      <L n="constraints">
+        <U>
+          <V n="value" t="cone">
+            <U n="cone">
+              <T n="max_radius">2.5</T>
+            </U>
+          </V>
+        </U>
+      </L>
+    </U>
+    <U>
+      <L n="constraints">
+        <U>
+          <V t="facing" n="value" />
+        </U>
+      </L>
+    </U>
+  </L>
+  <V t="enabled" n="_saveable" />
+  <T n="attention_cost">0.5</T>
+  <V n="basic_content" t="flexible_length">
+    <U n="flexible_length">
+      <L n="conditional_actions">
+        <V t="literal">
+          <U n="literal">
+            <L n="conditions">
+              <V t="time_based">
+                <U n="time_based">
+                  <T n="max_time">10</T>
+                  <T n="min_time">7</T>
+                </U>
+              </V>
+            </L>
+            <E n="interaction_action">EXIT_NATURALLY</E>
+          </U>
+        </V>
+        <V t="literal">
+          <U n="literal">
+            <L n="conditions">
+              <V t="buff_based">
+                <U n="buff_based">
+                  <T n="buff">226416<!--Buff: buff_Generic_CancelInteraction--></T>
+                </U>
+              </V>
+            </L>
+            <E n="interaction_action">EXIT_CANCEL</E>
+          </U>
+        </V>
+        <V t="list_reference">
+          <T n="list_reference">33040<!--ExitConditionList: ExitConditionList_FunOrMotiveFailureExit--></T>
+        </V>
+        <V t="list_reference">
+          <T n="list_reference">40144<!--ExitConditionList: ExitConditionList_EmotionMiserable--></T>
+        </V>
+        <V t="list_reference">
+          <T n="list_reference">40702<!--ExitConditionList: ExitConditionList_EmotionStressed--></T>
+        </V>
+      </L>
+      <V n="content" t="looping_content">
+        <U n="looping_content">
+          <U n="animation_ref">
+            <T n="factory">224466<!--AnimationElement: interactableStatue_YarnBomb--></T>
+          </U>
+        </U>
+      </V>
+      <V n="periodic_stat_change" t="enabled">
+        <U n="enabled">
+          <L n="operations">
+            <V t="statistic_change">
+              <U n="statistic_change">
+                <T n="amount">10</T>
+                <T n="stat">239521<!--Skill: statistic_Skill_AdultMajor_Knitting--></T>
+              </U>
+            </V>
+          </L>
+        </U>
+      </V>
+    </U>
+  </V>
+  <L n="basic_extras">
+    <V t="broadcaster">
+      <U n="broadcaster">
+        <L n="broadcaster_types">
+          <U>
+            <T n="item">226553<!--Broadcaster: broadcaster_UniversityRivalry_PrankReaction_Standard--></T>
+          </U>
+        </L>
+      </U>
+    </V>
+    <V t="destroy_situations_by_tags">
+      <U n="destroy_situations_by_tags">
+        <L n="situation_tags">
+          <E>Situation_UniversityRivals_Prank</E>
+        </L>
+        <V t="at_end" n="timing">
+          <U n="at_end">
+            <E n="criticality">OnCancelOrException</E>
+          </U>
+        </V>
+      </U>
+    </V>
+    <V t="buff_fire_and_forget">
+      <U n="buff_fire_and_forget">
+        <U n="buff">
+          <T n="buff_type">226416<!--Buff: buff_Generic_CancelInteraction--></T>
+        </U>
+        <E n="participant">Actor</E>
+        <V t="at_end" n="timing">
+          <U n="at_end">
+            <E n="criticality">OnCancelOrException</E>
+          </U>
+        </V>
+      </U>
+    </V>
+    <V t="vfx">
+      <U n="vfx">
+        <U n="success_chance">
+          <L n="multipliers">
+            <U>
+              <T n="multiplier">0</T>
+              <L n="tests">
+                <L>
+                  <V t="object_criteria">
+                    <U n="object_criteria">
+                      <V t="definition_id" n="identity_test">
+                        <U n="definition_id">
+                          <T n="actual_object">232218</T>
+                        </U>
+                      </V>
+                      <T n="owned">False</T>
+                      <V t="single_object" n="subject_specific_tests" />
+                    </U>
+                  </V>
+                </L>
+              </L>
+            </U>
+          </L>
+        </U>
+        <V t="at_beginning" n="timing" />
+        <U n="vfx">
+          <T n="effect_name">ep08_interactable_statue_yarnbomb_art</T>
+          <V t="Current_Position" n="joint_name" />
+        </U>
+        <V t="interaction" n="vfx_lifetime" />
+      </U>
+    </V>
+    <V t="vfx">
+      <U n="vfx">
+        <U n="success_chance">
+          <L n="multipliers">
+            <U>
+              <T n="multiplier">0</T>
+              <L n="tests">
+                <L>
+                  <V t="object_criteria">
+                    <U n="object_criteria">
+                      <V t="definition_id" n="identity_test">
+                        <U n="definition_id">
+                          <T n="actual_object">232216</T>
+                        </U>
+                      </V>
+                      <T n="owned">False</T>
+                      <V t="single_object" n="subject_specific_tests" />
+                    </U>
+                  </V>
+                </L>
+              </L>
+            </U>
+          </L>
+        </U>
+        <V t="at_beginning" n="timing" />
+        <U n="vfx">
+          <T n="effect_name">ep08_interactable_statue_yarnbomb_science</T>
+          <V t="Current_Position" n="joint_name" />
+        </U>
+        <V t="interaction" n="vfx_lifetime" />
+      </U>
+    </V>
+  </L>
+  <V t="disabled" n="content_score" />
+  <T n="display_name">0xA7F74F13<!--String: "Encalcetar estatua"--></T>
+  <U n="display_name_text_tokens">
+    <L n="tokens">
+      <V t="participant_type">
+        <U n="participant_type">
+          <V n="objects" t="from_participant">
+            <U n="from_participant">
+              <E n="participant">Actor</E>
+            </U>
+          </V>
+        </U>
+      </V>
+      <V t="participant_type">
+        <U n="participant_type">
+          <V t="from_participant" n="objects">
+            <U n="from_participant">
+              <E n="participant">Object</E>
+            </U>
+          </V>
+        </U>
+      </V>
+    </L>
+  </U>
+  <L n="interaction_category_tags">
+    <E>Interaction_Super</E>
+    <E>Interaction_All</E>
+  </L>
+  <V n="outcome" t="test_based">
+    <U n="test_based">
+      <L n="fallback_outcomes">
+        <U>
+          <U n="outcome">
+            <L n="basic_extras">
+              <V t="state_change">
+                <U n="state_change">
+                  <V n="new_value" t="single_value">
+                    <U n="single_value">
+                      <T n="new_value">224664<!--ObjectStateValue: interactableStatue_YarnBombed--></T>
+                    </U>
+                  </V>
+                </U>
+              </V>
+            </L>
+            <L n="loot_list">
+              <T>224640<!--LootActions: loot_CollegeOrganizations_SchoolSpirit_Prank_AddMischiefSmall--></T>
+            </L>
+            <E n="outcome_result">FAILURE</E>
+          </U>
+        </U>
+      </L>
+      <L n="tested_outcomes">
+        <U>
+          <L n="potential_outcomes">
+            <U>
+              <U n="outcome">
+                <L n="basic_extras">
+                  <V t="state_change">
+                    <U n="state_change">
+                      <V n="new_value" t="single_value">
+                        <U n="single_value">
+                          <T n="new_value">224664<!--ObjectStateValue: interactableStatue_YarnBombed--></T>
+                        </U>
+                      </V>
+                    </U>
+                  </V>
+                </L>
+                <L n="loot_list">
+                  <T>224640<!--LootActions: loot_CollegeOrganizations_SchoolSpirit_Prank_AddMischiefSmall--></T>
+                  <T>229204<!--LootActions: loot_CollegeOrganizations_SchoolSpirit_Prank_AddProgress_Small_NoEvent--></T>
+                  <T>229205<!--LootActions: loot_CollegeOrganizations_SchoolSpirit_Party_AddProgress_Small_NoEvent--></T>
+                  <T>226589<!--LootActions: loot_UniversityRivalry_PrankSuccess--></T>
+                </L>
+              </U>
+            </U>
+          </L>
+          <L n="tests">
+            <L>
+              <V t="test_set_reference">
+                <T n="test_set_reference">228065<!--TestSetInstance: testSet_Organizations_PrankRivalStatue_Party--></T>
+              </V>
+            </L>
+            <L>
+              <V t="test_set_reference">
+                <T n="test_set_reference">228063<!--TestSetInstance: testSet_Organizations_PrankRivalStatue_Prank--></T>
+              </V>
+            </L>
+          </L>
+        </U>
+      </L>
+    </U>
+  </V>
+  <E n="scoring_priority">NORMAL</E>
+  <T n="subaction_selection_weight">1</T>
+  <V t="literal" n="super_affordance_compatibility">
+    <U n="literal">
+      <V n="default_inclusion" t="exclude_all" />
+    </U>
+  </V>
+  <E n="target_type">OBJECT</E>
+  <L n="test_globals">
+    <V t="sim_info">
+      <U n="sim_info">
+        <V t="specified" n="ages" />
+        <V t="specified" n="species">
+          <U n="specified">
+            <L n="species">
+              <E />
+            </L>
+          </U>
+        </V>
+        <E n="who">Actor</E>
+      </U>
+    </V>
+  </L>
+  <T n="time_overhead">30</T>
+</I>

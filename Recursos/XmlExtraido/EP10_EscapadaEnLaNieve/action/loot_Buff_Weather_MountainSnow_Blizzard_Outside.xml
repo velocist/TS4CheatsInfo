@@ -1,0 +1,147 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<I c="LootActions" i="action" m="interactions.utils.loot" n="loot_Buff_Weather_MountainSnow_Blizzard_Outside" s="237505">
+  <L n="loot_actions">
+    <V t="buff">
+      <U n="buff">
+        <U n="buff">
+          <T n="buff_type">183183<!--Buff: buff_Sim_SeasonWeather_Blizzard_Outside--></T>
+        </U>
+        <L n="tests">
+          <L>
+            <V t="sim_info">
+              <U n="sim_info">
+                <V t="specified" n="ages">
+                  <L n="specified">
+                    <E>TEEN</E>
+                    <E>YOUNGADULT</E>
+                    <E>ADULT</E>
+                    <E>ELDER</E>
+                    <E>CHILD</E>
+                  </L>
+                </V>
+                <V t="specified" n="species">
+                  <U n="specified">
+                    <L n="species">
+                      <E />
+                    </L>
+                  </U>
+                </V>
+              </U>
+            </V>
+            <V t="test_set_reference">
+              <T n="test_set_reference">239871<!--TestSetInstance: testSet_MountainSnow_TemperatureBehavior_Allow--></T>
+            </V>
+          </L>
+        </L>
+      </U>
+    </V>
+    <V t="buff">
+      <U n="buff">
+        <U n="buff">
+          <V n="buff_reason" t="enabled">
+            <T n="enabled">0xFAAFBDEA<!--String: "(Por estar fuera con ventisca)"--></T>
+          </V>
+          <T n="buff_type">184861<!--Buff: buff_Sim_Weather_Blizzard_Scared_Outside--></T>
+        </U>
+        <L n="tests">
+          <L>
+            <V t="trait">
+              <U n="trait">
+                <L n="blacklist_traits">
+                  <T>185795<!--Trait: trait_Stormchaser--></T>
+                  <T>179139<!--Trait: trait_Hidden_Weather_Snow_Love--></T>
+                  <T>27914<!--Trait: trait_LovesOutdoors--></T>
+                  <T>16848<!--Trait: trait_Insane--></T>
+                </L>
+              </U>
+            </V>
+            <V t="test_set_reference">
+              <T n="test_set_reference">239871<!--TestSetInstance: testSet_MountainSnow_TemperatureBehavior_Allow--></T>
+            </V>
+          </L>
+        </L>
+      </U>
+    </V>
+    <V t="reaction">
+      <U n="reaction">
+        <V n="si_reaction" t="enabled">
+          <U n="enabled">
+            <T n="affordance">169887<!--ImmediateSuperInteraction: Push_Leave_Lot_Must_Run_Immediate--></T>
+            <E n="affordance_priority">High</E>
+            <V t="disabled" n="affordance_target" />
+          </U>
+        </V>
+        <L n="tests">
+          <L>
+            <V t="situation_running_test">
+              <U n="situation_running_test">
+                <V t="enabled" n="participant" />
+                <V n="tag_whitelist" t="enabled">
+                  <L n="enabled">
+                    <E>Situation_Weather_Snow_Storm</E>
+                  </L>
+                </V>
+              </U>
+            </V>
+            <V t="trait">
+              <U n="trait">
+                <L n="blacklist_traits">
+                  <T>185795<!--Trait: trait_Stormchaser--></T>
+                  <T>179139<!--Trait: trait_Hidden_Weather_Snow_Love--></T>
+                  <T>16848<!--Trait: trait_Insane--></T>
+                </L>
+              </U>
+            </V>
+            <V t="test_set_reference">
+              <T n="test_set_reference">239871<!--TestSetInstance: testSet_MountainSnow_TemperatureBehavior_Allow--></T>
+            </V>
+          </L>
+        </L>
+      </U>
+    </V>
+    <V t="reaction">
+      <U n="reaction">
+        <V n="si_reaction" t="enabled">
+          <U n="enabled">
+            <T n="affordance">183944<!--SuperInteraction: weather_Outside_Interaction_RunInside_Blizzard--></T>
+            <E n="affordance_priority">High</E>
+            <V n="affordance_run_priority" t="enabled">
+              <E n="enabled">High</E>
+            </V>
+            <V t="disabled" n="affordance_target" />
+          </U>
+        </V>
+        <L n="tests">
+          <L>
+            <V t="sim_info">
+              <U n="sim_info">
+                <V t="enabled" n="npc" />
+              </U>
+            </V>
+            <V t="trait">
+              <U n="trait">
+                <L n="blacklist_traits">
+                  <T>16848<!--Trait: trait_Insane--></T>
+                </L>
+              </U>
+            </V>
+            <V t="posture">
+              <U n="posture">
+                <L n="prohibited_postures">
+                  <T>132262<!--Posture: posture_BeCarried--></T>
+                </L>
+              </U>
+            </V>
+            <V t="test_set_reference">
+              <T n="test_set_reference">239871<!--TestSetInstance: testSet_MountainSnow_TemperatureBehavior_Allow--></T>
+            </V>
+          </L>
+        </L>
+      </U>
+    </V>
+    <V t="actions">
+      <T n="actions">253342<!--LootActions: loot_Lifestyles_Progress_Unlock_AdrenalineSeeker_DangerousWeather--></T>
+    </V>
+  </L>
+  <T n="run_test_first">False</T>
+</I>

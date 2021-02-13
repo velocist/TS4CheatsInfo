@@ -1,0 +1,1775 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<I c="Sim" i="object" m="sims.sim" n="object_Dog" s="120620">
+  <V t="enabled" n="_awareness_component" />
+  <U n="_carrying_component">
+    <V t="quadrupedal" n="carry_locomotion" />
+    <T n="default_put_down_strategy">145612<!--PutDownStrategy: putDownStrategy_Default_Dog--></T>
+    <U n="holstering_behavior">
+      <V n="default_behavior" t="disallow" />
+    </U>
+  </U>
+  <U n="_components">
+    <V t="enabled" n="autonomy">
+      <U n="enabled">
+        <E n="_settings_group">PETS</E>
+        <V n="get_comfortable" t="enabled">
+          <U n="enabled">
+            <T n="affordance">172777<!--AggregateSuperInteraction: aggregateSuperInteraction_AutonomyFiller_Dog--></T>
+          </U>
+        </V>
+        <L n="preroll_affordance_skip_set">
+          <T>30917<!--SocialPickerSuperInteraction: SocialPickerSI--></T>
+        </L>
+      </U>
+    </V>
+    <V t="enabled" n="carryable">
+      <U n="enabled">
+        <U n="allowed_hands_data">
+          <V n="biped_allowed_hands" t="right_only" />
+        </U>
+        <V t="use_custom_affordances" n="carry_affordances">
+          <L n="use_custom_affordances">
+            <T>132170<!--HoldObject: carry_HoldSim--></T>
+            <T>13134<!--HoldNothing: carry_holdnothing--></T>
+          </L>
+        </V>
+        <V t="enabled" n="constraint_pick_up">
+          <L n="enabled">
+            <V t="circle">
+              <U n="circle">
+                <T n="ideal_radius">0.5</T>
+              </U>
+            </V>
+            <V t="facing">
+              <U n="facing">
+                <T n="inner_radius">0</T>
+                <T n="range">65</T>
+              </U>
+            </V>
+          </L>
+        </V>
+        <L n="provided_affordances">
+          <U>
+            <T n="affordance">140681<!--PutDownSimOnRoutableSurfaceInteraction: putDownHere_CarriedSim--></T>
+            <V n="object_filter" t="filter_by_terrain">
+              <U n="filter_by_terrain">
+                <L n="disallowed_surfaces">
+                  <E />
+                </L>
+              </U>
+            </V>
+          </U>
+          <U>
+            <T n="affordance">165646<!--SocialSuperInteraction: bathtub_PetBath_FromCarry_Give--></T>
+            <T n="is_linked">False</T>
+            <V n="object_filter" t="filter_by_tags">
+              <U n="filter_by_tags">
+                <L n="tags">
+                  <E>Func_Bathtub</E>
+                  <E>Func_ShowerTub</E>
+                </L>
+              </U>
+            </V>
+          </U>
+        </L>
+        <V t="reference" n="put_down_tuning">
+          <L n="reference">
+            <U>
+              <T n="value">132438<!--PutDownStrategy: putDownStrategy_CarriedSim--></T>
+            </U>
+            <U>
+              <E n="key">CAT</E>
+              <T n="value">132438<!--PutDownStrategy: putDownStrategy_CarriedSim--></T>
+            </U>
+            <U>
+              <E n="key">DOG</E>
+              <T n="value">132438<!--PutDownStrategy: putDownStrategy_CarriedSim--></T>
+            </U>
+          </L>
+        </V>
+      </U>
+    </V>
+    <V t="enabled" n="censor_grid" />
+    <V t="enabled" n="focus">
+      <U n="enabled">
+        <T n="_focus_bone">b__R_Eye__</T>
+        <V n="_focus_score" t="globally">
+          <U n="globally">
+            <E n="base">HIGH</E>
+          </U>
+        </V>
+      </U>
+    </V>
+    <V t="enabled" n="line_of_sight">
+      <U n="enabled">
+        <U n="line_of_sight">
+          <T n="max_line_of_sight_radius">10</T>
+        </U>
+      </U>
+    </V>
+    <V t="disabled" n="live_drag_target" />
+    <V t="enabled" n="proximity_component">
+      <U n="enabled">
+        <L n="buffs">
+          <T>32807<!--Buff: Buff_Near_Friendly--></T>
+          <T>32818<!--Buff: Buff_Near_Unfriendly--></T>
+          <T>169547<!--Buff: buff_Near_HouseholdToddler--></T>
+        </L>
+      </U>
+    </V>
+    <V n="routing_component" t="enabled">
+      <U n="enabled">
+        <U n="plan_context_data">
+          <L n="context_age_species_overrides">
+            <U>
+              <E n="age">CHILD</E>
+              <U n="context_override">
+                <T n="_agent_extra_clearance_modifier">1.5</T>
+                <V t="enabled" n="_agent_height_clearance_override">
+                  <T n="enabled">0.5</T>
+                </V>
+                <V t="enabled" n="_allowed_heights" />
+                <V n="_allowed_portal_flags" t="enabled">
+                  <L n="enabled">
+                    <E>PetDoorLarge</E>
+                    <E>PetDoorSmall</E>
+                    <E>PetSqueezeUnderChild</E>
+                  </L>
+                </V>
+              </U>
+              <E n="species">DOG</E>
+            </U>
+            <U>
+              <E n="age">ELDER</E>
+              <U n="context_override">
+                <T n="_agent_goal_radius">0.4</T>
+                <V t="enabled" n="_agent_height_clearance_override">
+                  <T n="enabled">1</T>
+                </V>
+                <V t="rectangle" n="_agent_shape">
+                  <U n="rectangle">
+                    <T n="length">0.6</T>
+                    <T n="width">0.2</T>
+                  </U>
+                </V>
+                <V n="_allowed_portal_flags" t="enabled">
+                  <L n="enabled">
+                    <E>STAIRS_PORTAL_LONG</E>
+                    <E>PetDoorLarge</E>
+                    <E>STAIRS_PORTAL_SHORT</E>
+                    <E>PoolPortal</E>
+                    <E>PetObstacleCourse_LargePet</E>
+                    <E>PetSqueezeUnderAdult</E>
+                  </L>
+                </V>
+              </U>
+              <E n="species">DOG</E>
+            </U>
+          </L>
+          <U n="default_context">
+            <T n="_agent_goal_radius">0.4</T>
+            <V t="enabled" n="_agent_height_clearance_override">
+              <T n="enabled">1</T>
+            </V>
+            <V t="rectangle" n="_agent_shape">
+              <U n="rectangle">
+                <T n="length">0.6</T>
+                <T n="width">0.2</T>
+              </U>
+            </V>
+            <V n="_allowed_portal_flags" t="enabled">
+              <L n="enabled">
+                <E>STAIRS_PORTAL_LONG</E>
+                <E>STAIRS_PORTAL_SHORT</E>
+                <E>Elevator</E>
+                <E>PetDoorLarge</E>
+                <E>PetObstacleCourse_LargePet</E>
+                <E>PoolPortal</E>
+              </L>
+            </V>
+          </U>
+        </U>
+        <U n="walkstyle_behavior">
+          <L n="combo_walkstyle_replacements">
+            <U>
+              <L n="key_combo_list">
+                <T p="InGame\Locomotion\WalkGhost.walkstyle">27c01d95:00000000:0000000085fa674b</T>
+                <T p="InGame\Locomotion\Jog.walkstyle">27c01d95:00000000:00000000208631a7</T>
+              </L>
+              <T p="InGame\Locomotion\JogGhost.walkstyle" n="result">27c01d95:00000000:000000006d8226d0</T>
+            </U>
+            <U>
+              <L n="key_combo_list">
+                <T p="InGame\Locomotion\WalkGhost.walkstyle">27c01d95:00000000:0000000085fa674b</T>
+                <T p="InGame\Locomotion\WalkSad.walkstyle">27c01d95:00000000:00000000192e937a</T>
+              </L>
+              <T p="InGame\Locomotion\WalkGhostSad.walkstyle" n="result">27c01d95:00000000:0000000035c03e01</T>
+            </U>
+            <U>
+              <L n="key_combo_list">
+                <T p="InGame\Locomotion\WalkGhost.walkstyle">27c01d95:00000000:0000000085fa674b</T>
+                <T p="InGame\Locomotion\WalkAngry.walkstyle">27c01d95:00000000:00000000e8698d8d</T>
+              </L>
+              <T p="InGame\Locomotion\WalkGhostAngry.walkstyle" n="result">27c01d95:00000000:0000000059778116</T>
+            </U>
+            <U>
+              <L n="key_combo_list">
+                <T p="InGame\Locomotion\WalkGhost.walkstyle">27c01d95:00000000:0000000085fa674b</T>
+                <T p="InGame\Locomotion\WalkHappy.walkstyle">27c01d95:00000000:0000000066499344</T>
+              </L>
+              <T p="InGame\Locomotion\WalkGhostHappy.walkstyle" n="result">27c01d95:00000000:0000000050190287</T>
+            </U>
+            <U>
+              <L n="key_combo_list">
+                <T p="InGame\Locomotion\Swim.walkstyle">27c01d95:00000000:00000000090d7f4d</T>
+                <T p="InGame\Locomotion\WalkSad.walkstyle">27c01d95:00000000:00000000192e937a</T>
+              </L>
+              <T p="InGame\Locomotion\SwimSad.walkstyle" n="result">27c01d95:00000000:000000006b45f2f3</T>
+            </U>
+            <U>
+              <L n="key_combo_list">
+                <T p="InGame\Locomotion\Swim.walkstyle">27c01d95:00000000:00000000090d7f4d</T>
+                <T p="InGame\Locomotion\WalkAngry.walkstyle">27c01d95:00000000:00000000e8698d8d</T>
+              </L>
+              <T p="InGame\Locomotion\SwimAngry.walkstyle" n="result">27c01d95:00000000:00000000fbbc7568</T>
+            </U>
+            <U>
+              <L n="key_combo_list">
+                <T p="InGame\Locomotion\Swim.walkstyle">27c01d95:00000000:00000000090d7f4d</T>
+                <T p="InGame\Locomotion\WalkPlayful.walkstyle">27c01d95:00000000:00000000e7bc0bc5</T>
+              </L>
+              <T p="InGame\Locomotion\SwimPlayful.walkstyle" n="result">27c01d95:00000000:00000000708846c8</T>
+            </U>
+            <U>
+              <L n="key_combo_list">
+                <T p="InGame\Locomotion\Swim.walkstyle">27c01d95:00000000:00000000090d7f4d</T>
+                <T p="InGame\Locomotion\WalkEnergetic.walkstyle">27c01d95:00000000:000000003202eed6</T>
+              </L>
+              <T p="InGame\Locomotion\SwimEnergized.walkstyle" n="result">27c01d95:00000000:000000003f3989ce</T>
+            </U>
+            <U>
+              <L n="key_combo_list">
+                <T p="InGP07\Locomotion\GP07_WalkPossessed.walkstyle">27c01d95:00000000:00000000a68a97e0</T>
+                <T p="InEP07\Locomotion\SwimMermaid.walkstyle">27c01d95:00000000:0000000086c89dce</T>
+              </L>
+              <T p="InEP07\Locomotion\SwimMermaid.walkstyle" n="result">27c01d95:00000000:0000000086c89dce</T>
+            </U>
+            <U>
+              <L n="key_combo_list">
+                <T p="InGP07\Locomotion\GP07_WalkPossessed.walkstyle">27c01d95:00000000:00000000a68a97e0</T>
+                <T p="InEP07\Locomotion\SwimMermaid_MediumSpeed.walkstyle">27c01d95:00000000:0000000062f44389</T>
+              </L>
+              <T p="InEP07\Locomotion\SwimMermaid_MediumSpeed.walkstyle" n="result">27c01d95:00000000:0000000062f44389</T>
+            </U>
+            <U>
+              <L n="key_combo_list">
+                <T p="InGP07\Locomotion\GP07_WalkPossessed.walkstyle">27c01d95:00000000:00000000a68a97e0</T>
+                <T p="InEP07\Locomotion\SwimMermaid_SlowSpeed.walkstyle">27c01d95:00000000:00000000b86c9513</T>
+              </L>
+              <T p="InEP07\Locomotion\SwimMermaid_SlowSpeed.walkstyle" n="result">27c01d95:00000000:00000000b86c9513</T>
+            </U>
+            <U>
+              <L n="key_combo_list">
+                <T p="InGame\Locomotion\WalkGhost.walkstyle">27c01d95:00000000:0000000085fa674b</T>
+                <T p="InEP04\Locomotion\EP04_Run.walkstyle">27c01d95:00000000:00000000964fb45c</T>
+              </L>
+              <T p="InEP04\Locomotion\EP04_RunGhost.walkstyle" n="result">27c01d95:00000000:00000000a828aa51</T>
+            </U>
+            <U>
+              <L n="key_combo_list">
+                <T p="InGame\Locomotion\WalkGhost.walkstyle">27c01d95:00000000:0000000085fa674b</T>
+                <T p="InEP04\Locomotion\EP04_WalkDroopy.walkstyle">27c01d95:00000000:000000006ecc64d7</T>
+              </L>
+              <T p="InEP04\Locomotion\EP04_WalkDroopyGhost.walkstyle" n="result">27c01d95:00000000:00000000710e0820</T>
+            </U>
+            <U>
+              <L n="key_combo_list">
+                <T p="InGame\Locomotion\WalkGhost.walkstyle">27c01d95:00000000:0000000085fa674b</T>
+                <T p="InEP04\Locomotion\EP04_WalkStalk.walkstyle">27c01d95:00000000:00000000d46adba7</T>
+              </L>
+              <T p="InEP04\Locomotion\EP04_WalkStalkGhost.walkstyle" n="result">27c01d95:00000000:00000000c5d5a4d0</T>
+            </U>
+            <U>
+              <L n="key_combo_list">
+                <T p="InGame\Locomotion\WalkGhost.walkstyle">27c01d95:00000000:0000000085fa674b</T>
+                <T p="InEP04\Locomotion\Trot.walkstyle">27c01d95:00000000:00000000c002c396</T>
+              </L>
+              <T p="InEP04\Locomotion\EP04_TrotGhost.walkstyle" n="result">27c01d95:00000000:000000008c5f2f77</T>
+            </U>
+          </L>
+          <T p="InEP04\Locomotion\Trot.walkstyle" n="default_walkstyle">27c01d95:00000000:00000000c002c396</T>
+          <L n="run_allowed_flags">
+            <E>RUN_ALLOWED_OUTDOORS</E>
+            <E />
+          </L>
+          <L n="run_disallowed_walkstyles">
+            <T p="InGame\Locomotion\JogGhost.walkstyle">27c01d95:00000000:000000006d8226d0</T>
+            <T p="InGame\Locomotion\Swim.walkstyle">27c01d95:00000000:00000000090d7f4d</T>
+            <T p="InGame\Locomotion\SwimSad.walkstyle">27c01d95:00000000:000000006b45f2f3</T>
+            <T p="InGame\Locomotion\SwimAngry.walkstyle">27c01d95:00000000:00000000fbbc7568</T>
+            <T p="InGame\Locomotion\SwimPlayful.walkstyle">27c01d95:00000000:00000000708846c8</T>
+            <T p="InGame\Locomotion\SwimEnergized.walkstyle">27c01d95:00000000:000000003f3989ce</T>
+            <T p="InGP04\Locomotion\RunVampire.walkstyle">27c01d95:00000000:00000000742d7332</T>
+            <T p="InEP05\Locomotion\EP05_IceSkate.walkstyle">27c01d95:00000000:0000000003eddea7</T>
+            <T p="InEP05\Locomotion\EP05_IceSkateBackwards.walkstyle">27c01d95:00000000:000000005fffed97</T>
+            <T p="InEP05\Locomotion\EP05_IceSkateLowSkill.walkstyle">27c01d95:00000000:00000000d4dc3a9e</T>
+            <T p="InEP05\Locomotion\EP05_RollerSkate.walkstyle">27c01d95:00000000:000000001cb6aa0c</T>
+            <T p="InEP05\Locomotion\EP05_RollerSkateLowSkill.walkstyle">27c01d95:00000000:00000000c010a085</T>
+            <T p="InEP05\Locomotion\EP05_RollerSkateBackwards.walkstyle">27c01d95:00000000:000000003ef677de</T>
+            <T p="InEP05\Locomotion\EP05_IceSkateHighSkill.walkstyle">27c01d95:00000000:000000005555a4ea</T>
+            <T p="InEP05\Locomotion\EP05_RollerSkateHighSkill.walkstyle">27c01d95:00000000:0000000031319277</T>
+            <T p="InEP07\Locomotion\SwimMermaid.walkstyle">27c01d95:00000000:0000000086c89dce</T>
+            <T p="InGame\Locomotion\FloatOnBack_Locomotion.walkstyle">27c01d95:00000000:00000000075a5a7d</T>
+            <T p="InEP07\Locomotion\Snorkeling.walkstyle">27c01d95:00000000:00000000dfa904d5</T>
+            <T p="InEP07\Locomotion\SwimMermaid_MediumSpeed.walkstyle">27c01d95:00000000:0000000062f44389</T>
+            <T p="InEP07\Locomotion\SwimMermaid_SlowSpeed.walkstyle">27c01d95:00000000:00000000b86c9513</T>
+          </L>
+          <T n="run_required_segment_distance">10</T>
+          <T n="run_required_total_distance">15</T>
+          <T p="InGame\Locomotion\Run.walkstyle" n="run_walkstyle">27c01d95:00000000:000000002a72b9a8</T>
+          <T p="InEP04\Locomotion\EP04_Walk.walkstyle" n="short_walkstyle">27c01d95:00000000:000000004511b16a</T>
+          <T n="short_walkstyle_distance">5</T>
+          <L n="short_walkstyle_distance_override_map">
+            <U>
+              <T p="InGame\Locomotion\Swim.walkstyle" n="key">27c01d95:00000000:00000000090d7f4d</T>
+              <T n="value">5</T>
+            </U>
+            <U>
+              <T p="InGame\Locomotion\SwimAngry.walkstyle" n="key">27c01d95:00000000:00000000fbbc7568</T>
+              <T n="value">5</T>
+            </U>
+            <U>
+              <T p="InGame\Locomotion\SwimEnergized.walkstyle" n="key">27c01d95:00000000:000000003f3989ce</T>
+              <T n="value">5</T>
+            </U>
+            <U>
+              <T p="InGame\Locomotion\SwimPlayful.walkstyle" n="key">27c01d95:00000000:00000000708846c8</T>
+              <T n="value">5</T>
+            </U>
+            <U>
+              <T p="InGame\Locomotion\SwimSad.walkstyle" n="key">27c01d95:00000000:000000006b45f2f3</T>
+              <T n="value">5</T>
+            </U>
+            <U>
+              <T p="InGame\Locomotion\WalkAngry.walkstyle" n="key">27c01d95:00000000:00000000e8698d8d</T>
+              <T n="value">4</T>
+            </U>
+            <U>
+              <T p="InGame\Locomotion\WalkSad.walkstyle" n="key">27c01d95:00000000:00000000192e937a</T>
+              <T n="value">4</T>
+            </U>
+          </L>
+          <L n="short_walkstyle_map">
+            <U>
+              <T p="InEP04\Locomotion\EP04_RunGhost.walkstyle" n="key">27c01d95:00000000:00000000a828aa51</T>
+              <T p="InEP04\Locomotion\EP04_WalkGhost.walkstyle" n="value">27c01d95:00000000:00000000e95830a7</T>
+            </U>
+            <U>
+              <T p="InEP04\Locomotion\EP04_TrotGhost.walkstyle" n="key">27c01d95:00000000:000000008c5f2f77</T>
+              <T p="InEP04\Locomotion\EP04_WalkGhost.walkstyle" n="value">27c01d95:00000000:00000000e95830a7</T>
+            </U>
+            <U>
+              <T p="InEP04\Locomotion\EP04_WalkDroopyGhost.walkstyle" n="key">27c01d95:00000000:00000000710e0820</T>
+              <T p="InEP04\Locomotion\EP04_WalkDroopyGhost.walkstyle" n="value">27c01d95:00000000:00000000710e0820</T>
+            </U>
+            <U>
+              <T p="InEP04\Locomotion\EP04_WalkStalkGhost.walkstyle" n="key">27c01d95:00000000:00000000c5d5a4d0</T>
+              <T p="InEP04\Locomotion\EP04_WalkStalkGhost.walkstyle" n="value">27c01d95:00000000:00000000c5d5a4d0</T>
+            </U>
+            <U>
+              <T p="InEP05\Locomotion\EP05_IceSkate.walkstyle" n="key">27c01d95:00000000:0000000003eddea7</T>
+              <T p="InEP05\Locomotion\EP05_IceSkate.walkstyle" n="value">27c01d95:00000000:0000000003eddea7</T>
+            </U>
+            <U>
+              <T p="InEP05\Locomotion\EP05_IceSkateBackwards.walkstyle" n="key">27c01d95:00000000:000000005fffed97</T>
+              <T p="InEP05\Locomotion\EP05_IceSkateBackwards.walkstyle" n="value">27c01d95:00000000:000000005fffed97</T>
+            </U>
+            <U>
+              <T p="InEP05\Locomotion\EP05_IceSkateHighSkill.walkstyle" n="key">27c01d95:00000000:000000005555a4ea</T>
+              <T p="InEP05\Locomotion\EP05_IceSkateHighSkill.walkstyle" n="value">27c01d95:00000000:000000005555a4ea</T>
+            </U>
+            <U>
+              <T p="InEP05\Locomotion\EP05_IceSkateLowSkill.walkstyle" n="key">27c01d95:00000000:00000000d4dc3a9e</T>
+              <T p="InEP05\Locomotion\EP05_IceSkateLowSkill.walkstyle" n="value">27c01d95:00000000:00000000d4dc3a9e</T>
+            </U>
+            <U>
+              <T p="InEP05\Locomotion\EP05_RollerSkate.walkstyle" n="key">27c01d95:00000000:000000001cb6aa0c</T>
+              <T p="InEP05\Locomotion\EP05_RollerSkate.walkstyle" n="value">27c01d95:00000000:000000001cb6aa0c</T>
+            </U>
+            <U>
+              <T p="InEP05\Locomotion\EP05_RollerSkateBackwards.walkstyle" n="key">27c01d95:00000000:000000003ef677de</T>
+              <T p="InEP05\Locomotion\EP05_RollerSkateBackwards.walkstyle" n="value">27c01d95:00000000:000000003ef677de</T>
+            </U>
+            <U>
+              <T p="InEP05\Locomotion\EP05_RollerSkateHighSkill.walkstyle" n="key">27c01d95:00000000:0000000031319277</T>
+              <T p="InEP05\Locomotion\EP05_RollerSkateHighSkill.walkstyle" n="value">27c01d95:00000000:0000000031319277</T>
+            </U>
+            <U>
+              <T p="InEP05\Locomotion\EP05_RollerSkateLowSkill.walkstyle" n="key">27c01d95:00000000:00000000c010a085</T>
+              <T p="InEP05\Locomotion\EP05_RollerSkateLowSkill.walkstyle" n="value">27c01d95:00000000:00000000c010a085</T>
+            </U>
+            <U>
+              <T p="InGame\Locomotion\RunPanic.walkstyle" n="key">27c01d95:00000000:00000000278b1e71</T>
+              <T p="InGame\Locomotion\RunPanic.walkstyle" n="value">27c01d95:00000000:00000000278b1e71</T>
+            </U>
+            <U>
+              <T p="InGame\Locomotion\Swim.walkstyle" n="key">27c01d95:00000000:00000000090d7f4d</T>
+              <T p="InGame\Locomotion\Swim.walkstyle" n="value">27c01d95:00000000:00000000090d7f4d</T>
+            </U>
+            <U>
+              <T p="InGame\Locomotion\SwimAngry.walkstyle" n="key">27c01d95:00000000:00000000fbbc7568</T>
+              <T p="InGame\Locomotion\SwimAngry.walkstyle" n="value">27c01d95:00000000:00000000fbbc7568</T>
+            </U>
+            <U>
+              <T p="InGame\Locomotion\SwimEnergized.walkstyle" n="key">27c01d95:00000000:000000003f3989ce</T>
+              <T p="InGame\Locomotion\SwimEnergized.walkstyle" n="value">27c01d95:00000000:000000003f3989ce</T>
+            </U>
+            <U>
+              <T p="InGame\Locomotion\SwimPlayful.walkstyle" n="key">27c01d95:00000000:00000000708846c8</T>
+              <T p="InGame\Locomotion\SwimPlayful.walkstyle" n="value">27c01d95:00000000:00000000708846c8</T>
+            </U>
+            <U>
+              <T p="InGame\Locomotion\SwimSad.walkstyle" n="key">27c01d95:00000000:000000006b45f2f3</T>
+              <T p="InGame\Locomotion\SwimSad.walkstyle" n="value">27c01d95:00000000:000000006b45f2f3</T>
+            </U>
+            <U>
+              <T p="InGame\Locomotion\WalkGhost.walkstyle" n="key">27c01d95:00000000:0000000085fa674b</T>
+              <T p="InGame\Locomotion\WalkGhost.walkstyle" n="value">27c01d95:00000000:0000000085fa674b</T>
+            </U>
+            <U>
+              <T p="InGame\Locomotion\WalkGhostAngry.walkstyle" n="key">27c01d95:00000000:0000000059778116</T>
+              <T p="InGame\Locomotion\WalkGhostAngry.walkstyle" n="value">27c01d95:00000000:0000000059778116</T>
+            </U>
+            <U>
+              <T p="InGame\Locomotion\WalkGhostHappy.walkstyle" n="key">27c01d95:00000000:0000000050190287</T>
+              <T p="InGame\Locomotion\WalkGhostHappy.walkstyle" n="value">27c01d95:00000000:0000000050190287</T>
+            </U>
+            <U>
+              <T p="InGame\Locomotion\WalkGhostSad.walkstyle" n="key">27c01d95:00000000:0000000035c03e01</T>
+              <T p="InGame\Locomotion\WalkGhostSad.walkstyle" n="value">27c01d95:00000000:0000000035c03e01</T>
+            </U>
+            <U>
+              <T p="InGame\Locomotion\WalkPregnant.walkstyle" n="key">27c01d95:00000000:000000000f5ca155</T>
+              <T p="InGame\Locomotion\WalkPregnant.walkstyle" n="value">27c01d95:00000000:000000000f5ca155</T>
+            </U>
+            <U>
+              <T p="InGame\Locomotion\WalkReaper.walkstyle" n="key">27c01d95:00000000:00000000ae69ba8b</T>
+              <T p="InGame\Locomotion\WalkReaper.walkstyle" n="value">27c01d95:00000000:00000000ae69ba8b</T>
+            </U>
+          </L>
+        </U>
+      </U>
+    </V>
+    <V t="enabled" n="state">
+      <U n="enabled">
+        <L n="state_triggers" />
+        <L n="states">
+          <U>
+            <L n="client_states">
+              <U>
+                <T n="key">15152<!--CommodityBasedObjectStateValue: Fat_0--></T>
+              </U>
+              <U>
+                <T n="key">15153<!--CommodityBasedObjectStateValue: Fat_1--></T>
+              </U>
+              <U>
+                <T n="key">15154<!--CommodityBasedObjectStateValue: Fat_2--></T>
+              </U>
+              <U>
+                <T n="key">15155<!--CommodityBasedObjectStateValue: Fat_3--></T>
+              </U>
+              <U>
+                <T n="key">15156<!--CommodityBasedObjectStateValue: Fat_4--></T>
+              </U>
+            </L>
+            <V n="default_value" t="reference">
+              <T n="reference">15154<!--CommodityBasedObjectStateValue: Fat_2--></T>
+            </V>
+          </U>
+          <U>
+            <L n="client_states">
+              <U>
+                <T n="key">15180<!--CommodityBasedObjectStateValue: Fit_0--></T>
+              </U>
+              <U>
+                <T n="key">15181<!--CommodityBasedObjectStateValue: Fit_1--></T>
+              </U>
+              <U>
+                <T n="key">15182<!--CommodityBasedObjectStateValue: Fit_2--></T>
+              </U>
+              <U>
+                <T n="key">15183<!--CommodityBasedObjectStateValue: Fit_3--></T>
+              </U>
+              <U>
+                <T n="key">15184<!--CommodityBasedObjectStateValue: Fit_4--></T>
+              </U>
+            </L>
+            <V n="default_value" t="reference">
+              <T n="reference">15182<!--CommodityBasedObjectStateValue: Fit_2--></T>
+            </V>
+          </U>
+          <U>
+            <L n="client_states">
+              <U>
+                <T n="key">39737<!--CommodityBasedObjectStateValue: FireState_Burn_Material_Change_Not_Burning--></T>
+              </U>
+              <U>
+                <T n="key">75468<!--CommodityBasedObjectStateValue: FireState_Burn_Sim_Burning--></T>
+              </U>
+              <U>
+                <T n="key">75469<!--CommodityBasedObjectStateValue: FireState_Burn_Sim_Burning_Singed--></T>
+              </U>
+            </L>
+            <V n="default_value" t="reference">
+              <T n="reference">74096<!--CommodityBasedObjectStateValue: FireState_Burn_Sim_Not_Burning--></T>
+            </V>
+            <T n="reset_to_default">True</T>
+          </U>
+          <U>
+            <L n="client_states">
+              <U>
+                <T n="key">75466<!--ObjectStateValue: Sim_singed_singed--></T>
+              </U>
+              <U>
+                <T n="key">75467<!--ObjectStateValue: Sim_singed_non_singed--></T>
+              </U>
+            </L>
+            <V n="default_value" t="reference">
+              <T n="reference">75467<!--ObjectStateValue: Sim_singed_non_singed--></T>
+            </V>
+          </U>
+          <U>
+            <L n="client_states">
+              <U>
+                <T n="key">160280<!--ObjectStateValue: bowling_Ball_Values_Red--></T>
+              </U>
+              <U>
+                <T n="key">160282<!--ObjectStateValue: bowling_Ball_Values_default--></T>
+              </U>
+              <U>
+                <T n="key">160532<!--ObjectStateValue: bowling_Ball_Values_Gold--></T>
+              </U>
+              <U>
+                <T n="key">160533<!--ObjectStateValue: bowling_Ball_Values_Blue--></T>
+              </U>
+              <U>
+                <T n="key">160534<!--ObjectStateValue: bowling_Ball_Values_LightBlue--></T>
+              </U>
+            </L>
+            <V n="default_value" t="reference">
+              <T n="reference">160282<!--ObjectStateValue: bowling_Ball_Values_default--></T>
+            </V>
+          </U>
+          <U>
+            <L n="client_states">
+              <U>
+                <T n="key">115466<!--CommodityBasedObjectStateValue: sim_Frozen_Unfrozen--></T>
+              </U>
+              <U>
+                <T n="key">115467<!--CommodityBasedObjectStateValue: sim_Frozen_Frozen--></T>
+              </U>
+            </L>
+            <V n="default_value" t="reference">
+              <T n="reference">115466<!--CommodityBasedObjectStateValue: sim_Frozen_Unfrozen--></T>
+            </V>
+            <T n="reset_on_load_if_time_passes">True</T>
+            <T n="reset_to_default">True</T>
+          </U>
+          <U>
+            <L n="client_states">
+              <U>
+                <T n="key">115715<!--CommodityBasedObjectStateValue: sim_Frozen_Frozen_Child--></T>
+              </U>
+              <U>
+                <T n="key">115716<!--CommodityBasedObjectStateValue: sim_Frozen_UnFrozen_Child--></T>
+              </U>
+            </L>
+            <V n="default_value" t="reference">
+              <T n="reference">115716<!--CommodityBasedObjectStateValue: sim_Frozen_UnFrozen_Child--></T>
+            </V>
+            <T n="reset_on_load_if_time_passes">True</T>
+            <T n="reset_to_default">True</T>
+          </U>
+          <U>
+            <L n="client_states">
+              <U>
+                <T n="key">121725<!--ObjectStateValue: iceCream_Broadcaster_On--></T>
+              </U>
+              <U>
+                <T n="key">121726<!--ObjectStateValue: iceCream_Broadcaster_Off--></T>
+              </U>
+            </L>
+            <V n="default_value" t="reference">
+              <T n="reference">121726<!--ObjectStateValue: iceCream_Broadcaster_Off--></T>
+            </V>
+          </U>
+          <U>
+            <L n="client_states">
+              <U>
+                <T n="key">149312<!--ObjectStateValue: phone_UseType_Camera--></T>
+              </U>
+              <U>
+                <T n="key">149313<!--ObjectStateValue: phone_UseType_Game--></T>
+              </U>
+              <U>
+                <T n="key">149314<!--ObjectStateValue: phone_UseType_Photo--></T>
+              </U>
+              <U>
+                <T n="key">149315<!--ObjectStateValue: phone_UseType_Text--></T>
+              </U>
+              <U>
+                <T n="key">149316<!--ObjectStateValue: phone_UseType_Web--></T>
+              </U>
+            </L>
+            <V n="default_value" t="reference">
+              <T n="reference">149315<!--ObjectStateValue: phone_UseType_Text--></T>
+            </V>
+            <T n="reset_on_load_if_time_passes">True</T>
+            <T n="reset_to_default">True</T>
+          </U>
+          <U>
+            <L n="client_states">
+              <U>
+                <T n="key">149293<!--ObjectStateValue: phone_Color_TurquoiseStripes--></T>
+              </U>
+              <U>
+                <T n="key">149294<!--ObjectStateValue: phone_Color_Default--></T>
+              </U>
+              <U>
+                <T n="key">149295<!--ObjectStateValue: phone_Color_Lime--></T>
+              </U>
+              <U>
+                <T n="key">149296<!--ObjectStateValue: phone_Color_MintGreenStripes--></T>
+              </U>
+              <U>
+                <T n="key">149297<!--ObjectStateValue: phone_Color_OrangePolka--></T>
+              </U>
+              <U>
+                <T n="key">149298<!--ObjectStateValue: phone_Color_Purple--></T>
+              </U>
+              <U>
+                <T n="key">149299<!--ObjectStateValue: phone_Color_Red--></T>
+              </U>
+              <U>
+                <T n="key">149300<!--ObjectStateValue: phone_Color_RoseGold--></T>
+              </U>
+              <U>
+                <T n="key">149301<!--ObjectStateValue: phone_Color_Silver--></T>
+              </U>
+              <U>
+                <T n="key">149302<!--ObjectStateValue: phone_Color_White--></T>
+              </U>
+              <U>
+                <T n="key">149303<!--ObjectStateValue: phone_Color_BlackStripes--></T>
+              </U>
+              <U>
+                <T n="key">149304<!--ObjectStateValue: phone_Color_Black--></T>
+              </U>
+              <U>
+                <T n="key">149305<!--ObjectStateValue: phone_Color_BluePolka--></T>
+              </U>
+              <U>
+                <T n="key">149306<!--ObjectStateValue: phone_Color_Brown--></T>
+              </U>
+              <U>
+                <T n="key">149307<!--ObjectStateValue: phone_Color_DarkBlue--></T>
+              </U>
+              <U>
+                <T n="key">149308<!--ObjectStateValue: phone_Color_DarkGreen--></T>
+              </U>
+              <U>
+                <T n="key">149309<!--ObjectStateValue: phone_Color_Gold--></T>
+              </U>
+              <U>
+                <T n="key">149310<!--ObjectStateValue: phone_Color_HotPinkPolka--></T>
+              </U>
+              <U>
+                <T n="key">149311<!--ObjectStateValue: phone_Color_LightPink--></T>
+              </U>
+            </L>
+            <V n="default_value" t="reference">
+              <T n="reference">149294<!--ObjectStateValue: phone_Color_Default--></T>
+            </V>
+          </U>
+          <U>
+            <L n="client_states">
+              <U>
+                <T n="key">154789<!--ObjectStateValue: SimReflection_NoMirrors--></T>
+              </U>
+              <U>
+                <T n="key">154790<!--ObjectStateValue: SimReflection_Default--></T>
+              </U>
+            </L>
+            <V n="default_value" t="reference">
+              <T n="reference">154790<!--ObjectStateValue: SimReflection_Default--></T>
+            </V>
+          </U>
+          <U>
+            <L n="client_states">
+              <U>
+                <T n="key">181195<!--CommodityBasedObjectStateValue: EffectiveTemperature_ExtremeFreezing--></T>
+              </U>
+              <U>
+                <T n="key">181196<!--CommodityBasedObjectStateValue: EffectiveTemperature_Freezing--></T>
+              </U>
+              <U>
+                <T n="key">181197<!--CommodityBasedObjectStateValue: EffectiveTemperature_Cold--></T>
+              </U>
+              <U>
+                <T n="key">181198<!--CommodityBasedObjectStateValue: EffectiveTemperature_Cool--></T>
+              </U>
+              <U>
+                <T n="key">181199<!--CommodityBasedObjectStateValue: EffectiveTemperature_Warm--></T>
+              </U>
+              <U>
+                <T n="key">181200<!--CommodityBasedObjectStateValue: EffectiveTemperature_Hot--></T>
+              </U>
+              <U>
+                <T n="key">181201<!--CommodityBasedObjectStateValue: EffectiveTemperature_Burning--></T>
+              </U>
+              <U>
+                <T n="key">181202<!--CommodityBasedObjectStateValue: EffectiveTemperature_ExtremeBurning--></T>
+              </U>
+            </L>
+            <V n="default_value" t="reference">
+              <T n="reference">181198<!--CommodityBasedObjectStateValue: EffectiveTemperature_Cool--></T>
+            </V>
+            <T n="reset_on_load_if_time_passes">True</T>
+          </U>
+          <U>
+            <V n="default_value" t="reference">
+              <T n="reference">167649<!--CommodityBasedObjectStateValue: petHygiene_Normal_Dog--></T>
+            </V>
+          </U>
+          <U>
+            <L n="client_states">
+              <U>
+                <T n="key">186246<!--CommodityBasedObjectStateValue: wetness_State_Values_Pet_Dry--></T>
+              </U>
+              <U>
+                <T n="key">186250<!--CommodityBasedObjectStateValue: wetness_State_Values_Pet_Wet--></T>
+              </U>
+            </L>
+            <V n="default_value" t="reference">
+              <T n="reference">186246<!--CommodityBasedObjectStateValue: wetness_State_Values_Pet_Dry--></T>
+            </V>
+          </U>
+          <U>
+            <L n="client_states">
+              <U>
+                <T n="key">169221<!--CommodityBasedObjectStateValue: PregnantDog_FirstTrimester--></T>
+              </U>
+              <U>
+                <T n="key">169222<!--CommodityBasedObjectStateValue: PregnantDog_InLabor--></T>
+              </U>
+              <U>
+                <T n="key">169223<!--CommodityBasedObjectStateValue: PregnantDog_NotPregnant--></T>
+              </U>
+              <U>
+                <T n="key">169224<!--CommodityBasedObjectStateValue: PregnantDog_NotShowing--></T>
+              </U>
+              <U>
+                <T n="key">169225<!--CommodityBasedObjectStateValue: PregnantDog_SecondTrimester--></T>
+              </U>
+              <U>
+                <T n="key">169226<!--CommodityBasedObjectStateValue: PregnantDog_ThirdTrimester--></T>
+              </U>
+            </L>
+            <V n="default_value" t="reference">
+              <T n="reference">169223<!--CommodityBasedObjectStateValue: PregnantDog_NotPregnant--></T>
+            </V>
+          </U>
+        </L>
+      </U>
+    </V>
+    <V t="enabled" n="weather_aware_component">
+      <U n="enabled">
+        <L n="anywhere_loot">
+          <U>
+            <E n="key">AnyRain</E>
+            <U n="value">
+              <L n="end_loot">
+                <T>184851<!--LootActions: loot_Buff_Pet_SeasonWeather_Remove_Rain--></T>
+              </L>
+              <L n="start_loot">
+                <T>184841<!--LootActions: loot_Buff_Pet_SeasonWeather_Rain_Anywhere--></T>
+              </L>
+            </U>
+          </U>
+          <U>
+            <E n="key">AnyLightning</E>
+            <U n="value">
+              <L n="end_loot">
+                <T>188521<!--LootActions: loot_Buff_Pet_SeasonWeather_Remove_Lightning--></T>
+              </L>
+              <L n="start_loot">
+                <T>184848<!--LootActions: loot_Buff_Pet_SeasonWeather_Lightning_Anywhere--></T>
+              </L>
+            </U>
+          </U>
+          <U>
+            <E n="key">Thunder</E>
+            <U n="value">
+              <L n="end_loot">
+                <T>188521<!--LootActions: loot_Buff_Pet_SeasonWeather_Remove_Lightning--></T>
+              </L>
+              <L n="start_loot">
+                <T>184848<!--LootActions: loot_Buff_Pet_SeasonWeather_Lightning_Anywhere--></T>
+              </L>
+            </U>
+          </U>
+          <U>
+            <E n="key">Snow_Storm</E>
+            <U n="value">
+              <L n="end_loot">
+                <T>184853<!--LootActions: loot_Buff_Pet_SeasonWeather_Remove_Blizzard--></T>
+                <T>239673<!--LootActions: loot_Pet_Weather_MountainSnow_Blizzard_Remove--></T>
+              </L>
+              <L n="start_loot">
+                <T>239674<!--LootActions: loot_Pet_Weather_MountainSnow_Blizzard_Anywhere--></T>
+                <T>184839<!--LootActions: loot_Buff_Pet_SeasonWeather_Blizzard_Anywhere--></T>
+              </L>
+            </U>
+          </U>
+          <U>
+            <E n="key">Snow_Light</E>
+            <U n="value">
+              <L n="end_loot">
+                <T>184850<!--LootActions: loot_Buff_Pet_SeasonWeather_Remove_Snow--></T>
+                <T>239716<!--LootActions: loot_Pet_Weather_MountainSnow_Snow_Remove--></T>
+              </L>
+              <L n="start_loot">
+                <T>184843<!--LootActions: loot_Buff_Pet_SeasonWeather_Snow_Anywhere--></T>
+                <T>239715<!--LootActions: loot_Pet_Weather_MountainSnow_Snow_Anywhere--></T>
+              </L>
+            </U>
+          </U>
+          <U>
+            <E n="key">Snow_Heavy</E>
+            <U n="value">
+              <L n="end_loot">
+                <T>184850<!--LootActions: loot_Buff_Pet_SeasonWeather_Remove_Snow--></T>
+                <T>239716<!--LootActions: loot_Pet_Weather_MountainSnow_Snow_Remove--></T>
+              </L>
+              <L n="start_loot">
+                <T>184843<!--LootActions: loot_Buff_Pet_SeasonWeather_Snow_Anywhere--></T>
+                <T>239715<!--LootActions: loot_Pet_Weather_MountainSnow_Snow_Anywhere--></T>
+              </L>
+            </U>
+          </U>
+          <U>
+            <E n="key">Med_Snow_Accumulation</E>
+            <U n="value">
+              <L n="end_loot">
+                <T>184850<!--LootActions: loot_Buff_Pet_SeasonWeather_Remove_Snow--></T>
+                <T>239716<!--LootActions: loot_Pet_Weather_MountainSnow_Snow_Remove--></T>
+              </L>
+              <L n="start_loot">
+                <T>184843<!--LootActions: loot_Buff_Pet_SeasonWeather_Snow_Anywhere--></T>
+                <T>239715<!--LootActions: loot_Pet_Weather_MountainSnow_Snow_Anywhere--></T>
+              </L>
+            </U>
+          </U>
+          <U>
+            <E n="key">Max_Snow_Accumulation</E>
+            <U n="value">
+              <L n="end_loot">
+                <T>184850<!--LootActions: loot_Buff_Pet_SeasonWeather_Remove_Snow--></T>
+                <T>239716<!--LootActions: loot_Pet_Weather_MountainSnow_Snow_Remove--></T>
+              </L>
+              <L n="start_loot">
+                <T>184843<!--LootActions: loot_Buff_Pet_SeasonWeather_Snow_Anywhere--></T>
+                <T>239715<!--LootActions: loot_Pet_Weather_MountainSnow_Snow_Anywhere--></T>
+              </L>
+            </U>
+          </U>
+        </L>
+        <L n="disable_loot">
+          <T>189227<!--LootActions: loot_Temperature_Immune_To_Temperature_Set--></T>
+        </L>
+        <L n="enable_loot">
+          <T>189228<!--LootActions: loot_Temperature_Immune_To_Temperature_Remove--></T>
+        </L>
+        <L n="inside_loot">
+          <U>
+            <E n="key">Burning</E>
+            <U n="value">
+              <L n="start_loot">
+                <T>183284<!--LootActions: loot_GlobalTemperature_Inside_Burning--></T>
+              </L>
+            </U>
+          </U>
+          <U>
+            <E n="key">Hot</E>
+            <U n="value">
+              <L n="start_loot">
+                <T>183285<!--LootActions: loot_GlobalTemperature_Inside_Hot--></T>
+              </L>
+            </U>
+          </U>
+          <U>
+            <E n="key">Warm</E>
+            <U n="value">
+              <L n="start_loot">
+                <T>239917<!--LootActions: loot_Temperature_MountainSnow_EffectiveTemperature_Reset--></T>
+                <T>183286<!--LootActions: loot_GlobalTemperature_Inside_Warm--></T>
+              </L>
+            </U>
+          </U>
+          <U>
+            <E n="key">Cool</E>
+            <U n="value">
+              <L n="start_loot">
+                <T>183287<!--LootActions: loot_GlobalTemperature_Inside_Cool--></T>
+              </L>
+            </U>
+          </U>
+          <U>
+            <E n="key">Cold</E>
+            <U n="value">
+              <L n="start_loot">
+                <T>183288<!--LootActions: loot_GlobalTemperature_Inside_Cold--></T>
+                <T>237502<!--LootActions: loot_GlobalTemperature_MountainSnow_Inside_Cold--></T>
+              </L>
+            </U>
+          </U>
+          <U>
+            <E n="key">Freezing</E>
+            <U n="value">
+              <L n="start_loot">
+                <T>183289<!--LootActions: loot_GlobalTemperature_Inside_Freezing--></T>
+                <T>237503<!--LootActions: loot_GlobalTemperature_MountainSnow_Inside_Freezing--></T>
+              </L>
+            </U>
+          </U>
+        </L>
+        <L n="outside_loot">
+          <U>
+            <E n="key">Burning</E>
+            <U n="value">
+              <L n="end_loot">
+                <T>183602<!--LootActions: loot_GlobalTemperature_TraitBuff_Removal_BurningMan_Burning--></T>
+              </L>
+              <L n="start_loot">
+                <T>183276<!--LootActions: loot_GlobalTemperature_Outside_Burning--></T>
+              </L>
+            </U>
+          </U>
+          <U>
+            <E n="key">Hot</E>
+            <U n="value">
+              <L n="end_loot">
+                <T>183603<!--LootActions: loot_GlobalTemperature_TraitBuff_Removal_BurningMan_Hot--></T>
+              </L>
+              <L n="start_loot">
+                <T>183279<!--LootActions: loot_GlobalTemperature_Outside_Hot--></T>
+              </L>
+            </U>
+          </U>
+          <U>
+            <E n="key">Warm</E>
+            <U n="value">
+              <L n="start_loot">
+                <T>239917<!--LootActions: loot_Temperature_MountainSnow_EffectiveTemperature_Reset--></T>
+                <T>183280<!--LootActions: loot_GlobalTemperature_Outside_Warm--></T>
+              </L>
+            </U>
+          </U>
+          <U>
+            <E n="key">Cool</E>
+            <U n="value">
+              <L n="start_loot">
+                <T>183281<!--LootActions: loot_GlobalTemperature_Outside_Cool--></T>
+              </L>
+            </U>
+          </U>
+          <U>
+            <E n="key">Cold</E>
+            <U n="value">
+              <L n="end_loot">
+                <T>183605<!--LootActions: loot_GlobalTemperature_TraitBuff_Removal_IceMan_Cold--></T>
+                <T>184202<!--LootActions: loot_Temperature_VFX_ColdBreath_Removal--></T>
+                <T>237519<!--LootActions: loot_Temperature_MountainSnow_VFX_ColdBreath_Remove--></T>
+              </L>
+              <L n="start_loot">
+                <T>183282<!--LootActions: loot_GlobalTemperature_Outside_Cold--></T>
+                <T>184199<!--LootActions: loot_Temperature_VFX_ColdBreath--></T>
+                <T>237517<!--LootActions: loot_Temperature_MountainSnow_VFX_ColdBreath--></T>
+                <T>237506<!--LootActions: loot_GlobalTemperature_MountainSnow_Outside_Cold--></T>
+              </L>
+            </U>
+          </U>
+          <U>
+            <E n="key">Freezing</E>
+            <U n="value">
+              <L n="end_loot">
+                <T>183604<!--LootActions: loot_GlobalTemperature_TraitBuff_Removal_IceMan_Freezing--></T>
+                <T>184202<!--LootActions: loot_Temperature_VFX_ColdBreath_Removal--></T>
+                <T>237519<!--LootActions: loot_Temperature_MountainSnow_VFX_ColdBreath_Remove--></T>
+              </L>
+              <L n="start_loot">
+                <T>183283<!--LootActions: loot_GlobalTemperature_Outside_Freezing--></T>
+                <T>184199<!--LootActions: loot_Temperature_VFX_ColdBreath--></T>
+                <T>237517<!--LootActions: loot_Temperature_MountainSnow_VFX_ColdBreath--></T>
+                <T>237507<!--LootActions: loot_GlobalTemperature_MountainSnow_Outside_Freezing--></T>
+              </L>
+            </U>
+          </U>
+          <U>
+            <E n="key">AnyRain</E>
+            <U n="value">
+              <L n="end_loot">
+                <T>186243<!--LootActions: loot_Buff_Pet_SeasonWeather_Rain_Reset--></T>
+              </L>
+              <L n="start_loot">
+                <T>184842<!--LootActions: loot_Buff_Pet_SeasonWeather_Rain_Outside--></T>
+              </L>
+            </U>
+          </U>
+          <U>
+            <E n="key">Snow_Storm</E>
+            <U n="value">
+              <L n="start_loot">
+                <T>184840<!--LootActions: loot_Buff_Pet_SeasonWeather_Blizzard_Outside--></T>
+              </L>
+            </U>
+          </U>
+        </L>
+      </U>
+    </V>
+  </U>
+  <L n="_default_anim_params">
+    <U>
+      <T n="name">isMermaid</T>
+      <V n="value" t="boolean" />
+    </U>
+  </L>
+  <T n="_disable_child_footprint_and_shadow">True</T>
+  <U n="_interaction_queue">
+    <T n="always_start_inertial">False</T>
+    <T n="max_interactions">3</T>
+  </U>
+  <L n="_relation_panel_affordances">
+    <T>216212<!--SuperInteraction: relationshipPanel_Freelancer_Fashion_Photographer_Meet_With_Style_Influencer--></T>
+    <T>250897<!--ImmediateSuperInteraction: immediate_OpenSimProfile_RelPanel--></T>
+  </L>
+  <L n="_super_affordances">
+    <T>30917<!--SocialPickerSuperInteraction: SocialPickerSI--></T>
+    <T>24107<!--RelbitPickerSuperInteraction: picker_Relbit_Add--></T>
+    <T>13328<!--ImmediateSuperInteraction: debug_Reset--></T>
+    <T>13326<!--ImmediateSuperInteraction: debug_ObjectDestroy--></T>
+    <T>103888<!--ImmediateSuperInteraction: cheat_set_as_head--></T>
+    <T>100184<!--CheatSetSkillSuperInteraction: cheat_SetSkillAlmostTo--></T>
+    <T>13143<!--ImmediateSuperInteraction: cheat_make_me_happy--></T>
+    <T>13141<!--ImmediateSuperInteraction: cheat_enable_stat_decay--></T>
+    <T>13140<!--ImmediateSuperInteraction: cheat_disable_stat_decay--></T>
+    <T>176207<!--ImmediateSuperInteraction: debug_AddDebugInteractionBuff--></T>
+    <T>13144<!--ImmediateSuperInteraction: cheat_modify_in_cas--></T>
+    <T>13323<!--ImmediateSuperInteraction: debug_MakePregnant--></T>
+    <T>189659<!--ImmediateSuperInteraction: debug_RemoveRecentFire--></T>
+    <T>13322<!--ImmediateSuperInteraction: debug_EnableHaveBaby--></T>
+    <T>158186<!--ImmediateSuperInteraction: Cheat_AddQuirk_FearTV--></T>
+    <T>215186<!--ImmediateSuperInteraction: debugImmediate_rabbitHole--></T>
+    <T>13817<!--TraitPickerSuperInteraction: picker_Trait_Add--></T>
+    <T>13818<!--TraitPickerSuperInteraction: picker_Trait_Remove--></T>
+    <T>13145<!--CheatSetSkillSuperInteraction: cheat_SetSkill--></T>
+    <T>191703<!--ImmediateSuperInteraction: Cheat_RemoveFromFamilyBG--></T>
+    <T>219569<!--ImmediateSuperInteraction: cheat_LockMotives--></T>
+    <T>158677<!--SocialSuperInteraction: petSocial_SimToPet_NonTouching_Sim--></T>
+    <T>186124<!--SocialSuperInteraction: petSocials_SimToPet_NonTouching_Pickup--></T>
+    <T>103822<!--ImmediateSuperInteraction: Cheat_AddToFamily--></T>
+    <T>200941<!--SocialSuperInteraction: petSocials_SimToPet_Hug_Adopt_SmallPet_Service_Free--></T>
+    <T>163845<!--SocialSuperInteraction: petSocial_PetToPet_SocialGroup--></T>
+    <T>116234<!--AggregateSuperInteraction: aggregateSI_goHome--></T>
+    <T>167090<!--OutfitPickerSuperInteraction: changeOutfitPicker_TargetSim_Pet--></T>
+    <T>165157<!--SuperInteraction: petSocial_NonTouching_ShooNotMet--></T>
+    <T>158675<!--SuperInteraction: petSocial_NonTouching_Shoo--></T>
+    <T>168215<!--SuperInteraction: pet_Commands_GoHome--></T>
+    <T>169040<!--SuperInteraction: petBowl_FeedPet_Target--></T>
+    <T>170032<!--ImmediateSuperInteraction: debug_Pets_TeleportToActiveSim--></T>
+    <T>171276<!--SocialSuperInteraction: petSocials_SimToPet_PetIntimate_Pamper_SmallPet--></T>
+    <T>176351<!--SocialSuperInteraction: petSocials_SimToPet_PetIntimate_Pamper_LargeDog--></T>
+    <T>170873<!--SuperInteraction: pet_Command_CallToSit--></T>
+    <T>173597<!--SuperInteraction: pet_Command_CallOver_CallIntoArms--></T>
+    <T>175631<!--ImmediateSuperInteraction: debug_PetGoMissing--></T>
+    <T>169182<!--SocialSuperInteraction: petSocials_SimToPet_Hug_Adopt_SmallPet--></T>
+    <T>164324<!--SocialSuperInteraction: socials_Targeted_Pets_Greetings_PetToPet_Introduction--></T>
+    <T>169149<!--SocialSuperInteraction: petSocial_SimToPet_Hug_Adopt_LargePet--></T>
+    <T>158742<!--ImmediateSuperInteraction: Cheat_AddQuirk_ObsessedTV--></T>
+    <T>200943<!--SocialSuperInteraction: petSocial_SimToPet_Hug_Adopt_LargePet_Service_Free--></T>
+    <T>215117<!--ImmediateSuperInteraction: Debug_Familiars_Bind_Pet--></T>
+    <T>215442<!--ImmediateSuperInteraction: immediate_Familiars_SendToForage_OnFamiliar--></T>
+    <T>214780<!--ImmediateSuperInteraction: immediate_Familiars_Dismiss_OnFamiliar--></T>
+    <T>164344<!--SocialSuperInteraction: petSocials_SimToPet_PetIntimate_Hug--></T>
+    <T>164523<!--SocialSuperInteraction: petSocials_SimToPet_PetIntimate_Kiss--></T>
+    <T>166831<!--SocialSuperInteraction: petSocials_SimToPet_PetIntimate_Pet--></T>
+    <T>170857<!--SocialSuperInteraction: petSocials_SimToPet_PetIntimate_Kiss_FeelTheLove--></T>
+    <T>175758<!--SocialSuperInteraction: petSocials_SimToPet_PetIntimate_Kiss_Companion--></T>
+    <T>178336<!--SuperInteraction: debug_reactions_Pet_Fearful_VariedOutcome--></T>
+    <T>172178<!--AutonomousSimPickerSuperInteraction: simPicker_Pet_Sleep_NearOwner_WakeUpSim--></T>
+    <T>191482<!--AutonomousObjectTaggedPickerInteraction: Autonomous_ObjectPicker_Dog_ToyBall--></T>
+    <T>130037<!--SocialSuperInteraction: petSocial_DogToDog_SocialGroup--></T>
+    <T>177483<!--SocialSuperInteraction: petSocial_DogToDog_SocialGroup_Play--></T>
+    <T>164275<!--SimPickerInteraction: simPicker_DogSocial_Training_AttackPickedSim--></T>
+    <T>145626<!--SuperInteraction: dog_Command_DropIt--></T>
+    <T>166101<!--SocialSuperInteraction: petSocials_SimToPet_Shake_Command--></T>
+    <T>164619<!--SocialSuperInteraction: petSocials_SimToPet_Shake--></T>
+    <T>158248<!--ImmediateSuperInteraction: debugEmotionIntensity_Pets_Dog_Angry--></T>
+    <T>158247<!--ImmediateSuperInteraction: debugEmotionIntensity_Pets_Dog_Anxious--></T>
+    <T>157753<!--SuperInteraction: debug_sim_Dog_EnergyDistress--></T>
+    <T>157733<!--SuperInteraction: debug_sim_Dog_HungerDistress--></T>
+    <T>158254<!--ImmediateSuperInteraction: debugEmotionIntensity_Pets_Dog_Ashamed--></T>
+    <T>158244<!--ImmediateSuperInteraction: debugEmotionIntensity_Pets_Dog_Excited--></T>
+    <T>158249<!--ImmediateSuperInteraction: debugEmotionIntensity_Pets_Dog_Flirty--></T>
+    <T>158251<!--ImmediateSuperInteraction: debugEmotionIntensity_Pets_Dog_Happy--></T>
+    <T>158246<!--ImmediateSuperInteraction: debugEmotionIntensity_Pets_Dog_Mopey--></T>
+    <T>158245<!--ImmediateSuperInteraction: debugEmotionIntensity_Pets_Dog_Sad--></T>
+    <T>158250<!--ImmediateSuperInteraction: debugEmotionIntensity_Pets_Dog_Scared--></T>
+    <T>145410<!--SuperInteraction: dog_Command_CallOver--></T>
+    <T>162681<!--SocialSuperInteraction: petSocials_Dog_TrainingTricks_Practice--></T>
+    <T>158625<!--SocialSuperInteraction: petSocial_Dog_TrainingTricks_SI--></T>
+    <T>158981<!--SimPickerInteraction: simPicker_DogSocial_EncourageToMateBreed--></T>
+    <T>158846<!--SimPickerInteraction: simPicker_DogSocial_BeNiceTo--></T>
+    <T>158845<!--SimPickerInteraction: simPicker_DogSocial_BeMeanTo--></T>
+    <T>159417<!--SuperInteraction: pet_PoopInteraction_Dog_Outside--></T>
+    <T>159498<!--SuperInteraction: pet_PoopInteraction_Dog_Inside--></T>
+    <T>159541<!--SuperInteraction: pet_PeeInteraction_Dog_Inside--></T>
+    <T>159542<!--SuperInteraction: pet_PeeInteraction_Dog_Outside--></T>
+    <T>132265<!--SuperInteraction: generic_BeCarried_Dog--></T>
+    <T>24108<!--RelbitPickerSuperInteraction: picker_Relbit_Remove--></T>
+    <T>24110<!--BuffPickerSuperInteraction: picker_Buff_Add--></T>
+    <T>24112<!--BuffPickerSuperInteraction: picker_Buff_Remove--></T>
+    <T>250627<!--ImmediateSuperInteraction: immediate_OpenSimProfile--></T>
+    <T>96807<!--SuperInteraction: fire_ExtinguishSim--></T>
+    <T>134533<!--AggregateSuperInteraction: aggregateSuperInteraction_WalkDog--></T>
+    <T>165155<!--AggregateSuperInteraction: aggregateSuperInteraction_WalkDog_GoForWalkSituation--></T>
+    <T>167377<!--AggregateSuperInteraction: aggregateSuperInteraction_WalkDog_GoForJog--></T>
+    <T>167378<!--AggregateSuperInteraction: aggregateSuperInteraction_WalkDog_GoForWalk_Long--></T>
+    <T>167379<!--AggregateSuperInteraction: aggregateSuperInteraction_WalkDog_GoForWalk_Short--></T>
+    <T>215568<!--SuperInteraction: Death_OldAge_TestLocation_Dog--></T>
+  </L>
+  <U n="animation_overlay_component">
+    <L n="animation_overlays">
+      <U>
+        <T n="_overlay_animation">11495<!--AnimationElement: Facial_Overlay_Mood--></T>
+      </U>
+      <U>
+        <T n="_overlay_animation">141236<!--AnimationElement: animationElement_tailOverlay--></T>
+      </U>
+    </L>
+  </U>
+  <U n="initial_buff">
+    <T n="buff_type">158284<!--Buff: moodBuffs_Pets_Dog_Hidden_Fine--></T>
+  </U>
+  <U n="recycling_data">
+    <L n="recycling_values">
+      <U>
+        <E n="Bucks Type">RecycleBitsBucks</E>
+        <T n="Value">0.5</T>
+      </U>
+      <U>
+        <E n="Bucks Type">RecyclePiecesBucks</E>
+        <T n="Value">0.5</T>
+      </U>
+    </L>
+  </U>
+  <U n="trait_quirks">
+    <L n="_quirk_sets">
+      <U>
+        <L n="entries">
+          <U>
+            <T n="quirk_relative_weight">2</T>
+            <T n="quirk_trait">148643<!--Trait: trait_DogQuirk_BarkerLoud--></T>
+          </U>
+          <U>
+            <T n="quirk_relative_weight">5</T>
+            <T n="quirk_trait">148645<!--Trait: trait_DogQuirk_BarkerNeutral--></T>
+          </U>
+          <U>
+            <T n="quirk_trait">148644<!--Trait: trait_DogQuirk_BarkerQuiet--></T>
+          </U>
+        </L>
+      </U>
+      <U>
+        <V n="count" t="dynamic">
+          <U n="dynamic">
+            <U n="interval">
+              <T n="lower_bound">0</T>
+              <T n="upper_bound">0</T>
+            </U>
+            <L n="trait_modifiers">
+              <U>
+                <T n="key">171609<!--Trait: trait_Pet_Glutton_Dog--></T>
+                <U n="value">
+                  <T n="lower_bound_modifier">1</T>
+                  <T n="upper_bound_modifier">1</T>
+                </U>
+              </U>
+              <U>
+                <T n="key">171611<!--Trait: trait_Pet_Curious_Dog--></T>
+                <U n="value">
+                  <T n="lower_bound_modifier">1</T>
+                  <T n="upper_bound_modifier">1</T>
+                </U>
+              </U>
+            </L>
+          </U>
+        </V>
+        <L n="entries">
+          <U>
+            <T n="quirk_trait">170713<!--Trait: trait_Misbehavior_Dog_JumpOnCounters--></T>
+          </U>
+        </L>
+      </U>
+      <U>
+        <V n="count" t="dynamic">
+          <U n="dynamic">
+            <U n="interval">
+              <T n="upper_bound">0</T>
+            </U>
+            <L n="trait_modifiers">
+              <U>
+                <T n="key">164046<!--Trait: trait_Pet_Playful_Cat--></T>
+                <U n="value">
+                  <T n="lower_bound_modifier">2</T>
+                  <T n="upper_bound_modifier">2</T>
+                </U>
+              </U>
+              <U>
+                <T n="key">171602<!--Trait: trait_Pet_Playful_Dog--></T>
+                <U n="value">
+                  <T n="lower_bound_modifier">2</T>
+                  <T n="upper_bound_modifier">2</T>
+                </U>
+              </U>
+            </L>
+          </U>
+        </V>
+        <L n="entries">
+          <U>
+            <T n="quirk_trait">162251<!--Trait: trait_Misbehavior_Pet_TrashPlay--></T>
+          </U>
+          <U>
+            <T n="quirk_trait">162246<!--Trait: trait_Misbehavior_Dog_PuddlesPlay--></T>
+          </U>
+        </L>
+      </U>
+      <U>
+        <V n="count" t="dynamic">
+          <U n="dynamic">
+            <U n="interval">
+              <T n="lower_bound">4</T>
+              <T n="upper_bound">4</T>
+            </U>
+            <L n="trait_modifiers">
+              <U>
+                <T n="key">171600<!--Trait: trait_Pet_Smart_Dog--></T>
+                <U n="value">
+                  <T n="lower_bound_modifier">-4</T>
+                  <T n="upper_bound_modifier">-4</T>
+                </U>
+              </U>
+              <U>
+                <T n="key">171603<!--Trait: trait_Pet_Naughty_Dog--></T>
+                <U n="value">
+                  <T n="lower_bound_modifier">4</T>
+                  <T n="upper_bound_modifier">4</T>
+                </U>
+              </U>
+            </L>
+          </U>
+        </V>
+        <L n="entries">
+          <U>
+            <T n="quirk_trait">162249<!--Trait: trait_Misbehavior_Pet_PuddlesDrink--></T>
+          </U>
+          <U>
+            <T n="quirk_trait">162247<!--Trait: trait_Discipline_Pet_PottyTraining--></T>
+          </U>
+          <U>
+            <T n="quirk_trait">170716<!--Trait: trait_Misbehaviors_Pet_EatPeopleFood--></T>
+          </U>
+          <U>
+            <T n="quirk_trait">165942<!--Trait: trait_Misbehavior_Dog_Bark--></T>
+          </U>
+        </L>
+      </U>
+      <U>
+        <V n="count" t="dynamic">
+          <U n="dynamic">
+            <U n="interval">
+              <T n="lower_bound">2</T>
+              <T n="upper_bound">2</T>
+            </U>
+            <L n="trait_modifiers">
+              <U>
+                <T n="key">171600<!--Trait: trait_Pet_Smart_Dog--></T>
+                <U n="value">
+                  <T n="lower_bound_modifier">-2</T>
+                  <T n="upper_bound_modifier">-2</T>
+                </U>
+              </U>
+              <U>
+                <T n="key">171603<!--Trait: trait_Pet_Naughty_Dog--></T>
+                <U n="value">
+                  <T n="lower_bound_modifier">12</T>
+                  <T n="upper_bound_modifier">12</T>
+                </U>
+              </U>
+            </L>
+          </U>
+        </V>
+        <L n="entries">
+          <U>
+            <T n="quirk_trait">162251<!--Trait: trait_Misbehavior_Pet_TrashPlay--></T>
+          </U>
+          <U>
+            <T n="quirk_trait">162250<!--Trait: trait_Misbehavior_Pet_TrashEat--></T>
+          </U>
+          <U>
+            <T n="quirk_trait">162252<!--Trait: trait_Misbehavior_Pet_BegEating--></T>
+          </U>
+          <U>
+            <T n="quirk_trait">162253<!--Trait: trait_Misbehavior_Pet_Attack--></T>
+          </U>
+          <U>
+            <T n="quirk_trait">168487<!--Trait: trait_Misbehavior_Dog_EatPoop--></T>
+          </U>
+          <U>
+            <T n="quirk_trait">162246<!--Trait: trait_Misbehavior_Dog_PuddlesPlay--></T>
+          </U>
+          <U>
+            <T n="quirk_trait">162243<!--Trait: trait_Misbehavior_Dog_Toilet--></T>
+          </U>
+          <U>
+            <T n="quirk_relative_weight">1</T>
+            <T n="quirk_trait">170713<!--Trait: trait_Misbehavior_Dog_JumpOnCounters--></T>
+          </U>
+        </L>
+      </U>
+      <U>
+        <V n="count" t="dynamic">
+          <U n="dynamic">
+            <U n="interval">
+              <T n="upper_bound">0</T>
+            </U>
+            <L n="trait_modifiers">
+              <U>
+                <T n="key">158767<!--Trait: trait_Pet_Vocal_Cat--></T>
+                <U n="value">
+                  <T n="lower_bound_modifier">2</T>
+                  <T n="upper_bound_modifier">2</T>
+                </U>
+              </U>
+              <U>
+                <T n="key">171598<!--Trait: trait_Pet_Vocal_Dog--></T>
+                <U n="value">
+                  <T n="lower_bound_modifier">2</T>
+                  <T n="upper_bound_modifier">2</T>
+                </U>
+              </U>
+            </L>
+          </U>
+        </V>
+        <L n="entries">
+          <U>
+            <T n="quirk_trait">159237<!--Trait: trait_PetQuirk_Obsessed_Stereo--></T>
+          </U>
+          <U>
+            <T n="quirk_trait">159239<!--Trait: trait_PetQuirk_Obsessed_Instrument--></T>
+          </U>
+        </L>
+      </U>
+      <U>
+        <V t="dynamic" n="count">
+          <U n="dynamic">
+            <U n="interval">
+              <T n="lower_bound">1</T>
+              <T n="upper_bound">2</T>
+            </U>
+            <L n="trait_modifiers">
+              <U>
+                <T n="key">158766<!--Trait: trait_Pet_Skittish_Cat--></T>
+                <U n="value">
+                  <T n="lower_bound_modifier">1</T>
+                  <T n="upper_bound_modifier">2</T>
+                </U>
+              </U>
+              <U>
+                <T n="key">167107<!--Trait: trait_Pet_age_Child--></T>
+                <U n="value">
+                  <T n="lower_bound_modifier">0</T>
+                  <T n="upper_bound_modifier">-1</T>
+                </U>
+              </U>
+              <U>
+                <T n="key">171601<!--Trait: trait_Pet_Skittish_Dog--></T>
+                <U n="value">
+                  <T n="upper_bound_modifier">2</T>
+                </U>
+              </U>
+            </L>
+          </U>
+        </V>
+        <L n="entries">
+          <U>
+            <T n="quirk_trait">158096<!--Trait: trait_PetQuirk_Fear_TV--></T>
+          </U>
+          <U>
+            <T n="quirk_trait">159292<!--Trait: trait_PetQuirk_Fear_Stereo--></T>
+          </U>
+          <U>
+            <T n="quirk_trait">159293<!--Trait: trait_PetQuirk_Fear_Stove--></T>
+          </U>
+          <U>
+            <T n="quirk_trait">159302<!--Trait: trait_PetQuirk_Fear_Computer--></T>
+          </U>
+          <U>
+            <T n="quirk_trait">159303<!--Trait: trait_PetQuirk_Fear_Toilet--></T>
+          </U>
+          <U>
+            <T n="quirk_trait">159304<!--Trait: trait_PetQuirk_Fear_Shower--></T>
+          </U>
+        </L>
+      </U>
+      <U>
+        <V t="dynamic" n="count">
+          <U n="dynamic">
+            <U n="interval">
+              <T n="lower_bound">1</T>
+              <T n="upper_bound">2</T>
+            </U>
+            <L n="trait_modifiers">
+              <U>
+                <T n="key">158766<!--Trait: trait_Pet_Skittish_Cat--></T>
+                <U n="value">
+                  <T n="lower_bound_modifier">1</T>
+                  <T n="upper_bound_modifier">2</T>
+                </U>
+              </U>
+              <U>
+                <T n="key">167107<!--Trait: trait_Pet_age_Child--></T>
+                <U n="value">
+                  <T n="lower_bound_modifier">0</T>
+                  <T n="upper_bound_modifier">-1</T>
+                </U>
+              </U>
+              <U>
+                <T n="key">171601<!--Trait: trait_Pet_Skittish_Dog--></T>
+                <U n="value">
+                  <T n="upper_bound_modifier">2</T>
+                </U>
+              </U>
+            </L>
+          </U>
+        </V>
+        <L n="entries">
+          <U>
+            <T n="quirk_trait">159294<!--Trait: trait_PetQuirk_Fear_Instrument--></T>
+          </U>
+          <U>
+            <T n="quirk_trait">159295<!--Trait: trait_PetQuirk_Fear_Dishwasher--></T>
+          </U>
+          <U>
+            <T n="quirk_trait">159296<!--Trait: trait_PetQuirk_Fear_Fire--></T>
+          </U>
+          <U>
+            <T n="quirk_trait">159297<!--Trait: trait_PetQuirk_Fear_Swiming--></T>
+          </U>
+          <U>
+            <T n="quirk_trait">159298<!--Trait: trait_PetQuirk_Fear_Microwave--></T>
+          </U>
+          <U>
+            <T n="quirk_trait">159299<!--Trait: trait_PetQuirk_Fear_FitnessEquipment--></T>
+          </U>
+          <U>
+            <T n="quirk_trait">159300<!--Trait: trait_PetQuirk_Fear_CoffeeMaker--></T>
+          </U>
+          <U>
+            <T n="quirk_trait">159301<!--Trait: trait_PetQuirk_Fear_Gaming--></T>
+          </U>
+          <U>
+            <T n="quirk_trait">171319<!--Trait: trait_PetQuirk_Fear_RobotVacuum--></T>
+          </U>
+        </L>
+      </U>
+      <U>
+        <V t="dynamic" n="count">
+          <U n="dynamic">
+            <U n="interval">
+              <T n="lower_bound">1</T>
+              <T n="upper_bound">2</T>
+            </U>
+            <L n="trait_modifiers">
+              <U>
+                <T n="key">158211<!--Trait: trait_Pet_Curious_Cat--></T>
+                <U n="value">
+                  <T n="lower_bound_modifier">1</T>
+                  <T n="upper_bound_modifier">2</T>
+                </U>
+              </U>
+              <U>
+                <T n="key">167107<!--Trait: trait_Pet_age_Child--></T>
+                <U n="value">
+                  <T n="lower_bound_modifier">0</T>
+                  <T n="upper_bound_modifier">-1</T>
+                </U>
+              </U>
+              <U>
+                <T n="key">171611<!--Trait: trait_Pet_Curious_Dog--></T>
+                <U n="value">
+                  <T n="upper_bound_modifier">2</T>
+                </U>
+              </U>
+            </L>
+          </U>
+        </V>
+        <L n="entries">
+          <U>
+            <T n="quirk_trait">159251<!--Trait: trait_PetQuirk_Obsessed_Fridge--></T>
+          </U>
+          <U>
+            <T n="quirk_trait">158739<!--Trait: trait_PetQuirk_Obsessed_TV--></T>
+          </U>
+          <U>
+            <T n="quirk_trait">159237<!--Trait: trait_PetQuirk_Obsessed_Stereo--></T>
+          </U>
+          <U>
+            <T n="quirk_trait">159238<!--Trait: trait_PetQuirk_Obsessed_Cooking--></T>
+          </U>
+          <U>
+            <T n="quirk_trait">159248<!--Trait: trait_PetQuirk_Obsessed_Computer--></T>
+          </U>
+          <U>
+            <T n="quirk_trait">159249<!--Trait: trait_PetQuirk_Obsessed_Toilet--></T>
+          </U>
+          <U>
+            <T n="quirk_trait">159250<!--Trait: trait_PetQuirk_Obsessed_Shower--></T>
+          </U>
+        </L>
+      </U>
+      <U>
+        <V t="dynamic" n="count">
+          <U n="dynamic">
+            <U n="interval">
+              <T n="lower_bound">1</T>
+              <T n="upper_bound">2</T>
+            </U>
+            <L n="trait_modifiers">
+              <U>
+                <T n="key">158211<!--Trait: trait_Pet_Curious_Cat--></T>
+                <U n="value">
+                  <T n="lower_bound_modifier">1</T>
+                  <T n="upper_bound_modifier">2</T>
+                </U>
+              </U>
+              <U>
+                <T n="key">167107<!--Trait: trait_Pet_age_Child--></T>
+                <U n="value">
+                  <T n="lower_bound_modifier">0</T>
+                  <T n="upper_bound_modifier">-1</T>
+                </U>
+              </U>
+              <U>
+                <T n="key">171611<!--Trait: trait_Pet_Curious_Dog--></T>
+                <U n="value">
+                  <T n="upper_bound_modifier">2</T>
+                </U>
+              </U>
+            </L>
+          </U>
+        </V>
+        <L n="entries">
+          <U>
+            <T n="quirk_trait">159239<!--Trait: trait_PetQuirk_Obsessed_Instrument--></T>
+          </U>
+          <U>
+            <T n="quirk_trait">159240<!--Trait: trait_PetQuirk_Obsessed_Dishwasher--></T>
+          </U>
+          <U>
+            <T n="quirk_trait">159241<!--Trait: trait_PetQuirk_Obsessed_Fire--></T>
+          </U>
+          <U>
+            <T n="quirk_trait">159242<!--Trait: trait_PetQuirk_Obsessed_Microwave--></T>
+          </U>
+          <U>
+            <T n="quirk_trait">159243<!--Trait: trait_PetQuirk_Obsessed_FitnessEquipment--></T>
+          </U>
+          <U>
+            <T n="quirk_trait">159244<!--Trait: trait_PetQuirk_Obsessed_CoffeeMaker--></T>
+          </U>
+          <U>
+            <T n="quirk_trait">159245<!--Trait: trait_PetQuirk_Obsessed_Gaming--></T>
+          </U>
+          <U>
+            <T n="quirk_trait">159246<!--Trait: trait_PetQuirk_Obsessed_FishTanks--></T>
+          </U>
+          <U>
+            <T n="quirk_trait">171320<!--Trait: trait_PetQuirk_Obsessed_RobotVacuum--></T>
+          </U>
+          <U>
+            <T n="quirk_trait">184406<!--Trait: trait_PetQuirk_Obsessed_Pet_Minor_Cage--></T>
+          </U>
+          <U>
+            <T n="quirk_trait">171912<!--Trait: trait_PetQuirk_Obsessed_Swimming--></T>
+          </U>
+        </L>
+      </U>
+      <U>
+        <V n="count" t="dynamic">
+          <U n="dynamic">
+            <U n="interval">
+              <T n="lower_bound">1</T>
+            </U>
+            <L n="trait_modifiers" />
+          </U>
+        </V>
+        <L n="entries">
+          <U>
+            <T n="quirk_trait">159312<!--Trait: trait_PetQuirk_Obsessed_DoorBell--></T>
+          </U>
+          <U>
+            <T n="quirk_trait">159311<!--Trait: trait_PetQuirk_Fear_DoorBell--></T>
+          </U>
+        </L>
+      </U>
+      <U>
+        <V n="count" t="dynamic">
+          <U n="dynamic">
+            <U n="interval">
+              <T n="lower_bound">0</T>
+              <T n="upper_bound">0</T>
+            </U>
+            <L n="trait_modifiers">
+              <U>
+                <T n="key">159977<!--Trait: trait_Pet_Glutton_Cat--></T>
+                <U n="value">
+                  <T n="lower_bound_modifier">1</T>
+                  <T n="upper_bound_modifier">3</T>
+                </U>
+              </U>
+              <U>
+                <T n="key">171609<!--Trait: trait_Pet_Glutton_Dog--></T>
+                <U n="value">
+                  <T n="upper_bound_modifier">3</T>
+                </U>
+              </U>
+            </L>
+          </U>
+        </V>
+        <L n="entries">
+          <U>
+            <T n="quirk_trait">159251<!--Trait: trait_PetQuirk_Obsessed_Fridge--></T>
+          </U>
+          <U>
+            <T n="quirk_trait">159238<!--Trait: trait_PetQuirk_Obsessed_Cooking--></T>
+          </U>
+          <U>
+            <T n="quirk_trait">159242<!--Trait: trait_PetQuirk_Obsessed_Microwave--></T>
+          </U>
+        </L>
+      </U>
+      <U>
+        <V n="count" t="dynamic">
+          <U n="dynamic">
+            <U n="interval">
+              <T n="lower_bound">0</T>
+              <T n="upper_bound">1</T>
+            </U>
+            <L n="trait_modifiers">
+              <U>
+                <T n="key">158769<!--Trait: trait_Pet_Smart_Cat--></T>
+                <U n="value">
+                  <T n="lower_bound_modifier">0</T>
+                  <T n="upper_bound_modifier">-1</T>
+                </U>
+              </U>
+              <U>
+                <T n="key">159976<!--Trait: trait_Pet_Naughty_Cat--></T>
+                <U n="value">
+                  <T n="lower_bound_modifier">1</T>
+                  <T n="upper_bound_modifier">1</T>
+                </U>
+              </U>
+              <U>
+                <T n="key">171600<!--Trait: trait_Pet_Smart_Dog--></T>
+                <U n="value">
+                  <T n="lower_bound_modifier">0</T>
+                  <T n="upper_bound_modifier">-1</T>
+                </U>
+              </U>
+              <U>
+                <T n="key">171603<!--Trait: trait_Pet_Naughty_Dog--></T>
+                <U n="value">
+                  <T n="lower_bound_modifier">1</T>
+                  <T n="upper_bound_modifier">1</T>
+                </U>
+              </U>
+            </L>
+          </U>
+        </V>
+        <L n="entries">
+          <U>
+            <T n="quirk_trait">170715<!--Trait: trait_Misbehaviors_Pet_WakeUpSims--></T>
+          </U>
+        </L>
+      </U>
+      <U>
+        <V n="count" t="dynamic">
+          <U n="dynamic">
+            <U n="interval">
+              <T n="lower_bound">0</T>
+              <T n="upper_bound">0</T>
+            </U>
+            <L n="trait_modifiers">
+              <U>
+                <T n="key">102448<!--Trait: trait_GenderFemale--></T>
+                <U n="value">
+                  <T n="lower_bound_modifier">1</T>
+                  <T n="upper_bound_modifier">1</T>
+                </U>
+              </U>
+            </L>
+          </U>
+        </V>
+        <L n="entries">
+          <U>
+            <T n="quirk_relative_weight">3</T>
+            <T n="quirk_trait">174465<!--Trait: trait_PetQuirk_PregnancyVomiting_Yes--></T>
+          </U>
+          <U>
+            <T n="quirk_relative_weight">2</T>
+            <T n="quirk_trait">174466<!--Trait: trait_PetQuirk_PregnancyVomiting_No--></T>
+          </U>
+        </L>
+      </U>
+      <U>
+        <V n="count" t="dynamic" />
+        <L n="entries">
+          <U>
+            <T n="quirk_trait">174976<!--Trait: trait_PetQuirk_PetBedSpin--></T>
+          </U>
+        </L>
+      </U>
+      <U>
+        <V n="count" t="dynamic">
+          <U n="dynamic">
+            <U n="interval">
+              <T n="upper_bound">0</T>
+            </U>
+            <L n="trait_modifiers">
+              <U>
+                <T n="key">171604<!--Trait: trait_Pet_Loyal_Dog--></T>
+              </U>
+            </L>
+          </U>
+        </V>
+        <L n="entries">
+          <U>
+            <T n="quirk_trait">161173<!--Trait: trait_Pets_TrainingCommand_Heel--></T>
+          </U>
+        </L>
+      </U>
+    </L>
+  </U>
+</I>

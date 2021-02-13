@@ -1,0 +1,59 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<I c="SituationGoalObjectInteraction" i="situation_goal" m="situations.situation_goal_object_interaction" n="careerDetective_Patrol_Social2" s="116099">
+  <T n="_cancel_on_travel">True</T>
+  <T n="_cooldown">180</T>
+  <V t="enabled" n="_display_data">
+    <U n="enabled">
+      <V t="enabled" n="instance_display_icon">
+        <T n="enabled" p="InGame\UI\Icons\Events\EventGoal_Socialize.png">2f7d0004:00000000:21835a4b8238b2fa</T>
+      </V>
+      <V n="instance_display_name" t="enabled">
+        <T n="enabled">0x1553D350<!--String: "Hablar con más civiles"--></T>
+      </V>
+      <V t="enabled" n="instance_display_tooltip">
+        <T n="enabled">0xD8963FD9<!--String: "Conoce mejor a la comunidad charlando con los civiles que la componen."--></T>
+      </V>
+    </U>
+  </V>
+  <L n="_goal_loot_list">
+    <T>116387<!--SituationGoalLootActions: gaolLoot_Detective_IncrementSocialCiv--></T>
+  </L>
+  <U n="_goal_test">
+    <L n="tags">
+      <E>Interaction_Chat</E>
+    </L>
+    <E n="test_event">InteractionComplete</E>
+  </U>
+  <L n="_pre_tests">
+    <V t="situation_job">
+      <U n="situation_job">
+        <L n="situation_jobs">
+          <T>110742<!--SituationJob: situationJob_Detective_PatrolPlayer--></T>
+        </L>
+      </U>
+    </V>
+    <V t="statistic">
+      <U n="statistic">
+        <T n="stat">116376<!--Statistic: statistic_Career_Detective_SingleDayGoalTracking_SocialCiv--></T>
+        <V t="value_threshold" n="threshold">
+          <U n="value_threshold">
+            <E n="comparison">GREATER</E>
+          </U>
+        </V>
+      </U>
+    </V>
+    <V t="statistic">
+      <U n="statistic">
+        <T n="stat">116376<!--Statistic: statistic_Career_Detective_SingleDayGoalTracking_SocialCiv--></T>
+        <V t="value_threshold" n="threshold">
+          <U n="value_threshold">
+            <E n="comparison">LESS</E>
+            <T n="value">3</T>
+          </U>
+        </V>
+      </U>
+    </V>
+  </L>
+  <T n="_score">10</T>
+  <T p="InGame\Audio\Bumper\bumper_event_goal_complete.propx" n="audio_sting_on_complete">39b2aa4a:00000000:ed52c39bcc2a7111</T>
+</I>

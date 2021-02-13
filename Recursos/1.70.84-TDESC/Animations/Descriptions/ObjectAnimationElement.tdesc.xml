@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+
+<TuningRoot>
+    <Instance instance_type="animation" class="ObjectAnimationElement" module="animation.object_animation" muid="1A6B486254B952C0" instance_needs_reference="True" instance_subclasses_only="False" path="Animations\Descriptions" use_guid_for_reference="True">
+        <Tunable type="str" name="actor_name" class="Tunable" default="None" display="Actor Name" muid="B18C122B4DCE0DBC" description="The name of the actor in the ASM." choice_query="ASM:ActorNames" choice_source="../asm_key" Deprecated="False" filter="0" group="General" />
+
+        <Tunable type="ResourceKey" name="asm_key" class="TunableInteractionAsmResourceKey" default="None" display="Asm Key" muid="B0C58B0AA76A61E4" description="The ASM to use." category="asm" Deprecated="False" filter="0" group="General" resource_types="0x2d5df13" />
+
+        <TunableVariant type="None" name="balloon_data" class="OptionalTunable" default="disabled" display="Balloon Data" muid="4226F627614D4952" description="Information that will be used to create an element that represents&#xA;thought or speech balloons." Deprecated="False" filter="0" group="General">
+            <Tunable name="disabled" class="TunableExistance" display="Disabled" muid="971E9420A102D00C" />
+            <TunableTuple name="enabled" class="TunableTuple" display="Enabled" muid="7FDEF5A6ECCA9721" Deprecated="False" filter="0" group="General">
+                <Tunable type="int" name="balloon_delay" class="Tunable" default="0" display="Balloon Delay" muid="36CD0F9B046C99F0" description="If set, the number of seconds after the start of the animation&#xA;to trigger the balloon. A negative number will count backwards&#xA;from the end of the animation." tuning_state="NeedsTuning" Deprecated="False" filter="0" group="General" />
+                <Tunable type="int" name="balloon_delay_random_offset" class="Tunable" default="0" display="Balloon Delay Random Offset" muid="CDE8FE5FC26F28C5" description="The amount of randomization that added to balloon requests.&#xA;Will always offset the delay time later and requires the delay&#xA;time be set to a number. A value of 0 has no randomization." tuning_state="NeedsTuning" Deprecated="False" filter="0" group="General" />
+                <TunableEnum type="BalloonTypeEnum" name="balloon_type" class="TunableEnumEntry" default="SPEECH" display="Balloon Type" muid="FD700104C5AC497C" static_entries="balloon-balloon_enums.BalloonTypeEnum" description="The visual style of the balloon background." Deprecated="False" filter="0" group="General" />
+                <Tunable type="ResourceKey" name="icon" class="TunableIcon" default="None" display="Icon" muid="D38156DA76F642DF" description="Icon that will be used in the balloon. Object Animations&#xA;elements only support Icon References." Deprecated="False" filter="0" group="General" resource_types="0x2f7d0004" />
+                <TunableVariant type="None" name="overlay" class="OptionalTunable" default="disabled" display="Overlay" muid="1811CAF40A1DE7C0" description="The overlay of the balloon, if present." Deprecated="False" filter="0" group="General">
+                    <Tunable name="disabled" class="TunableExistance" display="Disabled" muid="F9553CD664379D93" />
+                    <Tunable type="ResourceKey" name="enabled" class="TunableIcon" default="None" display="Enabled" muid="2AFAE2DEE567586C" description="The icon image to be displayed." Deprecated="False" filter="0" group="General" resource_types="0x2f7d0004" />
+                </TunableVariant>
+            </TunableTuple>
+        </TunableVariant>
+
+        <TunableList name="begin_states" class="TunableList" display="Begin States" muid="46E4F778E5A01413" description="A list of states to play." Deprecated="False" filter="0" group="General">
+            <Tunable type="str" class="Tunable" default="None" muid="A0CD66A806E0FE42" choice_query="ASM:StateNames" choice_source="../../asm_key" Deprecated="False" filter="0" group="General" />
+        </TunableList>
+
+        <TunableList name="end_states" class="TunableList" display="End States" muid="A065D6BCDCCB3ABB" description="A list of states to play after looping." Deprecated="False" filter="0" group="General">
+            <Tunable type="str" class="Tunable" default="None" muid="4CB152F172C2944D" choice_query="ASM:StateNames" choice_source="../../asm_key" Deprecated="False" filter="0" group="General" />
+        </TunableList>
+
+        <Tunable type="bool" name="include_object_children_in_fade" class="Tunable" default="False" display="Include Object Children In Fade" muid="C7D651423509123A" description="If True, fade events on the object will apply to the object's&#xA;children. If False, only the object is affected by the fade event." Deprecated="False" filter="0" group="General" />
+
+        <TunableVariant type="None" name="initial_state" class="OptionalTunable" default="use_default" display="Initial State" muid="C243FDB49D575304" description="The name of the initial state in the ASM you expect your actor to be&#xA;in when running this AnimationElement. If you do not tune this we&#xA;will use the entry state which is usually what you want." Deprecated="False" filter="0" group="General">
+            <Tunable type="str" name="custom_state_name" class="Tunable" default="None" display="Custom State Name" muid="585FE2D54CB97153" choice_query="ASM:StateNames" choice_source="../../asm_key" Deprecated="False" filter="0" group="General" />
+            <Tunable name="use_default" class="TunableExistance" display="Use Default" muid="AD89ED40C78B47E2" />
+        </TunableVariant>
+
+        <Tunable type="bool" name="repeat" class="Tunable" default="False" display="Repeat" muid="EAD12DAFD704305" description="If this is checked, then the begin_states will loop until the&#xA;controlling sequence (e.g. state change on idle component) ends. &#xA;At that point, end_states will play.&#xA;&#xA;This tunable allows you to create looping one-shot states. The&#xA;effects of this tunable on already looping states is undefined." Deprecated="False" filter="0" group="General" />
+
+        <TunableVariant type="None" name="target_name" class="OptionalTunable" default="disabled" display="Target Name" muid="55BBCB790AA91205" description="If enabled, some portion of this object animation expects the actor&#xA;to interact with another object. The object must be set by whatever&#xA;system uses the ASM. In and of itself, the Idle component never sets&#xA;this actor." Deprecated="False" filter="0" group="General">
+            <Tunable name="disabled" class="TunableExistance" display="Disabled" muid="D31E7200013DEB00" />
+            <Tunable type="str" name="enabled" class="Tunable" default="None" display="Enabled" muid="B04FCF2241481719" choice_query="ASM:ActorNames" choice_source="../../asm_key" Deprecated="False" filter="0" group="General" />
+        </TunableVariant>
+
+        <Tunable type="bool" name="use_surface_height" class="Tunable" default="False" display="Use Surface Height" muid="40ABD3121C883F62" description="If checked, the asm will be provided with the surfaceHeight&#xA;global parameter, which uses slot height tuning to resolve the &#xA;height of the target object to a parameter value. " Deprecated="False" filter="0" group="General" />
+    </Instance>
+</TuningRoot>

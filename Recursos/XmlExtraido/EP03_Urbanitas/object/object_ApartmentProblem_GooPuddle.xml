@@ -1,0 +1,235 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<I c="GameObject" i="object" m="objects.game_object" n="object_ApartmentProblem_GooPuddle" s="133057">
+  <U n="_components">
+    <V n="flowing_puddle" t="enabled">
+      <U n="enabled">
+        <T n="max_distance">1</T>
+        <T n="max_num_puddles">3</T>
+        <E n="puddle_liquid">GreenGoo</E>
+        <T n="spawn_rate">5</T>
+      </U>
+    </V>
+    <V t="enabled" n="focus">
+      <U n="enabled">
+        <V t="globally" n="_focus_score">
+          <U n="globally">
+            <E n="base">LOW</E>
+          </U>
+        </V>
+      </U>
+    </V>
+    <V n="state" t="enabled">
+      <U n="enabled">
+        <L n="state_triggers">
+          <U>
+            <L n="at_states">
+              <T>133071<!--CommodityBasedObjectStateValue: apartmentProblem_Values_Active--></T>
+            </L>
+            <V n="set_states" t="Set_state_list">
+              <L n="Set_state_list">
+                <T>137689<!--ObjectStateValue: apartmentProblem_ActiveState_Active--></T>
+                <T>137692<!--ObjectStateValue: apartmentProblem_ActiveState_Failure_NotActive--></T>
+              </L>
+            </V>
+          </U>
+          <U>
+            <L n="at_states">
+              <T>133072<!--CommodityBasedObjectStateValue: apartmentProblem_Values_Failure--></T>
+            </L>
+            <V n="set_states" t="Set_state_list">
+              <L n="Set_state_list">
+                <T>137691<!--ObjectStateValue: apartmentProblem_ActiveState_Failure_Active--></T>
+                <T>137690<!--ObjectStateValue: apartmentProblem_ActiveState_NotActive--></T>
+              </L>
+            </V>
+          </U>
+          <U>
+            <L n="at_states">
+              <T>133070<!--CommodityBasedObjectStateValue: apartmentProblem_Values_Dormant--></T>
+            </L>
+            <V n="set_states" t="Set_state_list">
+              <L n="Set_state_list">
+                <T>137692<!--ObjectStateValue: apartmentProblem_ActiveState_Failure_NotActive--></T>
+                <T>137690<!--ObjectStateValue: apartmentProblem_ActiveState_NotActive--></T>
+              </L>
+            </V>
+          </U>
+          <U>
+            <L n="at_states">
+              <T>133070<!--CommodityBasedObjectStateValue: apartmentProblem_Values_Dormant--></T>
+            </L>
+            <V n="set_states" t="Set_state_list">
+              <L n="Set_state_list">
+                <T>139502<!--ObjectStateValue: apartmentProblem_ActiveState_HasComplained_False--></T>
+              </L>
+            </V>
+          </U>
+          <U>
+            <L n="at_states">
+              <T>137691<!--ObjectStateValue: apartmentProblem_ActiveState_Failure_Active--></T>
+            </L>
+            <V t="Set_state_list" n="set_states">
+              <L n="Set_state_list">
+                <T>155515<!--CommodityBasedObjectStateValue: apartmentProblem_FlowingPuddle_ActiveMax--></T>
+              </L>
+            </V>
+          </U>
+          <U>
+            <L n="at_states">
+              <T>155516<!--CommodityBasedObjectStateValue: apartmentProblem_FlowingPuddle_Reset--></T>
+            </L>
+            <V t="Set_state_list" n="set_states">
+              <L n="Set_state_list">
+                <T>155515<!--CommodityBasedObjectStateValue: apartmentProblem_FlowingPuddle_ActiveMax--></T>
+              </L>
+            </V>
+          </U>
+        </L>
+        <L n="states">
+          <U>
+            <L n="client_states">
+              <U>
+                <T n="key">133070<!--CommodityBasedObjectStateValue: apartmentProblem_Values_Dormant--></T>
+                <U n="value">
+                  <V t="apply_new_value" n="environment_score" />
+                  <V t="apply_new_value" n="flowing_puddle_enabled" />
+                </U>
+              </U>
+              <U>
+                <T n="key">133071<!--CommodityBasedObjectStateValue: apartmentProblem_Values_Active--></T>
+              </U>
+              <U>
+                <T n="key">133072<!--CommodityBasedObjectStateValue: apartmentProblem_Values_Failure--></T>
+              </U>
+            </L>
+            <V t="reference" n="default_value">
+              <T n="reference">133070<!--CommodityBasedObjectStateValue: apartmentProblem_Values_Dormant--></T>
+            </V>
+          </U>
+          <U>
+            <L n="client_states">
+              <U>
+                <T n="key">137689<!--ObjectStateValue: apartmentProblem_ActiveState_Active--></T>
+              </U>
+              <U>
+                <T n="key">137690<!--ObjectStateValue: apartmentProblem_ActiveState_NotActive--></T>
+                <U n="value">
+                  <V t="apply_new_value" n="broadcaster" />
+                  <V t="apply_new_value" n="vfx_state" />
+                </U>
+              </U>
+            </L>
+            <V t="reference" n="default_value">
+              <T n="reference">137690<!--ObjectStateValue: apartmentProblem_ActiveState_NotActive--></T>
+            </V>
+          </U>
+          <U>
+            <L n="client_states">
+              <U>
+                <T n="key">137691<!--ObjectStateValue: apartmentProblem_ActiveState_Failure_Active--></T>
+                <U n="value">
+                  <V t="leave_unchanged" n="broadcaster" />
+                </U>
+              </U>
+              <U>
+                <T n="key">137692<!--ObjectStateValue: apartmentProblem_ActiveState_Failure_NotActive--></T>
+                <U n="value">
+                  <V t="apply_new_value" n="broadcaster" />
+                  <V n="environment_score" t="apply_new_value">
+                    <U n="apply_new_value">
+                      <U n="base_modifiers">
+                        <V t="disabled" n="negative_modifiers" />
+                      </U>
+                    </U>
+                  </V>
+                  <V t="apply_new_value" n="flowing_puddle_enabled" />
+                  <V t="apply_new_value" n="vfx_state" />
+                </U>
+              </U>
+            </L>
+            <V t="reference" n="default_value">
+              <T n="reference">137692<!--ObjectStateValue: apartmentProblem_ActiveState_Failure_NotActive--></T>
+            </V>
+          </U>
+          <U>
+            <V n="default_value" t="reference">
+              <T n="reference">139502<!--ObjectStateValue: apartmentProblem_ActiveState_HasComplained_False--></T>
+            </V>
+          </U>
+          <U>
+            <L n="client_states">
+              <U>
+                <T n="key">155515<!--CommodityBasedObjectStateValue: apartmentProblem_FlowingPuddle_ActiveMax--></T>
+                <U n="value">
+                  <V t="apply_new_value" n="autonomy_modifiers" />
+                </U>
+              </U>
+              <U>
+                <T n="key">155517<!--CommodityBasedObjectStateValue: apartmentProblem_FlowingPuddle_Inactive--></T>
+                <U n="value">
+                  <V n="autonomy_modifiers" t="apply_new_value">
+                    <V n="apply_new_value" t="apply_statistic_modifiers">
+                      <U n="apply_statistic_modifiers">
+                        <L n="autonomy_modifiers">
+                          <U>
+                            <V n="override_convergence_value" t="Set_new_convergence_value">
+                              <L n="Set_new_convergence_value">
+                                <U>
+                                  <T n="key">155520<!--Commodity: commodity_Object_ApartmentProblem_FlowingPuddle--></T>
+                                  <T n="value">5940</T>
+                                </U>
+                              </L>
+                            </V>
+                          </U>
+                        </L>
+                      </U>
+                    </V>
+                  </V>
+                </U>
+              </U>
+              <U>
+                <T n="key">155518<!--CommodityBasedObjectStateValue: apartmentProblem_FlowingPuddle_Active_Flowing--></T>
+                <U n="value">
+                  <V n="broadcaster" t="apply_new_value">
+                    <V n="apply_new_value" t="start_broadcaster">
+                      <U n="start_broadcaster">
+                        <L n="broadcaster_types">
+                          <U>
+                            <T n="item">133084<!--Broadcaster: broadcaster_ApartmentProblem_GooPuddle--></T>
+                          </U>
+                        </L>
+                      </U>
+                    </V>
+                  </V>
+                </U>
+              </U>
+            </L>
+            <V n="default_value" t="reference">
+              <T n="reference">155517<!--CommodityBasedObjectStateValue: apartmentProblem_FlowingPuddle_Inactive--></T>
+            </V>
+            <T n="reset_to_default">True</T>
+          </U>
+        </L>
+      </U>
+    </V>
+  </U>
+  <L n="_super_affordances">
+    <T>13328<!--ImmediateSuperInteraction: debug_Reset--></T>
+    <T>13326<!--ImmediateSuperInteraction: debug_ObjectDestroy--></T>
+    <T>103888<!--ImmediateSuperInteraction: cheat_set_as_head--></T>
+    <T>143326<!--ImmediateSuperInteraction: debug_ApartmentProblems_SetToActive--></T>
+    <T>143327<!--ImmediateSuperInteraction: debug_ApartmentProblems_SetToFailure--></T>
+  </L>
+  <U n="recycling_data">
+    <L n="recycling_values">
+      <U>
+        <E n="Bucks Type">RecycleBitsBucks</E>
+        <T n="Value">0.5</T>
+      </U>
+      <U>
+        <E n="Bucks Type">RecyclePiecesBucks</E>
+        <T n="Value">0.5</T>
+      </U>
+    </L>
+  </U>
+</I>

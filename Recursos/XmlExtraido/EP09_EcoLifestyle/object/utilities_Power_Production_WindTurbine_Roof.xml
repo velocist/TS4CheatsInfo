@@ -1,0 +1,381 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<I c="GameObject" i="object" m="objects.game_object" n="utilities_Power_Production_WindTurbine_Roof" s="234513">
+  <U n="_components">
+    <V t="enabled" n="focus">
+      <U n="enabled">
+        <V n="_focus_score" t="globally">
+          <U n="globally">
+            <E n="base">LOW</E>
+          </U>
+        </V>
+      </U>
+    </V>
+    <V t="enabled" n="retail_component">
+      <V n="enabled" t="reference">
+        <T n="reference">115301<!--RetailComponent: retailComponent_Default_LowAppeal--></T>
+      </V>
+    </V>
+    <V n="state" t="enabled">
+      <U n="enabled">
+        <L n="state_triggers">
+          <U>
+            <L n="at_states">
+              <T>15080<!--ObjectStateValue: BrokenState_Broken--></T>
+            </L>
+            <L n="prohibited_states">
+              <T>231419<!--ObjectStateValue: ecoFootprint_Values_Industrial--></T>
+              <T>231420<!--ObjectStateValue: ecoFootprint_Values_Neutral--></T>
+            </L>
+            <V t="Set_state_list" n="set_states">
+              <L n="Set_state_list">
+                <T>236003<!--ObjectStateValue: ecoFootprint_Values_Green_NotProducing--></T>
+              </L>
+            </V>
+          </U>
+          <U>
+            <L n="at_states">
+              <T>15081<!--ObjectStateValue: BrokenState_Unbroken--></T>
+            </L>
+            <L n="prohibited_states">
+              <T>231419<!--ObjectStateValue: ecoFootprint_Values_Industrial--></T>
+              <T>231420<!--ObjectStateValue: ecoFootprint_Values_Neutral--></T>
+            </L>
+            <V t="Set_state_list" n="set_states">
+              <L n="Set_state_list">
+                <T>231418<!--ObjectStateValue: ecoFootprint_Values_Green--></T>
+              </L>
+            </V>
+          </U>
+          <U>
+            <L n="at_states">
+              <T>231418<!--ObjectStateValue: ecoFootprint_Values_Green--></T>
+            </L>
+            <L n="prohibited_states">
+              <T>15081<!--ObjectStateValue: BrokenState_Unbroken--></T>
+            </L>
+            <V t="Set_state_list" n="set_states">
+              <L n="Set_state_list">
+                <T>236003<!--ObjectStateValue: ecoFootprint_Values_Green_NotProducing--></T>
+              </L>
+            </V>
+          </U>
+          <U>
+            <L n="at_states">
+              <T>235401<!--ObjectStateValue: windTurbine_Weather_NotWindy--></T>
+            </L>
+            <V n="set_states" t="Set_state_list">
+              <L n="Set_state_list">
+                <T>235332<!--ObjectStateValue: windTurbine_PowerProduction_Default--></T>
+              </L>
+            </V>
+          </U>
+          <U>
+            <L n="at_states">
+              <T>235402<!--ObjectStateValue: windTurbine_Weather_Windy--></T>
+            </L>
+            <V t="Set_state_list" n="set_states">
+              <L n="Set_state_list">
+                <T>235333<!--ObjectStateValue: windTurbine_PowerProduction_High--></T>
+              </L>
+            </V>
+          </U>
+        </L>
+        <L n="states">
+          <U>
+            <L n="client_states">
+              <U>
+                <T n="key">235332<!--ObjectStateValue: windTurbine_PowerProduction_Default--></T>
+                <U n="value">
+                  <V n="autonomy_modifiers" t="apply_new_value">
+                    <V n="apply_new_value" t="apply_statistic_modifiers">
+                      <U n="apply_statistic_modifiers">
+                        <L n="lot_statistic_modifiers">
+                          <U>
+                            <V n="modifier" t="basic_value">
+                              <U n="basic_value">
+                                <T n="value">0.00357</T>
+                              </U>
+                            </V>
+                            <T n="statistic">233027<!--Commodity: commodity_Utilities_Power--></T>
+                          </U>
+                          <U>
+                            <V n="modifier" t="basic_value">
+                              <U n="basic_value">
+                                <T n="value">-0.00875</T>
+                              </U>
+                            </V>
+                            <T n="statistic">233233<!--Commodity: commodity_EcoFootprint_Lot--></T>
+                          </U>
+                        </L>
+                      </U>
+                    </V>
+                  </V>
+                  <V t="apply_new_value" n="periodic_loot">
+                    <U n="apply_new_value">
+                      <L n="periodic_loots">
+                        <U>
+                          <T n="frequency_interval">720</T>
+                          <T n="initial_delay">360</T>
+                          <L n="loots_to_apply">
+                            <T>235205<!--LootActions: loot_CivicPolicy_ObjectOwned_WindTurbine--></T>
+                          </L>
+                        </U>
+                      </L>
+                    </U>
+                  </V>
+                </U>
+              </U>
+              <U>
+                <T n="key">235333<!--ObjectStateValue: windTurbine_PowerProduction_High--></T>
+                <U n="value">
+                  <V n="autonomy_modifiers" t="apply_new_value">
+                    <V n="apply_new_value" t="apply_statistic_modifiers">
+                      <U n="apply_statistic_modifiers">
+                        <L n="lot_statistic_modifiers">
+                          <U>
+                            <V n="modifier" t="basic_value">
+                              <U n="basic_value">
+                                <T n="value">0.00417</T>
+                              </U>
+                            </V>
+                            <T n="statistic">233027<!--Commodity: commodity_Utilities_Power--></T>
+                          </U>
+                          <U>
+                            <V n="modifier" t="basic_value">
+                              <U n="basic_value">
+                                <T n="value">-0.00875</T>
+                              </U>
+                            </V>
+                            <T n="statistic">233233<!--Commodity: commodity_EcoFootprint_Lot--></T>
+                          </U>
+                        </L>
+                      </U>
+                    </V>
+                  </V>
+                  <V t="apply_new_value" n="periodic_loot">
+                    <U n="apply_new_value">
+                      <L n="periodic_loots">
+                        <U>
+                          <T n="frequency_interval">720</T>
+                          <T n="initial_delay">360</T>
+                          <L n="loots_to_apply">
+                            <T>235205<!--LootActions: loot_CivicPolicy_ObjectOwned_WindTurbine--></T>
+                          </L>
+                        </U>
+                      </L>
+                    </U>
+                  </V>
+                </U>
+              </U>
+            </L>
+            <V t="reference" n="default_value">
+              <T n="reference">235332<!--ObjectStateValue: windTurbine_PowerProduction_Default--></T>
+            </V>
+          </U>
+          <U>
+            <L n="client_states">
+              <U>
+                <T n="key">231418<!--ObjectStateValue: ecoFootprint_Values_Green--></T>
+                <U n="value">
+                  <V n="autonomy_modifiers" t="apply_new_value">
+                    <V n="apply_new_value" t="apply_statistic_modifiers">
+                      <U n="apply_statistic_modifiers">
+                        <L n="lot_statistic_modifiers">
+                          <U>
+                            <V n="modifier" t="basic_value">
+                              <U n="basic_value">
+                                <T n="value">0.000714</T>
+                              </U>
+                            </V>
+                            <T n="statistic">233027<!--Commodity: commodity_Utilities_Power--></T>
+                          </U>
+                        </L>
+                      </U>
+                    </V>
+                  </V>
+                </U>
+              </U>
+              <U>
+                <T n="key">231419<!--ObjectStateValue: ecoFootprint_Values_Industrial--></T>
+                <U n="value">
+                  <V t="apply_new_value" n="autonomy_modifiers" />
+                </U>
+              </U>
+              <U>
+                <T n="key">231420<!--ObjectStateValue: ecoFootprint_Values_Neutral--></T>
+                <U n="value">
+                  <V t="apply_new_value" n="autonomy_modifiers">
+                    <V n="apply_new_value" t="no_statistic_to_apply" />
+                  </V>
+                </U>
+              </U>
+              <U>
+                <T n="key">236003<!--ObjectStateValue: ecoFootprint_Values_Green_NotProducing--></T>
+                <U n="value">
+                  <V t="apply_new_value" n="autonomy_modifiers" />
+                </U>
+              </U>
+            </L>
+            <V t="reference" n="default_value">
+              <T n="reference">231420<!--ObjectStateValue: ecoFootprint_Values_Neutral--></T>
+            </V>
+            <V t="enabled" n="tested_states_on_add">
+              <U n="enabled">
+                <L n="tested_states">
+                  <U>
+                    <T n="state">231418<!--ObjectStateValue: ecoFootprint_Values_Green--></T>
+                    <L n="tests">
+                      <L>
+                        <V t="test_set_reference">
+                          <T n="test_set_reference">232678<!--TestSetInstance: testSet_EcoFootprint_Green--></T>
+                        </V>
+                      </L>
+                    </L>
+                  </U>
+                  <U>
+                    <T n="state">231419<!--ObjectStateValue: ecoFootprint_Values_Industrial--></T>
+                    <L n="tests">
+                      <L>
+                        <V t="test_set_reference">
+                          <T n="test_set_reference">232679<!--TestSetInstance: testSet_EcoFootprint_Industrial--></T>
+                        </V>
+                      </L>
+                    </L>
+                  </U>
+                  <U>
+                    <T n="state">231420<!--ObjectStateValue: ecoFootprint_Values_Neutral--></T>
+                    <L n="tests">
+                      <L>
+                        <V t="test_set_reference">
+                          <T n="test_set_reference">234750<!--TestSetInstance: testSet_EcoFootprint_Neutral--></T>
+                        </V>
+                      </L>
+                    </L>
+                  </U>
+                </L>
+              </U>
+            </V>
+          </U>
+          <U>
+            <L n="client_states">
+              <U>
+                <T n="key">235401<!--ObjectStateValue: windTurbine_Weather_NotWindy--></T>
+              </U>
+              <U>
+                <T n="key">235402<!--ObjectStateValue: windTurbine_Weather_Windy--></T>
+              </U>
+            </L>
+            <V n="default_value" t="reference">
+              <T n="reference">235401<!--ObjectStateValue: windTurbine_Weather_NotWindy--></T>
+            </V>
+          </U>
+          <U>
+            <L n="client_states">
+              <U>
+                <T n="key">224554<!--ObjectStateValue: utilities_Power_Production_Off--></T>
+                <U n="value">
+                  <V t="apply_new_value" n="autonomy_modifiers">
+                    <V n="apply_new_value" t="no_statistic_to_apply" />
+                  </V>
+                </U>
+              </U>
+              <U>
+                <T n="key">224566<!--ObjectStateValue: utilities_Power_Production_On--></T>
+                <U n="value">
+                  <V t="apply_new_value" n="autonomy_modifiers">
+                    <V n="apply_new_value" t="no_statistic_to_apply" />
+                  </V>
+                </U>
+              </U>
+            </L>
+            <V t="reference" n="default_value">
+              <T n="reference">224566<!--ObjectStateValue: utilities_Power_Production_On--></T>
+            </V>
+          </U>
+        </L>
+      </U>
+    </V>
+    <V t="enabled" n="tooltip_component">
+      <U n="enabled">
+        <L n="custom_tooltips">
+          <U>
+            <L n="object_tests">
+              <L>
+                <V t="state">
+                  <U n="state">
+                    <E n="operator">NOTEQUAL</E>
+                    <T n="value">235331<!--ObjectStateValue: windTurbine_PowerProduction_Off--></T>
+                  </U>
+                </V>
+                <V t="game_option">
+                  <U n="game_option">
+                    <E n="gameplay_option">ECO_FOOTPRINT_GAMEPLAY</E>
+                  </U>
+                </V>
+              </L>
+            </L>
+            <L n="tooltip_fields">
+              <U>
+                <E n="key">header</E>
+                <U n="value">
+                  <V t="concatenate_with_component_fields" n="override_component_information" />
+                  <V n="text" t="single">
+                    <T n="single">0x5D0F1C0E<!--String: "<font color='#4BA64A'>+ huella ecológica verde</font>"--></T>
+                  </V>
+                </U>
+              </U>
+            </L>
+          </U>
+        </L>
+        <T n="update_on_game_option_changed">True</T>
+      </U>
+    </V>
+    <V t="enabled" n="weather_aware_component">
+      <U n="enabled">
+        <L n="anywhere_loot">
+          <U>
+            <E n="key">Windy</E>
+            <U n="value">
+              <L n="end_loot">
+                <T>235397<!--LootActions: loot_WindTurbine_SetNotWindy--></T>
+              </L>
+              <L n="start_loot">
+                <T>235396<!--LootActions: loot_WindTurbine_SetWindy--></T>
+              </L>
+            </U>
+          </U>
+        </L>
+        <V n="lightning_effect_override" t="enabled">
+          <U n="enabled">
+            <T n="effect_name">ep05_lightning</T>
+            <V n="joint_name" t="Slot">
+              <T n="Slot">_bind_propellerRotate</T>
+            </V>
+          </U>
+        </V>
+      </U>
+    </V>
+  </U>
+  <L n="_super_affordances">
+    <T>13328<!--ImmediateSuperInteraction: debug_Reset--></T>
+    <T>13326<!--ImmediateSuperInteraction: debug_ObjectDestroy--></T>
+    <T>103888<!--ImmediateSuperInteraction: cheat_set_as_head--></T>
+    <T>196759<!--SuperInteraction: famePerks_GoodReputation_GivingBack_DonateObject--></T>
+    <T>232428<!--SuperInteraction: ecoInspector_inspect--></T>
+    <T>233612<!--SuperInteraction: civicInspector_inspect--></T>
+    <T>74457<!--ImmediateSuperInteraction: fire_ReplaceBurntObject--></T>
+    <T>168502<!--SuperInteraction: Ghost_Pet_Possess--></T>
+  </L>
+  <U n="recycling_data">
+    <L n="recycling_values">
+      <U>
+        <E n="Bucks Type">RecycleBitsBucks</E>
+        <T n="Value">0</T>
+      </U>
+      <U>
+        <E n="Bucks Type">RecyclePiecesBucks</E>
+        <T n="Value">1</T>
+      </U>
+    </L>
+  </U>
+</I>

@@ -1,0 +1,245 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<I c="SuperInteraction" i="interaction" m="interactions.base.super_interaction" n="si_marketStalls_CoffeeCart_HireNPC" s="226050">
+  <L n="_constraints" />
+  <V t="enabled" n="_saveable" />
+  <T n="allow_autonomous">False</T>
+  <T n="attention_cost">0.5</T>
+  <V t="one_shot" n="basic_content">
+    <U n="one_shot">
+      <U n="animation_ref">
+        <T n="factory">11702<!--AnimationElement: Phone_Chat--></T>
+      </U>
+    </U>
+  </V>
+  <L n="basic_extras">
+    <V t="create_situation">
+      <U n="create_situation">
+        <V n="create_situation" t="situation_start">
+          <U n="situation_start">
+            <T n="invite_actor">False</T>
+            <T n="invite_picked_sims">False</T>
+            <T n="invite_target_sim">False</T>
+            <T n="situation">226530<!--TendObjectSituation: situation_VendorStall_CoffeeCart_HiredNPC--></T>
+            <V t="enabled" n="situation_default_target" />
+            <T n="user_facing">False</T>
+          </U>
+        </V>
+      </U>
+    </V>
+    <V t="payment">
+      <U n="payment">
+        <V t="literal" n="payment">
+          <U n="literal">
+            <V n="payment_cost" t="amount">
+              <U n="amount">
+                <T n="amount">100</T>
+              </U>
+            </V>
+          </U>
+        </V>
+      </U>
+    </V>
+    <V t="notification">
+      <U n="notification">
+        <V n="dialog" t="single">
+          <V n="single" t="literal">
+            <U n="literal">
+              <V t="enabled" n="icon">
+                <V t="participant" n="enabled">
+                  <U n="participant">
+                    <L n="participant_type">
+                      <E>Object</E>
+                    </L>
+                  </U>
+                </V>
+              </V>
+              <V n="text" t="single">
+                <T n="single">0x6ABE0931<!--String: "¡Un Sim de servicios contratado por {0.SimName} viene de camino!"--></T>
+              </V>
+              <V t="enabled" n="text_tokens">
+                <U n="enabled">
+                  <L n="tokens">
+                    <V t="participant_type" />
+                  </L>
+                </U>
+              </V>
+            </U>
+          </V>
+        </V>
+      </U>
+    </V>
+  </L>
+  <V t="disabled" n="basic_reserve_object" />
+  <T n="category">126523<!--PieMenuCategory: pieMenuCategory_HireNPC--></T>
+  <T n="collapsible">True</T>
+  <V t="disabled" n="content_score" />
+  <T n="display_name">0x530047B3<!--String: "Contratar vendedor"--></T>
+  <U n="display_name_text_tokens">
+    <L n="tokens">
+      <V t="participant_type">
+        <U n="participant_type">
+          <V n="objects" t="from_participant">
+            <U n="from_participant">
+              <E n="participant">Actor</E>
+            </U>
+          </V>
+        </U>
+      </V>
+      <V t="participant_type">
+        <U n="participant_type">
+          <V t="from_participant" n="objects">
+            <U n="from_participant">
+              <E n="participant">Object</E>
+            </U>
+          </V>
+        </U>
+      </V>
+    </L>
+  </U>
+  <L n="interaction_category_tags">
+    <E>Interaction_Super</E>
+    <E>Interaction_All</E>
+  </L>
+  <U n="posture_preferences">
+    <T n="disable_all_scoring">True</T>
+  </U>
+  <E n="scoring_priority">NORMAL</E>
+  <T n="subaction_selection_weight">1</T>
+  <V t="literal" n="super_affordance_compatibility">
+    <U n="literal">
+      <V n="default_inclusion" t="include_all">
+        <U n="include_all">
+          <L n="exclude_affordances">
+            <T>143546<!--SuperInteraction: si_MarketStalls_HireNPC--></T>
+          </L>
+        </U>
+      </V>
+    </U>
+  </V>
+  <V t="enabled" n="super_affordance_klobberers">
+    <V n="enabled" t="literal">
+      <U n="literal">
+        <V n="default_inclusion" t="exclude_all">
+          <U n="exclude_all">
+            <L n="include_affordances">
+              <T>143546<!--SuperInteraction: si_MarketStalls_HireNPC--></T>
+            </L>
+          </U>
+        </V>
+      </U>
+    </V>
+  </V>
+  <E n="target_type">OBJECT</E>
+  <V t="enabled" n="test_disallow_while_running">
+    <U n="enabled">
+      <T n="test_self">True</T>
+    </U>
+  </V>
+  <L n="test_globals">
+    <V t="sim_info">
+      <U n="sim_info">
+        <V t="specified" n="ages">
+          <L n="specified">
+            <E>TEEN</E>
+            <E>YOUNGADULT</E>
+            <E>ADULT</E>
+            <E>ELDER</E>
+          </L>
+        </V>
+        <V t="specified" n="species">
+          <U n="specified">
+            <L n="species">
+              <E />
+            </L>
+          </U>
+        </V>
+        <E n="who">Actor</E>
+      </U>
+    </V>
+    <V t="location">
+      <U n="location">
+        <U n="location_tests">
+          <V t="Is_or_is_not_on_active_lot" n="is_on_active_lot" />
+          <V n="is_venue_type" t="enabled">
+            <U n="enabled">
+              <T n="negate">True</T>
+              <T n="use_source_venue">True</T>
+              <T n="venue_type">223944<!--Venue: venue_CommunityLot--></T>
+            </U>
+          </V>
+        </U>
+        <E n="subject">Object</E>
+      </U>
+    </V>
+    <V t="state">
+      <U n="state">
+        <T n="value">132692<!--ObjectStateValue: marketStalls_Closed--></T>
+      </U>
+    </V>
+    <V t="object_relationship">
+      <U n="object_relationship">
+        <V t="enabled" n="can_add_relationship" />
+        <V n="relationship_status" t="no_relationship_exists" />
+      </U>
+    </V>
+    <V t="situation_count_test">
+      <U n="situation_count_test">
+        <L n="additional_situations">
+          <T>217636<!--TendObjectSituation: situation_HiredNPC_Magic_VendorStall_Broom--></T>
+          <T>217847<!--TendObjectSituation: situation_HiredNPC_Magic_VendorStall_Potion--></T>
+          <T>217848<!--TendObjectSituation: situation_HiredNPC_Magic_VendorStall_Wand--></T>
+        </L>
+        <T n="situation">143512<!--TendObjectSituation: situation_HiredNPC_VendorStall--></T>
+        <U n="test">
+          <E n="comparison">LESS</E>
+          <T n="value">6</T>
+        </U>
+        <V t="enabled" n="tooltip">
+          <T n="enabled">0x2F651A92<!--String: "Ya se ha alcanzado el número máximo de vendedores de puestos en el solar."--></T>
+        </V>
+      </U>
+    </V>
+    <V t="situation_object_comparison_test">
+      <U n="situation_object_comparison_test">
+        <E n="comparison">LESS</E>
+        <V n="identity_test" t="tags">
+          <U n="tags">
+            <L n="tag_set">
+              <E>Func_MarketStalls</E>
+            </L>
+          </U>
+        </V>
+        <T n="on_active_lot">True</T>
+        <T n="owned">False</T>
+        <T n="situation">143512<!--TendObjectSituation: situation_HiredNPC_VendorStall--></T>
+        <V t="enabled" n="tooltip">
+          <T n="enabled">0x2F651A92<!--String: "Ya se ha alcanzado el número máximo de vendedores de puestos en el solar."--></T>
+        </V>
+      </U>
+    </V>
+  </L>
+  <L n="tests">
+    <L>
+      <V t="zone">
+        <U n="zone">
+          <U n="zone_tests">
+            <V n="venue_type" t="enabled">
+              <U n="enabled">
+                <V n="blacklist" t="specify">
+                  <U n="specify">
+                    <L n="blacklist">
+                      <T>208182<!--Venue: venue_rentable_universityHousing--></T>
+                      <T>218858<!--Venue: venue_University_StudentCommons_Science--></T>
+                      <T>218857<!--Venue: venue_University_StudentCommons_Arts--></T>
+                    </L>
+                  </U>
+                </V>
+              </U>
+            </V>
+          </U>
+        </U>
+      </V>
+    </L>
+  </L>
+  <T n="time_overhead">30</T>
+</I>

@@ -1,0 +1,601 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<I c="SuperInteraction" i="interaction" m="interactions.base.super_interaction" n="SI_JuiceKeg_Tap_DragonFruit" s="208450">
+  <L n="_constraints">
+    <U>
+      <L n="constraints">
+        <U>
+          <V n="value" t="circle">
+            <U n="circle">
+              <T n="radius">2</T>
+            </U>
+          </V>
+        </U>
+      </L>
+    </U>
+  </L>
+  <V t="enabled" n="_saveable" />
+  <L n="_static_commodities">
+    <U>
+      <T n="static_commodity">37409<!--StaticCommodity: StaticCommodity_Make_BlackAndWhitePartyDrinks--></T>
+    </U>
+    <U>
+      <T n="static_commodity">37417<!--StaticCommodity: StaticCommodity_Make_CostumePartyDrinks--></T>
+    </U>
+    <U>
+      <T n="static_commodity">26279<!--StaticCommodity: StaticCommodity_MakeDrink--></T>
+    </U>
+    <U>
+      <T n="static_commodity">234647<!--StaticCommodity: staticCommodity_CivicPolicy_JuicedCommunity--></T>
+    </U>
+  </L>
+  <T n="attention_cost">0.5</T>
+  <V t="one_shot" n="basic_content" />
+  <L n="basic_extras" />
+  <V t="enabled" n="basic_reserve_object">
+    <U n="enabled">
+      <L n="subject_list">
+        <U>
+          <V n="reserve_type" t="reserve_and_lock_all_parts" />
+        </U>
+      </L>
+    </U>
+  </V>
+  <V t="enabled" n="canonical_animation">
+    <U n="enabled">
+      <T n="factory">209586<!--AnimationElement: juiceKeg_TapKeg_Success--></T>
+    </U>
+  </V>
+  <V t="disabled" n="content_score" />
+  <T n="display_name">0xA055EEAE<!--String: "Pinchar barril de zumo"--></T>
+  <U n="display_name_text_tokens">
+    <L n="tokens">
+      <V t="participant_type">
+        <U n="participant_type">
+          <V n="objects" t="from_participant">
+            <U n="from_participant">
+              <E n="participant">Actor</E>
+            </U>
+          </V>
+        </U>
+      </V>
+      <V t="participant_type">
+        <U n="participant_type">
+          <V t="from_participant" n="objects">
+            <U n="from_participant">
+              <E n="participant">Object</E>
+            </U>
+          </V>
+        </U>
+      </V>
+    </L>
+  </U>
+  <L n="interaction_category_tags">
+    <E>Interaction_Super</E>
+    <E>Interaction_All</E>
+    <E>Interaction_JuiceKeg</E>
+  </L>
+  <V n="outcome" t="test_based">
+    <U n="test_based">
+      <L n="fallback_outcomes">
+        <U>
+          <U n="outcome">
+            <V n="animation_ref" t="enabled">
+              <U n="enabled">
+                <T n="factory">209588<!--AnimationElement: juiceKeg_TapKeg_Failure--></T>
+                <U n="overrides">
+                  <L n="vfx">
+                    <U>
+                      <T n="original_effect">spoutburst_purple</T>
+                      <U n="replacement_effect">
+                        <V n="effect" t="play_effect">
+                          <T n="play_effect">ep08_keg_tap_spoutBurst_purple</T>
+                        </V>
+                      </U>
+                    </U>
+                  </L>
+                </U>
+              </U>
+            </V>
+            <L n="basic_extras">
+              <V t="loot">
+                <U n="loot">
+                  <L n="loot_list">
+                    <T>210291<!--LootActions: loot_JuiceKeg_FailureReaction--></T>
+                  </L>
+                </U>
+              </V>
+              <V t="buff_fire_and_forget">
+                <U n="buff_fire_and_forget">
+                  <U n="buff">
+                    <V n="buff_reason" t="enabled">
+                      <T n="enabled">0x7673FE09<!--String: "(Por no pinchar bien un barril de zumo)"--></T>
+                    </V>
+                    <T n="buff_type">209599<!--Buff: buff_JuiceKeg_TapperFailed--></T>
+                  </U>
+                  <V t="at_end" n="timing">
+                    <U n="at_end">
+                      <E n="criticality">OnCancelOrException</E>
+                    </U>
+                  </V>
+                </U>
+              </V>
+            </L>
+            <L n="loot_list">
+              <T>226103<!--LootActions: loot_JuiceKeg_Tapping_FailureSkill--></T>
+            </L>
+            <E n="outcome_result">FAILURE</E>
+          </U>
+          <U n="weight">
+            <T n="base_value">2</T>
+            <L n="multipliers">
+              <U>
+                <T n="multiplier">0</T>
+                <L n="tests">
+                  <L>
+                    <V t="statistic">
+                      <U n="statistic">
+                        <T n="stat">225996<!--Statistic: statistic_JuiceKeg_TappingSkill--></T>
+                        <V n="threshold" t="value_threshold">
+                          <U n="value_threshold">
+                            <T n="value">48</T>
+                          </U>
+                        </V>
+                      </U>
+                    </V>
+                  </L>
+                </L>
+              </U>
+              <U>
+                <T n="multiplier">2</T>
+                <L n="tests">
+                  <L>
+                    <V t="buff">
+                      <U n="buff">
+                        <V t="enabled" n="whitelist">
+                          <L n="enabled">
+                            <T>208584<!--Buff: buff_JuiceKeg_BlueRaspberryConfident_1--></T>
+                            <T>208587<!--Buff: buff_JuiceKeg_DragonfruitPlayful_1--></T>
+                            <T>208590<!--Buff: buff_JuiceKeg_PassionFruitFlirty_1--></T>
+                            <T>208593<!--Buff: buff_JuiceKeg_PineappleHappy_1--></T>
+                          </L>
+                        </V>
+                      </U>
+                    </V>
+                  </L>
+                </L>
+              </U>
+              <U>
+                <T n="multiplier">3</T>
+                <L n="tests">
+                  <L>
+                    <V t="buff">
+                      <U n="buff">
+                        <V t="enabled" n="whitelist">
+                          <L n="enabled">
+                            <T>208585<!--Buff: buff_JuiceKeg_BlueRaspberryConfident_2--></T>
+                            <T>208588<!--Buff: buff_JuiceKeg_DragonfruitPlayful_2--></T>
+                            <T>208591<!--Buff: buff_JuiceKeg_PassionFruitFlirty_2--></T>
+                            <T>208594<!--Buff: buff_JuiceKeg_PineappleHappy_2--></T>
+                          </L>
+                        </V>
+                      </U>
+                    </V>
+                  </L>
+                </L>
+              </U>
+              <U>
+                <T n="multiplier">5</T>
+                <L n="tests">
+                  <L>
+                    <V t="buff">
+                      <U n="buff">
+                        <V t="enabled" n="whitelist">
+                          <L n="enabled">
+                            <T>208586<!--Buff: buff_JuiceKeg_BlueRaspberryConfident_3--></T>
+                            <T>208589<!--Buff: buff_JuiceKeg_DragonfruitPlayful_3--></T>
+                            <T>208592<!--Buff: buff_JuiceKeg_PassionFruitFlirty_3--></T>
+                            <T>208595<!--Buff: buff_JuiceKeg_PineappleHappy_3--></T>
+                          </L>
+                        </V>
+                      </U>
+                    </V>
+                  </L>
+                </L>
+              </U>
+            </L>
+          </U>
+        </U>
+      </L>
+      <L n="tested_outcomes">
+        <U>
+          <L n="potential_outcomes">
+            <U>
+              <U n="outcome">
+                <V t="enabled" n="animation_ref">
+                  <U n="enabled">
+                    <T n="factory">209586<!--AnimationElement: juiceKeg_TapKeg_Success--></T>
+                  </U>
+                </V>
+                <L n="basic_extras">
+                  <V t="state_change">
+                    <U n="state_change">
+                      <V n="new_value" t="single_value">
+                        <U n="single_value">
+                          <T n="new_value">209637<!--CommodityBasedObjectStateValue: juiceKeg_Servings_Tapped--></T>
+                        </U>
+                      </V>
+                      <V t="on_xevt" n="timing">
+                        <U n="on_xevt">
+                          <T n="xevt_id">701</T>
+                        </U>
+                      </V>
+                    </U>
+                  </V>
+                  <V t="buff_fire_and_forget">
+                    <U n="buff_fire_and_forget">
+                      <U n="buff">
+                        <V n="buff_reason" t="enabled">
+                          <T n="enabled">0x251DC584<!--String: "(Por pinchar bien un barril de zumo)"--></T>
+                        </V>
+                        <T n="buff_type">209598<!--Buff: buff_JuiceKeg_TapperSuccess--></T>
+                      </U>
+                    </U>
+                  </V>
+                  <V t="loot">
+                    <U n="loot">
+                      <L n="loot_list">
+                        <T>210288<!--LootActions: loot_JuiceKeg_SuccessReaction--></T>
+                      </L>
+                    </U>
+                  </V>
+                </L>
+                <L n="loot_list">
+                  <T>226102<!--LootActions: loot_JuiceKeg_Tapping_SuccessSkill--></T>
+                </L>
+                <E n="outcome_result">SUCCESS</E>
+                <V n="response" t="enabled">
+                  <V n="enabled" t="individual">
+                    <U n="individual">
+                      <L n="animations">
+                        <U>
+                          <E n="target">Actor</E>
+                          <U n="animation">
+                            <T n="factory">28359<!--AnimationElement: Socials_Responses_Excited_HighIntensity--></T>
+                            <U n="overrides">
+                              <V n="balloons" t="enabled">
+                                <L n="enabled">
+                                  <U>
+                                    <L n="balloon_choices">
+                                      <U>
+                                        <V n="item" t="balloon_icon">
+                                          <U n="balloon_icon">
+                                            <V n="category_icon" t="show_category_icon">
+                                              <V t="resource_key" n="show_category_icon">
+                                                <U n="resource_key">
+                                                  <T n="key" p="InGame\UI\Icons\Headlines\Final\headline_heart.png">2f7d0004:00000000:fb9f24cb465801ac</T>
+                                                </U>
+                                              </V>
+                                            </V>
+                                            <V t="resource_key" n="icon">
+                                              <U n="resource_key">
+                                                <T n="key" p="InGame\UI\Icons\Headlines\Final\headline_drinkbartend.png">2f7d0004:00000000:ac37f3c777ef291e</T>
+                                              </U>
+                                            </V>
+                                          </U>
+                                        </V>
+                                      </U>
+                                    </L>
+                                    <L n="balloon_target">
+                                      <E>Actor</E>
+                                    </L>
+                                  </U>
+                                </L>
+                              </V>
+                            </U>
+                          </U>
+                        </U>
+                      </L>
+                    </U>
+                  </V>
+                </V>
+              </U>
+              <U n="weight">
+                <L n="multipliers">
+                  <U>
+                    <T n="multiplier">1.25</T>
+                    <L n="tests">
+                      <L>
+                        <V t="statistic">
+                          <U n="statistic">
+                            <T n="stat">225996<!--Statistic: statistic_JuiceKeg_TappingSkill--></T>
+                            <V t="value_threshold" n="threshold">
+                              <U n="value_threshold">
+                                <T n="value">4</T>
+                              </U>
+                            </V>
+                          </U>
+                        </V>
+                      </L>
+                    </L>
+                  </U>
+                  <U>
+                    <T n="multiplier">1.28</T>
+                    <L n="tests">
+                      <L>
+                        <V t="statistic">
+                          <U n="statistic">
+                            <T n="stat">225996<!--Statistic: statistic_JuiceKeg_TappingSkill--></T>
+                            <V t="value_threshold" n="threshold">
+                              <U n="value_threshold">
+                                <T n="value">8</T>
+                              </U>
+                            </V>
+                          </U>
+                        </V>
+                      </L>
+                    </L>
+                  </U>
+                  <U>
+                    <T n="multiplier">1.25</T>
+                    <L n="tests">
+                      <L>
+                        <V t="statistic">
+                          <U n="statistic">
+                            <T n="stat">225996<!--Statistic: statistic_JuiceKeg_TappingSkill--></T>
+                            <V n="threshold" t="value_threshold">
+                              <U n="value_threshold">
+                                <T n="value">12</T>
+                              </U>
+                            </V>
+                          </U>
+                        </V>
+                      </L>
+                    </L>
+                  </U>
+                  <U>
+                    <T n="multiplier">1.4</T>
+                    <L n="tests">
+                      <L>
+                        <V t="statistic">
+                          <U n="statistic">
+                            <T n="stat">225996<!--Statistic: statistic_JuiceKeg_TappingSkill--></T>
+                            <V n="threshold" t="value_threshold">
+                              <U n="value_threshold">
+                                <T n="value">18</T>
+                              </U>
+                            </V>
+                          </U>
+                        </V>
+                      </L>
+                    </L>
+                  </U>
+                  <U>
+                    <T n="multiplier">8</T>
+                    <L n="tests">
+                      <L>
+                        <V t="buff">
+                          <U n="buff">
+                            <V n="whitelist" t="enabled">
+                              <L n="enabled">
+                                <T>209599<!--Buff: buff_JuiceKeg_TapperFailed--></T>
+                              </L>
+                            </V>
+                          </U>
+                        </V>
+                      </L>
+                    </L>
+                  </U>
+                </L>
+              </U>
+            </U>
+          </L>
+          <L n="tests">
+            <L>
+              <V t="statistic">
+                <U n="statistic">
+                  <T n="stat">225996<!--Statistic: statistic_JuiceKeg_TappingSkill--></T>
+                  <V n="threshold" t="value_threshold">
+                    <U n="value_threshold">
+                      <E n="comparison">LESS</E>
+                      <T n="value">24</T>
+                    </U>
+                  </V>
+                </U>
+              </V>
+            </L>
+          </L>
+        </U>
+        <U>
+          <L n="potential_outcomes">
+            <U>
+              <U n="outcome">
+                <V t="enabled" n="animation_ref">
+                  <U n="enabled">
+                    <T n="factory">209586<!--AnimationElement: juiceKeg_TapKeg_Success--></T>
+                  </U>
+                </V>
+                <L n="basic_extras">
+                  <V t="state_change">
+                    <U n="state_change">
+                      <V n="new_value" t="single_value">
+                        <U n="single_value">
+                          <T n="new_value">209637<!--CommodityBasedObjectStateValue: juiceKeg_Servings_Tapped--></T>
+                        </U>
+                      </V>
+                      <V t="on_xevt" n="timing">
+                        <U n="on_xevt">
+                          <T n="xevt_id">701</T>
+                        </U>
+                      </V>
+                    </U>
+                  </V>
+                  <V t="buff_fire_and_forget">
+                    <U n="buff_fire_and_forget">
+                      <U n="buff">
+                        <V n="buff_reason" t="enabled">
+                          <T n="enabled">0x251DC584<!--String: "(Por pinchar bien un barril de zumo)"--></T>
+                        </V>
+                        <T n="buff_type">209598<!--Buff: buff_JuiceKeg_TapperSuccess--></T>
+                      </U>
+                    </U>
+                  </V>
+                  <V t="loot">
+                    <U n="loot">
+                      <L n="loot_list">
+                        <T>210288<!--LootActions: loot_JuiceKeg_SuccessReaction--></T>
+                      </L>
+                    </U>
+                  </V>
+                </L>
+                <L n="loot_list">
+                  <T>226102<!--LootActions: loot_JuiceKeg_Tapping_SuccessSkill--></T>
+                </L>
+                <E n="outcome_result">SUCCESS</E>
+                <V n="response" t="enabled">
+                  <V n="enabled" t="individual">
+                    <U n="individual">
+                      <L n="animations">
+                        <U>
+                          <E n="target">Actor</E>
+                          <U n="animation">
+                            <T n="factory">11810<!--AnimationElement: Social_Responses_Confident_Random--></T>
+                            <U n="overrides">
+                              <V n="balloons" t="enabled">
+                                <L n="enabled">
+                                  <U>
+                                    <L n="balloon_choices">
+                                      <U>
+                                        <V n="item" t="balloon_icon">
+                                          <U n="balloon_icon">
+                                            <V n="category_icon" t="show_category_icon">
+                                              <V t="resource_key" n="show_category_icon">
+                                                <U n="resource_key">
+                                                  <T n="key" p="InGame\UI\Icons\Headlines\Final\headline_thumbup.png">2f7d0004:00000000:f8fd1d05fbeac837</T>
+                                                </U>
+                                              </V>
+                                            </V>
+                                            <V t="resource_key" n="icon">
+                                              <U n="resource_key">
+                                                <T n="key" p="InGame\UI\Icons\Headlines\Final\headline_drinkbartend.png">2f7d0004:00000000:ac37f3c777ef291e</T>
+                                              </U>
+                                            </V>
+                                          </U>
+                                        </V>
+                                      </U>
+                                    </L>
+                                    <L n="balloon_target">
+                                      <E>Actor</E>
+                                    </L>
+                                  </U>
+                                </L>
+                              </V>
+                            </U>
+                          </U>
+                        </U>
+                      </L>
+                    </U>
+                  </V>
+                </V>
+              </U>
+              <U n="weight">
+                <T n="base_value">4</T>
+                <L n="multipliers">
+                  <U>
+                    <T n="multiplier">1.75</T>
+                    <L n="tests">
+                      <L>
+                        <V t="statistic">
+                          <U n="statistic">
+                            <T n="stat">225996<!--Statistic: statistic_JuiceKeg_TappingSkill--></T>
+                            <V n="threshold" t="value_threshold">
+                              <U n="value_threshold">
+                                <T n="value">32</T>
+                              </U>
+                            </V>
+                          </U>
+                        </V>
+                      </L>
+                    </L>
+                  </U>
+                  <U>
+                    <T n="multiplier">2.286</T>
+                    <L n="tests">
+                      <L>
+                        <V t="statistic">
+                          <U n="statistic">
+                            <T n="stat">225996<!--Statistic: statistic_JuiceKeg_TappingSkill--></T>
+                            <V t="value_threshold" n="threshold">
+                              <U n="value_threshold">
+                                <T n="value">40</T>
+                              </U>
+                            </V>
+                          </U>
+                        </V>
+                      </L>
+                    </L>
+                  </U>
+                  <U>
+                    <T n="multiplier">2</T>
+                    <L n="tests">
+                      <L>
+                        <V t="buff">
+                          <U n="buff">
+                            <V n="whitelist" t="enabled">
+                              <L n="enabled">
+                                <T>209599<!--Buff: buff_JuiceKeg_TapperFailed--></T>
+                              </L>
+                            </V>
+                          </U>
+                        </V>
+                      </L>
+                    </L>
+                  </U>
+                </L>
+              </U>
+            </U>
+          </L>
+          <L n="tests">
+            <L>
+              <V t="statistic">
+                <U n="statistic">
+                  <T n="stat">225996<!--Statistic: statistic_JuiceKeg_TappingSkill--></T>
+                  <V n="threshold" t="value_threshold">
+                    <U n="value_threshold">
+                      <T n="value">24</T>
+                    </U>
+                  </V>
+                </U>
+              </V>
+            </L>
+          </L>
+        </U>
+      </L>
+      <T n="use_fallback_as_default">True</T>
+    </U>
+  </V>
+  <E n="scoring_priority">NORMAL</E>
+  <T n="subaction_selection_weight">1</T>
+  <E n="target_type">OBJECT</E>
+  <L n="test_globals">
+    <V t="sim_info">
+      <U n="sim_info">
+        <V t="specified" n="ages" />
+        <V t="specified" n="species">
+          <U n="specified">
+            <L n="species">
+              <E />
+            </L>
+          </U>
+        </V>
+        <E n="who">Actor</E>
+      </U>
+    </V>
+    <V t="state">
+      <U n="state">
+        <E n="operator">EQUAL</E>
+        <T n="value">209638<!--CommodityBasedObjectStateValue: juiceKeg_Servings_Sealed--></T>
+      </U>
+    </V>
+  </L>
+  <T n="time_overhead">30</T>
+</I>

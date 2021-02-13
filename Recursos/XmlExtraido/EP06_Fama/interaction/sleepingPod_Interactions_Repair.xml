@@ -1,0 +1,335 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<I c="SuperInteraction" i="interaction" m="interactions.base.super_interaction" n="sleepingPod_Interactions_Repair" s="199621">
+  <L n="_constraints">
+    <U>
+      <L n="constraints">
+        <U>
+          <V n="value" t="circle">
+            <U n="circle">
+              <T n="ideal_radius">2</T>
+              <T n="radius">2</T>
+            </U>
+          </V>
+        </U>
+      </L>
+    </U>
+  </L>
+  <V t="enabled" n="_saveable" />
+  <L n="_static_commodities">
+    <U>
+      <T n="static_commodity">101383<!--StaticCommodity: StaticCommodity_HandymanRepair--></T>
+    </U>
+    <U>
+      <T n="static_commodity">250634<!--StaticCommodity: staticCommodity_OnsenVenue_Employee_WorkingRepair--></T>
+    </U>
+  </L>
+  <T n="allow_autonomous">True</T>
+  <T n="attention_cost">0.5</T>
+  <V n="basic_content" t="flexible_length">
+    <U n="flexible_length">
+      <L n="conditional_actions">
+        <V t="literal">
+          <U n="literal">
+            <L n="conditions">
+              <V t="state_based">
+                <U n="state_based">
+                  <V n="state" t="on_trigger">
+                    <T n="on_trigger">15078<!--CommodityBasedObjectStateValue: Brokenness_Unbroken--></T>
+                  </V>
+                </U>
+              </V>
+            </L>
+          </U>
+        </V>
+        <V t="literal">
+          <U n="literal">
+            <L n="conditions">
+              <V t="stat_based">
+                <U n="stat_based">
+                  <T n="stat">8935<!--Commodity: Commodity_Death_Electrocution_Tracker--></T>
+                  <U n="threshold">
+                    <T n="value">100</T>
+                  </U>
+                </U>
+              </V>
+            </L>
+            <E n="interaction_action">EXIT_NATURALLY</E>
+          </U>
+        </V>
+        <V t="literal">
+          <U n="literal">
+            <L n="conditions">
+              <V t="stat_based">
+                <U n="stat_based">
+                  <T n="stat">8935<!--Commodity: Commodity_Death_Electrocution_Tracker--></T>
+                  <U n="threshold">
+                    <T n="value">100</T>
+                  </U>
+                </U>
+              </V>
+            </L>
+            <E n="interaction_action">EXIT_NATURALLY</E>
+          </U>
+        </V>
+      </L>
+      <V t="looping_content" n="content">
+        <U n="looping_content">
+          <U n="animation_ref">
+            <T n="factory">34905<!--AnimationElement: Handiness_Upgrade_Repair_StereoTV--></T>
+          </U>
+        </U>
+      </V>
+      <V n="periodic_stat_change" t="enabled">
+        <U n="enabled">
+          <U n="operation_actions">
+            <L n="actions">
+              <T>8932<!--LootActions: loot_Repair_Death_Electrocution_Periodic--></T>
+            </L>
+          </U>
+          <L n="operations">
+            <V t="statistic_change">
+              <U n="statistic_change">
+                <T n="amount">2</T>
+                <T n="stat">16633<!--Commodity: commodity_Object_Brokenness--></T>
+                <L n="subject">
+                  <E>Object</E>
+                </L>
+              </U>
+            </V>
+            <V t="dynamic_skill">
+              <U n="dynamic_skill">
+                <U n="skill_loot_data_override">
+                  <E n="effectiveness">StandardPeriodic</E>
+                  <T n="stat">16704<!--Skill: statistic_Skill_AdultMajor_Handiness--></T>
+                </U>
+              </U>
+            </V>
+          </L>
+        </U>
+      </V>
+    </U>
+  </V>
+  <V n="basic_reserve_object" t="enabled">
+    <U n="enabled">
+      <V t="none" n="reserve_type_for_provided_target" />
+      <L n="subject_list">
+        <U>
+          <V t="all" n="reserve_type" />
+        </U>
+      </L>
+    </U>
+  </V>
+  <V t="disabled" n="content_score" />
+  <T n="display_name">0x7F6812F8<!--String: "Reparar"--></T>
+  <V t="testable" n="display_name_overrides">
+    <U n="testable">
+      <L n="overrides">
+        <U>
+          <V n="new_display_name" t="enabled">
+            <T n="enabled">0xD23A7CD<!--String: "Reparación experta"--></T>
+          </V>
+          <L n="test">
+            <L>
+              <V t="buff">
+                <U n="buff">
+                  <V n="whitelist" t="enabled">
+                    <L n="enabled">
+                      <T>109673<!--Buff: buff_Career_Scientist_Expert_Repair--></T>
+                    </L>
+                  </V>
+                </U>
+              </V>
+            </L>
+          </L>
+        </U>
+        <U>
+          <V n="new_display_name" t="enabled">
+            <T n="enabled">0x7F6812F8<!--String: "Reparar"--></T>
+          </V>
+          <V n="new_display_tooltip" t="enabled">
+            <T n="enabled">0x2AD2AC0C<!--String: "Realizar reparaciones estando centrado reduce el tiempo necesario para llevarlas a cabo."--></T>
+          </V>
+          <L n="test">
+            <L>
+              <V t="mood">
+                <U n="mood">
+                  <T n="mood">14639<!--Mood: Mood_Focused--></T>
+                </U>
+              </V>
+            </L>
+          </L>
+        </U>
+      </L>
+    </U>
+  </V>
+  <U n="display_name_text_tokens">
+    <L n="tokens">
+      <V t="participant_type">
+        <U n="participant_type">
+          <V t="from_participant" n="objects">
+            <U n="from_participant">
+              <E n="participant">Actor</E>
+            </U>
+          </V>
+        </U>
+      </V>
+      <V t="participant_type">
+        <U n="participant_type">
+          <V t="from_participant" n="objects">
+            <U n="from_participant">
+              <E n="participant">Object</E>
+            </U>
+          </V>
+        </U>
+      </V>
+    </L>
+  </U>
+  <L n="interaction_category_tags">
+    <E>Interaction_Repair</E>
+    <E>Interaction_Super</E>
+    <E>Interaction_All</E>
+    <E>Interaction_Skill_Handiness</E>
+    <E>Interaction_OldDay_Fine</E>
+  </L>
+  <V n="outcome" t="test_based">
+    <U n="test_based">
+      <L n="fallback_outcomes">
+        <U>
+          <U n="outcome">
+            <L n="basic_extras">
+              <V t="create_object">
+                <U n="create_object">
+                  <V t="definition" n="creation_data">
+                    <U n="definition">
+                      <T n="definition">22672</T>
+                    </U>
+                  </V>
+                  <T n="destroy_on_placement_failure">True</T>
+                  <V n="location" t="position">
+                    <U n="position">
+                      <V t="from_participant" n="initial_location">
+                        <U n="from_participant">
+                          <E n="participant">Object</E>
+                        </U>
+                      </V>
+                    </U>
+                  </V>
+                  <U n="success_chance">
+                    <L n="multipliers">
+                      <U>
+                        <T n="multiplier">0</T>
+                        <L n="tests">
+                          <L>
+                            <V t="situation_job_test">
+                              <U n="situation_job_test">
+                                <L n="situation_jobs">
+                                  <T>129478<!--SituationJob: job_repair--></T>
+                                </L>
+                              </U>
+                            </V>
+                          </L>
+                        </L>
+                      </U>
+                    </L>
+                  </U>
+                  <V t="at_end" n="timing">
+                    <U n="at_end">
+                      <E n="criticality">NotCritical</E>
+                    </U>
+                  </V>
+                </U>
+              </V>
+            </L>
+            <L n="loot_list">
+              <T>8936<!--LootActions: loot_Death_Electrocution_Outcome--></T>
+              <T>28446<!--LootActions: loot_Buff_Skill_Handiness_Ouch_Repair--></T>
+              <T>10944<!--LootActions: Loot_Repair_ScaledByHandiness--></T>
+              <T>38200<!--LootActions: Loot_Trash_Scavenge_Kitchen--></T>
+            </L>
+          </U>
+        </U>
+      </L>
+      <L n="tested_outcomes">
+        <U>
+          <L n="potential_outcomes">
+            <U>
+              <U n="outcome">
+                <V n="animation_ref" t="enabled">
+                  <U n="enabled">
+                    <T n="factory">32285<!--AnimationElement: Handiness_Upgrade_Repair_Electrocuted--></T>
+                  </U>
+                </V>
+                <L n="loot_list">
+                  <T>8936<!--LootActions: loot_Death_Electrocution_Outcome--></T>
+                  <T>74015<!--LootActions: Loot_Fire_TestHandiness--></T>
+                </L>
+              </U>
+            </U>
+          </L>
+          <L n="tests">
+            <L>
+              <V t="statistic">
+                <U n="statistic">
+                  <T n="stat">8935<!--Commodity: Commodity_Death_Electrocution_Tracker--></T>
+                  <V t="value_threshold" n="threshold">
+                    <U n="value_threshold">
+                      <T n="value">100</T>
+                    </U>
+                  </V>
+                </U>
+              </V>
+            </L>
+          </L>
+        </U>
+      </L>
+      <T n="use_fallback_as_default">False</T>
+    </U>
+  </V>
+  <T n="pie_menu_priority">8</T>
+  <U n="progress_bar_enabled">
+    <V n="blacklist_statistics" t="specify_blacklist_statistics">
+      <L n="specify_blacklist_statistics">
+        <T>8935<!--Commodity: Commodity_Death_Electrocution_Tracker--></T>
+      </L>
+    </V>
+  </U>
+  <E n="scoring_priority">NORMAL</E>
+  <T n="subaction_selection_weight">1</T>
+  <E n="target_type">OBJECT</E>
+  <L n="test_globals">
+    <V t="sim_info">
+      <U n="sim_info">
+        <V t="specified" n="ages" />
+        <V t="specified" n="species">
+          <U n="specified">
+            <L n="species">
+              <E />
+            </L>
+          </U>
+        </V>
+        <E n="who">Actor</E>
+      </U>
+    </V>
+  </L>
+  <L n="tests">
+    <L>
+      <V t="state">
+        <U n="state">
+          <E n="operator">EQUAL</E>
+          <T n="value">15080<!--ObjectStateValue: BrokenState_Broken--></T>
+        </U>
+      </V>
+    </L>
+    <L>
+      <V t="state">
+        <U n="state">
+          <E n="operator">EQUAL</E>
+          <T n="value">39292<!--ObjectStateValue: BrokenState_Repairing--></T>
+        </U>
+      </V>
+    </L>
+  </L>
+  <T n="time_overhead">30</T>
+  <V t="disabled" n="utility_info" />
+  <T n="visible">True</T>
+</I>

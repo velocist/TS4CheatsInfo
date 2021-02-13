@@ -1,0 +1,986 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<I c="GameObject" i="object" m="objects.game_object" n="object_Earbuds" s="164697">
+  <U n="_components">
+    <V n="affordance_tuning" t="enabled">
+      <U n="enabled">
+        <L n="affordance_map">
+          <U>
+            <T n="key">10459<!--SuperInteraction: si_SwipeIntoSimInventory--></T>
+            <U n="value">
+              <L n="tests">
+                <L>
+                  <V t="inventory">
+                    <U n="inventory">
+                      <V t="has_object_with_tag" n="contents_check">
+                        <U n="has_object_with_tag">
+                          <L n="tag_set">
+                            <E>Func_EarBuds</E>
+                          </L>
+                        </U>
+                      </V>
+                      <U n="required_count">
+                        <E n="comparison">EQUAL</E>
+                        <T n="value">0</T>
+                      </U>
+                      <V n="tooltip" t="enabled">
+                        <T n="enabled">0x1C844962<!--String: "{0.SimFirstName} ya tiene un par de auriculares en su inventario."--></T>
+                      </V>
+                    </U>
+                  </V>
+                </L>
+              </L>
+            </U>
+          </U>
+          <U>
+            <T n="key">167436<!--SwipeAddToWorldSuperInteraction: si_SwipeAddToWorld_Earbuds--></T>
+            <U n="value">
+              <L n="tests">
+                <L>
+                  <V t="state">
+                    <U n="state">
+                      <T n="value">166751<!--AudioChannel: stereoChannel_EarBuds_Off--></T>
+                    </U>
+                  </V>
+                </L>
+              </L>
+            </U>
+          </U>
+        </L>
+      </U>
+    </V>
+    <V t="disabled" n="focus" />
+    <V n="inventory_item" t="enabled">
+      <U n="enabled">
+        <T n="can_place_in_world">True</T>
+        <T n="forward_affordances_to_inventory_owner">True</T>
+        <V n="forward_client_state_change_to_inventory_owner" t="enabled">
+          <L n="enabled">
+            <V t="audio_state" />
+            <V t="audio_effect_state" />
+          </L>
+        </V>
+        <T n="inventory_only">False</T>
+        <V n="no_carry_add_to_world_affordances" t="OVERRIDE">
+          <L n="OVERRIDE">
+            <T>167436<!--SwipeAddToWorldSuperInteraction: si_SwipeAddToWorld_Earbuds--></T>
+          </L>
+        </V>
+        <T n="skip_carry_pose">True</T>
+        <L n="valid_inventory_types">
+          <E>SIM</E>
+        </L>
+      </U>
+    </V>
+    <V t="disabled" n="line_of_sight" />
+    <V n="retail_component" t="enabled">
+      <V n="enabled" t="reference">
+        <T n="reference">115308<!--RetailComponent: retailComponent_NotSellable--></T>
+      </V>
+    </V>
+    <V n="state" t="enabled">
+      <U n="enabled">
+        <V t="disabled" n="delinquency_state_changes" />
+        <L n="state_triggers">
+          <U>
+            <L n="at_states">
+              <T>39736<!--CommodityBasedObjectStateValue: FireState_Burn_Material_Change_Burning--></T>
+            </L>
+            <V n="set_states" t="Set_state_list">
+              <L n="Set_state_list">
+                <T>166751<!--AudioChannel: stereoChannel_EarBuds_Off--></T>
+              </L>
+            </V>
+          </U>
+          <U>
+            <L n="at_states">
+              <T>166751<!--AudioChannel: stereoChannel_EarBuds_Off--></T>
+              <T>15080<!--ObjectStateValue: BrokenState_Broken--></T>
+            </L>
+            <V t="Set_state_list" n="set_states">
+              <L n="Set_state_list">
+                <T>24384<!--ObjectStateValue: StereoOnOff_Off--></T>
+              </L>
+            </V>
+            <E n="trigger_operation">OR</E>
+          </U>
+          <U>
+            <L n="at_states">
+              <T>166751<!--AudioChannel: stereoChannel_EarBuds_Off--></T>
+            </L>
+            <V n="set_states" t="Set_state_list">
+              <L n="Set_state_list">
+                <T>24383<!--ObjectStateValue: StereoOnOff_On--></T>
+              </L>
+            </V>
+            <E n="trigger_operation">NONE</E>
+          </U>
+          <U>
+            <L n="at_states">
+              <T>108831<!--ObjectStateValue: ObjectStateValue_Detective_Stolen--></T>
+            </L>
+            <V t="Set_state_list" n="set_states">
+              <L n="Set_state_list">
+                <T>24384<!--ObjectStateValue: StereoOnOff_Off--></T>
+              </L>
+            </V>
+          </U>
+          <U>
+            <L n="at_states">
+              <T>133569<!--AudioChannel: stereoChannel_TalkRadio--></T>
+              <T>133595<!--AudioChannel: stereoWall_Channel_TalkRadio--></T>
+              <T>15342<!--AudioChannel: StereoChannel_Off--></T>
+            </L>
+            <V n="set_states" t="Set_state_list">
+              <L n="Set_state_list">
+                <T>153365<!--ObjectStateValue: stereoOnOff_CanDance_False--></T>
+              </L>
+            </V>
+            <E n="trigger_operation">OR</E>
+          </U>
+          <U>
+            <L n="at_states">
+              <T>150129<!--AudioChannel: StereoChannel_randomPick--></T>
+            </L>
+            <V n="set_random_state" t="Trigger_random_state">
+              <L n="Trigger_random_state">
+                <U>
+                  <T n="state_value">15338<!--AudioChannel: StereoChannel_Alt--></T>
+                </U>
+                <U>
+                  <T n="state_value">150141<!--AudioChannel: stereoChannel_KidsRadio--></T>
+                </U>
+                <U>
+                  <T n="state_value">15343<!--AudioChannel: StereoChannel_Pop--></T>
+                </U>
+                <U>
+                  <T n="state_value">32571<!--AudioChannel: StereoChannel_Retro--></T>
+                </U>
+                <U>
+                  <T n="state_value">103697<!--AudioChannel: StereoChannel_Spooky--></T>
+                </U>
+                <U>
+                  <T n="state_value">110062<!--AudioChannel: StereoChannel_WinterHoliday--></T>
+                </U>
+              </L>
+            </V>
+          </U>
+          <U>
+            <L n="at_states">
+              <T>133569<!--AudioChannel: stereoChannel_TalkRadio--></T>
+              <T>133595<!--AudioChannel: stereoWall_Channel_TalkRadio--></T>
+            </L>
+            <V n="set_states" t="Set_state_list">
+              <L n="Set_state_list">
+                <T>153364<!--ObjectStateValue: stereoOnOff_CanDance_True--></T>
+              </L>
+            </V>
+            <E n="trigger_operation">NONE</E>
+          </U>
+          <U>
+            <L n="at_states">
+              <T>24384<!--ObjectStateValue: StereoOnOff_Off--></T>
+              <T>169892<!--ObjectStateValue: stereoOnOff_HasMoodSwing_Off--></T>
+            </L>
+            <V n="set_states" t="Set_state_list">
+              <L n="Set_state_list">
+                <T>153299<!--ObjectStateValue: stereoOnOff_VFX_Off--></T>
+              </L>
+            </V>
+            <E n="trigger_operation">OR</E>
+          </U>
+          <U>
+            <L n="at_states">
+              <T>24383<!--ObjectStateValue: StereoOnOff_On--></T>
+              <T>153364<!--ObjectStateValue: stereoOnOff_CanDance_True--></T>
+              <T>169892<!--ObjectStateValue: stereoOnOff_HasMoodSwing_Off--></T>
+            </L>
+            <V n="set_states" t="Set_state_list">
+              <L n="Set_state_list">
+                <T>153260<!--ObjectStateValue: stereoOnOff_VFX_Music--></T>
+              </L>
+            </V>
+          </U>
+          <U>
+            <L n="at_states">
+              <T>24383<!--ObjectStateValue: StereoOnOff_On--></T>
+              <T>153365<!--ObjectStateValue: stereoOnOff_CanDance_False--></T>
+            </L>
+            <V n="set_states" t="Set_state_list">
+              <L n="Set_state_list">
+                <T>153262<!--ObjectStateValue: stereoOnOff_VFX_Talk--></T>
+              </L>
+            </V>
+          </U>
+          <U>
+            <L n="at_states">
+              <T>153364<!--ObjectStateValue: stereoOnOff_CanDance_True--></T>
+              <T>169891<!--ObjectStateValue: stereoOnOff_HasMoodSwing_On--></T>
+            </L>
+            <V n="set_states" t="Set_state_list">
+              <L n="Set_state_list">
+                <T>163342<!--ObjectStateValue: stereoOnOff_VFX_LoudMusic--></T>
+              </L>
+            </V>
+          </U>
+          <U>
+            <L n="at_states">
+              <T>77532<!--CommodityBasedObjectStateValue: FireState_Burn_Material_Change_Replace--></T>
+            </L>
+            <V n="set_states" t="Set_state_list">
+              <L n="Set_state_list">
+                <T>39737<!--CommodityBasedObjectStateValue: FireState_Burn_Material_Change_Not_Burning--></T>
+              </L>
+            </V>
+          </U>
+        </L>
+        <L n="states">
+          <U>
+            <L n="client_states">
+              <U>
+                <T n="key">166592<!--AudioChannel: stereoChannel_Alt_EarBuds--></T>
+                <U n="value">
+                  <V n="audio_state" t="apply_new_value">
+                    <V n="apply_new_value" t="start_audio">
+                      <U n="start_audio">
+                        <T p="InGame\Audio\Music\stereo\alternative\mu_stereo_alternative.propx" n="audio">39b2aa4a:00000000:c4f531d9d7d156c6</T>
+                        <T n="immediate_audio">True</T>
+                        <V t="enabled" n="joint_name_hash">
+                          <T n="enabled">b__R_Earring_slot</T>
+                        </V>
+                        <T n="play_on_active_sim_only">True</T>
+                      </U>
+                    </V>
+                  </V>
+                </U>
+              </U>
+              <U>
+                <T n="key">166597<!--AudioChannel: stereoChannel_Classical_EarBuds--></T>
+                <U n="value">
+                  <V n="audio_state" t="apply_new_value">
+                    <V n="apply_new_value" t="start_audio">
+                      <U n="start_audio">
+                        <T p="InGame\Audio\Music\stereo\classical\mu_stereo_classical.propx" n="audio">39b2aa4a:00000000:3658c55340bfcdd4</T>
+                        <T n="immediate_audio">True</T>
+                        <V t="enabled" n="joint_name_hash">
+                          <T n="enabled">b__R_Earring_slot</T>
+                        </V>
+                        <T n="play_on_active_sim_only">True</T>
+                      </U>
+                    </V>
+                  </V>
+                </U>
+              </U>
+              <U>
+                <T n="key">166599<!--AudioChannel: stereoChannel_Electro_EarBuds--></T>
+                <U n="value">
+                  <V n="audio_state" t="apply_new_value">
+                    <V n="apply_new_value" t="start_audio">
+                      <U n="start_audio">
+                        <T p="InGame\Audio\Music\stereo\electronica\mu_stereo_electronica.propx" n="audio">39b2aa4a:00000000:5d51327b9182bc04</T>
+                        <T n="immediate_audio">True</T>
+                        <V t="enabled" n="joint_name_hash">
+                          <T n="enabled">b__R_Earring_slot</T>
+                        </V>
+                        <T n="play_on_active_sim_only">True</T>
+                      </U>
+                    </V>
+                  </V>
+                </U>
+              </U>
+              <U>
+                <T n="key">166602<!--AudioChannel: stereoChannel_KidsRadio_EarBuds--></T>
+                <U n="value">
+                  <V n="audio_state" t="apply_new_value">
+                    <V n="apply_new_value" t="start_audio">
+                      <U n="start_audio">
+                        <T p="InGame\Audio\Music\stereo\kids\mu_stereo_kids.propx" n="audio">39b2aa4a:00000000:aacfe87b1b0acf0a</T>
+                        <T n="immediate_audio">True</T>
+                        <V t="enabled" n="joint_name_hash">
+                          <T n="enabled">b__R_Earring_slot</T>
+                        </V>
+                        <T n="play_on_active_sim_only">True</T>
+                      </U>
+                    </V>
+                  </V>
+                </U>
+              </U>
+              <U>
+                <T n="key">166604<!--AudioChannel: stereoChannel_Lullabies_EarBuds--></T>
+                <U n="value">
+                  <V n="audio_state" t="apply_new_value">
+                    <V n="apply_new_value" t="start_audio">
+                      <U n="start_audio">
+                        <T p="InGame\Audio\Music\stereo\lullaby\mu_stereo_lullaby.propx" n="audio">39b2aa4a:00000000:7badb1e38fd4cbee</T>
+                        <T n="immediate_audio">True</T>
+                        <V t="enabled" n="joint_name_hash">
+                          <T n="enabled">b__R_Earring_slot</T>
+                        </V>
+                        <T n="play_on_active_sim_only">True</T>
+                      </U>
+                    </V>
+                  </V>
+                </U>
+              </U>
+              <U>
+                <T n="key">166606<!--AudioChannel: stereoChannel_Pop_EarBuds--></T>
+                <U n="value">
+                  <V n="audio_state" t="apply_new_value">
+                    <V n="apply_new_value" t="start_audio">
+                      <U n="start_audio">
+                        <T p="InGame\Audio\Music\stereo\pop\mu_stereo_pop.propx" n="audio">39b2aa4a:00000000:221dea395dfcdfae</T>
+                        <T n="immediate_audio">True</T>
+                        <V t="enabled" n="joint_name_hash">
+                          <T n="enabled">b__R_Earring_slot</T>
+                        </V>
+                        <T n="play_on_active_sim_only">True</T>
+                      </U>
+                    </V>
+                  </V>
+                </U>
+              </U>
+              <U>
+                <T n="key">166608<!--AudioChannel: stereoChannel_Retro_EarBuds--></T>
+                <U n="value">
+                  <V n="audio_state" t="apply_new_value">
+                    <V n="apply_new_value" t="start_audio">
+                      <U n="start_audio">
+                        <T p="InGame\Audio\Music\stereo\simretro\mu_stereo_simretro.propx" n="audio">39b2aa4a:00000000:435fa71eee9c0b62</T>
+                        <T n="immediate_audio">True</T>
+                        <V t="enabled" n="joint_name_hash">
+                          <T n="enabled">b__R_Earring_slot</T>
+                        </V>
+                        <T n="play_on_active_sim_only">True</T>
+                      </U>
+                    </V>
+                  </V>
+                </U>
+              </U>
+              <U>
+                <T n="key">166610<!--AudioChannel: stereoChannel_Romance_EarBuds--></T>
+                <U n="value">
+                  <V n="audio_state" t="apply_new_value">
+                    <V n="apply_new_value" t="start_audio">
+                      <U n="start_audio">
+                        <T p="InGame\Audio\Music\stereo\romance\mu_stereo_romance.propx" n="audio">39b2aa4a:00000000:84bf16d610f2d690</T>
+                        <T n="immediate_audio">True</T>
+                        <V t="enabled" n="joint_name_hash">
+                          <T n="enabled">b__R_Earring_slot</T>
+                        </V>
+                        <T n="play_on_active_sim_only">True</T>
+                      </U>
+                    </V>
+                  </V>
+                </U>
+              </U>
+              <U>
+                <T n="key">166612<!--AudioChannel: stereoChannel_Spooky_EarBuds--></T>
+                <U n="value">
+                  <V n="audio_state" t="apply_new_value">
+                    <V n="apply_new_value" t="start_audio">
+                      <U n="start_audio">
+                        <T p="InGame\Audio\Music\stereo\spooky\mu_stereo_spooky.propx" n="audio">39b2aa4a:00000000:d0500b31764b388a</T>
+                        <T n="immediate_audio">True</T>
+                        <V t="enabled" n="joint_name_hash">
+                          <T n="enabled">b__R_Earring_slot</T>
+                        </V>
+                        <T n="play_on_active_sim_only">True</T>
+                      </U>
+                    </V>
+                  </V>
+                </U>
+              </U>
+              <U>
+                <T n="key">166614<!--AudioChannel: stereoChannel_Blues_EarBuds--></T>
+                <U n="value">
+                  <V n="audio_state" t="apply_new_value">
+                    <V n="apply_new_value" t="start_audio">
+                      <U n="start_audio">
+                        <T p="InGame\Audio\Music\stereo\blues\mu_stereo_blues.propx" n="audio">39b2aa4a:00000000:b42cfdf7df7c7d80</T>
+                        <T n="immediate_audio">True</T>
+                        <V t="enabled" n="joint_name_hash">
+                          <T n="enabled">b__R_Earring_slot</T>
+                        </V>
+                        <T n="play_on_active_sim_only">True</T>
+                      </U>
+                    </V>
+                  </V>
+                </U>
+              </U>
+              <U>
+                <T n="key">166620<!--AudioChannel: stereoChannel_WinterHoliday_EarBuds--></T>
+                <U n="value">
+                  <V n="audio_state" t="apply_new_value">
+                    <V n="apply_new_value" t="start_audio">
+                      <U n="start_audio">
+                        <T p="InGame\Audio\Music\stereo\winterholiday\mu_stereo_winterholiday.propx" n="audio">39b2aa4a:00000000:f1a70374a8ff49ca</T>
+                        <T n="immediate_audio">True</T>
+                        <V t="enabled" n="joint_name_hash">
+                          <T n="enabled">b__R_Earring_slot</T>
+                        </V>
+                        <T n="play_on_active_sim_only">True</T>
+                      </U>
+                    </V>
+                  </V>
+                </U>
+              </U>
+              <U>
+                <T n="key">166751<!--AudioChannel: stereoChannel_EarBuds_Off--></T>
+              </U>
+              <U>
+                <T n="key">167558<!--AudioChannel: stereoChannel_Backyard_EarBuds--></T>
+              </U>
+              <U>
+                <T n="key">167563<!--AudioChannel: stereoChannel_Baroque_EarBuds--></T>
+              </U>
+              <U>
+                <T n="key">167565<!--AudioChannel: stereoChannel_DinnerJazz_EarBuds--></T>
+              </U>
+              <U>
+                <T n="key">167570<!--AudioChannel: stereoChannel_NewAge_EarBuds--></T>
+              </U>
+              <U>
+                <T n="key">167574<!--AudioChannel: stereoChannel_Tween_EarBuds--></T>
+              </U>
+              <U>
+                <T n="key">167577<!--AudioChannel: stereoChannel_Disco_Pop_EarBuds--></T>
+              </U>
+              <U>
+                <T n="key">167580<!--AudioChannel: stereoChannel_CulturalWorld_EarBuds--></T>
+              </U>
+              <U>
+                <T n="key">167583<!--AudioChannel: stereoChannel_SPop_EarBuds--></T>
+              </U>
+              <U>
+                <T n="key">167586<!--AudioChannel: stereoChannel_TalkRadio_EarBuds--></T>
+              </U>
+              <U>
+                <T n="key">175455<!--AudioChannel: stereoChannel_Latin_EarBuds--></T>
+              </U>
+              <U>
+                <T n="key">175729<!--AudioChannel: stereoChannel_LatinPop_EarBuds--></T>
+              </U>
+              <U>
+                <T n="key">177006<!--AudioChannel: stereoChannel_SingerSongWriter_EarBuds--></T>
+              </U>
+              <U>
+                <T n="key">177382<!--AudioChannel: stereoChannel_HospitalMusic_Earbuds--></T>
+              </U>
+              <U>
+                <T n="key">179784<!--AudioChannel: stereoChannel_SummerStrut_EarBuds--></T>
+              </U>
+              <U>
+                <T n="key">197372<!--AudioChannel: stereoChannel_HipHop_EarBuds--></T>
+              </U>
+              <U>
+                <T n="key">205231<!--AudioChannel: stereoChannel_StrangeTunes_EarBuds--></T>
+              </U>
+              <U>
+                <T n="key">209338<!--AudioChannel: stereoChannel_Island_EarBuds--></T>
+              </U>
+              <U>
+                <T n="key">238272<!--AudioChannel: stereoChannel_Americana_EarBuds--></T>
+              </U>
+              <U>
+                <T n="key">240057<!--AudioChannel: stereoChannel_Focus_EarBuds--></T>
+              </U>
+              <U>
+                <T n="key">240066<!--AudioChannel: stereoChannel_Metal_EarBuds--></T>
+              </U>
+              <U>
+                <T n="key">246208<!--AudioChannel: stereoChannel_JFolk_EarBuds--></T>
+              </U>
+              <U>
+                <T n="key">247524<!--AudioChannel: stereoChannel_Batuu_EarBuds--></T>
+              </U>
+            </L>
+            <V n="default_value" t="reference">
+              <T n="reference">166751<!--AudioChannel: stereoChannel_EarBuds_Off--></T>
+            </V>
+            <T n="reset_on_load_if_time_passes">True</T>
+          </U>
+          <U>
+            <L n="client_states">
+              <U>
+                <T n="key">15022<!--ObjectStateValue: AudioVolume_High--></T>
+                <U n="value">
+                  <V n="audio_effect_state" t="apply_new_value">
+                    <V n="apply_new_value" t="start_audio_effect">
+                      <U n="start_audio_effect">
+                        <T n="effect_name">stereo_volume_high</T>
+                        <T n="tag_name">volume</T>
+                      </U>
+                    </V>
+                  </V>
+                </U>
+              </U>
+              <U>
+                <T n="key">15023<!--ObjectStateValue: AudioVolume_Low--></T>
+                <U n="value">
+                  <V n="audio_effect_state" t="apply_new_value">
+                    <V n="apply_new_value" t="start_audio_effect">
+                      <U n="start_audio_effect">
+                        <T n="effect_name">stereo_volume_low</T>
+                        <T n="tag_name">volume</T>
+                      </U>
+                    </V>
+                  </V>
+                </U>
+              </U>
+              <U>
+                <T n="key">15024<!--ObjectStateValue: AudioVolume_Medium--></T>
+                <U n="value">
+                  <V n="audio_effect_state" t="apply_new_value">
+                    <V n="apply_new_value" t="start_audio_effect">
+                      <U n="start_audio_effect">
+                        <T n="effect_name">stereo_volume_normal</T>
+                        <T n="tag_name">volume</T>
+                      </U>
+                    </V>
+                  </V>
+                </U>
+              </U>
+              <U>
+                <T n="key">163341<!--ObjectStateValue: AudioVolume_LoudMusic--></T>
+                <U n="value">
+                  <V n="audio_effect_state" t="apply_new_value">
+                    <V n="apply_new_value" t="start_audio_effect">
+                      <U n="start_audio_effect">
+                        <T n="effect_name">stereo_teenmoodswing</T>
+                        <T n="tag_name">volume</T>
+                      </U>
+                    </V>
+                  </V>
+                </U>
+              </U>
+            </L>
+            <V n="default_value" t="reference">
+              <T n="reference">15024<!--ObjectStateValue: AudioVolume_Medium--></T>
+            </V>
+          </U>
+          <U>
+            <L n="client_states">
+              <U>
+                <T n="key">24383<!--ObjectStateValue: StereoOnOff_On--></T>
+                <U n="value">
+                  <V n="audio_effect_state" t="apply_new_value">
+                    <V n="apply_new_value" t="start_audio_effect">
+                      <U n="start_audio_effect">
+                        <T n="effect_name">stereo_headphones</T>
+                        <T n="tag_name">all_effects</T>
+                      </U>
+                    </V>
+                  </V>
+                  <V n="broadcaster" t="apply_new_value">
+                    <V n="apply_new_value" t="start_broadcaster">
+                      <U n="start_broadcaster">
+                        <L n="broadcaster_types">
+                          <U>
+                            <T n="item">159374<!--Broadcaster: broadcaster_Fear_Pet_Stereo--></T>
+                          </U>
+                          <U>
+                            <T n="item">174075<!--Broadcaster: broadcaster_Pet_Stereo_Vocal--></T>
+                          </U>
+                        </L>
+                      </U>
+                    </V>
+                  </V>
+                </U>
+              </U>
+              <U>
+                <T n="key">24384<!--ObjectStateValue: StereoOnOff_Off--></T>
+                <U n="value">
+                  <V t="apply_new_value" n="audio_effect_state" />
+                  <V t="apply_new_value" n="broadcaster" />
+                </U>
+              </U>
+            </L>
+            <V n="default_value" t="reference">
+              <T n="reference">24384<!--ObjectStateValue: StereoOnOff_Off--></T>
+            </V>
+          </U>
+          <U>
+            <L n="client_states">
+              <U>
+                <T n="key">153260<!--ObjectStateValue: stereoOnOff_VFX_Music--></T>
+                <U n="value">
+                  <V n="broadcaster" t="apply_new_value">
+                    <V n="apply_new_value" t="start_broadcaster">
+                      <U n="start_broadcaster">
+                        <L n="broadcaster_types">
+                          <U>
+                            <T n="item">123698<!--Broadcaster: broadcaster_Dancefloor_Danceable--></T>
+                          </U>
+                        </L>
+                      </U>
+                    </V>
+                  </V>
+                </U>
+              </U>
+              <U>
+                <T n="key">153262<!--ObjectStateValue: stereoOnOff_VFX_Talk--></T>
+              </U>
+              <U>
+                <T n="key">153299<!--ObjectStateValue: stereoOnOff_VFX_Off--></T>
+                <U n="value">
+                  <V t="apply_new_value" n="vfx_state">
+                    <V n="apply_new_value" t="no_vfx" />
+                  </V>
+                </U>
+              </U>
+              <U>
+                <T n="key">163342<!--ObjectStateValue: stereoOnOff_VFX_LoudMusic--></T>
+                <U n="value">
+                  <V n="broadcaster" t="apply_new_value">
+                    <V n="apply_new_value" t="start_broadcaster">
+                      <U n="start_broadcaster">
+                        <L n="broadcaster_types">
+                          <U>
+                            <T n="item">163362<!--Broadcaster: broadcaster_TeenMoodSwing_LoudMusic--></T>
+                          </U>
+                        </L>
+                      </U>
+                    </V>
+                  </V>
+                  <V t="leave_unchanged" n="vfx_state" />
+                </U>
+              </U>
+            </L>
+            <V n="default_value" t="reference">
+              <T n="reference">153299<!--ObjectStateValue: stereoOnOff_VFX_Off--></T>
+            </V>
+          </U>
+          <U>
+            <L n="client_states">
+              <U>
+                <T n="key">153364<!--ObjectStateValue: stereoOnOff_CanDance_True--></T>
+              </U>
+              <U>
+                <T n="key">153365<!--ObjectStateValue: stereoOnOff_CanDance_False--></T>
+              </U>
+            </L>
+            <V n="default_value" t="reference">
+              <T n="reference">153365<!--ObjectStateValue: stereoOnOff_CanDance_False--></T>
+            </V>
+          </U>
+          <U>
+            <L n="client_states">
+              <U>
+                <T n="key">108830<!--ObjectStateValue: ObjectStateValue_Detective_NotStolen--></T>
+              </U>
+              <U>
+                <T n="key">108831<!--ObjectStateValue: ObjectStateValue_Detective_Stolen--></T>
+              </U>
+            </L>
+            <V n="default_value" t="reference">
+              <T n="reference">108830<!--ObjectStateValue: ObjectStateValue_Detective_NotStolen--></T>
+            </V>
+          </U>
+          <U>
+            <L n="client_states">
+              <U>
+                <T n="key">109125<!--ObjectStateValue: objectStateValue_Detective_NotBroken--></T>
+              </U>
+              <U>
+                <T n="key">109126<!--ObjectStateValue: objectStateValue_Detective_Broken--></T>
+              </U>
+            </L>
+            <V n="default_value" t="reference">
+              <T n="reference">109125<!--ObjectStateValue: objectStateValue_Detective_NotBroken--></T>
+            </V>
+          </U>
+          <U>
+            <L n="client_states">
+              <U>
+                <T n="key">109127<!--ObjectStateValue: objectStateValue_Detective_Burned--></T>
+              </U>
+              <U>
+                <T n="key">109128<!--ObjectStateValue: objectStateValue_Detective_NotBurned--></T>
+              </U>
+            </L>
+            <V n="default_value" t="reference">
+              <T n="reference">109128<!--ObjectStateValue: objectStateValue_Detective_NotBurned--></T>
+            </V>
+          </U>
+          <U>
+            <L n="client_states">
+              <U>
+                <T n="key">131794<!--ObjectStateValue: Kelpto_Stolen_Object--></T>
+              </U>
+              <U>
+                <T n="key">131795<!--ObjectStateValue: Klepto_Not_Stolen_Object--></T>
+              </U>
+            </L>
+            <V n="default_value" t="reference">
+              <T n="reference">131795<!--ObjectStateValue: Klepto_Not_Stolen_Object--></T>
+            </V>
+          </U>
+          <U>
+            <L n="client_states">
+              <U>
+                <T n="key">169891<!--ObjectStateValue: stereoOnOff_HasMoodSwing_On--></T>
+              </U>
+              <U>
+                <T n="key">169892<!--ObjectStateValue: stereoOnOff_HasMoodSwing_Off--></T>
+              </U>
+            </L>
+            <V n="default_value" t="reference">
+              <T n="reference">169892<!--ObjectStateValue: stereoOnOff_HasMoodSwing_Off--></T>
+            </V>
+          </U>
+          <U>
+            <V n="default_value" t="reference">
+              <T n="reference">208488<!--CommodityBasedObjectStateValue: state_IslanderCulture_TimeSinceBroken_NotBroken--></T>
+            </V>
+          </U>
+          <U>
+            <L n="client_states">
+              <U>
+                <T n="key">73870<!--ObjectStateValue: TheKnack_Awesome--></T>
+              </U>
+              <U>
+                <T n="key">73871<!--ObjectStateValue: TheKnack_NotAwesome--></T>
+              </U>
+            </L>
+            <V n="default_value" t="reference">
+              <T n="reference">73871<!--ObjectStateValue: TheKnack_NotAwesome--></T>
+            </V>
+          </U>
+          <U>
+            <L n="client_states">
+              <U>
+                <T n="key">39478<!--CommodityBasedObjectStateValue: FireState_Burn_Incinerate_Burning--></T>
+              </U>
+              <U>
+                <T n="key">39479<!--CommodityBasedObjectStateValue: FireState_Burn_Incinerate--></T>
+              </U>
+              <U>
+                <T n="key">39612<!--CommodityBasedObjectStateValue: FireState_Burn_Incinerate_Not_Burning--></T>
+              </U>
+            </L>
+            <V n="default_value" t="reference">
+              <T n="reference">39612<!--CommodityBasedObjectStateValue: FireState_Burn_Incinerate_Not_Burning--></T>
+            </V>
+          </U>
+          <U>
+            <L n="client_states">
+              <U>
+                <T n="key">35956<!--CommodityBasedObjectStateValue: Materialistic_Admired--></T>
+              </U>
+              <U>
+                <T n="key">35957<!--CommodityBasedObjectStateValue: Materialistic_YetToAdmire--></T>
+              </U>
+            </L>
+            <V n="default_value" t="reference">
+              <T n="reference">35957<!--CommodityBasedObjectStateValue: Materialistic_YetToAdmire--></T>
+            </V>
+          </U>
+        </L>
+      </U>
+    </V>
+    <V n="stereo" t="enabled">
+      <V n="enabled" t="literal">
+        <U n="literal">
+          <T n="channel_state">166746<!--ObjectState: stereoChannel_EarBuds--></T>
+          <T n="immediate">True</T>
+          <L n="listen_affordances">
+            <T>228222<!--ListenSuperInteraction: stereo_listen_earbuds--></T>
+          </L>
+          <T n="off_state">166751<!--AudioChannel: stereoChannel_EarBuds_Off--></T>
+          <T n="play_on_active_sim_only">True</T>
+        </U>
+      </V>
+    </V>
+    <V n="tooltip_component" t="enabled">
+      <U n="enabled">
+        <L n="custom_tooltips">
+          <U>
+            <L n="object_tests">
+              <L>
+                <V t="in_inventory" />
+              </L>
+            </L>
+            <L n="tooltip_fields">
+              <U>
+                <E n="key">recipe_description</E>
+                <U n="value">
+                  <V n="text" t="single">
+                    <T n="single">0xD6740541<!--String: "{0.ObjectDescription}"--></T>
+                  </V>
+                  <V t="enabled" n="text_tokens">
+                    <U n="enabled">
+                      <L n="tokens">
+                        <V t="participant_type">
+                          <U n="participant_type">
+                            <V n="objects" t="from_participant">
+                              <U n="from_participant">
+                                <E n="participant">Object</E>
+                              </U>
+                            </V>
+                          </U>
+                        </V>
+                      </L>
+                    </U>
+                  </V>
+                </U>
+              </U>
+              <U>
+                <E n="key">recipe_name</E>
+                <U n="value">
+                  <V n="text" t="single">
+                    <T n="single">0x4F918F8<!--String: "{0.ObjectName}"--></T>
+                  </V>
+                  <V t="enabled" n="text_tokens">
+                    <U n="enabled">
+                      <L n="tokens">
+                        <V t="participant_type">
+                          <U n="participant_type">
+                            <V n="objects" t="from_participant">
+                              <U n="from_participant">
+                                <E n="participant">Object</E>
+                              </U>
+                            </V>
+                          </U>
+                        </V>
+                      </L>
+                    </U>
+                  </V>
+                </U>
+              </U>
+            </L>
+            <E n="tooltip_style">HOVER_TIP_CUSTOM_OBJECT</E>
+          </U>
+        </L>
+      </U>
+    </V>
+    <V t="disabled" n="weather_aware_component" />
+  </U>
+  <L n="_preroll_super_affordances">
+    <T>14315<!--CancelOnStateChangeInteraction: stereo_Dance--></T>
+  </L>
+  <L n="_super_affordances">
+    <T>33618<!--SuperInteraction: generic_Dance--></T>
+    <T>164802<!--ImmediateSuperInteraction: stereo_earbuds_turnoff--></T>
+    <T>166544<!--StereoPieMenuChoicesInteraction: stereo_PickChannel_EarBuds--></T>
+    <T>166588<!--PickChannelAutonomouslySuperInteraction: stereo_AutonomousPickChannel_EarBuds--></T>
+    <T>178691<!--SuperInteraction: stereo_earbuds_turnoff_autonomous--></T>
+    <T>13328<!--ImmediateSuperInteraction: debug_Reset--></T>
+    <T>13326<!--ImmediateSuperInteraction: debug_ObjectDestroy--></T>
+    <T>103888<!--ImmediateSuperInteraction: cheat_set_as_head--></T>
+    <T>13319<!--ImmediateSuperInteraction: debug_BreakObject--></T>
+    <T>13327<!--ImmediateSuperInteraction: debug_RepairObject--></T>
+    <T>164799<!--ImmediateSuperInteraction: stereo_earbuds_changevolume_high--></T>
+    <T>164800<!--ImmediateSuperInteraction: stereo_earbuds_changevolume_low--></T>
+    <T>164801<!--ImmediateSuperInteraction: stereo_earbuds_changevolume_medium--></T>
+    <T>164803<!--SkipToNextSongSuperInteraction: stereo_EarBuds_SkipToNextSong--></T>
+    <T>150123<!--SimPickerInteraction: simPicker_Stereo_TeachToddlerDancing--></T>
+    <T>150124<!--SimPickerInteraction: simPicker_Stereo_TeachToddlerDancing_Adult--></T>
+    <T>157457<!--AutonomousSimPickerSuperInteraction: simPicker_Stereo_TeachToddlerDancing_Autonomous--></T>
+    <T>150127<!--SuperInteraction: stereo_TeachToddlerDance--></T>
+    <T>150128<!--SuperInteraction: stereo_WaitForToddler--></T>
+    <T>14315<!--CancelOnStateChangeInteraction: stereo_Dance--></T>
+    <T>196759<!--SuperInteraction: famePerks_GoodReputation_GivingBack_DonateObject--></T>
+    <T>108781<!--SuperInteraction: crimeScene_CollectSample--></T>
+    <T>108780<!--SuperInteraction: crimeScene_DustForPrints--></T>
+    <T>108779<!--SuperInteraction: crimeScene_TakePicture--></T>
+    <T>115812<!--SuperInteraction: crimeScene_TakeNotes--></T>
+    <T>34922<!--SuperInteraction: object_Repair_StereoTV--></T>
+    <T>99087<!--ImmediateSuperInteraction: object_ReplaceBrokenObject--></T>
+    <T>129510<!--SuperInteraction: object_Hire_Repair_Service--></T>
+    <T>102433<!--SuperInteraction: Ghost_Possess_Break_Electrocution--></T>
+    <T>175415<!--CancelOnStateChangeInteraction: stereo_Dance_LocalCultureSkill--></T>
+    <T>194052<!--ObjectInInventoryPickerInteraction: picker_MusicProductionStation_PlayTrack--></T>
+    <T>225282<!--CancelOnStateChangeInteraction: stereo_EncourageToDance--></T>
+    <T>73832<!--SuperInteraction: object_Knack_FixIt_StereoTV--></T>
+    <T>146361<!--SuperInteraction: situation_Butler_Autonomous_Sabotage_StereoTV--></T>
+    <T>158379<!--SuperInteraction: TV_Cat_WatchWary--></T>
+    <T>159689<!--SuperInteraction: petInvestigate_Obsess_Watch_Stereo--></T>
+    <T>159879<!--SuperInteraction: PetInvestigate_Fear_Stereo--></T>
+    <T>164489<!--SuperInteraction: PetInvestigate_LazyTrait_Fear_Stereo--></T>
+    <T>164512<!--SuperInteraction: petInvestigate_LazyTrait_Obsess_Watch_Stereo--></T>
+    <T>165071<!--AutonomousSimPickerSuperInteraction: autonomousSimPicker_DanceWith--></T>
+    <T>168766<!--CancelOnStateChangeInteraction: stereo_earbuds_ListenDeeply--></T>
+    <T>240309<!--SuperInteraction: stereo_Metal_Headbang--></T>
+    <T>181327<!--CancelOnStateChangeInteraction: stereo_EarBuds_Dance_LocalCultureSkill--></T>
+    <T>220560<!--SuperInteraction: stereo_ListenTo_OffTheGrid_displayOnly--></T>
+    <T>220561<!--SuperInteraction: stereo_TurnOn_OffTheGrid_displayOnly--></T>
+    <T>179101<!--StereoPieMenuChoicesInteraction: stereo_TurnOnAndListen_EarBuds--></T>
+    <T>167775<!--CancelOnStateChangeInteraction: stereo_EarBuds_Dance--></T>
+    <T>74457<!--ImmediateSuperInteraction: fire_ReplaceBurntObject--></T>
+    <T>102258<!--SuperInteraction: Ghost_Possess--></T>
+    <T>168502<!--SuperInteraction: Ghost_Pet_Possess--></T>
+  </L>
+  <L n="additional_interaction_constraints">
+    <U>
+      <V t="literal" n="affordance_links">
+        <U n="literal">
+          <V n="default_inclusion" t="exclude_all">
+            <U n="exclude_all">
+              <L n="include_lists">
+                <T>100466<!--AffordanceList: AffordanceList_Stereo_Dance--></T>
+                <T>33624<!--AffordanceList: AffordanceList_Stereo_Listens--></T>
+              </L>
+            </U>
+          </V>
+        </U>
+      </V>
+      <V n="constraint" t="circle">
+        <U n="circle">
+          <T n="ideal_radius">2</T>
+          <T n="ideal_radius_width">1</T>
+          <T n="radius">10</T>
+        </U>
+      </V>
+    </U>
+    <U>
+      <V t="literal" n="affordance_links">
+        <U n="literal">
+          <V n="default_inclusion" t="exclude_all">
+            <U n="exclude_all">
+              <L n="include_lists">
+                <T>100466<!--AffordanceList: AffordanceList_Stereo_Dance--></T>
+                <T>33624<!--AffordanceList: AffordanceList_Stereo_Listens--></T>
+              </L>
+            </U>
+          </V>
+        </U>
+      </V>
+      <V n="constraint" t="facing">
+        <U n="facing">
+          <T n="inner_radius">0</T>
+          <T n="range">360</T>
+        </U>
+      </V>
+    </U>
+  </L>
+  <L n="autonomy_modifiers">
+    <U>
+      <L n="stat_use_multiplier">
+        <U>
+          <T n="key">16655<!--Commodity: motive_Fun--></T>
+          <U n="value">
+            <E n="apply_direction">INCREASE</E>
+          </U>
+        </U>
+      </L>
+      <V t="apply_on_interaction_to_participant" n="subject">
+        <V n="apply_on_interaction_to_participant" t="enabled">
+          <L n="enabled">
+            <E>Actor</E>
+          </L>
+        </V>
+      </V>
+    </U>
+  </L>
+  <U n="recycling_data">
+    <L n="recycling_values">
+      <U>
+        <E n="Bucks Type">RecycleBitsBucks</E>
+        <T n="Value">0</T>
+      </U>
+      <U>
+        <E n="Bucks Type">RecyclePiecesBucks</E>
+        <T n="Value">1</T>
+      </U>
+    </L>
+  </U>
+</I>

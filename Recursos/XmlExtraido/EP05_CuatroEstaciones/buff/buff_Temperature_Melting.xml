@@ -1,0 +1,54 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<I c="Buff" i="buff" m="buffs.buff" n="buff_Temperature_Melting" s="180206">
+  <L n="_loot_on_removal">
+    <T>188540<!--LootActions: loot_Temperature_Death_Reset_Burning--></T>
+  </L>
+  <T p="InGame\audio\stings\sting_death_freezing.propx" n="audio_sting_on_add">39b2aa4a:00000000:46030b9b22934592</T>
+  <T p="InGame\Audio\Stings\sting_buff_loss.propx" n="audio_sting_on_remove">39b2aa4a:00000000:3bf33216a25546ea</T>
+  <T n="buff_description">0xA6E6259<!--String: "¡La temperatura corporal de {M0.este}{F0.esta} Sim está aumentando demasiado debido al calor! Será mejor que se refresque poniéndose ropa más fresquita y refugiándose bajo techo."--></T>
+  <T n="buff_name">0x9F36D9DC<!--String: "¡Calor letal!"--></T>
+  <U n="game_effect_modifier">
+    <L n="_game_effect_modifiers">
+      <V t="continuous_statistic_modifier">
+        <U n="continuous_statistic_modifier">
+          <T n="modifier_value">1</T>
+          <T n="statistic">182175<!--Commodity: commodity_Death_Temperature_Burning--></T>
+        </U>
+      </V>
+      <V t="autonomy_modifier">
+        <U n="autonomy_modifier">
+          <L n="decay_modifiers">
+            <U>
+              <T n="key">190848<!--Commodity: commodity_sim_Overheating--></T>
+              <T n="value">0.83</T>
+            </U>
+          </L>
+          <V t="enabled" n="outside_objects_multiplier">
+            <T n="enabled">0.25</T>
+          </V>
+        </U>
+      </V>
+    </L>
+  </U>
+  <T p="InEP05\UI\Icons\Buffs\Buff_WeatherSun_neg.png" n="icon">2f7d0004:00000000:80c5c612324dfe88</T>
+  <V t="enabled" n="interactions">
+    <U n="enabled">
+      <L n="interaction_items">
+        <T>189073<!--MixerInteraction: idle_Buff_Temperature_Burning--></T>
+      </L>
+      <T n="weight">10</T>
+    </U>
+  </V>
+  <T n="mood_type">14646<!--Mood: Mood_Uncomfortable--></T>
+  <T n="mood_weight">99</T>
+  <T n="show_timeout">False</T>
+  <L n="static_commodity_to_add">
+    <T>189513<!--StaticCommodity: staticCommodity_BodyTemperature_Burning--></T>
+  </L>
+  <L n="super_affordances">
+    <T>186339<!--SuperInteraction: temperature_Autonomy_MoveInside_CoolDown--></T>
+  </L>
+  <L n="tags">
+    <E>Buff_Temperature</E>
+  </L>
+</I>

@@ -1,0 +1,108 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<I c="MixerInteraction" i="interaction" m="interactions.base.mixer_interaction" n="bowlingLane_Mixers_PutOnShoes" s="161367">
+  <T n="allow_user_directed">False</T>
+  <T n="allowed_to_combine">False</T>
+  <V t="one_shot" n="basic_content" />
+  <V t="disable_focus" n="basic_focus" />
+  <U n="display_name_text_tokens">
+    <L n="tokens">
+      <V t="participant_type">
+        <U n="participant_type">
+          <V n="objects" t="from_participant">
+            <U n="from_participant">
+              <E n="participant">Actor</E>
+            </U>
+          </V>
+        </U>
+      </V>
+      <V t="participant_type">
+        <U n="participant_type">
+          <V n="objects" t="from_participant">
+            <U n="from_participant">
+              <E n="participant">Object</E>
+            </U>
+          </V>
+        </U>
+      </V>
+    </L>
+  </U>
+  <L n="interaction_category_tags">
+    <E>Interaction_Mixer</E>
+    <E>Interaction_All</E>
+  </L>
+  <V n="lock_out_time" t="enabled">
+    <U n="enabled">
+      <U n="interval">
+        <T n="lower_bound">3</T>
+        <T n="upper_bound">3</T>
+      </U>
+    </U>
+  </V>
+  <V n="outcome" t="test_based">
+    <U n="test_based">
+      <L n="fallback_outcomes">
+        <U>
+          <U n="outcome">
+            <L n="loot_list">
+              <T>161422<!--LootActions: loot_Object_BowlingLane_Shoes--></T>
+            </L>
+          </U>
+        </U>
+      </L>
+      <L n="tested_outcomes">
+        <U>
+          <L n="potential_outcomes">
+            <U>
+              <U n="outcome">
+                <V n="animation_ref" t="enabled">
+                  <U n="enabled">
+                    <T n="factory">159397<!--AnimationElement: bowlingLane_Idle_GloveAdjust--></T>
+                  </U>
+                </V>
+                <L n="basic_extras">
+                  <V t="loot">
+                    <U n="loot">
+                      <L n="loot_list">
+                        <T>161856<!--LootActions: loot_Object_BowlingLane_Glove--></T>
+                      </L>
+                      <V t="at_beginning" n="timing" />
+                    </U>
+                  </V>
+                </L>
+              </U>
+            </U>
+          </L>
+          <L n="tests">
+            <L>
+              <V t="skill_test">
+                <U n="skill_test">
+                  <T n="skill">158659<!--Skill: statistic_Skill_Bowling--></T>
+                  <V n="skill_range" t="interval">
+                    <U n="interval">
+                      <U n="skill_interval">
+                        <T n="lower_bound">5</T>
+                        <T n="upper_bound">5</T>
+                      </U>
+                    </U>
+                  </V>
+                </U>
+              </V>
+              <V t="sim_info">
+                <U n="sim_info">
+                  <V t="specified" n="ages" />
+                </U>
+              </V>
+            </L>
+          </L>
+        </U>
+      </L>
+    </U>
+  </V>
+  <U n="sub_action">
+    <T n="base_weight">8</T>
+    <E n="mixer_group">IDLES</E>
+  </U>
+  <E n="target_type">OBJECT</E>
+  <L n="test_globals" />
+  <T n="visible">False</T>
+</I>

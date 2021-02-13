@@ -1,0 +1,198 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<I c="SuperInteraction" i="interaction" m="interactions.base.super_interaction" n="petBowl_FillAll_Ground" s="170840">
+  <L n="_constraints">
+    <U>
+      <L n="constraints">
+        <U>
+          <V n="value" t="circle">
+            <U n="circle">
+              <T n="ideal_radius">0.8</T>
+              <T n="radius">0.9</T>
+            </U>
+          </V>
+        </U>
+        <U>
+          <V n="value" t="facing">
+            <U n="facing">
+              <T n="range">1</T>
+            </U>
+          </V>
+        </U>
+      </L>
+    </U>
+  </L>
+  <V t="enabled" n="_saveable" />
+  <L n="_static_commodities">
+    <U>
+      <T n="desire">100</T>
+      <T n="static_commodity">170844<!--StaticCommodity: staticCommodity_PetCare_FillAllPetBowls--></T>
+    </U>
+  </L>
+  <T n="allow_autonomous">False</T>
+  <T n="attention_cost">0.5</T>
+  <T n="autonomy_can_overwrite_similar_affordance">True</T>
+  <V t="one_shot" n="basic_content">
+    <U n="one_shot">
+      <U n="animation_ref">
+        <T n="factory">157899<!--AnimationElement: animationElement_PetBowl_Fill--></T>
+      </U>
+    </U>
+  </V>
+  <L n="basic_extras">
+    <V t="loot">
+      <U n="loot">
+        <L n="loot_list">
+          <T>157114<!--LootActions: loot_Commodity_Consumable_SetMax--></T>
+          <T>158921<!--LootActions: loot_Commodity_PetBowl_Unspoil--></T>
+          <T>161581<!--LootActions: loot_Statistic_LifeSkill_Responsibility_Gain_Small--></T>
+        </L>
+        <V n="timing" t="on_xevt">
+          <U n="on_xevt">
+            <T n="xevt_id">716</T>
+          </U>
+        </V>
+      </U>
+    </V>
+    <V t="payment">
+      <U n="payment">
+        <V t="literal" n="payment">
+          <U n="literal">
+            <V n="payment_cost" t="amount">
+              <U n="amount">
+                <T n="amount">5</T>
+              </U>
+            </V>
+          </U>
+        </V>
+      </U>
+    </V>
+  </L>
+  <V t="disable_focus" n="basic_focus" />
+  <V t="enabled" n="basic_reserve_object">
+    <U n="enabled">
+      <L n="subject_list">
+        <U>
+          <V t="basic" n="reserve_type" />
+        </U>
+      </L>
+    </U>
+  </V>
+  <V t="disabled" n="content_score" />
+  <T n="display_name">0x91F41C02<!--String: "Llenar todos los comederos"--></T>
+  <U n="display_name_text_tokens">
+    <L n="tokens">
+      <V t="participant_type">
+        <U n="participant_type">
+          <V t="from_participant" n="objects">
+            <U n="from_participant">
+              <E n="participant">Actor</E>
+            </U>
+          </V>
+        </U>
+      </V>
+      <V t="participant_type">
+        <U n="participant_type">
+          <V t="from_participant" n="objects">
+            <U n="from_participant">
+              <E n="participant">Object</E>
+            </U>
+          </V>
+        </U>
+      </V>
+    </L>
+  </U>
+  <V n="display_tooltip" t="enabled">
+    <T n="enabled">0xC2B6EB1A<!--String: "5 simoleones por comedero."--></T>
+  </V>
+  <T n="ignore_animation_context_liability">True</T>
+  <L n="interaction_category_tags">
+    <E>Interaction_Super</E>
+    <E>Interaction_All</E>
+  </L>
+  <V t="single" n="outcome" />
+  <U n="post_run_autonomy_commodities">
+    <L n="requests">
+      <U>
+        <T n="consider_same_target">False</T>
+        <T n="ignore_user_directed_and_autonomous">True</T>
+        <L n="static_commodities">
+          <T>170844<!--StaticCommodity: staticCommodity_PetCare_FillAllPetBowls--></T>
+        </L>
+      </U>
+    </L>
+  </U>
+  <E n="scoring_priority">NORMAL</E>
+  <T n="subaction_selection_weight">1</T>
+  <V t="literal" n="super_affordance_compatibility">
+    <U n="literal">
+      <V n="default_inclusion" t="include_all">
+        <U n="include_all">
+          <L n="exclude_affordances">
+            <T>157013<!--SuperInteraction: petBowl_FillBowl_CallPets--></T>
+            <T>157008<!--SuperInteraction: petBowl_RefillFromPicker_Cat--></T>
+            <T>148908<!--SuperInteraction: petBowl_RefillFromPicker_Dog--></T>
+          </L>
+        </U>
+      </V>
+    </U>
+  </V>
+  <E n="target_type">OBJECT</E>
+  <L n="test_globals">
+    <V t="sim_info">
+      <U n="sim_info">
+        <V t="specified" n="ages">
+          <L n="specified">
+            <E>TEEN</E>
+            <E>YOUNGADULT</E>
+            <E>ADULT</E>
+            <E>ELDER</E>
+            <E>CHILD</E>
+          </L>
+        </V>
+        <V t="specified" n="species">
+          <U n="specified">
+            <L n="species">
+              <E />
+            </L>
+          </U>
+        </V>
+        <E n="who">Actor</E>
+      </U>
+    </V>
+    <V t="state">
+      <U n="state">
+        <E n="operator">LESS</E>
+        <T n="value">15109<!--CommodityBasedObjectStateValue: Consumable_Full--></T>
+      </U>
+    </V>
+    <V t="test_set_reference">
+      <T n="test_set_reference">175961<!--TestSetInstance: testSetInstance_OnGroundOrOnSurfaceSlot--></T>
+    </V>
+    <V t="object_criteria">
+      <U n="object_criteria">
+        <V t="enabled" n="desired_state_threshold">
+          <U n="enabled">
+            <E n="comparison">LESS</E>
+            <T n="value">15109<!--CommodityBasedObjectStateValue: Consumable_Full--></T>
+          </U>
+        </V>
+        <V t="tags" n="identity_test">
+          <U n="tags">
+            <L n="tag_set">
+              <E>Func_PetBowl</E>
+            </L>
+          </U>
+        </V>
+        <T n="on_active_lot">True</T>
+        <V n="subject_specific_tests" t="all_objects">
+          <U n="all_objects">
+            <U n="quantity">
+              <T n="value">2</T>
+            </U>
+          </U>
+        </V>
+      </U>
+    </V>
+  </L>
+  <T n="time_overhead">30</T>
+</I>

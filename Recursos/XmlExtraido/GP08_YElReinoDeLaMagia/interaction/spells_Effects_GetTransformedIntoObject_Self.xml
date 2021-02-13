@@ -1,0 +1,222 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<I c="SuperInteraction" i="interaction" m="interactions.base.super_interaction" n="spells_Effects_GetTransformedIntoObject_Self" s="215184">
+  <V t="prohibit_cancelation" n="_cancelable_by_user" />
+  <V t="participant" n="_icon">
+    <U n="participant">
+      <L n="participant_type">
+        <E>Actor</E>
+      </L>
+    </U>
+  </V>
+  <V t="disabled" n="_saveable" />
+  <T n="allow_autonomous">False</T>
+  <T n="attention_cost">0.5</T>
+  <V n="basic_content" t="flexible_length">
+    <U n="flexible_length">
+      <L n="conditional_actions">
+        <V t="literal">
+          <U n="literal">
+            <L n="conditions">
+              <V t="time_based">
+                <U n="time_based">
+                  <T n="max_time">120</T>
+                  <T n="min_time">120</T>
+                </U>
+              </V>
+            </L>
+            <E n="interaction_action">EXIT_NATURALLY</E>
+          </U>
+        </V>
+      </L>
+      <V n="content" t="looping_content">
+        <U n="looping_content">
+          <U n="animation_ref">
+            <T n="factory">215480<!--AnimationElement: spells_Transformation_Self--></T>
+          </U>
+        </U>
+      </V>
+      <T n="start_autonomous_inertial">False</T>
+    </U>
+  </V>
+  <L n="basic_extras">
+    <V t="create_object">
+      <U n="create_object">
+        <V n="creation_data" t="definition_tested">
+          <U n="definition_tested">
+            <L n="definitions">
+              <U>
+                <T n="definition">223352</T>
+              </U>
+              <U>
+                <T n="definition">223342</T>
+              </U>
+              <U>
+                <T n="definition">223364</T>
+              </U>
+              <U>
+                <T n="definition">223363</T>
+              </U>
+              <U>
+                <T n="definition">223345</T>
+              </U>
+              <U>
+                <T n="definition">223366</T>
+              </U>
+              <U>
+                <T n="definition">223365</T>
+              </U>
+              <U>
+                <T n="definition">231353</T>
+              </U>
+            </L>
+          </U>
+        </V>
+        <V n="location" t="position">
+          <U n="position">
+            <T n="allow_off_lot_placement">True</T>
+            <T n="perform_fgl_check">False</T>
+            <T n="stay_in_connected_connectivity_group">False</T>
+          </U>
+        </V>
+        <V t="on_xevt" n="timing">
+          <U n="on_xevt">
+            <T n="xevt_id">102</T>
+          </U>
+        </V>
+      </U>
+    </V>
+    <V t="destroy_object">
+      <U n="destroy_object">
+        <V t="from_participant" n="objects_to_destroy">
+          <U n="from_participant">
+            <E n="participant">CreatedObject</E>
+          </U>
+        </V>
+        <L n="tests">
+          <L>
+            <V t="existence">
+              <U n="existence">
+                <E n="participant">CreatedObject</E>
+              </U>
+            </V>
+          </L>
+        </L>
+        <V n="timing" t="on_xevt">
+          <U n="on_xevt">
+            <E n="criticality">OnCancelOrException</E>
+            <T n="xevt_id">104</T>
+          </U>
+        </V>
+      </U>
+    </V>
+    <V t="set_visibility_state">
+      <U n="set_visibility_state">
+        <V t="on_xevt" n="timing">
+          <U n="on_xevt">
+            <T n="xevt_id">102</T>
+          </U>
+        </V>
+        <T n="visibility">False</T>
+      </U>
+    </V>
+    <V t="set_visibility_state">
+      <U n="set_visibility_state">
+        <V t="on_xevt" n="timing">
+          <U n="on_xevt">
+            <T n="xevt_id">104</T>
+          </U>
+        </V>
+        <T n="visibility">True</T>
+      </U>
+    </V>
+    <V t="buff_fire_and_forget">
+      <U n="buff_fire_and_forget">
+        <U n="buff">
+          <V t="enabled" n="buff_reason">
+            <T n="enabled">0x8D7A1AFF<!--String: "(Por hechizo <i>Transmutatio</i>)"--></T>
+          </V>
+          <T n="buff_type">213741<!--Buff: buff_Spells_Sim_GetTransformedIntoObject--></T>
+        </U>
+        <V t="at_beginning" n="timing" />
+      </U>
+    </V>
+    <V t="vfx">
+      <U n="vfx">
+        <V t="from_participant" n="participant">
+          <U n="from_participant">
+            <E n="participant">Actor</E>
+          </U>
+        </V>
+        <V t="on_xevt" n="timing">
+          <U n="on_xevt">
+            <T n="xevt_id">104</T>
+          </U>
+        </V>
+        <U n="vfx">
+          <T n="effect_name">gp08_transform_object_disappear</T>
+          <V t="Current_Position" n="joint_name" />
+        </U>
+      </U>
+    </V>
+  </L>
+  <L n="basic_liabilities">
+    <V t="remove_buff">
+      <U n="remove_buff">
+        <T n="buff_to_remove">213741<!--Buff: buff_Spells_Sim_GetTransformedIntoObject--></T>
+      </U>
+    </V>
+  </L>
+  <T n="can_shoo">False</T>
+  <V t="disabled" n="content_score" />
+  <T n="display_name">0x7D6B5AA<!--String: "Existir en forma de objeto"--></T>
+  <U n="display_name_text_tokens">
+    <L n="tokens">
+      <V t="participant_type">
+        <U n="participant_type">
+          <V t="from_participant" n="objects">
+            <U n="from_participant">
+              <E n="participant">Actor</E>
+            </U>
+          </V>
+        </U>
+      </V>
+      <V t="participant_type">
+        <U n="participant_type">
+          <V t="from_participant" n="objects">
+            <U n="from_participant">
+              <E n="participant">Object</E>
+            </U>
+          </V>
+        </U>
+      </V>
+    </L>
+  </U>
+  <L n="interaction_category_tags">
+    <E>Interaction_Super</E>
+    <E>Interaction_All</E>
+  </L>
+  <E n="scoring_priority">NORMAL</E>
+  <T n="subaction_selection_weight">1</T>
+  <V t="literal" n="super_affordance_compatibility">
+    <U n="literal">
+      <V n="default_inclusion" t="exclude_all" />
+    </U>
+  </V>
+  <E n="target_type">ACTOR</E>
+  <L n="test_globals">
+    <V t="sim_info">
+      <U n="sim_info">
+        <V t="specified" n="ages" />
+        <V t="specified" n="species">
+          <U n="specified">
+            <L n="species">
+              <E />
+            </L>
+          </U>
+        </V>
+        <E n="who">Actor</E>
+      </U>
+    </V>
+  </L>
+  <T n="time_overhead">30</T>
+</I>

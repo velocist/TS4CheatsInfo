@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+
+<TuningRoot>
+    <Instance instance_type="situation" class="LoudNeighborSituation" module="apartments.situations.neighbor_loud_common" muid="6C55DA452042B981" description="A situation base class for loud neighbors." instance_subclasses_only="False" parents="SituationComplexCommon, SituationComplex, Situation" path="Situations\Descriptions" use_guid_for_reference="True">
+        <Deleted name="_implies_greeted_status" muid="6C3285F09713C9F2" />
+
+        <TunableTuple name="complain_state" class="Tunable_ComplainState" display="02_complain_situation_state" muid="521DB0ACBB37A1BF" description="The situation state used for when a player Sim has banged on the&#xA;neighbor's door and we are waiting for them to complain to the&#xA;neighbor." Deprecated="False" filter="0" group="Situation State">
+            <Tunable type="bool" name="allow_join_situation" class="Tunable" default="True" display="Allow Join Situation" muid="AA6DCD2BC95D7D55" description="Whether the situation is allowed to join at this state." Deprecated="False" filter="0" group="General" />
+            <TunableTuple name="interaction_of_interest" class="TunableInteractionOfInterest" display="Interaction Of Interest" muid="6517E2E50FCBCC73" description="The interaction that when run will cause GPE defined behavior&#xA;to run." Deprecated="False" filter="0" group="General">
+                <TunableList name="affordances" class="TunableList" display="Affordances" muid="2690E7C98323D7C1" description="The Sim must have started either any affordance in this list or an&#xA;interaction matching one of the tags in this tunable's Tags&#xA;field." Deprecated="False" filter="0" group="General">
+                    <Tunable type="interaction" class="TunableReference" muid="CFF2806632C787D6" allow_none="False" Deprecated="False" filter="0" group="General" pack_safe="True" />
+                </TunableList>
+                <TunableList name="tags" class="TunableSet" display="Tags" muid="CFF7411D5270A1CB" description="The Sim must have run either an interaction matching one of these&#xA;Tags or an affordance from the list of Affordances in this&#xA;tunable." Deprecated="False" filter="0" group="General" unique_entries="true">
+                    <TunableEnum type="Tag" class="TunableEnumEntry" default="INVALID" muid="33A64D548EBB1188" dynamic_entries="tag.Tag._elements" static_entries="tag.Tag" Deprecated="False" filter="0" group="General" />
+                </TunableList>
+            </TunableTuple>
+            <TunableList name="job_and_role_changes" class="TunableMapping" display="Job And Role Changes" muid="DAD46234BF15F5B5" mapping_key="Situation Job" mapping_value="Role State" description="A mapping between situation jobs and role states that defines&#xA;what role states we want to switch to for sims on which jobs&#xA;when this situation state is entered." Deprecated="False" filter="0" group="General">
+                <TunableTuple class="TunableTuple" muid="6928132BAAC8CC04" Deprecated="False" filter="0" group="General">
+                    <Tunable type="role_state" name="Role State" class="TunableReference" display="Role State" muid="56F2AF71447B5A1C" description="The role state that we will switch sims of the linked job&#xA;into." allow_none="False" Deprecated="False" filter="0" group="General" />
+                    <Tunable type="situation_job" name="Situation Job" class="TunableReference" display="Situation Job" muid="4EA19B50EF09EE4E" description="A reference to a SituationJob that we will use to change&#xA;sim's role state." allow_none="False" Deprecated="False" filter="0" group="General" />
+                </TunableTuple>
+            </TunableList>
+            <Tunable type="situation" name="neighbor_situation" class="TunableReference" display="Neighbor Situation" muid="848A6B29A3DD9BDA" description="The Situation for the loud neighbor to come out and see what the&#xA;player wants when they bang on the door." allow_none="False" Deprecated="False" filter="0" group="General" restrict="NeighborResponseSituation" />
+            <TunableVariant type="None" name="time_out" class="OptionalTunable" default="disabled" display="Time Out" muid="6C0F0F7048A1CEAA" description="How long this state will last before time expired. Please talk to the GPE who implemented the specific&#xA;situation to see what the state will do on time expired." Deprecated="False" filter="0" group="General">
+                <Tunable name="disabled" class="TunableExistance" display="Disabled" muid="157E67DFAFA99D53" />
+                <Tunable type="float" name="enabled" class="TunableSimMinute" default="15" display="Enabled" muid="BEA82363D626E271" min="1" max="None" tuning_state="NeedsTuning" Deprecated="False" filter="0" group="General" />
+            </TunableVariant>
+            <Tunable type="bool" name="turn_off_loud_door_state" class="Tunable" default="False" display="Turn Off Loud Door State" muid="7BFA59389656F0D3" description="If enabled, we will set the door to the loud door off state when&#xA;entering this situation state." Deprecated="False" filter="0" group="General" />
+        </TunableTuple>
+
+        <Deleted name="exclusivity" muid="AE18C74AB22A8BBD" />
+
+        <Tunable type="object_state" name="loud_door_state_off" class="TunableReference" display="Loud Door State Off" muid="BA41EA5327DA52D7" description="State to set on the apartment door of the loud neighbor when they&#xA;are no longer being loud." allow_none="False" Deprecated="False" filter="0" group="General" restrict="ObjectStateValue" />
+
+        <Tunable type="object_state" name="loud_door_state_on" class="TunableReference" display="Loud Door State On" muid="8AB0213E1E55A9D8" description="State to set on the apartment door of the loud neighbor when the&#xA;situation starts." allow_none="False" Deprecated="False" filter="0" group="General" restrict="ObjectStateValue" />
+
+        <TunableList name="loud_neighbor_filters" class="TunableList" display="Loud Neighbor Filters" muid="EB7277598F3103EE" description="Sim filters that fit the description of loud neighbor(s). We run&#xA;through them until we find someone matching the filter." Deprecated="False" filter="0" group="General">
+            <TunableVariant type="None" class="TunableVariant" default="single_filter" muid="91AA6B2E812A109F" description="The filter we want to use to find loud neighbors." Deprecated="False" filter="0" group="General">
+                <Tunable type="sim_filter" name="aggregate_filter" class="TunableReference" display="Aggregate Filter" muid="D9EE790F2F3775C6" description="An aggregate Sim Filter to find a loud neighbor that has&#xA;other Sims." allow_none="False" Deprecated="False" filter="0" group="General" pack_safe="True" restrict="TunableAggregateFilter" />
+                <Tunable type="sim_filter" name="single_filter" class="TunableReference" display="Single Filter" muid="73A7E95645F0D2FA" description="A Sim Filter to find a loud neighbor." allow_none="False" Deprecated="False" filter="0" group="General" pack_safe="True" restrict="TunableSimFilter" />
+            </TunableVariant>
+        </TunableList>
+
+        <TunableTuple name="loud_neighbor_state" class="Tunable_LoudNeighborState" display="01_loud_neighbor_situation_state" muid="3CE55240E5D28EC8" description="The situation state used for when a neighbor starts being loud.&#xA;This will listen for a Sim to bang on the door and complain about&#xA;the noise before transitioning to the complain state." Deprecated="False" filter="0" group="Situation State">
+            <Tunable type="bool" name="allow_join_situation" class="Tunable" default="True" display="Allow Join Situation" muid="337BD0B353EC53BE" description="Whether the situation is allowed to join at this state." Deprecated="False" filter="0" group="General" />
+            <TunableTuple name="interaction_of_interest" class="TunableInteractionOfInterest" display="Interaction Of Interest" muid="B1FF34DA19352326" description="The interaction that when run will cause GPE defined behavior&#xA;to run." Deprecated="False" filter="0" group="General">
+                <TunableList name="affordances" class="TunableList" display="Affordances" muid="A0D776BCD8323DEE" description="The Sim must have started either any affordance in this list or an&#xA;interaction matching one of the tags in this tunable's Tags&#xA;field." Deprecated="False" filter="0" group="General">
+                    <Tunable type="interaction" class="TunableReference" muid="430491E6E0923D28" allow_none="False" Deprecated="False" filter="0" group="General" pack_safe="True" />
+                </TunableList>
+                <TunableList name="tags" class="TunableSet" display="Tags" muid="AFCB96293CE706" description="The Sim must have run either an interaction matching one of these&#xA;Tags or an affordance from the list of Affordances in this&#xA;tunable." Deprecated="False" filter="0" group="General" unique_entries="true">
+                    <TunableEnum type="Tag" class="TunableEnumEntry" default="INVALID" muid="243E36A3D4147BB" dynamic_entries="tag.Tag._elements" static_entries="tag.Tag" Deprecated="False" filter="0" group="General" />
+                </TunableList>
+            </TunableTuple>
+            <TunableList name="job_and_role_changes" class="TunableMapping" display="Job And Role Changes" muid="B90B5DFD6A888FEB" mapping_key="Situation Job" mapping_value="Role State" description="A mapping between situation jobs and role states that defines&#xA;what role states we want to switch to for sims on which jobs&#xA;when this situation state is entered." Deprecated="False" filter="0" group="General">
+                <TunableTuple class="TunableTuple" muid="218BFF254AE3D5B6" Deprecated="False" filter="0" group="General">
+                    <Tunable type="role_state" name="Role State" class="TunableReference" display="Role State" muid="51C6138D2FC9443C" description="The role state that we will switch sims of the linked job&#xA;into." allow_none="False" Deprecated="False" filter="0" group="General" />
+                    <Tunable type="situation_job" name="Situation Job" class="TunableReference" display="Situation Job" muid="4537322C43506846" description="A reference to a SituationJob that we will use to change&#xA;sim's role state." allow_none="False" Deprecated="False" filter="0" group="General" />
+                </TunableTuple>
+            </TunableList>
+            <TunableTuple name="loot_actions_on_situation_start" class="TunableTuple" display="Loot Actions On Situation Start" muid="32F0C8B5102D54FA" description="A list of loot actions and a delay before they are applied to all&#xA;instanced sims on the active lot." Deprecated="False" filter="0" group="General">
+                <Tunable type="float" name="delay" class="TunableSimMinute" default="0" display="Delay" muid="9F83B6E0E2C10735" min="0" max="None" description="The delay in sim minutes before we give the loot to Sims on&#xA;lot. This delay starts from when the loud state is set on the&#xA;neighbor's door." tuning_state="NeedsTuning" Deprecated="False" filter="0" group="General" />
+                <TunableList name="loot_actions" class="TunableList" display="Loot Actions" muid="BF6396F45761CB9D" description="Loot Actions that will be applied to instanced Sims on lot when&#xA;this situation starts." Deprecated="False" filter="0" group="General">
+                    <Tunable type="action" class="TunableReference" muid="7147E9A9B0F03DD" description="A loot action applied to instanced Sims on the active lot when&#xA;the situation starts." allow_none="False" Deprecated="False" filter="0" group="General" restrict="LootActions" />
+                </TunableList>
+            </TunableTuple>
+            <TunableVariant type="None" name="time_out" class="OptionalTunable" default="disabled" display="Time Out" muid="7D1E90A4A0EF4C94" description="How long this state will last before time expired. Please talk to the GPE who implemented the specific&#xA;situation to see what the state will do on time expired." Deprecated="False" filter="0" group="General">
+                <Tunable name="disabled" class="TunableExistance" display="Disabled" muid="76F3ECCD8AF103C8" />
+                <Tunable type="float" name="enabled" class="TunableSimMinute" default="15" display="Enabled" muid="2B97271143224AEB" min="1" max="None" tuning_state="NeedsTuning" Deprecated="False" filter="0" group="General" />
+            </TunableVariant>
+        </TunableTuple>
+    </Instance>
+</TuningRoot>

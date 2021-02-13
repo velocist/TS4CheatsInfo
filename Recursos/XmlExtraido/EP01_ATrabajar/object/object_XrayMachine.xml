@@ -1,0 +1,245 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<I c="GameObject" i="object" m="objects.game_object" n="object_XrayMachine" s="105836">
+  <U n="_components">
+    <V t="enabled" n="focus">
+      <U n="enabled">
+        <V t="globally" n="_focus_score">
+          <U n="globally">
+            <E n="base">LOW</E>
+          </U>
+        </V>
+      </U>
+    </V>
+    <V n="state" t="enabled">
+      <U n="enabled">
+        <L n="state_triggers">
+          <U>
+            <L n="at_states">
+              <T>15076<!--CommodityBasedObjectStateValue: Brokenness_Broken--></T>
+            </L>
+            <V n="set_states" t="Set_state_list">
+              <L n="Set_state_list">
+                <T>15080<!--ObjectStateValue: BrokenState_Broken--></T>
+              </L>
+            </V>
+          </U>
+          <U>
+            <L n="at_states">
+              <T>15080<!--ObjectStateValue: BrokenState_Broken--></T>
+            </L>
+            <V n="set_states" t="Set_state_list">
+              <L n="Set_state_list">
+                <T>112141<!--VideoChannel: XrayMachine_Off--></T>
+              </L>
+            </V>
+          </U>
+          <U>
+            <L n="at_states">
+              <T>15078<!--CommodityBasedObjectStateValue: Brokenness_Unbroken--></T>
+            </L>
+            <V t="Set_state_list" n="set_states">
+              <L n="Set_state_list">
+                <T>15081<!--ObjectStateValue: BrokenState_Unbroken--></T>
+              </L>
+            </V>
+          </U>
+        </L>
+        <L n="states">
+          <U>
+            <L n="client_states">
+              <U>
+                <T n="key">15076<!--CommodityBasedObjectStateValue: Brokenness_Broken--></T>
+              </U>
+              <U>
+                <T n="key">15077<!--CommodityBasedObjectStateValue: Brokenness_Neutral--></T>
+              </U>
+              <U>
+                <T n="key">15078<!--CommodityBasedObjectStateValue: Brokenness_Unbroken--></T>
+              </U>
+            </L>
+            <V t="reference" n="default_value">
+              <T n="reference">15078<!--CommodityBasedObjectStateValue: Brokenness_Unbroken--></T>
+            </V>
+          </U>
+          <U>
+            <L n="client_states">
+              <U>
+                <T n="key">15080<!--ObjectStateValue: BrokenState_Broken--></T>
+                <U n="value">
+                  <V n="vfx_state" t="apply_new_value">
+                    <V n="apply_new_value" t="start_vfx">
+                      <V n="start_vfx" t="single_effect">
+                        <U n="single_effect">
+                          <T n="effect_name">ep1_xray_machine_broken</T>
+                          <V t="Slot" n="joint_name">
+                            <T n="Slot">_FX_repair_0</T>
+                          </V>
+                        </U>
+                      </V>
+                    </V>
+                  </V>
+                </U>
+              </U>
+              <U>
+                <T n="key">15081<!--ObjectStateValue: BrokenState_Unbroken--></T>
+                <U n="value">
+                  <V t="apply_new_value" n="vfx_state" />
+                </U>
+              </U>
+            </L>
+            <V t="reference" n="default_value">
+              <T n="reference">15081<!--ObjectStateValue: BrokenState_Unbroken--></T>
+            </V>
+          </U>
+          <U>
+            <L n="client_states">
+              <U>
+                <T n="key">105757<!--CommodityBasedObjectStateValue: xrayMachine_Calibrate_Calibrated--></T>
+              </U>
+              <U>
+                <T n="key">105758<!--CommodityBasedObjectStateValue: xrayMachine_Calibrate_Uncalibrated--></T>
+              </U>
+            </L>
+            <V n="default_value" t="reference">
+              <T n="reference">105758<!--CommodityBasedObjectStateValue: xrayMachine_Calibrate_Uncalibrated--></T>
+            </V>
+          </U>
+          <U>
+            <L n="client_states">
+              <U>
+                <T n="key">105978<!--ObjectStateValue: xrayMachine_Scan_Patient_occupied--></T>
+              </U>
+              <U>
+                <T n="key">105979<!--ObjectStateValue: xrayMachine_Scan_Patient_vacant--></T>
+              </U>
+            </L>
+            <V n="default_value" t="reference">
+              <T n="reference">105979<!--ObjectStateValue: xrayMachine_Scan_Patient_vacant--></T>
+            </V>
+            <T n="reset_on_load_if_time_passes">True</T>
+            <T n="reset_to_default">True</T>
+          </U>
+          <U>
+            <L n="client_states">
+              <U>
+                <T n="key">106059<!--ObjectStateValue: xrayMachine_Scan_Doctor_inprogress--></T>
+              </U>
+              <U>
+                <T n="key">106060<!--ObjectStateValue: xrayMachine_Scan_Doctor_untended--></T>
+              </U>
+              <U>
+                <T n="key">106061<!--ObjectStateValue: xrayMachine_Scan_Doctor_completed--></T>
+              </U>
+            </L>
+            <V n="default_value" t="reference">
+              <T n="reference">106060<!--ObjectStateValue: xrayMachine_Scan_Doctor_untended--></T>
+            </V>
+            <T n="reset_on_load_if_time_passes">True</T>
+            <T n="reset_to_default">True</T>
+          </U>
+          <U>
+            <L n="client_states">
+              <U>
+                <T n="key">109288<!--CommodityBasedObjectStateValue: upgrade_XrayMachine_NeverBreaks_Partial--></T>
+              </U>
+              <U>
+                <T n="key">109292<!--CommodityBasedObjectStateValue: upgrade_XrayMachine_NeverBreaks_NotStarted--></T>
+              </U>
+              <U>
+                <T n="key">109294<!--CommodityBasedObjectStateValue: upgrade_XrayMachine_NeverBreaks_Completed--></T>
+              </U>
+            </L>
+            <V n="default_value" t="reference">
+              <T n="reference">109292<!--CommodityBasedObjectStateValue: upgrade_XrayMachine_NeverBreaks_NotStarted--></T>
+            </V>
+          </U>
+          <U>
+            <L n="client_states">
+              <U>
+                <T n="key">109289<!--CommodityBasedObjectStateValue: upgrade_XrayMachine_AutoCalibrate_Partial--></T>
+              </U>
+              <U>
+                <T n="key">109293<!--CommodityBasedObjectStateValue: upgrade_XrayMachine_AutoCalibrate_NotStarted--></T>
+              </U>
+              <U>
+                <T n="key">109295<!--CommodityBasedObjectStateValue: upgrade_XrayMachine_AutoCalibrate_Completed--></T>
+              </U>
+            </L>
+            <V n="default_value" t="reference">
+              <T n="reference">109293<!--CommodityBasedObjectStateValue: upgrade_XrayMachine_AutoCalibrate_NotStarted--></T>
+            </V>
+          </U>
+          <U>
+            <V n="default_value" t="reference">
+              <T n="reference">112141<!--VideoChannel: XrayMachine_Off--></T>
+            </V>
+          </U>
+          <U>
+            <L n="client_states">
+              <U>
+                <T n="key">73870<!--ObjectStateValue: TheKnack_Awesome--></T>
+              </U>
+              <U>
+                <T n="key">73871<!--ObjectStateValue: TheKnack_NotAwesome--></T>
+              </U>
+            </L>
+            <V t="reference" n="default_value">
+              <T n="reference">73871<!--ObjectStateValue: TheKnack_NotAwesome--></T>
+            </V>
+            <T n="reset_to_default">True</T>
+          </U>
+        </L>
+      </U>
+    </V>
+  </U>
+  <L n="_part_data">
+    <U>
+      <T n="part_definition">107809<!--ObjectPart: object_XrayMachine_Part_0_Doctor--></T>
+    </U>
+    <U>
+      <T n="part_definition">107815<!--ObjectPart: object_XrayMAchine_Part_1_Patient--></T>
+      <V t="enabled" n="subroot_index">
+        <T n="enabled">1</T>
+      </V>
+    </U>
+  </L>
+  <L n="_super_affordances">
+    <T>13983<!--StandSuperInteraction: sim-stand--></T>
+    <T>109937<!--SuperInteraction: generic_XrayMachine_Doctor--></T>
+    <T>107796<!--SuperInteraction: generic_XrayMachine_Patient--></T>
+    <T>105938<!--SuperInteraction: object_Repair_Electronic_XrayMachine--></T>
+    <T>13328<!--ImmediateSuperInteraction: debug_Reset--></T>
+    <T>13326<!--ImmediateSuperInteraction: debug_ObjectDestroy--></T>
+    <T>103888<!--ImmediateSuperInteraction: cheat_set_as_head--></T>
+    <T>105841<!--SuperInteraction: xrayMachine_Calibrate--></T>
+    <T>106133<!--SimPickerInteraction: XrayMachine_ScanTarget_simPicker--></T>
+    <T>105966<!--SuperInteraction: xrayMachine_ScanTarget_patient--></T>
+    <T>105942<!--SuperInteraction: xrayMachine_ScanTarget_doctor--></T>
+    <T>109277<!--SuperInteraction: xrayMachine_Upgrade_NeverBreaks_SI--></T>
+    <T>109279<!--SuperInteraction: xrayMachine_Upgrade_NeverBreaks_resume--></T>
+    <T>109278<!--SuperInteraction: xrayMachine_Upgrade_AutoCalibrate_SI--></T>
+    <T>109280<!--SuperInteraction: xrayMachine_Upgrade_AutoCalibrate_resume--></T>
+    <T>115250<!--SuperInteraction: xrayMachine_Doctor_Exam_display--></T>
+    <T>107739<!--SuperInteraction: si_CareerScientist_Tinker_StereoTV--></T>
+    <T>156587<!--SuperInteraction: object_Knack_MakeAwesome_XRayMachine--></T>
+    <T>156559<!--SuperInteraction: xrayMachine_Upgrade_AutoCalibrate_CompletedDisplay--></T>
+    <T>156560<!--SuperInteraction: xrayMachine_Upgrade_NeverBreaks_CompletedDisplay--></T>
+    <T>111320<!--ImmediateSuperInteraction: debugObjectUpgrades_XrayMachine_AutoCalibrate--></T>
+    <T>111321<!--ImmediateSuperInteraction: debugObjectUpgrades_XrayMachine_NeverBreak--></T>
+    <T>13319<!--ImmediateSuperInteraction: debug_BreakObject--></T>
+  </L>
+  <T n="custom_posture_target_name">xrayAnimated</T>
+  <T n="fire_retardant">True</T>
+  <U n="recycling_data">
+    <L n="recycling_values">
+      <U>
+        <E n="Bucks Type">RecycleBitsBucks</E>
+        <T n="Value">0.5</T>
+      </U>
+      <U>
+        <E n="Bucks Type">RecyclePiecesBucks</E>
+        <T n="Value">0.5</T>
+      </U>
+    </L>
+  </U>
+</I>

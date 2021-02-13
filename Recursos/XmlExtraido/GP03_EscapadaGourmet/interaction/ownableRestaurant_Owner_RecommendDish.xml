@@ -1,0 +1,389 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<I c="SocialSuperInteraction" i="interaction" m="interactions.social.social_super_interaction" n="ownableRestaurant_Owner_RecommendDish" s="138922">
+  <V t="participant" n="_icon">
+    <U n="participant">
+      <L n="participant_type">
+        <E>TargetSim</E>
+      </L>
+    </U>
+  </V>
+  <L n="_party_size_weight_tuning">
+    <U>
+      <T n="y">100</T>
+    </U>
+    <U>
+      <T n="x">1</T>
+      <T n="y">100</T>
+    </U>
+    <U>
+      <T n="x">2</T>
+      <T n="y">50</T>
+    </U>
+    <U>
+      <T n="x">3</T>
+      <T n="y">0</T>
+    </U>
+    <U>
+      <T n="x">4</T>
+    </U>
+  </L>
+  <V t="enabled" n="_saveable" />
+  <T n="_social_group_type">134553<!--SocialGroup: socialGroup_Basic_Waitstaff_Customer--></T>
+  <V t="push_affordance" n="affordance_to_push_on_target">
+    <T n="push_affordance">138918<!--SocialSuperInteraction: ownableRestaurant_Customer--></T>
+  </V>
+  <T n="allow_autonomous">False</T>
+  <T n="allow_user_directed">False</T>
+  <T n="attention_cost">0</T>
+  <V t="one_shot" n="basic_content" />
+  <L n="basic_extras">
+    <V t="loot">
+      <U n="loot">
+        <L n="loot_list">
+          <T>162659<!--LootActions: loot_Commodity_Culling_GhostAdd_target--></T>
+        </L>
+      </U>
+    </V>
+    <V t="buff">
+      <U n="buff">
+        <U n="buff_type">
+          <V n="buff_reason" t="enabled">
+            <T n="enabled">0x9C09275F<!--String: "(Por estar en un grupo social con al menos 3 Sims)"--></T>
+          </V>
+          <T n="buff_type">125555<!--Buff: buff_Trait_WithMyFriends--></T>
+        </U>
+        <L n="subject">
+          <E>Actor</E>
+          <E>SocialGroupSims</E>
+          <E>TargetSim</E>
+        </L>
+        <L n="tests">
+          <L>
+            <V t="social_group">
+              <U n="social_group">
+                <V n="threshold" t="enabled">
+                  <U n="enabled">
+                    <T n="value">3</T>
+                  </U>
+                </V>
+              </U>
+            </V>
+          </L>
+        </L>
+      </U>
+    </V>
+  </L>
+  <V t="tunable_focus" n="basic_focus">
+    <U n="tunable_focus">
+      <T n="layer">5</T>
+      <L n="subject">
+        <E>TargetSim</E>
+      </L>
+    </U>
+  </V>
+  <V t="disabled" n="basic_reserve_object" />
+  <T n="category">142909<!--PieMenuCategory: pieMenuCategorty_OwnableBusiness_CustomerSocials--></T>
+  <V t="disabled" n="content_score" />
+  <T n="display_name">0x936AF877<!--String: "Recomendar plato"--></T>
+  <U n="display_name_text_tokens">
+    <L n="tokens">
+      <V t="participant_type">
+        <U n="participant_type">
+          <V n="objects" t="from_participant">
+            <U n="from_participant">
+              <E n="participant">Actor</E>
+            </U>
+          </V>
+        </U>
+      </V>
+      <V t="participant_type">
+        <U n="participant_type">
+          <V n="objects" t="from_participant">
+            <U n="from_participant">
+              <E n="participant">Object</E>
+            </U>
+          </V>
+        </U>
+      </V>
+    </L>
+  </U>
+  <V t="enabled" n="idle_animation">
+    <U n="enabled">
+      <T n="factory">11570<!--AnimationElement: Listen_Listen_Looping_basic--></T>
+    </U>
+  </V>
+  <T n="ignore_group_socials">False</T>
+  <L n="interaction_category_tags">
+    <E>Interaction_SocialSuper</E>
+    <E>Interaction_Super</E>
+    <E>Interaction_All</E>
+    <E>Interaction_SocialAll</E>
+    <E>Interaction_Social_Contagious</E>
+  </L>
+  <T n="invite_in_after_interaction">True</T>
+  <U n="listen_animation">
+    <T n="factory">11570<!--AnimationElement: Listen_Listen_Looping_basic--></T>
+  </U>
+  <V n="outcome" t="test_based">
+    <U n="test_based">
+      <L n="fallback_outcomes">
+        <U>
+          <U n="outcome">
+            <V n="animation_ref" t="enabled">
+              <U n="enabled">
+                <T n="factory">138884<!--AnimationElement: socials_OwnableRestaurant_RecommendDish_Reject--></T>
+              </U>
+            </V>
+            <L n="basic_extras">
+              <V t="do_command">
+                <U n="do_command">
+                  <L n="arguments">
+                    <V t="participant">
+                      <U n="participant">
+                        <E n="argument">TargetSim</E>
+                      </U>
+                    </V>
+                    <V t="string">
+                      <U n="string">
+                        <T n="argument">false</T>
+                      </U>
+                    </V>
+                  </L>
+                  <T n="command">restaurant.npc_accept_or_reject_recommendation</T>
+                  <V t="at_end" n="timing" />
+                </U>
+              </V>
+              <V t="notification">
+                <U n="notification">
+                  <V n="dialog" t="single">
+                    <V n="single" t="literal">
+                      <U n="literal">
+                        <V t="enabled" n="icon">
+                          <V t="participant" n="enabled" />
+                        </V>
+                        <V n="text" t="variation">
+                          <U n="variation">
+                            <L n="variations">
+                              <T>0x577FA270<!--String: "Mi sugerencia es la recomendación del chef. {M1.Nuestro}{F1.Nuestra} chef ha elaborado una auténtica delicia para el paladar.\n\nNo. Espero que {M1.el}{F1.la} chef no se lo tome como algo personal."--></T>
+                              <T>0xB2D6CD2F<!--String: "¿Este plato no? Es una receta que ha ido transmitiéndose de generación en generación en mi familia. Supongo que es algo que hay que haber crecido comiendo para que resulte apetecible."--></T>
+                              <T>0x1529AF08<!--String: "Mi recomendación es esta. La frescura de los ingredientes le da un gusto fantástico, pero veo que a sus papilas gustativas se les antoja algo con un sabor menos fresco."--></T>
+                              <T>0xF1737D27<!--String: "Este plato se ha preparado con un cargamento fresco de los mejores ingredientes. Yo no perdería la oportunidad de volver y probarlo la próxima vez."--></T>
+                              <T>0x1842AE5D<!--String: "A nuestro personal le encantan los sabores de este plato. ¡Todos lo recomendamos! Pero veo que en esta ocasión la opinión pública no cuenta. Tal vez la próxima vez."--></T>
+                            </L>
+                          </U>
+                        </V>
+                        <E n="visual_type">SPEECH</E>
+                      </U>
+                    </V>
+                  </V>
+                </U>
+              </V>
+            </L>
+            <L n="loot_list">
+              <T>141718<!--LootActions: loot_RestaurantBucks_Socials--></T>
+              <T>142851<!--LootActions: loot_OwnableRestaurant_WantsDishRecommended_Removal_TargetSim--></T>
+              <T>10954<!--LootActions: Loot_ForSocialsSocialMotiveMedium--></T>
+            </L>
+          </U>
+        </U>
+      </L>
+      <L n="tested_outcomes">
+        <U>
+          <L n="potential_outcomes">
+            <U>
+              <U n="outcome">
+                <V n="animation_ref" t="enabled">
+                  <U n="enabled">
+                    <T n="factory">138883<!--AnimationElement: socials_OwnableRestaurant_RecommendDish_Accept--></T>
+                  </U>
+                </V>
+                <L n="basic_extras">
+                  <V t="do_command">
+                    <U n="do_command">
+                      <L n="arguments">
+                        <V t="participant">
+                          <U n="participant">
+                            <E n="argument">TargetSim</E>
+                          </U>
+                        </V>
+                        <V t="string">
+                          <U n="string">
+                            <T n="argument">true</T>
+                          </U>
+                        </V>
+                      </L>
+                      <T n="command">restaurant.npc_accept_or_reject_recommendation</T>
+                    </U>
+                  </V>
+                  <V t="notification">
+                    <U n="notification">
+                      <V n="dialog" t="single">
+                        <V n="single" t="literal">
+                          <U n="literal">
+                            <V t="enabled" n="icon">
+                              <V t="participant" n="enabled" />
+                            </V>
+                            <V n="text" t="variation">
+                              <U n="variation">
+                                <L n="variations">
+                                  <T>0x38C56546<!--String: "Mi sugerencia es la recomendación del chef. {M1.Nuestro}{F1.Nuestra} chef ha elaborado una auténtica delicia para el paladar. ¡Toda una sinfonía de sabores!\n\n¿Sí? ¡Excelente! {M1.Al}{F1.A la} chef le encantará oír eso."--></T>
+                                  <T>0x4DBE551D<!--String: "Yo probaría este plato. Es una receta que ha ido transmitiéndose de generación en generación en mi familia. Me aseguraré de que se lo preparen como lo haría mi abuela."--></T>
+                                  <T>0x982F773B<!--String: "Mi recomendación es esta. Los ingredientes han salido de la granja esta misma mañana y esa frescura le da un gusto fantástico al plato."--></T>
+                                  <T>0x34FEB41B<!--String: "Este plato se ha preparado con un cargamento fresco de los mejores ingredientes. No le decepcionará, se lo garantizo."--></T>
+                                  <T>0x83ED68CE<!--String: "A nuestro personal le encantan los sabores de este plato. ¡Todos lo recomendamos! Animarse a probarlo es señal de un gusto exquisito por su parte."--></T>
+                                </L>
+                              </U>
+                            </V>
+                            <E n="visual_type">SPEECH</E>
+                          </U>
+                        </V>
+                      </V>
+                    </U>
+                  </V>
+                </L>
+                <L n="loot_list">
+                  <T>138984<!--LootActions: loot_OwnableRestaurant_RecommendDish--></T>
+                  <T>141718<!--LootActions: loot_RestaurantBucks_Socials--></T>
+                  <T>142851<!--LootActions: loot_OwnableRestaurant_WantsDishRecommended_Removal_TargetSim--></T>
+                  <T>10954<!--LootActions: Loot_ForSocialsSocialMotiveMedium--></T>
+                </L>
+              </U>
+            </U>
+          </L>
+          <L n="tests">
+            <L>
+              <V t="test_based_score_threshold">
+                <U n="test_based_score_threshold">
+                  <T n="test_based_score">24555<!--TestBasedScore: scores_socialoutcomes_friendly--></T>
+                  <U n="threshold">
+                    <T n="value">6</T>
+                  </U>
+                </U>
+              </V>
+            </L>
+            <L>
+              <V t="buff">
+                <U n="buff">
+                  <E n="subject">TargetSim</E>
+                  <V t="enabled" n="whitelist">
+                    <L n="enabled">
+                      <T>142077<!--Buff: buff_OwnableRestaurant_Hospitality_WantsDishRecommended--></T>
+                    </L>
+                  </V>
+                </U>
+              </V>
+            </L>
+          </L>
+        </U>
+      </L>
+    </U>
+  </V>
+  <V t="enabled" n="pie_menu_icon">
+    <V n="enabled" t="resource_key">
+      <U n="resource_key">
+        <T n="key" p="InGP03\UI\Icons\PieMenu\Interactions\icon_pieMenu_Owner.png">2f7d0004:00000000:300311e707898994</T>
+      </U>
+    </V>
+  </V>
+  <U n="progress_bar_enabled">
+    <T n="bar_enabled">False</T>
+  </U>
+  <T n="relationship_scoring">True</T>
+  <E n="scoring_priority">NORMAL</E>
+  <V t="enabled" n="sim_affinity_posture_scoring_data">
+    <U n="enabled">
+      <L n="my_scoring">
+        <U>
+          <V t="relationship_based" n="affinity_strategy" />
+          <T n="negate_tag">True</T>
+          <E n="running_interaction_tag">Sleeping</E>
+        </U>
+        <U>
+          <V n="affinity_strategy" t="avoid" />
+          <E n="running_interaction_tag">Very_Loud</E>
+        </U>
+      </L>
+      <L n="my_tags">
+        <E>Loud</E>
+        <E>Chat</E>
+      </L>
+    </U>
+  </V>
+  <T n="subaction_selection_weight">1</T>
+  <E n="target_type">TARGET</E>
+  <L n="test_globals">
+    <V t="sim_info">
+      <U n="sim_info">
+        <V t="specified" n="species">
+          <U n="specified">
+            <L n="species">
+              <E />
+            </L>
+          </U>
+        </V>
+        <E n="who">TargetSim</E>
+      </U>
+    </V>
+    <V t="sim_info">
+      <U n="sim_info">
+        <V t="specified" n="ages">
+          <L n="specified">
+            <E>TEEN</E>
+            <E>YOUNGADULT</E>
+            <E>ADULT</E>
+            <E>ELDER</E>
+            <E>CHILD</E>
+          </L>
+        </V>
+        <V t="specified" n="species">
+          <U n="specified">
+            <L n="species">
+              <E />
+            </L>
+          </U>
+        </V>
+        <E n="who">Actor</E>
+      </U>
+    </V>
+    <V t="posture">
+      <U n="posture">
+        <L n="required_postures">
+          <T>15535<!--Posture: posture_Sit--></T>
+        </L>
+        <E n="subject">TargetSim</E>
+      </U>
+    </V>
+    <V t="lot_owner" />
+    <V t="bucks_perks_test">
+      <U n="bucks_perks_test">
+        <T n="bucks_perk">139159<!--BucksPerk: restaurantPerks_RecommendDishSocial--></T>
+      </U>
+    </V>
+    <V t="buff">
+      <U n="buff">
+        <L n="blacklist">
+          <T>136769<!--Buff: buff_OwnableRestaurant_Hospitality_DishRecommended--></T>
+        </L>
+        <E n="subject">TargetSim</E>
+        <V n="tooltip" t="enabled">
+          <T n="enabled">0xF54EA67E<!--String: "A {M1.este}{F1.esta} Sim ya se le ha recomendado un plato."--></T>
+        </V>
+      </U>
+    </V>
+    <V t="buff">
+      <U n="buff">
+        <E n="subject">TargetSim</E>
+        <V t="enabled" n="tooltip">
+          <T n="enabled">0xAB5B5523<!--String: "{M1.Este}{F1.Esta} Sim ya ha decidido qué pedir."--></T>
+        </V>
+        <V n="whitelist" t="enabled">
+          <L n="enabled">
+            <T>132667<!--Buff: buff_Restaurants_Diner_Basic_PreplaceOrder--></T>
+          </L>
+        </V>
+      </U>
+    </V>
+  </L>
+  <T n="time_overhead">30</T>
+  <T n="visible">True</T>
+</I>

@@ -1,0 +1,161 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<I c="SuperInteraction" i="interaction" m="interactions.base.super_interaction" n="vampireCure_Transform_Unwilling" s="150233">
+  <V t="prohibit_cancelation" n="_cancelable_by_user" />
+  <V t="participant" n="_icon">
+    <U n="participant">
+      <L n="participant_type">
+        <E>Actor</E>
+      </L>
+    </U>
+  </V>
+  <V t="enabled" n="_saveable" />
+  <T n="allow_autonomous">False</T>
+  <T n="allow_user_directed">False</T>
+  <T n="attention_cost">0.5</T>
+  <V t="one_shot" n="basic_content">
+    <U n="one_shot">
+      <U n="animation_ref">
+        <T n="factory">150230<!--AnimationElement: occult_Vampire_CureTransform--></T>
+      </U>
+    </U>
+  </V>
+  <L n="basic_extras">
+    <V t="notification">
+      <U n="notification">
+        <V n="dialog" t="single">
+          <V n="single" t="literal">
+            <U n="literal">
+              <V t="enabled" n="secondary_icon">
+                <V n="enabled" t="participant" />
+              </V>
+              <V n="text" t="single">
+                <T n="single">0x371EBFF9<!--String: "¡{0.SimName} ha dejado atrás la vida de no {M0.muerto}{F0.muerta} y ya no es {M0.un vampiro}{F0.una vampira}!"--></T>
+              </V>
+              <E n="visual_type">SPECIAL_MOMENT</E>
+            </U>
+          </V>
+        </V>
+        <V t="at_beginning" n="timing" />
+      </U>
+    </V>
+    <V t="broadcaster">
+      <U n="broadcaster">
+        <L n="broadcaster_types">
+          <U>
+            <T n="item">150262<!--Broadcaster: broadcaster_Reaction_VampireCure--></T>
+          </U>
+        </L>
+      </U>
+    </V>
+    <V t="audio_sting">
+      <U n="audio_sting">
+        <U n="audio_sting">
+          <T n="audio" p="InGP04\Audio\bumper\bumper_cure_vampire.propx">39b2aa4a:00000000:ebf671151d36fdbf</T>
+        </U>
+        <V t="at_beginning" n="timing" />
+      </U>
+    </V>
+    <V t="do_command">
+      <U n="do_command">
+        <L n="arguments">
+          <V t="string">
+            <U n="string">
+              <T n="argument">VampirePowerBucks</T>
+            </U>
+          </V>
+          <V t="participant">
+            <U n="participant">
+              <E n="argument">Actor</E>
+            </U>
+          </V>
+          <V t="string">
+            <U n="string">
+              <T n="argument">True</T>
+            </U>
+          </V>
+        </L>
+        <T n="command">bucks.lock_all_perks_for_bucks_type</T>
+      </U>
+    </V>
+    <V t="do_command">
+      <U n="do_command">
+        <L n="arguments">
+          <V t="string">
+            <U n="string">
+              <T n="argument">VampireWeaknessBucks</T>
+            </U>
+          </V>
+          <V t="participant">
+            <U n="participant">
+              <E n="argument">Actor</E>
+            </U>
+          </V>
+          <V t="string">
+            <U n="string">
+              <T n="argument">True</T>
+            </U>
+          </V>
+        </L>
+        <T n="command">bucks.lock_all_perks_for_bucks_type</T>
+      </U>
+    </V>
+  </L>
+  <V t="disabled" n="content_score" />
+  <T n="display_name">0x15067602<!--String: "Curando vampirismo"--></T>
+  <U n="display_name_text_tokens">
+    <L n="tokens">
+      <V t="participant_type">
+        <U n="participant_type">
+          <V t="from_participant" n="objects">
+            <U n="from_participant">
+              <E n="participant">Actor</E>
+            </U>
+          </V>
+        </U>
+      </V>
+      <V t="participant_type">
+        <U n="participant_type">
+          <V n="objects" t="from_participant">
+            <U n="from_participant">
+              <E n="participant">Object</E>
+            </U>
+          </V>
+        </U>
+      </V>
+    </L>
+  </U>
+  <L n="interaction_category_tags">
+    <E>Interaction_Super</E>
+    <E>Interaction_All</E>
+  </L>
+  <V n="outcome" t="single">
+    <U n="single">
+      <U n="actions">
+        <L n="loot_list">
+          <T>150170<!--LootActions: loot_VampireCure_RemoveVampirism--></T>
+          <T>31238<!--LootActions: loot_Life_ResetProgress--></T>
+          <T>150169<!--LootActions: loot_VampireCure_MortalMelancholy--></T>
+        </L>
+      </U>
+    </U>
+  </V>
+  <E n="scoring_priority">NORMAL</E>
+  <T n="subaction_selection_weight">1</T>
+  <E n="target_type">ACTOR</E>
+  <L n="test_globals">
+    <V t="sim_info">
+      <U n="sim_info">
+        <V t="specified" n="ages" />
+        <V t="specified" n="species">
+          <U n="specified">
+            <L n="species">
+              <E />
+            </L>
+          </U>
+        </V>
+        <E n="who">Actor</E>
+      </U>
+    </V>
+  </L>
+  <T n="time_overhead">30</T>
+</I>

@@ -1,0 +1,242 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<I c="SuperInteraction" i="interaction" m="interactions.base.super_interaction" n="sI_Object_AlienPortal_Upgrade_ParentCont" s="113470">
+  <V t="participant" n="_icon">
+    <U n="participant">
+      <L n="participant_type">
+        <E>Object</E>
+      </L>
+    </U>
+  </V>
+  <V t="enabled" n="_saveable" />
+  <T n="allowed_to_combine">False</T>
+  <T n="attention_cost">0.5</T>
+  <V n="basic_content" t="flexible_length">
+    <U n="flexible_length">
+      <L n="conditional_actions">
+        <V t="literal">
+          <U n="literal">
+            <L n="conditions">
+              <V t="state_based">
+                <U n="state_based">
+                  <V n="state" t="on_trigger">
+                    <T n="on_trigger">15076<!--CommodityBasedObjectStateValue: Brokenness_Broken--></T>
+                  </V>
+                </U>
+              </V>
+            </L>
+            <E n="interaction_action">EXIT_CANCEL</E>
+          </U>
+        </V>
+        <V t="literal">
+          <U n="literal">
+            <L n="conditions">
+              <V t="state_based">
+                <U n="state_based">
+                  <V n="state" t="on_trigger">
+                    <T n="on_trigger">111992<!--CommodityBasedObjectStateValue: osv_InventionConstructorUpgrade_Completed--></T>
+                  </V>
+                  <E n="subject">ObjectChildren</E>
+                </U>
+              </V>
+            </L>
+            <E n="interaction_action">EXIT_NATURALLY</E>
+          </U>
+        </V>
+      </L>
+      <V t="looping_content" n="content">
+        <U n="looping_content">
+          <U n="animation_ref">
+            <T n="factory">115340<!--AnimationElement: asm_Object_InventionConstructor_Upgrade--></T>
+          </U>
+        </U>
+      </V>
+      <V n="periodic_stat_change" t="enabled">
+        <U n="enabled">
+          <L n="operations">
+            <V t="statistic_change">
+              <U n="statistic_change">
+                <T n="advertise">False</T>
+                <T n="amount">-0.77</T>
+                <T n="stat">16633<!--Commodity: commodity_Object_Brokenness--></T>
+                <L n="subject">
+                  <E>Object</E>
+                </L>
+              </U>
+            </V>
+            <V t="statistic_change">
+              <U n="statistic_change">
+                <T n="advertise">True</T>
+                <T n="amount">3</T>
+                <T n="exclusive_to_owning_si">True</T>
+                <T n="stat">112000<!--Statistic: statistic_Object_Upgrade_InventionConstructorUpgrade--></T>
+                <L n="subject">
+                  <E>ObjectChildren</E>
+                </L>
+              </U>
+            </V>
+            <V t="statistic_change">
+              <U n="statistic_change">
+                <T n="amount">0.5</T>
+                <T n="stat">112000<!--Statistic: statistic_Object_Upgrade_InventionConstructorUpgrade--></T>
+                <L n="subject">
+                  <E>ObjectChildren</E>
+                </L>
+                <L n="tests">
+                  <L>
+                    <V t="buff">
+                      <U n="buff">
+                        <V n="whitelist" t="enabled">
+                          <L n="enabled">
+                            <T>232794<!--Buff: buff_Trait_Personality_RecycleDisciple_SalvageThrills--></T>
+                          </L>
+                        </V>
+                      </U>
+                    </V>
+                  </L>
+                </L>
+              </U>
+            </V>
+          </L>
+        </U>
+      </V>
+    </U>
+  </V>
+  <L n="basic_extras" />
+  <V t="enabled" n="basic_reserve_object">
+    <U n="enabled">
+      <L n="subject_list">
+        <U>
+          <V t="reserve_and_lock_all_parts" n="reserve_type" />
+          <L n="subject">
+            <E>Object</E>
+            <E>CarriedObject</E>
+            <E>CraftingObject</E>
+            <E>ObjectChildren</E>
+          </L>
+        </U>
+      </L>
+    </U>
+  </V>
+  <V t="disabled" n="content_score" />
+  <T n="display_name">0x9E392C0C<!--String: "Mejorar el electrogenerador de agujeros de gusano"--></T>
+  <V t="testable" n="display_name_overrides">
+    <U n="testable">
+      <L n="overrides">
+        <U>
+          <V n="new_display_name" t="enabled">
+            <T n="enabled">0x30CDC1A3<!--String: "Seguir mejorando el electrogenerador de agujeros de gusano"--></T>
+          </V>
+          <L n="test">
+            <L>
+              <V t="state">
+                <U n="state">
+                  <T n="value">111994<!--CommodityBasedObjectStateValue: osv_InventionConstructorUpgrade_Partial--></T>
+                </U>
+              </V>
+            </L>
+          </L>
+        </U>
+      </L>
+    </U>
+  </V>
+  <U n="display_name_text_tokens">
+    <L n="tokens">
+      <V t="participant_type">
+        <U n="participant_type">
+          <V t="from_participant" n="objects">
+            <U n="from_participant">
+              <E n="participant">Actor</E>
+            </U>
+          </V>
+        </U>
+      </V>
+      <V t="participant_type">
+        <U n="participant_type">
+          <V t="from_participant" n="objects">
+            <U n="from_participant">
+              <E n="participant">Object</E>
+            </U>
+          </V>
+        </U>
+      </V>
+    </L>
+  </U>
+  <L n="interaction_category_tags">
+    <E>Interaction_Super</E>
+    <E>Interaction_All</E>
+  </L>
+  <V n="outcome" t="test_based">
+    <U n="test_based">
+      <L n="fallback_outcomes">
+        <U>
+          <U n="outcome">
+            <L n="basic_extras">
+              <V t="notification">
+                <U n="notification">
+                  <V n="dialog" t="single">
+                    <V n="single" t="literal">
+                      <U n="literal">
+                        <V t="enabled" n="icon">
+                          <V n="enabled" t="participant">
+                            <U n="participant">
+                              <L n="participant_type">
+                                <E>ObjectChildren</E>
+                              </L>
+                            </U>
+                          </V>
+                        </V>
+                        <V t="enabled" n="secondary_icon">
+                          <V t="participant" n="enabled" />
+                        </V>
+                        <V n="text" t="single">
+                          <T n="single">0xDF35D85<!--String: "{0.SimFirstName} ha mejorado el electrogenerador de agujeros de gusano. ¡Ahora puede usarlo para viajar a un mundo alienígena! ¿Qué encontrará al otro lado?"--></T>
+                        </V>
+                        <V n="title" t="enabled">
+                          <T n="enabled">0x718A620<!--String: "Electrogenerador de agujeros de gusano mejorado"--></T>
+                        </V>
+                      </U>
+                    </V>
+                  </V>
+                </U>
+              </V>
+            </L>
+            <L n="loot_list">
+              <T>116268<!--LootActions: loot_Career_Scientist_AlienPortal_Upgraded--></T>
+            </L>
+          </U>
+        </U>
+      </L>
+    </U>
+  </V>
+  <E n="scoring_priority">NORMAL</E>
+  <T n="subaction_selection_weight">1</T>
+  <E n="target_type">OBJECT</E>
+  <L n="test_globals">
+    <V t="sim_info">
+      <U n="sim_info">
+        <V t="specified" n="ages" />
+        <V t="specified" n="species">
+          <U n="specified">
+            <L n="species">
+              <E />
+            </L>
+          </U>
+        </V>
+        <E n="who">Actor</E>
+      </U>
+    </V>
+    <V t="location">
+      <U n="location">
+        <U n="location_tests">
+          <V n="is_venue_type" t="enabled">
+            <U n="enabled">
+              <T n="negate">True</T>
+              <T n="venue_type">111611<!--Venue: venue_HiddenAlienWorld--></T>
+            </U>
+          </V>
+        </U>
+      </U>
+    </V>
+  </L>
+  <T n="time_overhead">30</T>
+</I>

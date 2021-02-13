@@ -1,0 +1,252 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<I c="SuperInteraction" i="interaction" m="interactions.base.super_interaction" n="bowlingLane_WaitForTurn" s="158452">
+  <L n="_constraints">
+    <U>
+      <L n="constraints">
+        <U>
+          <V n="value" t="cone">
+            <U n="cone">
+              <T n="angle">65</T>
+              <T n="ideal_angle">0.75</T>
+              <T n="ideal_radius_min">0.5</T>
+              <T n="max_radius">9</T>
+              <T n="min_radius">7</T>
+            </U>
+          </V>
+        </U>
+      </L>
+    </U>
+    <U>
+      <L n="constraints">
+        <U>
+          <V n="value" t="facing">
+            <U n="facing">
+              <T n="range">170</T>
+            </U>
+          </V>
+        </U>
+      </L>
+    </U>
+  </L>
+  <V t="disabled" n="_saveable" />
+  <T n="_super_affordance_can_share_target">True</T>
+  <T n="acquire_targets_as_resource">False</T>
+  <T n="attention_cost">0.5</T>
+  <V n="basic_content" t="flexible_length">
+    <U n="flexible_length">
+      <L n="conditional_actions">
+        <V t="literal">
+          <U n="literal">
+            <L n="conditions">
+              <V t="state_based">
+                <U n="state_based">
+                  <V n="state" t="on_trigger">
+                    <T n="on_trigger">158050<!--ObjectStateValue: bowlingLane_Values_InUse_false--></T>
+                  </V>
+                </U>
+              </V>
+            </L>
+            <E n="interaction_action">EXIT_NATURALLY</E>
+          </U>
+        </V>
+        <V t="list_reference">
+          <T n="list_reference">40144<!--ExitConditionList: ExitConditionList_EmotionMiserable--></T>
+        </V>
+        <V t="list_reference">
+          <T n="list_reference">40702<!--ExitConditionList: ExitConditionList_EmotionStressed--></T>
+        </V>
+        <V t="list_reference">
+          <T n="list_reference">40705<!--ExitConditionList: ExitConditionList_MotivesNearFail--></T>
+        </V>
+      </L>
+      <V n="content" t="staging_content">
+        <U n="staging_content">
+          <U n="content_set">
+            <L n="affordance_links">
+              <T>158169<!--MixerInteraction: bowlingLane_Mixers_WaitForTurn--></T>
+              <T>158756<!--MixerInteraction: bowlingLane_Mixers_WinGame--></T>
+              <T>158757<!--MixerInteraction: bowlingLane_Mixers_LoseGame--></T>
+              <T>161832<!--MixerInteraction: bowlingLane_Mixers_WaitForTurn_EndGame--></T>
+              <T>162656<!--MixerInteraction: bowlingLane_Mixers_TakeTurn--></T>
+            </L>
+          </U>
+        </U>
+      </V>
+      <V n="periodic_stat_change" t="enabled">
+        <U n="enabled">
+          <L n="operations">
+            <V t="statistic_set_max">
+              <U n="statistic_set_max">
+                <T n="stat">161517<!--Commodity: commodity_Object_BowlingLane_GameInProgress--></T>
+                <L n="subject">
+                  <E>Object</E>
+                </L>
+              </U>
+            </V>
+            <V t="statistic_change">
+              <U n="statistic_change">
+                <T n="advertise">False</T>
+                <T n="amount">0.1</T>
+                <T n="stat">162030<!--Commodity: commodity_Object_BowlingLane_SoreArms_Tracker--></T>
+                <L n="tests">
+                  <L>
+                    <V t="game_component">
+                      <U n="game_component">
+                        <V n="number_of_players" t="enabled">
+                          <U n="enabled">
+                            <T n="lower_bound">2</T>
+                            <T n="upper_bound">3</T>
+                          </U>
+                        </V>
+                      </U>
+                    </V>
+                  </L>
+                </L>
+              </U>
+            </V>
+            <V t="statistic_change">
+              <U n="statistic_change">
+                <T n="advertise">False</T>
+                <T n="amount">0.001</T>
+                <T n="stat">162030<!--Commodity: commodity_Object_BowlingLane_SoreArms_Tracker--></T>
+                <L n="tests">
+                  <L>
+                    <V t="game_component">
+                      <U n="game_component">
+                        <V n="number_of_players" t="enabled">
+                          <U n="enabled">
+                            <T n="lower_bound">4</T>
+                            <T n="upper_bound">4</T>
+                          </U>
+                        </V>
+                      </U>
+                    </V>
+                  </L>
+                </L>
+              </U>
+            </V>
+            <V t="statistic_change">
+              <U n="statistic_change">
+                <T n="amount">0.5</T>
+                <T n="stat">16655<!--Commodity: motive_Fun--></T>
+                <L n="tests">
+                  <L>
+                    <V t="state">
+                      <U n="state">
+                        <T n="value">158056<!--ObjectStateValue: bowlingLane_Values_MoonLightBowling_Off--></T>
+                      </U>
+                    </V>
+                  </L>
+                </L>
+              </U>
+            </V>
+            <V t="statistic_change">
+              <U n="statistic_change">
+                <T n="amount">1</T>
+                <T n="stat">16655<!--Commodity: motive_Fun--></T>
+                <L n="tests">
+                  <L>
+                    <V t="state">
+                      <U n="state">
+                        <T n="value">158055<!--ObjectStateValue: bowlingLane_Values_MoonLightBowling_On--></T>
+                      </U>
+                    </V>
+                  </L>
+                </L>
+              </U>
+            </V>
+          </L>
+        </U>
+      </V>
+    </U>
+  </V>
+  <L n="basic_liabilities">
+    <V t="remove_buff">
+      <U n="remove_buff">
+        <T n="buff_to_remove">161421<!--Buff: buff_Object_BowlingLane_Shoes--></T>
+      </U>
+    </V>
+    <V t="user_cancelable_chain" />
+    <V t="remove_buff">
+      <U n="remove_buff">
+        <T n="buff_to_remove">161855<!--Buff: buff_Object_BowlingLane_Glove_Shoes--></T>
+      </U>
+    </V>
+  </L>
+  <V t="enabled" n="basic_reserve_object">
+    <U n="enabled">
+      <L n="subject_list">
+        <U>
+          <V n="reserve_type" t="multi" />
+        </U>
+      </L>
+    </U>
+  </V>
+  <V n="canonical_animation" t="enabled">
+    <U n="enabled">
+      <T n="factory">12142<!--AnimationElement: View_View_Looping_basic--></T>
+    </U>
+  </V>
+  <V t="disabled" n="content_score" />
+  <T n="disallow_as_mixer_target">True</T>
+  <T n="display_name">0xA6292BCC<!--String: "Jugando a los bolos"--></T>
+  <U n="display_name_text_tokens">
+    <L n="tokens">
+      <V t="participant_type">
+        <U n="participant_type">
+          <V n="objects" t="from_participant">
+            <U n="from_participant">
+              <E n="participant">Actor</E>
+            </U>
+          </V>
+        </U>
+      </V>
+      <V t="participant_type">
+        <U n="participant_type">
+          <V n="objects" t="from_participant">
+            <U n="from_participant">
+              <E n="participant">Object</E>
+            </U>
+          </V>
+        </U>
+      </V>
+    </L>
+  </U>
+  <L n="interaction_category_tags">
+    <E>Interaction_Super</E>
+    <E>Interaction_All</E>
+  </L>
+  <V t="single" n="outcome" />
+  <E n="scoring_priority">NORMAL</E>
+  <T n="subaction_selection_weight">1</T>
+  <V t="literal" n="super_affordance_compatibility">
+    <U n="literal">
+      <V n="default_inclusion" t="include_all" />
+    </U>
+  </V>
+  <E n="target_type">OBJECT</E>
+  <L n="test_globals">
+    <V t="sim_info">
+      <U n="sim_info">
+        <V t="specified" n="ages">
+          <L n="specified">
+            <E>TEEN</E>
+            <E>YOUNGADULT</E>
+            <E>ADULT</E>
+            <E>ELDER</E>
+            <E>CHILD</E>
+          </L>
+        </V>
+        <V t="specified" n="species">
+          <U n="specified">
+            <L n="species">
+              <E />
+            </L>
+          </U>
+        </V>
+        <E n="who">Actor</E>
+      </U>
+    </V>
+  </L>
+  <T n="time_overhead">30</T>
+</I>

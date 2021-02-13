@@ -1,0 +1,141 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<I c="SuperInteraction" i="interaction" m="interactions.base.super_interaction" n="si_waitStaff_ServeFood_Spill" s="139216">
+  <V t="reference" n="_animation_actor_map">
+    <T n="reference">104104<!--AnimationActorMap: AlreadyCarryingCarryTarget--></T>
+  </V>
+  <L n="_constraints">
+    <U>
+      <L n="constraints">
+        <U>
+          <V n="value" t="circle">
+            <U n="circle">
+              <T n="ideal_radius">0</T>
+              <T n="ideal_radius_width">1</T>
+              <T n="radial_cost_weight">2.25</T>
+              <T n="radius">3</T>
+            </U>
+          </V>
+        </U>
+      </L>
+    </U>
+    <U>
+      <L n="constraints">
+        <U>
+          <V n="value" t="facing" />
+        </U>
+      </L>
+    </U>
+  </L>
+  <V t="participant" n="_icon">
+    <U n="participant">
+      <L n="participant_type">
+        <E>Actor</E>
+      </L>
+    </U>
+  </V>
+  <V t="enabled" n="_saveable" />
+  <T n="allow_user_directed">False</T>
+  <T n="attention_cost">0.5</T>
+  <V n="basic_content" t="one_shot">
+    <U n="one_shot">
+      <U n="animation_ref">
+        <T n="factory">139215<!--AnimationElement: waitStaff_Waiter_Spill--></T>
+      </U>
+    </U>
+  </V>
+  <L n="basic_extras">
+    <V t="transience_change">
+      <U n="transience_change">
+        <V t="make_transient" n="new_value_ending" />
+        <E n="who">CarriedObject</E>
+      </U>
+    </V>
+    <V t="exit_carry_while_holding" />
+    <V t="create_object">
+      <U n="create_object">
+        <V n="creation_data" t="definition">
+          <U n="definition">
+            <T n="definition">132297</T>
+          </U>
+        </V>
+        <V t="on_xevt" n="timing">
+          <U n="on_xevt">
+            <T n="xevt_id">101</T>
+          </U>
+        </V>
+      </U>
+    </V>
+    <V t="broadcaster">
+      <U n="broadcaster">
+        <L n="broadcaster_types">
+          <U>
+            <T n="item">132663<!--Broadcaster: broadcaster_WaitStaff_SpillOnCustomers--></T>
+          </U>
+        </L>
+      </U>
+    </V>
+  </L>
+  <V t="enabled" n="basic_reserve_object">
+    <U n="enabled">
+      <L n="subject_list">
+        <U>
+          <V t="basic" n="reserve_type" />
+          <L n="subject">
+            <E>CarriedObject</E>
+          </L>
+        </U>
+      </L>
+    </U>
+  </V>
+  <V t="disabled" n="content_score" />
+  <T n="display_name">0xA5C7450B<!--String: "Servir comida"--></T>
+  <U n="display_name_text_tokens">
+    <L n="tokens">
+      <V t="participant_type">
+        <U n="participant_type">
+          <V n="objects" t="from_participant">
+            <U n="from_participant">
+              <E n="participant">Actor</E>
+            </U>
+          </V>
+        </U>
+      </V>
+      <V t="participant_type">
+        <U n="participant_type">
+          <V n="objects" t="from_participant">
+            <U n="from_participant">
+              <E n="participant">Object</E>
+            </U>
+          </V>
+        </U>
+      </V>
+    </L>
+  </U>
+  <L n="interaction_category_tags">
+    <E>Interaction_Super</E>
+    <E>Interaction_All</E>
+  </L>
+  <V n="outcome" t="single">
+    <U n="single">
+      <U n="actions">
+        <L n="loot_list">
+          <T>142541<!--LootActions: loot_OwnableRestaurant_WaiterService_Spill--></T>
+        </L>
+      </U>
+    </U>
+  </V>
+  <E n="scoring_priority">NORMAL</E>
+  <T n="subaction_selection_weight">1</T>
+  <E n="target_type">OBJECT</E>
+  <L n="test_globals">
+    <V t="situation_count_test">
+      <U n="situation_count_test">
+        <T n="situation">132213<!--WaitstaffSituation: situation_Restaurant_WaitStaff--></T>
+        <U n="test">
+          <T n="value">1</T>
+        </U>
+      </U>
+    </V>
+  </L>
+  <T n="time_overhead">30</T>
+</I>

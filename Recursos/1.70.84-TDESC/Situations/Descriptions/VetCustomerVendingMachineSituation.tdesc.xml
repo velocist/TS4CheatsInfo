@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+
+<TuningRoot>
+    <Instance instance_type="situation" class="VetCustomerVendingMachineSituation" module="vet.vet_customer_vending_machine_situation" muid="17635918C0ECB3D" description="A situation for a Sim to spawn and purchase something from the vending&#xA;machine." instance_subclasses_only="False" parents="SituationComplexCommon, SituationComplex, Situation" path="Situations\Descriptions" use_guid_for_reference="True">
+        <Deleted name="_buff" muid="1F4090D1C602E4A5" />
+
+        <Deleted name="_cost" muid="4D2D394235DBFCFB" />
+
+        <Deleted name="_display_name" muid="6890C728D76F52CF" />
+
+        <Deleted name="_icon" muid="BDD393128DF6A8D0" />
+
+        <Deleted name="_initiating_sim_tests" muid="99CE438EEBE2B1CC" />
+
+        <Deleted name="_level_data" muid="5551C0383A033FA0" />
+
+        <Deleted name="_main_goal_visibility_test" muid="2A79DC5383EB38DD" />
+
+        <Deleted name="_relationship_between_job_members" muid="3DA9BB6694DF409A" />
+
+        <Deleted name="_resident_job" muid="4E0D092AE6BD0341" />
+
+        <Deleted name="audio_sting_on_start" muid="528E38C552291788" />
+
+        <Deleted name="background_audio" muid="1941865E29AA2EC7" />
+
+        <Deleted name="category" muid="BAB22F0838C5570A" />
+
+        <Deleted name="compatible_venues" muid="E90ACCCCF55AE2A7" />
+
+        <Deleted name="creation_ui_option" muid="57D880C3702EB61B" />
+
+        <TunableTuple name="customer_job_and_role_states" class="TunableSituationJobAndRoleState" display="Customer Job And Role States" muid="93298FE2ECBCC2D3" description="The job assigned to pet owners and the initial role when the situation starts." Deprecated="False" filter="0" group="Roles">
+            <Tunable type="role_state" name="role_state" class="TunableReference" display="Role State" muid="515E8391655584E" description="A role state the sim assigned to the job will perform" allow_none="False" Deprecated="False" filter="0" group="General" />
+            <Tunable type="situation_job" name="situation_job" class="TunableReference" display="Situation Job" muid="7AAFC2A26D08BC93" description="A reference to a SituationJob that can be performed at this Situation." allow_none="False" Deprecated="False" filter="0" group="General" />
+        </TunableTuple>
+
+        <Deleted name="entitlement" muid="6200E4D79BFB1A18" />
+
+        <Deleted name="exclusivity" muid="CC505D3AE6CF2F9" />
+
+        <Deleted name="force_invite_only" muid="B703DEAC80F98C76" />
+
+        <Deleted name="goal_button_text" muid="70DC8F8D5D6A8B9A" />
+
+        <Deleted name="goal_sub_text" muid="7A9E3CB33B9235A0" />
+
+        <Deleted name="highlight_first_incomplete_minor_goal" muid="34DB03F69DF08D24" />
+
+        <Deleted name="job_display_ordering" muid="6D1D3B8A5C601EB5" />
+
+        <Deleted name="main_goal" muid="A53F64D15A14F609" />
+
+        <Deleted name="main_goal_audio_sting" muid="D9AF61424FBE8B1D" />
+
+        <Deleted name="max_participants" muid="F3F328DB382BBC7F" />
+
+        <Deleted name="minor_goal_chains" muid="F97F6518D2D4C00" />
+
+        <Deleted name="recommended_job_object_notification" muid="18C782717396342A" />
+
+        <Deleted name="recommended_job_object_text" muid="8F7795CEAC93883" />
+
+        <Deleted name="screen_slam_bronze" muid="C38D2003AA84EDD3" />
+
+        <Deleted name="screen_slam_gold" muid="8A35FCADA9B3B4E8" />
+
+        <Deleted name="screen_slam_no_medal" muid="B5FB4CA5AC1776DA" />
+
+        <Deleted name="screen_slam_silver" muid="48391CE4981250E" />
+
+        <Deleted name="situation_description" muid="6B2939C0C6970D3F" />
+
+        <TunableTuple name="situation_state" class="TunableVetCustomerState" display="Situation State" muid="7883E153F005F771" description="A situation state that looks for them to run an interaction to&#xA;purchase an item from the vending machine so that the situation&#xA;can end." Deprecated="False" filter="0" group="General">
+            <TunableTuple name="interaction_of_interest" class="TunableInteractionOfInterest" display="Interaction Of Interest" muid="CA05083F095DC510" description="The interaction that when run will cause GPE defined behavior&#xA;to run." Deprecated="False" filter="0" group="General">
+                <TunableList name="affordances" class="TunableList" display="Affordances" muid="6F180DEE585BA500" description="The Sim must have started either any affordance in this list or an&#xA;interaction matching one of the tags in this tunable's Tags&#xA;field." Deprecated="False" filter="0" group="General">
+                    <Tunable type="interaction" class="TunableReference" muid="EC21AFFC716F6A5C" allow_none="False" Deprecated="False" filter="0" group="General" pack_safe="True" />
+                </TunableList>
+                <TunableList name="tags" class="TunableSet" display="Tags" muid="8B4CE9849C79D87F" description="The Sim must have run either an interaction matching one of these&#xA;Tags or an affordance from the list of Affordances in this&#xA;tunable." Deprecated="False" filter="0" group="General" unique_entries="true">
+                    <TunableEnum type="Tag" class="TunableEnumEntry" default="INVALID" muid="A612C3159A3B9409" dynamic_entries="tag.Tag._elements" static_entries="tag.Tag" Deprecated="False" filter="0" group="General" />
+                </TunableList>
+            </TunableTuple>
+            <TunableList name="job_and_role_changes" class="TunableMapping" display="Job And Role Changes" muid="F4C121599510DE57" mapping_key="Situation Job" mapping_value="Role State" description="A mapping between situation jobs and role states that defines&#xA;what role states we want to switch to for sims on which jobs&#xA;when this situation state is entered." Deprecated="False" filter="0" group="General">
+                <TunableTuple class="TunableTuple" muid="855FF47A1CD3850C" Deprecated="False" filter="0" group="General">
+                    <Tunable type="role_state" name="Role State" class="TunableReference" display="Role State" muid="E8EBA2601DA4C7EE" description="The role state that we will switch sims of the linked job&#xA;into." allow_none="False" Deprecated="False" filter="0" group="General" />
+                    <Tunable type="situation_job" name="Situation Job" class="TunableReference" display="Situation Job" muid="7EC4882EFDA148BB" description="A reference to a SituationJob that we will use to change&#xA;sim's role state." allow_none="False" Deprecated="False" filter="0" group="General" />
+                </TunableTuple>
+            </TunableList>
+        </TunableTuple>
+
+        <Deleted name="suppress_scoring_progress_bar" muid="9B387DD317351D88" />
+
+        <Deleted name="targeted_situation" muid="ED1429C3F4C9DA49" />
+
+        <Deleted name="travel_request_behavior" muid="153AB82D2CEC232C" />
+
+        <Deleted name="venue_invitation_message" muid="720EA6DAA2913636" />
+
+        <Deleted name="venue_situation_player_job" muid="9C6C400636F29188" />
+    </Instance>
+
+    <VersionHistory>
+        <ActionList>
+            <Action type="kRemove" old_muid="937CF6B95C77173D" />
+        </ActionList>
+
+        <ActionList>
+            <Action type="kRename" old_muid="3CF8530255934244" new_muid="E90ACCCCF55AE2A7" />
+        </ActionList>
+
+        <ActionList>
+            <Action type="kRemove" old_muid="9D368E824C2DD0B" />
+            <Action type="kRemove" old_muid="8E0CCCD9580398C1" />
+        </ActionList>
+    </VersionHistory>
+</TuningRoot>

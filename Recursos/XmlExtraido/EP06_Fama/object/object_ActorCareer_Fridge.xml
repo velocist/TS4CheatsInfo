@@ -1,0 +1,151 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<I c="GameObject" i="object" m="objects.game_object" n="object_ActorCareer_Fridge" s="193192">
+  <U n="_components">
+    <V t="enabled" n="focus">
+      <U n="enabled">
+        <V t="globally" n="_focus_score">
+          <U n="globally">
+            <E n="base">LOW</E>
+          </U>
+        </V>
+      </U>
+    </V>
+    <V n="state" t="enabled">
+      <U n="enabled">
+        <L n="states">
+          <U>
+            <L n="client_states">
+              <U>
+                <T n="key">98745<!--ObjectStateValue: GenericFX_On--></T>
+                <U n="value">
+                  <V n="glow" t="apply_new_value">
+                    <V n="apply_new_value" t="start_glow">
+                      <U n="start_glow">
+                        <V n="color" t="name" />
+                        <T n="pulse_frequency">0.3</T>
+                      </U>
+                    </V>
+                  </V>
+                </U>
+              </U>
+              <U>
+                <T n="key">98746<!--ObjectStateValue: GenericFX_Off--></T>
+                <U n="value">
+                  <V t="apply_new_value" n="glow" />
+                  <V t="leave_unchanged" n="vfx_state" />
+                </U>
+              </U>
+            </L>
+            <V t="reference" n="default_value">
+              <T n="reference">98746<!--ObjectStateValue: GenericFX_Off--></T>
+            </V>
+          </U>
+          <U>
+            <V n="default_value" t="reference">
+              <T n="reference">198751<!--ObjectStateValue: state_Stage_Sound_Solo_Off--></T>
+            </V>
+            <T n="reset_to_default">True</T>
+          </U>
+          <U>
+            <L n="client_states">
+              <U>
+                <T n="key">15081<!--ObjectStateValue: BrokenState_Unbroken--></T>
+                <U n="value">
+                  <V n="audio_state" t="apply_new_value">
+                    <V n="apply_new_value" t="start_audio">
+                      <U n="start_audio">
+                        <T n="audio" p="InGame\Audio\Sfx\fridge\fridge_run_loop.propx">39b2aa4a:00000000:f18b23a085e7d3f1</T>
+                      </U>
+                    </V>
+                  </V>
+                  <V t="apply_new_value" n="flowing_puddle_enabled" />
+                  <V n="tint" t="apply_new_value">
+                    <V n="apply_new_value" t="literal">
+                      <V t="none" n="literal" />
+                    </V>
+                  </V>
+                  <V t="apply_new_value" n="vfx_state" />
+                </U>
+              </U>
+              <U>
+                <T n="key">26940<!--ObjectStateValue: BrokenState_Broken_Fridge--></T>
+                <U n="value">
+                  <V t="apply_new_value" n="audio_state" />
+                  <V t="apply_new_value" n="flowing_puddle_enabled">
+                    <T n="apply_new_value">False</T>
+                  </V>
+                  <V n="vfx_state" t="apply_new_value">
+                    <V n="apply_new_value" t="start_vfx">
+                      <V n="start_vfx" t="single_effect">
+                        <U n="single_effect">
+                          <T n="effect_name">S40_Obj_fridge_stink_Vintage</T>
+                          <V t="Slot" n="joint_name">
+                            <T n="Slot">_FX_</T>
+                          </V>
+                        </U>
+                      </V>
+                    </V>
+                  </V>
+                </U>
+              </U>
+            </L>
+            <V n="default_value" t="reference">
+              <T n="reference">26940<!--ObjectStateValue: BrokenState_Broken_Fridge--></T>
+            </V>
+          </U>
+        </L>
+      </U>
+    </V>
+  </U>
+  <L n="_super_affordances">
+    <T>201434<!--SuperInteraction: solo_ActorCareer_Player_ReviewScript--></T>
+    <T>13328<!--ImmediateSuperInteraction: debug_Reset--></T>
+    <T>13326<!--ImmediateSuperInteraction: debug_ObjectDestroy--></T>
+    <T>103888<!--ImmediateSuperInteraction: cheat_set_as_head--></T>
+    <T>13983<!--StandSuperInteraction: sim-stand--></T>
+    <T>193194<!--SuperInteraction: stage_Solos_PreActing_Safe_RepairFridge--></T>
+    <T>193193<!--SuperInteraction: stage_Solos_PreActing_Risky_RepairFridge--></T>
+  </L>
+  <L n="autonomy_modifiers">
+    <U>
+      <L n="stat_use_multiplier">
+        <U>
+          <T n="key">16671<!--Statistic: statistic_Object_Consumable-Quality--></T>
+          <U n="value">
+            <T n="multiplier">1.29</T>
+          </U>
+        </U>
+      </L>
+      <V n="subject" t="apply_on_interaction_to_participant">
+        <V n="apply_on_interaction_to_participant" t="enabled">
+          <L n="enabled">
+            <E>Object</E>
+          </L>
+        </V>
+      </V>
+    </U>
+    <U>
+      <L n="stat_use_multiplier">
+        <U>
+          <T n="key">16633<!--Commodity: commodity_Object_Brokenness--></T>
+          <U n="value">
+            <E n="apply_direction">DECREASE</E>
+            <T n="multiplier">0.125</T>
+          </U>
+        </U>
+      </L>
+    </U>
+  </L>
+  <U n="recycling_data">
+    <L n="recycling_values">
+      <U>
+        <E n="Bucks Type">RecycleBitsBucks</E>
+        <T n="Value">0.5</T>
+      </U>
+      <U>
+        <E n="Bucks Type">RecyclePiecesBucks</E>
+        <T n="Value">0.5</T>
+      </U>
+    </L>
+  </U>
+</I>

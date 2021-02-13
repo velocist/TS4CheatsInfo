@@ -1,0 +1,496 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<I c="SuperInteraction" i="interaction" m="interactions.base.super_interaction" n="gardening_VerticalGarden_MeatWall_Tend_Continuation_spray_Mature" s="236454">
+  <L n="_constraints" />
+  <V t="resource_key" n="_icon">
+    <U n="resource_key">
+      <T n="key" p="InGame\UI\Icons\Headlines\Final\headline_flies.png">2f7d0004:00000000:18c3cb3d5d3e0bff</T>
+    </U>
+  </V>
+  <V t="enabled" n="_saveable" />
+  <L n="_static_commodities">
+    <U>
+      <T n="desire">10</T>
+      <T n="static_commodity">36207<!--StaticCommodity: StaticCommodity_TendPlants_same--></T>
+    </U>
+    <U>
+      <T n="desire">8</T>
+      <T n="static_commodity">76154<!--StaticCommodity: StaticCommodity_TendPlants_others--></T>
+    </U>
+    <U>
+      <T n="static_commodity">168145<!--StaticCommodity: staticCommodity_Gardening_DoGardeningThings--></T>
+    </U>
+    <U>
+      <T n="static_commodity">151329<!--StaticCommodity: staticCommodity_Butler_Gardening--></T>
+    </U>
+  </L>
+  <T n="allow_user_directed">False</T>
+  <T n="attention_cost">0.75</T>
+  <T n="autonomy_can_overwrite_similar_affordance">True</T>
+  <V t="flexible_length" n="basic_content">
+    <U n="flexible_length">
+      <L n="conditional_actions">
+        <V t="list_reference">
+          <T n="list_reference">40705<!--ExitConditionList: ExitConditionList_MotivesNearFail--></T>
+        </V>
+        <V t="literal">
+          <U n="literal">
+            <L n="conditions">
+              <V t="stat_based">
+                <U n="stat_based">
+                  <T n="absolute">True</T>
+                  <T n="stat">16601<!--Commodity: commodity_Gardening_Infestation--></T>
+                  <U n="threshold">
+                    <E n="comparison">GREATER_OR_EQUAL</E>
+                    <T n="value">100</T>
+                  </U>
+                  <E n="who">Object</E>
+                </U>
+              </V>
+            </L>
+            <E n="interaction_action">EXIT_NATURALLY</E>
+            <L n="loot_actions" />
+            <E n="restrictions">NO_RESTRICTIONS</E>
+            <L n="tests" />
+          </U>
+        </V>
+        <V t="list_reference">
+          <T n="list_reference">40702<!--ExitConditionList: ExitConditionList_EmotionStressed--></T>
+        </V>
+        <V t="list_reference">
+          <T n="list_reference">40144<!--ExitConditionList: ExitConditionList_EmotionMiserable--></T>
+        </V>
+      </L>
+      <V t="staging_content" n="content">
+        <U n="staging_content">
+          <U n="content_set">
+            <L n="affordance_links">
+              <T>241339<!--MixerInteraction: verticalGarden_MeatWall_Spray_Mature--></T>
+              <T>241340<!--MixerInteraction: verticalGarden_MeatWall_Spray_Sprout--></T>
+            </L>
+          </U>
+        </U>
+      </V>
+      <V t="enabled" n="periodic_stat_change">
+        <U n="enabled">
+          <U n="operation_actions">
+            <L n="actions">
+              <T>245302<!--LootActions: loot_SlowExperiences_Progress_Gain_Small--></T>
+            </L>
+          </U>
+          <L n="operations">
+            <V t="dynamic_skill">
+              <U n="dynamic_skill">
+                <U n="skill_loot_data_override">
+                  <E n="effectiveness">StandardPeriodic</E>
+                  <T n="stat">16700<!--Skill: statistic_Skill_AdultMajor_Gardening--></T>
+                </U>
+              </U>
+            </V>
+            <V t="statistic_change">
+              <U n="statistic_change">
+                <T n="amount">-10</T>
+                <T n="stat">16616<!--Commodity: commodity_Motive_HygieneHands--></T>
+              </U>
+            </V>
+            <V t="statistic_change">
+              <U n="statistic_change">
+                <T n="advertise">False</T>
+                <T n="amount">2.5</T>
+                <T n="stat">16601<!--Commodity: commodity_Gardening_Infestation--></T>
+                <L n="subject">
+                  <E>Object</E>
+                </L>
+              </U>
+            </V>
+            <V t="statistic_change">
+              <U n="statistic_change">
+                <T n="amount">0.39</T>
+                <T n="stat">16655<!--Commodity: motive_Fun--></T>
+                <L n="tests">
+                  <L>
+                    <V t="skill_test">
+                      <U n="skill_test">
+                        <T n="skill">16700<!--Skill: statistic_Skill_AdultMajor_Gardening--></T>
+                        <V n="skill_range" t="interval">
+                          <U n="interval">
+                            <U n="skill_interval">
+                              <T n="lower_bound">3</T>
+                              <T n="upper_bound">9</T>
+                            </U>
+                          </U>
+                        </V>
+                      </U>
+                    </V>
+                  </L>
+                </L>
+              </U>
+            </V>
+            <V t="statistic_change">
+              <U n="statistic_change">
+                <T n="amount">0.78</T>
+                <T n="stat">16655<!--Commodity: motive_Fun--></T>
+                <L n="subject">
+                  <E>Actor</E>
+                </L>
+                <L n="tests">
+                  <L>
+                    <V t="skill_test">
+                      <U n="skill_test">
+                        <T n="skill">16700<!--Skill: statistic_Skill_AdultMajor_Gardening--></T>
+                        <V n="skill_range" t="interval">
+                          <U n="interval">
+                            <U n="skill_interval">
+                              <T n="lower_bound">10</T>
+                              <T n="upper_bound">10</T>
+                            </U>
+                          </U>
+                        </V>
+                      </U>
+                    </V>
+                  </L>
+                </L>
+              </U>
+            </V>
+            <V t="statistic_set_max">
+              <U n="statistic_set_max">
+                <T n="stat">234028<!--Commodity: commodity_Trait_Autonomy_GreenFiend_Gardening--></T>
+                <L n="tests">
+                  <L>
+                    <V t="trait">
+                      <U n="trait">
+                        <L n="whitelist_traits">
+                          <T>231699<!--Trait: trait_GreenFiend--></T>
+                        </L>
+                      </U>
+                    </V>
+                  </L>
+                </L>
+              </U>
+            </V>
+            <V t="statistic_change">
+              <U n="statistic_change">
+                <T n="amount">5</T>
+                <T n="stat">102856<!--Commodity: commodity_Autonomy_Trait_Ghost_Cowplant--></T>
+              </U>
+            </V>
+            <V t="reference">
+              <T n="reference">251311<!--PeriodicStatChangeOperation: periodicStatChangeOperation_Lifestyles_Liked_Outdoorsy--></T>
+            </V>
+            <V t="reference">
+              <T n="reference">249765<!--PeriodicStatChangeOperation: periodicStatChangeOperation_Lifestyles_Progress_Outdoorsy--></T>
+            </V>
+            <V t="reference">
+              <T n="reference">249843<!--PeriodicStatChangeOperation: periodicStatChangeOperation_Lifestyles_Progress_AdreanlineSeeker_Mundane--></T>
+            </V>
+            <V t="reference">
+              <T n="reference">250954<!--PeriodicStatChangeOperation: periodicStatChangeOperation_Lifestyles_Disliked_AdrenalineSeeker--></T>
+            </V>
+          </L>
+        </U>
+      </V>
+      <V t="disabled" n="progressive_stat_change" />
+      <T n="start_autonomous_inertial">False</T>
+    </U>
+  </V>
+  <L n="basic_extras">
+    <V t="broadcaster">
+      <U n="broadcaster">
+        <L n="broadcaster_types">
+          <U>
+            <T n="item">130030<!--Broadcaster: broadcaster_GainRelWithOthersUsingObject_Gardening--></T>
+            <L n="test">
+              <L>
+                <V t="sim_info">
+                  <U n="sim_info">
+                    <V t="enabled" n="npc" />
+                  </U>
+                </V>
+              </L>
+            </L>
+          </U>
+        </L>
+      </U>
+    </V>
+    <V t="loot">
+      <U n="loot">
+        <L n="loot_list">
+          <T>191597<!--LootActions: garden_BugSprayed_Loot_L6--></T>
+        </L>
+        <V t="enabled" n="object_override">
+          <V t="from_gardening" n="enabled">
+            <U n="from_gardening">
+              <T n="distance">0.9</T>
+            </U>
+          </V>
+        </V>
+      </U>
+    </V>
+    <V t="loot">
+      <U n="loot">
+        <L n="loot_list">
+          <T>191596<!--LootActions: garden_BugSprayed_Loot_L1L5--></T>
+        </L>
+      </U>
+    </V>
+  </L>
+  <V t="enabled" n="canonical_animation">
+    <U n="enabled">
+      <T n="factory">234783<!--AnimationElement: VerticalGarden_MeatWall_Spray_Mature--></T>
+    </U>
+  </V>
+  <V t="disabled" n="content_score" />
+  <T n="display_name">0x40C03A89<!--String: "Cuidando carne"--></T>
+  <V t="testable" n="display_name_overrides">
+    <U n="testable">
+      <L n="overrides">
+        <U>
+          <V t="disabled" n="new_display_name" />
+          <V t="enabled" n="new_pie_menu_icon">
+            <V n="enabled" t="tradition">
+              <U n="tradition">
+                <L n="participant_type">
+                  <E>Actor</E>
+                </L>
+              </U>
+            </V>
+          </V>
+          <L n="test">
+            <L>
+              <V t="holiday_tradition">
+                <U n="holiday_tradition">
+                  <U n="tradition_filter">
+                    <V n="whitelist" t="specify">
+                      <U n="specify">
+                        <L n="whitelist">
+                          <T>182135<!--HolidayTradition: holidayTradition_Gardening--></T>
+                        </L>
+                      </U>
+                    </V>
+                  </U>
+                </U>
+              </V>
+              <V t="mood">
+                <U n="mood">
+                  <T n="disallow">False</T>
+                  <T n="mood">14639<!--Mood: Mood_Focused--></T>
+                </U>
+              </V>
+            </L>
+          </L>
+        </U>
+        <U>
+          <V t="disabled" n="new_display_name" />
+          <L n="test">
+            <L>
+              <V t="holiday_tradition">
+                <U n="holiday_tradition">
+                  <U n="tradition_filter">
+                    <V n="blacklist" t="specify">
+                      <U n="specify">
+                        <L n="blacklist">
+                          <T>182135<!--HolidayTradition: holidayTradition_Gardening--></T>
+                        </L>
+                      </U>
+                    </V>
+                  </U>
+                </U>
+              </V>
+              <V t="mood">
+                <U n="mood">
+                  <T n="mood">14639<!--Mood: Mood_Focused--></T>
+                </U>
+              </V>
+            </L>
+          </L>
+        </U>
+        <U>
+          <V t="disabled" n="new_display_name" />
+          <V t="enabled" n="new_pie_menu_icon">
+            <V n="enabled" t="tradition" />
+          </V>
+          <L n="test">
+            <L>
+              <V t="holiday_tradition">
+                <U n="holiday_tradition">
+                  <U n="tradition_filter">
+                    <V n="whitelist" t="specify">
+                      <U n="specify">
+                        <L n="whitelist">
+                          <T>182135<!--HolidayTradition: holidayTradition_Gardening--></T>
+                        </L>
+                      </U>
+                    </V>
+                  </U>
+                </U>
+              </V>
+              <V t="mood">
+                <U n="mood">
+                  <T n="disallow">True</T>
+                  <T n="mood">14639<!--Mood: Mood_Focused--></T>
+                </U>
+              </V>
+            </L>
+          </L>
+        </U>
+      </L>
+    </U>
+  </V>
+  <U n="display_name_text_tokens">
+    <L n="tokens">
+      <V t="participant_type">
+        <U n="participant_type">
+          <V t="from_participant" n="objects">
+            <U n="from_participant">
+              <E n="participant">Actor</E>
+            </U>
+          </V>
+        </U>
+      </V>
+      <V t="participant_type">
+        <U n="participant_type">
+          <V t="from_participant" n="objects">
+            <U n="from_participant">
+              <E n="participant">Object</E>
+            </U>
+          </V>
+        </U>
+      </V>
+    </L>
+  </U>
+  <L n="interaction_category_tags">
+    <E>Interaction_Skill_Gardening</E>
+    <E>Interaction_Super</E>
+    <E>Interaction_All</E>
+    <E>Interaction_Lifestyles_Outdoorsy_FlexibleLength</E>
+    <E>Interaction_Lifestyles_AdrenalineSeeker_Mundane</E>
+  </L>
+  <L n="mood_list">
+    <T>14639<!--Mood: Mood_Focused--></T>
+  </L>
+  <V t="single" n="outcome">
+    <U n="single">
+      <U n="actions">
+        <L n="loot_list">
+          <T>35510<!--LootActions: Loot_Gardening_SuperGreenThumb--></T>
+        </L>
+      </U>
+    </U>
+  </V>
+  <V t="enabled" n="pie_menu_icon">
+    <V n="enabled" t="resource_key">
+      <U n="resource_key">
+        <T n="key" p="InGame\UI\Icons\PieMenu\Skills\skill_gardening_piemenu.png">2f7d0004:00000000:446087c3c244b42e</T>
+      </U>
+    </V>
+  </V>
+  <T n="pie_menu_priority">3</T>
+  <U n="post_run_autonomy_commodities">
+    <L n="requests">
+      <U>
+        <T n="consider_same_target">True</T>
+        <T n="radius_to_consider">10</T>
+        <V t="enabled" n="randomization_override">
+          <E n="enabled">DISABLED</E>
+        </V>
+        <L n="static_commodities">
+          <T>36207<!--StaticCommodity: StaticCommodity_TendPlants_same--></T>
+          <T>76154<!--StaticCommodity: StaticCommodity_TendPlants_others--></T>
+        </L>
+      </U>
+    </L>
+  </U>
+  <E n="scoring_priority">NORMAL</E>
+  <U n="skill_loot_data">
+    <E n="effectiveness">StandardPeriodic</E>
+    <V t="enabled" n="level_range">
+      <U n="enabled">
+        <T n="lower_bound">5</T>
+        <T n="upper_bound">9</T>
+      </U>
+    </V>
+    <T n="stat">16700<!--Skill: statistic_Skill_AdultMajor_Gardening--></T>
+  </U>
+  <T n="subaction_selection_weight">3</T>
+  <V t="literal" n="super_affordance_compatibility">
+    <U n="literal">
+      <V n="default_inclusion" t="include_all">
+        <U n="include_all">
+          <L n="exclude_lists">
+            <T>75763<!--AffordanceList: AffordanceList_Painting--></T>
+            <T>30816<!--AffordanceList: affordanceList_FoodConsume--></T>
+          </L>
+        </U>
+      </V>
+    </U>
+  </V>
+  <E n="target_type">OBJECT</E>
+  <V t="enabled" n="test_disallow_while_running" />
+  <L n="test_globals">
+    <V t="sim_info">
+      <U n="sim_info">
+        <V t="specified" n="ages" />
+        <V t="specified" n="species">
+          <U n="specified">
+            <L n="species">
+              <E />
+            </L>
+          </U>
+        </V>
+        <E n="who">Actor</E>
+      </U>
+    </V>
+    <V t="state">
+      <U n="state">
+        <E n="operator">NOTEQUAL</E>
+        <T n="value">39611<!--CommodityBasedObjectStateValue: FireState_Burn_Material_Change--></T>
+        <E n="who">ObjectParent</E>
+      </U>
+    </V>
+    <V t="state">
+      <U n="state">
+        <V t="always_pass" n="fallback_behavior" />
+        <E n="operator">NOTEQUAL</E>
+        <T n="value">32491<!--ObjectStateValue: Cowplant_GrowthState_Mature--></T>
+      </U>
+    </V>
+    <V t="state">
+      <U n="state">
+        <E n="operator">NOTEQUAL</E>
+        <T n="value">39330<!--CommodityBasedObjectStateValue: PlantEvolution_0_Death--></T>
+      </U>
+    </V>
+    <V t="state">
+      <U n="state">
+        <E n="operator">NOTEQUAL</E>
+        <T n="value">15211<!--ObjectStateValue: GardeningQuality_00_Wild--></T>
+      </U>
+    </V>
+    <V t="state">
+      <U n="state">
+        <T n="value">236258<!--ObjectStateValue: verticalGarden_MeatWall_Maturity_Mature--></T>
+      </U>
+    </V>
+    <V t="state_white_black">
+      <U n="state_white_black">
+        <U n="states">
+          <V n="whitelist" t="specify">
+            <U n="specify">
+              <L n="whitelist">
+                <T>185721<!--ObjectStateValue: InfestationEffects_0_BugsHeavy--></T>
+                <T>185722<!--ObjectStateValue: InfestationEffects_1_BugsLight--></T>
+                <T>185723<!--ObjectStateValue: InfestationEffects_2_BugsSprayable--></T>
+              </L>
+            </U>
+          </V>
+        </U>
+      </U>
+    </V>
+    <V t="test_set_reference">
+      <T n="test_set_reference">28305<!--TestSetInstance: testSet_EmotionNotMiserable--></T>
+    </V>
+    <V t="test_set_reference">
+      <T n="test_set_reference">28176<!--TestSetInstance: testSet_EmotionNotStressed--></T>
+    </V>
+  </L>
+  <T n="time_overhead">6</T>
+</I>

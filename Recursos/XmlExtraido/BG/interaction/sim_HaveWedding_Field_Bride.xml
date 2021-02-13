@@ -1,0 +1,479 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<I c="SocialSuperInteraction" i="interaction" m="interactions.social.social_super_interaction" n="sim_HaveWedding_Field_Bride" s="14093">
+  <V t="allow_cancelation" n="_cancelable_by_user" />
+  <V t="participant" n="_icon">
+    <U n="participant">
+      <L n="participant_type">
+        <E>TargetSim</E>
+      </L>
+    </U>
+  </V>
+  <L n="_party_size_weight_tuning">
+    <U>
+      <T n="y">100</T>
+    </U>
+    <U>
+      <T n="x">1</T>
+      <T n="y">100</T>
+    </U>
+    <U>
+      <T n="x">2</T>
+      <T n="y">50</T>
+    </U>
+    <U>
+      <T n="x">3</T>
+      <T n="y">0</T>
+    </U>
+    <U>
+      <T n="x">4</T>
+    </U>
+  </L>
+  <V t="enabled" n="_saveable" />
+  <T n="_social_group_type">16400<!--JigGroup: group_Wedding--></T>
+  <L n="_static_commodities">
+    <U>
+      <T n="static_commodity">31020<!--StaticCommodity: staticCommodity_WatchCeremony--></T>
+    </U>
+    <U>
+      <T n="static_commodity">123949<!--StaticCommodity: StaticCommodity_TwinRoses--></T>
+    </U>
+  </L>
+  <V n="affordance_to_push_on_target" t="push_affordance">
+    <T n="push_affordance">14094<!--SocialSuperInteraction: sim_HaveWedding_Field_Groom--></T>
+  </V>
+  <T n="allow_autonomous">False</T>
+  <T n="attention_cost">1</T>
+  <V t="flexible_length" n="basic_content">
+    <U n="flexible_length">
+      <V t="override" n="allow_holster" />
+      <V n="content" t="staging_content">
+        <U n="staging_content">
+          <U n="content_set">
+            <L n="affordance_links">
+              <T>14560<!--SocialMixerInteraction: Wedding_BrideGroom_ExchangeVows_Auto--></T>
+              <T>14561<!--SocialMixerInteraction: Wedding_BrideGroom_ExchangeVows_User--></T>
+              <T>14558<!--SocialMixerInteraction: Wedding_BrideGroom_ExchangeRing_Auto--></T>
+              <T>14559<!--SocialMixerInteraction: Wedding_BrideGroom_ExchangeRing_User--></T>
+              <T>14564<!--SocialMixerInteraction: Wedding_BrideGroom_HoldHands--></T>
+              <T>14557<!--SocialMixerInteraction: Wedding_BrideGroom_Caress--></T>
+              <T>14562<!--SocialMixerInteraction: Wedding_BrideGroom_Flirt--></T>
+              <T>14566<!--SocialMixerInteraction: Wedding_BrideGroom_Passive--></T>
+              <T>14563<!--SocialMixerInteraction: Wedding_BrideGroom_Flirt2--></T>
+              <T>14556<!--SocialMixerInteraction: Wedding_BrideGroom_CallOffWedding--></T>
+              <T>14567<!--SocialMixerInteraction: Wedding_BrideGroom_Slap--></T>
+              <T>14563<!--SocialMixerInteraction: Wedding_BrideGroom_Flirt2--></T>
+              <T>97571<!--SocialMixerInteraction: Wedding_BrideGroom_Flirt3--></T>
+              <T>97572<!--SocialMixerInteraction: Wedding_BrideGroom_Flirt4--></T>
+              <T>97573<!--SocialMixerInteraction: Wedding_BrideGroom_Flirt5--></T>
+            </L>
+          </U>
+        </U>
+      </V>
+      <V t="enabled" n="periodic_stat_change">
+        <U n="enabled">
+          <L n="operations">
+            <V t="statistic_change">
+              <U n="statistic_change">
+                <T n="amount">1</T>
+                <T n="stat">16658<!--Commodity: motive_Social--></T>
+              </U>
+            </V>
+            <V t="statistic_change">
+              <U n="statistic_change">
+                <T n="amount">0.25</T>
+                <T n="stat">102865<!--Commodity: commodity_AlienAbduction_Tracker--></T>
+                <L n="tests">
+                  <L>
+                    <V t="trait">
+                      <U n="trait">
+                        <E n="subject">TargetSim</E>
+                        <L n="whitelist_traits">
+                          <T>102785<!--Trait: trait_OccultAlien--></T>
+                        </L>
+                      </U>
+                    </V>
+                  </L>
+                </L>
+              </U>
+            </V>
+            <V t="statistic_set_max">
+              <U n="statistic_set_max">
+                <T n="stat">125579<!--Commodity: commodity_Buff_InsiderTrait_MissHangingOut--></T>
+                <L n="tests">
+                  <L>
+                    <V t="relationship">
+                      <U n="relationship">
+                        <U n="relationship_score_interval">
+                          <T n="lower_bound">35</T>
+                          <T n="upper_bound">100</T>
+                        </U>
+                        <L n="target_sim">
+                          <E>TargetSim</E>
+                        </L>
+                      </U>
+                    </V>
+                    <V t="trait">
+                      <U n="trait">
+                        <L n="whitelist_traits">
+                          <T>125437<!--Trait: trait_Insider--></T>
+                        </L>
+                      </U>
+                    </V>
+                  </L>
+                </L>
+              </U>
+            </V>
+          </L>
+        </U>
+      </V>
+      <T n="start_autonomous_inertial">False</T>
+    </U>
+  </V>
+  <L n="basic_extras">
+    <V t="loot">
+      <U n="loot">
+        <L n="loot_list">
+          <T>162659<!--LootActions: loot_Commodity_Culling_GhostAdd_target--></T>
+        </L>
+      </U>
+    </V>
+    <V t="state_change">
+      <U n="state_change">
+        <V n="new_value" t="single_value">
+          <U n="single_value">
+            <T n="new_value">15436<!--CommodityBasedObjectStateValue: WeddingProgress_1_PreVows--></T>
+          </U>
+        </V>
+        <E n="state_change_target">SocialGroup</E>
+        <V t="immediately" n="timing" />
+      </U>
+    </V>
+    <V t="relationship_bit">
+      <U n="relationship_bit">
+        <U n="relationship_bits_begin">
+          <L n="bit_operations">
+            <U>
+              <T n="bit">15818<!--RelationshipBit: romantic-GettingMarried--></T>
+              <E n="operation">ADD</E>
+              <E n="recipients">Actor</E>
+              <E n="targets">TargetSim</E>
+            </U>
+          </L>
+        </U>
+        <U n="relationship_bits_end">
+          <L n="bit_operations">
+            <U>
+              <T n="bit">15818<!--RelationshipBit: romantic-GettingMarried--></T>
+              <E n="operation">REMOVE</E>
+              <E n="recipients">Actor</E>
+              <E n="targets">TargetSim</E>
+            </U>
+          </L>
+        </U>
+      </U>
+    </V>
+    <V t="audio_sting">
+      <U n="audio_sting">
+        <U n="audio_sting">
+          <T n="audio" p="InGame\Audio\Music\musicbed\musicbed_wedding_success.propx">39b2aa4a:00000000:7c3ab18df95c1236</T>
+        </U>
+        <T n="stop_audio_on_end">True</T>
+        <V t="at_beginning" n="timing" />
+      </U>
+    </V>
+    <V t="buff">
+      <U n="buff">
+        <U n="buff_type">
+          <V n="buff_reason" t="enabled">
+            <T n="enabled">0x9C09275F<!--String: "(Por estar en un grupo social con al menos 3 Sims)"--></T>
+          </V>
+          <T n="buff_type">125555<!--Buff: buff_Trait_WithMyFriends--></T>
+        </U>
+        <L n="subject">
+          <E>Actor</E>
+          <E>SocialGroupSims</E>
+          <E>TargetSim</E>
+        </L>
+        <L n="tests">
+          <L>
+            <V t="social_group">
+              <U n="social_group">
+                <V t="enabled" n="threshold">
+                  <U n="enabled">
+                    <T n="value">3</T>
+                  </U>
+                </V>
+              </U>
+            </V>
+          </L>
+        </L>
+      </U>
+    </V>
+    <V t="loot">
+      <U n="loot">
+        <L n="loot_list">
+          <T>157124<!--LootActions: loot_Toddler_RemovedLeftBehind--></T>
+        </L>
+        <V t="at_beginning" n="timing" />
+      </U>
+    </V>
+  </L>
+  <V t="disabled" n="basic_reserve_object" />
+  <T n="can_shoo">False</T>
+  <V t="enabled" n="canonical_animation">
+    <U n="enabled">
+      <T n="factory">12059<!--AnimationElement: Soc_Romance_Wedding_Rings--></T>
+    </U>
+  </V>
+  <V t="disabled" n="content_score" />
+  <T n="display_name">0xF3349557<!--String: "Casarse con {1.SimFirstName} inmediatamente"--></T>
+  <V t="testable" n="display_name_overrides">
+    <U n="testable">
+      <L n="overrides">
+        <U>
+          <V n="new_display_name" t="enabled">
+            <T n="enabled">0x7AD46134<!--String: "Casarse con {1.SimFirstName}"--></T>
+          </V>
+          <V t="disabled" n="new_display_tooltip" />
+          <L n="test">
+            <L>
+              <V t="situation_job_test">
+                <U n="situation_job_test">
+                  <L n="situation_jobs">
+                    <T>9363<!--SituationJob: job_wedding_betrothed--></T>
+                  </L>
+                </U>
+              </V>
+            </L>
+          </L>
+        </U>
+      </L>
+    </U>
+  </V>
+  <U n="display_name_text_tokens">
+    <L n="tokens">
+      <V t="participant_type">
+        <U n="participant_type">
+          <V t="from_participant" n="objects">
+            <U n="from_participant">
+              <E n="participant">Actor</E>
+            </U>
+          </V>
+        </U>
+      </V>
+      <V t="participant_type">
+        <U n="participant_type">
+          <V t="from_participant" n="objects">
+            <U n="from_participant">
+              <E n="participant">Object</E>
+            </U>
+          </V>
+        </U>
+      </V>
+    </L>
+  </U>
+  <V t="enabled" n="display_tooltip">
+    <T n="enabled">0x58555B0A<!--String: "Sellad vuestra unión aquí y ahora."--></T>
+  </V>
+  <V t="enabled" n="idle_animation">
+    <U n="enabled">
+      <T n="factory">11570<!--AnimationElement: Listen_Listen_Looping_basic--></T>
+    </U>
+  </V>
+  <T n="ignore_group_socials">True</T>
+  <L n="interaction_category_tags">
+    <E>Interaction_SocialSuper</E>
+    <E>Interaction_Super</E>
+    <E>Interaction_All</E>
+    <E>Interaction_SocialAll</E>
+    <E>Interaction_Social_Touching</E>
+    <E>Interaction_Social_Contagious</E>
+  </L>
+  <T n="invite_in_after_interaction">True</T>
+  <U n="listen_animation">
+    <T n="factory">11570<!--AnimationElement: Listen_Listen_Looping_basic--></T>
+  </U>
+  <V t="none" n="outcome" />
+  <V t="enabled" n="pie_menu_icon">
+    <V t="resource_key" n="enabled">
+      <U n="resource_key">
+        <T n="key" p="InGame\UI\Icons\Headlines\Final\headline_weddingrings.png">2f7d0004:00000000:e0926b5aa811b461</T>
+      </U>
+    </V>
+  </V>
+  <T n="pie_menu_priority">2</T>
+  <U n="progress_bar_enabled">
+    <T n="bar_enabled">False</T>
+    <V n="force_listen_statistic" t="enabled">
+      <U n="enabled">
+        <T n="statistic">16643<!--Commodity: commodity_weddingprogress--></T>
+        <E n="subject">SocialGroup</E>
+        <U n="target_value">
+          <T n="value">0</T>
+        </U>
+      </U>
+    </V>
+  </U>
+  <L n="provided_affordances">
+    <U>
+      <T n="affordance">14554<!--SuperInteraction: Wedding_Attend_Field_Bride--></T>
+    </U>
+  </L>
+  <T n="relationship_scoring">True</T>
+  <E n="scoring_priority">NORMAL</E>
+  <V t="enabled" n="sim_affinity_posture_scoring_data">
+    <U n="enabled">
+      <L n="my_scoring">
+        <U>
+          <V t="relationship_based" n="affinity_strategy" />
+          <T n="negate_tag">True</T>
+          <E n="running_interaction_tag">Sleeping</E>
+        </U>
+        <U>
+          <V t="avoid" n="affinity_strategy" />
+          <E n="running_interaction_tag">Very_Loud</E>
+        </U>
+      </L>
+      <L n="my_tags">
+        <E>Loud</E>
+        <E>Chat</E>
+      </L>
+    </U>
+  </V>
+  <T n="subaction_selection_weight">1</T>
+  <V t="literal" n="super_affordance_compatibility">
+    <U n="literal">
+      <V n="default_inclusion" t="exclude_all">
+        <U n="exclude_all">
+          <L n="include_affordances">
+            <T>14552<!--SuperInteraction: Wedding_Attend_Arch_Bride--></T>
+            <T>14553<!--SuperInteraction: Wedding_Attend_Arch_Groom--></T>
+            <T>14554<!--SuperInteraction: Wedding_Attend_Field_Bride--></T>
+            <T>14555<!--SuperInteraction: Wedding_Attend_Field_Groom--></T>
+          </L>
+        </U>
+      </V>
+    </U>
+  </V>
+  <L n="supported_posture_type_filter">
+    <U>
+      <E n="participant_type">Actor</E>
+      <T n="posture_type">15537<!--MobilePosture: posture_Stand--></T>
+    </U>
+    <U>
+      <E n="participant_type">TargetSim</E>
+      <T n="posture_type">15537<!--MobilePosture: posture_Stand--></T>
+    </U>
+  </L>
+  <E n="target_type">TARGET</E>
+  <L n="test_globals">
+    <V t="relationship">
+      <U n="relationship">
+        <U n="prohibited_relationship_bits">
+          <L n="match_all">
+            <T>15818<!--RelationshipBit: romantic-GettingMarried--></T>
+            <T>15822<!--RelationshipBit: romantic-Married--></T>
+          </L>
+        </U>
+        <U n="required_relationship_bits">
+          <L n="match_all">
+            <T>15816<!--RelationshipBit: romantic-Engaged--></T>
+          </L>
+        </U>
+      </U>
+    </V>
+    <V t="test_set_reference">
+      <T n="test_set_reference">121319<!--TestSetInstance: testSet_TargetisNotYogaInstructorInClass--></T>
+    </V>
+    <V t="situation_job_test">
+      <U n="situation_job_test">
+        <T n="negate">True</T>
+        <E n="participant">TargetSim</E>
+        <L n="situation_jobs">
+          <T>181420<!--SituationJob: jobs_HolidayTradition_FatherWinter--></T>
+        </L>
+      </U>
+    </V>
+    <V t="sim_info">
+      <U n="sim_info">
+        <V t="specified" n="species">
+          <U n="specified">
+            <L n="species">
+              <E />
+            </L>
+          </U>
+        </V>
+        <E n="who">TargetSim</E>
+      </U>
+    </V>
+    <V t="sim_info">
+      <U n="sim_info">
+        <V t="specified" n="ages">
+          <L n="specified">
+            <E>YOUNGADULT</E>
+            <E>ADULT</E>
+            <E>ELDER</E>
+          </L>
+        </V>
+        <V n="tooltip" t="enabled">
+          <T n="enabled">0x453E4931<!--String: "¡{1.SimFirstName} es demasiado joven para casarse!"--></T>
+        </V>
+        <E n="who">TargetSim</E>
+      </U>
+    </V>
+    <V t="sim_info">
+      <U n="sim_info">
+        <V t="specified" n="ages">
+          <L n="specified">
+            <E>YOUNGADULT</E>
+            <E>ADULT</E>
+            <E>ELDER</E>
+          </L>
+        </V>
+        <V t="specified" n="species">
+          <U n="specified">
+            <L n="species">
+              <E />
+            </L>
+          </U>
+        </V>
+        <V n="tooltip" t="enabled">
+          <T n="enabled">0x38F2AE54<!--String: "{0.SimFirstName} es demasiado joven para casarse."--></T>
+        </V>
+        <E n="who">Actor</E>
+      </U>
+    </V>
+    <V t="situation_job_test">
+      <U n="situation_job_test">
+        <T n="negate">True</T>
+        <E n="participant">TargetSim</E>
+        <L n="role_tags">
+          <E>Role_Service</E>
+        </L>
+        <V t="enabled" n="tooltip">
+          <T n="enabled">0xC3E7F15F<!--String: "Casarte con una persona que trabaja para ti no sería apropiado. Si quieres que la relación vaya a más, pon fin a sus servicios."--></T>
+        </V>
+      </U>
+    </V>
+    <V t="mood">
+      <U n="mood">
+        <T n="disallow">True</T>
+        <T n="mood">14643<!--Mood: Mood_Sad--></T>
+        <V n="tooltip" t="enabled">
+          <T n="enabled">0xD3FBB440<!--String: "¡{0.SimFirstName} está demasiado triste para hacer esto!"--></T>
+        </V>
+      </U>
+    </V>
+    <V t="mood">
+      <U n="mood">
+        <T n="disallow">True</T>
+        <T n="mood">14632<!--Mood: Mood_Angry--></T>
+        <V n="tooltip" t="enabled">
+          <T n="enabled">0x630A426D<!--String: "¡{0.SimFirstName} está demasiado {M0.enfadado}{F0.enfadada} para hacer esto!"--></T>
+        </V>
+      </U>
+    </V>
+  </L>
+  <T n="test_incest">True</T>
+  <T n="time_overhead">30</T>
+</I>

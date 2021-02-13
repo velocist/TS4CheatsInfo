@@ -1,0 +1,58 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<I c="Broadcaster" i="broadcaster" m="broadcasters.broadcaster" n="broadcaster_ActingSkill_AttractWatchers" s="195070">
+  <L n="constraints">
+    <V t="circle">
+      <U n="circle">
+        <T n="radius">10</T>
+      </U>
+    </V>
+  </L>
+  <L n="effects">
+    <V t="affordance">
+      <U n="affordance">
+        <V t="enabled" n="affected_object_cap">
+          <T n="enabled">5</T>
+        </V>
+        <E n="affordance_priority">High</E>
+        <V t="enabled" n="affordance_target" />
+        <L n="affordances">
+          <U>
+            <T n="affordance">195072<!--SuperInteraction: actingSkill_WatchRoutine--></T>
+            <T n="weight">1</T>
+          </U>
+        </L>
+        <L n="tests">
+          <L>
+            <V t="zone">
+              <U n="zone">
+                <U n="zone_tests">
+                  <V n="venue_type" t="enabled">
+                    <U n="enabled">
+                      <V n="blacklist" t="specify">
+                        <U n="specify">
+                          <L n="blacklist">
+                            <T>190058<!--Venue: venue_ActingStudio--></T>
+                          </L>
+                        </U>
+                      </V>
+                    </U>
+                  </V>
+                </U>
+              </U>
+            </V>
+            <V t="participant_running_interaction">
+              <U n="participant_running_interaction">
+                <L n="affordances">
+                  <T>200562<!--SocialSuperInteraction: si_Touching_ActingSkill_TargetSimRoutine--></T>
+                </L>
+                <T n="test_for_not_running">True</T>
+              </U>
+            </V>
+          </L>
+        </L>
+      </U>
+    </V>
+  </L>
+  <V t="on_enter" n="frequency" />
+  <T n="immediate">True</T>
+</I>

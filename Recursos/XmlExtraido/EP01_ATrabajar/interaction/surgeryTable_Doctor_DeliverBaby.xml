@@ -1,0 +1,271 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<I c="SuperInteraction" i="interaction" m="interactions.base.super_interaction" n="surgeryTable_Doctor_DeliverBaby" s="111767">
+  <V t="prohibit_cancelation" n="_cancelable_by_user" />
+  <V t="participant" n="_icon">
+    <U n="participant">
+      <L n="participant_type">
+        <E>TargetSim</E>
+      </L>
+    </U>
+  </V>
+  <V t="enabled" n="_saveable" />
+  <T n="allow_autonomous">False</T>
+  <T n="allow_user_directed">False</T>
+  <T n="attention_cost">0.5</T>
+  <V n="basic_content" t="flexible_length">
+    <U n="flexible_length">
+      <L n="conditional_actions">
+        <V t="list_reference">
+          <T n="list_reference">40705<!--ExitConditionList: ExitConditionList_MotivesNearFail--></T>
+        </V>
+        <V t="literal">
+          <U n="literal">
+            <L n="conditions">
+              <V t="state_based">
+                <U n="state_based">
+                  <V n="state" t="on_trigger">
+                    <T n="on_trigger">110030<!--ObjectStateValue: surgeryTable_Patient_Occupany_completed_Success--></T>
+                  </V>
+                  <E n="subject">ActorPostureTarget</E>
+                </U>
+              </V>
+            </L>
+            <E n="interaction_action">EXIT_NATURALLY</E>
+          </U>
+        </V>
+      </L>
+      <V t="looping_content" n="content">
+        <U n="looping_content">
+          <U n="animation_ref">
+            <T n="factory">108738<!--AnimationElement: object_SurgeryTable_Doctor_Standing_Idles--></T>
+            <U n="overrides">
+              <V n="balloons" t="enabled">
+                <L n="enabled">
+                  <U>
+                    <L n="balloon_choices">
+                      <U>
+                        <V t="balloon_category" n="item">
+                          <T n="balloon_category">107017<!--BalloonCategory: balloonCategory_SicknessSystem_MedicalAdvice_Good_Doctor--></T>
+                        </V>
+                      </U>
+                    </L>
+                    <T n="balloon_delay">2</T>
+                    <T n="balloon_delay_random_offset">1</T>
+                    <L n="balloon_target">
+                      <E>Actor</E>
+                    </L>
+                  </U>
+                </L>
+              </V>
+            </U>
+          </U>
+        </U>
+      </V>
+      <T n="start_autonomous_inertial">False</T>
+    </U>
+  </V>
+  <L n="basic_extras">
+    <V t="state_change">
+      <U n="state_change">
+        <V n="new_value" t="single_value">
+          <U n="single_value">
+            <T n="new_value">110029<!--ObjectStateValue: surgeryTable_Doctor_Occupancy_tended--></T>
+          </U>
+        </V>
+        <E n="state_change_target">ActorPostureTarget</E>
+        <V t="immediately" n="timing" />
+      </U>
+    </V>
+    <V t="state_change">
+      <U n="state_change">
+        <V n="new_value" t="single_value">
+          <U n="single_value">
+            <T n="new_value">112146<!--VideoChannel: surgeryTable_DeliveryBaby--></T>
+          </U>
+        </V>
+        <E n="state_change_target">ActorPostureTarget</E>
+        <V t="immediately" n="timing" />
+      </U>
+    </V>
+    <V t="state_change">
+      <U n="state_change">
+        <V n="new_value" t="single_value">
+          <U n="single_value">
+            <T n="new_value">108729<!--ObjectStateValue: surgeryTable_PatientOccupancy_empty--></T>
+          </U>
+        </V>
+        <E n="state_change_target">ActorPostureTarget</E>
+      </U>
+    </V>
+    <V t="state_change">
+      <U n="state_change">
+        <V n="new_value" t="single_value">
+          <U n="single_value">
+            <T n="new_value">110028<!--ObjectStateValue: surgeryTable_Doctor_Occupany_untended--></T>
+          </U>
+        </V>
+        <E n="state_change_target">ActorPostureTarget</E>
+      </U>
+    </V>
+    <V t="state_change">
+      <U n="state_change">
+        <V n="new_value" t="single_value">
+          <U n="single_value">
+            <T n="new_value">112144<!--VideoChannel: surgeryTable_Off--></T>
+          </U>
+        </V>
+        <E n="state_change_target">ActorPostureTarget</E>
+      </U>
+    </V>
+  </L>
+  <V t="disabled" n="content_score" />
+  <T n="display_name">0xC2432810<!--String: "Asistiendo parto"--></T>
+  <U n="display_name_text_tokens">
+    <L n="tokens">
+      <V t="participant_type">
+        <U n="participant_type">
+          <V t="from_participant" n="objects">
+            <U n="from_participant">
+              <E n="participant">Actor</E>
+            </U>
+          </V>
+        </U>
+      </V>
+      <V t="participant_type">
+        <U n="participant_type">
+          <V t="from_participant" n="objects">
+            <U n="from_participant">
+              <E n="participant">TargetSim</E>
+            </U>
+          </V>
+        </U>
+      </V>
+    </L>
+  </U>
+  <L n="interaction_category_tags">
+    <E>Interaction_Super</E>
+    <E>Interaction_All</E>
+  </L>
+  <V t="single" n="outcome">
+    <U n="single">
+      <U n="actions">
+        <L n="basic_extras">
+          <V t="notification">
+            <U n="notification">
+              <V n="dialog" t="single">
+                <V n="single" t="literal">
+                  <U n="literal">
+                    <V t="enabled" n="icon">
+                      <V t="resource_key" n="enabled">
+                        <U n="resource_key">
+                          <T p="InGame\UI\Icons\Headlines\Final\headline_babyrattle.png" n="key">2f7d0004:00000000:7216664d23aca3f2</T>
+                        </U>
+                      </V>
+                    </V>
+                    <V t="enabled" n="secondary_icon">
+                      <V t="participant" n="enabled" />
+                    </V>
+                    <V n="text" t="single">
+                      <T n="single">0xFF6FB3A0<!--String: "¡El procedimiento ha sido un éxito! {1.SimName} ha dado a luz a su bebé y ahora descansa tranquilamente gracias a la pericia quirúrgica de {0.SimFirstName}."--></T>
+                    </V>
+                    <V t="enabled" n="text_tokens">
+                      <U n="enabled">
+                        <L n="tokens">
+                          <V t="participant_type" />
+                          <V t="participant_type">
+                            <U n="participant_type">
+                              <V t="from_participant" n="objects">
+                                <U n="from_participant">
+                                  <E n="participant">TargetSim</E>
+                                </U>
+                              </V>
+                            </U>
+                          </V>
+                        </L>
+                      </U>
+                    </V>
+                  </U>
+                </V>
+              </V>
+            </U>
+          </V>
+          <V t="balloon">
+            <U n="balloon">
+              <L n="balloon_choices">
+                <U>
+                  <V n="item" t="balloon_category">
+                    <T n="balloon_category">30980<!--BalloonCategory: balloonCategory_SetBabies_Speech--></T>
+                  </V>
+                </U>
+              </L>
+              <T n="balloon_delay">-2</T>
+              <L n="balloon_target">
+                <E>Actor</E>
+              </L>
+            </U>
+          </V>
+        </L>
+        <L n="continuation">
+          <U>
+            <T n="affordance">13983<!--StandSuperInteraction: sim-stand--></T>
+          </U>
+        </L>
+        <L n="loot_list">
+          <T>109500<!--LootActions: loot_JobPerformance_Gain_Large_Doctor--></T>
+          <T>113112<!--LootActions: loot_Buff_Sim_Doctor_DeliveredBabyRecently--></T>
+        </L>
+        <V t="enabled" n="response">
+          <V n="enabled" t="individual">
+            <U n="individual">
+              <L n="animations">
+                <U>
+                  <E n="target">Actor</E>
+                  <U n="animation">
+                    <T n="factory">28358<!--AnimationElement: Socials_Responses_Excited_LowIntensity--></T>
+                  </U>
+                </U>
+              </L>
+            </U>
+          </V>
+        </V>
+      </U>
+    </U>
+  </V>
+  <T n="relocate_main_group">True</T>
+  <T n="require_shared_body_target">True</T>
+  <E n="scoring_priority">NORMAL</E>
+  <T n="subaction_selection_weight">1</T>
+  <V t="literal" n="super_affordance_compatibility">
+    <U n="literal">
+      <V n="default_inclusion" t="exclude_all" />
+    </U>
+  </V>
+  <E n="target_type">OBJECT</E>
+  <L n="test_globals">
+    <V t="sim_info">
+      <U n="sim_info">
+        <V t="specified" n="ages" />
+        <V t="specified" n="species">
+          <U n="specified">
+            <L n="species">
+              <E />
+            </L>
+          </U>
+        </V>
+        <E n="who">Actor</E>
+      </U>
+    </V>
+    <V t="career_test">
+      <U n="career_test">
+        <V t="career_reference" n="test_type">
+          <U n="career_reference">
+            <V t="specific_career" n="career">
+              <T n="specific_career">107230<!--Career: career_Adult_Active_Doctor--></T>
+            </V>
+          </U>
+        </V>
+      </U>
+    </V>
+  </L>
+  <T n="time_overhead">30</T>
+</I>

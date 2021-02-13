@@ -1,0 +1,1068 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<I c="SuperInteraction" i="interaction" m="interactions.base.super_interaction" n="sleepingPod_Interactions_Sleep_Upgraded" s="200699">
+  <V t="enabled" n="_affordance_key_override_for_autonomy">
+    <T n="enabled">bed_sleep</T>
+  </V>
+  <V t="enabled" n="_saveable" />
+  <T n="allow_autonomous">True</T>
+  <L n="appropriateness_tags">
+    <E>Appropriateness_Sleeping</E>
+  </L>
+  <T n="attention_cost">0.5</T>
+  <V t="enabled" n="autonomy_preference">
+    <V n="enabled" t="use_only">
+      <U n="use_only">
+        <U n="preference">
+          <E n="tag">BED</E>
+        </U>
+      </U>
+    </V>
+  </V>
+  <V n="basic_content" t="flexible_length">
+    <U n="flexible_length">
+      <L n="conditional_actions">
+        <V t="literal">
+          <U n="literal">
+            <L n="conditions">
+              <V t="stat_based">
+                <U n="stat_based">
+                  <T n="stat">16654<!--Commodity: motive_Energy--></T>
+                  <U n="threshold">
+                    <T n="value">100</T>
+                  </U>
+                </U>
+              </V>
+            </L>
+            <E n="interaction_action">EXIT_NATURALLY</E>
+            <L n="loot_actions">
+              <T>77289<!--LootActions: Loot_Wakeup_GiveWakeupInXHours--></T>
+            </L>
+            <E n="progress_bar_action">FORCE_USE_CONDITION</E>
+            <L n="tests">
+              <L>
+                <V t="statistic">
+                  <U n="statistic">
+                    <T n="must_have_stat">True</T>
+                    <T n="stat">16654<!--Commodity: motive_Energy--></T>
+                    <V t="value_threshold" n="threshold">
+                      <U n="value_threshold">
+                        <T n="value">-100</T>
+                      </U>
+                    </V>
+                  </U>
+                </V>
+              </L>
+            </L>
+          </U>
+        </V>
+        <V t="literal">
+          <U n="literal">
+            <L n="conditions">
+              <V t="buff_based">
+                <U n="buff_based">
+                  <T n="buff">77288<!--Buff: buff_Sim_WakeupInXHoursHidden--></T>
+                  <E n="timing">ON_REMOVE</E>
+                </U>
+              </V>
+            </L>
+            <E n="interaction_action">EXIT_NATURALLY</E>
+          </U>
+        </V>
+        <V t="literal">
+          <U n="literal">
+            <L n="conditions">
+              <V t="wakeup_time_based" />
+              <V t="stat_based">
+                <U n="stat_based">
+                  <T n="stat">16654<!--Commodity: motive_Energy--></T>
+                  <U n="threshold">
+                    <T n="value">50</T>
+                  </U>
+                </U>
+              </V>
+            </L>
+            <E n="interaction_action">LOWER_PRIORITY</E>
+            <L n="tests">
+              <L>
+                <V t="statistic">
+                  <U n="statistic">
+                    <T n="must_have_stat">True</T>
+                    <T n="stat">16654<!--Commodity: motive_Energy--></T>
+                    <V t="value_threshold" n="threshold">
+                      <U n="value_threshold">
+                        <T n="value">-100</T>
+                      </U>
+                    </V>
+                  </U>
+                </V>
+              </L>
+            </L>
+          </U>
+        </V>
+        <V t="list_reference">
+          <T n="list_reference">203044<!--ExitConditionList: ExitConditionList_BeWokenUp--></T>
+        </V>
+        <V t="literal">
+          <U n="literal">
+            <L n="conditions">
+              <V t="stat_based">
+                <U n="stat_based">
+                  <T n="stat">16652<!--Commodity: motive_Bladder--></T>
+                  <U n="threshold">
+                    <E n="comparison">LESS_OR_EQUAL</E>
+                    <T n="value">-85</T>
+                  </U>
+                </U>
+              </V>
+            </L>
+            <E n="interaction_action">EXIT_CANCEL</E>
+            <L n="tests">
+              <L>
+                <V t="statistic">
+                  <U n="statistic">
+                    <T n="must_have_stat">True</T>
+                    <T n="stat">16652<!--Commodity: motive_Bladder--></T>
+                    <V t="value_threshold" n="threshold">
+                      <U n="value_threshold">
+                        <T n="value">-100</T>
+                      </U>
+                    </V>
+                  </U>
+                </V>
+              </L>
+            </L>
+          </U>
+        </V>
+        <V t="literal">
+          <U n="literal">
+            <L n="conditions">
+              <V t="wakeup_time_based" />
+              <V t="stat_based">
+                <U n="stat_based">
+                  <T n="stat">16654<!--Commodity: motive_Energy--></T>
+                  <U n="threshold">
+                    <T n="value">100</T>
+                  </U>
+                </U>
+              </V>
+            </L>
+            <E n="interaction_action">EXIT_NATURALLY</E>
+            <L n="tests">
+              <L>
+                <V t="statistic">
+                  <U n="statistic">
+                    <T n="must_have_stat">True</T>
+                    <T n="stat">16654<!--Commodity: motive_Energy--></T>
+                    <V t="value_threshold" n="threshold">
+                      <U n="value_threshold">
+                        <T n="value">-100</T>
+                      </U>
+                    </V>
+                  </U>
+                </V>
+              </L>
+            </L>
+          </U>
+        </V>
+        <V t="literal">
+          <U n="literal">
+            <L n="conditions">
+              <V t="buff_based">
+                <U n="buff_based">
+                  <T n="buff">150295<!--Buff: buff_MindPowers_Command_WakeUp--></T>
+                </U>
+              </V>
+            </L>
+            <E n="interaction_action">EXIT_NATURALLY</E>
+          </U>
+        </V>
+        <V t="literal">
+          <U n="literal">
+            <L n="conditions">
+              <V t="wakeup_time_based">
+                <U n="wakeup_time_based">
+                  <T n="hours_prior_to_schedule_start">-1</T>
+                </U>
+              </V>
+            </L>
+            <L n="tests">
+              <L>
+                <V t="trait">
+                  <U n="trait">
+                    <L n="whitelist_traits">
+                      <T>161626<!--Trait: trait_LifeSkills_Irresponsible--></T>
+                    </L>
+                  </U>
+                </V>
+              </L>
+            </L>
+          </U>
+        </V>
+        <V t="literal">
+          <U n="literal">
+            <L n="conditions">
+              <V t="wakeup_time_based">
+                <U n="wakeup_time_based">
+                  <T n="hours_prior_to_schedule_start">1</T>
+                </U>
+              </V>
+            </L>
+            <L n="tests">
+              <L>
+                <V t="trait">
+                  <U n="trait">
+                    <L n="whitelist_traits">
+                      <T>161625<!--Trait: trait_LifeSkills_Responsible--></T>
+                    </L>
+                  </U>
+                </V>
+              </L>
+            </L>
+          </U>
+        </V>
+        <V t="literal">
+          <U n="literal">
+            <L n="conditions">
+              <V t="buff_based">
+                <U n="buff_based">
+                  <T n="buff">75271<!--Buff: buff_Pregnancy_InLabor--></T>
+                </U>
+              </V>
+              <V t="stat_based">
+                <U n="stat_based">
+                  <T n="stat">16654<!--Commodity: motive_Energy--></T>
+                  <U n="threshold">
+                    <T n="value">100</T>
+                  </U>
+                </U>
+              </V>
+            </L>
+            <E n="interaction_action">EXIT_CANCEL</E>
+          </U>
+        </V>
+        <V t="literal">
+          <U n="literal">
+            <L n="conditions">
+              <V t="time_based">
+                <U n="time_based">
+                  <T n="max_time">120</T>
+                  <T n="min_time">120</T>
+                </U>
+              </V>
+              <V t="stat_based">
+                <U n="stat_based">
+                  <T n="stat">16654<!--Commodity: motive_Energy--></T>
+                  <U n="threshold">
+                    <T n="value">75</T>
+                  </U>
+                </U>
+              </V>
+            </L>
+            <E n="interaction_action">NO_ACTION</E>
+            <L n="loot_actions">
+              <T>200457<!--LootActions: loot_SleepingPod_Upgrades_Up-N-Atomizer_TurnOn--></T>
+            </L>
+            <L n="tests">
+              <L>
+                <V t="state">
+                  <U n="state">
+                    <T n="value">199483<!--ObjectStateValue: sleepingPod_StateValues_Upgrades_Up-N-Atomizer_True--></T>
+                  </U>
+                </V>
+              </L>
+            </L>
+          </U>
+        </V>
+        <V t="literal">
+          <U n="literal">
+            <L n="conditions">
+              <V t="stat_based">
+                <U n="stat_based">
+                  <T n="stat">16654<!--Commodity: motive_Energy--></T>
+                  <U n="threshold">
+                    <T n="value">35</T>
+                  </U>
+                </U>
+              </V>
+            </L>
+            <E n="interaction_action">NO_ACTION</E>
+            <L n="loot_actions">
+              <T>200457<!--LootActions: loot_SleepingPod_Upgrades_Up-N-Atomizer_TurnOn--></T>
+            </L>
+            <L n="tests">
+              <L>
+                <V t="state">
+                  <U n="state">
+                    <T n="value">199483<!--ObjectStateValue: sleepingPod_StateValues_Upgrades_Up-N-Atomizer_True--></T>
+                  </U>
+                </V>
+                <V t="buff">
+                  <U n="buff">
+                    <V n="whitelist" t="enabled">
+                      <L n="enabled">
+                        <T>200636<!--Buff: buff_SleepingPod_CircadianTweaker--></T>
+                      </L>
+                    </V>
+                  </U>
+                </V>
+              </L>
+            </L>
+          </U>
+        </V>
+        <V t="literal">
+          <U n="literal">
+            <L n="conditions">
+              <V t="state_based">
+                <U n="state_based">
+                  <V t="on_trigger" n="state">
+                    <T n="on_trigger">15080<!--ObjectStateValue: BrokenState_Broken--></T>
+                  </V>
+                </U>
+              </V>
+            </L>
+            <E n="interaction_action">EXIT_CANCEL</E>
+          </U>
+        </V>
+        <V t="literal">
+          <U n="literal">
+            <L n="conditions">
+              <V t="state_based">
+                <U n="state_based">
+                  <V n="state" t="on_trigger">
+                    <T n="on_trigger">199472<!--ObjectStateValue: sleepingPod_StateValues_Mischief_Hacked_True--></T>
+                  </V>
+                </U>
+              </V>
+            </L>
+            <E n="interaction_action">EXIT_NATURALLY</E>
+          </U>
+        </V>
+        <V t="reference">
+          <T n="reference">153292<!--ExitCondition: exitCondition_VampireMaxedPower--></T>
+        </V>
+      </L>
+      <V t="looping_content" n="content">
+        <U n="looping_content">
+          <U n="animation_ref">
+            <T n="factory">200078<!--AnimationElement: SleepingPod_Sleep_Hover--></T>
+          </U>
+        </U>
+      </V>
+      <V t="enabled" n="periodic_stat_change">
+        <U n="enabled">
+          <L n="operations">
+            <V t="statistic_change">
+              <U n="statistic_change">
+                <T n="amount">0.312</T>
+                <T n="stat">16654<!--Commodity: motive_Energy--></T>
+                <L n="subject">
+                  <E>Actor</E>
+                </L>
+              </U>
+            </V>
+            <V t="statistic_set_max">
+              <U n="statistic_set_max">
+                <T n="stat">33350<!--Commodity: commodity_SimInfo_TimeSinceLastSlept--></T>
+                <L n="subject">
+                  <E>Actor</E>
+                </L>
+              </U>
+            </V>
+            <V t="statistic_set_max">
+              <U n="statistic_set_max">
+                <T n="advertise">False</T>
+                <T n="stat">157460<!--Commodity: commodity_Buff_ToddlerCaregiverAwake--></T>
+                <L n="subject">
+                  <E>Actor</E>
+                </L>
+              </U>
+            </V>
+            <V t="statistic_change">
+              <U n="statistic_change">
+                <T n="advertise">False</T>
+                <T n="amount">1</T>
+                <T n="stat">201167<!--Statistic: statistic_Object_SleepingPod_SleepDuration--></T>
+                <L n="subject">
+                  <E>Actor</E>
+                </L>
+              </U>
+            </V>
+            <V t="statistic_change">
+              <U n="statistic_change">
+                <T n="advertise">False</T>
+                <T n="amount">2</T>
+                <E n="periodic_change_behavior">APPLY_AT_INTERVAL_ONLY</E>
+                <T n="stat">16657<!--Commodity: motive_Hygiene--></T>
+                <L n="subject">
+                  <E>Actor</E>
+                </L>
+                <L n="tests">
+                  <L>
+                    <V t="state">
+                      <U n="state">
+                        <T n="value">200453<!--ObjectStateValue: sleepingPod_StateValues_Upgrades_Up-N-Atomizer_ON--></T>
+                      </U>
+                    </V>
+                  </L>
+                </L>
+              </U>
+            </V>
+            <V t="statistic_change">
+              <U n="statistic_change">
+                <T n="advertise">False</T>
+                <T n="amount">2</T>
+                <E n="periodic_change_behavior">APPLY_AT_INTERVAL_ONLY</E>
+                <T n="stat">16652<!--Commodity: motive_Bladder--></T>
+                <L n="subject">
+                  <E>Actor</E>
+                </L>
+                <L n="tests">
+                  <L>
+                    <V t="state">
+                      <U n="state">
+                        <T n="value">200453<!--ObjectStateValue: sleepingPod_StateValues_Upgrades_Up-N-Atomizer_ON--></T>
+                      </U>
+                    </V>
+                  </L>
+                </L>
+              </U>
+            </V>
+            <V t="statistic_change">
+              <U n="statistic_change">
+                <T n="advertise">False</T>
+                <T n="amount">-0.0052</T>
+                <T n="exclusive_to_owning_si">False</T>
+                <T n="stat">16633<!--Commodity: commodity_Object_Brokenness--></T>
+                <L n="subject">
+                  <E>Object</E>
+                </L>
+              </U>
+            </V>
+            <V t="statistic_change">
+              <U n="statistic_change">
+                <T n="advertise">True</T>
+                <T n="amount">0.41</T>
+                <T n="exclusive_to_owning_si">True</T>
+                <T n="stat">150238<!--Commodity: commodity_Motive_Visible_Vampire_Power--></T>
+                <L n="subject">
+                  <E>Actor</E>
+                </L>
+                <L n="tests">
+                  <L>
+                    <V t="buff">
+                      <U n="buff">
+                        <V n="whitelist" t="enabled">
+                          <L n="enabled">
+                            <T>149543<!--Buff: buff_Vampire_IsVampire--></T>
+                          </L>
+                        </V>
+                      </U>
+                    </V>
+                    <V t="bucks_perks_test">
+                      <U n="bucks_perks_test">
+                        <T n="bucks_perk">152217<!--BucksPerk: vampirePerks_Weaknesses_FitfulSleeper_Level1--></T>
+                        <T n="test_if_unlocked">False</T>
+                      </U>
+                    </V>
+                  </L>
+                </L>
+              </U>
+            </V>
+            <V t="statistic_change">
+              <U n="statistic_change">
+                <T n="advertise">True</T>
+                <T n="amount">0.33</T>
+                <T n="exclusive_to_owning_si">True</T>
+                <T n="stat">150238<!--Commodity: commodity_Motive_Visible_Vampire_Power--></T>
+                <L n="subject">
+                  <E>Actor</E>
+                </L>
+                <L n="tests">
+                  <L>
+                    <V t="bucks_perks_test">
+                      <U n="bucks_perks_test">
+                        <T n="bucks_perk">152217<!--BucksPerk: vampirePerks_Weaknesses_FitfulSleeper_Level1--></T>
+                      </U>
+                    </V>
+                    <V t="bucks_perks_test">
+                      <U n="bucks_perks_test">
+                        <T n="bucks_perk">152229<!--BucksPerk: vampirePerks_Weaknesses_FitfulSleeper_Level2--></T>
+                        <T n="test_if_unlocked">False</T>
+                      </U>
+                    </V>
+                  </L>
+                </L>
+              </U>
+            </V>
+            <V t="statistic_change">
+              <U n="statistic_change">
+                <T n="advertise">True</T>
+                <T n="amount">0.27</T>
+                <T n="exclusive_to_owning_si">True</T>
+                <T n="stat">150238<!--Commodity: commodity_Motive_Visible_Vampire_Power--></T>
+                <L n="subject">
+                  <E>Actor</E>
+                </L>
+                <L n="tests">
+                  <L>
+                    <V t="bucks_perks_test">
+                      <U n="bucks_perks_test">
+                        <T n="bucks_perk">152229<!--BucksPerk: vampirePerks_Weaknesses_FitfulSleeper_Level2--></T>
+                      </U>
+                    </V>
+                  </L>
+                </L>
+              </U>
+            </V>
+            <V t="statistic_change">
+              <U n="statistic_change">
+                <T n="amount">0.37</T>
+                <T n="stat">218484<!--Commodity: motive_Robots_Charge--></T>
+                <L n="subject">
+                  <E>Actor</E>
+                </L>
+                <L n="tests">
+                  <L>
+                    <V t="trait">
+                      <U n="trait">
+                        <L n="whitelist_traits">
+                          <T>218444<!--Trait: trait_Humanoid_Robots_MainTrait--></T>
+                        </L>
+                      </U>
+                    </V>
+                  </L>
+                </L>
+              </U>
+            </V>
+          </L>
+        </U>
+      </V>
+      <V t="enabled" n="statistic_reduction_by_category">
+        <U n="enabled">
+          <L n="categories">
+            <E>Angry_Buffs</E>
+            <E>Sad_Buffs</E>
+            <E>Embarrassed_Buffs</E>
+            <E>Uncomfortable_Buffs</E>
+            <E>Stressed_Buffs</E>
+          </L>
+          <T n="rate">5</T>
+          <L n="subject">
+            <E>Actor</E>
+          </L>
+        </U>
+      </V>
+    </U>
+  </V>
+  <L n="basic_extras">
+    <V t="loot">
+      <U n="loot">
+        <L n="loot_list">
+          <T>201169<!--LootActions: loot_SleepingPod_SleepTimeTracker_Add--></T>
+        </L>
+        <V t="at_beginning" n="timing" />
+      </U>
+    </V>
+    <V t="state_change">
+      <U n="state_change">
+        <V t="single_value" n="new_value">
+          <U n="single_value">
+            <T n="new_value">199594<!--ObjectStateValue: sleepingPod_StateValues_Occupied--></T>
+          </U>
+        </V>
+        <V t="on_xevt" n="timing">
+          <U n="on_xevt">
+            <E n="criticality">NotCritical</E>
+          </U>
+        </V>
+      </U>
+    </V>
+    <V t="state_change">
+      <U n="state_change">
+        <V t="single_value" n="new_value">
+          <U n="single_value">
+            <T n="new_value">199595<!--ObjectStateValue: sleepingPod_StateValues_Vacant--></T>
+          </U>
+        </V>
+        <V t="on_xevt" n="timing">
+          <U n="on_xevt">
+            <E n="criticality">OnCancelOrException</E>
+            <T n="xevt_id">101</T>
+          </U>
+        </V>
+      </U>
+    </V>
+    <V t="loot">
+      <U n="loot">
+        <L n="loot_list">
+          <T>201964<!--LootActions: loot_SleepingPod_Sabotaged_SetBroken--></T>
+        </L>
+        <V t="on_xevt" n="timing" />
+      </U>
+    </V>
+    <V t="buff">
+      <U n="buff">
+        <U n="buff_type">
+          <V t="enabled" n="buff_reason">
+            <T n="enabled">0x938AA0AC<!--String: "(Por recargarse)"--></T>
+          </V>
+          <T n="buff_type">223742<!--Buff: buff_Motives_Humanoid_Robots_Recharging--></T>
+        </U>
+        <L n="subject">
+          <E>Actor</E>
+        </L>
+        <L n="tests">
+          <L>
+            <V t="trait">
+              <U n="trait">
+                <L n="whitelist_traits">
+                  <T>218444<!--Trait: trait_Humanoid_Robots_MainTrait--></T>
+                </L>
+              </U>
+            </V>
+          </L>
+        </L>
+      </U>
+    </V>
+    <V t="buff">
+      <U n="buff">
+        <U n="buff_type">
+          <T n="buff_type">200636<!--Buff: buff_SleepingPod_CircadianTweaker--></T>
+        </U>
+        <L n="subject">
+          <E>Actor</E>
+        </L>
+        <L n="tests">
+          <L>
+            <V t="state">
+              <U n="state">
+                <T n="value">199479<!--ObjectStateValue: sleepingPod_StateValues_Upgrades_CircadianTweaker_True--></T>
+              </U>
+            </V>
+          </L>
+        </L>
+      </U>
+    </V>
+    <V t="buff">
+      <U n="buff">
+        <U n="buff_type">
+          <T n="buff_type">200960<!--Buff: buff_SleepingPod_Up-N-Atomizer--></T>
+        </U>
+        <L n="subject">
+          <E>Actor</E>
+        </L>
+        <L n="tests">
+          <L>
+            <V t="state">
+              <U n="state">
+                <T n="value">199483<!--ObjectStateValue: sleepingPod_StateValues_Upgrades_Up-N-Atomizer_True--></T>
+              </U>
+            </V>
+          </L>
+        </L>
+      </U>
+    </V>
+    <V t="state_change">
+      <U n="state_change">
+        <V n="new_value" t="single_value">
+          <U n="single_value">
+            <T n="new_value">200454<!--ObjectStateValue: sleepingPod_StateValues_Upgrades_Up-N-Atomizer_OFF--></T>
+          </U>
+        </V>
+        <V t="at_end" n="timing">
+          <U n="at_end">
+            <E n="criticality">OnCancelOrException</E>
+          </U>
+        </V>
+      </U>
+    </V>
+    <V t="loot">
+      <U n="loot">
+        <L n="loot_list">
+          <T>201170<!--LootActions: loot_SleepingPod_SleepTimeTracker_Remove--></T>
+        </L>
+        <V t="at_end" n="timing">
+          <U n="at_end">
+            <E n="criticality">OnCancelOrException</E>
+          </U>
+        </V>
+      </U>
+    </V>
+    <V t="buff">
+      <U n="buff">
+        <U n="buff_type">
+          <T n="buff_type">201367<!--Buff: buff_SleepingPod_Sleep_MotiveDecay_Suppression--></T>
+        </U>
+        <L n="subject">
+          <E>Actor</E>
+        </L>
+      </U>
+    </V>
+    <V t="buff">
+      <U n="buff">
+        <U n="buff_type">
+          <V t="enabled" n="buff_reason">
+            <T n="enabled">0x32D2CECC<!--String: "(Por dormir)"--></T>
+          </V>
+          <T n="buff_type">10094<!--Buff: buff_Sim_IsSleeping--></T>
+        </U>
+        <L n="subject">
+          <E>Actor</E>
+        </L>
+        <L n="tests">
+          <L>
+            <V t="trait">
+              <U n="trait">
+                <L n="blacklist_traits">
+                  <T>218444<!--Trait: trait_Humanoid_Robots_MainTrait--></T>
+                </L>
+              </U>
+            </V>
+          </L>
+        </L>
+      </U>
+    </V>
+    <V t="buff">
+      <U n="buff">
+        <U n="buff_type">
+          <T n="buff_type">185065<!--Buff: buff_Temperature_Immune_To_Temperature--></T>
+        </U>
+        <L n="subject">
+          <E>Actor</E>
+        </L>
+      </U>
+    </V>
+  </L>
+  <L n="basic_liabilities">
+    <V t="game_speed">
+      <U n="game_speed">
+        <E n="game_speed">SUPER_SPEED3</E>
+        <U n="species_interaction_speed_requirements">
+          <L n="exempt_sim_buffs">
+            <T>167047<!--Buff: buff_Motives_Pet_Cat_InSS3Mode--></T>
+            <T>167048<!--Buff: buff_Motives_Pet_Dog_InSS3Mode--></T>
+          </L>
+          <L n="species_affordance_mapping">
+            <U>
+              <E n="key">CAT</E>
+              <T n="value">171288<!--AggregateSuperInteraction: pet_Sleep_Aggregate_LeftAtHome_Selection--></T>
+            </U>
+            <U>
+              <E n="key">DOG</E>
+              <T n="value">171288<!--AggregateSuperInteraction: pet_Sleep_Aggregate_LeftAtHome_Selection--></T>
+            </U>
+          </L>
+          <L n="speed_affordance_tags">
+            <E>Interaction_Sleep</E>
+            <E>Interaction_Pets_SS3Allowed</E>
+          </L>
+        </U>
+      </U>
+    </V>
+    <V t="hide_whims">
+      <U n="hide_whims">
+        <V n="_reset_time" t="enabled">
+          <T n="enabled">240</T>
+        </V>
+      </U>
+    </V>
+  </L>
+  <V t="enabled" n="basic_reserve_object">
+    <U n="enabled">
+      <V t="reserve_and_lock_all_parts" n="reserve_type_for_provided_target" />
+    </U>
+  </V>
+  <V t="enabled" n="canonical_animation">
+    <U n="enabled">
+      <T n="factory">200078<!--AnimationElement: SleepingPod_Sleep_Hover--></T>
+    </U>
+  </V>
+  <V t="disabled" n="content_score" />
+  <T n="counts_as_in_shade">True</T>
+  <T n="counts_as_inside">True</T>
+  <T n="display_name">0xB4623E6F<!--String: "Dormir"--></T>
+  <V t="testable" n="display_name_overrides">
+    <U n="testable">
+      <L n="overrides">
+        <U>
+          <V n="new_display_name" t="enabled">
+            <T n="enabled">0x7FDB5061<!--String: "Recargar"--></T>
+          </V>
+          <L n="test">
+            <L>
+              <V t="trait">
+                <U n="trait">
+                  <L n="whitelist_traits">
+                    <T>218444<!--Trait: trait_Humanoid_Robots_MainTrait--></T>
+                  </L>
+                </U>
+              </V>
+            </L>
+          </L>
+        </U>
+      </L>
+    </U>
+  </V>
+  <U n="display_name_text_tokens">
+    <L n="tokens">
+      <V t="participant_type">
+        <U n="participant_type">
+          <V t="from_participant" n="objects">
+            <U n="from_participant">
+              <E n="participant">Actor</E>
+            </U>
+          </V>
+        </U>
+      </V>
+      <V t="participant_type">
+        <U n="participant_type">
+          <V t="from_participant" n="objects">
+            <U n="from_participant">
+              <E n="participant">Object</E>
+            </U>
+          </V>
+        </U>
+      </V>
+    </L>
+  </U>
+  <L n="interaction_category_tags">
+    <E>Interaction_Super</E>
+    <E>Interaction_All</E>
+    <E>Interaction_OldDay_Fine</E>
+  </L>
+  <V t="test_based" n="outcome">
+    <U n="test_based">
+      <L n="tested_outcomes">
+        <U>
+          <L n="potential_outcomes">
+            <U>
+              <U n="outcome">
+                <L n="continuation">
+                  <U>
+                    <T n="affordance">200430<!--SuperInteraction: sleepingPod_Interactions_Mischief_TrappedInPod--></T>
+                  </U>
+                </L>
+                <T n="force_outcome_on_exit">True</T>
+              </U>
+            </U>
+          </L>
+          <L n="tests">
+            <L>
+              <V t="state">
+                <U n="state">
+                  <T n="value">199474<!--ObjectStateValue: sleepingPod_StateValues_Mischief_Jammed_True--></T>
+                </U>
+              </V>
+            </L>
+          </L>
+        </U>
+        <U>
+          <L n="potential_outcomes">
+            <U>
+              <U n="outcome">
+                <L n="continuation">
+                  <U>
+                    <T n="affordance">201591<!--SuperInteraction: sleepingPod_Interactions_Mischief_DreamsHacked_Sleep--></T>
+                  </U>
+                </L>
+              </U>
+            </U>
+          </L>
+          <L n="tests">
+            <L>
+              <V t="state">
+                <U n="state">
+                  <T n="value">199472<!--ObjectStateValue: sleepingPod_StateValues_Mischief_Hacked_True--></T>
+                </U>
+              </V>
+            </L>
+          </L>
+        </U>
+      </L>
+    </U>
+  </V>
+  <T n="pie_menu_priority">7</T>
+  <V t="enabled" n="route_start_balloon">
+    <U n="enabled">
+      <T n="also_show_user_directed">True</T>
+      <U n="balloon">
+        <L n="balloon_choices">
+          <U>
+            <V n="item" t="balloon_icon">
+              <U n="balloon_icon">
+                <V t="participant" n="icon">
+                  <U n="participant">
+                    <L n="participant_type">
+                      <E>Object</E>
+                    </L>
+                  </U>
+                </V>
+              </U>
+            </V>
+          </U>
+        </L>
+        <L n="balloon_target">
+          <E>Actor</E>
+        </L>
+      </U>
+    </U>
+  </V>
+  <E n="scoring_priority">HIGH</E>
+  <T n="subaction_selection_weight">1</T>
+  <V t="literal" n="super_affordance_compatibility">
+    <U n="literal">
+      <V n="default_inclusion" t="exclude_all" />
+    </U>
+  </V>
+  <E n="target_type">OBJECT</E>
+  <L n="test_autonomous">
+    <L>
+      <V t="appropriateness" />
+      <V t="buff">
+        <U n="buff">
+          <V n="whitelist" t="enabled">
+            <L n="enabled">
+              <T>8847<!--Buff: buff_SmallSleepDesire--></T>
+              <T>8904<!--Buff: buff_LargeSleepDesire--></T>
+              <T>36123<!--Buff: buff_AllowSleepDesire--></T>
+              <T>101209<!--Buff: Buff_AskedToStayNight_Invisible--></T>
+            </L>
+          </V>
+        </U>
+      </V>
+      <V t="trait">
+        <U n="trait">
+          <L n="blacklist_traits">
+            <T>153867<!--Trait: trait_OccultVampire_Manifested--></T>
+          </L>
+        </U>
+      </V>
+    </L>
+    <L>
+      <V t="appropriateness" />
+      <V t="trait">
+        <U n="trait">
+          <L n="whitelist_traits">
+            <T>153867<!--Trait: trait_OccultVampire_Manifested--></T>
+          </L>
+        </U>
+      </V>
+      <V t="buff">
+        <U n="buff">
+          <V n="whitelist" t="enabled">
+            <L n="enabled">
+              <T>151171<!--Buff: buff_Vampire_DayTime--></T>
+            </L>
+          </V>
+        </U>
+      </V>
+    </L>
+    <L>
+      <V t="appropriateness" />
+      <V t="trait">
+        <U n="trait">
+          <L n="whitelist_traits">
+            <T>153867<!--Trait: trait_OccultVampire_Manifested--></T>
+          </L>
+        </U>
+      </V>
+      <V t="statistic">
+        <U n="statistic">
+          <T n="stat">150238<!--Commodity: commodity_Motive_Visible_Vampire_Power--></T>
+          <V n="threshold" t="value_threshold">
+            <U n="value_threshold">
+              <E n="comparison">LESS_OR_EQUAL</E>
+              <T n="value">-90</T>
+            </U>
+          </V>
+        </U>
+      </V>
+    </L>
+    <L>
+      <V t="trait">
+        <U n="trait">
+          <L n="blacklist_traits">
+            <T>147121<!--Trait: trait_isButler--></T>
+          </L>
+        </U>
+      </V>
+    </L>
+  </L>
+  <L n="test_globals">
+    <V t="sim_info">
+      <U n="sim_info">
+        <V t="specified" n="ages">
+          <L n="specified">
+            <E>TEEN</E>
+            <E>YOUNGADULT</E>
+            <E>ADULT</E>
+            <E>ELDER</E>
+            <E>CHILD</E>
+          </L>
+        </V>
+        <V t="specified" n="species">
+          <U n="specified">
+            <L n="species">
+              <E />
+            </L>
+          </U>
+        </V>
+        <E n="who">Actor</E>
+      </U>
+    </V>
+    <V t="state">
+      <U n="state">
+        <T n="value">199595<!--ObjectStateValue: sleepingPod_StateValues_Vacant--></T>
+      </U>
+    </V>
+    <V t="state">
+      <U n="state">
+        <E n="operator">NOTEQUAL</E>
+        <T n="value">15080<!--ObjectStateValue: BrokenState_Broken--></T>
+      </U>
+    </V>
+    <V t="state">
+      <U n="state">
+        <T n="value">199480<!--ObjectStateValue: sleepingPod_StateValues_Upgrades_EmotionDeprivation_True--></T>
+      </U>
+    </V>
+    <V t="bucks_perks_test">
+      <U n="bucks_perks_test">
+        <T n="bucks_perk">152218<!--BucksPerk: vampirePerks_Weaknesses_SleepOfTheUndead--></T>
+        <T n="invert">True</T>
+        <V n="tooltip" t="enabled">
+          <T n="enabled">0x56A6725F<!--String: "{0.SimFirstName} solo puede dormir en ataúdes."--></T>
+        </V>
+      </U>
+    </V>
+    <V t="buff">
+      <U n="buff">
+        <L n="blacklist">
+          <T>174449<!--Buff: buff_Temple_Trap_Punishment_RestlessHorror--></T>
+        </L>
+        <V n="tooltip" t="enabled">
+          <T n="enabled">0x536B2339<!--String: "¡{0.SimName} está demasiado {M0.asustado}{F0.asustada} para dormir!"--></T>
+        </V>
+      </U>
+    </V>
+    <V t="buff">
+      <U n="buff">
+        <L n="blacklist">
+          <T>215608<!--Buff: buff_Curses_NightStalker_Hidden_Trait--></T>
+        </L>
+        <V n="tooltip" t="enabled">
+          <T n="enabled">0xECBD8F9A<!--String: "¡{0.SimName} está demasiado {M0.asustado}{F0.asustada} para cerrar los ojos!"--></T>
+        </V>
+      </U>
+    </V>
+  </L>
+  <T n="time_overhead">30</T>
+  <V t="enabled" n="utility_info">
+    <L n="enabled">
+      <U>
+        <E n="key">POWER</E>
+      </U>
+    </L>
+  </V>
+  <T n="visible">True</T>
+</I>

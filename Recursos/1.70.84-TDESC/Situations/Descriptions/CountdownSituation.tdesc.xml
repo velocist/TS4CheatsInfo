@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+
+<TuningRoot>
+    <Instance instance_type="situation" class="CountdownSituation" module="holidays.countdown_situation" muid="9D48967F3FD1F000" description="A Situation to control Sims counting down to a celebration time." instance_subclasses_only="False" parents="SituationComplexCommon, SituationComplex, Situation" path="Situations\Descriptions" use_guid_for_reference="True">
+        <Deleted name="_buff" muid="DCC24E674F8A0D2A" />
+
+        <Deleted name="_cost" muid="323BD011D41AD7F" />
+
+        <Deleted name="_display_name" muid="CA68496633AC0109" />
+
+        <Deleted name="_icon" muid="539D9FF98481E9EA" />
+
+        <Deleted name="_initiating_sim_tests" muid="BEB8EA48AC5E3555" />
+
+        <Deleted name="_level_data" muid="E29157822C172EC1" />
+
+        <Deleted name="_main_goal_visibility_test" muid="C0811C4F26D22D2D" />
+
+        <Deleted name="_relationship_between_job_members" muid="40E40A94110F71C9" />
+
+        <Deleted name="_resident_job" muid="8B5247EA19C4F2A4" />
+
+        <Deleted name="audio_sting_on_start" muid="A2A5DACDC28473CF" />
+
+        <Deleted name="background_audio" muid="1EECA35876FDCA22" />
+
+        <Deleted name="category" muid="344F09C15D643F9B" />
+
+        <TunableTuple name="celebrate_state" class="TunableCelebrateState" display="Celebrate State" muid="2F2CD36C1F247CC9" description="A Situation State for the Sims to Celebrate." Deprecated="False" filter="0" group="General">
+            <TunableList name="job_and_role_changes" class="TunableMapping" display="Job And Role Changes" muid="8A31A9A587622297" mapping_key="Situation Job" mapping_value="Role State" description="A mapping between situation jobs and role states that defines&#xA;what role states we want to switch to for sims on which jobs&#xA;when this situation state is entered." Deprecated="False" filter="0" group="General">
+                <TunableTuple class="TunableTuple" muid="17690CAFA3BDE954" Deprecated="False" filter="0" group="General">
+                    <Tunable type="role_state" name="Role State" class="TunableReference" display="Role State" muid="784279BD85FBB365" description="The role state that we will switch sims of the linked job&#xA;into." allow_none="False" Deprecated="False" filter="0" group="General" />
+                    <Tunable type="situation_job" name="Situation Job" class="TunableReference" display="Situation Job" muid="EDECDA15955DC17F" description="A reference to a SituationJob that we will use to change&#xA;sim's role state." allow_none="False" Deprecated="False" filter="0" group="General" />
+                </TunableTuple>
+            </TunableList>
+        </TunableTuple>
+
+        <Deleted name="compatible_venues" muid="33DAE5C799F0A272" />
+
+        <TunableTuple name="countdown_state" class="TunableCountdownState" display="Countdown State" muid="2127036E3B55FEC4" description="A Situation State for the Sims to count down to the celebration." Deprecated="False" filter="0" group="General">
+            <TunableTuple name="celebrate_time" class="TunableTimeOfDay" display="Celebrate Time" muid="248D6D8D86DCC421" description="Time of Day to Celebrate" Deprecated="False" filter="0" group="General">
+                <Tunable type="int" name="hour" class="TunableRange" default="0" display="Hour" muid="5855816E147B137A" min="0" max="23" description="Hour of the day" tuning_state="NeedsTuning" Deprecated="False" filter="0" group="General" />
+                <Tunable type="int" name="minute" class="TunableRange" default="0" display="Minute" muid="EFE49DAF2FD750DB" min="0" max="59" description="Minute of Hour" tuning_state="NeedsTuning" Deprecated="False" filter="0" group="General" />
+            </TunableTuple>
+            <Tunable type="interaction" name="count_mixer" class="TunableReference" display="Count Mixer" muid="18332919407309C0" allow_none="False" Deprecated="False" filter="0" group="General" />
+            <Tunable type="interaction" name="countdown_affordance" class="TunableReference" display="Countdown Affordance" muid="A9B4846EEB6DBA5D" allow_none="False" Deprecated="False" filter="0" group="General" />
+            <Tunable type="float" name="interval_between_counts" class="TunableSimMinute" default="5" display="Interval Between Counts" muid="82FFA5324CBC0894" min="1" max="None" description="The interval between each count animation." tuning_state="NeedsTuning" Deprecated="False" filter="0" group="General" />
+            <TunableList name="job_and_role_changes" class="TunableMapping" display="Job And Role Changes" muid="8B5426870EEAE9FA" mapping_key="Situation Job" mapping_value="Role State" description="A mapping between situation jobs and role states that defines&#xA;what role states we want to switch to for sims on which jobs&#xA;when this situation state is entered." Deprecated="False" filter="0" group="General">
+                <TunableTuple class="TunableTuple" muid="E61FA4A0D3D97699" Deprecated="False" filter="0" group="General">
+                    <Tunable type="role_state" name="Role State" class="TunableReference" display="Role State" muid="FE30D18F08CA9959" description="The role state that we will switch sims of the linked job&#xA;into." allow_none="False" Deprecated="False" filter="0" group="General" />
+                    <Tunable type="situation_job" name="Situation Job" class="TunableReference" display="Situation Job" muid="5B78AF3A83BCABE8" description="A reference to a SituationJob that we will use to change&#xA;sim's role state." allow_none="False" Deprecated="False" filter="0" group="General" />
+                </TunableTuple>
+            </TunableList>
+            <TunableTuple name="time_to_start_count" class="TunableTimeOfDay" display="Time To Start Count" muid="21B8B1ACE9BD375" description="Time to start performing the Count." Deprecated="False" filter="0" group="General">
+                <Tunable type="int" name="hour" class="TunableRange" default="11" display="Hour" muid="CC676E26824E7E69" min="0" max="23" description="Hour of the day" tuning_state="NeedsTuning" Deprecated="False" filter="0" group="General" />
+                <Tunable type="int" name="minute" class="TunableRange" default="30" display="Minute" muid="23364B5A8EA1669E" min="0" max="59" description="Minute of Hour" tuning_state="NeedsTuning" Deprecated="False" filter="0" group="General" />
+            </TunableTuple>
+        </TunableTuple>
+
+        <Deleted name="entitlement" muid="F5D87A17D66EC090" />
+
+        <Deleted name="force_invite_only" muid="D80D4B94CBD1A62C" />
+
+        <Deleted name="goal_button_text" muid="58DFB5553467C9EA" />
+
+        <Deleted name="goal_sub_text" muid="9F7B407F2BDC9B1A" />
+
+        <Deleted name="highlight_first_incomplete_minor_goal" muid="475A0393352FAF4F" />
+
+        <Deleted name="job_display_ordering" muid="5A46DFA6F3EC1063" />
+
+        <Deleted name="main_goal" muid="F7FE8837C3DB2A7F" />
+
+        <Deleted name="main_goal_audio_sting" muid="C6B87B61933CFC89" />
+
+        <Deleted name="max_participants" muid="70E60BAB49FF678D" />
+
+        <Deleted name="minor_goal_chains" muid="1F31EACC92E3B2CA" />
+
+        <Deleted name="recommended_job_object_notification" muid="4BE10BA32AEEAA23" />
+
+        <Deleted name="recommended_job_object_text" muid="ECEC2B910BAF303" />
+
+        <Deleted name="screen_slam_bronze" muid="2545CE4F5F1FA0C2" />
+
+        <Deleted name="screen_slam_gold" muid="88B9C9CD803DAD9A" />
+
+        <Deleted name="screen_slam_no_medal" muid="9FCCBA488AE396F0" />
+
+        <Deleted name="screen_slam_silver" muid="D2ED6DA0E54AB17F" />
+
+        <Deleted name="situation_description" muid="BC612D2373D85131" />
+
+        <Deleted name="suppress_scoring_progress_bar" muid="924D303D9800BE51" />
+
+        <Deleted name="targeted_situation" muid="44F41C4D45B7B4DB" />
+
+        <Deleted name="travel_request_behavior" muid="EF75A6A7F40C3497" />
+
+        <Deleted name="venue_invitation_message" muid="1DDBD1539EA823F4" />
+
+        <Deleted name="venue_situation_player_job" muid="49AF3D4A12C08515" />
+    </Instance>
+
+    <VersionHistory>
+        <ActionList>
+            <Action type="kRemove" old_muid="937CF6B95C77173D" />
+        </ActionList>
+
+        <ActionList>
+            <Action type="kRename" old_muid="874DF6DE8F5D7670" new_muid="33DAE5C799F0A272" />
+        </ActionList>
+
+        <ActionList>
+            <Action type="kRemove" old_muid="9D368E824C2DD0B" />
+            <Action type="kRemove" old_muid="8E0CCCD9580398C1" />
+        </ActionList>
+    </VersionHistory>
+</TuningRoot>

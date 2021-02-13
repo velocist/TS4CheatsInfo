@@ -1,0 +1,167 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<I c="RepoSituation" i="situation" m="situations.complex.repo_situation" n="repo_Situation" s="224390">
+  <V n="ask_not_to_take_failure_notification" t="enabled">
+    <U n="enabled">
+      <V t="enabled" n="icon">
+        <V t="participant" n="enabled" />
+      </V>
+      <V n="text" t="single">
+        <T n="single">0xA1439C02<!--String: "No. ¡Deberías haber hecho los pagos de tu préstamo! Me temo que tendré que llevarme esto."--></T>
+      </V>
+      <E n="visual_type">SPEECH</E>
+    </U>
+  </V>
+  <U n="ask_not_to_take_interaction">
+    <L n="affordances">
+      <T>226257<!--SocialSuperInteraction: RepoPerson_AskNotToTake--></T>
+    </L>
+  </U>
+  <L n="ask_not_to_take_success_chances">
+    <U />
+    <U>
+      <T n="base_chance">50</T>
+    </U>
+    <U>
+      <T n="base_chance">0</T>
+    </U>
+  </L>
+  <V n="ask_not_to_take_success_notification" t="enabled">
+    <U n="enabled">
+      <V t="enabled" n="icon">
+        <V t="participant" n="enabled" />
+      </V>
+      <V n="text" t="single">
+        <T n="single">0xAC3772B7<!--String: "Vale, está bien. Si tanto significa para ti, me plantearé llevarme otra cosa."--></T>
+      </V>
+      <E n="visual_type">SPEECH</E>
+    </U>
+  </V>
+  <U n="bribe_interaction">
+    <L n="affordances">
+      <T>226061<!--SocialSuperInteraction: RepoPerson_Bribe--></T>
+      <T>235206<!--SocialSuperInteraction: repoPerson_FightTheMan--></T>
+      <T>234920<!--SocialSuperInteraction: repoPerson_AppealToHumanity--></T>
+    </L>
+  </U>
+  <U n="debtor_sim_job_and_role_state">
+    <T n="role_state">224489<!--RoleState: role_Repo_DebtorSim--></T>
+    <T n="situation_job">224486<!--SituationJob: situationJob_Repo_DebtorSim--></T>
+  </U>
+  <T n="duration">360</T>
+  <U n="find_object_state">
+    <L n="job_and_role_changes">
+      <U>
+        <T n="Situation Job">224391<!--SituationJob: situationJob_Repo_RepoPerson--></T>
+        <T n="Role State">224394<!--RoleState: role_Repo_RepoPerson_FindObject--></T>
+      </U>
+      <U>
+        <T n="Situation Job">224486<!--SituationJob: situationJob_Repo_DebtorSim--></T>
+        <T n="Role State">224489<!--RoleState: role_Repo_DebtorSim--></T>
+      </U>
+    </L>
+    <V n="time_out" t="enabled">
+      <T n="enabled">15</T>
+    </V>
+  </U>
+  <U n="idle_at_object_state">
+    <L n="job_and_role_changes">
+      <U>
+        <T n="Situation Job">224391<!--SituationJob: situationJob_Repo_RepoPerson--></T>
+        <T n="Role State">225976<!--RoleState: role_Repo_RepoPerson_Idle--></T>
+      </U>
+      <U>
+        <T n="Situation Job">224486<!--SituationJob: situationJob_Repo_DebtorSim--></T>
+        <T n="Role State">225977<!--RoleState: role_Repo_GetNearRepoPerson--></T>
+      </U>
+    </L>
+    <V t="enabled" n="time_out">
+      <T n="enabled">30</T>
+    </V>
+  </U>
+  <U n="leave_state">
+    <L n="job_and_role_changes">
+      <U>
+        <T n="Situation Job">224391<!--SituationJob: situationJob_Repo_RepoPerson--></T>
+        <T n="Role State">24224<!--RoleState: rolestate_leave_now--></T>
+      </U>
+    </L>
+    <V t="enabled" n="time_out" />
+  </U>
+  <U n="nothing_to_take_state">
+    <U n="interaction_of_interest">
+      <L n="affordances">
+        <T>228002<!--SuperInteraction: repoPerson_NothingToTake--></T>
+      </L>
+    </U>
+    <L n="job_and_role_changes">
+      <U>
+        <T n="Situation Job">224391<!--SituationJob: situationJob_Repo_RepoPerson--></T>
+        <T n="Role State">228001<!--RoleState: role_Repo_RepoPerson_NothingToTake--></T>
+      </U>
+    </L>
+    <V n="time_out" t="enabled">
+      <T n="enabled">20</T>
+    </V>
+  </U>
+  <U n="repo_amount">
+    <U n="min_and_max_collection_range">
+      <T n="lower_bound">0.8</T>
+      <T n="upper_bound">1.2</T>
+    </U>
+  </U>
+  <U n="repo_person_job_and_role_state">
+    <T n="role_state">224394<!--RoleState: role_Repo_RepoPerson_FindObject--></T>
+    <T n="situation_job">224391<!--SituationJob: situationJob_Repo_RepoPerson--></T>
+  </U>
+  <U n="repossess_object_state">
+    <U n="interaction_of_interest">
+      <L n="affordances">
+        <T>229529<!--SuperInteraction: repo_RepoPerson_DestroyObject--></T>
+      </L>
+    </U>
+    <L n="job_and_role_changes">
+      <U>
+        <T n="Situation Job">224391<!--SituationJob: situationJob_Repo_RepoPerson--></T>
+        <T n="Role State">225985<!--RoleState: role_Repo_RepoPerson_TakeObject--></T>
+      </U>
+      <U>
+        <T n="Situation Job">224486<!--SituationJob: situationJob_Repo_DebtorSim--></T>
+        <T n="Role State">228338<!--RoleState: role_Repo_Debtor_ObjectTaken--></T>
+      </U>
+    </L>
+    <V t="enabled" n="time_out">
+      <T n="enabled">60</T>
+    </V>
+  </U>
+  <T n="save_lock_tooltip">0xD7A5F22E<!--String: "No puedes guardar mientras un embargador está embargando."--></T>
+  <L n="valid_object_tests">
+    <L>
+      <V t="object_criteria">
+        <U n="object_criteria">
+          <V n="identity_test" t="tags">
+            <U n="tags">
+              <L n="tag_set">
+                <E>Func_CantRepo</E>
+              </L>
+              <E n="test_type">CONTAINS_NO_TAGS_IN_SET</E>
+            </U>
+          </V>
+          <V t="single_object" n="subject_specific_tests" />
+        </U>
+      </V>
+      <V t="object_criteria">
+        <U n="object_criteria">
+          <V n="identity_test" t="tags">
+            <U n="tags">
+              <L n="tag_set">
+                <E>Func_Lightning_CanStrike</E>
+              </L>
+              <E n="test_type">CONTAINS_ANY_TAG_IN_SET</E>
+            </U>
+          </V>
+          <V t="single_object" n="subject_specific_tests" />
+        </U>
+      </V>
+    </L>
+  </L>
+</I>

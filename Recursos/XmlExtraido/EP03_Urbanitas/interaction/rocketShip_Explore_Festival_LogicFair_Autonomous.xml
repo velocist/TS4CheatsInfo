@@ -1,0 +1,381 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<I c="SuperInteraction" i="interaction" m="interactions.base.super_interaction" n="rocketShip_Explore_Festival_LogicFair_Autonomous" s="140943">
+  <V t="resource_key" n="_icon">
+    <U n="resource_key">
+      <T n="key" p="InGame\UI\Icons\InteractionQueue\IconQueuRocketShip.png">2f7d0004:00000000:d8d6cc4001f7827c</T>
+    </U>
+  </V>
+  <V t="enabled" n="_saveable" />
+  <L n="_static_commodities">
+    <U>
+      <T n="static_commodity">140944<!--StaticCommodity: staticCommodity_Festivals_UseRocket--></T>
+    </U>
+  </L>
+  <T n="allow_autonomous">True</T>
+  <T n="allow_user_directed">False</T>
+  <T n="attention_cost">0.75</T>
+  <V n="basic_content" t="flexible_length">
+    <U n="flexible_length">
+      <L n="conditional_actions">
+        <V t="literal">
+          <U n="literal">
+            <L n="conditions">
+              <V t="stat_based">
+                <U n="stat_based">
+                  <T n="stat">9691<!--Statistic: statistic_Object_RocketShip-Fuel--></T>
+                  <U n="threshold">
+                    <E n="comparison">LESS_OR_EQUAL</E>
+                    <T n="value">0</T>
+                  </U>
+                  <E n="who">Object</E>
+                </U>
+              </V>
+            </L>
+            <E n="interaction_action">EXIT_NATURALLY</E>
+          </U>
+        </V>
+        <V t="literal">
+          <U n="literal">
+            <L n="conditions">
+              <V t="time_based">
+                <U n="time_based">
+                  <T n="max_time">2</T>
+                  <T n="min_time">2</T>
+                </U>
+              </V>
+            </L>
+            <E n="interaction_action">NO_ACTION</E>
+            <L n="loot_actions">
+              <T>98970<!--LootActions: loot_ObjectReward_RocketShip_LaunchFire--></T>
+            </L>
+          </U>
+        </V>
+      </L>
+      <V n="content" t="looping_content">
+        <U n="looping_content">
+          <U n="animation_ref">
+            <T n="factory">11759<!--AnimationElement: RocketShip_Explore--></T>
+          </U>
+        </U>
+      </V>
+      <V n="periodic_stat_change" t="enabled">
+        <U n="enabled">
+          <L n="operations">
+            <V t="statistic_change">
+              <U n="statistic_change">
+                <T n="amount">-0.833333333333333</T>
+                <T n="stat">9691<!--Statistic: statistic_Object_RocketShip-Fuel--></T>
+                <L n="subject">
+                  <E>Object</E>
+                </L>
+              </U>
+            </V>
+            <V t="statistic_change">
+              <U n="statistic_change">
+                <T n="amount">4.67</T>
+                <T n="stat">16655<!--Commodity: motive_Fun--></T>
+              </U>
+            </V>
+            <V t="statistic_change">
+              <U n="statistic_change">
+                <T n="amount">0.2</T>
+                <T n="stat">188229<!--RankedStatistic: rankedStatistic_Fame--></T>
+              </U>
+            </V>
+            <V t="reference">
+              <T n="reference">249770<!--PeriodicStatChangeOperation: periodicStatChangeOperation_Lifestyles_Liked_AdrenalineSeeker--></T>
+            </V>
+            <V t="reference">
+              <T n="reference">249762<!--PeriodicStatChangeOperation: periodicStatChangeOperation_Lifestyles_Progress_AdrenalineSeeker--></T>
+            </V>
+            <V t="reference">
+              <T n="reference">249084<!--PeriodicStatChangeOperation: periodicStatChangeOperation_Lifestyles_Progress_Techie--></T>
+            </V>
+            <V t="reference">
+              <T n="reference">249352<!--PeriodicStatChangeOperation: periodicStatChangeOperation_Lifestyles_BonusFun_Techie--></T>
+            </V>
+            <V t="reference">
+              <T n="reference">249073<!--PeriodicStatChangeOperation: periodicStatChangeOperation_Lifestyles_Liked_Techie--></T>
+            </V>
+            <V t="reference">
+              <T n="reference">252299<!--PeriodicStatChangeOperation: periodictStatChange_Adventurous_Adventuring--></T>
+            </V>
+          </L>
+        </U>
+      </V>
+      <T n="start_autonomous_inertial">False</T>
+    </U>
+  </V>
+  <L n="basic_extras">
+    <V t="stat_increment_decrement">
+      <U n="stat_increment_decrement">
+        <T n="stat">16678<!--Statistic: statistic_Object_RocketShip-RocketsInSpace--></T>
+        <L n="subject">
+          <E>Lot</E>
+        </L>
+      </U>
+    </V>
+    <V t="buff">
+      <U n="buff">
+        <U n="buff_type">
+          <T n="buff_type">24732<!--Buff: buff_Suppress_All_Interaction--></T>
+        </U>
+      </U>
+    </V>
+    <V t="loot">
+      <U n="loot">
+        <L n="loot_list">
+          <T>239552<!--LootActions: loot_EcoFootprint_OneShot_Industrial_RocketShip_Street--></T>
+        </L>
+        <V t="at_beginning" n="timing" />
+      </U>
+    </V>
+    <V t="loot">
+      <U n="loot">
+        <L n="loot_list">
+          <T>153374<!--LootActions: loot_Festival_Logic_RocketShip_Use_CD--></T>
+        </L>
+      </U>
+    </V>
+  </L>
+  <T n="can_shoo">False</T>
+  <L n="cancel_replacement_affordances">
+    <U>
+      <E n="key">BODY</E>
+      <U n="value">
+        <T n="affordance">13983<!--StandSuperInteraction: sim-stand--></T>
+        <T n="always_run">True</T>
+      </U>
+    </U>
+  </L>
+  <V n="canonical_animation" t="enabled">
+    <U n="enabled">
+      <T n="factory">11759<!--AnimationElement: RocketShip_Explore--></T>
+    </U>
+  </V>
+  <V t="disabled" n="content_score" />
+  <T n="counts_as_inside">True</T>
+  <T n="display_name">0x9C934992<!--String: "Explorar espacio"--></T>
+  <U n="display_name_text_tokens">
+    <L n="tokens">
+      <V t="participant_type">
+        <U n="participant_type">
+          <V t="from_participant" n="objects">
+            <U n="from_participant">
+              <E n="participant">Actor</E>
+            </U>
+          </V>
+        </U>
+      </V>
+      <V t="participant_type">
+        <U n="participant_type">
+          <V t="from_participant" n="objects">
+            <U n="from_participant">
+              <E n="participant">Object</E>
+            </U>
+          </V>
+        </U>
+      </V>
+    </L>
+  </U>
+  <V t="enabled" n="display_name_wrappers">
+    <U n="enabled">
+      <L n="wrappers">
+        <U>
+          <L n="test">
+            <L>
+              <V t="trait">
+                <U n="trait">
+                  <L n="blacklist_traits">
+                    <T>200510<!--Trait: trait_Hidden_isDisguised--></T>
+                  </L>
+                </U>
+              </V>
+              <V t="sim_info_gameplay_options" />
+            </L>
+          </L>
+          <T n="wrapper">0xD20B3C9B<!--String: "{0.String} <font color='#199C2C'>(+▰fama)</font>"--></T>
+        </U>
+      </L>
+    </U>
+  </V>
+  <T n="force_exit_on_inertia">False</T>
+  <L n="interaction_category_tags">
+    <E>Interaction_Rocketship_Launch</E>
+    <E>Interaction_Super</E>
+    <E>Interaction_All</E>
+    <E>Interaction_Rocket</E>
+    <E>Interaction_Lifestyles_Techie_FlexibleLength</E>
+    <E>Interaction_Lifestyles_AdrenalineSeeker_FlexibleLength</E>
+  </L>
+  <V n="outcome" t="dual">
+    <U n="dual">
+      <U n="failure_actions">
+        <V n="animation_ref" t="enabled">
+          <U n="enabled">
+            <T n="factory">11760<!--AnimationElement: RocketShip_Explore_Fail--></T>
+          </U>
+        </V>
+        <T n="force_outcome_on_exit">True</T>
+        <L n="loot_list">
+          <T>8594<!--LootActions: loot_ObjectReward_RocketShip_Crash--></T>
+          <T>99450<!--LootActions: Loot_Commodity_CareerBenefit_Astronaut_Ranger_Adventure--></T>
+          <T>99451<!--LootActions: Loot_Commodity_CareerBenefit_Astronaut_Smuggler_Adventure--></T>
+        </L>
+        <E n="outcome_result">FAILURE</E>
+      </U>
+      <U n="success_actions">
+        <V n="animation_ref" t="enabled">
+          <U n="enabled">
+            <T n="factory">11761<!--AnimationElement: RocketShip_Explore_Success--></T>
+          </U>
+        </V>
+        <T n="force_outcome_on_exit">True</T>
+        <L n="loot_list">
+          <T>8595<!--LootActions: loot_ObjectReward_RocketShip_Land--></T>
+          <T>99451<!--LootActions: Loot_Commodity_CareerBenefit_Astronaut_Smuggler_Adventure--></T>
+          <T>99450<!--LootActions: Loot_Commodity_CareerBenefit_Astronaut_Ranger_Adventure--></T>
+        </L>
+      </U>
+      <U n="success_chance">
+        <T n="base_chance">95</T>
+        <L n="multipliers">
+          <U>
+            <T n="multiplier">1.2</T>
+            <L n="tests">
+              <L>
+                <V t="state">
+                  <U n="state">
+                    <T n="value">15420<!--CommodityBasedObjectStateValue: Upgrade_RocketShipLandingStabilizers_Completed--></T>
+                  </U>
+                </V>
+                <V t="state">
+                  <U n="state">
+                    <E n="operator">NOTEQUAL</E>
+                    <T n="value">29456<!--CommodityBasedObjectStateValue: RocketShipSabotage_Complete--></T>
+                  </U>
+                </V>
+              </L>
+            </L>
+          </U>
+          <U>
+            <T n="multiplier">100</T>
+            <L n="tests">
+              <L>
+                <V t="state">
+                  <U n="state">
+                    <T n="value">15416<!--CommodityBasedObjectStateValue: Upgrade_RocketShipLandingComputer_Completed--></T>
+                  </U>
+                </V>
+                <V t="state">
+                  <U n="state">
+                    <E n="operator">NOTEQUAL</E>
+                    <T n="value">29456<!--CommodityBasedObjectStateValue: RocketShipSabotage_Complete--></T>
+                  </U>
+                </V>
+              </L>
+            </L>
+          </U>
+          <U>
+            <T n="multiplier">0</T>
+            <L n="tests">
+              <L>
+                <V t="state">
+                  <U n="state">
+                    <T n="value">29456<!--CommodityBasedObjectStateValue: RocketShipSabotage_Complete--></T>
+                  </U>
+                </V>
+              </L>
+            </L>
+          </U>
+        </L>
+      </U>
+    </U>
+  </V>
+  <T n="pie_menu_priority">8</T>
+  <V t="enabled" n="route_start_balloon">
+    <U n="enabled">
+      <U n="balloon">
+        <L n="balloon_choices">
+          <U>
+            <V n="item" t="balloon_icon">
+              <U n="balloon_icon">
+                <V t="participant" n="icon">
+                  <U n="participant">
+                    <L n="participant_type">
+                      <E>Object</E>
+                    </L>
+                  </U>
+                </V>
+              </U>
+            </V>
+          </U>
+        </L>
+        <L n="balloon_target">
+          <E>Actor</E>
+        </L>
+      </U>
+    </U>
+  </V>
+  <E n="scoring_priority">NORMAL</E>
+  <U n="skill_loot_data">
+    <T n="stat">16710<!--Skill: statistic_Skill_AdultMajor_RocketScience--></T>
+  </U>
+  <T n="subaction_selection_weight">1</T>
+  <V t="literal" n="super_affordance_compatibility">
+    <U n="literal">
+      <V n="default_inclusion" t="exclude_all" />
+    </U>
+  </V>
+  <E n="target_type">OBJECT</E>
+  <L n="test_autonomous">
+    <L>
+      <V t="buff">
+        <U n="buff">
+          <V n="whitelist" t="enabled">
+            <L n="enabled">
+              <T>140945<!--Buff: buff_Festival_Logic_Autonomy_RocketShip_User--></T>
+            </L>
+          </V>
+        </U>
+      </V>
+    </L>
+  </L>
+  <L n="test_globals">
+    <V t="sim_info">
+      <U n="sim_info">
+        <V t="specified" n="ages" />
+        <V t="specified" n="species">
+          <U n="specified">
+            <L n="species">
+              <E />
+            </L>
+          </U>
+        </V>
+        <E n="who">Actor</E>
+      </U>
+    </V>
+    <V t="state">
+      <U n="state">
+        <T n="value">15312<!--CommodityBasedObjectStateValue: RocketShipProgress_Phase4--></T>
+      </U>
+    </V>
+    <V t="buff">
+      <U n="buff">
+        <L n="blacklist">
+          <T>153373<!--Buff: buff_Festival_Logic_RocketShip_UseCD--></T>
+        </L>
+      </U>
+    </V>
+    <V t="test_set_reference">
+      <T n="test_set_reference">25731<!--TestSetInstance: testSet_PregnantDisallow--></T>
+    </V>
+    <V t="test_set_reference">
+      <T n="test_set_reference">28305<!--TestSetInstance: testSet_EmotionNotMiserable--></T>
+    </V>
+    <V t="test_set_reference">
+      <T n="test_set_reference">28176<!--TestSetInstance: testSet_EmotionNotStressed--></T>
+    </V>
+  </L>
+  <T n="time_overhead">30</T>
+</I>

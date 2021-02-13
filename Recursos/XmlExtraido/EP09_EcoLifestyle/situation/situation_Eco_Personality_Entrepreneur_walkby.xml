@@ -1,0 +1,161 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<I c="SpecificSimCustomStatesSituation" i="situation" m="situations.custom_states.custom_states_specific_sim_situation" n="situation_Eco_Personality_Entrepreneur_walkby" s="241170">
+  <L n="_situation_states">
+    <U>
+      <T n="Situation State Key">FLAVORFLAV</T>
+      <V n="Situation State" t="literal">
+        <U n="literal">
+          <L n="job_and_role_changes">
+            <U>
+              <T n="Situation Job">241202<!--SituationJob: situationJob_Eco_Personality_Entrepreneur_walkby--></T>
+              <T n="Role State">241185<!--RoleState: roleState_BasicTrait_EcoPersonality_entrepreneur_flavor--></T>
+            </U>
+          </L>
+          <L n="triggers">
+            <U>
+              <V t="change_state" n="effect">
+                <U n="change_state">
+                  <U n="possible_states">
+                    <L n="possible_state_keys">
+                      <U>
+                        <T n="situation_key">LEAVETHISPLACE</T>
+                      </U>
+                    </L>
+                  </U>
+                </U>
+              </V>
+              <L n="triggers">
+                <V t="test_event">
+                  <U n="test_event">
+                    <V n="test" t="ran_interaction_test">
+                      <U n="ran_interaction_test">
+                        <L n="affordances">
+                          <T>238512<!--SuperInteraction: civicPolicy_NPCPush_FlavorChooser--></T>
+                        </L>
+                      </U>
+                    </V>
+                  </U>
+                </V>
+              </L>
+            </U>
+            <U>
+              <V t="change_state" n="effect">
+                <U n="change_state">
+                  <U n="possible_states">
+                    <L n="possible_state_keys">
+                      <U>
+                        <T n="situation_key">LEAVETHISPLACE</T>
+                      </U>
+                    </L>
+                  </U>
+                </U>
+              </V>
+              <L n="triggers">
+                <V t="duration">
+                  <U n="duration">
+                    <U n="duration">
+                      <T n="hours">1</T>
+                    </U>
+                  </U>
+                </V>
+              </L>
+            </U>
+          </L>
+        </U>
+      </V>
+    </U>
+    <U>
+      <T n="Situation State Key">LEAVETHISPLACE</T>
+      <V n="Situation State" t="literal">
+        <U n="literal">
+          <L n="job_and_role_changes">
+            <U>
+              <T n="Situation Job">241202<!--SituationJob: situationJob_Eco_Personality_Entrepreneur_walkby--></T>
+              <T n="Role State">24224<!--RoleState: rolestate_leave_now--></T>
+            </U>
+          </L>
+          <L n="triggers">
+            <U>
+              <V t="end_situation" n="effect" />
+              <L n="triggers">
+                <V t="duration">
+                  <U n="duration">
+                    <U n="duration">
+                      <T n="hours">2</T>
+                    </U>
+                  </U>
+                </V>
+              </L>
+            </U>
+          </L>
+        </U>
+      </V>
+    </U>
+  </L>
+  <V t="random_starting_state" n="_starting_state">
+    <U n="random_starting_state">
+      <L n="possible_state_keys">
+        <U>
+          <T n="situation_key">LEAVETHISPLACE</T>
+          <U n="weight">
+            <T n="base_value">10</T>
+          </U>
+        </U>
+        <U>
+          <T n="situation_key">FLAVORFLAV</T>
+          <U n="weight">
+            <T n="base_value">1</T>
+          </U>
+        </U>
+      </L>
+    </U>
+  </V>
+  <T p="InGame\Audio\Bumper\bumper_event_start.propx" n="audio_sting_on_start">39b2aa4a:00000000:78b903461d47e4fc</T>
+  <L n="compatible_venues">
+    <T>28614<!--Venue: venue_residential--></T>
+  </L>
+  <L n="default_job_and_roles">
+    <U>
+      <T n="Situation Job">241202<!--SituationJob: situationJob_Eco_Personality_Entrepreneur_walkby--></T>
+      <T n="Role State">234903<!--RoleState: roleState_BasicTrait_EcoPersonality_entrepreneur--></T>
+    </U>
+  </L>
+  <T n="duration">0</T>
+  <E n="exclusivity">WALKBY</E>
+  <T p="InGame\Audio\Bumper\bumper_event_major_complete.propx" n="main_goal_audio_sting">39b2aa4a:00000000:10b476550150a33f</T>
+  <T n="max_participants">20</T>
+  <E n="persistence_option">OPEN_STREETS</E>
+  <T n="should_cancel_leave_interaction_on_premature_removal">True</T>
+  <T n="specific_sim_expectation_preference">False</T>
+  <T n="specific_sim_job">241202<!--SituationJob: situationJob_Eco_Personality_Entrepreneur_walkby--></T>
+  <L n="tags">
+    <E>Situation_Weather_Rain_Light</E>
+    <E>Situation_Weather_Rain_Heavy</E>
+    <E>Situation_Weather_Rain_Storm</E>
+    <E>Situation_Weather_Snow_Heavy</E>
+    <E>Situation_Weather_Snow_Storm</E>
+  </L>
+  <U n="weight_multipliers">
+    <L n="multipliers">
+      <U>
+        <T n="multiplier">0</T>
+        <L n="tests">
+          <L>
+            <V t="situation_running_test">
+              <U n="situation_running_test">
+                <V n="situation_whitelist" t="enabled">
+                  <L n="enabled">
+                    <T>237860<!--SpecificSimCustomStatesSituation: situation_CommunityCloseness_IntroToCivicPolicies_EcoMaster--></T>
+                    <T>238041<!--SpecificSimCustomStatesSituation: situation_CommunityCloseness_IntroToCivicPolicies_Entrepreneur--></T>
+                    <T>241170<!--SpecificSimCustomStatesSituation: situation_Eco_Personality_Entrepreneur_walkby--></T>
+                    <T>235529<!--SpecificSimCustomStatesSituation: situation_Eco_Personality_Entrepreneur--></T>
+                  </L>
+                </V>
+              </U>
+            </V>
+          </L>
+        </L>
+      </U>
+    </L>
+  </U>
+</I>

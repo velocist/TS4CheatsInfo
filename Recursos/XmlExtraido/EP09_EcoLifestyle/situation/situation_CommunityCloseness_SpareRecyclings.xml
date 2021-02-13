@@ -1,0 +1,335 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<I c="CustomStatesSituation" i="situation" m="situations.custom_states.custom_states_situation" n="situation_CommunityCloseness_SpareRecyclings" s="233497">
+  <T n="_display_name">0xD9FB6D28<!--String: "Hazañas de Sim"--></T>
+  <L n="_situation_states">
+    <U>
+      <T n="Situation State Key">dosomething</T>
+      <V n="Situation State" t="literal">
+        <U n="literal">
+          <L n="job_and_role_changes">
+            <U>
+              <T n="Situation Job">233542<!--SituationJob: jobs_CommunityCloseness_SpareRecyclings--></T>
+              <T n="Role State">233548<!--RoleState: roleState_CommunityCloseness_SpareRecycling_Recycle--></T>
+            </U>
+          </L>
+          <L n="triggers">
+            <U>
+              <V t="change_state" n="effect">
+                <U n="change_state">
+                  <U n="possible_states">
+                    <L n="possible_state_keys">
+                      <U>
+                        <T n="situation_key">hangout</T>
+                      </U>
+                    </L>
+                  </U>
+                </U>
+              </V>
+              <L n="triggers">
+                <V t="test_event">
+                  <U n="test_event">
+                    <V n="test" t="ran_interaction_test">
+                      <U n="ran_interaction_test">
+                        <L n="affordances">
+                          <T>234183<!--SuperInteraction: si_Recycler_Operate_NPC_CommunityCloseness--></T>
+                        </L>
+                      </U>
+                    </V>
+                  </U>
+                </V>
+              </L>
+            </U>
+          </L>
+        </U>
+      </V>
+    </U>
+    <U>
+      <T n="Situation State Key">hangout</T>
+      <V n="Situation State" t="literal">
+        <U n="literal">
+          <L n="job_and_role_changes">
+            <U>
+              <T n="Situation Job">233542<!--SituationJob: jobs_CommunityCloseness_SpareRecyclings--></T>
+              <T n="Role State">234292<!--RoleState: roleState_CommunityCloseness_Hangout--></T>
+            </U>
+          </L>
+          <L n="triggers">
+            <U>
+              <V t="end_situation" n="effect" />
+              <L n="triggers">
+                <V t="duration">
+                  <U n="duration">
+                    <U n="duration">
+                      <T n="hours">2</T>
+                    </U>
+                  </U>
+                </V>
+              </L>
+            </U>
+          </L>
+        </U>
+      </V>
+    </U>
+    <U>
+      <T n="Situation State Key">knock_wait</T>
+      <V n="Situation State" t="literal">
+        <U n="literal">
+          <L n="job_and_role_changes">
+            <U>
+              <T n="Situation Job">233542<!--SituationJob: jobs_CommunityCloseness_SpareRecyclings--></T>
+              <T n="Role State">233545<!--RoleState: roleState_CommunityCloseness_Intro_KnockOnDoor--></T>
+            </U>
+          </L>
+          <L n="triggers">
+            <U>
+              <V n="effect" t="change_state">
+                <U n="change_state">
+                  <U n="possible_states">
+                    <L n="possible_state_keys">
+                      <U>
+                        <T n="situation_key">dosomething</T>
+                      </U>
+                    </L>
+                  </U>
+                </U>
+              </V>
+              <L n="triggers">
+                <V t="test_event">
+                  <U n="test_event">
+                    <T n="only_trigger_for_situation_sims">False</T>
+                    <V n="test" t="ran_interaction_test">
+                      <U n="ran_interaction_test">
+                        <L n="affordances">
+                          <T>234517<!--SocialSuperInteraction: sim_InviteIn_NoSummon_NoEnterFrontDoor--></T>
+                        </L>
+                      </U>
+                    </V>
+                  </U>
+                </V>
+              </L>
+            </U>
+            <U>
+              <V t="change_state" n="effect">
+                <U n="change_state">
+                  <U n="possible_states">
+                    <L n="possible_state_keys">
+                      <U>
+                        <T n="situation_key">wait_for_invite</T>
+                      </U>
+                    </L>
+                  </U>
+                </U>
+              </V>
+              <L n="triggers">
+                <V t="test_event">
+                  <U n="test_event">
+                    <T n="only_trigger_for_situation_sims">False</T>
+                    <V n="test" t="ran_interaction_test">
+                      <U n="ran_interaction_test">
+                        <L n="affordances">
+                          <T>25211<!--SuperInteraction: door_RingDoorbell--></T>
+                          <T>201065<!--SuperInteraction: door_RingDoorbell_Sliding--></T>
+                          <T>139307<!--SuperInteraction: door_Apartment_NPCRingDoorbell--></T>
+                        </L>
+                        <E n="test_event">InteractionStart</E>
+                      </U>
+                    </V>
+                  </U>
+                </V>
+              </L>
+            </U>
+          </L>
+        </U>
+      </V>
+    </U>
+    <U>
+      <T n="Situation State Key">mailbox_wait</T>
+      <V n="Situation State" t="literal">
+        <U n="literal">
+          <L n="job_and_role_changes">
+            <U>
+              <T n="Situation Job">233542<!--SituationJob: jobs_CommunityCloseness_SpareRecyclings--></T>
+              <T n="Role State">233546<!--RoleState: roleState_CommunityCloseness_Intro_WaitAtMailbox--></T>
+            </U>
+          </L>
+          <L n="triggers">
+            <U>
+              <V n="effect" t="change_state">
+                <U n="change_state">
+                  <U n="possible_states">
+                    <L n="possible_state_keys">
+                      <U>
+                        <T n="situation_key">dosomething</T>
+                      </U>
+                    </L>
+                  </U>
+                </U>
+              </V>
+              <L n="triggers">
+                <V t="test_event">
+                  <U n="test_event">
+                    <T n="only_trigger_for_situation_sims">False</T>
+                    <V n="test" t="ran_interaction_test">
+                      <U n="ran_interaction_test">
+                        <L n="affordances">
+                          <T>234517<!--SocialSuperInteraction: sim_InviteIn_NoSummon_NoEnterFrontDoor--></T>
+                        </L>
+                      </U>
+                    </V>
+                  </U>
+                </V>
+              </L>
+            </U>
+            <U>
+              <V t="change_state" n="effect">
+                <U n="change_state">
+                  <U n="possible_states">
+                    <L n="possible_state_keys">
+                      <U>
+                        <T n="situation_key">wait_for_invite</T>
+                      </U>
+                    </L>
+                  </U>
+                </U>
+              </V>
+              <L n="triggers">
+                <V t="test_event">
+                  <U n="test_event">
+                    <T n="only_trigger_for_situation_sims">False</T>
+                    <V n="test" t="ran_interaction_test">
+                      <U n="ran_interaction_test">
+                        <L n="affordances">
+                          <T>24821<!--SuperInteraction: mailbox_visit--></T>
+                        </L>
+                        <E n="test_event">InteractionStart</E>
+                      </U>
+                    </V>
+                  </U>
+                </V>
+              </L>
+            </U>
+          </L>
+        </U>
+      </V>
+    </U>
+    <U>
+      <T n="Situation State Key">wait_for_invite</T>
+      <V n="Situation State" t="literal">
+        <U n="literal">
+          <L n="job_and_role_changes">
+            <U>
+              <T n="Situation Job">233542<!--SituationJob: jobs_CommunityCloseness_SpareRecyclings--></T>
+              <T n="Role State">241769<!--RoleState: roleState_CommunityCloseness_Intro_WaitForInvite--></T>
+            </U>
+          </L>
+          <L n="triggers">
+            <U>
+              <V t="end_situation" n="effect" />
+              <L n="triggers">
+                <V t="duration">
+                  <U n="duration">
+                    <U n="duration">
+                      <T n="hours">1</T>
+                      <T n="minutes">30</T>
+                    </U>
+                  </U>
+                </V>
+              </L>
+            </U>
+            <U>
+              <V n="effect" t="change_state">
+                <U n="change_state">
+                  <U n="possible_states">
+                    <L n="possible_state_keys">
+                      <U>
+                        <T n="situation_key">dosomething</T>
+                      </U>
+                    </L>
+                  </U>
+                </U>
+              </V>
+              <L n="triggers">
+                <V t="test_event">
+                  <U n="test_event">
+                    <T n="only_trigger_for_situation_sims">False</T>
+                    <V n="test" t="ran_interaction_test">
+                      <U n="ran_interaction_test">
+                        <L n="affordances">
+                          <T>234517<!--SocialSuperInteraction: sim_InviteIn_NoSummon_NoEnterFrontDoor--></T>
+                        </L>
+                      </U>
+                    </V>
+                  </U>
+                </V>
+              </L>
+            </U>
+          </L>
+        </U>
+      </V>
+    </U>
+  </L>
+  <V t="random_starting_state" n="_starting_state">
+    <U n="random_starting_state">
+      <L n="possible_state_keys">
+        <U>
+          <T n="situation_key">knock_wait</T>
+          <U n="weight">
+            <L n="multipliers">
+              <U>
+                <T n="multiplier">0</T>
+                <L n="tests">
+                  <L>
+                    <V t="lot_has_front_door">
+                      <U n="lot_has_front_door">
+                        <T n="invert">True</T>
+                      </U>
+                    </V>
+                  </L>
+                </L>
+              </U>
+            </L>
+          </U>
+        </U>
+        <U>
+          <T n="situation_key">mailbox_wait</T>
+          <U n="weight">
+            <L n="multipliers">
+              <U>
+                <T n="multiplier">0</T>
+                <L n="tests">
+                  <L>
+                    <V t="lot_has_front_door">
+                      <U n="lot_has_front_door">
+                        <T n="invert">False</T>
+                      </U>
+                    </V>
+                  </L>
+                </L>
+              </U>
+            </L>
+          </U>
+        </U>
+      </L>
+    </U>
+  </V>
+  <T p="InGame\Audio\Stings\sting_best_friend_bit.propx" n="audio_sting_on_start">39b2aa4a:00000000:b3a4f6a0ea160508</T>
+  <E n="category">DEFAULT</E>
+  <L n="compatible_venues">
+    <T>28614<!--Venue: venue_residential--></T>
+  </L>
+  <E n="creation_ui_option">NOT_AVAILABLE</E>
+  <L n="default_job_and_roles">
+    <U>
+      <T n="Situation Job">233542<!--SituationJob: jobs_CommunityCloseness_SpareRecyclings--></T>
+      <T n="Role State">233544<!--RoleState: roleState_CommunityCloseness_Default--></T>
+    </U>
+  </L>
+  <T n="duration">0</T>
+  <T p="InGame\Audio\Bumper\bumper_event_major_complete.propx" n="main_goal_audio_sting">39b2aa4a:00000000:10b476550150a33f</T>
+  <T n="max_participants">20</T>
+  <T n="situation_description">0xB933D44A<!--String: "Hazañas de jugador"--></T>
+  <T n="suppress_scoring_progress_bar">True</T>
+  <L n="tags">
+    <E>Situation_VisitorNPCs</E>
+  </L>
+</I>

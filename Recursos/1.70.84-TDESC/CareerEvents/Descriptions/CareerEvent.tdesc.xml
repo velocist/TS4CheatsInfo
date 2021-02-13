@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+
+<TuningRoot>
+    <Instance instance_type="career_event" class="CareerEvent" module="careers.career_event" muid="28B91DD6744DD157" description="Class that manages a career event." instance_needs_reference="True" instance_subclasses_only="False" path="CareerEvents\Descriptions" use_guid_for_reference="True">
+        <Tunable type="int" name="cooldown" class="TunableRange" default="0" display="Cooldown" muid="3E3DC8B0B758730F" min="0" max="None" description="How many work days before this career event will be offered again." tuning_state="NeedsTuning" Deprecated="False" filter="0" group="General" />
+
+        <Tunable type="action" name="loot_on_request" class="TunableReference" display="Loot On Request" muid="82E890B72596A877" description="Loot applied when the career event is requested to start. Happens&#xA;before traveling.&#xA;&#xA;Example 1: A detective is at home and goes to work. This loot&#xA;applies while the detective is still on the home lot, right before&#xA;the travel to the police station happens.&#xA;&#xA;Example 2: A detective at the police station travels to a crime&#xA;scene. This loot for the crime scene sub event applies while the&#xA;detective is still at the police station, right before the travel." allow_none="True" Deprecated="False" filter="0" group="General" restrict="LootActions" />
+
+        <Tunable type="action" name="loot_on_start" class="TunableReference" display="Loot On Start" muid="9E8C0ADE0410565B" description="Loot applied when the career event starts. Happens after travel.&#xA;&#xA;Example 1: A detective is at home and goes to work. This loot &#xA;applies at the police station, right after traveling.&#xA;&#xA;Example 2: A detective at the police station travels to a crime&#xA;scene. This loot for the crime scene sub event applies at the&#xA;crime scene lot, right after traveling." allow_none="True" Deprecated="False" filter="0" group="General" restrict="LootActions" />
+
+        <TunableList name="loots_on_end" class="TunableList" display="Loots On End" muid="7CD5D0E92C6FE726" description="Loots applied when the career event ends." Deprecated="False" filter="0" group="General">
+            <Tunable type="action" class="TunableReference" muid="FB921BF9964DB55B" description="A loot applied when the career event ends." allow_none="True" Deprecated="False" filter="0" group="General" pack_safe="True" restrict="LootActions" />
+        </TunableList>
+
+        <TunableVariant type="None" name="required_zone" class="RequiredCareerEventZoneTunableVariant" default="any" display="Required Zone" muid="4C182CEF721774CA" description="The required zone for this career event (e.g. the hospital lot for&#xA;a doctor career event). The Sim involved in this event will&#xA;automatically travel to this zone at the beginning of the work&#xA;shift. The Sim will in general be prohibited from leaving this zone&#xA;without work -- the lone exception is the Sim is allowed to travel&#xA;for a career sub-event (e.g. a detective Sim running a career event&#xA;requiring the police station lot is allowed to initiate the sub-&#xA;event of investigating the crime scene at a commercial lot)." Deprecated="False" filter="0" group="General">
+            <TunableTuple name="any" class="TunableRequiredCareerEventZoneAny" display="Any" muid="A71A8E1FE9C509E5" description="No required career event zone." Deprecated="False" filter="0" group="General" />
+            <TunableTuple name="home_zone" class="TunableRequiredCareerEventZoneHome" display="Home Zone" muid="2ADECC04372F669E" description="Require career event zone to be the Sim's home zone." Deprecated="False" filter="0" group="General" />
+            <TunableTuple name="lot_description" class="TunableRequiredCareerEventZoneLotDescription" display="Lot Description" muid="5315B2552EAC4525" description="Specify the required career event zone by lot description." Deprecated="False" filter="0" group="General">
+                <TunableVariant type="None" name="house_description" class="OptionalTunable" default="disabled" display="House Description" muid="3614CD6A62FD5875" description="If tuned, this house description will be used for this career event.&#xA;For example, for the acting career loads into the same lot but different&#xA;houses (studio sets). " Deprecated="False" filter="0" group="General">
+                    <Tunable name="disabled" class="TunableExistance" display="Disabled" muid="76D5499DC2DD1323" />
+                    <Tunable type="housedescription" name="enabled" class="TunableReference" display="Enabled" muid="2A6FD5354E0E72B1" description="House description used for this career event." Deprecated="False" filter="0" group="General" />
+                </TunableVariant>
+                <Tunable type="lotdescription" name="lot_description" class="TunableReference" display="Lot Description" muid="81831D79D6369DBA" description="Lot description of required zone." Deprecated="False" filter="0" group="General" />
+            </TunableTuple>
+            <TunableTuple name="random_lot" class="TunableRequiredCareerEventZoneRandom" display="Random Lot" muid="6DD85F5BD3F851A7" description="Travel to a random zone, with weighting according to the tuning." Deprecated="False" filter="0" group="General">
+                <TunableList name="random_weight_terms" class="TunableList" display="Random Weight Terms" muid="5AE4C101D9C8FFD3" description="A list of tests to use and the weights to add for each test.&#xA;By default, zones start with a weight of 1.0 and this can be&#xA;increased through these tests." Deprecated="False" filter="0" group="General">
+                    <TunableTuple class="TunableTuple" muid="E6FE369F05B2EAE8" Deprecated="False" filter="0" group="General">
+                        <Tunable type="bool" name="negate" class="Tunable" default="False" display="Negate" muid="69B059550CC01D41" description="If checked, extra weight will be applied to zones that do NOT&#xA;pass this test, instead of zones that do pass." Deprecated="False" filter="0" group="General" />
+                        <TunableVariant type="None" name="test" class="TunableVariant" default="venue_type" display="Test" muid="D4D5677C85076ADB" Deprecated="False" filter="0" group="General">
+                            <TunableTuple name="belongs_to_active_player" class="TunableZoneTestActivePlayer" display="Belongs To Active Player" muid="EC6B953F6076E0CA" description="A zone test to check if the zone belongs to the active player. " Deprecated="False" filter="0" group="General" />
+                            <TunableTuple name="is_active_zone" class="TunableZoneTestActiveZone" display="Is Active Zone" muid="9829345568690206" description="A zone test to check if the zone is currently the active zone. " Deprecated="False" filter="0" group="General" />
+                            <TunableTuple name="is_npc_household" class="TunableZoneTestNpc" display="Is Npc Household" muid="3DED196D67A2DE70" description="A zone test to check if the zone belongs to an NPC household. " Deprecated="False" filter="0" group="General" />
+                            <TunableTuple name="is_owned_by_any_household" class="TunableZoneTestOwnedByHousehold" display="Is Owned By Any Household" muid="88808626DEB113F6" description="A zone test to check if the zone is owned by any household. " Deprecated="False" filter="0" group="General" />
+                            <TunableTuple name="is_plex" class="TunableZoneTestIsPlex" display="Is Plex" muid="2F98C215C7B0325" description="A zone test to check if the zone is a plex. " Deprecated="False" filter="0" group="General" />
+                            <TunableTuple name="venue_type" class="TunableZoneTestVenueType" display="Venue Type" muid="F387A5EAC37878A6" description="A zone test for a specific list of venue types. " Deprecated="False" filter="0" group="General">
+                                <TunableList name="venues" class="TunableList" display="Venues" muid="BF36B974E1F64153" description="If the venue is in this list, the test passes." Deprecated="False" filter="0" group="General">
+                                    <Tunable type="venue" class="TunableReference" muid="A1BE3905542BA893" allow_none="False" Deprecated="False" filter="0" group="General" pack_safe="True" />
+                                </TunableList>
+                            </TunableTuple>
+                        </TunableVariant>
+                        <TunableVariant type="None" name="weight" class="TunableVariant" default="add_weight" display="Weight" muid="12862EDE49025C4F" Deprecated="False" filter="0" group="General">
+                            <Tunable type="float" name="add_weight" class="TunableRange" default="1.0" display="Add Weight" muid="313390BB9C753FEA" min="0.0" max="None" description="The amount of extra weight to add to the probability of zones&#xA;that pass this test." tuning_state="NeedsTuning" Deprecated="False" filter="0" group="General" />
+                            <Tunable name="forbid" class="TunableExistance" display="Forbid" muid="EBE01F38C96CD2A4" />
+                        </TunableVariant>
+                    </TunableTuple>
+                </TunableList>
+            </TunableTuple>
+        </TunableVariant>
+
+        <TunableVariant type="None" name="scorable_situation" class="OptionalTunable" default="main_event" display="Scorable Situation" muid="355A184879C2403F" description="A situation which the player must complete. Work performance for&#xA;the Sim will depend on how much the Sim accomplishes. This should&#xA;be enabled for main events and disabled for sub events. Example:&#xA;&#xA;Detective Career. The career event that starts at the beginning of&#xA;the work shift, going to the police station, will have a scorable&#xA;situation. The sub event to go to the crime scene will not, as the&#xA;career event will not be scored against it." Deprecated="False" filter="0" group="General">
+            <TunableTuple name="main_event" class="TunableTuple" display="Main Event" muid="7356718106AE1FC5" Deprecated="False" filter="0" group="General">
+                <TunableTuple name="medal_payout_bronze" class="MedalPayout" display="Medal Payout Bronze" muid="EC2B2E7DACEA8298" description="Work performance and money payout if scorable situation&#xA;ends with a bronze medal." Deprecated="False" filter="0" group="General">
+                    <TunableList name="additional_loots" class="TunableList" display="Additional Loots" muid="F102B9CE92155A19" description="Any additional loot needed on this medal payout. Currently, this&#xA;is used to award additional drama nodes/dialogs on this level." Deprecated="False" filter="0" group="General">
+                        <Tunable type="action" class="TunableReference" muid="E988C0934907E7A8" description="The loot action applied." allow_none="False" Deprecated="False" filter="0" group="General" pack_safe="True" restrict="LootActions" />
+                    </TunableList>
+                    <TunableTuple name="money" class="TunableTunableMultiplier" display="Money" muid="8185F3CB9A0F1ED2" description="Multiplier on full day pay, determined by hourly wage (tunable&#xA;at Career Level -&gt; Simoleons Per Hour), multiplied by work day&#xA;length (tunable at Career Level -&gt; Work Scheduler), modified by&#xA;any additional multipliers (e.g. tuning on Career Level -&gt;&#xA;Simolean Trait Bonus, Career Track -&gt; Overmax, etc.)." Deprecated="False" filter="0" group="General">
+                        <Tunable type="float" name="base_value" class="Tunable" default="1" display="Base Value" muid="BB4D0B69DA845C39" description="The basic value to return if no modifications are applied." tuning_state="NeedsTuning" Deprecated="False" filter="0" group="General" />
+                        <TunableList name="multipliers" class="TunableList" display="Multipliers" muid="81FC076EA65EEFDF" description="A list of multipliers to apply to base_value." Deprecated="False" filter="0" group="General">
+                            <TunableTuple class="TunableTuple" muid="B83FE175293E2248" Deprecated="False" filter="0" group="General">
+                                <Tunable type="float" name="multiplier" class="TunableRange" default="1" display="Multiplier" muid="D29DF004E9BC77C7" min="0" max="None" description="The multiplier to apply to base_value if the associated&#xA;tests pass." tuning_state="NeedsTuning" Deprecated="False" filter="0" group="General" />
+                                <TdescFragTag name="tests" class="TunableTestSet" display="Tests" muid="1D5A3D0FE7E8C97C" description="A series of tests that must pass in order for multiplier to&#xA;be applied." filter="0" group="General" />
+                            </TunableTuple>
+                        </TunableList>
+                    </TunableTuple>
+                    <Tunable type="int" name="text" class="TunableLocalizedString" default="0x0" display="Text" muid="45EBB48B68269D07" description="Text shown at end of event notification/dialog if the Sim&#xA;finishes at this medal.&#xA;&#xA;0 param - Sim in the career" Deprecated="False" filter="0" group="General" />
+                    <TunableTuple name="work_performance" class="TunableTunableMultiplier" display="Work Performance" muid="D42F871DFEFB795C" description="Multiplier on the base full day work performance (tunable at&#xA;CareerLevel -&gt; Performance Metrics -&gt; Base Performance)." Deprecated="False" filter="0" group="General">
+                        <Tunable type="float" name="base_value" class="Tunable" default="1" display="Base Value" muid="6B1CC13BC13DA017" description="The basic value to return if no modifications are applied." tuning_state="NeedsTuning" Deprecated="False" filter="0" group="General" />
+                        <TunableList name="multipliers" class="TunableList" display="Multipliers" muid="140EE9E0611E8CC0" description="A list of multipliers to apply to base_value." Deprecated="False" filter="0" group="General">
+                            <TunableTuple class="TunableTuple" muid="BE5292CF73A6CB2E" Deprecated="False" filter="0" group="General">
+                                <Tunable type="float" name="multiplier" class="TunableRange" default="1" display="Multiplier" muid="E7F76622F2DC159D" min="0" max="None" description="The multiplier to apply to base_value if the associated&#xA;tests pass." tuning_state="NeedsTuning" Deprecated="False" filter="0" group="General" />
+                                <TdescFragTag name="tests" class="TunableTestSet" display="Tests" muid="B8FF6A3734F92564" description="A series of tests that must pass in order for multiplier to&#xA;be applied." filter="0" group="General" />
+                            </TunableTuple>
+                        </TunableList>
+                    </TunableTuple>
+                </TunableTuple>
+                <TunableTuple name="medal_payout_gold" class="MedalPayout" display="Medal Payout Gold" muid="528A40B30B7CEB87" description="Work performance and money payout if scorable situation&#xA;ends with a gold medal." Deprecated="False" filter="0" group="General">
+                    <TunableList name="additional_loots" class="TunableList" display="Additional Loots" muid="2D8E93B45BA5BE39" description="Any additional loot needed on this medal payout. Currently, this&#xA;is used to award additional drama nodes/dialogs on this level." Deprecated="False" filter="0" group="General">
+                        <Tunable type="action" class="TunableReference" muid="FB50E5B463063109" description="The loot action applied." allow_none="False" Deprecated="False" filter="0" group="General" pack_safe="True" restrict="LootActions" />
+                    </TunableList>
+                    <TunableTuple name="money" class="TunableTunableMultiplier" display="Money" muid="2457A5D8B5AD362C" description="Multiplier on full day pay, determined by hourly wage (tunable&#xA;at Career Level -&gt; Simoleons Per Hour), multiplied by work day&#xA;length (tunable at Career Level -&gt; Work Scheduler), modified by&#xA;any additional multipliers (e.g. tuning on Career Level -&gt;&#xA;Simolean Trait Bonus, Career Track -&gt; Overmax, etc.)." Deprecated="False" filter="0" group="General">
+                        <Tunable type="float" name="base_value" class="Tunable" default="1" display="Base Value" muid="92229A744FF2B4AC" description="The basic value to return if no modifications are applied." tuning_state="NeedsTuning" Deprecated="False" filter="0" group="General" />
+                        <TunableList name="multipliers" class="TunableList" display="Multipliers" muid="2D40EEFDD8CCBB76" description="A list of multipliers to apply to base_value." Deprecated="False" filter="0" group="General">
+                            <TunableTuple class="TunableTuple" muid="9BD74FFAD02CC4E2" Deprecated="False" filter="0" group="General">
+                                <Tunable type="float" name="multiplier" class="TunableRange" default="1" display="Multiplier" muid="51F41920784FAF0E" min="0" max="None" description="The multiplier to apply to base_value if the associated&#xA;tests pass." tuning_state="NeedsTuning" Deprecated="False" filter="0" group="General" />
+                                <TdescFragTag name="tests" class="TunableTestSet" display="Tests" muid="48A22C2A218817BD" description="A series of tests that must pass in order for multiplier to&#xA;be applied." filter="0" group="General" />
+                            </TunableTuple>
+                        </TunableList>
+                    </TunableTuple>
+                    <Tunable type="int" name="text" class="TunableLocalizedString" default="0x0" display="Text" muid="C3BC9BC371F62AA" description="Text shown at end of event notification/dialog if the Sim&#xA;finishes at this medal.&#xA;&#xA;0 param - Sim in the career" Deprecated="False" filter="0" group="General" />
+                    <TunableTuple name="work_performance" class="TunableTunableMultiplier" display="Work Performance" muid="1272DBF6E343734" description="Multiplier on the base full day work performance (tunable at&#xA;CareerLevel -&gt; Performance Metrics -&gt; Base Performance)." Deprecated="False" filter="0" group="General">
+                        <Tunable type="float" name="base_value" class="Tunable" default="1" display="Base Value" muid="CAE1D3B7D25B9BC4" description="The basic value to return if no modifications are applied." tuning_state="NeedsTuning" Deprecated="False" filter="0" group="General" />
+                        <TunableList name="multipliers" class="TunableList" display="Multipliers" muid="D869AF00B8753059" description="A list of multipliers to apply to base_value." Deprecated="False" filter="0" group="General">
+                            <TunableTuple class="TunableTuple" muid="9894473EF32982BA" Deprecated="False" filter="0" group="General">
+                                <Tunable type="float" name="multiplier" class="TunableRange" default="1" display="Multiplier" muid="E821ACA937959471" min="0" max="None" description="The multiplier to apply to base_value if the associated&#xA;tests pass." tuning_state="NeedsTuning" Deprecated="False" filter="0" group="General" />
+                                <TdescFragTag name="tests" class="TunableTestSet" display="Tests" muid="10D353B101277892" description="A series of tests that must pass in order for multiplier to&#xA;be applied." filter="0" group="General" />
+                            </TunableTuple>
+                        </TunableList>
+                    </TunableTuple>
+                </TunableTuple>
+                <TunableTuple name="medal_payout_silver" class="MedalPayout" display="Medal Payout Silver" muid="A36249BB533B72F" description="Work performance and money payout if scorable situation&#xA;ends with a silver medal." Deprecated="False" filter="0" group="General">
+                    <TunableList name="additional_loots" class="TunableList" display="Additional Loots" muid="CE8EF88609C2095A" description="Any additional loot needed on this medal payout. Currently, this&#xA;is used to award additional drama nodes/dialogs on this level." Deprecated="False" filter="0" group="General">
+                        <Tunable type="action" class="TunableReference" muid="3C125933A40B522E" description="The loot action applied." allow_none="False" Deprecated="False" filter="0" group="General" pack_safe="True" restrict="LootActions" />
+                    </TunableList>
+                    <TunableTuple name="money" class="TunableTunableMultiplier" display="Money" muid="1795CAE58D3C1B48" description="Multiplier on full day pay, determined by hourly wage (tunable&#xA;at Career Level -&gt; Simoleons Per Hour), multiplied by work day&#xA;length (tunable at Career Level -&gt; Work Scheduler), modified by&#xA;any additional multipliers (e.g. tuning on Career Level -&gt;&#xA;Simolean Trait Bonus, Career Track -&gt; Overmax, etc.)." Deprecated="False" filter="0" group="General">
+                        <Tunable type="float" name="base_value" class="Tunable" default="1" display="Base Value" muid="7E51771B120EDB03" description="The basic value to return if no modifications are applied." tuning_state="NeedsTuning" Deprecated="False" filter="0" group="General" />
+                        <TunableList name="multipliers" class="TunableList" display="Multipliers" muid="C5B358800BC09E1B" description="A list of multipliers to apply to base_value." Deprecated="False" filter="0" group="General">
+                            <TunableTuple class="TunableTuple" muid="81DF150501F66D95" Deprecated="False" filter="0" group="General">
+                                <Tunable type="float" name="multiplier" class="TunableRange" default="1" display="Multiplier" muid="12D9C7ABF9A23405" min="0" max="None" description="The multiplier to apply to base_value if the associated&#xA;tests pass." tuning_state="NeedsTuning" Deprecated="False" filter="0" group="General" />
+                                <TdescFragTag name="tests" class="TunableTestSet" display="Tests" muid="2310E70650A95922" description="A series of tests that must pass in order for multiplier to&#xA;be applied." filter="0" group="General" />
+                            </TunableTuple>
+                        </TunableList>
+                    </TunableTuple>
+                    <Tunable type="int" name="text" class="TunableLocalizedString" default="0x0" display="Text" muid="15AE589BA7FA1BF6" description="Text shown at end of event notification/dialog if the Sim&#xA;finishes at this medal.&#xA;&#xA;0 param - Sim in the career" Deprecated="False" filter="0" group="General" />
+                    <TunableTuple name="work_performance" class="TunableTunableMultiplier" display="Work Performance" muid="5E404F625A4A5FA6" description="Multiplier on the base full day work performance (tunable at&#xA;CareerLevel -&gt; Performance Metrics -&gt; Base Performance)." Deprecated="False" filter="0" group="General">
+                        <Tunable type="float" name="base_value" class="Tunable" default="1" display="Base Value" muid="E6BE9B1DBC1EA145" description="The basic value to return if no modifications are applied." tuning_state="NeedsTuning" Deprecated="False" filter="0" group="General" />
+                        <TunableList name="multipliers" class="TunableList" display="Multipliers" muid="A929395A2D85500B" description="A list of multipliers to apply to base_value." Deprecated="False" filter="0" group="General">
+                            <TunableTuple class="TunableTuple" muid="70A8E78D48FF3DCF" Deprecated="False" filter="0" group="General">
+                                <Tunable type="float" name="multiplier" class="TunableRange" default="1" display="Multiplier" muid="6715F58CE2DD2DCA" min="0" max="None" description="The multiplier to apply to base_value if the associated&#xA;tests pass." tuning_state="NeedsTuning" Deprecated="False" filter="0" group="General" />
+                                <TdescFragTag name="tests" class="TunableTestSet" display="Tests" muid="B314DA5B5E7804DF" description="A series of tests that must pass in order for multiplier to&#xA;be applied." filter="0" group="General" />
+                            </TunableTuple>
+                        </TunableList>
+                    </TunableTuple>
+                </TunableTuple>
+                <TunableTuple name="medal_payout_tin" class="MedalPayout" display="Medal Payout Tin" muid="E725154B875E4628" description="Work performance and money payout if scorable situation&#xA;ends with a tin medal." Deprecated="False" filter="0" group="General">
+                    <TunableList name="additional_loots" class="TunableList" display="Additional Loots" muid="FA42C17DAEE2FCE5" description="Any additional loot needed on this medal payout. Currently, this&#xA;is used to award additional drama nodes/dialogs on this level." Deprecated="False" filter="0" group="General">
+                        <Tunable type="action" class="TunableReference" muid="4087817253FF23F6" description="The loot action applied." allow_none="False" Deprecated="False" filter="0" group="General" pack_safe="True" restrict="LootActions" />
+                    </TunableList>
+                    <TunableTuple name="money" class="TunableTunableMultiplier" display="Money" muid="345B2BFF252177ED" description="Multiplier on full day pay, determined by hourly wage (tunable&#xA;at Career Level -&gt; Simoleons Per Hour), multiplied by work day&#xA;length (tunable at Career Level -&gt; Work Scheduler), modified by&#xA;any additional multipliers (e.g. tuning on Career Level -&gt;&#xA;Simolean Trait Bonus, Career Track -&gt; Overmax, etc.)." Deprecated="False" filter="0" group="General">
+                        <Tunable type="float" name="base_value" class="Tunable" default="1" display="Base Value" muid="1776E5B483A59048" description="The basic value to return if no modifications are applied." tuning_state="NeedsTuning" Deprecated="False" filter="0" group="General" />
+                        <TunableList name="multipliers" class="TunableList" display="Multipliers" muid="7AF6BA65C7DD5255" description="A list of multipliers to apply to base_value." Deprecated="False" filter="0" group="General">
+                            <TunableTuple class="TunableTuple" muid="D7AA375138045593" Deprecated="False" filter="0" group="General">
+                                <Tunable type="float" name="multiplier" class="TunableRange" default="1" display="Multiplier" muid="D40BFB45CCC737B3" min="0" max="None" description="The multiplier to apply to base_value if the associated&#xA;tests pass." tuning_state="NeedsTuning" Deprecated="False" filter="0" group="General" />
+                                <TdescFragTag name="tests" class="TunableTestSet" display="Tests" muid="F11EAEFECDAA2C70" description="A series of tests that must pass in order for multiplier to&#xA;be applied." filter="0" group="General" />
+                            </TunableTuple>
+                        </TunableList>
+                    </TunableTuple>
+                    <Tunable type="int" name="text" class="TunableLocalizedString" default="0x0" display="Text" muid="7D7DFCAEA270BBA9" description="Text shown at end of event notification/dialog if the Sim&#xA;finishes at this medal.&#xA;&#xA;0 param - Sim in the career" Deprecated="False" filter="0" group="General" />
+                    <TunableTuple name="work_performance" class="TunableTunableMultiplier" display="Work Performance" muid="885AF948F486A4A2" description="Multiplier on the base full day work performance (tunable at&#xA;CareerLevel -&gt; Performance Metrics -&gt; Base Performance)." Deprecated="False" filter="0" group="General">
+                        <Tunable type="float" name="base_value" class="Tunable" default="1" display="Base Value" muid="FB2DDBCEA86B3E66" description="The basic value to return if no modifications are applied." tuning_state="NeedsTuning" Deprecated="False" filter="0" group="General" />
+                        <TunableList name="multipliers" class="TunableList" display="Multipliers" muid="7FFBB5F74D0EDF19" description="A list of multipliers to apply to base_value." Deprecated="False" filter="0" group="General">
+                            <TunableTuple class="TunableTuple" muid="2849BFF0080BBBEC" Deprecated="False" filter="0" group="General">
+                                <Tunable type="float" name="multiplier" class="TunableRange" default="1" display="Multiplier" muid="9F3373CA25D83F82" min="0" max="None" description="The multiplier to apply to base_value if the associated&#xA;tests pass." tuning_state="NeedsTuning" Deprecated="False" filter="0" group="General" />
+                                <TdescFragTag name="tests" class="TunableTestSet" display="Tests" muid="C1A8AC6B0FD16628" description="A series of tests that must pass in order for multiplier to&#xA;be applied." filter="0" group="General" />
+                            </TunableTuple>
+                        </TunableList>
+                    </TunableTuple>
+                </TunableTuple>
+                <Tunable type="situation" name="situation" class="TunableReference" display="Situation" muid="F9183E4684087F3E" description="Situation which the Sim in the career event will be scored by." allow_none="True" Deprecated="False" filter="0" group="General" restrict="CareerEventSituation" />
+            </TunableTuple>
+            <Tunable name="sub_event" class="TunableExistance" display="Sub Event" muid="21B448B6C6171FD1" />
+        </TunableVariant>
+
+        <TdescFragTag name="tests" class="TunableTestSet" display="Tests" muid="9BC2AB16FD838467" description="Tests for if this career event is available to the Sim&#xA;ParticipantType.Actor." filter="0" group="General" />
+
+        <TunableVariant type="None" name="zone_director" class="OptionalTunable" default="disabled" display="Zone Director" muid="B2654E5B03BBEFBD" description="An optional zone director to apply to the zone the career event&#xA;takes place." Deprecated="False" filter="0" group="General">
+            <Tunable name="disabled" class="TunableExistance" display="Disabled" muid="8B7E919BC4103128" />
+            <Tunable type="zone_director" name="enabled" class="TunableReference" display="Enabled" muid="2E8706BF9B78F99F" allow_none="False" Deprecated="False" filter="0" group="General" restrict="CareerEventZoneDirector" />
+        </TunableVariant>
+    </Instance>
+
+    <VersionHistory>
+        <ActionList>
+            <Action type="kRename" old_muid="B022B298FB315986" new_muid="BF36B974E1F64153" />
+        </ActionList>
+    </VersionHistory>
+</TuningRoot>

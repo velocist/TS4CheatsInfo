@@ -1,0 +1,529 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<I c="SocialSuperInteraction" i="interaction" m="interactions.social.social_super_interaction" n="sim_Chat" s="13998">
+  <V t="participant" n="_icon">
+    <U n="participant">
+      <L n="participant_type">
+        <E>TargetSim</E>
+      </L>
+    </U>
+  </V>
+  <L n="_party_size_weight_tuning">
+    <U>
+      <T n="y">100</T>
+    </U>
+    <U>
+      <T n="x">1</T>
+      <T n="y">100</T>
+    </U>
+    <U>
+      <T n="x">2</T>
+      <T n="y">50</T>
+    </U>
+    <U>
+      <T n="x">3</T>
+      <T n="y">0</T>
+    </U>
+    <U>
+      <T n="x">4</T>
+    </U>
+  </L>
+  <V t="enabled" n="_saveable" />
+  <T n="_social_group_type">16390<!--SocialGroup: chat--></T>
+  <L n="_static_commodities">
+    <U>
+      <T n="static_commodity">16435<!--StaticCommodity: StaticCommodity_Socialize--></T>
+    </U>
+    <U>
+      <T n="static_commodity">96799<!--StaticCommodity: StaticCommodity_Socialize_AsBackup--></T>
+    </U>
+    <U>
+      <T n="desire">2</T>
+      <T n="static_commodity">120613<!--StaticCommodity: staticCommodity_InHotTub--></T>
+    </U>
+    <U>
+      <T n="desire">100</T>
+      <T n="static_commodity">134229<!--StaticCommodity: staticCommodity_MonsterUnderBed_Scared_Wakup_SprayForMonsters--></T>
+    </U>
+  </L>
+  <T n="_super_affordance_can_share_target">True</T>
+  <T n="allow_autonomous">False</T>
+  <T n="allow_user_directed">False</T>
+  <T n="attention_cost">0</T>
+  <T n="autonomy_can_overwrite_similar_affordance">True</T>
+  <V n="basic_content" t="flexible_length">
+    <U n="flexible_length">
+      <L n="conditional_actions">
+        <V t="list_reference">
+          <T n="list_reference">40705<!--ExitConditionList: ExitConditionList_MotivesNearFail--></T>
+        </V>
+        <V t="list_reference">
+          <T n="list_reference">77072<!--ExitConditionList: ExitConditionList_Socialization--></T>
+        </V>
+        <V t="literal">
+          <U n="literal">
+            <L n="conditions">
+              <V t="buff_based">
+                <U n="buff_based">
+                  <T n="buff">109789<!--Buff: buff_AutonomyMod_RetailBuy--></T>
+                  <E n="timing">HAS_BUFF</E>
+                </U>
+              </V>
+            </L>
+            <E n="interaction_action">EXIT_CANCEL</E>
+          </U>
+        </V>
+        <V t="literal">
+          <U n="literal">
+            <L n="conditions">
+              <V t="buff_based">
+                <U n="buff_based">
+                  <T n="buff">126524<!--Buff: buff_Reaction_Break_Social_Chat--></T>
+                </U>
+              </V>
+            </L>
+            <E n="interaction_action">EXIT_CANCEL</E>
+          </U>
+        </V>
+        <V t="literal">
+          <U n="literal">
+            <L n="conditions">
+              <V t="buff_based">
+                <U n="buff_based">
+                  <T n="buff">130245<!--Buff: buff_Object_Dartboard_WaitingForTurn--></T>
+                </U>
+              </V>
+            </L>
+          </U>
+        </V>
+        <V t="literal">
+          <U n="literal">
+            <L n="conditions">
+              <V t="time_based">
+                <U n="time_based">
+                  <T n="max_time">5</T>
+                  <T n="min_time">1</T>
+                </U>
+              </V>
+            </L>
+            <E n="interaction_action">EXIT_NATURALLY</E>
+            <L n="tests">
+              <L>
+                <V t="location">
+                  <U n="location">
+                    <U n="location_tests">
+                      <V t="enabled" n="is_venue_type">
+                        <U n="enabled">
+                          <T n="venue_type">130713<!--Venue: venue_Restaurant--></T>
+                        </U>
+                      </V>
+                    </U>
+                  </U>
+                </V>
+                <V t="situation_job_test">
+                  <U n="situation_job_test">
+                    <L n="role_tags">
+                      <E>Role_RestaurantStaff</E>
+                    </L>
+                  </U>
+                </V>
+              </L>
+            </L>
+          </U>
+        </V>
+        <V t="list_reference">
+          <T n="list_reference">153449<!--ExitConditionList: exitConditionList_RetailEmployee--></T>
+        </V>
+        <V t="literal">
+          <U n="literal">
+            <L n="conditions">
+              <V t="buff_based">
+                <U n="buff_based">
+                  <T n="buff">250516<!--Buff: buff_Batuu_Missions_FS8_Rey_StopAndGoMindErase--></T>
+                </U>
+              </V>
+            </L>
+            <E n="interaction_action">EXIT_NATURALLY</E>
+            <L n="tests">
+              <L>
+                <V t="trait">
+                  <U n="trait">
+                    <L n="whitelist_traits">
+                      <T>238969<!--Trait: trait_Batuu_Resistance_SNPC_Rey_Identifier--></T>
+                    </L>
+                  </U>
+                </V>
+              </L>
+            </L>
+          </U>
+        </V>
+        <V t="reference">
+          <T n="reference">153409<!--ExitCondition: exitCondition_noAction_apartmentNeighbor_Brainstorm_buffLoot--></T>
+        </V>
+      </L>
+      <V n="content" t="staging_content">
+        <U n="staging_content">
+          <U n="content_set">
+            <L n="affordance_links">
+              <T>14266<!--SocialMixerInteraction: Social_Trait_Ambitious_GiveCareerAdvice--></T>
+              <T>13996<!--SocialMixerInteraction: sim_call_to_dinner--></T>
+              <T>14267<!--SocialMixerInteraction: Social_Trait_Ambitious_Schmooze--></T>
+              <T>14143<!--SocialMixerInteraction: sim_talk_about_dinnerParty--></T>
+              <T>102275<!--SocialMixerInteraction: Social_Ghost_To_Ghost_Reminisce--></T>
+              <T>102237<!--SocialMixerInteraction: Social_Ghost_Talk_About_Death--></T>
+              <T>114496<!--SocialMixerInteraction: socials_Doctor_Refer_ExamTable--></T>
+              <T>114495<!--SocialMixerInteraction: socials_Doctor_Refer_Surgery--></T>
+              <T>114494<!--SocialMixerInteraction: socials_Doctor_Refer_Treadmill--></T>
+              <T>114473<!--SocialMixerInteraction: Socials_Doctor_Refer_Xray--></T>
+              <T>116714<!--SocialMixerInteraction: socials_Targeted_Friendly_AlwaysOn_STC_Detective_TalkToChief--></T>
+              <T>129376<!--SocialMixerInteraction: mixer_TransitionToIntimate_BeAffectionate--></T>
+              <T>129377<!--SocialMixerInteraction: mixer_TransitionToIntimate_Sofa_BeIntimate--></T>
+              <T>123783<!--SocialMixerInteraction: mixer_social_ScoldClubMember_Targeted_Mean_AlwaysOn--></T>
+              <T>27110<!--SocialMixerInteraction: Social_Trait_Gloomy_Sigh--></T>
+            </L>
+            <L n="affordance_lists">
+              <T>24513<!--AffordanceList: social_Mixers_Special_NonTouching--></T>
+              <T>24508<!--AffordanceList: social_Mixers_Friendly_NonTouching--></T>
+              <T>24509<!--AffordanceList: social_Mixers_Funny_NonTouching--></T>
+              <T>24511<!--AffordanceList: social_Mixers_Mean_NonTouching--></T>
+              <T>24512<!--AffordanceList: social_Mixers_Mischief_NonTouching--></T>
+              <T>24510<!--AffordanceList: social_Mixers_Romance_NonTouching--></T>
+              <T>112376<!--AffordanceList: socialMixers_Retail_NonTouching--></T>
+              <T>113518<!--AffordanceList: social_Mixers_ScienceCareer--></T>
+            </L>
+          </U>
+        </U>
+      </V>
+      <V n="periodic_stat_change" t="enabled">
+        <U n="enabled">
+          <L n="operations">
+            <V t="statistic_set_max">
+              <U n="statistic_set_max">
+                <T n="stat">33351<!--Commodity: commodity_SimInfo_TimeSinceLastSocial--></T>
+              </U>
+            </V>
+            <V t="statistic_change">
+              <U n="statistic_change">
+                <T n="amount">0.25</T>
+                <T n="stat">102865<!--Commodity: commodity_AlienAbduction_Tracker--></T>
+                <L n="tests">
+                  <L>
+                    <V t="trait">
+                      <U n="trait">
+                        <E n="subject">TargetSim</E>
+                        <L n="whitelist_traits">
+                          <T>102785<!--Trait: trait_OccultAlien--></T>
+                        </L>
+                      </U>
+                    </V>
+                  </L>
+                </L>
+              </U>
+            </V>
+          </L>
+          <T n="trigger_gain_on_start">True</T>
+        </U>
+      </V>
+      <V t="disabled" n="progressive_stat_change" />
+      <T n="start_autonomous_inertial">True</T>
+    </U>
+  </V>
+  <L n="basic_extras">
+    <V t="buff">
+      <U n="buff">
+        <U n="buff_type">
+          <V n="buff_reason" t="enabled">
+            <T n="enabled">0xE5FAA493<!--String: "(Por pasar el rato con coleguitas)"--></T>
+          </V>
+          <T n="buff_type">12656<!--Buff: Buff_Trait_Bro_Broximity(Hidden)--></T>
+        </U>
+        <L n="subject">
+          <E>Actor</E>
+        </L>
+        <L n="tests">
+          <L>
+            <V t="trait">
+              <U n="trait">
+                <E n="subject">AllSims</E>
+                <L n="whitelist_traits">
+                  <T>16826<!--Trait: trait_Bro--></T>
+                </L>
+              </U>
+            </V>
+          </L>
+        </L>
+      </U>
+    </V>
+    <V t="buff">
+      <U n="buff">
+        <U n="buff_type">
+          <V t="disabled" n="buff_reason" />
+          <T n="buff_type">8876<!--Buff: buff_Sim_IsTalking--></T>
+        </U>
+      </U>
+    </V>
+    <V t="buff">
+      <U n="buff">
+        <U n="buff_type">
+          <V n="buff_reason" t="enabled">
+            <T n="enabled">0x9C09275F<!--String: "(Por estar en un grupo social con al menos 3 Sims)"--></T>
+          </V>
+          <T n="buff_type">125555<!--Buff: buff_Trait_WithMyFriends--></T>
+        </U>
+        <L n="subject">
+          <E>Actor</E>
+          <E>SocialGroupSims</E>
+          <E>TargetSim</E>
+        </L>
+        <L n="tests">
+          <L>
+            <V t="social_group">
+              <U n="social_group">
+                <V t="enabled" n="threshold">
+                  <U n="enabled">
+                    <T n="value">3</T>
+                  </U>
+                </V>
+              </U>
+            </V>
+          </L>
+        </L>
+      </U>
+    </V>
+    <V t="buff">
+      <U n="buff">
+        <U n="buff_type">
+          <T n="buff_type">127122<!--Buff: buff_Sim_Speaking_With_Relative--></T>
+        </U>
+        <L n="tests">
+          <L>
+            <V t="relationship">
+              <U n="relationship">
+                <U n="required_relationship_bits">
+                  <L n="match_any">
+                    <T>15806<!--RelationshipBitCollection: rbc_Family--></T>
+                    <T>8829<!--RelationshipBit: family_aunt_uncle--></T>
+                    <T>8802<!--RelationshipBit: family_brother_sister--></T>
+                    <T>8826<!--RelationshipBit: family_cousin--></T>
+                    <T>8807<!--RelationshipBit: family_grandchild--></T>
+                    <T>8808<!--RelationshipBit: family_grandparent--></T>
+                    <T>24490<!--RelationshipBit: family_husband_wife--></T>
+                    <T>9989<!--RelationshipBit: family_niece_nephew--></T>
+                    <T>8809<!--RelationshipBit: family_parent--></T>
+                    <T>8805<!--RelationshipBit: family_son_daughter--></T>
+                    <T>8824<!--RelationshipBit: family_stepsibling--></T>
+                    <T>100705<!--RelationshipBit: relbit_Pregnancy_Birthparent--></T>
+                  </L>
+                </U>
+              </U>
+            </V>
+          </L>
+        </L>
+      </U>
+    </V>
+    <V t="buff">
+      <U n="buff">
+        <U n="buff_type">
+          <T n="buff_type">127657<!--Buff: buff_Sim_Speaking_With_Child_Teen--></T>
+        </U>
+        <L n="tests">
+          <L>
+            <V t="sim_info">
+              <U n="sim_info">
+                <V t="specified" n="ages">
+                  <L n="specified">
+                    <E>CHILD</E>
+                    <E>TEEN</E>
+                  </L>
+                </V>
+                <E n="who">TargetSim</E>
+              </U>
+            </V>
+          </L>
+        </L>
+      </U>
+    </V>
+    <V t="loot">
+      <U n="loot">
+        <L n="loot_list">
+          <T>183411<!--LootActions: loot_Sim_Chat_SetCommodities--></T>
+        </L>
+        <V t="at_beginning" n="timing" />
+      </U>
+    </V>
+    <V t="loot">
+      <U n="loot">
+        <L n="loot_list">
+          <T>183411<!--LootActions: loot_Sim_Chat_SetCommodities--></T>
+        </L>
+        <V t="at_end" n="timing">
+          <U n="at_end">
+            <E n="criticality">OnCancelOrException</E>
+          </U>
+        </V>
+      </U>
+    </V>
+  </L>
+  <V t="disabled" n="basic_reserve_object" />
+  <T n="can_shoo">False</T>
+  <V t="enabled" n="canonical_animation">
+    <U n="enabled">
+      <T n="factory">11326<!--AnimationElement: Canonical_NonTouchingSocial--></T>
+    </U>
+  </V>
+  <T o="true" n="category" />
+  <V t="disabled" n="content_score" />
+  <T n="display_name">0x482BA41C<!--String: "Charlar con {1.SimFirstName}"--></T>
+  <U n="display_name_text_tokens">
+    <L n="tokens">
+      <V t="participant_type">
+        <U n="participant_type">
+          <V t="from_participant" n="objects">
+            <U n="from_participant">
+              <E n="participant">Actor</E>
+            </U>
+          </V>
+        </U>
+      </V>
+      <V t="participant_type">
+        <U n="participant_type">
+          <V t="from_participant" n="objects">
+            <U n="from_participant">
+              <E n="participant">Object</E>
+            </U>
+          </V>
+        </U>
+      </V>
+    </L>
+  </U>
+  <V t="enabled" n="idle_animation">
+    <U n="enabled">
+      <T n="factory">11570<!--AnimationElement: Listen_Listen_Looping_basic--></T>
+    </U>
+  </V>
+  <V t="enabled" n="idle_animation_overrides">
+    <L n="enabled">
+      <U>
+        <U n="override">
+          <T n="factory">244348<!--AnimationElement: batuu_SNPC_Listen--></T>
+        </U>
+        <L n="tests">
+          <L>
+            <V t="test_set_reference">
+              <T n="test_set_reference">247857<!--TestSetInstance: testSet_Batuu_SNPC_ListenOverride--></T>
+            </V>
+          </L>
+        </L>
+      </U>
+    </L>
+  </V>
+  <T n="ignore_group_socials">False</T>
+  <T n="ignores_greetings">False</T>
+  <L n="interaction_category_tags">
+    <E>Interaction_Chat</E>
+    <E>Interaction_SocialSuper</E>
+    <E>Interaction_Super</E>
+    <E>Interaction_All</E>
+    <E>Interaction_SocialAll</E>
+    <E>Interaction_WaitstaffIdle</E>
+    <E>Interaction_Social_Contagious</E>
+  </L>
+  <T n="invite_in_after_interaction">True</T>
+  <U n="listen_animation">
+    <T n="factory">11570<!--AnimationElement: Listen_Listen_Looping_basic--></T>
+  </U>
+  <V t="enabled" n="multi_sim_override_data">
+    <U n="enabled">
+      <T n="display_text">0x98041977<!--String: "Charlando con {0.String}"--></T>
+      <T p="InGame\UI\Icons\InteractionQueue\IconQueueGroupSocial.png" n="icon">2f7d0004:00000000:0883d3e17815f5f1</T>
+    </U>
+  </V>
+  <T n="opportunity_cost_multiplier">1.5</T>
+  <V t="single" n="outcome" />
+  <U n="posture_preferences">
+    <T n="apply_penalties">True</T>
+    <L n="posture_cost_overrides">
+      <U>
+        <T n="key">240809<!--Posture: posture_Sit_RockingChair--></T>
+        <T n="value">-10</T>
+      </U>
+    </L>
+  </U>
+  <U n="progress_bar_enabled">
+    <T n="bar_enabled">False</T>
+  </U>
+  <T n="relationship_scoring">True</T>
+  <V t="enabled" n="route_start_balloon">
+    <U n="enabled">
+      <U n="balloon">
+        <L n="balloon_choices">
+          <U>
+            <V n="item" t="balloon_icon">
+              <U n="balloon_icon">
+                <V t="participant" n="icon">
+                  <U n="participant">
+                    <L n="participant_type">
+                      <E>TargetSim</E>
+                    </L>
+                  </U>
+                </V>
+              </U>
+            </V>
+          </U>
+        </L>
+        <L n="balloon_target">
+          <E>Actor</E>
+        </L>
+      </U>
+    </U>
+  </V>
+  <E n="scoring_priority">NORMAL</E>
+  <V t="enabled" n="sim_affinity_posture_scoring_data">
+    <U n="enabled">
+      <L n="my_scoring">
+        <U>
+          <V t="relationship_based" n="affinity_strategy" />
+          <T n="negate_tag">True</T>
+          <E n="running_interaction_tag">Sleeping</E>
+        </U>
+        <U>
+          <V t="avoid" n="affinity_strategy" />
+          <E n="running_interaction_tag">Very_Loud</E>
+        </U>
+      </L>
+      <L n="my_tags">
+        <E>Loud</E>
+        <E>Chat</E>
+      </L>
+    </U>
+  </V>
+  <T n="subaction_selection_weight">2</T>
+  <E n="target_type">TARGET</E>
+  <L n="test_globals">
+    <V t="sim_info">
+      <U n="sim_info">
+        <V t="specified" n="ages">
+          <L n="specified">
+            <E>TEEN</E>
+            <E>YOUNGADULT</E>
+            <E>ADULT</E>
+            <E>ELDER</E>
+            <E>CHILD</E>
+          </L>
+        </V>
+        <V t="specified" n="species">
+          <U n="specified">
+            <L n="species">
+              <E />
+            </L>
+          </U>
+        </V>
+        <E n="who">TargetSim</E>
+      </U>
+    </V>
+  </L>
+  <T n="time_overhead">60</T>
+  <U n="visual_type_override_data">
+    <T n="group_priority">2</T>
+    <E n="group_tag">Interaction_Chat</E>
+  </U>
+</I>

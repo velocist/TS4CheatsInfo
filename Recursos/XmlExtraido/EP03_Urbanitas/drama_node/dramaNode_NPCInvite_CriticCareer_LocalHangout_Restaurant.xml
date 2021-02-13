@@ -1,0 +1,105 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<I c="NPCInviteSituationDramaNode" i="drama_node" m="drama_scheduler.npc_invite_situation_drama_node" n="dramaNode_NPCInvite_CriticCareer_LocalHangout_Restaurant" s="140065">
+  <V n="_NPC_host_job" t="enabled">
+    <T n="enabled">140080<!--SituationJob: jobs_NPCInvites_Recommend_Restaurant_NPC_Invite--></T>
+  </V>
+  <V n="_NPC_hosted_situation_player_job" t="enabled">
+    <T n="enabled">140078<!--SituationJob: jobs_NPCInvites_Recommend_Restaurant_Actor_Target--></T>
+  </V>
+  <L n="_NPC_hosted_situation_start_messages">
+    <U>
+      <U n="dialog">
+        <V n="text" t="single">
+          <T n="single">0x3088455<!--String: "Eh, {0.SimFirstName}, soy {1.SimFirstName}. Pensaba pasarme por el restaurante que comentaste. ¿Te apetece venirte?"--></T>
+        </V>
+        <T n="text_cancel">0xC01F21E9<!--String: "No, gracias."--></T>
+        <V t="enabled" n="text_tokens">
+          <U n="enabled">
+            <L n="tokens">
+              <V t="participant_type" />
+              <V t="participant_type">
+                <U n="participant_type">
+                  <V n="objects" t="from_participant">
+                    <U n="from_participant">
+                      <E n="participant">TargetSim</E>
+                    </U>
+                  </V>
+                </U>
+              </V>
+            </L>
+          </U>
+        </V>
+        <T n="zone_title">0xC79595F2<!--String: "{0.String}: {1.String}"--></T>
+      </U>
+    </U>
+  </L>
+  <T n="_situation_to_run">140076<!--RestaurantEventSituation: situation_NPCInvite_Recommend_Restaurant--></T>
+  <T n="allow_during_work_hours">True</T>
+  <V t="none" n="cooldown_data" />
+  <U n="min_and_max_times">
+    <T n="lower_bound">0</T>
+    <T n="upper_bound">24</T>
+  </U>
+  <L n="receiver_sim_pretests">
+    <L>
+      <V t="sim_info">
+        <U n="sim_info">
+          <V t="specified" n="ages" />
+          <V t="specified" n="species">
+            <U n="specified">
+              <L n="species">
+                <E />
+              </L>
+            </U>
+          </V>
+        </U>
+      </V>
+    </L>
+  </L>
+  <L n="run_tests">
+    <L>
+      <V t="relationship">
+        <U n="relationship">
+          <U n="prohibited_relationship_bits">
+            <L n="match_any">
+              <T>240110<!--RelationshipBitCollection: rbc_Sentiment_Negative--></T>
+            </L>
+          </U>
+          <L n="subject">
+            <E>Actor</E>
+          </L>
+          <L n="target_sim">
+            <E>TargetSim</E>
+          </L>
+        </U>
+      </V>
+    </L>
+  </L>
+  <V t="disabled" n="scoring" />
+  <V t="participant_type" n="sender_sim_info">
+    <U n="participant_type">
+      <E n="participant_type">TargetSim</E>
+    </U>
+  </V>
+  <V t="schedule" n="time_option">
+    <U n="schedule">
+      <L n="valid_times">
+        <U>
+          <U n="days_available">
+            <T n="0 SUNDAY">True</T>
+            <T n="1 MONDAY">True</T>
+            <T n="2 TUESDAY">True</T>
+            <T n="3 WEDNESDAY">True</T>
+            <T n="4 THURSDAY">True</T>
+            <T n="5 FRIDAY">True</T>
+            <T n="6 SATURDAY">True</T>
+          </U>
+          <T n="duration">10</T>
+          <U n="start_time">
+            <T n="hour">10</T>
+          </U>
+        </U>
+      </L>
+    </U>
+  </V>
+</I>

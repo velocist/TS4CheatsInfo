@@ -1,0 +1,235 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+
+<TuningRoot>
+    <Instance instance_type="situation" class="MotherPlantBattleSituation" module="situations.complex.mother_plant_battle" muid="60E31EAD3A7780AF" description="Situation for controlling the Mother Plant Battle" instance_subclasses_only="False" parents="SituationComplexCommon, SituationComplex, Situation" path="Situations\Descriptions" use_guid_for_reference="True">
+        <TunableTuple name="attack_battle_situation_state" class="TunableAttackBattleThePlantSituationState" display="Attack Battle Situation State" muid="B0F84CA17DB3A581" description="State in which we are battling the plant with extra attack damage." Deprecated="False" filter="0" group="State">
+            <TunableList name="job_and_role_changes" class="TunableMapping" display="Job And Role Changes" muid="D4941A06C4E3091C" mapping_key="Situation Job" mapping_value="Role State" description="A mapping between situation jobs and role states that defines&#xA;what role states we want to switch to for sims on which jobs&#xA;when this situation state is entered." Deprecated="False" filter="0" group="General">
+                <TunableTuple class="TunableTuple" muid="6BA25CB3AD77B88A" Deprecated="False" filter="0" group="General">
+                    <Tunable type="role_state" name="Role State" class="TunableReference" display="Role State" muid="B01D93FC7D1B203D" description="The role state that we will switch sims of the linked job&#xA;into." allow_none="False" Deprecated="False" filter="0" group="General" />
+                    <Tunable type="situation_job" name="Situation Job" class="TunableReference" display="Situation Job" muid="797FE0BE6C3F1993" description="A reference to a SituationJob that we will use to change&#xA;sim's role state." allow_none="False" Deprecated="False" filter="0" group="General" />
+                </TunableTuple>
+            </TunableList>
+            <TunableVariant type="None" name="time_out" class="OptionalTunable" default="disabled" display="Time Out" muid="F5A4CBC717CC1BAC" description="How long this state will last before time expired. Please talk to the GPE who implemented the specific&#xA;situation to see what the state will do on time expired." Deprecated="False" filter="0" group="General">
+                <Tunable name="disabled" class="TunableExistance" display="Disabled" muid="8B6FA8507DE0E695" />
+                <Tunable type="float" name="enabled" class="TunableSimMinute" default="15" display="Enabled" muid="55474FE8C592445A" min="1" max="None" tuning_state="NeedsTuning" Deprecated="False" filter="0" group="General" />
+            </TunableVariant>
+        </TunableTuple>
+
+        <Deleted name="audio_sting_on_start" muid="25FBDD9C24BB5D12" />
+
+        <TunableTuple name="base_battle_situation_state" class="TunableBattleThePlantSituationState" display="Base Battle Situation State" muid="49D055D215BC6B5F" description="State in which we are battling the plant with no special buffs." Deprecated="False" filter="0" group="State">
+            <TunableList name="job_and_role_changes" class="TunableMapping" display="Job And Role Changes" muid="27C85D0996D81BA1" mapping_key="Situation Job" mapping_value="Role State" description="A mapping between situation jobs and role states that defines&#xA;what role states we want to switch to for sims on which jobs&#xA;when this situation state is entered." Deprecated="False" filter="0" group="General">
+                <TunableTuple class="TunableTuple" muid="855AA89BAA119909" Deprecated="False" filter="0" group="General">
+                    <Tunable type="role_state" name="Role State" class="TunableReference" display="Role State" muid="3D8A76277949E462" description="The role state that we will switch sims of the linked job&#xA;into." allow_none="False" Deprecated="False" filter="0" group="General" />
+                    <Tunable type="situation_job" name="Situation Job" class="TunableReference" display="Situation Job" muid="864DC7260A3F6F45" description="A reference to a SituationJob that we will use to change&#xA;sim's role state." allow_none="False" Deprecated="False" filter="0" group="General" />
+                </TunableTuple>
+            </TunableList>
+        </TunableTuple>
+
+        <Tunable type="ResourceKey" name="defeat_audio_sting" class="TunableResourceKey" default="None" display="Defeat Audio Sting" muid="3E8E5FB7AF462E17" description="The sound to play when the Sim loses the battle." Deprecated="False" filter="0" group="Audio" resource_types="0x39b2aa4a" />
+
+        <Tunable type="interaction" name="fight_affordance" class="TunableReference" display="Fight Affordance" muid="B03D2842D928C3A1" description="The primary fight interaction that we will use to run the defeat&#xA;mixer the player Sim." allow_none="False" Deprecated="False" filter="0" group="General" />
+
+        <Tunable type="situation_job" name="helper_1_job" class="TunableReference" display="Helper 1 Job" muid="86B2CD5215080D75" description="Job for one of the helper Sims for the fight." allow_none="False" Deprecated="False" filter="0" group="General" />
+
+        <Tunable type="situation_job" name="helper_2_job" class="TunableReference" display="Helper 2 Job" muid="97D4FF49802E31CC" description="Job for one of the helper Sims for the fight." allow_none="False" Deprecated="False" filter="0" group="General" />
+
+        <Tunable type="situation_job" name="helper_3_job" class="TunableReference" display="Helper 3 Job" muid="C261B6A4970B7BF4" description="Job for one of the helper Sims for the fight." allow_none="False" Deprecated="False" filter="0" group="General" />
+
+        <Tunable type="interaction" name="helper_lose_affordance" class="TunableReference" display="Helper Lose Affordance" muid="1891FBB3F32FBF94" description="The affordance that will be pushed on the helper Sims if they&#xA;lose." allow_none="False" Deprecated="False" filter="0" group="General" />
+
+        <Tunable type="role_state" name="helper_sim_prepare_role_state_1" class="TunableReference" display="Helper Sim Prepare Role State 1" muid="6EC47274C3194F1B" description="Role state for helper Sim 1 when preparing for battle." allow_none="False" Deprecated="False" filter="0" group="General" />
+
+        <Tunable type="role_state" name="helper_sim_prepare_role_state_2" class="TunableReference" display="Helper Sim Prepare Role State 2" muid="197CFF06B10B4500" description="Role state for helper Sim 2 when preparing for battle." allow_none="False" Deprecated="False" filter="0" group="General" />
+
+        <Tunable type="role_state" name="helper_sim_prepare_role_state_3" class="TunableReference" display="Helper Sim Prepare Role State 3" muid="702F074FC1CFCB76" description="Role state for helper Sim 3 when preparing for battle." allow_none="False" Deprecated="False" filter="0" group="General" />
+
+        <Tunable type="interaction" name="helper_victory_affordance" class="TunableReference" display="Helper Victory Affordance" muid="79DA47E97CAC4304" description="The affordance that will be pushed on the helper Sims if they&#xA;achieve victory." allow_none="False" Deprecated="False" filter="0" group="General" />
+
+        <TunableTuple name="inspire_battle_situation_state" class="TunableInspireBattleThePlantSituationState" display="Inspire Battle Situation State" muid="C9BFAAAA4D657E6E" description="State in which we are battling the plant while inspired." Deprecated="False" filter="0" group="State">
+            <TunableList name="job_and_role_changes" class="TunableMapping" display="Job And Role Changes" muid="303D56307C42EC60" mapping_key="Situation Job" mapping_value="Role State" description="A mapping between situation jobs and role states that defines&#xA;what role states we want to switch to for sims on which jobs&#xA;when this situation state is entered." Deprecated="False" filter="0" group="General">
+                <TunableTuple class="TunableTuple" muid="D08BFED5690AA1C9" Deprecated="False" filter="0" group="General">
+                    <Tunable type="role_state" name="Role State" class="TunableReference" display="Role State" muid="4476B04C3B0840D0" description="The role state that we will switch sims of the linked job&#xA;into." allow_none="False" Deprecated="False" filter="0" group="General" />
+                    <Tunable type="situation_job" name="Situation Job" class="TunableReference" display="Situation Job" muid="11A94CB11F109ABF" description="A reference to a SituationJob that we will use to change&#xA;sim's role state." allow_none="False" Deprecated="False" filter="0" group="General" />
+                </TunableTuple>
+            </TunableList>
+            <TunableVariant type="None" name="time_out" class="OptionalTunable" default="disabled" display="Time Out" muid="B7D454C28CBEBE9A" description="How long this state will last before time expired. Please talk to the GPE who implemented the specific&#xA;situation to see what the state will do on time expired." Deprecated="False" filter="0" group="General">
+                <Tunable name="disabled" class="TunableExistance" display="Disabled" muid="CD20346E000AF3FA" />
+                <Tunable type="float" name="enabled" class="TunableSimMinute" default="15" display="Enabled" muid="2D8D61E951805C1A" min="1" max="None" tuning_state="NeedsTuning" Deprecated="False" filter="0" group="General" />
+            </TunableVariant>
+        </TunableTuple>
+
+        <Tunable type="interaction" name="loss_interaction_mixer" class="TunableReference" display="Loss Interaction Mixer" muid="32F73388AD2750A3" description="The affordance that will be pushed on the primary Sims if they&#xA;lose." allow_none="False" Deprecated="False" filter="0" group="General" />
+
+        <Deleted name="main_goal_audio_sting" muid="F85E55C4B511D52D" />
+
+        <Tunable type="object" name="mother_plant_definition" class="TunableReference" display="Mother Plant Definition" muid="EB5EDF10B79E3FA4" description="The actual mother plant itself." allow_none="False" Deprecated="False" filter="0" group="General" />
+
+        <Tunable type="ResourceKey" name="mother_plant_icon" class="TunableResourceKey" default="None" display="Mother Plant Icon" muid="752A39B76B3B31F6" description="Icon to be displayed in the situation UI beside the mother plant&#xA;health bar." allow_none="True" Deprecated="False" filter="0" group="Situation" resource_types="0x2f7d0004" />
+
+        <TunableTuple name="mother_plant_meter_settings" class="TunableStatBasedSituationMeterData" display="Mother Plant Meter Settings" muid="B36D30AC281770E8" description="The meter used to track the health of the mother plant." Deprecated="False" filter="0" group="Situation">
+            <TunableVariant type="None" name="_display_text" class="OptionalTunable" default="disabled" display="Display Text" muid="7307A633F571D8D" description="Optional meter display text." Deprecated="False" filter="0" group="General">
+                <Tunable name="disabled" class="TunableExistance" display="Disabled" muid="5DE921E0D1D1070E" />
+                <Tunable type="int" name="enabled" class="TunableLocalizedString" default="0x0" display="Enabled" muid="45C3C3BF827061EB" description="A localized string that may NOT require tokens." Deprecated="False" filter="0" group="General" />
+            </TunableVariant>
+            <TunableList name="_threshold_data" class="TunableList" display="Threshold Data" muid="93CF1D7E21C18729" description="List of thresholds for this meter." Deprecated="False" filter="0" group="General">
+                <TunableTuple class="TunableTuple" muid="A9BA9AA62E6AB269" Deprecated="False" filter="0" group="General">
+                    <TunableVariant type="None" name="color" class="TunableColorSnippet" default="literal" display="Color" muid="37700D53015B3B62" description="Color of meter at this specified threshold.&#xA;&#xA;Note: alpha value is not used.&#xA; (This may be tuned in place here using 'literal' or as a reference to a Color tuning snippet.)" Deprecated="False" filter="0" group="General">
+                        <TunableVariant type="None" name="literal" class="TunableColor" default="none" display="Literal" muid="288A6E4B1F900600" description="A color." Deprecated="False" filter="0" group="General">
+                            <TunableTuple name="hex" class="TunableColorHex" display="Hex" muid="808C89F04FE34AFE" description="A color." Deprecated="False" filter="0" group="General">
+                                <Tunable type="str" name="hex_code" class="Tunable" default="#FFFFFFFF" display="Hex Code" muid="B88F67FAB1339E51" description="An ARGB color in hex, same as one would use in HTML. A leading '0x' or '#' is allowed but not required. You can omit the alpha, in which case opaque is assumed." Deprecated="False" filter="0" group="General" />
+                            </TunableTuple>
+                            <TunableEnum type="Color" name="name" class="TunableEnumEntry" default="WHITE" display="Name" muid="597EC676FE80EC64" static_entries="sims4-color.Color" Deprecated="False" filter="0" group="General" />
+                            <Tunable name="none" class="TunableExistance" display="None" muid="25728A357E2ADDCE" />
+                            <TunableTuple name="rgb" class="TunableColorRGBA" display="Rgb" muid="25429E3F7C352534" description="A color." Deprecated="False" filter="0" group="General">
+                                <Tunable type="int" name="a" class="TunableRange" default="255" display="A" muid="3E303EA5373A09C" min="0" max="255" description="alpha value (0-255) (0 is transparent, 255 is opaque)" tuning_state="NeedsTuning" Deprecated="False" filter="0" group="General" />
+                                <Tunable type="int" name="b" class="TunableRange" default="255" display="B" muid="86CCE8D73AAD2B4E" min="0" max="255" description="blue value (0-255)" tuning_state="NeedsTuning" Deprecated="False" filter="0" group="General" />
+                                <Tunable type="int" name="g" class="TunableRange" default="255" display="G" muid="F2A362DAEFC921A" min="0" max="255" description="green value (0-255)" tuning_state="NeedsTuning" Deprecated="False" filter="0" group="General" />
+                                <Tunable type="int" name="r" class="TunableRange" default="255" display="R" muid="C56F98D9CBDD0116" min="0" max="255" description="red value (0-255)" tuning_state="NeedsTuning" Deprecated="False" filter="0" group="General" />
+                            </TunableTuple>
+                        </TunableVariant>
+                        <Tunable type="snippet" name="reference" class="TunableReference" display="Reference" muid="169C3F5B457E9FFD" description="A reference to a Color tuning snippet." allow_none="False" Deprecated="False" filter="0" group="General" restrict="Color" />
+                    </TunableVariant>
+                    <Tunable type="int" name="threshold_value" class="Tunable" default="0" display="Threshold Value" muid="243845D7EA6A2F5E" description="Value at or above which this threshold exists. " tuning_state="NeedsTuning" Deprecated="False" filter="0" group="General" />
+                </TunableTuple>
+            </TunableList>
+            <TunableVariant type="None" name="_tooltip" class="OptionalTunable" default="disabled" display="Tooltip" muid="C7FA5672E424AF62" description="Optional tooltip text." Deprecated="False" filter="0" group="General">
+                <Tunable name="disabled" class="TunableExistance" display="Disabled" muid="AB0CABDA253E75C7" />
+                <Tunable type="int" name="enabled" class="TunableLocalizedString" default="0x0" display="Enabled" muid="18F64624D739E377" description="A localized string that may NOT require tokens." Deprecated="False" filter="0" group="General" />
+            </TunableVariant>
+            <Tunable type="bool" name="auto_update_on_stat_change" class="Tunable" default="True" display="Auto Update On Stat Change" muid="817C7CF14692E481" description="If set, the meter will automatically update when the associated&#xA;stat changes.  Unset this for cases when you want the situation&#xA;to control when the meter changes." Deprecated="False" filter="0" group="General" />
+            <Tunable type="statistic" name="stat" class="TunableReference" display="Stat" muid="C225197A8E806D43" description="Statistic this meter is based off of." allow_none="False" Deprecated="False" filter="0" group="General" />
+        </TunableTuple>
+
+        <Tunable type="statistic" name="motherplant_health_statisic" class="TunableReference" display="Motherplant Health Statisic" muid="27395E86A006B2CC" description="The statistic that we will use in order to determine the Sim's&#xA;health for the motherplant." allow_none="False" Deprecated="False" filter="0" group="General" />
+
+        <Tunable type="situation_job" name="other_player_jobs" class="TunableReference" display="Other Player Jobs" muid="B05BB5209B8943E1" description="Job for the other player Sims that are not the main Sim and are not&#xA;participating as helpers." allow_none="False" Deprecated="False" filter="0" group="General" />
+
+        <Tunable type="role_state" name="other_player_sims_role_state" class="TunableReference" display="Other Player Sims Role State" muid="B68382DEEC17DC7B" description="Role state for the other player Sims." allow_none="False" Deprecated="False" filter="0" group="General" />
+
+        <TunableTuple name="player_health_meter_settings" class="TunableStatBasedSituationMeterData" display="Player Health Meter Settings" muid="30A0475158185B13" description="The meter used to track the health of the player team." Deprecated="False" filter="0" group="Situation">
+            <TunableVariant type="None" name="_display_text" class="OptionalTunable" default="disabled" display="Display Text" muid="EA01DD81E952023E" description="Optional meter display text." Deprecated="False" filter="0" group="General">
+                <Tunable name="disabled" class="TunableExistance" display="Disabled" muid="130FE89C72BA3ABE" />
+                <Tunable type="int" name="enabled" class="TunableLocalizedString" default="0x0" display="Enabled" muid="696F23EC340A0E0D" description="A localized string that may NOT require tokens." Deprecated="False" filter="0" group="General" />
+            </TunableVariant>
+            <TunableList name="_threshold_data" class="TunableList" display="Threshold Data" muid="DE866D197BF8AD2C" description="List of thresholds for this meter." Deprecated="False" filter="0" group="General">
+                <TunableTuple class="TunableTuple" muid="10D08C368D84DB78" Deprecated="False" filter="0" group="General">
+                    <TunableVariant type="None" name="color" class="TunableColorSnippet" default="literal" display="Color" muid="23079BCEB72775AE" description="Color of meter at this specified threshold.&#xA;&#xA;Note: alpha value is not used.&#xA; (This may be tuned in place here using 'literal' or as a reference to a Color tuning snippet.)" Deprecated="False" filter="0" group="General">
+                        <TunableVariant type="None" name="literal" class="TunableColor" default="none" display="Literal" muid="34E6A42F31409417" description="A color." Deprecated="False" filter="0" group="General">
+                            <TunableTuple name="hex" class="TunableColorHex" display="Hex" muid="81263117A0A76995" description="A color." Deprecated="False" filter="0" group="General">
+                                <Tunable type="str" name="hex_code" class="Tunable" default="#FFFFFFFF" display="Hex Code" muid="67D8ADA8821033DE" description="An ARGB color in hex, same as one would use in HTML. A leading '0x' or '#' is allowed but not required. You can omit the alpha, in which case opaque is assumed." Deprecated="False" filter="0" group="General" />
+                            </TunableTuple>
+                            <TunableEnum type="Color" name="name" class="TunableEnumEntry" default="WHITE" display="Name" muid="4AEFFFAEA25C1438" static_entries="sims4-color.Color" Deprecated="False" filter="0" group="General" />
+                            <Tunable name="none" class="TunableExistance" display="None" muid="63A5E737F3153BE3" />
+                            <TunableTuple name="rgb" class="TunableColorRGBA" display="Rgb" muid="8EAF6B84F4F6BF56" description="A color." Deprecated="False" filter="0" group="General">
+                                <Tunable type="int" name="a" class="TunableRange" default="255" display="A" muid="C4807B2DAEDC0473" min="0" max="255" description="alpha value (0-255) (0 is transparent, 255 is opaque)" tuning_state="NeedsTuning" Deprecated="False" filter="0" group="General" />
+                                <Tunable type="int" name="b" class="TunableRange" default="255" display="B" muid="E4D533026C71CBE0" min="0" max="255" description="blue value (0-255)" tuning_state="NeedsTuning" Deprecated="False" filter="0" group="General" />
+                                <Tunable type="int" name="g" class="TunableRange" default="255" display="G" muid="9C2FB58F6878E5CA" min="0" max="255" description="green value (0-255)" tuning_state="NeedsTuning" Deprecated="False" filter="0" group="General" />
+                                <Tunable type="int" name="r" class="TunableRange" default="255" display="R" muid="53D650124CB69541" min="0" max="255" description="red value (0-255)" tuning_state="NeedsTuning" Deprecated="False" filter="0" group="General" />
+                            </TunableTuple>
+                        </TunableVariant>
+                        <Tunable type="snippet" name="reference" class="TunableReference" display="Reference" muid="9155E6B20EB002BF" description="A reference to a Color tuning snippet." allow_none="False" Deprecated="False" filter="0" group="General" restrict="Color" />
+                    </TunableVariant>
+                    <Tunable type="int" name="threshold_value" class="Tunable" default="0" display="Threshold Value" muid="A12080D3339D6680" description="Value at or above which this threshold exists. " tuning_state="NeedsTuning" Deprecated="False" filter="0" group="General" />
+                </TunableTuple>
+            </TunableList>
+            <TunableVariant type="None" name="_tooltip" class="OptionalTunable" default="disabled" display="Tooltip" muid="E363EFC49F191D6C" description="Optional tooltip text." Deprecated="False" filter="0" group="General">
+                <Tunable name="disabled" class="TunableExistance" display="Disabled" muid="A445BD75DC702DFF" />
+                <Tunable type="int" name="enabled" class="TunableLocalizedString" default="0x0" display="Enabled" muid="F609D55C86C8B4B5" description="A localized string that may NOT require tokens." Deprecated="False" filter="0" group="General" />
+            </TunableVariant>
+            <Tunable type="bool" name="auto_update_on_stat_change" class="Tunable" default="True" display="Auto Update On Stat Change" muid="68DA84AEFB51B1E1" description="If set, the meter will automatically update when the associated&#xA;stat changes.  Unset this for cases when you want the situation&#xA;to control when the meter changes." Deprecated="False" filter="0" group="General" />
+            <Tunable type="statistic" name="stat" class="TunableReference" display="Stat" muid="E972C388D53AF844" description="Statistic this meter is based off of." allow_none="False" Deprecated="False" filter="0" group="General" />
+        </TunableTuple>
+
+        <Tunable type="statistic" name="player_health_statistic" class="TunableReference" display="Player Health Statistic" muid="24C104547E4439C9" description="The statistic that we will use in order to determine the Sim's&#xA;health for the motherplant." allow_none="False" Deprecated="False" filter="0" group="General" />
+
+        <Tunable type="situation_job" name="player_job" class="TunableReference" display="Player Job" muid="5A75F12D10CF8295" description="Job for the main player sim that fights the plant." allow_none="False" Deprecated="False" filter="0" group="General" />
+
+        <Tunable type="role_state" name="player_sim_role_state" class="TunableReference" display="Player Sim Role State" muid="B8D6F8F51A8ABD04" description="Role state for the main player sim Role." allow_none="False" Deprecated="False" filter="0" group="General" />
+
+        <TunableTuple name="possessed_buff" class="TunableBuffReference" display="Possessed Buff" muid="D9C91172AE6ABD62" description="Possessed Buff for zombie Sims. " Deprecated="False" filter="0" group="General">
+            <TunableVariant type="None" name="buff_reason" class="OptionalTunable" default="disabled" display="Buff Reason" muid="C86277A706827DC8" description="If set, specify a reason why the buff was added." Deprecated="False" filter="0" group="General">
+                <Tunable name="disabled" class="TunableExistance" display="Disabled" muid="2F2757CE2F29AFC8" />
+                <Tunable type="int" name="enabled" class="TunableLocalizedString" default="0x0" display="Enabled" muid="F691494FB32123C2" description="The reason the buff was added. This will be displayed in the&#xA;buff tooltip." Deprecated="False" filter="0" group="General" />
+            </TunableVariant>
+            <Tunable type="buff" name="buff_type" class="TunableReference" display="Buff Type" muid="B6E578E4C6E3AF0B" description="Buff that will get added to sim." allow_none="False" Deprecated="False" filter="0" group="General" />
+        </TunableTuple>
+
+        <TunableTuple name="rally_battle_sitaution_state" class="TunableRallyBattleThePlantSituationState" display="Rally Battle Sitaution State" muid="44B60DC7865DAD5" description="State in which we are battling the plant while being rallied." Deprecated="False" filter="0" group="State">
+            <TunableList name="job_and_role_changes" class="TunableMapping" display="Job And Role Changes" muid="E0AE2AD62E304D83" mapping_key="Situation Job" mapping_value="Role State" description="A mapping between situation jobs and role states that defines&#xA;what role states we want to switch to for sims on which jobs&#xA;when this situation state is entered." Deprecated="False" filter="0" group="General">
+                <TunableTuple class="TunableTuple" muid="890A14D24D398E73" Deprecated="False" filter="0" group="General">
+                    <Tunable type="role_state" name="Role State" class="TunableReference" display="Role State" muid="2B17E407FC6F63E6" description="The role state that we will switch sims of the linked job&#xA;into." allow_none="False" Deprecated="False" filter="0" group="General" />
+                    <Tunable type="situation_job" name="Situation Job" class="TunableReference" display="Situation Job" muid="4660C42940598BF3" description="A reference to a SituationJob that we will use to change&#xA;sim's role state." allow_none="False" Deprecated="False" filter="0" group="General" />
+                </TunableTuple>
+            </TunableList>
+            <TunableVariant type="None" name="time_out" class="OptionalTunable" default="disabled" display="Time Out" muid="A79934C2DA0FF935" description="How long this state will last before time expired. Please talk to the GPE who implemented the specific&#xA;situation to see what the state will do on time expired." Deprecated="False" filter="0" group="General">
+                <Tunable name="disabled" class="TunableExistance" display="Disabled" muid="AFACECFB809D757F" />
+                <Tunable type="float" name="enabled" class="TunableSimMinute" default="15" display="Enabled" muid="1A1036CE85B942F1" min="1" max="None" tuning_state="NeedsTuning" Deprecated="False" filter="0" group="General" />
+            </TunableVariant>
+        </TunableTuple>
+
+        <TunableTuple name="retreat_interaction_of_interest" class="TunableInteractionOfInterest" display="Retreat Interaction Of Interest" muid="D72DA45FCCE6EAAF" description="The interaction of interest that we are looking for to determine&#xA;retreat." Deprecated="False" filter="0" group="General">
+            <TunableList name="affordances" class="TunableList" display="Affordances" muid="6FA7996D301DA77C" description="The Sim must have started either any affordance in this list or an&#xA;interaction matching one of the tags in this tunable's Tags&#xA;field." Deprecated="False" filter="0" group="General">
+                <Tunable type="interaction" class="TunableReference" muid="6E7B569E0C6FDDCF" allow_none="False" Deprecated="False" filter="0" group="General" pack_safe="True" />
+            </TunableList>
+            <TunableList name="tags" class="TunableSet" display="Tags" muid="1B4454C74940182A" description="The Sim must have run either an interaction matching one of these&#xA;Tags or an affordance from the list of Affordances in this&#xA;tunable." Deprecated="False" filter="0" group="General" unique_entries="true">
+                <TunableEnum type="Tag" class="TunableEnumEntry" default="INVALID" muid="1573736DDB74068A" dynamic_entries="tag.Tag._elements" static_entries="tag.Tag" Deprecated="False" filter="0" group="General" />
+            </TunableList>
+        </TunableTuple>
+
+        <Tunable type="int" name="save_lock_tooltip" class="TunableLocalizedString" default="0x0" display="Save Lock Tooltip" muid="EDBD78001BAAAF6E" description="The tooltip/message to show when the player tries to save the game&#xA;while this situation is running. Save is locked when situation starts." Deprecated="False" filter="0" group="UI" />
+
+        <TunableList name="states_to_set_on_end" class="TunableList" display="States To Set On End" muid="C2EEDF5323A954DF" description="A list of states to set on the motherplant on end." Deprecated="False" filter="0" group="General">
+            <Tunable type="object_state" class="TunableReference" muid="D937BFC9B11A2EA" description="The state to set." allow_none="False" Deprecated="False" filter="0" group="General" restrict="ObjectStateValue" />
+        </TunableList>
+
+        <TunableList name="states_to_set_on_start" class="TunableList" display="States To Set On Start" muid="4040F345074275A1" description="A list of states to set on the motherplant on start." Deprecated="False" filter="0" group="General">
+            <Tunable type="object_state" class="TunableReference" muid="148BBBB1C12402FC" description="The state to set." allow_none="False" Deprecated="False" filter="0" group="General" restrict="ObjectStateValue" />
+        </TunableList>
+
+        <Tunable type="ResourceKey" name="victory_audio_sting" class="TunableResourceKey" default="None" display="Victory Audio Sting" muid="AFB80F406552CB29" description="The sound to play when the Sim wins the battle." Deprecated="False" filter="0" group="Audio" resource_types="0x39b2aa4a" />
+
+        <TunableTuple name="victory_interaction_of_interest" class="TunableInteractionOfInterest" display="Victory Interaction Of Interest" muid="DE05F47D7B6BA78C" description="The interaction of interest that we are looking for to determine&#xA;victory." Deprecated="False" filter="0" group="General">
+            <TunableList name="affordances" class="TunableList" display="Affordances" muid="DFFA0EB1631784A2" description="The Sim must have started either any affordance in this list or an&#xA;interaction matching one of the tags in this tunable's Tags&#xA;field." Deprecated="False" filter="0" group="General">
+                <Tunable type="interaction" class="TunableReference" muid="F23F7E19921B4519" allow_none="False" Deprecated="False" filter="0" group="General" pack_safe="True" />
+            </TunableList>
+            <TunableList name="tags" class="TunableSet" display="Tags" muid="B89115240CD8013" description="The Sim must have run either an interaction matching one of these&#xA;Tags or an affordance from the list of Affordances in this&#xA;tunable." Deprecated="False" filter="0" group="General" unique_entries="true">
+                <TunableEnum type="Tag" class="TunableEnumEntry" default="INVALID" muid="AACAA56B70F08C52" dynamic_entries="tag.Tag._elements" static_entries="tag.Tag" Deprecated="False" filter="0" group="General" />
+            </TunableList>
+        </TunableTuple>
+
+        <Tunable type="reward" name="victory_reward" class="TunableReference" display="Victory Reward" muid="5ED051D8B9517610" description="The Reward received when the Sim wins the situation." allow_none="False" Deprecated="False" filter="0" group="General" />
+
+        <TunableTuple name="warbling_warcry_battle_situation_state" class="TunableWarblingWarcryBattleThePlantSituationState" display="Warbling Warcry Battle Situation State" muid="1D1B5883048B516F" description="State in which we are battling the plant under the effects of a warbling&#xA;warcry." Deprecated="False" filter="0" group="State">
+            <TunableList name="job_and_role_changes" class="TunableMapping" display="Job And Role Changes" muid="4E59F0BB19D2899F" mapping_key="Situation Job" mapping_value="Role State" description="A mapping between situation jobs and role states that defines&#xA;what role states we want to switch to for sims on which jobs&#xA;when this situation state is entered." Deprecated="False" filter="0" group="General">
+                <TunableTuple class="TunableTuple" muid="F6941385AECAC8A3" Deprecated="False" filter="0" group="General">
+                    <Tunable type="role_state" name="Role State" class="TunableReference" display="Role State" muid="25F77C64B896030F" description="The role state that we will switch sims of the linked job&#xA;into." allow_none="False" Deprecated="False" filter="0" group="General" />
+                    <Tunable type="situation_job" name="Situation Job" class="TunableReference" display="Situation Job" muid="38E1F2EFED440596" description="A reference to a SituationJob that we will use to change&#xA;sim's role state." allow_none="False" Deprecated="False" filter="0" group="General" />
+                </TunableTuple>
+            </TunableList>
+            <TunableVariant type="None" name="time_out" class="OptionalTunable" default="disabled" display="Time Out" muid="44F837BAA774A25F" description="How long this state will last before time expired. Please talk to the GPE who implemented the specific&#xA;situation to see what the state will do on time expired." Deprecated="False" filter="0" group="General">
+                <Tunable name="disabled" class="TunableExistance" display="Disabled" muid="C42D78F9D20A2F92" />
+                <Tunable type="float" name="enabled" class="TunableSimMinute" default="15" display="Enabled" muid="7406A388C6E14D42" min="1" max="None" tuning_state="NeedsTuning" Deprecated="False" filter="0" group="General" />
+            </TunableVariant>
+        </TunableTuple>
+
+        <Tunable type="interaction" name="zombie_fight_interaction" class="TunableReference" display="Zombie Fight Interaction" muid="B439620DC63A6B60" description="Interaction pushed on zombies to get them to fight a Sim." allow_none="False" Deprecated="False" filter="0" group="General" />
+
+        <Tunable type="float" name="zombie_fight_interaction_timer" class="TunableSimMinute" default="30" display="Zombie Fight Interaction Timer" muid="DA0BCE3FB4E8A9DB" min="1" max="None" description="Timer for the amount of time between zombie attacks." tuning_state="NeedsTuning" Deprecated="False" filter="0" group="General" />
+
+        <Tunable type="situation_job" name="zombie_job" class="TunableReference" display="Zombie Job" muid="47EFF6C7922F3DA" description="Job for the Zombies for the fight." allow_none="False" Deprecated="False" filter="0" group="General" />
+
+        <Tunable type="role_state" name="zombie_prepare_role_state" class="TunableReference" display="Zombie Prepare Role State" muid="6224C7B639D60423" description="Role state for the zombie Sims when preparing for battle." allow_none="False" Deprecated="False" filter="0" group="General" />
+    </Instance>
+
+    <VersionHistory>
+        <ActionList>
+            <Action type="kRemove" old_muid="8A6B1E4DEFA30C1B" />
+            <Action type="kRemove" old_muid="52D93CCE43B24790" />
+        </ActionList>
+
+        <ActionList>
+            <Action type="kRemove" old_muid="D56012FC2C1C2B50" />
+        </ActionList>
+    </VersionHistory>
+</TuningRoot>

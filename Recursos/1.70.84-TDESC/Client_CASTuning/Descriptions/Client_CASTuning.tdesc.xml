@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+
+<TuningRoot>
+    <Instance instance_type="castuning" class="Client_CASTuning" module="castuning.Client_CASTuning" muid="B90C025630DC7E4A" description="Various tuning used by the CAS client." export_modes="client_binary" path="Client_CASTuning\Descriptions">
+        <TunableTuple name="ContextMenu" class="Client_CASTuning.ContextMenu" muid="C0827D6D43A958AE" description="Parameters for Context Menu in CAS.">
+            <Tunable type="int" name="CatalogPanelWidth" class="Tunable" default="300" muid="C90E19FD1702AE78" description="Width of the catalog panel, should also include width of the menu icons. Defines max menu radius." />
+            <Tunable type="float" name="DefaultRegionMinRadius" class="Tunable" default="200.0" muid="BDFB0DF92B3D5EC5" description="Min radius used for tops and bottoms." />
+            <Tunable type="float" name="DefaultRegionMult" class="Tunable" default="2.0" muid="242E512CDE064AB1" description="Specifies top/bottom menu radius in the units of sim head on-screen size." />
+            <Tunable type="float" name="DefaultRegionRadius" class="Tunable" default="275.0" muid="D4BCA6771C4B75F5" description="Default radius used for tops and bottoms." />
+            <Tunable type="float" name="DefaultRegionXLocation" class="Tunable" default="2.0" muid="28641856FFD47164" description="Fallback x-location of top/bottom context menu." />
+            <Tunable type="float" name="HeadRegionMinRadius" class="Tunable" default="200.0" muid="F727A46549EB09AE" description="Min radius used for tops and bottoms." />
+            <Tunable type="float" name="HeadRegionMult" class="Tunable" default="1.1" muid="65837BD7060DC" description="Specifies head menu radius in the units of sim head on-screen size." />
+            <Tunable type="float" name="HeadRegionRadius" class="Tunable" default="325" muid="B32070F93F88641A" description="Menu radius used for head region." />
+            <Tunable type="float" name="HeadRegionXLocation" class="Tunable" default="1.1" muid="90698B85ADC2BF41" description="Fallback x-location of head context menu." />
+            <Tunable type="int" name="MenuRadiusIncrement" class="Tunable" default="70" muid="4A26DB9637DF57B7" description="Difference between radii of the main menu and sub-menu." />
+        </TunableTuple>
+
+        <Tunable type="int" name="DebugDataDependency" class="Tunable" default="0" muid="4C7CA7D2426196A1" description="Used for dev purposes to gracefully transition code/data dependencies. Set to 1 along with dependent data changes. Reset it back to 0 after transition" />
+
+        <TunableTuple name="DirectManip" class="Client_CASTuning.DirectManip" muid="DC0DE1784D9A8085" description="Parameters related to direct manipulation.">
+            <Tunable type="float" name="AnimatedHighlightFrameDuration" class="Tunable" default="None" muid="DC96D49B56974896" description="Time (in seconds) for which each individual highlight texture is shown during animation." />
+            <Tunable type="float" name="AnimatedHighlightFrameInterval" class="Tunable" default="None" muid="BEF7E5446ADB4436" description="Time (in seconds) between highlight textures during animation." />
+            <Tunable type="float" name="AnimatedHighlightStartDelay" class="Tunable" default="None" muid="B7CCA593FB126753" description="Time (in seconds) before an animation starts (for the regions that require a delay)." />
+            <Tunable type="float" name="EaseInExponent" class="Tunable" default="None" muid="B12FF7380B6E6915" description="Ease In from Direct Manip. Ease In less than 1, Linear is 1, Ease Out is greater than 1" />
+            <TunableTuple name="ManipLimitHighlightColor" class="TunableVector3" muid="D054AE01014B5216" description="Color of the highlight displayed as the user gets close to the direct manipulation limit.  Values must be between 0.0 and 1.0.">
+                <Tunable type="float" name="x" class="Tunable" default="1.0" muid="B57747F334EB1605" description="Red value" />
+                <Tunable type="float" name="y" class="Tunable" default="1.0" muid="AEA09A1D30AD947D" description="Green value" />
+                <Tunable type="float" name="z" class="Tunable" default="1.0" muid="3915BF2A52944D96" description="Blue value" />
+            </TunableTuple>
+            <Tunable type="float" name="ManipLimitHighlightScale" class="Tunable" default="1.0" muid="32F505862C5220CE" description="Scale value that controls the intensity of the highlight displayed as the user gets close to the direct manipulation limit." />
+            <Tunable type="float" name="MinCameraDistanceContextMenu" class="Tunable" default="None" muid="8E039F71143C0DEA" description="Distance at the context menu will stay open." />
+            <Tunable type="float" name="MinCameraDistanceHead" class="Tunable" default="None" muid="7A7D6999938C467B" description="Distance at which individual head controls become active." />
+            <TunableTuple name="PieWedgeStartAngles" class="Client_CASTuning.Angles" muid="5AE7FA230F334637" description="Parameters defining the start angle of each pie wedge.">
+                <Tunable type="float" name="Back" class="Tunable" default="None" muid="EB21F9404E98816F" description="Start angle of the Back pie wedge." />
+                <Tunable type="float" name="Front" class="Tunable" default="None" muid="22A75F4A2041EF5E" description="Start angle of the Front pie wedge." />
+                <Tunable type="float" name="ProfileLeft" class="Tunable" default="None" muid="E716BC82F6C10CB0" description="Start angle of the ProfileLeft pie wedge." />
+                <Tunable type="float" name="ProfileRight" class="Tunable" default="None" muid="271B1DE83BE0A313" description="Start angle of the ProfileRight pie wedge." />
+                <Tunable type="float" name="ThreeQuarterLeft" class="Tunable" default="None" muid="2111F7AB694E5BA0" description="Start angle of the ThreeQuarterLeft pie wedge." />
+                <Tunable type="float" name="ThreeQuarterRight" class="Tunable" default="None" muid="DE8120DF66A83595" description="Start angle of the ThreeQuarterRight pie wedge." />
+            </TunableTuple>
+            <Tunable type="float" name="RubberBandEaseElasticity" class="Tunable" default="-0.5" muid="8C489313AD56F5DD" description="Rubber band elasticity value determines how loose or tight the rubber band is. A value greater than 0 will cause the rubber band to stretch, and the higher that value the more stretchy. A value less than 0 will cause the rubber band to contract and a higher value will cause it to contract faster. Use in conjunction with the rubber band zone to adjust the speed/feel of the rubber band movement." />
+            <Tunable type="float" name="RubberBandZoneSize" class="Tunable" default="400.0" muid="ED11CECE51B641E8" description="Rubber band zone for direct manip mouse cursor -- this is the outer limit that the mouse cursor can be pulled before there is resistance against the user's movement." />
+            <Tunable type="float" name="VirtualSliderScaleHorizontal" class="Tunable" default="None" muid="6B887548D9361E82" description="Horizontal Slider scale for direct manip mouse movement in pixel/screen units. Smaller value is more 1:1 movement, higher value is slower." />
+            <Tunable type="float" name="VirtualSliderScaleVertical" class="Tunable" default="None" muid="639B9F7F78141CA3" description="Vertical Slider scale for direct manip mouse movement in pixel/screen units. Smaller value is more 1:1 movement, higher value is slower." />
+            <Tunable type="float" name="VisualizationScaleFactor" class="Tunable" default="0.1" muid="AA7363997680011E" description="A scale factor applied to the virtual slider length and width to grow it smaller/bigger for on-screen UI" />
+        </TunableTuple>
+
+        <TunableTuple name="FeaturedLook" class="Client_CASTuning.FeaturedLook" muid="A4567D0B82F44A52" description="Parameters for Featured Looks.">
+            <Tunable type="float" name="TryOnReplaysProbability" class="Tunable" default="1.0" muid="7D5DF033AB829505" description="Probability (in percents) of replaying try-on animation after it was played once." />
+        </TunableTuple>
+
+        <TunableList name="GenderOptionsList" class="TunableList" display="Gender Options List" muid="3FE3128EADA49F62" group="U-Choice Gender Traits">
+            <TunableTuple name="GenderOptionsListTuple" class="Client_CASTuning.GenderOptionsListTuple" muid="15A5C04E6C61B5B5">
+                <TunableList name="GenderOptionsNameList" class="TunableList" display="Gender Options Name List" muid="D1C129A1B13B63ED">
+                    <TunableTuple name="GenderOptionNameTuple" class="Client_CASTuning.GenderOptionNameTuple" muid="4430294ED3C48EC">
+                        <TunableEnum type="Age" name="Age" class="TunableEnumEntry" default="None" display="Age" muid="6839B20B2F4CD595" static_entries="sims-sim_info_types.Age" description="Age this applies to." filter="0" group="General" />
+                        <Tunable type="int" name="OptionName" class="TunableLocalizedString" default="0x0" muid="6D972CE90F682B22" description="The name of the option as it will appear in the UI" />
+                    </TunableTuple>
+                </TunableList>
+                <TunableList name="GenderOptionValues" class="TunableList" muid="7DA9600257BAD78B">
+                    <TunableTuple name="GenderOptionValueTuple" class="Client_CASTuning.GenderOptionValueTuple" muid="4644BAE5F22D2CA6">
+                        <Tunable type="bool" name="FemaleDefault" class="Tunable" default="false" muid="2C712EAEA7A1F2E8" description="True if this option is the default value for female sims" />
+                        <Tunable type="bool" name="MaleDefault" class="Tunable" default="false" muid="5699129602AD4A4F" description="True if this option is the default value for male sims" />
+                        <Tunable type="int" name="ValueName" class="TunableLocalizedString" default="0x0" muid="A429E5FA34358C52" description="localized display name of option value" />
+                        <TunableList name="ValueTraitList" class="TunableList" muid="1013BC129936B55D">
+                            <Tunable type="trait" class="TunableReference" muid="126C3014A26AF651" />
+                        </TunableList>
+                    </TunableTuple>
+                </TunableList>
+            </TunableTuple>
+        </TunableList>
+
+        <Tunable type="int" name="GenderOptionsTitle" class="TunableLocalizedString" default="0x0" display="Gender Options Title" muid="B833402836E7AED3" description="The name of the gender options group" group="U-Choice Gender Traits" />
+
+        <TunableTuple name="GeneticInheritance" class="Client_CASTuning.GeneticInheritance" muid="8348B2D485FAF5D2" description="Parameters for changing Genetic Inheritance in CAS.">
+            <Tunable type="float" name="HeterochromiaChanceNoParents" class="Tunable" default="0" muid="FEEAE82685B863A4" min="0" max="1" description="Chance of offspring having heterochromia if no parents have it." />
+            <Tunable type="float" name="HeterochromiaChanceOneParent" class="Tunable" default="0" muid="5FDAE02EE0A30AD" min="0" max="1" description="Chance of offspring having heterochromia if one parent has it." />
+            <Tunable type="float" name="InheritCustomPaintChance" class="Tunable" default="0" muid="7E4A34A58C9F07DC" min="0" max="1" description="Chance of inheriting the parent's custom paint texture separate from its base layers." />
+            <Tunable type="float" name="InheritCustomPaintFromOtherParentChance" class="Tunable" default="0" muid="6997DB303A16082A" min="0" max="1" description="Chance of inheriting the custom paint texture from the parent that's NOT contributing the base layers." />
+            <Tunable type="float" name="InheritIdenticalPeltChance" class="Tunable" default="0.25" muid="879CC69551BBE49D" min="0" max="1" description="Chance of inheriting the parent's exact pelt (including custom paint layer), versus getting another breed-appropriate preset." />
+            <TunableEnum type="Tag" name="MixedBreedTag" class="TunableTag" default="INVALID" muid="C4D061430251EA7A" dynamic_entries="tag.Tag._elements" static_entries="tag.Tag" description="Tag used to indicate a non-purebred pet." binary_type="uint32" dynamic_entries_prefix="breed" filter="0" group="General" pack_safe="True" />
+            <Tunable type="float" name="SiblingChance" class="Tunable" default="0.8" muid="D1802AB15A9F25E2" min="0" max="1" description="Chance of inheriting features when generating a sim from a sibling." />
+            <Tunable type="float" name="SingleParentChance" class="Tunable" default="0.8" muid="F2C9759360C9FF0A" min="0" max="1" description="Chance of inheriting features between single parents and their offspring." />
+        </TunableTuple>
+
+        <TunableTuple name="Physique" class="Client_CASTuning.Physique" muid="C9D6A97F1A700296" description="Parameters for Changing Physique in CAS.">
+            <Tunable type="float" name="EaseInExponentBony" class="Tunable" default="1.0" muid="B184DEE4FC52725" description="Controls the rate at which the bony texture fades in with the bony value.  Less than 1: ease-in; Equal to 1: linear; Greater than 1: ease-out." />
+            <Tunable type="float" name="EaseInExponentFit" class="Tunable" default="1.0" muid="457C2D1288808F45" description="Controls the rate at which the fit texture fades in with the fit value.  Less than 1: ease-in; Equal to 1: linear; Greater than 1: ease-out." />
+            <Tunable type="float" name="EaseInExponentHeavy" class="Tunable" default="1.0" muid="59A22F9BFCC41E71" description="Controls the rate at which the heavy texture fades in with the heavy value.  Less than 1: ease-in; Equal to 1: linear; Greater than 1: ease-out." />
+            <Tunable type="float" name="EaseInExponentLean" class="Tunable" default="1.0" muid="F26E64FD7184839" description="Controls the rate at which the lean texture fades in with the lean value.  Less than 1: ease-in; Equal to 1: linear; Greater than 1: ease-out." />
+            <Tunable type="float" name="FitTextureFadeOutEnd" class="Tunable" default="1.0" muid="9BF4892DF1F1584B" description="When the fit value reaches this threshold in the CAS room, the lean texture on the Sim finishes fading out (i.e. disappears completely).  This value must be greater than FitTextureFadeOutStart." />
+            <Tunable type="float" name="FitTextureFadeOutStart" class="Tunable" default="1.0" muid="EDC8B63BD3D11028" description="When the fit value reaches this threshold in the CAS room, the lean texture on the Sim starts fading out.  This value must be smaller than FitTextureFadeOutEnd." />
+            <Tunable type="float" name="HeavyTextureFadeOutEnd" class="Tunable" default="1.0" muid="BC391F37534C1B2A" description="When the heavy value reaches this threshold in the CAS room, the fit or bony texture on the Sim finishes fading out (i.e. disappears completely).  This value must be greater than HeavyTextureFadeOutStart." />
+            <Tunable type="float" name="HeavyTextureFadeOutStart" class="Tunable" default="1.0" muid="3B561B6BCE80CFB5" description="When the heavy value reaches this threshold in the CAS room, the fit or bony texture on the Sim starts fading out.  This value must be smaller than HeavyTextureFadeOutEnd." />
+            <Tunable type="float" name="MaxBony" class="Tunable" default="1.0" muid="5A6FB77CD65801C5" description="Maximum bony value that can be set in CAS (0 to 1)." />
+            <Tunable type="float" name="MaxFit" class="Tunable" default="1.0" muid="80C119BC4D77D6E9" description="Maximum fit value that can be set in CAS (0 to 1)." />
+            <Tunable type="float" name="MaxHeavy" class="Tunable" default="1.0" muid="8704A867341D6928" description="Maximum heavy value that can be set in CAS (0 to 1)." />
+            <Tunable type="float" name="MaxLean" class="Tunable" default="1.0" muid="C89E13193EAC78BF" description="Maximum lean value that can be set in CAS (0 to 1.)" />
+        </TunableTuple>
+
+        <TunableTuple name="PresetRotation" class="Client_CASTuning.PresetRotation" muid="3AF1969C81492935" description="Parameters for setting the Sim's rotation in the CAS room.">
+            <Tunable type="float" name="LerpSpeedMult" class="Tunable" default="None" muid="AEE5E662CB422B13" description="Preset rotation lerp speed." />
+            <Tunable type="float" name="RotateContinuousEaseIn" class="Tunable" default="0.01" muid="36006E1CB7EDDC4" description="Initial ease in speed increments for continuous rotate." />
+            <Tunable type="float" name="RotateContinuousSpeed" class="Tunable" default="2.0" muid="A3629A2DEAEA1349" description="Rotation speed for continuous rotate via press-hold." />
+            <Tunable type="float" name="RotateKeySpeed" class="Tunable" default="None" muid="3704467E369B3CCE" description="Rotation speed by key input." />
+            <Tunable type="float" name="RotateKeySpeedFast" class="Tunable" default="None" muid="B7C01D1F36363BD2" description="Fast rotation speed by key input." />
+            <TunableTuple name="ViewAngles" class="Client_CASTuning.Angles" muid="EDA910905E45CCD" description="The preset rotation angles for each pie wedge.">
+                <Tunable type="float" name="Back" class="Tunable" default="None" muid="15AAF33433CB46F4" description="Back preset rotation angle." />
+                <Tunable type="float" name="Front" class="Tunable" default="None" muid="2B9DA09A7BC26B6F" description="Front preset rotation angle." />
+                <Tunable type="float" name="ProfileLeft" class="Tunable" default="None" muid="C2605707754A6DF5" description="ProfileLeft preset rotation angle." />
+                <Tunable type="float" name="ProfileRight" class="Tunable" default="None" muid="2E9A917970ED40AF" description="ProfileRight preset rotation angle." />
+                <Tunable type="float" name="ThreeQuarterLeft" class="Tunable" default="None" muid="9F3A13D710AA5743" description="ThreeQuarterLeft preset rotation angle." />
+                <Tunable type="float" name="ThreeQuarterRight" class="Tunable" default="None" muid="86FF061C4DB90C21" description="ThreeQuarterRight preset rotation angle." />
+            </TunableTuple>
+        </TunableTuple>
+
+        <TunableTuple name="Randomization" class="Client_CASTuning.Randomization" muid="F121E4C13751148F" description="Parameters for changing specific randomization probabilities in CAS.">
+            <Tunable type="float" name="AccessoriesChance" class="Tunable" default="0.25" muid="29F2D8FEE70F9314" min="0" max="1" description="Chance of randomly adding Accessories to a Sim at all when randomizing." />
+            <Tunable type="float" name="AccessoryBraceletChance" class="Tunable" default="0.5" muid="78C08800CC97A0EC" min="0" max="1" description="Chance of randomly obtaining a bracelet when randomizing if a random accessory should be set." />
+            <Tunable type="float" name="AccessoryEarRingsChance" class="Tunable" default="0.5" muid="A0BF942D6256CD83" min="0" max="1" description="Chance of randomly obtaining ear rings when randomizing if a random accessory should be set." />
+            <Tunable type="float" name="AccessoryGlassesChance" class="Tunable" default="0.5" muid="C5049680FB6C6D9E" min="0" max="1" description="Chance of randomly obtaining glasses when randomizing if a random accessory should be set." />
+            <Tunable type="float" name="AccessoryGlovesChance" class="Tunable" default="0.5" muid="43F260ABA7E59319" min="0" max="1" description="Chance of randomly obtaining gloves when randomizing if a random accessory should be set." />
+            <Tunable type="float" name="AccessoryNecklaceChance" class="Tunable" default="0.5" muid="AA04E17A101E1A24" min="0" max="1" description="Chance of randomly obtaining a necklace when randomizing if a random accessory should be set." />
+            <Tunable type="float" name="AccessoryRingsChance" class="Tunable" default="0.5" muid="4B28055DD3645B88" min="0" max="1" description="Chance of randomly obtaining rings when randomizing if a random accessory should be set." />
+            <Tunable type="float" name="AccessorySocksChance" class="Tunable" default="0.5" muid="F6C2442EF6E06F25" min="0" max="1" description="Chance of randomly obtaining socks when randomizing if a random accessory should be set." />
+            <Tunable type="float" name="FullbodyOutfitChanceFemale" class="Tunable" default="0.35" muid="9E224A058F72D33E" min="0" max="1" description="Chance of obtaining a fullbody outfit when randomizing a female sim." />
+            <Tunable type="float" name="FullbodyOutfitChanceMale" class="Tunable" default="0.05" muid="53BE96ADA9288D0C" min="0" max="1" description="Chance of obtaining a fullbody outfit when randomizing a male sim." />
+            <Tunable type="float" name="HatChance" class="Tunable" default="0.1" muid="48C45ED16F0CCF12" min="0" max="1" description="Chance of randomly adding a Hat to a Sim when randomizing." />
+            <Tunable type="float" name="HeterochromiaChance" class="Tunable" default="0.25" muid="5027B98C7E668A3B" min="0" max="1" description="Chance of heterochromia appearing on pets." />
+            <TunableList name="HeterochromiaColors" class="TunableList" muid="4AFEF6938A437472" description="EyeColor tags that describe valid eye colors for Sims that have heterochromia.">
+                <TunableEnum type="Tag" name="Tag" class="TunableEnumEntry" default="INVALID" muid="5001E3B04D4C499E" dynamic_entries="tag.Tag._elements" static_entries="tag.Tag" />
+            </TunableList>
+            <Tunable type="float" name="MakeupBlushChance" class="Tunable" default="0.5" muid="5AF1169D82C870F0" min="0" max="1" description="Chance of randomly obtaining blush when randomizing if random makeup should be set." />
+            <Tunable type="float" name="MakeupChance" class="Tunable" default="0.25" muid="D1CFD8DC8B127F44" min="0" max="1" description="Chance of randomly adding Makeup to a Sim at all when randomizing." />
+            <Tunable type="float" name="MakeupEyeLinerChance" class="Tunable" default="0.5" muid="202D481556AF7016" min="0" max="1" description="Chance of randomly obtaining eye liner when randomizing if random makeup should be set." />
+            <Tunable type="float" name="MakeupEyeShadowChance" class="Tunable" default="0.5" muid="C5CB1E5BCC0369DC" min="0" max="1" description="Chance of randomly obtaining eye shadow when randomizing if random makeup should be set." />
+            <Tunable type="float" name="MakeupFacePaintChance" class="Tunable" default="0.0" muid="F97094C05474A1E8" min="0" max="1" description="Chance of randomly obtaining face paint make up if random makeup should be set." />
+            <Tunable type="float" name="MakeupLipstickChance" class="Tunable" default="0.5" muid="84045790D70A502C" min="0" max="1" description="Chance of randomly obtaining lipstick when randomizing if random makeup should be set." />
+            <Tunable type="float" name="OccultSkinDetailChance" class="Tunable" default="0.5" muid="C0C76EA5C46EB22C" min="0" max="1" description="Chance of an occult skin detail body part being added." />
+            <Tunable type="float" name="PurebredChance" class="Tunable" default="0.5" muid="8D555766035724B0" min="0" max="1" description="Chance of randomization producing a purebred." />
+            <Tunable type="float" name="PurebredModifierVariance" class="Tunable" default="0.1" muid="45759F44841A7D41" min="0" max="1" description="Maximum amount by which modifiers for purebreds will vary from the values set in the breed preset." />
+            <Tunable type="float" name="TattooChance" class="Tunable" default="0.2" muid="BAAC1AED7BC60E36" min="0" max="1" description="Chance of randomly obtaining a tattoo when randomizing." />
+        </TunableTuple>
+
+        <TunableTuple name="SpecialTraits" class="Client_CASTuning.SpecialTraits" muid="8395345632AC4EB6" description="Traits with special meaning to the game engine.">
+            <Tunable type="trait" name="CanImpregnateTrait" class="TunableReference" muid="C5ED490E22D63E1C" />
+            <Tunable type="trait" name="CannotImpregnateTrait" class="TunableReference" muid="310C6F7C42FD90AD" />
+            <Tunable type="trait" name="CannotPregnantTrait" class="TunableReference" muid="115A5A1F5B73BA8F" />
+            <Tunable type="trait" name="CanPregnantTrait" class="TunableReference" muid="8653575174B78333" />
+            <Tunable type="trait" name="CustomGenderTrait" class="TunableReference" muid="3E7ECAA09708E305" description="trait identifying Sim as custom gender" />
+            <TunableList name="DisableCASEditTraits" class="TunableList" muid="1AC9B0D9CD2DAA0F" description="List of traits that disable direct manip in CAS">
+                <Tunable type="trait" name="DisableCASEditTrait" class="TunableReference" muid="678386BCC7D35EB9" pack_safe="True" />
+            </TunableList>
+            <Tunable type="trait" name="FemaleBodyFrameTrait" class="TunableReference" muid="7623F34983C4EAEB" />
+            <Tunable type="trait" name="FemaleClothingPreferenceTrait" class="TunableReference" muid="C9584F6ABFAD0A69" />
+            <Tunable type="trait" name="ForceBreastlessTrait" class="TunableReference" muid="B510E19AA8B391B1" description="trait identifying Sim as custom gender" />
+            <Tunable type="trait" name="ForceBreastsTrait" class="TunableReference" muid="2D59085792627D2" description="trait identifying Sim as custom gender" />
+            <Tunable type="trait" name="MaleBodyFrameTrait" class="TunableReference" muid="9BC9858E75F21B02" />
+            <Tunable type="trait" name="MaleClothingPreferenceTrait" class="TunableReference" muid="73A1BEFC9550B572" />
+            <Tunable type="trait" name="MissingTrait" class="TunableReference" muid="24D514B9E421FD58" pack_safe="True" />
+            <Tunable type="trait" name="PregnantTrait" class="TunableReference" muid="98F6A7B7A5904EDE" description="trait identifying Sim as custom gender" />
+            <Tunable type="trait" name="UseToiletSittingTrait" class="TunableReference" muid="1FEB209ABFCEB467" />
+            <Tunable type="trait" name="UseToiletStandingTrait" class="TunableReference" muid="3EEA510FF15D8BB6" />
+        </TunableTuple>
+
+        <TunableList name="Species" class="TunableSet" display="Species" muid="7C53E92AB62548B8" description="The species this tuning is specific to." filter="0" group="General" unique_entries="true">
+            <TunableEnum type="SpeciesExtended" class="TunableEnumEntry" default="HUMAN" muid="697CA5B28F5768B7" static_entries="sims-sim_info_types.SpeciesExtended" export_modes="client_binary,server_binary,server_xml" filter="0" group="General" />
+        </TunableList>
+
+        <TunableTuple name="WalkStyle" class="Client_CASTuning.WalkStyle" muid="3257C301129446F3" description="Parameters to setup sim walkstyle for genetics and UI.">
+            <Tunable type="trait" name="DefaultWalkStyleTraitId" class="TunableReference" muid="EF00AB49566BC98D" description="Which achievements are unlocked when this achievement is completed." filter="0" group="General" />
+            <TunableList name="RandomizeBlacklist" class="TunableList" display="Randomize Blacklist" muid="206951205A309AA3">
+                <Tunable type="trait" name="WalkStyleTraitId" class="TunableReference" muid="6458D92CF3FE8222" description="Walkstyle to not randomize." filter="0" group="General" />
+            </TunableList>
+            <Tunable type="float" name="SpecialWalkStyleProbability" class="Tunable" default="1.0" muid="4D0C60904A2C4A4B" description="Probability 0-1 of picking a special walk style versus the default one." />
+        </TunableTuple>
+    </Instance>
+</TuningRoot>

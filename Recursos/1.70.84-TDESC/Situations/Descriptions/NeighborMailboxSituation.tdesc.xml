@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+
+<TuningRoot>
+    <Instance instance_type="situation" class="NeighborMailboxSituation" module="apartments.situations.neighbor_mailbox" muid="B782E309901789F1" description="Situation for an apartment neighbor that wants to check their mail." instance_subclasses_only="False" parents="SituationComplexCommon, SituationComplex, Situation" path="Situations\Descriptions" use_guid_for_reference="True">
+        <Deleted name="_buff" muid="DF1368C63611A314" />
+
+        <Deleted name="_cost" muid="C6D8D6E5E4DE92D2" />
+
+        <Deleted name="_display_name" muid="7CF793DC59DA558" />
+
+        <Deleted name="_icon" muid="73A0BC15AE9AD687" />
+
+        <Deleted name="_implies_greeted_status" muid="4735EB253DB98DE2" />
+
+        <Deleted name="_initiating_sim_tests" muid="E0CCBA1309EE35BB" />
+
+        <Deleted name="_level_data" muid="651E9CAC8D3A48AA" />
+
+        <Deleted name="_main_goal_visibility_test" muid="E419D5EBFF8BB51D" />
+
+        <Deleted name="_relationship_between_job_members" muid="E1494F0D75180CF3" />
+
+        <Deleted name="_resident_job" muid="C47725AF34BF940D" />
+
+        <Deleted name="audio_sting_on_start" muid="6582617E97BE5468" />
+
+        <Deleted name="background_audio" muid="CD8777AD5F77467A" />
+
+        <Deleted name="category" muid="22530E8CDA89CED8" />
+
+        <TunableTuple name="check_mail_state" class="Tunable_CheckMailState" display="Check Mail State" muid="DB89D2E549EF91B0" description="Situation State for the Sim to check their mail." Deprecated="False" filter="0" group="General">
+            <Tunable type="bool" name="allow_join_situation" class="Tunable" default="True" display="Allow Join Situation" muid="BA38B9C436B7FE34" description="Whether the situation is allowed to join at this state." Deprecated="False" filter="0" group="General" />
+            <TunableList name="job_and_role_changes" class="TunableMapping" display="Job And Role Changes" muid="A725FF6CE265BA2E" mapping_key="Situation Job" mapping_value="Role State" description="A mapping between situation jobs and role states that defines&#xA;what role states we want to switch to for sims on which jobs&#xA;when this situation state is entered." Deprecated="False" filter="0" group="General">
+                <TunableTuple class="TunableTuple" muid="DC6AB43C3E1C90B2" Deprecated="False" filter="0" group="General">
+                    <Tunable type="role_state" name="Role State" class="TunableReference" display="Role State" muid="7E6EDB053934F8C9" description="The role state that we will switch sims of the linked job&#xA;into." allow_none="False" Deprecated="False" filter="0" group="General" />
+                    <Tunable type="situation_job" name="Situation Job" class="TunableReference" display="Situation Job" muid="2DF330FF8A477A35" description="A reference to a SituationJob that we will use to change&#xA;sim's role state." allow_none="False" Deprecated="False" filter="0" group="General" />
+                </TunableTuple>
+            </TunableList>
+            <TunableVariant type="None" name="time_out" class="OptionalTunable" default="disabled" display="Time Out" muid="177BCDC35805429B" description="How long this state will last before time expired. Please talk to the GPE who implemented the specific&#xA;situation to see what the state will do on time expired." Deprecated="False" filter="0" group="General">
+                <Tunable name="disabled" class="TunableExistance" display="Disabled" muid="6136B279A67D8146" />
+                <Tunable type="float" name="enabled" class="TunableSimMinute" default="15" display="Enabled" muid="24010C058C8444C7" min="1" max="None" tuning_state="NeedsTuning" Deprecated="False" filter="0" group="General" />
+            </TunableVariant>
+        </TunableTuple>
+
+        <Deleted name="compatible_venues" muid="F831973731226672" />
+
+        <Deleted name="creation_ui_option" muid="9AEE7523ECE54D9" />
+
+        <Deleted name="entitlement" muid="966E8B27B693E2F0" />
+
+        <Deleted name="exclusivity" muid="B20E752CD791CA40" />
+
+        <Deleted name="force_invite_only" muid="EE38D5942EA6F10B" />
+
+        <Deleted name="goal_button_text" muid="BEFD3179EF2C5D31" />
+
+        <Deleted name="goal_sub_text" muid="82540581DFAA2EDC" />
+
+        <Deleted name="highlight_first_incomplete_minor_goal" muid="143EEDA8C4A17EA3" />
+
+        <Deleted name="job_display_ordering" muid="C0D87EEBC35A9363" />
+
+        <Deleted name="main_goal" muid="B45B18063A6053BA" />
+
+        <Deleted name="main_goal_audio_sting" muid="44616BFAA57A5340" />
+
+        <Deleted name="max_participants" muid="45358EF819174FF8" />
+
+        <Deleted name="minor_goal_chains" muid="A36EFA3ACC6E97D8" />
+
+        <TunableTuple name="neighbor_job_and_role_state" class="TunableSituationJobAndRoleState" display="Neighbor Job And Role State" muid="D0CFF24E4B582A27" description="Job and Role State for the neighbor." Deprecated="False" filter="0" group="General">
+            <Tunable type="role_state" name="role_state" class="TunableReference" display="Role State" muid="A4E82C229B930CAE" description="A role state the sim assigned to the job will perform" allow_none="False" Deprecated="False" filter="0" group="General" />
+            <Tunable type="situation_job" name="situation_job" class="TunableReference" display="Situation Job" muid="9AFF02E1B5913A2C" description="A reference to a SituationJob that can be performed at this Situation." allow_none="False" Deprecated="False" filter="0" group="General" />
+        </TunableTuple>
+
+        <Deleted name="recommended_job_object_notification" muid="80EDD3295C25D9DF" />
+
+        <Deleted name="recommended_job_object_text" muid="BCD4912B7A66D755" />
+
+        <Deleted name="screen_slam_bronze" muid="8B69067A095CA37F" />
+
+        <Deleted name="screen_slam_gold" muid="ACB568B6D2BD0A37" />
+
+        <Deleted name="screen_slam_no_medal" muid="6D41B70A25EC14C" />
+
+        <Deleted name="screen_slam_silver" muid="31E22C77F3C3CA48" />
+
+        <Deleted name="situation_description" muid="AD3A1EA576DACF89" />
+
+        <Deleted name="suppress_scoring_progress_bar" muid="9B09EBBD6F8A09A5" />
+
+        <Deleted name="targeted_situation" muid="F663FCAB7A2A6C44" />
+
+        <Deleted name="travel_request_behavior" muid="AB6D75EEFADD61FC" />
+
+        <Deleted name="venue_invitation_message" muid="F9D124E41EB00FB2" />
+
+        <Deleted name="venue_situation_player_job" muid="377168BA9EBEBD06" />
+    </Instance>
+
+    <VersionHistory>
+        <ActionList>
+            <Action type="kRemove" old_muid="937CF6B95C77173D" />
+        </ActionList>
+
+        <ActionList>
+            <Action type="kRename" old_muid="B7BABC4DDC9F8C5" new_muid="F831973731226672" />
+        </ActionList>
+
+        <ActionList>
+            <Action type="kRemove" old_muid="9D368E824C2DD0B" />
+            <Action type="kRemove" old_muid="8E0CCCD9580398C1" />
+        </ActionList>
+    </VersionHistory>
+</TuningRoot>

@@ -1,0 +1,170 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<I c="SuperInteraction" i="interaction" m="interactions.base.super_interaction" n="laundry_WashingMachine_Sabotage" s="177271">
+  <V t="enabled" n="_saveable" />
+  <T n="attention_cost">0.5</T>
+  <V t="one_shot" n="basic_content">
+    <U n="one_shot">
+      <U n="animation_ref">
+        <T n="factory">176741<!--AnimationElement: laundry_WashingMachine_Actions_AddIngredient--></T>
+      </U>
+    </U>
+  </V>
+  <L n="basic_extras">
+    <V t="broadcaster">
+      <U n="broadcaster">
+        <L n="broadcaster_types">
+          <U>
+            <T n="item">202619<!--Broadcaster: broadcaster_Reputation_SeenLoot_Instant_Loss_Misc_OffLot--></T>
+          </U>
+        </L>
+      </U>
+    </V>
+  </L>
+  <V t="disabled" n="content_score" />
+  <T n="display_name">0xFE5722B3<!--String: "Sabotear"--></T>
+  <U n="display_name_text_tokens">
+    <L n="tokens">
+      <V t="participant_type">
+        <U n="participant_type">
+          <V t="from_participant" n="objects">
+            <U n="from_participant">
+              <E n="participant">Actor</E>
+            </U>
+          </V>
+        </U>
+      </V>
+      <V t="participant_type">
+        <U n="participant_type">
+          <V t="from_participant" n="objects">
+            <U n="from_participant">
+              <E n="participant">Object</E>
+            </U>
+          </V>
+        </U>
+      </V>
+    </L>
+  </U>
+  <L n="interaction_category_tags">
+    <E>Interaction_Super</E>
+    <E>Interaction_All</E>
+  </L>
+  <V t="single" n="outcome">
+    <U n="single">
+      <U n="actions">
+        <L n="basic_extras">
+          <V t="state_change">
+            <U n="state_change">
+              <V n="new_value" t="single_value">
+                <U n="single_value">
+                  <T n="new_value">97754<!--CommodityBasedObjectStateValue: Brokenness_Broken_Sabotage--></T>
+                </U>
+              </V>
+            </U>
+          </V>
+          <V t="notification">
+            <U n="notification">
+              <V n="dialog" t="single">
+                <V n="single" t="literal">
+                  <U n="literal">
+                    <L n="dialog_options">
+                      <E>DISABLE_CLOSE_BUTTON</E>
+                    </L>
+                    <V n="icon" t="enabled">
+                      <V n="enabled" t="participant">
+                        <U n="participant">
+                          <L n="participant_type">
+                            <E>Actor</E>
+                          </L>
+                        </U>
+                      </V>
+                    </V>
+                    <V n="secondary_icon" t="enabled">
+                      <V t="participant" n="enabled">
+                        <U n="participant">
+                          <L n="participant_type">
+                            <E>Object</E>
+                          </L>
+                        </U>
+                      </V>
+                    </V>
+                    <V n="text" t="single">
+                      <T n="single">0xFC89CD3E<!--String: "{0.SimName} ha saboteado el objeto."--></T>
+                    </V>
+                    <V t="enabled" n="text_tokens">
+                      <U n="enabled">
+                        <L n="tokens">
+                          <V t="participant_type" />
+                        </L>
+                      </U>
+                    </V>
+                  </U>
+                </V>
+              </V>
+            </U>
+          </V>
+        </L>
+      </U>
+    </U>
+  </V>
+  <V t="enabled" n="pie_menu_icon">
+    <V n="enabled" t="resource_key">
+      <U n="resource_key">
+        <T n="key" p="InGame\UI\Icons\PieMenu\Traits\traitAspiration_Bane_piemenu.png">2f7d0004:00000000:309f6a6cd00cdcfc</T>
+      </U>
+    </V>
+  </V>
+  <E n="scoring_priority">NORMAL</E>
+  <T n="subaction_selection_weight">1</T>
+  <E n="target_type">OBJECT</E>
+  <L n="test_globals">
+    <V t="sim_info">
+      <U n="sim_info">
+        <V t="specified" n="ages" />
+        <V t="specified" n="species">
+          <U n="specified">
+            <L n="species">
+              <E />
+            </L>
+          </U>
+        </V>
+        <E n="who">Actor</E>
+      </U>
+    </V>
+    <V t="trait">
+      <U n="trait">
+        <L n="whitelist_traits">
+          <T>27217<!--Trait: trait_Bane--></T>
+        </L>
+      </U>
+    </V>
+    <V t="state">
+      <U n="state">
+        <E n="operator">NOTEQUAL</E>
+        <V t="enabled" n="tooltip">
+          <T n="enabled">0xBD936B9B<!--String: "No se puede romper un objeto irrompible."--></T>
+        </V>
+        <T n="value">177239<!--CommodityBasedObjectStateValue: upgrade_Laundry_WashingMachine_NeverBreaks_Completed--></T>
+      </U>
+    </V>
+    <V t="state">
+      <U n="state">
+        <V t="always_pass" n="fallback_behavior" />
+        <E n="operator">NOTEQUAL</E>
+        <V n="tooltip" t="enabled">
+          <T n="enabled">0xD417D90F<!--String: "¡Este objeto está a punto de romperse o estropearse!"--></T>
+        </V>
+        <T n="value">97754<!--CommodityBasedObjectStateValue: Brokenness_Broken_Sabotage--></T>
+      </U>
+    </V>
+    <V t="state">
+      <U n="state">
+        <E n="operator">NOTEQUAL</E>
+        <V t="enabled" n="tooltip">
+          <T n="enabled">0x11E9A292<!--String: "{0.SimFirstName} no puede mejorar este objeto mientras está averiado."--></T>
+        </V>
+        <T n="value">177041<!--CommodityBasedObjectStateValue: laundry_WashingMachine_Brokeness_Plumbing_Broken--></T>
+      </U>
+    </V>
+  </L>
+  <T n="time_overhead">30</T>
+</I>

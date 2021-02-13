@@ -1,0 +1,61 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<I c="ObjectRoutingBehavior" i="snippet" m="routing.object_routing.object_routing_behavior" n="objectRoutingBehavior_RobotVacuum_Run_Cleaner" s="173164">
+  <L n="actions">
+    <V t="destroy_objects">
+      <U n="destroy_objects">
+        <V t="enabled" n="animation_failure">
+          <U n="enabled">
+            <T n="loop_time">5</T>
+            <T n="reference">171489<!--ObjectAnimationElement: animation_RobotVacuum_Scan--></T>
+          </U>
+        </V>
+        <V t="enabled" n="animation_success">
+          <U n="enabled">
+            <V t="enabled" n="event_id">
+              <T n="enabled">100</T>
+            </V>
+            <T n="reference">171493<!--ObjectAnimationElement: animation_RobotVacuum_Clean--></T>
+          </U>
+        </V>
+        <L n="loot_success">
+          <T>172063<!--LootActions: lootActions_RobotVacuum_stat_TrashCapacity_cleanObject--></T>
+          <T>173371<!--LootActions: lootActions_RobotVacuum_stat_Breakage_small--></T>
+        </L>
+        <V t="tags" n="object_selection_method">
+          <U n="tags">
+            <L n="tags">
+              <E>Func_RobotVacuum_Mess_DefaultClean</E>
+              <E>Func_RobotVacuum_Mess_UpgradedClean</E>
+            </L>
+          </U>
+        </V>
+      </U>
+    </V>
+  </L>
+  <L n="completion_loot">
+    <T>171890<!--LootActions: lootActions_RobotVacuum_RoutingBehavior_SwitchToDock--></T>
+  </L>
+  <V t="enabled" n="pre_route_animation">
+    <T n="enabled">171491<!--ObjectAnimationElement: animation_RobotVacuum_NoIdle--></T>
+  </V>
+  <V t="from_waypoints" n="route">
+    <U n="from_waypoints">
+      <V n="waypoint_generator" t="lot_points">
+        <U n="lot_points">
+          <V n="object_tag_generator" t="enabled">
+            <U n="enabled">
+              <T n="constrain_radius">1</T>
+              <T n="object_max_distance">1000</T>
+              <V t="sorted_by_distance" n="object_search_strategy" />
+              <L n="object_tags">
+                <E>Func_RobotVacuum_Mess_DefaultClean</E>
+                <E>Func_RobotVacuum_Mess_UpgradedClean</E>
+              </L>
+              <V t="inside_only" n="placement_restriction" />
+            </U>
+          </V>
+        </U>
+      </V>
+    </U>
+  </V>
+</I>

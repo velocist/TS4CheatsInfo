@@ -1,0 +1,112 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<I c="SuperInteraction" i="interaction" m="interactions.base.super_interaction" n="run_clone_situation" s="215114">
+  <V t="enabled" n="_saveable" />
+  <T n="allow_user_directed">False</T>
+  <T n="attention_cost">0.5</T>
+  <V t="one_shot" n="basic_content" />
+  <L n="basic_extras">
+    <V t="loot">
+      <U n="loot">
+        <L n="loot_list">
+          <T>32292<!--LootActions: loot_$1000--></T>
+        </L>
+      </U>
+    </V>
+    <V t="set_visibility_state">
+      <U n="set_visibility_state">
+        <V t="at_beginning" n="timing" />
+        <T n="visibility">False</T>
+      </U>
+    </V>
+  </L>
+  <V t="disabled" n="content_score" />
+  <U n="display_name_text_tokens">
+    <L n="tokens">
+      <V t="participant_type">
+        <U n="participant_type">
+          <V t="from_participant" n="objects">
+            <U n="from_participant">
+              <E n="participant">Actor</E>
+            </U>
+          </V>
+        </U>
+      </V>
+      <V t="participant_type">
+        <U n="participant_type">
+          <V t="from_participant" n="objects">
+            <U n="from_participant">
+              <E n="participant">Object</E>
+            </U>
+          </V>
+        </U>
+      </V>
+    </L>
+  </U>
+  <L n="interaction_category_tags">
+    <E>Interaction_Super</E>
+    <E>Interaction_All</E>
+  </L>
+  <V n="outcome" t="single">
+    <U n="single">
+      <U n="actions">
+        <L n="basic_extras">
+          <V t="vfx">
+            <U n="vfx">
+              <V t="from_participant" n="participant">
+                <U n="from_participant">
+                  <E n="participant">Actor</E>
+                </U>
+              </V>
+              <U n="vfx">
+                <T n="effect_name">gp08_duplicato_spell</T>
+                <V t="Current_Position" n="joint_name" />
+                <T n="play_immediate">True</T>
+              </U>
+            </U>
+          </V>
+          <V t="create_situation">
+            <U n="create_situation">
+              <V n="create_situation" t="situation_start">
+                <U n="situation_start">
+                  <V t="specify_job" n="actor_init_job">
+                    <T n="specify_job">215158<!--SituationJob: job_TemporaryClone--></T>
+                  </V>
+                  <T n="invite_picked_sims">False</T>
+                  <T n="invite_target_sim">False</T>
+                  <T n="situation">215157<!--TemporaryCloneSituation: situation_TemporaryClone--></T>
+                  <T n="user_facing">False</T>
+                </U>
+              </V>
+            </U>
+          </V>
+          <V t="set_visibility_state">
+            <U n="set_visibility_state">
+              <T n="fade">True</T>
+              <T n="visibility">True</T>
+            </U>
+          </V>
+        </L>
+      </U>
+    </U>
+  </V>
+  <E n="scoring_priority">NORMAL</E>
+  <T n="subaction_selection_weight">1</T>
+  <E n="target_type">OBJECT</E>
+  <L n="test_globals">
+    <V t="sim_info">
+      <U n="sim_info">
+        <V t="specified" n="ages" />
+        <V t="specified" n="species">
+          <U n="specified">
+            <L n="species">
+              <E />
+            </L>
+          </U>
+        </V>
+        <E n="who">Actor</E>
+      </U>
+    </V>
+  </L>
+  <T n="time_overhead">30</T>
+  <T n="visible">False</T>
+</I>

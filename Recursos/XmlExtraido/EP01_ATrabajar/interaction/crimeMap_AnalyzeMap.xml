@@ -1,0 +1,453 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<I c="SuperInteraction" i="interaction" m="interactions.base.super_interaction" n="crimeMap_AnalyzeMap" s="107071">
+  <V t="participant" n="_icon">
+    <U n="participant">
+      <L n="participant_type">
+        <E>Object</E>
+      </L>
+    </U>
+  </V>
+  <V t="enabled" n="_saveable" />
+  <T n="allow_autonomous">False</T>
+  <T n="allow_user_directed">True</T>
+  <T n="attention_cost">0.5</T>
+  <V n="basic_content" t="flexible_length">
+    <U n="flexible_length">
+      <L n="conditional_actions">
+        <V t="literal">
+          <U n="literal">
+            <L n="conditions">
+              <V t="time_based">
+                <U n="time_based">
+                  <T n="max_time">10</T>
+                  <T n="min_time">5</T>
+                </U>
+              </V>
+            </L>
+            <E n="interaction_action">EXIT_NATURALLY</E>
+          </U>
+        </V>
+      </L>
+      <V n="content" t="looping_content">
+        <U n="looping_content">
+          <U n="animation_ref">
+            <T n="factory">107499<!--AnimationElement: object_CrimeMap_DeduceCrime--></T>
+          </U>
+        </U>
+      </V>
+    </U>
+  </V>
+  <V t="disabled" n="content_score" />
+  <T n="display_name">0xAF136AB4<!--String: "Deducir nueva pista"--></T>
+  <U n="display_name_text_tokens">
+    <L n="tokens">
+      <V t="participant_type">
+        <U n="participant_type">
+          <V t="from_participant" n="objects">
+            <U n="from_participant">
+              <E n="participant">Actor</E>
+            </U>
+          </V>
+        </U>
+      </V>
+      <V t="participant_type">
+        <U n="participant_type">
+          <V t="from_participant" n="objects">
+            <U n="from_participant">
+              <E n="participant">Object</E>
+            </U>
+          </V>
+        </U>
+      </V>
+    </L>
+  </U>
+  <L n="interaction_category_tags">
+    <E>Interaction_Super</E>
+    <E>Interaction_All</E>
+  </L>
+  <V n="outcome" t="dual">
+    <U n="dual">
+      <U n="failure_actions">
+        <V n="animation_ref" t="enabled">
+          <U n="enabled">
+            <T n="factory">107500<!--AnimationElement: object_CrimeMap_DeduceFail--></T>
+          </U>
+        </V>
+        <L n="basic_extras">
+          <V t="notification">
+            <U n="notification">
+              <V n="dialog" t="single">
+                <V n="single" t="literal">
+                  <U n="literal">
+                    <V t="enabled" n="icon">
+                      <V t="participant" n="enabled" />
+                    </V>
+                    <V n="text" t="single">
+                      <T n="single">0x9F6813F2<!--String: "{0.SimFirstName} no ha podido deducir ninguna pista nueva."--></T>
+                    </V>
+                  </U>
+                </V>
+              </V>
+            </U>
+          </V>
+        </L>
+        <L n="loot_list">
+          <T>107619<!--LootActions: loot_Commodity_CrimeMap_AnalyzeCooldownSet--></T>
+          <T>116208<!--LootActions: loot_Buff_DetectiveCareer_DunceDuction--></T>
+        </L>
+        <E n="outcome_result">FAILURE</E>
+      </U>
+      <U n="success_actions">
+        <V n="animation_ref" t="enabled">
+          <U n="enabled">
+            <T n="factory">107494<!--AnimationElement: object_CrimeMap_DeduceCrimeSucceed--></T>
+          </U>
+        </V>
+        <L n="basic_extras">
+          <V t="audio_sting">
+            <U n="audio_sting">
+              <U n="audio_sting">
+                <T n="audio" p="InEP01\Audio\Bumper\bumper_detective_deduce_crime.propx">39b2aa4a:00000000:ccbf3b44b6f07ac8</T>
+              </U>
+            </U>
+          </V>
+        </L>
+        <L n="loot_list">
+          <T>106524<!--LootActions: loot_DiscoverClue--></T>
+          <T>107619<!--LootActions: loot_Commodity_CrimeMap_AnalyzeCooldownSet--></T>
+          <T>109452<!--LootActions: loot_ObjectStateChange_CrimeMap_NextState--></T>
+          <T>116207<!--LootActions: loot_Buff_DetectiveCareer_CrackingCase--></T>
+        </L>
+      </U>
+      <U n="success_chance">
+        <T n="base_chance">10</T>
+        <L n="multipliers">
+          <U>
+            <L n="tests">
+              <L>
+                <V t="career_test">
+                  <U n="career_test">
+                    <V n="test_type" t="career_reference">
+                      <U n="career_reference">
+                        <V t="specific_career" n="career">
+                          <T n="specific_career">106132<!--DetectiveCareer: detectiveCareer_1--></T>
+                        </V>
+                        <V t="enabled" n="user_level">
+                          <U n="enabled">
+                            <T n="upper_bound">1</T>
+                          </U>
+                        </V>
+                      </U>
+                    </V>
+                  </U>
+                </V>
+              </L>
+            </L>
+          </U>
+          <U>
+            <T n="multiplier">1.5</T>
+            <L n="tests">
+              <L>
+                <V t="career_test">
+                  <U n="career_test">
+                    <V n="test_type" t="career_reference">
+                      <U n="career_reference">
+                        <V t="specific_career" n="career">
+                          <T n="specific_career">106132<!--DetectiveCareer: detectiveCareer_1--></T>
+                        </V>
+                        <V t="enabled" n="user_level">
+                          <U n="enabled">
+                            <T n="lower_bound">2</T>
+                            <T n="upper_bound">2</T>
+                          </U>
+                        </V>
+                      </U>
+                    </V>
+                  </U>
+                </V>
+              </L>
+            </L>
+          </U>
+          <U>
+            <T n="multiplier">2</T>
+            <L n="tests">
+              <L>
+                <V t="career_test">
+                  <U n="career_test">
+                    <V n="test_type" t="career_reference">
+                      <U n="career_reference">
+                        <V t="specific_career" n="career">
+                          <T n="specific_career">106132<!--DetectiveCareer: detectiveCareer_1--></T>
+                        </V>
+                        <V t="enabled" n="user_level">
+                          <U n="enabled">
+                            <T n="lower_bound">3</T>
+                            <T n="upper_bound">3</T>
+                          </U>
+                        </V>
+                      </U>
+                    </V>
+                  </U>
+                </V>
+              </L>
+            </L>
+          </U>
+          <U>
+            <T n="multiplier">2.5</T>
+            <L n="tests">
+              <L>
+                <V t="career_test">
+                  <U n="career_test">
+                    <V n="test_type" t="career_reference">
+                      <U n="career_reference">
+                        <V t="specific_career" n="career">
+                          <T n="specific_career">106132<!--DetectiveCareer: detectiveCareer_1--></T>
+                        </V>
+                        <V t="enabled" n="user_level">
+                          <U n="enabled">
+                            <T n="lower_bound">4</T>
+                            <T n="upper_bound">4</T>
+                          </U>
+                        </V>
+                      </U>
+                    </V>
+                  </U>
+                </V>
+              </L>
+            </L>
+          </U>
+          <U>
+            <T n="multiplier">3</T>
+            <L n="tests">
+              <L>
+                <V t="career_test">
+                  <U n="career_test">
+                    <V n="test_type" t="career_reference">
+                      <U n="career_reference">
+                        <V t="specific_career" n="career">
+                          <T n="specific_career">106132<!--DetectiveCareer: detectiveCareer_1--></T>
+                        </V>
+                        <V t="enabled" n="user_level">
+                          <U n="enabled">
+                            <T n="lower_bound">5</T>
+                            <T n="upper_bound">5</T>
+                          </U>
+                        </V>
+                      </U>
+                    </V>
+                  </U>
+                </V>
+              </L>
+            </L>
+          </U>
+          <U>
+            <T n="multiplier">3.5</T>
+            <L n="tests">
+              <L>
+                <V t="career_test">
+                  <U n="career_test">
+                    <V n="test_type" t="career_reference">
+                      <U n="career_reference">
+                        <V t="specific_career" n="career">
+                          <T n="specific_career">106132<!--DetectiveCareer: detectiveCareer_1--></T>
+                        </V>
+                        <V t="enabled" n="user_level">
+                          <U n="enabled">
+                            <T n="lower_bound">6</T>
+                            <T n="upper_bound">6</T>
+                          </U>
+                        </V>
+                      </U>
+                    </V>
+                  </U>
+                </V>
+              </L>
+            </L>
+          </U>
+          <U>
+            <T n="multiplier">4</T>
+            <L n="tests">
+              <L>
+                <V t="career_test">
+                  <U n="career_test">
+                    <V n="test_type" t="career_reference">
+                      <U n="career_reference">
+                        <V t="specific_career" n="career">
+                          <T n="specific_career">106132<!--DetectiveCareer: detectiveCareer_1--></T>
+                        </V>
+                        <V t="enabled" n="user_level">
+                          <U n="enabled">
+                            <T n="lower_bound">7</T>
+                            <T n="upper_bound">7</T>
+                          </U>
+                        </V>
+                      </U>
+                    </V>
+                  </U>
+                </V>
+              </L>
+            </L>
+          </U>
+          <U>
+            <T n="multiplier">4.5</T>
+            <L n="tests">
+              <L>
+                <V t="career_test">
+                  <U n="career_test">
+                    <V n="test_type" t="career_reference">
+                      <U n="career_reference">
+                        <V t="specific_career" n="career">
+                          <T n="specific_career">106132<!--DetectiveCareer: detectiveCareer_1--></T>
+                        </V>
+                        <V t="enabled" n="user_level">
+                          <U n="enabled">
+                            <T n="lower_bound">8</T>
+                            <T n="upper_bound">8</T>
+                          </U>
+                        </V>
+                      </U>
+                    </V>
+                  </U>
+                </V>
+              </L>
+            </L>
+          </U>
+          <U>
+            <T n="multiplier">5</T>
+            <L n="tests">
+              <L>
+                <V t="career_test">
+                  <U n="career_test">
+                    <V n="test_type" t="career_reference">
+                      <U n="career_reference">
+                        <V t="specific_career" n="career">
+                          <T n="specific_career">106132<!--DetectiveCareer: detectiveCareer_1--></T>
+                        </V>
+                        <V t="enabled" n="user_level">
+                          <U n="enabled">
+                            <T n="lower_bound">9</T>
+                            <T n="upper_bound">9</T>
+                          </U>
+                        </V>
+                      </U>
+                    </V>
+                  </U>
+                </V>
+              </L>
+            </L>
+          </U>
+          <U>
+            <T n="multiplier">5.5</T>
+            <L n="tests">
+              <L>
+                <V t="career_test">
+                  <U n="career_test">
+                    <V n="test_type" t="career_reference">
+                      <U n="career_reference">
+                        <V t="specific_career" n="career">
+                          <T n="specific_career">106132<!--DetectiveCareer: detectiveCareer_1--></T>
+                        </V>
+                        <V t="enabled" n="user_level">
+                          <U n="enabled">
+                            <T n="lower_bound">10</T>
+                            <T n="upper_bound">10</T>
+                          </U>
+                        </V>
+                      </U>
+                    </V>
+                  </U>
+                </V>
+              </L>
+            </L>
+          </U>
+        </L>
+      </U>
+    </U>
+  </V>
+  <V t="enabled" n="pie_menu_icon">
+    <V t="resource_key" n="enabled">
+      <U n="resource_key">
+        <T p="InEP01\UI\Icons\Career\Career_Detective_Main.png" n="key">2f7d0004:00000000:7e10457cfc46f451</T>
+      </U>
+    </V>
+  </V>
+  <T n="pie_menu_priority">10</T>
+  <E n="scoring_priority">NORMAL</E>
+  <T n="subaction_selection_weight">1</T>
+  <E n="target_type">OBJECT</E>
+  <L n="test_globals">
+    <V t="sim_info">
+      <U n="sim_info">
+        <V t="specified" n="ages" />
+        <V t="specified" n="species">
+          <U n="specified">
+            <L n="species">
+              <E />
+            </L>
+          </U>
+        </V>
+        <E n="who">Actor</E>
+      </U>
+    </V>
+    <V t="career_test">
+      <U n="career_test">
+        <V t="career_reference" n="test_type">
+          <U n="career_reference">
+            <V t="specific_career" n="career">
+              <T n="specific_career">106132<!--DetectiveCareer: detectiveCareer_1--></T>
+            </V>
+          </U>
+        </V>
+      </U>
+    </V>
+    <V t="state">
+      <U n="state">
+        <E n="operator">NOTEQUAL</E>
+        <T n="value">110420<!--ObjectStateValue: objectStateValue_Detective_CrimeMap_Empty--></T>
+      </U>
+    </V>
+    <V t="statistic">
+      <U n="statistic">
+        <T n="stat">112059<!--Statistic: statistic_Career_Detective_HasCase--></T>
+        <V t="value_threshold" n="threshold">
+          <U n="value_threshold">
+            <T n="value">1</T>
+          </U>
+        </V>
+      </U>
+    </V>
+    <V t="situation_running_test">
+      <U n="situation_running_test">
+        <V n="situation_blacklist" t="enabled">
+          <L n="enabled">
+            <T>112170<!--CareerEventSituation: careerEventSituations_DetectiveCareer_Day01--></T>
+            <T>112171<!--CareerEventSituation: careerEventSituations_DetectiveCareer_Day02--></T>
+          </L>
+        </V>
+      </U>
+    </V>
+    <V t="detective_clues">
+      <U n="detective_clues">
+        <T n="career_reference">106132<!--DetectiveCareer: detectiveCareer_1--></T>
+        <U n="threshold">
+          <E n="comparison">LESS_OR_EQUAL</E>
+          <T n="value">6</T>
+        </U>
+      </U>
+    </V>
+    <V t="statistic">
+      <U n="statistic">
+        <T n="stat">107612<!--Commodity: commodity_CrimeMap_AnalyzeCooldown--></T>
+        <V t="value_threshold" n="threshold">
+          <U n="value_threshold">
+            <E n="comparison">LESS_OR_EQUAL</E>
+          </U>
+        </V>
+        <V n="tooltip" t="enabled">
+          <T n="enabled">0x4E3DCF0E<!--String: "{0.SimFirstName} aún no se ha recuperado mentalmente de la última vez que intentó hacerlo."--></T>
+        </V>
+      </U>
+    </V>
+  </L>
+  <T n="time_overhead">30</T>
+</I>

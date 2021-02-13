@@ -1,0 +1,170 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<I c="MixerInteraction" i="interaction" m="interactions.base.mixer_interaction" n="mixer_AlienAbduction_TrackerIdle_VeryHigh" s="115186">
+  <T n="allow_user_directed">False</T>
+  <V t="disable_focus" n="basic_focus" />
+  <U n="display_name_text_tokens">
+    <L n="tokens">
+      <V t="participant_type">
+        <U n="participant_type">
+          <V t="from_participant" n="objects">
+            <U n="from_participant">
+              <E n="participant">Actor</E>
+            </U>
+          </V>
+        </U>
+      </V>
+      <V t="participant_type">
+        <U n="participant_type">
+          <V t="from_participant" n="objects">
+            <U n="from_participant">
+              <E n="participant">Object</E>
+            </U>
+          </V>
+        </U>
+      </V>
+    </L>
+  </U>
+  <L n="interaction_category_tags">
+    <E>Interaction_Mixer</E>
+    <E>Interaction_All</E>
+  </L>
+  <V t="enabled" n="lock_out_time">
+    <U n="enabled">
+      <U n="interval">
+        <T n="lower_bound">720</T>
+        <T n="upper_bound">720</T>
+      </U>
+    </U>
+  </V>
+  <V n="outcome" t="test_based">
+    <U n="test_based">
+      <L n="fallback_outcomes">
+        <U>
+          <U n="outcome">
+            <L n="continuation">
+              <U>
+                <T n="affordance">102862<!--SuperInteraction: alienAbduction_BeAbducted--></T>
+              </U>
+            </L>
+          </U>
+          <U n="weight">
+            <T n="base_value">10</T>
+            <L n="multipliers">
+              <U>
+                <T n="multiplier">2</T>
+                <L n="tests">
+                  <L>
+                    <V t="career_test">
+                      <U n="career_test">
+                        <V t="career_reference" n="test_type">
+                          <U n="career_reference">
+                            <V t="specific_career" n="career">
+                              <T n="specific_career">107255<!--Career: career_Adult_Active_Scientist--></T>
+                            </V>
+                          </U>
+                        </V>
+                      </U>
+                    </V>
+                  </L>
+                </L>
+              </U>
+              <U>
+                <T n="multiplier">2</T>
+                <L n="tests">
+                  <L>
+                    <V t="inventory">
+                      <U n="inventory">
+                        <V n="contents_check" t="has_object_with_tag">
+                          <U n="has_object_with_tag">
+                            <L n="tag_set">
+                              <E>BuyCat_Collection_Alien</E>
+                              <E>BuyCat_Collection_SpaceRock</E>
+                            </L>
+                          </U>
+                        </V>
+                      </U>
+                    </V>
+                  </L>
+                  <L>
+                    <V t="object_criteria">
+                      <U n="object_criteria">
+                        <V n="identity_test" t="tags">
+                          <U n="tags">
+                            <L n="tag_set">
+                              <E>BuyCat_Collection_Alien</E>
+                              <E>BuyCat_Collection_SpaceRock</E>
+                            </L>
+                          </U>
+                        </V>
+                        <T n="on_active_lot">True</T>
+                      </U>
+                    </V>
+                  </L>
+                </L>
+              </U>
+            </L>
+          </U>
+        </U>
+        <U>
+          <U n="weight">
+            <T n="base_value">90</T>
+          </U>
+        </U>
+      </L>
+    </U>
+  </V>
+  <U n="sub_action">
+    <T n="base_weight">2</T>
+  </U>
+  <E n="target_type">ACTOR</E>
+  <L n="test_globals">
+    <V t="sim_info">
+      <U n="sim_info">
+        <V t="specified" n="ages">
+          <L n="specified">
+            <E>TEEN</E>
+            <E>YOUNGADULT</E>
+            <E>ADULT</E>
+            <E>ELDER</E>
+          </L>
+        </V>
+      </U>
+    </V>
+    <V t="day_and_time">
+      <U n="day_and_time">
+        <V n="time_range" t="enabled">
+          <U n="enabled">
+            <U n="begin_time">
+              <T n="hour">22</T>
+            </U>
+            <U n="duration">
+              <T n="hour">6</T>
+            </U>
+          </U>
+        </V>
+      </U>
+    </V>
+    <V t="buff">
+      <U n="buff">
+        <L n="blacklist">
+          <T>107158<!--Buff: buff_AlienAbduction_NoChance--></T>
+        </L>
+      </U>
+    </V>
+    <V t="lot_owner" />
+    <V t="statistic">
+      <U n="statistic">
+        <T n="stat">102866<!--Commodity: commodity_AlienAbduction_Cooldown--></T>
+        <V t="value_threshold" n="threshold">
+          <U n="value_threshold">
+            <E n="comparison">LESS_OR_EQUAL</E>
+          </U>
+        </V>
+      </U>
+    </V>
+    <V t="test_set_reference">
+      <T n="test_set_reference">25731<!--TestSetInstance: testSet_PregnantDisallow--></T>
+    </V>
+  </L>
+  <T n="visible">False</T>
+</I>

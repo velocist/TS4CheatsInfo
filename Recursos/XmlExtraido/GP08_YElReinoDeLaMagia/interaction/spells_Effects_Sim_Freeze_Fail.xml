@@ -1,0 +1,177 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<I c="SuperInteraction" i="interaction" m="interactions.base.super_interaction" n="spells_Effects_Sim_Freeze_Fail" s="221345">
+  <V t="prohibit_cancelation" n="_cancelable_by_user" />
+  <V t="participant" n="_icon">
+    <U n="participant">
+      <L n="participant_type">
+        <E>Actor</E>
+      </L>
+    </U>
+  </V>
+  <V t="enabled" n="_saveable" />
+  <T n="allow_autonomous">False</T>
+  <T n="allow_user_directed">False</T>
+  <T n="attention_cost">0.5</T>
+  <V n="basic_content" t="flexible_length">
+    <U n="flexible_length">
+      <L n="conditional_actions">
+        <V t="literal">
+          <U n="literal">
+            <L n="conditions">
+              <V t="time_based">
+                <U n="time_based">
+                  <T n="max_time">120</T>
+                  <T n="min_time">120</T>
+                </U>
+              </V>
+            </L>
+            <E n="interaction_action">EXIT_NATURALLY</E>
+          </U>
+        </V>
+        <V t="literal">
+          <U n="literal">
+            <L n="conditions">
+              <V t="buff_based">
+                <U n="buff_based">
+                  <T n="buff">221541<!--Buff: buff_Spells_Frozen_Fail--></T>
+                  <E n="timing">NOT_HAS_BUFF</E>
+                </U>
+              </V>
+            </L>
+            <E n="interaction_action">EXIT_NATURALLY</E>
+          </U>
+        </V>
+      </L>
+      <V n="content" t="looping_content">
+        <U n="looping_content">
+          <U n="animation_ref">
+            <T n="factory">215491<!--AnimationElement: spells_Freeze_Fail--></T>
+          </U>
+        </U>
+      </V>
+    </U>
+  </V>
+  <L n="basic_extras">
+    <V t="buff_fire_and_forget">
+      <U n="buff_fire_and_forget">
+        <U n="buff">
+          <V t="enabled" n="buff_reason">
+            <T n="enabled">0x8D93BE25<!--String: "(Por hechizo <i>Congelatio</i>)"--></T>
+          </V>
+          <T n="buff_type">222830<!--Buff: buff_Spells_Frozen_Fail_Visible--></T>
+        </U>
+        <V n="timing" t="on_xevt">
+          <U n="on_xevt">
+            <T n="xevt_id">200</T>
+          </U>
+        </V>
+      </U>
+    </V>
+    <V t="buff">
+      <U n="buff">
+        <U n="buff_type">
+          <T n="buff_type">221541<!--Buff: buff_Spells_Frozen_Fail--></T>
+        </U>
+      </U>
+    </V>
+  </L>
+  <V t="disable_focus" n="basic_focus" />
+  <L n="basic_liabilities">
+    <V t="critical_priority" />
+    <V t="remove_buff">
+      <U n="remove_buff">
+        <T n="buff_to_remove">215498<!--Buff: buff_Spells_Frozen--></T>
+      </U>
+    </V>
+    <V t="remove_buff">
+      <U n="remove_buff">
+        <T n="buff_to_remove">215587<!--Buff: buff_Spells_Frozen_Charged--></T>
+      </U>
+    </V>
+    <V t="remove_buff">
+      <U n="remove_buff">
+        <T n="buff_to_remove">221541<!--Buff: buff_Spells_Frozen_Fail--></T>
+      </U>
+    </V>
+    <V t="remove_buff">
+      <U n="remove_buff">
+        <T n="buff_to_remove">222830<!--Buff: buff_Spells_Frozen_Fail_Visible--></T>
+      </U>
+    </V>
+  </L>
+  <V t="disabled" n="basic_reserve_object" />
+  <T n="can_shoo">False</T>
+  <V t="disabled" n="content_score" />
+  <T n="display_name">0xCF886D5F<!--String: "<i>Congelatio</i>"--></T>
+  <U n="display_name_text_tokens">
+    <L n="tokens">
+      <V t="participant_type">
+        <U n="participant_type">
+          <V t="from_participant" n="objects">
+            <U n="from_participant">
+              <E n="participant">Actor</E>
+            </U>
+          </V>
+        </U>
+      </V>
+      <V t="participant_type">
+        <U n="participant_type">
+          <V t="from_participant" n="objects">
+            <U n="from_participant">
+              <E n="participant">Object</E>
+            </U>
+          </V>
+        </U>
+      </V>
+    </L>
+  </U>
+  <L n="interaction_category_tags">
+    <E>Interaction_Super</E>
+    <E>Interaction_All</E>
+  </L>
+  <E n="scoring_priority">NORMAL</E>
+  <T n="subaction_selection_weight">1</T>
+  <V t="literal" n="super_affordance_compatibility">
+    <U n="literal">
+      <V n="default_inclusion" t="exclude_all">
+        <U n="exclude_all">
+          <L n="include_affordances">
+            <T>216991<!--SuperInteraction: spells_Sim_Fire_Unfreeze--></T>
+            <T>13328<!--ImmediateSuperInteraction: debug_Reset--></T>
+            <T>216992<!--SuperInteraction: spells_Sim_Fire_Unfreeze_SpectralReach--></T>
+          </L>
+        </U>
+      </V>
+    </U>
+  </V>
+  <V t="enabled" n="super_affordance_klobberers">
+    <V n="enabled" t="literal">
+      <U n="literal">
+        <V n="default_inclusion" t="exclude_all">
+          <U n="exclude_all">
+            <L n="include_lists">
+              <T>36156<!--AffordanceList: AffordanceList_Socialize--></T>
+            </L>
+          </U>
+        </V>
+      </U>
+    </V>
+  </V>
+  <E n="target_type">ACTOR</E>
+  <L n="test_globals">
+    <V t="sim_info">
+      <U n="sim_info">
+        <V t="specified" n="ages" />
+        <V t="specified" n="species">
+          <U n="specified">
+            <L n="species">
+              <E />
+            </L>
+          </U>
+        </V>
+        <E n="who">Actor</E>
+      </U>
+    </V>
+  </L>
+  <T n="time_overhead">30</T>
+</I>

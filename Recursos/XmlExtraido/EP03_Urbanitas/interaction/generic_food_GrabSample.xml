@@ -1,0 +1,505 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<I c="GrabServingSuperInteraction" i="interaction" m="crafting.crafting_interactions" n="generic_food_GrabSample" s="136365">
+  <V t="reference" n="_animation_actor_map">
+    <T n="reference">104044<!--AnimationActorMap: CreateAndPickupObject--></T>
+  </V>
+  <L n="_constraints">
+    <U>
+      <L n="constraints">
+        <U>
+          <V n="value" t="circle">
+            <U n="circle">
+              <T n="ideal_radius">0.7</T>
+              <T n="ideal_radius_width">0.1</T>
+              <T n="radius">2.5</T>
+            </U>
+          </V>
+        </U>
+      </L>
+    </U>
+    <U>
+      <L n="constraints">
+        <U>
+          <V n="value" t="facing">
+            <U n="facing">
+              <T n="inner_radius">0</T>
+              <T n="range">180</T>
+            </U>
+          </V>
+        </U>
+      </L>
+    </U>
+  </L>
+  <L n="_false_advertisements" />
+  <V t="participant" n="_icon">
+    <U n="participant">
+      <L n="participant_type">
+        <E>Object</E>
+      </L>
+    </U>
+  </V>
+  <V t="enabled" n="_saveable" />
+  <L n="_static_commodities">
+    <U>
+      <T n="static_commodity">16403<!--StaticCommodity: Crafting--></T>
+    </U>
+    <U>
+      <T n="static_commodity">24930<!--StaticCommodity: StaticCommodity_PoliteHunger--></T>
+    </U>
+    <U>
+      <T n="static_commodity">136402<!--StaticCommodity: staticCommodity_Festivals_GrabSample--></T>
+    </U>
+    <U>
+      <T n="static_commodity">106184<!--StaticCommodity: staticCommodity_SimRay_MindControl_Eat--></T>
+    </U>
+    <U>
+      <T n="static_commodity">136416<!--StaticCommodity: staticCommodity_Festivals_Overeat--></T>
+    </U>
+    <U>
+      <T n="static_commodity">177237<!--StaticCommodity: staticCommodity_Skeleton--></T>
+    </U>
+  </L>
+  <T n="allow_autonomous">True</T>
+  <T n="allow_from_object_inventory">True</T>
+  <T n="allow_from_sim_inventory">True</T>
+  <L n="appropriateness_tags">
+    <E>Appropriateness_Eating</E>
+  </L>
+  <T n="attention_cost">0.5</T>
+  <L n="basic_extras">
+    <V t="store_sim">
+      <U n="store_sim">
+        <E n="destination_participant">Actor</E>
+        <V n="source_participant" t="specific_participant">
+          <E n="specific_participant">StoredSim</E>
+        </V>
+        <U n="success_chance">
+          <L n="multipliers">
+            <U>
+              <T n="multiplier">0</T>
+              <L n="tests">
+                <L>
+                  <V t="statistic">
+                    <U n="statistic">
+                      <T n="must_have_stat">False</T>
+                      <T n="stat">187177<!--Statistic: statistic_Object_Consumable-Sabotaged--></T>
+                      <V t="value_threshold" n="threshold">
+                        <U n="value_threshold">
+                          <E n="comparison">EQUAL</E>
+                          <T n="value">0</T>
+                        </U>
+                      </V>
+                      <E n="who">Object</E>
+                    </U>
+                  </V>
+                </L>
+              </L>
+            </U>
+          </L>
+        </U>
+        <V t="at_beginning" n="timing" />
+      </U>
+    </V>
+    <V t="loot">
+      <U n="loot">
+        <L n="loot_list">
+          <T>137153<!--LootActions: loot_Festival_Food_SampleCooldown--></T>
+        </L>
+      </U>
+    </V>
+  </L>
+  <V t="enabled" n="basic_reserve_object">
+    <U n="enabled">
+      <L n="subject_list">
+        <U>
+          <V n="reserve_type" t="multi">
+            <U n="multi">
+              <V n="reservation_limit" t="stat_based">
+                <U n="stat_based">
+                  <T n="reservation_statistic">16672<!--Statistic: statistic_Object_Consumable_Servings--></T>
+                </U>
+              </V>
+            </U>
+          </V>
+          <L n="subject">
+            <E>Object</E>
+          </L>
+        </U>
+      </L>
+    </U>
+  </V>
+  <L n="consume_affordances_override">
+    <T>136354<!--SuperInteraction: generic_Consume_Sample--></T>
+  </L>
+  <V t="disabled" n="content_score" />
+  <T n="decrease_serving">False</T>
+  <U n="default_grab_serving_animation">
+    <T n="factory">11500<!--AnimationElement: Food_Grab--></T>
+  </U>
+  <T n="display_name">0x14F39574<!--String: "Probar muestra de comida"--></T>
+  <U n="display_name_text_tokens">
+    <L n="tokens">
+      <V t="participant_type">
+        <U n="participant_type">
+          <V t="from_participant" n="objects">
+            <U n="from_participant">
+              <E n="participant">Actor</E>
+            </U>
+          </V>
+        </U>
+      </V>
+      <V t="participant_type">
+        <U n="participant_type">
+          <V t="from_participant" n="objects">
+            <U n="from_participant">
+              <E n="participant">Object</E>
+            </U>
+          </V>
+        </U>
+      </V>
+    </L>
+  </U>
+  <V t="enabled" n="goal_height_limit">
+    <T n="enabled">1</T>
+  </V>
+  <L n="interaction_category_tags">
+    <E>Interaction_Super</E>
+    <E>Interaction_All</E>
+  </L>
+  <V t="single" n="outcome">
+    <U n="single">
+      <U n="actions">
+        <L n="events_to_send">
+          <E>actorCareer_PrePerformance_GrabFood</E>
+        </L>
+      </U>
+    </U>
+  </V>
+  <V t="enabled" n="pie_menu_icon">
+    <V n="enabled" t="resource_key">
+      <U n="resource_key">
+        <T n="key" p="InGame\UI\Icons\PieMenu\SpecialInteractions\specialinteraction_festival_piemenu.png">2f7d0004:00000000:af799da19e70a677</T>
+      </U>
+    </V>
+  </V>
+  <T n="pie_menu_priority">10</T>
+  <U n="posture_preferences">
+    <T n="apply_penalties">False</T>
+  </U>
+  <T n="posture_type">15522<!--CarryingObject: posture_CarryObject--></T>
+  <L n="rallyable">
+    <U>
+      <V t="enabled" n="pie_menu_icon">
+        <V n="enabled" t="resource_key">
+          <U n="resource_key">
+            <T n="key" p="InGame\UI\Icons\PieMenu\SpecialInteractions\specialinteraction_ensembles_piemenu.png">2f7d0004:00000000:a113281581961bf1</T>
+          </U>
+        </V>
+      </V>
+    </U>
+  </L>
+  <V t="enabled" n="route_start_balloon">
+    <U n="enabled">
+      <U n="balloon">
+        <L n="balloon_choices">
+          <U>
+            <V n="item" t="balloon_icon">
+              <U n="balloon_icon">
+                <V t="participant" n="icon">
+                  <U n="participant">
+                    <L n="participant_type">
+                      <E>Object</E>
+                    </L>
+                  </U>
+                </V>
+              </U>
+            </V>
+          </U>
+        </L>
+        <L n="balloon_target">
+          <E>Actor</E>
+        </L>
+      </U>
+    </U>
+  </V>
+  <E n="scoring_priority">HIGH</E>
+  <T n="si_to_push">136354<!--SuperInteraction: generic_Consume_Sample--></T>
+  <T n="subaction_selection_weight">1</T>
+  <V t="literal" n="super_affordance_compatibility">
+    <U n="literal">
+      <V n="default_inclusion" t="include_all">
+        <U n="include_all">
+          <L n="exclude_affordances">
+            <T>13433<!--SuperInteraction: generic_consume_food--></T>
+          </L>
+        </U>
+      </V>
+    </U>
+  </V>
+  <E n="target_type">OBJECT</E>
+  <L n="test_autonomous">
+    <L>
+      <V t="test_set_reference">
+        <T n="test_set_reference">230357<!--TestSetInstance: testSet_Eat_Food_CTYAE_Rules_MainPath--></T>
+      </V>
+      <V t="test_set_reference">
+        <T n="test_set_reference">143264<!--TestSetInstance: testSetInstance_Festival_NoTrashPutAway--></T>
+      </V>
+      <V t="test_set_reference">
+        <T n="test_set_reference">188642<!--TestSetInstance: TestSet_SabotagedFood--></T>
+      </V>
+      <V t="buff">
+        <U n="buff">
+          <L n="blacklist">
+            <T>144204<!--Buff: buff_OwnableBusiness_Restaurant_AllowEating--></T>
+            <T>137152<!--Buff: buff_Festival_Food_Sample_Cooldown--></T>
+          </L>
+        </U>
+      </V>
+    </L>
+    <L>
+      <V t="test_set_reference">
+        <T n="test_set_reference">230415<!--TestSetInstance: testSet_Eat_Food_CTYAE_Rules_RestaurantDiner--></T>
+      </V>
+      <V t="test_set_reference">
+        <T n="test_set_reference">143264<!--TestSetInstance: testSetInstance_Festival_NoTrashPutAway--></T>
+      </V>
+      <V t="test_set_reference">
+        <T n="test_set_reference">188642<!--TestSetInstance: TestSet_SabotagedFood--></T>
+      </V>
+      <V t="buff">
+        <U n="buff">
+          <L n="blacklist">
+            <T>144204<!--Buff: buff_OwnableBusiness_Restaurant_AllowEating--></T>
+            <T>137152<!--Buff: buff_Festival_Food_Sample_Cooldown--></T>
+          </L>
+        </U>
+      </V>
+    </L>
+    <L>
+      <V t="test_set_reference">
+        <T n="test_set_reference">230380<!--TestSetInstance: testSet_Eat_Food_CTYAE_Rules_Glutton--></T>
+      </V>
+      <V t="test_set_reference">
+        <T n="test_set_reference">143264<!--TestSetInstance: testSetInstance_Festival_NoTrashPutAway--></T>
+      </V>
+      <V t="test_set_reference">
+        <T n="test_set_reference">188642<!--TestSetInstance: TestSet_SabotagedFood--></T>
+      </V>
+      <V t="buff">
+        <U n="buff">
+          <L n="blacklist">
+            <T>144204<!--Buff: buff_OwnableBusiness_Restaurant_AllowEating--></T>
+            <T>137152<!--Buff: buff_Festival_Food_Sample_Cooldown--></T>
+          </L>
+        </U>
+      </V>
+    </L>
+    <L>
+      <V t="test_set_reference">
+        <T n="test_set_reference">230382<!--TestSetInstance: testSet_Eat_Food_CTYAE_Rules_Foodie--></T>
+      </V>
+      <V t="test_set_reference">
+        <T n="test_set_reference">143264<!--TestSetInstance: testSetInstance_Festival_NoTrashPutAway--></T>
+      </V>
+      <V t="test_set_reference">
+        <T n="test_set_reference">188642<!--TestSetInstance: TestSet_SabotagedFood--></T>
+      </V>
+      <V t="buff">
+        <U n="buff">
+          <L n="blacklist">
+            <T>144204<!--Buff: buff_OwnableBusiness_Restaurant_AllowEating--></T>
+            <T>137152<!--Buff: buff_Festival_Food_Sample_Cooldown--></T>
+          </L>
+        </U>
+      </V>
+    </L>
+    <L>
+      <V t="test_set_reference">
+        <T n="test_set_reference">230375<!--TestSetInstance: testSet_Eat_Food_CTYAE_Rules_Erratic--></T>
+      </V>
+      <V t="test_set_reference">
+        <T n="test_set_reference">143264<!--TestSetInstance: testSetInstance_Festival_NoTrashPutAway--></T>
+      </V>
+      <V t="test_set_reference">
+        <T n="test_set_reference">188642<!--TestSetInstance: TestSet_SabotagedFood--></T>
+      </V>
+      <V t="buff">
+        <U n="buff">
+          <L n="blacklist">
+            <T>144204<!--Buff: buff_OwnableBusiness_Restaurant_AllowEating--></T>
+            <T>137152<!--Buff: buff_Festival_Food_Sample_Cooldown--></T>
+          </L>
+        </U>
+      </V>
+    </L>
+    <L>
+      <V t="test_set_reference">
+        <T n="test_set_reference">230384<!--TestSetInstance: testSet_Eat_Food_CTYAE_Rules_Vegetarian--></T>
+      </V>
+      <V t="test_set_reference">
+        <T n="test_set_reference">143264<!--TestSetInstance: testSetInstance_Festival_NoTrashPutAway--></T>
+      </V>
+      <V t="test_set_reference">
+        <T n="test_set_reference">188642<!--TestSetInstance: TestSet_SabotagedFood--></T>
+      </V>
+      <V t="buff">
+        <U n="buff">
+          <L n="blacklist">
+            <T>144204<!--Buff: buff_OwnableBusiness_Restaurant_AllowEating--></T>
+            <T>137152<!--Buff: buff_Festival_Food_Sample_Cooldown--></T>
+          </L>
+        </U>
+      </V>
+    </L>
+    <L>
+      <V t="test_set_reference">
+        <T n="test_set_reference">230387<!--TestSetInstance: testSet_Eat_Food_CTYAE_Rules_ChildOfTheOcean--></T>
+      </V>
+      <V t="test_set_reference">
+        <T n="test_set_reference">143264<!--TestSetInstance: testSetInstance_Festival_NoTrashPutAway--></T>
+      </V>
+      <V t="test_set_reference">
+        <T n="test_set_reference">188642<!--TestSetInstance: TestSet_SabotagedFood--></T>
+      </V>
+      <V t="buff">
+        <U n="buff">
+          <L n="blacklist">
+            <T>144204<!--Buff: buff_OwnableBusiness_Restaurant_AllowEating--></T>
+            <T>137152<!--Buff: buff_Festival_Food_Sample_Cooldown--></T>
+          </L>
+        </U>
+      </V>
+    </L>
+    <L>
+      <V t="test_set_reference">
+        <T n="test_set_reference">230665<!--TestSetInstance: testSet_Eat_Food_CTYAE_Rules_EvangelizedAboutVegetarianBenefits--></T>
+      </V>
+      <V t="test_set_reference">
+        <T n="test_set_reference">143264<!--TestSetInstance: testSetInstance_Festival_NoTrashPutAway--></T>
+      </V>
+      <V t="test_set_reference">
+        <T n="test_set_reference">188642<!--TestSetInstance: TestSet_SabotagedFood--></T>
+      </V>
+      <V t="buff">
+        <U n="buff">
+          <L n="blacklist">
+            <T>144204<!--Buff: buff_OwnableBusiness_Restaurant_AllowEating--></T>
+            <T>137152<!--Buff: buff_Festival_Food_Sample_Cooldown--></T>
+          </L>
+        </U>
+      </V>
+    </L>
+    <L>
+      <V t="test_set_reference">
+        <T n="test_set_reference">230393<!--TestSetInstance: testSet_Eat_Food_CTYAE_Rules_EvangelizedAboutGrilledCheese--></T>
+      </V>
+      <V t="test_set_reference">
+        <T n="test_set_reference">143264<!--TestSetInstance: testSetInstance_Festival_NoTrashPutAway--></T>
+      </V>
+      <V t="test_set_reference">
+        <T n="test_set_reference">188642<!--TestSetInstance: TestSet_SabotagedFood--></T>
+      </V>
+      <V t="buff">
+        <U n="buff">
+          <L n="blacklist">
+            <T>144204<!--Buff: buff_OwnableBusiness_Restaurant_AllowEating--></T>
+            <T>137152<!--Buff: buff_Festival_Food_Sample_Cooldown--></T>
+          </L>
+        </U>
+      </V>
+    </L>
+  </L>
+  <L n="test_globals">
+    <V t="sim_info">
+      <U n="sim_info">
+        <V t="specified" n="ages">
+          <L n="specified">
+            <E>TEEN</E>
+            <E>YOUNGADULT</E>
+            <E>ADULT</E>
+            <E>ELDER</E>
+            <E>CHILD</E>
+          </L>
+        </V>
+        <V t="specified" n="species">
+          <U n="specified">
+            <L n="species">
+              <E />
+            </L>
+          </U>
+        </V>
+        <E n="who">Actor</E>
+      </U>
+    </V>
+    <V t="state">
+      <U n="state">
+        <E n="operator">NOTEQUAL</E>
+        <T n="value">15320<!--CommodityBasedObjectStateValue: Servings_Empty--></T>
+        <E n="who">Object</E>
+      </U>
+    </V>
+    <V t="buff">
+      <U n="buff">
+        <L n="blacklist">
+          <T>191752<!--Buff: buff_Vampire_DontEat--></T>
+        </L>
+      </U>
+    </V>
+    <V t="location">
+      <U n="location">
+        <U n="location_tests">
+          <V n="is_on_active_lot" t="Is_or_is_not_on_active_lot">
+            <U n="Is_or_is_not_on_active_lot">
+              <T n="is_or_is_not_on_active_lot">False</T>
+            </U>
+          </V>
+        </U>
+        <E n="subject">Object</E>
+      </U>
+    </V>
+    <V t="festival_running">
+      <U n="festival_running">
+        <V t="enabled" n="check_if_on_festival_street" />
+        <V t="enabled" n="drama_node">
+          <T n="enabled">140082<!--FestivalDramaNode: festivalDramaNode_FoodFestival--></T>
+        </V>
+        <U n="valid_time_blocks">
+          <T n="pre_festival">False</T>
+        </U>
+      </U>
+    </V>
+    <V t="state">
+      <U n="state">
+        <E n="operator">NOTEQUAL</E>
+        <T n="value">15320<!--CommodityBasedObjectStateValue: Servings_Empty--></T>
+      </U>
+    </V>
+    <V t="test_set_reference">
+      <T n="test_set_reference">252105<!--TestSetInstance: testSet_SimBot_Disallow--></T>
+    </V>
+    <V t="posture">
+      <U n="posture">
+        <L n="prohibited_postures">
+          <T>39398<!--MobilePosture: posture_Swim--></T>
+          <T>247297<!--Posture: posture_HotSprings_Sit--></T>
+        </L>
+        <V n="tooltip" t="enabled">
+          <T n="enabled">0x2F904076<!--String: "No se puede realizar esta acción dentro de una piscina, un spa ni ningún otro objeto de relajación con agua."--></T>
+        </V>
+      </U>
+    </V>
+  </L>
+  <T n="time_overhead">30</T>
+  <L n="transferred_states">
+    <T>15246<!--ObjectState: Masterwork--></T>
+    <T>116682<!--ObjectState: objectState_Baking_FreshnessDecay--></T>
+    <T>26212<!--ObjectState: FreshnessDecay--></T>
+  </L>
+  <L n="transferred_stats">
+    <T>16591<!--Commodity: commodity_freshness--></T>
+    <T>16671<!--Statistic: statistic_Object_Consumable-Quality--></T>
+    <T>187177<!--Statistic: statistic_Object_Consumable-Sabotaged--></T>
+  </L>
+  <T n="use_linked_recipe_mapping">True</T>
+</I>

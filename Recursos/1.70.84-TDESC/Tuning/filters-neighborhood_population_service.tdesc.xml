@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+
+<TuningRoot>
+    <Module name="filters.neighborhood_population_service" muid="B95662125607D004">
+        <Class name="_FillZonePopulationRequest" muid="49EDA63A064DB3D0">
+            <Tunable type="float" name="RELATIONSHIP_DEPTH_WEIGHT" class="Tunable" default="0.5" display="Relationship Depth Weight" muid="8C5DF71E6C41F0C4" description="Multiplier used to modify relationship depth to determine how&#xA;important depth is in weight.  The higher the multiplier the&#xA;more relationship depth is added to weight score.  The lower the&#xA;weight the less likely household will be moved in." tuning_state="NeedsTuning" Deprecated="False" filter="0" group="General" />
+
+            <Tunable type="float" name="RELATIONSHIP_TRACK_MULTIPLIER" class="Tunable" default="2" display="Relationship Track Multiplier" muid="B37EB9D60D628778" description="Multiply the number of tracks by this multiplier to provide an&#xA;additional score to determine if household should be moved in. The&#xA;higher the multiplier the more the number of tracks bonus is added to&#xA;weight.  The lower the weight the less likely household will be moved&#xA;in." tuning_state="NeedsTuning" Deprecated="False" filter="0" group="General" />
+
+            <TunableList name="RELATIONSHIP_UTILITY_CURVE" class="TunableWeightedUtilityCurve" display="Relationship Utility Curve" muid="5D964CDB2CB80D07" description="Based on the relationship score for a household apply a multiplier to&#xA;weight for determining score for moving household in." Deprecated="False" filter="0" group="General">
+                <TunableTuple class="TunableVector2" muid="93EBF570BA4601B8" description="Point on a Curve" Deprecated="False" filter="0" group="General">
+                    <Tunable type="float" name="x" class="Tunable" default="0.0" display="x: overall_score_for_household" muid="7E99AAC7D46C51F1" description="x component" tuning_state="NeedsTuning" Deprecated="False" filter="0" group="General" />
+                    <Tunable type="float" name="y" class="Tunable" default="0.0" display="y: multiplier_to_apply" muid="3698243113968C49" description="y component" tuning_state="NeedsTuning" Deprecated="False" filter="0" group="General" />
+                </TunableTuple>
+            </TunableList>
+        </Class>
+
+        <Class name="_FillRentableLotRequest" muid="DFE6C2E1FDDD9C0C">
+            <TdescFragTag name="CAN_RENT_TESTS" class="TunableTestSet" display="Can Rent Tests" muid="E32991523868FC6B" description="A set of tests that must pass for a Sim to be able to rent a lot as either the leader or a member of the travel&#xA;group." filter="0" group="General" />
+        </Class>
+
+        <Class name="NeighborhoodPopulationService" muid="83550B37162063D3">
+            <TunableList name="HOMELESS_HOUSEHOLD_TEMPLATES" class="TunableList" display="Homeless Household Templates" muid="79B64600525519BE" description="A List of household templates that will be considered for homelesss&#xA;households." Deprecated="False" filter="0" group="General">
+                <TunableTuple class="TunableHouseholdTemplateWeightTuple" muid="7033514BCD324142" Deprecated="False" filter="0" group="General">
+                    <Tunable type="sim_template" name="household_template" class="TunableReference" display="Household Template" muid="79FAABB1F0519AA0" description="Household template that will be created for neighborhood population" allow_none="False" Deprecated="False" filter="0" group="General" pack_safe="True" restrict="HouseholdTemplate" />
+                    <Tunable type="float" name="weight" class="Tunable" default="1" display="Weight" muid="35721F326C46A2FF" description="Weight of this template being chosen." tuning_state="NeedsTuning" Deprecated="False" filter="0" group="General" />
+                </TunableTuple>
+            </TunableList>
+
+            <Tunable type="float" name="KID_TO_KID_BED_MULTIPLIER" class="TunableRange" default="1" display="Kid To Kid Bed Multiplier" muid="A977677FAB6785CD" min="1" max="None" description="When trying to populate a lot if lot has a kids bed and household has a&#xA;kid in it.  This multiplier will be applied to the weight of household&#xA;when selecting household to move in." tuning_state="NeedsTuning" Deprecated="False" filter="0" group="General" />
+
+            <TunableList name="NUM_BEDS_TO_IDEAL_HOUSEHOLD_CURVE" class="TunableMapping" display="Num Beds To Ideal Household Curve" muid="EE9885220DE7A59C" mapping_key="Num Beds" mapping_value="Ideal Household Curve" description="Based on the number of beds and the number of sims in the household, a&#xA;multiplier will be applied to the household to determine if household&#xA;will be selected and added to zone." Deprecated="False" filter="0" group="General">
+                <TunableTuple class="TunableTuple" muid="3075645CB5C8BCF3" Deprecated="False" filter="0" group="General">
+                    <TunableList name="Ideal Household Curve" class="TunableCurve" display="Ideal Household Curve" muid="E4E0D7DF41D4A35" Deprecated="False" filter="0" group="General">
+                        <TunableTuple class="TunableVector2" muid="D590DAE6F57F9422" description="Point on a Curve" Deprecated="False" filter="0" group="General">
+                            <Tunable type="float" name="x" class="Tunable" default="0.0" display="x: num_sim_in_household" muid="1163FBFDDD70D50E" description="x component" tuning_state="NeedsTuning" Deprecated="False" filter="0" group="General" />
+                            <Tunable type="float" name="y" class="Tunable" default="0.0" display="y: bonus_multiplier" muid="F81514E26EEB1B06" description="y component" tuning_state="NeedsTuning" Deprecated="False" filter="0" group="General" />
+                        </TunableTuple>
+                    </TunableList>
+                    <Tunable type="int" name="Num Beds" class="Tunable" default="1" display="Num Beds" muid="664675ADD92153BE" tuning_state="NeedsTuning" Deprecated="False" filter="0" group="General" />
+                </TunableTuple>
+            </TunableList>
+
+            <TunableList name="REGION_TO_HOUSEHOLD_POPULATION_DATA" class="TunableMapping" display="Region To Household Population Data" muid="CF3CC9A626FC4900" mapping_key="Region Description" mapping_value="Household Population Data" description="Mapping of Region Description ID to household population data.  This is&#xA;used to fill households for the different type of regions." Deprecated="False" filter="0" group="General">
+                <TunableTuple class="TunableTuple" muid="2259C77F62F68A35" Deprecated="False" filter="0" group="General">
+                    <TunableTuple name="Household Population Data" class="TunableHouseholdPopulationData" display="Household Population Data" muid="6336008D1E467455" description="Contains data required to fill neighborhood with sims." Deprecated="False" filter="0" group="General">
+                        <TunableList name="household_description_to_templates" class="TunableMapping" display="Household Description To Templates" muid="79E71B0B7CFD464B" mapping_key="House Description" mapping_value="Household Templates" description="Mapping of House Description ID to household templates and weight.  This&#xA;is used to fill households for the different type of regions." Deprecated="False" filter="0" group="General">
+                            <TunableTuple class="TunableTuple" muid="BD60618FE865C1DC" Deprecated="False" filter="0" group="General">
+                                <Tunable type="housedescription" name="House Description" class="TunableReference" display="House Description" muid="6FF95C3ECEF55C96" Deprecated="False" filter="0" group="General" pack_safe="True" />
+                                <TunableList name="Household Templates" class="TunableList" display="Household Templates" muid="6DBB5C456C80B773" Deprecated="False" filter="0" group="General">
+                                    <TunableTuple class="TunableHouseholdTemplateWeightTuple" muid="4FE235B5A095FAB1" Deprecated="False" filter="0" group="General">
+                                        <Tunable type="sim_template" name="household_template" class="TunableReference" display="Household Template" muid="739B4BE21A1205A" description="Household template that will be created for neighborhood population" allow_none="False" Deprecated="False" filter="0" group="General" pack_safe="True" restrict="HouseholdTemplate" />
+                                        <Tunable type="float" name="weight" class="Tunable" default="1" display="Weight" muid="BD5E1342A6500B2" description="Weight of this template being chosen." tuning_state="NeedsTuning" Deprecated="False" filter="0" group="General" />
+                                    </TunableTuple>
+                                </TunableList>
+                            </TunableTuple>
+                        </TunableList>
+                        <TunableList name="street_description_to_templates" class="TunableMapping" display="Street Description To Templates" muid="23E4F1D4E1A79AA5" mapping_key="House Description" mapping_value="Household Templates" description="Mapping of World Description ID to household templates and weight.  This&#xA;is used to fill households for the different type of streets." Deprecated="False" filter="0" group="General">
+                            <TunableTuple class="TunableTuple" muid="E25F9546A3859223" Deprecated="False" filter="0" group="General">
+                                <Tunable type="worlddescription" name="House Description" class="TunableReference" display="House Description" muid="7663B897701FA98E" Deprecated="False" filter="0" group="General" pack_safe="True" />
+                                <TunableList name="Household Templates" class="TunableList" display="Household Templates" muid="895D78A3F775ECA6" Deprecated="False" filter="0" group="General">
+                                    <TunableTuple class="TunableHouseholdTemplateWeightTuple" muid="E740A7A8D212FED9" Deprecated="False" filter="0" group="General">
+                                        <Tunable type="sim_template" name="household_template" class="TunableReference" display="Household Template" muid="7943A5D373F05D13" description="Household template that will be created for neighborhood population" allow_none="False" Deprecated="False" filter="0" group="General" pack_safe="True" restrict="HouseholdTemplate" />
+                                        <Tunable type="float" name="weight" class="Tunable" default="1" display="Weight" muid="EDF1B365B18E5C05" description="Weight of this template being chosen." tuning_state="NeedsTuning" Deprecated="False" filter="0" group="General" />
+                                    </TunableTuple>
+                                </TunableList>
+                            </TunableTuple>
+                        </TunableList>
+                    </TunableTuple>
+                    <Tunable type="regiondescription" name="Region Description" class="TunableReference" display="Region Description" muid="446005A242C85BC8" Deprecated="False" filter="0" group="General" pack_safe="True" />
+                </TunableTuple>
+            </TunableList>
+
+            <Tunable type="float" name="SIGNIFICANT_OTHER_MULTIPLIER" class="TunableRange" default="1" display="Significant Other Multiplier" muid="35115AA47EA83809" min="1" max="None" description="When trying to populate a lot and if lot has a double bed and household&#xA;contains a pair of sims that are considered significant other.  This&#xA;multiplier will be applied to the weight of household when selecting&#xA;household to move in." tuning_state="NeedsTuning" Deprecated="False" filter="0" group="General" />
+        </Class>
+    </Module>
+</TuningRoot>

@@ -1,0 +1,230 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<I c="RingDoorbellSuperInteraction" i="interaction" m="situations.visiting.visiting_interactions" n="door_PlayerRingDoorbell_UniversityHousing" s="229629">
+  <T n="_always_allow_greeting">True</T>
+  <U n="_bad_relationship_failure_notification">
+    <V n="text" t="single">
+      <T n="single">0x126076<!--String: "Parece que hay gente en casa, pero nadie quiere abrir la puerta..."--></T>
+    </V>
+  </U>
+  <L n="_constraints">
+    <U>
+      <L n="constraints">
+        <U>
+          <V n="value" t="front_door">
+            <U n="front_door">
+              <U n="line_of_sight">
+                <T n="max_line_of_sight_radius">2</T>
+              </U>
+            </U>
+          </V>
+        </U>
+      </L>
+    </U>
+  </L>
+  <V t="participant" n="_icon">
+    <U n="participant">
+      <L n="participant_type">
+        <E>Object</E>
+      </L>
+    </U>
+  </V>
+  <U n="_nobody_home_failure_notification">
+    <V n="text" t="single">
+      <T n="single">0x8E5DD4A5<!--String: "Parece que no hay nadie en casa."--></T>
+    </V>
+  </U>
+  <V t="enabled" n="_saveable" />
+  <U n="_success_notification">
+    <V n="icon" t="enabled">
+      <V n="enabled" t="resource_key">
+        <U n="resource_key">
+          <T n="key" p="InGame\UI\Icons\Headlines\Final\headline_frontdoor.png">2f7d0004:00000000:08db07f3f7ebf90d</T>
+        </U>
+      </V>
+    </V>
+    <V t="enabled" n="secondary_icon">
+      <V t="participant" n="enabled" />
+    </V>
+    <V n="text" t="single">
+      <T n="single">0xCAC933E4<!--String: "¡Adelante!"--></T>
+    </V>
+    <E n="visual_type">SPEECH</E>
+  </U>
+  <T n="allow_autonomous">False</T>
+  <T n="allow_user_directed">True</T>
+  <T n="attention_cost">0.5</T>
+  <V n="basic_content" t="one_shot">
+    <U n="one_shot">
+      <U n="animation_ref">
+        <T n="factory">31008<!--AnimationElement: Door_Ring_Doorbell--></T>
+      </U>
+    </U>
+  </V>
+  <L n="basic_extras">
+    <V t="broadcaster">
+      <U n="broadcaster">
+        <L n="broadcaster_types">
+          <U>
+            <T n="item">162170<!--Broadcaster: broadcaster_PetReactions_Dog_Door--></T>
+          </U>
+        </L>
+        <E n="participant">Object</E>
+      </U>
+    </V>
+  </L>
+  <V t="disabled" n="content_score" />
+  <T n="display_name">0x7D73F407<!--String: "Llamar a la puerta"--></T>
+  <U n="display_name_text_tokens">
+    <L n="tokens">
+      <V t="participant_type">
+        <U n="participant_type">
+          <V n="objects" t="from_participant">
+            <U n="from_participant">
+              <E n="participant">Actor</E>
+            </U>
+          </V>
+        </U>
+      </V>
+      <V t="participant_type">
+        <U n="participant_type">
+          <V t="from_participant" n="objects">
+            <U n="from_participant">
+              <E n="participant">Object</E>
+            </U>
+          </V>
+        </U>
+      </V>
+    </L>
+  </U>
+  <L n="interaction_category_tags">
+    <E>Interaction_VisitLot</E>
+    <E>Interaction_Super</E>
+    <E>Interaction_All</E>
+  </L>
+  <U n="posture_preferences">
+    <T n="apply_penalties">False</T>
+  </U>
+  <V t="enabled" n="route_start_balloon">
+    <U n="enabled">
+      <U n="balloon">
+        <L n="balloon_choices">
+          <U>
+            <V n="item" t="balloon_icon">
+              <U n="balloon_icon">
+                <V t="resource_key" n="icon">
+                  <U n="resource_key">
+                    <T n="key" p="InGame\UI\Icons\Headlines\Final\headline_house.png">2f7d0004:00000000:51f9bfcb772dd174</T>
+                  </U>
+                </V>
+              </U>
+            </V>
+          </U>
+        </L>
+        <L n="balloon_target">
+          <E>Actor</E>
+        </L>
+      </U>
+    </U>
+  </V>
+  <E n="scoring_priority">NORMAL</E>
+  <T n="subaction_selection_weight">1</T>
+  <E n="target_type">OBJECT</E>
+  <L n="test_globals">
+    <V t="sim_info">
+      <U n="sim_info">
+        <V t="specified" n="ages">
+          <L n="specified">
+            <E>TEEN</E>
+            <E>YOUNGADULT</E>
+            <E>ADULT</E>
+            <E>ELDER</E>
+            <E>CHILD</E>
+          </L>
+        </V>
+        <V t="specified" n="species">
+          <U n="specified">
+            <L n="species">
+              <E />
+            </L>
+          </U>
+        </V>
+        <E n="who">Actor</E>
+      </U>
+    </V>
+    <V t="buff">
+      <U n="buff">
+        <V n="whitelist" t="enabled">
+          <L n="enabled">
+            <T>34725<!--Buff: buff_Situation_UngreetedPlayerVisitingNPC--></T>
+          </L>
+        </V>
+      </U>
+    </V>
+    <V t="lot_owner">
+      <U n="lot_owner">
+        <T n="consider_rented_lot_as_owned">False</T>
+        <T n="owns_lot">False</T>
+      </U>
+    </V>
+    <V t="situation_running_test">
+      <U n="situation_running_test">
+        <V n="situation_blacklist" t="enabled">
+          <L n="enabled">
+            <T>34413<!--GreetedPlayerVisitingNPCSituation: Situation_GreetedPlayerVisitingNPC--></T>
+            <T>110690<!--SituationSimple: situation_Career_Detective_Patrol--></T>
+          </L>
+        </V>
+      </U>
+    </V>
+    <V t="state">
+      <U n="state">
+        <T n="value">135096<!--ObjectStateValue: FrontDoor_IsFrontDoor--></T>
+      </U>
+    </V>
+    <V t="zone">
+      <U n="zone">
+        <U n="zone_tests">
+          <V t="enabled" n="is_penthouse">
+            <T n="enabled">False</T>
+          </V>
+          <V t="enabled" n="venue_type">
+            <U n="enabled">
+              <V n="blacklist" t="nothing" />
+              <V t="specify" n="whitelist">
+                <U n="specify">
+                  <L n="whitelist">
+                    <T>208182<!--Venue: venue_rentable_universityHousing--></T>
+                  </L>
+                </U>
+              </V>
+            </U>
+          </V>
+        </U>
+      </U>
+    </V>
+    <V t="situation_running_test">
+      <U n="situation_running_test">
+        <V n="situation_blacklist" t="enabled">
+          <L n="enabled">
+            <T>253765<!--LotStatisticBasedCareerEventSituation: lotStatisticBasedCareerEventSituation_ParanormalInvestigator--></T>
+            <T>254924<!--LotStatisticBasedCareerEventSituation: lotStatisticBasedCareerEventSituation_ParanormalInvestigator_Easy--></T>
+            <T>254923<!--LotStatisticBasedCareerEventSituation: lotStatisticBasedCareerEventSituation_ParanormalInvestigator_Hard--></T>
+          </L>
+        </V>
+      </U>
+    </V>
+    <V t="situation_running_test">
+      <U n="situation_running_test">
+        <V t="enabled" n="situation_whitelist">
+          <L n="enabled">
+            <T>209550<!--RoommateSituation: roommateNPC_Situation--></T>
+          </L>
+        </V>
+        <V n="tooltip" t="enabled">
+          <T n="enabled">0x65EF68B7<!--String: "Aquí no vive nadie."--></T>
+        </V>
+      </U>
+    </V>
+  </L>
+  <T n="time_overhead">30</T>
+</I>

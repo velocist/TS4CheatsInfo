@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+
+<TuningRoot>
+    <Instance instance_type="call_to_action" class="CallToAction" module="call_to_action.call_to_action" muid="4CFBC2F8906D733" description="A specific Call To Action.  (Highlight designed to attract players attention&#xA;and get him to perform an interaction on the specified object)" instance_subclasses_only="False" path="CallsToAction\Descriptions" use_guid_for_reference="True">
+        <TunableVariant type="None" name="_color" class="TunableColor" default="none" display="Color" muid="33C7523508AA2CAB" description="The color of the call to action." Deprecated="False" filter="0" group="General">
+            <TunableTuple name="hex" class="TunableColorHex" display="Hex" muid="55C6A51A25F80002" description="A color." Deprecated="False" filter="0" group="General">
+                <Tunable type="str" name="hex_code" class="Tunable" default="#FFFFFFFF" display="Hex Code" muid="D8B2B77E30FD914" description="An ARGB color in hex, same as one would use in HTML. A leading '0x' or '#' is allowed but not required. You can omit the alpha, in which case opaque is assumed." Deprecated="False" filter="0" group="General" />
+            </TunableTuple>
+            <TunableEnum type="Color" name="name" class="TunableEnumEntry" default="WHITE" display="Name" muid="F1425163ED5C7709" static_entries="sims4-color.Color" Deprecated="False" filter="0" group="General" />
+            <Tunable name="none" class="TunableExistance" display="None" muid="85FC31976A5ACD4" />
+            <TunableTuple name="rgb" class="TunableColorRGBA" display="Rgb" muid="A661404B3D80D55D" description="A color." Deprecated="False" filter="0" group="General">
+                <Tunable type="int" name="a" class="TunableRange" default="255" display="A" muid="58D3DA46D18FFEC9" min="0" max="255" description="alpha value (0-255) (0 is transparent, 255 is opaque)" tuning_state="NeedsTuning" Deprecated="False" filter="0" group="General" />
+                <Tunable type="int" name="b" class="TunableRange" default="255" display="B" muid="259FFFD3B60D59C" min="0" max="255" description="blue value (0-255)" tuning_state="NeedsTuning" Deprecated="False" filter="0" group="General" />
+                <Tunable type="int" name="g" class="TunableRange" default="255" display="G" muid="72CF7145385FCD05" min="0" max="255" description="green value (0-255)" tuning_state="NeedsTuning" Deprecated="False" filter="0" group="General" />
+                <Tunable type="int" name="r" class="TunableRange" default="255" display="R" muid="582D7217735856A5" min="0" max="255" description="red value (0-255)" tuning_state="NeedsTuning" Deprecated="False" filter="0" group="General" />
+            </TunableTuple>
+        </TunableVariant>
+
+        <Tunable type="bool" name="_on_active_lot" class="Tunable" default="True" display="On Active Lot" muid="7F0BBC61FF15C0AF" description="Whether or not objects on active lot should be highlighted." Deprecated="False" filter="0" group="General" />
+
+        <Tunable type="bool" name="_on_open_street" class="Tunable" default="True" display="On Open Street" muid="B0B8668F15AEECE7" description="Whether or not objects on open street should be highlighted." Deprecated="False" filter="0" group="General" />
+
+        <Tunable type="float" name="_pulse_frequency" class="TunableRange" default="1.0" display="Pulse Frequency" muid="A7A81F480F08EFFF" min="0.1" max="None" description="The frequency at which the highlight pulses." tuning_state="NeedsTuning" Deprecated="False" filter="0" group="General" />
+
+        <TunableVariant type="None" name="_sim_filter" class="OptionalTunable" default="disabled" display="Sim Filter" muid="4F46435CD806BF1A" description="Filter to select one or more sims to recieve the CTA." Deprecated="False" filter="0" group="General">
+            <Tunable name="disabled" class="TunableExistance" display="Disabled" muid="3F3001209E02106A" />
+            <Tunable type="sim_filter" name="enabled" class="TunableReference" display="Enabled" muid="9CB98252B759BBDF" allow_none="False" Deprecated="False" filter="0" group="General" pack_safe="True" restrict="TunableSimFilter" />
+        </TunableVariant>
+
+        <TunableList name="_tags" class="TunableTags" display="Tags" muid="A0D417EDFD857BAB" Deprecated="False" filter="0" group="General" unique_entries="true">
+            <TunableEnum type="Tag" class="TunableEnumEntry" default="INVALID" muid="A9CD12CF98C0A302" dynamic_entries="tag.Tag._elements" static_entries="tag.Tag" description="The set of tags that are used to determine which objects to highlight." Deprecated="False" filter="0" group="General" invalid_entries="INVALID" pack_safe="True" />
+        </TunableList>
+
+        <Tunable type="float" name="_thickness" class="TunableRange" default="0.002" display="Thickness" muid="69C3A78784028141" min="0.001" max="0.005" description="The thickness of the highlight." tuning_state="NeedsTuning" Deprecated="False" filter="0" group="General" />
+
+        <TunableVariant type="None" name="_tutorial_text" class="OptionalTunable" default="disabled" display="Tutorial Text" muid="B3D0CFCF5A1A6D9C" description="Text for a tutorial call to action.  If this is enabled, the&#xA;CTA will be a tutorial CTA with the specified text." Deprecated="False" filter="0" group="General">
+            <Tunable name="disabled" class="TunableExistance" display="Disabled" muid="C1B0D8813D129AE4" />
+            <Tunable type="int" name="enabled" class="TunableLocalizedString" default="0x0" display="Enabled" muid="1043AFB74AE0D1F2" description="A localized string that may NOT require tokens." Deprecated="False" filter="0" group="General" />
+        </TunableVariant>
+    </Instance>
+</TuningRoot>

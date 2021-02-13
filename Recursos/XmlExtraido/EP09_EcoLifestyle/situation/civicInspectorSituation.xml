@@ -1,0 +1,342 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<I c="CivicInspectorSituation" i="situation" m="situations.complex.civic_inspector_situation" n="civicInspectorSituation" s="233261">
+  <T n="audio_sting_on_start" p="InEP09\Audio\music\bumpers\bumper_civic_inspector_arrive.propx">39b2aa4a:00000000:431c2673cf3bff05</T>
+  <U n="civic_inspect_inside">
+    <T n="interaction_to_push">77271<!--SuperInteraction: sim_EnterFrontDoor--></T>
+    <L n="job_and_role_changes">
+      <U>
+        <T n="Situation Job">233262<!--SituationJob: situationJob_civicinspector_inspector--></T>
+        <T n="Role State">233265<!--RoleState: roleState_civicinspector_inspectinside--></T>
+      </U>
+    </L>
+    <V t="enabled" n="time_out">
+      <T n="enabled">40</T>
+    </V>
+  </U>
+  <U n="civic_inspect_outside">
+    <L n="job_and_role_changes">
+      <U>
+        <T n="Situation Job">233262<!--SituationJob: situationJob_civicinspector_inspector--></T>
+        <T n="Role State">233266<!--RoleState: roleState_civicinspector_inspectoutside--></T>
+      </U>
+    </L>
+    <V t="enabled" n="time_out">
+      <T n="enabled">40</T>
+    </V>
+  </U>
+  <T n="commodity_follow">234272<!--Commodity: commodity_CivicInspector_following--></T>
+  <T n="commodity_notfollow">234273<!--Commodity: commodity_CivicInspector_notfollowing--></T>
+  <L n="compatible_venues">
+    <T>28614<!--Venue: venue_residential--></T>
+  </L>
+  <T n="duration">300</T>
+  <U n="final_checks">
+    <L n="civic_policy_follow_rules">
+      <U>
+        <T n="policy_display_name">0x492D20C2<!--String: "Jardinería ecológica"--></T>
+        <U n="street_civic_policy_test">
+          <L n="civic_policy_tests">
+            <V t="enacted">
+              <U n="enacted">
+                <U n="white_black_list">
+                  <V n="whitelist" t="specify">
+                    <U n="specify">
+                      <V t="threshold" n="threshold">
+                        <U n="threshold">
+                          <E n="comparison">GREATER_OR_EQUAL</E>
+                        </U>
+                      </V>
+                      <L n="whitelist">
+                        <T>233560<!--StreetCivicPolicy: streetCivicPolicy_ObjectBased_GreenGardening--></T>
+                      </L>
+                    </U>
+                  </V>
+                </U>
+              </U>
+            </V>
+          </L>
+          <V t="via_zone_source" n="street" />
+        </U>
+        <V n="whitelist_filter" t="object_tags">
+          <U n="object_tags">
+            <L n="tag_set">
+              <E>Func_eco_green_gardening</E>
+            </L>
+          </U>
+        </V>
+      </U>
+      <U>
+        <T n="policy_display_name">0xBB895B30<!--String: "Producción de energías limpias"--></T>
+        <L n="skip_test_condition">
+          <L>
+            <V t="zone">
+              <U n="zone">
+                <U n="zone_tests">
+                  <V n="is_apartment" t="Is_or_is_not_apartment_zone">
+                    <U n="Is_or_is_not_apartment_zone">
+                      <T n="is_apartment">True</T>
+                    </U>
+                  </V>
+                </U>
+              </U>
+            </V>
+          </L>
+        </L>
+        <U n="street_civic_policy_test">
+          <L n="civic_policy_tests">
+            <V t="enacted">
+              <U n="enacted">
+                <U n="white_black_list">
+                  <V n="whitelist" t="specify">
+                    <U n="specify">
+                      <V t="threshold" n="threshold">
+                        <U n="threshold">
+                          <E n="comparison">GREATER_OR_EQUAL</E>
+                        </U>
+                      </V>
+                      <L n="whitelist">
+                        <T>233559<!--StreetCivicPolicy: streetCivicPolicy_ObjectBased_UtilityProduction--></T>
+                      </L>
+                    </U>
+                  </V>
+                </U>
+              </U>
+            </V>
+          </L>
+          <V t="via_zone_source" n="street" />
+        </U>
+        <L n="test">
+          <L>
+            <V t="state">
+              <U n="state">
+                <V t="always_pass" n="fallback_behavior" />
+                <E n="operator">NOTEQUAL</E>
+                <T n="value">15080<!--ObjectStateValue: BrokenState_Broken--></T>
+              </U>
+            </V>
+          </L>
+        </L>
+        <V n="whitelist_filter" t="object_tags">
+          <U n="object_tags">
+            <L n="tag_set">
+              <E>Func_eco_neighborhood_utility</E>
+            </L>
+          </U>
+        </V>
+      </U>
+      <U>
+        <T n="policy_display_name">0x5A4A0BB<!--String: "Iniciativa de reutilización"--></T>
+        <U n="street_civic_policy_test">
+          <L n="civic_policy_tests">
+            <V t="enacted">
+              <U n="enacted">
+                <U n="white_black_list">
+                  <V n="whitelist" t="specify">
+                    <U n="specify">
+                      <V t="threshold" n="threshold">
+                        <U n="threshold">
+                          <E n="comparison">GREATER_OR_EQUAL</E>
+                        </U>
+                      </V>
+                      <L n="whitelist">
+                        <T>226333<!--StreetCivicPolicy: streetCivicPolicy_ObjectBased_UpcyclingInitiative--></T>
+                      </L>
+                    </U>
+                  </V>
+                </U>
+              </U>
+            </V>
+          </L>
+          <V t="via_zone_source" n="street" />
+        </U>
+        <L n="test">
+          <L>
+            <V t="state">
+              <U n="state">
+                <V t="always_pass" n="fallback_behavior" />
+                <E n="operator">NOTEQUAL</E>
+                <T n="value">15080<!--ObjectStateValue: BrokenState_Broken--></T>
+              </U>
+            </V>
+          </L>
+        </L>
+        <V n="whitelist_filter" t="object_tags">
+          <U n="object_tags">
+            <L n="tag_set">
+              <E>Func_eco_upcycling_initiative</E>
+            </L>
+          </U>
+        </V>
+      </U>
+      <U>
+        <T n="policy_display_name">0x606B15B2<!--String: "Electrodomésticos ecológicos"--></T>
+        <L n="skip_test_condition">
+          <L>
+            <V t="object_criteria">
+              <U n="object_criteria">
+                <V n="identity_test" t="tags">
+                  <U n="tags">
+                    <L n="tag_set">
+                      <E>Func_eco_ecofriendy_appliances</E>
+                    </L>
+                  </U>
+                </V>
+                <T n="on_active_lot">True</T>
+                <V t="all_objects" n="subject_specific_tests">
+                  <U n="all_objects">
+                    <U n="quantity">
+                      <E n="comparison">EQUAL</E>
+                      <T n="value">0</T>
+                    </U>
+                  </U>
+                </V>
+              </U>
+            </V>
+          </L>
+        </L>
+        <U n="street_civic_policy_test">
+          <L n="civic_policy_tests">
+            <V t="enacted">
+              <U n="enacted">
+                <U n="white_black_list">
+                  <V n="whitelist" t="specify">
+                    <U n="specify">
+                      <V t="threshold" n="threshold">
+                        <U n="threshold">
+                          <E n="comparison">GREATER_OR_EQUAL</E>
+                        </U>
+                      </V>
+                      <L n="whitelist">
+                        <T>232589<!--StreetCivicPolicy: streetCivicPolicy_EcoFriendlyAppliances--></T>
+                      </L>
+                    </U>
+                  </V>
+                </U>
+              </U>
+            </V>
+          </L>
+          <V t="via_zone_source" n="street" />
+        </U>
+        <L n="test">
+          <L>
+            <V t="state">
+              <U n="state">
+                <V t="always_pass" n="fallback_behavior" />
+                <E n="operator">EQUAL</E>
+                <T n="value">235688<!--CommodityBasedObjectStateValue: upgrade_Completed_EcoUpgrades_AtomizedMist--></T>
+              </U>
+            </V>
+            <V t="state">
+              <U n="state">
+                <V t="always_pass" n="fallback_behavior" />
+                <E n="operator">EQUAL</E>
+                <T n="value">235474<!--CommodityBasedObjectStateValue: upgrade_Completed_EcoUpgrades_CompostingContainer--></T>
+              </U>
+            </V>
+            <V t="state">
+              <U n="state">
+                <V t="always_pass" n="fallback_behavior" />
+                <E n="operator">EQUAL</E>
+                <T n="value">233852<!--CommodityBasedObjectStateValue: upgrade_Completed_EcoUpgrades_EnergyEfficientDrive--></T>
+              </U>
+            </V>
+            <V t="state">
+              <U n="state">
+                <V t="always_pass" n="fallback_behavior" />
+                <E n="operator">EQUAL</E>
+                <T n="value">233853<!--CommodityBasedObjectStateValue: upgrade_Completed_EcoUpgrades_FuelCell--></T>
+              </U>
+            </V>
+            <V t="state">
+              <U n="state">
+                <V t="always_pass" n="fallback_behavior" />
+                <E n="operator">EQUAL</E>
+                <T n="value">233854<!--CommodityBasedObjectStateValue: upgrade_Completed_EcoUpgrades_Siphoner--></T>
+              </U>
+            </V>
+            <V t="state">
+              <U n="state">
+                <V t="always_pass" n="fallback_behavior" />
+                <E n="operator">EQUAL</E>
+                <T n="value">235475<!--CommodityBasedObjectStateValue: upgrade_Completed_EcoUpgrades_WaterRecycler--></T>
+              </U>
+            </V>
+          </L>
+        </L>
+        <V n="whitelist_filter" t="object_tags">
+          <U n="object_tags">
+            <L n="tag_set">
+              <E>Func_eco_ecofriendy_appliances</E>
+            </L>
+          </U>
+        </V>
+      </U>
+    </L>
+    <L n="job_and_role_changes">
+      <U>
+        <T n="Situation Job">233262<!--SituationJob: situationJob_civicinspector_inspector--></T>
+        <T n="Role State">233270<!--RoleState: roleState_civicinspector_finalinspection--></T>
+      </U>
+    </L>
+    <V n="time_out" t="enabled">
+      <T n="enabled">10</T>
+    </V>
+  </U>
+  <U n="inspection_failure_notification">
+    <V t="enabled" n="icon">
+      <V t="participant" n="enabled" />
+    </V>
+    <V n="text" t="single">
+      <T n="single">0x1B93974C<!--String: "Me temo que esta unidad doméstica incumple lo estipulado en los siguientes planes de acción para el barrio:\n\n{1.String}\n\nSe aplicará un incremento en las facturas hasta que la situación se resuelva."--></T>
+    </V>
+  </U>
+  <U n="inspection_partial_success_notification">
+    <V t="enabled" n="icon">
+      <V t="participant" n="enabled" />
+    </V>
+    <V n="text" t="single">
+      <T n="single">0xAEC36E3F<!--String: "Me temo que esta unidad doméstica incumple lo estipulado en los siguientes planes de acción para el barrio:\n\n {1.String}\n\nSe aplicará un incremento en las facturas hasta que la situación se resuelva."--></T>
+    </V>
+  </U>
+  <U n="inspection_successful_notification">
+    <V t="enabled" n="icon">
+      <V t="participant" n="enabled" />
+    </V>
+    <V n="text" t="single">
+      <T n="single">0x26A68290<!--String: "¡Bien hecho! Parece que esta unidad doméstica cumple lo estipulado en todos los planes de acción para el barrio activos.\n\nComo resultado de este compromiso se aplicará una reducción en la próxima ronda de facturas."--></T>
+    </V>
+  </U>
+  <U n="inspector_entry">
+    <U n="interaction_of_interest">
+      <L n="affordances">
+        <T>233515<!--SocialSuperInteraction: civicInspector_Social_LetIn--></T>
+      </L>
+    </U>
+    <L n="job_and_role_changes">
+      <U>
+        <T n="Situation Job">233262<!--SituationJob: situationJob_civicinspector_inspector--></T>
+        <T n="Role State">233264<!--RoleState: roleState_civicinspector_inspectorentry--></T>
+      </U>
+    </L>
+    <T n="timeout">60</T>
+  </U>
+  <U n="inspector_job_and_role_state">
+    <T n="role_state">233264<!--RoleState: roleState_civicinspector_inspectorentry--></T>
+    <T n="situation_job">233262<!--SituationJob: situationJob_civicinspector_inspector--></T>
+  </U>
+  <U n="leave">
+    <L n="job_and_role_changes">
+      <U>
+        <T n="Situation Job">233262<!--SituationJob: situationJob_civicinspector_inspector--></T>
+        <T n="Role State">233267<!--RoleState: roleState_civicinspector_leave--></T>
+      </U>
+    </L>
+  </U>
+  <T p="InGame\Audio\Bumper\bumper_event_major_complete.propx" n="main_goal_audio_sting">39b2aa4a:00000000:10b476550150a33f</T>
+  <T n="max_participants">20</T>
+  <U n="overlook_issues_success_interaction">
+    <L n="affordances">
+      <T>234363<!--SocialSuperInteraction: civicInspector_Social_overlookissues--></T>
+    </L>
+  </U>
+</I>

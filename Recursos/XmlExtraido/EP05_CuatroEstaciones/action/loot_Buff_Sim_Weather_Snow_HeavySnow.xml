@@ -1,0 +1,76 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<I c="LootActions" i="action" m="interactions.utils.loot" n="loot_Buff_Sim_Weather_Snow_HeavySnow" s="183104">
+  <L n="loot_actions">
+    <V t="buff">
+      <U n="buff">
+        <U n="buff">
+          <T n="buff_type">182653<!--Buff: buff_Sim_Weather_Hidden_Snowing--></T>
+        </U>
+      </U>
+    </V>
+    <V t="reaction">
+      <U n="reaction">
+        <V n="si_reaction" t="enabled">
+          <U n="enabled">
+            <T n="affordance">191117<!--SuperInteraction: snowEffects_FirstSnow_Start--></T>
+            <E n="affordance_priority">High</E>
+            <V t="disabled" n="affordance_target" />
+          </U>
+        </V>
+        <L n="tests">
+          <L>
+            <V t="buff">
+              <U n="buff">
+                <L n="blacklist">
+                  <T>10094<!--Buff: buff_Sim_IsSleeping--></T>
+                </L>
+              </U>
+            </V>
+            <V t="test_set_reference">
+              <T n="test_set_reference">255055<!--TestSetInstance: testSetInstance_NotHiking_Actor--></T>
+            </V>
+          </L>
+        </L>
+      </U>
+    </V>
+    <V t="reaction">
+      <U n="reaction">
+        <V t="enabled" n="si_reaction">
+          <U n="enabled">
+            <T n="affordance">169887<!--ImmediateSuperInteraction: Push_Leave_Lot_Must_Run_Immediate--></T>
+            <E n="affordance_priority">High</E>
+            <V t="disabled" n="affordance_target" />
+          </U>
+        </V>
+        <L n="tests">
+          <L>
+            <V t="situation_running_test">
+              <U n="situation_running_test">
+                <V n="tag_whitelist" t="enabled">
+                  <L n="enabled">
+                    <E>Situation_Weather_Snow_Heavy</E>
+                  </L>
+                </V>
+              </U>
+            </V>
+            <V t="location">
+              <U n="location">
+                <U n="location_tests">
+                  <V t="enabled" n="is_outside" />
+                </U>
+              </U>
+            </V>
+            <V t="trait">
+              <U n="trait">
+                <L n="blacklist_traits">
+                  <T>27914<!--Trait: trait_LovesOutdoors--></T>
+                  <T>16848<!--Trait: trait_Insane--></T>
+                </L>
+              </U>
+            </V>
+          </L>
+        </L>
+      </U>
+    </V>
+  </L>
+</I>

@@ -1,0 +1,841 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<I c="GameObject" i="object" m="objects.game_object" n="object_MotionGameRig" s="14951">
+  <U n="_components">
+    <V t="enabled" n="focus">
+      <U n="enabled">
+        <V t="globally" n="_focus_score">
+          <U n="globally">
+            <E n="base">LOW</E>
+          </U>
+        </V>
+      </U>
+    </V>
+    <V t="enabled" n="retail_component">
+      <V n="enabled" t="reference">
+        <T n="reference">115303<!--RetailComponent: retailComponent_Default_HighAppeal--></T>
+      </V>
+    </V>
+    <V n="state" t="enabled">
+      <U n="enabled">
+        <L n="state_triggers">
+          <U>
+            <L n="at_states">
+              <T>15076<!--CommodityBasedObjectStateValue: Brokenness_Broken--></T>
+            </L>
+            <V n="set_states" t="Set_state_list">
+              <L n="Set_state_list">
+                <T>15080<!--ObjectStateValue: BrokenState_Broken--></T>
+              </L>
+            </V>
+          </U>
+          <U>
+            <L n="at_states">
+              <T>15078<!--CommodityBasedObjectStateValue: Brokenness_Unbroken--></T>
+            </L>
+            <V t="Set_state_list" n="set_states">
+              <L n="Set_state_list">
+                <T>15081<!--ObjectStateValue: BrokenState_Unbroken--></T>
+              </L>
+            </V>
+            <L n="statistic_operations">
+              <V t="statistic_set_min">
+                <U n="statistic_set_min">
+                  <T n="stat">208412<!--Commodity: commodity_IslanderCulture_TimeSinceBroken--></T>
+                </U>
+              </V>
+            </L>
+          </U>
+          <U>
+            <L n="at_states">
+              <T>153899<!--ObjectStateValue: objectStateValue_MotionGameRig_Power_On--></T>
+            </L>
+            <V t="Set_state_list" n="set_states">
+              <L n="Set_state_list">
+                <T>35296<!--ObjectStateValue: GenericOnOff_On--></T>
+                <T>224553<!--ObjectStateValue: utilities_Power_Consumption_On--></T>
+              </L>
+            </V>
+          </U>
+          <U>
+            <L n="at_states">
+              <T>153900<!--ObjectStateValue: objectStateValue_MotionGameRig_Power_Off--></T>
+            </L>
+            <V t="Set_state_list" n="set_states">
+              <L n="Set_state_list">
+                <T>35297<!--ObjectStateValue: GenericOnOff_Off--></T>
+                <T>224564<!--ObjectStateValue: utilities_Power_Consumption_Off--></T>
+                <T>236552<!--ObjectStateValue: ecoFootprint_EcoUpgrade_Off--></T>
+                <T>239919<!--ObjectStateValue: ecoFootprint_EnergyEfficient_Off--></T>
+              </L>
+            </V>
+          </U>
+          <U>
+            <L n="at_states">
+              <T>153899<!--ObjectStateValue: objectStateValue_MotionGameRig_Power_On--></T>
+              <T>235547<!--CommodityBasedObjectStateValue: ecoUpgrades_Fill_Values_FuelCell_HasFuel--></T>
+            </L>
+            <V t="Set_state_list" n="set_states">
+              <L n="Set_state_list">
+                <T>236551<!--ObjectStateValue: ecoFootprint_EcoUpgrade_On--></T>
+              </L>
+            </V>
+            <E n="trigger_operation">AND</E>
+          </U>
+          <U>
+            <L n="at_states">
+              <T>153899<!--ObjectStateValue: objectStateValue_MotionGameRig_Power_On--></T>
+              <T>233852<!--CommodityBasedObjectStateValue: upgrade_Completed_EcoUpgrades_EnergyEfficientDrive--></T>
+            </L>
+            <V t="Set_state_list" n="set_states">
+              <L n="Set_state_list">
+                <T>239918<!--ObjectStateValue: ecoFootprint_EnergyEfficient_On--></T>
+              </L>
+            </V>
+            <E n="trigger_operation">AND</E>
+          </U>
+          <U>
+            <L n="at_states">
+              <T>77532<!--CommodityBasedObjectStateValue: FireState_Burn_Material_Change_Replace--></T>
+            </L>
+            <V n="set_states" t="Set_state_list">
+              <L n="Set_state_list">
+                <T>39737<!--CommodityBasedObjectStateValue: FireState_Burn_Material_Change_Not_Burning--></T>
+              </L>
+            </V>
+          </U>
+        </L>
+        <L n="states">
+          <U>
+            <L n="client_states">
+              <U>
+                <T n="key">15076<!--CommodityBasedObjectStateValue: Brokenness_Broken--></T>
+              </U>
+              <U>
+                <T n="key">15077<!--CommodityBasedObjectStateValue: Brokenness_Neutral--></T>
+              </U>
+              <U>
+                <T n="key">15078<!--CommodityBasedObjectStateValue: Brokenness_Unbroken--></T>
+              </U>
+              <U>
+                <T n="key">97754<!--CommodityBasedObjectStateValue: Brokenness_Broken_Sabotage--></T>
+              </U>
+            </L>
+            <V t="reference" n="default_value">
+              <T n="reference">15078<!--CommodityBasedObjectStateValue: Brokenness_Unbroken--></T>
+            </V>
+          </U>
+          <U>
+            <L n="client_states">
+              <U>
+                <T n="key">15080<!--ObjectStateValue: BrokenState_Broken--></T>
+                <U n="value">
+                  <V n="vfx_state" t="apply_new_value">
+                    <V n="apply_new_value" t="start_vfx">
+                      <V n="start_vfx" t="single_effect">
+                        <U n="single_effect">
+                          <T n="effect_name">Obj_motionGameRig_broken</T>
+                        </U>
+                      </V>
+                    </V>
+                  </V>
+                </U>
+              </U>
+              <U>
+                <T n="key">15081<!--ObjectStateValue: BrokenState_Unbroken--></T>
+                <U n="value">
+                  <V t="apply_new_value" n="vfx_state">
+                    <V n="apply_new_value" t="no_vfx" />
+                  </V>
+                </U>
+              </U>
+            </L>
+            <V t="reference" n="default_value">
+              <T n="reference">15081<!--ObjectStateValue: BrokenState_Unbroken--></T>
+            </V>
+          </U>
+          <U>
+            <L n="client_states">
+              <U>
+                <T n="key">15396<!--CommodityBasedObjectStateValue: Upgrade_Generic_LowerBrokenness_Completed--></T>
+              </U>
+              <U>
+                <T n="key">15397<!--CommodityBasedObjectStateValue: Upgrade_Generic_LowerBrokenness_NotStarted--></T>
+              </U>
+              <U>
+                <T n="key">15398<!--CommodityBasedObjectStateValue: Upgrade_Generic_LowerBrokenness_Partial--></T>
+              </U>
+            </L>
+            <V t="reference" n="default_value">
+              <T n="reference">15397<!--CommodityBasedObjectStateValue: Upgrade_Generic_LowerBrokenness_NotStarted--></T>
+            </V>
+          </U>
+          <U>
+            <L n="client_states">
+              <U>
+                <T n="key">29029<!--CommodityBasedObjectStateValue: upgrade_Computer_GamingSkill_Completed--></T>
+              </U>
+              <U>
+                <T n="key">29048<!--CommodityBasedObjectStateValue: upgrade_Computer_GamingSkill_NotStarted--></T>
+              </U>
+              <U>
+                <T n="key">29051<!--CommodityBasedObjectStateValue: upgrade_Computer_GamingSkill_Partial--></T>
+              </U>
+            </L>
+            <V n="default_value" t="reference">
+              <T n="reference">29048<!--CommodityBasedObjectStateValue: upgrade_Computer_GamingSkill_NotStarted--></T>
+            </V>
+          </U>
+          <U>
+            <L n="client_states">
+              <U>
+                <T n="key">15384<!--CommodityBasedObjectStateValue: Upgrade_Generic_LockBrokenness_Completed--></T>
+              </U>
+              <U>
+                <T n="key">15385<!--CommodityBasedObjectStateValue: Upgrade_Generic_LockBrokenness_NotStarted--></T>
+              </U>
+              <U>
+                <T n="key">15386<!--CommodityBasedObjectStateValue: Upgrade_Generic_LockBrokenness_Partial--></T>
+              </U>
+            </L>
+            <V t="reference" n="default_value">
+              <T n="reference">15385<!--CommodityBasedObjectStateValue: Upgrade_Generic_LockBrokenness_NotStarted--></T>
+            </V>
+          </U>
+          <U>
+            <L n="client_states">
+              <U>
+                <T n="key">153899<!--ObjectStateValue: objectStateValue_MotionGameRig_Power_On--></T>
+              </U>
+              <U>
+                <T n="key">153900<!--ObjectStateValue: objectStateValue_MotionGameRig_Power_Off--></T>
+              </U>
+            </L>
+            <V n="default_value" t="reference">
+              <T n="reference">153900<!--ObjectStateValue: objectStateValue_MotionGameRig_Power_Off--></T>
+            </V>
+          </U>
+          <U>
+            <L n="client_states">
+              <U>
+                <T n="key">35296<!--ObjectStateValue: GenericOnOff_On--></T>
+                <U n="value">
+                  <V n="broadcaster" t="apply_new_value">
+                    <V n="apply_new_value" t="start_broadcaster">
+                      <U n="start_broadcaster">
+                        <L n="broadcaster_types">
+                          <U>
+                            <T n="item">159383<!--Broadcaster: broadcaster_Fear_Pet_Gaming--></T>
+                          </U>
+                        </L>
+                      </U>
+                    </V>
+                  </V>
+                </U>
+              </U>
+              <U>
+                <T n="key">35297<!--ObjectStateValue: GenericOnOff_Off--></T>
+              </U>
+            </L>
+            <V t="reference" n="default_value">
+              <T n="reference">35297<!--ObjectStateValue: GenericOnOff_Off--></T>
+            </V>
+          </U>
+          <U>
+            <L n="client_states">
+              <U>
+                <T n="key">185122<!--ObjectStateValue: object_Rain_Outside--></T>
+              </U>
+              <U>
+                <T n="key">185125<!--ObjectStateValue: object_Rain_Inside--></T>
+              </U>
+            </L>
+            <V n="default_value" t="reference">
+              <T n="reference">185125<!--ObjectStateValue: object_Rain_Inside--></T>
+            </V>
+          </U>
+          <U>
+            <L n="client_states">
+              <U>
+                <T n="key">233852<!--CommodityBasedObjectStateValue: upgrade_Completed_EcoUpgrades_EnergyEfficientDrive--></T>
+              </U>
+              <U>
+                <T n="key">233856<!--CommodityBasedObjectStateValue: upgrade_NotStarted_EcoUpgrades_EnergyEfficientDrive--></T>
+              </U>
+              <U>
+                <T n="key">233870<!--CommodityBasedObjectStateValue: upgrade_Partial_EcoUpgrades_EnergyEfficientDrive--></T>
+              </U>
+            </L>
+            <V n="default_value" t="reference">
+              <T n="reference">233856<!--CommodityBasedObjectStateValue: upgrade_NotStarted_EcoUpgrades_EnergyEfficientDrive--></T>
+            </V>
+          </U>
+          <U>
+            <L n="client_states">
+              <U>
+                <T n="key">233853<!--CommodityBasedObjectStateValue: upgrade_Completed_EcoUpgrades_FuelCell--></T>
+              </U>
+              <U>
+                <T n="key">233857<!--CommodityBasedObjectStateValue: upgrade_NotStarted_EcoUpgrades_FuelCell--></T>
+              </U>
+              <U>
+                <T n="key">233871<!--CommodityBasedObjectStateValue: upgrade_Partial_EcoUpgrades_FuelCell--></T>
+              </U>
+            </L>
+            <V n="default_value" t="reference">
+              <T n="reference">233857<!--CommodityBasedObjectStateValue: upgrade_NotStarted_EcoUpgrades_FuelCell--></T>
+            </V>
+          </U>
+          <U>
+            <L n="client_states">
+              <U>
+                <T n="key">231418<!--ObjectStateValue: ecoFootprint_Values_Green--></T>
+                <U n="value">
+                  <V n="autonomy_modifiers" t="apply_new_value">
+                    <V n="apply_new_value" t="apply_statistic_modifiers">
+                      <U n="apply_statistic_modifiers">
+                        <L n="autonomy_modifiers">
+                          <U>
+                            <L n="decay_modifiers">
+                              <U>
+                                <T n="key">235560<!--Commodity: commodity_EcoUpgrade_Fuel_FuelCell--></T>
+                                <T n="value">1</T>
+                              </U>
+                            </L>
+                          </U>
+                        </L>
+                      </U>
+                    </V>
+                  </V>
+                </U>
+              </U>
+              <U>
+                <T n="key">231419<!--ObjectStateValue: ecoFootprint_Values_Industrial--></T>
+                <U n="value">
+                  <V n="autonomy_modifiers" t="apply_new_value">
+                    <V n="apply_new_value" t="apply_statistic_modifiers">
+                      <U n="apply_statistic_modifiers">
+                        <L n="autonomy_modifiers">
+                          <U>
+                            <L n="decay_modifiers">
+                              <U>
+                                <T n="key">235560<!--Commodity: commodity_EcoUpgrade_Fuel_FuelCell--></T>
+                                <T n="value">0.7</T>
+                              </U>
+                            </L>
+                          </U>
+                        </L>
+                      </U>
+                    </V>
+                  </V>
+                </U>
+              </U>
+              <U>
+                <T n="key">231420<!--ObjectStateValue: ecoFootprint_Values_Neutral--></T>
+                <U n="value">
+                  <V n="autonomy_modifiers" t="apply_new_value">
+                    <V n="apply_new_value" t="apply_statistic_modifiers">
+                      <U n="apply_statistic_modifiers">
+                        <L n="autonomy_modifiers">
+                          <U>
+                            <L n="decay_modifiers">
+                              <U>
+                                <T n="key">235560<!--Commodity: commodity_EcoUpgrade_Fuel_FuelCell--></T>
+                                <T n="value">1</T>
+                              </U>
+                            </L>
+                          </U>
+                        </L>
+                      </U>
+                    </V>
+                  </V>
+                </U>
+              </U>
+            </L>
+            <V t="reference" n="default_value">
+              <T n="reference">231420<!--ObjectStateValue: ecoFootprint_Values_Neutral--></T>
+            </V>
+            <V t="enabled" n="tested_states_on_add">
+              <U n="enabled">
+                <L n="tested_states">
+                  <U>
+                    <T n="state">231418<!--ObjectStateValue: ecoFootprint_Values_Green--></T>
+                    <L n="tests">
+                      <L>
+                        <V t="eco_footprint">
+                          <U n="eco_footprint">
+                            <L n="eco_footprint_tests">
+                              <V t="state">
+                                <U n="state">
+                                  <E n="required_eco_footprint_state">GREEN</E>
+                                </U>
+                              </V>
+                            </L>
+                            <V t="via_zone_source" n="street" />
+                          </U>
+                        </V>
+                      </L>
+                    </L>
+                  </U>
+                  <U>
+                    <T n="state">231419<!--ObjectStateValue: ecoFootprint_Values_Industrial--></T>
+                    <L n="tests">
+                      <L>
+                        <V t="eco_footprint">
+                          <U n="eco_footprint">
+                            <L n="eco_footprint_tests">
+                              <V t="state">
+                                <U n="state">
+                                  <E n="required_eco_footprint_state">INDUSTRIAL</E>
+                                </U>
+                              </V>
+                            </L>
+                            <V t="via_zone_source" n="street" />
+                          </U>
+                        </V>
+                      </L>
+                    </L>
+                  </U>
+                  <U>
+                    <T n="state">231420<!--ObjectStateValue: ecoFootprint_Values_Neutral--></T>
+                    <L n="tests">
+                      <L>
+                        <V t="eco_footprint">
+                          <U n="eco_footprint">
+                            <L n="eco_footprint_tests">
+                              <V t="state">
+                                <U n="state">
+                                  <E n="required_eco_footprint_state">NEUTRAL</E>
+                                </U>
+                              </V>
+                            </L>
+                            <V t="via_zone_source" n="street" />
+                          </U>
+                        </V>
+                      </L>
+                    </L>
+                  </U>
+                </L>
+              </U>
+            </V>
+          </U>
+          <U>
+            <L n="client_states">
+              <U>
+                <T n="key">235545<!--CommodityBasedObjectStateValue: ecoUpgrades_Fill_Values_FuelCell_Empty--></T>
+              </U>
+              <U>
+                <T n="key">235547<!--CommodityBasedObjectStateValue: ecoUpgrades_Fill_Values_FuelCell_HasFuel--></T>
+              </U>
+            </L>
+            <V t="reference" n="default_value">
+              <T n="reference">235545<!--CommodityBasedObjectStateValue: ecoUpgrades_Fill_Values_FuelCell_Empty--></T>
+            </V>
+          </U>
+          <U>
+            <L n="client_states">
+              <U>
+                <T n="key">236551<!--ObjectStateValue: ecoFootprint_EcoUpgrade_On--></T>
+                <U n="value">
+                  <V t="apply_new_value" n="autonomy_modifiers">
+                    <V n="apply_new_value" t="apply_statistic_modifiers">
+                      <U n="apply_statistic_modifiers">
+                        <L n="lot_statistic_modifiers">
+                          <U>
+                            <V n="modifier" t="basic_value">
+                              <U n="basic_value">
+                                <T n="value">0.0175</T>
+                              </U>
+                            </V>
+                            <T n="statistic">233233<!--Commodity: commodity_EcoFootprint_Lot--></T>
+                          </U>
+                        </L>
+                      </U>
+                    </V>
+                  </V>
+                </U>
+              </U>
+              <U>
+                <T n="key">236552<!--ObjectStateValue: ecoFootprint_EcoUpgrade_Off--></T>
+                <U n="value">
+                  <V t="apply_new_value" n="autonomy_modifiers" />
+                </U>
+              </U>
+            </L>
+            <V t="reference" n="default_value">
+              <T n="reference">236552<!--ObjectStateValue: ecoFootprint_EcoUpgrade_Off--></T>
+            </V>
+          </U>
+          <U>
+            <L n="client_states">
+              <U>
+                <T n="key">239918<!--ObjectStateValue: ecoFootprint_EnergyEfficient_On--></T>
+                <U n="value">
+                  <V n="autonomy_modifiers" t="apply_new_value">
+                    <V n="apply_new_value" t="apply_statistic_modifiers">
+                      <U n="apply_statistic_modifiers">
+                        <L n="lot_statistic_modifiers">
+                          <U>
+                            <V n="modifier" t="basic_value">
+                              <U n="basic_value">
+                                <T n="value">-0.0175</T>
+                              </U>
+                            </V>
+                            <T n="statistic">233233<!--Commodity: commodity_EcoFootprint_Lot--></T>
+                          </U>
+                        </L>
+                      </U>
+                    </V>
+                  </V>
+                </U>
+              </U>
+              <U>
+                <T n="key">239919<!--ObjectStateValue: ecoFootprint_EnergyEfficient_Off--></T>
+                <U n="value">
+                  <V t="apply_new_value" n="autonomy_modifiers" />
+                </U>
+              </U>
+            </L>
+            <V t="reference" n="default_value">
+              <T n="reference">239919<!--ObjectStateValue: ecoFootprint_EnergyEfficient_Off--></T>
+            </V>
+          </U>
+          <U>
+            <L n="client_states">
+              <U>
+                <T n="key">73870<!--ObjectStateValue: TheKnack_Awesome--></T>
+              </U>
+              <U>
+                <T n="key">73871<!--ObjectStateValue: TheKnack_NotAwesome--></T>
+              </U>
+            </L>
+            <V t="reference" n="default_value">
+              <T n="reference">73871<!--ObjectStateValue: TheKnack_NotAwesome--></T>
+            </V>
+          </U>
+          <U>
+            <L n="client_states">
+              <U>
+                <T n="key">224553<!--ObjectStateValue: utilities_Power_Consumption_On--></T>
+                <U n="value">
+                  <V n="autonomy_modifiers" t="apply_new_value">
+                    <V n="apply_new_value" t="apply_statistic_modifiers">
+                      <U n="apply_statistic_modifiers">
+                        <L n="autonomy_modifiers">
+                          <U>
+                            <L n="decay_modifiers">
+                              <U>
+                                <T n="key">235560<!--Commodity: commodity_EcoUpgrade_Fuel_FuelCell--></T>
+                                <T n="value">50</T>
+                              </U>
+                            </L>
+                          </U>
+                        </L>
+                        <L n="lot_statistic_modifiers">
+                          <U>
+                            <V n="modifier" t="multipliers">
+                              <U n="multipliers">
+                                <U n="value">
+                                  <T n="base_value">-0.01042</T>
+                                  <L n="multipliers">
+                                    <U>
+                                      <T n="multiplier">1.5</T>
+                                    </U>
+                                    <U>
+                                      <T n="multiplier">0.5</T>
+                                      <L n="tests">
+                                        <L>
+                                          <V t="state">
+                                            <U n="state">
+                                              <T n="value">233852<!--CommodityBasedObjectStateValue: upgrade_Completed_EcoUpgrades_EnergyEfficientDrive--></T>
+                                            </U>
+                                          </V>
+                                        </L>
+                                      </L>
+                                    </U>
+                                    <U>
+                                      <T n="multiplier">0</T>
+                                      <L n="tests">
+                                        <L>
+                                          <V t="state">
+                                            <U n="state">
+                                              <T n="value">235547<!--CommodityBasedObjectStateValue: ecoUpgrades_Fill_Values_FuelCell_HasFuel--></T>
+                                            </U>
+                                          </V>
+                                        </L>
+                                      </L>
+                                    </U>
+                                  </L>
+                                </U>
+                              </U>
+                            </V>
+                            <T n="statistic">233027<!--Commodity: commodity_Utilities_Power--></T>
+                          </U>
+                        </L>
+                        <U n="periodic_statistic_change">
+                          <T n="interval">10</T>
+                          <L n="operations">
+                            <U>
+                              <T n="amount">1.667</T>
+                              <T n="stat">233027<!--Commodity: commodity_Utilities_Power--></T>
+                            </U>
+                          </L>
+                        </U>
+                      </U>
+                    </V>
+                  </V>
+                </U>
+              </U>
+              <U>
+                <T n="key">224564<!--ObjectStateValue: utilities_Power_Consumption_Off--></T>
+                <U n="value">
+                  <V t="apply_new_value" n="autonomy_modifiers" />
+                </U>
+              </U>
+            </L>
+            <V t="reference" n="default_value">
+              <T n="reference">224564<!--ObjectStateValue: utilities_Power_Consumption_Off--></T>
+            </V>
+          </U>
+          <U>
+            <L n="client_states">
+              <U>
+                <T n="key">39611<!--CommodityBasedObjectStateValue: FireState_Burn_Material_Change--></T>
+              </U>
+              <U>
+                <T n="key">39736<!--CommodityBasedObjectStateValue: FireState_Burn_Material_Change_Burning--></T>
+              </U>
+              <U>
+                <T n="key">39737<!--CommodityBasedObjectStateValue: FireState_Burn_Material_Change_Not_Burning--></T>
+              </U>
+              <U>
+                <T n="key">77532<!--CommodityBasedObjectStateValue: FireState_Burn_Material_Change_Replace--></T>
+              </U>
+            </L>
+            <V t="reference" n="default_value">
+              <T n="reference">39737<!--CommodityBasedObjectStateValue: FireState_Burn_Material_Change_Not_Burning--></T>
+            </V>
+          </U>
+          <U>
+            <L n="client_states">
+              <U>
+                <T n="key">35956<!--CommodityBasedObjectStateValue: Materialistic_Admired--></T>
+              </U>
+              <U>
+                <T n="key">35957<!--CommodityBasedObjectStateValue: Materialistic_YetToAdmire--></T>
+              </U>
+            </L>
+            <V n="default_value" t="reference">
+              <T n="reference">35957<!--CommodityBasedObjectStateValue: Materialistic_YetToAdmire--></T>
+            </V>
+          </U>
+        </L>
+      </U>
+    </V>
+    <V t="enabled" n="tooltip_component">
+      <U n="enabled">
+        <L n="custom_tooltips">
+          <U>
+            <L n="object_tests">
+              <L>
+                <V t="state">
+                  <U n="state">
+                    <T n="value">239918<!--ObjectStateValue: ecoFootprint_EnergyEfficient_On--></T>
+                  </U>
+                </V>
+                <V t="game_option">
+                  <U n="game_option">
+                    <E n="gameplay_option">ECO_FOOTPRINT_GAMEPLAY</E>
+                  </U>
+                </V>
+              </L>
+            </L>
+            <L n="tooltip_fields">
+              <U>
+                <E n="key">header</E>
+                <U n="value">
+                  <V t="concatenate_with_component_fields" n="override_component_information" />
+                  <V n="text" t="single">
+                    <T n="single">0x5D0F1C0E<!--String: "<font color='#4BA64A'>+ huella ecológica verde</font>"--></T>
+                  </V>
+                </U>
+              </U>
+            </L>
+          </U>
+          <U>
+            <L n="object_tests">
+              <L>
+                <V t="game_option">
+                  <U n="game_option">
+                    <E n="gameplay_option">ECO_FOOTPRINT_GAMEPLAY</E>
+                  </U>
+                </V>
+                <V t="state">
+                  <U n="state">
+                    <T n="value">236551<!--ObjectStateValue: ecoFootprint_EcoUpgrade_On--></T>
+                  </U>
+                </V>
+              </L>
+            </L>
+            <L n="tooltip_fields">
+              <U>
+                <E n="key">header</E>
+                <U n="value">
+                  <V t="concatenate_with_component_fields" n="override_component_information" />
+                  <V n="text" t="single">
+                    <T n="single">0xE6403AD8<!--String: "<font color='#C9A927'>+ huella ecológica industrial</font>"--></T>
+                  </V>
+                </U>
+              </U>
+            </L>
+          </U>
+        </L>
+        <T n="update_on_game_option_changed">True</T>
+      </U>
+    </V>
+    <V t="enabled" n="weather_aware_component">
+      <U n="enabled">
+        <L n="outside_loot">
+          <U>
+            <E n="key">AnyRain</E>
+            <U n="value">
+              <L n="end_loot">
+                <T>185163<!--LootActions: loot_Wetness_Object_Rain_End--></T>
+              </L>
+              <L n="start_loot">
+                <T>184964<!--LootActions: Loot_Wetness_Object_Start--></T>
+              </L>
+            </U>
+          </U>
+        </L>
+      </U>
+    </V>
+  </U>
+  <L n="_part_data">
+    <U>
+      <T n="part_definition">37069<!--ObjectPart: part_MotionBasedGaming--></T>
+      <V t="enabled" n="subroot_index">
+        <T n="enabled">0</T>
+      </V>
+    </U>
+  </L>
+  <L n="_super_affordances">
+    <T>13741<!--SuperInteraction: motionBasedGaming_play_sports--></T>
+    <T>13328<!--ImmediateSuperInteraction: debug_Reset--></T>
+    <T>13326<!--ImmediateSuperInteraction: debug_ObjectDestroy--></T>
+    <T>103888<!--ImmediateSuperInteraction: cheat_set_as_head--></T>
+    <T>13740<!--SuperInteraction: motionBasedGaming_play_family--></T>
+    <T>13739<!--SuperInteraction: motionBasedGaming_play_adventure--></T>
+    <T>13319<!--ImmediateSuperInteraction: debug_BreakObject--></T>
+    <T>34921<!--SuperInteraction: object_Repair_MotionGame--></T>
+    <T>27027<!--SuperInteraction: motionBasedGaming_Upgrade_LessBroken--></T>
+    <T>73831<!--SuperInteraction: object_Knack_FixIt_MotionGame--></T>
+    <T>73853<!--SuperInteraction: object_Knack_MakeAwesome_MotionGame--></T>
+    <T>27029<!--SuperInteraction: motionBasedGaming_UpgradeContinue_LessBroken--></T>
+    <T>27036<!--SuperInteraction: motionBasedGaming_Upgrade_NeverBreaks--></T>
+    <T>27039<!--SuperInteraction: motionBasedGaming_UpgradeContinue_NeverBreaks--></T>
+    <T>29310<!--SuperInteraction: motionBasedGaming_Upgrade_GamingSkill--></T>
+    <T>196759<!--SuperInteraction: famePerks_GoodReputation_GivingBack_DonateObject--></T>
+    <T>29311<!--SuperInteraction: motionBasedGaming_Upgrade_GamingSkill_Resume--></T>
+    <T>40054<!--SuperInteraction: object_Bane_Sabotage_MotionGame--></T>
+    <T>77618<!--SuperInteraction: si_object_electronics_salvage_motion_game_rig--></T>
+    <T>32317<!--SuperInteraction: motionBasedGaming_PlayTournament_Blicblock--></T>
+    <T>32318<!--SuperInteraction: motionBasedGaming_PlayTournament_IncredibleSports--></T>
+    <T>32319<!--SuperInteraction: motionBasedGaming_PlayTournament_REFUGE--></T>
+    <T>39920<!--SuperInteraction: motionBasedGaming_PlayTournament_ManiacMatchums--></T>
+    <T>32345<!--SuperInteraction: motionBasedGaming_PlayTournament_Blicblock_Pro--></T>
+    <T>32333<!--SuperInteraction: motionBasedGaming_PlayTournament_IncredibleSports_Pro--></T>
+    <T>32334<!--SuperInteraction: motionBasedGaming_PlayTournament_REFUGE_Pro--></T>
+    <T>39921<!--SuperInteraction: motionBasedGaming_PlayTournament_ManiacMatchums_Pro--></T>
+    <T>32175<!--SuperInteraction: motionBasedGaming_play_adventure_GamedOut--></T>
+    <T>32174<!--SuperInteraction: motionBasedGaming_play_family_GamedOut--></T>
+    <T>32173<!--SuperInteraction: motionBasedGaming_play_sports_GamedOut--></T>
+    <T>37064<!--SuperInteraction: generic_MotionBasedGaming--></T>
+    <T>37083<!--SuperInteraction: motionBasedGaming_play_puzzle--></T>
+    <T>37082<!--SuperInteraction: motionBasedGaming_play_puzzle_GamedOut--></T>
+    <T>13983<!--StandSuperInteraction: sim-stand--></T>
+    <T>33960<!--ImmediateSuperInteraction: Cheat_MakeClean--></T>
+    <T>99087<!--ImmediateSuperInteraction: object_ReplaceBrokenObject--></T>
+    <T>156936<!--SuperInteraction: generic_Object_Toddler_Check_Out_HighChair--></T>
+    <T>107833<!--SuperInteraction: si_CareerScientist_Tinker_MotionGame--></T>
+    <T>129510<!--SuperInteraction: object_Hire_Repair_Service--></T>
+    <T>141005<!--SuperInteraction: motionBasedGaming_UGT--></T>
+    <T>146365<!--SuperInteraction: situation_Butler_Autonomous_Sabotage_MotionGame--></T>
+    <T>145407<!--SuperInteraction: motionBasedGaming_play_family_butler--></T>
+    <T>153877<!--SuperInteraction: motionBasedGaming_Upgrade_GamingSkill_CompletedDisplay--></T>
+    <T>153878<!--SuperInteraction: motionBasedGaming_Upgrade_LessBroken_CompletedDisplay--></T>
+    <T>153879<!--SuperInteraction: motionBasedGaming_Upgrade_NeverBreaks_CompletedDisplay--></T>
+    <T>159864<!--SuperInteraction: petInvestigate_Obsess_Watch_Gaming--></T>
+    <T>158379<!--SuperInteraction: TV_Cat_WatchWary--></T>
+    <T>159875<!--SuperInteraction: PetInvestigate_Fear_Gaming--></T>
+    <T>164485<!--SuperInteraction: PetInvestigate_LazyTrait_Fear_Gaming--></T>
+    <T>164508<!--SuperInteraction: petInvestigate_LazyTrait_Obsess_Watch_Gaming--></T>
+    <T>164546<!--SuperInteraction: PetQuirks_Lazy_WatchWary--></T>
+    <T>233913<!--SuperInteraction: ecoUpgrades_EcoParts_FuelCell--></T>
+    <T>233912<!--SuperInteraction: ecoUpgrades_EcoParts_EnergyEfficientDrive--></T>
+    <T>233905<!--SuperInteraction: ecoUpgrades_Handiness_EnergyEfficientDrive--></T>
+    <T>233904<!--SuperInteraction: ecoUpgrades_Handiness_FuelCell--></T>
+    <T>233917<!--SuperInteraction: ecoUpgrades_Resume_EnergyEfficientDrive--></T>
+    <T>233918<!--SuperInteraction: ecoUpgrades_Resume_FuelCell--></T>
+    <T>235565<!--SuperInteraction: fuel_Fill_FuelCell--></T>
+    <T>239276<!--SuperInteraction: ecoUpgrades_CompletedDisplay_EnergyEfficientDrive--></T>
+    <T>239274<!--SuperInteraction: ecoUpgrades_CompletedDisplay_FuelCell--></T>
+    <T>106859<!--SuperInteraction: simRay_Transform_Object--></T>
+    <T>237116<!--SuperInteraction: fuel_Fill_FuelCell_Insect--></T>
+    <T>144099<!--SuperInteraction: generic_Object_Toddler_Check_Out--></T>
+    <T>74457<!--ImmediateSuperInteraction: fire_ReplaceBurntObject--></T>
+    <T>102258<!--SuperInteraction: Ghost_Possess--></T>
+    <T>168502<!--SuperInteraction: Ghost_Pet_Possess--></T>
+  </L>
+  <L n="autonomy_modifiers">
+    <U>
+      <L n="stat_use_multiplier">
+        <U>
+          <T n="key">16655<!--Commodity: motive_Fun--></T>
+          <U n="value">
+            <E n="apply_direction">INCREASE</E>
+            <T n="multiplier">2.01</T>
+          </U>
+        </U>
+      </L>
+      <V t="apply_on_interaction_to_participant" n="subject">
+        <V t="enabled" n="apply_on_interaction_to_participant">
+          <L n="enabled">
+            <E>Actor</E>
+          </L>
+        </V>
+      </V>
+    </U>
+  </L>
+  <U n="recycling_data">
+    <L n="recycling_values">
+      <U>
+        <E n="Bucks Type">RecycleBitsBucks</E>
+        <T n="Value">0.5</T>
+      </U>
+      <U>
+        <E n="Bucks Type">RecyclePiecesBucks</E>
+        <T n="Value">0.5</T>
+      </U>
+    </L>
+  </U>
+  <L n="tests_to_bypass_utility_requirement">
+    <U>
+      <E n="key">POWER</E>
+      <L n="value">
+        <L>
+          <V t="statistic">
+            <U n="statistic">
+              <T n="stat">235560<!--Commodity: commodity_EcoUpgrade_Fuel_FuelCell--></T>
+              <V t="value_threshold" n="threshold">
+                <U n="value_threshold">
+                  <T n="value">1</T>
+                </U>
+              </V>
+              <E n="who">Object</E>
+            </U>
+          </V>
+        </L>
+      </L>
+    </U>
+  </L>
+</I>

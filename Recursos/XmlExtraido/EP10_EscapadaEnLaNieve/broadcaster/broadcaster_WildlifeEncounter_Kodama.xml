@@ -1,0 +1,81 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<I c="Broadcaster" i="broadcaster" m="broadcasters.broadcaster" n="broadcaster_WildlifeEncounter_Kodama" s="247885">
+  <V t="enabled" n="allow_sim_test">
+    <L n="enabled">
+      <L>
+        <V t="test_set_reference">
+          <T n="test_set_reference">255055<!--TestSetInstance: testSetInstance_NotHiking_Actor--></T>
+        </V>
+        <V t="day_and_time">
+          <U n="day_and_time">
+            <V t="enabled" n="is_day">
+              <T n="enabled">False</T>
+            </V>
+          </U>
+        </V>
+      </L>
+    </L>
+  </V>
+  <L n="constraints">
+    <V t="circle">
+      <U n="circle">
+        <T n="radius">4</T>
+      </U>
+    </V>
+  </L>
+  <L n="effects">
+    <V t="affordance">
+      <U n="affordance">
+        <E n="affordance_priority">Critical</E>
+        <L n="affordances">
+          <U>
+            <T n="affordance">247883<!--SuperInteraction: wildlifeEncounter_EncounterOutcome_Kodama--></T>
+          </U>
+        </L>
+        <L n="tests">
+          <L>
+            <V t="state">
+              <U n="state">
+                <T n="value">247480<!--ObjectStateValue: wildlifeEncounter_Trigger_Active--></T>
+                <E n="who">TargetSim</E>
+              </U>
+            </V>
+            <V t="state">
+              <U n="state">
+                <T n="value">247492<!--ObjectStateValue: wildlifeEncounter_TriggerCooldown_State_Inactive--></T>
+                <E n="who">TargetSim</E>
+              </U>
+            </V>
+          </L>
+        </L>
+      </U>
+    </V>
+    <V t="self_loot">
+      <U n="self_loot">
+        <T n="apply_loot_on_remove">False</T>
+        <U n="broadcastee_count_interval">
+          <T n="upper_bound">100</T>
+        </U>
+        <L n="loot_list">
+          <T>247582<!--LootActions: loot_WildlifeEncounter_Trigger_StartCooldown--></T>
+          <T>252032<!--LootActions: loot_WildlifeEncounter_StartVFX_Kodama--></T>
+        </L>
+        <L n="tests">
+          <L>
+            <V t="state">
+              <U n="state">
+                <T n="value">247492<!--ObjectStateValue: wildlifeEncounter_TriggerCooldown_State_Inactive--></T>
+                <E n="who">TargetSim</E>
+              </U>
+            </V>
+          </L>
+        </L>
+      </U>
+    </V>
+  </L>
+  <V t="on_pulse" n="frequency">
+    <U n="on_pulse">
+      <T n="cooldown_time">20</T>
+    </U>
+  </V>
+</I>

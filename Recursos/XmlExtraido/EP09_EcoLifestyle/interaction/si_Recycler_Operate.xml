@@ -1,0 +1,274 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<I c="SuperInteraction" i="interaction" m="interactions.base.super_interaction" n="si_Recycler_Operate" s="225142">
+  <V t="enabled" n="_saveable" />
+  <T n="attention_cost">0.5</T>
+  <V n="basic_content" t="flexible_length">
+    <U n="flexible_length">
+      <L n="conditional_actions">
+        <V t="literal">
+          <U n="literal">
+            <L n="conditions">
+              <V t="time_based">
+                <U n="time_based">
+                  <T n="max_time">15</T>
+                  <T n="min_time">10</T>
+                </U>
+              </V>
+            </L>
+            <E n="interaction_action">EXIT_NATURALLY</E>
+            <L n="tests">
+              <L>
+                <V t="buff">
+                  <U n="buff">
+                    <L n="blacklist">
+                      <T>232794<!--Buff: buff_Trait_Personality_RecycleDisciple_SalvageThrills--></T>
+                    </L>
+                  </U>
+                </V>
+              </L>
+            </L>
+          </U>
+        </V>
+        <V t="literal">
+          <U n="literal">
+            <L n="conditions">
+              <V t="time_based">
+                <U n="time_based">
+                  <T n="max_time">10</T>
+                  <T n="min_time">5</T>
+                </U>
+              </V>
+            </L>
+            <E n="interaction_action">EXIT_NATURALLY</E>
+            <L n="tests">
+              <L>
+                <V t="buff">
+                  <U n="buff">
+                    <V n="whitelist" t="enabled">
+                      <L n="enabled">
+                        <T>232794<!--Buff: buff_Trait_Personality_RecycleDisciple_SalvageThrills--></T>
+                      </L>
+                    </V>
+                  </U>
+                </V>
+              </L>
+            </L>
+          </U>
+        </V>
+      </L>
+      <V t="staging_content" n="content">
+        <U n="staging_content">
+          <U n="content_set">
+            <L n="affordance_links">
+              <T>228653<!--MixerInteraction: mixer_Recycler_Operate--></T>
+              <T>228654<!--MixerInteraction: mixer_Recycler_Idle--></T>
+            </L>
+          </U>
+        </U>
+      </V>
+      <V n="periodic_stat_change" t="enabled">
+        <U n="enabled">
+          <L n="operations">
+            <V t="statistic_change">
+              <U n="statistic_change">
+                <T n="advertise">False</T>
+                <T n="amount">-0.00556</T>
+                <T n="exclusive_to_owning_si">False</T>
+                <T n="stat">233027<!--Commodity: commodity_Utilities_Power--></T>
+                <L n="subject">
+                  <E>Object</E>
+                </L>
+              </U>
+            </V>
+            <V t="statistic_set_max">
+              <U n="statistic_set_max">
+                <T n="stat">232715<!--Commodity: commodity_Trait_Autonomy_RecycleDisciple--></T>
+              </U>
+            </V>
+            <V t="statistic_change">
+              <U n="statistic_change">
+                <T n="amount">-0.35</T>
+                <T n="stat">16575<!--Commodity: commodity_dirtiness--></T>
+                <L n="subject">
+                  <E>Object</E>
+                </L>
+              </U>
+            </V>
+          </L>
+        </U>
+      </V>
+    </U>
+  </V>
+  <L n="basic_extras">
+    <V t="loot">
+      <U n="loot">
+        <L n="loot_list">
+          <T>238582<!--LootActions: loot_AntiEcoDrama_SavingTheWorld--></T>
+        </L>
+      </U>
+    </V>
+    <V t="loot">
+      <U n="loot">
+        <L n="loot_list">
+          <T>238580<!--LootActions: loot_AntiEcoDrama_ThisIsExactlyWhatTheyWant--></T>
+        </L>
+      </U>
+    </V>
+    <V t="loot">
+      <U n="loot">
+        <L n="loot_list">
+          <T>238585<!--LootActions: loot_AntiEcoDrama_ForcedToRecycle--></T>
+        </L>
+      </U>
+    </V>
+  </L>
+  <V t="enabled" n="canonical_animation">
+    <U n="enabled">
+      <T n="factory">225122<!--AnimationElement: Recycler_Operate--></T>
+    </U>
+  </V>
+  <T n="collapsible">True</T>
+  <V t="disabled" n="content_score" />
+  <T n="display_name">0xDAC8D77C<!--String: "Reciclar"--></T>
+  <U n="display_name_text_tokens">
+    <L n="tokens">
+      <V t="participant_type">
+        <U n="participant_type">
+          <V t="from_participant" n="objects">
+            <U n="from_participant">
+              <E n="participant">Actor</E>
+            </U>
+          </V>
+        </U>
+      </V>
+      <V t="participant_type">
+        <U n="participant_type">
+          <V t="from_participant" n="objects">
+            <U n="from_participant">
+              <E n="participant">Object</E>
+            </U>
+          </V>
+        </U>
+      </V>
+    </L>
+  </U>
+  <L n="interaction_category_tags">
+    <E>Interaction_Super</E>
+    <E>Interaction_All</E>
+    <E>Interaction_OldDay_Fine</E>
+  </L>
+  <V n="outcome" t="test_based">
+    <U n="test_based">
+      <L n="fallback_outcomes">
+        <U>
+          <U n="outcome">
+            <V t="enabled" n="animation_ref">
+              <U n="enabled">
+                <T n="factory">225123<!--AnimationElement: Recycler_Succeed--></T>
+                <U n="overrides">
+                  <L n="params">
+                    <U>
+                      <T n="name">IsRecyclerDirty</T>
+                      <V t="boolean" n="value">
+                        <T n="boolean">False</T>
+                      </V>
+                    </U>
+                  </L>
+                </U>
+              </U>
+            </V>
+            <L n="loot_list">
+              <T>226043<!--LootActions: loot_Recycler_RecycleObject--></T>
+            </L>
+          </U>
+          <U n="weight">
+            <T n="base_value">1</T>
+            <L n="multipliers">
+              <U>
+                <T n="multiplier">0</T>
+                <L n="tests">
+                  <L>
+                    <V t="state">
+                      <U n="state">
+                        <E n="operator">EQUAL</E>
+                        <T n="value">15131<!--ObjectStateValue: DirtyState_Dirty--></T>
+                      </U>
+                    </V>
+                  </L>
+                </L>
+              </U>
+            </L>
+          </U>
+        </U>
+        <U>
+          <U n="outcome">
+            <V t="enabled" n="animation_ref">
+              <U n="enabled">
+                <T n="factory">225121<!--AnimationElement: Recycler_Fail--></T>
+                <U n="overrides">
+                  <L n="params">
+                    <U>
+                      <T n="name">IsRecyclerDirty</T>
+                      <V t="boolean" n="value">
+                        <T n="boolean">True</T>
+                      </V>
+                    </U>
+                  </L>
+                </U>
+              </U>
+            </V>
+            <L n="loot_list">
+              <T>226043<!--LootActions: loot_Recycler_RecycleObject--></T>
+            </L>
+          </U>
+          <U n="weight">
+            <L n="multipliers">
+              <U>
+                <T n="multiplier">0</T>
+                <L n="tests">
+                  <L>
+                    <V t="state">
+                      <U n="state">
+                        <E n="operator">NOTEQUAL</E>
+                        <T n="value">15131<!--ObjectStateValue: DirtyState_Dirty--></T>
+                      </U>
+                    </V>
+                  </L>
+                </L>
+              </U>
+            </L>
+          </U>
+        </U>
+      </L>
+    </U>
+  </V>
+  <E n="scoring_priority">NORMAL</E>
+  <T n="subaction_selection_weight">1</T>
+  <V t="literal" n="super_affordance_compatibility">
+    <U n="literal">
+      <V n="default_inclusion" t="exclude_all" />
+    </U>
+  </V>
+  <E n="target_type">OBJECT</E>
+  <V t="enabled" n="test_disallow_while_running">
+    <U n="enabled">
+      <T n="test_self">True</T>
+    </U>
+  </V>
+  <L n="test_globals">
+    <V t="sim_info">
+      <U n="sim_info">
+        <V t="specified" n="ages" />
+        <V t="specified" n="species">
+          <U n="specified">
+            <L n="species">
+              <E />
+            </L>
+          </U>
+        </V>
+        <E n="who">Actor</E>
+      </U>
+    </V>
+  </L>
+  <T n="time_overhead">30</T>
+</I>

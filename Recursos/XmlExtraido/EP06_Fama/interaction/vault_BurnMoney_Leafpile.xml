@@ -1,0 +1,290 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<I c="SuperInteraction" i="interaction" m="interactions.base.super_interaction" n="vault_BurnMoney_Leafpile" s="201642">
+  <L n="_constraints">
+    <U>
+      <L n="constraints">
+        <U>
+          <V n="value" t="circle">
+            <U n="circle">
+              <T n="ideal_radius">1.5</T>
+              <T n="ideal_radius_width">0</T>
+              <T n="radial_cost_weight">500</T>
+              <T n="radius">1.75</T>
+            </U>
+          </V>
+        </U>
+        <U>
+          <V n="value" t="facing">
+            <U n="facing">
+              <T n="inner_radius">10</T>
+              <T n="range">30</T>
+            </U>
+          </V>
+        </U>
+      </L>
+    </U>
+  </L>
+  <V t="enabled" n="_saveable" />
+  <T n="allow_autonomous">False</T>
+  <T n="attention_cost">0.5</T>
+  <V n="basic_content" t="one_shot">
+    <U n="one_shot">
+      <U n="animation_ref">
+        <T n="factory">201639<!--AnimationElement: vaultAnimations_BurnMoney_Leafpile--></T>
+      </U>
+    </U>
+  </V>
+  <L n="basic_extras">
+    <V t="payment">
+      <U n="payment">
+        <V n="payment" t="literal">
+          <U n="literal">
+            <U n="cost_modifiers">
+              <L n="multipliers">
+                <U>
+                  <T n="multiplier">2</T>
+                  <L n="tests">
+                    <L>
+                      <V t="simoleon_value">
+                        <U n="simoleon_value">
+                          <V t="total_cash" n="value_context" />
+                          <U n="value_threshold">
+                            <T n="value">100000<!--PaintingTexture: PaintingTexture_Sml_IMP_High_01--></T>
+                          </U>
+                        </U>
+                      </V>
+                      <V t="simoleon_value">
+                        <U n="simoleon_value">
+                          <V t="total_cash" n="value_context" />
+                          <U n="value_threshold">
+                            <E n="comparison">LESS</E>
+                            <T n="value">200000</T>
+                          </U>
+                        </U>
+                      </V>
+                    </L>
+                  </L>
+                </U>
+                <U>
+                  <T n="multiplier">4</T>
+                  <L n="tests">
+                    <L>
+                      <V t="simoleon_value">
+                        <U n="simoleon_value">
+                          <V t="total_cash" n="value_context" />
+                          <U n="value_threshold">
+                            <E n="comparison">GREATER_OR_EQUAL</E>
+                            <T n="value">200000</T>
+                          </U>
+                        </U>
+                      </V>
+                      <V t="simoleon_value">
+                        <U n="simoleon_value">
+                          <V t="total_cash" n="value_context" />
+                          <U n="value_threshold">
+                            <E n="comparison">LESS</E>
+                            <T n="value">500000</T>
+                          </U>
+                        </U>
+                      </V>
+                    </L>
+                  </L>
+                </U>
+                <U>
+                  <T n="multiplier">10</T>
+                  <L n="tests">
+                    <L>
+                      <V t="simoleon_value">
+                        <U n="simoleon_value">
+                          <V t="total_cash" n="value_context" />
+                          <U n="value_threshold">
+                            <E n="comparison">GREATER_OR_EQUAL</E>
+                            <T n="value">500000</T>
+                          </U>
+                        </U>
+                      </V>
+                      <V t="simoleon_value">
+                        <U n="simoleon_value">
+                          <V t="total_cash" n="value_context" />
+                          <U n="value_threshold">
+                            <E n="comparison">LESS</E>
+                            <T n="value">1000000</T>
+                          </U>
+                        </U>
+                      </V>
+                    </L>
+                  </L>
+                </U>
+                <U>
+                  <T n="multiplier">20</T>
+                  <L n="tests">
+                    <L>
+                      <V t="simoleon_value">
+                        <U n="simoleon_value">
+                          <V t="total_cash" n="value_context" />
+                          <U n="value_threshold">
+                            <E n="comparison">GREATER_OR_EQUAL</E>
+                            <T n="value">1000000</T>
+                          </U>
+                        </U>
+                      </V>
+                    </L>
+                  </L>
+                </U>
+              </L>
+            </U>
+            <V t="amount" n="payment_cost">
+              <U n="amount">
+                <T n="amount">500</T>
+              </U>
+            </V>
+          </U>
+        </V>
+        <V t="at_beginning" n="timing" />
+      </U>
+    </V>
+    <V t="broadcaster">
+      <U n="broadcaster">
+        <L n="broadcaster_types">
+          <U>
+            <T n="item">193818<!--Broadcaster: broadcaster_Vault_BurnMoney_Horrified--></T>
+          </U>
+        </L>
+      </U>
+    </V>
+    <V t="vfx">
+      <U n="vfx">
+        <V t="at_beginning" n="timing" />
+        <U n="vfx">
+          <T n="effect_name">ep06_money_burn_fire</T>
+        </U>
+        <V t="interaction" n="vfx_lifetime" />
+      </U>
+    </V>
+  </L>
+  <V t="disabled" n="basic_reserve_object" />
+  <V t="disabled" n="content_score" />
+  <T n="display_name">0x5AC02666<!--String: "Quemar dinero"--></T>
+  <U n="display_name_text_tokens">
+    <L n="tokens">
+      <V t="participant_type">
+        <U n="participant_type">
+          <V t="from_participant" n="objects">
+            <U n="from_participant">
+              <E n="participant">Actor</E>
+            </U>
+          </V>
+        </U>
+      </V>
+      <V t="participant_type">
+        <U n="participant_type">
+          <V t="from_participant" n="objects">
+            <U n="from_participant">
+              <E n="participant">Object</E>
+            </U>
+          </V>
+        </U>
+      </V>
+    </L>
+  </U>
+  <L n="interaction_category_tags">
+    <E>Interaction_Super</E>
+    <E>Interaction_All</E>
+  </L>
+  <V t="single" n="outcome">
+    <U n="single">
+      <U n="actions">
+        <V n="animation_ref" t="enabled">
+          <U n="enabled">
+            <T n="factory">28391<!--AnimationElement: Socials_Responses_Miscellaneous_Maniacal--></T>
+            <U n="overrides">
+              <V n="balloons" t="enabled">
+                <L n="enabled">
+                  <U>
+                    <L n="balloon_choices">
+                      <U>
+                        <V n="item" t="balloon_icon">
+                          <U n="balloon_icon">
+                            <V n="category_icon" t="show_category_icon">
+                              <V t="resource_key" n="show_category_icon">
+                                <U n="resource_key">
+                                  <T p="InGame\UI\Icons\Headlines\Final\headline_angry_v3.png" n="key">2f7d0004:00000000:304ff71504fffd8b</T>
+                                </U>
+                              </V>
+                            </V>
+                            <V t="resource_key" n="icon">
+                              <U n="resource_key">
+                                <T n="key" p="InGame\UI\Icons\Headlines\Final\headline_cashmoney.png">2f7d0004:00000000:36d81b5cf7ea3cab</T>
+                              </U>
+                            </V>
+                          </U>
+                        </V>
+                      </U>
+                    </L>
+                    <L n="balloon_target">
+                      <E>Actor</E>
+                    </L>
+                  </U>
+                </L>
+              </V>
+            </U>
+          </U>
+        </V>
+        <L n="loot_list">
+          <T>193855<!--LootActions: loot_Vault_BurnMoney--></T>
+          <T>102362<!--LootActions: loot_Statistic_Campfire_AddLog--></T>
+          <T>121488<!--LootActions: loot_Statistic_Bonfire_AddFuel--></T>
+        </L>
+      </U>
+    </U>
+  </V>
+  <E n="scoring_priority">NORMAL</E>
+  <T n="subaction_selection_weight">1</T>
+  <E n="target_type">OBJECT</E>
+  <L n="test_globals">
+    <V t="sim_info">
+      <U n="sim_info">
+        <V t="specified" n="ages" />
+        <V t="specified" n="species">
+          <U n="specified">
+            <L n="species">
+              <E />
+            </L>
+          </U>
+        </V>
+        <E n="who">Actor</E>
+      </U>
+    </V>
+    <V t="simoleon_value">
+      <U n="simoleon_value">
+        <V t="total_cash" n="value_context" />
+        <U n="value_threshold">
+          <T n="value">10000</T>
+        </U>
+      </U>
+    </V>
+    <V t="simoleon_value">
+      <U n="simoleon_value">
+        <V n="tooltip" t="enabled">
+          <T n="enabled">0x95F48EC<!--String: "Para usar esta interacción se necesitan más fondos en la unidad doméstica."--></T>
+        </V>
+        <V t="total_cash" n="value_context" />
+        <U n="value_threshold">
+          <T n="value">50000</T>
+        </U>
+      </U>
+    </V>
+  </L>
+  <L n="tests">
+    <L>
+      <V t="state">
+        <U n="state">
+          <V t="always_pass" n="fallback_behavior" />
+          <E n="operator">NOTEQUAL</E>
+          <T n="value">182945<!--CommodityBasedObjectStateValue: LeafPile_FireIntensity_Unlit--></T>
+        </U>
+      </V>
+    </L>
+  </L>
+  <T n="time_overhead">30</T>
+</I>

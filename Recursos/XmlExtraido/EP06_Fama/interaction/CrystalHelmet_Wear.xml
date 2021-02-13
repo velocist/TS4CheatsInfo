@@ -1,0 +1,160 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<I c="SuperInteraction" i="interaction" m="interactions.base.super_interaction" n="CrystalHelmet_Wear" s="192748">
+  <V t="enabled" n="_saveable" />
+  <T n="allow_autonomous">False</T>
+  <T n="allow_from_sim_inventory">True</T>
+  <T n="allow_from_world">False</T>
+  <T n="attention_cost">0.5</T>
+  <V t="one_shot" n="basic_content" />
+  <L n="basic_extras">
+    <V t="audio_sting">
+      <U n="audio_sting">
+        <U n="audio_sting">
+          <T n="audio" p="InEP06\Audio\SFX\crystalhelmet\fx_ep06_crystal_helmet_power_on.propx">39b2aa4a:00000000:d878fb90aa1a0fb6</T>
+        </U>
+        <U n="success_chance">
+          <L n="multipliers">
+            <U>
+              <T n="multiplier">0</T>
+              <L n="tests">
+                <L>
+                  <V t="state">
+                    <U n="state">
+                      <T n="value">192771<!--ObjectStateValue: crystalHelmet_Crystal_NoCrystal--></T>
+                    </U>
+                  </V>
+                </L>
+              </L>
+            </U>
+          </L>
+        </U>
+      </U>
+    </V>
+  </L>
+  <V t="disabled" n="content_score" />
+  <T n="display_name">0x371CF13D<!--String: "Ponerse la corona"--></T>
+  <U n="display_name_text_tokens">
+    <L n="tokens">
+      <V t="participant_type">
+        <U n="participant_type">
+          <V t="from_participant" n="objects">
+            <U n="from_participant">
+              <E n="participant">Actor</E>
+            </U>
+          </V>
+        </U>
+      </V>
+      <V t="participant_type">
+        <U n="participant_type">
+          <V t="from_participant" n="objects">
+            <U n="from_participant">
+              <E n="participant">Object</E>
+            </U>
+          </V>
+        </U>
+      </V>
+    </L>
+  </U>
+  <L n="interaction_category_tags">
+    <E>Interaction_Super</E>
+    <E>Interaction_All</E>
+  </L>
+  <V n="outcome" t="single">
+    <U n="single">
+      <U n="actions">
+        <L n="loot_list">
+          <T>192768<!--LootActions: loot_CrystalHelmet_WearHelmet--></T>
+          <T>193533<!--LootActions: loot_CrystalHelmet_ApplyTrait--></T>
+          <T>192890<!--LootActions: loot_CrystalHelmet_CopyBatteryLife_CrystalToSim--></T>
+        </L>
+      </U>
+    </U>
+  </V>
+  <E n="scoring_priority">NORMAL</E>
+  <T n="subaction_selection_weight">1</T>
+  <E n="target_type">OBJECT</E>
+  <L n="test_globals">
+    <V t="sim_info">
+      <U n="sim_info">
+        <V t="specified" n="ages">
+          <L n="specified">
+            <E>TEEN</E>
+            <E>YOUNGADULT</E>
+            <E>ADULT</E>
+            <E>ELDER</E>
+            <E>CHILD</E>
+          </L>
+        </V>
+        <V t="specified" n="species">
+          <U n="specified">
+            <L n="species">
+              <E />
+            </L>
+          </U>
+        </V>
+        <E n="who">Actor</E>
+      </U>
+    </V>
+    <V t="buff">
+      <U n="buff">
+        <L n="blacklist">
+          <T>192776<!--Buff: buff_Object_CrystalHelmet_Wearing--></T>
+        </L>
+      </U>
+    </V>
+    <V t="buff">
+      <U n="buff">
+        <L n="blacklist">
+          <T>198617<!--Buff: buff_Object_CrystalHelmet_WearingIncompatibleOutfit_BG--></T>
+          <T>165768<!--Buff: buff_ChildhoodPhase_Bear_InCostume_Child--></T>
+          <T>165769<!--Buff: buff_ChildhoodPhase_Bear_InCostume_Adult--></T>
+          <T>153741<!--Buff: buff_IsBear_BG--></T>
+        </L>
+        <V t="enabled" n="tooltip">
+          <T n="enabled">0x15DF69C0<!--String: "No es compatible con este atuendo."--></T>
+        </V>
+      </U>
+    </V>
+    <V t="buff">
+      <U n="buff">
+        <L n="blacklist">
+          <T>175971<!--Buff: buff_Skeleton--></T>
+        </L>
+        <V n="tooltip" t="enabled">
+          <T n="enabled">0x9A6AEB70<!--String: "No disponible mientras se es un esqueleto."--></T>
+        </V>
+      </U>
+    </V>
+    <V t="zone">
+      <U n="zone">
+        <V n="tooltip" t="enabled">
+          <T n="enabled">0xC0E42540<!--String: "La corona Cristales Celestiales no se puede llevar puesta en esa ubicación."--></T>
+        </V>
+        <U n="zone_tests">
+          <V n="venue_type" t="enabled">
+            <U n="enabled">
+              <V n="blacklist" t="specify">
+                <U n="specify">
+                  <L n="blacklist">
+                    <T>190058<!--Venue: venue_ActingStudio--></T>
+                  </L>
+                </U>
+              </V>
+            </U>
+          </V>
+        </U>
+      </U>
+    </V>
+    <V t="trait">
+      <U n="trait">
+        <L n="blacklist_traits">
+          <T>200510<!--Trait: trait_Hidden_isDisguised--></T>
+        </L>
+        <V t="enabled" n="tooltip">
+          <T n="enabled">0x15DF69C0<!--String: "No es compatible con este atuendo."--></T>
+        </V>
+      </U>
+    </V>
+  </L>
+  <T n="time_overhead">30</T>
+</I>

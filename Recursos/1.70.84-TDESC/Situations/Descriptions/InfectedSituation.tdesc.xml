@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+
+<TuningRoot>
+    <Instance instance_type="situation" class="InfectedSituation" module="situations.complex.infected_situation" muid="7DCFE405054859DF" description="Infected situation.&#xA;&#xA;This situation is always created for a Sim with the Infected trait. The&#xA;infected Sim is not assigned to this situation however. When the Sim should&#xA;be possessed, this situation creates a sub situation that is the possessed&#xA;situation." instance_subclasses_only="False" parents="SituationComplexCommon, SituationComplex, Situation" path="Situations\Descriptions" use_guid_for_reference="True">
+        <Deleted name="_buff" muid="F3FCFA2E1B94EA94" />
+
+        <Deleted name="_cost" muid="9A4AEB82F957A517" />
+
+        <Deleted name="_display_name" muid="DE1839C5B2160ADB" />
+
+        <Deleted name="_icon" muid="B50C5CADE3C186B2" />
+
+        <Deleted name="_initiating_sim_tests" muid="B4AA7D8E2EBAF166" />
+
+        <Deleted name="_level_data" muid="E88E4EC48883CC05" />
+
+        <Deleted name="_main_goal_visibility_test" muid="61BC0A24756CA922" />
+
+        <Deleted name="_relationship_between_job_members" muid="7EC6E0E8282AF40A" />
+
+        <Deleted name="_resident_job" muid="22273298A5837C4F" />
+
+        <Deleted name="audio_sting_on_start" muid="2E4638E0798BA925" />
+
+        <Deleted name="background_audio" muid="83A224D0A8B0B3CB" />
+
+        <Deleted name="category" muid="8CC9D33F2D4F4B9B" />
+
+        <Deleted name="compatible_venues" muid="7E53185B7CCCC5CD" />
+
+        <TunableTuple name="default_job_and_role" class="TunableSituationJobAndRoleState" display="Default Job And Role" muid="92C258742355F6E6" description="The job/role the infected Sim will be in." Deprecated="False" filter="0" group="Situation">
+            <Tunable type="role_state" name="role_state" class="TunableReference" display="Role State" muid="BC732120359BDC15" description="A role state the sim assigned to the job will perform" allow_none="False" Deprecated="False" filter="0" group="General" />
+            <Tunable type="situation_job" name="situation_job" class="TunableReference" display="Situation Job" muid="E2E9804DC9B76E88" description="A reference to a SituationJob that can be performed at this Situation." allow_none="False" Deprecated="False" filter="0" group="General" />
+        </TunableTuple>
+
+        <Deleted name="entitlement" muid="5CBAE383D34664F4" />
+
+        <Deleted name="force_invite_only" muid="862C1DFBC37AC932" />
+
+        <Deleted name="goal_button_text" muid="7B04A5EA2ED4007A" />
+
+        <Deleted name="goal_sub_text" muid="19B6E85048E82BC0" />
+
+        <Deleted name="highlight_first_incomplete_minor_goal" muid="4C9E249196495320" />
+
+        <TunableTuple name="infected_state" class="Tunable_InfectedState" display="Infected State" muid="67D64D64F38F5B86" description="Infected state." Deprecated="False" filter="0" group="Situation State">
+            <Tunable type="bool" name="allow_join_situation" class="Tunable" default="True" display="Allow Join Situation" muid="D28DA58B67B18A1E" description="Whether the situation is allowed to join at this state." Deprecated="False" filter="0" group="General" />
+            <TunableList name="job_and_role_changes" class="TunableMapping" display="Job And Role Changes" muid="93DD9999243FEEA" mapping_key="Situation Job" mapping_value="Role State" description="A mapping between situation jobs and role states that defines&#xA;what role states we want to switch to for sims on which jobs&#xA;when this situation state is entered." Deprecated="False" filter="0" group="General">
+                <TunableTuple class="TunableTuple" muid="1354E1A6691578EF" Deprecated="False" filter="0" group="General">
+                    <Tunable type="role_state" name="Role State" class="TunableReference" display="Role State" muid="8EEA5FA437F3261E" description="The role state that we will switch sims of the linked job&#xA;into." allow_none="False" Deprecated="False" filter="0" group="General" />
+                    <Tunable type="situation_job" name="Situation Job" class="TunableReference" display="Situation Job" muid="6D4762E28F2842D8" description="A reference to a SituationJob that we will use to change&#xA;sim's role state." allow_none="False" Deprecated="False" filter="0" group="General" />
+                </TunableTuple>
+            </TunableList>
+            <TunableVariant type="None" name="time_out" class="OptionalTunable" default="disabled" display="Time Out" muid="1D0C325B8F11D1AC" description="How long this state will last before time expired. Please talk to the GPE who implemented the specific&#xA;situation to see what the state will do on time expired." Deprecated="False" filter="0" group="General">
+                <Tunable name="disabled" class="TunableExistance" display="Disabled" muid="890FBC2D656A5CBA" />
+                <Tunable type="float" name="enabled" class="TunableSimMinute" default="15" display="Enabled" muid="B83BF7D1C2D09AD" min="1" max="None" tuning_state="NeedsTuning" Deprecated="False" filter="0" group="General" />
+            </TunableVariant>
+        </TunableTuple>
+
+        <Deleted name="job_display_ordering" muid="92BA1D0F7EC4418E" />
+
+        <Deleted name="main_goal" muid="1B23BFC50B3E6E89" />
+
+        <Deleted name="main_goal_audio_sting" muid="80ECF9EBBB87B95D" />
+
+        <Deleted name="max_participants" muid="1C7A4E3CDB855BFE" />
+
+        <Deleted name="minor_goal_chains" muid="CB5AA6BF8FFD17A1" />
+
+        <TunableEnum type="Tag" name="possessed_buff_no_animate_tag" class="TunableTag" default="INVALID" display="Possessed Buff No Animate Tag" muid="33BA791E720F33C" dynamic_entries="tag.Tag._elements" static_entries="tag.Tag" description="Possession buffs with this tag will not play the start possession&#xA;animation." Deprecated="False" dynamic_entries_prefix="Buff" filter="0" group="General" invalid_entries="INVALID" pack_safe="True" />
+
+        <TunableEnum type="Tag" name="possessed_buff_tag" class="TunableTag" default="INVALID" display="Possessed Buff Tag" muid="45A8428D43FF7B5" dynamic_entries="tag.Tag._elements" static_entries="tag.Tag" description="Tag for buffs that can add the Possessed Mood through the Infection&#xA;System. Possessed status is refreshed when these buffs are added&#xA;or removed." Deprecated="False" dynamic_entries_prefix="Buff" filter="0" group="General" invalid_entries="INVALID" pack_safe="True" />
+
+        <TunableTuple name="possessed_duration_hours" class="TunableTestedSum" display="Possessed Duration Hours" muid="45F8B7B2DC24EADD" description="How long the possession lasts." Deprecated="False" filter="0" group="Situation">
+            <Tunable type="float" name="base_value" class="Tunable" default="0" display="Base Value" muid="94C7AAF8E3B6C0D9" description="The basic value to return if no modifiers are applied." tuning_state="NeedsTuning" Deprecated="False" filter="0" group="General" />
+            <TunableList name="modifiers" class="TunableList" display="Modifiers" muid="3E1536245C900823" description="A list of modifiers to add to Base Value." Deprecated="False" filter="0" group="General">
+                <TunableTuple class="TunableTuple" muid="940AAC3715485DD7" Deprecated="False" filter="0" group="General">
+                    <Tunable type="float" name="modifier" class="Tunable" default="0" display="Modifier" muid="FBEFBE9685F73253" description="The value to apply add to Base Value if the associated&#xA;tests pass. Can be negative" tuning_state="NeedsTuning" Deprecated="False" filter="0" group="General" />
+                    <TdescFragTag name="tests" class="TunableTestSet" display="Tests" muid="453A469DA13D6246" description="A series of tests that must pass in order for the modifier&#xA;to be applied." filter="0" group="General" />
+                </TunableTuple>
+            </TunableList>
+        </TunableTuple>
+
+        <Tunable type="situation" name="possessed_situation" class="TunableReference" display="Possessed Situation" muid="E127CC343E9AE4DC" description="Possessed situation to place Sim in." allow_none="False" Deprecated="False" filter="0" group="Situation" restrict="PossessedSituation" />
+
+        <TunableTuple name="possessed_start_time" class="TunableTimeOfDay" display="Possessed Start Time" muid="AEC1A91709D440C" description="Time of day Sims become possessed." Deprecated="False" filter="0" group="Situation">
+            <Tunable type="int" name="hour" class="TunableRange" default="12" display="Hour" muid="E3F296C158A0FF74" min="0" max="23" description="Hour of the day" tuning_state="NeedsTuning" Deprecated="False" filter="0" group="General" />
+            <Tunable type="int" name="minute" class="TunableRange" default="0" display="Minute" muid="E230894B610F23A6" min="0" max="59" description="Minute of Hour" tuning_state="NeedsTuning" Deprecated="False" filter="0" group="General" />
+        </TunableTuple>
+
+        <TunableTuple name="possession_time_buff" class="TunableBuffReference" display="Possession Time Buff" muid="571CB3CE7E2485BC" description="The buff to add to the Sim when it is the possessed start time." Deprecated="False" filter="0" group="General">
+            <TunableVariant type="None" name="buff_reason" class="OptionalTunable" default="disabled" display="Buff Reason" muid="B981412B68461262" description="If set, specify a reason why the buff was added." Deprecated="False" filter="0" group="General">
+                <Tunable name="disabled" class="TunableExistance" display="Disabled" muid="6ED0A55683C7BA7D" />
+                <Tunable type="int" name="enabled" class="TunableLocalizedString" default="0x0" display="Enabled" muid="732AF66785644D88" description="The reason the buff was added. This will be displayed in the&#xA;buff tooltip." Deprecated="False" filter="0" group="General" />
+            </TunableVariant>
+            <Tunable type="buff" name="buff_type" class="TunableReference" display="Buff Type" muid="93AA5B66F17E1DC0" description="Buff that will get added to sim." allow_none="False" Deprecated="False" filter="0" group="General" />
+        </TunableTuple>
+
+        <Deleted name="recommended_job_object_notification" muid="BD90D27CF3E9CEA3" />
+
+        <Deleted name="recommended_job_object_text" muid="F76E4F41EC3ED27A" />
+
+        <Deleted name="screen_slam_bronze" muid="7AF4C80748FE954C" />
+
+        <Deleted name="screen_slam_gold" muid="3566424778F42D13" />
+
+        <Deleted name="screen_slam_no_medal" muid="E5D550662F241CB2" />
+
+        <Deleted name="screen_slam_silver" muid="19FB0320B292D602" />
+
+        <Deleted name="situation_description" muid="93D8CFEB4B9FB99A" />
+
+        <Deleted name="suppress_scoring_progress_bar" muid="A4B2BF9F98EFBE5E" />
+
+        <Deleted name="targeted_situation" muid="AD3C6A37B4B5ED3C" />
+
+        <Deleted name="travel_request_behavior" muid="49F59983C9878F6E" />
+
+        <Deleted name="venue_invitation_message" muid="527762CE9049A77A" />
+
+        <Deleted name="venue_situation_player_job" muid="FCE8B72DF9EDA68E" />
+    </Instance>
+
+    <VersionHistory>
+        <ActionList>
+            <Action type="kRemove" old_muid="937CF6B95C77173D" />
+        </ActionList>
+
+        <ActionList>
+            <Action type="kRename" old_muid="D2E9F794AA3A01C8" new_muid="7E53185B7CCCC5CD" />
+        </ActionList>
+
+        <ActionList>
+            <Action type="kRemove" old_muid="9D368E824C2DD0B" />
+            <Action type="kRemove" old_muid="8E0CCCD9580398C1" />
+        </ActionList>
+    </VersionHistory>
+</TuningRoot>

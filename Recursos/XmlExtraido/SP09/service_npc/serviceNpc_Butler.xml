@@ -1,0 +1,174 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<I c="ServiceNpcHireable" i="service_npc" m="situations.service_npcs.service_npc_tuning" n="serviceNpc_Butler" s="146002">
+  <T n="_min_duration_left_for_arrival_on_lot">60</T>
+  <U n="_work_duration_min_max">
+    <T n="lower_bound">1440</T>
+    <T n="upper_bound">1440</T>
+  </U>
+  <V n="additional_culling_immunity" t="enabled">
+    <T n="enabled">200</T>
+  </V>
+  <E n="bill_source">Butler_Service</E>
+  <V n="bill_time_of_day" t="specify_bill_time">
+    <U n="specify_bill_time">
+      <V n="delinquent_npc_quit_notification" t="literal">
+        <U n="literal">
+          <V n="text" t="single">
+            <T n="single">0x35A50DB8<!--String: "Si algo me enseñó la Academia de Mayordomos de Windenburg es que "no hay ocupación sin compensación". Debido a la tardanza en pagar las facturas de su unidad doméstica, me temo que debo marcharme.\n\nSi consigue poner en orden sus finanzas, puede usar el teléfono para volver a contratar un nuevo servicio de mayordomo."--></T>
+          </V>
+        </U>
+      </V>
+      <V n="fail_to_pay_notification" t="literal">
+        <U n="literal">
+          <V t="enabled" n="icon">
+            <V t="resource_key" n="enabled">
+              <U n="resource_key">
+                <T p="InSP09\UI\Headlines\headline_Butler.png" n="key">2f7d0004:00000000:db011c5d746be8d6</T>
+              </U>
+            </V>
+          </V>
+          <V n="text" t="single">
+            <T n="single">0xEECF6B74<!--String: "Desgraciadamente, no he recibido el abono total de mi remuneración diaria. Como cortesía, he añadido {1.Money} a las facturas de la unidad doméstica de esta semana para que la deuda pueda saldarse cómodamente. El impago de la cantidad debida supondrá la finalización de nuestro acuerdo de servicio."--></T>
+          </V>
+        </U>
+      </V>
+    </U>
+  </V>
+  <T n="cost_hourly">12</T>
+  <T n="cost_up_front">175</T>
+  <T n="display_name">0xBEAC41D1<!--String: "Servicio de mayordomo"--></T>
+  <T n="exclusive_to_household">True</T>
+  <U n="fake_perform_job">
+    <L n="modifications">
+      <U>
+        <V n="action" t="set_state">
+          <U n="set_state">
+            <T n="action_value">15132<!--CommodityBasedObjectStateValue: Dirty_Clean--></T>
+          </U>
+        </V>
+        <L n="tests">
+          <L>
+            <V t="state">
+              <U n="state">
+                <E n="operator">LESS_OR_EQUAL</E>
+                <T n="value">15133<!--CommodityBasedObjectStateValue: Dirty_Dirty--></T>
+              </U>
+            </V>
+          </L>
+        </L>
+      </U>
+      <U>
+        <V n="action" t="destroy_object" />
+        <L n="tests">
+          <L>
+            <V t="state">
+              <U n="state">
+                <E n="operator">EQUAL</E>
+                <T n="value">15108<!--CommodityBasedObjectStateValue: Consumable_Empty--></T>
+              </U>
+            </V>
+            <V t="consumable_test">
+              <U n="consumable_test">
+                <U n="bites_left">
+                  <E n="operator">LESS_OR_EQUAL</E>
+                </U>
+              </U>
+            </V>
+            <V t="object_definition">
+              <U n="object_definition">
+                <V n="item" t="tagged_item">
+                  <U n="tagged_item">
+                    <L n="tag_set">
+                      <E>Func_Venue_NotDestroyableByCleanup</E>
+                    </L>
+                    <E n="test_type">CONTAINS_NO_TAGS_IN_SET</E>
+                  </U>
+                </V>
+              </U>
+            </V>
+          </L>
+          <L>
+            <V t="state">
+              <U n="state">
+                <E n="operator">EQUAL</E>
+                <T n="value">15190<!--CommodityBasedObjectStateValue: Freshness_Spoiled--></T>
+              </U>
+            </V>
+            <V t="object_definition">
+              <U n="object_definition">
+                <V n="item" t="tagged_item">
+                  <U n="tagged_item">
+                    <L n="tag_set">
+                      <E>Func_Venue_NotDestroyableByCleanup</E>
+                    </L>
+                    <E n="test_type">CONTAINS_NO_TAGS_IN_SET</E>
+                  </U>
+                </V>
+              </U>
+            </V>
+          </L>
+          <L>
+            <V t="object_definition">
+              <U n="object_definition">
+                <V n="item" t="tagged_item">
+                  <U n="tagged_item">
+                    <L n="tag_set">
+                      <E>Func_TrashPile</E>
+                      <E>Func_Puddle</E>
+                      <E>Func_Laundry_Pile</E>
+                    </L>
+                    <E n="test_type">CONTAINS_ANY_TAG_IN_SET</E>
+                  </U>
+                </V>
+              </U>
+            </V>
+          </L>
+        </L>
+      </U>
+      <U>
+        <V n="action" t="set_state">
+          <U n="set_state">
+            <T n="action_value">175576<!--CommodityBasedObjectStateValue: laundry_Hamper_Capacity_Values_Empty--></T>
+          </U>
+        </V>
+        <L n="tests">
+          <L>
+            <V t="state">
+              <U n="state">
+                <E n="operator">NOTEQUAL</E>
+                <T n="value">175576<!--CommodityBasedObjectStateValue: laundry_Hamper_Capacity_Values_Empty--></T>
+              </U>
+            </V>
+          </L>
+        </L>
+      </U>
+    </L>
+  </U>
+  <L n="free_service_traits">
+    <T>32110<!--Trait: trait_FreeServices--></T>
+    <T>196358<!--Trait: trait_Hidden_Fame_Quirk_StarTreatment--></T>
+  </L>
+  <T n="full_time_npc">True</T>
+  <T n="hire_interaction">146001<!--SuperInteraction: phone_HireMaleButler--></T>
+  <T p="InSP09\UI\Headlines\headline_Butler.png" n="icon">2f7d0004:00000000:db011c5d746be8d6</T>
+  <T n="situation">145804<!--ServiceNpcButlerSituation: butler_situation--></T>
+  <U n="work_hours">
+    <L n="schedule_entries">
+      <U>
+        <U n="days_available">
+          <T n="0 SUNDAY">True</T>
+          <T n="1 MONDAY">True</T>
+          <T n="2 TUESDAY">True</T>
+          <T n="3 WEDNESDAY">True</T>
+          <T n="4 THURSDAY">True</T>
+          <T n="5 FRIDAY">True</T>
+          <T n="6 SATURDAY">True</T>
+        </U>
+        <T n="duration">24</T>
+        <U n="start_time">
+          <T n="hour">6</T>
+        </U>
+      </U>
+    </L>
+  </U>
+</I>

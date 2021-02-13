@@ -1,0 +1,548 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<I c="SuperInteraction" i="interaction" m="interactions.base.super_interaction" n="si_waitStaff_DeliverFood" s="132598">
+  <V t="reference" n="_animation_actor_map">
+    <T n="reference">104104<!--AnimationActorMap: AlreadyCarryingCarryTarget--></T>
+  </V>
+  <L n="_constraints">
+    <U>
+      <L n="constraints">
+        <U>
+          <V n="value" t="posture">
+            <U n="posture">
+              <L n="posture_manifest_tuning">
+                <U>
+                  <V n="carry_right" t="actor" />
+                  <V t="enabled" n="posture_type">
+                    <T n="enabled">15537<!--MobilePosture: posture_Stand--></T>
+                  </V>
+                </U>
+              </L>
+            </U>
+          </V>
+        </U>
+      </L>
+    </U>
+  </L>
+  <V t="participant" n="_icon">
+    <U n="participant">
+      <L n="participant_type">
+        <E>Actor</E>
+      </L>
+    </U>
+  </V>
+  <V t="enabled" n="_saveable" />
+  <T n="allow_user_directed">False</T>
+  <T n="allowed_to_combine">False</T>
+  <T n="attention_cost">0.5</T>
+  <V t="one_shot" n="basic_content" />
+  <L n="basic_liabilities">
+    <V t="restaurant_deliver_food_liability">
+      <U n="restaurant_deliver_food_liability">
+        <T n="drop_plate_interaction">139216<!--SuperInteraction: si_waitStaff_ServeFood_Spill--></T>
+      </U>
+    </V>
+  </L>
+  <V t="disabled" n="basic_reserve_object" />
+  <V t="disabled" n="content_score" />
+  <T n="display_name">0x3327F231<!--String: "Servir comida"--></T>
+  <U n="display_name_text_tokens">
+    <L n="tokens">
+      <V t="participant_type">
+        <U n="participant_type">
+          <V n="objects" t="from_participant">
+            <U n="from_participant">
+              <E n="participant">Actor</E>
+            </U>
+          </V>
+        </U>
+      </V>
+      <V t="participant_type">
+        <U n="participant_type">
+          <V n="objects" t="from_participant">
+            <U n="from_participant">
+              <E n="participant">Object</E>
+            </U>
+          </V>
+        </U>
+      </V>
+    </L>
+  </U>
+  <L n="interaction_category_tags">
+    <E>Interaction_Super</E>
+    <E>Interaction_All</E>
+  </L>
+  <V t="test_based" n="outcome">
+    <U n="test_based">
+      <L n="fallback_outcomes">
+        <U>
+          <U n="outcome">
+            <L n="continuation">
+              <U>
+                <T n="affordance">132233<!--SuperInteraction: si_waitStaff_ServeFood--></T>
+              </U>
+            </L>
+          </U>
+          <U n="weight">
+            <T n="base_value">100</T>
+          </U>
+        </U>
+      </L>
+      <L n="tested_outcomes">
+        <U>
+          <L n="potential_outcomes">
+            <U>
+              <U n="outcome">
+                <L n="basic_extras">
+                  <V t="notification">
+                    <U n="notification">
+                      <V n="dialog" t="single">
+                        <V n="single" t="literal">
+                          <U n="literal">
+                            <V t="enabled" n="icon">
+                              <V t="participant" n="enabled" />
+                            </V>
+                            <V n="text" t="single">
+                              <T n="single">0x84571FF<!--String: "¡Con clientes como usted da gusto trabajar, gracias! ¡A esto invita la casa!"--></T>
+                            </V>
+                          </U>
+                        </V>
+                      </V>
+                    </U>
+                  </V>
+                </L>
+                <L n="continuation">
+                  <U>
+                    <T n="affordance">132233<!--SuperInteraction: si_waitStaff_ServeFood--></T>
+                  </U>
+                </L>
+              </U>
+            </U>
+          </L>
+          <L n="tests">
+            <L>
+              <V t="has_lot_owner">
+                <U n="has_lot_owner">
+                  <T n="consider_rented_lot_as_owned">False</T>
+                  <T n="has_owner">False</T>
+                </U>
+              </V>
+            </L>
+          </L>
+        </U>
+        <U>
+          <L n="potential_outcomes">
+            <U>
+              <U n="outcome">
+                <L n="continuation">
+                  <U>
+                    <T n="affordance">139216<!--SuperInteraction: si_waitStaff_ServeFood_Spill--></T>
+                  </U>
+                </L>
+              </U>
+              <U n="weight">
+                <T n="base_value">5</T>
+              </U>
+            </U>
+          </L>
+          <L n="tests">
+            <L>
+              <V t="lot_owner">
+                <U n="lot_owner">
+                  <T n="consider_business_lot_as_owned">False</T>
+                  <T n="invert">True</T>
+                  <E n="subject">ActiveHousehold</E>
+                </U>
+              </V>
+            </L>
+          </L>
+        </U>
+        <U>
+          <L n="potential_outcomes">
+            <U>
+              <U n="outcome">
+                <L n="continuation">
+                  <U>
+                    <T n="affordance">139216<!--SuperInteraction: si_waitStaff_ServeFood_Spill--></T>
+                  </U>
+                </L>
+              </U>
+              <U n="weight">
+                <T n="base_value">14</T>
+              </U>
+            </U>
+          </L>
+          <L n="tests">
+            <L>
+              <V t="skill_test">
+                <U n="skill_test">
+                  <T n="skill">16659<!--Skill: skill_Fitness--></T>
+                  <V n="skill_range" t="interval">
+                    <U n="interval">
+                      <U n="skill_interval">
+                        <T n="lower_bound">1</T>
+                        <T n="upper_bound">1</T>
+                      </U>
+                    </U>
+                  </V>
+                  <T n="use_effective_skill_level">True</T>
+                </U>
+              </V>
+              <V t="lot_owner">
+                <U n="lot_owner">
+                  <T n="consider_business_lot_as_owned">False</T>
+                  <E n="subject">ActiveHousehold</E>
+                </U>
+              </V>
+            </L>
+          </L>
+        </U>
+        <U>
+          <L n="potential_outcomes">
+            <U>
+              <U n="outcome">
+                <L n="continuation">
+                  <U>
+                    <T n="affordance">139216<!--SuperInteraction: si_waitStaff_ServeFood_Spill--></T>
+                  </U>
+                </L>
+              </U>
+              <U n="weight">
+                <T n="base_value">11</T>
+              </U>
+            </U>
+          </L>
+          <L n="tests">
+            <L>
+              <V t="skill_test">
+                <U n="skill_test">
+                  <T n="skill">16659<!--Skill: skill_Fitness--></T>
+                  <V n="skill_range" t="interval">
+                    <U n="interval">
+                      <U n="skill_interval">
+                        <T n="lower_bound">2</T>
+                        <T n="upper_bound">2</T>
+                      </U>
+                    </U>
+                  </V>
+                  <T n="use_effective_skill_level">True</T>
+                </U>
+              </V>
+              <V t="lot_owner">
+                <U n="lot_owner">
+                  <T n="consider_business_lot_as_owned">False</T>
+                  <E n="subject">ActiveHousehold</E>
+                </U>
+              </V>
+            </L>
+          </L>
+        </U>
+        <U>
+          <L n="potential_outcomes">
+            <U>
+              <U n="outcome">
+                <L n="continuation">
+                  <U>
+                    <T n="affordance">139216<!--SuperInteraction: si_waitStaff_ServeFood_Spill--></T>
+                  </U>
+                </L>
+              </U>
+              <U n="weight">
+                <T n="base_value">13</T>
+              </U>
+            </U>
+          </L>
+          <L n="tests">
+            <L>
+              <V t="skill_test">
+                <U n="skill_test">
+                  <T n="skill">16659<!--Skill: skill_Fitness--></T>
+                  <V n="skill_range" t="interval">
+                    <U n="interval">
+                      <U n="skill_interval">
+                        <T n="lower_bound">3</T>
+                        <T n="upper_bound">3</T>
+                      </U>
+                    </U>
+                  </V>
+                  <T n="use_effective_skill_level">True</T>
+                </U>
+              </V>
+              <V t="lot_owner">
+                <U n="lot_owner">
+                  <T n="consider_business_lot_as_owned">False</T>
+                  <E n="subject">ActiveHousehold</E>
+                </U>
+              </V>
+            </L>
+          </L>
+        </U>
+        <U>
+          <L n="potential_outcomes">
+            <U>
+              <U n="outcome">
+                <L n="continuation">
+                  <U>
+                    <T n="affordance">139216<!--SuperInteraction: si_waitStaff_ServeFood_Spill--></T>
+                  </U>
+                </L>
+              </U>
+              <U n="weight">
+                <T n="base_value">11</T>
+              </U>
+            </U>
+          </L>
+          <L n="tests">
+            <L>
+              <V t="skill_test">
+                <U n="skill_test">
+                  <T n="skill">16659<!--Skill: skill_Fitness--></T>
+                  <V n="skill_range" t="interval">
+                    <U n="interval">
+                      <U n="skill_interval">
+                        <T n="lower_bound">4</T>
+                        <T n="upper_bound">4</T>
+                      </U>
+                    </U>
+                  </V>
+                  <T n="use_effective_skill_level">True</T>
+                </U>
+              </V>
+              <V t="lot_owner">
+                <U n="lot_owner">
+                  <T n="consider_business_lot_as_owned">False</T>
+                  <E n="subject">ActiveHousehold</E>
+                </U>
+              </V>
+            </L>
+          </L>
+        </U>
+        <U>
+          <L n="potential_outcomes">
+            <U>
+              <U n="outcome">
+                <L n="continuation">
+                  <U>
+                    <T n="affordance">139216<!--SuperInteraction: si_waitStaff_ServeFood_Spill--></T>
+                  </U>
+                </L>
+              </U>
+              <U n="weight">
+                <T n="base_value">9</T>
+              </U>
+            </U>
+          </L>
+          <L n="tests">
+            <L>
+              <V t="skill_test">
+                <U n="skill_test">
+                  <T n="skill">16659<!--Skill: skill_Fitness--></T>
+                  <V n="skill_range" t="interval">
+                    <U n="interval">
+                      <U n="skill_interval">
+                        <T n="lower_bound">5</T>
+                        <T n="upper_bound">5</T>
+                      </U>
+                    </U>
+                  </V>
+                  <T n="use_effective_skill_level">True</T>
+                </U>
+              </V>
+              <V t="lot_owner">
+                <U n="lot_owner">
+                  <T n="consider_business_lot_as_owned">False</T>
+                  <E n="subject">ActiveHousehold</E>
+                </U>
+              </V>
+            </L>
+          </L>
+        </U>
+        <U>
+          <L n="potential_outcomes">
+            <U>
+              <U n="outcome">
+                <L n="continuation">
+                  <U>
+                    <T n="affordance">139216<!--SuperInteraction: si_waitStaff_ServeFood_Spill--></T>
+                  </U>
+                </L>
+              </U>
+              <U n="weight">
+                <T n="base_value">6</T>
+              </U>
+            </U>
+          </L>
+          <L n="tests">
+            <L>
+              <V t="skill_test">
+                <U n="skill_test">
+                  <T n="skill">16659<!--Skill: skill_Fitness--></T>
+                  <V n="skill_range" t="interval">
+                    <U n="interval">
+                      <U n="skill_interval">
+                        <T n="lower_bound">6</T>
+                        <T n="upper_bound">6</T>
+                      </U>
+                    </U>
+                  </V>
+                  <T n="use_effective_skill_level">True</T>
+                </U>
+              </V>
+              <V t="lot_owner">
+                <U n="lot_owner">
+                  <T n="consider_business_lot_as_owned">False</T>
+                  <E n="subject">ActiveHousehold</E>
+                </U>
+              </V>
+            </L>
+          </L>
+        </U>
+        <U>
+          <L n="potential_outcomes">
+            <U>
+              <U n="outcome">
+                <L n="continuation">
+                  <U>
+                    <T n="affordance">139216<!--SuperInteraction: si_waitStaff_ServeFood_Spill--></T>
+                  </U>
+                </L>
+              </U>
+              <U n="weight">
+                <T n="base_value">4</T>
+              </U>
+            </U>
+          </L>
+          <L n="tests">
+            <L>
+              <V t="skill_test">
+                <U n="skill_test">
+                  <T n="skill">16659<!--Skill: skill_Fitness--></T>
+                  <V n="skill_range" t="interval">
+                    <U n="interval">
+                      <U n="skill_interval">
+                        <T n="lower_bound">7</T>
+                        <T n="upper_bound">7</T>
+                      </U>
+                    </U>
+                  </V>
+                  <T n="use_effective_skill_level">True</T>
+                </U>
+              </V>
+              <V t="lot_owner">
+                <U n="lot_owner">
+                  <T n="consider_business_lot_as_owned">False</T>
+                  <E n="subject">ActiveHousehold</E>
+                </U>
+              </V>
+            </L>
+          </L>
+        </U>
+        <U>
+          <L n="potential_outcomes">
+            <U>
+              <U n="outcome">
+                <L n="continuation">
+                  <U>
+                    <T n="affordance">139216<!--SuperInteraction: si_waitStaff_ServeFood_Spill--></T>
+                  </U>
+                </L>
+              </U>
+              <U n="weight">
+                <T n="base_value">2</T>
+              </U>
+            </U>
+          </L>
+          <L n="tests">
+            <L>
+              <V t="skill_test">
+                <U n="skill_test">
+                  <T n="skill">16659<!--Skill: skill_Fitness--></T>
+                  <V n="skill_range" t="interval">
+                    <U n="interval">
+                      <U n="skill_interval">
+                        <T n="lower_bound">8</T>
+                        <T n="upper_bound">8</T>
+                      </U>
+                    </U>
+                  </V>
+                  <T n="use_effective_skill_level">True</T>
+                </U>
+              </V>
+              <V t="lot_owner">
+                <U n="lot_owner">
+                  <T n="consider_business_lot_as_owned">False</T>
+                  <E n="subject">ActiveHousehold</E>
+                </U>
+              </V>
+            </L>
+          </L>
+        </U>
+        <U>
+          <L n="potential_outcomes">
+            <U>
+              <U n="outcome">
+                <L n="continuation">
+                  <U>
+                    <T n="affordance">139216<!--SuperInteraction: si_waitStaff_ServeFood_Spill--></T>
+                  </U>
+                </L>
+              </U>
+              <U n="weight">
+                <T n="base_value">2</T>
+              </U>
+            </U>
+          </L>
+          <L n="tests">
+            <L>
+              <V t="skill_test">
+                <U n="skill_test">
+                  <T n="skill">16659<!--Skill: skill_Fitness--></T>
+                  <V n="skill_range" t="interval">
+                    <U n="interval">
+                      <U n="skill_interval">
+                        <T n="lower_bound">9</T>
+                        <T n="upper_bound">9</T>
+                      </U>
+                    </U>
+                  </V>
+                  <T n="use_effective_skill_level">True</T>
+                </U>
+              </V>
+              <V t="lot_owner">
+                <U n="lot_owner">
+                  <T n="consider_business_lot_as_owned">False</T>
+                  <E n="subject">ActiveHousehold</E>
+                </U>
+              </V>
+            </L>
+          </L>
+        </U>
+      </L>
+      <T n="use_fallback_as_default">True</T>
+    </U>
+  </V>
+  <E n="scoring_priority">NORMAL</E>
+  <T n="subaction_selection_weight">1</T>
+  <V n="super_affordance_compatibility" t="literal">
+    <U n="literal">
+      <V n="default_inclusion" t="include_all">
+        <U n="include_all">
+          <L n="exclude_affordances">
+            <T>13991<!--SocialSuperInteraction: sim_BeAffectionate--></T>
+          </L>
+        </U>
+      </V>
+    </U>
+  </V>
+  <E n="target_type">OBJECT</E>
+  <L n="test_globals">
+    <V t="situation_count_test">
+      <U n="situation_count_test">
+        <T n="situation">132213<!--WaitstaffSituation: situation_Restaurant_WaitStaff--></T>
+        <U n="test">
+          <T n="value">1</T>
+        </U>
+      </U>
+    </V>
+  </L>
+  <T n="time_overhead">30</T>
+</I>

@@ -1,0 +1,286 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<I c="SuperInteraction" i="interaction" m="interactions.base.super_interaction" n="mural_Wall_StartGraffiti" s="148019">
+  <L n="_constraints">
+    <U>
+      <L n="constraints">
+        <U>
+          <V n="value" t="cone" />
+        </U>
+      </L>
+    </U>
+    <U>
+      <L n="constraints">
+        <U>
+          <V t="facing" n="value" />
+        </U>
+      </L>
+    </U>
+  </L>
+  <V t="enabled" n="_saveable" />
+  <L n="_static_commodities">
+    <U>
+      <T n="desire">1</T>
+      <T n="static_commodity">146654<!--StaticCommodity: staticCommodity_MuralPaint--></T>
+    </U>
+  </L>
+  <T n="attention_cost">0.5</T>
+  <V t="flexible_length" n="basic_content">
+    <U n="flexible_length">
+      <L n="conditional_actions">
+        <V t="literal">
+          <U n="literal">
+            <L n="conditions">
+              <V t="time_based">
+                <U n="time_based">
+                  <T n="max_time">1</T>
+                  <T n="min_time">1</T>
+                </U>
+              </V>
+            </L>
+            <E n="interaction_action">EXIT_NATURALLY</E>
+          </U>
+        </V>
+      </L>
+    </U>
+  </V>
+  <V t="disabled" n="basic_reserve_object" />
+  <V t="disabled" n="content_score" />
+  <T n="display_name">0x3D1A1774<!--String: "Hacer grafiti"--></T>
+  <V t="enabled" n="display_name_in_queue">
+    <T n="enabled">0xBD0C3214<!--String: "Empezar grafiti"--></T>
+  </V>
+  <V t="testable" n="display_name_overrides">
+    <U n="testable">
+      <L n="overrides">
+        <U>
+          <V n="new_display_name" t="enabled">
+            <T n="enabled">0xF07648C9<!--String: "Hacer grafiti"--></T>
+          </V>
+          <V t="enabled" n="new_display_tooltip">
+            <T n="enabled">0xC051940E<!--String: "¡La inspiración ayuda a mejorar la habilidad Pintura!"--></T>
+          </V>
+          <L n="test">
+            <L>
+              <V t="mood">
+                <U n="mood">
+                  <T n="mood">14641<!--Mood: Mood_Inspired--></T>
+                </U>
+              </V>
+            </L>
+          </L>
+        </U>
+        <U>
+          <V t="disabled" n="new_display_name" />
+          <V t="enabled" n="new_pie_menu_icon">
+            <V n="enabled" t="tradition" />
+          </V>
+          <L n="test">
+            <L>
+              <V t="holiday_tradition">
+                <U n="holiday_tradition">
+                  <U n="tradition_filter">
+                    <V n="whitelist" t="specify">
+                      <U n="specify">
+                        <L n="whitelist">
+                          <T>185434<!--HolidayTradition: holidayTradition_ArtAndMusic--></T>
+                        </L>
+                      </U>
+                    </V>
+                  </U>
+                </U>
+              </V>
+            </L>
+          </L>
+        </U>
+      </L>
+    </U>
+  </V>
+  <U n="display_name_text_tokens">
+    <L n="tokens">
+      <V t="participant_type">
+        <U n="participant_type">
+          <V t="from_participant" n="objects">
+            <U n="from_participant">
+              <E n="participant">Actor</E>
+            </U>
+          </V>
+        </U>
+      </V>
+      <V t="participant_type">
+        <U n="participant_type">
+          <V t="from_participant" n="objects">
+            <U n="from_participant">
+              <E n="participant">Object</E>
+            </U>
+          </V>
+        </U>
+      </V>
+    </L>
+  </U>
+  <L n="interaction_category_tags">
+    <E>Interaction_Super</E>
+    <E>Interaction_All</E>
+    <E>Interaction_Skill_Painting</E>
+    <E>Interaction_Paint</E>
+  </L>
+  <L n="mood_list">
+    <T>14641<!--Mood: Mood_Inspired--></T>
+  </L>
+  <V n="outcome" t="test_based">
+    <U n="test_based">
+      <L n="fallback_outcomes">
+        <U />
+      </L>
+      <L n="tested_outcomes">
+        <U>
+          <L n="potential_outcomes">
+            <U>
+              <U n="outcome">
+                <L n="continuation">
+                  <U>
+                    <T n="affordance">148021<!--SuperInteraction: mural_wallBrush_Graffiti_Staging--></T>
+                  </U>
+                </L>
+                <L n="loot_list">
+                  <T>146768<!--LootActions: loot_ObjectState_Mural_InProgress--></T>
+                  <T>148957<!--LootActions: loot_ObjectState_Mural_RandomGrafOn--></T>
+                  <T>147246<!--LootActions: loot_Mural_CooldownBuff--></T>
+                </L>
+              </U>
+            </U>
+          </L>
+          <L n="tests">
+            <L>
+              <V t="state">
+                <U n="state">
+                  <T n="value">146765<!--ObjectStateValue: mural_Wall_NotStarted--></T>
+                </U>
+              </V>
+            </L>
+          </L>
+        </U>
+        <U>
+          <L n="potential_outcomes">
+            <U>
+              <U n="outcome">
+                <L n="continuation">
+                  <U>
+                    <T n="affordance">148171<!--SuperInteraction: mural_RollUp_Graffiti_Staging--></T>
+                  </U>
+                </L>
+                <L n="loot_list">
+                  <T>147631<!--LootActions: loot_ObjectState_RollUp_InProgress--></T>
+                  <T>148957<!--LootActions: loot_ObjectState_Mural_RandomGrafOn--></T>
+                  <T>147246<!--LootActions: loot_Mural_CooldownBuff--></T>
+                </L>
+              </U>
+            </U>
+          </L>
+          <L n="tests">
+            <L>
+              <V t="state">
+                <U n="state">
+                  <T n="value">147510<!--ObjectStateValue: mural_RollUp_StateValues_NotStarted--></T>
+                </U>
+              </V>
+            </L>
+          </L>
+        </U>
+        <U>
+          <L n="potential_outcomes">
+            <U>
+              <U n="outcome">
+                <L n="continuation">
+                  <U>
+                    <T n="affordance">148233<!--SuperInteraction: mural_Garage_Graffiti_Staging--></T>
+                  </U>
+                </L>
+                <L n="loot_list">
+                  <T>148229<!--LootActions: loot_ObjectState_Garage_InProgress--></T>
+                  <T>148957<!--LootActions: loot_ObjectState_Mural_RandomGrafOn--></T>
+                  <T>147246<!--LootActions: loot_Mural_CooldownBuff--></T>
+                </L>
+              </U>
+            </U>
+          </L>
+          <L n="tests">
+            <L>
+              <V t="state">
+                <U n="state">
+                  <T n="value">148176<!--ObjectStateValue: mural_Garage_StateValues_NotStarted--></T>
+                </U>
+              </V>
+            </L>
+          </L>
+        </U>
+      </L>
+    </U>
+  </V>
+  <U n="progress_bar_enabled">
+    <T n="bar_enabled">False</T>
+  </U>
+  <L n="rallyable">
+    <U>
+      <V n="behavior" t="push_affordance">
+        <U n="push_affordance">
+          <T n="affordance">150474<!--SuperInteraction: rallyables_GoStartMurals_Graffiti--></T>
+        </U>
+      </V>
+      <V t="enabled" n="pie_menu_icon">
+        <V n="enabled" t="resource_key">
+          <U n="resource_key">
+            <T n="key" p="InGame\UI\Icons\PieMenu\SpecialInteractions\specialinteraction_ensembles_piemenu.png">2f7d0004:00000000:a113281581961bf1</T>
+          </U>
+        </V>
+      </V>
+    </U>
+  </L>
+  <E n="scoring_priority">NORMAL</E>
+  <T n="subaction_selection_weight">1</T>
+  <E n="target_type">OBJECT</E>
+  <L n="test_globals">
+    <V t="sim_info">
+      <U n="sim_info">
+        <V t="specified" n="ages" />
+        <V t="specified" n="species">
+          <U n="specified">
+            <L n="species">
+              <E />
+            </L>
+          </U>
+        </V>
+        <E n="who">Actor</E>
+      </U>
+    </V>
+    <V t="test_set_reference">
+      <T n="test_set_reference">28176<!--TestSetInstance: testSet_EmotionNotStressed--></T>
+    </V>
+    <V t="test_set_reference">
+      <T n="test_set_reference">28305<!--TestSetInstance: testSet_EmotionNotMiserable--></T>
+    </V>
+  </L>
+  <L n="tests">
+    <L>
+      <V t="state">
+        <U n="state">
+          <T n="value">146765<!--ObjectStateValue: mural_Wall_NotStarted--></T>
+        </U>
+      </V>
+    </L>
+    <L>
+      <V t="state">
+        <U n="state">
+          <T n="value">147510<!--ObjectStateValue: mural_RollUp_StateValues_NotStarted--></T>
+        </U>
+      </V>
+    </L>
+    <L>
+      <V t="state">
+        <U n="state">
+          <T n="value">148176<!--ObjectStateValue: mural_Garage_StateValues_NotStarted--></T>
+        </U>
+      </V>
+    </L>
+  </L>
+  <T n="time_overhead">30</T>
+</I>

@@ -1,0 +1,379 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<I c="SuperInteraction" i="interaction" m="interactions.base.super_interaction" n="mural_EP08_Floor_Paint_Staging" s="220724">
+  <V t="enabled" n="_saveable" />
+  <V n="animation_stat" t="enabled">
+    <U n="enabled">
+      <V n="actor_stat" t="enabled">
+        <V n="enabled" t="single">
+          <U n="single">
+            <T n="item">16708<!--Skill: statistic_Skill_AdultMajor_Painting--></T>
+          </U>
+        </V>
+      </V>
+    </U>
+  </V>
+  <T n="attention_cost">0.5</T>
+  <V n="basic_content" t="flexible_length">
+    <U n="flexible_length">
+      <L n="conditional_actions">
+        <V t="list_reference">
+          <T n="list_reference">40705<!--ExitConditionList: ExitConditionList_MotivesNearFail--></T>
+        </V>
+        <V t="list_reference">
+          <T n="list_reference">40144<!--ExitConditionList: ExitConditionList_EmotionMiserable--></T>
+        </V>
+        <V t="list_reference">
+          <T n="list_reference">40702<!--ExitConditionList: ExitConditionList_EmotionStressed--></T>
+        </V>
+        <V t="literal">
+          <U n="literal">
+            <L n="conditions">
+              <V t="stat_based">
+                <U n="stat_based">
+                  <T n="stat">220729<!--Commodity: commodity_Mural_EP08_Arts1--></T>
+                  <U n="threshold">
+                    <T n="value">501</T>
+                  </U>
+                  <E n="who">Object</E>
+                </U>
+              </V>
+            </L>
+            <E n="interaction_action">EXIT_NATURALLY</E>
+            <L n="loot_actions">
+              <T>220930<!--LootActions: loot_ObjectState_Mural_EP08_Floor_Complete--></T>
+            </L>
+          </U>
+        </V>
+        <V t="literal">
+          <U n="literal">
+            <L n="conditions">
+              <V t="stat_based">
+                <U n="stat_based">
+                  <T n="stat">220735<!--Commodity: commodity_Mural_EP08_Arts2--></T>
+                  <U n="threshold">
+                    <T n="value">501</T>
+                  </U>
+                  <E n="who">Object</E>
+                </U>
+              </V>
+            </L>
+            <E n="interaction_action">EXIT_NATURALLY</E>
+            <L n="loot_actions">
+              <T>220930<!--LootActions: loot_ObjectState_Mural_EP08_Floor_Complete--></T>
+            </L>
+          </U>
+        </V>
+      </L>
+      <V n="content" t="staging_content">
+        <U n="staging_content">
+          <U n="content_set">
+            <L n="affordance_links">
+              <T>220719<!--MixerInteraction: mural_mixer_EP08_Floor_PaintPassive--></T>
+              <T>220717<!--MixerInteraction: mural_mixer_EP08_Floor_PaintActive--></T>
+              <T>220715<!--MixerInteraction: mural_mixer_EP08_Floor_Fail--></T>
+              <T>220718<!--MixerInteraction: mural_mixer_EP08_Floor_PaintActive_Primer--></T>
+              <T>220716<!--MixerInteraction: mural_mixer_EP08_Floor_Fail_Primer--></T>
+            </L>
+            <V n="balloon_overrides" t="enabled">
+              <L n="enabled">
+                <U>
+                  <T n="balloon_chance">50</T>
+                  <L n="balloon_choices">
+                    <U>
+                      <V n="item" t="balloon_icon">
+                        <U n="balloon_icon">
+                          <V t="resource_key" n="icon">
+                            <U n="resource_key">
+                              <T n="key" p="InGame\UI\Icons\Headlines\Final\icon_headline_painterspalette.png">2f7d0004:00000000:5a26492417a82311</T>
+                            </U>
+                          </V>
+                        </U>
+                      </V>
+                    </U>
+                    <U>
+                      <V n="item" t="balloon_icon">
+                        <U n="balloon_icon">
+                          <V n="icon" t="resource_key">
+                            <U n="resource_key">
+                              <T n="key" p="InGame\UI\Icons\Headlines\Final\headline_imaginative_v1.png">2f7d0004:00000000:9a104c73eef29666</T>
+                            </U>
+                          </V>
+                        </U>
+                      </V>
+                    </U>
+                    <U>
+                      <V n="item" t="balloon_icon">
+                        <U n="balloon_icon">
+                          <V n="icon" t="resource_key">
+                            <U n="resource_key">
+                              <T n="key" p="InGame\UI\Icons\Headlines\Final\icon_headline_imaginative_v2.png">2f7d0004:00000000:5779d23b755bc9f9</T>
+                            </U>
+                          </V>
+                        </U>
+                      </V>
+                    </U>
+                  </L>
+                  <T n="balloon_delay">5</T>
+                  <T n="balloon_delay_random_offset">2</T>
+                  <L n="balloon_target">
+                    <E>Actor</E>
+                  </L>
+                </U>
+              </L>
+            </V>
+          </U>
+        </U>
+      </V>
+      <V n="periodic_stat_change" t="enabled">
+        <U n="enabled">
+          <L n="operations">
+            <V t="statistic_change">
+              <U n="statistic_change">
+                <T n="amount">0.47</T>
+                <T n="stat">16655<!--Commodity: motive_Fun--></T>
+                <L n="subject">
+                  <E>Actor</E>
+                </L>
+              </U>
+            </V>
+            <V t="statistic_change">
+              <U n="statistic_change">
+                <T n="advertise">False</T>
+                <T n="amount">-5</T>
+                <T n="stat">99719<!--Commodity: Commodity_Trait_Creative_TenseTimer--></T>
+                <L n="subject">
+                  <E>Actor</E>
+                </L>
+                <L n="tests">
+                  <L>
+                    <V t="buff">
+                      <U n="buff">
+                        <V n="whitelist" t="enabled">
+                          <L n="enabled">
+                            <T>74668<!--Buff: Buff_Trait_Creative_Uncreative--></T>
+                          </L>
+                        </V>
+                      </U>
+                    </V>
+                  </L>
+                </L>
+              </U>
+            </V>
+            <V t="dynamic_skill">
+              <U n="dynamic_skill">
+                <U n="skill_loot_data_override">
+                  <E n="effectiveness">StandardPeriodic</E>
+                  <V t="enabled" n="level_range">
+                    <U n="enabled">
+                      <T n="upper_bound">10</T>
+                    </U>
+                  </V>
+                  <T n="stat">16708<!--Skill: statistic_Skill_AdultMajor_Painting--></T>
+                </U>
+                <L n="tests">
+                  <L>
+                    <V t="skill_test">
+                      <U n="skill_test">
+                        <T n="skill">16708<!--Skill: statistic_Skill_AdultMajor_Painting--></T>
+                        <V t="interval" n="skill_range">
+                          <U n="interval">
+                            <U n="skill_interval">
+                              <T n="lower_bound">6</T>
+                            </U>
+                          </U>
+                        </V>
+                      </U>
+                    </V>
+                  </L>
+                </L>
+              </U>
+            </V>
+            <V t="dynamic_skill">
+              <U n="dynamic_skill">
+                <U n="skill_loot_data_override">
+                  <E n="effectiveness">LargePeriodic</E>
+                  <V t="enabled" n="level_range">
+                    <U n="enabled">
+                      <T n="upper_bound">10</T>
+                    </U>
+                  </V>
+                  <T n="stat">16708<!--Skill: statistic_Skill_AdultMajor_Painting--></T>
+                </U>
+                <L n="tests">
+                  <L>
+                    <V t="skill_test">
+                      <U n="skill_test">
+                        <T n="skill">16708<!--Skill: statistic_Skill_AdultMajor_Painting--></T>
+                        <V t="interval" n="skill_range">
+                          <U n="interval">
+                            <U n="skill_interval">
+                              <T n="upper_bound">5</T>
+                            </U>
+                          </U>
+                        </V>
+                      </U>
+                    </V>
+                  </L>
+                </L>
+              </U>
+            </V>
+            <V t="statistic_change">
+              <U n="statistic_change">
+                <T n="amount">1</T>
+                <T n="stat">220729<!--Commodity: commodity_Mural_EP08_Arts1--></T>
+                <L n="subject">
+                  <E>Object</E>
+                </L>
+                <L n="tests">
+                  <L>
+                    <V t="state">
+                      <U n="state">
+                        <E n="operator">NOTEQUAL</E>
+                        <T n="value">220670<!--CommodityBasedObjectStateValue: mural_EP08_Floor_Arts1_NotStarted--></T>
+                      </U>
+                    </V>
+                  </L>
+                </L>
+              </U>
+            </V>
+            <V t="statistic_change">
+              <U n="statistic_change">
+                <T n="amount">1</T>
+                <T n="stat">220735<!--Commodity: commodity_Mural_EP08_Arts2--></T>
+                <L n="subject">
+                  <E>Object</E>
+                </L>
+                <L n="tests">
+                  <L>
+                    <V t="state">
+                      <U n="state">
+                        <E n="operator">NOTEQUAL</E>
+                        <T n="value">220675<!--CommodityBasedObjectStateValue: mural_EP08_Floor_Arts2_NotStarted--></T>
+                      </U>
+                    </V>
+                  </L>
+                </L>
+              </U>
+            </V>
+          </L>
+        </U>
+      </V>
+    </U>
+  </V>
+  <L n="basic_extras">
+    <V t="buff_fire_and_forget">
+      <U n="buff_fire_and_forget">
+        <U n="buff">
+          <T n="buff_type">220779<!--Buff: buff_Object_Mural_EP08_Floor_ScootCooldown--></T>
+        </U>
+      </U>
+    </V>
+    <V t="buff">
+      <U n="buff">
+        <U n="buff_type">
+          <T n="buff_type">129126<!--Buff: buff_Suppress_Emotion_Idle--></T>
+        </U>
+        <L n="subject">
+          <E>Actor</E>
+        </L>
+      </U>
+    </V>
+  </L>
+  <V t="disabled" n="basic_reserve_object" />
+  <V t="enabled" n="canonical_animation">
+    <U n="enabled">
+      <T n="factory">220772<!--AnimationElement: mural_EP08_Floor_Spray_Paint--></T>
+    </U>
+  </V>
+  <V t="disabled" n="content_score" />
+  <T n="display_name">0xD71648C1<!--String: "Pintar mural"--></T>
+  <U n="display_name_text_tokens">
+    <L n="tokens">
+      <V t="participant_type">
+        <U n="participant_type">
+          <V n="objects" t="from_participant">
+            <U n="from_participant">
+              <E n="participant">Actor</E>
+            </U>
+          </V>
+        </U>
+      </V>
+      <V t="participant_type">
+        <U n="participant_type">
+          <V t="from_participant" n="objects">
+            <U n="from_participant">
+              <E n="participant">Object</E>
+            </U>
+          </V>
+        </U>
+      </V>
+    </L>
+  </U>
+  <L n="interaction_category_tags">
+    <E>Interaction_Super</E>
+    <E>Interaction_All</E>
+    <E>Interaction_Skill_Painting</E>
+    <E>Interaction_PaintMural</E>
+  </L>
+  <L n="mood_list">
+    <T>14641<!--Mood: Mood_Inspired--></T>
+  </L>
+  <V n="outcome" t="single">
+    <U n="single">
+      <U n="actions">
+        <L n="loot_list">
+          <T>227396<!--LootActions: loot_CollegeOrganizations_SchoolSpirit_Prank_AddProgress_Medium--></T>
+        </L>
+      </U>
+    </U>
+  </V>
+  <E n="scoring_priority">NORMAL</E>
+  <T n="subaction_selection_weight">1</T>
+  <V n="super_affordance_compatibility" t="literal">
+    <U n="literal">
+      <V n="default_inclusion" t="exclude_all">
+        <U n="exclude_all">
+          <L n="include_affordances">
+            <T>220719<!--MixerInteraction: mural_mixer_EP08_Floor_PaintPassive--></T>
+            <T>220717<!--MixerInteraction: mural_mixer_EP08_Floor_PaintActive--></T>
+            <T>220715<!--MixerInteraction: mural_mixer_EP08_Floor_Fail--></T>
+            <T>220718<!--MixerInteraction: mural_mixer_EP08_Floor_PaintActive_Primer--></T>
+            <T>220716<!--MixerInteraction: mural_mixer_EP08_Floor_Fail_Primer--></T>
+            <T>220712<!--MixerInteraction: mural_mixer_EP08_Floor_ScootC--></T>
+            <T>220713<!--MixerInteraction: mural_mixer_EP08_Floor_ScootL--></T>
+            <T>220714<!--MixerInteraction: mural_mixer_EP08_Floor_ScootR--></T>
+            <T>220771<!--SuperInteraction: mural_EP08_Floor_Scoot_C--></T>
+            <T>220769<!--SuperInteraction: mural_EP08_Floor_Scoot_L--></T>
+            <T>220770<!--SuperInteraction: mural_EP08_Floor_Scoot_R--></T>
+          </L>
+        </U>
+      </V>
+    </U>
+  </V>
+  <E n="target_type">OBJECT</E>
+  <L n="test_globals">
+    <V t="sim_info">
+      <U n="sim_info">
+        <V t="specified" n="ages" />
+        <V t="specified" n="species">
+          <U n="specified">
+            <L n="species">
+              <E />
+            </L>
+          </U>
+        </V>
+        <E n="who">Actor</E>
+      </U>
+    </V>
+    <V t="test_set_reference">
+      <T n="test_set_reference">229593<!--TestSetInstance: testSetInstance_Mural_SnowOnGround_Outside--></T>
+    </V>
+    <V t="test_set_reference">
+      <T n="test_set_reference">28176<!--TestSetInstance: testSet_EmotionNotStressed--></T>
+    </V>
+    <V t="test_set_reference">
+      <T n="test_set_reference">28305<!--TestSetInstance: testSet_EmotionNotMiserable--></T>
+    </V>
+  </L>
+  <T n="time_overhead">30</T>
+</I>

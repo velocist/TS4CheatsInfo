@@ -1,0 +1,316 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<I c="GameObject" i="object" m="objects.game_object" n="object_motherPlant" s="201744">
+  <U n="_components">
+    <V t="enabled" n="focus">
+      <U n="enabled">
+        <V n="_focus_score" t="globally">
+          <U n="globally">
+            <E n="base">LOW</E>
+          </U>
+        </V>
+      </U>
+    </V>
+    <V n="idle_component" t="enabled">
+      <U n="enabled">
+        <L n="idle_animation_map">
+          <U>
+            <T n="key">201778<!--ObjectStateValue: motherplant_Idle_basic--></T>
+            <T n="value">201769<!--ObjectAnimationElement: idle_Motherplant_basic--></T>
+          </U>
+          <U>
+            <T n="key">201779<!--ObjectStateValue: motherplant_Idle_hostile--></T>
+            <T n="value">201771<!--ObjectAnimationElement: idle_Motherplant_hostile--></T>
+          </U>
+          <U>
+            <T n="key">201780<!--ObjectStateValue: motherplant_Idle_alluring--></T>
+            <T n="value">201770<!--ObjectAnimationElement: idle_Motherplant_alluring--></T>
+          </U>
+          <U>
+            <T n="key">204348<!--ObjectStateValue: motherplant_Idle_Dead--></T>
+            <T n="value">204347<!--ObjectAnimationElement: motherplant_Idles_Dead--></T>
+          </U>
+          <U>
+            <T n="key">204349<!--ObjectStateValue: motherplant_Idle_Scream--></T>
+            <T n="value">204343<!--ObjectAnimationElement: motherplant_Idles_Scream--></T>
+          </U>
+          <U>
+            <T n="key">204350<!--ObjectStateValue: motherplant_Idle_Talk--></T>
+            <T n="value">204346<!--ObjectAnimationElement: motherplant_Idles_Talk--></T>
+          </U>
+          <U>
+            <T n="key">204351<!--ObjectStateValue: motherplant_Idle_Spit--></T>
+            <T n="value">204344<!--ObjectAnimationElement: motherplant_Idles_Spit--></T>
+          </U>
+          <U>
+            <T n="key">204352<!--ObjectStateValue: motherplant_Idle_LashOut--></T>
+            <T n="value">204345<!--ObjectAnimationElement: motherplant_Idles_LashOut--></T>
+          </U>
+          <U>
+            <T n="key">204874<!--ObjectStateValue: motherplant_Idle_Revive--></T>
+            <T n="value">204873<!--ObjectAnimationElement: motherplant_Idles_Revive--></T>
+          </U>
+        </L>
+      </U>
+    </V>
+    <V n="object_relationships" t="enabled">
+      <U n="enabled">
+        <V n="icon_override" t="enabled">
+          <T p="InGP07\UI\Icons\Headlines\headline_MotherPlantFace.png" n="enabled">2f7d0004:00000000:a72300acb7937e5b</T>
+        </V>
+        <T n="relationship_stat">206016<!--Statistic: statistic_Object_MotherPlant_relationship--></T>
+        <V n="relationship_track_visual" t="enabled">
+          <U n="enabled">
+            <T n="relationship_track">16650<!--RelationshipTrack: LTR_Friendship_Main--></T>
+          </U>
+        </V>
+      </U>
+    </V>
+    <V n="state" t="enabled">
+      <U n="enabled">
+        <L n="state_triggers">
+          <U>
+            <L n="at_states">
+              <T>204352<!--ObjectStateValue: motherplant_Idle_LashOut--></T>
+              <T>204349<!--ObjectStateValue: motherplant_Idle_Scream--></T>
+              <T>204351<!--ObjectStateValue: motherplant_Idle_Spit--></T>
+            </L>
+            <V t="Set_state_list" n="set_states">
+              <L n="Set_state_list">
+                <T>201779<!--ObjectStateValue: motherplant_Idle_hostile--></T>
+              </L>
+            </V>
+            <E n="trigger_operation">OR</E>
+          </U>
+          <U>
+            <L n="at_states">
+              <T>204348<!--ObjectStateValue: motherplant_Idle_Dead--></T>
+            </L>
+            <V n="set_states" t="Set_state_list">
+              <L n="Set_state_list">
+                <T>204485<!--ObjectStateValue: motherplant_Vitals_Values_Dead--></T>
+              </L>
+            </V>
+          </U>
+          <U>
+            <L n="at_states">
+              <T>204874<!--ObjectStateValue: motherplant_Idle_Revive--></T>
+            </L>
+            <V n="set_states" t="Set_state_list">
+              <L n="Set_state_list">
+                <T>204484<!--ObjectStateValue: motherplant_Vitals_Values_Alive--></T>
+                <T>201778<!--ObjectStateValue: motherplant_Idle_basic--></T>
+              </L>
+            </V>
+          </U>
+          <U>
+            <L n="at_states">
+              <T>204712<!--CommodityBasedObjectStateValue: motherplantEnrage_Values_Calm--></T>
+            </L>
+            <L n="prohibited_states">
+              <T>204718<!--ObjectStateValue: motherplant_Fight_Values_FightInProgress--></T>
+              <T>204348<!--ObjectStateValue: motherplant_Idle_Dead--></T>
+              <T>204352<!--ObjectStateValue: motherplant_Idle_LashOut--></T>
+              <T>204349<!--ObjectStateValue: motherplant_Idle_Scream--></T>
+              <T>204351<!--ObjectStateValue: motherplant_Idle_Spit--></T>
+              <T>204350<!--ObjectStateValue: motherplant_Idle_Talk--></T>
+              <T>204485<!--ObjectStateValue: motherplant_Vitals_Values_Dead--></T>
+              <T>201778<!--ObjectStateValue: motherplant_Idle_basic--></T>
+            </L>
+            <V n="set_states" t="Set_state_list">
+              <L n="Set_state_list">
+                <T>201778<!--ObjectStateValue: motherplant_Idle_basic--></T>
+              </L>
+            </V>
+          </U>
+          <U>
+            <L n="at_states">
+              <T>204713<!--CommodityBasedObjectStateValue: motherplantEnrage_Values_Rage--></T>
+            </L>
+            <V t="Set_state_list" n="set_states">
+              <L n="Set_state_list">
+                <T>201779<!--ObjectStateValue: motherplant_Idle_hostile--></T>
+              </L>
+            </V>
+          </U>
+        </L>
+        <L n="states">
+          <U>
+            <L n="client_states">
+              <U>
+                <T n="key">201778<!--ObjectStateValue: motherplant_Idle_basic--></T>
+              </U>
+              <U>
+                <T n="key">201779<!--ObjectStateValue: motherplant_Idle_hostile--></T>
+              </U>
+              <U>
+                <T n="key">201780<!--ObjectStateValue: motherplant_Idle_alluring--></T>
+              </U>
+              <U>
+                <T n="key">204348<!--ObjectStateValue: motherplant_Idle_Dead--></T>
+              </U>
+              <U>
+                <T n="key">204349<!--ObjectStateValue: motherplant_Idle_Scream--></T>
+              </U>
+              <U>
+                <T n="key">204350<!--ObjectStateValue: motherplant_Idle_Talk--></T>
+              </U>
+              <U>
+                <T n="key">204351<!--ObjectStateValue: motherplant_Idle_Spit--></T>
+              </U>
+              <U>
+                <T n="key">204352<!--ObjectStateValue: motherplant_Idle_LashOut--></T>
+              </U>
+            </L>
+            <V n="default_value" t="reference">
+              <T n="reference">201778<!--ObjectStateValue: motherplant_Idle_basic--></T>
+            </V>
+          </U>
+          <U>
+            <L n="client_states">
+              <U>
+                <T n="key">204484<!--ObjectStateValue: motherplant_Vitals_Values_Alive--></T>
+                <U n="value">
+                  <V n="geometry_state" t="apply_new_value">
+                    <V t="set_to_custom_value" n="apply_new_value">
+                      <T n="set_to_custom_value">undefeat</T>
+                    </V>
+                  </V>
+                  <V n="lot_statistic_modifiers" t="apply_new_value">
+                    <V n="apply_new_value" t="apply_modifiers">
+                      <U n="apply_modifiers">
+                        <L n="statistic_changes">
+                          <U>
+                            <T n="stat">205212<!--Statistic: statistic_Object_MotherplantDefeat--></T>
+                          </U>
+                        </L>
+                      </U>
+                    </V>
+                  </V>
+                  <V t="apply_new_value" n="material_state">
+                    <U n="apply_new_value">
+                      <V t="set_to_custom_value" n="state_name">
+                        <T n="set_to_custom_value">undefeat</T>
+                      </V>
+                    </U>
+                  </V>
+                </U>
+              </U>
+              <U>
+                <T n="key">204485<!--ObjectStateValue: motherplant_Vitals_Values_Dead--></T>
+                <U n="value">
+                  <V n="geometry_state" t="apply_new_value">
+                    <V t="set_to_custom_value" n="apply_new_value">
+                      <T n="set_to_custom_value">defeat</T>
+                    </V>
+                  </V>
+                  <V n="lot_statistic_modifiers" t="apply_new_value">
+                    <V n="apply_new_value" t="apply_modifiers">
+                      <U n="apply_modifiers">
+                        <L n="statistic_changes">
+                          <U>
+                            <T n="amount">2</T>
+                            <T n="stat">205212<!--Statistic: statistic_Object_MotherplantDefeat--></T>
+                          </U>
+                        </L>
+                      </U>
+                    </V>
+                  </V>
+                  <V t="apply_new_value" n="material_state">
+                    <U n="apply_new_value">
+                      <V t="set_to_custom_value" n="state_name">
+                        <T n="set_to_custom_value">defeat</T>
+                      </V>
+                    </U>
+                  </V>
+                </U>
+              </U>
+            </L>
+            <V n="default_value" t="reference">
+              <T n="reference">204484<!--ObjectStateValue: motherplant_Vitals_Values_Alive--></T>
+            </V>
+          </U>
+          <U>
+            <L n="client_states">
+              <U>
+                <T n="key">204712<!--CommodityBasedObjectStateValue: motherplantEnrage_Values_Calm--></T>
+                <U n="value">
+                  <V t="apply_new_value" n="situation" />
+                </U>
+              </U>
+              <U>
+                <T n="key">204713<!--CommodityBasedObjectStateValue: motherplantEnrage_Values_Rage--></T>
+                <U n="value">
+                  <V n="situation" t="apply_new_value">
+                    <U n="apply_new_value">
+                      <L n="situations_to_create">
+                        <U>
+                          <T n="invite_only">False</T>
+                          <T n="situation">204726<!--SituationSimple: situationSimple_infectedAttack--></T>
+                        </U>
+                      </L>
+                    </U>
+                  </V>
+                </U>
+              </U>
+            </L>
+            <V n="default_value" t="reference">
+              <T n="reference">204712<!--CommodityBasedObjectStateValue: motherplantEnrage_Values_Calm--></T>
+            </V>
+            <T n="reset_on_load_if_time_passes">True</T>
+          </U>
+          <U>
+            <V n="default_value" t="reference">
+              <T n="reference">204719<!--ObjectStateValue: motherplant_Fight_Values_NoFightInProgress--></T>
+            </V>
+            <T n="reset_on_load_if_time_passes">True</T>
+            <T n="reset_to_default">True</T>
+          </U>
+        </L>
+      </U>
+    </V>
+  </U>
+  <L n="_super_affordances">
+    <T>13328<!--ImmediateSuperInteraction: debug_Reset--></T>
+    <T>13326<!--ImmediateSuperInteraction: debug_ObjectDestroy--></T>
+    <T>203378<!--SuperInteraction: motherPlant_Appease--></T>
+    <T>203377<!--SuperInteraction: motherPlant_Chat--></T>
+    <T>203376<!--SuperInteraction: motherPlant_ReasonWith--></T>
+    <T>13983<!--StandSuperInteraction: sim-stand--></T>
+    <T>203359<!--SuperInteraction: motherPlant_FightSolo--></T>
+    <T>205565<!--SimPickerInteraction: simPickerInteraction_StartMotherplantFight--></T>
+    <T>204094<!--SuperInteraction: motherPlant_Death_EatMe--></T>
+    <T>204337<!--ImmediateSuperInteraction: motherPlant_DebugSetState_Alluring--></T>
+    <T>204335<!--ImmediateSuperInteraction: motherPlant_DebugSetState_Basic--></T>
+    <T>204338<!--ImmediateSuperInteraction: motherPlant_DebugSetState_Dead--></T>
+    <T>204336<!--ImmediateSuperInteraction: motherPlant_DebugSetState_Hostile--></T>
+    <T>204355<!--SuperInteraction: motherPlant_Chat_RequestEnergy--></T>
+    <T>204357<!--SuperInteraction: motherPlant_Chat_RequestLifeExtension--></T>
+    <T>204354<!--SuperInteraction: motherPlant_Chat_RequestRiches--></T>
+    <T>204356<!--SuperInteraction: motherPlant_Chat_RequestSuccess--></T>
+    <T>204373<!--SuperInteraction: motherPlant_FightSoloDeath--></T>
+    <T>206383<!--ImmediateSuperInteraction: motherPlant_Mixers_PrimarySim_Defeat_MotherPlant--></T>
+    <T>204486<!--ImmediateSuperInteraction: motherPlant_DebugSetState_Kill--></T>
+    <T>204487<!--ImmediateSuperInteraction: motherPlant_DebugSetState_Revive--></T>
+    <T>203719<!--SuperInteraction: motherPlant_Fight_Helper_Fight_1--></T>
+    <T>203720<!--SuperInteraction: motherPlant_Fight_Helper_Fight_2--></T>
+    <T>203718<!--SuperInteraction: motherPlant_Fight_Helper_Fight_3--></T>
+    <T>204791<!--SuperInteraction: motherPlant_revive_plant--></T>
+    <T>204917<!--SuperInteraction: motherPlant_Chat_RequestAct1--></T>
+    <T>204918<!--SuperInteraction: motherPlant_Chat_RequestAct2--></T>
+    <T>204919<!--SuperInteraction: motherPlant_Chat_RequestAct3--></T>
+    <T>204920<!--SuperInteraction: motherPlant_Chat_RequestAct4--></T>
+  </L>
+  <T n="force_multi_surface_constraints">True</T>
+  <U n="recycling_data">
+    <L n="recycling_values">
+      <U>
+        <E n="Bucks Type">RecycleBitsBucks</E>
+        <T n="Value">0.5</T>
+      </U>
+      <U>
+        <E n="Bucks Type">RecyclePiecesBucks</E>
+        <T n="Value">0.5</T>
+      </U>
+    </L>
+  </U>
+</I>

@@ -1,0 +1,85 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<I c="NeedSomethingFixedSituation" i="situation" m="situations.npc_hosted.need_something_fixed" n="situation_IslanderCulture_NeedSomethingFixed" s="208713">
+  <T n="_display_name">0x589D8824<!--String: "¿Necesitas algún arreglillo?"--></T>
+  <T n="_hidden_scoring_override">True</T>
+  <T p="InGame\Audio\Bumper\bumper_event_start.propx" n="audio_sting_on_start">39b2aa4a:00000000:78b903461d47e4fc</T>
+  <L n="compatible_venues">
+    <T>28614<!--Venue: venue_residential--></T>
+  </L>
+  <E n="creation_ui_option">NOT_AVAILABLE</E>
+  <T n="duration">120</T>
+  <U n="front_door_repair_arrival">
+    <U n="interaction_of_interest">
+      <L n="affordances">
+        <T>25211<!--SuperInteraction: door_RingDoorbell--></T>
+      </L>
+    </U>
+    <L n="job_and_role_changes">
+      <U>
+        <T n="Situation Job">208712<!--SituationJob: job_IslanderCulture_NeedSomethingFixed_Repairman--></T>
+        <T n="Role State">119494<!--RoleState: Role_welcomeWagon_DoorKnocker--></T>
+      </U>
+    </L>
+  </U>
+  <T n="main_goal">119727<!--SituationGoalRanInteractionOnTargetedSim: Goal_Socialize_Neighbor_WelcomeWagon--></T>
+  <T p="InGame\Audio\Bumper\bumper_event_major_complete.propx" n="main_goal_audio_sting">39b2aa4a:00000000:10b476550150a33f</T>
+  <T n="max_participants">20</T>
+  <L n="minor_goal_chains">
+    <T>119928<!--SituationGoalSet: goalSet_WelcomeWagon_1--></T>
+    <T>119929<!--SituationGoalSet: goalSet_WelcomeWagon_2--></T>
+    <T>119930<!--SituationGoalSet: goalSet_WelcomeWagon_3--></T>
+  </L>
+  <U n="no_front_door_repair_arrival">
+    <U n="interaction_of_interest">
+      <L n="affordances">
+        <T>120598<!--SuperInteraction: si_WelcomeWagon_GoTo_ArrivalSpawn_NoDoorTNS--></T>
+      </L>
+    </U>
+    <L n="job_and_role_changes">
+      <U>
+        <T n="Situation Job">208712<!--SituationJob: job_IslanderCulture_NeedSomethingFixed_Repairman--></T>
+        <T n="Role State">120397<!--RoleState: Role_welcomeWagon_WelcomingNeighbor_Arrive_NoFrontDoor--></T>
+      </U>
+    </L>
+  </U>
+  <L n="repair_job_done_tests">
+    <U>
+      <E n="Leave Reason">FINISHED_WORK</E>
+      <U n="Finish Test and Role State">
+        <U n="enter_state_test">
+          <L n="affordances">
+            <T>208865<!--SuperInteraction: serviceNpc_noMoreWork_IslanderCulture--></T>
+          </L>
+        </U>
+      </U>
+    </U>
+  </L>
+  <T n="repair_neighbor_job">208712<!--SituationJob: job_IslanderCulture_NeedSomethingFixed_Repairman--></T>
+  <U n="repair_state">
+    <L n="job_and_role_changes">
+      <U>
+        <T n="Situation Job">208712<!--SituationJob: job_IslanderCulture_NeedSomethingFixed_Repairman--></T>
+        <T n="Role State">208731<!--RoleState: role_IslanderCulture_Repair--></T>
+      </U>
+    </L>
+  </U>
+  <T n="situation_description">0x5C0478C0<!--String: "Las noticias vuelan por aquí, pero los vecinos son un dechado de amabilidad y siempre están dispuestos a echar una mano cuando se enteran de que algo se te ha roto. "--></T>
+  <L n="tags">
+    <E>Situation_Ring_Doorbell</E>
+  </L>
+  <U n="wait_to_be_let_in_state">
+    <U n="interaction_of_interest">
+      <L n="affordances">
+        <T>119787<!--SocialSuperInteraction: social_Greet_Neighbor--></T>
+        <T>147299<!--SocialSuperInteraction: social_Greet_Neighbor_Butler--></T>
+        <T>151017<!--SocialSuperInteraction: sim_InviteIn_Butler--></T>
+      </L>
+    </U>
+    <L n="job_and_role_changes">
+      <U>
+        <T n="Situation Job">208712<!--SituationJob: job_IslanderCulture_NeedSomethingFixed_Repairman--></T>
+        <T n="Role State">210665<!--RoleState: role_IslanderCulture_NeedSomethingFixed_Visitor_Ungreeted--></T>
+      </U>
+    </L>
+  </U>
+</I>

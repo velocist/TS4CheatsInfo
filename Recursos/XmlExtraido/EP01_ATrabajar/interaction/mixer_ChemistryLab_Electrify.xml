@@ -1,0 +1,121 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<I c="MixerInteraction" i="interaction" m="interactions.base.mixer_interaction" n="mixer_ChemistryLab_Electrify" s="105402">
+  <T n="allow_user_directed">False</T>
+  <V t="disable_focus" n="basic_focus" />
+  <U n="display_name_text_tokens">
+    <L n="tokens">
+      <V t="participant_type">
+        <U n="participant_type">
+          <V t="from_participant" n="objects">
+            <U n="from_participant">
+              <E n="participant">Actor</E>
+            </U>
+          </V>
+        </U>
+      </V>
+      <V t="participant_type">
+        <U n="participant_type">
+          <V t="from_participant" n="objects">
+            <U n="from_participant">
+              <E n="participant">Object</E>
+            </U>
+          </V>
+        </U>
+      </V>
+    </L>
+  </U>
+  <L n="interaction_category_tags">
+    <E>Interaction_Mixer</E>
+    <E>Interaction_All</E>
+  </L>
+  <V n="lock_out_time" t="enabled">
+    <U n="enabled">
+      <U n="interval">
+        <T n="lower_bound">45</T>
+        <T n="upper_bound">45</T>
+      </U>
+      <T n="target_based_lock_out">False</T>
+    </U>
+  </V>
+  <V t="enabled" n="lock_out_time_initial">
+    <U n="enabled">
+      <T n="lower_bound">5</T>
+      <T n="upper_bound">5</T>
+    </U>
+  </V>
+  <V n="outcome" t="single">
+    <U n="single">
+      <U n="actions">
+        <V n="animation_ref" t="enabled">
+          <U n="enabled">
+            <T n="factory">105280<!--AnimationElement: object_ChemistryLab_Electrify--></T>
+            <U n="overrides">
+              <L n="prop_state_values">
+                <U>
+                  <T n="key">serum</T>
+                  <L n="value">
+                    <T>110050<!--CommodityBasedObjectStateValue: objectStateValue_DrinkSerum_Full_Full--></T>
+                  </L>
+                </U>
+              </L>
+              <L n="props">
+                <U>
+                  <T n="key">serum</T>
+                  <U n="value">
+                    <T n="definition">72300</T>
+                    <T n="from_actor">serum</T>
+                  </U>
+                </U>
+              </L>
+            </U>
+          </U>
+        </V>
+        <L n="loot_list">
+          <T>107435<!--LootActions: loot_Statistic_Breakage_ChemistryLab--></T>
+          <T>105419<!--LootActions: loot_Buff_ChemistryLab_InterestingResults--></T>
+          <T>29396<!--LootActions: loot_ObjectReward_Collectible_Metal--></T>
+        </L>
+      </U>
+    </U>
+  </V>
+  <U n="sub_action">
+    <T n="base_weight">1</T>
+  </U>
+  <E n="target_type">OBJECT</E>
+  <L n="test_globals" />
+  <L n="tests">
+    <L>
+      <V t="career_test">
+        <U n="career_test">
+          <T n="negate">True</T>
+          <V t="career_reference" n="test_type">
+            <U n="career_reference">
+              <V t="specific_career" n="career">
+                <T n="specific_career">107255<!--Career: career_Adult_Active_Scientist--></T>
+              </V>
+            </U>
+          </V>
+        </U>
+      </V>
+    </L>
+    <L>
+      <V t="career_test">
+        <U n="career_test">
+          <V n="test_type" t="career_reference">
+            <U n="career_reference">
+              <V t="specific_career" n="career">
+                <T n="specific_career">107255<!--Career: career_Adult_Active_Scientist--></T>
+              </V>
+              <V t="enabled" n="user_level">
+                <U n="enabled">
+                  <T n="upper_bound">3</T>
+                </U>
+              </V>
+            </U>
+          </V>
+        </U>
+      </V>
+    </L>
+  </L>
+  <T n="visible">False</T>
+</I>

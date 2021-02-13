@@ -1,0 +1,100 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<I c="SituationGoalObjectInteraction" i="situation_goal" m="situations.situation_goal_object_interaction" n="situationGoalObjectInteraction_CareerScientist_Drink_GhostGoo_requiredInventory" s="113827">
+  <V n="_display_data" t="enabled">
+    <U n="enabled">
+      <V t="enabled" n="instance_display_icon">
+        <T n="enabled" p="InEP01\UI\Icons\Headlines\headline_serum_ghost.png">2f7d0004:00000000:9343b104066b5888</T>
+      </V>
+      <V n="instance_display_name" t="enabled">
+        <T n="enabled">0xCB4C279<!--String: "Beber o darle a alguien suero de pringue fantasmal"--></T>
+      </V>
+      <V n="instance_display_tooltip" t="enabled">
+        <T n="enabled">0x492575BA<!--String: "Haz clic en un suero de pringue fantasmal que haya en el mundo o en el inventario de tu Sim y selecciona Beber. O, si lo prefieres, selecciona a otro Sim, elige Probar suero y, a continuación, escoge el suero de pringue fantasmal."--></T>
+      </V>
+    </U>
+  </V>
+  <U n="_goal_test">
+    <L n="affordances">
+      <T>115170<!--SuperInteraction: si_Serums_Outcomes_GhostGoo--></T>
+      <T>115030<!--SocialSuperInteraction: si_Touching_Serums_TestSerum--></T>
+    </L>
+    <E n="test_event">InteractionComplete</E>
+  </U>
+  <L n="_post_tests">
+    <V t="object_criteria">
+      <U n="object_criteria">
+        <V t="tags" n="identity_test">
+          <U n="tags">
+            <L n="tag_set">
+              <E>Func_EP01_Serum_GhostGoo</E>
+            </L>
+          </U>
+        </V>
+        <T n="owned">False</T>
+        <V t="single_object" n="subject_specific_tests">
+          <U n="single_object">
+            <E n="target">SavedActor1</E>
+          </U>
+        </V>
+      </U>
+    </V>
+  </L>
+  <L n="_pre_goal_loot_list">
+    <T>112808<!--SituationGoalLootActions: loot_Career_ScientistGoalChain_Breakthrough_12--></T>
+  </L>
+  <L n="_pre_tests">
+    <V t="statistic">
+      <U n="statistic">
+        <T n="must_have_stat">True</T>
+        <T n="stat">112769<!--Statistic: statistic_Career_Scientist_SituationGoalChain_Breakthrough_12--></T>
+        <V t="value_threshold" n="threshold">
+          <U n="value_threshold">
+            <E n="comparison">EQUAL</E>
+            <T n="value">1</T>
+          </U>
+        </V>
+      </U>
+    </V>
+    <V t="inventory">
+      <U n="inventory">
+        <V n="contents_check" t="has_object_with_def">
+          <U n="has_object_with_def">
+            <T n="definition">72298</T>
+          </U>
+        </V>
+      </U>
+    </V>
+    <V t="statistic">
+      <U n="statistic">
+        <T n="stat">113011<!--Statistic: statistic_Career_Scientist_Inventing--></T>
+        <V t="value_threshold" n="threshold">
+          <U n="value_threshold">
+            <E n="comparison">EQUAL</E>
+            <T n="value">1</T>
+          </U>
+        </V>
+      </U>
+    </V>
+    <V t="career">
+      <U n="career">
+        <V n="test_type" t="career_reference">
+          <U n="career_reference">
+            <V t="specific_career" n="career">
+              <T n="specific_career">107255<!--Career: career_Adult_Active_Scientist--></T>
+            </V>
+            <V t="enabled" n="user_level">
+              <U n="enabled">
+                <T n="lower_bound">6</T>
+                <T n="upper_bound">7</T>
+              </U>
+            </V>
+          </U>
+        </V>
+      </U>
+    </V>
+  </L>
+  <T p="InGame\Audio\Bumper\bumper_event_goal_complete.propx" n="audio_sting_on_complete">39b2aa4a:00000000:ed52c39bcc2a7111</T>
+  <L n="role_tags">
+    <E>Role_Scientist</E>
+  </L>
+</I>

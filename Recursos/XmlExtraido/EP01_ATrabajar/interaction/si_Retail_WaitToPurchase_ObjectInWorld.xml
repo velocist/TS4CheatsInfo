@@ -1,0 +1,335 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<I c="SuperInteraction" i="interaction" m="interactions.base.super_interaction" n="si_Retail_WaitToPurchase_ObjectInWorld" s="116359">
+  <L n="_constraints">
+    <U>
+      <L n="constraints">
+        <U>
+          <V n="value" t="relative_circle">
+            <U n="relative_circle">
+              <V t="enabled" n="maximum_radius">
+                <T n="enabled">6</T>
+              </V>
+              <V t="enabled" n="minimum_radius" />
+              <V n="relative_ideal_radius" t="enabled">
+                <U n="enabled">
+                  <T n="radius">0.25</T>
+                </U>
+              </V>
+              <T n="relative_radius">8</T>
+            </U>
+          </V>
+        </U>
+      </L>
+    </U>
+    <U>
+      <L n="constraints">
+        <U>
+          <V t="line_of_sight" n="value">
+            <U n="line_of_sight">
+              <V t="enabled" n="temporary_los" />
+            </U>
+          </V>
+        </U>
+      </L>
+    </U>
+  </L>
+  <V t="participant" n="_icon">
+    <U n="participant">
+      <L n="participant_type">
+        <E>Object</E>
+      </L>
+    </U>
+  </V>
+  <V t="enabled" n="_saveable" />
+  <T n="_super_affordance_can_share_target">True</T>
+  <T n="allow_from_object_inventory">False</T>
+  <T n="allow_user_directed">False</T>
+  <T n="attention_cost">0.3</T>
+  <V n="basic_content" t="flexible_length">
+    <U n="flexible_length">
+      <L n="conditional_actions">
+        <V t="literal">
+          <U n="literal">
+            <L n="conditions">
+              <V t="buff_based">
+                <U n="buff_based">
+                  <T n="buff">112137<!--Buff: buff_Retail_RecentPurchase--></T>
+                  <E n="timing">ON_ADD</E>
+                </U>
+              </V>
+            </L>
+            <E n="interaction_action">EXIT_NATURALLY</E>
+          </U>
+        </V>
+        <V t="literal">
+          <U n="literal">
+            <L n="conditions">
+              <V t="buff_based">
+                <U n="buff_based">
+                  <T n="buff">112137<!--Buff: buff_Retail_RecentPurchase--></T>
+                  <E n="timing">HAS_BUFF</E>
+                </U>
+              </V>
+            </L>
+            <E n="interaction_action">EXIT_NATURALLY</E>
+          </U>
+        </V>
+        <V t="literal">
+          <U n="literal">
+            <L n="conditions">
+              <V t="stat_based">
+                <U n="stat_based">
+                  <T n="stat">112136<!--Commodity: commodity_Retail_WaitToPurchase--></T>
+                  <U n="threshold">
+                    <E n="comparison">LESS_OR_EQUAL</E>
+                  </U>
+                </U>
+              </V>
+            </L>
+            <E n="interaction_action">EXIT_NATURALLY</E>
+          </U>
+        </V>
+      </L>
+      <V n="content" t="staging_content">
+        <U n="staging_content">
+          <U n="content_set">
+            <L n="affordance_links">
+              <T>112192<!--MixerInteraction: mixer_Retail_WaitToPurchase_WaveOver--></T>
+            </L>
+          </U>
+        </U>
+      </V>
+      <T n="start_autonomous_inertial">False</T>
+    </U>
+  </V>
+  <L n="basic_extras">
+    <V t="buff">
+      <U n="buff">
+        <U n="buff_type">
+          <T n="buff_type">112198<!--Buff: buff_Retail_Customer_StartWaitingForCheckout--></T>
+        </U>
+      </U>
+    </V>
+  </L>
+  <V t="enabled" n="basic_reserve_object">
+    <U n="enabled">
+      <L n="subject_list">
+        <U>
+          <V t="reserve_and_lock_all_parts" n="reserve_type" />
+          <L n="subject">
+            <E>Object</E>
+          </L>
+        </U>
+      </L>
+    </U>
+  </V>
+  <V n="canonical_animation" t="enabled">
+    <U n="enabled">
+      <T n="factory">112117<!--AnimationElement: animationElement_Retail_WaitToPurchase--></T>
+    </U>
+  </V>
+  <V t="disabled" n="content_score" />
+  <T n="display_name">0xDEEFE1B2<!--String: "Preparar para comprar"--></T>
+  <U n="display_name_text_tokens">
+    <L n="tokens">
+      <V t="participant_type">
+        <U n="participant_type">
+          <V t="from_participant" n="objects">
+            <U n="from_participant">
+              <E n="participant">Actor</E>
+            </U>
+          </V>
+        </U>
+      </V>
+      <V t="participant_type">
+        <U n="participant_type">
+          <V t="from_participant" n="objects">
+            <U n="from_participant">
+              <E n="participant">Object</E>
+            </U>
+          </V>
+        </U>
+      </V>
+    </L>
+  </U>
+  <L n="interaction_category_tags">
+    <E>Interaction_Super</E>
+    <E>Interaction_All</E>
+  </L>
+  <V n="outcome" t="test_based">
+    <U n="test_based">
+      <L n="fallback_outcomes">
+        <U>
+          <U n="outcome">
+            <V n="animation_ref" t="enabled">
+              <U n="enabled">
+                <T n="factory">12063<!--AnimationElement: Soc_Solo_NT_AngryFootstomp_Succeed_basic--></T>
+              </U>
+            </V>
+            <L n="basic_extras">
+              <V t="retail_customer_action">
+                <U n="retail_customer_action">
+                  <L n="actions">
+                    <V t="adjust_total_shop_time">
+                      <U n="adjust_total_shop_time">
+                        <T n="time_multiplier">0</T>
+                      </U>
+                    </V>
+                  </L>
+                  <E n="customer">Actor</E>
+                </U>
+              </V>
+            </L>
+            <L n="loot_list">
+              <T>116081<!--LootActions: lootActions_Walkstyle_Angry--></T>
+            </L>
+          </U>
+        </U>
+      </L>
+      <L n="tested_outcomes">
+        <U>
+          <L n="potential_outcomes">
+            <U>
+              <U n="outcome">
+                <L n="continuation">
+                  <U>
+                    <T n="affordance">105847<!--SuperInteraction: retail_BuyItem--></T>
+                  </U>
+                </L>
+              </U>
+            </U>
+          </L>
+          <L n="tests">
+            <L>
+              <V t="buff">
+                <U n="buff">
+                  <V n="whitelist" t="enabled">
+                    <L n="enabled">
+                      <T>112137<!--Buff: buff_Retail_RecentPurchase--></T>
+                    </L>
+                  </V>
+                </U>
+              </V>
+              <V t="object_criteria">
+                <U n="object_criteria">
+                  <V n="identity_test" t="tags">
+                    <U n="tags">
+                      <L n="tag_set">
+                        <E>Func_Mannequin</E>
+                      </L>
+                      <E n="test_type">CONTAINS_NO_TAGS_IN_SET</E>
+                    </U>
+                  </V>
+                  <T n="owned">False</T>
+                  <V t="single_object" n="subject_specific_tests" />
+                </U>
+              </V>
+            </L>
+          </L>
+        </U>
+        <U>
+          <L n="potential_outcomes">
+            <U>
+              <U n="outcome">
+                <L n="continuation">
+                  <U>
+                    <T n="affordance">107746<!--SuperInteraction: mannequin_OutfitChange_BuyOutfit_AllowClobber--></T>
+                  </U>
+                </L>
+              </U>
+            </U>
+          </L>
+          <L n="tests">
+            <L>
+              <V t="buff">
+                <U n="buff">
+                  <V n="whitelist" t="enabled">
+                    <L n="enabled">
+                      <T>112137<!--Buff: buff_Retail_RecentPurchase--></T>
+                    </L>
+                  </V>
+                </U>
+              </V>
+              <V t="object_criteria">
+                <U n="object_criteria">
+                  <V n="identity_test" t="tags">
+                    <U n="tags">
+                      <L n="tag_set">
+                        <E>Func_Mannequin</E>
+                      </L>
+                      <E n="test_type">CONTAINS_ANY_TAG_IN_SET</E>
+                    </U>
+                  </V>
+                  <T n="owned">False</T>
+                  <V t="single_object" n="subject_specific_tests" />
+                </U>
+              </V>
+            </L>
+          </L>
+        </U>
+      </L>
+    </U>
+  </V>
+  <L n="provided_affordances">
+    <U>
+      <T n="affordance">112108<!--SocialSuperInteraction: si_Retail_RingUpCustomer--></T>
+    </U>
+  </L>
+  <E n="scoring_priority">NORMAL</E>
+  <T n="subaction_selection_weight">1</T>
+  <V t="literal" n="super_affordance_compatibility">
+    <U n="literal">
+      <V n="default_inclusion" t="exclude_all">
+        <U n="exclude_all">
+          <L n="include_affordances">
+            <T>112108<!--SocialSuperInteraction: si_Retail_RingUpCustomer--></T>
+            <T>116285<!--SocialSuperInteraction: si_Retail_CustomerCheckOut--></T>
+          </L>
+        </U>
+      </V>
+    </U>
+  </V>
+  <E n="target_type">OBJECT</E>
+  <L n="test_globals">
+    <V t="sim_info">
+      <U n="sim_info">
+        <V t="specified" n="ages">
+          <L n="specified">
+            <E>TEEN</E>
+            <E>YOUNGADULT</E>
+            <E>ADULT</E>
+            <E>ELDER</E>
+            <E>CHILD</E>
+          </L>
+        </V>
+        <V t="specified" n="species">
+          <U n="specified">
+            <L n="species">
+              <E />
+            </L>
+          </U>
+        </V>
+        <E n="who">Actor</E>
+      </U>
+    </V>
+    <V t="location">
+      <U n="location">
+        <U n="location_tests">
+          <V t="Is_or_is_not_on_active_lot" n="is_on_active_lot" />
+          <V t="enabled" n="is_venue_type">
+            <U n="enabled">
+              <T n="venue_type">105157<!--Venue: venue_retail--></T>
+            </U>
+          </V>
+        </U>
+        <E n="subject">Object</E>
+      </U>
+    </V>
+    <V t="in_use">
+      <U n="in_use">
+        <T n="negate">True</T>
+      </U>
+    </V>
+  </L>
+  <T n="time_overhead">30</T>
+</I>

@@ -1,0 +1,123 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<I c="CustomStatesSituation" i="situation" m="situations.custom_states.custom_states_situation" n="situation_TrashUpdate_WasteManager" s="235041">
+  <T n="_resident_job">235802<!--SituationJob: jobs_TrashUpdate_WasteManager_Player--></T>
+  <L n="_situation_states">
+    <U>
+      <T n="Situation State Key">collect_trash</T>
+      <V n="Situation State" t="literal">
+        <U n="literal">
+          <L n="triggers">
+            <U>
+              <V n="effect" t="change_state">
+                <U n="change_state">
+                  <U n="possible_states">
+                    <L n="possible_state_keys">
+                      <U>
+                        <T n="situation_key">consult</T>
+                      </U>
+                    </L>
+                  </U>
+                </U>
+              </V>
+              <L n="triggers">
+                <V t="duration">
+                  <U n="duration">
+                    <U n="duration">
+                      <T n="hours">1</T>
+                      <T n="minutes">0</T>
+                    </U>
+                  </U>
+                </V>
+              </L>
+            </U>
+          </L>
+        </U>
+      </V>
+    </U>
+    <U>
+      <T n="Situation State Key">consult</T>
+      <V n="Situation State" t="literal">
+        <U n="literal">
+          <L n="job_and_role_changes">
+            <U>
+              <T n="Situation Job">235043<!--SituationJob: jobs_TrashUpdate_WasteManager--></T>
+              <T n="Role State">235105<!--RoleState: role_TrashUpdate_WasteManager_Consult--></T>
+            </U>
+            <U>
+              <T n="Situation Job">235802<!--SituationJob: jobs_TrashUpdate_WasteManager_Player--></T>
+              <T n="Role State">235940<!--RoleState: role_TrashUpdate_WasteManager_Player_TakePayment--></T>
+            </U>
+          </L>
+          <L n="triggers">
+            <U>
+              <V n="effect" t="change_state">
+                <U n="change_state">
+                  <U n="possible_states">
+                    <L n="possible_state_keys">
+                      <U>
+                        <T n="situation_key">leave</T>
+                      </U>
+                    </L>
+                  </U>
+                </U>
+              </V>
+              <L n="triggers">
+                <V t="duration">
+                  <U n="duration">
+                    <U n="duration">
+                      <T n="hours">1</T>
+                      <T n="minutes">0</T>
+                    </U>
+                  </U>
+                </V>
+              </L>
+            </U>
+          </L>
+        </U>
+      </V>
+    </U>
+    <U>
+      <T n="Situation State Key">leave</T>
+      <V n="Situation State" t="literal">
+        <U n="literal">
+          <L n="job_and_role_changes">
+            <U>
+              <T n="Situation Job">235043<!--SituationJob: jobs_TrashUpdate_WasteManager--></T>
+              <T n="Role State">235108<!--RoleState: role_TrashUpdate_WasteManager_Leave--></T>
+            </U>
+            <U>
+              <T n="Situation Job">235802<!--SituationJob: jobs_TrashUpdate_WasteManager_Player--></T>
+              <T n="Role State">239753<!--RoleState: role_TrashUpdate_WasteManager_Player_End--></T>
+            </U>
+          </L>
+        </U>
+      </V>
+    </U>
+  </L>
+  <V n="_starting_state" t="random_starting_state">
+    <U n="random_starting_state">
+      <L n="possible_state_keys">
+        <U>
+          <T n="situation_key">collect_trash</T>
+        </U>
+      </L>
+    </U>
+  </V>
+  <T p="InGame\Audio\Bumper\bumper_event_start.propx" n="audio_sting_on_start">39b2aa4a:00000000:78b903461d47e4fc</T>
+  <L n="compatible_venues">
+    <T>28614<!--Venue: venue_residential--></T>
+  </L>
+  <L n="default_job_and_roles">
+    <U>
+      <T n="Situation Job">235043<!--SituationJob: jobs_TrashUpdate_WasteManager--></T>
+      <T n="Role State">235060<!--RoleState: role_TrashUpdate_WasteManager_PickupTrash--></T>
+    </U>
+    <U>
+      <T n="Situation Job">235802<!--SituationJob: jobs_TrashUpdate_WasteManager_Player--></T>
+      <T n="Role State">235811<!--RoleState: role_TrashUpdate_WasteManager_Player--></T>
+    </U>
+  </L>
+  <T n="duration">180</T>
+  <T p="InGame\Audio\Bumper\bumper_event_major_complete.propx" n="main_goal_audio_sting">39b2aa4a:00000000:10b476550150a33f</T>
+  <T n="max_participants">20</T>
+</I>

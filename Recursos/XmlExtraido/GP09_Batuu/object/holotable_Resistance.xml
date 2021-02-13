@@ -1,0 +1,198 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<I c="GameObject" i="object" m="objects.game_object" n="holotable_Resistance" s="232615">
+  <U n="_components">
+    <V t="enabled" n="focus">
+      <U n="enabled">
+        <V n="_focus_score" t="globally">
+          <U n="globally">
+            <E n="base">LOW</E>
+          </U>
+        </V>
+      </U>
+    </V>
+    <V n="state" t="enabled">
+      <U n="enabled">
+        <L n="states">
+          <U>
+            <L n="client_states">
+              <U>
+                <T n="key">244985<!--ObjectStateValue: holotable_Values_HackSuccess--></T>
+                <U n="value">
+                  <V n="vfx_state" t="apply_new_value">
+                    <V n="apply_new_value" t="start_vfx">
+                      <V n="start_vfx" t="single_effect">
+                        <U n="single_effect">
+                          <T n="effect_name">gp09_command_center_logo_first_order</T>
+                        </U>
+                      </V>
+                    </V>
+                  </V>
+                </U>
+              </U>
+            </L>
+            <V n="default_value" t="reference">
+              <T n="reference">244563<!--ObjectStateValue: holotable_Values_Static_LOGO_RESISTANCE--></T>
+            </V>
+            <T n="reset_to_default">True</T>
+          </U>
+          <U>
+            <L n="client_states">
+              <U>
+                <T n="key">235742<!--CommodityBasedObjectStateValue: holotable_Commodity_Values_Idle--></T>
+              </U>
+              <U>
+                <T n="key">235743<!--CommodityBasedObjectStateValue: holotable_Commodity_Values_InUse--></T>
+              </U>
+            </L>
+            <V n="default_value" t="reference">
+              <T n="reference">235742<!--CommodityBasedObjectStateValue: holotable_Commodity_Values_Idle--></T>
+            </V>
+            <T n="reset_to_default">True</T>
+          </U>
+          <U>
+            <V n="default_value" t="reference">
+              <T n="reference">244934<!--ObjectStateValue: holotable_Values_Lights_Alarm_Off--></T>
+            </V>
+          </U>
+        </L>
+        <V n="timed_state_triggers" t="enabled">
+          <L n="enabled">
+            <U>
+              <T n="key">244509<!--ObjectStateValue: holotable_Values_Lights_Alarm_Red--></T>
+              <U n="value">
+                <L n="ops">
+                  <U>
+                    <L n="states_to_trigger">
+                      <T>244934<!--ObjectStateValue: holotable_Values_Lights_Alarm_Off--></T>
+                    </L>
+                    <T n="trigger_time">90</T>
+                  </U>
+                </L>
+              </U>
+            </U>
+            <U>
+              <T n="key">244929<!--ObjectStateValue: holotable_Values_Reset--></T>
+              <U n="value">
+                <L n="ops">
+                  <U>
+                    <L n="states_to_trigger">
+                      <T>244563<!--ObjectStateValue: holotable_Values_Static_LOGO_RESISTANCE--></T>
+                    </L>
+                    <T n="trigger_time">20</T>
+                  </U>
+                </L>
+              </U>
+            </U>
+            <U>
+              <T n="key">244985<!--ObjectStateValue: holotable_Values_HackSuccess--></T>
+              <U n="value">
+                <L n="ops">
+                  <U>
+                    <L n="states_to_trigger">
+                      <T>244929<!--ObjectStateValue: holotable_Values_Reset--></T>
+                    </L>
+                    <T n="trigger_time">20</T>
+                  </U>
+                </L>
+              </U>
+            </U>
+          </L>
+        </V>
+      </U>
+    </V>
+  </U>
+  <L n="_part_data_map">
+    <U>
+      <T n="key">console_1</T>
+      <U n="value">
+        <L n="adjacent_parts">
+          <T>console_2</T>
+          <T>console_3</T>
+          <T>console_4</T>
+        </L>
+        <T n="part_definition">235584<!--ObjectPart: objectPart_Holotable_Console--></T>
+      </U>
+    </U>
+    <U>
+      <T n="key">console_2</T>
+      <U n="value">
+        <L n="adjacent_parts">
+          <T>console_1</T>
+          <T>console_3</T>
+          <T>console_4</T>
+        </L>
+        <T n="part_definition">235584<!--ObjectPart: objectPart_Holotable_Console--></T>
+        <V t="enabled" n="subroot_index">
+          <T n="enabled">1</T>
+        </V>
+      </U>
+    </U>
+    <U>
+      <T n="key">console_3</T>
+      <U n="value">
+        <L n="adjacent_parts">
+          <T>console_2</T>
+          <T>console_1</T>
+          <T>console_4</T>
+        </L>
+        <T n="part_definition">235584<!--ObjectPart: objectPart_Holotable_Console--></T>
+        <V t="enabled" n="subroot_index">
+          <T n="enabled">2</T>
+        </V>
+      </U>
+    </U>
+    <U>
+      <T n="key">console_4</T>
+      <U n="value">
+        <L n="adjacent_parts">
+          <T>console_2</T>
+          <T>console_3</T>
+          <T>console_1</T>
+        </L>
+        <T n="part_definition">235584<!--ObjectPart: objectPart_Holotable_Console--></T>
+        <V t="enabled" n="subroot_index">
+          <T n="enabled">3</T>
+        </V>
+      </U>
+    </U>
+  </L>
+  <L n="_super_affordances">
+    <T>13328<!--ImmediateSuperInteraction: debug_Reset--></T>
+    <T>13326<!--ImmediateSuperInteraction: debug_ObjectDestroy--></T>
+    <T>103888<!--ImmediateSuperInteraction: cheat_set_as_head--></T>
+    <T>23835<!--StandSuperInteraction: sim-standExclusive--></T>
+    <T>235632<!--SuperInteraction: holotable_Slice_SkimCredits--></T>
+    <T>13983<!--StandSuperInteraction: sim-stand--></T>
+    <T>244173<!--SuperInteraction: holotable_Slice_HackTable_SS17_ValuableInformation--></T>
+    <T>244515<!--ImmediateSuperInteraction: holotable_Immediate_SetVFX_XWING--></T>
+    <T>244520<!--ImmediateSuperInteraction: holotable_Immediate_SetVFX_TIEECHELON--></T>
+    <T>244516<!--ImmediateSuperInteraction: holotable_Immediate_SetVFX_FO_DROID--></T>
+    <T>244517<!--ImmediateSuperInteraction: holotable_Immediate_SetVFX_MILLENIUMFALCON--></T>
+    <T>244521<!--ImmediateSuperInteraction: holotable_Immediate_SetVFX_RES_DROID--></T>
+    <T>244518<!--ImmediateSuperInteraction: holotable_Immediate_SetVFX_TURRET--></T>
+    <T>244544<!--ImmediateSuperInteraction: holotable_Immediate_SetVFX_NONE--></T>
+    <T>244598<!--SuperInteraction: holotable_Slice_HackTable_LocateContraband--></T>
+    <T>244565<!--ImmediateSuperInteraction: holotable_Immediate_SetVFX_LOGO_RESISTANCE--></T>
+    <T>244566<!--ImmediateSuperInteraction: holotable_Immediate_SetVFX_LOGO_FIRSTORDER--></T>
+    <T>235579<!--SuperInteraction: holotable_UseTable_Resistance--></T>
+    <T>244884<!--SuperInteraction: holotable_UseToPurchase_Resistance--></T>
+    <T>235726<!--SuperInteraction: holotable_SelectMission_Resistance--></T>
+    <T>243412<!--SuperInteraction: batuu_Mission_SuperInteraction_Get_Defector_Description--></T>
+    <T>240003<!--SuperInteraction: holotable_MissionInteraction_Resistance_Input_FO_Log_Files--></T>
+    <T>244525<!--SuperInteraction: holotable_debug_VI_Scene--></T>
+    <T>244571<!--SuperInteraction: holotable_ExamineEnemyPlans_FirstOrder--></T>
+    <T>242102<!--SuperInteraction: holotable_Slice_Sabotage--></T>
+  </L>
+  <U n="recycling_data">
+    <L n="recycling_values">
+      <U>
+        <E n="Bucks Type">RecycleBitsBucks</E>
+        <T n="Value">0.5</T>
+      </U>
+      <U>
+        <E n="Bucks Type">RecyclePiecesBucks</E>
+        <T n="Value">0.5</T>
+      </U>
+    </L>
+  </U>
+</I>

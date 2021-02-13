@@ -1,0 +1,179 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<I c="WaypointInteraction" i="interaction" m="interactions.jog_interaction" n="waypoint_Batuu_RestrictedArea_Patrols_FirstOrder" s="240408">
+  <V t="participant" n="_icon">
+    <U n="participant">
+      <L n="participant_type">
+        <E>Actor</E>
+      </L>
+    </U>
+  </V>
+  <V t="enabled" n="_saveable" />
+  <T n="allow_teleport_style_injection">False</T>
+  <T n="attention_cost">0.5</T>
+  <V n="basic_content" t="flexible_length">
+    <U n="flexible_length">
+      <L n="conditional_actions">
+        <V t="literal">
+          <U n="literal">
+            <L n="conditions">
+              <V t="time_based">
+                <U n="time_based">
+                  <T n="max_time">20</T>
+                  <T n="min_time">15</T>
+                </U>
+              </V>
+            </L>
+            <E n="interaction_action">EXIT_NATURALLY</E>
+          </U>
+        </V>
+        <V t="literal">
+          <U n="literal">
+            <L n="conditions">
+              <V t="time_based">
+                <U n="time_based">
+                  <T n="max_time">15</T>
+                  <T n="min_time">10</T>
+                </U>
+              </V>
+            </L>
+            <E n="interaction_action">EXIT_NATURALLY</E>
+          </U>
+        </V>
+      </L>
+      <V t="staging_content" n="content" />
+    </U>
+  </V>
+  <L n="basic_extras">
+    <V t="buff_fire_and_forget">
+      <U n="buff_fire_and_forget">
+        <U n="buff">
+          <T n="buff_type">246062<!--Buff: buff_Batuu_NPC_RestrictedPatrol_Cooldown--></T>
+        </U>
+      </U>
+    </V>
+    <V t="balloon">
+      <U n="balloon">
+        <L n="balloon_choices">
+          <U>
+            <V n="item" t="balloon_category">
+              <T n="balloon_category">238163<!--BalloonCategory: balloonCategory_Batuu_FirstOrder--></T>
+            </V>
+          </U>
+        </L>
+        <T n="balloon_delay_random_offset">10</T>
+        <L n="balloon_target">
+          <E>Actor</E>
+        </L>
+      </U>
+    </V>
+  </L>
+  <V t="disabled" n="canonical_animation" />
+  <V t="disabled" n="content_score" />
+  <U n="display_name_text_tokens">
+    <L n="tokens">
+      <V t="participant_type">
+        <U n="participant_type">
+          <V n="objects" t="from_participant">
+            <U n="from_participant">
+              <E n="participant">Actor</E>
+            </U>
+          </V>
+        </U>
+      </V>
+      <V t="participant_type">
+        <U n="participant_type">
+          <V t="from_participant" n="objects">
+            <U n="from_participant">
+              <E n="participant">Object</E>
+            </U>
+          </V>
+        </U>
+      </V>
+    </L>
+  </U>
+  <L n="interaction_category_tags">
+    <E>Interaction_Super</E>
+    <E>Interaction_All</E>
+  </L>
+  <E n="scoring_priority">NORMAL</E>
+  <T n="subaction_selection_weight">1</T>
+  <V t="literal" n="super_affordance_compatibility">
+    <U n="literal">
+      <V n="default_inclusion" t="exclude_all">
+        <U n="exclude_all">
+          <L n="include_lists" />
+        </U>
+      </V>
+    </U>
+  </V>
+  <E n="target_type">ACTOR</E>
+  <L n="test_globals">
+    <V t="sim_info">
+      <U n="sim_info">
+        <V t="specified" n="ages" />
+        <V t="specified" n="species">
+          <U n="specified">
+            <L n="species">
+              <E />
+            </L>
+          </U>
+        </V>
+        <E n="who">Actor</E>
+      </U>
+    </V>
+    <V t="situation_job_test">
+      <U n="situation_job_test">
+        <T n="negate">True</T>
+        <L n="situation_jobs">
+          <T>242380<!--SituationJob: job_Batuu_StormtrooperInspection_Inspector--></T>
+          <T>242080<!--SituationJob: job_Batuu_StormtrooperArrest_Escort--></T>
+        </L>
+      </U>
+    </V>
+  </L>
+  <T n="time_overhead">30</T>
+  <T n="visible">False</T>
+  <V n="waypoint_constraint" t="ellipse">
+    <U n="ellipse">
+      <U n="x_radius_interval">
+        <T n="lower_bound">3</T>
+        <T n="upper_bound">4</T>
+      </U>
+      <U n="z_radius_interval">
+        <T n="lower_bound">3</T>
+        <T n="upper_bound">4</T>
+      </U>
+    </U>
+  </V>
+  <T n="waypoint_count">4</T>
+  <T n="waypoint_randomize_orientation">True</T>
+  <V t="enabled" n="waypoint_route_fail_balloon">
+    <U n="enabled">
+      <L n="balloon_choices">
+        <U>
+          <V n="item" t="balloon_icon">
+            <U n="balloon_icon">
+              <V n="icon" t="resource_key">
+                <U n="resource_key">
+                  <T n="key" p="InGame\UI\Icons\Headlines\Final\headline_RouteFail.png">2f7d0004:00000000:97cc3201d9f385cf</T>
+                </U>
+              </V>
+            </U>
+          </V>
+        </U>
+      </L>
+      <L n="balloon_target">
+        <E>Actor</E>
+      </L>
+    </U>
+  </V>
+  <V t="waypoints" n="waypoint_stitching">
+    <U n="waypoints">
+      <T n="max_distance">5000</T>
+    </U>
+  </V>
+  <U n="waypoint_walk_style">
+    <E n="priority">INTERACTION</E>
+    <T p="InGame\Locomotion\Walk.walkstyle" n="walkstyle">27c01d95:00000000:000000007db16dbe</T>
+  </U>
+</I>

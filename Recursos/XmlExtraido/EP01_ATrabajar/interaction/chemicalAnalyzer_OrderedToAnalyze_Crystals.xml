@@ -1,0 +1,336 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<I c="SuperInteraction" i="interaction" m="interactions.base.super_interaction" n="chemicalAnalyzer_OrderedToAnalyze_Crystals" s="113683">
+  <V t="participant" n="_icon">
+    <U n="participant">
+      <L n="participant_type">
+        <E>Object</E>
+      </L>
+    </U>
+  </V>
+  <V t="enabled" n="_saveable" />
+  <L n="_static_commodities">
+    <U>
+      <T n="desire">10</T>
+      <T n="static_commodity">113641<!--StaticCommodity: staticCommodity_Scientist_OrderCoworkers_Crystals--></T>
+    </U>
+  </L>
+  <T n="allow_user_directed">False</T>
+  <T n="attention_cost">0.5</T>
+  <V t="flexible_length" n="basic_content">
+    <U n="flexible_length">
+      <L n="conditional_actions">
+        <V t="literal">
+          <U n="literal">
+            <L n="conditions">
+              <V t="time_based">
+                <U n="time_based">
+                  <T n="max_time">30</T>
+                  <T n="min_time">15</T>
+                </U>
+              </V>
+            </L>
+            <E n="interaction_action">EXIT_NATURALLY</E>
+          </U>
+        </V>
+        <V t="list_reference">
+          <T n="list_reference">40705<!--ExitConditionList: ExitConditionList_MotivesNearFail--></T>
+        </V>
+        <V t="literal">
+          <U n="literal">
+            <L n="conditions">
+              <V t="state_based">
+                <U n="state_based">
+                  <V n="state" t="on_trigger">
+                    <T n="on_trigger">15076<!--CommodityBasedObjectStateValue: Brokenness_Broken--></T>
+                  </V>
+                </U>
+              </V>
+            </L>
+            <E n="interaction_action">EXIT_CANCEL</E>
+          </U>
+        </V>
+      </L>
+      <V n="content" t="looping_content">
+        <U n="looping_content">
+          <U n="animation_ref">
+            <T n="factory">104812<!--AnimationElement: ChemicalAnalyzer_AnalyzeSample--></T>
+          </U>
+        </U>
+      </V>
+      <V n="periodic_stat_change" t="enabled">
+        <U n="enabled">
+          <L n="operations">
+            <V t="statistic_change">
+              <U n="statistic_change">
+                <T n="amount">-0.177</T>
+                <T n="stat">16575<!--Commodity: commodity_dirtiness--></T>
+                <L n="subject">
+                  <E>Object</E>
+                </L>
+              </U>
+            </V>
+            <V t="dynamic_skill">
+              <U n="dynamic_skill">
+                <U n="skill_loot_data_override">
+                  <E n="effectiveness">StandardPeriodic</E>
+                  <T n="stat">16706<!--Skill: statistic_Skill_AdultMajor_Logic--></T>
+                </U>
+              </U>
+            </V>
+            <V t="statistic_change">
+              <U n="statistic_change">
+                <T n="advertise">False</T>
+                <T n="amount">-0.05</T>
+                <T n="stat">16633<!--Commodity: commodity_Object_Brokenness--></T>
+                <L n="subject">
+                  <E>Object</E>
+                </L>
+              </U>
+            </V>
+            <V t="statistic_change">
+              <U n="statistic_change">
+                <T n="amount">-0.01042</T>
+                <T n="stat">233027<!--Commodity: commodity_Utilities_Power--></T>
+                <L n="subject">
+                  <E>Lot</E>
+                </L>
+              </U>
+            </V>
+          </L>
+        </U>
+      </V>
+      <T n="start_autonomous_inertial">False</T>
+    </U>
+  </V>
+  <V t="enabled" n="canonical_animation">
+    <U n="enabled">
+      <T n="factory">104813<!--AnimationElement: ChemicalAnalyzer_BreakdownSample--></T>
+    </U>
+  </V>
+  <V t="disabled" n="content_score" />
+  <T n="display_name">0x18F54CB8<!--String: "Analizar cristales"--></T>
+  <U n="display_name_text_tokens">
+    <L n="tokens">
+      <V t="participant_type">
+        <U n="participant_type">
+          <V t="from_participant" n="objects">
+            <U n="from_participant">
+              <E n="participant">Actor</E>
+            </U>
+          </V>
+        </U>
+      </V>
+      <V t="participant_type">
+        <U n="participant_type">
+          <V t="from_participant" n="objects">
+            <U n="from_participant">
+              <E n="participant">Object</E>
+            </U>
+          </V>
+        </U>
+      </V>
+    </L>
+  </U>
+  <L n="interaction_category_tags">
+    <E>Interaction_Super</E>
+    <E>Interaction_All</E>
+    <E>Interaction_Skill_Logic</E>
+  </L>
+  <V n="outcome" t="test_based">
+    <U n="test_based">
+      <L n="fallback_outcomes">
+        <U>
+          <U n="outcome">
+            <L n="basic_extras">
+              <V t="notification">
+                <U n="notification">
+                  <V n="dialog" t="single">
+                    <V n="single" t="literal">
+                      <U n="literal">
+                        <V t="enabled" n="icon">
+                          <V t="participant" n="enabled" />
+                        </V>
+                        <V t="enabled" n="secondary_icon">
+                          <V n="enabled" t="participant">
+                            <U n="participant">
+                              <L n="participant_type">
+                                <E>CareerEventSim</E>
+                              </L>
+                            </U>
+                          </V>
+                        </V>
+                        <V n="text" t="single">
+                          <T n="single">0xA73E6CA<!--String: "Hola, {1.SimFirstName}, soy {0.SimFirstName}. Quería informarte de que mis intentos por analizar cristales no han dado ningún resultado interesante."--></T>
+                        </V>
+                        <V t="enabled" n="text_tokens">
+                          <U n="enabled">
+                            <L n="tokens">
+                              <V t="participant_type" />
+                              <V t="participant_type">
+                                <U n="participant_type">
+                                  <V n="objects" t="from_participant">
+                                    <U n="from_participant">
+                                      <E n="participant">CareerEventSim</E>
+                                    </U>
+                                  </V>
+                                </U>
+                              </V>
+                            </L>
+                          </U>
+                        </V>
+                      </U>
+                    </V>
+                  </V>
+                  <E n="recipient_subject">ActiveHousehold</E>
+                </U>
+              </V>
+            </L>
+            <L n="loot_list">
+              <T>113670<!--LootActions: loot_Career_Scientist_OrderCoworkers_Crystals_Finished--></T>
+            </L>
+          </U>
+        </U>
+        <U>
+          <U n="outcome">
+            <L n="basic_extras">
+              <V t="create_object">
+                <U n="create_object">
+                  <V n="creation_data" t="definition_tested">
+                    <U n="definition_tested">
+                      <L n="definitions">
+                        <U>
+                          <T n="definition">28738</T>
+                        </U>
+                        <U>
+                          <T n="definition">28739</T>
+                        </U>
+                        <U>
+                          <T n="definition">28744</T>
+                        </U>
+                        <U>
+                          <T n="definition">28747</T>
+                        </U>
+                        <U>
+                          <T n="definition">28748</T>
+                        </U>
+                        <U>
+                          <T n="definition">28750</T>
+                        </U>
+                        <U>
+                          <T n="definition">28729</T>
+                        </U>
+                        <U>
+                          <T n="definition">28732</T>
+                        </U>
+                        <U>
+                          <T n="definition">28733</T>
+                        </U>
+                        <U>
+                          <T n="definition">28735</T>
+                        </U>
+                      </L>
+                    </U>
+                  </V>
+                  <V t="inventory" n="location">
+                    <U n="inventory">
+                      <E n="location_target">CareerEventSim</E>
+                    </U>
+                  </V>
+                </U>
+              </V>
+              <V t="notification">
+                <U n="notification">
+                  <V n="dialog" t="single">
+                    <V n="single" t="literal">
+                      <U n="literal">
+                        <V t="enabled" n="icon">
+                          <V t="participant" n="enabled" />
+                        </V>
+                        <V t="enabled" n="secondary_icon">
+                          <V n="enabled" t="participant">
+                            <U n="participant">
+                              <L n="participant_type">
+                                <E>CareerEventSim</E>
+                              </L>
+                            </U>
+                          </V>
+                        </V>
+                        <V n="text" t="single">
+                          <T n="single">0x37502025<!--String: "Hola, {1.SimFirstName}, soy {0.SimFirstName}. Quería informarte de que mis intentos por analizar cristales han dado como resultado {2.ObjectName}."--></T>
+                        </V>
+                        <V t="enabled" n="text_tokens">
+                          <U n="enabled">
+                            <L n="tokens">
+                              <V t="participant_type" />
+                              <V t="participant_type">
+                                <U n="participant_type">
+                                  <V n="objects" t="from_participant">
+                                    <U n="from_participant">
+                                      <E n="participant">CareerEventSim</E>
+                                    </U>
+                                  </V>
+                                </U>
+                              </V>
+                              <V t="participant_type">
+                                <U n="participant_type">
+                                  <V t="from_participant" n="objects">
+                                    <U n="from_participant">
+                                      <E n="participant">CreatedObject</E>
+                                    </U>
+                                  </V>
+                                </U>
+                              </V>
+                            </L>
+                          </U>
+                        </V>
+                      </U>
+                    </V>
+                  </V>
+                  <E n="recipient_subject">ActiveHousehold</E>
+                </U>
+              </V>
+            </L>
+            <L n="loot_list">
+              <T>113670<!--LootActions: loot_Career_Scientist_OrderCoworkers_Crystals_Finished--></T>
+            </L>
+          </U>
+        </U>
+      </L>
+    </U>
+  </V>
+  <E n="scoring_priority">NORMAL</E>
+  <T n="subaction_selection_weight">1</T>
+  <E n="target_type">OBJECT</E>
+  <L n="test_globals">
+    <V t="sim_info">
+      <U n="sim_info">
+        <V t="specified" n="ages">
+          <L n="specified">
+            <E>YOUNGADULT</E>
+            <E>ADULT</E>
+            <E>ELDER</E>
+          </L>
+        </V>
+        <V t="specified" n="species">
+          <U n="specified">
+            <L n="species">
+              <E />
+            </L>
+          </U>
+        </V>
+        <E n="who">Actor</E>
+      </U>
+    </V>
+    <V t="test_set_reference">
+      <T n="test_set_reference">77630<!--TestSetInstance: testSet_StateNotBroken--></T>
+    </V>
+  </L>
+  <T n="time_overhead">30</T>
+  <V t="enabled" n="utility_info">
+    <L n="enabled">
+      <U>
+        <E n="key">POWER</E>
+      </U>
+    </L>
+  </V>
+</I>

@@ -1,0 +1,289 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<I c="SocialSuperInteraction" i="interaction" m="interactions.social.social_super_interaction" n="sim_InviteIn_Butler" s="151017">
+  <V t="participant" n="_icon">
+    <U n="participant">
+      <L n="participant_type">
+        <E>TargetSim</E>
+      </L>
+    </U>
+  </V>
+  <L n="_party_size_weight_tuning">
+    <U>
+      <T n="y">100</T>
+    </U>
+    <U>
+      <T n="x">1</T>
+      <T n="y">100</T>
+    </U>
+    <U>
+      <T n="x">2</T>
+      <T n="y">50</T>
+    </U>
+    <U>
+      <T n="x">3</T>
+      <T n="y">0</T>
+    </U>
+    <U>
+      <T n="x">4</T>
+    </U>
+  </L>
+  <V t="enabled" n="_saveable" />
+  <T n="_social_group_type">16390<!--SocialGroup: chat--></T>
+  <L n="_static_commodities">
+    <U>
+      <T n="static_commodity">146146<!--StaticCommodity: staticCommodity_Butler_Bultering--></T>
+    </U>
+  </L>
+  <V t="push_self_or_none" n="affordance_to_push_on_target">
+    <T n="push_self_or_none">False</T>
+  </V>
+  <T n="allow_autonomous">True</T>
+  <T n="attention_cost">1</T>
+  <V t="one_shot" n="basic_content">
+    <U n="one_shot">
+      <U n="animation_ref">
+        <T n="factory">11854<!--AnimationElement: Soc_Friendly_NT_askQuestionFriendly_success_basic--></T>
+      </U>
+    </U>
+  </V>
+  <L n="basic_extras">
+    <V t="loot">
+      <U n="loot">
+        <L n="loot_list">
+          <T>162659<!--LootActions: loot_Commodity_Culling_GhostAdd_target--></T>
+        </L>
+      </U>
+    </V>
+    <V t="npc_summon">
+      <U n="npc_summon">
+        <E n="purpose">Invite_In</E>
+      </U>
+    </V>
+    <V t="buff">
+      <U n="buff">
+        <U n="buff_type">
+          <V n="buff_reason" t="enabled">
+            <T n="enabled">0x9C09275F<!--String: "(Por estar en un grupo social con al menos 3 Sims)"--></T>
+          </V>
+          <T n="buff_type">125555<!--Buff: buff_Trait_WithMyFriends--></T>
+        </U>
+        <L n="subject">
+          <E>Actor</E>
+          <E>SocialGroupSims</E>
+          <E>TargetSim</E>
+        </L>
+        <L n="tests">
+          <L>
+            <V t="social_group">
+              <U n="social_group">
+                <V n="threshold" t="enabled">
+                  <U n="enabled">
+                    <T n="value">3</T>
+                  </U>
+                </V>
+              </U>
+            </V>
+          </L>
+        </L>
+      </U>
+    </V>
+  </L>
+  <V t="disabled" n="basic_reserve_object" />
+  <V t="disabled" n="canonical_animation" />
+  <T o="true" n="category" />
+  <V t="disabled" n="content_score" />
+  <T n="display_name">0xC4DDA163<!--String: "Invitar a entrar"--></T>
+  <U n="display_name_text_tokens">
+    <L n="tokens">
+      <V t="participant_type">
+        <U n="participant_type">
+          <V n="objects" t="from_participant">
+            <U n="from_participant">
+              <E n="participant">Actor</E>
+            </U>
+          </V>
+        </U>
+      </V>
+      <V t="participant_type">
+        <U n="participant_type">
+          <V n="objects" t="from_participant">
+            <U n="from_participant">
+              <E n="participant">Object</E>
+            </U>
+          </V>
+        </U>
+      </V>
+    </L>
+  </U>
+  <V t="enabled" n="idle_animation">
+    <U n="enabled">
+      <T n="factory">11570<!--AnimationElement: Listen_Listen_Looping_basic--></T>
+    </U>
+  </V>
+  <V n="idle_animation_overrides" t="enabled">
+    <L n="enabled">
+      <U>
+        <U n="override">
+          <T n="factory">244348<!--AnimationElement: batuu_SNPC_Listen--></T>
+        </U>
+        <L n="tests">
+          <L>
+            <V t="test_set_reference">
+              <T n="test_set_reference">247857<!--TestSetInstance: testSet_Batuu_SNPC_ListenOverride--></T>
+            </V>
+          </L>
+        </L>
+      </U>
+    </L>
+  </V>
+  <T n="ignore_group_socials">False</T>
+  <L n="interaction_category_tags">
+    <E>Interaction_InviteToStay</E>
+    <E>Interaction_SocialSuper</E>
+    <E>Interaction_Super</E>
+    <E>Interaction_All</E>
+    <E>Interaction_SocialAll</E>
+    <E>Interaction_Social_Contagious</E>
+  </L>
+  <T n="invite_in_after_interaction">True</T>
+  <U n="listen_animation">
+    <T n="factory">11570<!--AnimationElement: Listen_Listen_Looping_basic--></T>
+  </U>
+  <V n="outcome" t="dual">
+    <U n="dual">
+      <U n="success_actions">
+        <L n="continuation">
+          <U>
+            <T n="affordance">77271<!--SuperInteraction: sim_EnterFrontDoor--></T>
+            <E n="target">Actor</E>
+          </U>
+          <U>
+            <E n="actor">TargetSim</E>
+            <T n="affordance">77271<!--SuperInteraction: sim_EnterFrontDoor--></T>
+          </U>
+        </L>
+      </U>
+      <U n="success_chance">
+        <T n="base_chance">100</T>
+      </U>
+    </U>
+  </V>
+  <T n="pie_menu_priority">8</T>
+  <U n="progress_bar_enabled">
+    <T n="bar_enabled">False</T>
+  </U>
+  <T n="relationship_scoring">False</T>
+  <E n="scoring_priority">NORMAL</E>
+  <V t="enabled" n="sim_affinity_posture_scoring_data">
+    <U n="enabled">
+      <L n="my_scoring">
+        <U>
+          <V t="relationship_based" n="affinity_strategy" />
+          <T n="negate_tag">True</T>
+          <E n="running_interaction_tag">Sleeping</E>
+        </U>
+        <U>
+          <V t="avoid" n="affinity_strategy" />
+          <E n="running_interaction_tag">Very_Loud</E>
+        </U>
+      </L>
+      <L n="my_tags">
+        <E>Loud</E>
+        <E>Chat</E>
+      </L>
+    </U>
+  </V>
+  <T n="subaction_selection_weight">1</T>
+  <E n="target_type">TARGET</E>
+  <L n="test_autonomous">
+    <L>
+      <V t="buff">
+        <U n="buff">
+          <V n="whitelist" t="enabled">
+            <L n="enabled">
+              <T>147314<!--Buff: buff_Role_Butler_InviteGuests_AlwaysInvite--></T>
+            </L>
+          </V>
+        </U>
+      </V>
+    </L>
+  </L>
+  <L n="test_globals">
+    <V t="sim_info">
+      <U n="sim_info">
+        <V t="specified" n="species">
+          <U n="specified">
+            <L n="species">
+              <E />
+            </L>
+          </U>
+        </V>
+        <E n="who">TargetSim</E>
+      </U>
+    </V>
+    <V t="sim_info">
+      <U n="sim_info">
+        <V t="specified" n="ages">
+          <L n="specified">
+            <E>TEEN</E>
+            <E>YOUNGADULT</E>
+            <E>ADULT</E>
+            <E>ELDER</E>
+            <E>CHILD</E>
+          </L>
+        </V>
+        <V t="specified" n="species">
+          <U n="specified">
+            <L n="species">
+              <E />
+            </L>
+          </U>
+        </V>
+        <E n="who">Actor</E>
+      </U>
+    </V>
+    <V t="lot_has_front_door" />
+    <V t="buff">
+      <U n="buff">
+        <V t="enabled" n="whitelist">
+          <L n="enabled">
+            <T>145405<!--Buff: buff_Role_Butler_NPC--></T>
+          </L>
+        </V>
+      </U>
+    </V>
+    <V t="situation_job_test">
+      <U n="situation_job_test">
+        <T n="negate">True</T>
+        <E n="participant">TargetSim</E>
+        <L n="situation_jobs">
+          <T>146556<!--SituationJob: situationJob_ApartmentNeighbor_NPC_invitedHangout--></T>
+          <T>141133<!--SituationJob: situationJob_ApartmentNeighbor_visitor_Hangout_ChildComplaint--></T>
+          <T>141134<!--SituationJob: situationJob_ApartmentNeighbor_visitor_Hangout_ChildsPlay--></T>
+          <T>141135<!--SituationJob: situationJob_ApartmentNeighbor_visitor_Hangout_FlirtyShower--></T>
+          <T>141132<!--SituationJob: situationJob_ApartmentNeighbor_visitor_Hangout_GeekOut--></T>
+          <T>139265<!--SituationJob: situationJob_ApartmentNeighbor_visitor_Hangout_genericBored--></T>
+          <T>140397<!--SituationJob: situationJob_ApartmentNeighbor_visitor_Hangout_keyGroup--></T>
+          <T>141131<!--SituationJob: situationJob_ApartmentNeighbor_visitor_Hangout_Workout--></T>
+          <T>141312<!--SituationJob: situationJob_ApartmentNeighbor_visitor_Hangout_Brainstorm_ArtLover--></T>
+          <T>141311<!--SituationJob: situationJob_ApartmentNeighbor_visitor_Hangout_Brainstorm_Creative--></T>
+          <T>141313<!--SituationJob: situationJob_apartmentNeighbor_visitor_Hangout_Munchies_Foodie--></T>
+          <T>141314<!--SituationJob: situationJob_apartmentNeighbor_visitor_Hangout_Munchies_Glutton--></T>
+          <T>141929<!--SituationJob: situationJob_ApartmentNeighbor_visitor_Hangout_Uninvited_Goofball--></T>
+          <T>141935<!--SituationJob: situationJob_ApartmentNeighbor_visitor_Hangout_Uninvited_Insane--></T>
+          <T>146280<!--SituationJob: situationJob_PenthouseNeighbors_visitor_Hangout_Brainstorm_KeyHolders_ArtLover--></T>
+          <T>146279<!--SituationJob: situationJob_PenthouseNeighbors_visitor_Hangout_Brainstorm_KeyHolders_Creative--></T>
+          <T>146408<!--SituationJob: situationJob_PenthouseNeighbors_visitor_Hangout_ChildsPlay_KeyHolders--></T>
+          <T>146405<!--SituationJob: situationJob_PenthouseNeighbors_visitor_Hangout_GeekOut_KeyHolders--></T>
+          <T>146328<!--SituationJob: situationJob_PenthouseNeighbors_visitor_Hangout_genericBored_KeyHolders--></T>
+          <T>146195<!--SituationJob: situationJob_PenthouseNeighbors_Hangout_Munchies_KeyHolders_Foodie--></T>
+          <T>146196<!--SituationJob: situationJob_PenthouseNeighbors_Hangout_Munchies_KeyHolders_Glutton--></T>
+          <T>146356<!--SituationJob: situationJob_PenthouseNeighbors_visitor_Hangout_Uninvited_KeyHolders_Goofball--></T>
+          <T>146357<!--SituationJob: situationJob_PenthouseNeighbors_visitor_Hangout_Uninvited_KeyHolders_Insane--></T>
+          <T>146402<!--SituationJob: situationJob_PenthouseNeighbors_visitor_Hangout_Workout_KeyHolders--></T>
+        </L>
+      </U>
+    </V>
+  </L>
+  <T n="time_overhead">30</T>
+</I>

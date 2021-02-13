@@ -1,0 +1,112 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<I c="PickerDramaNode" i="drama_node" m="drama_scheduler.picker_drama_node" n="pickerDramaNode_Freelancer_Batuu_FirstOrder_Story_Mission_6" s="241543">
+  <V t="enabled" n="associated_sim_filter">
+    <T n="enabled">235939<!--TunableSimFilter: filter_Batuu_FirstOrder_SpecialNPC_LTAgnon--></T>
+  </V>
+  <V t="enabled" n="associated_sim_thumbnail_background">
+    <T n="enabled" p="InGP09\UI\Icons\Missions\picker_missions_firstorder_simportrait_bg.png">2f7d0004:00000000:2673f5cdc7a16d49</T>
+  </V>
+  <V n="behavior" t="schedule_career_gig">
+    <U n="schedule_career_gig">
+      <T n="allow_add_career">True</T>
+      <T n="career_gig">241541<!--MissionGig: missionGig_Missions_FirstOrder_Story_6--></T>
+    </U>
+  </V>
+  <V t="node_cooldown" n="cooldown_data">
+    <U n="node_cooldown">
+      <E n="cooldown_option">ON_SCHEDULE</E>
+      <V n="duration" t="duration">
+        <T n="duration">49</T>
+      </V>
+    </U>
+  </V>
+  <T n="disable_if_visibility_tests_fail_with_tooltip">True</T>
+  <U n="min_and_max_times">
+    <T n="lower_bound">24</T>
+    <T n="upper_bound">48</T>
+  </U>
+  <E n="on_pick_behavior">REMOVE</E>
+  <T n="replace_if_removed">True</T>
+  <V t="enabled" n="scoring">
+    <U n="enabled">
+      <E n="bucket">Batuu_Mission_First_Order_Story</E>
+    </U>
+  </V>
+  <V t="schedule" n="time_option">
+    <U n="schedule">
+      <L n="valid_times">
+        <U>
+          <U n="days_available">
+            <T n="0 SUNDAY">True</T>
+            <T n="1 MONDAY">True</T>
+            <T n="2 TUESDAY">True</T>
+            <T n="3 WEDNESDAY">True</T>
+            <T n="4 THURSDAY">True</T>
+            <T n="5 FRIDAY">True</T>
+            <T n="6 SATURDAY">True</T>
+          </U>
+          <T n="duration">8</T>
+        </U>
+      </L>
+    </U>
+  </V>
+  <L n="visibility_tests">
+    <L>
+      <V t="test_set_reference">
+        <T n="test_set_reference">245454<!--TestSetInstance: testSet_Batuu_FactionReputation_Resistance_LessThan_Rank+2--></T>
+      </V>
+      <V t="career_gig_test">
+        <U n="career_gig_test">
+          <T n="career">231099<!--Career: career_Batuu--></T>
+          <T n="negate">True</T>
+          <V t="specific_gigs" n="test_type">
+            <U n="specific_gigs">
+              <L n="gigs">
+                <T>241541<!--MissionGig: missionGig_Missions_FirstOrder_Story_6--></T>
+              </L>
+            </U>
+          </V>
+        </U>
+      </V>
+      <V t="unlock_earned">
+        <U n="unlock_earned">
+          <V n="unlock_to_test" t="aspiration">
+            <U n="aspiration">
+              <T n="aspiration">241369<!--AspirationGig: aspirationGig_Batuu_Missions_FirstOrder_Story_5--></T>
+            </U>
+          </V>
+        </U>
+      </V>
+      <V t="unlock_earned">
+        <U n="unlock_earned">
+          <V n="unlock_to_test" t="aspiration">
+            <U n="aspiration">
+              <T n="aspiration">241542<!--AspirationGig: aspirationGig_Batuu_Missions_FirstOrder_Story_6--></T>
+              <T n="negate">True</T>
+            </U>
+          </V>
+        </U>
+      </V>
+      <V t="test_set_reference">
+        <T n="test_set_reference">245455<!--TestSetInstance: testSet_Batuu_FactionReputation_FirstOrder_GreaterOrEqual_Rank+3--></T>
+      </V>
+      <V t="career_gig_test">
+        <U n="career_gig_test">
+          <T n="career">231099<!--Career: career_Batuu--></T>
+          <T n="negate">True</T>
+          <E n="participant">ActiveHousehold</E>
+          <V t="specific_gigs" n="test_type">
+            <U n="specific_gigs">
+              <L n="gigs">
+                <T>241541<!--MissionGig: missionGig_Missions_FirstOrder_Story_6--></T>
+              </L>
+            </U>
+          </V>
+          <V t="enabled" n="tooltip">
+            <T n="enabled">0xB5517ADF<!--String: "Alguien de tu unidad doméstica está llevando a cabo esta misión.\n\nCompleta o cancela la misión desde su panel de profesión."--></T>
+          </V>
+        </U>
+      </V>
+    </L>
+  </L>
+</I>

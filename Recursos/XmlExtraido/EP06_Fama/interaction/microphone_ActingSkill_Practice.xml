@@ -1,0 +1,269 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<I c="SuperInteraction" i="interaction" m="interactions.base.super_interaction" n="microphone_ActingSkill_Practice" s="195994">
+  <V t="reference" n="_animation_actor_map">
+    <T n="reference">104104<!--AnimationActorMap: AlreadyCarryingCarryTarget--></T>
+  </V>
+  <V t="enabled" n="_saveable" />
+  <L n="_static_commodities">
+    <U>
+      <T n="static_commodity">197032<!--StaticCommodity: staticCommodity_ActorCareer_PrePerformance_BackgroundActor--></T>
+    </U>
+    <U>
+      <T n="static_commodity">234599<!--StaticCommodity: staticCommodity_CivicPolicy_MusicArts--></T>
+    </U>
+  </L>
+  <T n="allow_autonomous">True</T>
+  <T n="attention_cost">0.5</T>
+  <V n="basic_content" t="flexible_length">
+    <U n="flexible_length">
+      <L n="conditional_actions">
+        <V t="list_reference">
+          <T n="list_reference">40705<!--ExitConditionList: ExitConditionList_MotivesNearFail--></T>
+        </V>
+        <V t="literal">
+          <U n="literal">
+            <L n="conditions">
+              <V t="time_based">
+                <U n="time_based">
+                  <T n="max_time">30</T>
+                  <T n="min_time">20</T>
+                </U>
+              </V>
+            </L>
+            <E n="interaction_action">EXIT_NATURALLY</E>
+            <L n="tests">
+              <L>
+                <V t="location">
+                  <U n="location">
+                    <U n="location_tests">
+                      <V n="is_venue_type" t="enabled">
+                        <U n="enabled">
+                          <T n="venue_type">190058<!--Venue: venue_ActingStudio--></T>
+                        </U>
+                      </V>
+                    </U>
+                  </U>
+                </V>
+                <V t="sim_info">
+                  <U n="sim_info">
+                    <V t="enabled" n="npc" />
+                  </U>
+                </V>
+              </L>
+            </L>
+          </U>
+        </V>
+        <V t="list_reference">
+          <T n="list_reference">40702<!--ExitConditionList: ExitConditionList_EmotionStressed--></T>
+        </V>
+        <V t="list_reference">
+          <T n="list_reference">40144<!--ExitConditionList: ExitConditionList_EmotionMiserable--></T>
+        </V>
+      </L>
+      <V t="looping_content" n="content">
+        <U n="looping_content">
+          <U n="animation_ref">
+            <T n="factory">195762<!--AnimationElement: actingSkill_Practice--></T>
+          </U>
+        </U>
+      </V>
+      <V n="periodic_stat_change" t="enabled">
+        <U n="enabled">
+          <U n="operation_actions">
+            <T n="alarm_interval">1</T>
+          </U>
+          <L n="operations">
+            <V t="dynamic_skill">
+              <U n="dynamic_skill">
+                <U n="skill_loot_data_override">
+                  <E n="effectiveness">StandardPeriodic</E>
+                  <T n="stat">194727<!--Skill: statistic_Skill_AdultMajor_Acting--></T>
+                </U>
+              </U>
+            </V>
+            <V t="statistic_change">
+              <U n="statistic_change">
+                <T n="amount">1</T>
+                <T n="stat">199910<!--Commodity: commodity_CareerBenefit_DramaClub--></T>
+                <L n="subject">
+                  <E>Actor</E>
+                </L>
+                <L n="tests">
+                  <L>
+                    <V t="career_test">
+                      <U n="career_test">
+                        <V n="test_type" t="career_reference">
+                          <U n="career_reference">
+                            <V t="specific_career" n="career">
+                              <T n="specific_career">199274<!--Career: career_Volunteer_DramaClub--></T>
+                            </V>
+                            <V t="enabled" n="user_level">
+                              <U n="enabled">
+                                <T n="upper_bound">1</T>
+                              </U>
+                            </V>
+                          </U>
+                        </V>
+                      </U>
+                    </V>
+                  </L>
+                  <L>
+                    <V t="career_test">
+                      <U n="career_test">
+                        <V n="test_type" t="career_reference">
+                          <U n="career_reference">
+                            <V t="specific_career" n="career">
+                              <T n="specific_career">199274<!--Career: career_Volunteer_DramaClub--></T>
+                            </V>
+                            <V n="user_level" t="enabled">
+                              <U n="enabled">
+                                <T n="lower_bound">4</T>
+                              </U>
+                            </V>
+                          </U>
+                        </V>
+                      </U>
+                    </V>
+                  </L>
+                </L>
+              </U>
+            </V>
+          </L>
+        </U>
+      </V>
+    </U>
+  </V>
+  <L n="basic_extras">
+    <V t="balloon">
+      <U n="balloon">
+        <L n="balloon_choices">
+          <U>
+            <V n="item" t="balloon_category">
+              <T n="balloon_category">200458<!--BalloonCategory: balloonCategory_ActingPractice--></T>
+            </V>
+          </U>
+        </L>
+        <T n="balloon_delay">1</T>
+        <T n="balloon_delay_random_offset">0.5</T>
+        <L n="balloon_target">
+          <E>Actor</E>
+        </L>
+      </U>
+    </V>
+    <V t="buff">
+      <U n="buff">
+        <U n="buff_type">
+          <T n="buff_type">200372<!--Buff: buff_Sim_isPerforming--></T>
+        </U>
+      </U>
+    </V>
+  </L>
+  <V t="enabled" n="canonical_animation">
+    <U n="enabled">
+      <T n="factory">202543<!--AnimationElement: mic_NoCarry_Canonical--></T>
+    </U>
+  </V>
+  <V t="disabled" n="content_score" />
+  <T n="display_name">0xB9B0E62B<!--String: "Practicar actuación"--></T>
+  <V t="testable" n="display_name_overrides">
+    <U n="testable">
+      <L n="overrides">
+        <U>
+          <V t="disabled" n="new_display_name" />
+          <L n="test">
+            <L>
+              <V t="mood">
+                <U n="mood">
+                  <T n="mood">14634<!--Mood: Mood_Confident--></T>
+                </U>
+              </V>
+            </L>
+          </L>
+        </U>
+      </L>
+    </U>
+  </V>
+  <U n="display_name_text_tokens">
+    <L n="tokens">
+      <V t="participant_type">
+        <U n="participant_type">
+          <V t="from_participant" n="objects">
+            <U n="from_participant">
+              <E n="participant">Actor</E>
+            </U>
+          </V>
+        </U>
+      </V>
+      <V t="participant_type">
+        <U n="participant_type">
+          <V t="from_participant" n="objects">
+            <U n="from_participant">
+              <E n="participant">Object</E>
+            </U>
+          </V>
+        </U>
+      </V>
+    </L>
+  </U>
+  <L n="interaction_category_tags">
+    <E>Interaction_Super</E>
+    <E>Interaction_All</E>
+    <E>Interaction_Practice_Acting</E>
+    <E>Interaction_Skill_Acting</E>
+  </L>
+  <L n="mood_list">
+    <T>14634<!--Mood: Mood_Confident--></T>
+  </L>
+  <V t="single" n="outcome">
+    <U n="single">
+      <U n="actions">
+        <L n="events_to_send">
+          <E>actorCareer_PrePerformance_PracticeLines</E>
+        </L>
+      </U>
+    </U>
+  </V>
+  <V t="enabled" n="route_start_balloon">
+    <U n="enabled">
+      <U n="balloon">
+        <L n="balloon_choices">
+          <U>
+            <V n="item" t="balloon_icon">
+              <U n="balloon_icon">
+                <V t="participant" n="icon">
+                  <U n="participant">
+                    <L n="participant_type">
+                      <E>Object</E>
+                    </L>
+                  </U>
+                </V>
+              </U>
+            </V>
+          </U>
+        </L>
+        <L n="balloon_target">
+          <E>Actor</E>
+        </L>
+      </U>
+    </U>
+  </V>
+  <E n="scoring_priority">NORMAL</E>
+  <T n="subaction_selection_weight">1</T>
+  <E n="target_type">OBJECT</E>
+  <L n="test_globals">
+    <V t="sim_info">
+      <U n="sim_info">
+        <V t="specified" n="ages" />
+        <V t="specified" n="species">
+          <U n="specified">
+            <L n="species">
+              <E />
+            </L>
+          </U>
+        </V>
+        <E n="who">Actor</E>
+      </U>
+    </V>
+  </L>
+  <T n="time_overhead">30</T>
+</I>

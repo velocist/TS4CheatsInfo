@@ -1,0 +1,389 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<I c="GameObject" i="object" m="objects.game_object" n="object_Retail_NeonSign_Simoleon" s="115011">
+  <U n="_components">
+    <V t="enabled" n="affordance_tuning">
+      <U n="enabled">
+        <L n="affordance_map">
+          <U>
+            <T n="key">114573<!--SwitchLightImmediateInteraction: lights_TurnOn_NoCategory--></T>
+            <U n="value">
+              <L n="tests">
+                <L>
+                  <V t="test_set_reference">
+                    <T n="test_set_reference">77630<!--TestSetInstance: testSet_StateNotBroken--></T>
+                  </V>
+                </L>
+              </L>
+            </U>
+          </U>
+        </L>
+      </U>
+    </V>
+    <V t="enabled" n="focus">
+      <U n="enabled">
+        <V t="globally" n="_focus_score">
+          <U n="globally">
+            <E n="base">LOW</E>
+          </U>
+        </V>
+      </U>
+    </V>
+    <V t="enabled" n="lighting">
+      <U n="enabled">
+        <L n="component_interactions">
+          <T>114572<!--SwitchLightImmediateInteraction: lights_TurnOff_NoCategory--></T>
+          <T>114573<!--SwitchLightImmediateInteraction: lights_TurnOn_NoCategory--></T>
+        </L>
+        <V t="enabled" n="material_state_off" />
+        <V t="enabled" n="material_state_on" />
+      </U>
+    </V>
+    <V t="enabled" n="retail_component">
+      <V n="enabled" t="reference">
+        <T n="reference">115305<!--RetailComponent: retailComponent_NeonSigns--></T>
+      </V>
+    </V>
+    <V n="state" t="enabled">
+      <U n="enabled">
+        <L n="state_triggers">
+          <U>
+            <L n="at_states">
+              <T>77849<!--CommodityBasedObjectStateValue: Lights_On--></T>
+              <T>15080<!--ObjectStateValue: BrokenState_Broken--></T>
+            </L>
+            <V n="set_states" t="Set_state_list">
+              <L n="Set_state_list">
+                <T>77850<!--CommodityBasedObjectStateValue: Lights_Off--></T>
+              </L>
+            </V>
+          </U>
+          <U>
+            <L n="at_states">
+              <T>15076<!--CommodityBasedObjectStateValue: Brokenness_Broken--></T>
+            </L>
+            <V n="set_states" t="Set_state_list">
+              <L n="Set_state_list">
+                <T>15080<!--ObjectStateValue: BrokenState_Broken--></T>
+              </L>
+            </V>
+          </U>
+          <U>
+            <L n="at_states">
+              <T>15078<!--CommodityBasedObjectStateValue: Brokenness_Unbroken--></T>
+            </L>
+            <V t="Set_state_list" n="set_states">
+              <L n="Set_state_list">
+                <T>15081<!--ObjectStateValue: BrokenState_Unbroken--></T>
+              </L>
+            </V>
+          </U>
+          <U>
+            <L n="at_states">
+              <T>77850<!--CommodityBasedObjectStateValue: Lights_Off--></T>
+            </L>
+            <V n="set_states" t="Set_state_list">
+              <L n="Set_state_list">
+                <T>100571<!--ObjectStateValue: EmotionEnvironment_Disabled--></T>
+              </L>
+            </V>
+          </U>
+          <U>
+            <L n="at_states">
+              <T>77849<!--CommodityBasedObjectStateValue: Lights_On--></T>
+            </L>
+            <V n="set_states" t="Set_state_list">
+              <L n="Set_state_list">
+                <T>100570<!--ObjectStateValue: EmotionEnvironment_Enabled--></T>
+              </L>
+            </V>
+          </U>
+        </L>
+        <L n="states">
+          <U>
+            <L n="client_states">
+              <U>
+                <T n="key">77849<!--CommodityBasedObjectStateValue: Lights_On--></T>
+                <U n="value">
+                  <V t="apply_new_value" n="audio_state">
+                    <V n="apply_new_value" t="start_audio">
+                      <U n="start_audio">
+                        <T n="audio" p="InEP01\Audio\SFX\neonsign\neon_sign_turn_on.propx">39b2aa4a:00000000:420cd36f7f7d0fb5</T>
+                      </U>
+                    </V>
+                  </V>
+                  <V n="autonomy_modifiers" t="apply_new_value">
+                    <V n="apply_new_value" t="apply_statistic_modifiers">
+                      <U n="apply_statistic_modifiers">
+                        <L n="autonomy_modifiers">
+                          <U />
+                        </L>
+                        <U n="periodic_statistic_change">
+                          <L n="operations">
+                            <U>
+                              <T n="amount">-0.8</T>
+                              <T n="stat">16633<!--Commodity: commodity_Object_Brokenness--></T>
+                            </U>
+                          </L>
+                        </U>
+                      </U>
+                    </V>
+                  </V>
+                </U>
+              </U>
+              <U>
+                <T n="key">77850<!--CommodityBasedObjectStateValue: Lights_Off--></T>
+                <U n="value">
+                  <V n="audio_state" t="apply_new_value">
+                    <V n="apply_new_value" t="start_audio">
+                      <U n="start_audio">
+                        <T n="audio" p="InEP01\Audio\SFX\neonsign\neon_sign_turn_off.propx">39b2aa4a:00000000:b8db0375a181be41</T>
+                      </U>
+                    </V>
+                  </V>
+                  <V t="apply_new_value" n="autonomy_modifiers" />
+                </U>
+              </U>
+            </L>
+            <V t="reference" n="default_value">
+              <T n="reference">77849<!--CommodityBasedObjectStateValue: Lights_On--></T>
+            </V>
+          </U>
+          <U>
+            <L n="client_states">
+              <U>
+                <T n="key">15076<!--CommodityBasedObjectStateValue: Brokenness_Broken--></T>
+              </U>
+              <U>
+                <T n="key">15077<!--CommodityBasedObjectStateValue: Brokenness_Neutral--></T>
+              </U>
+              <U>
+                <T n="key">15078<!--CommodityBasedObjectStateValue: Brokenness_Unbroken--></T>
+              </U>
+              <U>
+                <T n="key">97754<!--CommodityBasedObjectStateValue: Brokenness_Broken_Sabotage--></T>
+              </U>
+            </L>
+            <V t="reference" n="default_value">
+              <T n="reference">15078<!--CommodityBasedObjectStateValue: Brokenness_Unbroken--></T>
+            </V>
+          </U>
+          <U>
+            <L n="client_states">
+              <U>
+                <T n="key">73870<!--ObjectStateValue: TheKnack_Awesome--></T>
+              </U>
+              <U>
+                <T n="key">73871<!--ObjectStateValue: TheKnack_NotAwesome--></T>
+              </U>
+            </L>
+            <V t="reference" n="default_value">
+              <T n="reference">73871<!--ObjectStateValue: TheKnack_NotAwesome--></T>
+            </V>
+            <T n="reset_to_default">True</T>
+          </U>
+          <U>
+            <L n="client_states">
+              <U>
+                <T n="key">185122<!--ObjectStateValue: object_Rain_Outside--></T>
+              </U>
+              <U>
+                <T n="key">185125<!--ObjectStateValue: object_Rain_Inside--></T>
+              </U>
+            </L>
+            <V n="default_value" t="reference">
+              <T n="reference">185125<!--ObjectStateValue: object_Rain_Inside--></T>
+            </V>
+          </U>
+          <U>
+            <L n="client_states">
+              <U>
+                <T n="key">15396<!--CommodityBasedObjectStateValue: Upgrade_Generic_LowerBrokenness_Completed--></T>
+                <U n="value">
+                  <V n="autonomy_modifiers" t="apply_new_value">
+                    <V n="apply_new_value" t="apply_statistic_modifiers">
+                      <U n="apply_statistic_modifiers">
+                        <L n="autonomy_modifiers">
+                          <U>
+                            <L n="stat_use_multiplier">
+                              <U>
+                                <T n="key">16633<!--Commodity: commodity_Object_Brokenness--></T>
+                                <U n="value">
+                                  <E n="apply_direction">DECREASE</E>
+                                  <T n="multiplier">0.5</T>
+                                </U>
+                              </U>
+                            </L>
+                          </U>
+                        </L>
+                      </U>
+                    </V>
+                  </V>
+                </U>
+              </U>
+              <U>
+                <T n="key">15397<!--CommodityBasedObjectStateValue: Upgrade_Generic_LowerBrokenness_NotStarted--></T>
+              </U>
+              <U>
+                <T n="key">15398<!--CommodityBasedObjectStateValue: Upgrade_Generic_LowerBrokenness_Partial--></T>
+              </U>
+            </L>
+            <V t="reference" n="default_value">
+              <T n="reference">15397<!--CommodityBasedObjectStateValue: Upgrade_Generic_LowerBrokenness_NotStarted--></T>
+            </V>
+          </U>
+          <U>
+            <L n="client_states">
+              <U>
+                <T n="key">15384<!--CommodityBasedObjectStateValue: Upgrade_Generic_LockBrokenness_Completed--></T>
+              </U>
+              <U>
+                <T n="key">15385<!--CommodityBasedObjectStateValue: Upgrade_Generic_LockBrokenness_NotStarted--></T>
+              </U>
+              <U>
+                <T n="key">15386<!--CommodityBasedObjectStateValue: Upgrade_Generic_LockBrokenness_Partial--></T>
+              </U>
+            </L>
+            <V n="default_value" t="reference">
+              <T n="reference">15385<!--CommodityBasedObjectStateValue: Upgrade_Generic_LockBrokenness_NotStarted--></T>
+            </V>
+          </U>
+          <U>
+            <L n="client_states">
+              <U>
+                <T n="key">15380<!--CommodityBasedObjectStateValue: Upgrade_Generic_IncreaseQuality_Completed--></T>
+                <U n="value">
+                  <V n="light_material_states" t="apply_new_value">
+                    <U n="apply_new_value">
+                      <V n="material_state_on" t="apply_new_value">
+                        <T n="apply_new_value">Upgraded</T>
+                      </V>
+                    </U>
+                  </V>
+                </U>
+              </U>
+            </L>
+            <V t="reference" n="default_value">
+              <T n="reference">15381<!--CommodityBasedObjectStateValue: Upgrade_Generic_IncreaseQuality_NotStarted--></T>
+            </V>
+          </U>
+          <U>
+            <L n="client_states">
+              <U>
+                <T n="key">100570<!--ObjectStateValue: EmotionEnvironment_Enabled--></T>
+              </U>
+              <U>
+                <T n="key">100571<!--ObjectStateValue: EmotionEnvironment_Disabled--></T>
+              </U>
+            </L>
+            <V t="reference" n="default_value">
+              <T n="reference">100571<!--ObjectStateValue: EmotionEnvironment_Disabled--></T>
+            </V>
+          </U>
+          <U>
+            <L n="client_states">
+              <U>
+                <T n="key">15080<!--ObjectStateValue: BrokenState_Broken--></T>
+                <U n="value">
+                  <V t="apply_new_value" n="broadcaster">
+                    <V n="apply_new_value" t="start_broadcaster">
+                      <U n="start_broadcaster">
+                        <L n="broadcaster_types">
+                          <U>
+                            <T n="item">110970<!--Broadcaster: broadcaster_Reaction_BrokenNeonSign--></T>
+                          </U>
+                        </L>
+                      </U>
+                    </V>
+                  </V>
+                  <V t="apply_new_value" n="light_dimmer" />
+                  <V t="apply_new_value" n="light_material_states">
+                    <U n="apply_new_value">
+                      <V n="material_state_off" t="apply_new_value">
+                        <T n="apply_new_value">Burnt</T>
+                      </V>
+                    </U>
+                  </V>
+                  <V n="vfx_state" t="apply_new_value">
+                    <V n="apply_new_value" t="start_vfx">
+                      <V n="start_vfx" t="single_effect">
+                        <U n="single_effect">
+                          <T n="effect_name">ep1_neon_sign_simoleon</T>
+                        </U>
+                      </V>
+                    </V>
+                  </V>
+                </U>
+              </U>
+              <U>
+                <T n="key">15081<!--ObjectStateValue: BrokenState_Unbroken--></T>
+                <U n="value">
+                  <V t="apply_new_value" n="broadcaster" />
+                  <V n="light_material_states" t="apply_new_value">
+                    <U n="apply_new_value">
+                      <V n="material_state_off" t="set_to_default" />
+                    </U>
+                  </V>
+                  <V t="apply_new_value" n="vfx_state" />
+                </U>
+              </U>
+            </L>
+            <V t="reference" n="default_value">
+              <T n="reference">15081<!--ObjectStateValue: BrokenState_Unbroken--></T>
+            </V>
+          </U>
+        </L>
+      </U>
+    </V>
+    <V t="enabled" n="weather_aware_component">
+      <U n="enabled">
+        <L n="outside_loot">
+          <U>
+            <E n="key">AnyRain</E>
+            <U n="value">
+              <L n="end_loot">
+                <T>185163<!--LootActions: loot_Wetness_Object_Rain_End--></T>
+              </L>
+              <L n="start_loot">
+                <T>184964<!--LootActions: Loot_Wetness_Object_Start--></T>
+              </L>
+            </U>
+          </U>
+        </L>
+      </U>
+    </V>
+  </U>
+  <L n="_super_affordances">
+    <T>13328<!--ImmediateSuperInteraction: debug_Reset--></T>
+    <T>13326<!--ImmediateSuperInteraction: debug_ObjectDestroy--></T>
+    <T>103888<!--ImmediateSuperInteraction: cheat_set_as_head--></T>
+    <T>110965<!--SuperInteraction: si_NeonSign_LaughAtBrokenSign--></T>
+    <T>113833<!--SuperInteraction: object_Repair_Electronic_RetailNeonSign--></T>
+    <T>110962<!--SuperInteraction: si_NeonSign_Upgrade_AddAnimations--></T>
+    <T>110963<!--SuperInteraction: si_NeonSign_Upgrade_AddAnimations_Resume--></T>
+    <T>110958<!--SuperInteraction: si_NeonSign_Upgrade_BreakLess--></T>
+    <T>110959<!--SuperInteraction: si_NeonSign_Upgrade_BreakLess_Resume--></T>
+    <T>110960<!--SuperInteraction: si_NeonSign_Upgrade_NeverBreak--></T>
+    <T>110961<!--SuperInteraction: si_NeonSign_Upgrade_NeverBreak_Resume--></T>
+    <T>13319<!--ImmediateSuperInteraction: debug_BreakObject--></T>
+    <T>13327<!--ImmediateSuperInteraction: debug_RepairObject--></T>
+    <T>115421<!--SuperInteraction: si_object_electronics_salvage_NeonSign--></T>
+    <T>99087<!--ImmediateSuperInteraction: object_ReplaceBrokenObject--></T>
+    <T>129510<!--SuperInteraction: object_Hire_Repair_Service--></T>
+    <T>156583<!--SuperInteraction: object_Knack_MakeAwesome_NeonSign--></T>
+    <T>156562<!--SuperInteraction: neonSign_Upgrade_AddAnimations_CompletedDisplay--></T>
+    <T>156563<!--SuperInteraction: neonSign_Upgrade_BreakLess_CompletedDisplay--></T>
+    <T>156564<!--SuperInteraction: neonSign_Upgrade_NeverBreak_CompletedDisplay--></T>
+  </L>
+  <U n="recycling_data">
+    <L n="recycling_values">
+      <U>
+        <E n="Bucks Type">RecycleBitsBucks</E>
+        <T n="Value">0.5</T>
+      </U>
+      <U>
+        <E n="Bucks Type">RecyclePiecesBucks</E>
+        <T n="Value">0.5</T>
+      </U>
+    </L>
+  </U>
+</I>

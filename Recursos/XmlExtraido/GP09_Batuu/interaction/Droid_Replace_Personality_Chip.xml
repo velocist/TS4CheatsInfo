@@ -1,0 +1,687 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<I c="SuperInteraction" i="interaction" m="interactions.base.super_interaction" n="Droid_Replace_Personality_Chip" s="234140">
+  <L n="_constraints">
+    <U>
+      <L n="constraints">
+        <U />
+      </L>
+    </U>
+    <U>
+      <L n="constraints">
+        <U>
+          <V t="facing" n="value" />
+        </U>
+      </L>
+    </U>
+  </L>
+  <V t="enabled" n="_saveable" />
+  <T n="attention_cost">0.5</T>
+  <V n="basic_content" t="flexible_length">
+    <U n="flexible_length">
+      <L n="conditional_actions">
+        <V t="literal">
+          <U n="literal">
+            <L n="conditions">
+              <V t="time_based">
+                <U n="time_based">
+                  <T n="max_time">30</T>
+                  <T n="min_time">20</T>
+                </U>
+              </V>
+            </L>
+            <E n="interaction_action">EXIT_NATURALLY</E>
+            <L n="loot_actions">
+              <T>243292<!--LootActions: loot_Droids_Replace_Personality_Chip--></T>
+            </L>
+            <L n="tests">
+              <L>
+                <V t="skill_test">
+                  <U n="skill_test">
+                    <T n="skill">16704<!--Skill: statistic_Skill_AdultMajor_Handiness--></T>
+                    <V n="skill_range" t="interval">
+                      <U n="interval">
+                        <U n="skill_interval">
+                          <T n="upper_bound">3</T>
+                        </U>
+                      </U>
+                    </V>
+                  </U>
+                </V>
+              </L>
+            </L>
+          </U>
+        </V>
+        <V t="literal">
+          <U n="literal">
+            <L n="conditions">
+              <V t="time_based">
+                <U n="time_based">
+                  <T n="max_time">20</T>
+                  <T n="min_time">10</T>
+                </U>
+              </V>
+            </L>
+            <E n="interaction_action">EXIT_NATURALLY</E>
+            <L n="loot_actions">
+              <T>243292<!--LootActions: loot_Droids_Replace_Personality_Chip--></T>
+            </L>
+            <L n="tests">
+              <L>
+                <V t="skill_test">
+                  <U n="skill_test">
+                    <T n="skill">16704<!--Skill: statistic_Skill_AdultMajor_Handiness--></T>
+                    <V n="skill_range" t="interval">
+                      <U n="interval">
+                        <U n="skill_interval">
+                          <T n="lower_bound">4</T>
+                          <T n="upper_bound">10</T>
+                        </U>
+                      </U>
+                    </V>
+                  </U>
+                </V>
+              </L>
+            </L>
+          </U>
+        </V>
+      </L>
+      <V t="looping_content" n="content">
+        <U n="looping_content">
+          <U n="animation_ref">
+            <T n="factory">34905<!--AnimationElement: Handiness_Upgrade_Repair_StereoTV--></T>
+          </U>
+        </U>
+      </V>
+      <V n="periodic_stat_change" t="enabled">
+        <U n="enabled">
+          <L n="operations">
+            <V t="statistic_change">
+              <U n="statistic_change">
+                <T n="amount">1</T>
+                <T n="stat">16704<!--Skill: statistic_Skill_AdultMajor_Handiness--></T>
+              </U>
+            </V>
+          </L>
+        </U>
+      </V>
+    </U>
+  </V>
+  <T n="category">234146<!--PieMenuCategory: droid_PieMenuCategory_Droid_Maintenance--></T>
+  <V t="disabled" n="content_score" />
+  <T n="display_name">0xFAAED5E0<!--String: "Reemplazar chip de personalidad"--></T>
+  <U n="display_name_text_tokens">
+    <L n="tokens">
+      <V t="participant_type">
+        <U n="participant_type">
+          <V n="objects" t="from_participant">
+            <U n="from_participant">
+              <E n="participant">Actor</E>
+            </U>
+          </V>
+        </U>
+      </V>
+      <V t="participant_type">
+        <U n="participant_type">
+          <V t="from_participant" n="objects">
+            <U n="from_participant">
+              <E n="participant">Object</E>
+            </U>
+          </V>
+        </U>
+      </V>
+    </L>
+  </U>
+  <L n="interaction_category_tags">
+    <E>Interaction_Super</E>
+    <E>Interaction_All</E>
+  </L>
+  <V n="outcome" t="test_based">
+    <U n="test_based">
+      <L n="fallback_outcomes">
+        <U>
+          <U n="outcome">
+            <L n="basic_extras">
+              <V t="state_change">
+                <U n="state_change">
+                  <V n="new_value" t="single_value">
+                    <U n="single_value">
+                      <T n="new_value">236520<!--ObjectStateValue: droid_Personality_Chips_Default--></T>
+                    </U>
+                  </V>
+                </U>
+              </V>
+              <V t="destroy_object">
+                <U n="destroy_object">
+                  <V n="objects_to_destroy" t="from_participant">
+                    <U n="from_participant">
+                      <E n="participant">PickedObject</E>
+                    </U>
+                  </V>
+                </U>
+              </V>
+              <V t="state_change">
+                <U n="state_change">
+                  <V n="new_value" t="single_value">
+                    <U n="single_value">
+                      <T n="new_value">245502<!--ObjectStateValue: droid_Values_ChipDefinition_Default--></T>
+                    </U>
+                  </V>
+                </U>
+              </V>
+            </L>
+            <L n="loot_list">
+              <T>234284<!--LootActions: loot_Droids_Rel_Gain--></T>
+            </L>
+          </U>
+        </U>
+      </L>
+      <L n="tested_outcomes">
+        <U>
+          <L n="potential_outcomes">
+            <U>
+              <U n="outcome">
+                <L n="basic_extras">
+                  <V t="state_change">
+                    <U n="state_change">
+                      <V n="new_value" t="single_value">
+                        <U n="single_value">
+                          <T n="new_value">236522<!--ObjectStateValue: droid_Personality_Chips_FirstOrder--></T>
+                        </U>
+                      </V>
+                    </U>
+                  </V>
+                  <V t="destroy_object">
+                    <U n="destroy_object">
+                      <V n="objects_to_destroy" t="from_participant">
+                        <U n="from_participant">
+                          <E n="participant">PickedObject</E>
+                        </U>
+                      </V>
+                    </U>
+                  </V>
+                  <V t="state_change">
+                    <U n="state_change">
+                      <V n="new_value" t="single_value">
+                        <U n="single_value">
+                          <T n="new_value">245503<!--ObjectStateValue: droid_Values_ChipDefinition_FO1--></T>
+                        </U>
+                      </V>
+                    </U>
+                  </V>
+                </L>
+                <L n="loot_list">
+                  <T>234284<!--LootActions: loot_Droids_Rel_Gain--></T>
+                </L>
+              </U>
+            </U>
+          </L>
+          <L n="tests">
+            <L>
+              <V t="object_criteria">
+                <U n="object_criteria">
+                  <V n="identity_test" t="tags">
+                    <U n="tags">
+                      <L n="tag_set">
+                        <E>Func_Droid_Personality_Chip_FirstOrder</E>
+                      </L>
+                    </U>
+                  </V>
+                  <T n="owned">False</T>
+                  <V t="single_object" n="subject_specific_tests">
+                    <U n="single_object">
+                      <E n="target">PickedObject</E>
+                    </U>
+                  </V>
+                </U>
+              </V>
+              <V t="object_criteria">
+                <U n="object_criteria">
+                  <V n="identity_test" t="tags">
+                    <U n="tags">
+                      <L n="tag_set">
+                        <E>Func_Droid_Personality_Chip_FirstOrder_2</E>
+                      </L>
+                      <E n="test_type">CONTAINS_NO_TAGS_IN_SET</E>
+                    </U>
+                  </V>
+                  <T n="owned">False</T>
+                  <V t="single_object" n="subject_specific_tests">
+                    <U n="single_object">
+                      <E n="target">PickedObject</E>
+                    </U>
+                  </V>
+                </U>
+              </V>
+            </L>
+          </L>
+        </U>
+        <U>
+          <L n="potential_outcomes">
+            <U>
+              <U n="outcome">
+                <L n="basic_extras">
+                  <V t="state_change">
+                    <U n="state_change">
+                      <V n="new_value" t="single_value">
+                        <U n="single_value">
+                          <T n="new_value">236521<!--ObjectStateValue: droid_Personality_Chips_Resistance--></T>
+                        </U>
+                      </V>
+                    </U>
+                  </V>
+                  <V t="destroy_object">
+                    <U n="destroy_object">
+                      <V n="objects_to_destroy" t="from_participant">
+                        <U n="from_participant">
+                          <E n="participant">PickedObject</E>
+                        </U>
+                      </V>
+                    </U>
+                  </V>
+                  <V t="state_change">
+                    <U n="state_change">
+                      <V n="new_value" t="single_value">
+                        <U n="single_value">
+                          <T n="new_value">245505<!--ObjectStateValue: droid_Values_ChipDefinition_R1--></T>
+                        </U>
+                      </V>
+                    </U>
+                  </V>
+                </L>
+                <L n="loot_list">
+                  <T>234284<!--LootActions: loot_Droids_Rel_Gain--></T>
+                </L>
+              </U>
+            </U>
+          </L>
+          <L n="tests">
+            <L>
+              <V t="object_criteria">
+                <U n="object_criteria">
+                  <V n="identity_test" t="tags">
+                    <U n="tags">
+                      <L n="tag_set">
+                        <E>Func_Droid_Personality_Chip_Resistance</E>
+                      </L>
+                    </U>
+                  </V>
+                  <T n="owned">False</T>
+                  <V t="single_object" n="subject_specific_tests">
+                    <U n="single_object">
+                      <E n="target">PickedObject</E>
+                    </U>
+                  </V>
+                </U>
+              </V>
+              <V t="object_criteria">
+                <U n="object_criteria">
+                  <V n="identity_test" t="tags">
+                    <U n="tags">
+                      <L n="tag_set">
+                        <E>Func_Droid_Personality_Chip_Resistance_2</E>
+                      </L>
+                      <E n="test_type">CONTAINS_NO_TAGS_IN_SET</E>
+                    </U>
+                  </V>
+                  <T n="owned">False</T>
+                  <V t="single_object" n="subject_specific_tests">
+                    <U n="single_object">
+                      <E n="target">PickedObject</E>
+                    </U>
+                  </V>
+                </U>
+              </V>
+            </L>
+          </L>
+        </U>
+        <U>
+          <L n="potential_outcomes">
+            <U>
+              <U n="outcome">
+                <L n="basic_extras">
+                  <V t="state_change">
+                    <U n="state_change">
+                      <V n="new_value" t="single_value">
+                        <U n="single_value">
+                          <T n="new_value">236523<!--ObjectStateValue: droid_Personality_Chips_Scoundrel--></T>
+                        </U>
+                      </V>
+                    </U>
+                  </V>
+                  <V t="destroy_object">
+                    <U n="destroy_object">
+                      <V n="objects_to_destroy" t="from_participant">
+                        <U n="from_participant">
+                          <E n="participant">PickedObject</E>
+                        </U>
+                      </V>
+                    </U>
+                  </V>
+                  <V t="state_change">
+                    <U n="state_change">
+                      <V n="new_value" t="single_value">
+                        <U n="single_value">
+                          <T n="new_value">245507<!--ObjectStateValue: droid_Values_ChipDefinition_S1--></T>
+                        </U>
+                      </V>
+                    </U>
+                  </V>
+                </L>
+                <L n="loot_list">
+                  <T>234284<!--LootActions: loot_Droids_Rel_Gain--></T>
+                </L>
+              </U>
+            </U>
+          </L>
+          <L n="tests">
+            <L>
+              <V t="object_criteria">
+                <U n="object_criteria">
+                  <V n="identity_test" t="tags">
+                    <U n="tags">
+                      <L n="tag_set">
+                        <E>Func_Droid_Personality_Chip_Scoundrel</E>
+                      </L>
+                    </U>
+                  </V>
+                  <T n="owned">False</T>
+                  <V t="single_object" n="subject_specific_tests">
+                    <U n="single_object">
+                      <E n="target">PickedObject</E>
+                    </U>
+                  </V>
+                </U>
+              </V>
+              <V t="object_criteria">
+                <U n="object_criteria">
+                  <V n="identity_test" t="tags">
+                    <U n="tags">
+                      <L n="tag_set">
+                        <E>Func_Droid_Personality_Chip_Scoundrel_2</E>
+                      </L>
+                      <E n="test_type">CONTAINS_NO_TAGS_IN_SET</E>
+                    </U>
+                  </V>
+                  <T n="owned">False</T>
+                  <V t="single_object" n="subject_specific_tests">
+                    <U n="single_object">
+                      <E n="target">PickedObject</E>
+                    </U>
+                  </V>
+                </U>
+              </V>
+            </L>
+          </L>
+        </U>
+        <U>
+          <L n="potential_outcomes">
+            <U>
+              <U n="outcome">
+                <L n="basic_extras">
+                  <V t="state_change">
+                    <U n="state_change">
+                      <V n="new_value" t="single_value">
+                        <U n="single_value">
+                          <T n="new_value">236522<!--ObjectStateValue: droid_Personality_Chips_FirstOrder--></T>
+                        </U>
+                      </V>
+                    </U>
+                  </V>
+                  <V t="destroy_object">
+                    <U n="destroy_object">
+                      <V n="objects_to_destroy" t="from_participant">
+                        <U n="from_participant">
+                          <E n="participant">PickedObject</E>
+                        </U>
+                      </V>
+                    </U>
+                  </V>
+                  <V t="state_change">
+                    <U n="state_change">
+                      <V n="new_value" t="single_value">
+                        <U n="single_value">
+                          <T n="new_value">245504<!--ObjectStateValue: droid_Values_ChipDefinition_FO2--></T>
+                        </U>
+                      </V>
+                    </U>
+                  </V>
+                </L>
+                <L n="loot_list">
+                  <T>234284<!--LootActions: loot_Droids_Rel_Gain--></T>
+                </L>
+              </U>
+            </U>
+          </L>
+          <L n="tests">
+            <L>
+              <V t="object_criteria">
+                <U n="object_criteria">
+                  <V n="identity_test" t="tags">
+                    <U n="tags">
+                      <L n="tag_set">
+                        <E>Func_Droid_Personality_Chip_FirstOrder</E>
+                      </L>
+                    </U>
+                  </V>
+                  <T n="owned">False</T>
+                  <V t="single_object" n="subject_specific_tests">
+                    <U n="single_object">
+                      <E n="target">PickedObject</E>
+                    </U>
+                  </V>
+                </U>
+              </V>
+              <V t="object_criteria">
+                <U n="object_criteria">
+                  <V n="identity_test" t="tags">
+                    <U n="tags">
+                      <L n="tag_set">
+                        <E>Func_Droid_Personality_Chip_FirstOrder_2</E>
+                      </L>
+                      <E n="test_type">CONTAINS_ANY_TAG_IN_SET</E>
+                    </U>
+                  </V>
+                  <T n="owned">False</T>
+                  <V t="single_object" n="subject_specific_tests">
+                    <U n="single_object">
+                      <E n="target">PickedObject</E>
+                    </U>
+                  </V>
+                </U>
+              </V>
+            </L>
+          </L>
+        </U>
+        <U>
+          <L n="potential_outcomes">
+            <U>
+              <U n="outcome">
+                <L n="basic_extras">
+                  <V t="state_change">
+                    <U n="state_change">
+                      <V n="new_value" t="single_value">
+                        <U n="single_value">
+                          <T n="new_value">236521<!--ObjectStateValue: droid_Personality_Chips_Resistance--></T>
+                        </U>
+                      </V>
+                    </U>
+                  </V>
+                  <V t="destroy_object">
+                    <U n="destroy_object">
+                      <V n="objects_to_destroy" t="from_participant">
+                        <U n="from_participant">
+                          <E n="participant">PickedObject</E>
+                        </U>
+                      </V>
+                    </U>
+                  </V>
+                  <V t="state_change">
+                    <U n="state_change">
+                      <V n="new_value" t="single_value">
+                        <U n="single_value">
+                          <T n="new_value">245506<!--ObjectStateValue: droid_Values_ChipDefinition_R2--></T>
+                        </U>
+                      </V>
+                    </U>
+                  </V>
+                </L>
+                <L n="loot_list">
+                  <T>234284<!--LootActions: loot_Droids_Rel_Gain--></T>
+                </L>
+              </U>
+            </U>
+          </L>
+          <L n="tests">
+            <L>
+              <V t="object_criteria">
+                <U n="object_criteria">
+                  <V n="identity_test" t="tags">
+                    <U n="tags">
+                      <L n="tag_set">
+                        <E>Func_Droid_Personality_Chip_Resistance</E>
+                      </L>
+                    </U>
+                  </V>
+                  <T n="owned">False</T>
+                  <V t="single_object" n="subject_specific_tests">
+                    <U n="single_object">
+                      <E n="target">PickedObject</E>
+                    </U>
+                  </V>
+                </U>
+              </V>
+              <V t="object_criteria">
+                <U n="object_criteria">
+                  <V n="identity_test" t="tags">
+                    <U n="tags">
+                      <L n="tag_set">
+                        <E>Func_Droid_Personality_Chip_Resistance_2</E>
+                      </L>
+                      <E n="test_type">CONTAINS_ANY_TAG_IN_SET</E>
+                    </U>
+                  </V>
+                  <T n="owned">False</T>
+                  <V t="single_object" n="subject_specific_tests">
+                    <U n="single_object">
+                      <E n="target">PickedObject</E>
+                    </U>
+                  </V>
+                </U>
+              </V>
+            </L>
+          </L>
+        </U>
+        <U>
+          <L n="potential_outcomes">
+            <U>
+              <U n="outcome">
+                <L n="basic_extras">
+                  <V t="state_change">
+                    <U n="state_change">
+                      <V n="new_value" t="single_value">
+                        <U n="single_value">
+                          <T n="new_value">236523<!--ObjectStateValue: droid_Personality_Chips_Scoundrel--></T>
+                        </U>
+                      </V>
+                    </U>
+                  </V>
+                  <V t="destroy_object">
+                    <U n="destroy_object">
+                      <V n="objects_to_destroy" t="from_participant">
+                        <U n="from_participant">
+                          <E n="participant">PickedObject</E>
+                        </U>
+                      </V>
+                    </U>
+                  </V>
+                  <V t="state_change">
+                    <U n="state_change">
+                      <V n="new_value" t="single_value">
+                        <U n="single_value">
+                          <T n="new_value">245501<!--ObjectStateValue: droid_Values_ChipDefinition_S2--></T>
+                        </U>
+                      </V>
+                    </U>
+                  </V>
+                </L>
+                <L n="loot_list">
+                  <T>234284<!--LootActions: loot_Droids_Rel_Gain--></T>
+                </L>
+              </U>
+            </U>
+          </L>
+          <L n="tests">
+            <L>
+              <V t="object_criteria">
+                <U n="object_criteria">
+                  <V n="identity_test" t="tags">
+                    <U n="tags">
+                      <L n="tag_set">
+                        <E>Func_Droid_Personality_Chip_Scoundrel</E>
+                      </L>
+                    </U>
+                  </V>
+                  <T n="owned">False</T>
+                  <V t="single_object" n="subject_specific_tests">
+                    <U n="single_object">
+                      <E n="target">PickedObject</E>
+                    </U>
+                  </V>
+                </U>
+              </V>
+              <V t="object_criteria">
+                <U n="object_criteria">
+                  <V n="identity_test" t="tags">
+                    <U n="tags">
+                      <L n="tag_set">
+                        <E>Func_Droid_Personality_Chip_Scoundrel_2</E>
+                      </L>
+                      <E n="test_type">CONTAINS_ANY_TAG_IN_SET</E>
+                    </U>
+                  </V>
+                  <T n="owned">False</T>
+                  <V t="single_object" n="subject_specific_tests">
+                    <U n="single_object">
+                      <E n="target">PickedObject</E>
+                    </U>
+                  </V>
+                </U>
+              </V>
+            </L>
+          </L>
+        </U>
+      </L>
+    </U>
+  </V>
+  <E n="scoring_priority">NORMAL</E>
+  <T n="subaction_selection_weight">1</T>
+  <E n="target_type">OBJECT</E>
+  <L n="test_globals">
+    <V t="sim_info">
+      <U n="sim_info">
+        <V t="specified" n="ages" />
+        <V t="specified" n="species">
+          <U n="specified">
+            <L n="species">
+              <E />
+            </L>
+          </U>
+        </V>
+        <E n="who">Actor</E>
+      </U>
+    </V>
+    <V t="state">
+      <U n="state">
+        <E n="operator">NOTEQUAL</E>
+        <T n="value">242329<!--ObjectStateValue: droid_Power_Values_Off--></T>
+      </U>
+    </V>
+    <V t="state">
+      <U n="state">
+        <E n="operator">NOTEQUAL</E>
+        <T n="value">242330<!--ObjectStateValue: droid_Power_Values_Off_Broken--></T>
+      </U>
+    </V>
+  </L>
+  <T n="time_overhead">30</T>
+</I>

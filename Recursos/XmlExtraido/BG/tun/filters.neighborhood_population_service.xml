@@ -1,0 +1,2713 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<M n="filters.neighborhood_population_service" s="5270187847984954755">
+  <C n="_FillZonePopulationRequest">
+    <T n="RELATIONSHIP_TRACK_MULTIPLIER">0.5</T>
+    <L n="RELATIONSHIP_UTILITY_CURVE">
+      <U>
+        <T n="y">1</T>
+      </U>
+      <U>
+        <T n="x">100</T>
+        <T n="y">1.5</T>
+      </U>
+    </L>
+  </C>
+  <C n="_FillRentableLotRequest">
+    <L n="CAN_RENT_TESTS">
+      <L>
+        <V t="university_enrollment_test">
+          <U n="university_enrollment_test">
+            <V n="enrollment_status" t="enabled">
+              <U n="enabled">
+                <V n="blacklist" t="specify">
+                  <U n="specify">
+                    <L n="blacklist">
+                      <E>ENROLLED</E>
+                      <E>PROBATION</E>
+                      <E>SUSPENDED</E>
+                    </L>
+                  </U>
+                </V>
+              </U>
+            </V>
+            <V t="disabled" n="major" />
+          </U>
+        </V>
+      </L>
+    </L>
+  </C>
+  <C n="NeighborhoodPopulationService">
+    <L n="HOMELESS_HOUSEHOLD_TEMPLATES">
+      <U>
+        <T n="household_template">75902<!--HouseholdTemplate: HH_template_NPC_GD_onlyChild_caucasian_female_01--></T>
+        <T n="weight">1</T>
+      </U>
+      <U>
+        <T n="household_template">27227<!--HouseholdTemplate: HH_template_NPC_GD_coeds_04--></T>
+      </U>
+      <U>
+        <T n="household_template">27244<!--HouseholdTemplate: HH_template_NPC_GD_newlyweds--></T>
+        <T n="weight">1</T>
+      </U>
+      <U>
+        <T n="household_template">15950<!--HouseholdTemplate: HH_template_NPC_GD_gentry--></T>
+      </U>
+      <U>
+        <T n="household_template">75900<!--HouseholdTemplate: HH_template_NPC_GD_roomies_female--></T>
+        <T n="weight">1</T>
+      </U>
+      <U>
+        <T n="household_template">27268<!--HouseholdTemplate: HH_template_NPC_GD_nuclearFamily_caucasian_01--></T>
+      </U>
+      <U>
+        <T n="household_template">27359<!--HouseholdTemplate: HH_template_NPC_GD_nuclearFamily_african_01--></T>
+      </U>
+      <U>
+        <T n="household_template">75896<!--HouseholdTemplate: HH_template_NPC_GD_roomies_oddCouple--></T>
+        <T n="weight">1</T>
+      </U>
+      <U>
+        <T n="household_template">27360<!--HouseholdTemplate: HH_template_NPC_GD_familyWithKids_latin_01--></T>
+      </U>
+      <U>
+        <T n="household_template">75903<!--HouseholdTemplate: HH_template_NPC_GD_onlyChild_asian_male_01--></T>
+        <T n="weight">1</T>
+      </U>
+      <U>
+        <T n="household_template">105246<!--HouseholdTemplate: HH_template_NPC_2YAERoomies--></T>
+      </U>
+      <U>
+        <T n="household_template">105251<!--HouseholdTemplate: HH_template_NPC_3YAERoomies--></T>
+      </U>
+      <U>
+        <T n="household_template">105243<!--HouseholdTemplate: HH_template_NPC_Elder_couple--></T>
+      </U>
+      <U>
+        <T n="household_template">27358<!--HouseholdTemplate: HH_template_NPC_GD_adoptedKids_01--></T>
+      </U>
+      <U>
+        <T n="household_template">75915<!--HouseholdTemplate: HH_template_NPC_GD_grandparents_asian_01--></T>
+      </U>
+      <U>
+        <T n="household_template">27228<!--HouseholdTemplate: HH_template_NPC_GD_partners_male--></T>
+      </U>
+      <U>
+        <T n="household_template">105249<!--HouseholdTemplate: HH_template_NPC_mother_1CT--></T>
+        <T n="weight">5</T>
+      </U>
+      <U>
+        <T n="household_template">105230<!--HouseholdTemplate: HH_template_NPC_YA_1couple--></T>
+      </U>
+      <U>
+        <T n="household_template">75894<!--HouseholdTemplate: HH_template_NPC_partners_female--></T>
+      </U>
+      <U>
+        <T n="household_template">27215<!--HouseholdTemplate: HH_template_NPC_GD_worker--></T>
+      </U>
+      <U>
+        <T n="household_template">105255<!--HouseholdTemplate: HH_template_NPC_parents_1CT--></T>
+        <T n="weight">10</T>
+      </U>
+      <U>
+        <T n="household_template">105257<!--HouseholdTemplate: HH_template_NPC_parents_2CT--></T>
+        <T n="weight">10</T>
+      </U>
+      <U>
+        <T n="household_template">105247<!--HouseholdTemplate: HH_template_NPC_father_1CT--></T>
+        <T n="weight">5</T>
+      </U>
+      <U>
+        <T n="household_template">105252<!--HouseholdTemplate: HH_template_NPC_father_2CT--></T>
+        <T n="weight">2</T>
+      </U>
+      <U>
+        <T n="household_template">105253<!--HouseholdTemplate: HH_template_NPC_mother_2CT--></T>
+        <T n="weight">2</T>
+      </U>
+    </L>
+    <T n="KID_TO_KID_BED_MULTIPLIER">1.2</T>
+    <L n="NUM_BEDS_TO_IDEAL_HOUSEHOLD_CURVE">
+      <U>
+        <T n="Num Beds">1</T>
+        <L n="Ideal Household Curve">
+          <U>
+            <T n="x">1</T>
+            <T n="y">1.2</T>
+          </U>
+        </L>
+      </U>
+      <U>
+        <T n="Num Beds">2</T>
+        <L n="Ideal Household Curve">
+          <U>
+            <T n="x">1</T>
+            <T n="y">0.5</T>
+          </U>
+          <U>
+            <T n="x">2</T>
+            <T n="y">1.2</T>
+          </U>
+        </L>
+      </U>
+      <U>
+        <T n="Num Beds">3</T>
+        <L n="Ideal Household Curve">
+          <U>
+            <T n="x">1</T>
+            <T n="y">0.4</T>
+          </U>
+          <U>
+            <T n="x">2</T>
+            <T n="y">0.7</T>
+          </U>
+          <U>
+            <T n="x">3</T>
+            <T n="y">1.2</T>
+          </U>
+        </L>
+      </U>
+      <U>
+        <T n="Num Beds">4</T>
+        <L n="Ideal Household Curve">
+          <U>
+            <T n="x">1</T>
+            <T n="y">0.1</T>
+          </U>
+          <U>
+            <T n="x">2</T>
+            <T n="y">0.4</T>
+          </U>
+          <U>
+            <T n="x">3</T>
+            <T n="y">0.8</T>
+          </U>
+          <U>
+            <T n="x">4</T>
+            <T n="y">1.2</T>
+          </U>
+        </L>
+      </U>
+      <U>
+        <T n="Num Beds">5</T>
+        <L n="Ideal Household Curve">
+          <U>
+            <T n="x">1</T>
+            <T n="y">0.2</T>
+          </U>
+          <U>
+            <T n="x">2</T>
+            <T n="y">0.4</T>
+          </U>
+          <U>
+            <T n="x">3</T>
+            <T n="y">0.7</T>
+          </U>
+          <U>
+            <T n="x">4</T>
+            <T n="y">1</T>
+          </U>
+          <U>
+            <T n="x">5</T>
+            <T n="y">1.2</T>
+          </U>
+        </L>
+      </U>
+      <U>
+        <T n="Num Beds">6</T>
+        <L n="Ideal Household Curve">
+          <U>
+            <T n="x">1</T>
+            <T n="y">0</T>
+          </U>
+          <U>
+            <T n="x">2</T>
+            <T n="y">0.1</T>
+          </U>
+          <U>
+            <T n="x">3</T>
+            <T n="y">0.5</T>
+          </U>
+          <U>
+            <T n="x">4</T>
+            <T n="y">0.75</T>
+          </U>
+          <U>
+            <T n="x">5</T>
+            <T n="y">1</T>
+          </U>
+          <U>
+            <T n="x">6</T>
+            <T n="y">1.2</T>
+          </U>
+        </L>
+      </U>
+      <U>
+        <T n="Num Beds">7</T>
+        <L n="Ideal Household Curve">
+          <U>
+            <T n="x">1</T>
+            <T n="y">0</T>
+          </U>
+          <U>
+            <T n="x">2</T>
+            <T n="y">0.1</T>
+          </U>
+          <U>
+            <T n="x">3</T>
+            <T n="y">0.25</T>
+          </U>
+          <U>
+            <T n="x">4</T>
+            <T n="y">0.5</T>
+          </U>
+          <U>
+            <T n="x">5</T>
+            <T n="y">0.8</T>
+          </U>
+          <U>
+            <T n="x">6</T>
+            <T n="y">1</T>
+          </U>
+          <U>
+            <T n="x">7</T>
+            <T n="y">1.2</T>
+          </U>
+        </L>
+      </U>
+      <U>
+        <T n="Num Beds">8</T>
+        <L n="Ideal Household Curve">
+          <U>
+            <T n="x">1</T>
+          </U>
+          <U>
+            <T n="x">4</T>
+            <T n="y">0.5</T>
+          </U>
+          <U>
+            <T n="x">8</T>
+            <T n="y">1.2</T>
+          </U>
+          <U>
+            <T n="x">2</T>
+            <T n="y">0.1</T>
+          </U>
+          <U>
+            <T n="x">3</T>
+            <T n="y">0.2</T>
+          </U>
+          <U>
+            <T n="x">5</T>
+            <T n="y">0.6</T>
+          </U>
+          <U>
+            <T n="x">6</T>
+            <T n="y">0.8</T>
+          </U>
+          <U>
+            <T n="x">7</T>
+            <T n="y">1</T>
+          </U>
+          <U>
+            <T n="x">8</T>
+            <T n="y">1.2</T>
+          </U>
+        </L>
+      </U>
+    </L>
+    <L n="REGION_TO_HOUSEHOLD_POPULATION_DATA">
+      <U>
+        <T n="Region Description">117425</T>
+        <U n="Household Population Data">
+          <L n="household_description_to_templates">
+            <U>
+              <T n="House Description">118310</T>
+              <L n="Household Templates">
+                <U>
+                  <T n="household_template">154350<!--HouseholdTemplate: householdTemplate_SpiceMarket--></T>
+                </U>
+              </L>
+            </U>
+            <U>
+              <T n="House Description">119026</T>
+              <L n="Household Templates">
+                <U>
+                  <T n="household_template">154350<!--HouseholdTemplate: householdTemplate_SpiceMarket--></T>
+                </U>
+              </L>
+            </U>
+            <U>
+              <T n="House Description">120289</T>
+              <L n="Household Templates">
+                <U>
+                  <T n="household_template">98542<!--HouseholdTemplate: HH_template_NPC_adult_single--></T>
+                </U>
+              </L>
+            </U>
+            <U>
+              <T n="House Description">120290</T>
+              <L n="Household Templates">
+                <U>
+                  <T n="household_template">98542<!--HouseholdTemplate: HH_template_NPC_adult_single--></T>
+                </U>
+              </L>
+            </U>
+            <U>
+              <T n="House Description">120352</T>
+              <L n="Household Templates">
+                <U>
+                  <T n="household_template">154351<!--HouseholdTemplate: householdTemplate_FashionDistrict--></T>
+                </U>
+              </L>
+            </U>
+            <U>
+              <T n="House Description">123918</T>
+              <L n="Household Templates">
+                <U>
+                  <T n="household_template">154348<!--HouseholdTemplate: householdTemplate_ArtsQuarter_African--></T>
+                </U>
+              </L>
+            </U>
+            <U>
+              <T n="House Description">125063</T>
+              <L n="Household Templates">
+                <U>
+                  <T n="household_template">154350<!--HouseholdTemplate: householdTemplate_SpiceMarket--></T>
+                </U>
+              </L>
+            </U>
+            <U>
+              <T n="House Description">125064</T>
+              <L n="Household Templates">
+                <U>
+                  <T n="household_template">154350<!--HouseholdTemplate: householdTemplate_SpiceMarket--></T>
+                </U>
+              </L>
+            </U>
+            <U>
+              <T n="House Description">125065</T>
+              <L n="Household Templates">
+                <U>
+                  <T n="household_template">154350<!--HouseholdTemplate: householdTemplate_SpiceMarket--></T>
+                </U>
+              </L>
+            </U>
+            <U>
+              <T n="House Description">125333</T>
+              <L n="Household Templates">
+                <U>
+                  <T n="household_template">154350<!--HouseholdTemplate: householdTemplate_SpiceMarket--></T>
+                </U>
+              </L>
+            </U>
+            <U>
+              <T n="House Description">130587</T>
+              <L n="Household Templates">
+                <U>
+                  <T n="household_template">154350<!--HouseholdTemplate: householdTemplate_SpiceMarket--></T>
+                </U>
+              </L>
+            </U>
+            <U>
+              <T n="House Description">130589</T>
+              <L n="Household Templates">
+                <U>
+                  <T n="household_template">154350<!--HouseholdTemplate: householdTemplate_SpiceMarket--></T>
+                </U>
+              </L>
+            </U>
+            <U>
+              <T n="House Description">130959</T>
+              <L n="Household Templates">
+                <U>
+                  <T n="household_template">98542<!--HouseholdTemplate: HH_template_NPC_adult_single--></T>
+                </U>
+              </L>
+            </U>
+            <U>
+              <T n="House Description">130960</T>
+              <L n="Household Templates">
+                <U>
+                  <T n="household_template">98542<!--HouseholdTemplate: HH_template_NPC_adult_single--></T>
+                </U>
+              </L>
+            </U>
+            <U>
+              <T n="House Description">130962</T>
+              <L n="Household Templates">
+                <U>
+                  <T n="household_template">98542<!--HouseholdTemplate: HH_template_NPC_adult_single--></T>
+                </U>
+              </L>
+            </U>
+            <U>
+              <T n="House Description">130963</T>
+              <L n="Household Templates">
+                <U>
+                  <T n="household_template">98542<!--HouseholdTemplate: HH_template_NPC_adult_single--></T>
+                </U>
+              </L>
+            </U>
+            <U>
+              <T n="House Description">130964</T>
+              <L n="Household Templates">
+                <U>
+                  <T n="household_template">98542<!--HouseholdTemplate: HH_template_NPC_adult_single--></T>
+                </U>
+              </L>
+            </U>
+            <U>
+              <T n="House Description">130972</T>
+              <L n="Household Templates">
+                <U>
+                  <T n="household_template">154348<!--HouseholdTemplate: householdTemplate_ArtsQuarter_African--></T>
+                </U>
+              </L>
+            </U>
+            <U>
+              <T n="House Description">130975</T>
+              <L n="Household Templates">
+                <U>
+                  <T n="household_template">154348<!--HouseholdTemplate: householdTemplate_ArtsQuarter_African--></T>
+                </U>
+              </L>
+            </U>
+            <U>
+              <T n="House Description">130977</T>
+              <L n="Household Templates">
+                <U>
+                  <T n="household_template">154360<!--HouseholdTemplate: householdTemplate_ArtsQuarter_MiddleEastern--></T>
+                </U>
+              </L>
+            </U>
+            <U>
+              <T n="House Description">130978</T>
+              <L n="Household Templates">
+                <U>
+                  <T n="household_template">154360<!--HouseholdTemplate: householdTemplate_ArtsQuarter_MiddleEastern--></T>
+                </U>
+              </L>
+            </U>
+            <U>
+              <T n="House Description">130979</T>
+              <L n="Household Templates">
+                <U>
+                  <T n="household_template">154360<!--HouseholdTemplate: householdTemplate_ArtsQuarter_MiddleEastern--></T>
+                </U>
+              </L>
+            </U>
+            <U>
+              <T n="House Description">130980</T>
+              <L n="Household Templates">
+                <U>
+                  <T n="household_template">154360<!--HouseholdTemplate: householdTemplate_ArtsQuarter_MiddleEastern--></T>
+                </U>
+              </L>
+            </U>
+            <U>
+              <T n="House Description">130992</T>
+              <L n="Household Templates">
+                <U>
+                  <T n="household_template">154351<!--HouseholdTemplate: householdTemplate_FashionDistrict--></T>
+                </U>
+              </L>
+            </U>
+            <U>
+              <T n="House Description">131013</T>
+              <L n="Household Templates">
+                <U>
+                  <T n="household_template">154351<!--HouseholdTemplate: householdTemplate_FashionDistrict--></T>
+                </U>
+              </L>
+            </U>
+            <U>
+              <T n="House Description">131014</T>
+              <L n="Household Templates">
+                <U>
+                  <T n="household_template">154351<!--HouseholdTemplate: householdTemplate_FashionDistrict--></T>
+                </U>
+              </L>
+            </U>
+            <U>
+              <T n="House Description">131015</T>
+              <L n="Household Templates">
+                <U>
+                  <T n="household_template">154351<!--HouseholdTemplate: householdTemplate_FashionDistrict--></T>
+                </U>
+              </L>
+            </U>
+            <U>
+              <T n="House Description">135231</T>
+              <L n="Household Templates">
+                <U>
+                  <T n="household_template">154351<!--HouseholdTemplate: householdTemplate_FashionDistrict--></T>
+                </U>
+              </L>
+            </U>
+            <U>
+              <T n="House Description">137290</T>
+              <L n="Household Templates">
+                <U>
+                  <T n="household_template">154351<!--HouseholdTemplate: householdTemplate_FashionDistrict--></T>
+                </U>
+              </L>
+            </U>
+          </L>
+          <L n="street_description_to_templates">
+            <U>
+              <T n="House Description">117423</T>
+              <L n="Household Templates">
+                <U>
+                  <T n="household_template">154350<!--HouseholdTemplate: householdTemplate_SpiceMarket--></T>
+                </U>
+              </L>
+            </U>
+            <U>
+              <T n="House Description">118767</T>
+              <L n="Household Templates">
+                <U>
+                  <T n="household_template">27358<!--HouseholdTemplate: HH_template_NPC_GD_adoptedKids_01--></T>
+                </U>
+                <U>
+                  <T n="household_template">27268<!--HouseholdTemplate: HH_template_NPC_GD_nuclearFamily_caucasian_01--></T>
+                </U>
+                <U>
+                  <T n="household_template">27359<!--HouseholdTemplate: HH_template_NPC_GD_nuclearFamily_african_01--></T>
+                </U>
+                <U>
+                  <T n="household_template">75901<!--HouseholdTemplate: HH_template_NPC_GD_roomies_ThreesCo--></T>
+                </U>
+                <U>
+                  <T n="household_template">75915<!--HouseholdTemplate: HH_template_NPC_GD_grandparents_asian_01--></T>
+                </U>
+              </L>
+            </U>
+            <U>
+              <T n="House Description">120336</T>
+              <L n="Household Templates">
+                <U>
+                  <T n="household_template">154351<!--HouseholdTemplate: householdTemplate_FashionDistrict--></T>
+                </U>
+              </L>
+            </U>
+            <U>
+              <T n="House Description">121286</T>
+              <L n="Household Templates">
+                <U>
+                  <T n="household_template">154348<!--HouseholdTemplate: householdTemplate_ArtsQuarter_African--></T>
+                </U>
+                <U>
+                  <T n="household_template">154360<!--HouseholdTemplate: householdTemplate_ArtsQuarter_MiddleEastern--></T>
+                </U>
+              </L>
+            </U>
+          </L>
+        </U>
+      </U>
+      <U>
+        <T n="Region Description">146196</T>
+        <U n="Household Population Data">
+          <L n="street_description_to_templates">
+            <U>
+              <T n="House Description">146194</T>
+              <L n="Household Templates">
+                <U>
+                  <T n="household_template">27157<!--HouseholdTemplate: HH_template_NPC_GD_hermit--></T>
+                </U>
+                <U>
+                  <T n="household_template">27163<!--HouseholdTemplate: HH_template_NPC_GD_catlady--></T>
+                </U>
+                <U>
+                  <T n="household_template">15949<!--HouseholdTemplate: HH_template_NPC_GD_creole--></T>
+                </U>
+                <U>
+                  <T n="household_template">27244<!--HouseholdTemplate: HH_template_NPC_GD_newlyweds--></T>
+                </U>
+                <U>
+                  <T n="household_template">75903<!--HouseholdTemplate: HH_template_NPC_GD_onlyChild_asian_male_01--></T>
+                </U>
+                <U>
+                  <T n="household_template">75902<!--HouseholdTemplate: HH_template_NPC_GD_onlyChild_caucasian_female_01--></T>
+                </U>
+                <U>
+                  <T n="household_template">75900<!--HouseholdTemplate: HH_template_NPC_GD_roomies_female--></T>
+                </U>
+                <U>
+                  <T n="household_template">75896<!--HouseholdTemplate: HH_template_NPC_GD_roomies_oddCouple--></T>
+                </U>
+                <U>
+                  <T n="household_template">27232<!--HouseholdTemplate: HH_template_NPC_GD_singleMom_african_01--></T>
+                </U>
+                <U>
+                  <T n="household_template">27231<!--HouseholdTemplate: HH_template_NPC_GD_singleMom_caucasian_01--></T>
+                </U>
+                <U>
+                  <T n="household_template">27238<!--HouseholdTemplate: HH_template_NPC_GD_voodoo--></T>
+                </U>
+                <U>
+                  <T n="household_template">27215<!--HouseholdTemplate: HH_template_NPC_GD_worker--></T>
+                </U>
+                <U>
+                  <T n="household_template">75895<!--HouseholdTemplate: HH_template_NPC_partnersWithKid_female--></T>
+                </U>
+                <U>
+                  <T n="household_template">15951<!--HouseholdTemplate: HH_template_NPC_SO_wt--></T>
+                </U>
+              </L>
+            </U>
+          </L>
+        </U>
+      </U>
+      <U>
+        <T n="Region Description">15740</T>
+        <U n="Household Population Data">
+          <L n="household_description_to_templates">
+            <U>
+              <T n="House Description">23298</T>
+              <L n="Household Templates">
+                <U>
+                  <T n="household_template">15949<!--HouseholdTemplate: HH_template_NPC_GD_creole--></T>
+                </U>
+                <U>
+                  <T n="household_template">27238<!--HouseholdTemplate: HH_template_NPC_GD_voodoo--></T>
+                </U>
+                <U>
+                  <T n="household_template">27215<!--HouseholdTemplate: HH_template_NPC_GD_worker--></T>
+                </U>
+              </L>
+            </U>
+            <U>
+              <T n="House Description">23299</T>
+              <L n="Household Templates">
+                <U>
+                  <T n="household_template">27163<!--HouseholdTemplate: HH_template_NPC_GD_catlady--></T>
+                </U>
+                <U>
+                  <T n="household_template">27244<!--HouseholdTemplate: HH_template_NPC_GD_newlyweds--></T>
+                </U>
+              </L>
+            </U>
+            <U>
+              <T n="House Description">23301</T>
+              <L n="Household Templates">
+                <U>
+                  <T n="household_template">27157<!--HouseholdTemplate: HH_template_NPC_GD_hermit--></T>
+                </U>
+                <U>
+                  <T n="household_template">27163<!--HouseholdTemplate: HH_template_NPC_GD_catlady--></T>
+                </U>
+              </L>
+            </U>
+            <U>
+              <T n="House Description">23305</T>
+              <L n="Household Templates">
+                <U>
+                  <T n="household_template">15951<!--HouseholdTemplate: HH_template_NPC_SO_wt--></T>
+                </U>
+                <U>
+                  <T n="household_template">27232<!--HouseholdTemplate: HH_template_NPC_GD_singleMom_african_01--></T>
+                </U>
+                <U>
+                  <T n="household_template">27244<!--HouseholdTemplate: HH_template_NPC_GD_newlyweds--></T>
+                </U>
+              </L>
+            </U>
+            <U>
+              <T n="House Description">31321</T>
+              <L n="Household Templates">
+                <U>
+                  <T n="household_template">75903<!--HouseholdTemplate: HH_template_NPC_GD_onlyChild_asian_male_01--></T>
+                </U>
+                <U>
+                  <T n="household_template">75895<!--HouseholdTemplate: HH_template_NPC_partnersWithKid_female--></T>
+                </U>
+                <U>
+                  <T n="household_template">27232<!--HouseholdTemplate: HH_template_NPC_GD_singleMom_african_01--></T>
+                </U>
+              </L>
+            </U>
+            <U>
+              <T n="House Description">31324</T>
+              <L n="Household Templates">
+                <U>
+                  <T n="household_template">75914<!--HouseholdTemplate: HH_template_NPC_GD_FamilyWithKids_african_01--></T>
+                </U>
+                <U>
+                  <T n="household_template">27241<!--HouseholdTemplate: HH_template_NPC_GD_FamilyWithKids_caucasian_01--></T>
+                </U>
+                <U>
+                  <T n="household_template">27360<!--HouseholdTemplate: HH_template_NPC_GD_familyWithKids_latin_01--></T>
+                </U>
+                <U>
+                  <T n="household_template">75903<!--HouseholdTemplate: HH_template_NPC_GD_onlyChild_asian_male_01--></T>
+                </U>
+              </L>
+            </U>
+            <U>
+              <T n="House Description">31325</T>
+              <L n="Household Templates">
+                <U>
+                  <T n="household_template">75914<!--HouseholdTemplate: HH_template_NPC_GD_FamilyWithKids_african_01--></T>
+                </U>
+                <U>
+                  <T n="household_template">27241<!--HouseholdTemplate: HH_template_NPC_GD_FamilyWithKids_caucasian_01--></T>
+                </U>
+                <U>
+                  <T n="household_template">27360<!--HouseholdTemplate: HH_template_NPC_GD_familyWithKids_latin_01--></T>
+                </U>
+                <U>
+                  <T n="household_template">75903<!--HouseholdTemplate: HH_template_NPC_GD_onlyChild_asian_male_01--></T>
+                </U>
+              </L>
+            </U>
+            <U>
+              <T n="House Description">31326</T>
+              <L n="Household Templates">
+                <U>
+                  <T n="household_template">27231<!--HouseholdTemplate: HH_template_NPC_GD_singleMom_caucasian_01--></T>
+                </U>
+                <U>
+                  <T n="household_template">15951<!--HouseholdTemplate: HH_template_NPC_SO_wt--></T>
+                </U>
+                <U>
+                  <T n="household_template">75895<!--HouseholdTemplate: HH_template_NPC_partnersWithKid_female--></T>
+                </U>
+              </L>
+            </U>
+            <U>
+              <T n="House Description">31327</T>
+              <L n="Household Templates">
+                <U>
+                  <T n="household_template">75914<!--HouseholdTemplate: HH_template_NPC_GD_FamilyWithKids_african_01--></T>
+                </U>
+                <U>
+                  <T n="household_template">27241<!--HouseholdTemplate: HH_template_NPC_GD_FamilyWithKids_caucasian_01--></T>
+                </U>
+                <U>
+                  <T n="household_template">27360<!--HouseholdTemplate: HH_template_NPC_GD_familyWithKids_latin_01--></T>
+                </U>
+                <U>
+                  <T n="household_template">75903<!--HouseholdTemplate: HH_template_NPC_GD_onlyChild_asian_male_01--></T>
+                </U>
+              </L>
+            </U>
+            <U>
+              <T n="House Description">31328</T>
+              <L n="Household Templates">
+                <U>
+                  <T n="household_template">27227<!--HouseholdTemplate: HH_template_NPC_GD_coeds_04--></T>
+                </U>
+                <U>
+                  <T n="household_template">75915<!--HouseholdTemplate: HH_template_NPC_GD_grandparents_asian_01--></T>
+                </U>
+                <U>
+                  <T n="household_template">75914<!--HouseholdTemplate: HH_template_NPC_GD_FamilyWithKids_african_01--></T>
+                </U>
+                <U>
+                  <T n="household_template">27360<!--HouseholdTemplate: HH_template_NPC_GD_familyWithKids_latin_01--></T>
+                </U>
+              </L>
+            </U>
+            <U>
+              <T n="House Description">31329</T>
+              <L n="Household Templates">
+                <U>
+                  <T n="household_template">27358<!--HouseholdTemplate: HH_template_NPC_GD_adoptedKids_01--></T>
+                </U>
+                <U>
+                  <T n="household_template">27268<!--HouseholdTemplate: HH_template_NPC_GD_nuclearFamily_caucasian_01--></T>
+                </U>
+                <U>
+                  <T n="household_template">75901<!--HouseholdTemplate: HH_template_NPC_GD_roomies_ThreesCo--></T>
+                </U>
+                <U>
+                  <T n="household_template">75915<!--HouseholdTemplate: HH_template_NPC_GD_grandparents_asian_01--></T>
+                </U>
+              </L>
+            </U>
+            <U>
+              <T n="House Description">31430</T>
+              <L n="Household Templates">
+                <U>
+                  <T n="household_template">27163<!--HouseholdTemplate: HH_template_NPC_GD_catlady--></T>
+                </U>
+              </L>
+            </U>
+            <U>
+              <T n="House Description">36265</T>
+              <L n="Household Templates">
+                <U>
+                  <T n="household_template">27228<!--HouseholdTemplate: HH_template_NPC_GD_partners_male--></T>
+                </U>
+                <U>
+                  <T n="household_template">27238<!--HouseholdTemplate: HH_template_NPC_GD_voodoo--></T>
+                </U>
+                <U>
+                  <T n="household_template">75896<!--HouseholdTemplate: HH_template_NPC_GD_roomies_oddCouple--></T>
+                </U>
+                <U>
+                  <T n="household_template">27157<!--HouseholdTemplate: HH_template_NPC_GD_hermit--></T>
+                </U>
+                <U>
+                  <T n="household_template">27360<!--HouseholdTemplate: HH_template_NPC_GD_familyWithKids_latin_01--></T>
+                </U>
+                <U>
+                  <T n="household_template">27359<!--HouseholdTemplate: HH_template_NPC_GD_nuclearFamily_african_01--></T>
+                </U>
+                <U>
+                  <T n="household_template">75915<!--HouseholdTemplate: HH_template_NPC_GD_grandparents_asian_01--></T>
+                </U>
+              </L>
+            </U>
+            <U>
+              <T n="House Description">36266</T>
+              <L n="Household Templates">
+                <U>
+                  <T n="household_template">27228<!--HouseholdTemplate: HH_template_NPC_GD_partners_male--></T>
+                </U>
+                <U>
+                  <T n="household_template">27238<!--HouseholdTemplate: HH_template_NPC_GD_voodoo--></T>
+                </U>
+                <U>
+                  <T n="household_template">75896<!--HouseholdTemplate: HH_template_NPC_GD_roomies_oddCouple--></T>
+                </U>
+                <U>
+                  <T n="household_template">27157<!--HouseholdTemplate: HH_template_NPC_GD_hermit--></T>
+                </U>
+                <U>
+                  <T n="household_template">27360<!--HouseholdTemplate: HH_template_NPC_GD_familyWithKids_latin_01--></T>
+                </U>
+                <U>
+                  <T n="household_template">27359<!--HouseholdTemplate: HH_template_NPC_GD_nuclearFamily_african_01--></T>
+                </U>
+                <U>
+                  <T n="household_template">75915<!--HouseholdTemplate: HH_template_NPC_GD_grandparents_asian_01--></T>
+                </U>
+              </L>
+            </U>
+            <U>
+              <T n="House Description">36267</T>
+              <L n="Household Templates">
+                <U>
+                  <T n="household_template">27228<!--HouseholdTemplate: HH_template_NPC_GD_partners_male--></T>
+                </U>
+                <U>
+                  <T n="household_template">27238<!--HouseholdTemplate: HH_template_NPC_GD_voodoo--></T>
+                </U>
+                <U>
+                  <T n="household_template">75896<!--HouseholdTemplate: HH_template_NPC_GD_roomies_oddCouple--></T>
+                </U>
+                <U>
+                  <T n="household_template">27157<!--HouseholdTemplate: HH_template_NPC_GD_hermit--></T>
+                </U>
+                <U>
+                  <T n="household_template">27360<!--HouseholdTemplate: HH_template_NPC_GD_familyWithKids_latin_01--></T>
+                </U>
+                <U>
+                  <T n="household_template">27359<!--HouseholdTemplate: HH_template_NPC_GD_nuclearFamily_african_01--></T>
+                </U>
+                <U>
+                  <T n="household_template">75915<!--HouseholdTemplate: HH_template_NPC_GD_grandparents_asian_01--></T>
+                </U>
+              </L>
+            </U>
+            <U>
+              <T n="House Description">36268</T>
+              <L n="Household Templates">
+                <U>
+                  <T n="household_template">27228<!--HouseholdTemplate: HH_template_NPC_GD_partners_male--></T>
+                </U>
+                <U>
+                  <T n="household_template">27238<!--HouseholdTemplate: HH_template_NPC_GD_voodoo--></T>
+                </U>
+                <U>
+                  <T n="household_template">75896<!--HouseholdTemplate: HH_template_NPC_GD_roomies_oddCouple--></T>
+                </U>
+                <U>
+                  <T n="household_template">27157<!--HouseholdTemplate: HH_template_NPC_GD_hermit--></T>
+                </U>
+                <U>
+                  <T n="household_template">27360<!--HouseholdTemplate: HH_template_NPC_GD_familyWithKids_latin_01--></T>
+                </U>
+                <U>
+                  <T n="household_template">27359<!--HouseholdTemplate: HH_template_NPC_GD_nuclearFamily_african_01--></T>
+                </U>
+                <U>
+                  <T n="household_template">75915<!--HouseholdTemplate: HH_template_NPC_GD_grandparents_asian_01--></T>
+                </U>
+              </L>
+            </U>
+            <U>
+              <T n="House Description">42523</T>
+              <L n="Household Templates">
+                <U>
+                  <T n="household_template">27228<!--HouseholdTemplate: HH_template_NPC_GD_partners_male--></T>
+                </U>
+                <U>
+                  <T n="household_template">75896<!--HouseholdTemplate: HH_template_NPC_GD_roomies_oddCouple--></T>
+                </U>
+                <U>
+                  <T n="household_template">75903<!--HouseholdTemplate: HH_template_NPC_GD_onlyChild_asian_male_01--></T>
+                </U>
+                <U>
+                  <T n="household_template">27359<!--HouseholdTemplate: HH_template_NPC_GD_nuclearFamily_african_01--></T>
+                </U>
+                <U>
+                  <T n="household_template">75915<!--HouseholdTemplate: HH_template_NPC_GD_grandparents_asian_01--></T>
+                </U>
+              </L>
+            </U>
+          </L>
+          <L n="street_description_to_templates">
+            <U>
+              <T n="House Description">23278</T>
+              <L n="Household Templates">
+                <U>
+                  <T n="household_template">27157<!--HouseholdTemplate: HH_template_NPC_GD_hermit--></T>
+                </U>
+                <U>
+                  <T n="household_template">27163<!--HouseholdTemplate: HH_template_NPC_GD_catlady--></T>
+                </U>
+                <U>
+                  <T n="household_template">15949<!--HouseholdTemplate: HH_template_NPC_GD_creole--></T>
+                </U>
+                <U>
+                  <T n="household_template">27244<!--HouseholdTemplate: HH_template_NPC_GD_newlyweds--></T>
+                </U>
+                <U>
+                  <T n="household_template">75903<!--HouseholdTemplate: HH_template_NPC_GD_onlyChild_asian_male_01--></T>
+                </U>
+                <U>
+                  <T n="household_template">75902<!--HouseholdTemplate: HH_template_NPC_GD_onlyChild_caucasian_female_01--></T>
+                </U>
+                <U>
+                  <T n="household_template">75900<!--HouseholdTemplate: HH_template_NPC_GD_roomies_female--></T>
+                </U>
+                <U>
+                  <T n="household_template">75896<!--HouseholdTemplate: HH_template_NPC_GD_roomies_oddCouple--></T>
+                </U>
+                <U>
+                  <T n="household_template">27232<!--HouseholdTemplate: HH_template_NPC_GD_singleMom_african_01--></T>
+                </U>
+                <U>
+                  <T n="household_template">27231<!--HouseholdTemplate: HH_template_NPC_GD_singleMom_caucasian_01--></T>
+                </U>
+                <U>
+                  <T n="household_template">27238<!--HouseholdTemplate: HH_template_NPC_GD_voodoo--></T>
+                </U>
+                <U>
+                  <T n="household_template">27215<!--HouseholdTemplate: HH_template_NPC_GD_worker--></T>
+                </U>
+                <U>
+                  <T n="household_template">75895<!--HouseholdTemplate: HH_template_NPC_partnersWithKid_female--></T>
+                </U>
+                <U>
+                  <T n="household_template">15951<!--HouseholdTemplate: HH_template_NPC_SO_wt--></T>
+                </U>
+              </L>
+            </U>
+            <U>
+              <T n="House Description">23279</T>
+              <L n="Household Templates">
+                <U>
+                  <T n="household_template">15950<!--HouseholdTemplate: HH_template_NPC_GD_gentry--></T>
+                </U>
+                <U>
+                  <T n="household_template">27157<!--HouseholdTemplate: HH_template_NPC_GD_hermit--></T>
+                </U>
+                <U>
+                  <T n="household_template">27163<!--HouseholdTemplate: HH_template_NPC_GD_catlady--></T>
+                </U>
+              </L>
+            </U>
+            <U>
+              <T n="House Description">23280</T>
+              <L n="Household Templates">
+                <U>
+                  <T n="household_template">15951<!--HouseholdTemplate: HH_template_NPC_SO_wt--></T>
+                </U>
+                <U>
+                  <T n="household_template">27232<!--HouseholdTemplate: HH_template_NPC_GD_singleMom_african_01--></T>
+                </U>
+                <U>
+                  <T n="household_template">27244<!--HouseholdTemplate: HH_template_NPC_GD_newlyweds--></T>
+                </U>
+                <U>
+                  <T n="household_template">27227<!--HouseholdTemplate: HH_template_NPC_GD_coeds_04--></T>
+                  <T n="weight">1</T>
+                </U>
+                <U>
+                  <T n="household_template">75915<!--HouseholdTemplate: HH_template_NPC_GD_grandparents_asian_01--></T>
+                  <T n="weight">1</T>
+                </U>
+                <U>
+                  <T n="household_template">75901<!--HouseholdTemplate: HH_template_NPC_GD_roomies_ThreesCo--></T>
+                  <T n="weight">1</T>
+                </U>
+                <U>
+                  <T n="household_template">27358<!--HouseholdTemplate: HH_template_NPC_GD_adoptedKids_01--></T>
+                  <T n="weight">1</T>
+                </U>
+                <U>
+                  <T n="household_template">27360<!--HouseholdTemplate: HH_template_NPC_GD_familyWithKids_latin_01--></T>
+                  <T n="weight">1</T>
+                </U>
+                <U>
+                  <T n="household_template">27359<!--HouseholdTemplate: HH_template_NPC_GD_nuclearFamily_african_01--></T>
+                  <T n="weight">1</T>
+                </U>
+                <U>
+                  <T n="household_template">75914<!--HouseholdTemplate: HH_template_NPC_GD_FamilyWithKids_african_01--></T>
+                  <T n="weight">1</T>
+                </U>
+                <U>
+                  <T n="household_template">27231<!--HouseholdTemplate: HH_template_NPC_GD_singleMom_caucasian_01--></T>
+                  <T n="weight">1</T>
+                </U>
+                <U>
+                  <T n="household_template">75895<!--HouseholdTemplate: HH_template_NPC_partnersWithKid_female--></T>
+                  <T n="weight">1</T>
+                </U>
+                <U>
+                  <T n="household_template">75896<!--HouseholdTemplate: HH_template_NPC_GD_roomies_oddCouple--></T>
+                  <T n="weight">1</T>
+                </U>
+              </L>
+            </U>
+            <U>
+              <T n="House Description">23281</T>
+              <L n="Household Templates">
+                <U>
+                  <T n="household_template">15951<!--HouseholdTemplate: HH_template_NPC_SO_wt--></T>
+                </U>
+                <U>
+                  <T n="household_template">27232<!--HouseholdTemplate: HH_template_NPC_GD_singleMom_african_01--></T>
+                </U>
+                <U>
+                  <T n="household_template">27244<!--HouseholdTemplate: HH_template_NPC_GD_newlyweds--></T>
+                </U>
+                <U>
+                  <T n="household_template">27227<!--HouseholdTemplate: HH_template_NPC_GD_coeds_04--></T>
+                  <T n="weight">1</T>
+                </U>
+                <U>
+                  <T n="household_template">75915<!--HouseholdTemplate: HH_template_NPC_GD_grandparents_asian_01--></T>
+                  <T n="weight">1</T>
+                </U>
+                <U>
+                  <T n="household_template">75901<!--HouseholdTemplate: HH_template_NPC_GD_roomies_ThreesCo--></T>
+                  <T n="weight">1</T>
+                </U>
+                <U>
+                  <T n="household_template">27358<!--HouseholdTemplate: HH_template_NPC_GD_adoptedKids_01--></T>
+                  <T n="weight">1</T>
+                </U>
+                <U>
+                  <T n="household_template">27360<!--HouseholdTemplate: HH_template_NPC_GD_familyWithKids_latin_01--></T>
+                  <T n="weight">1</T>
+                </U>
+                <U>
+                  <T n="household_template">27359<!--HouseholdTemplate: HH_template_NPC_GD_nuclearFamily_african_01--></T>
+                  <T n="weight">1</T>
+                </U>
+                <U>
+                  <T n="household_template">75914<!--HouseholdTemplate: HH_template_NPC_GD_FamilyWithKids_african_01--></T>
+                  <T n="weight">1</T>
+                </U>
+                <U>
+                  <T n="household_template">27231<!--HouseholdTemplate: HH_template_NPC_GD_singleMom_caucasian_01--></T>
+                  <T n="weight">1</T>
+                </U>
+                <U>
+                  <T n="household_template">75895<!--HouseholdTemplate: HH_template_NPC_partnersWithKid_female--></T>
+                  <T n="weight">1</T>
+                </U>
+                <U>
+                  <T n="household_template">75896<!--HouseholdTemplate: HH_template_NPC_GD_roomies_oddCouple--></T>
+                  <T n="weight">1</T>
+                </U>
+              </L>
+            </U>
+            <U>
+              <T n="House Description">36256</T>
+              <L n="Household Templates">
+                <U>
+                  <T n="household_template">27228<!--HouseholdTemplate: HH_template_NPC_GD_partners_male--></T>
+                </U>
+                <U>
+                  <T n="household_template">27238<!--HouseholdTemplate: HH_template_NPC_GD_voodoo--></T>
+                </U>
+                <U>
+                  <T n="household_template">75896<!--HouseholdTemplate: HH_template_NPC_GD_roomies_oddCouple--></T>
+                </U>
+                <U>
+                  <T n="household_template">27157<!--HouseholdTemplate: HH_template_NPC_GD_hermit--></T>
+                </U>
+                <U>
+                  <T n="household_template">27360<!--HouseholdTemplate: HH_template_NPC_GD_familyWithKids_latin_01--></T>
+                </U>
+                <U>
+                  <T n="household_template">27359<!--HouseholdTemplate: HH_template_NPC_GD_nuclearFamily_african_01--></T>
+                </U>
+                <U>
+                  <T n="household_template">75915<!--HouseholdTemplate: HH_template_NPC_GD_grandparents_asian_01--></T>
+                </U>
+              </L>
+            </U>
+            <U>
+              <T n="House Description">42521</T>
+              <L n="Household Templates">
+                <U>
+                  <T n="household_template">27228<!--HouseholdTemplate: HH_template_NPC_GD_partners_male--></T>
+                </U>
+                <U>
+                  <T n="household_template">75896<!--HouseholdTemplate: HH_template_NPC_GD_roomies_oddCouple--></T>
+                </U>
+                <U>
+                  <T n="household_template">75903<!--HouseholdTemplate: HH_template_NPC_GD_onlyChild_asian_male_01--></T>
+                </U>
+                <U>
+                  <T n="household_template">27359<!--HouseholdTemplate: HH_template_NPC_GD_nuclearFamily_african_01--></T>
+                </U>
+                <U>
+                  <T n="household_template">75915<!--HouseholdTemplate: HH_template_NPC_GD_grandparents_asian_01--></T>
+                </U>
+              </L>
+            </U>
+          </L>
+        </U>
+      </U>
+      <U>
+        <T n="Region Description">160112</T>
+        <U n="Household Population Data">
+          <L n="street_description_to_templates">
+            <U>
+              <T n="House Description">164435</T>
+              <L n="Household Templates">
+                <U>
+                  <T n="household_template">27157<!--HouseholdTemplate: HH_template_NPC_GD_hermit--></T>
+                </U>
+                <U>
+                  <T n="household_template">27163<!--HouseholdTemplate: HH_template_NPC_GD_catlady--></T>
+                </U>
+                <U>
+                  <T n="household_template">15949<!--HouseholdTemplate: HH_template_NPC_GD_creole--></T>
+                </U>
+                <U>
+                  <T n="household_template">27244<!--HouseholdTemplate: HH_template_NPC_GD_newlyweds--></T>
+                </U>
+                <U>
+                  <T n="household_template">75903<!--HouseholdTemplate: HH_template_NPC_GD_onlyChild_asian_male_01--></T>
+                </U>
+                <U>
+                  <T n="household_template">75902<!--HouseholdTemplate: HH_template_NPC_GD_onlyChild_caucasian_female_01--></T>
+                </U>
+                <U>
+                  <T n="household_template">75900<!--HouseholdTemplate: HH_template_NPC_GD_roomies_female--></T>
+                </U>
+                <U>
+                  <T n="household_template">75896<!--HouseholdTemplate: HH_template_NPC_GD_roomies_oddCouple--></T>
+                </U>
+                <U>
+                  <T n="household_template">27232<!--HouseholdTemplate: HH_template_NPC_GD_singleMom_african_01--></T>
+                </U>
+                <U>
+                  <T n="household_template">27231<!--HouseholdTemplate: HH_template_NPC_GD_singleMom_caucasian_01--></T>
+                </U>
+                <U>
+                  <T n="household_template">27238<!--HouseholdTemplate: HH_template_NPC_GD_voodoo--></T>
+                </U>
+                <U>
+                  <T n="household_template">27215<!--HouseholdTemplate: HH_template_NPC_GD_worker--></T>
+                </U>
+                <U>
+                  <T n="household_template">75895<!--HouseholdTemplate: HH_template_NPC_partnersWithKid_female--></T>
+                </U>
+                <U>
+                  <T n="household_template">15951<!--HouseholdTemplate: HH_template_NPC_SO_wt--></T>
+                </U>
+              </L>
+            </U>
+            <U>
+              <T n="House Description">164436</T>
+              <L n="Household Templates">
+                <U>
+                  <T n="household_template">27157<!--HouseholdTemplate: HH_template_NPC_GD_hermit--></T>
+                </U>
+                <U>
+                  <T n="household_template">27163<!--HouseholdTemplate: HH_template_NPC_GD_catlady--></T>
+                </U>
+                <U>
+                  <T n="household_template">15949<!--HouseholdTemplate: HH_template_NPC_GD_creole--></T>
+                </U>
+                <U>
+                  <T n="household_template">27244<!--HouseholdTemplate: HH_template_NPC_GD_newlyweds--></T>
+                </U>
+                <U>
+                  <T n="household_template">75903<!--HouseholdTemplate: HH_template_NPC_GD_onlyChild_asian_male_01--></T>
+                </U>
+                <U>
+                  <T n="household_template">75902<!--HouseholdTemplate: HH_template_NPC_GD_onlyChild_caucasian_female_01--></T>
+                </U>
+                <U>
+                  <T n="household_template">75900<!--HouseholdTemplate: HH_template_NPC_GD_roomies_female--></T>
+                </U>
+                <U>
+                  <T n="household_template">75896<!--HouseholdTemplate: HH_template_NPC_GD_roomies_oddCouple--></T>
+                </U>
+                <U>
+                  <T n="household_template">27232<!--HouseholdTemplate: HH_template_NPC_GD_singleMom_african_01--></T>
+                </U>
+                <U>
+                  <T n="household_template">27231<!--HouseholdTemplate: HH_template_NPC_GD_singleMom_caucasian_01--></T>
+                </U>
+                <U>
+                  <T n="household_template">27238<!--HouseholdTemplate: HH_template_NPC_GD_voodoo--></T>
+                </U>
+                <U>
+                  <T n="household_template">27215<!--HouseholdTemplate: HH_template_NPC_GD_worker--></T>
+                </U>
+                <U>
+                  <T n="household_template">75895<!--HouseholdTemplate: HH_template_NPC_partnersWithKid_female--></T>
+                </U>
+                <U>
+                  <T n="household_template">15951<!--HouseholdTemplate: HH_template_NPC_SO_wt--></T>
+                </U>
+              </L>
+            </U>
+            <U>
+              <T n="House Description">164438</T>
+              <L n="Household Templates">
+                <U>
+                  <T n="household_template">27157<!--HouseholdTemplate: HH_template_NPC_GD_hermit--></T>
+                </U>
+                <U>
+                  <T n="household_template">27163<!--HouseholdTemplate: HH_template_NPC_GD_catlady--></T>
+                </U>
+                <U>
+                  <T n="household_template">15949<!--HouseholdTemplate: HH_template_NPC_GD_creole--></T>
+                </U>
+                <U>
+                  <T n="household_template">27244<!--HouseholdTemplate: HH_template_NPC_GD_newlyweds--></T>
+                </U>
+                <U>
+                  <T n="household_template">75903<!--HouseholdTemplate: HH_template_NPC_GD_onlyChild_asian_male_01--></T>
+                </U>
+                <U>
+                  <T n="household_template">75902<!--HouseholdTemplate: HH_template_NPC_GD_onlyChild_caucasian_female_01--></T>
+                </U>
+                <U>
+                  <T n="household_template">75900<!--HouseholdTemplate: HH_template_NPC_GD_roomies_female--></T>
+                </U>
+                <U>
+                  <T n="household_template">75896<!--HouseholdTemplate: HH_template_NPC_GD_roomies_oddCouple--></T>
+                </U>
+                <U>
+                  <T n="household_template">27232<!--HouseholdTemplate: HH_template_NPC_GD_singleMom_african_01--></T>
+                </U>
+                <U>
+                  <T n="household_template">27231<!--HouseholdTemplate: HH_template_NPC_GD_singleMom_caucasian_01--></T>
+                </U>
+                <U>
+                  <T n="household_template">27238<!--HouseholdTemplate: HH_template_NPC_GD_voodoo--></T>
+                </U>
+                <U>
+                  <T n="household_template">27215<!--HouseholdTemplate: HH_template_NPC_GD_worker--></T>
+                </U>
+                <U>
+                  <T n="household_template">75895<!--HouseholdTemplate: HH_template_NPC_partnersWithKid_female--></T>
+                </U>
+                <U>
+                  <T n="household_template">15951<!--HouseholdTemplate: HH_template_NPC_SO_wt--></T>
+                </U>
+              </L>
+            </U>
+          </L>
+        </U>
+      </U>
+      <U>
+        <T n="Region Description">197663</T>
+        <U n="Household Population Data">
+          <L n="street_description_to_templates">
+            <U>
+              <T n="House Description">201096</T>
+              <L n="Household Templates">
+                <U>
+                  <T n="household_template">27157<!--HouseholdTemplate: HH_template_NPC_GD_hermit--></T>
+                </U>
+                <U>
+                  <T n="household_template">27163<!--HouseholdTemplate: HH_template_NPC_GD_catlady--></T>
+                </U>
+                <U>
+                  <T n="household_template">15949<!--HouseholdTemplate: HH_template_NPC_GD_creole--></T>
+                </U>
+                <U>
+                  <T n="household_template">27244<!--HouseholdTemplate: HH_template_NPC_GD_newlyweds--></T>
+                </U>
+                <U>
+                  <T n="household_template">75903<!--HouseholdTemplate: HH_template_NPC_GD_onlyChild_asian_male_01--></T>
+                </U>
+                <U>
+                  <T n="household_template">75902<!--HouseholdTemplate: HH_template_NPC_GD_onlyChild_caucasian_female_01--></T>
+                </U>
+                <U>
+                  <T n="household_template">75900<!--HouseholdTemplate: HH_template_NPC_GD_roomies_female--></T>
+                </U>
+                <U>
+                  <T n="household_template">75896<!--HouseholdTemplate: HH_template_NPC_GD_roomies_oddCouple--></T>
+                </U>
+                <U>
+                  <T n="household_template">27232<!--HouseholdTemplate: HH_template_NPC_GD_singleMom_african_01--></T>
+                </U>
+                <U>
+                  <T n="household_template">27231<!--HouseholdTemplate: HH_template_NPC_GD_singleMom_caucasian_01--></T>
+                </U>
+                <U>
+                  <T n="household_template">27238<!--HouseholdTemplate: HH_template_NPC_GD_voodoo--></T>
+                </U>
+                <U>
+                  <T n="household_template">27215<!--HouseholdTemplate: HH_template_NPC_GD_worker--></T>
+                </U>
+                <U>
+                  <T n="household_template">75895<!--HouseholdTemplate: HH_template_NPC_partnersWithKid_female--></T>
+                </U>
+                <U>
+                  <T n="household_template">15951<!--HouseholdTemplate: HH_template_NPC_SO_wt--></T>
+                </U>
+              </L>
+            </U>
+            <U>
+              <T n="House Description">201097</T>
+              <L n="Household Templates">
+                <U>
+                  <T n="household_template">27157<!--HouseholdTemplate: HH_template_NPC_GD_hermit--></T>
+                </U>
+                <U>
+                  <T n="household_template">27163<!--HouseholdTemplate: HH_template_NPC_GD_catlady--></T>
+                </U>
+                <U>
+                  <T n="household_template">15949<!--HouseholdTemplate: HH_template_NPC_GD_creole--></T>
+                </U>
+                <U>
+                  <T n="household_template">27244<!--HouseholdTemplate: HH_template_NPC_GD_newlyweds--></T>
+                </U>
+                <U>
+                  <T n="household_template">75903<!--HouseholdTemplate: HH_template_NPC_GD_onlyChild_asian_male_01--></T>
+                </U>
+                <U>
+                  <T n="household_template">75902<!--HouseholdTemplate: HH_template_NPC_GD_onlyChild_caucasian_female_01--></T>
+                </U>
+                <U>
+                  <T n="household_template">75900<!--HouseholdTemplate: HH_template_NPC_GD_roomies_female--></T>
+                </U>
+                <U>
+                  <T n="household_template">75896<!--HouseholdTemplate: HH_template_NPC_GD_roomies_oddCouple--></T>
+                </U>
+                <U>
+                  <T n="household_template">27232<!--HouseholdTemplate: HH_template_NPC_GD_singleMom_african_01--></T>
+                </U>
+                <U>
+                  <T n="household_template">27231<!--HouseholdTemplate: HH_template_NPC_GD_singleMom_caucasian_01--></T>
+                </U>
+                <U>
+                  <T n="household_template">27238<!--HouseholdTemplate: HH_template_NPC_GD_voodoo--></T>
+                </U>
+                <U>
+                  <T n="household_template">27215<!--HouseholdTemplate: HH_template_NPC_GD_worker--></T>
+                </U>
+                <U>
+                  <T n="household_template">75895<!--HouseholdTemplate: HH_template_NPC_partnersWithKid_female--></T>
+                </U>
+                <U>
+                  <T n="household_template">15951<!--HouseholdTemplate: HH_template_NPC_SO_wt--></T>
+                </U>
+              </L>
+            </U>
+            <U>
+              <T n="House Description">201098</T>
+              <L n="Household Templates">
+                <U>
+                  <T n="household_template">27157<!--HouseholdTemplate: HH_template_NPC_GD_hermit--></T>
+                </U>
+                <U>
+                  <T n="household_template">27163<!--HouseholdTemplate: HH_template_NPC_GD_catlady--></T>
+                </U>
+                <U>
+                  <T n="household_template">15949<!--HouseholdTemplate: HH_template_NPC_GD_creole--></T>
+                </U>
+                <U>
+                  <T n="household_template">27244<!--HouseholdTemplate: HH_template_NPC_GD_newlyweds--></T>
+                </U>
+                <U>
+                  <T n="household_template">75903<!--HouseholdTemplate: HH_template_NPC_GD_onlyChild_asian_male_01--></T>
+                </U>
+                <U>
+                  <T n="household_template">75902<!--HouseholdTemplate: HH_template_NPC_GD_onlyChild_caucasian_female_01--></T>
+                </U>
+                <U>
+                  <T n="household_template">75900<!--HouseholdTemplate: HH_template_NPC_GD_roomies_female--></T>
+                </U>
+                <U>
+                  <T n="household_template">75896<!--HouseholdTemplate: HH_template_NPC_GD_roomies_oddCouple--></T>
+                </U>
+                <U>
+                  <T n="household_template">27232<!--HouseholdTemplate: HH_template_NPC_GD_singleMom_african_01--></T>
+                </U>
+                <U>
+                  <T n="household_template">27231<!--HouseholdTemplate: HH_template_NPC_GD_singleMom_caucasian_01--></T>
+                </U>
+                <U>
+                  <T n="household_template">27238<!--HouseholdTemplate: HH_template_NPC_GD_voodoo--></T>
+                </U>
+                <U>
+                  <T n="household_template">27215<!--HouseholdTemplate: HH_template_NPC_GD_worker--></T>
+                </U>
+                <U>
+                  <T n="household_template">75895<!--HouseholdTemplate: HH_template_NPC_partnersWithKid_female--></T>
+                </U>
+                <U>
+                  <T n="household_template">15951<!--HouseholdTemplate: HH_template_NPC_SO_wt--></T>
+                </U>
+              </L>
+            </U>
+          </L>
+        </U>
+      </U>
+      <U>
+        <T n="Region Description">208768</T>
+        <U n="Household Population Data">
+          <L n="street_description_to_templates">
+            <U>
+              <T n="House Description">208775</T>
+              <L n="Household Templates">
+                <U>
+                  <T n="household_template">27157<!--HouseholdTemplate: HH_template_NPC_GD_hermit--></T>
+                </U>
+                <U>
+                  <T n="household_template">27163<!--HouseholdTemplate: HH_template_NPC_GD_catlady--></T>
+                </U>
+                <U>
+                  <T n="household_template">15949<!--HouseholdTemplate: HH_template_NPC_GD_creole--></T>
+                </U>
+                <U>
+                  <T n="household_template">27244<!--HouseholdTemplate: HH_template_NPC_GD_newlyweds--></T>
+                </U>
+                <U>
+                  <T n="household_template">75903<!--HouseholdTemplate: HH_template_NPC_GD_onlyChild_asian_male_01--></T>
+                </U>
+                <U>
+                  <T n="household_template">75902<!--HouseholdTemplate: HH_template_NPC_GD_onlyChild_caucasian_female_01--></T>
+                </U>
+                <U>
+                  <T n="household_template">75900<!--HouseholdTemplate: HH_template_NPC_GD_roomies_female--></T>
+                </U>
+                <U>
+                  <T n="household_template">75896<!--HouseholdTemplate: HH_template_NPC_GD_roomies_oddCouple--></T>
+                </U>
+                <U>
+                  <T n="household_template">27232<!--HouseholdTemplate: HH_template_NPC_GD_singleMom_african_01--></T>
+                </U>
+                <U>
+                  <T n="household_template">27231<!--HouseholdTemplate: HH_template_NPC_GD_singleMom_caucasian_01--></T>
+                </U>
+                <U>
+                  <T n="household_template">27238<!--HouseholdTemplate: HH_template_NPC_GD_voodoo--></T>
+                </U>
+                <U>
+                  <T n="household_template">27215<!--HouseholdTemplate: HH_template_NPC_GD_worker--></T>
+                </U>
+                <U>
+                  <T n="household_template">75895<!--HouseholdTemplate: HH_template_NPC_partnersWithKid_female--></T>
+                </U>
+                <U>
+                  <T n="household_template">15951<!--HouseholdTemplate: HH_template_NPC_SO_wt--></T>
+                </U>
+              </L>
+            </U>
+          </L>
+        </U>
+      </U>
+      <U>
+        <T n="Region Description">216823</T>
+        <U n="Household Population Data">
+          <L n="street_description_to_templates">
+            <U>
+              <T n="House Description">207075</T>
+              <L n="Household Templates">
+                <U>
+                  <T n="household_template">27157<!--HouseholdTemplate: HH_template_NPC_GD_hermit--></T>
+                </U>
+                <U>
+                  <T n="household_template">27163<!--HouseholdTemplate: HH_template_NPC_GD_catlady--></T>
+                </U>
+                <U>
+                  <T n="household_template">15949<!--HouseholdTemplate: HH_template_NPC_GD_creole--></T>
+                </U>
+                <U>
+                  <T n="household_template">27244<!--HouseholdTemplate: HH_template_NPC_GD_newlyweds--></T>
+                </U>
+                <U>
+                  <T n="household_template">75903<!--HouseholdTemplate: HH_template_NPC_GD_onlyChild_asian_male_01--></T>
+                </U>
+                <U>
+                  <T n="household_template">75902<!--HouseholdTemplate: HH_template_NPC_GD_onlyChild_caucasian_female_01--></T>
+                </U>
+                <U>
+                  <T n="household_template">75900<!--HouseholdTemplate: HH_template_NPC_GD_roomies_female--></T>
+                </U>
+                <U>
+                  <T n="household_template">75896<!--HouseholdTemplate: HH_template_NPC_GD_roomies_oddCouple--></T>
+                </U>
+                <U>
+                  <T n="household_template">27232<!--HouseholdTemplate: HH_template_NPC_GD_singleMom_african_01--></T>
+                </U>
+                <U>
+                  <T n="household_template">27231<!--HouseholdTemplate: HH_template_NPC_GD_singleMom_caucasian_01--></T>
+                </U>
+                <U>
+                  <T n="household_template">27238<!--HouseholdTemplate: HH_template_NPC_GD_voodoo--></T>
+                </U>
+                <U>
+                  <T n="household_template">27215<!--HouseholdTemplate: HH_template_NPC_GD_worker--></T>
+                </U>
+                <U>
+                  <T n="household_template">75895<!--HouseholdTemplate: HH_template_NPC_partnersWithKid_female--></T>
+                </U>
+                <U>
+                  <T n="household_template">15951<!--HouseholdTemplate: HH_template_NPC_SO_wt--></T>
+                </U>
+              </L>
+            </U>
+            <U>
+              <T n="House Description">208803</T>
+              <L n="Household Templates">
+                <U>
+                  <T n="household_template">27157<!--HouseholdTemplate: HH_template_NPC_GD_hermit--></T>
+                </U>
+                <U>
+                  <T n="household_template">27163<!--HouseholdTemplate: HH_template_NPC_GD_catlady--></T>
+                </U>
+                <U>
+                  <T n="household_template">15949<!--HouseholdTemplate: HH_template_NPC_GD_creole--></T>
+                </U>
+                <U>
+                  <T n="household_template">27244<!--HouseholdTemplate: HH_template_NPC_GD_newlyweds--></T>
+                </U>
+                <U>
+                  <T n="household_template">75903<!--HouseholdTemplate: HH_template_NPC_GD_onlyChild_asian_male_01--></T>
+                </U>
+                <U>
+                  <T n="household_template">75902<!--HouseholdTemplate: HH_template_NPC_GD_onlyChild_caucasian_female_01--></T>
+                </U>
+                <U>
+                  <T n="household_template">75900<!--HouseholdTemplate: HH_template_NPC_GD_roomies_female--></T>
+                </U>
+                <U>
+                  <T n="household_template">75896<!--HouseholdTemplate: HH_template_NPC_GD_roomies_oddCouple--></T>
+                </U>
+                <U>
+                  <T n="household_template">27232<!--HouseholdTemplate: HH_template_NPC_GD_singleMom_african_01--></T>
+                </U>
+                <U>
+                  <T n="household_template">27231<!--HouseholdTemplate: HH_template_NPC_GD_singleMom_caucasian_01--></T>
+                </U>
+                <U>
+                  <T n="household_template">27238<!--HouseholdTemplate: HH_template_NPC_GD_voodoo--></T>
+                </U>
+                <U>
+                  <T n="household_template">27215<!--HouseholdTemplate: HH_template_NPC_GD_worker--></T>
+                </U>
+                <U>
+                  <T n="household_template">75895<!--HouseholdTemplate: HH_template_NPC_partnersWithKid_female--></T>
+                </U>
+                <U>
+                  <T n="household_template">15951<!--HouseholdTemplate: HH_template_NPC_SO_wt--></T>
+                </U>
+              </L>
+            </U>
+            <U>
+              <T n="House Description">212324</T>
+              <L n="Household Templates">
+                <U>
+                  <T n="household_template">27157<!--HouseholdTemplate: HH_template_NPC_GD_hermit--></T>
+                </U>
+                <U>
+                  <T n="household_template">27163<!--HouseholdTemplate: HH_template_NPC_GD_catlady--></T>
+                </U>
+                <U>
+                  <T n="household_template">15949<!--HouseholdTemplate: HH_template_NPC_GD_creole--></T>
+                </U>
+                <U>
+                  <T n="household_template">27244<!--HouseholdTemplate: HH_template_NPC_GD_newlyweds--></T>
+                </U>
+                <U>
+                  <T n="household_template">75903<!--HouseholdTemplate: HH_template_NPC_GD_onlyChild_asian_male_01--></T>
+                </U>
+                <U>
+                  <T n="household_template">75902<!--HouseholdTemplate: HH_template_NPC_GD_onlyChild_caucasian_female_01--></T>
+                </U>
+                <U>
+                  <T n="household_template">75900<!--HouseholdTemplate: HH_template_NPC_GD_roomies_female--></T>
+                </U>
+                <U>
+                  <T n="household_template">75896<!--HouseholdTemplate: HH_template_NPC_GD_roomies_oddCouple--></T>
+                </U>
+                <U>
+                  <T n="household_template">27232<!--HouseholdTemplate: HH_template_NPC_GD_singleMom_african_01--></T>
+                </U>
+                <U>
+                  <T n="household_template">27231<!--HouseholdTemplate: HH_template_NPC_GD_singleMom_caucasian_01--></T>
+                </U>
+                <U>
+                  <T n="household_template">27238<!--HouseholdTemplate: HH_template_NPC_GD_voodoo--></T>
+                </U>
+                <U>
+                  <T n="household_template">27215<!--HouseholdTemplate: HH_template_NPC_GD_worker--></T>
+                </U>
+                <U>
+                  <T n="household_template">75895<!--HouseholdTemplate: HH_template_NPC_partnersWithKid_female--></T>
+                </U>
+                <U>
+                  <T n="household_template">15951<!--HouseholdTemplate: HH_template_NPC_SO_wt--></T>
+                </U>
+              </L>
+            </U>
+          </L>
+        </U>
+      </U>
+      <U>
+        <T n="Region Description">222656</T>
+        <U n="Household Population Data">
+          <L n="street_description_to_templates">
+            <U>
+              <T n="House Description">222659</T>
+              <L n="Household Templates">
+                <U>
+                  <T n="household_template">27157<!--HouseholdTemplate: HH_template_NPC_GD_hermit--></T>
+                </U>
+                <U>
+                  <T n="household_template">27163<!--HouseholdTemplate: HH_template_NPC_GD_catlady--></T>
+                </U>
+                <U>
+                  <T n="household_template">15949<!--HouseholdTemplate: HH_template_NPC_GD_creole--></T>
+                </U>
+                <U>
+                  <T n="household_template">27244<!--HouseholdTemplate: HH_template_NPC_GD_newlyweds--></T>
+                </U>
+                <U>
+                  <T n="household_template">75903<!--HouseholdTemplate: HH_template_NPC_GD_onlyChild_asian_male_01--></T>
+                </U>
+                <U>
+                  <T n="household_template">75902<!--HouseholdTemplate: HH_template_NPC_GD_onlyChild_caucasian_female_01--></T>
+                </U>
+                <U>
+                  <T n="household_template">75900<!--HouseholdTemplate: HH_template_NPC_GD_roomies_female--></T>
+                </U>
+                <U>
+                  <T n="household_template">75896<!--HouseholdTemplate: HH_template_NPC_GD_roomies_oddCouple--></T>
+                </U>
+                <U>
+                  <T n="household_template">27232<!--HouseholdTemplate: HH_template_NPC_GD_singleMom_african_01--></T>
+                </U>
+                <U>
+                  <T n="household_template">27231<!--HouseholdTemplate: HH_template_NPC_GD_singleMom_caucasian_01--></T>
+                </U>
+                <U>
+                  <T n="household_template">27238<!--HouseholdTemplate: HH_template_NPC_GD_voodoo--></T>
+                </U>
+                <U>
+                  <T n="household_template">27215<!--HouseholdTemplate: HH_template_NPC_GD_worker--></T>
+                </U>
+                <U>
+                  <T n="household_template">75895<!--HouseholdTemplate: HH_template_NPC_partnersWithKid_female--></T>
+                </U>
+                <U>
+                  <T n="household_template">15951<!--HouseholdTemplate: HH_template_NPC_SO_wt--></T>
+                </U>
+              </L>
+            </U>
+          </L>
+        </U>
+      </U>
+      <U>
+        <T n="Region Description">246370</T>
+        <U n="Household Population Data">
+          <L n="street_description_to_templates">
+            <U>
+              <T n="House Description">248698</T>
+              <L n="Household Templates">
+                <U>
+                  <T n="household_template">15949<!--HouseholdTemplate: HH_template_NPC_GD_creole--></T>
+                </U>
+                <U>
+                  <T n="household_template">75902<!--HouseholdTemplate: HH_template_NPC_GD_onlyChild_caucasian_female_01--></T>
+                </U>
+                <U>
+                  <T n="household_template">27232<!--HouseholdTemplate: HH_template_NPC_GD_singleMom_african_01--></T>
+                </U>
+                <U>
+                  <T n="household_template">27231<!--HouseholdTemplate: HH_template_NPC_GD_singleMom_caucasian_01--></T>
+                </U>
+                <U>
+                  <T n="household_template">27215<!--HouseholdTemplate: HH_template_NPC_GD_worker--></T>
+                </U>
+                <U>
+                  <T n="household_template">75914<!--HouseholdTemplate: HH_template_NPC_GD_FamilyWithKids_african_01--></T>
+                </U>
+                <U>
+                  <T n="household_template">27241<!--HouseholdTemplate: HH_template_NPC_GD_FamilyWithKids_caucasian_01--></T>
+                </U>
+                <U>
+                  <T n="household_template">27360<!--HouseholdTemplate: HH_template_NPC_GD_familyWithKids_latin_01--></T>
+                </U>
+                <U>
+                  <T n="household_template">75915<!--HouseholdTemplate: HH_template_NPC_GD_grandparents_asian_01--></T>
+                </U>
+                <U>
+                  <T n="household_template">75918<!--HouseholdTemplate: HH_template_NPC_GD_grandparents_latin_01--></T>
+                </U>
+                <U>
+                  <T n="household_template">105257<!--HouseholdTemplate: HH_template_NPC_parents_2CT--></T>
+                </U>
+                <U>
+                  <T n="household_template">105299<!--HouseholdTemplate: HH_template_NPC_YA_2couples--></T>
+                </U>
+                <U>
+                  <T n="household_template">252050<!--HouseholdTemplate: HH_template_NPC_EP10_2Parents2Children_FF_2CT--></T>
+                  <T n="weight">4</T>
+                </U>
+                <U>
+                  <T n="household_template">252049<!--HouseholdTemplate: HH_template_NPC_EP10_2Parents2Children_MF_2CT--></T>
+                  <T n="weight">4</T>
+                </U>
+                <U>
+                  <T n="household_template">252051<!--HouseholdTemplate: HH_template_NPC_EP10_2Parents2Children_MM_2CT--></T>
+                  <T n="weight">4</T>
+                </U>
+                <U>
+                  <T n="household_template">252052<!--HouseholdTemplate: HH_template_NPC_EP10_2Parents2Children_FF_2C--></T>
+                  <T n="weight">4</T>
+                </U>
+                <U>
+                  <T n="household_template">252053<!--HouseholdTemplate: HH_template_NPC_EP10_2Parents2Children_MF_2C--></T>
+                  <T n="weight">4</T>
+                </U>
+                <U>
+                  <T n="household_template">252054<!--HouseholdTemplate: HH_template_NPC_EP10_2Parents2Children_MM_2C--></T>
+                  <T n="weight">4</T>
+                </U>
+                <U>
+                  <T n="household_template">252061<!--HouseholdTemplate: HH_template_NPC_EP10_Generations_E_A_C--></T>
+                  <T n="weight">4</T>
+                </U>
+                <U>
+                  <T n="household_template">252060<!--HouseholdTemplate: HH_template_NPC_EP10_Generations_2E_2A_2C--></T>
+                  <T n="weight">4</T>
+                </U>
+                <U>
+                  <T n="household_template">252059<!--HouseholdTemplate: HH_template_NPC_EP10_Single_E--></T>
+                  <T n="weight">6</T>
+                </U>
+                <U>
+                  <T n="household_template">252056<!--HouseholdTemplate: HH_template_NPC_EP10_NoChildren_Spouses_E--></T>
+                  <T n="weight">6</T>
+                </U>
+                <U>
+                  <T n="household_template">252057<!--HouseholdTemplate: HH_template_NPC_EP10_NoChildren_Spouses_Y--></T>
+                  <T n="weight">6</T>
+                </U>
+                <U>
+                  <T n="household_template">252058<!--HouseholdTemplate: hH_template_NPC_EP10_NoChildren_Roommates_Y--></T>
+                  <T n="weight">8</T>
+                </U>
+              </L>
+            </U>
+            <U>
+              <T n="House Description">249006</T>
+              <L n="Household Templates">
+                <U>
+                  <T n="household_template">15949<!--HouseholdTemplate: HH_template_NPC_GD_creole--></T>
+                </U>
+                <U>
+                  <T n="household_template">75902<!--HouseholdTemplate: HH_template_NPC_GD_onlyChild_caucasian_female_01--></T>
+                </U>
+                <U>
+                  <T n="household_template">27232<!--HouseholdTemplate: HH_template_NPC_GD_singleMom_african_01--></T>
+                </U>
+                <U>
+                  <T n="household_template">27231<!--HouseholdTemplate: HH_template_NPC_GD_singleMom_caucasian_01--></T>
+                </U>
+                <U>
+                  <T n="household_template">27215<!--HouseholdTemplate: HH_template_NPC_GD_worker--></T>
+                </U>
+                <U>
+                  <T n="household_template">75914<!--HouseholdTemplate: HH_template_NPC_GD_FamilyWithKids_african_01--></T>
+                </U>
+                <U>
+                  <T n="household_template">27241<!--HouseholdTemplate: HH_template_NPC_GD_FamilyWithKids_caucasian_01--></T>
+                </U>
+                <U>
+                  <T n="household_template">27360<!--HouseholdTemplate: HH_template_NPC_GD_familyWithKids_latin_01--></T>
+                </U>
+                <U>
+                  <T n="household_template">75915<!--HouseholdTemplate: HH_template_NPC_GD_grandparents_asian_01--></T>
+                </U>
+                <U>
+                  <T n="household_template">75918<!--HouseholdTemplate: HH_template_NPC_GD_grandparents_latin_01--></T>
+                </U>
+                <U>
+                  <T n="household_template">105257<!--HouseholdTemplate: HH_template_NPC_parents_2CT--></T>
+                </U>
+                <U>
+                  <T n="household_template">105299<!--HouseholdTemplate: HH_template_NPC_YA_2couples--></T>
+                </U>
+                <U>
+                  <T n="household_template">252050<!--HouseholdTemplate: HH_template_NPC_EP10_2Parents2Children_FF_2CT--></T>
+                  <T n="weight">4</T>
+                </U>
+                <U>
+                  <T n="household_template">252049<!--HouseholdTemplate: HH_template_NPC_EP10_2Parents2Children_MF_2CT--></T>
+                  <T n="weight">4</T>
+                </U>
+                <U>
+                  <T n="household_template">252051<!--HouseholdTemplate: HH_template_NPC_EP10_2Parents2Children_MM_2CT--></T>
+                  <T n="weight">4</T>
+                </U>
+                <U>
+                  <T n="household_template">252052<!--HouseholdTemplate: HH_template_NPC_EP10_2Parents2Children_FF_2C--></T>
+                  <T n="weight">4</T>
+                </U>
+                <U>
+                  <T n="household_template">252053<!--HouseholdTemplate: HH_template_NPC_EP10_2Parents2Children_MF_2C--></T>
+                  <T n="weight">4</T>
+                </U>
+                <U>
+                  <T n="household_template">252054<!--HouseholdTemplate: HH_template_NPC_EP10_2Parents2Children_MM_2C--></T>
+                  <T n="weight">4</T>
+                </U>
+                <U>
+                  <T n="household_template">252061<!--HouseholdTemplate: HH_template_NPC_EP10_Generations_E_A_C--></T>
+                  <T n="weight">4</T>
+                </U>
+                <U>
+                  <T n="household_template">252060<!--HouseholdTemplate: HH_template_NPC_EP10_Generations_2E_2A_2C--></T>
+                  <T n="weight">4</T>
+                </U>
+                <U>
+                  <T n="household_template">252059<!--HouseholdTemplate: HH_template_NPC_EP10_Single_E--></T>
+                  <T n="weight">6</T>
+                </U>
+                <U>
+                  <T n="household_template">252056<!--HouseholdTemplate: HH_template_NPC_EP10_NoChildren_Spouses_E--></T>
+                  <T n="weight">6</T>
+                </U>
+                <U>
+                  <T n="household_template">252057<!--HouseholdTemplate: HH_template_NPC_EP10_NoChildren_Spouses_Y--></T>
+                  <T n="weight">6</T>
+                </U>
+                <U>
+                  <T n="household_template">252058<!--HouseholdTemplate: hH_template_NPC_EP10_NoChildren_Roommates_Y--></T>
+                  <T n="weight">8</T>
+                </U>
+              </L>
+            </U>
+            <U>
+              <T n="House Description">251669</T>
+              <L n="Household Templates">
+                <U>
+                  <T n="household_template">15949<!--HouseholdTemplate: HH_template_NPC_GD_creole--></T>
+                </U>
+                <U>
+                  <T n="household_template">75902<!--HouseholdTemplate: HH_template_NPC_GD_onlyChild_caucasian_female_01--></T>
+                </U>
+                <U>
+                  <T n="household_template">27232<!--HouseholdTemplate: HH_template_NPC_GD_singleMom_african_01--></T>
+                </U>
+                <U>
+                  <T n="household_template">27231<!--HouseholdTemplate: HH_template_NPC_GD_singleMom_caucasian_01--></T>
+                </U>
+                <U>
+                  <T n="household_template">27215<!--HouseholdTemplate: HH_template_NPC_GD_worker--></T>
+                </U>
+                <U>
+                  <T n="household_template">75914<!--HouseholdTemplate: HH_template_NPC_GD_FamilyWithKids_african_01--></T>
+                </U>
+                <U>
+                  <T n="household_template">27241<!--HouseholdTemplate: HH_template_NPC_GD_FamilyWithKids_caucasian_01--></T>
+                </U>
+                <U>
+                  <T n="household_template">27360<!--HouseholdTemplate: HH_template_NPC_GD_familyWithKids_latin_01--></T>
+                </U>
+                <U>
+                  <T n="household_template">75915<!--HouseholdTemplate: HH_template_NPC_GD_grandparents_asian_01--></T>
+                </U>
+                <U>
+                  <T n="household_template">75918<!--HouseholdTemplate: HH_template_NPC_GD_grandparents_latin_01--></T>
+                </U>
+                <U>
+                  <T n="household_template">105257<!--HouseholdTemplate: HH_template_NPC_parents_2CT--></T>
+                </U>
+                <U>
+                  <T n="household_template">105299<!--HouseholdTemplate: HH_template_NPC_YA_2couples--></T>
+                </U>
+                <U>
+                  <T n="household_template">252050<!--HouseholdTemplate: HH_template_NPC_EP10_2Parents2Children_FF_2CT--></T>
+                  <T n="weight">4</T>
+                </U>
+                <U>
+                  <T n="household_template">252049<!--HouseholdTemplate: HH_template_NPC_EP10_2Parents2Children_MF_2CT--></T>
+                  <T n="weight">4</T>
+                </U>
+                <U>
+                  <T n="household_template">252051<!--HouseholdTemplate: HH_template_NPC_EP10_2Parents2Children_MM_2CT--></T>
+                  <T n="weight">4</T>
+                </U>
+                <U>
+                  <T n="household_template">252052<!--HouseholdTemplate: HH_template_NPC_EP10_2Parents2Children_FF_2C--></T>
+                  <T n="weight">4</T>
+                </U>
+                <U>
+                  <T n="household_template">252053<!--HouseholdTemplate: HH_template_NPC_EP10_2Parents2Children_MF_2C--></T>
+                  <T n="weight">4</T>
+                </U>
+                <U>
+                  <T n="household_template">252054<!--HouseholdTemplate: HH_template_NPC_EP10_2Parents2Children_MM_2C--></T>
+                  <T n="weight">4</T>
+                </U>
+                <U>
+                  <T n="household_template">252061<!--HouseholdTemplate: HH_template_NPC_EP10_Generations_E_A_C--></T>
+                  <T n="weight">4</T>
+                </U>
+                <U>
+                  <T n="household_template">252060<!--HouseholdTemplate: HH_template_NPC_EP10_Generations_2E_2A_2C--></T>
+                  <T n="weight">4</T>
+                </U>
+                <U>
+                  <T n="household_template">252059<!--HouseholdTemplate: HH_template_NPC_EP10_Single_E--></T>
+                  <T n="weight">6</T>
+                </U>
+                <U>
+                  <T n="household_template">252056<!--HouseholdTemplate: HH_template_NPC_EP10_NoChildren_Spouses_E--></T>
+                  <T n="weight">6</T>
+                </U>
+                <U>
+                  <T n="household_template">252057<!--HouseholdTemplate: HH_template_NPC_EP10_NoChildren_Spouses_Y--></T>
+                  <T n="weight">6</T>
+                </U>
+                <U>
+                  <T n="household_template">252058<!--HouseholdTemplate: hH_template_NPC_EP10_NoChildren_Roommates_Y--></T>
+                  <T n="weight">8</T>
+                </U>
+              </L>
+            </U>
+          </L>
+        </U>
+      </U>
+      <U>
+        <T n="Region Description">8086</T>
+        <U n="Household Population Data">
+          <L n="household_description_to_templates">
+            <U>
+              <T n="House Description">21313</T>
+              <L n="Household Templates">
+                <U>
+                  <T n="household_template">15950<!--HouseholdTemplate: HH_template_NPC_GD_gentry--></T>
+                </U>
+                <U>
+                  <T n="household_template">27157<!--HouseholdTemplate: HH_template_NPC_GD_hermit--></T>
+                </U>
+              </L>
+            </U>
+            <U>
+              <T n="House Description">21332</T>
+              <L n="Household Templates">
+                <U>
+                  <T n="household_template">27238<!--HouseholdTemplate: HH_template_NPC_GD_voodoo--></T>
+                </U>
+                <U>
+                  <T n="household_template">27215<!--HouseholdTemplate: HH_template_NPC_GD_worker--></T>
+                </U>
+                <U>
+                  <T n="household_template">27244<!--HouseholdTemplate: HH_template_NPC_GD_newlyweds--></T>
+                </U>
+              </L>
+            </U>
+            <U>
+              <T n="House Description">21334</T>
+              <L n="Household Templates">
+                <U>
+                  <T n="household_template">27231<!--HouseholdTemplate: HH_template_NPC_GD_singleMom_caucasian_01--></T>
+                </U>
+                <U>
+                  <T n="household_template">75903<!--HouseholdTemplate: HH_template_NPC_GD_onlyChild_asian_male_01--></T>
+                </U>
+                <U>
+                  <T n="household_template">75900<!--HouseholdTemplate: HH_template_NPC_GD_roomies_female--></T>
+                </U>
+              </L>
+            </U>
+            <U>
+              <T n="House Description">31309</T>
+              <L n="Household Templates">
+                <U>
+                  <T n="household_template">27244<!--HouseholdTemplate: HH_template_NPC_GD_newlyweds--></T>
+                </U>
+                <U>
+                  <T n="household_template">15951<!--HouseholdTemplate: HH_template_NPC_SO_wt--></T>
+                </U>
+                <U>
+                  <T n="household_template">27163<!--HouseholdTemplate: HH_template_NPC_GD_catlady--></T>
+                </U>
+              </L>
+            </U>
+            <U>
+              <T n="House Description">31310</T>
+              <L n="Household Templates">
+                <U>
+                  <T n="household_template">75901<!--HouseholdTemplate: HH_template_NPC_GD_roomies_ThreesCo--></T>
+                </U>
+                <U>
+                  <T n="household_template">27358<!--HouseholdTemplate: HH_template_NPC_GD_adoptedKids_01--></T>
+                </U>
+                <U>
+                  <T n="household_template">27359<!--HouseholdTemplate: HH_template_NPC_GD_nuclearFamily_african_01--></T>
+                </U>
+              </L>
+            </U>
+            <U>
+              <T n="House Description">31312</T>
+              <L n="Household Templates">
+                <U>
+                  <T n="household_template">27231<!--HouseholdTemplate: HH_template_NPC_GD_singleMom_caucasian_01--></T>
+                </U>
+                <U>
+                  <T n="household_template">15951<!--HouseholdTemplate: HH_template_NPC_SO_wt--></T>
+                </U>
+                <U>
+                  <T n="household_template">75895<!--HouseholdTemplate: HH_template_NPC_partnersWithKid_female--></T>
+                </U>
+              </L>
+            </U>
+            <U>
+              <T n="House Description">31313</T>
+              <L n="Household Templates">
+                <U>
+                  <T n="household_template">27231<!--HouseholdTemplate: HH_template_NPC_GD_singleMom_caucasian_01--></T>
+                </U>
+                <U>
+                  <T n="household_template">15951<!--HouseholdTemplate: HH_template_NPC_SO_wt--></T>
+                </U>
+                <U>
+                  <T n="household_template">75895<!--HouseholdTemplate: HH_template_NPC_partnersWithKid_female--></T>
+                </U>
+              </L>
+            </U>
+            <U>
+              <T n="House Description">31314</T>
+              <L n="Household Templates">
+                <U>
+                  <T n="household_template">75895<!--HouseholdTemplate: HH_template_NPC_partnersWithKid_female--></T>
+                </U>
+                <U>
+                  <T n="household_template">27231<!--HouseholdTemplate: HH_template_NPC_GD_singleMom_caucasian_01--></T>
+                </U>
+              </L>
+            </U>
+            <U>
+              <T n="House Description">31315</T>
+              <L n="Household Templates">
+                <U>
+                  <T n="household_template">27358<!--HouseholdTemplate: HH_template_NPC_GD_adoptedKids_01--></T>
+                </U>
+                <U>
+                  <T n="household_template">27268<!--HouseholdTemplate: HH_template_NPC_GD_nuclearFamily_caucasian_01--></T>
+                </U>
+                <U>
+                  <T n="household_template">75901<!--HouseholdTemplate: HH_template_NPC_GD_roomies_ThreesCo--></T>
+                </U>
+                <U>
+                  <T n="household_template">75915<!--HouseholdTemplate: HH_template_NPC_GD_grandparents_asian_01--></T>
+                </U>
+              </L>
+            </U>
+            <U>
+              <T n="House Description">31317</T>
+              <L n="Household Templates">
+                <U>
+                  <T n="household_template">27358<!--HouseholdTemplate: HH_template_NPC_GD_adoptedKids_01--></T>
+                </U>
+                <U>
+                  <T n="household_template">27268<!--HouseholdTemplate: HH_template_NPC_GD_nuclearFamily_caucasian_01--></T>
+                </U>
+                <U>
+                  <T n="household_template">75901<!--HouseholdTemplate: HH_template_NPC_GD_roomies_ThreesCo--></T>
+                </U>
+                <U>
+                  <T n="household_template">75915<!--HouseholdTemplate: HH_template_NPC_GD_grandparents_asian_01--></T>
+                </U>
+              </L>
+            </U>
+            <U>
+              <T n="House Description">31318</T>
+              <L n="Household Templates">
+                <U>
+                  <T n="household_template">27241<!--HouseholdTemplate: HH_template_NPC_GD_FamilyWithKids_caucasian_01--></T>
+                </U>
+                <U>
+                  <T n="household_template">75901<!--HouseholdTemplate: HH_template_NPC_GD_roomies_ThreesCo--></T>
+                </U>
+                <U>
+                  <T n="household_template">75918<!--HouseholdTemplate: HH_template_NPC_GD_grandparents_latin_01--></T>
+                </U>
+              </L>
+            </U>
+            <U>
+              <T n="House Description">31429</T>
+              <L n="Household Templates">
+                <U>
+                  <T n="household_template">27358<!--HouseholdTemplate: HH_template_NPC_GD_adoptedKids_01--></T>
+                </U>
+                <U>
+                  <T n="household_template">27268<!--HouseholdTemplate: HH_template_NPC_GD_nuclearFamily_caucasian_01--></T>
+                </U>
+                <U>
+                  <T n="household_template">75901<!--HouseholdTemplate: HH_template_NPC_GD_roomies_ThreesCo--></T>
+                </U>
+                <U>
+                  <T n="household_template">75915<!--HouseholdTemplate: HH_template_NPC_GD_grandparents_asian_01--></T>
+                </U>
+              </L>
+            </U>
+            <U>
+              <T n="House Description">36251</T>
+              <L n="Household Templates">
+                <U>
+                  <T n="household_template">27228<!--HouseholdTemplate: HH_template_NPC_GD_partners_male--></T>
+                </U>
+                <U>
+                  <T n="household_template">75894<!--HouseholdTemplate: HH_template_NPC_partners_female--></T>
+                </U>
+                <U>
+                  <T n="household_template">75896<!--HouseholdTemplate: HH_template_NPC_GD_roomies_oddCouple--></T>
+                </U>
+                <U>
+                  <T n="household_template">15951<!--HouseholdTemplate: HH_template_NPC_SO_wt--></T>
+                </U>
+                <U>
+                  <T n="household_template">75903<!--HouseholdTemplate: HH_template_NPC_GD_onlyChild_asian_male_01--></T>
+                </U>
+                <U>
+                  <T n="household_template">27360<!--HouseholdTemplate: HH_template_NPC_GD_familyWithKids_latin_01--></T>
+                </U>
+                <U>
+                  <T n="household_template">15949<!--HouseholdTemplate: HH_template_NPC_GD_creole--></T>
+                </U>
+                <U>
+                  <T n="household_template">75915<!--HouseholdTemplate: HH_template_NPC_GD_grandparents_asian_01--></T>
+                </U>
+              </L>
+            </U>
+            <U>
+              <T n="House Description">36252</T>
+              <L n="Household Templates">
+                <U>
+                  <T n="household_template">27228<!--HouseholdTemplate: HH_template_NPC_GD_partners_male--></T>
+                </U>
+                <U>
+                  <T n="household_template">27238<!--HouseholdTemplate: HH_template_NPC_GD_voodoo--></T>
+                </U>
+                <U>
+                  <T n="household_template">75896<!--HouseholdTemplate: HH_template_NPC_GD_roomies_oddCouple--></T>
+                </U>
+                <U>
+                  <T n="household_template">27157<!--HouseholdTemplate: HH_template_NPC_GD_hermit--></T>
+                </U>
+                <U>
+                  <T n="household_template">27360<!--HouseholdTemplate: HH_template_NPC_GD_familyWithKids_latin_01--></T>
+                </U>
+                <U>
+                  <T n="household_template">27359<!--HouseholdTemplate: HH_template_NPC_GD_nuclearFamily_african_01--></T>
+                </U>
+                <U>
+                  <T n="household_template">75915<!--HouseholdTemplate: HH_template_NPC_GD_grandparents_asian_01--></T>
+                </U>
+              </L>
+            </U>
+            <U>
+              <T n="House Description">36253</T>
+              <L n="Household Templates">
+                <U>
+                  <T n="household_template">27227<!--HouseholdTemplate: HH_template_NPC_GD_coeds_04--></T>
+                </U>
+                <U>
+                  <T n="household_template">75894<!--HouseholdTemplate: HH_template_NPC_partners_female--></T>
+                </U>
+                <U>
+                  <T n="household_template">75896<!--HouseholdTemplate: HH_template_NPC_GD_roomies_oddCouple--></T>
+                </U>
+                <U>
+                  <T n="household_template">27244<!--HouseholdTemplate: HH_template_NPC_GD_newlyweds--></T>
+                </U>
+                <U>
+                  <T n="household_template">27360<!--HouseholdTemplate: HH_template_NPC_GD_familyWithKids_latin_01--></T>
+                </U>
+                <U>
+                  <T n="household_template">27359<!--HouseholdTemplate: HH_template_NPC_GD_nuclearFamily_african_01--></T>
+                </U>
+                <U>
+                  <T n="household_template">75915<!--HouseholdTemplate: HH_template_NPC_GD_grandparents_asian_01--></T>
+                </U>
+              </L>
+            </U>
+            <U>
+              <T n="House Description">36254</T>
+              <L n="Household Templates">
+                <U>
+                  <T n="household_template">27228<!--HouseholdTemplate: HH_template_NPC_GD_partners_male--></T>
+                </U>
+                <U>
+                  <T n="household_template">75894<!--HouseholdTemplate: HH_template_NPC_partners_female--></T>
+                </U>
+                <U>
+                  <T n="household_template">75896<!--HouseholdTemplate: HH_template_NPC_GD_roomies_oddCouple--></T>
+                </U>
+                <U>
+                  <T n="household_template">75903<!--HouseholdTemplate: HH_template_NPC_GD_onlyChild_asian_male_01--></T>
+                </U>
+                <U>
+                  <T n="household_template">15950<!--HouseholdTemplate: HH_template_NPC_GD_gentry--></T>
+                </U>
+                <U>
+                  <T n="household_template">27359<!--HouseholdTemplate: HH_template_NPC_GD_nuclearFamily_african_01--></T>
+                </U>
+                <U>
+                  <T n="household_template">75895<!--HouseholdTemplate: HH_template_NPC_partnersWithKid_female--></T>
+                </U>
+              </L>
+            </U>
+            <U>
+              <T n="House Description">38375</T>
+              <L n="Household Templates">
+                <U>
+                  <T n="household_template">15951<!--HouseholdTemplate: HH_template_NPC_SO_wt--></T>
+                </U>
+                <U>
+                  <T n="household_template">27232<!--HouseholdTemplate: HH_template_NPC_GD_singleMom_african_01--></T>
+                </U>
+                <U>
+                  <T n="household_template">27244<!--HouseholdTemplate: HH_template_NPC_GD_newlyweds--></T>
+                </U>
+              </L>
+            </U>
+            <U>
+              <T n="House Description">42531</T>
+              <L n="Household Templates">
+                <U>
+                  <T n="household_template">27358<!--HouseholdTemplate: HH_template_NPC_GD_adoptedKids_01--></T>
+                </U>
+                <U>
+                  <T n="household_template">27268<!--HouseholdTemplate: HH_template_NPC_GD_nuclearFamily_caucasian_01--></T>
+                </U>
+                <U>
+                  <T n="household_template">27359<!--HouseholdTemplate: HH_template_NPC_GD_nuclearFamily_african_01--></T>
+                </U>
+                <U>
+                  <T n="household_template">75901<!--HouseholdTemplate: HH_template_NPC_GD_roomies_ThreesCo--></T>
+                </U>
+                <U>
+                  <T n="household_template">75915<!--HouseholdTemplate: HH_template_NPC_GD_grandparents_asian_01--></T>
+                </U>
+              </L>
+            </U>
+          </L>
+          <L n="street_description_to_templates">
+            <U>
+              <T n="House Description">20381</T>
+              <L n="Household Templates">
+                <U>
+                  <T n="household_template">27358<!--HouseholdTemplate: HH_template_NPC_GD_adoptedKids_01--></T>
+                </U>
+                <U>
+                  <T n="household_template">27268<!--HouseholdTemplate: HH_template_NPC_GD_nuclearFamily_caucasian_01--></T>
+                </U>
+                <U>
+                  <T n="household_template">75901<!--HouseholdTemplate: HH_template_NPC_GD_roomies_ThreesCo--></T>
+                </U>
+                <U>
+                  <T n="household_template">75915<!--HouseholdTemplate: HH_template_NPC_GD_grandparents_asian_01--></T>
+                </U>
+              </L>
+            </U>
+            <U>
+              <T n="House Description">20382</T>
+              <L n="Household Templates">
+                <U>
+                  <T n="household_template">15951<!--HouseholdTemplate: HH_template_NPC_SO_wt--></T>
+                  <T n="weight">2</T>
+                </U>
+                <U>
+                  <T n="household_template">27244<!--HouseholdTemplate: HH_template_NPC_GD_newlyweds--></T>
+                  <T n="weight">2</T>
+                </U>
+                <U>
+                  <T n="household_template">27231<!--HouseholdTemplate: HH_template_NPC_GD_singleMom_caucasian_01--></T>
+                  <T n="weight">2</T>
+                </U>
+                <U>
+                  <T n="household_template">27232<!--HouseholdTemplate: HH_template_NPC_GD_singleMom_african_01--></T>
+                  <T n="weight">2</T>
+                </U>
+                <U>
+                  <T n="household_template">27244<!--HouseholdTemplate: HH_template_NPC_GD_newlyweds--></T>
+                </U>
+                <U>
+                  <T n="household_template">75895<!--HouseholdTemplate: HH_template_NPC_partnersWithKid_female--></T>
+                </U>
+                <U>
+                  <T n="household_template">75900<!--HouseholdTemplate: HH_template_NPC_GD_roomies_female--></T>
+                </U>
+                <U>
+                  <T n="household_template">75896<!--HouseholdTemplate: HH_template_NPC_GD_roomies_oddCouple--></T>
+                </U>
+              </L>
+            </U>
+            <U>
+              <T n="House Description">20383</T>
+              <L n="Household Templates">
+                <U>
+                  <T n="household_template">15951<!--HouseholdTemplate: HH_template_NPC_SO_wt--></T>
+                  <T n="weight">2</T>
+                </U>
+                <U>
+                  <T n="household_template">27244<!--HouseholdTemplate: HH_template_NPC_GD_newlyweds--></T>
+                  <T n="weight">2</T>
+                </U>
+                <U>
+                  <T n="household_template">27231<!--HouseholdTemplate: HH_template_NPC_GD_singleMom_caucasian_01--></T>
+                  <T n="weight">2</T>
+                </U>
+                <U>
+                  <T n="household_template">27232<!--HouseholdTemplate: HH_template_NPC_GD_singleMom_african_01--></T>
+                  <T n="weight">2</T>
+                </U>
+                <U>
+                  <T n="household_template">27244<!--HouseholdTemplate: HH_template_NPC_GD_newlyweds--></T>
+                </U>
+                <U>
+                  <T n="household_template">75895<!--HouseholdTemplate: HH_template_NPC_partnersWithKid_female--></T>
+                </U>
+                <U>
+                  <T n="household_template">75900<!--HouseholdTemplate: HH_template_NPC_GD_roomies_female--></T>
+                </U>
+                <U>
+                  <T n="household_template">75896<!--HouseholdTemplate: HH_template_NPC_GD_roomies_oddCouple--></T>
+                </U>
+              </L>
+            </U>
+            <U>
+              <T n="House Description">20384</T>
+              <L n="Household Templates">
+                <U>
+                  <T n="household_template">15949<!--HouseholdTemplate: HH_template_NPC_GD_creole--></T>
+                </U>
+                <U>
+                  <T n="household_template">27163<!--HouseholdTemplate: HH_template_NPC_GD_catlady--></T>
+                </U>
+                <U>
+                  <T n="household_template">27244<!--HouseholdTemplate: HH_template_NPC_GD_newlyweds--></T>
+                </U>
+                <U>
+                  <T n="household_template">27238<!--HouseholdTemplate: HH_template_NPC_GD_voodoo--></T>
+                </U>
+                <U>
+                  <T n="household_template">15951<!--HouseholdTemplate: HH_template_NPC_SO_wt--></T>
+                </U>
+                <U>
+                  <T n="household_template">27232<!--HouseholdTemplate: HH_template_NPC_GD_singleMom_african_01--></T>
+                </U>
+                <U>
+                  <T n="household_template">75903<!--HouseholdTemplate: HH_template_NPC_GD_onlyChild_asian_male_01--></T>
+                </U>
+                <U>
+                  <T n="household_template">75895<!--HouseholdTemplate: HH_template_NPC_partnersWithKid_female--></T>
+                </U>
+                <U>
+                  <T n="household_template">27215<!--HouseholdTemplate: HH_template_NPC_GD_worker--></T>
+                </U>
+                <U>
+                  <T n="household_template">75900<!--HouseholdTemplate: HH_template_NPC_GD_roomies_female--></T>
+                </U>
+                <U>
+                  <T n="household_template">75896<!--HouseholdTemplate: HH_template_NPC_GD_roomies_oddCouple--></T>
+                </U>
+                <U>
+                  <T n="household_template">27231<!--HouseholdTemplate: HH_template_NPC_GD_singleMom_caucasian_01--></T>
+                </U>
+                <U>
+                  <T n="household_template">75901<!--HouseholdTemplate: HH_template_NPC_GD_roomies_ThreesCo--></T>
+                </U>
+                <U>
+                  <T n="household_template">27358<!--HouseholdTemplate: HH_template_NPC_GD_adoptedKids_01--></T>
+                </U>
+                <U>
+                  <T n="household_template">27359<!--HouseholdTemplate: HH_template_NPC_GD_nuclearFamily_african_01--></T>
+                </U>
+              </L>
+            </U>
+            <U>
+              <T n="House Description">36244</T>
+              <L n="Household Templates">
+                <U>
+                  <T n="household_template">15951<!--HouseholdTemplate: HH_template_NPC_SO_wt--></T>
+                  <T n="weight">2</T>
+                </U>
+                <U>
+                  <T n="household_template">27244<!--HouseholdTemplate: HH_template_NPC_GD_newlyweds--></T>
+                  <T n="weight">2</T>
+                </U>
+                <U>
+                  <T n="household_template">27231<!--HouseholdTemplate: HH_template_NPC_GD_singleMom_caucasian_01--></T>
+                  <T n="weight">2</T>
+                </U>
+                <U>
+                  <T n="household_template">27232<!--HouseholdTemplate: HH_template_NPC_GD_singleMom_african_01--></T>
+                  <T n="weight">2</T>
+                </U>
+                <U>
+                  <T n="household_template">27244<!--HouseholdTemplate: HH_template_NPC_GD_newlyweds--></T>
+                </U>
+                <U>
+                  <T n="household_template">75895<!--HouseholdTemplate: HH_template_NPC_partnersWithKid_female--></T>
+                </U>
+                <U>
+                  <T n="household_template">75900<!--HouseholdTemplate: HH_template_NPC_GD_roomies_female--></T>
+                </U>
+                <U>
+                  <T n="household_template">75896<!--HouseholdTemplate: HH_template_NPC_GD_roomies_oddCouple--></T>
+                </U>
+              </L>
+            </U>
+            <U>
+              <T n="House Description">42525</T>
+              <L n="Household Templates">
+                <U>
+                  <T n="household_template">27358<!--HouseholdTemplate: HH_template_NPC_GD_adoptedKids_01--></T>
+                </U>
+                <U>
+                  <T n="household_template">27268<!--HouseholdTemplate: HH_template_NPC_GD_nuclearFamily_caucasian_01--></T>
+                </U>
+                <U>
+                  <T n="household_template">27359<!--HouseholdTemplate: HH_template_NPC_GD_nuclearFamily_african_01--></T>
+                </U>
+                <U>
+                  <T n="household_template">75901<!--HouseholdTemplate: HH_template_NPC_GD_roomies_ThreesCo--></T>
+                </U>
+                <U>
+                  <T n="household_template">75915<!--HouseholdTemplate: HH_template_NPC_GD_grandparents_asian_01--></T>
+                </U>
+              </L>
+            </U>
+          </L>
+        </U>
+      </U>
+      <U>
+        <T n="Region Description">93517</T>
+        <U n="Household Population Data">
+          <L n="street_description_to_templates">
+            <U>
+              <T n="House Description">93558</T>
+              <L n="Household Templates">
+                <U>
+                  <T n="household_template">15949<!--HouseholdTemplate: HH_template_NPC_GD_creole--></T>
+                </U>
+                <U>
+                  <T n="household_template">27163<!--HouseholdTemplate: HH_template_NPC_GD_catlady--></T>
+                </U>
+                <U>
+                  <T n="household_template">27244<!--HouseholdTemplate: HH_template_NPC_GD_newlyweds--></T>
+                </U>
+                <U>
+                  <T n="household_template">27238<!--HouseholdTemplate: HH_template_NPC_GD_voodoo--></T>
+                </U>
+                <U>
+                  <T n="household_template">15951<!--HouseholdTemplate: HH_template_NPC_SO_wt--></T>
+                </U>
+                <U>
+                  <T n="household_template">27232<!--HouseholdTemplate: HH_template_NPC_GD_singleMom_african_01--></T>
+                </U>
+                <U>
+                  <T n="household_template">75903<!--HouseholdTemplate: HH_template_NPC_GD_onlyChild_asian_male_01--></T>
+                </U>
+                <U>
+                  <T n="household_template">75895<!--HouseholdTemplate: HH_template_NPC_partnersWithKid_female--></T>
+                </U>
+                <U>
+                  <T n="household_template">27215<!--HouseholdTemplate: HH_template_NPC_GD_worker--></T>
+                </U>
+                <U>
+                  <T n="household_template">75900<!--HouseholdTemplate: HH_template_NPC_GD_roomies_female--></T>
+                </U>
+                <U>
+                  <T n="household_template">75896<!--HouseholdTemplate: HH_template_NPC_GD_roomies_oddCouple--></T>
+                </U>
+                <U>
+                  <T n="household_template">27231<!--HouseholdTemplate: HH_template_NPC_GD_singleMom_caucasian_01--></T>
+                </U>
+                <U>
+                  <T n="household_template">75901<!--HouseholdTemplate: HH_template_NPC_GD_roomies_ThreesCo--></T>
+                </U>
+                <U>
+                  <T n="household_template">27358<!--HouseholdTemplate: HH_template_NPC_GD_adoptedKids_01--></T>
+                </U>
+                <U>
+                  <T n="household_template">27359<!--HouseholdTemplate: HH_template_NPC_GD_nuclearFamily_african_01--></T>
+                </U>
+              </L>
+            </U>
+            <U>
+              <T n="House Description">93559</T>
+              <L n="Household Templates">
+                <U>
+                  <T n="household_template">15951<!--HouseholdTemplate: HH_template_NPC_SO_wt--></T>
+                  <T n="weight">2</T>
+                </U>
+                <U>
+                  <T n="household_template">27244<!--HouseholdTemplate: HH_template_NPC_GD_newlyweds--></T>
+                  <T n="weight">2</T>
+                </U>
+                <U>
+                  <T n="household_template">27231<!--HouseholdTemplate: HH_template_NPC_GD_singleMom_caucasian_01--></T>
+                  <T n="weight">2</T>
+                </U>
+                <U>
+                  <T n="household_template">27232<!--HouseholdTemplate: HH_template_NPC_GD_singleMom_african_01--></T>
+                  <T n="weight">2</T>
+                </U>
+                <U>
+                  <T n="household_template">27244<!--HouseholdTemplate: HH_template_NPC_GD_newlyweds--></T>
+                </U>
+                <U>
+                  <T n="household_template">75895<!--HouseholdTemplate: HH_template_NPC_partnersWithKid_female--></T>
+                </U>
+                <U>
+                  <T n="household_template">75900<!--HouseholdTemplate: HH_template_NPC_GD_roomies_female--></T>
+                </U>
+                <U>
+                  <T n="household_template">75896<!--HouseholdTemplate: HH_template_NPC_GD_roomies_oddCouple--></T>
+                </U>
+              </L>
+            </U>
+            <U>
+              <T n="House Description">93560</T>
+              <L n="Household Templates">
+                <U>
+                  <T n="household_template">27358<!--HouseholdTemplate: HH_template_NPC_GD_adoptedKids_01--></T>
+                </U>
+                <U>
+                  <T n="household_template">27268<!--HouseholdTemplate: HH_template_NPC_GD_nuclearFamily_caucasian_01--></T>
+                </U>
+                <U>
+                  <T n="household_template">27359<!--HouseholdTemplate: HH_template_NPC_GD_nuclearFamily_african_01--></T>
+                </U>
+                <U>
+                  <T n="household_template">75901<!--HouseholdTemplate: HH_template_NPC_GD_roomies_ThreesCo--></T>
+                </U>
+                <U>
+                  <T n="household_template">75915<!--HouseholdTemplate: HH_template_NPC_GD_grandparents_asian_01--></T>
+                </U>
+              </L>
+            </U>
+          </L>
+        </U>
+      </U>
+      <U>
+        <T n="Region Description">99995</T>
+        <U n="Household Population Data">
+          <L n="street_description_to_templates">
+            <U>
+              <T n="House Description">100124</T>
+              <L n="Household Templates">
+                <U>
+                  <T n="household_template">27358<!--HouseholdTemplate: HH_template_NPC_GD_adoptedKids_01--></T>
+                </U>
+                <U>
+                  <T n="household_template">27268<!--HouseholdTemplate: HH_template_NPC_GD_nuclearFamily_caucasian_01--></T>
+                </U>
+                <U>
+                  <T n="household_template">27359<!--HouseholdTemplate: HH_template_NPC_GD_nuclearFamily_african_01--></T>
+                </U>
+                <U>
+                  <T n="household_template">75901<!--HouseholdTemplate: HH_template_NPC_GD_roomies_ThreesCo--></T>
+                </U>
+                <U>
+                  <T n="household_template">75915<!--HouseholdTemplate: HH_template_NPC_GD_grandparents_asian_01--></T>
+                </U>
+              </L>
+            </U>
+            <U>
+              <T n="House Description">100125</T>
+              <L n="Household Templates">
+                <U>
+                  <T n="household_template">27358<!--HouseholdTemplate: HH_template_NPC_GD_adoptedKids_01--></T>
+                </U>
+                <U>
+                  <T n="household_template">27268<!--HouseholdTemplate: HH_template_NPC_GD_nuclearFamily_caucasian_01--></T>
+                </U>
+                <U>
+                  <T n="household_template">27359<!--HouseholdTemplate: HH_template_NPC_GD_nuclearFamily_african_01--></T>
+                </U>
+                <U>
+                  <T n="household_template">75901<!--HouseholdTemplate: HH_template_NPC_GD_roomies_ThreesCo--></T>
+                </U>
+                <U>
+                  <T n="household_template">75915<!--HouseholdTemplate: HH_template_NPC_GD_grandparents_asian_01--></T>
+                </U>
+              </L>
+            </U>
+            <U>
+              <T n="House Description">100126</T>
+              <L n="Household Templates">
+                <U>
+                  <T n="household_template">27358<!--HouseholdTemplate: HH_template_NPC_GD_adoptedKids_01--></T>
+                </U>
+                <U>
+                  <T n="household_template">27268<!--HouseholdTemplate: HH_template_NPC_GD_nuclearFamily_caucasian_01--></T>
+                </U>
+                <U>
+                  <T n="household_template">27359<!--HouseholdTemplate: HH_template_NPC_GD_nuclearFamily_african_01--></T>
+                </U>
+                <U>
+                  <T n="household_template">75901<!--HouseholdTemplate: HH_template_NPC_GD_roomies_ThreesCo--></T>
+                </U>
+                <U>
+                  <T n="household_template">75915<!--HouseholdTemplate: HH_template_NPC_GD_grandparents_asian_01--></T>
+                </U>
+              </L>
+            </U>
+            <U>
+              <T n="House Description">101536</T>
+              <L n="Household Templates">
+                <U>
+                  <T n="household_template">27358<!--HouseholdTemplate: HH_template_NPC_GD_adoptedKids_01--></T>
+                </U>
+                <U>
+                  <T n="household_template">27268<!--HouseholdTemplate: HH_template_NPC_GD_nuclearFamily_caucasian_01--></T>
+                </U>
+                <U>
+                  <T n="household_template">27359<!--HouseholdTemplate: HH_template_NPC_GD_nuclearFamily_african_01--></T>
+                </U>
+                <U>
+                  <T n="household_template">75901<!--HouseholdTemplate: HH_template_NPC_GD_roomies_ThreesCo--></T>
+                </U>
+                <U>
+                  <T n="household_template">75915<!--HouseholdTemplate: HH_template_NPC_GD_grandparents_asian_01--></T>
+                </U>
+              </L>
+            </U>
+          </L>
+        </U>
+      </U>
+    </L>
+    <T n="SIGNIFICANT_OTHER_MULTIPLIER">1.5</T>
+  </C>
+</M>

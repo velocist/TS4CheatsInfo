@@ -1,0 +1,242 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<I c="SuperInteraction" i="interaction" m="interactions.base.super_interaction" n="door_RingDoorbell" s="25211">
+  <L n="_constraints">
+    <U>
+      <L n="constraints">
+        <U>
+          <V n="value" t="front_door">
+            <U n="front_door">
+              <U n="line_of_sight">
+                <T n="max_line_of_sight_radius">2</T>
+              </U>
+            </U>
+          </V>
+        </U>
+      </L>
+    </U>
+  </L>
+  <V t="participant" n="_icon">
+    <U n="participant">
+      <L n="participant_type">
+        <E>Object</E>
+      </L>
+    </U>
+  </V>
+  <V t="enabled" n="_saveable" />
+  <L n="_static_commodities">
+    <U>
+      <T n="static_commodity">16433<!--StaticCommodity: StaticCommodity_RingDoorbell--></T>
+    </U>
+  </L>
+  <T n="allow_user_directed">False</T>
+  <T n="attention_cost">0.5</T>
+  <V t="one_shot" n="basic_content">
+    <U n="one_shot">
+      <U n="animation_ref">
+        <T n="factory">31008<!--AnimationElement: Door_Ring_Doorbell--></T>
+        <U n="overrides">
+          <V n="balloons" t="enabled">
+            <L n="enabled">
+              <U>
+                <L n="balloon_choices">
+                  <U>
+                    <V n="item" t="balloon_category">
+                      <T n="balloon_category">38587<!--BalloonCategory: Visit_Thought--></T>
+                    </V>
+                  </U>
+                  <U>
+                    <V n="item" t="balloon_icon">
+                      <U n="balloon_icon">
+                        <V n="icon" t="participant">
+                          <U n="participant">
+                            <L n="participant_type">
+                              <E>LotOwners</E>
+                            </L>
+                          </U>
+                        </V>
+                        <T n="weight">5</T>
+                      </U>
+                    </V>
+                  </U>
+                </L>
+                <T n="balloon_delay">2</T>
+                <T n="balloon_delay_random_offset">1</T>
+                <L n="balloon_target">
+                  <E>Actor</E>
+                </L>
+              </U>
+            </L>
+          </V>
+        </U>
+      </U>
+    </U>
+  </V>
+  <L n="basic_extras">
+    <V t="broadcaster">
+      <U n="broadcaster">
+        <L n="broadcaster_types">
+          <U>
+            <T n="item">162170<!--Broadcaster: broadcaster_PetReactions_Dog_Door--></T>
+          </U>
+        </L>
+        <E n="participant">Object</E>
+      </U>
+    </V>
+    <V t="loot">
+      <U n="loot">
+        <L n="loot_list">
+          <T>254342<!--LootActions: loot_HauntedHouse_DoorSpecters--></T>
+        </L>
+      </U>
+    </V>
+  </L>
+  <V t="disabled" n="content_score" />
+  <T n="display_name">0x7D73F407<!--String: "Llamar a la puerta"--></T>
+  <U n="display_name_text_tokens">
+    <L n="tokens">
+      <V t="participant_type">
+        <U n="participant_type">
+          <V t="from_participant" n="objects">
+            <U n="from_participant">
+              <E n="participant">Actor</E>
+            </U>
+          </V>
+        </U>
+      </V>
+      <V t="participant_type">
+        <U n="participant_type">
+          <V t="from_participant" n="objects">
+            <U n="from_participant">
+              <E n="participant">Object</E>
+            </U>
+          </V>
+        </U>
+      </V>
+    </L>
+  </U>
+  <L n="interaction_category_tags">
+    <E>Interaction_VisitLot</E>
+    <E>Interaction_Super</E>
+    <E>Interaction_All</E>
+  </L>
+  <V t="single" n="outcome">
+    <U n="single">
+      <U n="actions">
+        <L n="basic_extras">
+          <V t="notification">
+            <U n="notification">
+              <T n="allow_autonomous">True</T>
+              <V n="dialog" t="single">
+                <V n="single" t="literal">
+                  <U n="literal">
+                    <V t="enabled" n="icon">
+                      <V t="participant" n="enabled" />
+                    </V>
+                    <V n="text" t="single">
+                      <T n="single">0x67849D96<!--String: "¿Hola? ¿Hay alguien en casa?"--></T>
+                    </V>
+                    <V n="title" t="enabled">
+                      <T n="enabled">0x78AB947E<!--String: "Visita en la puerta"--></T>
+                    </V>
+                    <E n="visual_type">SPEECH</E>
+                  </U>
+                </V>
+              </V>
+              <T n="limit_to_one_notification">True</T>
+              <E n="recipient_subject">Actor</E>
+            </U>
+          </V>
+        </L>
+        <L n="loot_list">
+          <T>100157<!--LootActions: loot_Buff_walkbyNPC_ringDoorbell_Cooldown--></T>
+          <T>120151<!--LootActions: Loot_WelcomeWagon_WelcomingNeighbors_TNS--></T>
+          <T>154881<!--LootActions: loot_Buff_Event_NPC_Visited_Mailbox--></T>
+          <T>234256<!--LootActions: Loot_CommunityCloseness_Situations_RingDoorbellTNS--></T>
+        </L>
+      </U>
+    </U>
+  </V>
+  <U n="posture_preferences">
+    <T n="apply_penalties">False</T>
+    <T n="prefer_clicked_part">False</T>
+  </U>
+  <E n="scoring_priority">NORMAL</E>
+  <T n="subaction_selection_weight">1</T>
+  <E n="target_type">OBJECT</E>
+  <L n="test_globals">
+    <V t="sim_info">
+      <U n="sim_info">
+        <V t="specified" n="ages">
+          <L n="specified">
+            <E>TEEN</E>
+            <E>YOUNGADULT</E>
+            <E>ADULT</E>
+            <E>ELDER</E>
+            <E>CHILD</E>
+          </L>
+        </V>
+        <V t="specified" n="species">
+          <U n="specified">
+            <L n="species">
+              <E />
+            </L>
+          </U>
+        </V>
+        <E n="who">Actor</E>
+      </U>
+    </V>
+    <V t="lot_owner">
+      <U n="lot_owner">
+        <T n="consider_rented_lot_as_owned">False</T>
+        <T n="owns_lot">False</T>
+      </U>
+    </V>
+    <V t="buff">
+      <U n="buff">
+        <L n="blacklist">
+          <T>154883<!--Buff: buff_Event_NPC_VisitedMailbox_Cooldown--></T>
+        </L>
+      </U>
+    </V>
+    <V t="situation_running_test">
+      <U n="situation_running_test">
+        <V t="enabled" n="situation_blacklist">
+          <L n="enabled">
+            <T>34413<!--GreetedPlayerVisitingNPCSituation: Situation_GreetedPlayerVisitingNPC--></T>
+          </L>
+        </V>
+      </U>
+    </V>
+    <V t="state">
+      <U n="state">
+        <T n="value">135096<!--ObjectStateValue: FrontDoor_IsFrontDoor--></T>
+      </U>
+    </V>
+    <V t="has_lot_owner">
+      <U n="has_lot_owner">
+        <V n="tooltip" t="enabled">
+          <T n="enabled">0x65EF68B7<!--String: "Aquí no vive nadie."--></T>
+        </V>
+      </U>
+    </V>
+    <V t="relationship">
+      <U n="relationship">
+        <U n="prohibited_relationship_bits">
+          <L n="match_any">
+            <T>129869<!--RelationshipBit: shortTermBits_KickedOut_InappropriateBehavior--></T>
+          </L>
+        </U>
+        <L n="target_sim">
+          <E>LotOwners</E>
+        </L>
+        <V t="enabled" n="tooltip">
+          <T n="enabled">0x8AF0DDA5<!--String: "¡Te acaban de echar! Vuelve más tarde."--></T>
+        </V>
+      </U>
+    </V>
+    <V t="test_set_reference">
+      <T n="test_set_reference">200045<!--TestSetInstance: testSetInstance_CelebrityHomeLot_KnowsOwners--></T>
+    </V>
+  </L>
+  <T n="time_overhead">5</T>
+</I>

@@ -1,0 +1,84 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<I c="SituationGoalObjectInteraction" i="situation_goal" m="situations.situation_goal_object_interaction" n="situationGoalObjectInteraction_CareerScientist_Transform_Barrel_Backup" s="115509">
+  <V t="enabled" n="_display_data">
+    <U n="enabled">
+      <V t="enabled" n="instance_display_icon">
+        <T p="InEP01\UI\Icons\Events\EventGoal_SimRay.png" n="enabled">2f7d0004:00000000:6c88e65af065393a</T>
+      </V>
+      <V n="instance_display_name" t="enabled">
+        <T n="enabled">0xFDAFEE79<!--String: "Transformar un barril"--></T>
+      </V>
+      <V n="instance_display_tooltip" t="enabled">
+        <T n="enabled">0xD036D9BA<!--String: "Si dispones de Sim-Rayo, selecciona un barril y elige Transformar."--></T>
+      </V>
+    </U>
+  </V>
+  <U n="_goal_test">
+    <L n="affordances">
+      <T>106859<!--SuperInteraction: simRay_Transform_Object--></T>
+      <T>116720<!--SuperInteraction: simRay_Transform_Object_WallObject--></T>
+    </L>
+    <T n="consider_user_cancelled_as_failure">False</T>
+    <U n="target_filters">
+      <V n="object_tags" t="enabled">
+        <U n="enabled">
+          <L n="tag_set">
+            <E>Func_Barrel</E>
+          </L>
+        </U>
+      </V>
+    </U>
+    <E n="test_event">InteractionComplete</E>
+  </U>
+  <L n="_pre_tests">
+    <V t="inventory">
+      <U n="inventory">
+        <V n="contents_check" t="has_object_with_states">
+          <U n="has_object_with_states">
+            <V t="tag" n="object_requirement">
+              <U n="tag">
+                <U n="tag">
+                  <L n="tag_set">
+                    <E>Func_SimRay</E>
+                  </L>
+                </U>
+              </U>
+            </V>
+            <L n="state_set">
+              <T>114377<!--CommodityBasedObjectStateValue: osv_Upgrade_SimRay_TransformObject_Completed--></T>
+            </L>
+          </U>
+        </V>
+      </U>
+    </V>
+    <V t="object_criteria">
+      <U n="object_criteria">
+        <V n="identity_test" t="tags">
+          <U n="tags">
+            <L n="tag_set">
+              <E>Func_Barrel</E>
+            </L>
+          </U>
+        </V>
+        <T n="on_active_lot">True</T>
+        <T n="owned">False</T>
+      </U>
+    </V>
+    <V t="career">
+      <U n="career">
+        <V n="test_type" t="career_reference">
+          <U n="career_reference">
+            <V t="specific_career" n="career">
+              <T n="specific_career">107255<!--Career: career_Adult_Active_Scientist--></T>
+            </V>
+            <V t="enabled" n="user_level" />
+          </U>
+        </V>
+      </U>
+    </V>
+  </L>
+  <T p="InGame\Audio\Bumper\bumper_event_goal_complete.propx" n="audio_sting_on_complete">39b2aa4a:00000000:ed52c39bcc2a7111</T>
+  <L n="role_tags">
+    <E>Role_Scientist</E>
+  </L>
+</I>

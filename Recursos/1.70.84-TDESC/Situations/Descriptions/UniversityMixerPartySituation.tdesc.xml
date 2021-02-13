@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+
+<TuningRoot>
+    <Instance instance_type="situation" class="UniversityMixerPartySituation" module="situations.complex.university_mixer_situation" muid="2D9159D609ED8422" instance_subclasses_only="False" parents="SituationComplexCommon, SituationComplex, Situation" path="Situations\Descriptions" use_guid_for_reference="True">
+        <Deleted name="_buff" muid="B3205BA7F78E1782" />
+
+        <Deleted name="_cost" muid="9F2530136B9B677E" />
+
+        <Deleted name="_display_name" muid="1B699AA6E596BAC" />
+
+        <Deleted name="_icon" muid="A0A10969E8E688C" />
+
+        <Deleted name="_initiating_sim_tests" muid="DA6D8791B0B7A20" />
+
+        <Deleted name="_level_data" muid="82233450A49CE89F" />
+
+        <Deleted name="_main_goal_visibility_test" muid="9F63E25C902FAC88" />
+
+        <Deleted name="_relationship_between_job_members" muid="134FCD8BC016B55F" />
+
+        <Deleted name="_resident_job" muid="4017E6B35ADB728" />
+
+        <Deleted name="audio_sting_on_start" muid="22036BE683E581B5" />
+
+        <Deleted name="background_audio" muid="E65FDDB7DD6C0BBE" />
+
+        <Deleted name="category" muid="5F5F7B6778D3E6C8" />
+
+        <TunableTuple name="cleanup_party_state" class="Tunable_CleanupJuiceKeg" display="3. Party Cleanup State" muid="37C4A3AA00DD25A9" description="The state to cleanup the juice keg and end the party" Deprecated="False" filter="0" group="Situation State">
+            <Tunable type="bool" name="allow_join_situation" class="Tunable" default="True" display="Allow Join Situation" muid="580B7F52E996A15D" description="Whether the situation is allowed to join at this state." Deprecated="False" filter="0" group="General" />
+            <TunableTuple name="interaction_of_interest" class="TunableInteractionOfInterest" display="Interaction Of Interest" muid="E19C7B6D67E54E5A" description="The interaction that when run will cause GPE defined behavior&#xA;to run." Deprecated="False" filter="0" group="General">
+                <TunableList name="affordances" class="TunableList" display="Affordances" muid="F03661B073758E08" description="The Sim must have started either any affordance in this list or an&#xA;interaction matching one of the tags in this tunable's Tags&#xA;field." Deprecated="False" filter="0" group="General">
+                    <Tunable type="interaction" class="TunableReference" muid="32E7F95991158309" allow_none="False" Deprecated="False" filter="0" group="General" pack_safe="True" />
+                </TunableList>
+                <TunableList name="tags" class="TunableSet" display="Tags" muid="E111ED274519A2B" description="The Sim must have run either an interaction matching one of these&#xA;Tags or an affordance from the list of Affordances in this&#xA;tunable." Deprecated="False" filter="0" group="General" unique_entries="true">
+                    <TunableEnum type="Tag" class="TunableEnumEntry" default="INVALID" muid="465A0649258EB6E9" dynamic_entries="tag.Tag._elements" static_entries="tag.Tag" Deprecated="False" filter="0" group="General" />
+                </TunableList>
+            </TunableTuple>
+            <TunableList name="job_and_role_changes" class="TunableMapping" display="Job And Role Changes" muid="F35619F6975FAF97" mapping_key="Situation Job" mapping_value="Role State" description="A mapping between situation jobs and role states that defines&#xA;what role states we want to switch to for sims on which jobs&#xA;when this situation state is entered." Deprecated="False" filter="0" group="General">
+                <TunableTuple class="TunableTuple" muid="BD460185758D27FA" Deprecated="False" filter="0" group="General">
+                    <Tunable type="role_state" name="Role State" class="TunableReference" display="Role State" muid="6D1D75D686AE2BD3" description="The role state that we will switch sims of the linked job&#xA;into." allow_none="False" Deprecated="False" filter="0" group="General" />
+                    <Tunable type="situation_job" name="Situation Job" class="TunableReference" display="Situation Job" muid="76E62F3157E970DB" description="A reference to a SituationJob that we will use to change&#xA;sim's role state." allow_none="False" Deprecated="False" filter="0" group="General" />
+                </TunableTuple>
+            </TunableList>
+            <TunableVariant type="None" name="time_out" class="OptionalTunable" default="disabled" display="Time Out" muid="E9FAA96CBAF7D46C" description="How long this state will last before time expired. Please talk to the GPE who implemented the specific&#xA;situation to see what the state will do on time expired." Deprecated="False" filter="0" group="General">
+                <Tunable name="disabled" class="TunableExistance" display="Disabled" muid="29D046AC535F106D" />
+                <Tunable type="float" name="enabled" class="TunableSimMinute" default="15" display="Enabled" muid="D13BFFA5E2B1D2BD" min="1" max="None" tuning_state="NeedsTuning" Deprecated="False" filter="0" group="General" />
+            </TunableVariant>
+        </TunableTuple>
+
+        <Deleted name="compatible_venues" muid="B66126916B2F43E4" />
+
+        <Deleted name="creation_ui_option" muid="743C41DF556D023A" />
+
+        <Deleted name="entitlement" muid="913632AA998F8785" />
+
+        <Deleted name="exclusivity" muid="48522F615D00F46F" />
+
+        <Deleted name="force_invite_only" muid="969ACFFD3405A4B1" />
+
+        <Deleted name="goal_button_text" muid="B4AA203EB07E42BF" />
+
+        <Deleted name="goal_sub_text" muid="4FD56CE155635B68" />
+
+        <Deleted name="highlight_first_incomplete_minor_goal" muid="275A691AADA7551F" />
+
+        <Deleted name="job_display_ordering" muid="FD93E57FB0283D5A" />
+
+        <TunableTuple name="juice_keg_bearer_job_and_role" class="TunableSituationJobAndRoleState" display="Juice Keg Bearer Job And Role" muid="BC6D53DAF7D055C6" description="The job and role state for the bearer of the juice keg." Deprecated="False" filter="0" group="General">
+            <Tunable type="role_state" name="role_state" class="TunableReference" display="Role State" muid="5C9EC6F8AE3B0520" description="A role state the sim assigned to the job will perform" allow_none="False" Deprecated="False" filter="0" group="General" />
+            <Tunable type="situation_job" name="situation_job" class="TunableReference" display="Situation Job" muid="62AABE66666F7ED8" description="A reference to a SituationJob that can be performed at this Situation." allow_none="False" Deprecated="False" filter="0" group="General" />
+        </TunableTuple>
+
+        <TunableEnum type="Tag" name="juice_keg_tag" class="TunableEnumWithFilter" default="INVALID" display="Juice Keg Tag" muid="A9B37CFFBA25884F" dynamic_entries="tag.Tag._elements" static_entries="tag.Tag" description="Tag used to find the juice keg supplied by the situation." Deprecated="False" dynamic_entries_prefix="func" filter="0" group="General" />
+
+        <Deleted name="main_goal" muid="17CB427C4EA73218" />
+
+        <Deleted name="main_goal_audio_sting" muid="1FEA2F86E48B8685" />
+
+        <Deleted name="max_participants" muid="8B7C09D69567A9B6" />
+
+        <Deleted name="minor_goal_chains" muid="25BE22332F456CE0" />
+
+        <TunableTuple name="mixer_party_state" class="Tunable_MixerParty" display="2. Mixer Party State" muid="4019314A006DC440" description="The state to represent the party itself." Deprecated="False" filter="0" group="Situation State">
+            <Tunable type="bool" name="allow_join_situation" class="Tunable" default="True" display="Allow Join Situation" muid="72B8E5A617DE352" description="Whether the situation is allowed to join at this state." Deprecated="False" filter="0" group="General" />
+            <TunableList name="job_and_role_changes" class="TunableMapping" display="Job And Role Changes" muid="4C25BA2F4F8FDC77" mapping_key="Situation Job" mapping_value="Role State" description="A mapping between situation jobs and role states that defines&#xA;what role states we want to switch to for sims on which jobs&#xA;when this situation state is entered." Deprecated="False" filter="0" group="General">
+                <TunableTuple class="TunableTuple" muid="4E00C0A72B661E9A" Deprecated="False" filter="0" group="General">
+                    <Tunable type="role_state" name="Role State" class="TunableReference" display="Role State" muid="F75995273AAD3A52" description="The role state that we will switch sims of the linked job&#xA;into." allow_none="False" Deprecated="False" filter="0" group="General" />
+                    <Tunable type="situation_job" name="Situation Job" class="TunableReference" display="Situation Job" muid="4FE89DC5B9C38630" description="A reference to a SituationJob that we will use to change&#xA;sim's role state." allow_none="False" Deprecated="False" filter="0" group="General" />
+                </TunableTuple>
+            </TunableList>
+            <TunableVariant type="None" name="time_out" class="OptionalTunable" default="disabled" display="Time Out" muid="CA082D09AEC0FAE" description="How long this state will last before time expired. Please talk to the GPE who implemented the specific&#xA;situation to see what the state will do on time expired." Deprecated="False" filter="0" group="General">
+                <Tunable name="disabled" class="TunableExistance" display="Disabled" muid="E9CFCFEF55BDB146" />
+                <Tunable type="float" name="enabled" class="TunableSimMinute" default="15" display="Enabled" muid="F53626FB29FE7E9" min="1" max="None" tuning_state="NeedsTuning" Deprecated="False" filter="0" group="General" />
+            </TunableVariant>
+        </TunableTuple>
+
+        <Deleted name="recommended_job_object_notification" muid="478361B17D3727EC" />
+
+        <Deleted name="recommended_job_object_text" muid="F39E065175C309B6" />
+
+        <Deleted name="screen_slam_bronze" muid="224EE4B30E09EA40" />
+
+        <Deleted name="screen_slam_gold" muid="59AADE9FFA539667" />
+
+        <Deleted name="screen_slam_no_medal" muid="2E9440A4AAA25FAF" />
+
+        <Deleted name="screen_slam_silver" muid="9F11D3635F84C3B3" />
+
+        <TunableTuple name="setup_juice_keg_state" class="Tunable_SetupJuiceKeg" display="1. Setup Juice Keg State" muid="D7C63181EABDC1CB" description="The state to bring in the keg bearer and have the juice keg set up on the lot." Deprecated="False" filter="0" group="Situation State">
+            <Tunable type="bool" name="allow_join_situation" class="Tunable" default="True" display="Allow Join Situation" muid="C821D59367F87BA4" description="Whether the situation is allowed to join at this state." Deprecated="False" filter="0" group="General" />
+            <TunableTuple name="interaction_of_interest" class="TunableInteractionOfInterest" display="Interaction Of Interest" muid="7421BB596C200BD7" description="The interaction that when run will cause GPE defined behavior&#xA;to run." Deprecated="False" filter="0" group="General">
+                <TunableList name="affordances" class="TunableList" display="Affordances" muid="1DAA962801EA2A5F" description="The Sim must have started either any affordance in this list or an&#xA;interaction matching one of the tags in this tunable's Tags&#xA;field." Deprecated="False" filter="0" group="General">
+                    <Tunable type="interaction" class="TunableReference" muid="76086887A86AD8DA" allow_none="False" Deprecated="False" filter="0" group="General" pack_safe="True" />
+                </TunableList>
+                <TunableList name="tags" class="TunableSet" display="Tags" muid="A31E9444013A1655" description="The Sim must have run either an interaction matching one of these&#xA;Tags or an affordance from the list of Affordances in this&#xA;tunable." Deprecated="False" filter="0" group="General" unique_entries="true">
+                    <TunableEnum type="Tag" class="TunableEnumEntry" default="INVALID" muid="72654242AD6F63DC" dynamic_entries="tag.Tag._elements" static_entries="tag.Tag" Deprecated="False" filter="0" group="General" />
+                </TunableList>
+            </TunableTuple>
+            <TunableList name="job_and_role_changes" class="TunableMapping" display="Job And Role Changes" muid="E4FF5D37C2B7411F" mapping_key="Situation Job" mapping_value="Role State" description="A mapping between situation jobs and role states that defines&#xA;what role states we want to switch to for sims on which jobs&#xA;when this situation state is entered." Deprecated="False" filter="0" group="General">
+                <TunableTuple class="TunableTuple" muid="C85E1B3B7A754D4A" Deprecated="False" filter="0" group="General">
+                    <Tunable type="role_state" name="Role State" class="TunableReference" display="Role State" muid="15B55F0B24D8E28E" description="The role state that we will switch sims of the linked job&#xA;into." allow_none="False" Deprecated="False" filter="0" group="General" />
+                    <Tunable type="situation_job" name="Situation Job" class="TunableReference" display="Situation Job" muid="3499030E35CFB1D7" description="A reference to a SituationJob that we will use to change&#xA;sim's role state." allow_none="False" Deprecated="False" filter="0" group="General" />
+                </TunableTuple>
+            </TunableList>
+            <TunableVariant type="None" name="time_out" class="OptionalTunable" default="disabled" display="Time Out" muid="B87E250A2F4853C4" description="How long this state will last before time expired. Please talk to the GPE who implemented the specific&#xA;situation to see what the state will do on time expired." Deprecated="False" filter="0" group="General">
+                <Tunable name="disabled" class="TunableExistance" display="Disabled" muid="9AD8D54467345269" />
+                <Tunable type="float" name="enabled" class="TunableSimMinute" default="15" display="Enabled" muid="2EE23D71E13CEF16" min="1" max="None" tuning_state="NeedsTuning" Deprecated="False" filter="0" group="General" />
+            </TunableVariant>
+        </TunableTuple>
+
+        <Deleted name="situation_description" muid="CE1E7EDB8A142FFD" />
+
+        <Deleted name="suppress_scoring_progress_bar" muid="6449185FECF7EFD3" />
+
+        <Deleted name="targeted_situation" muid="450FDD65E5AFEFF4" />
+
+        <Deleted name="travel_request_behavior" muid="DF5004BADA6D2901" />
+
+        <Deleted name="venue_invitation_message" muid="7C2F991BB60335B3" />
+
+        <Deleted name="venue_situation_player_job" muid="AE7C1D0D1383C2B5" />
+    </Instance>
+
+    <VersionHistory>
+        <ActionList>
+            <Action type="kRemove" old_muid="18E1F2B1D6BAAED4" />
+            <Action type="kRemove" old_muid="494C661363723A08" />
+            <Action type="kRemove" old_muid="D5423E34BD257817" />
+            <Action type="kRemove" old_muid="557884AABF5102D8" />
+            <Action type="kRemove" old_muid="D682F046EB310435" />
+            <Action type="kRemove" old_muid="2B17466E9A861437" />
+            <Action type="kRemove" old_muid="9E488449490A134A" />
+            <Action type="kRemove" old_muid="D9FD3C41005422C8" />
+            <Action type="kRemove" old_muid="AFB2FC99598721C" />
+            <Action type="kRemove" old_muid="8A6B1E4DEFA30C1B" />
+            <Action type="kRemove" old_muid="937CF6B95C77173D" />
+            <Action type="kRemove" old_muid="D90F65699B1CC85C" />
+            <Action type="kRemove" old_muid="48CEF55497C2DA81" />
+            <Action type="kRemove" old_muid="D779C5F740199122" />
+            <Action type="kRemove" old_muid="1D8BE1100E73B12A" />
+            <Action type="kRemove" old_muid="25F3B3EC7345C94" />
+            <Action type="kRemove" old_muid="F683A8CB298E2976" />
+            <Action type="kRemove" old_muid="793C3E95F2F3D6DD" />
+            <Action type="kRemove" old_muid="4DDD1A10C4E9EB9B" />
+            <Action type="kRemove" old_muid="52D93CCE43B24790" />
+            <Action type="kRemove" old_muid="B31A2590F44414FB" />
+            <Action type="kRemove" old_muid="B791FEEB0A080CE1" />
+            <Action type="kRemove" old_muid="154A65D52E0544A1" />
+            <Action type="kRemove" old_muid="43FE36E2612A6425" />
+            <Action type="kRemove" old_muid="A9451CC398564CD2" />
+            <Action type="kRemove" old_muid="4D9E17BA6E7525F" />
+            <Action type="kRemove" old_muid="9E4BA4649FE76FD1" />
+            <Action type="kRemove" old_muid="A1D44A43DCAC1937" />
+            <Action type="kRemove" old_muid="1778ABEEDE97AA90" />
+            <Action type="kRemove" old_muid="212058D651C79697" />
+            <Action type="kRemove" old_muid="6C237919CECC0FB5" />
+            <Action type="kRemove" old_muid="9F3DFFD3C7C6089D" />
+            <Action type="kRemove" old_muid="DE476C488F205FAC" />
+            <Action type="kRemove" old_muid="CCE466AEE6B3D550" />
+            <Action type="kRemove" old_muid="4EB915B6BB3948E2" />
+        </ActionList>
+
+        <ActionList>
+            <Action type="kRename" old_muid="E44AFC4E4AEB286C" new_muid="B66126916B2F43E4" />
+        </ActionList>
+
+        <ActionList>
+            <Action type="kRemove" old_muid="9D368E824C2DD0B" />
+            <Action type="kRemove" old_muid="8E0CCCD9580398C1" />
+        </ActionList>
+    </VersionHistory>
+</TuningRoot>

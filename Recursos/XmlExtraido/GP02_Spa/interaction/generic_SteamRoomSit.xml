@@ -1,0 +1,357 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<I c="SuperInteraction" i="interaction" m="interactions.base.super_interaction" n="generic_SteamRoomSit" s="120223">
+  <V t="participant" n="_icon">
+    <U n="participant">
+      <L n="participant_type">
+        <E>Object</E>
+      </L>
+    </U>
+  </V>
+  <T n="_provided_posture_type">120222<!--Posture: posture_SteamRoomSit--></T>
+  <V t="enabled" n="_saveable" />
+  <T n="allow_autonomous">False</T>
+  <T n="allow_user_directed">False</T>
+  <T n="attention_cost">0.5</T>
+  <V n="basic_content" t="flexible_length">
+    <U n="flexible_length">
+      <L n="conditional_actions">
+        <V t="list_reference">
+          <T n="list_reference">40705<!--ExitConditionList: ExitConditionList_MotivesNearFail--></T>
+        </V>
+        <V t="list_reference">
+          <T n="list_reference">121668<!--ExitConditionList: ExitConditionList_SteamRoom_Relax--></T>
+        </V>
+        <V t="literal">
+          <U n="literal">
+            <L n="conditions">
+              <V t="buff_based">
+                <U n="buff_based">
+                  <T n="buff">122213<!--Buff: buff_Object_SteamRoom_Hidden_GetOut--></T>
+                  <E n="timing">HAS_BUFF</E>
+                </U>
+              </V>
+            </L>
+            <E n="interaction_action">EXIT_NATURALLY</E>
+          </U>
+        </V>
+      </L>
+      <V n="content" t="staging_content">
+        <U n="staging_content">
+          <U n="content_set">
+            <L n="affordance_links">
+              <T>119043<!--MixerInteraction: steamRoom_Mixer_DeepBreath--></T>
+              <T>119045<!--MixerInteraction: steamRoom_Mixer_FanSelf--></T>
+              <T>119044<!--MixerInteraction: steamRoom_Mixer_LeanBack--></T>
+              <T>119042<!--MixerInteraction: steamRoom_Mixer_WipeSweat--></T>
+              <T>119828<!--MixerInteraction: steamRoom_Mixer_DeathWarning--></T>
+              <T>120239<!--MixerInteraction: steamRoom_Mixer_BadSmell--></T>
+              <T>121996<!--MixerInteraction: steamRoom_Mixer_FanSelf_OverExposed--></T>
+              <T>121997<!--MixerInteraction: steamRoom_Mixer_WipeSweat_OverExposed--></T>
+            </L>
+          </U>
+        </U>
+      </V>
+      <V n="periodic_stat_change" t="enabled">
+        <U n="enabled">
+          <U n="operation_actions">
+            <L n="actions">
+              <T>120049<!--LootActions: loot_Buff_SteamRoom--></T>
+              <T>245836<!--LootActions: loot_SlowExperiences_Progress_Gain_Large_5TickRate--></T>
+            </L>
+            <T n="alarm_interval">5</T>
+          </U>
+          <L n="operations">
+            <V t="statistic_change">
+              <U n="statistic_change">
+                <T n="advertise">False</T>
+                <T n="amount">-0.25</T>
+                <T n="exclusive_to_owning_si">True</T>
+                <T n="stat">16575<!--Commodity: commodity_dirtiness--></T>
+                <L n="subject">
+                  <E>Object</E>
+                </L>
+                <L n="tests">
+                  <L>
+                    <V t="test_set_reference">
+                      <T n="test_set_reference">229174<!--TestSetInstance: testSet_Venue_Residential_Allow_Actor--></T>
+                    </V>
+                  </L>
+                </L>
+                <V t="use_default" n="text" />
+              </U>
+            </V>
+            <V t="statistic_change">
+              <U n="statistic_change">
+                <T n="amount">0.7</T>
+                <T n="exclusive_to_owning_si">False</T>
+                <T n="stat">119390<!--Commodity: commodity_Buff_Object_SteamRoom_Comfort--></T>
+              </U>
+            </V>
+            <V t="statistic_change">
+              <U n="statistic_change">
+                <T n="amount">0.5</T>
+                <T n="exclusive_to_owning_si">False</T>
+                <T n="stat">119409<!--Commodity: commodity_Buff_Object_SteamRoom_Exposure--></T>
+              </U>
+            </V>
+            <V t="statistic_set_max">
+              <U n="statistic_set_max">
+                <T n="stat">16471<!--Commodity: commodity_Emotion_Autonomy_Stressed--></T>
+              </U>
+            </V>
+            <V t="statistic_change">
+              <U n="statistic_change">
+                <T n="amount">-0.15</T>
+                <T n="stat">16657<!--Commodity: motive_Hygiene--></T>
+                <L n="tests">
+                  <L>
+                    <V t="state">
+                      <U n="state">
+                        <T n="value">15131<!--ObjectStateValue: DirtyState_Dirty--></T>
+                      </U>
+                    </V>
+                  </L>
+                </L>
+              </U>
+            </V>
+            <V t="statistic_change">
+              <U n="statistic_change">
+                <T n="amount">0.333333333333333</T>
+                <T n="stat">16655<!--Commodity: motive_Fun--></T>
+              </U>
+            </V>
+            <V t="statistic_change">
+              <U n="statistic_change">
+                <T n="amount">-0.01</T>
+                <T n="exclusive_to_owning_si">False</T>
+                <T n="stat">16633<!--Commodity: commodity_Object_Brokenness--></T>
+                <L n="subject">
+                  <E>Object</E>
+                </L>
+                <L n="tests">
+                  <L>
+                    <V t="test_set_reference">
+                      <T n="test_set_reference">229174<!--TestSetInstance: testSet_Venue_Residential_Allow_Actor--></T>
+                    </V>
+                  </L>
+                </L>
+              </U>
+            </V>
+            <V t="statistic_change">
+              <U n="statistic_change">
+                <T n="amount">0.5</T>
+                <T n="stat">16657<!--Commodity: motive_Hygiene--></T>
+                <L n="subject">
+                  <E>Actor</E>
+                </L>
+                <L n="tests">
+                  <L>
+                    <V t="trait">
+                      <U n="trait">
+                        <L n="whitelist_traits">
+                          <T>211545<!--Trait: trait_OccultMermaid_TYAE--></T>
+                        </L>
+                      </U>
+                    </V>
+                  </L>
+                </L>
+              </U>
+            </V>
+            <V t="reference">
+              <T n="reference">249721<!--PeriodicStatChangeOperation: periodicStatChangeOperation_Lifestyles_Progress_Sedentary--></T>
+            </V>
+            <V t="reference">
+              <T n="reference">249739<!--PeriodicStatChangeOperation: periodicStatChangeOperation_Lifestyles_Liked_Sedentary--></T>
+            </V>
+            <V t="reference">
+              <T n="reference">252965<!--PeriodicStatChangeOperation: periodicStatChange_Lifestyles_Sedentary_Seated--></T>
+            </V>
+            <V t="statistic_change_by_category">
+              <U n="statistic_change_by_category">
+                <V n="change" t="percent_change">
+                  <U n="percent_change">
+                    <T n="percent_change_amount">-1</T>
+                  </U>
+                </V>
+                <E n="statistic_category">Injury_Buffs</E>
+              </U>
+            </V>
+          </L>
+        </U>
+      </V>
+      <T n="start_autonomous_inertial">False</T>
+      <V t="enabled" n="statistic_reduction_by_category">
+        <U n="enabled">
+          <L n="categories">
+            <E>Stressed_Buffs</E>
+          </L>
+          <T n="rate">2</T>
+        </U>
+      </V>
+    </U>
+  </V>
+  <L n="basic_extras">
+    <V t="buff">
+      <U n="buff">
+        <U n="buff_type">
+          <T n="buff_type">119633<!--Buff: buff_Object_SteamRoom_Hidden_Relaxing--></T>
+        </U>
+      </U>
+    </V>
+    <V t="state_change">
+      <U n="state_change">
+        <V n="new_value" t="single_value">
+          <U n="single_value">
+            <T n="new_value">35296<!--ObjectStateValue: GenericOnOff_On--></T>
+          </U>
+        </V>
+        <V t="immediately" n="timing" />
+      </U>
+    </V>
+    <V t="buff">
+      <U n="buff">
+        <U n="buff_type">
+          <T n="buff_type">229867<!--Buff: buff_Motives_Humanoid_Robots_DurabilityLossFrom_Water_Low--></T>
+        </U>
+        <L n="tests">
+          <L>
+            <V t="trait">
+              <U n="trait">
+                <L n="whitelist_traits">
+                  <T>218444<!--Trait: trait_Humanoid_Robots_MainTrait--></T>
+                </L>
+              </U>
+            </V>
+          </L>
+        </L>
+      </U>
+    </V>
+  </L>
+  <V t="disabled" n="content_score" />
+  <T n="display_name">0x9216D7BE<!--String: "Relajarse"--></T>
+  <U n="display_name_text_tokens">
+    <L n="tokens">
+      <V t="participant_type">
+        <U n="participant_type">
+          <V t="from_participant" n="objects">
+            <U n="from_participant">
+              <E n="participant">Actor</E>
+            </U>
+          </V>
+        </U>
+      </V>
+      <V t="participant_type">
+        <U n="participant_type">
+          <V t="from_participant" n="objects">
+            <U n="from_participant">
+              <E n="participant">Object</E>
+            </U>
+          </V>
+        </U>
+      </V>
+    </L>
+  </U>
+  <T n="ignore_group_socials">False</T>
+  <L n="interaction_category_tags">
+    <E>Interaction_Super</E>
+    <E>Interaction_All</E>
+    <E>Posture_Lifestyles_RelaxedSit</E>
+  </L>
+  <L n="joinable">
+    <U>
+      <V t="enabled" n="invite_available" />
+      <V n="join_affordance" t="affordance">
+        <U n="affordance">
+          <V n="value" t="custom">
+            <T n="custom">118730<!--SuperInteraction: steamRoom_Relax--></T>
+          </V>
+        </U>
+      </V>
+      <V t="enabled" n="join_available" />
+    </U>
+  </L>
+  <V n="outcome" t="test_based">
+    <U n="test_based">
+      <L n="fallback_outcomes">
+        <U>
+          <U n="outcome">
+            <T n="force_outcome_on_exit">True</T>
+            <L n="loot_list">
+              <T>120063<!--LootActions: loot_SteamRoom_TurnOff--></T>
+              <T>122603<!--LootActions: loot_Buff_SteamRoom_GetOut_Remove--></T>
+            </L>
+          </U>
+        </U>
+      </L>
+      <L n="tested_outcomes">
+        <U>
+          <L n="potential_outcomes">
+            <U>
+              <U n="outcome">
+                <L n="loot_list">
+                  <T>120063<!--LootActions: loot_SteamRoom_TurnOff--></T>
+                  <T>122603<!--LootActions: loot_Buff_SteamRoom_GetOut_Remove--></T>
+                </L>
+              </U>
+            </U>
+          </L>
+          <L n="tests">
+            <L>
+              <V t="buff">
+                <U n="buff">
+                  <V n="whitelist" t="enabled">
+                    <L n="enabled">
+                      <T>119830<!--Buff: buff_Object_SteamRoom_Hidden_DeathBySteam--></T>
+                    </L>
+                  </V>
+                </U>
+              </V>
+            </L>
+          </L>
+        </U>
+      </L>
+    </U>
+  </V>
+  <U n="progress_bar_enabled">
+    <T n="bar_enabled">False</T>
+  </U>
+  <E n="scoring_priority">NORMAL</E>
+  <T n="subaction_selection_weight">18</T>
+  <E n="target_type">OBJECT</E>
+  <L n="test_globals">
+    <V t="sim_info">
+      <U n="sim_info">
+        <V t="specified" n="ages">
+          <L n="specified">
+            <E>CHILD</E>
+            <E>TEEN</E>
+            <E>YOUNGADULT</E>
+            <E>ADULT</E>
+            <E>ELDER</E>
+          </L>
+        </V>
+        <V t="specified" n="species">
+          <U n="specified">
+            <L n="species">
+              <E />
+            </L>
+          </U>
+        </V>
+        <E n="who">Actor</E>
+      </U>
+    </V>
+  </L>
+  <T n="time_overhead">30</T>
+  <V t="enabled" n="utility_info">
+    <L n="enabled">
+      <U>
+        <E n="key">POWER</E>
+      </U>
+      <U>
+        <E n="key">WATER</E>
+      </U>
+    </L>
+  </V>
+  <T n="visible">True</T>
+  <E n="visual_type_override">PARENT</E>
+</I>

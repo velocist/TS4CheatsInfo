@@ -1,0 +1,84 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<I c="Broadcaster" i="broadcaster" m="broadcasters.broadcaster" n="broadcaster_Batuu_RestrictedArea_LineofSight_FirstOrder" s="240744">
+  <V n="allow_sim_test" t="enabled">
+    <L n="enabled">
+      <L>
+        <V t="buff">
+          <U n="buff">
+            <L n="blacklist">
+              <T>243483<!--Buff: buff_Batuu_NPC_Venue_RestrictedArea_BeingInvestigated--></T>
+            </L>
+          </U>
+        </V>
+        <V t="location">
+          <U n="location">
+            <U n="location_tests">
+              <V t="Is_or_is_not_on_active_lot" n="is_on_active_lot" />
+              <V t="enabled" n="is_outside">
+                <T n="enabled">False</T>
+              </V>
+            </U>
+          </U>
+        </V>
+        <V t="statistic">
+          <U n="statistic">
+            <T n="stat">236632<!--RankedStatistic: rankedStatistic_Batuu_FactionReputation_FirstOrder--></T>
+            <V t="value_threshold" n="threshold">
+              <U n="value_threshold">
+                <E n="comparison">LESS_OR_EQUAL</E>
+                <T n="value">5</T>
+              </U>
+            </V>
+            <E n="who">Actor</E>
+          </U>
+        </V>
+      </L>
+    </L>
+  </V>
+  <L n="constraints">
+    <V t="line_of_sight">
+      <U n="line_of_sight">
+        <V t="enabled" n="temporary_los" />
+      </U>
+    </V>
+  </L>
+  <L n="effects">
+    <V t="affordance">
+      <U n="affordance">
+        <E n="affordance_priority">Critical</E>
+        <V t="enabled" n="affordance_target">
+          <E n="enabled">Object</E>
+        </V>
+        <L n="affordances">
+          <U>
+            <T n="affordance">240665<!--SuperInteraction: batuu_Patrol_CheckID_GetIntoPosition_FirstOrder--></T>
+          </U>
+        </L>
+      </U>
+    </V>
+    <V t="buff">
+      <U n="buff">
+        <U n="buff">
+          <T n="buff_type">243483<!--Buff: buff_Batuu_NPC_Venue_RestrictedArea_BeingInvestigated--></T>
+        </U>
+        <T n="remove_buff">False</T>
+      </U>
+    </V>
+    <V t="buff">
+      <U n="buff">
+        <U n="buff">
+          <V n="buff_reason" t="enabled">
+            <T n="enabled">0xB46D6B3D<!--String: "(Por pillada en una zona restringida)"--></T>
+          </V>
+          <T n="buff_type">240666<!--Buff: buff_Batuu_NPC_Venue_RestrictedArea_Spotted--></T>
+        </U>
+        <T n="remove_buff">False</T>
+      </U>
+    </V>
+  </L>
+  <V t="on_pulse" n="frequency">
+    <U n="on_pulse">
+      <T n="cooldown_time">3</T>
+    </U>
+  </V>
+</I>

@@ -1,0 +1,331 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<I c="SuperInteraction" i="interaction" m="interactions.base.super_interaction" n="si_waitStaff_Customer_PayBill_FromWaiter" s="136620">
+  <L n="_constraints">
+    <U>
+      <L n="constraints">
+        <U>
+          <V n="value" t="posture">
+            <U n="posture">
+              <L n="posture_manifest_tuning">
+                <U>
+                  <V n="posture_type" t="enabled">
+                    <T n="enabled">15535<!--Posture: posture_Sit--></T>
+                  </V>
+                </U>
+              </L>
+            </U>
+          </V>
+        </U>
+      </L>
+    </U>
+  </L>
+  <V t="participant" n="_icon">
+    <U n="participant">
+      <L n="participant_type">
+        <E>Actor</E>
+      </L>
+    </U>
+  </V>
+  <V t="enabled" n="_saveable" />
+  <T n="allow_user_directed">True</T>
+  <T n="attention_cost">0.5</T>
+  <V t="one_shot" n="basic_content">
+    <U n="one_shot">
+      <U n="animation_ref">
+        <T n="factory">75846<!--AnimationElement: Soc_Generic_CallOver_basic--></T>
+      </U>
+    </U>
+  </V>
+  <T n="category">130901<!--PieMenuCategory: sim_Restaurant--></T>
+  <V t="disabled" n="content_score" />
+  <T n="display_name">0xD17D1613<!--String: "Terminar la comida y pagar la cuenta"--></T>
+  <V t="testable" n="display_name_overrides">
+    <U n="testable">
+      <L n="overrides">
+        <U>
+          <V t="enabled" n="new_display_name">
+            <T n="enabled">0x11AEB4C7<!--String: "Dejar mesa libre"--></T>
+          </V>
+          <L n="test">
+            <L>
+              <V t="restaurant_payment">
+                <U n="restaurant_payment">
+                  <T n="negate">True</T>
+                </U>
+              </V>
+            </L>
+          </L>
+        </U>
+      </L>
+    </U>
+  </V>
+  <U n="display_name_text_tokens">
+    <L n="tokens">
+      <V t="participant_type">
+        <U n="participant_type">
+          <V n="objects" t="from_participant">
+            <U n="from_participant">
+              <E n="participant">Actor</E>
+            </U>
+          </V>
+        </U>
+      </V>
+      <V t="participant_type">
+        <U n="participant_type">
+          <V n="objects" t="from_participant">
+            <U n="from_participant">
+              <E n="participant">Object</E>
+            </U>
+          </V>
+        </U>
+      </V>
+    </L>
+  </U>
+  <V t="enabled" n="display_tooltip">
+    <T n="enabled">0x1C9C9B17<!--String: "Está mesa quedará disponible para otros clientes. Toda la comida que haya encima se retirará."--></T>
+  </V>
+  <L n="interaction_category_tags">
+    <E>Interaction_Super</E>
+    <E>Interaction_All</E>
+  </L>
+  <V n="outcome" t="test_based">
+    <U n="test_based">
+      <L n="fallback_outcomes">
+        <U>
+          <U n="outcome">
+            <V t="disabled" n="animation_ref" />
+            <L n="basic_extras">
+              <V t="notification">
+                <U n="notification">
+                  <V n="dialog" t="single">
+                    <V n="single" t="literal">
+                      <U n="literal">
+                        <V t="disabled" n="audio_sting" />
+                        <L n="dialog_options">
+                          <E>DISABLE_CLOSE_BUTTON</E>
+                        </L>
+                        <V t="enabled" n="icon">
+                          <V n="enabled" t="resource_key">
+                            <U n="resource_key">
+                              <T n="key" p="InGP03\UI\Icons\Headlines\headline_Host.png">2f7d0004:00000000:237acdd8730862fe</T>
+                            </U>
+                          </V>
+                        </V>
+                        <V t="disabled" n="participant" />
+                        <V t="disabled" n="primary_icon_response" />
+                        <V t="disabled" n="secondary_icon" />
+                        <V t="disabled" n="secondary_icon_response" />
+                        <V t="single" n="text">
+                          <T n="single">0x31BF8A0A<!--String: "¡Esperamos que te haya gustado la comida! Los simoleones de la cuenta se han descontado automáticamente de los fondos de tu unidad doméstica."--></T>
+                        </V>
+                        <V t="disabled" n="title" />
+                      </U>
+                    </V>
+                  </V>
+                  <U n="success_chance">
+                    <L n="multipliers">
+                      <U>
+                        <T n="multiplier">0</T>
+                        <L n="tests">
+                          <L>
+                            <V t="bucks_perks_test">
+                              <U n="bucks_perks_test">
+                                <T n="bucks_perk">193750<!--BucksPerk: famePerks_GoodReputation_StarTreatment--></T>
+                              </U>
+                            </V>
+                          </L>
+                          <L>
+                            <V t="buff">
+                              <U n="buff">
+                                <V n="whitelist" t="enabled">
+                                  <L n="enabled">
+                                    <T>191748<!--Buff: buff_ZoneMod_CelebrityHangOut_LowFame--></T>
+                                  </L>
+                                </V>
+                              </U>
+                            </V>
+                          </L>
+                        </L>
+                      </U>
+                    </L>
+                  </U>
+                  <V t="at_end" n="timing" />
+                </U>
+              </V>
+              <V t="loot">
+                <U n="loot">
+                  <L n="loot_list">
+                    <T>214889<!--LootActions: loot_Fame_Perk_StarTreatment_PackCheck--></T>
+                  </L>
+                </U>
+              </V>
+              <V t="payment">
+                <U n="payment">
+                  <V t="literal" n="payment">
+                    <U n="literal">
+                      <V n="payment_cost" t="dining_meal_cost">
+                        <U n="dining_meal_cost">
+                          <E n="participant">Actor</E>
+                        </U>
+                      </V>
+                    </U>
+                  </V>
+                  <V t="at_beginning" n="timing" />
+                </U>
+              </V>
+              <V t="notification">
+                <U n="notification">
+                  <V n="dialog" t="single">
+                    <V n="single" t="literal">
+                      <U n="literal">
+                        <L n="dialog_options">
+                          <E>DISABLE_CLOSE_BUTTON</E>
+                        </L>
+                        <V t="enabled" n="icon">
+                          <V n="enabled" t="resource_key">
+                            <U n="resource_key">
+                              <T n="key" p="InGP03\UI\Icons\Headlines\headline_Host.png">2f7d0004:00000000:237acdd8730862fe</T>
+                            </U>
+                          </V>
+                        </V>
+                        <V n="text" t="single">
+                          <T n="single">0xCA569CCC<!--String: ""¡No, por favor! ¡Ha sido un placer servir a alguien tan prominente! Permítanos hacerle un descuento por honrarnos como parte de nuestra clientela y dejarse ver por aquí."\n\n¡Esperamos que le haya gustado la comida! Los simoleones de la cuenta se han descontado automáticamente de los fondos de su unidad doméstica. "--></T>
+                        </V>
+                      </U>
+                    </V>
+                  </V>
+                  <U n="success_chance">
+                    <L n="multipliers">
+                      <U>
+                        <T n="multiplier">0</T>
+                        <L n="tests">
+                          <L>
+                            <V t="buff">
+                              <U n="buff">
+                                <L n="blacklist">
+                                  <T>191748<!--Buff: buff_ZoneMod_CelebrityHangOut_LowFame--></T>
+                                </L>
+                              </U>
+                            </V>
+                          </L>
+                          <L>
+                            <V t="bucks_perks_test">
+                              <U n="bucks_perks_test">
+                                <T n="bucks_perk">193750<!--BucksPerk: famePerks_GoodReputation_StarTreatment--></T>
+                              </U>
+                            </V>
+                          </L>
+                        </L>
+                      </U>
+                    </L>
+                  </U>
+                </U>
+              </V>
+            </L>
+            <V t="disabled" n="display_message" />
+            <L n="loot_list">
+              <T>133049<!--LootActions: loot_Restaurant_ReleaseTable--></T>
+              <T>133368<!--LootActions: loot_Restaurant_RemoveInvisibleBuffs--></T>
+            </L>
+            <V t="disabled" n="response" />
+            <V t="disabled" n="xevt" />
+          </U>
+        </U>
+      </L>
+      <L n="tested_outcomes">
+        <U>
+          <L n="potential_outcomes">
+            <U>
+              <U n="outcome">
+                <V t="disabled" n="animation_ref" />
+                <L n="basic_extras">
+                  <V t="notification">
+                    <U n="notification">
+                      <V n="dialog" t="single">
+                        <V n="single" t="literal">
+                          <U n="literal">
+                            <V t="disabled" n="audio_sting" />
+                            <L n="dialog_options">
+                              <E>DISABLE_CLOSE_BUTTON</E>
+                            </L>
+                            <V t="enabled" n="icon">
+                              <V t="participant" n="enabled">
+                                <U n="participant">
+                                  <L n="participant_type">
+                                    <E>Actor</E>
+                                  </L>
+                                </U>
+                              </V>
+                            </V>
+                            <V t="disabled" n="participant" />
+                            <V t="disabled" n="primary_icon_response" />
+                            <V t="disabled" n="secondary_icon" />
+                            <V t="disabled" n="secondary_icon_response" />
+                            <V t="single" n="text">
+                              <T n="single">0xDDC4BB0D<!--String: "{0.SimName} ha abandonado la mesa que tenía. Si quiere otra, puede pedírsela al metre."--></T>
+                            </V>
+                            <V t="enabled" n="text_tokens">
+                              <U n="enabled">
+                                <L n="tokens">
+                                  <V t="participant_type" />
+                                </L>
+                              </U>
+                            </V>
+                            <V t="disabled" n="title" />
+                          </U>
+                        </V>
+                      </V>
+                      <V t="at_end" n="timing" />
+                    </U>
+                  </V>
+                </L>
+                <V t="disabled" n="display_message" />
+                <L n="loot_list">
+                  <T>133049<!--LootActions: loot_Restaurant_ReleaseTable--></T>
+                  <T>133368<!--LootActions: loot_Restaurant_RemoveInvisibleBuffs--></T>
+                </L>
+                <V t="disabled" n="response" />
+                <V t="disabled" n="xevt" />
+              </U>
+            </U>
+          </L>
+          <L n="tests">
+            <L>
+              <V t="restaurant_payment">
+                <U n="restaurant_payment">
+                  <T n="negate">True</T>
+                </U>
+              </V>
+            </L>
+          </L>
+        </U>
+      </L>
+    </U>
+  </V>
+  <V t="enabled" n="pie_menu_icon">
+    <V n="enabled" t="resource_key">
+      <U n="resource_key">
+        <T n="key" p="InGP03\UI\Icons\PieMenu\Interactions\icon_pieMenu_Restaurant.png">2f7d0004:00000000:985f77fb2c2ac5ca</T>
+      </U>
+    </V>
+  </V>
+  <E n="scoring_priority">NORMAL</E>
+  <T n="subaction_selection_weight">1</T>
+  <E n="target_type">OBJECT</E>
+  <L n="test_globals">
+    <V t="situation_count_test">
+      <U n="situation_count_test">
+        <T n="situation">132213<!--WaitstaffSituation: situation_Restaurant_WaitStaff--></T>
+        <U n="test">
+          <T n="value">1</T>
+        </U>
+      </U>
+    </V>
+    <V t="restaurant">
+      <U n="restaurant">
+        <V t="enabled" n="claimed_table_status" />
+      </U>
+    </V>
+  </L>
+  <T n="time_overhead">30</T>
+</I>

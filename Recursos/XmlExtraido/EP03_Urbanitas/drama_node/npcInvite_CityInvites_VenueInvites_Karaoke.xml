@@ -1,0 +1,129 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<I c="NPCInviteSituationDramaNode" i="drama_node" m="drama_scheduler.npc_invite_situation_drama_node" n="npcInvite_CityInvites_VenueInvites_Karaoke" s="143036">
+  <V t="enabled" n="_NPC_host_job">
+    <T n="enabled">143134<!--SituationJob: situationJob_CityInvites_TargetSim--></T>
+  </V>
+  <V t="enabled" n="_NPC_hosted_situation_player_job">
+    <T n="enabled">139546<!--SituationJob: situationJob_CityInvites_Actor--></T>
+  </V>
+  <T n="_NPC_hosted_situation_scoring_enabled">True</T>
+  <L n="_NPC_hosted_situation_start_messages">
+    <U>
+      <U n="dialog">
+        <V t="enabled" n="bring_other_sims">
+          <U n="enabled">
+            <U n="picker_dialog">
+              <V t="static_count" n="max_selectable">
+                <U n="static_count">
+                  <T n="number_selectable">7</T>
+                </U>
+              </V>
+              <V n="title" t="enabled">
+                <T n="enabled">0xC47B3DE8<!--String: "Desplazarse con..."--></T>
+              </V>
+            </U>
+            <T n="situation_job">143134<!--SituationJob: situationJob_CityInvites_TargetSim--></T>
+            <T n="text">0x81365F6<!--String: "Llevar a amigos"--></T>
+            <T n="travel_with_filter">97825<!--TunableSimFilter: filter_TravelPicker--></T>
+          </U>
+        </V>
+        <V t="enabled" n="icon">
+          <V t="participant" n="enabled">
+            <U n="participant">
+              <L n="participant_type">
+                <E>TargetSim</E>
+              </L>
+            </U>
+          </V>
+        </V>
+        <E n="phone_ring_type">BUZZ</E>
+        <V n="text" t="variation">
+          <U n="variation">
+            <L n="variations">
+              <T>0x415B6F2C<!--String: "¡Vamos al bar de karaoke a cantar a dúo! He estado practicando que ni te imaginas."--></T>
+              <T>0xC1B5D349<!--String: "¡Es el día perfecto para aullar juntos! ¿Nos vamos ya mismo al karaoke?"--></T>
+            </L>
+          </U>
+        </V>
+        <T n="zone_title">0xC79595F2<!--String: "{0.String}: {1.String}"--></T>
+      </U>
+    </U>
+  </L>
+  <T n="_situation_to_run">142958<!--SituationSimple: situation_CityInvites_VenueInvites_Karaoke--></T>
+  <T n="allow_during_work_hours">False</T>
+  <V t="group_cooldown" n="cooldown_data">
+    <U n="group_cooldown">
+      <E n="group">InviteCooldown</E>
+    </U>
+  </V>
+  <U n="min_and_max_times">
+    <T n="lower_bound">0</T>
+    <T n="upper_bound">24</T>
+  </U>
+  <L n="receiver_sim_pretests">
+    <L>
+      <V t="sim_info">
+        <U n="sim_info">
+          <V t="specified" n="ages" />
+          <V t="specified" n="species">
+            <U n="specified">
+              <L n="species">
+                <E />
+              </L>
+            </U>
+          </V>
+        </U>
+      </V>
+    </L>
+  </L>
+  <L n="run_tests">
+    <L>
+      <V t="relationship">
+        <U n="relationship">
+          <U n="prohibited_relationship_bits">
+            <L n="match_any">
+              <T>240110<!--RelationshipBitCollection: rbc_Sentiment_Negative--></T>
+            </L>
+          </U>
+          <L n="subject">
+            <E>Actor</E>
+          </L>
+          <L n="target_sim">
+            <E>TargetSim</E>
+          </L>
+        </U>
+      </V>
+    </L>
+  </L>
+  <V n="scoring" t="enabled">
+    <U n="enabled">
+      <T n="base_score">30</T>
+    </U>
+  </V>
+  <V t="sim_filter" n="sender_sim_info">
+    <U n="sim_filter">
+      <T n="sim_filter">127381<!--TunableSimFilter: filter_HasMet_TYAE_AllowGhosts_NotInHousehold_PreferFriends--></T>
+    </U>
+  </V>
+  <V t="schedule" n="time_option">
+    <U n="schedule">
+      <L n="valid_times">
+        <U>
+          <U n="days_available">
+            <T n="0 SUNDAY">False</T>
+            <T n="1 MONDAY">False</T>
+            <T n="2 TUESDAY">False</T>
+            <T n="3 WEDNESDAY">False</T>
+            <T n="4 THURSDAY">False</T>
+            <T n="5 FRIDAY">False</T>
+            <T n="6 SATURDAY">True</T>
+          </U>
+          <T n="duration">4</T>
+          <U n="start_time">
+            <T n="hour">20</T>
+          </U>
+        </U>
+      </L>
+    </U>
+  </V>
+</I>

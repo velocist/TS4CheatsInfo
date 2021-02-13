@@ -1,0 +1,102 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<I c="MixerInteraction" i="interaction" m="interactions.base.mixer_interaction" n="motherPlant_Mixers_PrimarySim_Rally" s="203419">
+  <T n="allow_autonomous">False</T>
+  <T n="allow_user_directed">True</T>
+  <V n="basic_content" t="one_shot">
+    <U n="one_shot">
+      <U n="animation_ref">
+        <T n="factory">203401<!--AnimationElement: motherPlant_MainSimFight_Rally--></T>
+      </U>
+    </U>
+  </V>
+  <L n="basic_extras">
+    <V t="loot">
+      <U n="loot">
+        <L n="loot_list">
+          <T>204428<!--LootActions: loot_MotherPlant_ApplyAttack--></T>
+        </L>
+        <U n="success_chance">
+          <L n="multipliers">
+            <U>
+              <T n="multiplier">0</T>
+              <L n="tests">
+                <L>
+                  <V t="state">
+                    <U n="state">
+                      <E n="operator">NOTEQUAL</E>
+                      <T n="value">201779<!--ObjectStateValue: motherplant_Idle_hostile--></T>
+                    </U>
+                  </V>
+                </L>
+              </L>
+            </U>
+          </L>
+        </U>
+        <V t="at_beginning" n="timing" />
+      </U>
+    </V>
+    <V t="loot">
+      <U n="loot">
+        <L n="loot_list">
+          <T>204433<!--LootActions: loot_MotherPlant_Batlle_ChangeState_Rally--></T>
+        </L>
+      </U>
+    </V>
+  </L>
+  <V t="disable_focus" n="basic_focus" />
+  <T n="category">205506<!--PieMenuCategory: pieMenuCategory_MotherPlantCommand--></T>
+  <T n="display_name">0x2E35BC53<!--String: "Tomarse un descanso"--></T>
+  <U n="display_name_text_tokens">
+    <L n="tokens">
+      <V t="participant_type">
+        <U n="participant_type">
+          <V n="objects" t="from_participant">
+            <U n="from_participant">
+              <E n="participant">Actor</E>
+            </U>
+          </V>
+        </U>
+      </V>
+      <V t="participant_type">
+        <U n="participant_type">
+          <V t="from_participant" n="objects">
+            <U n="from_participant">
+              <E n="participant">Object</E>
+            </U>
+          </V>
+        </U>
+      </V>
+    </L>
+  </U>
+  <V n="display_tooltip" t="enabled">
+    <T n="enabled">0xCD6C64D1<!--String: "Tu equipo cura parte de su infección, pero no inflige daños."--></T>
+  </V>
+  <L n="interaction_category_tags">
+    <E>Interaction_Mixer</E>
+    <E>Interaction_All</E>
+  </L>
+  <U n="sub_action">
+    <T n="base_weight">2</T>
+  </U>
+  <E n="target_type">OBJECT</E>
+  <L n="test_globals">
+    <V t="buff">
+      <U n="buff">
+        <L n="blacklist">
+          <T>204385<!--Buff: buff_Role_MotherPlantBattle_Player_Start--></T>
+        </L>
+      </U>
+    </V>
+    <V t="buff">
+      <U n="buff">
+        <L n="blacklist">
+          <T>205259<!--Buff: buff_Role_MotherPlantBattle_Cooldown--></T>
+        </L>
+        <V n="tooltip" t="enabled">
+          <T n="enabled">0x2DDEFF13<!--String: "Has cambiado el modo de combate hace poco. Tus aliados necesitan un tiempo para cumplir tu orden."--></T>
+        </V>
+      </U>
+    </V>
+  </L>
+  <T n="visible">True</T>
+</I>

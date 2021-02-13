@@ -1,0 +1,63 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<I c="SituationGoalObjectInteraction" i="situation_goal" m="situations.situation_goal_object_interaction" n="situationGoalObjectInteraction_CareerScientist_WorkOnRocket_Timed_10Mins" s="112979">
+  <V n="_display_data" t="enabled">
+    <U n="enabled">
+      <V t="enabled" n="instance_display_icon">
+        <T n="enabled" p="InGame\UI\Icons\SkillObjects\SkillObjects_Rocketship.png">2f7d0004:00000000:14595b57c640397d</T>
+      </V>
+      <V t="enabled" n="instance_display_name">
+        <T n="enabled">0xD6786B01<!--String: "Trabajar en el cohete 10 minutos"--></T>
+      </V>
+      <V t="enabled" n="instance_display_tooltip">
+        <T n="enabled">0x8AC3E28D<!--String: "Selecciona el cohete y elige una interacción de mejora."--></T>
+      </V>
+    </U>
+  </V>
+  <U n="_goal_test">
+    <T n="consider_user_cancelled_as_failure">False</T>
+    <V t="enabled" n="running_time">
+      <T n="enabled">10</T>
+    </V>
+    <L n="tags">
+      <E>Interaction_Rocket</E>
+    </L>
+    <E n="test_event">InteractionUpdate</E>
+  </U>
+  <L n="_pre_tests">
+    <V t="object_criteria">
+      <U n="object_criteria">
+        <V n="desired_state_threshold" t="enabled">
+          <U n="enabled">
+            <E n="comparison">LESS</E>
+            <T n="value">15312<!--CommodityBasedObjectStateValue: RocketShipProgress_Phase4--></T>
+          </U>
+        </V>
+        <V t="tags" n="identity_test">
+          <U n="tags">
+            <L n="tag_set">
+              <E>Func_Rocket</E>
+            </L>
+          </U>
+        </V>
+        <T n="on_active_lot">True</T>
+        <T n="owned">False</T>
+      </U>
+    </V>
+    <V t="career">
+      <U n="career">
+        <V n="test_type" t="career_reference">
+          <U n="career_reference">
+            <V t="specific_career" n="career">
+              <T n="specific_career">107255<!--Career: career_Adult_Active_Scientist--></T>
+            </V>
+            <V t="enabled" n="user_level" />
+          </U>
+        </V>
+      </U>
+    </V>
+  </L>
+  <T p="InGame\Audio\Bumper\bumper_event_goal_complete.propx" n="audio_sting_on_complete">39b2aa4a:00000000:ed52c39bcc2a7111</T>
+  <L n="role_tags">
+    <E>Role_Scientist</E>
+  </L>
+</I>

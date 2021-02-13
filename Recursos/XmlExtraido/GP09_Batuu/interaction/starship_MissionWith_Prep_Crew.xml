@@ -1,0 +1,188 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<I c="SuperInteraction" i="interaction" m="interactions.base.super_interaction" n="starship_MissionWith_Prep_Crew" s="239385">
+  <L n="_constraints">
+    <U>
+      <L n="constraints">
+        <U>
+          <V t="circle" n="value">
+            <U n="circle">
+              <T n="radius">20</T>
+            </U>
+          </V>
+        </U>
+        <U>
+          <V n="value" t="spawn_points">
+            <U n="spawn_points">
+              <V t="Spawn_Point_Tags" n="tags">
+                <L n="Spawn_Point_Tags">
+                  <E>Spawn_Starship</E>
+                </L>
+              </V>
+            </U>
+          </V>
+        </U>
+      </L>
+    </U>
+  </L>
+  <V t="enabled" n="_saveable" />
+  <T n="allow_user_directed">False</T>
+  <T n="attention_cost">0.5</T>
+  <V n="basic_content" t="flexible_length">
+    <U n="flexible_length">
+      <L n="conditional_actions">
+        <V t="literal">
+          <U n="literal">
+            <L n="conditions">
+              <V t="time_based">
+                <U n="time_based">
+                  <T n="max_time">20</T>
+                  <T n="min_time">20</T>
+                </U>
+              </V>
+            </L>
+            <E n="interaction_action">EXIT_NATURALLY</E>
+            <L n="loot_actions">
+              <T>239512<!--LootActions: loot_Batuu_Starship_Broken_Reaction--></T>
+            </L>
+          </U>
+        </V>
+        <V t="literal">
+          <U n="literal">
+            <L n="conditions">
+              <V t="buff_based">
+                <U n="buff_based">
+                  <T n="buff">239378<!--Buff: buff_Batuu_Starship_ExploreWith_GoToSpace--></T>
+                  <E n="timing">HAS_BUFF</E>
+                </U>
+              </V>
+            </L>
+            <E n="interaction_action">EXIT_NATURALLY</E>
+          </U>
+        </V>
+        <V t="literal">
+          <U n="literal">
+            <L n="conditions">
+              <V t="state_based">
+                <U n="state_based">
+                  <V n="state" t="on_trigger">
+                    <T n="on_trigger">238529<!--ObjectStateValue: starship_CanExit_Yes--></T>
+                  </V>
+                </U>
+              </V>
+            </L>
+            <E n="interaction_action">EXIT_CANCEL</E>
+          </U>
+        </V>
+      </L>
+      <V t="looping_content" n="content">
+        <U n="looping_content">
+          <U n="animation_ref">
+            <T n="factory">8749<!--AnimationElement: PostureIdle_Stand--></T>
+          </U>
+        </U>
+      </V>
+    </U>
+  </V>
+  <L n="basic_extras">
+    <V t="change_outfit">
+      <U n="change_outfit">
+        <V t="for_tags" n="outfit_change">
+          <U n="for_tags">
+            <V n="on_entry" t="enabled">
+              <U n="enabled">
+                <T n="auto_undo_on_exit">False</T>
+                <V n="generator" t="reference">
+                  <T n="reference">239522<!--Outfit: outfit_Uniform_Batuu_Starship_FirstOrder--></T>
+                </V>
+              </U>
+            </V>
+          </U>
+        </V>
+        <L n="tests">
+          <L>
+            <V t="object_definition_criteria">
+              <U n="object_definition_criteria">
+                <V t="definition_id" n="identity_test">
+                  <U n="definition_id">
+                    <T n="actual_object">241487</T>
+                  </U>
+                </V>
+              </U>
+            </V>
+          </L>
+        </L>
+      </U>
+    </V>
+  </L>
+  <V t="disabled" n="basic_reserve_object" />
+  <V t="disabled" n="content_score" />
+  <T n="display_name">0x46042C1B<!--String: "Asignar tripulación al TIE Echelon"--></T>
+  <V t="testable" n="display_name_overrides">
+    <U n="testable">
+      <L n="overrides">
+        <U>
+          <V t="enabled" n="new_display_name">
+            <T n="enabled">0x823BCBD2<!--String: "Asignar tripulación al <i>Halcón Milenario</i>"--></T>
+          </V>
+        </U>
+      </L>
+    </U>
+  </V>
+  <U n="display_name_text_tokens">
+    <L n="tokens">
+      <V t="participant_type">
+        <U n="participant_type">
+          <V n="objects" t="from_participant">
+            <U n="from_participant">
+              <E n="participant">Actor</E>
+            </U>
+          </V>
+        </U>
+      </V>
+      <V t="participant_type">
+        <U n="participant_type">
+          <V t="from_participant" n="objects">
+            <U n="from_participant">
+              <E n="participant">Object</E>
+            </U>
+          </V>
+        </U>
+      </V>
+    </L>
+  </U>
+  <T n="fade_sim_out">True</T>
+  <L n="interaction_category_tags">
+    <E>Interaction_Super</E>
+    <E>Interaction_All</E>
+  </L>
+  <V n="outcome" t="single">
+    <U n="single">
+      <U n="actions">
+        <L n="continuation">
+          <U>
+            <T n="affordance">239390<!--SuperInteraction: starship_InSpace_MissionWith_Crew--></T>
+          </U>
+        </L>
+      </U>
+    </U>
+  </V>
+  <E n="scoring_priority">NORMAL</E>
+  <T n="subaction_selection_weight">1</T>
+  <E n="target_type">OBJECT</E>
+  <L n="test_globals">
+    <V t="state">
+      <U n="state">
+        <T n="value">238525<!--ObjectStateValue: starship_Idle_Ground--></T>
+      </U>
+    </V>
+    <V t="situation_job_test">
+      <U n="situation_job_test">
+        <L n="situation_jobs">
+          <T>239296<!--SituationJob: job_Batuu_Starship_ExploreWith_Crew--></T>
+        </L>
+      </U>
+    </V>
+  </L>
+  <L n="tests" />
+  <T n="time_overhead">30</T>
+</I>

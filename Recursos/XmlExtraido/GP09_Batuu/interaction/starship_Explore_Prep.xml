@@ -1,0 +1,143 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<I c="SuperInteraction" i="interaction" m="interactions.base.super_interaction" n="starship_Explore_Prep" s="238596">
+  <L n="_constraints">
+    <U>
+      <L n="constraints">
+        <U>
+          <V t="circle" n="value">
+            <U n="circle">
+              <T n="radius">20</T>
+            </U>
+          </V>
+        </U>
+        <U>
+          <V n="value" t="spawn_points">
+            <U n="spawn_points">
+              <V t="Spawn_Point_Tags" n="tags">
+                <L n="Spawn_Point_Tags">
+                  <E>Spawn_Starship</E>
+                </L>
+              </V>
+            </U>
+          </V>
+        </U>
+      </L>
+    </U>
+  </L>
+  <V t="enabled" n="_saveable" />
+  <T n="attention_cost">0.5</T>
+  <V t="flexible_length" n="basic_content">
+    <U n="flexible_length">
+      <L n="conditional_actions">
+        <V t="literal">
+          <U n="literal">
+            <L n="conditions">
+              <V t="time_based">
+                <U n="time_based">
+                  <T n="max_time">5</T>
+                  <T n="min_time">5</T>
+                </U>
+              </V>
+            </L>
+            <E n="interaction_action">EXIT_NATURALLY</E>
+            <L n="loot_actions" />
+          </U>
+        </V>
+      </L>
+      <V t="looping_content" n="content">
+        <U n="looping_content">
+          <U n="animation_ref">
+            <T n="factory">12082<!--AnimationElement: Stand_Idle_Stand_Idle_Looping_basic--></T>
+          </U>
+        </U>
+      </V>
+    </U>
+  </V>
+  <V t="disabled" n="basic_reserve_object" />
+  <V t="disabled" n="content_score" />
+  <T n="display_name">0xF1A7288A<!--String: "Explorar"--></T>
+  <U n="display_name_text_tokens">
+    <L n="tokens">
+      <V t="participant_type">
+        <U n="participant_type">
+          <V n="objects" t="from_participant">
+            <U n="from_participant">
+              <E n="participant">Actor</E>
+            </U>
+          </V>
+        </U>
+      </V>
+      <V t="participant_type">
+        <U n="participant_type">
+          <V t="from_participant" n="objects">
+            <U n="from_participant">
+              <E n="participant">Object</E>
+            </U>
+          </V>
+        </U>
+      </V>
+    </L>
+  </U>
+  <T n="fade_sim_out">True</T>
+  <L n="interaction_category_tags">
+    <E>Interaction_Super</E>
+    <E>Interaction_All</E>
+  </L>
+  <V n="outcome" t="single">
+    <U n="single">
+      <U n="actions">
+        <L n="continuation">
+          <U>
+            <T n="affordance">238602<!--SuperInteraction: starship_InSpace_Explore--></T>
+          </U>
+        </L>
+      </U>
+    </U>
+  </V>
+  <E n="scoring_priority">NORMAL</E>
+  <T n="subaction_selection_weight">1</T>
+  <E n="target_type">OBJECT</E>
+  <L n="test_globals">
+    <V t="sim_info">
+      <U n="sim_info">
+        <V t="specified" n="ages" />
+        <V t="specified" n="species">
+          <U n="specified">
+            <L n="species">
+              <E />
+            </L>
+          </U>
+        </V>
+        <E n="who">Actor</E>
+      </U>
+    </V>
+    <V t="state">
+      <U n="state">
+        <T n="value">238525<!--ObjectStateValue: starship_Idle_Ground--></T>
+      </U>
+    </V>
+    <V t="test_set_reference">
+      <T n="test_set_reference">239438<!--TestSetInstance: testSet_Batuu_Starship_Explore_Rank_Tooltip--></T>
+    </V>
+    <V t="state">
+      <U n="state">
+        <V n="tooltip" t="enabled">
+          <T n="enabled">0x345CAD49<!--String: "Hay que reparar esta nave antes de poder usarla."--></T>
+        </V>
+        <T n="value">15081<!--ObjectStateValue: BrokenState_Unbroken--></T>
+      </U>
+    </V>
+    <V t="buff">
+      <U n="buff">
+        <L n="blacklist">
+          <T>245068<!--Buff: buff_Batuu_Starship_Explore_Cooldown--></T>
+          <T>248621<!--Buff: buff_Batuu_Starship_Explore_Cooldown_InterstellarUpgrade--></T>
+        </L>
+        <V n="tooltip" t="enabled">
+          <T n="enabled">0xB6EA524B<!--String: "{0.SimFirstName} necesita esperar un poco antes de volver a explorar."--></T>
+        </V>
+      </U>
+    </V>
+  </L>
+  <T n="time_overhead">30</T>
+</I>

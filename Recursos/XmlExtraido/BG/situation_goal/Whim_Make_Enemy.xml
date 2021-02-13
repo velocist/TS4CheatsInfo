@@ -1,0 +1,64 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<I c="SituationGoalRelationshipChangeTargetedSim" i="situation_goal" m="situations.situation_goal_targeted_sim" n="Whim_Make_Enemy" s="35722">
+  <V n="_display_data" t="enabled">
+    <U n="enabled">
+      <V t="enabled" n="instance_display_icon">
+        <T n="enabled" p="InGame\UI\Icons\Whims\whim_Mean.png">2f7d0004:00000000:766235afbbe6916e</T>
+      </V>
+      <V n="instance_display_name" t="enabled">
+        <T n="enabled">0xC2D42817<!--String: "Trabar una enemistad"--></T>
+      </V>
+      <V n="instance_display_tooltip" t="enabled">
+        <T n="enabled">0xA7DF43A8<!--String: "Haz clic en un Sim y selecciona Declararlo enemigo. Los Sims pueden desbloquear esta interacción realizando interacciones mezquinas para empeorar sus relaciones."--></T>
+      </V>
+    </U>
+  </V>
+  <U n="_goal_test">
+    <U n="required_relationship_bits">
+      <L n="match_any">
+        <T>26560<!--RelationshipBit: SpecialBits_Enemy--></T>
+      </L>
+    </U>
+  </U>
+  <L n="_pre_tests">
+    <V t="sim_info">
+      <U n="sim_info">
+        <V t="specified" n="ages">
+          <L n="specified">
+            <E>TEEN</E>
+            <E>YOUNGADULT</E>
+            <E>ADULT</E>
+            <E>ELDER</E>
+            <E>CHILD</E>
+          </L>
+        </V>
+        <V t="specified" n="species">
+          <U n="specified">
+            <L n="species">
+              <E />
+            </L>
+          </U>
+        </V>
+      </U>
+    </V>
+    <V t="trait">
+      <U n="trait">
+        <L n="whitelist_traits">
+          <T>16836<!--Trait: trait_Evil--></T>
+          <T>188801<!--Trait: trait_Evil_BegoniaScent--></T>
+        </L>
+      </U>
+    </V>
+  </L>
+  <U n="_relationship_pretest">
+    <U n="prohibited_relationship_bits">
+      <L n="match_any">
+        <T>26560<!--RelationshipBit: SpecialBits_Enemy--></T>
+      </L>
+    </U>
+    <E n="test_event">AddRelationshipBit</E>
+  </U>
+  <T n="_score">25</T>
+  <T n="_select_sims_outside_of_situation">True</T>
+  <T p="InGame\Audio\Bumper\bumper_event_goal_complete.propx" n="audio_sting_on_complete">39b2aa4a:00000000:ed52c39bcc2a7111</T>
+</I>

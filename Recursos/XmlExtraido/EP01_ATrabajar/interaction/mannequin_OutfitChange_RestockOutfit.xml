@@ -1,0 +1,217 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<I c="SuperInteraction" i="interaction" m="interactions.base.super_interaction" n="mannequin_OutfitChange_RestockOutfit" s="107570">
+  <L n="_constraints">
+    <U>
+      <L n="constraints">
+        <U>
+          <V n="value" t="cone">
+            <U n="cone">
+              <T n="angle">360</T>
+            </U>
+          </V>
+        </U>
+      </L>
+    </U>
+    <U>
+      <L n="constraints">
+        <U>
+          <V t="facing" n="value" />
+        </U>
+      </L>
+    </U>
+    <U>
+      <L n="constraints">
+        <U>
+          <V n="value" t="posture">
+            <U n="posture">
+              <L n="posture_manifest_tuning">
+                <U>
+                  <V t="enabled" n="posture_type">
+                    <T n="enabled">15537<!--MobilePosture: posture_Stand--></T>
+                  </V>
+                </U>
+              </L>
+            </U>
+          </V>
+        </U>
+      </L>
+    </U>
+  </L>
+  <V t="participant" n="_icon">
+    <U n="participant">
+      <L n="participant_type">
+        <E>Object</E>
+      </L>
+    </U>
+  </V>
+  <V t="enabled" n="_saveable" />
+  <L n="_static_commodities">
+    <U>
+      <T n="static_commodity">109785<!--StaticCommodity: staticCommodity_Retail_Employee_Restock--></T>
+    </U>
+  </L>
+  <T n="attention_cost">0.5</T>
+  <V t="one_shot" n="basic_content">
+    <U n="one_shot">
+      <U n="animation_ref">
+        <T n="factory">23927<!--AnimationElement: Generic_PutDown--></T>
+      </U>
+    </U>
+  </V>
+  <L n="basic_extras" />
+  <V t="disabled" n="content_score" />
+  <T n="display_name">0x9C6E1D54<!--String: "Reponer atuendo"--></T>
+  <U n="display_name_text_tokens">
+    <L n="tokens">
+      <V t="participant_type">
+        <U n="participant_type">
+          <V t="from_participant" n="objects">
+            <U n="from_participant">
+              <E n="participant">Actor</E>
+            </U>
+          </V>
+        </U>
+      </V>
+      <V t="participant_type">
+        <U n="participant_type">
+          <V t="from_participant" n="objects">
+            <U n="from_participant">
+              <E n="participant">Object</E>
+            </U>
+          </V>
+        </U>
+      </V>
+    </L>
+  </U>
+  <L n="interaction_category_tags">
+    <E>Interaction_Super</E>
+    <E>Interaction_All</E>
+  </L>
+  <V n="outcome" t="single">
+    <U n="single">
+      <U n="actions">
+        <L n="basic_extras">
+          <V t="change_outfit">
+            <U n="change_outfit">
+              <V n="outfit_change" t="for_reason">
+                <U n="for_reason">
+                  <V n="on_entry" t="enabled">
+                    <E n="enabled">PreviousClothing</E>
+                  </V>
+                </U>
+              </V>
+              <L n="subject">
+                <E>Object</E>
+              </L>
+            </U>
+          </V>
+          <V t="payment">
+            <U n="payment">
+              <V n="payment" t="literal">
+                <U n="literal">
+                  <U n="cost_modifiers">
+                    <L n="multipliers">
+                      <U />
+                      <U>
+                        <T n="multiplier">0.75</T>
+                        <L n="tests">
+                          <L>
+                            <V t="bucks_perks_test">
+                              <U n="bucks_perks_test">
+                                <T n="bucks_perk">112338<!--BucksPerk: retailPerks_DescreaseRestockingCost--></T>
+                              </U>
+                            </V>
+                          </L>
+                        </L>
+                      </U>
+                    </L>
+                  </U>
+                  <V t="business_amount" n="payment_cost">
+                    <U n="business_amount">
+                      <V t="disabled" n="generate_revenue" />
+                      <V t="amount" n="wrapped_cost">
+                        <U n="amount">
+                          <T n="amount">175</T>
+                          <L n="payment_destinations">
+                            <V t="business" />
+                          </L>
+                        </U>
+                      </V>
+                    </U>
+                  </V>
+                  <V t="business" n="payment_source">
+                    <U n="business">
+                      <E n="funds_category">RESTOCKING</E>
+                    </U>
+                  </V>
+                </U>
+              </V>
+            </U>
+          </V>
+        </L>
+        <L n="loot_list">
+          <T>112358<!--LootActions: loot_RetailBucks_Restock--></T>
+        </L>
+      </U>
+    </U>
+  </V>
+  <T n="pie_menu_priority">10</T>
+  <E n="scoring_priority">NORMAL</E>
+  <T n="subaction_selection_weight">1</T>
+  <E n="target_type">OBJECT</E>
+  <L n="test_globals">
+    <V t="sim_info">
+      <U n="sim_info">
+        <V t="specified" n="ages">
+          <L n="specified">
+            <E>TEEN</E>
+            <E>YOUNGADULT</E>
+            <E>ADULT</E>
+            <E>ELDER</E>
+          </L>
+        </V>
+        <V t="specified" n="species">
+          <U n="specified">
+            <L n="species">
+              <E />
+            </L>
+          </U>
+        </V>
+        <E n="who">Actor</E>
+      </U>
+    </V>
+    <V t="outfit">
+      <U n="outfit">
+        <E n="participant">Object</E>
+        <L n="whitelist_outfits">
+          <E>BATHING</E>
+        </L>
+      </U>
+    </V>
+    <V t="trait">
+      <U n="trait">
+        <L n="blacklist_traits">
+          <T>218444<!--Trait: trait_Humanoid_Robots_MainTrait--></T>
+        </L>
+      </U>
+    </V>
+    <V t="outfit">
+      <U n="outfit">
+        <L n="blacklist_outfits">
+          <E>BATHING</E>
+        </L>
+        <V n="outfit" t="previous_outfits" />
+        <E n="participant">Object</E>
+      </U>
+    </V>
+    <V t="bucks_perks_test">
+      <U n="bucks_perks_test">
+        <T n="bucks_perk">112346<!--BucksPerk: retailPerks_InstantRestock--></T>
+      </U>
+    </V>
+    <V t="test_set_reference">
+      <T n="test_set_reference">109829<!--TestSetInstance: testSet_AllowedToRestock--></T>
+    </V>
+  </L>
+  <T n="time_overhead">30</T>
+</I>

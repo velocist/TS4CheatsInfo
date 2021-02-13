@@ -1,0 +1,72 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<I c="SituationGoalObjectInteraction" i="situation_goal" m="situations.situation_goal_object_interaction" n="Whim_SeranadeOnPiano" s="34296">
+  <V n="_display_data" t="enabled">
+    <U n="enabled">
+      <V t="enabled" n="instance_display_icon">
+        <T n="enabled" p="InGame\UI\Icons\Whims\whim_Piano.png">2f7d0004:00000000:06a1620c8a08895c</T>
+      </V>
+      <V n="instance_display_name" t="enabled">
+        <T n="enabled">0xCD8DC765<!--String: "Darle una serenata a alguien con un piano"--></T>
+      </V>
+      <V n="instance_display_tooltip" t="enabled">
+        <T n="enabled">0x12399D7<!--String: "Haz clic en el piano, selecciona Serenata y elige un Sim para que toque una serenata."--></T>
+      </V>
+    </U>
+  </V>
+  <U n="_goal_test">
+    <L n="affordances">
+      <T>13812<!--PlayAudioSocialSuperInteraction: piano_Social_Serenade--></T>
+      <T>144729<!--PlayAudioSocialSuperInteraction: portableKeyboard_Social_Serenade--></T>
+    </L>
+    <T n="consider_user_cancelled_as_failure">False</T>
+    <E n="test_event">InteractionComplete</E>
+  </U>
+  <L n="_pre_tests">
+    <V t="sim_info">
+      <U n="sim_info">
+        <V t="specified" n="ages">
+          <L n="specified">
+            <E>TEEN</E>
+            <E>YOUNGADULT</E>
+            <E>ADULT</E>
+            <E>ELDER</E>
+          </L>
+        </V>
+        <V t="specified" n="species">
+          <U n="specified">
+            <L n="species">
+              <E />
+            </L>
+          </U>
+        </V>
+      </U>
+    </V>
+    <V t="skill_test">
+      <U n="skill_test">
+        <T n="skill">16709<!--Skill: statistic_Skill_AdultMajor_Piano--></T>
+        <V t="interval" n="skill_range">
+          <U n="interval">
+            <U n="skill_interval">
+              <T n="lower_bound">6</T>
+            </U>
+          </U>
+        </V>
+      </U>
+    </V>
+    <V t="object_criteria">
+      <U n="object_criteria">
+        <V t="tags" n="identity_test">
+          <U n="tags">
+            <L n="tag_set">
+              <E>Func_Piano</E>
+            </L>
+          </U>
+        </V>
+        <T n="on_active_lot">True</T>
+        <T n="owned">False</T>
+      </U>
+    </V>
+  </L>
+  <T n="_score">50</T>
+  <T p="InGame\Audio\Bumper\bumper_event_goal_complete.propx" n="audio_sting_on_complete">39b2aa4a:00000000:ed52c39bcc2a7111</T>
+</I>

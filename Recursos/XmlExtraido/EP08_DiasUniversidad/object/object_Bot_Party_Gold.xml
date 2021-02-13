@@ -1,0 +1,1009 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<I c="GameObject" i="object" m="objects.game_object" n="object_Bot_Party_Gold" s="229795">
+  <V n="_anim_overrides" t="enabled">
+    <U n="enabled">
+      <L n="vfx">
+        <U>
+          <T n="original_effect">fx_bot_iris</T>
+          <U n="replacement_effect">
+            <V n="effect" t="play_effect">
+              <T n="play_effect">ep08_bot_iris_set13</T>
+            </V>
+          </U>
+        </U>
+      </L>
+    </U>
+  </V>
+  <U n="_components">
+    <V t="enabled" n="focus">
+      <U n="enabled">
+        <V n="_focus_score" t="globally">
+          <U n="globally">
+            <E n="base">LOW</E>
+          </U>
+        </V>
+      </U>
+    </V>
+    <V t="enabled" n="idle_component">
+      <U n="enabled">
+        <L n="idle_animation_map">
+          <U>
+            <T n="key">220845<!--ObjectStateValue: bot_StateValues_Animation_Hover--></T>
+            <T n="value">221034<!--ObjectAnimationElement: bots_Animations_Actions_Generic_Hover--></T>
+          </U>
+          <U>
+            <T n="key">220848<!--ObjectStateValue: bot_StateValues_Animation_Landed--></T>
+            <T n="value">221032<!--ObjectAnimationElement: bots_Animations_Actions_Generic_OnGround--></T>
+          </U>
+          <U>
+            <T n="key">220849<!--ObjectStateValue: bot_StateValues_Animation_Land_Broken--></T>
+            <T n="value">222320<!--ObjectAnimationElement: bots_Animations_Actions_Generic_Land_Broken--></T>
+          </U>
+          <U>
+            <T n="key">220896<!--ObjectStateValue: bot_StateValues_Party_Dance--></T>
+            <T n="value">221037<!--ObjectAnimationElement: bots_Animations_Actions_Party_Dance--></T>
+          </U>
+          <U>
+            <T n="key">222299<!--ObjectStateValue: bot_StateValues_Animation_Land_Normal--></T>
+            <T n="value">221030<!--ObjectAnimationElement: bots_Animations_Actions_Generic_Land--></T>
+          </U>
+          <U>
+            <T n="key">222328<!--ObjectStateValue: bot_StateValues_Animation_Landed_Broken--></T>
+            <T n="value">221033<!--ObjectAnimationElement: bots_Animations_Actions_Generic_OnGround_Broken--></T>
+          </U>
+        </L>
+      </U>
+    </V>
+    <V t="enabled" n="inventory_item">
+      <U n="enabled">
+        <V n="no_carry_add_to_sim_inventory_affordances" t="OVERRIDE">
+          <L n="OVERRIDE">
+            <T>228929<!--SuperInteraction: si_SwipeIntoSimInventory_Deactivate_Bot--></T>
+          </L>
+        </V>
+        <T n="skip_carry_pose">True</T>
+        <E n="stack_scheme">NONE</E>
+        <L n="valid_inventory_types">
+          <E>SIM</E>
+        </L>
+      </U>
+    </V>
+    <V t="enabled" n="name">
+      <U n="enabled">
+        <L n="templates">
+          <U>
+            <T n="template_name">0x5953543F<!--String: "Oxidado"--></T>
+          </U>
+          <U>
+            <T n="template_name">0xE4177E37<!--String: "Chispas"--></T>
+          </U>
+          <U>
+            <T n="template_name">0xFE002A85<!--String: "T.O.B.O.R."--></T>
+          </U>
+        </L>
+      </U>
+    </V>
+    <V t="enabled" n="retail_component">
+      <V n="enabled" t="reference">
+        <T n="reference">115303<!--RetailComponent: retailComponent_Default_HighAppeal--></T>
+      </V>
+    </V>
+    <V t="enabled" n="routing_component">
+      <U n="enabled">
+        <V n="object_routing_component" t="enabled">
+          <U n="enabled">
+            <V t="enabled" n="privacy_rules" />
+            <L n="routing_behavior_map">
+              <U>
+                <T n="key">220900<!--ObjectStateValue: bot_StateValues_Routing_Follow--></T>
+                <V t="Stop_All_Behavior" n="value" />
+              </U>
+              <U>
+                <T n="key">222290<!--ObjectStateValue: bot_StateValues_Routing_RouteToTarget--></T>
+                <V n="value" t="Start_Behavior">
+                  <T n="Start_Behavior">223087<!--ObjectRoutingBehavior: objectRoutingBehavior_Bots_Party_RouteToSim--></T>
+                </V>
+              </U>
+              <U>
+                <T n="key">222291<!--ObjectStateValue: bot_StateValues_Routing_Stop--></T>
+                <V t="Stop_All_Behavior" n="value" />
+              </U>
+              <U>
+                <T n="key">222292<!--ObjectStateValue: bot_StateValues_Routing_Wander--></T>
+                <V n="value" t="Start_Behavior">
+                  <T n="Start_Behavior">220971<!--ObjectRoutingBehavior: objectRoutingBehavior_Bots_Wander--></T>
+                </V>
+              </U>
+              <U>
+                <T n="key">222330<!--ObjectStateValue: bot_StateValues_Routing_Land--></T>
+                <V n="value" t="Start_Behavior">
+                  <T n="Start_Behavior">220963<!--ObjectRoutingBehavior: objectRoutingBehavior_Bots_Landing--></T>
+                </V>
+              </U>
+              <U>
+                <T n="key">222441<!--ObjectStateValue: bot_StateValues_Routing_Requeue--></T>
+                <V t="Stop_All_Behavior" n="value" />
+              </U>
+              <U>
+                <T n="key">226533<!--ObjectStateValue: bot_StateValues_Routing_ExhibitionEvent--></T>
+                <V t="Start_Behavior" n="value">
+                  <T n="Start_Behavior">226534<!--ObjectRoutingBehavior: objectRoutingBehavior_Bots_Generic_ExhibitionEvent--></T>
+                </V>
+              </U>
+              <U>
+                <T n="key">228262<!--ObjectStateValue: bot_StateValues_Routing_Land_Charge--></T>
+                <V n="value" t="Start_Behavior">
+                  <T n="Start_Behavior">228263<!--ObjectRoutingBehavior: objectRoutingBehavior_Bots_Charge--></T>
+                </V>
+              </U>
+              <U>
+                <T n="key">228354<!--ObjectStateValue: bot_StateValues_Routing_Sell--></T>
+                <V n="value" t="Start_Behavior">
+                  <T n="Start_Behavior">220968<!--ObjectRoutingBehavior: objectRoutingBehavior_Bots_Sell--></T>
+                </V>
+              </U>
+              <U>
+                <T n="key">229713<!--ObjectStateValue: bot_StateValues_Routing_Land_Broken--></T>
+                <V n="value" t="Start_Behavior">
+                  <T n="Start_Behavior">220965<!--ObjectRoutingBehavior: objectRoutingBehavior_Bots_Breaking--></T>
+                </V>
+              </U>
+              <U>
+                <T n="key">230045<!--ObjectStateValue: bot_StateValues_Routing_Wander_LowBattery--></T>
+                <V n="value" t="Start_Behavior">
+                  <T n="Start_Behavior">230046<!--ObjectRoutingBehavior: objectRoutingBehavior_Bots_Wander_LowBattery--></T>
+                </V>
+              </U>
+            </L>
+            <E n="tracking_category">BOT</E>
+          </U>
+        </V>
+        <U n="plan_context_data">
+          <U n="default_context">
+            <V t="enabled" n="_allowed_heights">
+              <L n="enabled">
+                <E>LARGE_HEIGHT</E>
+              </L>
+            </V>
+            <V t="enabled" n="_allowed_portal_flags">
+              <L n="enabled">
+                <E>DoorHuman</E>
+                <E>REQUIRE_NO_CARRY</E>
+                <E>SPECIES_HUMAN</E>
+                <E>STAIRS_PORTAL_LONG</E>
+                <E>STAIRS_PORTAL_SHORT</E>
+                <E>PoolPortal</E>
+              </L>
+            </V>
+          </U>
+        </U>
+        <U n="walkstyle_behavior">
+          <T p="InEP08\Locomotion\EP08_Bot_Default.walkstyle" n="default_walkstyle">27c01d95:00000000:00000000db6c9eee</T>
+          <T p="InEP08\Locomotion\EP08_Bot_Default.walkstyle" n="run_walkstyle">27c01d95:00000000:00000000db6c9eee</T>
+          <T p="InEP08\Locomotion\EP08_Bot_Default.walkstyle" n="short_walkstyle">27c01d95:00000000:00000000db6c9eee</T>
+        </U>
+      </U>
+    </V>
+    <V t="enabled" n="state">
+      <U n="enabled">
+        <L n="state_triggers">
+          <U>
+            <L n="at_states">
+              <T>220849<!--ObjectStateValue: bot_StateValues_Animation_Land_Broken--></T>
+            </L>
+            <V n="set_states" t="Set_state_list">
+              <L n="Set_state_list">
+                <T>222328<!--ObjectStateValue: bot_StateValues_Animation_Landed_Broken--></T>
+              </L>
+            </V>
+          </U>
+          <U>
+            <L n="at_states">
+              <T>222299<!--ObjectStateValue: bot_StateValues_Animation_Land_Normal--></T>
+            </L>
+            <V n="set_states" t="Set_state_list">
+              <L n="Set_state_list">
+                <T>220848<!--ObjectStateValue: bot_StateValues_Animation_Landed--></T>
+              </L>
+            </V>
+          </U>
+          <U>
+            <L n="at_states">
+              <T>220843<!--ObjectStateValue: bot_StateValues_Activated_On--></T>
+            </L>
+            <V t="Set_state_list" n="set_states">
+              <L n="Set_state_list">
+                <T>222290<!--ObjectStateValue: bot_StateValues_Routing_RouteToTarget--></T>
+              </L>
+            </V>
+          </U>
+          <U>
+            <L n="at_states">
+              <T>222441<!--ObjectStateValue: bot_StateValues_Routing_Requeue--></T>
+            </L>
+            <V t="Set_state_list" n="set_states">
+              <L n="Set_state_list">
+                <T>222290<!--ObjectStateValue: bot_StateValues_Routing_RouteToTarget--></T>
+              </L>
+            </V>
+          </U>
+          <U>
+            <L n="at_states">
+              <T>220843<!--ObjectStateValue: bot_StateValues_Activated_On--></T>
+              <T>220829<!--CommodityBasedObjectStateValue: bot_Durability_Values_Broken--></T>
+            </L>
+            <V n="set_states" t="Set_state_list">
+              <L n="Set_state_list">
+                <T>229713<!--ObjectStateValue: bot_StateValues_Routing_Land_Broken--></T>
+                <T>15080<!--ObjectStateValue: BrokenState_Broken--></T>
+              </L>
+            </V>
+          </U>
+          <U>
+            <L n="at_states">
+              <T>220844<!--ObjectStateValue: bot_StateValues_Activated_Off--></T>
+              <T>220829<!--CommodityBasedObjectStateValue: bot_Durability_Values_Broken--></T>
+            </L>
+            <V t="Set_state_list" n="set_states">
+              <L n="Set_state_list">
+                <T>15080<!--ObjectStateValue: BrokenState_Broken--></T>
+              </L>
+            </V>
+          </U>
+          <U>
+            <L n="at_states">
+              <T>230099<!--CommodityBasedObjectStateValue: bot_Durability_Values_Full--></T>
+              <T>220830<!--CommodityBasedObjectStateValue: bot_Durability_Values_NotBroken--></T>
+            </L>
+            <V t="Set_state_list" n="set_states">
+              <L n="Set_state_list">
+                <T>15081<!--ObjectStateValue: BrokenState_Unbroken--></T>
+              </L>
+            </V>
+            <E n="trigger_operation">OR</E>
+          </U>
+          <U>
+            <L n="at_states">
+              <T>220827<!--CommodityBasedObjectStateValue: bot_Battery_Values_Dead--></T>
+            </L>
+            <V n="set_states" t="Set_state_list">
+              <L n="Set_state_list">
+                <T>223683<!--ObjectStateValue: bot_StateValues_PartyMode_Off--></T>
+                <T>228262<!--ObjectStateValue: bot_StateValues_Routing_Land_Charge--></T>
+              </L>
+            </V>
+          </U>
+          <U>
+            <L n="at_states">
+              <T>220829<!--CommodityBasedObjectStateValue: bot_Durability_Values_Broken--></T>
+            </L>
+            <V n="set_states" t="Set_state_list">
+              <L n="Set_state_list">
+                <T>223683<!--ObjectStateValue: bot_StateValues_PartyMode_Off--></T>
+                <T>228624<!--CommodityBasedObjectStateValue: bot_Destroying_Values_Destroying--></T>
+              </L>
+            </V>
+          </U>
+          <U>
+            <L n="at_states">
+              <T>220830<!--CommodityBasedObjectStateValue: bot_Durability_Values_NotBroken--></T>
+              <T>230099<!--CommodityBasedObjectStateValue: bot_Durability_Values_Full--></T>
+            </L>
+            <V n="set_states" t="Set_state_list">
+              <L n="Set_state_list">
+                <T>228623<!--CommodityBasedObjectStateValue: bot_Destroying_Values_NotDestroying--></T>
+              </L>
+            </V>
+            <E n="trigger_operation">OR</E>
+          </U>
+          <U>
+            <L n="at_states">
+              <T>223681<!--ObjectStateValue: bot_StateValues_PartyMode_On--></T>
+              <T>220843<!--ObjectStateValue: bot_StateValues_Activated_On--></T>
+            </L>
+            <V n="set_random_state" t="Trigger_random_state">
+              <L n="Trigger_random_state">
+                <U>
+                  <T n="state_value">223490<!--AudioChannel: stereoChannel_Electro_Bot--></T>
+                </U>
+                <U>
+                  <T n="state_value">223493<!--AudioChannel: stereoChannel_Pop_Bot--></T>
+                </U>
+                <U>
+                  <T n="state_value">223487<!--AudioChannel: stereoChannel_Alt_Bot--></T>
+                </U>
+                <U>
+                  <T n="state_value">223494<!--AudioChannel: stereoChannel_Retro_Bot--></T>
+                </U>
+              </L>
+            </V>
+            <E n="trigger_operation">OR</E>
+          </U>
+          <U>
+            <L n="at_states">
+              <T>220844<!--ObjectStateValue: bot_StateValues_Activated_Off--></T>
+            </L>
+            <V n="set_states" t="Set_state_list">
+              <L n="Set_state_list">
+                <T>223655<!--AudioChannel: stereoChannel_Off_Bot--></T>
+              </L>
+            </V>
+            <E n="trigger_operation">OR</E>
+          </U>
+        </L>
+        <L n="states">
+          <U>
+            <L n="client_states">
+              <U>
+                <T n="key">220843<!--ObjectStateValue: bot_StateValues_Activated_On--></T>
+              </U>
+              <U>
+                <T n="key">220844<!--ObjectStateValue: bot_StateValues_Activated_Off--></T>
+              </U>
+            </L>
+            <V n="default_value" t="reference">
+              <T n="reference">220844<!--ObjectStateValue: bot_StateValues_Activated_Off--></T>
+            </V>
+          </U>
+          <U>
+            <L n="client_states">
+              <U>
+                <T n="key">220845<!--ObjectStateValue: bot_StateValues_Animation_Hover--></T>
+              </U>
+              <U>
+                <T n="key">220846<!--ObjectStateValue: bot_StateValues_Animation_Hover_LowBattery--></T>
+              </U>
+              <U>
+                <T n="key">220848<!--ObjectStateValue: bot_StateValues_Animation_Landed--></T>
+              </U>
+              <U>
+                <T n="key">220849<!--ObjectStateValue: bot_StateValues_Animation_Land_Broken--></T>
+              </U>
+              <U>
+                <T n="key">220850<!--ObjectStateValue: bot_StateValues_Animation_Scan--></T>
+              </U>
+              <U>
+                <T n="key">220851<!--ObjectStateValue: bot_StateValues_Animation_Wiggle--></T>
+              </U>
+              <U>
+                <T n="key">220852<!--ObjectStateValue: bot_StateValues_Animation_Sad--></T>
+              </U>
+              <U>
+                <T n="key">220896<!--ObjectStateValue: bot_StateValues_Party_Dance--></T>
+              </U>
+              <U>
+                <T n="key">220897<!--ObjectStateValue: bot_StateValues_Party_Dispense--></T>
+              </U>
+              <U>
+                <T n="key">222299<!--ObjectStateValue: bot_StateValues_Animation_Land_Normal--></T>
+              </U>
+              <U>
+                <T n="key">222328<!--ObjectStateValue: bot_StateValues_Animation_Landed_Broken--></T>
+              </U>
+              <U>
+                <T n="key">228359<!--ObjectStateValue: bot_StateValues_Destroy--></T>
+              </U>
+            </L>
+            <V t="reference" n="default_value">
+              <T n="reference">220848<!--ObjectStateValue: bot_StateValues_Animation_Landed--></T>
+            </V>
+            <T n="reset_to_default">True</T>
+          </U>
+          <U>
+            <L n="client_states">
+              <U>
+                <T n="key">220900<!--ObjectStateValue: bot_StateValues_Routing_Follow--></T>
+              </U>
+              <U>
+                <T n="key">220901<!--ObjectStateValue: bot_StateValues_Routing_GetClose--></T>
+              </U>
+              <U>
+                <T n="key">222290<!--ObjectStateValue: bot_StateValues_Routing_RouteToTarget--></T>
+              </U>
+              <U>
+                <T n="key">222291<!--ObjectStateValue: bot_StateValues_Routing_Stop--></T>
+              </U>
+              <U>
+                <T n="key">222292<!--ObjectStateValue: bot_StateValues_Routing_Wander--></T>
+              </U>
+              <U>
+                <T n="key">222330<!--ObjectStateValue: bot_StateValues_Routing_Land--></T>
+              </U>
+              <U>
+                <T n="key">222441<!--ObjectStateValue: bot_StateValues_Routing_Requeue--></T>
+              </U>
+              <U>
+                <T n="key">228262<!--ObjectStateValue: bot_StateValues_Routing_Land_Charge--></T>
+              </U>
+              <U>
+                <T n="key">228354<!--ObjectStateValue: bot_StateValues_Routing_Sell--></T>
+              </U>
+              <U>
+                <T n="key">229713<!--ObjectStateValue: bot_StateValues_Routing_Land_Broken--></T>
+              </U>
+              <U>
+                <T n="key">230045<!--ObjectStateValue: bot_StateValues_Routing_Wander_LowBattery--></T>
+              </U>
+            </L>
+            <V n="default_value" t="reference">
+              <T n="reference">222291<!--ObjectStateValue: bot_StateValues_Routing_Stop--></T>
+            </V>
+          </U>
+          <U>
+            <L n="client_states">
+              <U>
+                <T n="key">220824<!--CommodityBasedObjectStateValue: bot_Battery_Values_High--></T>
+              </U>
+              <U>
+                <T n="key">220825<!--CommodityBasedObjectStateValue: bot_Battery_Values_Medium--></T>
+              </U>
+              <U>
+                <T n="key">220826<!--CommodityBasedObjectStateValue: bot_Battery_Values_Low--></T>
+              </U>
+              <U>
+                <T n="key">220827<!--CommodityBasedObjectStateValue: bot_Battery_Values_Dead--></T>
+              </U>
+            </L>
+            <V n="default_value" t="reference">
+              <T n="reference">220824<!--CommodityBasedObjectStateValue: bot_Battery_Values_High--></T>
+            </V>
+          </U>
+          <U>
+            <L n="client_states">
+              <U>
+                <T n="key">220829<!--CommodityBasedObjectStateValue: bot_Durability_Values_Broken--></T>
+              </U>
+              <U>
+                <T n="key">220830<!--CommodityBasedObjectStateValue: bot_Durability_Values_NotBroken--></T>
+              </U>
+              <U>
+                <T n="key">230099<!--CommodityBasedObjectStateValue: bot_Durability_Values_Full--></T>
+              </U>
+            </L>
+            <V n="default_value" t="reference">
+              <T n="reference">230099<!--CommodityBasedObjectStateValue: bot_Durability_Values_Full--></T>
+            </V>
+          </U>
+          <U>
+            <L n="client_states">
+              <U>
+                <T n="key">220873<!--CommodityBasedObjectStateValue: bots_Enhancement_Values_1--></T>
+              </U>
+              <U>
+                <T n="key">220874<!--CommodityBasedObjectStateValue: bots_Enhancement_Values_2--></T>
+              </U>
+              <U>
+                <T n="key">220875<!--CommodityBasedObjectStateValue: bots_Enhancement_Values_3--></T>
+              </U>
+              <U>
+                <T n="key">220878<!--CommodityBasedObjectStateValue: bots_Enhancement_Values_4--></T>
+              </U>
+              <U>
+                <T n="key">220879<!--CommodityBasedObjectStateValue: bots_Enhancement_Values_5--></T>
+              </U>
+              <U>
+                <T n="key">220880<!--CommodityBasedObjectStateValue: bots_Enhancement_Values_6--></T>
+              </U>
+              <U>
+                <T n="key">220881<!--CommodityBasedObjectStateValue: bots_Enhancement_Values_7--></T>
+              </U>
+              <U>
+                <T n="key">220882<!--CommodityBasedObjectStateValue: bots_Enhancement_Values_8--></T>
+              </U>
+              <U>
+                <T n="key">220891<!--CommodityBasedObjectStateValue: bots_Enhancement_Values_9--></T>
+              </U>
+              <U>
+                <T n="key">220892<!--CommodityBasedObjectStateValue: bots_Enhancement_Values_10--></T>
+              </U>
+            </L>
+            <V n="default_value" t="reference">
+              <T n="reference">220873<!--CommodityBasedObjectStateValue: bots_Enhancement_Values_1--></T>
+            </V>
+          </U>
+          <U>
+            <V t="reference" n="default_value">
+              <T n="reference">15304<!--CommodityBasedObjectStateValue: Quality_Normal--></T>
+            </V>
+          </U>
+          <U>
+            <L n="client_states">
+              <U>
+                <T n="key">15080<!--ObjectStateValue: BrokenState_Broken--></T>
+                <U n="value">
+                  <V n="broadcaster" t="apply_new_value">
+                    <V n="apply_new_value" t="start_broadcaster">
+                      <U n="start_broadcaster">
+                        <L n="broadcaster_types">
+                          <U>
+                            <T n="item">177106<!--Broadcaster: broadcaster_RobotVacuum_closeRange_Pets_Fear--></T>
+                          </U>
+                          <U>
+                            <T n="item">172032<!--Broadcaster: broadcaster_Fear_Pet_RobotVacuum_running--></T>
+                          </U>
+                        </L>
+                      </U>
+                    </V>
+                  </V>
+                  <V n="vfx_state" t="apply_new_value">
+                    <V n="apply_new_value" t="start_vfx">
+                      <V n="start_vfx" t="single_effect">
+                        <U n="single_effect">
+                          <T n="effect_name">ep08_bot_broken</T>
+                        </U>
+                      </V>
+                    </V>
+                  </V>
+                </U>
+              </U>
+              <U>
+                <T n="key">15081<!--ObjectStateValue: BrokenState_Unbroken--></T>
+                <U n="value">
+                  <V t="apply_new_value" n="broadcaster" />
+                  <V t="apply_new_value" n="vfx_state" />
+                </U>
+              </U>
+              <U>
+                <T n="key">39292<!--ObjectStateValue: BrokenState_Repairing--></T>
+                <U n="value">
+                  <V t="apply_new_value" n="broadcaster" />
+                </U>
+              </U>
+            </L>
+            <V t="reference" n="default_value">
+              <T n="reference">15081<!--ObjectStateValue: BrokenState_Unbroken--></T>
+            </V>
+          </U>
+          <U>
+            <L n="client_states">
+              <U>
+                <T n="key">185122<!--ObjectStateValue: object_Rain_Outside--></T>
+              </U>
+              <U>
+                <T n="key">185125<!--ObjectStateValue: object_Rain_Inside--></T>
+              </U>
+            </L>
+            <V n="default_value" t="reference">
+              <T n="reference">185125<!--ObjectStateValue: object_Rain_Inside--></T>
+            </V>
+          </U>
+          <U>
+            <L n="client_states">
+              <U>
+                <T n="key">228623<!--CommodityBasedObjectStateValue: bot_Destroying_Values_NotDestroying--></T>
+              </U>
+              <U>
+                <T n="key">228624<!--CommodityBasedObjectStateValue: bot_Destroying_Values_Destroying--></T>
+              </U>
+              <U>
+                <T n="key">228625<!--CommodityBasedObjectStateValue: bot_Destroying_Values_Destroyed--></T>
+              </U>
+            </L>
+            <V n="default_value" t="reference">
+              <T n="reference">228623<!--CommodityBasedObjectStateValue: bot_Destroying_Values_NotDestroying--></T>
+            </V>
+          </U>
+          <U>
+            <L n="client_states">
+              <U>
+                <T n="key">228969<!--ObjectStateValue: bot_StateValues_BatteryPercentageUpdate_A--></T>
+              </U>
+              <U>
+                <T n="key">228970<!--ObjectStateValue: bot_StateValues_BatteryPercentageUpdate_B--></T>
+              </U>
+            </L>
+            <V n="default_value" t="reference">
+              <T n="reference">228969<!--ObjectStateValue: bot_StateValues_BatteryPercentageUpdate_A--></T>
+            </V>
+          </U>
+          <U>
+            <L n="client_states">
+              <U>
+                <T n="key">223487<!--AudioChannel: stereoChannel_Alt_Bot--></T>
+              </U>
+              <U>
+                <T n="key">223488<!--AudioChannel: stereoChannel_Blues_Blot--></T>
+              </U>
+              <U>
+                <T n="key">223489<!--AudioChannel: stereoChannel_Classical_Bot--></T>
+              </U>
+              <U>
+                <T n="key">223490<!--AudioChannel: stereoChannel_Electro_Bot--></T>
+              </U>
+              <U>
+                <T n="key">223491<!--AudioChannel: stereoChannel_KidsRadio_Bot--></T>
+              </U>
+              <U>
+                <T n="key">223492<!--AudioChannel: stereoChannel_Lullabies_Bot--></T>
+              </U>
+              <U>
+                <T n="key">223493<!--AudioChannel: stereoChannel_Pop_Bot--></T>
+              </U>
+              <U>
+                <T n="key">223494<!--AudioChannel: stereoChannel_Retro_Bot--></T>
+              </U>
+              <U>
+                <T n="key">223511<!--AudioChannel: stereoChannel_Romance_Bot--></T>
+              </U>
+              <U>
+                <T n="key">223512<!--AudioChannel: stereoChannel_Spooky_Bot--></T>
+              </U>
+              <U>
+                <T n="key">223513<!--AudioChannel: stereoChannel_WinterHoliday_Bot--></T>
+              </U>
+              <U>
+                <T n="key">223514<!--AudioChannel: stereoChannel_HospitalMusic_Bot--></T>
+              </U>
+              <U>
+                <T n="key">223515<!--AudioChannel: stereoChannel_Backyard_Bot--></T>
+              </U>
+              <U>
+                <T n="key">223516<!--AudioChannel: stereoChannel_NewAge_Bot--></T>
+              </U>
+              <U>
+                <T n="key">223517<!--AudioChannel: stereoChannel_DinnerJazz_Bot--></T>
+              </U>
+              <U>
+                <T n="key">223518<!--AudioChannel: stereoChannel_Baroque_Bot--></T>
+              </U>
+              <U>
+                <T n="key">223519<!--AudioChannel: stereoChannel_Tween_Bot--></T>
+              </U>
+              <U>
+                <T n="key">223520<!--AudioChannel: stereoChannel_Disco_Pop_Bot--></T>
+              </U>
+              <U>
+                <T n="key">223521<!--AudioChannel: stereoChannel_Latin_Bot--></T>
+              </U>
+              <U>
+                <T n="key">223522<!--AudioChannel: stereoChannel_LatinPop_Bot--></T>
+              </U>
+              <U>
+                <T n="key">223523<!--AudioChannel: stereoChannel_StrangeTunes_Bot--></T>
+              </U>
+              <U>
+                <T n="key">223525<!--AudioChannel: stereoChannel_CulturalWorld_Bot--></T>
+              </U>
+              <U>
+                <T n="key">223526<!--AudioChannel: stereoChannel_SPop_Bot--></T>
+              </U>
+              <U>
+                <T n="key">223527<!--AudioChannel: stereoChannel_TalkRadio_Bot--></T>
+              </U>
+              <U>
+                <T n="key">223528<!--AudioChannel: stereoChannel_SingerSongWriter_Bot--></T>
+              </U>
+              <U>
+                <T n="key">223529<!--AudioChannel: stereoChannel_SummerStrut_Bot--></T>
+              </U>
+              <U>
+                <T n="key">223530<!--AudioChannel: stereoChannel_HipHop_Bot--></T>
+              </U>
+              <U>
+                <T n="key">223531<!--AudioChannel: stereoChannel_Island_Bot--></T>
+              </U>
+              <U>
+                <T n="key">223655<!--AudioChannel: stereoChannel_Off_Bot--></T>
+              </U>
+              <U>
+                <T n="key">238271<!--AudioChannel: stereoChannel_Americana_Bot--></T>
+              </U>
+              <U>
+                <T n="key">240056<!--AudioChannel: stereoChannel_Focus_Bot--></T>
+              </U>
+              <U>
+                <T n="key">240065<!--AudioChannel: stereoChannel_Metal_Bot--></T>
+              </U>
+              <U>
+                <T n="key">246206<!--AudioChannel: stereoChannel_JFolk_Bot--></T>
+              </U>
+              <U>
+                <T n="key">247519<!--AudioChannel: stereoChannel_Batuu_Bot--></T>
+              </U>
+            </L>
+            <V n="default_value" t="reference">
+              <T n="reference">223655<!--AudioChannel: stereoChannel_Off_Bot--></T>
+            </V>
+          </U>
+          <U>
+            <L n="client_states">
+              <U>
+                <T n="key">223681<!--ObjectStateValue: bot_StateValues_PartyMode_On--></T>
+              </U>
+              <U>
+                <T n="key">223683<!--ObjectStateValue: bot_StateValues_PartyMode_Off--></T>
+              </U>
+            </L>
+            <V n="default_value" t="reference">
+              <T n="reference">223683<!--ObjectStateValue: bot_StateValues_PartyMode_Off--></T>
+            </V>
+          </U>
+          <U>
+            <L n="client_states">
+              <U>
+                <T n="key">15022<!--ObjectStateValue: AudioVolume_High--></T>
+                <U n="value">
+                  <V n="audio_effect_state" t="apply_new_value">
+                    <V n="apply_new_value" t="start_audio_effect">
+                      <U n="start_audio_effect">
+                        <T n="effect_name">stereo_volume_high</T>
+                        <T n="tag_name">volume</T>
+                      </U>
+                    </V>
+                  </V>
+                </U>
+              </U>
+              <U>
+                <T n="key">15023<!--ObjectStateValue: AudioVolume_Low--></T>
+                <U n="value">
+                  <V n="audio_effect_state" t="apply_new_value">
+                    <V n="apply_new_value" t="start_audio_effect">
+                      <U n="start_audio_effect">
+                        <T n="effect_name">stereo_volume_low</T>
+                        <T n="tag_name">volume</T>
+                      </U>
+                    </V>
+                  </V>
+                </U>
+              </U>
+              <U>
+                <T n="key">15024<!--ObjectStateValue: AudioVolume_Medium--></T>
+                <U n="value">
+                  <V n="audio_effect_state" t="apply_new_value">
+                    <V n="apply_new_value" t="start_audio_effect">
+                      <U n="start_audio_effect">
+                        <T n="effect_name">stereo_volume_normal</T>
+                        <T n="tag_name">volume</T>
+                      </U>
+                    </V>
+                  </V>
+                </U>
+              </U>
+            </L>
+            <V t="reference" n="default_value">
+              <T n="reference">15024<!--ObjectStateValue: AudioVolume_Medium--></T>
+            </V>
+          </U>
+        </L>
+      </U>
+    </V>
+    <V t="enabled" n="tooltip_component">
+      <U n="enabled">
+        <L n="custom_tooltips">
+          <U>
+            <L n="tooltip_fields">
+              <U>
+                <E n="key">recipe_description</E>
+                <U n="value">
+                  <V n="text" t="single">
+                    <T n="single">0x38CDB51A<!--String: "{0.ObjectDescription}"--></T>
+                  </V>
+                  <V t="enabled" n="text_tokens">
+                    <U n="enabled">
+                      <L n="tokens">
+                        <V t="participant_type">
+                          <U n="participant_type">
+                            <V t="from_participant" n="objects">
+                              <U n="from_participant">
+                                <E n="participant">Object</E>
+                              </U>
+                            </V>
+                          </U>
+                        </V>
+                      </L>
+                    </U>
+                  </V>
+                </U>
+              </U>
+              <U>
+                <E n="key">recipe_name</E>
+                <U n="value">
+                  <V n="text" t="single">
+                    <T n="single">0x8D93CF08<!--String: "{0.ObjectName}"--></T>
+                  </V>
+                  <V t="enabled" n="text_tokens">
+                    <U n="enabled">
+                      <L n="tokens">
+                        <V t="participant_type">
+                          <U n="participant_type">
+                            <V t="from_participant" n="objects">
+                              <U n="from_participant">
+                                <E n="participant">Object</E>
+                              </U>
+                            </V>
+                          </U>
+                        </V>
+                      </L>
+                    </U>
+                  </V>
+                </U>
+              </U>
+              <U>
+                <E n="key">subtext</E>
+                <U n="value">
+                  <V n="text" t="single">
+                    <T n="single">0xF5148F56<!--String: "Batería: {0.Number}% \n • Durabilidad: {1.Number}%"--></T>
+                  </V>
+                  <V n="text_tokens" t="enabled">
+                    <U n="enabled">
+                      <L n="tokens">
+                        <V t="statistic_value">
+                          <U n="statistic_value">
+                            <E n="participant">Object</E>
+                            <T n="statistic">219981<!--Commodity: commodity_Bots_Battery--></T>
+                          </U>
+                        </V>
+                        <V t="statistic_value">
+                          <U n="statistic_value">
+                            <E n="participant">Object</E>
+                            <T n="statistic">229420<!--Commodity: commodity_Object_Bot_Brokenness--></T>
+                          </U>
+                        </V>
+                      </L>
+                    </U>
+                  </V>
+                </U>
+              </U>
+            </L>
+            <E n="tooltip_style">HOVER_TIP_CUSTOM_OBJECT</E>
+          </U>
+        </L>
+        <L n="state_value_strings">
+          <L>
+            <U>
+              <T n="state_value">220892<!--CommodityBasedObjectStateValue: bots_Enhancement_Values_10--></T>
+              <V n="text" t="single">
+                <T n="single">0x7D8C710D<!--String: "Nivel de mejora: 10"--></T>
+              </V>
+            </U>
+            <U>
+              <T n="state_value">220873<!--CommodityBasedObjectStateValue: bots_Enhancement_Values_1--></T>
+              <V n="text" t="single">
+                <T n="single">0xB1600DFC<!--String: "Nivel de mejora: 1"--></T>
+              </V>
+            </U>
+            <U>
+              <T n="state_value">220874<!--CommodityBasedObjectStateValue: bots_Enhancement_Values_2--></T>
+              <V n="text" t="single">
+                <T n="single">0x10EC58E3<!--String: "Nivel de mejora: 2"--></T>
+              </V>
+            </U>
+            <U>
+              <T n="state_value">220875<!--CommodityBasedObjectStateValue: bots_Enhancement_Values_3--></T>
+              <V n="text" t="single">
+                <T n="single">0x66E1F5A1<!--String: "Nivel de mejora: 3"--></T>
+              </V>
+            </U>
+            <U>
+              <T n="state_value">220878<!--CommodityBasedObjectStateValue: bots_Enhancement_Values_4--></T>
+              <V n="text" t="single">
+                <T n="single">0xE548EC3E<!--String: "Nivel de mejora: 4"--></T>
+              </V>
+            </U>
+            <U>
+              <T n="state_value">220879<!--CommodityBasedObjectStateValue: bots_Enhancement_Values_5--></T>
+              <V n="text" t="single">
+                <T n="single">0xE642457E<!--String: "Nivel de mejora: 5"--></T>
+              </V>
+            </U>
+            <U>
+              <T n="state_value">220880<!--CommodityBasedObjectStateValue: bots_Enhancement_Values_6--></T>
+              <V n="text" t="single">
+                <T n="single">0x31123425<!--String: "Nivel de mejora: 6"--></T>
+              </V>
+            </U>
+            <U>
+              <T n="state_value">220881<!--CommodityBasedObjectStateValue: bots_Enhancement_Values_7--></T>
+              <V n="text" t="single">
+                <T n="single">0xC8F752B1<!--String: "Nivel de mejora: 7"--></T>
+              </V>
+            </U>
+            <U>
+              <T n="state_value">220882<!--CommodityBasedObjectStateValue: bots_Enhancement_Values_8--></T>
+              <V n="text" t="single">
+                <T n="single">0x6447B56C<!--String: "Nivel de mejora: 8"--></T>
+              </V>
+            </U>
+            <U>
+              <T n="state_value">220891<!--CommodityBasedObjectStateValue: bots_Enhancement_Values_9--></T>
+              <V n="text" t="single">
+                <T n="single">0x3C4A2786<!--String: "Nivel de mejora: 9"--></T>
+              </V>
+            </U>
+          </L>
+        </L>
+      </U>
+    </V>
+    <V t="enabled" n="weather_aware_component">
+      <U n="enabled">
+        <L n="outside_loot">
+          <U>
+            <E n="key">AnyRain</E>
+            <U n="value">
+              <L n="end_loot">
+                <T>185163<!--LootActions: loot_Wetness_Object_Rain_End--></T>
+              </L>
+              <L n="start_loot">
+                <T>184964<!--LootActions: Loot_Wetness_Object_Start--></T>
+              </L>
+            </U>
+          </U>
+        </L>
+      </U>
+    </V>
+  </U>
+  <L n="_super_affordances">
+    <T>13328<!--ImmediateSuperInteraction: debug_Reset--></T>
+    <T>13326<!--ImmediateSuperInteraction: debug_ObjectDestroy--></T>
+    <T>103888<!--ImmediateSuperInteraction: cheat_set_as_head--></T>
+    <T>13327<!--ImmediateSuperInteraction: debug_RepairObject--></T>
+    <T>221759<!--SuperInteraction: bots_Launch_Activate--></T>
+    <T>221760<!--SuperInteraction: bots_Land_Deactivate--></T>
+    <T>222773<!--SuperInteraction: roboticsTable_Interactions_Dismantle--></T>
+    <T>227884<!--SuperInteraction: humanoid_Robots_TalkToObjects_Socials_MiniBot_STOP--></T>
+    <T>222100<!--SuperInteraction: roboticsTable_Interactions_FromInventory_Bots_WorkOn--></T>
+    <T>230136<!--SuperInteraction: roboticsTable_Interactions_Bots_OnTable_Enhance_Forward_1_to_2--></T>
+    <T>222132<!--SuperInteraction: roboticsTable_Interactions_FromWorld_Bots_WorkOn--></T>
+    <T>224367<!--SuperInteraction: bots_View_Bot--></T>
+    <T>230137<!--SuperInteraction: roboticsTable_Interactions_Bots_OnTable_Enhance_Forward_2_to_3--></T>
+    <T>230138<!--SuperInteraction: roboticsTable_Interactions_Bots_OnTable_Enhance_Forward_3_to_4--></T>
+    <T>230139<!--SuperInteraction: roboticsTable_Interactions_Bots_OnTable_Enhance_Forward_4_to_5--></T>
+    <T>230140<!--SuperInteraction: roboticsTable_Interactions_Bots_OnTable_Enhance_Forward_5_to_6--></T>
+    <T>230141<!--SuperInteraction: roboticsTable_Interactions_Bots_OnTable_Enhance_Forward_6_to_7--></T>
+    <T>230142<!--SuperInteraction: roboticsTable_Interactions_Bots_OnTable_Enhance_Forward_7_to_8--></T>
+    <T>230143<!--SuperInteraction: roboticsTable_Interactions_Bots_OnTable_Enhance_Forward_8_to_9--></T>
+    <T>230144<!--SuperInteraction: roboticsTable_Interactions_Bots_OnTable_Enhance_Forward_9_to_10--></T>
+    <T>227776<!--SuperInteraction: roboticsTable_Interactions_FromWorld_Bots_WorkOn_DeactivateFirst--></T>
+    <T>224381<!--SuperInteraction: bots_View_Judging--></T>
+    <T>230151<!--SuperInteraction: roboticsTable_Interactions_Bots_WorkOn_TuneUp_Forward--></T>
+    <T>228352<!--SuperInteraction: generic_SellObject_Bot--></T>
+    <T>13319<!--ImmediateSuperInteraction: debug_BreakObject--></T>
+    <T>230150<!--SuperInteraction: roboticsTable_Interactions_Bots_WorkOn_Repair_Forward--></T>
+    <T>228414<!--ImmediateSuperInteraction: debug_BotBattery_NearDead--></T>
+    <T>230164<!--SuperInteraction: roboticsTable_Interactions_Bots_OnTable_Enhance_Forward_1_to_2_RoboticsRank3--></T>
+    <T>230165<!--SuperInteraction: roboticsTable_Interactions_Bots_OnTable_Enhance_Forward_2_to_3_RoboticsRank3--></T>
+    <T>230166<!--SuperInteraction: roboticsTable_Interactions_Bots_OnTable_Enhance_Forward_3_to_4_RoboticsRank3--></T>
+    <T>230167<!--SuperInteraction: roboticsTable_Interactions_Bots_OnTable_Enhance_Forward_4_to_5_RoboticsRank3--></T>
+    <T>230168<!--SuperInteraction: roboticsTable_Interactions_Bots_OnTable_Enhance_Forward_5_to_6_RoboticsRank3--></T>
+    <T>230169<!--SuperInteraction: roboticsTable_Interactions_Bots_OnTable_Enhance_Forward_6_to_7_RoboticsRank3--></T>
+    <T>230170<!--SuperInteraction: roboticsTable_Interactions_Bots_OnTable_Enhance_Forward_7_to_8_RoboticsRank3--></T>
+    <T>230171<!--SuperInteraction: roboticsTable_Interactions_Bots_OnTable_Enhance_Forward_8_to_9_RoboticsRank3--></T>
+    <T>230172<!--SuperInteraction: roboticsTable_Interactions_Bots_OnTable_Enhance_Forward_9_to_10_RoboticsRank3--></T>
+    <T>230648<!--SuperInteraction: roboticsTable_Interactions_Bots_WorkOn_TuneUp_Forward_RoboticsRank3--></T>
+    <T>230650<!--SuperInteraction: roboticsTable_Interactions_Bots_WorkOn_Repair_Forward_RoboticsRank3--></T>
+    <T>223183<!--SuperInteraction: bots_Party_PartyMode_On--></T>
+    <T>223184<!--SuperInteraction: bots_Party_PartyMode_Off--></T>
+    <T>223533<!--StereoPieMenuChoicesInteraction: stereo_PickChannel_Bot--></T>
+    <T>223534<!--StereoPieMenuChoicesInteraction: stereo_TurnOnAndListen_Bot--></T>
+    <T>223674<!--ImmediateSuperInteraction: stereo_turnoff_Bot--></T>
+    <T>224305<!--StartCraftingSuperInteraction: bot_StartCrafting_Food--></T>
+    <T>224623<!--CraftingPhaseCreateObjectInSlotSuperInteraction: Bots_CreateInSlot--></T>
+    <T>224306<!--StartCraftingSuperInteraction: bot_StartCrafting_Drink--></T>
+    <T>227905<!--CancelOnStateChangeInteraction: stereo_Dance_Bot--></T>
+    <T>229941<!--ImmediateSuperInteraction: stereo_changevolume_high_Bots--></T>
+    <T>229943<!--ImmediateSuperInteraction: stereo_changevolume_low_Bots--></T>
+    <T>229945<!--ImmediateSuperInteraction: stereo_changevolume_medium_Bots--></T>
+  </L>
+  <U n="recycling_data">
+    <L n="recycling_values">
+      <U>
+        <E n="Bucks Type">RecycleBitsBucks</E>
+        <T n="Value">0.5</T>
+      </U>
+      <U>
+        <E n="Bucks Type">RecyclePiecesBucks</E>
+        <T n="Value">0.5</T>
+      </U>
+    </L>
+  </U>
+  <L n="slot_cost_modifiers">
+    <U>
+      <T n="key">slot_BarServe</T>
+      <T n="value">10000</T>
+    </U>
+    <U>
+      <T n="key">slot_PartyBot</T>
+      <T n="value">10000</T>
+    </U>
+  </L>
+</I>

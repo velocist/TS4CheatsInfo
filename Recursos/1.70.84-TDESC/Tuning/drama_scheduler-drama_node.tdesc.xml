@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+
+<TuningRoot>
+    <Module name="drama_scheduler.drama_node" muid="CC7849E6A13BDF0F">
+        <Class name="DramaNodeUiDisplayType" muid="EDC643EF40F8AAD3" enum_bit_flag="False" enum_locked="False">
+            <EnumItem name="ALERTS_ONLY" muid="1E501F0449A5155B" enum_value="4" />
+
+            <EnumItem name="EVENT" muid="9F2A23BAC97CA8E3" enum_value="1" />
+
+            <EnumItem name="HOLIDAY" muid="2FBA4C278BDECF61" enum_value="3" />
+
+            <EnumItem name="NO_UI" muid="24055C40E648D9EC" enum_value="0" />
+
+            <EnumItem name="POP_UP_HOLIDAY" muid="325DCC7540DDB01D" enum_value="2" />
+
+            <EnumItem name="VACATION" muid="25D4BBB46514FFDC" enum_value="5" />
+        </Class>
+
+        <Class name="DramaNodeScoringBucket" muid="DCAE965089ADF431" enum_bit_flag="False" enum_locked="False">
+            <TunableList name="_elements" class="TunableDynamicEnumElements" display="Elements" muid="8B4C124F2F174450" description="The list of elements in the dynamic enumeration." Deprecated="False" filter="0" group="General" unique_entries="true">
+                <Tunable type="str" class="TunableEnumItem" default="None" muid="14481E8245414E98" Deprecated="False" filter="0" group="General" />
+            </TunableList>
+
+            <EnumItem name="DEFAULT" muid="3D88382CBB2195CD" enum_value="0" />
+        </Class>
+
+        <Class name="DramaNodeParticipantOption" muid="63E7516D3F6EAACF" enum_bit_flag="False" enum_locked="False">
+            <EnumItem name="DRAMA_PARTICIPANT_OPTION_FILTER" muid="3BE5A2DB2E4C5694" enum_value="2" />
+
+            <EnumItem name="DRAMA_PARTICIPANT_OPTION_NONE" muid="B5167014950AF54D" enum_value="0" />
+
+            <EnumItem name="DRAMA_PARTICIPANT_OPTION_PARTICIPANT_TYPE" muid="DF32EDFC9512D5EA" enum_value="1" />
+        </Class>
+
+        <Class name="TimeSelectionOption" muid="D9356FDEB0210332" enum_bit_flag="False" enum_locked="False">
+            <EnumItem name="SCHEDULE" muid="6CBB8E1FFD67BEA8" enum_value="0" />
+
+            <EnumItem name="SINGLE_TIME" muid="1DEA6AD22A7750FE" enum_value="1" />
+        </Class>
+
+        <Class name="CooldownOption" muid="6C9C27C647045389" enum_bit_flag="False" enum_locked="False">
+            <EnumItem name="ON_DIALOG_RESPONSE" muid="7EFA899E386E1DE6" enum_value="1" />
+
+            <EnumItem name="ON_RUN" muid="B03C0FF622AA7BC9" enum_value="0" />
+
+            <EnumItem name="ON_SCHEDULE" muid="99A0F9EC80AC223C" enum_value="2" />
+        </Class>
+
+        <Class name="CooldownGroup" muid="59B0DAB427B885A0" enum_bit_flag="False" enum_locked="False">
+            <TunableList name="_elements" class="TunableDynamicEnumElements" display="Elements" muid="B89BC70DF4634591" description="The list of elements in the dynamic enumeration." Deprecated="False" filter="0" group="General" unique_entries="true">
+                <Tunable type="str" class="TunableEnumItem" default="None" muid="2D637DB95DDF4BB4" Deprecated="False" filter="0" group="General" />
+            </TunableList>
+
+            <EnumItem name="INVALID" muid="3A34B326F3A4EF71" enum_value="0" />
+        </Class>
+
+        <Class name="SenderSimInfoType" muid="96FDDCA85D03C3CA" enum_bit_flag="False" enum_locked="False">
+            <EnumItem name="INSTANCED_ALLOWED" muid="F8CBCCB2BC817175" enum_value="1" />
+
+            <EnumItem name="UNINSTANCED_ONLY" muid="5CDC343493090965" enum_value="0" />
+        </Class>
+
+        <Class name="BaseDramaNode" muid="D31A12D19544CB28">
+            <TunableList name="COOLDOWN_GROUPS" class="TunableMapping" display="Cooldown Groups" muid="205840C2373D9528" mapping_key="key" mapping_value="value" Deprecated="False" filter="0" group="General">
+                <TunableTuple class="TunableTuple" muid="9933C2FB92D85BAD" Deprecated="False" filter="0" group="General">
+                    <TunableEnum type="CooldownGroup" name="key" class="TunableEnumEntry" default="INVALID" display="Key" muid="FDE85F2C4ADD4576" dynamic_entries="drama_scheduler-drama_node.CooldownGroup._elements" static_entries="drama_scheduler-drama_node.CooldownGroup" description="The cooldown group that this cooldown is a part of." Deprecated="False" filter="0" group="General" invalid_entries="INVALID" />
+                    <TunableTuple name="value" class="_DramaNodeCooldown" display="Value" muid="2094B4754810417A" Deprecated="False" filter="0" group="General">
+                        <TunableEnum type="CooldownOption" name="cooldown_option" class="TunableEnumEntry" default="ON_RUN" display="Cooldown Option" muid="16B436B459BC3432" static_entries="drama_scheduler-drama_node.CooldownOption" description="When this drama node should be put on cooldown." Deprecated="False" filter="0" group="General" />
+                        <TunableVariant type="None" name="duration" class="OptionalTunable" default="duration" display="Duration" muid="46D8CE8593949D9" description="If this drama node will be put on cooldown for a duration or put on cooldown permanently." Deprecated="False" filter="0" group="General">
+                            <Tunable type="float" name="duration" class="TunableRange" default="1" display="Duration" muid="CAC51A97D86668CB" min="0" max="None" description="The amount of time in hours after being given this node from&#xA;scoring that it will not be chosen." tuning_state="NeedsTuning" Deprecated="False" filter="0" group="General" />
+                            <Tunable name="permanent" class="TunableExistance" display="Permanent" muid="AD23F17B3D3F7730" />
+                        </TunableVariant>
+                    </TunableTuple>
+                </TunableTuple>
+            </TunableList>
+        </Class>
+    </Module>
+</TuningRoot>

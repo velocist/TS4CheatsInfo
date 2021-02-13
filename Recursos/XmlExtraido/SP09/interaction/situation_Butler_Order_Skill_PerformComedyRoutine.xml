@@ -1,0 +1,168 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<I c="SuperInteraction" i="interaction" m="interactions.base.super_interaction" n="situation_Butler_Order_Skill_PerformComedyRoutine" s="146021">
+  <V t="participant" n="_icon">
+    <U n="participant">
+      <L n="participant_type">
+        <E>TargetSim</E>
+      </L>
+    </U>
+  </V>
+  <V t="enabled" n="_saveable" />
+  <T n="allow_autonomous">False</T>
+  <T n="attention_cost">0.5</T>
+  <V n="basic_content" t="one_shot">
+    <U n="one_shot">
+      <U n="animation_ref">
+        <T n="factory">145389<!--AnimationElement: sim_Butler_OrderButler--></T>
+        <U n="overrides">
+          <V n="balloons" t="enabled">
+            <L n="enabled">
+              <U>
+                <L n="balloon_choices">
+                  <U>
+                    <V n="item" t="balloon_icon">
+                      <U n="balloon_icon">
+                        <V n="icon" t="resource_key">
+                          <U n="resource_key">
+                            <T n="key" p="InGame\UI\Icons\Headlines\Final\headline_ChildSociallyGifted.png">2f7d0004:00000000:68ed61661fe1b647</T>
+                          </U>
+                        </V>
+                      </U>
+                    </V>
+                  </U>
+                </L>
+                <L n="balloon_target">
+                  <E>TargetSim</E>
+                </L>
+              </U>
+            </L>
+          </V>
+        </U>
+      </U>
+    </U>
+  </V>
+  <V t="disabled" n="basic_reserve_object" />
+  <T n="category">148680<!--PieMenuCategory: butlerCatagories_Action--></T>
+  <V t="disabled" n="content_score" />
+  <T n="display_name">0xCEA268E8<!--String: "Realizar número cómico"--></T>
+  <U n="display_name_text_tokens">
+    <L n="tokens">
+      <V t="participant_type">
+        <U n="participant_type">
+          <V n="objects" t="from_participant">
+            <U n="from_participant">
+              <E n="participant">Actor</E>
+            </U>
+          </V>
+        </U>
+      </V>
+      <V t="participant_type">
+        <U n="participant_type">
+          <V n="objects" t="from_participant">
+            <U n="from_participant">
+              <E n="participant">Object</E>
+            </U>
+          </V>
+        </U>
+      </V>
+    </L>
+  </U>
+  <L n="interaction_category_tags">
+    <E>Interaction_Super</E>
+    <E>Interaction_All</E>
+  </L>
+  <V n="outcome" t="single">
+    <U n="single">
+      <U n="actions">
+        <L n="loot_list">
+          <T>152370<!--LootActions: loot_ButlerSituation_GivenOrder--></T>
+        </L>
+        <L n="parameterized_autonomy">
+          <U>
+            <E n="key">TargetSim</E>
+            <U n="value">
+              <V t="enabled" n="fallback_notification">
+                <V n="enabled" t="literal">
+                  <U n="literal">
+                    <V n="text" t="single">
+                      <T n="single">0x13344965<!--String: "{M0.El mayordomo}{F0.La mayordoma} de la residencia no ha podido realizar la tarea solicitada. Dale tiempo para completar su tarea actual o proporciónale las instalaciones adecuadas para llevarla a cabo."--></T>
+                    </V>
+                  </U>
+                </V>
+              </V>
+              <L n="requests">
+                <U>
+                  <L n="static_commodities">
+                    <T>146029<!--StaticCommodity: staticCommodity_Butler_PerformComedyRoutine--></T>
+                  </L>
+                </U>
+              </L>
+            </U>
+          </U>
+        </L>
+        <V t="enabled" n="response">
+          <V n="enabled" t="individual">
+            <U n="individual">
+              <L n="animations">
+                <U>
+                  <E n="target">TargetSim</E>
+                  <U n="animation">
+                    <T n="factory">145386<!--AnimationElement: sim_Butler_OrderReact--></T>
+                  </U>
+                </U>
+              </L>
+            </U>
+          </V>
+        </V>
+      </U>
+    </U>
+  </V>
+  <E n="scoring_priority">NORMAL</E>
+  <T n="subaction_selection_weight">1</T>
+  <E n="target_type">OBJECT</E>
+  <L n="test_globals">
+    <V t="sim_info">
+      <U n="sim_info">
+        <V t="specified" n="ages">
+          <L n="specified">
+            <E>TEEN</E>
+            <E>YOUNGADULT</E>
+            <E>ADULT</E>
+            <E>ELDER</E>
+            <E>CHILD</E>
+          </L>
+        </V>
+        <V t="specified" n="species">
+          <U n="specified">
+            <L n="species">
+              <E />
+            </L>
+          </U>
+        </V>
+        <E n="who">Actor</E>
+      </U>
+    </V>
+    <V t="buff">
+      <U n="buff">
+        <E n="subject">TargetSim</E>
+        <V t="enabled" n="whitelist">
+          <L n="enabled">
+            <T>145405<!--Buff: buff_Role_Butler_NPC--></T>
+          </L>
+        </V>
+      </U>
+    </V>
+    <V t="object_criteria">
+      <U n="object_criteria">
+        <V n="identity_test" t="tags">
+          <U n="tags">
+            <L n="tag_set">
+              <E>Func_Microphone</E>
+            </L>
+          </U>
+        </V>
+      </U>
+    </V>
+  </L>
+  <T n="time_overhead">30</T>
+</I>

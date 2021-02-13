@@ -1,0 +1,272 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<I c="GameObject" i="object" m="objects.game_object" n="starShip_XWing" s="238505">
+  <U n="_components">
+    <V t="enabled" n="focus">
+      <U n="enabled">
+        <V n="_focus_score" t="globally">
+          <U n="globally">
+            <E n="base">LOW</E>
+          </U>
+        </V>
+      </U>
+    </V>
+    <V n="idle_component" t="enabled">
+      <U n="enabled">
+        <L n="idle_animation_map">
+          <U>
+            <T n="key">238525<!--ObjectStateValue: starship_Idle_Ground--></T>
+            <T n="value">238536<!--ObjectAnimationElement: starship_Idles_XWing_Ground--></T>
+          </U>
+          <U>
+            <T n="key">238526<!--ObjectStateValue: starship_Idle_Space--></T>
+            <T n="value">238537<!--ObjectAnimationElement: starship_Idles_XWing_Space--></T>
+          </U>
+        </L>
+      </U>
+    </V>
+    <V t="enabled" n="spawn_point">
+      <U n="enabled">
+        <L n="spawn_points">
+          <U>
+            <T n="bone_name">b__subroot__2</T>
+            <L n="spawner_tags">
+              <E>Spawn_Starship</E>
+            </L>
+          </U>
+        </L>
+      </U>
+    </V>
+    <V n="state" t="enabled">
+      <U n="enabled">
+        <L n="state_triggers">
+          <U>
+            <L n="at_states">
+              <T>238526<!--ObjectStateValue: starship_Idle_Space--></T>
+            </L>
+            <V n="set_states" t="Set_state_list">
+              <L n="Set_state_list">
+                <T>238528<!--ObjectStateValue: starship_CanExit_No--></T>
+              </L>
+            </V>
+          </U>
+          <U>
+            <L n="at_states">
+              <T>238529<!--ObjectStateValue: starship_CanExit_Yes--></T>
+            </L>
+            <V n="set_states" t="Set_state_list">
+              <L n="Set_state_list">
+                <T>238527<!--ObjectStateValue: starship_CanExit_Default--></T>
+              </L>
+            </V>
+          </U>
+          <U>
+            <L n="at_states">
+              <T>15076<!--CommodityBasedObjectStateValue: Brokenness_Broken--></T>
+            </L>
+            <V n="set_states" t="Set_state_list">
+              <L n="Set_state_list">
+                <T>15080<!--ObjectStateValue: BrokenState_Broken--></T>
+              </L>
+            </V>
+          </U>
+          <U>
+            <L n="at_states">
+              <T>15078<!--CommodityBasedObjectStateValue: Brokenness_Unbroken--></T>
+            </L>
+            <V n="set_states" t="Set_state_list">
+              <L n="Set_state_list">
+                <T>15081<!--ObjectStateValue: BrokenState_Unbroken--></T>
+                <T>239165<!--ObjectStateValue: starship_Reaction_Default--></T>
+              </L>
+            </V>
+          </U>
+          <U>
+            <L n="at_states">
+              <T>238527<!--ObjectStateValue: starship_CanExit_Default--></T>
+              <T>15080<!--ObjectStateValue: BrokenState_Broken--></T>
+            </L>
+            <V n="set_states" t="Set_state_list">
+              <L n="Set_state_list">
+                <T>239166<!--ObjectStateValue: starship_Reaction_Damaged--></T>
+              </L>
+            </V>
+          </U>
+        </L>
+        <L n="states">
+          <U>
+            <V n="default_value" t="reference">
+              <T n="reference">238525<!--ObjectStateValue: starship_Idle_Ground--></T>
+            </V>
+          </U>
+          <U>
+            <V n="default_value" t="reference">
+              <T n="reference">238527<!--ObjectStateValue: starship_CanExit_Default--></T>
+            </V>
+          </U>
+          <U>
+            <L n="client_states">
+              <U>
+                <T n="key">15080<!--ObjectStateValue: BrokenState_Broken--></T>
+                <U n="value">
+                  <V n="vfx_state" t="apply_new_value">
+                    <V n="apply_new_value" t="start_vfx">
+                      <V n="start_vfx" t="single_effect">
+                        <U n="single_effect">
+                          <T n="effect_name">gp09_xwing_electrical_broken</T>
+                          <V t="Slot" n="joint_name">
+                            <T n="Slot">_FX_</T>
+                          </V>
+                        </U>
+                      </V>
+                    </V>
+                  </V>
+                </U>
+              </U>
+              <U>
+                <T n="key">15081<!--ObjectStateValue: BrokenState_Unbroken--></T>
+                <U n="value">
+                  <V t="apply_new_value" n="vfx_state" />
+                </U>
+              </U>
+            </L>
+            <V t="reference" n="default_value">
+              <T n="reference">15081<!--ObjectStateValue: BrokenState_Unbroken--></T>
+            </V>
+          </U>
+          <U>
+            <V t="reference" n="default_value">
+              <T n="reference">15078<!--CommodityBasedObjectStateValue: Brokenness_Unbroken--></T>
+            </V>
+          </U>
+          <U>
+            <L n="client_states">
+              <U>
+                <T n="key">239165<!--ObjectStateValue: starship_Reaction_Default--></T>
+                <U n="value">
+                  <V t="apply_new_value" n="broadcaster">
+                    <V n="apply_new_value" t="no_broadcaster" />
+                  </V>
+                </U>
+              </U>
+              <U>
+                <T n="key">239166<!--ObjectStateValue: starship_Reaction_Damaged--></T>
+                <U n="value">
+                  <V n="broadcaster" t="apply_new_value">
+                    <V n="apply_new_value" t="start_broadcaster">
+                      <U n="start_broadcaster">
+                        <L n="broadcaster_types">
+                          <U>
+                            <T n="item">239169<!--Broadcaster: broadcaster_Batuu_Starship_Broken--></T>
+                          </U>
+                        </L>
+                      </U>
+                    </V>
+                  </V>
+                </U>
+              </U>
+              <U>
+                <T n="key">239167<!--ObjectStateValue: starship_Reaction_Repair--></T>
+                <U n="value">
+                  <V t="apply_new_value" n="broadcaster">
+                    <V n="apply_new_value" t="no_broadcaster" />
+                  </V>
+                  <V n="situation" t="apply_new_value">
+                    <U n="apply_new_value">
+                      <L n="situations_to_create">
+                        <U>
+                          <T n="situation">239176<!--SingleJobSituation: situation_Batuu_Starship_Repair_XWing--></T>
+                        </U>
+                      </L>
+                    </U>
+                  </V>
+                </U>
+              </U>
+            </L>
+            <V t="reference" n="default_value">
+              <T n="reference">239165<!--ObjectStateValue: starship_Reaction_Default--></T>
+            </V>
+          </U>
+        </L>
+        <V t="enabled" n="timed_state_triggers">
+          <L n="enabled">
+            <U>
+              <T n="key">238525<!--ObjectStateValue: starship_Idle_Ground--></T>
+              <U n="value">
+                <L n="ops">
+                  <U>
+                    <L n="states_to_trigger">
+                      <T>238529<!--ObjectStateValue: starship_CanExit_Yes--></T>
+                    </L>
+                    <T n="trigger_time">5</T>
+                  </U>
+                </L>
+              </U>
+            </U>
+            <U>
+              <T n="key">239166<!--ObjectStateValue: starship_Reaction_Damaged--></T>
+              <U n="value">
+                <L n="ops">
+                  <U>
+                    <L n="states_to_trigger">
+                      <T>239167<!--ObjectStateValue: starship_Reaction_Repair--></T>
+                    </L>
+                    <T n="trigger_time">60</T>
+                  </U>
+                </L>
+              </U>
+            </U>
+          </L>
+        </V>
+      </U>
+    </V>
+  </U>
+  <L n="_part_data_map">
+    <U>
+      <T n="key">Part_Repair</T>
+      <U n="value">
+        <T n="part_definition">239093<!--ObjectPart: objectPart_Starship_Repair--></T>
+        <V t="enabled" n="subroot_index">
+          <T n="enabled">1</T>
+        </V>
+      </U>
+    </U>
+  </L>
+  <L n="_super_affordances">
+    <T>13328<!--ImmediateSuperInteraction: debug_Reset--></T>
+    <T>13326<!--ImmediateSuperInteraction: debug_ObjectDestroy--></T>
+    <T>103888<!--ImmediateSuperInteraction: cheat_set_as_head--></T>
+    <T>13983<!--StandSuperInteraction: sim-stand--></T>
+    <T>13327<!--ImmediateSuperInteraction: debug_RepairObject--></T>
+    <T>13319<!--ImmediateSuperInteraction: debug_BreakObject--></T>
+    <T>239385<!--SuperInteraction: starship_MissionWith_Prep_Crew--></T>
+    <T>239386<!--SuperInteraction: starship_MissionWith_Prep_Leader--></T>
+    <T>239510<!--SuperInteraction: starship_Reaction_Broken--></T>
+    <T>240685<!--SuperInteraction: starship_NPC_Examine--></T>
+    <T>238562<!--SuperInteraction: starship_Mission_Prep_XWing_ActiveDroid--></T>
+    <T>238589<!--SuperInteraction: starship_Mission_Prep_XWing_DefaultDroid--></T>
+    <T>238590<!--SuperInteraction: starship_Mission_Prep_XWing_InventoryDroid--></T>
+    <T>238597<!--SuperInteraction: starship_Explore_Prep_XWing_ActiveDroid--></T>
+    <T>238598<!--SuperInteraction: starship_Explore_Prep_XWing_DefaultDroid--></T>
+    <T>238599<!--SuperInteraction: starship_Explore_Prep_XWing_InventoryDroid--></T>
+    <T>238643<!--SuperInteraction: starship_Mission_Sabotage_XWing--></T>
+    <T>238648<!--SuperInteraction: object_Repair_Starship_XWing--></T>
+    <T>243535<!--SuperInteraction: object_Repair_Starship_XWing_Mission_RS3--></T>
+    <T>243842<!--SuperInteraction: batuu_RecordCollections_Scan_XWing--></T>
+    <T>244115<!--SuperInteraction: starship_Mission_OnShip_Steal_Valuable_Xwing_SR9--></T>
+    <T>244436<!--SuperInteraction: object_repair_Starship_XWing_Perform_Maintenance_RR7--></T>
+    <T>249947<!--SuperInteraction: batuu_SNPC_GetIntoPosition_Resistance_Object_Starship--></T>
+    <T>250072<!--SuperInteraction: batuu_SNPC_GetIntoPosition_Resistance_Object_Starship_Train--></T>
+  </L>
+  <U n="recycling_data">
+    <L n="recycling_values">
+      <U>
+        <E n="Bucks Type">RecycleBitsBucks</E>
+        <T n="Value">0.5</T>
+      </U>
+      <U>
+        <E n="Bucks Type">RecyclePiecesBucks</E>
+        <T n="Value">0.5</T>
+      </U>
+    </L>
+  </U>
+</I>

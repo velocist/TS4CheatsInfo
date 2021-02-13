@@ -1,0 +1,93 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<I c="SuperInteraction" i="interaction" m="interactions.base.super_interaction" n="door_ApartmentAskToChat" s="137118">
+  <V t="enabled" n="_saveable" />
+  <T n="allow_autonomous">False</T>
+  <T n="attention_cost">0.5</T>
+  <V t="one_shot" n="basic_content">
+    <U n="one_shot">
+      <U n="animation_ref">
+        <T n="factory">31008<!--AnimationElement: Door_Ring_Doorbell--></T>
+      </U>
+    </U>
+  </V>
+  <L n="basic_extras" />
+  <V t="disabled" n="content_score" />
+  <T n="display_name">0x1DBA29E0<!--String: "Charlar con {1.SimFirstName}"--></T>
+  <U n="display_name_text_tokens">
+    <L n="tokens">
+      <V t="participant_type">
+        <U n="participant_type">
+          <V t="from_participant" n="objects">
+            <U n="from_participant">
+              <E n="participant">Actor</E>
+            </U>
+          </V>
+        </U>
+      </V>
+      <V t="participant_type">
+        <U n="participant_type">
+          <V n="objects" t="from_participant">
+            <U n="from_participant">
+              <E n="participant">PickedSim</E>
+            </U>
+          </V>
+        </U>
+      </V>
+    </L>
+  </U>
+  <L n="interaction_category_tags">
+    <E>Interaction_Super</E>
+    <E>Interaction_All</E>
+  </L>
+  <V n="outcome" t="single">
+    <U n="single">
+      <U n="actions">
+        <L n="basic_extras">
+          <V t="create_situation">
+            <U n="create_situation">
+              <V n="create_situation" t="situation_start">
+                <U n="situation_start">
+                  <V n="actor_init_job" t="specify_job">
+                    <T n="specify_job">155252<!--SituationJob: situationJob_ApartmentNeighbor_playerHost_chat--></T>
+                  </V>
+                  <T n="invite_target_sim">False</T>
+                  <T n="situation">155007<!--NeighborChatSituation: situationComplex_Apartment_NeighborChat--></T>
+                  <T n="user_facing">False</T>
+                </U>
+              </V>
+            </U>
+          </V>
+        </L>
+        <L n="continuation">
+          <U>
+            <E n="actor">Actor</E>
+            <T n="affordance">145988<!--SuperInteraction: door_Apartment_Knock_wait--></T>
+          </U>
+        </L>
+      </U>
+    </U>
+  </V>
+  <U n="posture_preferences">
+    <T n="apply_penalties">True</T>
+    <T n="prefer_clicked_part">False</T>
+  </U>
+  <E n="scoring_priority">NORMAL</E>
+  <T n="subaction_selection_weight">1</T>
+  <E n="target_type">OBJECT</E>
+  <L n="test_globals">
+    <V t="sim_info">
+      <U n="sim_info">
+        <V t="specified" n="ages" />
+        <V t="specified" n="species">
+          <U n="specified">
+            <L n="species">
+              <E />
+            </L>
+          </U>
+        </V>
+        <E n="who">Actor</E>
+      </U>
+    </V>
+  </L>
+  <T n="time_overhead">30</T>
+</I>

@@ -1,0 +1,739 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<I c="GameObject" i="object" m="objects.game_object" n="object_WaterScooter" s="200008">
+  <U n="_components">
+    <V t="enabled" n="focus">
+      <U n="enabled">
+        <V n="_focus_score" t="globally">
+          <U n="globally">
+            <E n="base">LOW</E>
+          </U>
+        </V>
+      </U>
+    </V>
+    <V t="enabled" n="idle_component">
+      <U n="enabled">
+        <L n="idle_animation_map">
+          <U>
+            <T n="key">209348<!--ObjectStateValue: waterScooter_Values_Surface_Water--></T>
+            <T n="value">209345<!--ObjectAnimationElement: waterScooter_Idle_WaterSurface--></T>
+          </U>
+          <U>
+            <T n="key">209349<!--ObjectStateValue: waterScooter_Values_Surface_Terrain--></T>
+            <T n="value">209346<!--ObjectAnimationElement: waterScooter_Idle_TerrainSurface--></T>
+          </U>
+        </L>
+      </U>
+    </V>
+    <V n="inventory_item" t="enabled">
+      <U n="enabled">
+        <V t="OVERRIDE" n="no_carry_add_to_sim_inventory_affordances">
+          <L n="OVERRIDE">
+            <T>210869<!--SuperInteraction: si_SwipeIntoSimInventory_Boat--></T>
+            <T>213983<!--SuperInteraction: si_SwipeIntoSimInventory_Boat_Swim--></T>
+          </L>
+        </V>
+        <V t="OVERRIDE" n="no_carry_add_to_world_affordances">
+          <L n="OVERRIDE">
+            <T>216303<!--SwipeAddToWorldSuperInteraction: swipeAddToWorld_Waterscooter--></T>
+          </L>
+        </V>
+        <V t="enabled" n="register_with_lost_and_found">
+          <U n="enabled">
+            <T n="time_before_lost">1440</T>
+          </U>
+        </V>
+        <T n="remove_from_npc_inventory">True</T>
+        <T n="skip_carry_pose">True</T>
+        <E n="stack_scheme">NONE</E>
+        <L n="valid_inventory_types">
+          <E>SIM</E>
+          <E>STORAGE_CHEST_DORM</E>
+        </L>
+      </U>
+    </V>
+    <V n="name" t="enabled">
+      <U n="enabled">
+        <V n="affordance" t="enabled">
+          <T n="enabled">210601<!--RenameImmediateInteraction: rename_Waterscooter--></T>
+        </V>
+      </U>
+    </V>
+    <V t="enabled" n="retail_component">
+      <V n="enabled" t="reference">
+        <T n="reference">110393<!--RetailComponent: retailComponent_Default--></T>
+      </V>
+    </V>
+    <V t="enabled" n="routing_component">
+      <U n="enabled">
+        <U n="plan_context_data">
+          <U n="default_context">
+            <T n="_agent_extra_clearance_modifier">1.5</T>
+            <T n="_agent_goal_radius">0.75</T>
+            <T n="_agent_radius">0.5</T>
+            <V n="_agent_shape" t="rectangle">
+              <U n="rectangle">
+                <T n="length">1</T>
+              </U>
+            </V>
+          </U>
+        </U>
+        <U n="walkstyle_behavior">
+          <T p="InEP07\Locomotion\WaterScooter.walkstyle" n="default_walkstyle">27c01d95:00000000:000000002602f477</T>
+          <T p="InEP07\Locomotion\WaterScooter.walkstyle" n="run_walkstyle">27c01d95:00000000:000000002602f477</T>
+          <T p="InEP07\Locomotion\WaterScooter.walkstyle" n="short_walkstyle">27c01d95:00000000:000000002602f477</T>
+        </U>
+      </U>
+    </V>
+    <V t="enabled" n="state">
+      <U n="enabled">
+        <L n="state_triggers">
+          <U>
+            <L n="at_states">
+              <T>205079<!--AudioChannel: stereoChannel_Off_WaterScooter--></T>
+            </L>
+            <V n="set_states" t="Set_state_list">
+              <L n="Set_state_list">
+                <T>24383<!--ObjectStateValue: StereoOnOff_On--></T>
+              </L>
+            </V>
+            <E n="trigger_operation">NONE</E>
+          </U>
+          <U>
+            <L n="at_states">
+              <T>205079<!--AudioChannel: stereoChannel_Off_WaterScooter--></T>
+            </L>
+            <V t="Set_state_list" n="set_states">
+              <L n="Set_state_list">
+                <T>24384<!--ObjectStateValue: StereoOnOff_Off--></T>
+              </L>
+            </V>
+          </U>
+          <U>
+            <L n="at_states">
+              <T>201400<!--ObjectStateValue: waterScooter_Rider_Off--></T>
+            </L>
+            <V n="set_states" t="Set_state_list">
+              <L n="Set_state_list">
+                <T>208074<!--ObjectStateValue: waterScooter_Values_Settings_FireworksOff--></T>
+                <T>208072<!--ObjectStateValue: waterScooter_Values_Settings_FlamesOff--></T>
+                <T>208070<!--ObjectStateValue: waterScooter_Values_Settings_LightsOff--></T>
+                <T>208065<!--ObjectStateValue: waterScooter_Values_Settings_StreamersOff--></T>
+              </L>
+            </V>
+          </U>
+        </L>
+        <L n="states">
+          <U>
+            <L n="client_states">
+              <U>
+                <T n="key">207889<!--ObjectStateValue: waterScooter_Values_Paint_1--></T>
+              </U>
+              <U>
+                <T n="key">207890<!--ObjectStateValue: waterScooter_Values_Paint_2--></T>
+              </U>
+              <U>
+                <T n="key">207891<!--ObjectStateValue: waterScooter_Values_Paint_3--></T>
+              </U>
+              <U>
+                <T n="key">207892<!--ObjectStateValue: waterScooter_Values_Paint_4--></T>
+              </U>
+              <U>
+                <T n="key">207893<!--ObjectStateValue: waterScooter_Values_Paint_5--></T>
+              </U>
+              <U>
+                <T n="key">207894<!--ObjectStateValue: waterScooter_Values_Paint_6--></T>
+              </U>
+              <U>
+                <T n="key">207895<!--ObjectStateValue: waterScooter_Values_Paint_7--></T>
+              </U>
+              <U>
+                <T n="key">207896<!--ObjectStateValue: waterScooter_Values_Paint_8--></T>
+              </U>
+              <U>
+                <T n="key">207898<!--ObjectStateValue: waterScooter_Values_Paint_Default--></T>
+              </U>
+              <U>
+                <T n="key">213152<!--ObjectStateValue: waterScooter_Values_Paint_9--></T>
+              </U>
+              <U>
+                <T n="key">213153<!--ObjectStateValue: waterScooter_Values_Paint_10--></T>
+              </U>
+              <U>
+                <T n="key">213154<!--ObjectStateValue: waterScooter_Values_Paint_11--></T>
+              </U>
+              <U>
+                <T n="key">213155<!--ObjectStateValue: waterScooter_Values_Paint_12--></T>
+              </U>
+              <U>
+                <T n="key">213156<!--ObjectStateValue: waterScooter_Values_Paint_13--></T>
+              </U>
+              <U>
+                <T n="key">213157<!--ObjectStateValue: waterScooter_Values_Paint_14--></T>
+              </U>
+            </L>
+            <V n="default_value" t="reference">
+              <T n="reference">207898<!--ObjectStateValue: waterScooter_Values_Paint_Default--></T>
+            </V>
+          </U>
+          <U>
+            <L n="client_states">
+              <U>
+                <T n="key">201399<!--ObjectStateValue: waterScooter_Rider_On--></T>
+                <U n="value">
+                  <V n="autonomy_modifiers" t="apply_new_value">
+                    <V n="apply_new_value" t="apply_statistic_modifiers">
+                      <U n="apply_statistic_modifiers">
+                        <L n="lot_statistic_modifiers">
+                          <U>
+                            <V n="modifier" t="basic_value">
+                              <U n="basic_value">
+                                <T n="value">0.004375</T>
+                              </U>
+                            </V>
+                            <T n="statistic">233233<!--Commodity: commodity_EcoFootprint_Lot--></T>
+                          </U>
+                        </L>
+                      </U>
+                    </V>
+                  </V>
+                </U>
+              </U>
+              <U>
+                <T n="key">201400<!--ObjectStateValue: waterScooter_Rider_Off--></T>
+                <U n="value">
+                  <V t="apply_new_value" n="autonomy_modifiers" />
+                </U>
+              </U>
+            </L>
+            <V n="default_value" t="reference">
+              <T n="reference">201400<!--ObjectStateValue: waterScooter_Rider_Off--></T>
+            </V>
+            <T n="reset_on_load_if_time_passes">True</T>
+            <T n="reset_to_default">True</T>
+          </U>
+          <U>
+            <L n="client_states">
+              <U>
+                <T n="key">205079<!--AudioChannel: stereoChannel_Off_WaterScooter--></T>
+              </U>
+              <U>
+                <T n="key">205080<!--AudioChannel: stereoChannel_Alt_WaterScooter--></T>
+              </U>
+              <U>
+                <T n="key">205081<!--AudioChannel: stereoChannel_Blues_WaterScooter--></T>
+              </U>
+              <U>
+                <T n="key">205082<!--AudioChannel: stereoChannel_Classical_WaterScooter--></T>
+              </U>
+              <U>
+                <T n="key">205083<!--AudioChannel: stereoChannel_Electro_WaterScooter--></T>
+              </U>
+              <U>
+                <T n="key">205084<!--AudioChannel: stereoChannel_KidsRadio_WaterScooter--></T>
+              </U>
+              <U>
+                <T n="key">205085<!--AudioChannel: stereoChannel_Lullabies_WaterScooter--></T>
+              </U>
+              <U>
+                <T n="key">205086<!--AudioChannel: stereoChannel_Pop_WaterScooter--></T>
+              </U>
+              <U>
+                <T n="key">205087<!--AudioChannel: stereoChannel_Retro_WaterScooter--></T>
+              </U>
+              <U>
+                <T n="key">205088<!--AudioChannel: stereoChannel_Romance_WaterScooter--></T>
+              </U>
+              <U>
+                <T n="key">205089<!--AudioChannel: stereoChannel_Spooky_WaterScooter--></T>
+              </U>
+              <U>
+                <T n="key">205090<!--AudioChannel: stereoChannel_WinterHoliday_WaterScooter--></T>
+              </U>
+              <U>
+                <T n="key">205091<!--AudioChannel: stereoChannel_HospitalMusic_WaterScooter--></T>
+              </U>
+              <U>
+                <T n="key">205092<!--AudioChannel: stereoChannel_Backyard_WaterScooter--></T>
+              </U>
+              <U>
+                <T n="key">205093<!--AudioChannel: stereoChannel_NewAge_WaterScooter--></T>
+              </U>
+              <U>
+                <T n="key">205094<!--AudioChannel: stereoChannel_DinnerJazz_WaterScooter--></T>
+              </U>
+              <U>
+                <T n="key">205095<!--AudioChannel: stereoChannel_Baroque_WaterScooter--></T>
+              </U>
+              <U>
+                <T n="key">205096<!--AudioChannel: stereoChannel_Tween_WaterScooter--></T>
+              </U>
+              <U>
+                <T n="key">205097<!--AudioChannel: stereoChannel_Disco_Pop_WaterScooter--></T>
+              </U>
+              <U>
+                <T n="key">205098<!--AudioChannel: stereoChannel_Latin_WaterScooter--></T>
+              </U>
+              <U>
+                <T n="key">205099<!--AudioChannel: stereoChannel_LatinPop_WaterScooter--></T>
+              </U>
+              <U>
+                <T n="key">205101<!--AudioChannel: stereoChannel_CulturalWorld_WaterScooter--></T>
+              </U>
+              <U>
+                <T n="key">205102<!--AudioChannel: stereoChannel_SPop_WaterScooter--></T>
+              </U>
+              <U>
+                <T n="key">205103<!--AudioChannel: stereoChannel_TalkRadio_WaterScooter--></T>
+              </U>
+              <U>
+                <T n="key">205104<!--AudioChannel: stereoChannel_SingerSongWriter_WaterScooter--></T>
+              </U>
+              <U>
+                <T n="key">205105<!--AudioChannel: stereoChannel_SummerStrut_WaterScooter--></T>
+              </U>
+              <U>
+                <T n="key">205106<!--AudioChannel: stereoChannel_HipHop_WaterScooter--></T>
+              </U>
+              <U>
+                <T n="key">209343<!--AudioChannel: stereoChannel_Island_WaterScooter--></T>
+              </U>
+              <U>
+                <T n="key">238276<!--AudioChannel: stereoChannel_Americana_WaterScooter--></T>
+              </U>
+              <U>
+                <T n="key">240061<!--AudioChannel: stereoChannel_Focus_WaterScooter--></T>
+              </U>
+              <U>
+                <T n="key">240070<!--AudioChannel: stereoChannel_Metal_WaterScooter--></T>
+              </U>
+              <U>
+                <T n="key">246210<!--AudioChannel: stereoChannel_JFolk_WaterScooter--></T>
+              </U>
+              <U>
+                <T n="key">247523<!--AudioChannel: stereoChannel_Batuu_WaterScooter--></T>
+              </U>
+            </L>
+            <V n="default_value" t="reference">
+              <T n="reference">205079<!--AudioChannel: stereoChannel_Off_WaterScooter--></T>
+            </V>
+          </U>
+          <U>
+            <L n="client_states">
+              <U>
+                <T n="key">205220<!--ObjectStateValue: waterScooter_Values_Upgrades_MusicOn--></T>
+              </U>
+              <U>
+                <T n="key">205221<!--ObjectStateValue: waterScooter_Values_Upgrades_MusicOff--></T>
+              </U>
+            </L>
+            <V n="default_value" t="reference">
+              <T n="reference">205221<!--ObjectStateValue: waterScooter_Values_Upgrades_MusicOff--></T>
+            </V>
+          </U>
+          <U>
+            <L n="client_states">
+              <U>
+                <T n="key">24383<!--ObjectStateValue: StereoOnOff_On--></T>
+                <U n="value">
+                  <V n="broadcaster" t="apply_new_value">
+                    <V n="apply_new_value" t="start_broadcaster">
+                      <U n="start_broadcaster">
+                        <L n="broadcaster_types">
+                          <U>
+                            <T n="item">185878<!--Broadcaster: broadcaster_Reaction_MusicEnjoy--></T>
+                          </U>
+                        </L>
+                      </U>
+                    </V>
+                  </V>
+                  <V n="vfx_state" t="apply_new_value">
+                    <V n="apply_new_value" t="start_vfx">
+                      <V n="start_vfx" t="single_effect">
+                        <U n="single_effect">
+                          <T n="effect_name">ep07_water_Scooter_upgrade_music</T>
+                          <V t="Slot" n="joint_name">
+                            <T n="Slot">_FX_0_</T>
+                          </V>
+                          <T n="play_immediate">True</T>
+                        </U>
+                      </V>
+                    </V>
+                  </V>
+                </U>
+              </U>
+              <U>
+                <T n="key">24384<!--ObjectStateValue: StereoOnOff_Off--></T>
+                <U n="value">
+                  <V t="apply_new_value" n="broadcaster" />
+                  <V t="apply_new_value" n="vfx_state" />
+                </U>
+              </U>
+            </L>
+            <V n="default_value" t="reference">
+              <T n="reference">24384<!--ObjectStateValue: StereoOnOff_Off--></T>
+            </V>
+          </U>
+          <U>
+            <L n="client_states">
+              <U>
+                <T n="key">205236<!--ObjectStateValue: waterScooter_Values_Upgrades_FireworksOn--></T>
+              </U>
+              <U>
+                <T n="key">205237<!--ObjectStateValue: waterScooter_Values_Upgrades_FireworksOff--></T>
+              </U>
+            </L>
+            <V n="default_value" t="reference">
+              <T n="reference">205237<!--ObjectStateValue: waterScooter_Values_Upgrades_FireworksOff--></T>
+            </V>
+          </U>
+          <U>
+            <L n="client_states">
+              <U>
+                <T n="key">205226<!--ObjectStateValue: waterScooter_Values_Upgrades_FlamesOn--></T>
+              </U>
+              <U>
+                <T n="key">205227<!--ObjectStateValue: waterScooter_Values_Upgrades_FlamesOff--></T>
+              </U>
+            </L>
+            <V n="default_value" t="reference">
+              <T n="reference">205227<!--ObjectStateValue: waterScooter_Values_Upgrades_FlamesOff--></T>
+            </V>
+          </U>
+          <U>
+            <L n="client_states">
+              <U>
+                <T n="key">205224<!--ObjectStateValue: waterScooter_Values_Upgrades_LightsOn--></T>
+              </U>
+              <U>
+                <T n="key">205225<!--ObjectStateValue: waterScooter_Values_Upgrades_LightsOff--></T>
+              </U>
+            </L>
+            <V n="default_value" t="reference">
+              <T n="reference">205225<!--ObjectStateValue: waterScooter_Values_Upgrades_LightsOff--></T>
+            </V>
+          </U>
+          <U>
+            <L n="client_states">
+              <U>
+                <T n="key">209348<!--ObjectStateValue: waterScooter_Values_Surface_Water--></T>
+              </U>
+              <U>
+                <T n="key">209349<!--ObjectStateValue: waterScooter_Values_Surface_Terrain--></T>
+              </U>
+            </L>
+            <V n="default_value" t="reference">
+              <T n="reference">209349<!--ObjectStateValue: waterScooter_Values_Surface_Terrain--></T>
+            </V>
+          </U>
+          <U>
+            <L n="client_states">
+              <U>
+                <T n="key">205217<!--ObjectStateValue: waterScooter_Values_Upgrades_PatternOn--></T>
+              </U>
+              <U>
+                <T n="key">205219<!--ObjectStateValue: waterScooter_Values_Upgrades_PatternOff--></T>
+              </U>
+            </L>
+            <V n="default_value" t="reference">
+              <T n="reference">205219<!--ObjectStateValue: waterScooter_Values_Upgrades_PatternOff--></T>
+            </V>
+          </U>
+          <U>
+            <L n="client_states">
+              <U>
+                <T n="key">205222<!--ObjectStateValue: waterScooter_Values_Upgrades_StreamersOn--></T>
+              </U>
+              <U>
+                <T n="key">205223<!--ObjectStateValue: waterScooter_Values_Upgrades_StreamersOff--></T>
+              </U>
+            </L>
+            <V n="default_value" t="reference">
+              <T n="reference">205223<!--ObjectStateValue: waterScooter_Values_Upgrades_StreamersOff--></T>
+            </V>
+          </U>
+          <U>
+            <L n="client_states">
+              <U>
+                <T n="key">15022<!--ObjectStateValue: AudioVolume_High--></T>
+                <U n="value">
+                  <V n="audio_effect_state" t="apply_new_value">
+                    <V n="apply_new_value" t="start_audio_effect">
+                      <U n="start_audio_effect">
+                        <T n="effect_name">stereo_volume_high</T>
+                        <T n="tag_name">volume</T>
+                      </U>
+                    </V>
+                  </V>
+                </U>
+              </U>
+              <U>
+                <T n="key">15023<!--ObjectStateValue: AudioVolume_Low--></T>
+                <U n="value">
+                  <V n="audio_effect_state" t="apply_new_value">
+                    <V n="apply_new_value" t="start_audio_effect">
+                      <U n="start_audio_effect">
+                        <T n="effect_name">stereo_volume_low</T>
+                        <T n="tag_name">volume</T>
+                      </U>
+                    </V>
+                  </V>
+                </U>
+              </U>
+              <U>
+                <T n="key">15024<!--ObjectStateValue: AudioVolume_Medium--></T>
+                <U n="value">
+                  <V n="audio_effect_state" t="apply_new_value">
+                    <V n="apply_new_value" t="start_audio_effect">
+                      <U n="start_audio_effect">
+                        <T n="effect_name">stereo_volume_normal</T>
+                        <T n="tag_name">volume</T>
+                      </U>
+                    </V>
+                  </V>
+                </U>
+              </U>
+            </L>
+            <V n="default_value" t="reference">
+              <T n="reference">15022<!--ObjectStateValue: AudioVolume_High--></T>
+            </V>
+          </U>
+          <U>
+            <L n="client_states">
+              <U>
+                <T n="key">208063<!--ObjectStateValue: waterScooter_Values_Settings_StreamersOn--></T>
+              </U>
+              <U>
+                <T n="key">208065<!--ObjectStateValue: waterScooter_Values_Settings_StreamersOff--></T>
+              </U>
+            </L>
+            <V n="default_value" t="reference">
+              <T n="reference">208065<!--ObjectStateValue: waterScooter_Values_Settings_StreamersOff--></T>
+            </V>
+          </U>
+          <U>
+            <L n="client_states">
+              <U>
+                <T n="key">208068<!--ObjectStateValue: waterScooter_Values_Settings_LightsOn--></T>
+              </U>
+              <U>
+                <T n="key">208070<!--ObjectStateValue: waterScooter_Values_Settings_LightsOff--></T>
+              </U>
+            </L>
+            <V n="default_value" t="reference">
+              <T n="reference">208070<!--ObjectStateValue: waterScooter_Values_Settings_LightsOff--></T>
+            </V>
+          </U>
+          <U>
+            <L n="client_states">
+              <U>
+                <T n="key">208071<!--ObjectStateValue: waterScooter_Values_Settings_FlamesOn--></T>
+                <U n="value">
+                  <V n="autonomy_modifiers" t="apply_new_value">
+                    <V n="apply_new_value" t="apply_statistic_modifiers">
+                      <U n="apply_statistic_modifiers">
+                        <L n="lot_statistic_modifiers">
+                          <U>
+                            <V n="modifier" t="basic_value">
+                              <U n="basic_value">
+                                <T n="value">0.0175</T>
+                              </U>
+                            </V>
+                            <T n="statistic">233233<!--Commodity: commodity_EcoFootprint_Lot--></T>
+                          </U>
+                        </L>
+                      </U>
+                    </V>
+                  </V>
+                </U>
+              </U>
+              <U>
+                <T n="key">208072<!--ObjectStateValue: waterScooter_Values_Settings_FlamesOff--></T>
+                <U n="value">
+                  <V t="apply_new_value" n="autonomy_modifiers" />
+                </U>
+              </U>
+            </L>
+            <V n="default_value" t="reference">
+              <T n="reference">208072<!--ObjectStateValue: waterScooter_Values_Settings_FlamesOff--></T>
+            </V>
+          </U>
+          <U>
+            <L n="client_states">
+              <U>
+                <T n="key">208073<!--ObjectStateValue: waterScooter_Values_Settings_FireworksOn--></T>
+                <U n="value">
+                  <V n="autonomy_modifiers" t="apply_new_value">
+                    <V n="apply_new_value" t="apply_statistic_modifiers">
+                      <U n="apply_statistic_modifiers">
+                        <L n="lot_statistic_modifiers">
+                          <U>
+                            <V n="modifier" t="basic_value">
+                              <U n="basic_value">
+                                <T n="value">0.0175</T>
+                              </U>
+                            </V>
+                            <T n="statistic">233233<!--Commodity: commodity_EcoFootprint_Lot--></T>
+                          </U>
+                        </L>
+                      </U>
+                    </V>
+                  </V>
+                </U>
+              </U>
+              <U>
+                <T n="key">208074<!--ObjectStateValue: waterScooter_Values_Settings_FireworksOff--></T>
+                <U n="value">
+                  <V t="apply_new_value" n="autonomy_modifiers" />
+                </U>
+              </U>
+            </L>
+            <V n="default_value" t="reference">
+              <T n="reference">208074<!--ObjectStateValue: waterScooter_Values_Settings_FireworksOff--></T>
+            </V>
+          </U>
+        </L>
+        <V n="unique_state_changes" t="enabled">
+          <U n="enabled">
+            <L n="surface_type_placement_states">
+              <U>
+                <E n="key">SURFACETYPE_POOL</E>
+                <T n="value">209348<!--ObjectStateValue: waterScooter_Values_Surface_Water--></T>
+              </U>
+              <U>
+                <E n="key">SURFACETYPE_WORLD</E>
+                <T n="value">209349<!--ObjectStateValue: waterScooter_Values_Surface_Terrain--></T>
+              </U>
+            </L>
+          </U>
+        </V>
+      </U>
+    </V>
+    <V t="enabled" n="stereo">
+      <V n="enabled" t="literal">
+        <U n="literal">
+          <T n="channel_state">205078<!--ObjectState: stereoChannel_WaterScooter--></T>
+          <T n="immediate">True</T>
+          <L n="listen_affordances">
+            <T>228415<!--ListenSuperInteraction: stereo_listen_WaterScooter--></T>
+          </L>
+          <T n="off_state">205079<!--AudioChannel: stereoChannel_Off_WaterScooter--></T>
+        </U>
+      </V>
+    </V>
+    <V t="enabled" n="tooltip_component">
+      <U n="enabled">
+        <L n="custom_tooltips">
+          <U>
+            <L n="tooltip_fields">
+              <U>
+                <E n="key">recipe_name</E>
+                <U n="value">
+                  <V n="text" t="single">
+                    <T n="single">0x144FD666<!--String: "{0.ObjectName}"--></T>
+                  </V>
+                  <V t="enabled" n="text_tokens">
+                    <U n="enabled">
+                      <L n="tokens">
+                        <V t="participant_type">
+                          <U n="participant_type">
+                            <V t="from_participant" n="objects">
+                              <U n="from_participant">
+                                <E n="participant">Object</E>
+                              </U>
+                            </V>
+                          </U>
+                        </V>
+                      </L>
+                    </U>
+                  </V>
+                </U>
+              </U>
+            </L>
+          </U>
+        </L>
+      </U>
+    </V>
+    <V n="vehicle_component" t="enabled">
+      <U n="enabled">
+        <L n="allowed_surfaces">
+          <E>SURFACETYPE_POOL</E>
+        </L>
+        <V n="deploy_tuning" t="enabled">
+          <U n="enabled">
+            <V n="deploy_affordance" t="override">
+              <T n="override">215624<!--SwipeAddToWorldSuperInteraction: si_SwipeAddToWorld_WaterScooter_Swim--></T>
+            </V>
+          </U>
+        </V>
+        <T n="drive_affordance">199823<!--SuperInteraction: generic_WaterScooter--></T>
+        <V t="enabled" n="footprint_toggles">
+          <L n="enabled">
+            <U>
+              <T n="footprint_hash">waterScooter_ftp_pathingToggleShape</T>
+            </U>
+          </L>
+        </V>
+        <T n="minimum_route_distance">15</T>
+        <V t="enabled" n="retrieve_tuning">
+          <U n="enabled">
+            <V n="retrieve_affordance" t="override">
+              <T n="override">213983<!--SuperInteraction: si_SwipeIntoSimInventory_Boat_Swim--></T>
+            </V>
+          </U>
+        </V>
+      </U>
+    </V>
+  </U>
+  <E n="_persistence">FULL</E>
+  <L n="_super_affordances">
+    <T>13328<!--ImmediateSuperInteraction: debug_Reset--></T>
+    <T>13326<!--ImmediateSuperInteraction: debug_ObjectDestroy--></T>
+    <T>103888<!--ImmediateSuperInteraction: cheat_set_as_head--></T>
+    <T>199823<!--SuperInteraction: generic_WaterScooter--></T>
+    <T>204897<!--SuperInteraction: waterScooter_Exit--></T>
+    <T>144099<!--SuperInteraction: generic_Object_Toddler_Check_Out--></T>
+    <T>212781<!--ImmediateSuperInteraction: waterScooter_Immediate_Settings_Fireworks--></T>
+    <T>205058<!--StereoPieMenuChoicesInteraction: stereo_PickChannel_WaterScooter--></T>
+    <T>205111<!--ImmediateSuperInteraction: stereo_turnoff_WaterScooter--></T>
+    <T>212782<!--ImmediateSuperInteraction: waterScooter_Immediate_Settings_Flames--></T>
+    <T>205038<!--WaypointInteraction: waypoint_WaterScooter_RideAroundFromObject--></T>
+    <T>212783<!--ImmediateSuperInteraction: waterScooter_Immediate_Settings_Lights--></T>
+    <T>212785<!--ImmediateSuperInteraction: waterScooter_Immediate_Settings_Streamers--></T>
+    <T>212775<!--ImmediateSuperInteraction: waterScooter_Immediate_Upgrades_Fireworks--></T>
+    <T>212776<!--ImmediateSuperInteraction: waterScooter_Immediate_Upgrades_Flames--></T>
+    <T>212777<!--ImmediateSuperInteraction: waterScooter_Immediate_Upgrades_Lights--></T>
+    <T>212778<!--ImmediateSuperInteraction: waterScooter_Immediate_Upgrades_Music--></T>
+    <T>212779<!--ImmediateSuperInteraction: waterScooter_Immediate_Upgrades_Streamers--></T>
+    <T>212786<!--ImmediateSuperInteraction: waterScooter_Immediate_Upgrades_Pattern_1--></T>
+    <T>212787<!--ImmediateSuperInteraction: waterScooter_Immediate_Upgrades_Pattern_2--></T>
+    <T>212788<!--ImmediateSuperInteraction: waterScooter_Immediate_Upgrades_Pattern_3--></T>
+    <T>212789<!--ImmediateSuperInteraction: waterScooter_Immediate_Upgrades_Pattern_4--></T>
+    <T>212790<!--ImmediateSuperInteraction: waterScooter_Immediate_Upgrades_Pattern_5--></T>
+    <T>212792<!--ImmediateSuperInteraction: waterScooter_Immediate_Upgrades_Pattern_6--></T>
+    <T>212793<!--ImmediateSuperInteraction: waterScooter_Immediate_Upgrades_Pattern_7--></T>
+    <T>212794<!--ImmediateSuperInteraction: waterScooter_Immediate_Upgrades_Pattern_8--></T>
+    <T>212996<!--ImmediateSuperInteraction: stereo_WaterScooter_changevolume_high--></T>
+    <T>213158<!--ImmediateSuperInteraction: waterScooter_Immediate_Upgrades_Pattern_10--></T>
+    <T>213160<!--ImmediateSuperInteraction: waterScooter_Immediate_Upgrades_Pattern_11--></T>
+    <T>212997<!--ImmediateSuperInteraction: stereo_WaterScooter_changevolume_low--></T>
+    <T>212998<!--ImmediateSuperInteraction: stereo_WaterScooter_changevolume_medium--></T>
+    <T>213161<!--ImmediateSuperInteraction: waterScooter_Immediate_Upgrades_Pattern_12--></T>
+    <T>213162<!--ImmediateSuperInteraction: waterScooter_Immediate_Upgrades_Pattern_13--></T>
+    <T>213163<!--ImmediateSuperInteraction: waterScooter_Immediate_Upgrades_Pattern_14--></T>
+    <T>213151<!--ImmediateSuperInteraction: waterScooter_Immediate_Upgrades_Pattern_9--></T>
+    <T>222848<!--ImmediateSuperInteraction: Vehicle_WaterScooter_ToggleFavorite--></T>
+  </L>
+  <T n="_transient_tuning">False</T>
+  <U n="recycling_data">
+    <L n="recycling_values">
+      <U>
+        <E n="Bucks Type">RecycleBitsBucks</E>
+        <T n="Value">0.25</T>
+      </U>
+      <U>
+        <E n="Bucks Type">RecyclePiecesBucks</E>
+        <T n="Value">0.75</T>
+      </U>
+    </L>
+  </U>
+</I>

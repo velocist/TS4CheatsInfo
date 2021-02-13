@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+
+<TuningRoot>
+    <Instance instance_type="situation" class="IslandSpiritsVisitSituation" module="situations.complex.island_spirits_visit_situation" muid="1C5C881677D1D2EA" description="A situation handling visiting island spirits, summoned by a sim .  The&#xA;spirits will run various interactions and judge the summoner based on the&#xA;value of a tuned commodity on the sim, representing how much the sim has&#xA;participated in island culture. At the highest thresholds, a special island&#xA;elemental will be summoned as well." instance_subclasses_only="False" parents="SituationComplexCommon, SituationComplex, Situation" path="Situations\Descriptions" use_guid_for_reference="True">
+        <TunableTuple name="island_elemental" class="TunableTuple" display="Island Elemental" muid="6415CE3A4D19F9EF" Deprecated="False" filter="0" group="Roles">
+            <Tunable type="situation_job" name="situation_job" class="TunableReference" display="Situation Job" muid="79E756C4B36BE38A" description="Island elemental's job during the visit." allow_none="False" Deprecated="False" filter="0" group="General" restrict="SituationJob" />
+            <Tunable type="role_state" name="situation_role_state" class="TunableReference" display="Situation Role State" muid="4A0B8EE2309A7DFF" description="Island elemental's role state during the visit." allow_none="False" Deprecated="False" filter="0" group="General" restrict="RoleState" />
+            <TdescFragTag name="spawn_tests" class="TunableTestSet" display="Spawn Tests" muid="D617BCD3CFD255FA" description="Tests that must be passed for the island elemental to be spawned." filter="0" group="General" />
+        </TunableTuple>
+
+        <TunableTuple name="island_spirit" class="TunableTuple" display="Island Spirit" muid="20135EFEFDBD1567" Deprecated="False" filter="0" group="Roles">
+            <Tunable type="situation_job" name="situation_job" class="TunableReference" display="Situation Job" muid="76D0EDA97CF2D515" description="Island spirit's job during the visit." allow_none="False" Deprecated="False" filter="0" group="General" restrict="SituationJob" />
+            <Tunable type="role_state" name="situation_role_state" class="TunableReference" display="Situation Role State" muid="83C0F669A8E2EAB1" description="Island spirit's role state during the visit." allow_none="False" Deprecated="False" filter="0" group="General" restrict="RoleState" />
+        </TunableTuple>
+
+        <TunableTuple name="visit_state" class="TunableVisitState" display="01_visit_state" muid="6B3B02DD984AA4A0" description="The state in which spirits will perform a set tuned of interactions." Deprecated="False" filter="0" group="Situation State">
+            <Tunable type="bool" name="allow_join_situation" class="Tunable" default="True" display="Allow Join Situation" muid="FE07AF354F98216C" description="Whether the situation is allowed to join at this state." Deprecated="False" filter="0" group="General" />
+            <TunableList name="job_and_role_changes" class="TunableMapping" display="Job And Role Changes" muid="ADD7860601791C03" mapping_key="Situation Job" mapping_value="Role State" description="A mapping between situation jobs and role states that defines&#xA;what role states we want to switch to for sims on which jobs&#xA;when this situation state is entered." Deprecated="False" filter="0" group="General">
+                <TunableTuple class="TunableTuple" muid="B76F3254BA1EF1CF" Deprecated="False" filter="0" group="General">
+                    <Tunable type="role_state" name="Role State" class="TunableReference" display="Role State" muid="E39AEB537ACA88A2" description="The role state that we will switch sims of the linked job&#xA;into." allow_none="False" Deprecated="False" filter="0" group="General" />
+                    <Tunable type="situation_job" name="Situation Job" class="TunableReference" display="Situation Job" muid="DAFA3AB8BA69F889" description="A reference to a SituationJob that we will use to change&#xA;sim's role state." allow_none="False" Deprecated="False" filter="0" group="General" />
+                </TunableTuple>
+            </TunableList>
+            <TunableVariant type="None" name="time_out" class="OptionalTunable" default="disabled" display="Time Out" muid="31A7B5D4EC1229B7" description="How long this state will last before time expired. Please talk to the GPE who implemented the specific&#xA;situation to see what the state will do on time expired." Deprecated="False" filter="0" group="General">
+                <Tunable name="disabled" class="TunableExistance" display="Disabled" muid="24742FA057BD145B" />
+                <Tunable type="float" name="enabled" class="TunableSimMinute" default="15" display="Enabled" muid="30588F951215FC17" min="1" max="None" tuning_state="NeedsTuning" Deprecated="False" filter="0" group="General" />
+            </TunableVariant>
+        </TunableTuple>
+    </Instance>
+
+    <VersionHistory>
+        <ActionList>
+            <Action type="kRemove" old_muid="53605D50E4E6C5C6" />
+            <Action type="kRemove" old_muid="A3C84C98FDCDADBA" />
+        </ActionList>
+
+        <ActionList>
+            <Action type="kRemove" old_muid="AFB0E4CEF74185E4" />
+            <Action type="kRemove" old_muid="72E1D9C1286D9413" />
+        </ActionList>
+
+        <ActionList>
+            <Action type="kRemove" old_muid="52B0A046F48D4385" />
+        </ActionList>
+
+        <ActionList>
+            <Action type="kRemove" old_muid="57AC51F571373BCD" />
+        </ActionList>
+
+        <ActionList>
+            <Action type="kRemove" old_muid="964E88C99D4AFE4A" />
+            <Action type="kRemove" old_muid="1A9261C0FE30BC4D" />
+            <Action type="kRemove" old_muid="EE14275CAC25F5A1" />
+            <Action type="kRemove" old_muid="3851C48010E50656" />
+            <Action type="kRemove" old_muid="7ED194BC0DFFBDB8" />
+            <Action type="kRemove" old_muid="327FB5D9D3F021E4" />
+            <Action type="kRemove" old_muid="573818F66F992F59" />
+            <Action type="kRemove" old_muid="9E5D069EFC0B1771" />
+            <Action type="kRemove" old_muid="EE936F098D04D62" />
+            <Action type="kRemove" old_muid="8F6E50E07CE629D1" />
+            <Action type="kRemove" old_muid="23B45B7127EAF9C5" />
+            <Action type="kRemove" old_muid="51D7E3BF76DE50BD" />
+            <Action type="kRemove" old_muid="5F23EA1B338710E4" />
+            <Action type="kRemove" old_muid="5D07ECBE2C7F1990" />
+            <Action type="kRemove" old_muid="76488B92C0C8189F" />
+            <Action type="kRemove" old_muid="118C54CC39D48DF7" />
+            <Action type="kRemove" old_muid="A78CA6773C29E9CE" />
+            <Action type="kRemove" old_muid="69CD187C35B5563F" />
+            <Action type="kRemove" old_muid="26E263B72E7CA151" />
+            <Action type="kRemove" old_muid="6269D91D493C83DE" />
+            <Action type="kRemove" old_muid="AB0306E0A2511682" />
+            <Action type="kRemove" old_muid="9102E8C72AA52752" />
+            <Action type="kRemove" old_muid="B80B621C2A4CF77D" />
+            <Action type="kRemove" old_muid="D6AD4A31F3803CB1" />
+            <Action type="kRemove" old_muid="C366660DFFE84365" />
+            <Action type="kRemove" old_muid="5B1C4784EED97FB8" />
+            <Action type="kRemove" old_muid="5E24FB37103C47CA" />
+            <Action type="kRemove" old_muid="13A4896D3EA430E6" />
+            <Action type="kRemove" old_muid="D337F306575CA740" />
+            <Action type="kRemove" old_muid="FA831AB6BDBBE852" />
+            <Action type="kRemove" old_muid="F3C6FD9F43FB1F62" />
+            <Action type="kRemove" old_muid="D9B393A26D35D8C1" />
+            <Action type="kRemove" old_muid="2C50FC6085BCF28" />
+        </ActionList>
+    </VersionHistory>
+</TuningRoot>

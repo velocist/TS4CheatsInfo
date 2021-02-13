@@ -1,0 +1,433 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<I c="SuperInteraction" i="interaction" m="interactions.base.super_interaction" n="oceanDiving_ScubaDiving" s="206083">
+  <L n="_constraints">
+    <U>
+      <L n="constraints">
+        <U>
+          <V t="circle" n="value">
+            <U n="circle">
+              <T n="radius">4</T>
+            </U>
+          </V>
+        </U>
+      </L>
+    </U>
+  </L>
+  <V t="enabled" n="_saveable" />
+  <T n="allowed_to_combine">False</T>
+  <T n="attention_cost">0.5</T>
+  <V n="basic_content" t="flexible_length">
+    <U n="flexible_length">
+      <L n="conditional_actions">
+        <V t="list_reference">
+          <T n="list_reference">119540<!--ExitConditionList: ExitConditionList_MotivesNearFail_MinusBladderFailure--></T>
+        </V>
+        <V t="list_reference">
+          <T n="list_reference">97352<!--ExitConditionList: ExitConditionList_PulledMuscle--></T>
+        </V>
+        <V t="list_reference">
+          <T n="list_reference">40144<!--ExitConditionList: ExitConditionList_EmotionMiserable--></T>
+        </V>
+        <V t="list_reference">
+          <T n="list_reference">97354<!--ExitConditionList: ExitConditionList_Fatigued--></T>
+        </V>
+        <V t="literal">
+          <U n="literal">
+            <L n="conditions">
+              <V t="time_based">
+                <U n="time_based">
+                  <T n="max_time">90</T>
+                  <T n="min_time">60</T>
+                </U>
+              </V>
+            </L>
+            <E n="interaction_action">EXIT_NATURALLY</E>
+            <L n="tests">
+              <L>
+                <V t="skill_test">
+                  <U n="skill_test">
+                    <T n="skill">16659<!--Skill: skill_Fitness--></T>
+                    <V n="skill_range" t="interval">
+                      <U n="interval">
+                        <U n="skill_interval">
+                          <T n="lower_bound">1</T>
+                          <T n="upper_bound">5</T>
+                        </U>
+                      </U>
+                    </V>
+                  </U>
+                </V>
+              </L>
+            </L>
+          </U>
+        </V>
+        <V t="literal">
+          <U n="literal">
+            <L n="conditions">
+              <V t="time_based">
+                <U n="time_based">
+                  <T n="max_time">120</T>
+                  <T n="min_time">90</T>
+                </U>
+              </V>
+            </L>
+            <E n="interaction_action">EXIT_NATURALLY</E>
+            <L n="tests">
+              <L>
+                <V t="skill_test">
+                  <U n="skill_test">
+                    <T n="skill">16659<!--Skill: skill_Fitness--></T>
+                    <V t="threshold" n="skill_range">
+                      <U n="threshold">
+                        <U n="skill_threshold">
+                          <T n="value">6</T>
+                        </U>
+                      </U>
+                    </V>
+                  </U>
+                </V>
+              </L>
+            </L>
+          </U>
+        </V>
+      </L>
+      <V t="staging_content" n="content">
+        <U n="staging_content">
+          <V t="enabled" n="animation_ref">
+            <U n="enabled">
+              <T n="factory">206782<!--AnimationElement: Freediving_Anims_Dive--></T>
+            </U>
+          </V>
+        </U>
+      </V>
+      <V n="periodic_stat_change" t="enabled">
+        <U n="enabled">
+          <U n="operation_actions">
+            <L n="actions">
+              <T>39350<!--LootActions: Loot_Commodity_Fitness_FatigueGain--></T>
+              <T>97350<!--LootActions: Loot_Commodity_Fitness_PulledMuscle--></T>
+              <T>105995<!--LootActions: loot_Death_ElderExhaustion_Periodic_Swimming--></T>
+            </L>
+          </U>
+          <L n="operations">
+            <V t="reference">
+              <T n="reference">249720<!--PeriodicStatChangeOperation: periodicStatChangeOperation_Lifestyles_Progress_Energetic--></T>
+            </V>
+            <V t="reference">
+              <T n="reference">249740<!--PeriodicStatChangeOperation: periodicStatChangeOperation_Lifestyles_Liked_Energetic--></T>
+            </V>
+            <V t="reference">
+              <T n="reference">249770<!--PeriodicStatChangeOperation: periodicStatChangeOperation_Lifestyles_Liked_AdrenalineSeeker--></T>
+            </V>
+            <V t="reference">
+              <T n="reference">249762<!--PeriodicStatChangeOperation: periodicStatChangeOperation_Lifestyles_Progress_AdrenalineSeeker--></T>
+            </V>
+            <V t="statistic_change">
+              <U n="statistic_change">
+                <T n="amount">0.55</T>
+                <E n="periodic_change_behavior">APPLY_AT_INTERVAL_ONLY</E>
+                <T n="stat">16655<!--Commodity: motive_Fun--></T>
+                <L n="subject">
+                  <E>Actor</E>
+                </L>
+              </U>
+            </V>
+            <V t="statistic_change">
+              <U n="statistic_change">
+                <T n="amount">1</T>
+                <T n="stat">103887<!--Commodity: Commodity_Sim_Swimming--></T>
+                <L n="subject">
+                  <E>Actor</E>
+                </L>
+              </U>
+            </V>
+            <V t="reference">
+              <T n="reference">248870<!--PeriodicStatChangeOperation: periodicStatChangeOperation_Lifestyles_Progress_FrequentTraveler--></T>
+            </V>
+            <V t="dynamic_skill">
+              <U n="dynamic_skill">
+                <U n="skill_loot_data_override">
+                  <E n="effectiveness">SmallPeriodic</E>
+                  <V t="enabled" n="level_range">
+                    <U n="enabled">
+                      <T n="lower_bound">1</T>
+                      <T n="upper_bound">10</T>
+                    </U>
+                  </V>
+                  <T n="stat">16659<!--Skill: skill_Fitness--></T>
+                </U>
+              </U>
+            </V>
+            <V t="reference">
+              <T n="reference">252299<!--PeriodicStatChangeOperation: periodictStatChange_Adventurous_Adventuring--></T>
+            </V>
+            <V t="statistic_change">
+              <U n="statistic_change">
+                <T n="advertise">False</T>
+                <T n="amount">-0.033</T>
+                <E n="periodic_change_behavior">APPLY_AT_INTERVAL_ONLY</E>
+                <T n="stat">16589<!--Commodity: commodity_Fitness_Fat--></T>
+                <L n="subject">
+                  <E>Actor</E>
+                </L>
+              </U>
+            </V>
+            <V t="statistic_change">
+              <U n="statistic_change">
+                <T n="amount">5</T>
+                <T n="stat">162675<!--Commodity: motive_PlantSim_Water--></T>
+                <L n="subject">
+                  <E>Actor</E>
+                </L>
+                <L n="tests">
+                  <L>
+                    <V t="trait">
+                      <U n="trait">
+                        <L n="whitelist_traits">
+                          <T>162668<!--Trait: trait_PlantSim--></T>
+                        </L>
+                      </U>
+                    </V>
+                  </L>
+                </L>
+              </U>
+            </V>
+            <V t="statistic_change">
+              <U n="statistic_change">
+                <T n="amount">1</T>
+                <T n="stat">76227<!--Commodity: commodity_CareerBenefit_Astronaut--></T>
+                <L n="subject">
+                  <E>Actor</E>
+                </L>
+              </U>
+            </V>
+            <V t="statistic_change">
+              <U n="statistic_change">
+                <T n="amount">20</T>
+                <T n="stat">29105<!--Commodity: commodity_Trait_Autonomy_Active--></T>
+                <L n="subject">
+                  <E>Actor</E>
+                </L>
+              </U>
+            </V>
+            <V t="statistic_change">
+              <U n="statistic_change">
+                <T n="amount">1</T>
+                <T n="stat">106738<!--Commodity: commodity_CareerBenefit_Athlete--></T>
+                <L n="subject">
+                  <E>Actor</E>
+                </L>
+                <L n="tests">
+                  <L>
+                    <V t="career_test">
+                      <U n="career_test">
+                        <V n="test_type" t="career_reference">
+                          <U n="career_reference">
+                            <V n="career" t="specific_career">
+                              <T n="specific_career">106458<!--Career: career_Adult_Athletic--></T>
+                            </V>
+                            <V n="user_level" t="enabled">
+                              <U n="enabled">
+                                <T n="upper_bound">4</T>
+                              </U>
+                            </V>
+                          </U>
+                        </V>
+                      </U>
+                    </V>
+                  </L>
+                </L>
+              </U>
+            </V>
+            <V t="statistic_change">
+              <U n="statistic_change">
+                <T n="advertise">False</T>
+                <T n="amount">-1</T>
+                <T n="stat">99491<!--Commodity: Commodity_Trait_Active_TenseTimer--></T>
+                <L n="subject">
+                  <E>Actor</E>
+                </L>
+                <L n="tests">
+                  <L>
+                    <V t="buff">
+                      <U n="buff">
+                        <V n="whitelist" t="enabled">
+                          <L n="enabled">
+                            <T>27457<!--Buff: Buff_Trait_Active_Antsy--></T>
+                          </L>
+                        </V>
+                      </U>
+                    </V>
+                  </L>
+                </L>
+              </U>
+            </V>
+            <V t="statistic_change">
+              <U n="statistic_change">
+                <T n="advertise">False</T>
+                <T n="amount">1</T>
+                <T n="stat">27458<!--Commodity: commodity_Trait_Active_Activity--></T>
+                <L n="subject">
+                  <E>Actor</E>
+                </L>
+              </U>
+            </V>
+          </L>
+        </U>
+      </V>
+    </U>
+  </V>
+  <L n="basic_extras">
+    <V t="loot">
+      <U n="loot">
+        <L n="loot_list">
+          <T>210913<!--LootActions: loot_Trait_ChildoftheOcean_OceanActivity--></T>
+        </L>
+        <V t="at_beginning" n="timing" />
+      </U>
+    </V>
+    <V t="buff">
+      <U n="buff">
+        <U n="buff_type">
+          <T n="buff_type">129126<!--Buff: buff_Suppress_Emotion_Idle--></T>
+        </U>
+      </U>
+    </V>
+    <V t="create_object">
+      <U n="create_object">
+        <V n="creation_data" t="definition">
+          <U n="definition">
+            <T n="definition">219994</T>
+          </U>
+        </V>
+        <V n="location" t="position">
+          <U n="position">
+            <T n="allow_off_lot_placement">True</T>
+            <V t="enabled" n="facing" />
+            <V t="enabled" n="surface_type_override">
+              <E n="enabled">SURFACETYPE_POOL</E>
+            </V>
+          </U>
+        </V>
+        <V t="on_xevt" n="timing">
+          <U n="on_xevt">
+            <E n="criticality">NotCritical</E>
+            <T n="xevt_id">350</T>
+          </U>
+        </V>
+        <T n="transient">True</T>
+      </U>
+    </V>
+    <V t="vfx">
+      <U n="vfx">
+        <V t="from_participant" n="participant">
+          <U n="from_participant">
+            <E n="participant">CreatedObject</E>
+          </U>
+        </V>
+        <V t="on_xevt" n="timing">
+          <U n="on_xevt">
+            <E n="criticality">NotCritical</E>
+            <T n="xevt_id">350</T>
+          </U>
+        </V>
+        <U n="vfx">
+          <T n="effect_name">ep07_diving_ocean_bubbles_dive</T>
+          <V n="joint_name" t="Slot">
+            <T n="Slot">_FX_SpawnVFX</T>
+          </V>
+        </U>
+        <V t="animation_event" n="vfx_lifetime">
+          <U n="animation_event">
+            <T n="event">351</T>
+          </U>
+        </V>
+        <V t="disabled" n="vfx_target" />
+      </U>
+    </V>
+  </L>
+  <V t="disabled" n="basic_reserve_object" />
+  <V t="disabled" n="content_score" />
+  <T n="display_name">0x72BF6295<!--String: "Hacer submarinismo"--></T>
+  <U n="display_name_text_tokens">
+    <L n="tokens">
+      <V t="participant_type">
+        <U n="participant_type">
+          <V t="from_participant" n="objects">
+            <U n="from_participant">
+              <E n="participant">Actor</E>
+            </U>
+          </V>
+        </U>
+      </V>
+      <V t="participant_type">
+        <U n="participant_type">
+          <V t="from_participant" n="objects">
+            <U n="from_participant">
+              <E n="participant">Object</E>
+            </U>
+          </V>
+        </U>
+      </V>
+    </L>
+  </U>
+  <L n="interaction_category_tags">
+    <E>Interaction_Super</E>
+    <E>Interaction_All</E>
+    <E>Interaction_Lifestyles_Energetic_FlexibleLength</E>
+    <E>Interaction_Lifestyles_AdrenalineSeeker_FlexibleLength</E>
+    <E>Interaction_Lifestyles_FrequentTraveler_FlexibleLength</E>
+  </L>
+  <V n="outcome" t="test_based">
+    <U n="test_based">
+      <L n="fallback_outcomes">
+        <U>
+          <U n="outcome">
+            <L n="continuation">
+              <U>
+                <T n="affordance">207375<!--SuperInteraction: oceanDiving_ClothesSpin_Exit--></T>
+                <E n="target">Actor</E>
+              </U>
+            </L>
+            <T n="force_outcome_on_exit">True</T>
+            <L n="loot_list">
+              <T>209468<!--LootActions: loot_IslandConservation_Progression_1--></T>
+            </L>
+          </U>
+        </U>
+      </L>
+    </U>
+  </V>
+  <T n="pie_menu_priority">6</T>
+  <E n="scoring_priority">NORMAL</E>
+  <T n="subaction_selection_weight">1</T>
+  <V t="literal" n="super_affordance_compatibility">
+    <U n="literal">
+      <V n="default_inclusion" t="exclude_all" />
+    </U>
+  </V>
+  <E n="target_type">OBJECT</E>
+  <L n="test_globals">
+    <V t="sim_info">
+      <U n="sim_info">
+        <V t="specified" n="ages" />
+        <V t="specified" n="species">
+          <U n="specified">
+            <L n="species">
+              <E />
+            </L>
+          </U>
+        </V>
+        <E n="who">Actor</E>
+      </U>
+    </V>
+    <V t="buff">
+      <U n="buff">
+        <L n="blacklist">
+          <T>215379<!--Buff: buff_AutonomyMod_NoSwimming--></T>
+        </L>
+      </U>
+    </V>
+  </L>
+  <T n="time_overhead">30</T>
+</I>

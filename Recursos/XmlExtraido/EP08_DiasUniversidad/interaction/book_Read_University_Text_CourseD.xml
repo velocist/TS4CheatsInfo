@@ -1,0 +1,740 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<I c="SuperInteraction" i="interaction" m="interactions.base.super_interaction" n="book_Read_University_Text_CourseD" s="223668">
+  <V t="reference" n="_animation_actor_map">
+    <T n="reference">104045<!--AnimationActorMap: PickupInteractionTarget--></T>
+  </V>
+  <V t="enabled" n="_carry_transfer_animation">
+    <U n="enabled">
+      <U n="begin">
+        <T n="factory">11315<!--AnimationElementSet: Book_Read_Start_Set--></T>
+      </U>
+      <V n="end" t="enabled">
+        <U n="enabled">
+          <T n="factory">77036<!--AnimationElementSet: Book_Read_Stop_Set--></T>
+        </U>
+      </V>
+    </U>
+  </V>
+  <V t="participant" n="_icon">
+    <U n="participant">
+      <L n="participant_type">
+        <E>Object</E>
+      </L>
+    </U>
+  </V>
+  <V t="enabled" n="_saveable" />
+  <L n="_static_commodities">
+    <U>
+      <T n="desire">2</T>
+      <T n="static_commodity">27576<!--StaticCommodity: StaticCommodity_ReadBooks--></T>
+    </U>
+    <U>
+      <T n="static_commodity">97118<!--StaticCommodity: StaticCommodity_GrabReadingMaterialForToilet--></T>
+    </U>
+    <U>
+      <T n="desire">4</T>
+      <T n="static_commodity">230294<!--StaticCommodity: StaticCommodity_ExamCram--></T>
+    </U>
+    <U>
+      <T n="desire">2</T>
+      <T n="static_commodity">228800<!--StaticCommodity: staticCommodity_CollegeOrganizations_HonorSociety_StudySession_Member--></T>
+    </U>
+  </L>
+  <T n="allow_autonomous">False</T>
+  <T n="allow_from_object_inventory">True</T>
+  <T n="allow_from_sim_inventory">True</T>
+  <L n="appropriateness_tags">
+    <E>Appropriateness_ReadBooks</E>
+  </L>
+  <T n="attention_cost">1</T>
+  <V t="flexible_length" n="basic_content">
+    <U n="flexible_length">
+      <L n="conditional_actions">
+        <V t="list_reference">
+          <T n="list_reference">40705<!--ExitConditionList: ExitConditionList_MotivesNearFail--></T>
+        </V>
+        <V t="literal">
+          <U n="literal">
+            <L n="conditions">
+              <V t="child_based">
+                <U n="child_based">
+                  <E n="participant">ObjectParent</E>
+                  <V n="slot_types" t="enabled">
+                    <L n="enabled">
+                      <T>slot_SitEat</T>
+                    </L>
+                  </V>
+                </U>
+              </V>
+            </L>
+            <E n="interaction_action">EXIT_NATURALLY</E>
+          </U>
+        </V>
+        <V t="literal">
+          <U n="literal">
+            <L n="conditions">
+              <V t="buff_based">
+                <U n="buff_based">
+                  <T n="buff">219079<!--Buff: buff_CollegeOrganization_SecretSociety_Sprite_Tense--></T>
+                  <E n="timing">HAS_BUFF</E>
+                </U>
+              </V>
+              <V t="time_based">
+                <U n="time_based">
+                  <T n="max_time">15</T>
+                  <T n="min_time">15</T>
+                </U>
+              </V>
+            </L>
+            <E n="interaction_action">EXIT_NATURALLY</E>
+          </U>
+        </V>
+        <V t="literal">
+          <U n="literal">
+            <L n="conditions">
+              <V t="buff_based">
+                <U n="buff_based">
+                  <T n="buff">227439<!--Buff: buff_CollegeOrganization_SecretSociety_Sprite_Tense_NonMember--></T>
+                  <E n="timing">HAS_BUFF</E>
+                </U>
+              </V>
+              <V t="time_based">
+                <U n="time_based">
+                  <T n="max_time">10</T>
+                  <T n="min_time">5</T>
+                </U>
+              </V>
+            </L>
+            <E n="interaction_action">EXIT_NATURALLY</E>
+            <L n="tests">
+              <L>
+                <V t="test_set_reference">
+                  <T n="test_set_reference">157700<!--TestSetInstance: testSet_Vampires_CanBeWokenUp--></T>
+                </V>
+              </L>
+            </L>
+          </U>
+        </V>
+        <V t="literal">
+          <U n="literal">
+            <L n="conditions">
+              <V t="buff_based">
+                <U n="buff_based">
+                  <T n="buff">223843<!--Buff: buff_University_Studying_TrulyCrammed--></T>
+                </U>
+              </V>
+            </L>
+            <E n="interaction_action">EXIT_NATURALLY</E>
+          </U>
+        </V>
+        <V t="literal">
+          <U n="literal">
+            <L n="conditions">
+              <V t="time_based">
+                <U n="time_based">
+                  <T n="max_time">60</T>
+                  <T n="min_time">59</T>
+                </U>
+              </V>
+            </L>
+            <E n="interaction_action">NO_ACTION</E>
+            <L n="loot_actions">
+              <T>227413<!--LootActions: loot_CollegeOrganizations_HonorSociety_AddProgress_Huge--></T>
+            </L>
+          </U>
+        </V>
+        <V t="list_reference">
+          <T n="list_reference">40144<!--ExitConditionList: ExitConditionList_EmotionMiserable--></T>
+        </V>
+        <V t="list_reference">
+          <T n="list_reference">40702<!--ExitConditionList: ExitConditionList_EmotionStressed--></T>
+        </V>
+      </L>
+      <V t="staging_content" n="content">
+        <U n="staging_content">
+          <U n="content_set">
+            <L n="affordance_links">
+              <T>13120<!--MixerInteraction: Book_Read_Active--></T>
+              <T>13121<!--MixerInteraction: Book_Read_Passive--></T>
+            </L>
+          </U>
+        </U>
+      </V>
+      <V n="periodic_stat_change" t="enabled">
+        <U n="enabled">
+          <U n="operation_actions">
+            <L n="actions">
+              <T>245303<!--LootActions: loot_SlowExperiences_Progress_Gain_Large--></T>
+            </L>
+            <T n="alarm_interval">1</T>
+          </U>
+          <L n="operations">
+            <V t="statistic_set_max">
+              <U n="statistic_set_max">
+                <T n="stat">28597<!--Commodity: commodity_Trait_Autonomy_Bookworm--></T>
+              </U>
+            </V>
+            <V t="statistic_set_max">
+              <U n="statistic_set_max">
+                <T n="stat">29109<!--Commodity: commodity_Trait_Autonomy_Genius--></T>
+              </U>
+            </V>
+            <V t="statistic_change">
+              <U n="statistic_change">
+                <T n="amount">0.1</T>
+                <T n="stat">213064<!--RankedStatistic: rankedStatistic_WitchOccult_WitchXP--></T>
+                <L n="tests">
+                  <L>
+                    <V t="bucks_perks_test">
+                      <U n="bucks_perks_test">
+                        <T n="bucks_perk">215745<!--BucksPerk: witchPerks_Prowess_1_KnowledgeIsMagic--></T>
+                      </U>
+                    </V>
+                  </L>
+                </L>
+              </U>
+            </V>
+            <V t="statistic_change">
+              <U n="statistic_change">
+                <T n="amount">0.208</T>
+                <T n="stat">223857<!--Commodity: commodity_University_Studying--></T>
+              </U>
+            </V>
+            <V t="statistic_change">
+              <U n="statistic_change">
+                <T n="amount">0.1</T>
+                <T n="stat">210146<!--Statistic: statistic_Career_University_CourseD_ClassGrade--></T>
+                <L n="statistic_multipliers">
+                  <U>
+                    <T n="statistic">225273<!--Commodity: commodity_ResearchDebate_StudySpeed--></T>
+                  </U>
+                  <U>
+                    <T n="statistic">228227<!--Commodity: commodity_ResearchDebate_StudyEfficiency--></T>
+                  </U>
+                  <U>
+                    <V t="value_curve" n="multiplier">
+                      <L n="value_curve">
+                        <U>
+                          <T n="x">50</T>
+                          <T n="y">1</T>
+                        </U>
+                        <U>
+                          <T n="x">51</T>
+                          <T n="y">0.8</T>
+                        </U>
+                        <U>
+                          <T n="x">90</T>
+                          <T n="y">0.4</T>
+                        </U>
+                      </L>
+                    </V>
+                    <T n="statistic">210146<!--Statistic: statistic_Career_University_CourseD_ClassGrade--></T>
+                  </U>
+                </L>
+              </U>
+            </V>
+            <V t="dynamic_variant_skill">
+              <U n="dynamic_variant_skill">
+                <U n="skill_loot_data">
+                  <E n="effectiveness">VerySmallPeriodic</E>
+                  <V t="from_career" n="stat">
+                    <U n="from_career">
+                      <T n="career">209989<!--UniversityCourseCareerSlot: university_CourseSlot_D--></T>
+                    </U>
+                  </V>
+                </U>
+              </U>
+            </V>
+            <V t="statistic_change">
+              <U n="statistic_change">
+                <T n="amount">10</T>
+                <T n="stat">228186<!--Commodity: commodity_Career_UniversityStudent--></T>
+                <L n="subject">
+                  <E>Actor</E>
+                </L>
+              </U>
+            </V>
+            <V t="reference">
+              <T n="reference">253402<!--PeriodicStatChangeOperation: periodicStatChange_Lifestyles_Progress_Low_Sedentary--></T>
+            </V>
+            <V t="reference">
+              <T n="reference">249739<!--PeriodicStatChangeOperation: periodicStatChangeOperation_Lifestyles_Liked_Sedentary--></T>
+            </V>
+            <V t="reference">
+              <T n="reference">253401<!--PeriodicStatChangeOperation: periodicStatChange_Lifestyles_Progress_Low_Indoorsy--></T>
+            </V>
+            <V t="reference">
+              <T n="reference">251310<!--PeriodicStatChangeOperation: periodicStatChangeOperation_Lifestyles_Liked_Indoorsy--></T>
+            </V>
+            <V t="reference">
+              <T n="reference">253403<!--PeriodicStatChangeOperation: periodicStatChange_Lifestyles_Progress_Low_AdrenalineSeeker_Loss--></T>
+            </V>
+            <V t="reference">
+              <T n="reference">250954<!--PeriodicStatChangeOperation: periodicStatChangeOperation_Lifestyles_Disliked_AdrenalineSeeker--></T>
+            </V>
+          </L>
+        </U>
+      </V>
+    </U>
+  </V>
+  <L n="basic_extras">
+    <V t="buff">
+      <U n="buff">
+        <U n="buff_type">
+          <T n="buff_type">185734<!--Buff: buff_Umbrella_Close--></T>
+        </U>
+      </U>
+    </V>
+    <V t="loot">
+      <U n="loot">
+        <L n="loot_list">
+          <T>184986<!--LootActions: loot_SnowEffects_LetitSnow_CozyFire--></T>
+        </L>
+        <V t="at_beginning" n="timing" />
+      </U>
+    </V>
+    <V t="buff">
+      <U n="buff">
+        <U n="buff_type">
+          <T n="buff_type">223950<!--Buff: buff_University_Studying--></T>
+        </U>
+      </U>
+    </V>
+    <V t="loot">
+      <U n="loot">
+        <L n="loot_list">
+          <T>227411<!--LootActions: loot_CollegeOrganizations_HonorSociety_AddProgress_Medium--></T>
+        </L>
+      </U>
+    </V>
+  </L>
+  <V t="do_not_change_focus" n="basic_focus" />
+  <L n="cancel_replacement_affordances">
+    <U>
+      <E n="key">BODY</E>
+      <U n="value">
+        <T n="affordance">131317<!--SuperInteraction: cancelReplacements_ReadtoCarry_fromSurface--></T>
+        <V t="enabled" n="target" />
+      </U>
+    </U>
+    <U>
+      <E n="key">CARRY</E>
+      <U n="value">
+        <T n="affordance">122714<!--SuperInteraction: cancelReplacements_ReadtoCarry--></T>
+        <V t="enabled" n="target" />
+      </U>
+    </U>
+  </L>
+  <V t="enabled" n="canonical_animation">
+    <U n="enabled">
+      <T n="factory">11313<!--AnimationElementSet: Book_Read_Active_Set--></T>
+    </U>
+  </V>
+  <V t="disabled" n="content_score" />
+  <T n="display_name">0xC72757C<!--String: "Estudiar para {2.String}"--></T>
+  <V t="testable" n="display_name_overrides">
+    <U n="testable">
+      <L n="overrides">
+        <U>
+          <V t="disabled" n="new_display_name" />
+          <V t="enabled" n="new_pie_menu_icon">
+            <V n="enabled" t="resource_key">
+              <U n="resource_key">
+                <T n="key" p="InEP08\UI\Icons\PieMenu\SpecialInteractions\specialinteraction_orgHonorSociety_piemenu.png">2f7d0004:00000000:63f1bad1a450a829</T>
+              </U>
+            </V>
+          </V>
+          <L n="test">
+            <L>
+              <V t="organization_membership_test">
+                <U n="organization_membership_test">
+                  <L n="organizations">
+                    <T>219856<!--Organization: University_Organization_Honor--></T>
+                  </L>
+                </U>
+              </V>
+              <V t="situation_running_test">
+                <U n="situation_running_test">
+                  <V n="situation_whitelist" t="enabled">
+                    <L n="enabled">
+                      <T>209035<!--OrganizationMemberSingleJobSituation: situation_CollegeOrganizations_SmallEvents_StudyGroup--></T>
+                      <T>226481<!--OrganizationMemberSingleJobSituation: University_HonorSociety_BarNight--></T>
+                    </L>
+                  </V>
+                </U>
+              </V>
+            </L>
+          </L>
+        </U>
+      </L>
+    </U>
+  </V>
+  <U n="display_name_text_tokens">
+    <L n="tokens">
+      <V t="participant_type">
+        <U n="participant_type">
+          <V n="objects" t="from_participant">
+            <U n="from_participant">
+              <E n="participant">Actor</E>
+            </U>
+          </V>
+        </U>
+      </V>
+      <V t="participant_type">
+        <U n="participant_type">
+          <V t="from_participant" n="objects">
+            <U n="from_participant">
+              <E n="participant">Object</E>
+            </U>
+          </V>
+        </U>
+      </V>
+      <V t="career_data">
+        <U n="career_data">
+          <T n="career_type">209989<!--UniversityCourseCareerSlot: university_CourseSlot_D--></T>
+        </U>
+      </V>
+    </L>
+  </U>
+  <T n="force_exit_on_inertia">False</T>
+  <L n="interaction_category_tags">
+    <E>Interaction_Super</E>
+    <E>Interaction_All</E>
+    <E>Interaction_Lifestyles_Sedentary_FlexibleLength</E>
+    <E>Interaction_Lifestyles_Indoorsy_FlexibleLength</E>
+    <E>Interaction_Lifestyles_AdrenalineSeeker_Mundane</E>
+  </L>
+  <L n="joinable">
+    <U>
+      <V t="enabled" n="invite_available" />
+      <V n="join_affordance" t="affordance">
+        <U n="affordance">
+          <V n="value" t="custom">
+            <T n="custom">226035<!--SuperInteraction: studying_CreateBook_Invite--></T>
+          </V>
+        </U>
+      </V>
+      <E n="join_target">Actor</E>
+    </U>
+    <U>
+      <V n="join_affordance" t="affordance">
+        <U n="affordance">
+          <V n="value" t="custom">
+            <T n="custom">225980<!--SuperInteraction: studying_CreateBook_Join_CourseA--></T>
+          </V>
+        </U>
+      </V>
+      <V t="enabled" n="join_available" />
+      <E n="join_target">Actor</E>
+    </U>
+    <U>
+      <V n="join_affordance" t="affordance">
+        <U n="affordance">
+          <V n="value" t="custom">
+            <T n="custom">225981<!--SuperInteraction: studying_CreateBook_Join_CourseB--></T>
+          </V>
+        </U>
+      </V>
+      <V t="enabled" n="join_available" />
+      <E n="join_target">Actor</E>
+    </U>
+    <U>
+      <V n="join_affordance" t="affordance">
+        <U n="affordance">
+          <V n="value" t="custom">
+            <T n="custom">225982<!--SuperInteraction: studying_CreateBook_Join_CourseC--></T>
+          </V>
+        </U>
+      </V>
+      <V t="enabled" n="join_available" />
+      <E n="join_target">Actor</E>
+    </U>
+    <U>
+      <V n="join_affordance" t="affordance">
+        <U n="affordance">
+          <V n="value" t="custom">
+            <T n="custom">225983<!--SuperInteraction: studying_CreateBook_Join_CourseD--></T>
+          </V>
+        </U>
+      </V>
+      <V t="enabled" n="join_available" />
+      <E n="join_target">Actor</E>
+    </U>
+  </L>
+  <V t="test_based" n="outcome">
+    <U n="test_based">
+      <L n="fallback_outcomes">
+        <U>
+          <U n="outcome">
+            <V t="disabled" n="animation_ref" />
+            <V t="disabled" n="display_message" />
+            <V t="disabled" n="response" />
+            <V t="disabled" n="xevt" />
+          </U>
+        </U>
+      </L>
+      <L n="tested_outcomes">
+        <U>
+          <L n="potential_outcomes">
+            <U>
+              <U n="outcome">
+                <V t="disabled" n="animation_ref" />
+                <L n="continuation">
+                  <U>
+                    <T n="affordance">13855<!--PutInInventoryInteraction: Put_Item_In_My_Inventory--></T>
+                    <V t="enabled" n="carry_target" />
+                    <V t="None" n="inventory_carry_target" />
+                  </U>
+                </L>
+                <V t="disabled" n="display_message" />
+                <V t="disabled" n="response" />
+                <V t="disabled" n="xevt" />
+              </U>
+            </U>
+          </L>
+          <L n="tests">
+            <L>
+              <V t="location">
+                <U n="location">
+                  <U n="location_tests">
+                    <V t="Don't_Test" n="is_in_slot" />
+                    <V t="Don't_Test" n="is_natural_ground" />
+                    <V t="Don't_Test" n="is_on_active_lot" />
+                    <V t="Don't_Test" n="is_outside" />
+                    <V t="enabled" n="is_venue_type">
+                      <U n="enabled">
+                        <T n="venue_type">130713<!--Venue: venue_Restaurant--></T>
+                      </U>
+                    </V>
+                  </U>
+                </U>
+              </V>
+            </L>
+          </L>
+        </U>
+      </L>
+    </U>
+  </V>
+  <T n="pie_menu_priority">10</T>
+  <U n="post_run_autonomy_commodities">
+    <L n="requests">
+      <U>
+        <L n="static_commodities">
+          <T>122784<!--StaticCommodity: staticCommodity_PickUpOwnBook--></T>
+        </L>
+      </U>
+    </L>
+  </U>
+  <U n="posture_preferences">
+    <T n="apply_penalties">True</T>
+    <L n="posture_cost_overrides">
+      <U>
+        <T n="key">134340<!--Posture: posture_SitOnGround--></T>
+        <T n="value">100</T>
+      </U>
+      <U>
+        <T n="key">15527<!--Posture: posture_Kneel--></T>
+        <T n="value">40</T>
+      </U>
+      <U>
+        <T n="key">15537<!--MobilePosture: posture_Stand--></T>
+        <T n="value">30</T>
+      </U>
+    </L>
+    <T n="prefer_surface">False</T>
+  </U>
+  <V t="enabled" n="posture_target_preference">
+    <L n="enabled">
+      <U>
+        <E n="key">SEATING_BARSTOOL</E>
+        <T n="value">5</T>
+      </U>
+      <U>
+        <E n="key">SEATING_BED</E>
+        <T n="value">5</T>
+      </U>
+      <U>
+        <E n="key">SEATING_DINING</E>
+        <T n="value">5</T>
+      </U>
+      <U>
+        <E n="key">SEATING_LIVING</E>
+        <T n="value">15</T>
+      </U>
+      <U>
+        <E n="key">SEATING_LOVESEAT</E>
+        <T n="value">15</T>
+      </U>
+      <U>
+        <E n="key">SEATING_POOL</E>
+        <T n="value">7</T>
+      </U>
+      <U>
+        <E n="key">SEATING_SOFA</E>
+        <T n="value">15</T>
+      </U>
+    </L>
+  </V>
+  <U n="progress_bar_enabled">
+    <T n="bar_enabled">False</T>
+  </U>
+  <V t="enabled" n="route_start_balloon">
+    <U n="enabled">
+      <U n="balloon">
+        <L n="balloon_choices">
+          <U>
+            <V n="item" t="balloon_icon">
+              <U n="balloon_icon">
+                <V t="participant" n="icon">
+                  <U n="participant">
+                    <L n="participant_type">
+                      <E>Object</E>
+                    </L>
+                  </U>
+                </V>
+              </U>
+            </V>
+          </U>
+        </L>
+        <L n="balloon_target">
+          <E>Actor</E>
+        </L>
+      </U>
+    </U>
+  </V>
+  <E n="scoring_priority">NORMAL</E>
+  <V t="enabled" n="sim_affinity_posture_scoring_data">
+    <U n="enabled">
+      <L n="my_scoring">
+        <U>
+          <V t="avoid" n="affinity_strategy" />
+          <E n="running_interaction_tag">Loud</E>
+        </U>
+        <U>
+          <V t="relationship_based" n="affinity_strategy" />
+          <T n="negate_tag">True</T>
+          <E n="running_interaction_tag">Loud</E>
+        </U>
+        <U>
+          <V t="attract" n="affinity_strategy" />
+          <E n="running_interaction_tag">Reading</E>
+        </U>
+        <U>
+          <V t="avoid" n="affinity_strategy" />
+          <E n="running_interaction_tag">Very_Loud</E>
+        </U>
+        <U>
+          <V t="attract" n="affinity_strategy" />
+          <E n="running_interaction_tag">Pet</E>
+        </U>
+      </L>
+      <L n="my_tags">
+        <E>Quiet</E>
+        <E>Reading</E>
+      </L>
+    </U>
+  </V>
+  <T n="subaction_selection_weight">3</T>
+  <V t="literal" n="super_affordance_compatibility">
+    <U n="literal">
+      <V n="default_inclusion" t="include_all">
+        <U n="include_all">
+          <L n="exclude_affordances">
+            <T>104856<!--WaypointInteraction: pool-swim--></T>
+            <T>103790<!--GoHereSuperInteraction: terrain-Swimhere--></T>
+            <T>129587<!--GoHereSuperInteraction: terrain-Swim_andChatHere--></T>
+            <T>182089<!--SuperInteraction: sim_CreateCarryUmbrella--></T>
+          </L>
+          <L n="exclude_lists">
+            <T>16388<!--AffordanceList: TV_All--></T>
+            <T>30641<!--AffordanceList: AffordanceList_View--></T>
+            <T>36156<!--AffordanceList: AffordanceList_Socialize--></T>
+            <T>30816<!--AffordanceList: affordanceList_FoodConsume--></T>
+            <T>30642<!--AffordanceList: AffordanceList_Phone--></T>
+          </L>
+        </U>
+      </V>
+    </U>
+  </V>
+  <V t="enabled" n="super_affordance_klobberers">
+    <V n="enabled" t="literal">
+      <U n="literal">
+        <V n="default_inclusion" t="exclude_all">
+          <U n="exclude_all">
+            <L n="include_affordances">
+              <T>182089<!--SuperInteraction: sim_CreateCarryUmbrella--></T>
+            </L>
+          </U>
+        </V>
+      </U>
+    </V>
+  </V>
+  <E n="target_type">OBJECT</E>
+  <L n="test_autonomous">
+    <L>
+      <V t="appropriateness" />
+      <V t="buff">
+        <U n="buff">
+          <L n="blacklist">
+            <T>214844<!--Buff: buff_Trait_IslandAncestors_Spirit_RoleAutonomy_PositiveJudging--></T>
+            <T>214845<!--Buff: buff_Trait_IslandAncestors_Spirit_RoleAutonomy_NegativeJudging--></T>
+          </L>
+        </U>
+      </V>
+    </L>
+  </L>
+  <L n="test_globals">
+    <V t="state">
+      <U n="state">
+        <V t="always_pass" n="fallback_behavior" />
+        <E n="operator">LESS</E>
+        <T n="value">105868<!--ObjectStateValue: RetailItem_ForSale_ForSale--></T>
+      </U>
+    </V>
+    <V t="object_criteria">
+      <U n="object_criteria">
+        <V n="identity_test" t="tags">
+          <U n="tags">
+            <L n="tag_set">
+              <E>Func_Book_MagicTome</E>
+            </L>
+            <E n="test_type">CONTAINS_NO_TAGS_IN_SET</E>
+          </U>
+        </V>
+        <T n="owned">False</T>
+        <V t="single_object" n="subject_specific_tests" />
+      </U>
+    </V>
+    <V t="career_test">
+      <U n="career_test">
+        <T n="negate">True</T>
+        <V n="test_type" t="is_elective_course">
+          <U n="is_elective_course">
+            <T n="career">209989<!--UniversityCourseCareerSlot: university_CourseSlot_D--></T>
+          </U>
+        </V>
+      </U>
+    </V>
+    <V t="test_set_reference">
+      <T n="test_set_reference">230096<!--TestSetInstance: testSetInstance_University_OngoingCourse_CourseD--></T>
+    </V>
+    <V t="buff">
+      <U n="buff">
+        <L n="blacklist">
+          <T>223843<!--Buff: buff_University_Studying_TrulyCrammed--></T>
+        </L>
+        <V n="tooltip" t="enabled">
+          <T n="enabled">0xB211F228<!--String: "{0.SimFirstName} no puede estudiar mientras le duren los efectos del atracón de conocimientos."--></T>
+        </V>
+      </U>
+    </V>
+    <V t="test_set_reference">
+      <T n="test_set_reference">28305<!--TestSetInstance: testSet_EmotionNotMiserable--></T>
+    </V>
+    <V t="test_set_reference">
+      <T n="test_set_reference">28176<!--TestSetInstance: testSet_EmotionNotStressed--></T>
+    </V>
+  </L>
+  <L n="tests" />
+  <T n="time_overhead">60</T>
+</I>

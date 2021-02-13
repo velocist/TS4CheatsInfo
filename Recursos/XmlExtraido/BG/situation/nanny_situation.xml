@@ -1,0 +1,206 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<I c="ServiceNpcNannySituation" i="situation" m="situations.complex.service_npc_nanny_situation" n="nanny_situation" s="141841">
+  <T n="_implies_greeted_status">True</T>
+  <U n="_service_npc_job">
+    <T n="role_state">143492<!--RoleState: nanny_role_arrive--></T>
+    <T n="situation_job">141842<!--SituationJob: jobs_nanny--></T>
+  </U>
+  <T p="InGame\Audio\Bumper\bumper_event_start.propx" n="audio_sting_on_start">39b2aa4a:00000000:78b903461d47e4fc</T>
+  <T n="blocks_super_speed_three">True</T>
+  <T n="duration">0</T>
+  <E n="exclusivity">SERVICE</E>
+  <T n="fail_on_preroll_execute_failure">False</T>
+  <L n="finish_job_states">
+    <U>
+      <E n="key">ASKED_TO_HANG_OUT</E>
+      <U n="value">
+        <U n="enter_state_test">
+          <L n="affordances">
+            <T>29935<!--SocialMixerInteraction: mixer_social_NPC_AskToHangOut_targeted_Friendly_alwaysOn--></T>
+          </L>
+          <V t="enabled" n="interaction_outcome">
+            <E n="enabled">SUCCESS</E>
+          </V>
+          <E n="participant">TargetSim</E>
+        </U>
+        <V n="notification" t="enabled">
+          <V n="enabled" t="literal">
+            <U n="literal">
+              <V t="enabled" n="icon">
+                <V t="participant" n="enabled" />
+              </V>
+              <V t="disabled" n="participant" />
+              <V n="text" t="single">
+                <T n="single">0x6394632<!--String: "Pues nada, entonces lo dejo ya. Serán {0.Money}."--></T>
+              </V>
+              <E n="visual_type">SPEECH</E>
+            </U>
+          </V>
+        </V>
+        <T o="true" n="role_state" />
+      </U>
+    </U>
+    <U>
+      <E n="key">DISMISSED</E>
+      <U n="value">
+        <U n="enter_state_test">
+          <L n="affordances">
+            <T>143425<!--SocialSuperInteraction: sim_DismissNannyNPC--></T>
+          </L>
+          <T n="consider_user_cancelled_as_failure">True</T>
+          <E n="participant">TargetSim</E>
+          <E n="test_event">InteractionComplete</E>
+        </U>
+        <V t="enabled" n="notification">
+          <V n="enabled" t="literal">
+            <U n="literal">
+              <V t="enabled" n="icon">
+                <V t="participant" n="enabled" />
+              </V>
+              <V n="text" t="single">
+                <T n="single">0xDE1C61D5<!--String: "Pues nada, supongo que he acabado aquí. Serán {0.Money}."--></T>
+              </V>
+              <E n="visual_type">SPEECH</E>
+            </U>
+          </V>
+        </V>
+        <T n="role_state">143638<!--RoleState: rolestate_leave_now_nanny--></T>
+      </U>
+    </U>
+    <U>
+      <E n="key">FINISHED_WORK</E>
+      <U n="value">
+        <U n="enter_state_test">
+          <L n="affordances">
+            <T>143660<!--SuperInteraction: serviceNpc_noMoreWork_nanny--></T>
+          </L>
+          <T n="consider_user_cancelled_as_failure">True</T>
+          <E n="participant">Actor</E>
+        </U>
+        <V n="notification" t="enabled">
+          <V n="enabled" t="literal">
+            <U n="literal">
+              <V t="enabled" n="icon">
+                <V t="participant" n="enabled" />
+              </V>
+              <V n="text" t="single">
+                <T n="single">0xBF384F34<!--String: "Bueno, parece que por hoy se nos ha acabado el tiempo. ¡Hasta la próxima! Y recuerda: cualquier cosa puede ser divertida o buena si tú haces que lo sea.\n\nSe {S0.ha}{P0.han} cargado {0.Money}."--></T>
+              </V>
+              <E n="visual_type">SPEECH</E>
+            </U>
+          </V>
+        </V>
+        <T n="role_state">143638<!--RoleState: rolestate_leave_now_nanny--></T>
+      </U>
+    </U>
+    <U>
+      <E n="key">FIRED</E>
+      <U n="value">
+        <U n="enter_state_test">
+          <L n="affordances">
+            <T>143427<!--SocialSuperInteraction: sim_FireNannyNPC--></T>
+          </L>
+          <E n="participant">TargetSim</E>
+        </U>
+        <V n="notification" t="enabled">
+          <V n="enabled" t="literal">
+            <U n="literal">
+              <V t="enabled" n="icon">
+                <V t="participant" n="enabled">
+                  <U n="participant">
+                    <L n="participant_type">
+                      <E>Actor</E>
+                    </L>
+                  </U>
+                </V>
+              </V>
+              <V n="text" t="single">
+                <T n="single">0xF9810934<!--String: "Parece que todo está en orden. {S0.Será}{P0.Serán} {0.Money} por los servicios prestados."--></T>
+              </V>
+            </U>
+          </V>
+        </V>
+      </U>
+    </U>
+    <U>
+      <E n="key">NOT_PAID</E>
+      <U n="value">
+        <U n="enter_state_test">
+          <L n="affordances">
+            <T>14140<!--SocialSuperInteraction: sim_ServiceNpcNotPaid--></T>
+          </L>
+        </U>
+        <V t="enabled" n="notification">
+          <V n="enabled" t="literal">
+            <U n="literal">
+              <V t="enabled" n="icon">
+                <V t="participant" n="enabled" />
+              </V>
+              <V n="text" t="single">
+                <T n="single">0xF8FC9790<!--String: "No trabajo gratis, ¿sabes? Si alguna vez vuelves a necesitar mi ayuda, más te vale organizarte y pagar la factura de {1.Money} que te haré llegar."--></T>
+              </V>
+              <E n="visual_type">SPEECH</E>
+            </U>
+          </V>
+        </V>
+      </U>
+    </U>
+    <U>
+      <E n="key">NO_WORK_TO_DO</E>
+      <U n="value">
+        <V n="notification" t="enabled">
+          <V n="enabled" t="literal">
+            <U n="literal">
+              <L n="dialog_options">
+                <E>DISABLE_CLOSE_BUTTON</E>
+              </L>
+              <V t="enabled" n="icon">
+                <V t="participant" n="enabled">
+                  <U n="participant">
+                    <L n="participant_type">
+                      <E>Actor</E>
+                    </L>
+                  </U>
+                </V>
+              </V>
+              <V t="single" n="text">
+                <T n="single">0x65442C6D<!--String: "Parece que no necesitas mis servicios hoy. Pues nada, me voy a ver al siguiente cliente."--></T>
+              </V>
+              <E n="visual_type">SPEECH</E>
+            </U>
+          </V>
+        </V>
+      </U>
+    </U>
+  </L>
+  <T p="InGame\Audio\Bumper\bumper_event_major_complete.propx" n="main_goal_audio_sting">39b2aa4a:00000000:10b476550150a33f</T>
+  <T n="max_participants">1</T>
+  <V t="disabled" n="preroll_autonomy" />
+  <V n="start_work_test_and_state" t="enabled">
+    <U n="enabled">
+      <U n="enter_state_test">
+        <L n="affordances">
+          <T>13998<!--SocialSuperInteraction: sim_Chat--></T>
+          <T>8649<!--SuperInteraction: baby_CooAt--></T>
+          <T>13005<!--SuperInteraction: baby_Bounce--></T>
+          <T>13011<!--SuperInteraction: baby_HoldOut--></T>
+          <T>13013<!--SuperInteraction: baby_Shoosh--></T>
+          <T>77821<!--SuperInteraction: baby_Talk--></T>
+          <T>97153<!--SuperInteraction: baby_MakeFace--></T>
+          <T>13009<!--SuperInteraction: baby_Cuddle--></T>
+          <T>13012<!--SuperInteraction: baby_Rock--></T>
+          <T>25211<!--SuperInteraction: door_RingDoorbell--></T>
+          <T>140885<!--SocialSuperInteraction: sim_Toddler_Talk--></T>
+          <T>157626<!--SocialSuperInteraction: sim_Toddler_Ask--></T>
+        </L>
+        <E n="test_event">InteractionStart</E>
+      </U>
+      <T n="role_state">141876<!--RoleState: nanny_role_start--></T>
+    </U>
+  </V>
+  <L n="tags">
+    <E>Situation_HiredNanny</E>
+  </L>
+  <V t="allow" n="time_jump" />
+  <V t="allow" n="travel_request_behavior" />
+</I>

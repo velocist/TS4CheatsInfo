@@ -1,0 +1,844 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<M n="services.roommate_service" s="12166126280697567296">
+  <C n="RoommateService">
+    <L n="ARCHETYPE_CATEGORIES">
+      <U>
+        <L n="archetypes">
+          <T>209560<!--RoommateArchetype: roommateNPC_Archetype_Mealmaker--></T>
+          <T>209557<!--RoommateArchetype: roommateNPC_Archetype_SuperNeat--></T>
+          <T>211781<!--RoommateArchetype: roommateNPC_Archetype_Cheerleader--></T>
+          <T>211782<!--RoommateArchetype: roommateNPC_Archetype_Fixer--></T>
+        </L>
+      </U>
+      <U>
+        <L n="archetypes">
+          <T>209556<!--RoommateArchetype: roommateNPC_Archetype_ClingySocialite--></T>
+          <T>209558<!--RoommateArchetype: roommateNPC_Archetype_CouchPotato--></T>
+          <T>211780<!--RoommateArchetype: roommateNPC_Archetype_EmoLoner--></T>
+          <T>211798<!--RoommateArchetype: roommateNPC_Archetype_LoudMusic--></T>
+          <T>211779<!--RoommateArchetype: roommateNPC_Archetype_PartyPlanner--></T>
+          <T>220356<!--RoommateArchetype: roommateNPC_Archetype_Breaker--></T>
+        </L>
+      </U>
+      <U>
+        <L n="archetypes">
+          <T>209575<!--RoommateArchetype: roommateNPC_Interest_Computer_TechGuru--></T>
+          <T>209574<!--RoommateArchetype: roommateNPC_Interest_Music_Entertainer--></T>
+          <T>211784<!--RoommateArchetype: roommateNPC_Interest_Art_Painter--></T>
+          <T>211783<!--RoommateArchetype: roommateNPC_Interest_Baking_Culinary--></T>
+          <T>211799<!--RoommateArchetype: roommateNPC_Interest_Fitness_Athletic--></T>
+          <T>229900<!--RoommateArchetype: roommateNPC_Interest_Computer_Student--></T>
+          <T>229898<!--RoommateArchetype: roommateNPC_Interest_Music_Student--></T>
+          <T>229902<!--RoommateArchetype: roommateNPC_Interest_Art_Student--></T>
+          <T>229901<!--RoommateArchetype: roommateNPC_Interest_Baking_Student--></T>
+          <T>229899<!--RoommateArchetype: roommateNPC_Interest_Fitness_Student--></T>
+        </L>
+      </U>
+      <U>
+        <L n="archetypes">
+          <T>209578<!--RoommateArchetype: roommateNPC_Quirk_BathroomHog--></T>
+          <T>209577<!--RoommateArchetype: roommateNPC_Quirk_PublicAffectionDisplayer--></T>
+          <T>211785<!--RoommateArchetype: roommateNPC_Quirk_Absent--></T>
+          <T>211786<!--RoommateArchetype: roommateNPC_Quirk_BigCloset--></T>
+          <T>211800<!--RoommateArchetype: roommateNPC_Quirk_Prankster--></T>
+          <T>220329<!--RoommateArchetype: roommateNPC_Quirk_LateOnRent--></T>
+        </L>
+        <U n="count">
+          <T n="lower_bound">0</T>
+          <T n="upper_bound">2</T>
+        </U>
+      </U>
+    </L>
+    <T n="AUTO_INVITE_CHANCE">33</T>
+    <U n="AUTO_INVITE_DIALOG">
+      <V t="enabled" n="icon">
+        <V t="participant" n="enabled" />
+      </V>
+      <V n="text" t="single">
+        <T n="single">0x82C1313B<!--String: "He visto que salías; ¿qué planes tenemos?"--></T>
+      </V>
+      <E n="visual_type">SPEECH</E>
+    </U>
+    <T n="AUTO_INVITE_TRAIT">207908<!--Trait: trait_RoommateNPC_Archetype_ClingySocialite--></T>
+    <E n="BED_PREFERENCE_TAG">BED</E>
+    <L n="BED_TAGS">
+      <E>BuyCatSS_Bed</E>
+      <E>BuyCatSS_BedDouble</E>
+      <E>BuyCatSS_BedSingle</E>
+    </L>
+    <U n="DECORATING">
+      <L n="decorations">
+        <U>
+          <V n="item" t="by_tag">
+            <U n="by_tag">
+              <L n="tag_set">
+                <E>Func_Roommate_Superneat</E>
+              </L>
+            </U>
+          </V>
+          <U n="weight">
+            <T n="base_value">1</T>
+            <L n="multipliers">
+              <U>
+                <T n="multiplier">50</T>
+                <L n="tests">
+                  <L>
+                    <V t="trait">
+                      <U n="trait">
+                        <L n="whitelist_traits">
+                          <T>207906<!--Trait: trait_RoommateNPC_Archetype_SuperNeat--></T>
+                        </L>
+                      </U>
+                    </V>
+                  </L>
+                </L>
+              </U>
+            </L>
+          </U>
+        </U>
+        <U>
+          <V n="item" t="by_tag">
+            <U n="by_tag">
+              <L n="tag_set">
+                <E>Func_Roommate_Cheerleader</E>
+              </L>
+            </U>
+          </V>
+          <U n="weight">
+            <T n="base_value">1</T>
+            <L n="multipliers">
+              <U>
+                <T n="multiplier">50</T>
+                <L n="tests">
+                  <L>
+                    <V t="trait">
+                      <U n="trait">
+                        <L n="whitelist_traits">
+                          <T>211764<!--Trait: trait_RoommateNPC_Archetype_Cheerleader--></T>
+                        </L>
+                      </U>
+                    </V>
+                  </L>
+                </L>
+              </U>
+            </L>
+          </U>
+        </U>
+        <U>
+          <V n="item" t="by_tag">
+            <U n="by_tag">
+              <L n="tag_set">
+                <E>Func_Roommate_Mealmaker</E>
+              </L>
+            </U>
+          </V>
+          <U n="weight">
+            <T n="base_value">1</T>
+            <L n="multipliers">
+              <U>
+                <T n="multiplier">50</T>
+                <L n="tests">
+                  <L>
+                    <V t="trait">
+                      <U n="trait">
+                        <L n="whitelist_traits">
+                          <T>207907<!--Trait: trait_RoommateNPC_Archetype_Mealmaker--></T>
+                        </L>
+                      </U>
+                    </V>
+                  </L>
+                </L>
+              </U>
+            </L>
+          </U>
+        </U>
+        <U>
+          <V n="item" t="by_tag">
+            <U n="by_tag">
+              <L n="tag_set">
+                <E>Func_Roommate_Fixer</E>
+              </L>
+            </U>
+          </V>
+          <U n="weight">
+            <T n="base_value">1</T>
+            <L n="multipliers">
+              <U>
+                <T n="multiplier">50</T>
+                <L n="tests">
+                  <L>
+                    <V t="trait">
+                      <U n="trait">
+                        <L n="whitelist_traits">
+                          <T>211765<!--Trait: trait_RoommateNPC_Archetype_Fixer--></T>
+                        </L>
+                      </U>
+                    </V>
+                  </L>
+                </L>
+              </U>
+            </L>
+          </U>
+        </U>
+        <U>
+          <V n="item" t="by_tag">
+            <U n="by_tag">
+              <L n="tag_set">
+                <E>Func_Roommate_ClingySocialite</E>
+              </L>
+            </U>
+          </V>
+          <U n="weight">
+            <T n="base_value">1</T>
+            <L n="multipliers">
+              <U>
+                <T n="multiplier">50</T>
+                <L n="tests">
+                  <L>
+                    <V t="trait">
+                      <U n="trait">
+                        <L n="whitelist_traits">
+                          <T>207908<!--Trait: trait_RoommateNPC_Archetype_ClingySocialite--></T>
+                        </L>
+                      </U>
+                    </V>
+                  </L>
+                </L>
+              </U>
+            </L>
+          </U>
+        </U>
+        <U>
+          <V n="item" t="by_tag">
+            <U n="by_tag">
+              <L n="tag_set">
+                <E>Func_Roommate_CouchPotato</E>
+              </L>
+            </U>
+          </V>
+          <U n="weight">
+            <T n="base_value">1</T>
+            <L n="multipliers">
+              <U>
+                <T n="multiplier">50</T>
+                <L n="tests">
+                  <L>
+                    <V t="trait">
+                      <U n="trait">
+                        <L n="whitelist_traits">
+                          <T>207909<!--Trait: trait_RoommateNPC_Archetype_CouchPotato--></T>
+                        </L>
+                      </U>
+                    </V>
+                  </L>
+                </L>
+              </U>
+            </L>
+          </U>
+        </U>
+        <U>
+          <V n="item" t="by_tag">
+            <U n="by_tag">
+              <L n="tag_set">
+                <E>Func_Roommate_PartyPlanner</E>
+              </L>
+            </U>
+          </V>
+          <U n="weight">
+            <T n="base_value">1</T>
+            <L n="multipliers">
+              <U>
+                <T n="multiplier">50</T>
+                <L n="tests">
+                  <L>
+                    <V t="trait">
+                      <U n="trait">
+                        <L n="whitelist_traits">
+                          <T>211742<!--Trait: trait_RoommateNPC_Archetype_PartyPlanner--></T>
+                        </L>
+                      </U>
+                    </V>
+                  </L>
+                </L>
+              </U>
+            </L>
+          </U>
+        </U>
+        <U>
+          <V n="item" t="by_tag">
+            <U n="by_tag">
+              <L n="tag_set">
+                <E>Func_Roommate_EmoLoner</E>
+              </L>
+            </U>
+          </V>
+          <U n="weight">
+            <T n="base_value">1</T>
+            <L n="multipliers">
+              <U>
+                <T n="multiplier">50</T>
+                <L n="tests">
+                  <L>
+                    <V t="trait">
+                      <U n="trait">
+                        <L n="whitelist_traits">
+                          <T>211741<!--Trait: trait_RoommateNPC_Archetype_EmoLoner--></T>
+                        </L>
+                      </U>
+                    </V>
+                  </L>
+                </L>
+              </U>
+            </L>
+          </U>
+        </U>
+        <U>
+          <V n="item" t="by_tag">
+            <U n="by_tag">
+              <L n="tag_set">
+                <E>Func_Roommate_CantStopTheBeat</E>
+              </L>
+            </U>
+          </V>
+          <U n="weight">
+            <T n="base_value">1</T>
+            <L n="multipliers">
+              <U>
+                <T n="multiplier">50</T>
+                <L n="tests">
+                  <L>
+                    <V t="trait">
+                      <U n="trait">
+                        <L n="whitelist_traits">
+                          <T>211740<!--Trait: trait_RoommateNPC_Archetype_LoudMusic--></T>
+                        </L>
+                      </U>
+                    </V>
+                  </L>
+                </L>
+              </U>
+            </L>
+          </U>
+        </U>
+        <U>
+          <V n="item" t="by_tag">
+            <U n="by_tag">
+              <L n="tag_set">
+                <E>Func_Roommate_Breaker</E>
+              </L>
+            </U>
+          </V>
+          <U n="weight">
+            <T n="base_value">1</T>
+            <L n="multipliers">
+              <U>
+                <T n="multiplier">50</T>
+                <L n="tests">
+                  <L>
+                    <V t="trait">
+                      <U n="trait">
+                        <L n="whitelist_traits">
+                          <T>220348<!--Trait: trait_RoommateNPC_Archetype_Breaker--></T>
+                        </L>
+                      </U>
+                    </V>
+                  </L>
+                </L>
+              </U>
+            </L>
+          </U>
+        </U>
+        <U>
+          <V n="item" t="by_tag">
+            <U n="by_tag">
+              <L n="tag_set">
+                <E>Func_Roommate_Music</E>
+              </L>
+            </U>
+          </V>
+          <U n="weight">
+            <T n="base_value">1</T>
+            <L n="multipliers">
+              <U>
+                <T n="multiplier">50</T>
+                <L n="tests">
+                  <L>
+                    <V t="trait">
+                      <U n="trait">
+                        <L n="whitelist_traits">
+                          <T>207910<!--Trait: trait_RoommateNPC_Interest_Music--></T>
+                        </L>
+                      </U>
+                    </V>
+                  </L>
+                </L>
+              </U>
+            </L>
+          </U>
+        </U>
+      </L>
+      <T n="distance">3.5</T>
+      <U n="number_to_place">
+        <T n="lower_bound">2</T>
+        <T n="upper_bound">5</T>
+      </U>
+    </U>
+    <T n="HOUSEHOLD_AND_ROOMMATE_CAP">10</T>
+    <U n="INTERVIEW">
+      <U n="ad_auto_close_notification">
+        <V n="icon" t="enabled">
+          <V n="enabled" t="resource_key">
+            <U n="resource_key">
+              <T n="key" p="InGame\UI\Icons\Notifications\notification_WebMaster.png">2f7d0004:00000000:691b98a2c232cde5</T>
+            </U>
+          </V>
+        </V>
+        <V n="text" t="single">
+          <T n="single">0x384C117D<!--String: "El anuncio buscando compañero de casa ya está quitado. \n\nTu unidad doméstica ha llenado todas las plazas disponibles."--></T>
+        </V>
+      </U>
+      <U n="interviewee_blackout_duration">
+        <T n="days">1</T>
+        <T n="hours">12</T>
+        <T n="minutes">0</T>
+      </U>
+      <U n="interviews_per_day">
+        <T n="lower_bound">3</T>
+        <T n="upper_bound">4</T>
+      </U>
+      <T n="job">220605<!--SituationJob: job_RoommateNPC_Standard_Potential--></T>
+      <T n="situation">220813<!--SingleJobSituation: situation_RoommateNPC_PotentialRoommate--></T>
+      <U n="start_stop_times">
+        <T n="lower_bound">9</T>
+        <T n="upper_bound">20</T>
+      </U>
+    </U>
+    <U n="LEAVING">
+      <U n="check_interval">
+        <T n="days">0</T>
+        <T n="hours">1</T>
+      </U>
+      <L n="leave_reasons">
+        <U>
+          <E n="key">AGE_UP</E>
+          <U n="value">
+            <V n="fixed_notification" t="enabled">
+              <U n="enabled">
+                <V t="enabled" n="icon">
+                  <V t="participant" n="enabled" />
+                </V>
+                <V n="text" t="single">
+                  <T n="single">0x8822239C<!--String: "Vale, me quedo, me has convencido. ¡Nada nos separará!"--></T>
+                </V>
+                <E n="visual_type">SPEECH</E>
+              </U>
+            </V>
+            <U n="leaving_notification">
+              <V t="enabled" n="icon">
+                <V t="participant" n="enabled" />
+              </V>
+              <V n="text" t="single">
+                <T n="single">0x2C901E58<!--String: "Siento irme, pero me esperan nuevas aventuras. ¡Chao!"--></T>
+              </V>
+              <E n="visual_type">SPEECH</E>
+            </U>
+            <V t="disabled" n="tests" />
+            <U n="time_till_leave">
+              <T n="days">0</T>
+              <T n="hours">12</T>
+            </U>
+            <V n="time_till_warning" t="enabled">
+              <U n="enabled">
+                <T n="days">0</T>
+                <T n="hours">1</T>
+              </U>
+            </V>
+            <V n="warning_notification" t="enabled">
+              <U n="enabled">
+                <V t="enabled" n="icon">
+                  <V t="participant" n="enabled" />
+                </V>
+                <V n="text" t="single">
+                  <T n="single">0xA845EE5A<!--String: "Parece que mi tiempo aquí se acaba. Con la edad llegan nuevas aventuras. Me mudaré a otro sitio a lo largo del día."--></T>
+                </V>
+                <E n="visual_type">SPEECH</E>
+              </U>
+            </V>
+          </U>
+        </U>
+        <U>
+          <E n="key">LOW_ENERGY</E>
+          <U n="value">
+            <V n="fixed_notification" t="enabled">
+              <U n="enabled">
+                <V t="enabled" n="icon">
+                  <V t="participant" n="enabled" />
+                </V>
+                <V n="text" t="single">
+                  <T n="single">0x302C17AF<!--String: "Parece que por fin voy a poder descansar, ahora que las camas están bien repartidas. Me quedaré a echarme una siestecilla."--></T>
+                </V>
+                <E n="visual_type">SPEECH</E>
+              </U>
+            </V>
+            <U n="leaving_notification">
+              <V t="enabled" n="icon">
+                <V t="participant" n="enabled" />
+              </V>
+              <V n="text" t="single">
+                <T n="single">0xE39100D7<!--String: "Estoy que me caigo. Me mudo a otro lado, a ver si puedo echarme una siesta en un banco de un parque, aunque sea. "--></T>
+              </V>
+              <E n="urgency">DEFAULT</E>
+              <E n="visual_type">SPEECH</E>
+            </U>
+            <V n="tests" t="enabled">
+              <U n="enabled">
+                <L n="tests">
+                  <L>
+                    <V t="motive">
+                      <U n="motive">
+                        <L n="stats">
+                          <T>230250<!--Commodity: commodity_RoommateNPC_DesireToLeave_Energy--></T>
+                        </L>
+                        <U n="threshold">
+                          <E n="comparison">GREATER_OR_EQUAL</E>
+                          <T n="value">16</T>
+                        </U>
+                        <E n="who">Actor</E>
+                      </U>
+                    </V>
+                    <V t="zone">
+                      <U n="zone">
+                        <U n="zone_tests">
+                          <V t="enabled" n="venue_type">
+                            <U n="enabled">
+                              <V n="blacklist" t="specify">
+                                <U n="specify">
+                                  <L n="blacklist">
+                                    <T>208182<!--Venue: venue_rentable_universityHousing--></T>
+                                  </L>
+                                </U>
+                              </V>
+                            </U>
+                          </V>
+                        </U>
+                      </U>
+                    </V>
+                  </L>
+                </L>
+              </U>
+            </V>
+            <U n="time_till_leave">
+              <T n="days">0</T>
+              <T n="hours">18</T>
+            </U>
+            <V t="enabled" n="time_till_warning">
+              <U n="enabled">
+                <T n="days">0</T>
+                <T n="hours">4</T>
+              </U>
+            </V>
+            <V n="warning_notification" t="enabled">
+              <U n="enabled">
+                <V t="enabled" n="icon">
+                  <V t="participant" n="enabled" />
+                </V>
+                <V n="text" t="single">
+                  <T n="single">0xB38C36C1<!--String: "No he podido dormir. Lo de las camas aquí no tiene nombre. Creo que me voy a largar como no se solucione pronto el tema."--></T>
+                </V>
+                <E n="visual_type">SPEECH</E>
+              </U>
+            </V>
+          </U>
+        </U>
+        <U>
+          <E n="key">MOTIVE_DISTRESS</E>
+          <U n="value">
+            <V n="fixed_notification" t="enabled">
+              <U n="enabled">
+                <V t="enabled" n="icon">
+                  <V t="participant" n="enabled" />
+                </V>
+                <V n="text" t="single">
+                  <T n="single">0xC436AC70<!--String: "Ya me siento mejor respecto a esta situación. Es como si ahora pudiera lidiar con mi vida. ¡Gracias por apoyarme!"--></T>
+                </V>
+                <E n="visual_type">SPEECH</E>
+              </U>
+            </V>
+            <U n="leaving_notification">
+              <V t="enabled" n="icon">
+                <V t="participant" n="enabled" />
+              </V>
+              <V n="text" t="single">
+                <T n="single">0x521C699C<!--String: "Aquí vivimos en unas condiciones penosas. Creo que me voy a mudar. Hale, adiós."--></T>
+              </V>
+              <E n="visual_type">SPEECH</E>
+            </U>
+            <V n="tests" t="enabled">
+              <U n="enabled">
+                <E n="testing_time">HOUSEHOLD_ROOMMATES_HOME_LOT</E>
+                <L n="tests">
+                  <L>
+                    <V t="statistic">
+                      <U n="statistic">
+                        <T n="stat">223381<!--Commodity: commodity_Roommate_DesireToLeave--></T>
+                        <V n="threshold" t="value_threshold">
+                          <U n="value_threshold">
+                            <E n="comparison">GREATER_OR_EQUAL</E>
+                            <T n="value">24</T>
+                          </U>
+                        </V>
+                      </U>
+                    </V>
+                    <V t="zone">
+                      <U n="zone">
+                        <U n="zone_tests">
+                          <V t="enabled" n="venue_type">
+                            <U n="enabled">
+                              <V n="blacklist" t="specify">
+                                <U n="specify">
+                                  <L n="blacklist">
+                                    <T>208182<!--Venue: venue_rentable_universityHousing--></T>
+                                  </L>
+                                </U>
+                              </V>
+                            </U>
+                          </V>
+                        </U>
+                      </U>
+                    </V>
+                  </L>
+                </L>
+              </U>
+            </V>
+            <U n="time_till_leave">
+              <T n="days">1</T>
+              <T n="hours">0</T>
+            </U>
+            <V t="enabled" n="time_till_warning">
+              <U n="enabled">
+                <T n="days">0</T>
+                <T n="hours">4</T>
+              </U>
+            </V>
+            <V n="warning_notification" t="enabled">
+              <U n="enabled">
+                <V t="enabled" n="icon">
+                  <V t="participant" n="enabled" />
+                </V>
+                <V n="text" t="single">
+                  <T n="single">0xAE15D9D6<!--String: "Tengo necesidades que este sitio no cumple. Apenas puedo cuidarme aquí. ¿Podrías asegurarte de que contamos con todo lo necesario para ocuparme de mí? Si no..., voy a tener que empezar a buscarme otro sitio."--></T>
+                </V>
+                <E n="visual_type">SPEECH</E>
+              </U>
+            </V>
+          </U>
+        </U>
+        <U>
+          <E n="key">OVERCAPACITY</E>
+          <U n="value">
+            <V n="fixed_notification" t="enabled">
+              <U n="enabled">
+                <V t="enabled" n="icon">
+                  <V t="participant" n="enabled" />
+                </V>
+                <V n="text" t="single">
+                  <T n="single">0xBE30935E<!--String: "Parece que el problema de capacidad está solucionado. En tal caso, me quedaré. Buen trabajo."--></T>
+                </V>
+                <E n="visual_type">SPEECH</E>
+              </U>
+            </V>
+            <U n="leaving_notification">
+              <V t="enabled" n="icon">
+                <V t="participant" n="enabled" />
+              </V>
+              <V n="text" t="single">
+                <T n="single">0x7D700F8E<!--String: "Veo que ya no tengo cabida aquí. Pues nada, tendré que mudarme."--></T>
+              </V>
+              <E n="visual_type">SPEECH</E>
+            </U>
+            <V t="disabled" n="tests" />
+            <U n="time_till_leave">
+              <T n="hours">12</T>
+            </U>
+            <V t="enabled" n="time_till_warning">
+              <U n="enabled">
+                <T n="hours">1</T>
+              </U>
+            </V>
+            <V n="warning_notification" t="enabled">
+              <U n="enabled">
+                <V t="enabled" n="icon">
+                  <V t="participant" n="enabled" />
+                </V>
+                <V n="text" t="single">
+                  <T n="single">0x8E710154<!--String: "Aquí vivimos un poco hacinados. Si nadie se muda pronto, me iré yo."--></T>
+                </V>
+                <E n="visual_type">SPEECH</E>
+              </U>
+            </V>
+          </U>
+        </U>
+        <U>
+          <E n="key">PREGNANCY</E>
+          <U n="value">
+            <V t="disabled" n="fixed_notification" />
+            <U n="leaving_notification">
+              <V t="enabled" n="icon">
+                <V t="participant" n="enabled" />
+              </V>
+              <V n="text" t="single">
+                <T n="single">0xA550F29C<!--String: "¡Adiós! Me ha gustado compartir casa contigo, ¡pero la cigüeña está en camino!"--></T>
+              </V>
+              <E n="visual_type">SPEECH</E>
+            </U>
+            <V n="tests" t="enabled">
+              <U n="enabled">
+                <E n="testing_time">ALL_ROOMMATES</E>
+                <L n="tests">
+                  <L>
+                    <V t="statistic">
+                      <U n="statistic">
+                        <V n="score_to_use" t="user_value" />
+                        <T n="stat">16640<!--Commodity: commodity_Pregnancy--></T>
+                        <V n="threshold" t="value_threshold">
+                          <U n="value_threshold">
+                            <T n="value">73</T>
+                          </U>
+                        </V>
+                        <E n="who">Actor</E>
+                      </U>
+                    </V>
+                  </L>
+                </L>
+              </U>
+            </V>
+            <U n="time_till_leave">
+              <T n="hours">12</T>
+            </U>
+            <V t="enabled" n="time_till_warning">
+              <U n="enabled">
+                <T n="hours">1</T>
+              </U>
+            </V>
+            <V n="warning_notification" t="enabled">
+              <U n="enabled">
+                <V t="enabled" n="icon">
+                  <V t="participant" n="enabled" />
+                </V>
+                <V n="text" t="single">
+                  <T n="single">0xCFB282D6<!--String: "Tengo una noticia: voy a tener un bebé. Pero no quiero molestar a nadie, así que me mudaré a otro sitio."--></T>
+                </V>
+                <E n="visual_type">SPEECH</E>
+              </U>
+            </V>
+          </U>
+        </U>
+      </L>
+      <T n="loot">222235<!--LootActions: loot_RoommateNPC_UpdateCheck--></T>
+      <T n="time_slice_seconds">10</T>
+    </U>
+    <U n="LOCKED_OUT_SITUATION">
+      <T n="job">223199<!--SituationJob: job_RoommateNPC_Event_LockedOut--></T>
+      <T n="situation">220806<!--SingleJobSituation: Situation_RoommateNPC_Events_LockedOut--></T>
+    </U>
+    <U n="OFFLOT_ALARM_INTERVAL">
+      <T n="hours">1</T>
+    </U>
+    <U n="RENT">
+      <U n="all_pay_notification">
+        <V t="enabled" n="icon">
+          <V n="enabled" t="resource_key">
+            <U n="resource_key">
+              <T n="key" p="InGame\UI\Icons\Notifications\notification_cashmoney.png">2f7d0004:00000000:5e19074a43790036</T>
+            </U>
+          </V>
+        </V>
+        <V t="enabled" n="secondary_icon">
+          <V t="participant" n="enabled" />
+        </V>
+        <V n="text" t="single">
+          <T n="single">0x143A614F<!--String: "¡Todos tus compañeros de casa han pagado el alquiler! Has ganado {1.Money} de cada uno, lo que hace un total de {2.Money}."--></T>
+        </V>
+      </U>
+      <T n="non_payment_chance">60</T>
+      <T n="non_payment_format">0xF4670BCA<!--String: "{0.SimName}"--></T>
+      <T n="non_payment_trait">220349<!--Trait: trait_RoommateNPC_Quirk_LateOnRent--></T>
+      <U n="pay_failure_notification">
+        <V t="enabled" n="icon">
+          <V n="enabled" t="resource_key">
+            <U n="resource_key">
+              <T n="key" p="InGame\UI\Icons\Notifications\notification_cashmoney.png">2f7d0004:00000000:5e19074a43790036</T>
+            </U>
+          </V>
+        </V>
+        <V t="enabled" n="secondary_icon">
+          <V t="participant" n="enabled" />
+        </V>
+        <V n="text" t="single">
+          <T n="single">0x7DFAC06A<!--String: "{3.Number} de tus compañeros de casa han pagado {1.Money} de alquiler por cabeza, lo que suma un total de {2.Money}, pero aún quedan por pagar los siguientes:\n{4.String}"--></T>
+        </V>
+      </U>
+      <T n="rent_modifer">0.0175</T>
+      <T n="rent_owed_statistic">220593<!--Statistic: statistic_RoommateNPC_RentOwed--></T>
+      <U n="schedule">
+        <L n="schedule_entries">
+          <U>
+            <U n="days_available">
+              <T n="0 SUNDAY">True</T>
+              <T n="1 MONDAY">False</T>
+              <T n="2 TUESDAY">False</T>
+              <T n="3 WEDNESDAY">True</T>
+              <T n="4 THURSDAY">False</T>
+              <T n="5 FRIDAY">False</T>
+              <T n="6 SATURDAY">False</T>
+            </U>
+            <T n="duration">1</T>
+            <E n="schedule_shift_type">ALL_DAY</E>
+            <U n="start_time">
+              <T n="hour">10</T>
+            </U>
+          </U>
+        </L>
+      </U>
+    </U>
+    <T n="ROOMMATE_JOB">208141<!--SituationJob: Job_RoommateNPC_Standard--></T>
+    <T n="ROOMMATE_RELATIONSHIP_BIT">209563<!--RelationshipBit: bit_RoommateNPC--></T>
+    <L n="ROOMMATE_SIM_FILTERS">
+      <U>
+        <T n="sim_filter">230080<!--TunableSimFilter: filter_UniversityStudent_Tech_Housing--></T>
+        <L n="test">
+          <L>
+            <V t="university_housing_configuration_test">
+              <U n="university_housing_configuration_test">
+                <V n="university" t="enabled">
+                  <T n="enabled">219731<!--University: ScienceUniversity--></T>
+                </V>
+              </U>
+            </V>
+          </L>
+        </L>
+      </U>
+      <U>
+        <T n="sim_filter">230079<!--TunableSimFilter: filter_UniversityStudent_Arts_Housing--></T>
+        <L n="test">
+          <L>
+            <V t="university_housing_configuration_test">
+              <U n="university_housing_configuration_test">
+                <V n="university" t="enabled">
+                  <T n="enabled">219732<!--University: ArtsUniversity--></T>
+                </V>
+              </U>
+            </V>
+          </L>
+        </L>
+      </U>
+      <U>
+        <T n="sim_filter">208143<!--TunableSimFilter: Fiilter_RoommateNPC_Standard--></T>
+      </U>
+    </L>
+    <T n="ROOMMATE_SITUATION">209550<!--RoommateSituation: roommateNPC_Situation--></T>
+    <L n="SS3_PARK_INTERACTIONS">
+      <T>229806<!--AggregateSuperInteraction: aggregateSI_RoommateNPC_SS3--></T>
+    </L>
+  </C>
+</M>

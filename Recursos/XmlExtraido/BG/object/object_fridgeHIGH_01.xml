@@ -1,0 +1,1153 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<I c="GameObject" i="object" m="objects.game_object" n="object_fridgeHIGH_01" s="10192">
+  <V t="enabled" n="_anim_overrides">
+    <U n="enabled">
+      <L n="params">
+        <U>
+          <T n="name">objectName</T>
+          <V n="value" t="string">
+            <T n="string">fridge</T>
+          </V>
+        </U>
+        <U>
+          <T n="name">useCustomSwipe</T>
+          <V t="boolean" n="value">
+            <T n="boolean">False</T>
+          </V>
+        </U>
+        <U>
+          <T n="name">toddlerObjectName</T>
+          <V n="value" t="string">
+            <T n="string">Fridge</T>
+          </V>
+        </U>
+      </L>
+    </U>
+  </V>
+  <U n="_components">
+    <V t="enabled" n="affordance_tuning">
+      <U n="enabled">
+        <L n="affordance_map">
+          <U>
+            <T n="key">13395<!--CraftingPhaseCreateCarriedObjectSuperInteraction: fridge_CreateTray--></T>
+            <U n="value">
+              <L n="loot_list">
+                <T>10242<!--LootActions: loot_Buff_Fridge_Variants--></T>
+                <T>10748<!--LootActions: CommodityChange_Quality_Crafting_Gain_Med--></T>
+              </L>
+            </U>
+          </U>
+        </L>
+      </U>
+    </V>
+    <V t="enabled" n="crafting_station">
+      <U n="enabled">
+        <L n="crafting_station_types">
+          <T>15545<!--CraftingObjectType: craftingObjectType_Fridge--></T>
+        </L>
+      </U>
+    </V>
+    <V t="enabled" n="flowing_puddle">
+      <U n="enabled">
+        <T n="spawn_rate">60</T>
+      </U>
+    </V>
+    <V t="enabled" n="focus">
+      <U n="enabled">
+        <V n="_focus_score" t="globally">
+          <U n="globally">
+            <E n="base">NONE</E>
+          </U>
+        </V>
+      </U>
+    </V>
+    <V t="enabled" n="inventory">
+      <U n="enabled">
+        <V n="get_put" t="custom">
+          <U n="custom">
+            <U n="get">
+              <T n="factory">11501<!--AnimationElement: Fridge_Get--></T>
+            </U>
+            <U n="put">
+              <T n="factory">28801<!--AnimationElement: Fridge_Put--></T>
+            </U>
+          </U>
+        </V>
+        <E n="inventory_type">FRIDGE</E>
+        <L n="item_state_triggers">
+          <U>
+            <T n="item_state_value">15190<!--CommodityBasedObjectStateValue: Freshness_Spoiled--></T>
+            <T n="owner_state_value">98864<!--ObjectStateValue: InventorySpoil_Spoil--></T>
+          </U>
+          <U>
+            <T n="item_state_value">15190<!--CommodityBasedObjectStateValue: Freshness_Spoiled--></T>
+            <T n="owner_state_value">98865<!--ObjectStateValue: InventorySpoil_Clean--></T>
+            <E n="trigger_condition">NONE</E>
+          </U>
+        </L>
+        <V n="test_set" t="enabled">
+          <T n="enabled">156783<!--TestSetInstance: testSetInstance_Actor_NotToddler--></T>
+        </V>
+      </U>
+    </V>
+    <V t="enabled" n="line_of_sight" />
+    <V t="enabled" n="live_drag_target">
+      <U n="enabled">
+        <L n="drop_tests_and_actions">
+          <U>
+            <L n="actions" />
+            <E n="drop_type">FRIDGE</E>
+            <L n="test_set">
+              <V t="state">
+                <U n="state">
+                  <V t="always_pass" n="fallback_behavior" />
+                  <E n="operator">NOTEQUAL</E>
+                  <T n="value">15190<!--CommodityBasedObjectStateValue: Freshness_Spoiled--></T>
+                  <E n="who">LiveDragActor</E>
+                </U>
+              </V>
+              <V t="state">
+                <U n="state">
+                  <V t="always_pass" n="fallback_behavior" />
+                  <E n="operator">NOTEQUAL</E>
+                  <T n="value">77035<!--CommodityBasedObjectStateValue: FishFreshness_Foul--></T>
+                  <E n="who">LiveDragActor</E>
+                </U>
+              </V>
+              <V t="state">
+                <U n="state">
+                  <V t="always_fail" n="fallback_behavior" />
+                  <E n="operator">EQUAL</E>
+                  <T n="value">39737<!--CommodityBasedObjectStateValue: FireState_Burn_Material_Change_Not_Burning--></T>
+                  <E n="who">LiveDragTarget</E>
+                </U>
+              </V>
+              <V t="state">
+                <U n="state">
+                  <V t="always_pass" n="fallback_behavior" />
+                  <E n="operator">NOTEQUAL</E>
+                  <T n="value">100718<!--ObjectStateValue: LiveDragToFridge_Values_Cannot--></T>
+                  <E n="who">LiveDragActor</E>
+                </U>
+              </V>
+            </L>
+          </U>
+        </L>
+      </U>
+    </V>
+    <V t="enabled" n="portal">
+      <U n="enabled">
+        <L n="_portal_data">
+          <T>162869<!--PortalData: portalData_VariableJump_Fridge--></T>
+          <T>177817<!--PortalData: portalData_DynamicJump_Fridge--></T>
+        </L>
+      </U>
+    </V>
+    <V t="enabled" n="retail_component">
+      <V n="enabled" t="reference">
+        <T n="reference">115301<!--RetailComponent: retailComponent_Default_LowAppeal--></T>
+      </V>
+    </V>
+    <V n="state" t="enabled">
+      <U n="enabled">
+        <V t="enabled" n="delinquency_state_changes">
+          <L n="enabled">
+            <U>
+              <E n="key">POWER</E>
+              <L n="value">
+                <T>224564<!--ObjectStateValue: utilities_Power_Consumption_Off--></T>
+              </L>
+            </U>
+          </L>
+        </V>
+        <L n="state_triggers">
+          <U>
+            <L n="at_states">
+              <T>15076<!--CommodityBasedObjectStateValue: Brokenness_Broken--></T>
+            </L>
+            <V n="set_states" t="Set_state_list">
+              <L n="Set_state_list">
+                <T>26940<!--ObjectStateValue: BrokenState_Broken_Fridge--></T>
+                <T>239919<!--ObjectStateValue: ecoFootprint_EnergyEfficient_Off--></T>
+              </L>
+            </V>
+          </U>
+          <U>
+            <L n="at_states">
+              <T>15078<!--CommodityBasedObjectStateValue: Brokenness_Unbroken--></T>
+            </L>
+            <V t="Set_state_list" n="set_states">
+              <L n="Set_state_list">
+                <T>15081<!--ObjectStateValue: BrokenState_Unbroken--></T>
+              </L>
+            </V>
+            <L n="statistic_operations">
+              <V t="statistic_set_min">
+                <U n="statistic_set_min">
+                  <T n="stat">208412<!--Commodity: commodity_IslanderCulture_TimeSinceBroken--></T>
+                </U>
+              </V>
+            </L>
+          </U>
+          <U>
+            <L n="at_states">
+              <T>15078<!--CommodityBasedObjectStateValue: Brokenness_Unbroken--></T>
+              <T>233852<!--CommodityBasedObjectStateValue: upgrade_Completed_EcoUpgrades_EnergyEfficientDrive--></T>
+            </L>
+            <V t="Set_state_list" n="set_states">
+              <L n="Set_state_list">
+                <T>239918<!--ObjectStateValue: ecoFootprint_EnergyEfficient_On--></T>
+              </L>
+            </V>
+          </U>
+          <U>
+            <L n="at_states">
+              <T>77532<!--CommodityBasedObjectStateValue: FireState_Burn_Material_Change_Replace--></T>
+            </L>
+            <V n="set_states" t="Set_state_list">
+              <L n="Set_state_list">
+                <T>39737<!--CommodityBasedObjectStateValue: FireState_Burn_Material_Change_Not_Burning--></T>
+              </L>
+            </V>
+          </U>
+        </L>
+        <L n="states">
+          <U>
+            <L n="client_states">
+              <U>
+                <T n="key">10198<!--ObjectStateValue: ObjectVariant_Med--></T>
+                <U n="value">
+                  <V n="autonomy_modifiers" t="apply_new_value">
+                    <V n="apply_new_value" t="apply_statistic_modifiers">
+                      <U n="apply_statistic_modifiers">
+                        <L n="autonomy_modifiers">
+                          <U>
+                            <L n="stat_use_multiplier">
+                              <U>
+                                <T n="key">16671<!--Statistic: statistic_Object_Consumable-Quality--></T>
+                                <U n="value">
+                                  <E n="apply_direction">INCREASE</E>
+                                </U>
+                              </U>
+                            </L>
+                          </U>
+                        </L>
+                      </U>
+                    </V>
+                  </V>
+                </U>
+              </U>
+              <U>
+                <T n="key">10199<!--ObjectStateValue: ObjectVariant_High--></T>
+                <U n="value">
+                  <V n="autonomy_modifiers" t="apply_new_value">
+                    <V n="apply_new_value" t="apply_statistic_modifiers">
+                      <U n="apply_statistic_modifiers">
+                        <L n="autonomy_modifiers">
+                          <U>
+                            <L n="stat_use_multiplier">
+                              <U>
+                                <T n="key">16671<!--Statistic: statistic_Object_Consumable-Quality--></T>
+                                <U n="value">
+                                  <T n="multiplier">1.5</T>
+                                </U>
+                              </U>
+                            </L>
+                          </U>
+                        </L>
+                      </U>
+                    </V>
+                  </V>
+                </U>
+              </U>
+            </L>
+            <V t="reference" n="default_value">
+              <T n="reference">10199<!--ObjectStateValue: ObjectVariant_High--></T>
+            </V>
+          </U>
+          <U>
+            <L n="client_states">
+              <U>
+                <T n="key">15076<!--CommodityBasedObjectStateValue: Brokenness_Broken--></T>
+              </U>
+              <U>
+                <T n="key">15077<!--CommodityBasedObjectStateValue: Brokenness_Neutral--></T>
+              </U>
+              <U>
+                <T n="key">15078<!--CommodityBasedObjectStateValue: Brokenness_Unbroken--></T>
+              </U>
+              <U>
+                <T n="key">97754<!--CommodityBasedObjectStateValue: Brokenness_Broken_Sabotage--></T>
+              </U>
+            </L>
+            <V t="reference" n="default_value">
+              <T n="reference">15078<!--CommodityBasedObjectStateValue: Brokenness_Unbroken--></T>
+            </V>
+          </U>
+          <U>
+            <L n="client_states">
+              <U>
+                <T n="key">15081<!--ObjectStateValue: BrokenState_Unbroken--></T>
+                <U n="value">
+                  <V n="audio_state" t="apply_new_value">
+                    <V n="apply_new_value" t="start_audio">
+                      <U n="start_audio">
+                        <T n="audio" p="InGame\Audio\Sfx\fridge\fridge_run_loop.propx">39b2aa4a:00000000:f18b23a085e7d3f1</T>
+                      </U>
+                    </V>
+                  </V>
+                  <V t="apply_new_value" n="autonomy_modifiers">
+                    <V n="apply_new_value" t="apply_statistic_modifiers">
+                      <U n="apply_statistic_modifiers">
+                        <L n="autonomy_modifiers">
+                          <U>
+                            <L n="decay_modifiers">
+                              <U>
+                                <T n="key">208412<!--Commodity: commodity_IslanderCulture_TimeSinceBroken--></T>
+                              </U>
+                            </L>
+                          </U>
+                        </L>
+                      </U>
+                    </V>
+                  </V>
+                  <V t="apply_new_value" n="flowing_puddle_enabled" />
+                  <V n="tint" t="apply_new_value">
+                    <V n="apply_new_value" t="literal">
+                      <V t="none" n="literal" />
+                    </V>
+                  </V>
+                  <V t="apply_new_value" n="vfx_state" />
+                </U>
+              </U>
+              <U>
+                <T n="key">26940<!--ObjectStateValue: BrokenState_Broken_Fridge--></T>
+                <U n="value">
+                  <V t="apply_new_value" n="audio_state" />
+                  <V t="apply_new_value" n="autonomy_modifiers">
+                    <V n="apply_new_value" t="apply_statistic_modifiers">
+                      <U n="apply_statistic_modifiers">
+                        <L n="autonomy_modifiers">
+                          <U>
+                            <L n="decay_modifiers">
+                              <U>
+                                <T n="key">208412<!--Commodity: commodity_IslanderCulture_TimeSinceBroken--></T>
+                                <T n="value">1</T>
+                              </U>
+                            </L>
+                          </U>
+                        </L>
+                        <U n="periodic_statistic_change">
+                          <T n="interval">10</T>
+                          <L n="operations">
+                            <U>
+                              <T n="amount">0.0694</T>
+                              <T n="stat">233027<!--Commodity: commodity_Utilities_Power--></T>
+                            </U>
+                          </L>
+                        </U>
+                      </U>
+                    </V>
+                  </V>
+                  <V t="apply_new_value" n="flowing_puddle_enabled">
+                    <T n="apply_new_value">True</T>
+                  </V>
+                  <V n="vfx_state" t="apply_new_value">
+                    <V n="apply_new_value" t="start_vfx">
+                      <V n="start_vfx" t="single_effect">
+                        <U n="single_effect">
+                          <T n="effect_name">S40_Obj_High_01_broken</T>
+                          <V t="Slot" n="joint_name">
+                            <T n="Slot">_FX_</T>
+                          </V>
+                        </U>
+                      </V>
+                    </V>
+                  </V>
+                </U>
+              </U>
+            </L>
+            <V t="reference" n="default_value">
+              <T n="reference">15081<!--ObjectStateValue: BrokenState_Unbroken--></T>
+            </V>
+          </U>
+          <U>
+            <L n="client_states">
+              <U>
+                <T n="key">15380<!--CommodityBasedObjectStateValue: Upgrade_Generic_IncreaseQuality_Completed--></T>
+              </U>
+              <U>
+                <T n="key">15381<!--CommodityBasedObjectStateValue: Upgrade_Generic_IncreaseQuality_NotStarted--></T>
+              </U>
+              <U>
+                <T n="key">15382<!--CommodityBasedObjectStateValue: Upgrade_Generic_IncreaseQuality_Partial--></T>
+              </U>
+            </L>
+            <V n="default_value" t="reference">
+              <T n="reference">15381<!--CommodityBasedObjectStateValue: Upgrade_Generic_IncreaseQuality_NotStarted--></T>
+            </V>
+          </U>
+          <U>
+            <L n="client_states">
+              <U>
+                <T n="key">15396<!--CommodityBasedObjectStateValue: Upgrade_Generic_LowerBrokenness_Completed--></T>
+              </U>
+              <U>
+                <T n="key">15397<!--CommodityBasedObjectStateValue: Upgrade_Generic_LowerBrokenness_NotStarted--></T>
+              </U>
+              <U>
+                <T n="key">15398<!--CommodityBasedObjectStateValue: Upgrade_Generic_LowerBrokenness_Partial--></T>
+              </U>
+            </L>
+            <V t="reference" n="default_value">
+              <T n="reference">15397<!--CommodityBasedObjectStateValue: Upgrade_Generic_LowerBrokenness_NotStarted--></T>
+            </V>
+          </U>
+          <U>
+            <L n="client_states">
+              <U>
+                <T n="key">15384<!--CommodityBasedObjectStateValue: Upgrade_Generic_LockBrokenness_Completed--></T>
+              </U>
+              <U>
+                <T n="key">15385<!--CommodityBasedObjectStateValue: Upgrade_Generic_LockBrokenness_NotStarted--></T>
+              </U>
+              <U>
+                <T n="key">15386<!--CommodityBasedObjectStateValue: Upgrade_Generic_LockBrokenness_Partial--></T>
+              </U>
+            </L>
+            <V t="reference" n="default_value">
+              <T n="reference">15385<!--CommodityBasedObjectStateValue: Upgrade_Generic_LockBrokenness_NotStarted--></T>
+            </V>
+          </U>
+          <U>
+            <L n="client_states">
+              <U>
+                <T n="key">98864<!--ObjectStateValue: InventorySpoil_Spoil--></T>
+                <U n="value">
+                  <V n="vfx_state" t="apply_new_value">
+                    <V n="apply_new_value" t="start_vfx">
+                      <V n="start_vfx" t="single_effect">
+                        <U n="single_effect">
+                          <T n="effect_name">S40_Obj_fridge_stink_High</T>
+                        </U>
+                      </V>
+                    </V>
+                  </V>
+                </U>
+              </U>
+              <U>
+                <T n="key">98865<!--ObjectStateValue: InventorySpoil_Clean--></T>
+                <U n="value">
+                  <V t="apply_new_value" n="vfx_state" />
+                </U>
+              </U>
+            </L>
+            <V t="reference" n="default_value">
+              <T n="reference">98865<!--ObjectStateValue: InventorySpoil_Clean--></T>
+            </V>
+          </U>
+          <U>
+            <L n="client_states">
+              <U>
+                <T n="key">98864<!--ObjectStateValue: InventorySpoil_Spoil--></T>
+                <U n="value">
+                  <V n="vfx_state" t="apply_new_value">
+                    <V n="apply_new_value" t="start_vfx">
+                      <V n="start_vfx" t="single_effect">
+                        <U n="single_effect">
+                          <T n="effect_name">S40_Obj_fridge_stink_High</T>
+                        </U>
+                      </V>
+                    </V>
+                  </V>
+                </U>
+              </U>
+              <U>
+                <T n="key">98865<!--ObjectStateValue: InventorySpoil_Clean--></T>
+                <U n="value">
+                  <V t="apply_new_value" n="vfx_state" />
+                </U>
+              </U>
+            </L>
+            <V t="reference" n="default_value">
+              <T n="reference">98865<!--ObjectStateValue: InventorySpoil_Clean--></T>
+            </V>
+          </U>
+          <U>
+            <L n="client_states">
+              <U>
+                <T n="key">108830<!--ObjectStateValue: ObjectStateValue_Detective_NotStolen--></T>
+              </U>
+              <U>
+                <T n="key">108831<!--ObjectStateValue: ObjectStateValue_Detective_Stolen--></T>
+              </U>
+            </L>
+            <V n="default_value" t="reference">
+              <T n="reference">108830<!--ObjectStateValue: ObjectStateValue_Detective_NotStolen--></T>
+            </V>
+          </U>
+          <U>
+            <L n="client_states">
+              <U>
+                <T n="key">109127<!--ObjectStateValue: objectStateValue_Detective_Burned--></T>
+              </U>
+              <U>
+                <T n="key">109128<!--ObjectStateValue: objectStateValue_Detective_NotBurned--></T>
+              </U>
+            </L>
+            <V n="default_value" t="reference">
+              <T n="reference">109128<!--ObjectStateValue: objectStateValue_Detective_NotBurned--></T>
+            </V>
+          </U>
+          <U>
+            <L n="client_states">
+              <U>
+                <T n="key">185122<!--ObjectStateValue: object_Rain_Outside--></T>
+              </U>
+              <U>
+                <T n="key">185125<!--ObjectStateValue: object_Rain_Inside--></T>
+              </U>
+            </L>
+            <V n="default_value" t="reference">
+              <T n="reference">185125<!--ObjectStateValue: object_Rain_Inside--></T>
+            </V>
+          </U>
+          <U>
+            <V n="default_value" t="reference">
+              <T n="reference">208488<!--CommodityBasedObjectStateValue: state_IslanderCulture_TimeSinceBroken_NotBroken--></T>
+            </V>
+          </U>
+          <U>
+            <L n="client_states">
+              <U>
+                <T n="key">131794<!--ObjectStateValue: Kelpto_Stolen_Object--></T>
+              </U>
+              <U>
+                <T n="key">131795<!--ObjectStateValue: Klepto_Not_Stolen_Object--></T>
+              </U>
+            </L>
+            <V n="default_value" t="reference">
+              <T n="reference">131795<!--ObjectStateValue: Klepto_Not_Stolen_Object--></T>
+            </V>
+          </U>
+          <U>
+            <L n="client_states">
+              <U>
+                <T n="key">231418<!--ObjectStateValue: ecoFootprint_Values_Green--></T>
+                <U n="value">
+                  <V n="autonomy_modifiers" t="apply_new_value">
+                    <V n="apply_new_value" t="apply_statistic_modifiers">
+                      <U n="apply_statistic_modifiers">
+                        <L n="autonomy_modifiers">
+                          <U>
+                            <L n="decay_modifiers">
+                              <U>
+                                <T n="key">235560<!--Commodity: commodity_EcoUpgrade_Fuel_FuelCell--></T>
+                                <T n="value">1</T>
+                              </U>
+                            </L>
+                          </U>
+                        </L>
+                      </U>
+                    </V>
+                  </V>
+                </U>
+              </U>
+              <U>
+                <T n="key">231419<!--ObjectStateValue: ecoFootprint_Values_Industrial--></T>
+                <U n="value">
+                  <V n="autonomy_modifiers" t="apply_new_value">
+                    <V n="apply_new_value" t="apply_statistic_modifiers">
+                      <U n="apply_statistic_modifiers">
+                        <L n="autonomy_modifiers">
+                          <U>
+                            <L n="decay_modifiers">
+                              <U>
+                                <T n="key">235560<!--Commodity: commodity_EcoUpgrade_Fuel_FuelCell--></T>
+                                <T n="value">0.7</T>
+                              </U>
+                            </L>
+                          </U>
+                        </L>
+                      </U>
+                    </V>
+                  </V>
+                </U>
+              </U>
+              <U>
+                <T n="key">231420<!--ObjectStateValue: ecoFootprint_Values_Neutral--></T>
+                <U n="value">
+                  <V n="autonomy_modifiers" t="apply_new_value">
+                    <V n="apply_new_value" t="apply_statistic_modifiers">
+                      <U n="apply_statistic_modifiers">
+                        <L n="autonomy_modifiers">
+                          <U>
+                            <L n="decay_modifiers">
+                              <U>
+                                <T n="key">235560<!--Commodity: commodity_EcoUpgrade_Fuel_FuelCell--></T>
+                                <T n="value">1</T>
+                              </U>
+                            </L>
+                          </U>
+                        </L>
+                      </U>
+                    </V>
+                  </V>
+                </U>
+              </U>
+            </L>
+            <V t="reference" n="default_value">
+              <T n="reference">231420<!--ObjectStateValue: ecoFootprint_Values_Neutral--></T>
+            </V>
+            <V t="enabled" n="tested_states_on_add">
+              <U n="enabled">
+                <L n="tested_states">
+                  <U>
+                    <T n="state">231418<!--ObjectStateValue: ecoFootprint_Values_Green--></T>
+                    <L n="tests">
+                      <L>
+                        <V t="eco_footprint">
+                          <U n="eco_footprint">
+                            <L n="eco_footprint_tests">
+                              <V t="state">
+                                <U n="state">
+                                  <E n="required_eco_footprint_state">GREEN</E>
+                                </U>
+                              </V>
+                            </L>
+                            <V t="via_zone_source" n="street" />
+                          </U>
+                        </V>
+                      </L>
+                    </L>
+                  </U>
+                  <U>
+                    <T n="state">231419<!--ObjectStateValue: ecoFootprint_Values_Industrial--></T>
+                    <L n="tests">
+                      <L>
+                        <V t="eco_footprint">
+                          <U n="eco_footprint">
+                            <L n="eco_footprint_tests">
+                              <V t="state">
+                                <U n="state">
+                                  <E n="required_eco_footprint_state">INDUSTRIAL</E>
+                                </U>
+                              </V>
+                            </L>
+                            <V t="via_zone_source" n="street" />
+                          </U>
+                        </V>
+                      </L>
+                    </L>
+                  </U>
+                  <U>
+                    <T n="state">231420<!--ObjectStateValue: ecoFootprint_Values_Neutral--></T>
+                    <L n="tests">
+                      <L>
+                        <V t="eco_footprint">
+                          <U n="eco_footprint">
+                            <L n="eco_footprint_tests">
+                              <V t="state">
+                                <U n="state">
+                                  <E n="required_eco_footprint_state">NEUTRAL</E>
+                                </U>
+                              </V>
+                            </L>
+                            <V t="via_zone_source" n="street" />
+                          </U>
+                        </V>
+                      </L>
+                    </L>
+                  </U>
+                </L>
+              </U>
+            </V>
+          </U>
+          <U>
+            <L n="client_states">
+              <U>
+                <T n="key">235545<!--CommodityBasedObjectStateValue: ecoUpgrades_Fill_Values_FuelCell_Empty--></T>
+                <U n="value">
+                  <V t="apply_new_value" n="autonomy_modifiers" />
+                </U>
+              </U>
+              <U>
+                <T n="key">235547<!--CommodityBasedObjectStateValue: ecoUpgrades_Fill_Values_FuelCell_HasFuel--></T>
+                <U n="value">
+                  <V t="apply_new_value" n="autonomy_modifiers">
+                    <V n="apply_new_value" t="apply_statistic_modifiers">
+                      <U n="apply_statistic_modifiers">
+                        <L n="lot_statistic_modifiers">
+                          <U>
+                            <V n="modifier" t="basic_value">
+                              <U n="basic_value">
+                                <T n="value">0.00875</T>
+                              </U>
+                            </V>
+                            <T n="statistic">233233<!--Commodity: commodity_EcoFootprint_Lot--></T>
+                          </U>
+                        </L>
+                      </U>
+                    </V>
+                  </V>
+                </U>
+              </U>
+            </L>
+            <V t="reference" n="default_value">
+              <T n="reference">235545<!--CommodityBasedObjectStateValue: ecoUpgrades_Fill_Values_FuelCell_Empty--></T>
+            </V>
+          </U>
+          <U>
+            <L n="client_states">
+              <U>
+                <T n="key">233852<!--CommodityBasedObjectStateValue: upgrade_Completed_EcoUpgrades_EnergyEfficientDrive--></T>
+              </U>
+              <U>
+                <T n="key">233856<!--CommodityBasedObjectStateValue: upgrade_NotStarted_EcoUpgrades_EnergyEfficientDrive--></T>
+              </U>
+              <U>
+                <T n="key">233870<!--CommodityBasedObjectStateValue: upgrade_Partial_EcoUpgrades_EnergyEfficientDrive--></T>
+              </U>
+            </L>
+            <V n="default_value" t="reference">
+              <T n="reference">233856<!--CommodityBasedObjectStateValue: upgrade_NotStarted_EcoUpgrades_EnergyEfficientDrive--></T>
+            </V>
+          </U>
+          <U>
+            <L n="client_states">
+              <U>
+                <T n="key">233853<!--CommodityBasedObjectStateValue: upgrade_Completed_EcoUpgrades_FuelCell--></T>
+              </U>
+              <U>
+                <T n="key">233857<!--CommodityBasedObjectStateValue: upgrade_NotStarted_EcoUpgrades_FuelCell--></T>
+              </U>
+              <U>
+                <T n="key">233871<!--CommodityBasedObjectStateValue: upgrade_Partial_EcoUpgrades_FuelCell--></T>
+              </U>
+            </L>
+            <V n="default_value" t="reference">
+              <T n="reference">233857<!--CommodityBasedObjectStateValue: upgrade_NotStarted_EcoUpgrades_FuelCell--></T>
+            </V>
+          </U>
+          <U>
+            <L n="client_states">
+              <U>
+                <T n="key">239918<!--ObjectStateValue: ecoFootprint_EnergyEfficient_On--></T>
+                <U n="value">
+                  <V n="autonomy_modifiers" t="apply_new_value">
+                    <V n="apply_new_value" t="apply_statistic_modifiers">
+                      <U n="apply_statistic_modifiers">
+                        <L n="lot_statistic_modifiers">
+                          <U>
+                            <V n="modifier" t="basic_value">
+                              <U n="basic_value">
+                                <T n="value">-0.004375</T>
+                              </U>
+                            </V>
+                            <T n="statistic">233233<!--Commodity: commodity_EcoFootprint_Lot--></T>
+                          </U>
+                        </L>
+                      </U>
+                    </V>
+                  </V>
+                </U>
+              </U>
+              <U>
+                <T n="key">239919<!--ObjectStateValue: ecoFootprint_EnergyEfficient_Off--></T>
+                <U n="value">
+                  <V t="apply_new_value" n="autonomy_modifiers" />
+                </U>
+              </U>
+            </L>
+            <V t="reference" n="default_value">
+              <T n="reference">239919<!--ObjectStateValue: ecoFootprint_EnergyEfficient_Off--></T>
+            </V>
+          </U>
+          <U>
+            <L n="client_states">
+              <U>
+                <T n="key">73870<!--ObjectStateValue: TheKnack_Awesome--></T>
+              </U>
+              <U>
+                <T n="key">73871<!--ObjectStateValue: TheKnack_NotAwesome--></T>
+              </U>
+            </L>
+            <V t="reference" n="default_value">
+              <T n="reference">73871<!--ObjectStateValue: TheKnack_NotAwesome--></T>
+            </V>
+          </U>
+          <U>
+            <L n="client_states">
+              <U>
+                <T n="key">224553<!--ObjectStateValue: utilities_Power_Consumption_On--></T>
+                <U n="value">
+                  <V n="autonomy_modifiers" t="apply_new_value">
+                    <V n="apply_new_value" t="apply_statistic_modifiers">
+                      <U n="apply_statistic_modifiers">
+                        <L n="autonomy_modifiers">
+                          <U>
+                            <L n="decay_modifiers">
+                              <U>
+                                <T n="key">235560<!--Commodity: commodity_EcoUpgrade_Fuel_FuelCell--></T>
+                                <T n="value">12</T>
+                              </U>
+                            </L>
+                          </U>
+                        </L>
+                        <L n="lot_statistic_modifiers">
+                          <U>
+                            <V n="modifier" t="multipliers">
+                              <U n="multipliers">
+                                <U n="value">
+                                  <T n="base_value">-0.01042</T>
+                                  <L n="multipliers">
+                                    <U>
+                                      <T n="multiplier">0.44</T>
+                                    </U>
+                                    <U>
+                                      <T n="multiplier">0.5</T>
+                                      <L n="tests">
+                                        <L>
+                                          <V t="state">
+                                            <U n="state">
+                                              <T n="value">233852<!--CommodityBasedObjectStateValue: upgrade_Completed_EcoUpgrades_EnergyEfficientDrive--></T>
+                                            </U>
+                                          </V>
+                                        </L>
+                                      </L>
+                                    </U>
+                                    <U>
+                                      <T n="multiplier">0</T>
+                                      <L n="tests">
+                                        <L>
+                                          <V t="state">
+                                            <U n="state">
+                                              <T n="value">235547<!--CommodityBasedObjectStateValue: ecoUpgrades_Fill_Values_FuelCell_HasFuel--></T>
+                                            </U>
+                                          </V>
+                                        </L>
+                                      </L>
+                                    </U>
+                                    <U>
+                                      <T n="multiplier">0.8</T>
+                                      <L n="tests">
+                                        <L>
+                                          <V t="statistic">
+                                            <U n="statistic">
+                                              <T n="stat">187710<!--Statistic: statistic_Object_Thermostat_LotStat_Setting--></T>
+                                              <V t="value_threshold" n="threshold">
+                                                <U n="value_threshold">
+                                                  <E n="comparison">LESS_OR_EQUAL</E>
+                                                  <T n="value">-1</T>
+                                                </U>
+                                              </V>
+                                              <E n="who">Lot</E>
+                                            </U>
+                                          </V>
+                                        </L>
+                                      </L>
+                                    </U>
+                                  </L>
+                                </U>
+                              </U>
+                            </V>
+                            <T n="statistic">233027<!--Commodity: commodity_Utilities_Power--></T>
+                          </U>
+                        </L>
+                        <U n="periodic_statistic_change">
+                          <T n="interval">10</T>
+                          <L n="operations" />
+                        </U>
+                      </U>
+                    </V>
+                  </V>
+                </U>
+              </U>
+              <U>
+                <T n="key">224564<!--ObjectStateValue: utilities_Power_Consumption_Off--></T>
+                <U n="value">
+                  <V t="apply_new_value" n="autonomy_modifiers" />
+                </U>
+              </U>
+            </L>
+            <V t="reference" n="default_value">
+              <T n="reference">224553<!--ObjectStateValue: utilities_Power_Consumption_On--></T>
+            </V>
+          </U>
+          <U>
+            <L n="client_states">
+              <U>
+                <T n="key">39611<!--CommodityBasedObjectStateValue: FireState_Burn_Material_Change--></T>
+              </U>
+              <U>
+                <T n="key">39736<!--CommodityBasedObjectStateValue: FireState_Burn_Material_Change_Burning--></T>
+              </U>
+              <U>
+                <T n="key">39737<!--CommodityBasedObjectStateValue: FireState_Burn_Material_Change_Not_Burning--></T>
+              </U>
+              <U>
+                <T n="key">77532<!--CommodityBasedObjectStateValue: FireState_Burn_Material_Change_Replace--></T>
+              </U>
+            </L>
+            <V t="reference" n="default_value">
+              <T n="reference">39737<!--CommodityBasedObjectStateValue: FireState_Burn_Material_Change_Not_Burning--></T>
+            </V>
+          </U>
+          <U>
+            <L n="client_states">
+              <U>
+                <T n="key">35956<!--CommodityBasedObjectStateValue: Materialistic_Admired--></T>
+              </U>
+              <U>
+                <T n="key">35957<!--CommodityBasedObjectStateValue: Materialistic_YetToAdmire--></T>
+              </U>
+            </L>
+            <V n="default_value" t="reference">
+              <T n="reference">35957<!--CommodityBasedObjectStateValue: Materialistic_YetToAdmire--></T>
+            </V>
+          </U>
+        </L>
+      </U>
+    </V>
+    <V t="enabled" n="tooltip_component">
+      <U n="enabled">
+        <L n="custom_tooltips">
+          <U>
+            <L n="object_tests">
+              <L>
+                <V t="state">
+                  <U n="state">
+                    <T n="value">239918<!--ObjectStateValue: ecoFootprint_EnergyEfficient_On--></T>
+                  </U>
+                </V>
+                <V t="game_option">
+                  <U n="game_option">
+                    <E n="gameplay_option">ECO_FOOTPRINT_GAMEPLAY</E>
+                  </U>
+                </V>
+              </L>
+            </L>
+            <L n="tooltip_fields">
+              <U>
+                <E n="key">header</E>
+                <U n="value">
+                  <V t="concatenate_with_component_fields" n="override_component_information" />
+                  <V n="text" t="single">
+                    <T n="single">0x5D0F1C0E<!--String: "<font color='#4BA64A'>+ huella ecológica verde</font>"--></T>
+                  </V>
+                </U>
+              </U>
+            </L>
+          </U>
+          <U>
+            <L n="object_tests">
+              <L>
+                <V t="game_option">
+                  <U n="game_option">
+                    <E n="gameplay_option">ECO_FOOTPRINT_GAMEPLAY</E>
+                  </U>
+                </V>
+                <V t="state">
+                  <U n="state">
+                    <T n="value">235547<!--CommodityBasedObjectStateValue: ecoUpgrades_Fill_Values_FuelCell_HasFuel--></T>
+                  </U>
+                </V>
+              </L>
+            </L>
+            <L n="tooltip_fields">
+              <U>
+                <E n="key">header</E>
+                <U n="value">
+                  <V t="concatenate_with_component_fields" n="override_component_information" />
+                  <V n="text" t="single">
+                    <T n="single">0xE6403AD8<!--String: "<font color='#C9A927'>+ huella ecológica industrial</font>"--></T>
+                  </V>
+                </U>
+              </U>
+            </L>
+          </U>
+        </L>
+        <T n="update_on_game_option_changed">True</T>
+      </U>
+    </V>
+    <V t="enabled" n="weather_aware_component">
+      <U n="enabled">
+        <L n="outside_loot">
+          <U>
+            <E n="key">AnyRain</E>
+            <U n="value">
+              <L n="end_loot">
+                <T>185163<!--LootActions: loot_Wetness_Object_Rain_End--></T>
+              </L>
+              <L n="start_loot">
+                <T>184964<!--LootActions: Loot_Wetness_Object_Start--></T>
+              </L>
+            </U>
+          </U>
+        </L>
+      </U>
+    </V>
+  </U>
+  <L n="_super_affordances">
+    <T>99087<!--ImmediateSuperInteraction: object_ReplaceBrokenObject--></T>
+    <T>13328<!--ImmediateSuperInteraction: debug_Reset--></T>
+    <T>13326<!--ImmediateSuperInteraction: debug_ObjectDestroy--></T>
+    <T>103888<!--ImmediateSuperInteraction: cheat_set_as_head--></T>
+    <T>13395<!--CraftingPhaseCreateCarriedObjectSuperInteraction: fridge_CreateTray--></T>
+    <T>13387<!--StartCraftingSuperInteraction: fridge_Cook--></T>
+    <T>73835<!--SuperInteraction: object_Knack_FixIt_Fridge--></T>
+    <T>73859<!--SuperInteraction: object_Knack_MakeAwesome_Fridge--></T>
+    <T>26319<!--StartCraftingAutonomouslySuperInteraction: fridge_GrabDrinkAutonomously--></T>
+    <T>13983<!--StandSuperInteraction: sim-stand--></T>
+    <T>36758<!--CollectManyInteraction: Dish_Collection_From_Object_As_Dish--></T>
+    <T>13389<!--StartCraftingSuperInteraction: fridge_CookGourmet--></T>
+    <T>196759<!--SuperInteraction: famePerks_GoodReputation_GivingBack_DonateObject--></T>
+    <T>13388<!--StartCraftingAutonomouslySuperInteraction: fridge_CookAutonomously--></T>
+    <T>13397<!--StartCraftingAutonomouslySuperInteraction: fridge_GrabSnackAutonomously--></T>
+    <T>13390<!--StartCraftingAutonomouslySuperInteraction: fridge_CookGourmetAutonomously--></T>
+    <T>13319<!--ImmediateSuperInteraction: debug_BreakObject--></T>
+    <T>13327<!--ImmediateSuperInteraction: debug_RepairObject--></T>
+    <T>34935<!--SuperInteraction: object_Repair_Fridge--></T>
+    <T>26331<!--StartCraftingAutonomouslySuperInteraction: fridge_CookGroupDessert_Autonomously--></T>
+    <T>26361<!--StartCraftingAutonomouslySuperInteraction: fridge_CookGroupMeal_Autonomously--></T>
+    <T>34001<!--RunSituationSuperInteraction: run_famly_meal_situation--></T>
+    <T>108781<!--SuperInteraction: crimeScene_CollectSample--></T>
+    <T>108780<!--SuperInteraction: crimeScene_DustForPrints--></T>
+    <T>108779<!--SuperInteraction: crimeScene_TakePicture--></T>
+    <T>31030<!--StartCraftingAutonomouslySuperInteraction: fridge_BakeCake_Autonomously--></T>
+    <T>37208<!--CraftingPhaseCreateObjectInInventorySuperInteraction: create_fridge_tray--></T>
+    <T>28857<!--SuperInteraction: fridge_Upgrade_IncreaseQuality--></T>
+    <T>28858<!--SuperInteraction: fridge_Upgrade_IncreaseQuality_Resume--></T>
+    <T>40058<!--SuperInteraction: object_Bane_Sabotage_Fridge--></T>
+    <T>28849<!--SuperInteraction: fridge_Upgrade_LockBrokenness--></T>
+    <T>28855<!--SuperInteraction: fridge_Upgrade_LockBrokenness_Resume--></T>
+    <T>28844<!--SuperInteraction: fridge_Upgrade_LowerBrokenness--></T>
+    <T>28845<!--SuperInteraction: fridge_Upgrade_LowerBrokenness_Resume--></T>
+    <T>37405<!--StartCraftingAutonomouslySuperInteraction: fridge_Cook_BlackAndWhitePartyFood_Autonomously--></T>
+    <T>37404<!--StartCraftingAutonomouslySuperInteraction: fridge_Cook_CostumePartyFood_Autonomously--></T>
+    <T>36759<!--CollectManyInteraction: Dish_Collection_From_Object_As_Trash--></T>
+    <T>100327<!--CreateConsumableAndPushConsumeSuperInteraction: fridge_CreateSnackAndConsume_Generic--></T>
+    <T>77672<!--StartCraftingSuperInteraction: fridge_GrabSnack_PieMenu--></T>
+    <T>106195<!--StartCraftingAutonomouslySuperInteraction: fridge_CookGroupMeal_MindControlled--></T>
+    <T>108665<!--StartCraftingSuperInteraction: fridge_Bake_StartCrafting--></T>
+    <T>111967<!--StartCraftingSuperInteraction: fridge_GrabSnack_Autotest--></T>
+    <T>112476<!--StartCraftingAutonomouslySuperInteraction: fridge_StartBakingAutonomously--></T>
+    <T>115812<!--SuperInteraction: crimeScene_TakeNotes--></T>
+    <T>126096<!--StartCraftingAutonomouslySuperInteraction: fridge_Cook_SpookyPartyFood_Autonomously--></T>
+    <T>123710<!--SimPickerInteraction: caterer_HireSpecificNPC_Picker--></T>
+    <T>129510<!--SuperInteraction: object_Hire_Repair_Service--></T>
+    <T>123706<!--RunSituationSuperInteraction: object_HireNPC_Caterer--></T>
+    <T>140852<!--StartCraftingAutonomouslySuperInteraction: fridge_CookExperimentalFoodAutonomously--></T>
+    <T>150479<!--RunSituationSuperInteraction: object_hireNPC_Caterer_Vegetarian--></T>
+    <T>145851<!--StartCraftingAutonomouslySuperInteraction: fridge_Butler_MakeSnack--></T>
+    <T>145873<!--StartCraftingAutonomouslySuperInteraction: fridge_Butler_CookGourmetPartyMeal--></T>
+    <T>152490<!--StartCraftingAutonomouslySuperInteraction: fridge_CookGroupMeal_Autonomously_Vegetarian--></T>
+    <T>145871<!--StartCraftingAutonomouslySuperInteraction: fridge_Butler_CookGourmetFamilyMeal--></T>
+    <T>152489<!--StartCraftingAutonomouslySuperInteraction: fridge_CookGourmetAutonomously_Vegetarian--></T>
+    <T>145872<!--StartCraftingAutonomouslySuperInteraction: fridge_Butler_CookPartyMeal--></T>
+    <T>152488<!--StartCraftingAutonomouslySuperInteraction: fridge_CookAutonomously_Vegetarian--></T>
+    <T>146363<!--SuperInteraction: situation_Butler_Autonomous_Sabotage_Fridge--></T>
+    <T>147328<!--SimPickerInteraction: SimPicker_Fridge_GrabSnackForToddler--></T>
+    <T>156481<!--SuperInteraction: fridge_Upgrade_IncreaseQuality_CompletedDisplay--></T>
+    <T>149466<!--SimPickerInteraction: simPicker_Fridge_GrabSnackForToddler_p2a--></T>
+    <T>156482<!--SuperInteraction: fridge_Upgrade_LockBrokenness_CompletedDisplay--></T>
+    <T>151779<!--SimPickerInteraction: SimPicker_Fridge_GrabDrinkForToddler--></T>
+    <T>156483<!--SuperInteraction: fridge_Upgrade_LowerBrokenness_CompletedDisplay--></T>
+    <T>164355<!--StartCraftingAutonomouslySuperInteraction: fridge_GrabWaterAutonomously--></T>
+    <T>159739<!--SuperInteraction: petInvestigate_Obsess_Watch_Fridge--></T>
+    <T>164448<!--StartCraftingSuperInteraction: fridge_GrabSackLunch--></T>
+    <T>158379<!--SuperInteraction: TV_Cat_WatchWary--></T>
+    <T>159769<!--StartCraftingSuperInteraction: fridge_Cook_PetRecipe_Gourmet--></T>
+    <T>159768<!--StartCraftingSuperInteraction: fridge_Cook_PetRecipe_Homestyle--></T>
+    <T>151780<!--SimPickerInteraction: simPicker_Fridge_GrabDrinkForToddler_p2a--></T>
+    <T>170429<!--SimPickerInteraction: simPicker_MakeFoodForPet_Gourmet--></T>
+    <T>164546<!--SuperInteraction: PetQuirks_Lazy_WatchWary--></T>
+    <T>170427<!--SimPickerInteraction: simPicker_MakeFoodForPet_HomeStyle--></T>
+    <T>164507<!--SuperInteraction: petInvestigate_LazyTrait_Obsess_Watch_Fridge--></T>
+    <T>180825<!--StartCraftingSuperInteraction: fridge_Cook_GrandMeal_startCrafting--></T>
+    <T>181585<!--StartCraftingAutonomouslySuperInteraction: fridge_GrabCookiesAutonomously--></T>
+    <T>222922<!--SuperInteraction: humanoid_Robots_TalkToObjects--></T>
+    <T>222923<!--SuperInteraction: humanoid_Robots_FlirtWithObjects--></T>
+    <T>217063<!--StartCraftingSuperInteraction: fridge_GrabSnack_Microwave_PieMenu--></T>
+    <T>75761<!--StartCraftingSuperInteraction: fridge_Cook_Emotional--></T>
+    <T>76891<!--StartCraftingSuperInteraction: fridge_Cook_PieMenu_Breakfast_1Serving_Ingredients--></T>
+    <T>76893<!--StartCraftingSuperInteraction: fridge_Cook_PieMenu_Breakfast_8Servings_Ingredients--></T>
+    <T>76895<!--StartCraftingSuperInteraction: fridge_Cook_PieMenu_Brunch_1Serving_Ingredients--></T>
+    <T>76897<!--StartCraftingSuperInteraction: fridge_Cook_PieMenu_Brunch_8Servings_Ingredients--></T>
+    <T>76899<!--StartCraftingSuperInteraction: fridge_Cook_PieMenu_Dinner_1Serving_Ingredients--></T>
+    <T>76901<!--StartCraftingSuperInteraction: fridge_Cook_PieMenu_Dinner_8Servings_Ingredients--></T>
+    <T>76903<!--StartCraftingSuperInteraction: fridge_Cook_PieMenu_Lunch_1Serving_Ingredients--></T>
+    <T>76905<!--StartCraftingSuperInteraction: fridge_Cook_PieMenu_Lunch_8Servings_Ingredients--></T>
+    <T>108974<!--StartCraftingAutonomouslySuperInteraction: fridge_GrabLunchAutonomously--></T>
+    <T>237116<!--SuperInteraction: fuel_Fill_FuelCell_Insect--></T>
+    <T>233905<!--SuperInteraction: ecoUpgrades_Handiness_EnergyEfficientDrive--></T>
+    <T>233917<!--SuperInteraction: ecoUpgrades_Resume_EnergyEfficientDrive--></T>
+    <T>233913<!--SuperInteraction: ecoUpgrades_EcoParts_FuelCell--></T>
+    <T>233904<!--SuperInteraction: ecoUpgrades_Handiness_FuelCell--></T>
+    <T>233918<!--SuperInteraction: ecoUpgrades_Resume_FuelCell--></T>
+    <T>235565<!--SuperInteraction: fuel_Fill_FuelCell--></T>
+    <T>247887<!--ImmediateSuperInteraction: ChopsticksOptional_PreferChopsticks_Wood--></T>
+    <T>247889<!--ImmediateSuperInteraction: chopsticksOptional_PreferForks--></T>
+    <T>239276<!--SuperInteraction: ecoUpgrades_CompletedDisplay_EnergyEfficientDrive--></T>
+    <T>248498<!--ImmediateSuperInteraction: chopsticksOptional_PreferChopsticks_Plastic--></T>
+    <T>239274<!--SuperInteraction: ecoUpgrades_CompletedDisplay_FuelCell--></T>
+    <T>248497<!--ImmediateSuperInteraction: chopsticksOptional_PreferChopsticks_Steel--></T>
+    <T>254086<!--ImmediateSuperInteraction: chopsticksOptional_PreferChopsticks_ClassicWood--></T>
+    <T>102433<!--SuperInteraction: Ghost_Possess_Break_Electrocution--></T>
+    <T>156400<!--ObjectInInventoryPickerInteraction: refrigerator_GetLeftovers_Breakfast_Picker--></T>
+    <T>156402<!--ObjectInInventoryPickerInteraction: refrigerator_GetLeftovers_Brunch_Picker--></T>
+    <T>156403<!--ObjectInInventoryPickerInteraction: refrigerator_GetLeftovers_Lunch_Picker--></T>
+    <T>156404<!--ObjectInInventoryPickerInteraction: refrigerator_GetLeftovers_Dinner_Picker--></T>
+    <T>233912<!--SuperInteraction: ecoUpgrades_EcoParts_EnergyEfficientDrive--></T>
+    <T>106859<!--SuperInteraction: simRay_Transform_Object--></T>
+    <T>74457<!--ImmediateSuperInteraction: fire_ReplaceBurntObject--></T>
+    <T>102258<!--SuperInteraction: Ghost_Possess--></T>
+    <T>168502<!--SuperInteraction: Ghost_Pet_Possess--></T>
+  </L>
+  <U n="aop_forward_data">
+    <T n="should_search_forwarded_child_aop">True</T>
+    <T n="should_search_forwarded_sim_aop">True</T>
+  </U>
+  <L n="autonomy_modifiers">
+    <U>
+      <L n="stat_use_multiplier">
+        <U>
+          <T n="key">16671<!--Statistic: statistic_Object_Consumable-Quality--></T>
+          <U n="value">
+            <T n="multiplier">2.33</T>
+          </U>
+        </U>
+      </L>
+      <V t="apply_on_interaction_to_participant" n="subject">
+        <V n="apply_on_interaction_to_participant" t="enabled">
+          <L n="enabled">
+            <E>Object</E>
+          </L>
+        </V>
+      </V>
+    </U>
+    <U>
+      <L n="stat_use_multiplier">
+        <U>
+          <T n="key">16633<!--Commodity: commodity_Object_Brokenness--></T>
+          <U n="value">
+            <E n="apply_direction">DECREASE</E>
+            <T n="multiplier">0.125</T>
+          </U>
+        </U>
+      </L>
+    </U>
+  </L>
+  <U n="recycling_data">
+    <L n="recycling_values">
+      <U>
+        <E n="Bucks Type">RecycleBitsBucks</E>
+        <T n="Value">0.5</T>
+      </U>
+      <U>
+        <E n="Bucks Type">RecyclePiecesBucks</E>
+        <T n="Value">0.5</T>
+      </U>
+    </L>
+  </U>
+</I>

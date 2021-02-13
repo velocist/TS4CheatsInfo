@@ -1,0 +1,284 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<I c="ObjectRoutingBehavior" i="snippet" m="routing.object_routing.object_routing_behavior" n="objectRoutingBehavior_Bots_Cleaning_RouteToObject" s="220979">
+  <V n="route" t="from_target_object">
+    <U n="from_target_object">
+      <L n="constraints">
+        <V t="circle">
+          <U n="circle">
+            <T n="multi_surface">True</T>
+            <T n="radius">1.7</T>
+            <T n="require_los">True</T>
+          </U>
+        </V>
+        <V t="facing" />
+        <V t="line_of_sight">
+          <U n="line_of_sight">
+            <T n="multi_surface">True</T>
+            <V t="enabled" n="temporary_los" />
+          </U>
+        </V>
+      </L>
+      <L n="no_target_loot">
+        <T>222433<!--LootActions: loot_Bots_Actor_Wander--></T>
+      </L>
+      <T n="radius">25</T>
+      <L n="target_action_rules">
+        <U>
+          <T n="abort_if_applied">False</T>
+          <L n="actions">
+            <V t="play_animation">
+              <U n="play_animation">
+                <U n="animation">
+                  <L n="loop_exit_conditions">
+                    <U>
+                      <L n="conditions">
+                        <V t="time_based">
+                          <U n="time_based">
+                            <T n="max_time">12</T>
+                            <T n="min_time">10</T>
+                          </U>
+                        </V>
+                      </L>
+                      <L n="tests">
+                        <L>
+                          <V t="state_white_black">
+                            <U n="state_white_black">
+                              <U n="states">
+                                <V n="whitelist" t="specify">
+                                  <U n="specify">
+                                    <L n="whitelist">
+                                      <T>220880<!--CommodityBasedObjectStateValue: bots_Enhancement_Values_6--></T>
+                                      <T>220881<!--CommodityBasedObjectStateValue: bots_Enhancement_Values_7--></T>
+                                      <T>220882<!--CommodityBasedObjectStateValue: bots_Enhancement_Values_8--></T>
+                                      <T>220891<!--CommodityBasedObjectStateValue: bots_Enhancement_Values_9--></T>
+                                    </L>
+                                  </U>
+                                </V>
+                              </U>
+                            </U>
+                          </V>
+                        </L>
+                      </L>
+                    </U>
+                    <U>
+                      <L n="conditions">
+                        <V t="time_based">
+                          <U n="time_based">
+                            <T n="max_time">8</T>
+                            <T n="min_time">6</T>
+                          </U>
+                        </V>
+                      </L>
+                      <L n="tests">
+                        <L>
+                          <V t="state_white_black">
+                            <U n="state_white_black">
+                              <U n="states">
+                                <V n="whitelist" t="specify">
+                                  <U n="specify">
+                                    <V n="threshold" t="threshold">
+                                      <U n="threshold">
+                                        <T n="value">1</T>
+                                      </U>
+                                    </V>
+                                    <L n="whitelist">
+                                      <T>220892<!--CommodityBasedObjectStateValue: bots_Enhancement_Values_10--></T>
+                                    </L>
+                                  </U>
+                                </V>
+                              </U>
+                            </U>
+                          </V>
+                        </L>
+                      </L>
+                    </U>
+                  </L>
+                  <T n="loop_time">15</T>
+                  <T n="reference">221022<!--ObjectAnimationElement: bots_Animations_Actions_Cleaner_Hose--></T>
+                </U>
+              </U>
+            </V>
+            <V t="apply_loot">
+              <U n="apply_loot">
+                <L n="loot_actions">
+                  <T>227811<!--LootActions: loot_Bots_Cleaning_CleanObject--></T>
+                </L>
+              </U>
+            </V>
+          </L>
+          <L n="test">
+            <L>
+              <V t="state_white_black">
+                <U n="state_white_black">
+                  <U n="states">
+                    <V n="whitelist" t="specify">
+                      <U n="specify">
+                        <L n="whitelist">
+                          <T>15131<!--ObjectStateValue: DirtyState_Dirty--></T>
+                          <T>15133<!--CommodityBasedObjectStateValue: Dirty_Dirty--></T>
+                          <T>15135<!--CommodityBasedObjectStateValue: Dirty_VeryDirty--></T>
+                        </L>
+                      </U>
+                    </V>
+                  </U>
+                </U>
+              </V>
+            </L>
+          </L>
+        </U>
+        <U>
+          <T n="abort_if_applied">False</T>
+          <L n="actions">
+            <V t="play_animation">
+              <U n="play_animation">
+                <U n="animation">
+                  <L n="loop_exit_conditions">
+                    <U>
+                      <L n="conditions">
+                        <V t="time_based">
+                          <U n="time_based">
+                            <T n="max_time">12</T>
+                            <T n="min_time">10</T>
+                          </U>
+                        </V>
+                      </L>
+                      <L n="tests">
+                        <L>
+                          <V t="state_white_black">
+                            <U n="state_white_black">
+                              <U n="states">
+                                <V n="whitelist" t="specify">
+                                  <U n="specify">
+                                    <L n="whitelist">
+                                      <T>220880<!--CommodityBasedObjectStateValue: bots_Enhancement_Values_6--></T>
+                                      <T>220881<!--CommodityBasedObjectStateValue: bots_Enhancement_Values_7--></T>
+                                      <T>220882<!--CommodityBasedObjectStateValue: bots_Enhancement_Values_8--></T>
+                                      <T>220891<!--CommodityBasedObjectStateValue: bots_Enhancement_Values_9--></T>
+                                    </L>
+                                  </U>
+                                </V>
+                              </U>
+                            </U>
+                          </V>
+                        </L>
+                      </L>
+                    </U>
+                    <U>
+                      <L n="conditions">
+                        <V t="time_based">
+                          <U n="time_based">
+                            <T n="max_time">8</T>
+                            <T n="min_time">6</T>
+                          </U>
+                        </V>
+                      </L>
+                      <L n="tests">
+                        <L>
+                          <V t="state_white_black">
+                            <U n="state_white_black">
+                              <U n="states">
+                                <V n="whitelist" t="specify">
+                                  <U n="specify">
+                                    <V n="threshold" t="threshold">
+                                      <U n="threshold">
+                                        <T n="value">1</T>
+                                      </U>
+                                    </V>
+                                    <L n="whitelist">
+                                      <T>220892<!--CommodityBasedObjectStateValue: bots_Enhancement_Values_10--></T>
+                                    </L>
+                                  </U>
+                                </V>
+                              </U>
+                            </U>
+                          </V>
+                        </L>
+                      </L>
+                    </U>
+                  </L>
+                  <T n="loop_time">15</T>
+                  <T n="reference">221023<!--ObjectAnimationElement: bots_Animations_Actions_Cleaner_Vacuum--></T>
+                </U>
+              </U>
+            </V>
+            <V t="destroy_objects">
+              <U n="destroy_objects">
+                <V n="object_selection_method" t="target_object" />
+              </U>
+            </V>
+          </L>
+          <L n="test">
+            <L>
+              <V t="object_criteria">
+                <U n="object_criteria">
+                  <V n="identity_test" t="tags">
+                    <U n="tags">
+                      <L n="tag_set">
+                        <E>Func_Trash</E>
+                        <E>Func_Pet_Poop</E>
+                        <E>Func_TrashPile</E>
+                        <E>Func_Puddle</E>
+                      </L>
+                    </U>
+                  </V>
+                  <T n="on_active_lot">True</T>
+                  <T n="owned">False</T>
+                  <V t="single_object" n="subject_specific_tests" />
+                </U>
+              </V>
+            </L>
+          </L>
+        </U>
+        <U>
+          <L n="actions">
+            <V t="apply_loot">
+              <U n="apply_loot">
+                <L n="loot_actions">
+                  <T>222538<!--LootActions: loot_Bots_Actor_Requeue--></T>
+                </L>
+              </U>
+            </V>
+          </L>
+        </U>
+      </L>
+      <L n="target_selection_test">
+        <L>
+          <V t="object_criteria">
+            <U n="object_criteria">
+              <V n="identity_test" t="tags">
+                <U n="tags">
+                  <L n="tag_set">
+                    <E>Func_Pet_Poop</E>
+                    <E>Func_TrashPile</E>
+                    <E>Func_Puddle</E>
+                  </L>
+                </U>
+              </V>
+              <T n="on_active_lot">True</T>
+              <T n="owned">False</T>
+              <V t="single_object" n="subject_specific_tests" />
+            </U>
+          </V>
+        </L>
+        <L>
+          <V t="state_white_black">
+            <U n="state_white_black">
+              <U n="states">
+                <V n="whitelist" t="specify">
+                  <U n="specify">
+                    <L n="whitelist">
+                      <T>15131<!--ObjectStateValue: DirtyState_Dirty--></T>
+                      <T>15133<!--CommodityBasedObjectStateValue: Dirty_Dirty--></T>
+                      <T>15135<!--CommodityBasedObjectStateValue: Dirty_VeryDirty--></T>
+                    </L>
+                  </U>
+                </V>
+              </U>
+            </U>
+          </V>
+        </L>
+      </L>
+      <V n="target_type" t="object" />
+    </U>
+  </V>
+</I>

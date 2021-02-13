@@ -1,0 +1,139 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<I c="MixerInteraction" i="interaction" m="interactions.base.mixer_interaction" n="watch-movie_LowIntensity" s="128879">
+  <V t="participant" n="_icon">
+    <U n="participant">
+      <L n="participant_type">
+        <E>Object</E>
+      </L>
+    </U>
+  </V>
+  <V t="enabled" n="_interruptible">
+    <T n="enabled">True</T>
+  </V>
+  <T n="allow_user_directed">False</T>
+  <L n="appropriateness_tags">
+    <E>Appropriateness_TV_Watching</E>
+  </L>
+  <V n="basic_content" t="looping_animation">
+    <U n="looping_animation">
+      <U n="animation_ref">
+        <T n="factory">128877<!--AnimationElement: movie_Passive_LowEnjoyment--></T>
+      </U>
+      <L n="conditional_actions">
+        <V t="literal">
+          <U n="literal">
+            <L n="conditions">
+              <V t="time_based">
+                <U n="time_based">
+                  <T n="max_time">8</T>
+                  <T n="min_time">4</T>
+                </U>
+              </V>
+            </L>
+            <E n="interaction_action">EXIT_NATURALLY</E>
+          </U>
+        </V>
+      </L>
+      <V t="enabled" n="periodic_stat_change">
+        <U n="enabled">
+          <U n="operation_actions">
+            <L n="actions">
+              <T>128893<!--LootActions: loot_Movie_Enjoyment--></T>
+            </L>
+          </U>
+        </U>
+      </V>
+    </U>
+  </V>
+  <V t="tunable_focus" n="basic_focus">
+    <U n="tunable_focus">
+      <T n="layer">6</T>
+      <T n="score">5</T>
+    </U>
+  </V>
+  <U n="display_name_text_tokens">
+    <L n="tokens">
+      <V t="participant_type">
+        <U n="participant_type">
+          <V n="objects" t="from_participant">
+            <U n="from_participant">
+              <E n="participant">Actor</E>
+            </U>
+          </V>
+        </U>
+      </V>
+      <V t="participant_type">
+        <U n="participant_type">
+          <V n="objects" t="from_participant">
+            <U n="from_participant">
+              <E n="participant">Object</E>
+            </U>
+          </V>
+        </U>
+      </V>
+    </L>
+  </U>
+  <L n="interaction_category_tags">
+    <E>Interaction_Mixer</E>
+    <E>Interaction_All</E>
+  </L>
+  <V t="enabled" n="lock_out_time">
+    <U n="enabled">
+      <U n="interval">
+        <T n="lower_bound">10</T>
+        <T n="upper_bound">30</T>
+      </U>
+    </U>
+  </V>
+  <V t="single" n="outcome">
+    <U n="single">
+      <U n="actions">
+        <L n="loot_list">
+          <T>9162<!--LootActions: loot_RemoveTopic_TVPassive--></T>
+        </L>
+      </U>
+    </U>
+  </V>
+  <U n="sub_action">
+    <T n="base_weight">1</T>
+  </U>
+  <E n="target_type">OBJECT</E>
+  <L n="test_globals">
+    <V t="posture">
+      <U n="posture">
+        <L n="prohibited_postures">
+          <T>15536<!--IntimatePartPosture: posture_SitIntimate--></T>
+          <T>15520<!--IntimatePartPosture: posture_BedWoohoo--></T>
+          <T>131565<!--IntimatePartPosture: posture_SitTogether--></T>
+          <T>131139<!--IntimatePartPosture: posture_SitIntimateBooth--></T>
+        </L>
+      </U>
+    </V>
+    <V t="sim_info">
+      <U n="sim_info">
+        <V t="specified" n="ages">
+          <L n="specified">
+            <E>TEEN</E>
+            <E>YOUNGADULT</E>
+            <E>ADULT</E>
+            <E>ELDER</E>
+            <E>CHILD</E>
+          </L>
+        </V>
+      </U>
+    </V>
+    <V t="statistic">
+      <U n="statistic">
+        <T n="must_have_stat">True</T>
+        <T n="stat">128901<!--Commodity: commodity_Object_Movie_Enjoyment--></T>
+        <V n="threshold" t="value_threshold">
+          <U n="value_threshold">
+            <E n="comparison">GREATER_OR_EQUAL</E>
+            <T n="value">25</T>
+          </U>
+        </V>
+      </U>
+    </V>
+  </L>
+  <T n="visible">False</T>
+</I>

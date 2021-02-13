@@ -1,0 +1,252 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<I c="SuperInteraction" i="interaction" m="interactions.base.super_interaction" n="holidayTree_LightTree_Solo" s="190638">
+  <L n="_constraints">
+    <U>
+      <L n="constraints">
+        <U>
+          <V n="value" t="circle">
+            <U n="circle">
+              <T n="radius">2</T>
+            </U>
+          </V>
+        </U>
+        <U>
+          <V n="value" t="facing" />
+        </U>
+      </L>
+    </U>
+  </L>
+  <V t="disabled" n="_saveable" />
+  <T n="allow_autonomous">False</T>
+  <T n="attention_cost">0.5</T>
+  <V t="one_shot" n="basic_content">
+    <U n="one_shot">
+      <U n="animation_ref">
+        <T n="factory">12140<!--AnimationElement: TV_UseRemote_Use--></T>
+        <U n="overrides">
+          <V n="balloons" t="enabled">
+            <L n="enabled">
+              <U>
+                <L n="balloon_choices">
+                  <U>
+                    <V n="item" t="balloon_icon">
+                      <U n="balloon_icon">
+                        <E n="balloon_type">SPEECH</E>
+                        <V n="category_icon" t="show_category_icon">
+                          <V n="show_category_icon" t="resource_key">
+                            <U n="resource_key">
+                              <T n="key" p="InEP05\UI\Icons\Headlines\headline_SkillUp.png">2f7d0004:00000000:6a03282aa7701790</T>
+                            </U>
+                          </V>
+                        </V>
+                        <V t="resource_key" n="icon">
+                          <U n="resource_key">
+                            <T n="key" p="InEP05\UI\Icons\Headlines\headline_HolidayChristmas.png">2f7d0004:00000000:a756bad7a5d467f0</T>
+                          </U>
+                        </V>
+                      </U>
+                    </V>
+                  </U>
+                </L>
+                <L n="balloon_target">
+                  <E>Actor</E>
+                </L>
+              </U>
+            </L>
+          </V>
+        </U>
+      </U>
+    </U>
+  </V>
+  <V t="enabled" n="basic_reserve_object">
+    <U n="enabled">
+      <L n="subject_list">
+        <U>
+          <V t="multi" n="reserve_type" />
+        </U>
+      </L>
+    </U>
+  </V>
+  <V t="disabled" n="content_score" />
+  <T n="display_name">0x24DFA704<!--String: "Encender árbol"--></T>
+  <V t="testable" n="display_name_overrides">
+    <U n="testable">
+      <L n="overrides">
+        <U>
+          <V t="disabled" n="new_display_name" />
+          <V t="enabled" n="new_pie_menu_icon">
+            <V t="tradition" n="enabled" />
+          </V>
+          <L n="test">
+            <L>
+              <V t="holiday_tradition">
+                <U n="holiday_tradition">
+                  <U n="tradition_filter">
+                    <V n="whitelist" t="specify">
+                      <U n="specify">
+                        <L n="whitelist">
+                          <T>182110<!--HolidayTradition: holidayTradition_BeFestive--></T>
+                          <T>182134<!--HolidayTradition: holidayTradition_CelebrateWithLights--></T>
+                        </L>
+                      </U>
+                    </V>
+                  </U>
+                </U>
+              </V>
+            </L>
+          </L>
+        </U>
+      </L>
+    </U>
+  </V>
+  <U n="display_name_text_tokens">
+    <L n="tokens">
+      <V t="participant_type">
+        <U n="participant_type">
+          <V t="from_participant" n="objects">
+            <U n="from_participant">
+              <E n="participant">Actor</E>
+            </U>
+          </V>
+        </U>
+      </V>
+      <V t="participant_type">
+        <U n="participant_type">
+          <V t="from_participant" n="objects">
+            <U n="from_participant">
+              <E n="participant">Object</E>
+            </U>
+          </V>
+        </U>
+      </V>
+    </L>
+  </U>
+  <L n="interaction_category_tags">
+    <E>Interaction_Super</E>
+    <E>Interaction_All</E>
+    <E>Interaction_Festive</E>
+  </L>
+  <V n="outcome" t="test_based">
+    <U n="test_based">
+      <L n="fallback_outcomes">
+        <U>
+          <U n="outcome">
+            <L n="basic_extras">
+              <V t="state_change">
+                <U n="state_change">
+                  <V n="new_value" t="value_from_test_list">
+                    <U n="value_from_test_list">
+                      <L n="new_values">
+                        <U>
+                          <V n="test" t="state">
+                            <U n="state">
+                              <V t="always_fail" n="fallback_behavior" />
+                              <E n="operator">NOTEQUAL</E>
+                              <T n="value">180624<!--CommodityBasedObjectStateValue: holidayTree_Festive_VeryFestive--></T>
+                            </U>
+                          </V>
+                          <T n="value">180624<!--CommodityBasedObjectStateValue: holidayTree_Festive_VeryFestive--></T>
+                        </U>
+                      </L>
+                    </U>
+                  </V>
+                </U>
+              </V>
+            </L>
+            <L n="continuation">
+              <U>
+                <T n="affordance">114573<!--SwitchLightImmediateInteraction: lights_TurnOn_NoCategory--></T>
+              </U>
+            </L>
+            <L n="loot_list">
+              <T>180610<!--LootActions: loot_HolidayTree_Light--></T>
+            </L>
+          </U>
+          <U n="weight">
+            <T n="base_value">15</T>
+          </U>
+        </U>
+        <U>
+          <U n="outcome">
+            <L n="loot_list">
+              <T>40548<!--LootActions: Loot_Fire_Object--></T>
+            </L>
+          </U>
+          <U n="weight">
+            <L n="multipliers">
+              <U>
+                <T n="multiplier">0</T>
+                <L n="tests">
+                  <L>
+                    <V t="buff">
+                      <U n="buff">
+                        <E n="subject">ActiveHousehold</E>
+                        <V n="whitelist" t="enabled">
+                          <L n="enabled">
+                            <T>100849<!--Buff: Buff_Fire_RecentFire--></T>
+                          </L>
+                        </V>
+                      </U>
+                    </V>
+                  </L>
+                  <L>
+                    <V t="test_set_reference">
+                      <T n="test_set_reference">229175<!--TestSetInstance: testSet_Venue_Residential_Disallow_Actor--></T>
+                    </V>
+                  </L>
+                </L>
+              </U>
+              <U>
+                <T n="multiplier">5</T>
+                <L n="tests">
+                  <L>
+                    <V t="state">
+                      <U n="state">
+                        <T n="value">181643<!--ObjectStateValue: holidayTree_TreeGeo_Fail--></T>
+                      </U>
+                    </V>
+                  </L>
+                </L>
+              </U>
+            </L>
+          </U>
+        </U>
+      </L>
+      <L n="tested_outcomes" />
+    </U>
+  </V>
+  <E n="scoring_priority">NORMAL</E>
+  <T n="subaction_selection_weight">1</T>
+  <E n="target_type">OBJECT</E>
+  <L n="test_globals">
+    <V t="sim_info">
+      <U n="sim_info">
+        <V t="specified" n="ages">
+          <L n="specified">
+            <E>TEEN</E>
+            <E>YOUNGADULT</E>
+            <E>ADULT</E>
+            <E>ELDER</E>
+            <E>CHILD</E>
+          </L>
+        </V>
+        <V t="specified" n="species">
+          <U n="specified">
+            <L n="species">
+              <E />
+            </L>
+          </U>
+        </V>
+        <E n="who">Actor</E>
+      </U>
+    </V>
+  </L>
+  <T n="time_overhead">30</T>
+  <V t="enabled" n="utility_info">
+    <L n="enabled">
+      <U>
+        <E n="key">POWER</E>
+      </U>
+    </L>
+  </V>
+</I>

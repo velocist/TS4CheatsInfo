@@ -1,0 +1,168 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<I c="SuperInteraction" i="interaction" m="interactions.base.super_interaction" n="mailbox_UniversityEnrollment_Enroll" s="222244">
+  <V t="participant" n="_icon">
+    <U n="participant">
+      <L n="participant_type">
+        <E>Object</E>
+      </L>
+    </U>
+  </V>
+  <V t="enabled" n="_saveable" />
+  <T n="allow_autonomous">False</T>
+  <T n="allow_while_save_locked">False</T>
+  <T n="attention_cost">0.75</T>
+  <V t="one_shot" n="basic_content">
+    <U n="one_shot">
+      <U n="animation_ref">
+        <T n="factory">11572<!--AnimationElement: Mailbox_MailLetter--></T>
+      </U>
+    </U>
+  </V>
+  <V t="enabled" n="canonical_animation">
+    <U n="enabled">
+      <T n="factory">11572<!--AnimationElement: Mailbox_MailLetter--></T>
+    </U>
+  </V>
+  <T n="category">219678<!--PieMenuCategory: university_PieMenuCategories_Computer--></T>
+  <V t="disabled" n="content_score" />
+  <T n="display_name">0x2C5332E7<!--String: "Matricularse en la universidad"--></T>
+  <V t="testable" n="display_name_overrides">
+    <U n="testable">
+      <L n="overrides">
+        <U>
+          <V n="new_display_name" t="enabled">
+            <T n="enabled">0xF3FA63D4<!--String: "Volver a matricularse en la universidad"--></T>
+          </V>
+          <L n="test">
+            <L>
+              <V t="test_set_reference">
+                <T n="test_set_reference">228958<!--TestSetInstance: testSetInstance_UniversityEnrollment_Reenroll--></T>
+              </V>
+            </L>
+          </L>
+        </U>
+      </L>
+    </U>
+  </V>
+  <U n="display_name_text_tokens">
+    <L n="tokens">
+      <V t="participant_type">
+        <U n="participant_type">
+          <V n="objects" t="from_participant">
+            <U n="from_participant">
+              <E n="participant">Actor</E>
+            </U>
+          </V>
+        </U>
+      </V>
+      <V t="participant_type">
+        <U n="participant_type">
+          <V t="from_participant" n="objects">
+            <U n="from_participant">
+              <E n="participant">Object</E>
+            </U>
+          </V>
+        </U>
+      </V>
+    </L>
+  </U>
+  <L n="interaction_category_tags">
+    <E>Interaction_Super</E>
+    <E>Interaction_All</E>
+  </L>
+  <V n="outcome" t="test_based">
+    <U n="test_based">
+      <L n="fallback_outcomes">
+        <U>
+          <U n="outcome">
+            <V t="enabled" n="animation_ref">
+              <U n="enabled">
+                <T n="factory">12082<!--AnimationElement: Stand_Idle_Stand_Idle_Looping_basic--></T>
+              </U>
+            </V>
+            <L n="basic_extras">
+              <V t="university_enrollment_ui">
+                <U n="university_enrollment_ui">
+                  <V t="at_beginning" n="timing" />
+                </U>
+              </V>
+            </L>
+            <T n="force_outcome_on_exit">True</T>
+          </U>
+        </U>
+      </L>
+      <L n="tested_outcomes">
+        <U>
+          <L n="potential_outcomes">
+            <U>
+              <U n="outcome">
+                <L n="basic_extras">
+                  <V t="university_enrollment_ui">
+                    <U n="university_enrollment_ui">
+                      <T n="is_reenrollment">True</T>
+                      <V t="at_beginning" n="timing" />
+                    </U>
+                  </V>
+                </L>
+                <T n="force_outcome_on_exit">True</T>
+              </U>
+            </U>
+          </L>
+          <L n="tests">
+            <L>
+              <V t="test_set_reference">
+                <T n="test_set_reference">228958<!--TestSetInstance: testSetInstance_UniversityEnrollment_Reenroll--></T>
+              </V>
+            </L>
+          </L>
+        </U>
+      </L>
+    </U>
+  </V>
+  <V t="enabled" n="route_start_balloon">
+    <U n="enabled">
+      <U n="balloon">
+        <L n="balloon_choices">
+          <U>
+            <V n="item" t="balloon_icon">
+              <U n="balloon_icon">
+                <V t="participant" n="icon">
+                  <U n="participant">
+                    <L n="participant_type">
+                      <E>Object</E>
+                    </L>
+                  </U>
+                </V>
+              </U>
+            </V>
+          </U>
+        </L>
+        <L n="balloon_target">
+          <E>Actor</E>
+        </L>
+      </U>
+    </U>
+  </V>
+  <E n="scoring_priority">NORMAL</E>
+  <T n="subaction_selection_weight">1</T>
+  <E n="target_type">OBJECT</E>
+  <L n="test_globals">
+    <V t="sim_info">
+      <U n="sim_info">
+        <V t="specified" n="ages" />
+        <V t="specified" n="species">
+          <U n="specified">
+            <L n="species">
+              <E />
+            </L>
+          </U>
+        </V>
+        <E n="who">Actor</E>
+      </U>
+    </V>
+    <V t="test_set_reference">
+      <T n="test_set_reference">222246<!--TestSetInstance: testSetInstance_UniversityEnrollment_Enroll--></T>
+    </V>
+  </L>
+  <T n="time_overhead">5</T>
+</I>

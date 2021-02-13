@@ -1,0 +1,177 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<I c="SuperInteraction" i="interaction" m="interactions.base.super_interaction" n="rakeLeaf_Pile" s="182906">
+  <V t="resource_key" n="_icon">
+    <U n="resource_key">
+      <T n="key" p="InEP05\UI\Icons\BuildBuy\icon_pileLeaf2x2_EP05GEN01.png">2f7d0004:00000000:d3872dd58443a08b</T>
+    </U>
+  </V>
+  <V t="enabled" n="_saveable" />
+  <T n="attention_cost">0.5</T>
+  <V t="one_shot" n="basic_content">
+    <U n="one_shot">
+      <U n="animation_ref">
+        <T n="factory">182993<!--AnimationElement: LeafPile_Rake_looping--></T>
+      </U>
+    </U>
+  </V>
+  <L n="basic_extras">
+    <V t="save_participant">
+      <U n="save_participant">
+        <E n="participant">SavedActor1</E>
+        <V t="at_beginning" n="timing" />
+      </U>
+    </V>
+    <V t="buff">
+      <U n="buff">
+        <U n="buff_type">
+          <T n="buff_type">190872<!--Buff: buff_Object_LeafPile_Rake_Discipline--></T>
+        </U>
+      </U>
+    </V>
+    <V t="broadcaster">
+      <U n="broadcaster">
+        <L n="broadcaster_types">
+          <U>
+            <T n="item">201427<!--Broadcaster: broadcaster_Reputation_SeenLoot_Instant_Gain_Misc_Offlot--></T>
+          </U>
+        </L>
+      </U>
+    </V>
+  </L>
+  <V t="disabled" n="content_score" />
+  <T n="display_name">0x9492112F<!--String: "Rastrillar hojas"--></T>
+  <V t="testable" n="display_name_overrides">
+    <U n="testable">
+      <L n="overrides">
+        <U>
+          <V n="new_display_name" t="enabled">
+            <T n="enabled">0x9492112F<!--String: "Rastrillar hojas"--></T>
+          </V>
+          <V t="enabled" n="new_pie_menu_icon">
+            <V n="enabled" t="resource_key">
+              <U n="resource_key">
+                <T n="key" p="InGame\UI\Icons\PieMenu\Interactions\icon_pieMenu_event.png">2f7d0004:00000000:b907801c53b5058d</T>
+              </U>
+            </V>
+          </V>
+          <L n="test">
+            <L>
+              <V t="test_set_reference">
+                <T n="test_set_reference">202933<!--TestSetInstance: testSetInstance_Positivity_Challenge_Selected_Not_Social_Interactions--></T>
+              </V>
+            </L>
+          </L>
+        </U>
+      </L>
+    </U>
+  </V>
+  <U n="display_name_text_tokens">
+    <L n="tokens">
+      <V t="participant_type">
+        <U n="participant_type">
+          <V t="from_participant" n="objects">
+            <U n="from_participant">
+              <E n="participant">Actor</E>
+            </U>
+          </V>
+        </U>
+      </V>
+      <V t="participant_type">
+        <U n="participant_type">
+          <V t="from_participant" n="objects">
+            <U n="from_participant">
+              <E n="participant">Object</E>
+            </U>
+          </V>
+        </U>
+      </V>
+    </L>
+  </U>
+  <L n="interaction_category_tags">
+    <E>Interaction_Super</E>
+    <E>Interaction_All</E>
+  </L>
+  <V n="outcome" t="single">
+    <U n="single">
+      <U n="actions">
+        <L n="continuation">
+          <U>
+            <T n="affordance">182886<!--SuperInteraction: findLeaf_Pile--></T>
+            <E n="target">SavedActor1</E>
+          </U>
+        </L>
+        <L n="loot_list">
+          <T>182907<!--LootActions: loot_clean_leafarea--></T>
+          <T>180321<!--LootActions: Loot_AddToSavedLeafPile--></T>
+          <T>161581<!--LootActions: loot_Statistic_LifeSkill_Responsibility_Gain_Small--></T>
+        </L>
+      </U>
+    </U>
+  </V>
+  <E n="scoring_priority">NORMAL</E>
+  <T n="subaction_selection_weight">1</T>
+  <V t="literal" n="super_affordance_compatibility">
+    <U n="literal">
+      <V n="default_inclusion" t="exclude_all" />
+    </U>
+  </V>
+  <E n="target_type">OBJECT</E>
+  <V t="enabled" n="test_disallow_while_running">
+    <U n="enabled">
+      <T n="test_self">True</T>
+    </U>
+  </V>
+  <L n="test_globals">
+    <V t="sim_info">
+      <U n="sim_info">
+        <V t="specified" n="ages">
+          <L n="specified">
+            <E>TEEN</E>
+            <E>YOUNGADULT</E>
+            <E>ADULT</E>
+            <E>ELDER</E>
+            <E>CHILD</E>
+          </L>
+        </V>
+        <V t="specified" n="species">
+          <U n="specified">
+            <L n="species">
+              <E />
+            </L>
+          </U>
+        </V>
+        <E n="who">Actor</E>
+      </U>
+    </V>
+    <V t="weather_type">
+      <U n="weather_type">
+        <T n="invert">True</T>
+        <V t="disabled" n="tooltip" />
+        <L n="weather_types">
+          <E>High_Snow_Accumulation</E>
+        </L>
+      </U>
+    </V>
+    <V t="statistic">
+      <U n="statistic">
+        <T n="stat">180201<!--Commodity: commodity_Object_LeafPile_Count--></T>
+        <V t="value_threshold" n="threshold">
+          <U n="value_threshold">
+            <T n="value">10</T>
+          </U>
+        </V>
+        <V n="tooltip" t="enabled">
+          <T n="enabled">0xE20E274C<!--String: "Este montón de hojas ya está lleno de hojas."--></T>
+        </V>
+        <E n="who">Object</E>
+      </U>
+    </V>
+    <V t="test_set_reference">
+      <T n="test_set_reference">28305<!--TestSetInstance: testSet_EmotionNotMiserable--></T>
+    </V>
+    <V t="test_set_reference">
+      <T n="test_set_reference">28176<!--TestSetInstance: testSet_EmotionNotStressed--></T>
+    </V>
+  </L>
+  <T n="time_overhead">30</T>
+</I>

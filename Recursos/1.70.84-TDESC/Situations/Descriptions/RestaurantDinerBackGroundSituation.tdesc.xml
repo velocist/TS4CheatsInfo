@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+
+<TuningRoot>
+    <Instance instance_type="situation" class="RestaurantDinerBackGroundSituation" module="restaurants.restaurant_diner_situation" muid="57B3430A91E40DC5" description="The situation to control dining group. It will control the state of the&#xA;whole group like arrival, order, etc." instance_subclasses_only="False" parents="SituationComplexCommon, SituationComplex, Situation" path="Situations\Descriptions" use_guid_for_reference="True">
+        <Deleted name="_buff" muid="A86203D0BE7B9DBC" />
+
+        <Deleted name="_cost" muid="263F761C54B0DF82" />
+
+        <TunableVariant type="None" name="_diner_arrival_state" class="OptionalTunable" default="disabled" display="Diner Arrival State" muid="F869AB3BA9ABC356" description="If enabled then this will place all sims in the arrival state to &#xA;begin with. If not then the arrival state will be skipped and" Deprecated="False" filter="0" group="State">
+            <Tunable name="disabled" class="TunableExistance" display="Disabled" muid="6A391FD797117675" />
+            <TunableTuple name="enabled" class="Tunable_DinerArrivalState" display="Enabled" muid="22CA3BF34E1B0FA3" description="The state when a dining group first arrives the lot. They will wait&#xA;to be hosted, or claim a table directly. The state will transit to&#xA;order state when a table is claimed." Deprecated="False" filter="0" group="General">
+                <Tunable type="bool" name="allow_join_situation" class="Tunable" default="True" display="Allow Join Situation" muid="36CEA6D6DE3063EC" description="Whether the situation is allowed to join at this state." Deprecated="False" filter="0" group="General" />
+                <TunableList name="job_and_role_changes" class="TunableMapping" display="Job And Role Changes" muid="68A4244B5F343800" mapping_key="Situation Job" mapping_value="Role State" description="A mapping between situation jobs and role states that defines&#xA;what role states we want to switch to for sims on which jobs&#xA;when this situation state is entered." Deprecated="False" filter="0" group="General">
+                    <TunableTuple class="TunableTuple" muid="1572F2C982571147" Deprecated="False" filter="0" group="General">
+                        <Tunable type="role_state" name="Role State" class="TunableReference" display="Role State" muid="DA6B3ACFA760711D" description="The role state that we will switch sims of the linked job&#xA;into." allow_none="False" Deprecated="False" filter="0" group="General" />
+                        <Tunable type="situation_job" name="Situation Job" class="TunableReference" display="Situation Job" muid="7C41AE4109EA950A" description="A reference to a SituationJob that we will use to change&#xA;sim's role state." allow_none="False" Deprecated="False" filter="0" group="General" />
+                    </TunableTuple>
+                </TunableList>
+                <TunableVariant type="None" name="time_out" class="OptionalTunable" default="disabled" display="Time Out" muid="B19E99705A5D7D59" description="How long this state will last before time expired. Please talk to the GPE who implemented the specific&#xA;situation to see what the state will do on time expired." Deprecated="False" filter="0" group="General">
+                    <Tunable name="disabled" class="TunableExistance" display="Disabled" muid="BA8CD4E6238D1C12" />
+                    <Tunable type="float" name="enabled" class="TunableSimMinute" default="15" display="Enabled" muid="6B8F5021495E9E50" min="1" max="None" tuning_state="NeedsTuning" Deprecated="False" filter="0" group="General" />
+                </TunableVariant>
+            </TunableTuple>
+        </TunableVariant>
+
+        <TunableTuple name="_diner_eat_state" class="Tunable_DinerEatState" display="Diner Eat State" muid="F529CDB3F2ABB015" description="The state that all the dining group Sims are eating the food." Deprecated="False" filter="0" group="State">
+            <Tunable type="bool" name="allow_join_situation" class="Tunable" default="True" display="Allow Join Situation" muid="DB79720DEE8CE92C" description="Whether the situation is allowed to join at this state." Deprecated="False" filter="0" group="General" />
+            <TunableList name="job_and_role_changes" class="TunableMapping" display="Job And Role Changes" muid="F51D433DF6BC54B8" mapping_key="Situation Job" mapping_value="Role State" description="A mapping between situation jobs and role states that defines&#xA;what role states we want to switch to for sims on which jobs&#xA;when this situation state is entered." Deprecated="False" filter="0" group="General">
+                <TunableTuple class="TunableTuple" muid="34D575E36E9A77F3" Deprecated="False" filter="0" group="General">
+                    <Tunable type="role_state" name="Role State" class="TunableReference" display="Role State" muid="77BA75E6B2D8799B" description="The role state that we will switch sims of the linked job&#xA;into." allow_none="False" Deprecated="False" filter="0" group="General" />
+                    <Tunable type="situation_job" name="Situation Job" class="TunableReference" display="Situation Job" muid="95AEDACE2E5624A7" description="A reference to a SituationJob that we will use to change&#xA;sim's role state." allow_none="False" Deprecated="False" filter="0" group="General" />
+                </TunableTuple>
+            </TunableList>
+            <TunableVariant type="None" name="time_out" class="OptionalTunable" default="disabled" display="Time Out" muid="15159D89A697593" description="How long this state will last before time expired. Please talk to the GPE who implemented the specific&#xA;situation to see what the state will do on time expired." Deprecated="False" filter="0" group="General">
+                <Tunable name="disabled" class="TunableExistance" display="Disabled" muid="E836B8291E02425A" />
+                <Tunable type="float" name="enabled" class="TunableSimMinute" default="15" display="Enabled" muid="5BB9E5D04DACD3F3" min="1" max="None" tuning_state="NeedsTuning" Deprecated="False" filter="0" group="General" />
+            </TunableVariant>
+        </TunableTuple>
+
+        <TunableTuple name="_diner_leave_state" class="Tunable_DinerLeaveState" display="Diner Leave State" muid="945D9E47D804A1F2" description="The state handles the pay bill process or they finished eating and&#xA;decides to leave." Deprecated="False" filter="0" group="State">
+            <Tunable type="bool" name="allow_join_situation" class="Tunable" default="True" display="Allow Join Situation" muid="16F8EBC8E2706B6B" description="Whether the situation is allowed to join at this state." Deprecated="False" filter="0" group="General" />
+            <TunableList name="job_and_role_changes" class="TunableMapping" display="Job And Role Changes" muid="B9412C2C38714F11" mapping_key="Situation Job" mapping_value="Role State" description="A mapping between situation jobs and role states that defines&#xA;what role states we want to switch to for sims on which jobs&#xA;when this situation state is entered." Deprecated="False" filter="0" group="General">
+                <TunableTuple class="TunableTuple" muid="80EEE1CBB2603C2E" Deprecated="False" filter="0" group="General">
+                    <Tunable type="role_state" name="Role State" class="TunableReference" display="Role State" muid="F802F353522F57F9" description="The role state that we will switch sims of the linked job&#xA;into." allow_none="False" Deprecated="False" filter="0" group="General" />
+                    <Tunable type="situation_job" name="Situation Job" class="TunableReference" display="Situation Job" muid="6B6D0ACAEA4440D5" description="A reference to a SituationJob that we will use to change&#xA;sim's role state." allow_none="False" Deprecated="False" filter="0" group="General" />
+                </TunableTuple>
+            </TunableList>
+            <TunableVariant type="None" name="time_out" class="OptionalTunable" default="disabled" display="Time Out" muid="A2AAA2907D933A7E" description="How long this state will last before time expired. Please talk to the GPE who implemented the specific&#xA;situation to see what the state will do on time expired." Deprecated="False" filter="0" group="General">
+                <Tunable name="disabled" class="TunableExistance" display="Disabled" muid="1D3B93C56D018FAE" />
+                <Tunable type="float" name="enabled" class="TunableSimMinute" default="15" display="Enabled" muid="95FC326E11B49C62" min="1" max="None" tuning_state="NeedsTuning" Deprecated="False" filter="0" group="General" />
+            </TunableVariant>
+        </TunableTuple>
+
+        <TunableTuple name="_diner_order_state" class="Tunable_DinerOrderState" display="Diner Order State" muid="FB8D347863F7B31B" description="The state for the dining group to order food. They can either sit&#xA;at the table and order food from waiter, or wait in line to order&#xA;food. The state will switch to eat state when the table order is&#xA;delivered, or last sim in the group finished their order and get&#xA;the food from the chef station." Deprecated="False" filter="0" group="State">
+            <Tunable type="bool" name="allow_join_situation" class="Tunable" default="True" display="Allow Join Situation" muid="8D0B103B75B75815" description="Whether the situation is allowed to join at this state." Deprecated="False" filter="0" group="General" />
+            <TunableList name="job_and_role_changes" class="TunableMapping" display="Job And Role Changes" muid="65EA91715BDCF856" mapping_key="Situation Job" mapping_value="Role State" description="A mapping between situation jobs and role states that defines&#xA;what role states we want to switch to for sims on which jobs&#xA;when this situation state is entered." Deprecated="False" filter="0" group="General">
+                <TunableTuple class="TunableTuple" muid="1CB0603A1FF11A8A" Deprecated="False" filter="0" group="General">
+                    <Tunable type="role_state" name="Role State" class="TunableReference" display="Role State" muid="632A719E61C65565" description="The role state that we will switch sims of the linked job&#xA;into." allow_none="False" Deprecated="False" filter="0" group="General" />
+                    <Tunable type="situation_job" name="Situation Job" class="TunableReference" display="Situation Job" muid="C0979F4C0498677B" description="A reference to a SituationJob that we will use to change&#xA;sim's role state." allow_none="False" Deprecated="False" filter="0" group="General" />
+                </TunableTuple>
+            </TunableList>
+            <TunableVariant type="None" name="time_out" class="OptionalTunable" default="disabled" display="Time Out" muid="2BF118A69AB2A08B" description="How long this state will last before time expired. Please talk to the GPE who implemented the specific&#xA;situation to see what the state will do on time expired." Deprecated="False" filter="0" group="General">
+                <Tunable name="disabled" class="TunableExistance" display="Disabled" muid="5B32B3BD8924EE60" />
+                <Tunable type="float" name="enabled" class="TunableSimMinute" default="15" display="Enabled" muid="36537583ED3E30CF" min="1" max="None" tuning_state="NeedsTuning" Deprecated="False" filter="0" group="General" />
+            </TunableVariant>
+        </TunableTuple>
+
+        <Deleted name="_display_name" muid="6F3FF2FCC155BE2E" />
+
+        <Deleted name="_icon" muid="27762BD85837B209" />
+
+        <Deleted name="_initiating_sim_tests" muid="6119E5985F4DA1F9" />
+
+        <Deleted name="_level_data" muid="BF58DCF38295FA71" />
+
+        <Deleted name="_main_goal_visibility_test" muid="948EEDCD100C787D" />
+
+        <Deleted name="_relationship_between_job_members" muid="399DF9B44B9426C2" />
+
+        <Deleted name="_resident_job" muid="5FA29E1A7A2FD48A" />
+
+        <Tunable type="bool" name="allow_preroll" class="Tunable" default="True" display="Allow Preroll" muid="1BB233E3C8004773" description="If set to True then this situation may advance past arrival on&#xA;preroll. If false then this situation must go through the normal&#xA;flow every time.&#xA;&#xA;This should mainly be used to keep user situations from prerolling." Deprecated="False" filter="0" group="General" />
+
+        <Deleted name="audio_sting_on_start" muid="ABD34437BB7237BF" />
+
+        <Deleted name="background_audio" muid="7FC275A6858642A8" />
+
+        <Tunable type="situation_job" name="blacklist_job" class="TunableReference" display="Blacklist Job" muid="D6AE6131F71E555D" description="The default job used for blacklisting Sims from coming back as&#xA;Diners right away." allow_none="False" Deprecated="False" filter="0" group="General" restrict="SituationJob" />
+
+        <Deleted name="category" muid="F0FCEA23DD2A8509" />
+
+        <Deleted name="compatible_venues" muid="C66C164E359D50CD" />
+
+        <Deleted name="entitlement" muid="B59FCC54C1979482" />
+
+        <Deleted name="force_invite_only" muid="AD173678D9623B1E" />
+
+        <Deleted name="goal_button_text" muid="843E4832E73DB588" />
+
+        <Deleted name="goal_sub_text" muid="A35C86E6A4CFCA5" />
+
+        <TunableVariant type="None" name="group_filter" class="OptionalTunable" default="disabled" display="Group Filter" muid="9E15AAFFAC376104" description="If enabled allows the tuning of an Aggregate Group Filter for who&#xA;should be involved with this group. If disabled then no Sims will&#xA;be added to the group by default. This is probably only desirable &#xA;for user sims situations where the guest list is being created by&#xA;another process." Deprecated="False" filter="0" group="Roles">
+            <Tunable name="disabled" class="TunableExistance" display="Disabled" muid="18E05F0E90E16CA2" />
+            <Tunable type="sim_filter" name="enabled" class="TunableReference" display="Enabled" muid="C37D62F07C0E3627" description="The group filter for these Sims. This filter is what will&#xA;setup the Sims that need to spawn in. The value of the tags will&#xA;determine what sub situation the Sim will end up in." allow_none="False" Deprecated="False" filter="0" group="General" restrict="TunableAggregateFilter" />
+        </TunableVariant>
+
+        <Tunable type="relbit" name="group_rel_bit" class="TunableReference" display="Group Rel Bit" muid="18BE28754FEECD2A" description="The short term relationship bit that get's added to all of the Sims in&#xA;a dining group to help encourage them to socialize with each other." allow_none="False" Deprecated="False" filter="0" group="General" pack_safe="True" />
+
+        <Deleted name="highlight_first_incomplete_minor_goal" muid="3BE5C8A6363B6E35" />
+
+        <Deleted name="job_display_ordering" muid="92832498449AFB20" />
+
+        <Deleted name="main_goal" muid="6964716E9A51F101" />
+
+        <Deleted name="main_goal_audio_sting" muid="C2D5F0A08626C10C" />
+
+        <Deleted name="max_participants" muid="1189FCEF9FC18F8C" />
+
+        <Deleted name="minor_goal_chains" muid="4DAD2F831F498FA8" />
+
+        <Deleted name="recommended_job_object_notification" muid="7AB4F4B0BC9ABF17" />
+
+        <Deleted name="recommended_job_object_text" muid="2A9CB07443A1A803" />
+
+        <Deleted name="screen_slam_bronze" muid="35FB71E2977E0793" />
+
+        <Deleted name="screen_slam_gold" muid="83B8392CACD81AC1" />
+
+        <Deleted name="screen_slam_no_medal" muid="76CDC93485EB4AD2" />
+
+        <Deleted name="screen_slam_silver" muid="6A4112B1F894000" />
+
+        <Deleted name="situation_description" muid="3845C7F2E07A13A7" />
+
+        <TunableList name="situation_job_mapping" class="TunableMapping" display="Situation Job Mapping" muid="8716A97E68CE525C" mapping_key="filter_tag" mapping_value="job" description="A mapping of filter term tag to situation job.&#xA;&#xA;The filter term tag is returned as part of the sim filters used to &#xA;create the guest list for this particular background situation.&#xA;&#xA;The situation job is the job that the Sim will be assigned to in&#xA;the background situation." Deprecated="False" filter="0" group="General">
+            <TunableTuple class="TunableTuple" muid="8ADE1ADBD481D350" Deprecated="False" filter="0" group="General">
+                <TunableEnum type="FilterTermTag" name="filter_tag" class="TunableEnumEntry" default="NO_TAG" display="Filter Tag" muid="A7637D29932334BD" dynamic_entries="filters-tunable.FilterTermTag._elements" static_entries="filters-tunable.FilterTermTag" description="The filter term tag returned with the filter results." Deprecated="False" filter="0" group="General" />
+                <Tunable type="situation_job" name="job" class="TunableReference" display="Job" muid="B8FF4F6FF1D0D693" description="The job the Sim will receive when added to the background&#xA;situation." allow_none="False" Deprecated="False" filter="0" group="General" />
+            </TunableTuple>
+        </TunableList>
+
+        <TunableList name="sub_situation_mapping" class="TunableMapping" display="Sub Situation Mapping" muid="83F0BFCB90A24F71" mapping_key="job" mapping_value="sub_situation" description="A mapping from Job to Sub Situation.&#xA;&#xA;The job is the job that the Sim is beign given in the background &#xA;situation.&#xA;&#xA;the sub situation is the individual sub situation that will be used&#xA;to control the behavior of the Sim in the background situation. The&#xA;background situation will request the different phases of the sub&#xA;situations to affect change in the Sims behavior." Deprecated="False" filter="0" group="General">
+            <TunableTuple class="TunableTuple" muid="A8CEB0DB0A044F49" Deprecated="False" filter="0" group="General">
+                <Tunable type="situation_job" name="job" class="TunableReference" display="Job" muid="8F4C2AF708D1C1F0" description="The job the Sim is being added to in the background situation." allow_none="False" Deprecated="False" filter="0" group="General" />
+                <Tunable type="situation" name="sub_situation" class="TunableReference" display="Sub Situation" muid="A8A9C469C7CBD6EC" description="The sub situation that will be created for the Sim when they&#xA;are given the job that is the corresponding key value." allow_none="False" Deprecated="False" filter="0" group="General" restrict="RestaurantDinerSubSituation" />
+            </TunableTuple>
+        </TunableList>
+
+        <Deleted name="suppress_scoring_progress_bar" muid="C05E61E5980F7CFE" />
+
+        <Deleted name="targeted_situation" muid="E1DE59B9DE60B5D2" />
+
+        <Deleted name="travel_request_behavior" muid="3DD9851D4C543654" />
+
+        <Deleted name="venue_invitation_message" muid="5D1860F61C75A3AD" />
+
+        <Deleted name="venue_situation_player_job" muid="19D500FA008C7F62" />
+    </Instance>
+
+    <VersionHistory>
+        <ActionList>
+            <Action type="kRemove" old_muid="937CF6B95C77173D" />
+        </ActionList>
+
+        <ActionList>
+            <Action type="kRename" old_muid="B03CAB3BA56FEEEE" new_muid="C66C164E359D50CD" />
+        </ActionList>
+
+        <ActionList>
+            <Action type="kRemove" old_muid="9D368E824C2DD0B" />
+            <Action type="kRemove" old_muid="8E0CCCD9580398C1" />
+        </ActionList>
+    </VersionHistory>
+</TuningRoot>

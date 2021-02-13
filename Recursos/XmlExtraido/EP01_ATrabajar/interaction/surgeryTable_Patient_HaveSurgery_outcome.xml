@@ -1,0 +1,577 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<I c="SuperInteraction" i="interaction" m="interactions.base.super_interaction" n="surgeryTable_Patient_HaveSurgery_outcome" s="110026">
+  <V t="participant" n="_icon">
+    <U n="participant">
+      <L n="participant_type">
+        <E>Object</E>
+      </L>
+    </U>
+  </V>
+  <V t="enabled" n="_saveable" />
+  <T n="allow_autonomous">False</T>
+  <T n="allow_user_directed">False</T>
+  <T n="attention_cost">0.5</T>
+  <V n="basic_content" t="flexible_length">
+    <U n="flexible_length">
+      <L n="conditional_actions">
+        <V t="literal">
+          <U n="literal">
+            <L n="conditions">
+              <V t="stat_based">
+                <U n="stat_based">
+                  <T n="stat">110400<!--Commodity: commodity_SicknessSystem_SurgeryTable_PatientTreatments--></T>
+                  <U n="threshold">
+                    <T n="value">4</T>
+                  </U>
+                </U>
+              </V>
+            </L>
+            <E n="interaction_action">EXIT_NATURALLY</E>
+          </U>
+        </V>
+      </L>
+      <V n="content" t="staging_content">
+        <U n="staging_content">
+          <U n="content_set">
+            <L n="affordance_lists">
+              <T>110485<!--AffordanceList: affordanceList_SurgeryTable_TreatmentMixers--></T>
+            </L>
+          </U>
+        </U>
+      </V>
+    </U>
+  </V>
+  <V t="disabled" n="content_score" />
+  <T n="disable_transitions">True</T>
+  <T n="display_name">0x3F4E5DF2<!--String: "Recibiendo cirugía"--></T>
+  <U n="display_name_text_tokens">
+    <L n="tokens">
+      <V t="participant_type">
+        <U n="participant_type">
+          <V t="from_participant" n="objects">
+            <U n="from_participant">
+              <E n="participant">Actor</E>
+            </U>
+          </V>
+        </U>
+      </V>
+      <V t="participant_type">
+        <U n="participant_type">
+          <V t="from_participant" n="objects">
+            <U n="from_participant">
+              <E n="participant">Object</E>
+            </U>
+          </V>
+        </U>
+      </V>
+    </L>
+  </U>
+  <V t="enabled" n="idle_animation">
+    <U n="enabled">
+      <T n="factory">108737<!--AnimationElement: object_SurgeryTable_Patient_Reclined_Idles--></T>
+    </U>
+  </V>
+  <L n="interaction_category_tags">
+    <E>Interaction_Super</E>
+    <E>Interaction_All</E>
+    <E>Interaction_Doctor_TreatPatient</E>
+  </L>
+  <V n="outcome" t="test_based">
+    <U n="test_based">
+      <L n="fallback_outcomes">
+        <U>
+          <U n="outcome">
+            <V t="enabled" n="animation_ref">
+              <U n="enabled">
+                <T n="factory">109857<!--AnimationElement: surgeryTable_ReclinedAction_Glue_Success--></T>
+              </U>
+            </V>
+            <L n="basic_extras">
+              <V t="state_change">
+                <U n="state_change">
+                  <V n="new_value" t="single_value">
+                    <U n="single_value">
+                      <T n="new_value">111843<!--ObjectStateValue: surgeryTable_Patient_Occupany_completed_default--></T>
+                    </U>
+                  </V>
+                  <E n="state_change_target">ActorPostureTarget</E>
+                </U>
+              </V>
+            </L>
+            <L n="continuation">
+              <U>
+                <T n="affordance">13983<!--StandSuperInteraction: sim-stand--></T>
+              </U>
+            </L>
+            <E n="outcome_result">NONE</E>
+          </U>
+        </U>
+      </L>
+      <L n="tested_outcomes">
+        <U>
+          <L n="potential_outcomes">
+            <U>
+              <U n="outcome">
+                <V t="enabled" n="animation_ref">
+                  <U n="enabled">
+                    <T n="factory">109853<!--AnimationElement: surgeryTable_ReclinedAction_Grabber_Success--></T>
+                  </U>
+                </V>
+                <L n="basic_extras">
+                  <V t="state_change">
+                    <U n="state_change">
+                      <V n="new_value" t="single_value">
+                        <U n="single_value">
+                          <T n="new_value">110030<!--ObjectStateValue: surgeryTable_Patient_Occupany_completed_Success--></T>
+                        </U>
+                      </V>
+                      <E n="state_change_target">ActorPostureTarget</E>
+                    </U>
+                  </V>
+                </L>
+                <L n="continuation">
+                  <U>
+                    <T n="affordance">13983<!--StandSuperInteraction: sim-stand--></T>
+                  </U>
+                </L>
+                <L n="loot_list">
+                  <T>110459<!--LootActions: loot_Statistic_SurgeryTable_PatientTreatments_Actor_remove--></T>
+                  <T>106536<!--LootActions: loot_Commodity_SicknessSystem_IllnessDuration_Remove--></T>
+                </L>
+              </U>
+              <U n="weight">
+                <L n="multipliers">
+                  <U>
+                    <T n="multiplier">3</T>
+                    <L n="tests">
+                      <L>
+                        <V t="buff">
+                          <U n="buff">
+                            <V t="enabled" n="whitelist">
+                              <L n="enabled">
+                                <T>105621<!--Buff: buff_SicknessSystem_Illness_BurningTummy--></T>
+                              </L>
+                            </V>
+                          </U>
+                        </V>
+                      </L>
+                    </L>
+                  </U>
+                  <U>
+                    <T n="multiplier">0</T>
+                    <L n="tests">
+                      <L>
+                        <V t="buff">
+                          <U n="buff">
+                            <L n="blacklist">
+                              <T>105621<!--Buff: buff_SicknessSystem_Illness_BurningTummy--></T>
+                            </L>
+                          </U>
+                        </V>
+                      </L>
+                    </L>
+                  </U>
+                </L>
+              </U>
+            </U>
+            <U>
+              <U n="outcome">
+                <V t="enabled" n="animation_ref">
+                  <U n="enabled">
+                    <T n="factory">109855<!--AnimationElement: surgeryTable_ReclinedAction_Grabber_Fail--></T>
+                  </U>
+                </V>
+                <L n="basic_extras">
+                  <V t="state_change">
+                    <U n="state_change">
+                      <V n="new_value" t="single_value">
+                        <U n="single_value">
+                          <T n="new_value">110031<!--ObjectStateValue: surgeryTable_Patient_Occupany_completed_Fail--></T>
+                        </U>
+                      </V>
+                      <E n="state_change_target">ActorPostureTarget</E>
+                    </U>
+                  </V>
+                </L>
+                <L n="continuation">
+                  <U>
+                    <T n="affordance">13983<!--StandSuperInteraction: sim-stand--></T>
+                  </U>
+                </L>
+                <L n="loot_list">
+                  <T>110459<!--LootActions: loot_Statistic_SurgeryTable_PatientTreatments_Actor_remove--></T>
+                </L>
+                <E n="outcome_result">FAILURE</E>
+              </U>
+              <U n="weight">
+                <L n="multipliers">
+                  <U>
+                    <T n="multiplier">3</T>
+                    <L n="tests">
+                      <L>
+                        <V t="buff">
+                          <U n="buff">
+                            <L n="blacklist">
+                              <T>105621<!--Buff: buff_SicknessSystem_Illness_BurningTummy--></T>
+                            </L>
+                          </U>
+                        </V>
+                      </L>
+                    </L>
+                  </U>
+                  <U>
+                    <T n="multiplier">0</T>
+                    <L n="tests">
+                      <L>
+                        <V t="buff">
+                          <U n="buff">
+                            <V t="enabled" n="whitelist">
+                              <L n="enabled">
+                                <T>105621<!--Buff: buff_SicknessSystem_Illness_BurningTummy--></T>
+                              </L>
+                            </V>
+                          </U>
+                        </V>
+                      </L>
+                    </L>
+                  </U>
+                </L>
+              </U>
+            </U>
+          </L>
+          <L n="tests">
+            <L>
+              <V t="buff">
+                <U n="buff">
+                  <V t="enabled" n="whitelist">
+                    <L n="enabled">
+                      <T>108170<!--Buff: buff_SicknessSystem_Diagnosed_BurningTummy--></T>
+                    </L>
+                  </V>
+                </U>
+              </V>
+            </L>
+          </L>
+        </U>
+        <U>
+          <L n="potential_outcomes">
+            <U>
+              <U n="outcome">
+                <V t="enabled" n="animation_ref">
+                  <U n="enabled">
+                    <T n="factory">109859<!--AnimationElement: surgeryTable_ReclinedAction_EggBeater_Success--></T>
+                  </U>
+                </V>
+                <L n="basic_extras">
+                  <V t="state_change">
+                    <U n="state_change">
+                      <V n="new_value" t="single_value">
+                        <U n="single_value">
+                          <T n="new_value">110030<!--ObjectStateValue: surgeryTable_Patient_Occupany_completed_Success--></T>
+                        </U>
+                      </V>
+                      <E n="state_change_target">ActorPostureTarget</E>
+                    </U>
+                  </V>
+                </L>
+                <L n="continuation">
+                  <U>
+                    <T n="affordance">13983<!--StandSuperInteraction: sim-stand--></T>
+                  </U>
+                </L>
+                <L n="loot_list">
+                  <T>110459<!--LootActions: loot_Statistic_SurgeryTable_PatientTreatments_Actor_remove--></T>
+                  <T>106536<!--LootActions: loot_Commodity_SicknessSystem_IllnessDuration_Remove--></T>
+                </L>
+              </U>
+              <U n="weight">
+                <L n="multipliers">
+                  <U>
+                    <T n="multiplier">3</T>
+                    <L n="tests">
+                      <L>
+                        <V t="buff">
+                          <U n="buff">
+                            <V t="enabled" n="whitelist">
+                              <L n="enabled">
+                                <T>105619<!--Buff: buff_SicknessSystem_Illness_ItchyPlumbob--></T>
+                              </L>
+                            </V>
+                          </U>
+                        </V>
+                      </L>
+                    </L>
+                  </U>
+                  <U>
+                    <T n="multiplier">0</T>
+                    <L n="tests">
+                      <L>
+                        <V t="buff">
+                          <U n="buff">
+                            <L n="blacklist">
+                              <T>105619<!--Buff: buff_SicknessSystem_Illness_ItchyPlumbob--></T>
+                            </L>
+                          </U>
+                        </V>
+                      </L>
+                    </L>
+                  </U>
+                </L>
+              </U>
+            </U>
+            <U>
+              <U n="outcome">
+                <V t="enabled" n="animation_ref">
+                  <U n="enabled">
+                    <T n="factory">109851<!--AnimationElement: surgeryTable_ReclinedAction_EggBeater_Fail--></T>
+                  </U>
+                </V>
+                <L n="basic_extras">
+                  <V t="state_change">
+                    <U n="state_change">
+                      <V n="new_value" t="single_value">
+                        <U n="single_value">
+                          <T n="new_value">110031<!--ObjectStateValue: surgeryTable_Patient_Occupany_completed_Fail--></T>
+                        </U>
+                      </V>
+                      <E n="state_change_target">ActorPostureTarget</E>
+                    </U>
+                  </V>
+                </L>
+                <L n="continuation">
+                  <U>
+                    <T n="affordance">13983<!--StandSuperInteraction: sim-stand--></T>
+                  </U>
+                </L>
+                <L n="loot_list">
+                  <T>110459<!--LootActions: loot_Statistic_SurgeryTable_PatientTreatments_Actor_remove--></T>
+                </L>
+                <E n="outcome_result">FAILURE</E>
+              </U>
+              <U n="weight">
+                <L n="multipliers">
+                  <U>
+                    <T n="multiplier">3</T>
+                    <L n="tests">
+                      <L>
+                        <V t="buff">
+                          <U n="buff">
+                            <L n="blacklist">
+                              <T>105619<!--Buff: buff_SicknessSystem_Illness_ItchyPlumbob--></T>
+                            </L>
+                          </U>
+                        </V>
+                      </L>
+                    </L>
+                  </U>
+                  <U>
+                    <T n="multiplier">0</T>
+                    <L n="tests">
+                      <L>
+                        <V t="buff">
+                          <U n="buff">
+                            <V t="enabled" n="whitelist">
+                              <L n="enabled">
+                                <T>105619<!--Buff: buff_SicknessSystem_Illness_ItchyPlumbob--></T>
+                              </L>
+                            </V>
+                          </U>
+                        </V>
+                      </L>
+                    </L>
+                  </U>
+                </L>
+              </U>
+            </U>
+          </L>
+          <L n="tests">
+            <L>
+              <V t="buff">
+                <U n="buff">
+                  <V t="enabled" n="whitelist">
+                    <L n="enabled">
+                      <T>108172<!--Buff: buff_SicknessSystem_Diagnosed_ItchyPlumbob--></T>
+                    </L>
+                  </V>
+                </U>
+              </V>
+            </L>
+          </L>
+        </U>
+        <U>
+          <L n="potential_outcomes">
+            <U>
+              <U n="outcome">
+                <V t="enabled" n="animation_ref">
+                  <U n="enabled">
+                    <T n="factory">109852<!--AnimationElement: surgeryTable_ReclinedAction_Laser_Success--></T>
+                  </U>
+                </V>
+                <L n="basic_extras">
+                  <V t="state_change">
+                    <U n="state_change">
+                      <V n="new_value" t="single_value">
+                        <U n="single_value">
+                          <T n="new_value">110030<!--ObjectStateValue: surgeryTable_Patient_Occupany_completed_Success--></T>
+                        </U>
+                      </V>
+                      <E n="state_change_target">ActorPostureTarget</E>
+                    </U>
+                  </V>
+                </L>
+                <L n="continuation">
+                  <U>
+                    <T n="affordance">13983<!--StandSuperInteraction: sim-stand--></T>
+                  </U>
+                </L>
+                <L n="loot_list">
+                  <T>110459<!--LootActions: loot_Statistic_SurgeryTable_PatientTreatments_Actor_remove--></T>
+                  <T>106536<!--LootActions: loot_Commodity_SicknessSystem_IllnessDuration_Remove--></T>
+                </L>
+              </U>
+              <U n="weight">
+                <L n="multipliers">
+                  <U>
+                    <T n="multiplier">3</T>
+                    <L n="tests">
+                      <L>
+                        <V t="buff">
+                          <U n="buff">
+                            <V t="enabled" n="whitelist">
+                              <L n="enabled">
+                                <T>105615<!--Buff: buff_SicknessSystem_Illness_TripleThreat--></T>
+                              </L>
+                            </V>
+                          </U>
+                        </V>
+                      </L>
+                    </L>
+                  </U>
+                  <U>
+                    <T n="multiplier">0</T>
+                    <L n="tests">
+                      <L>
+                        <V t="buff">
+                          <U n="buff">
+                            <L n="blacklist">
+                              <T>105615<!--Buff: buff_SicknessSystem_Illness_TripleThreat--></T>
+                            </L>
+                          </U>
+                        </V>
+                      </L>
+                    </L>
+                  </U>
+                </L>
+              </U>
+            </U>
+            <U>
+              <U n="outcome">
+                <V t="enabled" n="animation_ref">
+                  <U n="enabled">
+                    <T n="factory">109856<!--AnimationElement: surgeryTable_ReclinedAction_Laser_Fail--></T>
+                  </U>
+                </V>
+                <L n="basic_extras">
+                  <V t="state_change">
+                    <U n="state_change">
+                      <V n="new_value" t="single_value">
+                        <U n="single_value">
+                          <T n="new_value">110031<!--ObjectStateValue: surgeryTable_Patient_Occupany_completed_Fail--></T>
+                        </U>
+                      </V>
+                      <E n="state_change_target">ActorPostureTarget</E>
+                    </U>
+                  </V>
+                </L>
+                <L n="continuation">
+                  <U>
+                    <T n="affordance">13983<!--StandSuperInteraction: sim-stand--></T>
+                  </U>
+                </L>
+                <L n="loot_list">
+                  <T>110459<!--LootActions: loot_Statistic_SurgeryTable_PatientTreatments_Actor_remove--></T>
+                </L>
+                <E n="outcome_result">FAILURE</E>
+              </U>
+              <U n="weight">
+                <L n="multipliers">
+                  <U>
+                    <T n="multiplier">3</T>
+                    <L n="tests">
+                      <L>
+                        <V t="buff">
+                          <U n="buff">
+                            <L n="blacklist">
+                              <T>105615<!--Buff: buff_SicknessSystem_Illness_TripleThreat--></T>
+                            </L>
+                          </U>
+                        </V>
+                      </L>
+                    </L>
+                  </U>
+                  <U>
+                    <T n="multiplier">0</T>
+                    <L n="tests">
+                      <L>
+                        <V t="buff">
+                          <U n="buff">
+                            <V t="enabled" n="whitelist">
+                              <L n="enabled">
+                                <T>105615<!--Buff: buff_SicknessSystem_Illness_TripleThreat--></T>
+                              </L>
+                            </V>
+                          </U>
+                        </V>
+                      </L>
+                    </L>
+                  </U>
+                </L>
+              </U>
+            </U>
+          </L>
+          <L n="tests">
+            <L>
+              <V t="buff">
+                <U n="buff">
+                  <V t="enabled" n="whitelist">
+                    <L n="enabled">
+                      <T>108175<!--Buff: buff_SicknessSystem_Diagnosed_TripleThreat--></T>
+                    </L>
+                  </V>
+                </U>
+              </V>
+            </L>
+          </L>
+        </U>
+      </L>
+    </U>
+  </V>
+  <U n="progress_bar_enabled">
+    <T n="bar_enabled">False</T>
+  </U>
+  <E n="scoring_priority">NORMAL</E>
+  <T n="subaction_selection_weight">1</T>
+  <V t="literal" n="super_affordance_compatibility">
+    <U n="literal">
+      <V n="default_inclusion" t="exclude_all" />
+    </U>
+  </V>
+  <E n="target_type">OBJECT</E>
+  <L n="test_globals">
+    <V t="sim_info">
+      <U n="sim_info">
+        <V t="specified" n="ages" />
+        <V t="specified" n="species">
+          <U n="specified">
+            <L n="species">
+              <E />
+            </L>
+          </U>
+        </V>
+        <E n="who">Actor</E>
+      </U>
+    </V>
+  </L>
+  <T n="time_overhead">30</T>
+  <T n="visible">False</T>
+</I>

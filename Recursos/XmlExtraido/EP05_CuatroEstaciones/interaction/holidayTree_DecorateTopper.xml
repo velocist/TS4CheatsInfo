@@ -1,0 +1,823 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<I c="SuperInteraction" i="interaction" m="interactions.base.super_interaction" n="holidayTree_DecorateTopper" s="180448">
+  <L n="_constraints">
+    <U>
+      <L n="constraints">
+        <U>
+          <V n="value" t="circle">
+            <U n="circle">
+              <T n="ideal_radius">1.15</T>
+              <T n="ideal_radius_width">0.2</T>
+              <T n="radius">1.4</T>
+            </U>
+          </V>
+        </U>
+        <U>
+          <V n="value" t="facing" />
+        </U>
+      </L>
+    </U>
+  </L>
+  <V t="enabled" n="_saveable" />
+  <T n="allow_autonomous">False</T>
+  <T n="attention_cost">0.5</T>
+  <V n="basic_content" t="flexible_length">
+    <U n="flexible_length">
+      <L n="conditional_actions">
+        <V t="list_reference">
+          <T n="list_reference">40705<!--ExitConditionList: ExitConditionList_MotivesNearFail--></T>
+        </V>
+        <V t="literal">
+          <U n="literal">
+            <L n="conditions">
+              <V t="state_based">
+                <U n="state_based">
+                  <V n="state" t="on_trigger">
+                    <T n="on_trigger">39478<!--CommodityBasedObjectStateValue: FireState_Burn_Incinerate_Burning--></T>
+                  </V>
+                </U>
+              </V>
+            </L>
+            <E n="interaction_action">EXIT_CANCEL</E>
+          </U>
+        </V>
+        <V t="list_reference">
+          <T n="list_reference">40144<!--ExitConditionList: ExitConditionList_EmotionMiserable--></T>
+        </V>
+        <V t="literal">
+          <U n="literal">
+            <L n="conditions">
+              <V t="stat_based">
+                <U n="stat_based">
+                  <T n="stat">180423<!--Statistic: statistic_HolidayTree_Topper_Progress--></T>
+                  <U n="threshold">
+                    <T n="value">100</T>
+                  </U>
+                  <E n="who">Object</E>
+                </U>
+              </V>
+            </L>
+            <E n="interaction_action">EXIT_NATURALLY</E>
+            <E n="progress_bar_action">FORCE_USE_CONDITION</E>
+          </U>
+        </V>
+      </L>
+      <V t="staging_content" n="content">
+        <U n="staging_content">
+          <U n="content_set">
+            <L n="affordance_links">
+              <T>180521<!--MixerInteraction: mixer_HolidayTree_Passive--></T>
+              <T>180522<!--MixerInteraction: mixer_HolidayTree_Decorate--></T>
+            </L>
+          </U>
+        </U>
+      </V>
+      <V n="periodic_stat_change" t="enabled">
+        <U n="enabled">
+          <U n="operation_actions">
+            <L n="actions">
+              <T>127030<!--LootActions: rel_Gain_Small_OtherInteractingSims--></T>
+            </L>
+            <T n="alarm_interval">5</T>
+          </U>
+          <L n="operations">
+            <V t="statistic_change">
+              <U n="statistic_change">
+                <T n="amount">25</T>
+                <T n="stat">180423<!--Statistic: statistic_HolidayTree_Topper_Progress--></T>
+                <L n="subject">
+                  <E>Object</E>
+                </L>
+                <L n="tests">
+                  <L>
+                    <V t="sim_info">
+                      <U n="sim_info">
+                        <V t="enabled" n="is_active_sim" />
+                      </U>
+                    </V>
+                  </L>
+                </L>
+              </U>
+            </V>
+            <V t="statistic_change">
+              <U n="statistic_change">
+                <T n="amount">5</T>
+                <T n="stat">180423<!--Statistic: statistic_HolidayTree_Topper_Progress--></T>
+                <L n="subject">
+                  <E>Object</E>
+                </L>
+                <L n="tests">
+                  <L>
+                    <V t="sim_info">
+                      <U n="sim_info">
+                        <V t="enabled" n="is_active_sim">
+                          <T n="enabled">False</T>
+                        </V>
+                      </U>
+                    </V>
+                  </L>
+                </L>
+              </U>
+            </V>
+            <V t="statistic_change">
+              <U n="statistic_change">
+                <T n="amount">0.8</T>
+                <T n="stat">16655<!--Commodity: motive_Fun--></T>
+              </U>
+            </V>
+            <V t="statistic_change">
+              <U n="statistic_change">
+                <T n="amount">0.8</T>
+                <E n="periodic_change_behavior">RETEST_ON_INTERVAL</E>
+                <T n="stat">16658<!--Commodity: motive_Social--></T>
+                <L n="tests">
+                  <L>
+                    <V t="participant_running_interaction">
+                      <U n="participant_running_interaction">
+                        <L n="affordances">
+                          <T>180501<!--SuperInteraction: holidayTree_DecorateGarland--></T>
+                          <T>180447<!--SuperInteraction: holidayTree_DecorateOrnaments--></T>
+                          <T>181661<!--SuperInteraction: holidayTree_DecorateSkirt--></T>
+                          <T>180448<!--SuperInteraction: holidayTree_DecorateTopper--></T>
+                        </L>
+                        <E n="participant">OtherSimsInteractingWithTarget</E>
+                      </U>
+                    </V>
+                  </L>
+                </L>
+              </U>
+            </V>
+          </L>
+        </U>
+      </V>
+    </U>
+  </V>
+  <L n="basic_extras">
+    <V t="loot">
+      <U n="loot">
+        <L n="loot_list">
+          <T>161581<!--LootActions: loot_Statistic_LifeSkill_Responsibility_Gain_Small--></T>
+        </L>
+      </U>
+    </V>
+  </L>
+  <L n="basic_liabilities">
+    <V t="route_goal_suppression">
+      <U n="route_goal_suppression">
+        <T n="radius">0.5</T>
+      </U>
+    </V>
+  </L>
+  <V t="enabled" n="basic_reserve_object">
+    <U n="enabled">
+      <L n="subject_list">
+        <U>
+          <V t="multi" n="reserve_type" />
+        </U>
+      </L>
+    </U>
+  </V>
+  <V t="enabled" n="canonical_animation">
+    <U n="enabled">
+      <T n="factory">181888<!--AnimationElement: holidayTree_Decorate--></T>
+    </U>
+  </V>
+  <T n="category">180473<!--PieMenuCategory: pieMenuCategory_HolidayTree_Decorate--></T>
+  <V t="disabled" n="content_score" />
+  <T n="display_name">0xE8D0E40C<!--String: "Colocar ornamento superior"--></T>
+  <V t="testable" n="display_name_overrides">
+    <U n="testable">
+      <L n="overrides">
+        <U>
+          <V t="disabled" n="new_display_name" />
+          <V t="enabled" n="new_pie_menu_icon">
+            <V t="tradition" n="enabled" />
+          </V>
+          <L n="test">
+            <L>
+              <V t="holiday_tradition">
+                <U n="holiday_tradition">
+                  <U n="tradition_filter">
+                    <V n="whitelist" t="specify">
+                      <U n="specify">
+                        <L n="whitelist">
+                          <T>182110<!--HolidayTradition: holidayTradition_BeFestive--></T>
+                          <T>182134<!--HolidayTradition: holidayTradition_CelebrateWithLights--></T>
+                        </L>
+                      </U>
+                    </V>
+                  </U>
+                </U>
+              </V>
+            </L>
+          </L>
+        </U>
+      </L>
+    </U>
+  </V>
+  <U n="display_name_text_tokens">
+    <L n="tokens">
+      <V t="participant_type">
+        <U n="participant_type">
+          <V t="from_participant" n="objects">
+            <U n="from_participant">
+              <E n="participant">Actor</E>
+            </U>
+          </V>
+        </U>
+      </V>
+      <V t="participant_type">
+        <U n="participant_type">
+          <V t="from_participant" n="objects">
+            <U n="from_participant">
+              <E n="participant">Object</E>
+            </U>
+          </V>
+        </U>
+      </V>
+    </L>
+  </U>
+  <L n="interaction_category_tags">
+    <E>Interaction_Super</E>
+    <E>Interaction_All</E>
+    <E>Interaction_Festive</E>
+  </L>
+  <V n="outcome" t="test_based">
+    <U n="test_based">
+      <L n="fallback_outcomes">
+        <U>
+          <U n="outcome">
+            <L n="loot_list">
+              <T>180633<!--LootActions: loot_HolidayTree_DecorationSuccess--></T>
+            </L>
+          </U>
+          <U n="weight">
+            <L n="multipliers">
+              <U>
+                <T n="multiplier">0</T>
+                <L n="tests">
+                  <L>
+                    <V t="object_criteria">
+                      <U n="object_criteria">
+                        <V t="enabled" n="desired_state_threshold">
+                          <U n="enabled">
+                            <E n="comparison">EQUAL</E>
+                            <T n="value">181891<!--ObjectStateValue: holidayTree_Objects_Fail--></T>
+                          </U>
+                        </V>
+                        <V t="tags" n="identity_test">
+                          <U n="tags">
+                            <L n="tag_set">
+                              <E>Func_HolidayTree_Topper</E>
+                            </L>
+                          </U>
+                        </V>
+                        <T n="owned">False</T>
+                        <V t="single_object" n="subject_specific_tests">
+                          <U n="single_object">
+                            <E n="target">ObjectChildren</E>
+                          </U>
+                        </V>
+                      </U>
+                    </V>
+                  </L>
+                </L>
+              </U>
+            </L>
+          </U>
+        </U>
+        <U>
+          <U n="outcome">
+            <L n="loot_list">
+              <T>180638<!--LootActions: loot_HolidayTree_DecorationFail--></T>
+            </L>
+            <E n="outcome_result">FAILURE</E>
+          </U>
+          <U n="weight">
+            <L n="multipliers">
+              <U>
+                <T n="multiplier">0</T>
+                <L n="tests">
+                  <L>
+                    <V t="object_criteria">
+                      <U n="object_criteria">
+                        <V t="enabled" n="desired_state_threshold">
+                          <U n="enabled">
+                            <E n="comparison">EQUAL</E>
+                            <T n="value">181892<!--ObjectStateValue: holidayTree_Objects_Success--></T>
+                          </U>
+                        </V>
+                        <V t="tags" n="identity_test">
+                          <U n="tags">
+                            <L n="tag_set">
+                              <E>Func_HolidayTree_Topper</E>
+                            </L>
+                          </U>
+                        </V>
+                        <T n="owned">False</T>
+                        <V t="single_object" n="subject_specific_tests">
+                          <U n="single_object">
+                            <E n="target">ObjectChildren</E>
+                          </U>
+                        </V>
+                      </U>
+                    </V>
+                  </L>
+                </L>
+              </U>
+            </L>
+          </U>
+        </U>
+      </L>
+      <L n="tested_outcomes">
+        <U>
+          <L n="potential_outcomes">
+            <U>
+              <U n="outcome">
+                <L n="basic_extras">
+                  <V t="vfx">
+                    <U n="vfx">
+                      <U n="vfx">
+                        <T n="effect_name">ep05_holiday_tree_topper</T>
+                      </U>
+                    </U>
+                  </V>
+                  <V t="create_object">
+                    <U n="create_object">
+                      <V t="definition" n="creation_data">
+                        <U n="definition">
+                          <T n="definition">190467</T>
+                        </U>
+                      </V>
+                      <V t="slot" n="location">
+                        <U n="slot">
+                          <V t="by_reference" n="parent_slot">
+                            <T n="by_reference">slot_HolidayTree_Decoration_Topper</T>
+                          </V>
+                        </U>
+                      </V>
+                    </U>
+                  </V>
+                </L>
+                <L n="loot_list">
+                  <T>180633<!--LootActions: loot_HolidayTree_DecorationSuccess--></T>
+                </L>
+              </U>
+              <U n="weight">
+                <T n="base_value">15</T>
+              </U>
+            </U>
+            <U>
+              <U n="outcome">
+                <L n="basic_extras">
+                  <V t="create_object">
+                    <U n="create_object">
+                      <V t="definition" n="creation_data">
+                        <U n="definition">
+                          <T n="definition">190467</T>
+                        </U>
+                      </V>
+                      <L n="initial_states">
+                        <U>
+                          <T n="state">181891<!--ObjectStateValue: holidayTree_Objects_Fail--></T>
+                        </U>
+                      </L>
+                      <V t="slot" n="location">
+                        <U n="slot">
+                          <V t="by_reference" n="parent_slot">
+                            <T n="by_reference">slot_HolidayTree_Decoration_Topper</T>
+                          </V>
+                        </U>
+                      </V>
+                    </U>
+                  </V>
+                </L>
+                <L n="loot_list">
+                  <T>180638<!--LootActions: loot_HolidayTree_DecorationFail--></T>
+                </L>
+                <E n="outcome_result">FAILURE</E>
+              </U>
+              <U n="weight">
+                <L n="multipliers">
+                  <U>
+                    <T n="multiplier">0</T>
+                    <L n="tests">
+                      <L>
+                        <V t="mood">
+                          <U n="mood">
+                            <T n="mood">14634<!--Mood: Mood_Confident--></T>
+                          </U>
+                        </V>
+                      </L>
+                      <L>
+                        <V t="mood">
+                          <U n="mood">
+                            <T n="mood">14636<!--Mood: Mood_Energized--></T>
+                          </U>
+                        </V>
+                      </L>
+                      <L>
+                        <V t="mood">
+                          <U n="mood">
+                            <T n="mood">14637<!--Mood: Mood_Fine--></T>
+                          </U>
+                        </V>
+                      </L>
+                      <L>
+                        <V t="mood">
+                          <U n="mood">
+                            <T n="mood">14638<!--Mood: Mood_Flirty--></T>
+                          </U>
+                        </V>
+                      </L>
+                      <L>
+                        <V t="mood">
+                          <U n="mood">
+                            <T n="mood">14639<!--Mood: Mood_Focused--></T>
+                          </U>
+                        </V>
+                      </L>
+                      <L>
+                        <V t="mood">
+                          <U n="mood">
+                            <T n="mood">14640<!--Mood: Mood_Happy--></T>
+                          </U>
+                        </V>
+                      </L>
+                      <L>
+                        <V t="mood">
+                          <U n="mood">
+                            <T n="mood">14641<!--Mood: Mood_Inspired--></T>
+                          </U>
+                        </V>
+                      </L>
+                      <L>
+                        <V t="mood">
+                          <U n="mood">
+                            <T n="mood">14642<!--Mood: Mood_Playful--></T>
+                          </U>
+                        </V>
+                      </L>
+                    </L>
+                  </U>
+                </L>
+              </U>
+            </U>
+          </L>
+          <L n="tests">
+            <L>
+              <V t="state">
+                <U n="state">
+                  <T n="value">180477<!--ObjectStateValue: holidayTree_Topper_Type1--></T>
+                </U>
+              </V>
+              <V t="slot_test">
+                <U n="slot_test">
+                  <V t="by_reference" n="child_slot">
+                    <T n="by_reference">slot_HolidayTree_Decoration_Topper</T>
+                  </V>
+                  <V t="has_empty_slot" n="slot_test_type" />
+                </U>
+              </V>
+            </L>
+          </L>
+        </U>
+        <U>
+          <L n="potential_outcomes">
+            <U>
+              <U n="outcome">
+                <L n="basic_extras">
+                  <V t="vfx">
+                    <U n="vfx">
+                      <U n="vfx">
+                        <T n="effect_name">ep05_holiday_tree_topper</T>
+                      </U>
+                    </U>
+                  </V>
+                  <V t="create_object">
+                    <U n="create_object">
+                      <V t="definition" n="creation_data">
+                        <U n="definition">
+                          <T n="definition">194454</T>
+                        </U>
+                      </V>
+                      <V t="slot" n="location">
+                        <U n="slot">
+                          <V t="by_reference" n="parent_slot">
+                            <T n="by_reference">slot_HolidayTree_Decoration_Topper</T>
+                          </V>
+                        </U>
+                      </V>
+                    </U>
+                  </V>
+                </L>
+                <L n="loot_list">
+                  <T>180633<!--LootActions: loot_HolidayTree_DecorationSuccess--></T>
+                </L>
+              </U>
+            </U>
+            <U>
+              <U n="outcome">
+                <L n="basic_extras">
+                  <V t="create_object">
+                    <U n="create_object">
+                      <V t="definition" n="creation_data">
+                        <U n="definition">
+                          <T n="definition">194454</T>
+                        </U>
+                      </V>
+                      <L n="initial_states">
+                        <U>
+                          <T n="state">181891<!--ObjectStateValue: holidayTree_Objects_Fail--></T>
+                        </U>
+                      </L>
+                      <V t="slot" n="location">
+                        <U n="slot">
+                          <V t="by_reference" n="parent_slot">
+                            <T n="by_reference">slot_HolidayTree_Decoration_Topper</T>
+                          </V>
+                        </U>
+                      </V>
+                    </U>
+                  </V>
+                </L>
+                <L n="loot_list">
+                  <T>180638<!--LootActions: loot_HolidayTree_DecorationFail--></T>
+                </L>
+                <E n="outcome_result">FAILURE</E>
+              </U>
+              <U n="weight">
+                <L n="multipliers">
+                  <U>
+                    <T n="multiplier">0</T>
+                    <L n="tests">
+                      <L>
+                        <V t="mood">
+                          <U n="mood">
+                            <T n="mood">14634<!--Mood: Mood_Confident--></T>
+                          </U>
+                        </V>
+                      </L>
+                      <L>
+                        <V t="mood">
+                          <U n="mood">
+                            <T n="mood">14636<!--Mood: Mood_Energized--></T>
+                          </U>
+                        </V>
+                      </L>
+                      <L>
+                        <V t="mood">
+                          <U n="mood">
+                            <T n="mood">14637<!--Mood: Mood_Fine--></T>
+                          </U>
+                        </V>
+                      </L>
+                      <L>
+                        <V t="mood">
+                          <U n="mood">
+                            <T n="mood">14638<!--Mood: Mood_Flirty--></T>
+                          </U>
+                        </V>
+                      </L>
+                      <L>
+                        <V t="mood">
+                          <U n="mood">
+                            <T n="mood">14639<!--Mood: Mood_Focused--></T>
+                          </U>
+                        </V>
+                      </L>
+                      <L>
+                        <V t="mood">
+                          <U n="mood">
+                            <T n="mood">14640<!--Mood: Mood_Happy--></T>
+                          </U>
+                        </V>
+                      </L>
+                      <L>
+                        <V t="mood">
+                          <U n="mood">
+                            <T n="mood">14641<!--Mood: Mood_Inspired--></T>
+                          </U>
+                        </V>
+                      </L>
+                      <L>
+                        <V t="mood">
+                          <U n="mood">
+                            <T n="mood">14642<!--Mood: Mood_Playful--></T>
+                          </U>
+                        </V>
+                      </L>
+                    </L>
+                  </U>
+                </L>
+              </U>
+            </U>
+          </L>
+          <L n="tests">
+            <L>
+              <V t="state">
+                <U n="state">
+                  <T n="value">180476<!--ObjectStateValue: holidayTree_Topper_Type3--></T>
+                </U>
+              </V>
+              <V t="slot_test">
+                <U n="slot_test">
+                  <V t="by_reference" n="child_slot">
+                    <T n="by_reference">slot_HolidayTree_Decoration_Topper</T>
+                  </V>
+                  <V t="has_empty_slot" n="slot_test_type" />
+                </U>
+              </V>
+            </L>
+          </L>
+        </U>
+        <U>
+          <L n="potential_outcomes">
+            <U>
+              <U n="outcome">
+                <L n="basic_extras">
+                  <V t="vfx">
+                    <U n="vfx">
+                      <U n="vfx">
+                        <T n="effect_name">ep05_holiday_tree_topper</T>
+                      </U>
+                    </U>
+                  </V>
+                  <V t="create_object">
+                    <U n="create_object">
+                      <V t="definition" n="creation_data">
+                        <U n="definition">
+                          <T n="definition">194456</T>
+                        </U>
+                      </V>
+                      <V t="slot" n="location">
+                        <U n="slot">
+                          <V t="by_reference" n="parent_slot">
+                            <T n="by_reference">slot_HolidayTree_Decoration_Topper</T>
+                          </V>
+                        </U>
+                      </V>
+                    </U>
+                  </V>
+                </L>
+                <L n="loot_list">
+                  <T>180633<!--LootActions: loot_HolidayTree_DecorationSuccess--></T>
+                </L>
+              </U>
+            </U>
+            <U>
+              <U n="outcome">
+                <L n="basic_extras">
+                  <V t="create_object">
+                    <U n="create_object">
+                      <V t="definition" n="creation_data">
+                        <U n="definition">
+                          <T n="definition">194456</T>
+                        </U>
+                      </V>
+                      <L n="initial_states">
+                        <U>
+                          <T n="state">181891<!--ObjectStateValue: holidayTree_Objects_Fail--></T>
+                        </U>
+                      </L>
+                      <V t="slot" n="location">
+                        <U n="slot">
+                          <V t="by_reference" n="parent_slot">
+                            <T n="by_reference">slot_HolidayTree_Decoration_Topper</T>
+                          </V>
+                        </U>
+                      </V>
+                    </U>
+                  </V>
+                </L>
+                <L n="loot_list">
+                  <T>180638<!--LootActions: loot_HolidayTree_DecorationFail--></T>
+                </L>
+                <E n="outcome_result">FAILURE</E>
+              </U>
+              <U n="weight">
+                <L n="multipliers">
+                  <U>
+                    <T n="multiplier">0</T>
+                    <L n="tests">
+                      <L>
+                        <V t="mood">
+                          <U n="mood">
+                            <T n="mood">14634<!--Mood: Mood_Confident--></T>
+                          </U>
+                        </V>
+                      </L>
+                      <L>
+                        <V t="mood">
+                          <U n="mood">
+                            <T n="mood">14636<!--Mood: Mood_Energized--></T>
+                          </U>
+                        </V>
+                      </L>
+                      <L>
+                        <V t="mood">
+                          <U n="mood">
+                            <T n="mood">14637<!--Mood: Mood_Fine--></T>
+                          </U>
+                        </V>
+                      </L>
+                      <L>
+                        <V t="mood">
+                          <U n="mood">
+                            <T n="mood">14638<!--Mood: Mood_Flirty--></T>
+                          </U>
+                        </V>
+                      </L>
+                      <L>
+                        <V t="mood">
+                          <U n="mood">
+                            <T n="mood">14639<!--Mood: Mood_Focused--></T>
+                          </U>
+                        </V>
+                      </L>
+                      <L>
+                        <V t="mood">
+                          <U n="mood">
+                            <T n="mood">14640<!--Mood: Mood_Happy--></T>
+                          </U>
+                        </V>
+                      </L>
+                      <L>
+                        <V t="mood">
+                          <U n="mood">
+                            <T n="mood">14641<!--Mood: Mood_Inspired--></T>
+                          </U>
+                        </V>
+                      </L>
+                      <L>
+                        <V t="mood">
+                          <U n="mood">
+                            <T n="mood">14642<!--Mood: Mood_Playful--></T>
+                          </U>
+                        </V>
+                      </L>
+                    </L>
+                  </U>
+                </L>
+              </U>
+            </U>
+          </L>
+          <L n="tests">
+            <L>
+              <V t="state">
+                <U n="state">
+                  <T n="value">180478<!--ObjectStateValue: holidayTree_Topper_Type2--></T>
+                </U>
+              </V>
+              <V t="slot_test">
+                <U n="slot_test">
+                  <V t="by_reference" n="child_slot">
+                    <T n="by_reference">slot_HolidayTree_Decoration_Topper</T>
+                  </V>
+                  <V t="has_empty_slot" n="slot_test_type" />
+                </U>
+              </V>
+            </L>
+          </L>
+        </U>
+      </L>
+    </U>
+  </V>
+  <U n="progress_bar_enabled">
+    <V n="force_listen_statistic" t="enabled">
+      <U n="enabled">
+        <T n="statistic">180423<!--Statistic: statistic_HolidayTree_Topper_Progress--></T>
+        <E n="subject">Object</E>
+        <U n="target_value">
+          <T n="value">100</T>
+        </U>
+      </U>
+    </V>
+  </U>
+  <E n="scoring_priority">NORMAL</E>
+  <T n="subaction_selection_weight">1</T>
+  <E n="target_type">OBJECT</E>
+  <L n="test_globals">
+    <V t="sim_info">
+      <U n="sim_info">
+        <V t="specified" n="ages">
+          <L n="specified">
+            <E>TEEN</E>
+            <E>YOUNGADULT</E>
+            <E>ADULT</E>
+            <E>ELDER</E>
+          </L>
+        </V>
+        <V t="specified" n="species">
+          <U n="specified">
+            <L n="species">
+              <E />
+            </L>
+          </U>
+        </V>
+        <E n="who">Actor</E>
+      </U>
+    </V>
+  </L>
+  <T n="time_overhead">30</T>
+</I>

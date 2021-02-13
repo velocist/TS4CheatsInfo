@@ -1,0 +1,90 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<M n="world.travel_group_tuning" s="8889660891848200236">
+  <C n="TravelGroupTuning">
+    <L n="INSTANCED_SIM_LOOT">
+      <T>251289<!--LootActions: loot_OnVacation_SimInstanced--></T>
+    </L>
+    <U n="RESIDENTIAL_WELCOME_NOTIFICATION">
+      <V n="text" t="single">
+        <T n="single">0xBBE5329D<!--String: "¿Se te ha olvidado algo? ¡Puedes comprar una gran variedad de artículos para enriquecer tu experiencia vacacional desde el teléfono o el buzón!"--></T>
+      </V>
+      <L n="ui_responses">
+        <U>
+          <V n="response_command" t="enabled">
+            <V n="enabled" t="literal">
+              <U n="literal">
+                <L n="arguments">
+                  <V t="string">
+                    <U n="string">
+                      <T n="arg_value">purchase_Vacation_notification</T>
+                    </U>
+                  </V>
+                </L>
+                <T n="command">interactions.push</T>
+              </U>
+            </V>
+          </V>
+          <T n="text">0x2F37A881<!--String: "Pedir material ya"--></T>
+          <E n="ui_request">SEND_COMMAND</E>
+        </U>
+      </L>
+    </U>
+    <L n="SS3_PARK_INTERACTIONS">
+      <T>249248<!--AggregateSuperInteraction: aggregateSi_NPC_SS3_Park--></T>
+    </L>
+    <U n="VACATION_CONTINUE_NOTIFICATION">
+      <V n="text" t="single">
+        <T n="single">0x356824BD<!--String: "¡Hola de nuevo! El alquiler vacacional de la familia {0.String} finaliza dentro de {1.Timespan}.\n\n¡Reserva más días de vacaciones para prolongar su estancia!"--></T>
+      </V>
+      <L n="ui_responses">
+        <U>
+          <V n="response_command" t="enabled">
+            <V n="enabled" t="literal">
+              <U n="literal">
+                <T n="command">travel_groups.show_extend_vacation</T>
+              </U>
+            </V>
+          </V>
+          <T n="text">0xE304EFA6<!--String: "Prolongar vacaciones"--></T>
+          <E n="ui_request">SEND_COMMAND</E>
+        </U>
+      </L>
+    </U>
+    <U n="VACATION_ENDING_DAYS_TNS">
+      <U n="notification_to_show">
+        <V t="enabled" n="icon">
+          <V n="enabled" t="resource_key">
+            <U n="resource_key">
+              <T p="InGame\UI\Icons\Headlines\Final\headline_GoHome.png" n="key">2f7d0004:00000000:f2ce027635927c83</T>
+            </U>
+          </V>
+        </V>
+        <E n="information_level">PLAYER</E>
+        <V n="text" t="single">
+          <T n="single">0xA990E48F<!--String: "Solo queda 1 día de vacaciones. Para ampliar el viaje elige Prolongar vacaciones en el teléfono o el ordenador."--></T>
+        </V>
+        <V n="title" t="enabled">
+          <T n="enabled">0x74897BAD<!--String: "Vacaciones próximas a su fin"--></T>
+        </V>
+      </U>
+    </U>
+    <U n="VACATION_ENDING_HOURS_TNS">
+      <U n="notification_to_show">
+        <V t="enabled" n="icon">
+          <V n="enabled" t="resource_key">
+            <U n="resource_key">
+              <T p="InGame\UI\Icons\Headlines\Final\headline_GoHome.png" n="key">2f7d0004:00000000:f2ce027635927c83</T>
+            </U>
+          </V>
+        </V>
+        <E n="information_level">PLAYER</E>
+        <V n="text" t="single">
+          <T n="single">0xFB5A3E1F<!--String: "Solo quedan {0.Number} horas de vacaciones. Convendría que empezases a hacer el equipaje y a despedirte."--></T>
+        </V>
+        <V n="title" t="enabled">
+          <T n="enabled">0xFB534EBD<!--String: "Vacaciones próximas a su fin"--></T>
+        </V>
+      </U>
+    </U>
+  </C>
+</M>

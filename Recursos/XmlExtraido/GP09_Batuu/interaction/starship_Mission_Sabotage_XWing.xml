@@ -1,0 +1,295 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<I c="SuperInteraction" i="interaction" m="interactions.base.super_interaction" n="starship_Mission_Sabotage_XWing" s="238643">
+  <V t="enabled" n="_saveable" />
+  <T n="attention_cost">0.5</T>
+  <V n="basic_content" t="flexible_length">
+    <U n="flexible_length">
+      <L n="conditional_actions">
+        <V t="list_reference">
+          <T n="list_reference">40705<!--ExitConditionList: ExitConditionList_MotivesNearFail--></T>
+        </V>
+        <V t="literal">
+          <U n="literal">
+            <L n="conditions">
+              <V t="state_based">
+                <U n="state_based">
+                  <V n="state" t="on_trigger">
+                    <T n="on_trigger">238526<!--ObjectStateValue: starship_Idle_Space--></T>
+                  </V>
+                </U>
+              </V>
+            </L>
+            <E n="interaction_action">EXIT_CANCEL</E>
+            <L n="loot_actions">
+              <T>239512<!--LootActions: loot_Batuu_Starship_Broken_Reaction--></T>
+            </L>
+          </U>
+        </V>
+        <V t="literal">
+          <U n="literal">
+            <L n="conditions">
+              <V t="buff_based">
+                <U n="buff_based">
+                  <T n="buff">226416<!--Buff: buff_Generic_CancelInteraction--></T>
+                </U>
+              </V>
+            </L>
+            <E n="interaction_action">EXIT_CANCEL</E>
+          </U>
+        </V>
+        <V t="literal">
+          <U n="literal">
+            <L n="conditions">
+              <V t="time_based">
+                <U n="time_based">
+                  <T n="max_time">60</T>
+                  <T n="min_time">15</T>
+                </U>
+              </V>
+            </L>
+            <E n="interaction_action">EXIT_NATURALLY</E>
+            <L n="tests">
+              <L>
+                <V t="skill_test">
+                  <U n="skill_test">
+                    <T n="skill">16707<!--Skill: statistic_Skill_AdultMajor_Mischief--></T>
+                    <V n="skill_range" t="interval">
+                      <U n="interval">
+                        <U n="skill_interval">
+                          <T n="lower_bound">0</T>
+                          <T n="upper_bound">5</T>
+                        </U>
+                      </U>
+                    </V>
+                  </U>
+                </V>
+              </L>
+            </L>
+          </U>
+        </V>
+        <V t="literal">
+          <U n="literal">
+            <L n="conditions">
+              <V t="time_based">
+                <U n="time_based">
+                  <T n="max_time">15</T>
+                  <T n="min_time">10</T>
+                </U>
+              </V>
+            </L>
+            <E n="interaction_action">EXIT_NATURALLY</E>
+            <L n="tests">
+              <L>
+                <V t="skill_test">
+                  <U n="skill_test">
+                    <T n="skill">16707<!--Skill: statistic_Skill_AdultMajor_Mischief--></T>
+                    <V t="interval" n="skill_range">
+                      <U n="interval">
+                        <U n="skill_interval">
+                          <T n="lower_bound">5</T>
+                        </U>
+                      </U>
+                    </V>
+                  </U>
+                </V>
+              </L>
+            </L>
+          </U>
+        </V>
+      </L>
+      <V n="content" t="staging_content">
+        <U n="staging_content">
+          <U n="content_set">
+            <L n="affordance_links">
+              <T>238629<!--MixerInteraction: mixer_Starship_CheckSurroundings--></T>
+              <T>238634<!--MixerInteraction: mixer_Starship_Sabotage_XWing--></T>
+            </L>
+          </U>
+          <T n="only_use_mixers_from_SI">True</T>
+        </U>
+      </V>
+      <V t="enabled" n="periodic_stat_change">
+        <U n="enabled">
+          <L n="operations">
+            <V t="dynamic_skill">
+              <U n="dynamic_skill">
+                <U n="skill_loot_data_override">
+                  <E n="effectiveness">StandardPeriodic</E>
+                </U>
+              </U>
+            </V>
+          </L>
+        </U>
+      </V>
+    </U>
+  </V>
+  <V t="disabled" n="basic_reserve_object" />
+  <V n="canonical_animation" t="enabled">
+    <U n="enabled">
+      <T n="factory">238616<!--AnimationElement: starship_XWing_Repair--></T>
+    </U>
+  </V>
+  <V t="disabled" n="content_score" />
+  <T n="display_name">0x27F379E2<!--String: "Sabotear"--></T>
+  <U n="display_name_text_tokens">
+    <L n="tokens">
+      <V t="participant_type">
+        <U n="participant_type">
+          <V n="objects" t="from_participant">
+            <U n="from_participant">
+              <E n="participant">Actor</E>
+            </U>
+          </V>
+        </U>
+      </V>
+      <V t="participant_type">
+        <U n="participant_type">
+          <V t="from_participant" n="objects">
+            <U n="from_participant">
+              <E n="participant">Object</E>
+            </U>
+          </V>
+        </U>
+      </V>
+    </L>
+  </U>
+  <L n="interaction_category_tags">
+    <E>Interaction_Super</E>
+    <E>Interaction_All</E>
+  </L>
+  <V n="outcome" t="test_based">
+    <U n="test_based">
+      <L n="fallback_outcomes">
+        <U>
+          <U n="outcome">
+            <L n="loot_list">
+              <T>10794<!--LootActions: Loot_Break_Object--></T>
+            </L>
+          </U>
+        </U>
+      </L>
+      <L n="tested_outcomes">
+        <U>
+          <L n="potential_outcomes">
+            <U>
+              <U n="outcome">
+                <L n="continuation">
+                  <U>
+                    <T n="affordance">242120<!--SuperInteraction: batuu_Mission_SuperInteraction_Get_Mind_Erased_FS8--></T>
+                  </U>
+                </L>
+                <L n="loot_list">
+                  <T>10794<!--LootActions: Loot_Break_Object--></T>
+                </L>
+              </U>
+            </U>
+          </L>
+          <L n="tests">
+            <L>
+              <V t="career_gig_test">
+                <U n="career_gig_test">
+                  <T n="career">231099<!--Career: career_Batuu--></T>
+                  <T n="negate">False</T>
+                  <V t="specific_gigs" n="test_type">
+                    <U n="specific_gigs">
+                      <V n="active_objective" t="enabled">
+                        <T n="enabled">242086<!--Objective: objective_Batuu_Missions_Interact_Object_Sabotage_Resistance_Camp_FS8--></T>
+                      </V>
+                      <L n="gigs">
+                        <T>242082<!--MissionGig: missionGig_Missions_FirstOrder_Story_8--></T>
+                      </L>
+                    </U>
+                  </V>
+                </U>
+              </V>
+            </L>
+          </L>
+        </U>
+      </L>
+    </U>
+  </V>
+  <V t="enabled" n="pie_menu_icon">
+    <V n="enabled" t="resource_key">
+      <U n="resource_key">
+        <T n="key" p="InGP09\UI\Icons\PieMenu\Interactions\icon_pieMenu_orderResist.png">2f7d0004:00000000:a9d99ffeb3c117e7</T>
+      </U>
+    </V>
+  </V>
+  <E n="scoring_priority">NORMAL</E>
+  <U n="skill_loot_data">
+    <E n="effectiveness">StandardPeriodic</E>
+    <V t="enabled" n="level_range">
+      <U n="enabled">
+        <T n="lower_bound">1</T>
+        <T n="upper_bound">10</T>
+      </U>
+    </V>
+    <T n="stat">16707<!--Skill: statistic_Skill_AdultMajor_Mischief--></T>
+  </U>
+  <T n="subaction_selection_weight">1</T>
+  <E n="target_type">OBJECT</E>
+  <L n="test_globals">
+    <V t="sim_info">
+      <U n="sim_info">
+        <V t="specified" n="ages" />
+        <V t="specified" n="species">
+          <U n="specified">
+            <L n="species">
+              <E />
+            </L>
+          </U>
+        </V>
+        <E n="who">Actor</E>
+      </U>
+    </V>
+    <V t="state">
+      <U n="state">
+        <T n="value">238525<!--ObjectStateValue: starship_Idle_Ground--></T>
+      </U>
+    </V>
+    <V t="state">
+      <U n="state">
+        <T n="value">15081<!--ObjectStateValue: BrokenState_Unbroken--></T>
+      </U>
+    </V>
+    <V t="test_set_reference">
+      <T n="test_set_reference">231408<!--TestSetInstance: testSet_Batuu_UnderWatch--></T>
+    </V>
+  </L>
+  <L n="tests">
+    <L>
+      <V t="career_gig_test">
+        <U n="career_gig_test">
+          <T n="career">231099<!--Career: career_Batuu--></T>
+          <V t="specific_gigs" n="test_type">
+            <U n="specific_gigs">
+              <V n="active_objective" t="enabled">
+                <T n="enabled">242086<!--Objective: objective_Batuu_Missions_Interact_Object_Sabotage_Resistance_Camp_FS8--></T>
+              </V>
+              <L n="gigs">
+                <T>242082<!--MissionGig: missionGig_Missions_FirstOrder_Story_8--></T>
+              </L>
+            </U>
+          </V>
+        </U>
+      </V>
+      <V t="career_gig_test">
+        <U n="career_gig_test">
+          <T n="career">231099<!--Career: career_Batuu--></T>
+          <T n="negate">True</T>
+          <V t="specific_gigs" n="test_type">
+            <U n="specific_gigs">
+              <V n="active_objective" t="enabled">
+                <T n="enabled">242087<!--Objective: objective_Batuu_Missions_Interact_Object_Fly_Tie_StarShip_FS8--></T>
+              </V>
+              <L n="gigs">
+                <T>242082<!--MissionGig: missionGig_Missions_FirstOrder_Story_8--></T>
+              </L>
+            </U>
+          </V>
+        </U>
+      </V>
+    </L>
+  </L>
+  <T n="time_overhead">30</T>
+</I>

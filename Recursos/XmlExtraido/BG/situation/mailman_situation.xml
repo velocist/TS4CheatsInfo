@@ -1,0 +1,74 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<I c="ServiceNpcSituation" i="situation" m="situations.complex.service_npc_situation" n="mailman_situation" s="16189">
+  <U n="_service_npc_job">
+    <T n="role_state">15874<!--RoleState: mailman_role_start--></T>
+    <T n="situation_job">16175<!--SituationJob: job_mailman--></T>
+  </U>
+  <T p="InGame\Audio\Bumper\bumper_event_start.propx" n="audio_sting_on_start">39b2aa4a:00000000:78b903461d47e4fc</T>
+  <E n="exclusivity">SERVICE</E>
+  <V n="fake_perform_on_preroll_failure" t="enabled">
+    <U n="enabled">
+      <V n="notification" t="enabled">
+        <U n="enabled">
+          <V n="dialog" t="single">
+            <V n="single" t="literal">
+              <U n="literal">
+                <V t="enabled" n="participant">
+                  <E n="enabled">Actor</E>
+                </V>
+                <V n="text" t="single">
+                  <T n="single">0xC483E192<!--String: "No he podido llegar al buzón, así que ahí se queda la correspondencia. ¡Buena suerte para cogerla!"--></T>
+                </V>
+              </U>
+            </V>
+          </V>
+        </U>
+      </V>
+    </U>
+  </V>
+  <L n="finish_job_states">
+    <U>
+      <E n="key">FINISHED_WORK</E>
+      <U n="value">
+        <U n="enter_state_test">
+          <L n="affordances">
+            <T>13540<!--SuperInteraction: mailbox_MailmanDeliverMail--></T>
+          </L>
+        </U>
+        <T o="true" n="role_state" />
+      </U>
+    </U>
+    <U>
+      <E n="key">NO_WORK_TO_DO</E>
+      <U n="value">
+        <U n="enter_state_test">
+          <L n="affordances">
+            <T>154381<!--SuperInteraction: serviceNpc_noMoreWork_mailman--></T>
+          </L>
+        </U>
+        <T o="true" n="role_state" />
+      </U>
+    </U>
+  </L>
+  <T p="InGame\Audio\Bumper\bumper_event_major_complete.propx" n="main_goal_audio_sting">39b2aa4a:00000000:10b476550150a33f</T>
+  <T n="max_participants">20</T>
+  <V n="preroll_autonomy" t="enabled">
+    <U n="enabled">
+      <T n="allow_unreachable_destinations">True</T>
+      <E n="preroll_priority">High</E>
+      <E n="preroll_source">SCRIPT</E>
+      <V n="super_affordance_compatibility" t="literal">
+        <U n="literal">
+          <V n="default_inclusion" t="include_all">
+            <U n="include_all">
+              <L n="exclude_affordances">
+                <T>154381<!--SuperInteraction: serviceNpc_noMoreWork_mailman--></T>
+              </L>
+            </U>
+          </V>
+        </U>
+      </V>
+    </U>
+  </V>
+  <V t="allow" n="travel_request_behavior" />
+</I>

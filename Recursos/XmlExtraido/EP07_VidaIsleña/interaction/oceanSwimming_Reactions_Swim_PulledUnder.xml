@@ -1,0 +1,221 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<I c="SuperInteraction" i="interaction" m="interactions.base.super_interaction" n="oceanSwimming_Reactions_Swim_PulledUnder" s="208111">
+  <V t="prohibit_cancelation" n="_cancelable_by_user" />
+  <V t="participant" n="_icon">
+    <U n="participant">
+      <L n="participant_type">
+        <E>Actor</E>
+      </L>
+    </U>
+  </V>
+  <T n="_must_run">False</T>
+  <V t="enabled" n="_saveable" />
+  <L n="_static_commodities">
+    <U>
+      <T n="desire">16</T>
+      <T n="static_commodity">211263<!--StaticCommodity: staticCommodity_SwimmingReactions--></T>
+    </U>
+  </L>
+  <T n="allow_autonomous">True</T>
+  <T n="allow_user_directed">False</T>
+  <T n="attention_cost">0.5</T>
+  <V t="one_shot" n="basic_content">
+    <U n="one_shot">
+      <U n="animation_ref">
+        <T n="factory">211120<!--AnimationElement: SwimmingReactions_Swim_NonLocomotion_pulledUnder--></T>
+        <U n="overrides">
+          <V n="balloons" t="enabled">
+            <L n="enabled">
+              <U>
+                <L n="balloon_choices">
+                  <U>
+                    <V n="item" t="balloon_category">
+                      <T n="balloon_category">212386<!--BalloonCategory: balloonCategory_SwimmingReactions_DeepSeaHorrors--></T>
+                    </V>
+                  </U>
+                </L>
+                <L n="balloon_target">
+                  <E>Actor</E>
+                </L>
+              </U>
+            </L>
+          </V>
+        </U>
+      </U>
+    </U>
+  </V>
+  <L n="basic_extras">
+    <V t="vfx">
+      <U n="vfx">
+        <V t="from_participant" n="participant">
+          <U n="from_participant">
+            <E n="participant">Actor</E>
+          </U>
+        </V>
+        <V n="timing" t="on_xevt">
+          <U n="on_xevt">
+            <T n="xevt_id">350</T>
+          </U>
+        </V>
+        <U n="vfx">
+          <T n="effect_name">ep07_swimming_reactions_dark_shadow</T>
+          <V t="Current_Position" n="joint_name" />
+        </U>
+        <V t="animation_event" n="vfx_lifetime">
+          <U n="animation_event">
+            <T n="event">351</T>
+          </U>
+        </V>
+        <V t="disabled" n="vfx_target" />
+      </U>
+    </V>
+    <V t="vfx">
+      <U n="vfx">
+        <V t="from_participant" n="participant">
+          <U n="from_participant">
+            <E n="participant">Actor</E>
+          </U>
+        </V>
+        <V n="timing" t="on_xevt">
+          <U n="on_xevt">
+            <T n="xevt_id">450</T>
+          </U>
+        </V>
+        <U n="vfx">
+          <T n="effect_name">ep07_merfolk_swim_reactions_splash_big</T>
+          <V t="Current_Position" n="joint_name" />
+        </U>
+        <V t="one_shot" n="vfx_lifetime" />
+      </U>
+    </V>
+  </L>
+  <L n="basic_liabilities">
+    <V t="timeout">
+      <U n="timeout">
+        <T n="timeout">2</T>
+      </U>
+    </V>
+    <V t="critical_priority" />
+  </L>
+  <V t="disabled" n="basic_reserve_object" />
+  <V t="disabled" n="content_score" />
+  <T n="display_name">0xEE3B6BC9<!--String: "{M0.Sumergido}{F0.Sumergida}"--></T>
+  <U n="display_name_text_tokens">
+    <L n="tokens">
+      <V t="participant_type">
+        <U n="participant_type">
+          <V t="from_participant" n="objects">
+            <U n="from_participant">
+              <E n="participant">Actor</E>
+            </U>
+          </V>
+        </U>
+      </V>
+      <V t="participant_type">
+        <U n="participant_type">
+          <V t="from_participant" n="objects">
+            <U n="from_participant">
+              <E n="participant">Object</E>
+            </U>
+          </V>
+        </U>
+      </V>
+    </L>
+  </U>
+  <L n="interaction_category_tags">
+    <E>Interaction_Super</E>
+    <E>Interaction_All</E>
+  </L>
+  <V n="outcome" t="test_based">
+    <U n="test_based">
+      <L n="fallback_outcomes">
+        <U>
+          <U n="outcome">
+            <L n="loot_list">
+              <T>207172<!--LootActions: loot_Mermaid_OceanThreat--></T>
+            </L>
+          </U>
+        </U>
+        <U>
+          <U n="outcome">
+            <L n="basic_extras">
+              <V t="audio_sting">
+                <U n="audio_sting">
+                  <U n="audio_sting">
+                    <T n="audio" p="InGame\Audio\Music\stings\sting_death_pulledunder.propx">39b2aa4a:00000000:32aba57da1be3e8e</T>
+                  </U>
+                  <V t="at_beginning" n="timing" />
+                </U>
+              </V>
+            </L>
+            <L n="continuation">
+              <U>
+                <T n="affordance">211504<!--DeathSuperInteraction: Death_Drowning_Ocean--></T>
+              </U>
+            </L>
+            <L n="loot_list">
+              <T>208110<!--LootActions: loot_OceanSwimming_Reactions_AddVisible_Buffs_PulledUnder--></T>
+            </L>
+            <E n="outcome_result">FAILURE</E>
+          </U>
+          <U n="weight">
+            <T n="base_value">0.5</T>
+            <L n="multipliers">
+              <U>
+                <T n="multiplier">200</T>
+                <L n="tests">
+                  <L>
+                    <V t="buff">
+                      <U n="buff">
+                        <V n="whitelist" t="enabled">
+                          <L n="enabled">
+                            <T>205874<!--Buff: buff_OceanSwimming_Reactions_SharkSighting--></T>
+                            <T>205875<!--Buff: buff_OceanSwimming_Reactions_PulledUnder--></T>
+                          </L>
+                        </V>
+                      </U>
+                    </V>
+                  </L>
+                </L>
+              </U>
+              <U>
+                <T n="multiplier">0</T>
+                <L n="tests">
+                  <L>
+                    <V t="sim_info">
+                      <U n="sim_info">
+                        <V t="enabled" n="npc">
+                          <T n="enabled">True</T>
+                        </V>
+                      </U>
+                    </V>
+                  </L>
+                </L>
+              </U>
+            </L>
+          </U>
+        </U>
+      </L>
+    </U>
+  </V>
+  <E n="scoring_priority">NORMAL</E>
+  <T n="subaction_selection_weight">1</T>
+  <E n="target_type">ACTOR</E>
+  <L n="test_globals">
+    <V t="sim_info">
+      <U n="sim_info">
+        <V t="specified" n="ages" />
+        <V t="specified" n="species">
+          <U n="specified">
+            <L n="species">
+              <E />
+            </L>
+          </U>
+        </V>
+        <E n="who">Actor</E>
+      </U>
+    </V>
+  </L>
+  <T n="time_overhead">30</T>
+  <T n="visible">True</T>
+</I>

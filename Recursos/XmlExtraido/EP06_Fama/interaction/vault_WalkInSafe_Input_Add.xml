@@ -1,0 +1,133 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<I c="ImmediateSuperInteraction" i="interaction" m="interactions.base.immediate_interaction" n="vault_WalkInSafe_Input_Add" s="201498">
+  <V t="disabled" n="_saveable" />
+  <L n="basic_extras">
+    <V t="payment">
+      <U n="payment">
+        <V n="payment" t="literal">
+          <U n="literal">
+            <V n="payment_cost" t="input_dialog">
+              <U n="input_dialog">
+                <U n="input_dialog">
+                  <L n="dialog_options">
+                    <E>DISABLE_CLOSE_BUTTON</E>
+                  </L>
+                  <T n="is_special_dialog">True</T>
+                  <V n="text" t="single">
+                    <T n="single">0x6BDBB72D<!--String: "Introduce la cantidad de simoleones que quieres depositar en la cámara."--></T>
+                  </V>
+                  <U n="text_inputs">
+                    <U n="payment_value">
+                      <V n="length_restriction" t="fixed">
+                        <U n="fixed">
+                          <V n="min_length" t="enabled">
+                            <U n="enabled">
+                              <V n="tooltip" t="enabled">
+                                <T n="enabled">0x21FF8311<!--String: "Introduce un número que tenga 1 o más caracteres. "--></T>
+                              </V>
+                            </U>
+                          </V>
+                        </U>
+                      </V>
+                      <V n="restricted_characters" t="enabled">
+                        <T n="enabled">0x8FE40C44<!--String: "0-9"--></T>
+                      </V>
+                    </U>
+                  </U>
+                  <V n="title" t="enabled">
+                    <T n="enabled">0x49D251EF<!--String: "Guardar dinero en la cámara"--></T>
+                  </V>
+                </U>
+                <L n="payment_destinations">
+                  <V t="statistic">
+                    <U n="statistic">
+                      <E n="participant">Object</E>
+                      <T n="statistic">193396<!--Statistic: statistic_Vault_WalkInSafe_Simoelons--></T>
+                    </U>
+                  </V>
+                </L>
+                <V n="success_continuation" t="enabled">
+                  <U n="enabled">
+                    <T n="interaction">193410<!--SuperInteraction: vault_WalkInSafe_Add--></T>
+                  </U>
+                </V>
+              </U>
+            </V>
+            <V t="household" n="payment_source">
+              <U n="household">
+                <T n="require_full_amount">False</T>
+              </U>
+            </V>
+          </U>
+        </V>
+        <V t="at_end" n="timing">
+          <U n="at_end">
+            <E n="criticality">OnCancelOrException</E>
+          </U>
+        </V>
+      </U>
+    </V>
+  </L>
+  <V t="disabled" n="content_score" />
+  <T n="display_name">0x24732862<!--String: "Guardar dinero en la cámara"--></T>
+  <U n="display_name_text_tokens">
+    <L n="tokens">
+      <V t="participant_type">
+        <U n="participant_type">
+          <V t="from_participant" n="objects">
+            <U n="from_participant">
+              <E n="participant">Actor</E>
+            </U>
+          </V>
+        </U>
+      </V>
+      <V t="participant_type">
+        <U n="participant_type">
+          <V t="from_participant" n="objects">
+            <U n="from_participant">
+              <E n="participant">Object</E>
+            </U>
+          </V>
+        </U>
+      </V>
+    </L>
+  </U>
+  <L n="interaction_category_tags">
+    <E>INVALID</E>
+  </L>
+  <V t="single" n="outcome" />
+  <T n="pie_menu_priority">2</T>
+  <U n="progress_bar_enabled">
+    <T n="bar_enabled">False</T>
+  </U>
+  <E n="target_type">OBJECT</E>
+  <L n="test_globals">
+    <V t="sim_info">
+      <U n="sim_info">
+        <V t="specified" n="ages">
+          <L n="specified">
+            <E>TEEN</E>
+            <E>YOUNGADULT</E>
+            <E>ADULT</E>
+            <E>ELDER</E>
+            <E>CHILD</E>
+          </L>
+        </V>
+        <V t="specified" n="species">
+          <U n="specified">
+            <L n="species">
+              <E />
+            </L>
+          </U>
+        </V>
+        <E n="who">Actor</E>
+      </U>
+    </V>
+    <V t="state">
+      <U n="state">
+        <V t="always_pass" n="fallback_behavior" />
+        <T n="value">193382<!--ObjectStateValue: vault_Door_Open--></T>
+      </U>
+    </V>
+  </L>
+</I>

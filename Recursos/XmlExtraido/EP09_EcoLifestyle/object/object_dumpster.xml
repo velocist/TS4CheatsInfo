@@ -1,0 +1,968 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<I c="GameObject" i="object" m="objects.game_object" n="object_dumpster" s="232910">
+  <V n="_anim_overrides" t="enabled">
+    <U n="enabled">
+      <L n="params">
+        <U>
+          <T n="name">useCustomSwipe</T>
+          <V t="boolean" n="value">
+            <T n="boolean">True</T>
+          </V>
+        </U>
+        <U>
+          <T n="name">objectName</T>
+          <V n="value" t="string">
+            <T n="string">trashCanOutdoor</T>
+          </V>
+        </U>
+      </L>
+    </U>
+  </V>
+  <U n="_components">
+    <V t="enabled" n="focus">
+      <U n="enabled">
+        <V n="_focus_score" t="globally">
+          <U n="globally">
+            <E n="base">NONE</E>
+          </U>
+        </V>
+      </U>
+    </V>
+    <V n="live_drag_target" t="enabled">
+      <U n="enabled">
+        <L n="drop_tests_and_actions">
+          <U>
+            <L n="actions">
+              <T>240608<!--LiveDragLootActions: loot_LiveDrag_PutInDumpster_TrashUpdate--></T>
+              <T>240607<!--LiveDragLootActions: loot_LiveDrag_PutInTrashcanOutdoor_TrashUpdate--></T>
+            </L>
+            <T n="destroy_live_drag_object">True</T>
+            <E n="drop_type">TRASHCAN</E>
+            <L n="test_set">
+              <V t="state">
+                <U n="state">
+                  <V t="always_pass" n="fallback_behavior" />
+                  <E n="operator">NOTEQUAL</E>
+                  <T n="value">105868<!--ObjectStateValue: RetailItem_ForSale_ForSale--></T>
+                </U>
+              </V>
+            </L>
+          </U>
+        </L>
+      </U>
+    </V>
+    <V t="enabled" n="retail_component">
+      <V n="enabled" t="reference">
+        <T n="reference">115301<!--RetailComponent: retailComponent_Default_LowAppeal--></T>
+      </V>
+    </V>
+    <V n="situation_scheduler_component" t="enabled">
+      <U n="enabled">
+        <V n="object_based_situations_schedule" t="enabled">
+          <U n="enabled">
+            <T n="consider_off_lot_objects">False</T>
+            <T n="schedule_immediate">True</T>
+            <V n="situation_schedule" t="weighted_situations">
+              <U n="weighted_situations">
+                <L n="schedule_entries">
+                  <U>
+                    <U n="days_available">
+                      <T n="0 SUNDAY">True</T>
+                      <T n="1 MONDAY">True</T>
+                      <T n="2 TUESDAY">True</T>
+                      <T n="3 WEDNESDAY">True</T>
+                      <T n="4 THURSDAY">True</T>
+                      <T n="5 FRIDAY">True</T>
+                      <T n="6 SATURDAY">True</T>
+                    </U>
+                    <T n="duration">4</T>
+                    <T n="random_start">True</T>
+                    <U n="start_time">
+                      <T n="hour">18</T>
+                    </U>
+                    <L n="weighted_situations">
+                      <U>
+                        <T n="situation">224194<!--SingleJobSituation: situation_TrashDiver--></T>
+                        <L n="tests">
+                          <L>
+                            <V t="state">
+                              <U n="state">
+                                <T n="value">99560<!--ObjectStateValue: Trash_Rummagable_CanRummage--></T>
+                              </U>
+                            </V>
+                          </L>
+                        </L>
+                      </U>
+                      <U>
+                        <T n="situation">77411<!--WalkbyNobodySituation: situation_walkby_nobody--></T>
+                        <U n="weight_multipliers">
+                          <T n="base_value">2</T>
+                        </U>
+                      </U>
+                    </L>
+                  </U>
+                  <U>
+                    <T n="affected_object_cap">5</T>
+                    <U n="days_available">
+                      <T n="0 SUNDAY">True</T>
+                      <T n="1 MONDAY">True</T>
+                      <T n="2 TUESDAY">True</T>
+                      <T n="3 WEDNESDAY">True</T>
+                      <T n="4 THURSDAY">True</T>
+                      <T n="5 FRIDAY">True</T>
+                      <T n="6 SATURDAY">True</T>
+                    </U>
+                    <T n="duration">4</T>
+                    <T n="random_start">False</T>
+                    <U n="start_time">
+                      <T n="hour">4</T>
+                    </U>
+                    <L n="weighted_situations">
+                      <U>
+                        <T n="situation">234655<!--SingleJobSituation: situation_CommunityShared_Scrounger--></T>
+                        <L n="tests">
+                          <L>
+                            <V t="location">
+                              <U n="location">
+                                <U n="location_tests">
+                                  <V t="enabled" n="is_venue_type">
+                                    <U n="enabled">
+                                      <T n="use_source_venue">True</T>
+                                      <T n="venue_type">223944<!--Venue: venue_CommunityLot--></T>
+                                    </U>
+                                  </V>
+                                </U>
+                                <E n="subject">Lot</E>
+                              </U>
+                            </V>
+                          </L>
+                        </L>
+                        <U n="weight_multipliers">
+                          <T n="base_value">2</T>
+                        </U>
+                      </U>
+                      <U>
+                        <T n="situation">234659<!--AggregateSingleStateSituation: situation_CommunityGroup_ScroungerWoohoo--></T>
+                        <L n="tests">
+                          <L>
+                            <V t="location">
+                              <U n="location">
+                                <U n="location_tests">
+                                  <V t="enabled" n="is_venue_type">
+                                    <U n="enabled">
+                                      <T n="use_source_venue">True</T>
+                                      <T n="venue_type">223944<!--Venue: venue_CommunityLot--></T>
+                                    </U>
+                                  </V>
+                                </U>
+                                <E n="subject">Lot</E>
+                              </U>
+                            </V>
+                          </L>
+                        </L>
+                      </U>
+                      <U>
+                        <T n="situation">77411<!--WalkbyNobodySituation: situation_walkby_nobody--></T>
+                        <L n="tests">
+                          <L>
+                            <V t="location">
+                              <U n="location">
+                                <U n="location_tests">
+                                  <V n="is_venue_type" t="enabled">
+                                    <U n="enabled">
+                                      <T n="negate">True</T>
+                                      <T n="venue_type">223944<!--Venue: venue_CommunityLot--></T>
+                                    </U>
+                                  </V>
+                                </U>
+                                <E n="subject">Lot</E>
+                              </U>
+                            </V>
+                          </L>
+                        </L>
+                        <U n="weight_multipliers">
+                          <T n="base_value">3</T>
+                        </U>
+                      </U>
+                    </L>
+                  </U>
+                  <U>
+                    <T n="affected_object_cap">3</T>
+                    <U n="days_available">
+                      <T n="0 SUNDAY">True</T>
+                      <T n="1 MONDAY">True</T>
+                      <T n="2 TUESDAY">True</T>
+                      <T n="3 WEDNESDAY">True</T>
+                      <T n="4 THURSDAY">True</T>
+                      <T n="5 FRIDAY">True</T>
+                      <T n="6 SATURDAY">True</T>
+                    </U>
+                    <T n="duration">6</T>
+                    <T n="random_start">False</T>
+                    <U n="start_time">
+                      <T n="hour">8</T>
+                    </U>
+                    <L n="weighted_situations">
+                      <U>
+                        <T n="situation">234655<!--SingleJobSituation: situation_CommunityShared_Scrounger--></T>
+                        <L n="tests">
+                          <L>
+                            <V t="location">
+                              <U n="location">
+                                <U n="location_tests">
+                                  <V t="enabled" n="is_venue_type">
+                                    <U n="enabled">
+                                      <T n="use_source_venue">True</T>
+                                      <T n="venue_type">223944<!--Venue: venue_CommunityLot--></T>
+                                    </U>
+                                  </V>
+                                </U>
+                                <E n="subject">Lot</E>
+                              </U>
+                            </V>
+                          </L>
+                        </L>
+                        <U n="weight_multipliers">
+                          <T n="base_value">10</T>
+                        </U>
+                      </U>
+                      <U>
+                        <T n="situation">234659<!--AggregateSingleStateSituation: situation_CommunityGroup_ScroungerWoohoo--></T>
+                        <L n="tests">
+                          <L>
+                            <V t="location">
+                              <U n="location">
+                                <U n="location_tests">
+                                  <V t="enabled" n="is_venue_type">
+                                    <U n="enabled">
+                                      <T n="use_source_venue">True</T>
+                                      <T n="venue_type">223944<!--Venue: venue_CommunityLot--></T>
+                                    </U>
+                                  </V>
+                                </U>
+                                <E n="subject">Lot</E>
+                              </U>
+                            </V>
+                          </L>
+                        </L>
+                      </U>
+                      <U>
+                        <T n="situation">77411<!--WalkbyNobodySituation: situation_walkby_nobody--></T>
+                        <L n="tests">
+                          <L>
+                            <V t="location">
+                              <U n="location">
+                                <U n="location_tests">
+                                  <V n="is_venue_type" t="enabled">
+                                    <U n="enabled">
+                                      <T n="negate">True</T>
+                                      <T n="venue_type">223944<!--Venue: venue_CommunityLot--></T>
+                                    </U>
+                                  </V>
+                                </U>
+                                <E n="subject">Lot</E>
+                              </U>
+                            </V>
+                          </L>
+                        </L>
+                        <U n="weight_multipliers">
+                          <T n="base_value">11</T>
+                        </U>
+                      </U>
+                    </L>
+                  </U>
+                  <U>
+                    <T n="affected_object_cap">2</T>
+                    <U n="days_available">
+                      <T n="0 SUNDAY">True</T>
+                      <T n="1 MONDAY">True</T>
+                      <T n="2 TUESDAY">True</T>
+                      <T n="3 WEDNESDAY">True</T>
+                      <T n="4 THURSDAY">True</T>
+                      <T n="5 FRIDAY">True</T>
+                      <T n="6 SATURDAY">True</T>
+                    </U>
+                    <T n="duration">8</T>
+                    <T n="random_start">False</T>
+                    <U n="start_time">
+                      <T n="hour">14</T>
+                    </U>
+                    <L n="weighted_situations">
+                      <U>
+                        <T n="situation">234655<!--SingleJobSituation: situation_CommunityShared_Scrounger--></T>
+                        <L n="tests">
+                          <L>
+                            <V t="location">
+                              <U n="location">
+                                <U n="location_tests">
+                                  <V t="enabled" n="is_venue_type">
+                                    <U n="enabled">
+                                      <T n="use_source_venue">True</T>
+                                      <T n="venue_type">223944<!--Venue: venue_CommunityLot--></T>
+                                    </U>
+                                  </V>
+                                </U>
+                                <E n="subject">Lot</E>
+                              </U>
+                            </V>
+                          </L>
+                        </L>
+                        <U n="weight_multipliers">
+                          <T n="base_value">10</T>
+                        </U>
+                      </U>
+                      <U>
+                        <T n="situation">234659<!--AggregateSingleStateSituation: situation_CommunityGroup_ScroungerWoohoo--></T>
+                        <L n="tests">
+                          <L>
+                            <V t="location">
+                              <U n="location">
+                                <U n="location_tests">
+                                  <V t="enabled" n="is_venue_type">
+                                    <U n="enabled">
+                                      <T n="use_source_venue">True</T>
+                                      <T n="venue_type">223944<!--Venue: venue_CommunityLot--></T>
+                                    </U>
+                                  </V>
+                                </U>
+                                <E n="subject">Lot</E>
+                              </U>
+                            </V>
+                          </L>
+                        </L>
+                      </U>
+                      <U>
+                        <T n="situation">77411<!--WalkbyNobodySituation: situation_walkby_nobody--></T>
+                        <L n="tests">
+                          <L>
+                            <V t="location">
+                              <U n="location">
+                                <U n="location_tests">
+                                  <V n="is_venue_type" t="enabled">
+                                    <U n="enabled">
+                                      <T n="negate">True</T>
+                                      <T n="venue_type">223944<!--Venue: venue_CommunityLot--></T>
+                                    </U>
+                                  </V>
+                                </U>
+                                <E n="subject">Lot</E>
+                              </U>
+                            </V>
+                          </L>
+                        </L>
+                        <U n="weight_multipliers">
+                          <T n="base_value">11</T>
+                        </U>
+                      </U>
+                    </L>
+                  </U>
+                  <U>
+                    <T n="affected_object_cap">5</T>
+                    <U n="days_available">
+                      <T n="0 SUNDAY">True</T>
+                      <T n="1 MONDAY">True</T>
+                      <T n="2 TUESDAY">True</T>
+                      <T n="3 WEDNESDAY">True</T>
+                      <T n="4 THURSDAY">True</T>
+                      <T n="5 FRIDAY">True</T>
+                      <T n="6 SATURDAY">True</T>
+                    </U>
+                    <T n="duration">4</T>
+                    <T n="random_start">False</T>
+                    <U n="start_time">
+                      <T n="hour">22</T>
+                    </U>
+                    <L n="weighted_situations">
+                      <U>
+                        <T n="situation">234655<!--SingleJobSituation: situation_CommunityShared_Scrounger--></T>
+                        <L n="tests">
+                          <L>
+                            <V t="location">
+                              <U n="location">
+                                <U n="location_tests">
+                                  <V t="enabled" n="is_venue_type">
+                                    <U n="enabled">
+                                      <T n="use_source_venue">True</T>
+                                      <T n="venue_type">223944<!--Venue: venue_CommunityLot--></T>
+                                    </U>
+                                  </V>
+                                </U>
+                                <E n="subject">Lot</E>
+                              </U>
+                            </V>
+                          </L>
+                        </L>
+                        <U n="weight_multipliers">
+                          <T n="base_value">5</T>
+                        </U>
+                      </U>
+                      <U>
+                        <T n="situation">234659<!--AggregateSingleStateSituation: situation_CommunityGroup_ScroungerWoohoo--></T>
+                        <L n="tests">
+                          <L>
+                            <V t="location">
+                              <U n="location">
+                                <U n="location_tests">
+                                  <V t="enabled" n="is_venue_type">
+                                    <U n="enabled">
+                                      <T n="use_source_venue">True</T>
+                                      <T n="venue_type">223944<!--Venue: venue_CommunityLot--></T>
+                                    </U>
+                                  </V>
+                                </U>
+                                <E n="subject">Lot</E>
+                              </U>
+                            </V>
+                          </L>
+                        </L>
+                      </U>
+                      <U>
+                        <T n="situation">77411<!--WalkbyNobodySituation: situation_walkby_nobody--></T>
+                        <L n="tests">
+                          <L>
+                            <V t="location">
+                              <U n="location">
+                                <U n="location_tests">
+                                  <V n="is_venue_type" t="enabled">
+                                    <U n="enabled">
+                                      <T n="negate">True</T>
+                                      <T n="venue_type">223944<!--Venue: venue_CommunityLot--></T>
+                                    </U>
+                                  </V>
+                                </U>
+                                <E n="subject">Lot</E>
+                              </U>
+                            </V>
+                          </L>
+                        </L>
+                        <U n="weight_multipliers">
+                          <T n="base_value">6</T>
+                        </U>
+                      </U>
+                    </L>
+                  </U>
+                </L>
+              </U>
+            </V>
+            <E n="tag">Func_Dumpster</E>
+            <L n="tests" />
+          </U>
+        </V>
+      </U>
+    </V>
+    <V n="state" t="enabled">
+      <U n="enabled">
+        <L n="state_triggers">
+          <U>
+            <L n="at_states">
+              <T>15347<!--CommodityBasedObjectStateValue: Trashcan_Capacity_Empty--></T>
+            </L>
+            <V n="set_states" t="Set_state_list">
+              <L n="Set_state_list">
+                <T>99561<!--ObjectStateValue: Trash_Rummagable_NoRummage--></T>
+                <T>232177<!--ObjectStateValue: trashUpdate_Sort_NoSort--></T>
+              </L>
+            </V>
+          </U>
+          <U>
+            <L n="at_states">
+              <T>15347<!--CommodityBasedObjectStateValue: Trashcan_Capacity_Empty--></T>
+            </L>
+            <V n="set_states" t="Set_state_list">
+              <L n="Set_state_list">
+                <T>232117<!--ObjectStateValue: trashUpdate_HigherVerminChance_False--></T>
+              </L>
+            </V>
+          </U>
+          <U>
+            <L n="at_states">
+              <T>15350<!--CommodityBasedObjectStateValue: Trashcan_Capacity_Overflowing--></T>
+              <T>15348<!--CommodityBasedObjectStateValue: Trashcan_Capacity_Full--></T>
+              <T>15349<!--CommodityBasedObjectStateValue: Trashcan_Capacity_Medium--></T>
+            </L>
+            <V n="set_states" t="Set_state_list">
+              <L n="Set_state_list">
+                <T>232176<!--ObjectStateValue: trashUpdate_Sort_CanSort--></T>
+              </L>
+            </V>
+            <E n="trigger_operation">OR</E>
+          </U>
+          <U>
+            <L n="at_states">
+              <T>77532<!--CommodityBasedObjectStateValue: FireState_Burn_Material_Change_Replace--></T>
+            </L>
+            <V t="Set_state_list" n="set_states">
+              <L n="Set_state_list">
+                <T>39737<!--CommodityBasedObjectStateValue: FireState_Burn_Material_Change_Not_Burning--></T>
+              </L>
+            </V>
+          </U>
+        </L>
+        <L n="states">
+          <U>
+            <L n="client_states">
+              <U>
+                <T n="key">15354<!--ObjectStateValue: Trashcan_Outdoor_Knocked_Over--></T>
+              </U>
+              <U>
+                <T n="key">15356<!--ObjectStateValue: Trashcan_Outdoor_Upright--></T>
+              </U>
+            </L>
+            <V n="default_value" t="reference">
+              <T n="reference">15356<!--ObjectStateValue: Trashcan_Outdoor_Upright--></T>
+            </V>
+          </U>
+          <U>
+            <L n="client_states">
+              <U>
+                <T n="key">99560<!--ObjectStateValue: Trash_Rummagable_CanRummage--></T>
+              </U>
+              <U>
+                <T n="key">99561<!--ObjectStateValue: Trash_Rummagable_NoRummage--></T>
+              </U>
+            </L>
+            <V n="default_value" t="reference">
+              <T n="reference">99560<!--ObjectStateValue: Trash_Rummagable_CanRummage--></T>
+            </V>
+          </U>
+          <U>
+            <L n="client_states">
+              <U>
+                <T n="key">232046<!--ObjectStateValue: trashUpdate_Flies_HasFlies--></T>
+                <U n="value">
+                  <V n="vfx_state" t="apply_new_value">
+                    <V n="apply_new_value" t="start_vfx">
+                      <V n="start_vfx" t="single_effect">
+                        <U n="single_effect">
+                          <T n="effect_name">ep09_fly_trashCan_high_swarm</T>
+                        </U>
+                      </V>
+                    </V>
+                  </V>
+                </U>
+              </U>
+              <U>
+                <T n="key">232047<!--ObjectStateValue: trashUpdate_Flies_NoFlies--></T>
+                <U n="value">
+                  <V n="periodic_loot" t="apply_new_value">
+                    <U n="apply_new_value">
+                      <L n="periodic_loots">
+                        <U>
+                          <T n="frequency_interval">180</T>
+                          <T n="initial_delay">180</T>
+                          <L n="loots_to_apply">
+                            <T>232066<!--LootActions: loot_TrashUpdate_SpawnFlies--></T>
+                          </L>
+                        </U>
+                      </L>
+                    </U>
+                  </V>
+                  <V t="apply_new_value" n="vfx_state" />
+                </U>
+              </U>
+            </L>
+            <V n="default_value" t="reference">
+              <T n="reference">232047<!--ObjectStateValue: trashUpdate_Flies_NoFlies--></T>
+            </V>
+            <V n="tested_states_on_location_changed" t="enabled">
+              <U n="enabled">
+                <L n="tested_states">
+                  <U>
+                    <T n="state">232047<!--ObjectStateValue: trashUpdate_Flies_NoFlies--></T>
+                    <L n="tests">
+                      <L>
+                        <V t="state">
+                          <U n="state">
+                            <T n="value">232046<!--ObjectStateValue: trashUpdate_Flies_HasFlies--></T>
+                          </U>
+                        </V>
+                        <V t="zone">
+                          <U n="zone">
+                            <U n="zone_tests">
+                              <V n="zone_modifiers" t="enabled">
+                                <U n="enabled">
+                                  <V t="specify" n="blacklist">
+                                    <U n="specify">
+                                      <L n="blacklist">
+                                        <T>230867<!--ZoneModifier: zoneModifier_LotTrait_TrashUpdate--></T>
+                                      </L>
+                                    </U>
+                                  </V>
+                                </U>
+                              </V>
+                            </U>
+                          </U>
+                        </V>
+                      </L>
+                    </L>
+                  </U>
+                </L>
+              </U>
+            </V>
+          </U>
+          <U>
+            <L n="client_states">
+              <U>
+                <T n="key">232048<!--ObjectStateValue: trashUpdate_Roaches_HasRoaches--></T>
+                <U n="value">
+                  <V n="vfx_state" t="apply_new_value">
+                    <V n="apply_new_value" t="start_vfx">
+                      <V n="start_vfx" t="single_effect">
+                        <U n="single_effect">
+                          <T n="effect_name">ep09_roaches_trashCan_high_active</T>
+                        </U>
+                      </V>
+                    </V>
+                  </V>
+                </U>
+              </U>
+              <U>
+                <T n="key">232059<!--ObjectStateValue: trashUpdate_Roaches_NoRoaches--></T>
+                <U n="value">
+                  <V n="periodic_loot" t="apply_new_value">
+                    <U n="apply_new_value">
+                      <L n="periodic_loots">
+                        <U>
+                          <T n="frequency_interval">120</T>
+                          <T n="initial_delay">120</T>
+                          <L n="loots_to_apply">
+                            <T>232069<!--LootActions: loot_TrashUpdate_SpawnRoaches--></T>
+                          </L>
+                        </U>
+                      </L>
+                    </U>
+                  </V>
+                  <V t="apply_new_value" n="vfx_state">
+                    <V n="apply_new_value" t="no_vfx" />
+                  </V>
+                </U>
+              </U>
+            </L>
+            <V n="default_value" t="reference">
+              <T n="reference">232059<!--ObjectStateValue: trashUpdate_Roaches_NoRoaches--></T>
+            </V>
+            <V n="tested_states_on_location_changed" t="enabled">
+              <U n="enabled">
+                <L n="tested_states">
+                  <U>
+                    <T n="state">232059<!--ObjectStateValue: trashUpdate_Roaches_NoRoaches--></T>
+                    <L n="tests">
+                      <L>
+                        <V t="state">
+                          <U n="state">
+                            <T n="value">232048<!--ObjectStateValue: trashUpdate_Roaches_HasRoaches--></T>
+                          </U>
+                        </V>
+                        <V t="zone">
+                          <U n="zone">
+                            <U n="zone_tests">
+                              <V n="zone_modifiers" t="enabled">
+                                <U n="enabled">
+                                  <V t="specify" n="blacklist">
+                                    <U n="specify">
+                                      <L n="blacklist">
+                                        <T>230867<!--ZoneModifier: zoneModifier_LotTrait_TrashUpdate--></T>
+                                      </L>
+                                    </U>
+                                  </V>
+                                </U>
+                              </V>
+                            </U>
+                          </U>
+                        </V>
+                      </L>
+                    </L>
+                  </U>
+                </L>
+              </U>
+            </V>
+          </U>
+          <U>
+            <L n="client_states">
+              <U>
+                <T n="key">232117<!--ObjectStateValue: trashUpdate_HigherVerminChance_False--></T>
+              </U>
+              <U>
+                <T n="key">232118<!--ObjectStateValue: trashUpdate_HigherVerminChance_True--></T>
+              </U>
+            </L>
+            <V n="default_value" t="reference">
+              <T n="reference">232117<!--ObjectStateValue: trashUpdate_HigherVerminChance_False--></T>
+            </V>
+          </U>
+          <U>
+            <L n="client_states">
+              <U>
+                <T n="key">232176<!--ObjectStateValue: trashUpdate_Sort_CanSort--></T>
+              </U>
+              <U>
+                <T n="key">232177<!--ObjectStateValue: trashUpdate_Sort_NoSort--></T>
+              </U>
+            </L>
+            <V n="default_value" t="reference">
+              <T n="reference">232177<!--ObjectStateValue: trashUpdate_Sort_NoSort--></T>
+            </V>
+          </U>
+          <U>
+            <L n="client_states">
+              <U>
+                <T n="key">15347<!--CommodityBasedObjectStateValue: Trashcan_Capacity_Empty--></T>
+                <U n="value">
+                  <V t="apply_new_value" n="geometry_state">
+                    <V n="apply_new_value" t="set_to_custom_value">
+                      <T n="set_to_custom_value">Empty</T>
+                    </V>
+                  </V>
+                  <V n="periodic_loot" t="apply_new_value">
+                    <U n="apply_new_value">
+                      <L n="periodic_loots">
+                        <U>
+                          <T n="frequency_interval">60</T>
+                          <T n="initial_delay">60</T>
+                          <L n="loots_to_apply">
+                            <T>239880<!--LootActions: loot_Dumpster_FillOverTime--></T>
+                          </L>
+                        </U>
+                      </L>
+                    </U>
+                  </V>
+                  <V t="apply_new_value" n="vfx_state" />
+                </U>
+              </U>
+              <U>
+                <T n="key">15348<!--CommodityBasedObjectStateValue: Trashcan_Capacity_Full--></T>
+                <U n="value">
+                  <V n="geometry_state" t="apply_new_value">
+                    <V n="apply_new_value" t="set_to_custom_value">
+                      <T n="set_to_custom_value">Full</T>
+                    </V>
+                  </V>
+                  <V n="periodic_loot" t="apply_new_value">
+                    <U n="apply_new_value">
+                      <L n="periodic_loots">
+                        <U>
+                          <T n="frequency_interval">120</T>
+                          <T n="initial_delay">120</T>
+                          <L n="loots_to_apply">
+                            <T>239880<!--LootActions: loot_Dumpster_FillOverTime--></T>
+                          </L>
+                        </U>
+                      </L>
+                    </U>
+                  </V>
+                  <V t="apply_new_value" n="vfx_state" />
+                </U>
+              </U>
+              <U>
+                <T n="key">15349<!--CommodityBasedObjectStateValue: Trashcan_Capacity_Medium--></T>
+                <U n="value">
+                  <V n="geometry_state" t="apply_new_value">
+                    <V n="apply_new_value" t="set_to_custom_value">
+                      <T n="set_to_custom_value">Medium</T>
+                    </V>
+                  </V>
+                  <V n="periodic_loot" t="apply_new_value">
+                    <U n="apply_new_value">
+                      <L n="periodic_loots">
+                        <U>
+                          <T n="frequency_interval">90</T>
+                          <T n="initial_delay">90</T>
+                          <L n="loots_to_apply">
+                            <T>239880<!--LootActions: loot_Dumpster_FillOverTime--></T>
+                          </L>
+                        </U>
+                      </L>
+                    </U>
+                  </V>
+                  <V t="apply_new_value" n="vfx_state" />
+                </U>
+              </U>
+              <U>
+                <T n="key">15350<!--CommodityBasedObjectStateValue: Trashcan_Capacity_Overflowing--></T>
+                <U n="value">
+                  <V n="geometry_state" t="apply_new_value">
+                    <V n="apply_new_value" t="set_to_custom_value">
+                      <T n="set_to_custom_value">Overflowing</T>
+                    </V>
+                  </V>
+                  <V n="periodic_loot" t="apply_new_value">
+                    <U n="apply_new_value">
+                      <L n="periodic_loots">
+                        <U>
+                          <T n="frequency_interval">240</T>
+                          <T n="initial_delay">240</T>
+                          <L n="loots_to_apply">
+                            <T>239880<!--LootActions: loot_Dumpster_FillOverTime--></T>
+                          </L>
+                        </U>
+                      </L>
+                    </U>
+                  </V>
+                  <V n="vfx_state" t="apply_new_value">
+                    <V n="apply_new_value" t="start_vfx">
+                      <V n="start_vfx" t="single_effect">
+                        <U n="single_effect">
+                          <T n="effect_name">s40_trashcan_lowRound_StinkLow</T>
+                        </U>
+                      </V>
+                    </V>
+                  </V>
+                </U>
+              </U>
+            </L>
+            <V n="default_value" t="reference">
+              <T n="reference">15347<!--CommodityBasedObjectStateValue: Trashcan_Capacity_Empty--></T>
+            </V>
+          </U>
+          <U>
+            <L n="client_states">
+              <U>
+                <T n="key">131794<!--ObjectStateValue: Kelpto_Stolen_Object--></T>
+              </U>
+              <U>
+                <T n="key">131795<!--ObjectStateValue: Klepto_Not_Stolen_Object--></T>
+              </U>
+            </L>
+            <V n="default_value" t="reference">
+              <T n="reference">131795<!--ObjectStateValue: Klepto_Not_Stolen_Object--></T>
+            </V>
+          </U>
+          <U>
+            <L n="client_states">
+              <U>
+                <T n="key">39611<!--CommodityBasedObjectStateValue: FireState_Burn_Material_Change--></T>
+              </U>
+              <U>
+                <T n="key">39736<!--CommodityBasedObjectStateValue: FireState_Burn_Material_Change_Burning--></T>
+              </U>
+              <U>
+                <T n="key">39737<!--CommodityBasedObjectStateValue: FireState_Burn_Material_Change_Not_Burning--></T>
+              </U>
+              <U>
+                <T n="key">77532<!--CommodityBasedObjectStateValue: FireState_Burn_Material_Change_Replace--></T>
+              </U>
+            </L>
+            <V t="reference" n="default_value">
+              <T n="reference">39737<!--CommodityBasedObjectStateValue: FireState_Burn_Material_Change_Not_Burning--></T>
+            </V>
+          </U>
+          <U>
+            <L n="client_states">
+              <U>
+                <T n="key">35956<!--CommodityBasedObjectStateValue: Materialistic_Admired--></T>
+              </U>
+              <U>
+                <T n="key">35957<!--CommodityBasedObjectStateValue: Materialistic_YetToAdmire--></T>
+              </U>
+            </L>
+            <V t="reference" n="default_value">
+              <T n="reference">35957<!--CommodityBasedObjectStateValue: Materialistic_YetToAdmire--></T>
+            </V>
+          </U>
+        </L>
+      </U>
+    </V>
+    <V t="enabled" n="tooltip_component" />
+  </U>
+  <L n="_part_data_map">
+    <U>
+      <T n="key">dumpster</T>
+      <U n="value">
+        <L n="overlapping_parts">
+          <T>dumpster_WooHoo_1</T>
+          <T>dumpster_WooHoo_2</T>
+        </L>
+        <T n="part_definition">235029<!--ObjectPart: part_Dumpster--></T>
+        <V t="disabled" n="subroot_index" />
+      </U>
+    </U>
+    <U>
+      <T n="key">dumpster_WooHoo_1</T>
+      <U n="value">
+        <L n="adjacent_parts">
+          <T>dumpster_WooHoo_2</T>
+        </L>
+        <L n="overlapping_parts">
+          <T>dumpster</T>
+        </L>
+        <T n="part_definition">234941<!--ObjectPart: part_Dumpster_Woohoo--></T>
+        <V t="disabled" n="subroot_index" />
+      </U>
+    </U>
+    <U>
+      <T n="key">dumpster_WooHoo_2</T>
+      <U n="value">
+        <L n="adjacent_parts">
+          <T>dumpster_WooHoo_1</T>
+        </L>
+        <L n="overlapping_parts">
+          <T>dumpster</T>
+        </L>
+        <T n="part_definition">234941<!--ObjectPart: part_Dumpster_Woohoo--></T>
+        <V t="disabled" n="subroot_index" />
+      </U>
+    </U>
+  </L>
+  <L n="_super_affordances">
+    <T>13983<!--StandSuperInteraction: sim-stand--></T>
+    <T>13328<!--ImmediateSuperInteraction: debug_Reset--></T>
+    <T>13326<!--ImmediateSuperInteraction: debug_ObjectDestroy--></T>
+    <T>234507<!--SuperInteraction: dumpster_HideIn--></T>
+    <T>234506<!--SuperInteraction: dumpster_Throw_Away_DumpInto--></T>
+    <T>196759<!--SuperInteraction: famePerks_GoodReputation_GivingBack_DonateObject--></T>
+    <T>144099<!--SuperInteraction: generic_Object_Toddler_Check_Out--></T>
+    <T>156936<!--SuperInteraction: generic_Object_Toddler_Check_Out_HighChair--></T>
+    <T>120569<!--StandSuperInteraction: dog_Stand--></T>
+    <T>234500<!--CollectManyInteraction: trashUpdate_Dumpster_SortCompostables--></T>
+    <T>234502<!--CollectManyInteraction: Empty_Dumpster_TrashUpdate--></T>
+    <T>234501<!--CollectManyInteraction: trashUpdate_Dumpster_SortRecyclables--></T>
+    <T>239654<!--SuperInteraction: trashUpdate_Dumpster_ClearRoaches--></T>
+    <T>239936<!--SuperInteraction: trashUpdate_Dumpster_BondWithFlies--></T>
+    <T>239647<!--SuperInteraction: trashUpdate_Dumpster_ClearFlies--></T>
+    <T>239953<!--ImmediateSuperInteraction: trashUpdate_Cheats_DeathByFlies--></T>
+    <T>235091<!--SuperInteraction: trashUpdate_WasteManager_PickupTrash--></T>
+    <T>234503<!--CollectManyInteraction: Empty_Dumpster_TrashUpdate_Continuation--></T>
+    <T>239639<!--ObjectInInventoryPickerInteraction: civilDesigner_SmogVacuum_Dumpster--></T>
+    <T>234433<!--ImmediateSuperInteraction: trashUpdate_Cheats_SetEmpty--></T>
+    <T>234086<!--ImmediateSuperInteraction: trashUpdate_Cheats_SetFull--></T>
+    <T>234434<!--ImmediateSuperInteraction: trashUpdate_Cheats_SetMed--></T>
+    <T>234377<!--ImmediateSuperInteraction: trashUpdate_Cheats_SetOverflowing--></T>
+    <T>233082<!--SuperInteraction: dumpster_DiveForDeals--></T>
+    <T>237004<!--SuperInteraction: dumpster_DiveForDeals_Freegan--></T>
+    <T>233084<!--SuperInteraction: dumpster_DiveForMeals--></T>
+    <T>234079<!--SuperInteraction: generic_Dumpster_WooHoo--></T>
+    <T>234331<!--SimPickerInteraction: wooHoo_Picker_Dumpster--></T>
+    <T>234075<!--SimPickerInteraction: Dumpster_messAround_Picker--></T>
+    <T>234076<!--SimPickerInteraction: Dumpster_tryForBaby_Female_Picker--></T>
+    <T>234077<!--SimPickerInteraction: Dumpster_tryForBaby_Male_Picker--></T>
+    <T>235452<!--SuperInteraction: dumpster_Dive_CommunityNPC--></T>
+    <T>234504<!--SuperInteraction: dumpster_Throw_Away--></T>
+    <T>241622<!--SuperInteraction: dumpster_Throw_Away_Pans_DumpInto--></T>
+    <T>241607<!--SuperInteraction: dumpster_Throw_Away_Pots_DumpInto--></T>
+    <T>238031<!--CollectManyInteraction: empty_Dumpster_TrashUpdate_LeftHand--></T>
+    <T>237820<!--SuperInteraction: dumpster_Nap--></T>
+    <T>233893<!--SocialSuperInteraction: dumpster_DiveForThrills_WooHoo--></T>
+    <T>234078<!--SocialSuperInteraction: Dumpster_tryForBaby--></T>
+    <T>238032<!--CollectManyInteraction: empty_Dumpster_TrashUpdate_LeftHand_Continuation--></T>
+    <T>241755<!--CollectManyInteraction: trashUpdate_Dumpster_SortCompostables_Left--></T>
+    <T>241756<!--CollectManyInteraction: trashUpdate_Dumpster_SortRecyclables_Left--></T>
+    <T>239033<!--SuperInteraction: generic_Dumpster_Nap--></T>
+    <T>106859<!--SuperInteraction: simRay_Transform_Object--></T>
+    <T>74457<!--ImmediateSuperInteraction: fire_ReplaceBurntObject--></T>
+    <T>102258<!--SuperInteraction: Ghost_Possess--></T>
+    <T>168502<!--SuperInteraction: Ghost_Pet_Possess--></T>
+  </L>
+  <T n="anim_boundary_conditions_check_carry">True</T>
+  <U n="recycling_data">
+    <L n="recycling_values">
+      <U>
+        <E n="Bucks Type">RecycleBitsBucks</E>
+        <T n="Value">0.5</T>
+      </U>
+      <U>
+        <E n="Bucks Type">RecyclePiecesBucks</E>
+        <T n="Value">0.5</T>
+      </U>
+    </L>
+  </U>
+</I>

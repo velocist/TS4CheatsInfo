@@ -1,0 +1,226 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<I c="SuperInteraction" i="interaction" m="interactions.base.super_interaction" n="craftable_Pumpkin_Smash_PaleOrange" s="128251">
+  <L n="_constraints">
+    <U>
+      <E n="constrained_participant">Actor</E>
+      <L n="constraints">
+        <U>
+          <V n="value" t="circle">
+            <U n="circle">
+              <T n="ideal_radius">0</T>
+              <T n="ideal_radius_width">0</T>
+              <T n="radial_cost_weight">2.25</T>
+              <T n="radius">0.65</T>
+              <T n="require_los">True</T>
+            </U>
+          </V>
+        </U>
+      </L>
+    </U>
+    <U>
+      <E n="constrained_participant">Actor</E>
+      <L n="constraints">
+        <U>
+          <V n="value" t="facing">
+            <U n="facing">
+              <T n="inner_radius">0</T>
+              <T n="range">90</T>
+            </U>
+          </V>
+        </U>
+      </L>
+    </U>
+  </L>
+  <V t="participant" n="_icon">
+    <U n="participant">
+      <L n="participant_type">
+        <E>Object</E>
+      </L>
+    </U>
+  </V>
+  <V t="enabled" n="_saveable" />
+  <T n="attention_cost">0.5</T>
+  <V n="basic_content" t="flexible_length">
+    <U n="flexible_length">
+      <L n="conditional_actions">
+        <V t="literal">
+          <U n="literal">
+            <L n="conditions">
+              <V t="time_based">
+                <U n="time_based">
+                  <T n="max_time">15</T>
+                  <T n="min_time">15</T>
+                </U>
+              </V>
+            </L>
+            <E n="interaction_action">EXIT_NATURALLY</E>
+          </U>
+        </V>
+      </L>
+      <V n="content" t="looping_content">
+        <U n="looping_content">
+          <U n="animation_ref">
+            <T n="factory">125080<!--AnimationElement: object_Pumpkin_Smash--></T>
+            <U n="overrides">
+              <L n="vfx">
+                <U>
+                  <T n="original_effect">jump01</T>
+                  <U n="replacement_effect">
+                    <V n="effect" t="play_effect">
+                      <T n="play_effect">sp04_pumpkin_smash_jump_orange_pale</T>
+                    </V>
+                  </U>
+                </U>
+                <U>
+                  <T n="original_effect">pumpkin_smash</T>
+                  <U n="replacement_effect">
+                    <V n="effect" t="play_effect">
+                      <T n="play_effect">sp04_pumpkin_jump_smash_orange_pale</T>
+                    </V>
+                  </U>
+                </U>
+              </L>
+            </U>
+          </U>
+        </U>
+      </V>
+    </U>
+  </V>
+  <L n="basic_extras">
+    <V t="state_change">
+      <U n="state_change">
+        <V t="single_value" n="new_value">
+          <U n="single_value">
+            <T n="new_value">125004<!--ObjectStateValue: pumpkin_Smashed_Destroyed--></T>
+          </U>
+        </V>
+        <V t="on_xevt" n="timing">
+          <U n="on_xevt">
+            <T n="xevt_id">750</T>
+          </U>
+        </V>
+      </U>
+    </V>
+    <V t="broadcaster">
+      <U n="broadcaster">
+        <L n="broadcaster_types">
+          <U>
+            <T n="item">126861<!--Broadcaster: broadcaster_SmashPumpkin--></T>
+          </U>
+        </L>
+      </U>
+    </V>
+    <V t="state_change">
+      <U n="state_change">
+        <V n="new_value" t="single_value">
+          <U n="single_value">
+            <T n="new_value">35956<!--CommodityBasedObjectStateValue: Materialistic_Admired--></T>
+          </U>
+        </V>
+        <V n="timing" t="immediately" />
+      </U>
+    </V>
+    <V t="broadcaster">
+      <U n="broadcaster">
+        <L n="broadcaster_types">
+          <U>
+            <T n="item">202997<!--Broadcaster: broadcaster_Reputation_SeenLoot_Looping_Loss_Misc_OffLot_Small--></T>
+          </U>
+        </L>
+      </U>
+    </V>
+  </L>
+  <V t="disabled" n="content_score" />
+  <T n="display_name">0x7B81DBFC<!--String: "Destrozar"--></T>
+  <U n="display_name_text_tokens">
+    <L n="tokens">
+      <V t="participant_type">
+        <U n="participant_type">
+          <V n="objects" t="from_participant">
+            <U n="from_participant">
+              <E n="participant">Actor</E>
+            </U>
+          </V>
+        </U>
+      </V>
+      <V t="participant_type">
+        <U n="participant_type">
+          <V n="objects" t="from_participant">
+            <U n="from_participant">
+              <E n="participant">Object</E>
+            </U>
+          </V>
+        </U>
+      </V>
+    </L>
+  </U>
+  <L n="interaction_category_tags">
+    <E>Interaction_Super</E>
+    <E>Interaction_All</E>
+    <E>Interaction_Skill_Mischief</E>
+  </L>
+  <V t="single" n="outcome">
+    <U n="single">
+      <U n="actions">
+        <L n="loot_list">
+          <T>125065<!--LootActions: loot_Buff_Pumpkin_SmashinPumpkins--></T>
+          <T>115108<!--LootActions: skill_Loot_Dynamic_Standard--></T>
+        </L>
+      </U>
+    </U>
+  </V>
+  <E n="scoring_priority">NORMAL</E>
+  <U n="skill_loot_data">
+    <T n="stat">16707<!--Skill: statistic_Skill_AdultMajor_Mischief--></T>
+  </U>
+  <T n="subaction_selection_weight">1</T>
+  <V t="literal" n="super_affordance_compatibility">
+    <U n="literal">
+      <V n="default_inclusion" t="exclude_all" />
+    </U>
+  </V>
+  <E n="target_type">OBJECT</E>
+  <L n="test_globals">
+    <V t="sim_info">
+      <U n="sim_info">
+        <V t="specified" n="ages">
+          <L n="specified">
+            <E>TEEN</E>
+            <E>YOUNGADULT</E>
+            <E>ADULT</E>
+            <E>ELDER</E>
+            <E>CHILD</E>
+          </L>
+        </V>
+        <V t="specified" n="species">
+          <U n="specified">
+            <L n="species">
+              <E />
+            </L>
+          </U>
+        </V>
+        <E n="who">Actor</E>
+      </U>
+    </V>
+    <V t="state">
+      <U n="state">
+        <T n="value">125015<!--ObjectStateValue: pumpkin_Color_PaleOrange--></T>
+      </U>
+    </V>
+    <V t="state">
+      <U n="state">
+        <E n="operator">NOTEQUAL</E>
+        <T n="value">125004<!--ObjectStateValue: pumpkin_Smashed_Destroyed--></T>
+      </U>
+    </V>
+    <V t="has_parent_object">
+      <U n="has_parent_object">
+        <T n="negate">True</T>
+        <V n="tooltip" t="enabled">
+          <T n="enabled">0xB219F7FE<!--String: "Las calabazas solo pueden destrozarse si están en el suelo."--></T>
+        </V>
+      </U>
+    </V>
+  </L>
+  <T n="time_overhead">30</T>
+</I>

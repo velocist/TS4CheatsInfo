@@ -1,0 +1,519 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<I c="SocialSuperInteraction" i="interaction" m="interactions.social.social_super_interaction" n="massageTable_Social_FertilityMassage" s="117753">
+  <L n="_constraints">
+    <U>
+      <L n="constraints">
+        <U>
+          <V n="value" t="posture">
+            <U n="posture">
+              <L n="posture_manifest_tuning">
+                <U>
+                  <V n="target_object_filter" t="enabled">
+                    <V t="object_tags" n="enabled">
+                      <U n="object_tags">
+                        <L n="tag_set">
+                          <E>Func_MassageTable</E>
+                        </L>
+                      </U>
+                    </V>
+                  </V>
+                </U>
+              </L>
+            </U>
+          </V>
+        </U>
+      </L>
+    </U>
+  </L>
+  <V t="participant" n="_icon">
+    <U n="participant">
+      <L n="participant_type">
+        <E>Object</E>
+      </L>
+    </U>
+  </V>
+  <L n="_party_size_weight_tuning">
+    <U>
+      <T n="y">100</T>
+    </U>
+    <U>
+      <T n="x">1</T>
+      <T n="y">100</T>
+    </U>
+    <U>
+      <T n="x">2</T>
+      <T n="y">50</T>
+    </U>
+    <U>
+      <T n="x">3</T>
+      <T n="y">0</T>
+    </U>
+    <U>
+      <T n="x">4</T>
+    </U>
+  </L>
+  <V t="enabled" n="_saveable" />
+  <T n="_social_group_type">117754<!--SocialGroup: group_MassageTable--></T>
+  <V t="push_affordance" n="affordance_to_push_on_target">
+    <T n="push_affordance">117755<!--SocialSuperInteraction: massageTable_CustomerSocial--></T>
+  </V>
+  <T n="allow_autonomous">False</T>
+  <T n="allow_user_directed">False</T>
+  <T n="attention_cost">0</T>
+  <V n="basic_content" t="flexible_length">
+    <U n="flexible_length">
+      <L n="conditional_actions">
+        <V t="literal">
+          <U n="literal">
+            <L n="conditions">
+              <V t="time_based">
+                <U n="time_based">
+                  <T n="max_time">60</T>
+                  <T n="min_time">45</T>
+                </U>
+              </V>
+            </L>
+            <E n="interaction_action">EXIT_NATURALLY</E>
+            <L n="loot_actions">
+              <T>121998<!--LootActions: loot_Commodity_MassageTable_Massage_Finished--></T>
+            </L>
+            <E n="progress_bar_action">FORCE_USE_CONDITION</E>
+          </U>
+        </V>
+      </L>
+      <V n="content" t="staging_content">
+        <U n="staging_content">
+          <U n="content_set">
+            <L n="affordance_links">
+              <T>117720<!--SocialMixerInteraction: mixer_massageTable_SwedishUpperBodyRub--></T>
+              <T>117721<!--SocialMixerInteraction: mixer_massageTable_SwedishUpperBodyKnead--></T>
+              <T>117723<!--SocialMixerInteraction: mixer_massageTable_SwedishRightLegRub--></T>
+              <T>117722<!--SocialMixerInteraction: mixer_massageTable_SwedishLeftLegRub--></T>
+              <T>117727<!--SocialMixerInteraction: mixer_massageTable_SwedishPassGas--></T>
+              <T>121277<!--SocialMixerInteraction: mixer_massageTable_Start--></T>
+            </L>
+            <V t="enabled" n="balloon_overrides">
+              <L n="enabled">
+                <U>
+                  <T n="balloon_chance">15</T>
+                  <L n="balloon_choices">
+                    <U>
+                      <V n="item" t="balloon_category">
+                        <T n="balloon_category">118589<!--BalloonCategory: balloonCategory_Set_MassageTable_Thought--></T>
+                      </V>
+                    </U>
+                  </L>
+                  <L n="balloon_target">
+                    <E>TargetSim</E>
+                  </L>
+                </U>
+              </L>
+            </V>
+          </U>
+        </U>
+      </V>
+      <V t="enabled" n="periodic_stat_change">
+        <U n="enabled">
+          <L n="operations">
+            <V t="statistic_change">
+              <U n="statistic_change">
+                <T n="amount">1</T>
+                <T n="stat">16658<!--Commodity: motive_Social--></T>
+                <L n="subject">
+                  <E>Actor</E>
+                  <E>TargetSim</E>
+                </L>
+              </U>
+            </V>
+            <V t="statistic_change">
+              <U n="statistic_change">
+                <T n="advertise">False</T>
+                <T n="amount">-0.4</T>
+                <T n="stat">16575<!--Commodity: commodity_dirtiness--></T>
+                <L n="subject">
+                  <E>ActorPostureTarget</E>
+                </L>
+              </U>
+            </V>
+            <V t="dynamic_skill">
+              <U n="dynamic_skill">
+                <U n="skill_loot_data_override">
+                  <E n="effectiveness">LargePeriodic</E>
+                </U>
+              </U>
+            </V>
+            <V t="statistic_set_max">
+              <U n="statistic_set_max">
+                <T n="stat">125579<!--Commodity: commodity_Buff_InsiderTrait_MissHangingOut--></T>
+                <L n="tests">
+                  <L>
+                    <V t="relationship">
+                      <U n="relationship">
+                        <U n="relationship_score_interval">
+                          <T n="lower_bound">35</T>
+                          <T n="upper_bound">100</T>
+                        </U>
+                        <L n="target_sim">
+                          <E>TargetSim</E>
+                        </L>
+                      </U>
+                    </V>
+                    <V t="trait">
+                      <U n="trait">
+                        <L n="whitelist_traits">
+                          <T>125437<!--Trait: trait_Insider--></T>
+                        </L>
+                      </U>
+                    </V>
+                  </L>
+                </L>
+              </U>
+            </V>
+          </L>
+        </U>
+      </V>
+      <V t="enabled" n="statistic_reduction_by_category">
+        <U n="enabled">
+          <L n="categories">
+            <E>Stressed_Buffs</E>
+            <E>Uncomfortable_Buffs</E>
+          </L>
+          <T n="rate">6</T>
+          <L n="subject">
+            <E>TargetSim</E>
+          </L>
+        </U>
+      </V>
+    </U>
+  </V>
+  <L n="basic_extras">
+    <V t="loot">
+      <U n="loot">
+        <L n="loot_list">
+          <T>162659<!--LootActions: loot_Commodity_Culling_GhostAdd_target--></T>
+        </L>
+      </U>
+    </V>
+    <V t="buff">
+      <U n="buff">
+        <U n="buff_type">
+          <V n="buff_reason" t="enabled">
+            <T n="enabled">0x9C09275F<!--String: "(Por estar en un grupo social con al menos 3 Sims)"--></T>
+          </V>
+          <T n="buff_type">125555<!--Buff: buff_Trait_WithMyFriends--></T>
+        </U>
+        <L n="subject">
+          <E>Actor</E>
+          <E>SocialGroupSims</E>
+          <E>TargetSim</E>
+        </L>
+        <L n="tests">
+          <L>
+            <V t="social_group">
+              <U n="social_group">
+                <V n="threshold" t="enabled">
+                  <U n="enabled">
+                    <T n="value">3</T>
+                  </U>
+                </V>
+              </U>
+            </V>
+          </L>
+        </L>
+      </U>
+    </V>
+  </L>
+  <V t="enabled" n="basic_reserve_object" />
+  <V t="enabled" n="canonical_animation">
+    <U n="enabled">
+      <T n="factory">117552<!--AnimationElement: massageTable_Swedish_UpperBodyRub--></T>
+    </U>
+  </V>
+  <V t="disabled" n="content_score" />
+  <T n="display_name">0x465CC1AB<!--String: "Dar un masaje de fertilidad"--></T>
+  <U n="display_name_text_tokens">
+    <L n="tokens">
+      <V t="participant_type">
+        <U n="participant_type">
+          <V t="from_participant" n="objects">
+            <U n="from_participant">
+              <E n="participant">Actor</E>
+            </U>
+          </V>
+        </U>
+      </V>
+      <V t="participant_type">
+        <U n="participant_type">
+          <V t="from_participant" n="objects">
+            <U n="from_participant">
+              <E n="participant">Object</E>
+            </U>
+          </V>
+        </U>
+      </V>
+    </L>
+  </U>
+  <V t="disabled" n="idle_animation" />
+  <T n="ignore_group_socials">False</T>
+  <L n="interaction_category_tags">
+    <E>Interaction_SocialSuper</E>
+    <E>Interaction_Super</E>
+    <E>Interaction_All</E>
+    <E>Interaction_SocialAll</E>
+    <E>Interaction_MassageTable</E>
+    <E>Interaction_Skill_Wellness</E>
+    <E>Interaction_Skill_Wellness_BG</E>
+    <E>Interaction_Social_Contagious</E>
+  </L>
+  <T n="invite_in_after_interaction">True</T>
+  <U n="listen_animation">
+    <T o="true" n="factory" />
+  </U>
+  <V n="outcome" t="test_based">
+    <U n="test_based">
+      <L n="fallback_outcomes">
+        <U>
+          <U n="outcome">
+            <V t="enabled" n="animation_ref">
+              <U n="enabled">
+                <T n="factory">121276<!--AnimationElement: massageTable_Actions_Stop--></T>
+              </U>
+            </V>
+            <L n="continuation">
+              <U>
+                <T n="affordance">13983<!--StandSuperInteraction: sim-stand--></T>
+                <E n="target">Invalid</E>
+              </U>
+              <U>
+                <E n="actor">TargetSim</E>
+                <T n="affordance">13983<!--StandSuperInteraction: sim-stand--></T>
+                <E n="target">Invalid</E>
+              </U>
+            </L>
+            <T n="force_outcome_on_exit">True</T>
+            <L n="loot_list">
+              <T>120465<!--LootActions: loot_Commodity_MassageTable_Stone_reset--></T>
+            </L>
+            <E n="outcome_result">NONE</E>
+          </U>
+          <U n="weight">
+            <T n="base_value">3</T>
+          </U>
+        </U>
+      </L>
+      <L n="tested_outcomes">
+        <U>
+          <L n="potential_outcomes">
+            <U>
+              <U n="outcome">
+                <V t="enabled" n="animation_ref">
+                  <U n="enabled">
+                    <T n="factory">121276<!--AnimationElement: massageTable_Actions_Stop--></T>
+                  </U>
+                </V>
+                <L n="continuation">
+                  <U>
+                    <E n="actor">TargetSim</E>
+                    <T n="affordance">118312<!--SuperInteraction: reactions_MassageTable_Fertility--></T>
+                  </U>
+                  <U>
+                    <T n="affordance">13983<!--StandSuperInteraction: sim-stand--></T>
+                    <E n="target">Invalid</E>
+                  </U>
+                </L>
+                <T n="force_outcome_on_exit">True</T>
+                <L n="loot_list">
+                  <T>120465<!--LootActions: loot_Commodity_MassageTable_Stone_reset--></T>
+                </L>
+              </U>
+            </U>
+          </L>
+          <L n="tests">
+            <L>
+              <V t="trait">
+                <U n="trait">
+                  <L n="blacklist_traits">
+                    <T>9602<!--Trait: trait_Loner--></T>
+                  </L>
+                  <E n="subject">TargetSim</E>
+                </U>
+              </V>
+              <V t="statistic">
+                <U n="statistic">
+                  <T n="stat">121999<!--Commodity: commodity_MassageTable_Finished--></T>
+                  <V t="value_threshold" n="threshold">
+                    <U n="value_threshold">
+                      <E n="comparison">GREATER</E>
+                    </U>
+                  </V>
+                  <E n="who">ActorPostureTarget</E>
+                </U>
+              </V>
+            </L>
+          </L>
+        </U>
+        <U>
+          <L n="potential_outcomes">
+            <U>
+              <U n="outcome">
+                <V t="enabled" n="animation_ref">
+                  <U n="enabled">
+                    <T n="factory">121276<!--AnimationElement: massageTable_Actions_Stop--></T>
+                  </U>
+                </V>
+                <L n="basic_extras">
+                  <V t="save_participant">
+                    <U n="save_participant">
+                      <V t="at_beginning" n="timing" />
+                    </U>
+                  </V>
+                </L>
+                <L n="continuation">
+                  <U>
+                    <E n="actor">TargetSim</E>
+                    <T n="affordance">121023<!--SuperInteraction: reactions_MassageTable_UncomfortableMassage--></T>
+                    <E n="target">TargetSim</E>
+                  </U>
+                  <U>
+                    <T n="affordance">13983<!--StandSuperInteraction: sim-stand--></T>
+                    <E n="target">Invalid</E>
+                  </U>
+                </L>
+                <L n="loot_list">
+                  <T>120465<!--LootActions: loot_Commodity_MassageTable_Stone_reset--></T>
+                </L>
+                <E n="outcome_result">FAILURE</E>
+              </U>
+            </U>
+            <U>
+              <U n="outcome">
+                <V t="enabled" n="animation_ref">
+                  <U n="enabled">
+                    <T n="factory">121276<!--AnimationElement: massageTable_Actions_Stop--></T>
+                  </U>
+                </V>
+                <L n="continuation">
+                  <U>
+                    <E n="actor">TargetSim</E>
+                    <T n="affordance">118312<!--SuperInteraction: reactions_MassageTable_Fertility--></T>
+                  </U>
+                  <U>
+                    <T n="affordance">13983<!--StandSuperInteraction: sim-stand--></T>
+                    <E n="target">Invalid</E>
+                  </U>
+                </L>
+                <L n="loot_list">
+                  <T>120465<!--LootActions: loot_Commodity_MassageTable_Stone_reset--></T>
+                </L>
+              </U>
+              <U n="weight">
+                <T n="base_value">3</T>
+              </U>
+            </U>
+          </L>
+          <L n="tests">
+            <L>
+              <V t="trait">
+                <U n="trait">
+                  <E n="subject">TargetSim</E>
+                  <L n="whitelist_traits">
+                    <T>9602<!--Trait: trait_Loner--></T>
+                  </L>
+                </U>
+              </V>
+              <V t="statistic">
+                <U n="statistic">
+                  <T n="stat">121999<!--Commodity: commodity_MassageTable_Finished--></T>
+                  <V t="value_threshold" n="threshold">
+                    <U n="value_threshold">
+                      <E n="comparison">GREATER</E>
+                    </U>
+                  </V>
+                  <E n="who">ActorPostureTarget</E>
+                </U>
+              </V>
+            </L>
+          </L>
+        </U>
+      </L>
+      <T n="use_fallback_as_default">False</T>
+    </U>
+  </V>
+  <U n="posture_preferences">
+    <T n="disable_all_scoring">True</T>
+    <T n="prefer_clicked_part">False</T>
+  </U>
+  <U n="progress_bar_enabled">
+    <T n="bar_enabled">True</T>
+  </U>
+  <T n="relationship_scoring">True</T>
+  <T n="require_shared_body_target">True</T>
+  <E n="scoring_priority">NORMAL</E>
+  <V t="enabled" n="sim_affinity_posture_scoring_data">
+    <U n="enabled">
+      <L n="my_scoring">
+        <U>
+          <V t="relationship_based" n="affinity_strategy" />
+          <T n="negate_tag">True</T>
+          <E n="running_interaction_tag">Sleeping</E>
+        </U>
+        <U>
+          <V n="affinity_strategy" t="avoid" />
+          <E n="running_interaction_tag">Very_Loud</E>
+        </U>
+      </L>
+      <L n="my_tags">
+        <E>Loud</E>
+        <E>Chat</E>
+      </L>
+    </U>
+  </V>
+  <U n="skill_loot_data">
+    <E n="effectiveness">SmallPeriodic</E>
+    <T n="stat">117858<!--Skill: statistic_Skill_AdultMajor_Wellness--></T>
+  </U>
+  <T n="subaction_selection_weight">1</T>
+  <V t="literal" n="super_affordance_compatibility">
+    <U n="literal">
+      <V n="default_inclusion" t="exclude_all">
+        <U n="exclude_all">
+          <L n="include_affordances">
+            <T>118841<!--MixerInteraction: smellIncense_positive--></T>
+          </L>
+          <L n="include_lists">
+            <T>33624<!--AffordanceList: AffordanceList_Stereo_Listens--></T>
+          </L>
+        </U>
+      </V>
+    </U>
+  </V>
+  <E n="target_type">TARGET</E>
+  <L n="test_globals">
+    <V t="sim_info">
+      <U n="sim_info">
+        <V t="specified" n="species">
+          <U n="specified">
+            <L n="species">
+              <E />
+            </L>
+          </U>
+        </V>
+        <E n="who">TargetSim</E>
+      </U>
+    </V>
+    <V t="sim_info">
+      <U n="sim_info">
+        <V t="specified" n="ages" />
+        <V t="specified" n="species">
+          <U n="specified">
+            <L n="species">
+              <E />
+            </L>
+          </U>
+        </V>
+        <E n="who">Actor</E>
+      </U>
+    </V>
+  </L>
+  <T n="time_overhead">30</T>
+</I>

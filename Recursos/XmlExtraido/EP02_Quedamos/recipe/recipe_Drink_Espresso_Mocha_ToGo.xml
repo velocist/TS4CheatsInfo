@@ -1,0 +1,205 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<I c="Recipe" i="recipe" m="crafting.recipe" n="recipe_Drink_Espresso_Mocha_ToGo" s="123923">
+  <L n="_first_phases">
+    <E>START_PHASE</E>
+  </L>
+  <L n="_phases">
+    <U>
+      <E n="key">2-Staging</E>
+      <V n="value" t="simple_phase_ref">
+        <U n="simple_phase_ref">
+          <V t="override" n="_cancel_phase_name">
+            <E n="override">discard_shaker</E>
+          </V>
+          <T n="factory">122257<!--SimplePhase: phaseSimple_Drink_Espresso_Grind--></T>
+          <L n="next_phases">
+            <E>4-Staging</E>
+          </L>
+        </U>
+      </V>
+    </U>
+    <U>
+      <E n="key">4-Staging</E>
+      <V n="value" t="simple_phase_ref">
+        <U n="simple_phase_ref">
+          <T n="factory">122258<!--SimplePhase: phaseSimple_Drink_Espresso_FilterAttach--></T>
+          <L n="next_phases">
+            <E>6-Staging</E>
+          </L>
+        </U>
+      </V>
+    </U>
+    <U>
+      <E n="key">6-Staging</E>
+      <V n="value" t="simple_phase_ref">
+        <U n="simple_phase_ref">
+          <V t="override" n="_cancel_phase_name">
+            <E n="override">destroy_cup</E>
+          </V>
+          <T n="factory">122507<!--SimplePhase: phaseSimple_Drink_Espresso_CreateCup--></T>
+          <L n="next_phases">
+            <E>make-drink</E>
+          </L>
+        </U>
+      </V>
+    </U>
+    <U>
+      <E n="key">8-Staging</E>
+      <V n="value" t="simple_phase_ref">
+        <U n="simple_phase_ref">
+          <T n="factory">122506<!--SimplePhase: phaseSimple_Drink_Espresso_FrothPour--></T>
+          <L n="next_phases">
+            <E>serve_drink</E>
+          </L>
+        </U>
+      </V>
+    </U>
+    <U>
+      <E n="key">START_PHASE</E>
+      <V n="value" t="simple_phase_ref">
+        <U n="simple_phase_ref">
+          <V t="override" n="_cancel_phase_name">
+            <E n="override">discard_shaker</E>
+          </V>
+          <T n="factory">122259<!--SimplePhase: phaseSimple_Drink_Espresso_FilterRemove--></T>
+          <L n="next_phases">
+            <E>2-Staging</E>
+          </L>
+        </U>
+      </V>
+    </U>
+    <U>
+      <E n="key">destroy_cup</E>
+      <V n="value" t="simple_phase_ref">
+        <U n="simple_phase_ref">
+          <T n="factory">125067<!--SimplePhase: phaseSimple_Drink_Espresso_Cancel_DestroyCup--></T>
+        </U>
+      </V>
+    </U>
+    <U>
+      <E n="key">discard_shaker</E>
+      <V n="value" t="simple_phase_ref">
+        <U n="simple_phase_ref">
+          <T n="factory">122258<!--SimplePhase: phaseSimple_Drink_Espresso_FilterAttach--></T>
+        </U>
+      </V>
+    </U>
+    <U>
+      <E n="key">make-drink</E>
+      <V n="value" t="simple_phase_ref">
+        <U n="simple_phase_ref">
+          <V t="override" n="_cancel_phase_name">
+            <E n="override">destroy_cup</E>
+          </V>
+          <T n="factory">122347<!--SimplePhase: phaseSimple_Drink_Espresso_Brew--></T>
+          <L n="next_phases">
+            <E>8-Staging</E>
+          </L>
+        </U>
+      </V>
+    </U>
+    <U>
+      <E n="key">serve_drink</E>
+      <V n="value" t="simple_phase_ref">
+        <U n="simple_phase_ref">
+          <T n="factory">122512<!--SimplePhase: phaseSimple_Drink_Espresso_Serve_fromCarry--></T>
+          <V t="override" n="point_of_no_return">
+            <T n="override">True</T>
+          </V>
+        </U>
+      </V>
+    </U>
+  </L>
+  <T n="_retail_price">8</T>
+  <T n="autonomy_weight">2</T>
+  <T n="available_in_restaurant">False</T>
+  <T n="crafted_by_text">0x2642142E<!--String: "Obra de: {0.SimName}"--></T>
+  <V t="flat_fee" n="crafting_cost">
+    <T n="flat_fee">8</T>
+  </V>
+  <U n="final_product">
+    <L n="apply_states" />
+    <V t="enabled" n="carry_track">
+      <E n="enabled">RIGHT</E>
+    </V>
+    <L n="conditional_apply_states">
+      <U>
+        <T n="state">32305<!--ObjectStateValue: Marketable_HigherValue--></T>
+        <V n="test" t="trait">
+          <U n="trait">
+            <L n="whitelist_traits">
+              <T>31924<!--Trait: trait_Marketable--></T>
+            </L>
+          </U>
+        </V>
+      </U>
+    </L>
+    <T n="definition">106093</T>
+    <L n="loot_list">
+      <T>33896<!--LootActions: loot_Buff_Trait_Perfectionist_Outstanding--></T>
+      <T>33897<!--LootActions: loot_Buff_Trait_Perfectionist_Poor--></T>
+    </L>
+    <U n="quality_adjustment">
+      <T n="base_quality">10</T>
+      <T n="skill_adjustment">0</T>
+    </U>
+    <L n="simoleon_value_modifiers_map">
+      <U>
+        <T n="key">15304<!--CommodityBasedObjectStateValue: Quality_Normal--></T>
+        <U n="value">
+          <T n="lower_bound">0.9</T>
+        </U>
+      </U>
+      <U>
+        <T n="key">15305<!--CommodityBasedObjectStateValue: Quality_Outstanding--></T>
+        <U n="value">
+          <T n="lower_bound">1.5</T>
+          <T n="upper_bound">2</T>
+        </U>
+      </U>
+      <U>
+        <T n="key">15306<!--CommodityBasedObjectStateValue: Quality_Poor--></T>
+        <U n="value">
+          <T n="lower_bound">0.5</T>
+          <T n="upper_bound">0.6</T>
+        </U>
+      </U>
+      <U>
+        <T n="key">32305<!--ObjectStateValue: Marketable_HigherValue--></T>
+        <U n="value">
+          <T n="upper_bound">3</T>
+        </U>
+      </U>
+    </L>
+  </U>
+  <V t="enabled" n="multiple_order_crafting_phase">
+    <E n="enabled">6-Staging</E>
+  </V>
+  <T n="name">0x2D660B1A<!--String: "Moca"--></T>
+  <T n="phase_interaction_name">0xF2AE9BE5<!--String: "Preparar moca"--></T>
+  <E n="recipe_difficulty">1</E>
+  <L n="recipe_tags">
+    <E>Recipe_Type_Drink</E>
+    <E>Recipe_Category_Drinks</E>
+    <E>Recipe_Course_Drink</E>
+    <E>Recipe_Meal_Breakfast</E>
+    <E>Recipe_Meal_Lunch</E>
+    <E>Recipe_Meal_Dinner</E>
+    <E>Recipe_ChildRestricted</E>
+  </L>
+  <T n="restaurant_base_price">7</T>
+  <T n="restaurant_menu_icon_definition">106093</T>
+  <T n="resumable">False</T>
+  <V t="disabled" n="resume_affordance" />
+  <V t="disabled" n="skill_test" />
+  <V t="enabled" n="utility_info">
+    <L n="enabled">
+      <U>
+        <E n="key">POWER</E>
+      </U>
+      <U>
+        <E n="key">WATER</E>
+      </U>
+    </L>
+  </V>
+</I>

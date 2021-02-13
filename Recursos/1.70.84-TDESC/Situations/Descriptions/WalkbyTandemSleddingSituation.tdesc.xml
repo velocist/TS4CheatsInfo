@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+
+<TuningRoot>
+    <Instance instance_type="situation" class="WalkbyTandemSleddingSituation" module="situations.ambient.walkby_tandem_sledding_situation" muid="F756BF743B598F20" description="A very basic non-user facing complex situation that runs an aggregate&#xA;filter to get the Sims that should be used in it and then has a single&#xA;situation state." instance_subclasses_only="False" parents="SituationComplexCommon, SituationComplex, Situation" path="Situations\Descriptions" use_guid_for_reference="True">
+        <Deleted name="_implies_greeted_status" muid="B95E9C7E48BC5B69" />
+
+        <Deleted name="creation_ui_option" muid="8E2E3A3EFCEEB18D" />
+
+        <Deleted name="exclusivity" muid="A21A5EF8542F6B9F" />
+
+        <TunableTuple name="go_to_sport_slope_state" class="TunableGoToSportSlopeSituationState" display="Go To Sport Slope State" muid="8A9A4EAFD66730ED" description="State for WalkbyTandemSleddingSituation where the sledding sims go to the sport slope." Deprecated="False" filter="0" group="State">
+            <TunableTuple name="interaction_of_interest" class="TunableInteractionOfInterest" display="Interaction Of Interest" muid="B4EE4ACD2150E315" description="The interaction that when run will cause GPE defined behavior&#xA;to run." Deprecated="False" filter="0" group="General">
+                <TunableList name="affordances" class="TunableList" display="Affordances" muid="A5DDB9EB43CA12CA" description="The Sim must have started either any affordance in this list or an&#xA;interaction matching one of the tags in this tunable's Tags&#xA;field." Deprecated="False" filter="0" group="General">
+                    <Tunable type="interaction" class="TunableReference" muid="20DABED06D3EA300" allow_none="False" Deprecated="False" filter="0" group="General" pack_safe="True" />
+                </TunableList>
+                <TunableList name="tags" class="TunableSet" display="Tags" muid="BC9E9DA3582EB2C0" description="The Sim must have run either an interaction matching one of these&#xA;Tags or an affordance from the list of Affordances in this&#xA;tunable." Deprecated="False" filter="0" group="General" unique_entries="true">
+                    <TunableEnum type="Tag" class="TunableEnumEntry" default="INVALID" muid="12531D12149A2A79" dynamic_entries="tag.Tag._elements" static_entries="tag.Tag" Deprecated="False" filter="0" group="General" />
+                </TunableList>
+            </TunableTuple>
+            <TunableList name="job_and_role_changes" class="TunableMapping" display="Job And Role Changes" muid="30E716EC5F79EAC" mapping_key="Situation Job" mapping_value="Role State" description="A mapping between situation jobs and role states that defines&#xA;what role states we want to switch to for sims on which jobs&#xA;when this situation state is entered." Deprecated="False" filter="0" group="General">
+                <TunableTuple class="TunableTuple" muid="5C8EDE993758C785" Deprecated="False" filter="0" group="General">
+                    <Tunable type="role_state" name="Role State" class="TunableReference" display="Role State" muid="1DF55E6F8B7EB49E" description="The role state that we will switch sims of the linked job&#xA;into." allow_none="False" Deprecated="False" filter="0" group="General" />
+                    <Tunable type="situation_job" name="Situation Job" class="TunableReference" display="Situation Job" muid="11A0CBFDBCA18B4A" description="A reference to a SituationJob that we will use to change&#xA;sim's role state." allow_none="False" Deprecated="False" filter="0" group="General" />
+                </TunableTuple>
+            </TunableList>
+        </TunableTuple>
+
+        <Tunable type="sim_filter" name="group_filter" class="TunableReference" display="Group Filter" muid="BAE41D6E1EE869B4" description="The aggregate filter that we use to find the sims for this&#xA;situation." allow_none="False" Deprecated="False" filter="0" group="General" restrict="TunableAggregateFilter" />
+
+        <TunableList name="sim_spawner_tags" class="TunableList" display="Sim Spawner Tags" muid="651CF2B6A2424436" description="A list of tags that represent where to spawn Sims for this&#xA;Situation when they come onto the lot.  This tuning will be used&#xA;instead of the tuning on the jobs.&#xA;NOTE: Tags will be searched in order of tuning. Tag [0] has&#xA;priority over Tag [1] and so on." Deprecated="False" filter="0" group="General">
+            <TunableEnum type="Tag" class="TunableEnumWithFilter" default="INVALID" muid="AE7047EC17F8E664" dynamic_entries="tag.Tag._elements" static_entries="tag.Tag" Deprecated="False" dynamic_entries_prefix="Spawn" filter="0" group="General" />
+        </TunableList>
+
+        <TunableList name="situation_job_mapping" class="TunableMapping" display="Situation Job Mapping" muid="12FACC79AEA22729" mapping_key="filter_tag" mapping_value="job" description="A mapping of filter term tag to situation job.&#xA;&#xA;The filter term tag is returned as part of the sim filters used to &#xA;create the guest list for this particular situation.&#xA;&#xA;The situation job is the job that the Sim will be assigned to in&#xA;the background situation." Deprecated="False" filter="0" group="General">
+            <TunableTuple class="TunableTuple" muid="B76B4853E463F135" Deprecated="False" filter="0" group="General">
+                <TunableEnum type="FilterTermTag" name="filter_tag" class="TunableEnumEntry" default="NO_TAG" display="Filter Tag" muid="25C3DCBE69C3EECF" dynamic_entries="filters-tunable.FilterTermTag._elements" static_entries="filters-tunable.FilterTermTag" description="The filter term tag returned with the filter results." Deprecated="False" filter="0" group="General" />
+                <Tunable type="situation_job" name="job" class="TunableReference" display="Job" muid="3AB1676810BC81CB" description="The job the Sim will receive when added to the this situation." allow_none="False" Deprecated="False" filter="0" group="General" />
+            </TunableTuple>
+        </TunableList>
+
+        <TunableTuple name="sled_leader" class="TunableTuple" display="Sled Leader" muid="564DF6347FCBE857" Deprecated="False" filter="0" group="General">
+            <Tunable type="role_state" name="initial_role_state" class="TunableReference" display="Initial Role State" muid="7476BF87CADC887E" description="The initial Role State of the sled leader." allow_none="False" Deprecated="False" filter="0" group="General" restrict="RoleState" />
+            <Tunable type="situation_job" name="situation_job" class="TunableReference" display="Situation Job" muid="F48CBF7110F85DA" description="The Situation Job of the sled leader." allow_none="False" Deprecated="False" filter="0" group="General" restrict="SituationJob" />
+        </TunableTuple>
+
+        <TunableTuple name="sled_passenger" class="TunableTuple" display="Sled Passenger" muid="1EF223D25F569B63" Deprecated="False" filter="0" group="General">
+            <Tunable type="role_state" name="initial_role_state" class="TunableReference" display="Initial Role State" muid="176F2524E90AFD4D" description="The initial Role State of the passenger." allow_none="False" Deprecated="False" filter="0" group="General" restrict="RoleState" />
+            <Tunable type="situation_job" name="situation_job" class="TunableReference" display="Situation Job" muid="A2F8347D169767CE" description="The Situation Job of the passenger." allow_none="False" Deprecated="False" filter="0" group="General" restrict="SituationJob" />
+        </TunableTuple>
+
+        <TunableTuple name="sled_state" class="TunableTandemSledSituationState" display="Sled State" muid="5F84878ABA93FF72" description="State for WalkbyTandemSleddingSituation where the sims actually sled" Deprecated="False" filter="0" group="State">
+            <TunableTuple name="interaction_of_interest" class="TunableInteractionOfInterest" display="Interaction Of Interest" muid="257690A051B93F28" description="The interaction that when run will cause GPE defined behavior&#xA;to run." Deprecated="False" filter="0" group="General">
+                <TunableList name="affordances" class="TunableList" display="Affordances" muid="3757BD0CDABC630D" description="The Sim must have started either any affordance in this list or an&#xA;interaction matching one of the tags in this tunable's Tags&#xA;field." Deprecated="False" filter="0" group="General">
+                    <Tunable type="interaction" class="TunableReference" muid="978496DB186C5C62" allow_none="False" Deprecated="False" filter="0" group="General" pack_safe="True" />
+                </TunableList>
+                <TunableList name="tags" class="TunableSet" display="Tags" muid="2D663871B8B2487E" description="The Sim must have run either an interaction matching one of these&#xA;Tags or an affordance from the list of Affordances in this&#xA;tunable." Deprecated="False" filter="0" group="General" unique_entries="true">
+                    <TunableEnum type="Tag" class="TunableEnumEntry" default="INVALID" muid="1CDFFC32C63910C7" dynamic_entries="tag.Tag._elements" static_entries="tag.Tag" Deprecated="False" filter="0" group="General" />
+                </TunableList>
+            </TunableTuple>
+            <TunableList name="job_and_role_changes" class="TunableMapping" display="Job And Role Changes" muid="97E7A9C0AB08DBD6" mapping_key="Situation Job" mapping_value="Role State" description="A mapping between situation jobs and role states that defines&#xA;what role states we want to switch to for sims on which jobs&#xA;when this situation state is entered." Deprecated="False" filter="0" group="General">
+                <TunableTuple class="TunableTuple" muid="EBC9B0AFDDB88313" Deprecated="False" filter="0" group="General">
+                    <Tunable type="role_state" name="Role State" class="TunableReference" display="Role State" muid="E2A7C993C4D76973" description="The role state that we will switch sims of the linked job&#xA;into." allow_none="False" Deprecated="False" filter="0" group="General" />
+                    <Tunable type="situation_job" name="Situation Job" class="TunableReference" display="Situation Job" muid="F78D4B08AC01763D" description="A reference to a SituationJob that we will use to change&#xA;sim's role state." allow_none="False" Deprecated="False" filter="0" group="General" />
+                </TunableTuple>
+            </TunableList>
+        </TunableTuple>
+    </Instance>
+
+    <VersionHistory>
+        <ActionList>
+            <Action type="kRemove" old_muid="8C78EAE9ACA2B0EA" />
+            <Action type="kRemove" old_muid="48CEF55497C2DA81" />
+        </ActionList>
+
+        <ActionList>
+            <Action type="kRemove" old_muid="AD0228CD8111EEB" />
+        </ActionList>
+
+        <ActionList>
+            <Action type="kRemove" old_muid="71F5C2AE6AD50985" />
+        </ActionList>
+
+        <ActionList>
+            <Action type="kRemove" old_muid="1D8BE1100E73B12A" />
+        </ActionList>
+    </VersionHistory>
+</TuningRoot>

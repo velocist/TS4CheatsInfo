@@ -1,0 +1,176 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<I c="SuperInteraction" i="interaction" m="interactions.base.super_interaction" n="si_InfectedChemicalAnalyzer_AnalyzeInfectiousPlants" s="204339">
+  <V t="enabled" n="_saveable" />
+  <T n="allow_autonomous">False</T>
+  <T n="attention_cost">0.5</T>
+  <V n="basic_content" t="flexible_length">
+    <U n="flexible_length">
+      <L n="conditional_actions">
+        <V t="literal">
+          <U n="literal">
+            <L n="conditions">
+              <V t="time_based">
+                <U n="time_based">
+                  <T n="max_time">60</T>
+                  <T n="min_time">60</T>
+                </U>
+              </V>
+            </L>
+            <E n="interaction_action">EXIT_NATURALLY</E>
+          </U>
+        </V>
+      </L>
+      <V t="staging_content" n="content">
+        <U n="staging_content">
+          <U n="content_set">
+            <L n="affordance_links">
+              <T>204171<!--MixerInteraction: mixer_InfectedChemicalAnalyzer_Analyze--></T>
+              <T>204170<!--MixerInteraction: mixer_InfectedChemicalAnalyzer_Breakdown--></T>
+            </L>
+          </U>
+        </U>
+      </V>
+      <V n="periodic_stat_change" t="enabled">
+        <U n="enabled">
+          <L n="operations">
+            <V t="dynamic_skill">
+              <U n="dynamic_skill">
+                <U n="skill_loot_data_override">
+                  <E n="effectiveness">StandardPeriodic</E>
+                  <T n="stat">16706<!--Skill: statistic_Skill_AdultMajor_Logic--></T>
+                </U>
+              </U>
+            </V>
+            <V t="statistic_change">
+              <U n="statistic_change">
+                <T n="amount">1</T>
+                <T n="stat">233027<!--Commodity: commodity_Utilities_Power--></T>
+                <L n="subject">
+                  <E>Lot</E>
+                </L>
+              </U>
+            </V>
+          </L>
+        </U>
+      </V>
+    </U>
+  </V>
+  <V t="enabled" n="canonical_animation">
+    <U n="enabled">
+      <T n="factory">204162<!--AnimationElement: InfectedChemicalAnalyzer_Analyze_Loop--></T>
+    </U>
+  </V>
+  <V t="disabled" n="content_score" />
+  <T n="display_name">0xA8FFF94<!--String: "Obtener datos del perfil de la infección"--></T>
+  <U n="display_name_text_tokens">
+    <L n="tokens">
+      <V t="participant_type">
+        <U n="participant_type">
+          <V n="objects" t="from_participant">
+            <U n="from_participant">
+              <E n="participant">Actor</E>
+            </U>
+          </V>
+        </U>
+      </V>
+      <V t="participant_type">
+        <U n="participant_type">
+          <V t="from_participant" n="objects">
+            <U n="from_participant">
+              <E n="participant">Object</E>
+            </U>
+          </V>
+        </U>
+      </V>
+    </L>
+  </U>
+  <L n="interaction_category_tags">
+    <E>Interaction_Super</E>
+    <E>Interaction_All</E>
+  </L>
+  <V n="outcome" t="single">
+    <U n="single">
+      <U n="actions">
+        <L n="loot_list">
+          <T>204340<!--LootActions: loot_InvestigationSystem_AnalyzeInfectiousPlants--></T>
+          <T>204688<!--LootActions: loot_InvestigationSystem_NotebookEntries_Remove_11_CollectSamples--></T>
+        </L>
+      </U>
+    </U>
+  </V>
+  <V t="enabled" n="pie_menu_icon">
+    <V n="enabled" t="resource_key">
+      <U n="resource_key">
+        <T n="key" p="InGP07\UI\Icons\PieMenu\Interactions\icon_piemenu_investigate.png">2f7d0004:00000000:aa10800c290b2564</T>
+      </U>
+    </V>
+  </V>
+  <E n="scoring_priority">NORMAL</E>
+  <T n="subaction_selection_weight">1</T>
+  <E n="target_type">OBJECT</E>
+  <L n="test_globals">
+    <V t="sim_info">
+      <U n="sim_info">
+        <V t="specified" n="ages" />
+        <V t="specified" n="species">
+          <U n="specified">
+            <L n="species">
+              <E />
+            </L>
+          </U>
+        </V>
+        <E n="who">Actor</E>
+      </U>
+    </V>
+    <V t="inventory">
+      <U n="inventory">
+        <V n="contents_check" t="has_object_with_tag">
+          <U n="has_object_with_tag">
+            <L n="tag_set">
+              <E>Func_Investigation_SporeFilter</E>
+              <E>Func_Investigation_HazmatSuit</E>
+            </L>
+            <E n="test_type">CONTAINS_ALL_TAGS_IN_SET</E>
+          </U>
+        </V>
+        <U n="required_count">
+          <E n="comparison">EQUAL</E>
+          <T n="value">0</T>
+        </U>
+      </U>
+    </V>
+    <V t="inventory">
+      <U n="inventory">
+        <V t="has_object_with_def" n="contents_check">
+          <U n="has_object_with_def">
+            <T n="definition">211703</T>
+          </U>
+        </V>
+        <U n="required_count">
+          <E n="comparison">LESS</E>
+        </U>
+        <V n="tooltip" t="enabled">
+          <T n="enabled">0x8E0252FF<!--String: "Ya has completado el análisis de las esporas. Pídele a cualquier científico que te fabrique un filtro de esporas a cambio de los <b>datos del perfil de la infección</b>."--></T>
+        </V>
+      </U>
+    </V>
+    <V t="inventory">
+      <U n="inventory">
+        <V t="has_object_with_tag" n="contents_check">
+          <U n="has_object_with_tag">
+            <L n="tag_set">
+              <E>Func_Investigation_SporeSample</E>
+            </L>
+          </U>
+        </V>
+        <U n="required_count">
+          <T n="value">15</T>
+        </U>
+        <V n="tooltip" t="enabled">
+          <T n="enabled">0xEE6D7560<!--String: "<b>Requisito: 15 grupos de esporas</b>\nPregunta al personal militar del <b>bar local</b> para conseguir un <b>escáner de infecciones</b>. Puede utilizarse para buscar grupos de esporas."--></T>
+        </V>
+      </U>
+    </V>
+  </L>
+  <T n="time_overhead">30</T>
+</I>

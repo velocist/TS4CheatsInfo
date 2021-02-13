@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+
+<TuningRoot>
+    <Instance instance_type="situation" class="FestivalPerformanceSpaceBuskerSituation" module="open_street_director.festival_situations" muid="A242E856F02E036A" description="Situation for a Sim who wants to Busk at a Performance Space at the&#xA;festival." instance_subclasses_only="False" parents="BaseGenericFestivalSituation, SituationComplexCommon, SituationComplex, Situation" path="Situations\Descriptions" use_guid_for_reference="True">
+        <Deleted name="_buff" muid="D7CD28CB4AD56140" />
+
+        <Deleted name="_cost" muid="2120DD3CDA4BA18D" />
+
+        <Deleted name="_display_name" muid="951E71EF693FD65C" />
+
+        <Deleted name="_icon" muid="B2B09AF0972A2C" />
+
+        <Deleted name="_implies_greeted_status" muid="6D849AD959FF74B3" />
+
+        <Deleted name="_initiating_sim_tests" muid="B8A0E772027BC3C8" />
+
+        <Deleted name="_level_data" muid="A44E2A8D759C9668" />
+
+        <Deleted name="_main_goal_visibility_test" muid="D883E8AD3739F417" />
+
+        <Deleted name="_relationship_between_job_members" muid="937D2161FE8DD76D" />
+
+        <Deleted name="_resident_job" muid="DD87FAEC27C562DE" />
+
+        <Deleted name="audio_sting_on_start" muid="696306FB6A511E87" />
+
+        <Deleted name="background_audio" muid="49E1F419485F408" />
+
+        <TunableTuple name="busk_state" class="TunableBuskSituationState" display="Busk State" muid="D5C5CFE1F08F98B9" description="Situation State for the Sim to busk at the performance space." Deprecated="False" filter="0" group="General">
+            <Tunable type="bool" name="allow_join_situation" class="Tunable" default="True" display="Allow Join Situation" muid="BA36905E1668B3C0" description="Whether the situation is allowed to join at this state." Deprecated="False" filter="0" group="General" />
+            <TunableList name="job_and_role_changes" class="TunableMapping" display="Job And Role Changes" muid="1D1A2908BAA74719" mapping_key="Situation Job" mapping_value="Role State" description="A mapping between situation jobs and role states that defines&#xA;what role states we want to switch to for sims on which jobs&#xA;when this situation state is entered." Deprecated="False" filter="0" group="General">
+                <TunableTuple class="TunableTuple" muid="1955069CAC230767" Deprecated="False" filter="0" group="General">
+                    <Tunable type="role_state" name="Role State" class="TunableReference" display="Role State" muid="37D755295819F958" description="The role state that we will switch sims of the linked job&#xA;into." allow_none="False" Deprecated="False" filter="0" group="General" />
+                    <Tunable type="situation_job" name="Situation Job" class="TunableReference" display="Situation Job" muid="4AFF89CDDDB57782" description="A reference to a SituationJob that we will use to change&#xA;sim's role state." allow_none="False" Deprecated="False" filter="0" group="General" />
+                </TunableTuple>
+            </TunableList>
+            <TunableVariant type="None" name="time_out" class="OptionalTunable" default="disabled" display="Time Out" muid="830C142E70436CF4" description="How long this state will last before time expired. Please talk to the GPE who implemented the specific&#xA;situation to see what the state will do on time expired." Deprecated="False" filter="0" group="General">
+                <Tunable name="disabled" class="TunableExistance" display="Disabled" muid="EEAB59FE54379B57" />
+                <Tunable type="float" name="enabled" class="TunableSimMinute" default="15" display="Enabled" muid="A9B2A96F3F1DCB72" min="1" max="None" tuning_state="NeedsTuning" Deprecated="False" filter="0" group="General" />
+            </TunableVariant>
+        </TunableTuple>
+
+        <TunableTuple name="busker_job_and_role_state" class="TunableSituationJobAndRoleState" display="Busker Job And Role State" muid="CE1161C8985CE66C" description="Job and Role State for the busker." Deprecated="False" filter="0" group="General">
+            <Tunable type="role_state" name="role_state" class="TunableReference" display="Role State" muid="892A2744A515C1A6" description="A role state the sim assigned to the job will perform" allow_none="False" Deprecated="False" filter="0" group="General" />
+            <Tunable type="situation_job" name="situation_job" class="TunableReference" display="Situation Job" muid="A4A9465A90FF0888" description="A reference to a SituationJob that can be performed at this Situation." allow_none="False" Deprecated="False" filter="0" group="General" />
+        </TunableTuple>
+
+        <Deleted name="category" muid="CC24A7A388B9147A" />
+
+        <Deleted name="compatible_venues" muid="21481E75CAE4A076" />
+
+        <Deleted name="creation_ui_option" muid="24863FDCEACD2EFF" />
+
+        <Deleted name="entitlement" muid="D9E3558BAD39EF11" />
+
+        <Deleted name="force_invite_only" muid="AF010D643B214764" />
+
+        <Deleted name="goal_button_text" muid="252487D702533591" />
+
+        <Deleted name="goal_sub_text" muid="7CBAAA1F34DDE328" />
+
+        <Deleted name="highlight_first_incomplete_minor_goal" muid="D671B5117FC8C8B1" />
+
+        <TunableList name="instrument_objects_to_create" class="TunableList" display="Instrument Objects To Create" muid="40880DE123357623" description="A list of objects to randomly pick from for this type of busker.&#xA;When the busker joins the situation, we randomly create one of&#xA;these and use it for the duration of the situation." Deprecated="False" filter="0" group="General">
+            <Tunable type="object" class="TunableReference" muid="788D7B79E7937E2F" description="An object to create." allow_none="False" Deprecated="False" filter="0" group="General" />
+        </TunableList>
+
+        <Deleted name="job_display_ordering" muid="FF58A226D9551417" />
+
+        <Deleted name="main_goal" muid="E814DFF41CF33799" />
+
+        <Deleted name="main_goal_audio_sting" muid="12DC179A4809302D" />
+
+        <Deleted name="max_participants" muid="3F60A5A263F059E6" />
+
+        <Deleted name="minor_goal_chains" muid="818A36F7282E87C" />
+
+        <Deleted name="recommended_job_object_notification" muid="A83D046A9D4CEA6F" />
+
+        <Deleted name="recommended_job_object_text" muid="8E9F6D27D0335B6E" />
+
+        <Deleted name="screen_slam_bronze" muid="1528E8D885D88BAD" />
+
+        <Deleted name="screen_slam_gold" muid="B6EE90FFC7892C96" />
+
+        <Deleted name="screen_slam_no_medal" muid="7CBEF9772181CD86" />
+
+        <Deleted name="screen_slam_silver" muid="A510D41789C3782D" />
+
+        <Deleted name="situation_description" muid="A43A45C3E100B8A0" />
+
+        <Deleted name="suppress_scoring_progress_bar" muid="954408C3326EB633" />
+
+        <Deleted name="targeted_situation" muid="37444206ABDC50F2" />
+
+        <Deleted name="travel_request_behavior" muid="224C8D73047933D3" />
+
+        <Deleted name="venue_invitation_message" muid="7F13F2B525B0E091" />
+
+        <Deleted name="venue_situation_player_job" muid="648CBDE8498B127" />
+    </Instance>
+
+    <VersionHistory>
+        <ActionList>
+            <Action type="kRemove" old_muid="6167D53F31BB645C" />
+        </ActionList>
+
+        <ActionList>
+            <Action type="kRename" old_muid="1B85E40E057D4244" new_muid="21481E75CAE4A076" />
+        </ActionList>
+
+        <ActionList>
+            <Action type="kRemove" old_muid="83CEA0AE9A64F8F2" />
+            <Action type="kRemove" old_muid="570D32A9811CE327" />
+        </ActionList>
+    </VersionHistory>
+</TuningRoot>

@@ -1,0 +1,400 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<I c="GameObject" i="object" m="objects.game_object" n="object_FrontDesk" s="104645">
+  <V n="_anim_overrides" t="enabled">
+    <U n="enabled">
+      <L n="params">
+        <U>
+          <T n="name">surfaceObject</T>
+          <V n="value" t="string">
+            <T n="string">desk</T>
+          </V>
+        </U>
+      </L>
+    </U>
+  </V>
+  <U n="_components">
+    <V t="enabled" n="focus">
+      <U n="enabled">
+        <V n="_focus_score" t="globally">
+          <U n="globally">
+            <E n="base">NONE</E>
+          </U>
+        </V>
+      </U>
+    </V>
+    <V n="portal" t="enabled">
+      <U n="enabled">
+        <L n="_portal_data">
+          <T>176483<!--PortalData: portalData_VariableJump_Desk--></T>
+        </L>
+      </U>
+    </V>
+    <V t="enabled" n="retail_component">
+      <V n="enabled" t="reference">
+        <T n="reference">110393<!--RetailComponent: retailComponent_Default--></T>
+      </V>
+    </V>
+    <V n="state" t="enabled">
+      <U n="enabled">
+        <L n="state_triggers">
+          <U>
+            <L n="at_states">
+              <T>15132<!--CommodityBasedObjectStateValue: Dirty_Clean--></T>
+            </L>
+            <V n="set_states" t="Set_state_list">
+              <L n="Set_state_list">
+                <T>15130<!--ObjectStateValue: DirtyState_Clean--></T>
+              </L>
+            </V>
+          </U>
+          <U>
+            <L n="at_states">
+              <T>15133<!--CommodityBasedObjectStateValue: Dirty_Dirty--></T>
+            </L>
+            <V n="set_states" t="Set_state_list">
+              <L n="Set_state_list">
+                <T>15131<!--ObjectStateValue: DirtyState_Dirty--></T>
+              </L>
+            </V>
+          </U>
+          <U>
+            <L n="at_states">
+              <T>39611<!--CommodityBasedObjectStateValue: FireState_Burn_Material_Change--></T>
+            </L>
+            <V n="set_states" t="Set_state_list">
+              <L n="Set_state_list">
+                <T>101103<!--ObjectStateValue: DirtyState_Neutral--></T>
+              </L>
+            </V>
+          </U>
+          <U>
+            <L n="at_states">
+              <T>115556<!--CommodityBasedObjectStateValue: frontDesk_AwayEvent_Timer_Reset--></T>
+            </L>
+            <V n="set_states" t="Set_state_list">
+              <L n="Set_state_list">
+                <T>113811<!--ObjectStateValue: frontDesk_NoEmergency--></T>
+              </L>
+            </V>
+          </U>
+          <U>
+            <L n="at_states">
+              <T>39611<!--CommodityBasedObjectStateValue: FireState_Burn_Material_Change--></T>
+            </L>
+            <V n="set_states" t="Set_state_list">
+              <L n="Set_state_list">
+                <T>15134<!--CommodityBasedObjectStateValue: Dirty_Neutral--></T>
+              </L>
+            </V>
+          </U>
+          <U>
+            <L n="at_states">
+              <T>77532<!--CommodityBasedObjectStateValue: FireState_Burn_Material_Change_Replace--></T>
+            </L>
+            <V n="set_states" t="Set_state_list">
+              <L n="Set_state_list">
+                <T>15132<!--CommodityBasedObjectStateValue: Dirty_Clean--></T>
+              </L>
+            </V>
+          </U>
+          <U>
+            <L n="at_states">
+              <T>77532<!--CommodityBasedObjectStateValue: FireState_Burn_Material_Change_Replace--></T>
+            </L>
+            <V t="Set_state_list" n="set_states">
+              <L n="Set_state_list">
+                <T>39737<!--CommodityBasedObjectStateValue: FireState_Burn_Material_Change_Not_Burning--></T>
+              </L>
+            </V>
+          </U>
+        </L>
+        <L n="states">
+          <U>
+            <L n="client_states">
+              <U>
+                <T n="key">15132<!--CommodityBasedObjectStateValue: Dirty_Clean--></T>
+              </U>
+              <U>
+                <T n="key">15133<!--CommodityBasedObjectStateValue: Dirty_Dirty--></T>
+              </U>
+              <U>
+                <T n="key">15134<!--CommodityBasedObjectStateValue: Dirty_Neutral--></T>
+              </U>
+            </L>
+            <V t="reference" n="default_value">
+              <T n="reference">15132<!--CommodityBasedObjectStateValue: Dirty_Clean--></T>
+            </V>
+          </U>
+          <U>
+            <L n="client_states">
+              <U>
+                <T n="key">101103<!--ObjectStateValue: DirtyState_Neutral--></T>
+              </U>
+              <U>
+                <T n="key">15130<!--ObjectStateValue: DirtyState_Clean--></T>
+                <U n="value">
+                  <V n="material_state" t="apply_new_value">
+                    <U n="apply_new_value">
+                      <V t="set_to_default_value" n="state_name" />
+                    </U>
+                  </V>
+                </U>
+              </U>
+              <U>
+                <T n="key">15131<!--ObjectStateValue: DirtyState_Dirty--></T>
+                <U n="value">
+                  <V t="apply_new_value" n="material_state">
+                    <U n="apply_new_value">
+                      <V t="set_to_custom_value" n="state_name">
+                        <T n="set_to_custom_value">Dirty</T>
+                      </V>
+                    </U>
+                  </V>
+                </U>
+              </U>
+            </L>
+            <V t="reference" n="default_value">
+              <T n="reference">15130<!--ObjectStateValue: DirtyState_Clean--></T>
+            </V>
+          </U>
+          <U>
+            <L n="client_states">
+              <U>
+                <T n="key">104593<!--ObjectStateValue: FrontDesk_Tend_Staffed--></T>
+              </U>
+              <U>
+                <T n="key">104597<!--ObjectStateValue: FrontDesk_Tend_UnStaffed--></T>
+              </U>
+            </L>
+            <V n="default_value" t="reference">
+              <T n="reference">104597<!--ObjectStateValue: FrontDesk_Tend_UnStaffed--></T>
+            </V>
+          </U>
+          <U>
+            <L n="client_states">
+              <U>
+                <T n="key">104650<!--ObjectStateValue: FrontDesk_Phone_On--></T>
+                <U n="value">
+                  <V t="leave_unchanged" n="audio_effect_state" />
+                  <V t="leave_unchanged" n="audio_state" />
+                  <V t="leave_unchanged" n="autonomy_modifiers" />
+                  <V t="leave_unchanged" n="broadcaster" />
+                  <V t="disabled" n="change_value" />
+                  <V t="leave_unchanged" n="environment_score" />
+                  <V t="leave_unchanged" n="flowing_puddle_enabled" />
+                  <V t="leave_unchanged" n="geometry_state" />
+                  <V t="leave_unchanged" n="light_dimmer" />
+                  <V t="leave_unchanged" n="lot_statistic_modifiers" />
+                  <V t="leave_unchanged" n="material_state" />
+                  <V t="leave_unchanged" n="material_variant" />
+                  <V t="leave_unchanged" n="model" />
+                  <V t="leave_unchanged" n="opacity" />
+                  <V t="leave_unchanged" n="painting_reveal_level" />
+                  <V t="leave_unchanged" n="pregnancy_progress" />
+                  <V t="disabled" n="replace_object" />
+                  <V t="leave_unchanged" n="scale" />
+                  <V t="leave_unchanged" n="singed" />
+                  <V t="leave_unchanged" n="tint" />
+                  <V t="leave_unchanged" n="transient" />
+                  <V t="leave_unchanged" n="ui_metadata" />
+                  <V t="leave_unchanged" n="vfx_state" />
+                  <V t="leave_unchanged" n="video_playlist" />
+                  <V t="leave_unchanged" n="video_playlist_looping" />
+                  <V t="leave_unchanged" n="visibility" />
+                </U>
+              </U>
+              <U>
+                <T n="key">104652<!--ObjectStateValue: FrontDesk_Phone_Off--></T>
+                <U n="value">
+                  <V t="leave_unchanged" n="audio_effect_state" />
+                  <V t="leave_unchanged" n="audio_state" />
+                  <V t="leave_unchanged" n="autonomy_modifiers" />
+                  <V t="leave_unchanged" n="broadcaster" />
+                  <V t="disabled" n="change_value" />
+                  <V t="leave_unchanged" n="environment_score" />
+                  <V t="leave_unchanged" n="flowing_puddle_enabled" />
+                  <V t="leave_unchanged" n="geometry_state" />
+                  <V t="leave_unchanged" n="light_dimmer" />
+                  <V t="leave_unchanged" n="lot_statistic_modifiers" />
+                  <V t="leave_unchanged" n="material_state" />
+                  <V t="leave_unchanged" n="material_variant" />
+                  <V t="leave_unchanged" n="model" />
+                  <V t="leave_unchanged" n="opacity" />
+                  <V t="leave_unchanged" n="painting_reveal_level" />
+                  <V t="leave_unchanged" n="pregnancy_progress" />
+                  <V t="disabled" n="replace_object" />
+                  <V t="leave_unchanged" n="scale" />
+                  <V t="leave_unchanged" n="singed" />
+                  <V t="leave_unchanged" n="tint" />
+                  <V t="leave_unchanged" n="transient" />
+                  <V t="leave_unchanged" n="ui_metadata" />
+                  <V t="leave_unchanged" n="vfx_state" />
+                  <V t="leave_unchanged" n="video_playlist" />
+                  <V t="leave_unchanged" n="video_playlist_looping" />
+                  <V t="leave_unchanged" n="visibility" />
+                </U>
+              </U>
+            </L>
+            <V n="default_value" t="reference">
+              <T n="reference">104650<!--ObjectStateValue: FrontDesk_Phone_On--></T>
+            </V>
+            <T n="reset_on_load_if_time_passes">True</T>
+            <T n="reset_to_default">True</T>
+          </U>
+          <U>
+            <L n="client_states">
+              <U>
+                <T n="key">131794<!--ObjectStateValue: Kelpto_Stolen_Object--></T>
+              </U>
+              <U>
+                <T n="key">131795<!--ObjectStateValue: Klepto_Not_Stolen_Object--></T>
+              </U>
+            </L>
+            <V n="default_value" t="reference">
+              <T n="reference">131795<!--ObjectStateValue: Klepto_Not_Stolen_Object--></T>
+            </V>
+          </U>
+          <U>
+            <L n="client_states">
+              <U>
+                <T n="key">235497<!--ObjectStateValue: ecoFootprint_Object_AcidRain_Outside--></T>
+              </U>
+              <U>
+                <T n="key">235498<!--ObjectStateValue: ecoFootprint_Object_AcidRain_Inside--></T>
+              </U>
+            </L>
+            <V n="default_value" t="reference">
+              <T n="reference">235498<!--ObjectStateValue: ecoFootprint_Object_AcidRain_Inside--></T>
+            </V>
+          </U>
+          <U>
+            <V n="default_value" t="reference">
+              <T n="reference">113811<!--ObjectStateValue: frontDesk_NoEmergency--></T>
+            </V>
+            <T n="reset_on_load_if_time_passes">True</T>
+          </U>
+          <U>
+            <V n="default_value" t="reference">
+              <T n="reference">115556<!--CommodityBasedObjectStateValue: frontDesk_AwayEvent_Timer_Reset--></T>
+            </V>
+          </U>
+          <U>
+            <L n="client_states">
+              <U>
+                <T n="key">39611<!--CommodityBasedObjectStateValue: FireState_Burn_Material_Change--></T>
+              </U>
+              <U>
+                <T n="key">39736<!--CommodityBasedObjectStateValue: FireState_Burn_Material_Change_Burning--></T>
+              </U>
+              <U>
+                <T n="key">39737<!--CommodityBasedObjectStateValue: FireState_Burn_Material_Change_Not_Burning--></T>
+              </U>
+              <U>
+                <T n="key">77532<!--CommodityBasedObjectStateValue: FireState_Burn_Material_Change_Replace--></T>
+              </U>
+            </L>
+            <V t="reference" n="default_value">
+              <T n="reference">39737<!--CommodityBasedObjectStateValue: FireState_Burn_Material_Change_Not_Burning--></T>
+            </V>
+          </U>
+          <U>
+            <L n="client_states">
+              <U>
+                <T n="key">35956<!--CommodityBasedObjectStateValue: Materialistic_Admired--></T>
+              </U>
+              <U>
+                <T n="key">35957<!--CommodityBasedObjectStateValue: Materialistic_YetToAdmire--></T>
+              </U>
+            </L>
+            <V n="default_value" t="reference">
+              <T n="reference">35957<!--CommodityBasedObjectStateValue: Materialistic_YetToAdmire--></T>
+            </V>
+          </U>
+        </L>
+      </U>
+    </V>
+    <V t="enabled" n="tooltip_component" />
+    <V t="enabled" n="weather_aware_component">
+      <U n="enabled">
+        <L n="outside_loot">
+          <U>
+            <E n="key">AnyRain</E>
+            <U n="value">
+              <L n="end_loot">
+                <T>235500<!--LootActions: loot_EcoFootprint_Object_AcidRain_End--></T>
+              </L>
+              <L n="start_loot">
+                <T>235499<!--LootActions: loot_EcoFootprint_Object_AcidRain--></T>
+              </L>
+            </U>
+          </U>
+        </L>
+      </U>
+    </V>
+  </U>
+  <U n="_components_native">
+    <V n="Slot" t="enabled">
+      <U n="enabled">
+        <L n="state_values">
+          <T>110122<!--ObjectStateValue: frontDesk_Slotted_1_Yes--></T>
+        </L>
+      </U>
+    </V>
+  </U>
+  <L n="_part_data">
+    <U>
+      <T n="part_definition">27103<!--ObjectPart: part_Table_Deco--></T>
+      <V t="disabled" n="subroot_index" />
+    </U>
+    <U>
+      <T n="part_definition">170458<!--ObjectPart: part_Surface_Seat_NoPortal--></T>
+    </U>
+  </L>
+  <L n="_preroll_super_affordances">
+    <T>116680<!--SuperInteraction: frontDesk_WaitToCheckIn_start--></T>
+    <T>225709<!--SuperInteraction: computer_UseFromInventory_NPC--></T>
+  </L>
+  <L n="_super_affordances">
+    <T>13983<!--StandSuperInteraction: sim-stand--></T>
+    <T>13328<!--ImmediateSuperInteraction: debug_Reset--></T>
+    <T>13326<!--ImmediateSuperInteraction: debug_ObjectDestroy--></T>
+    <T>103888<!--ImmediateSuperInteraction: cheat_set_as_head--></T>
+    <T>100035<!--SuperInteraction: Desk_Clean--></T>
+    <T>13142<!--ImmediateSuperInteraction: Cheat_MakeDirty--></T>
+    <T>33960<!--ImmediateSuperInteraction: Cheat_MakeClean--></T>
+    <T>110674<!--SuperInteraction: frontDesk_Use_DeskPhone--></T>
+    <T>104661<!--SuperInteraction: FrontDesk_FlashIDBadge--></T>
+    <T>107093<!--SuperInteraction: frontDesk_Page_Continuation_target--></T>
+    <T>111912<!--SuperInteraction: frontDesk_WaitToCheckIn--></T>
+    <T>113664<!--SuperInteraction: frontDesk_GetSamples--></T>
+    <T>196759<!--SuperInteraction: famePerks_GoodReputation_GivingBack_DonateObject--></T>
+    <T>147934<!--SuperInteraction: desk_Clean_Butler--></T>
+    <T>120569<!--StandSuperInteraction: dog_Stand--></T>
+    <T>114316<!--SuperInteraction: doctorCareer_PatientEmergency_deliverBaby_WalkIn--></T>
+    <T>116680<!--SuperInteraction: frontDesk_WaitToCheckIn_start--></T>
+    <T>113324<!--SuperInteraction: collapsedSim_WalkInside--></T>
+    <T>114265<!--SuperInteraction: frontDesk_Trigger_HouseCall--></T>
+    <T>113831<!--SuperInteraction: frontDesk_GoToHouseCall--></T>
+    <T>113925<!--SuperInteraction: frontDesk_GoToOutbreak--></T>
+    <T>114267<!--SuperInteraction: frontDesk_Trigger_Outbreak--></T>
+    <T>74457<!--ImmediateSuperInteraction: fire_ReplaceBurntObject--></T>
+    <T>102258<!--SuperInteraction: Ghost_Possess--></T>
+    <T>168502<!--SuperInteraction: Ghost_Pet_Possess--></T>
+  </L>
+  <U n="aop_forward_data">
+    <T n="should_search_forwarded_child_aop">True</T>
+  </U>
+  <E n="posture_transition_target_tag">SURFACE_DESK</E>
+  <U n="recycling_data">
+    <L n="recycling_values">
+      <U>
+        <E n="Bucks Type">RecycleBitsBucks</E>
+        <T n="Value">0.5</T>
+      </U>
+      <U>
+        <E n="Bucks Type">RecyclePiecesBucks</E>
+        <T n="Value">0.5</T>
+      </U>
+    </L>
+  </U>
+</I>

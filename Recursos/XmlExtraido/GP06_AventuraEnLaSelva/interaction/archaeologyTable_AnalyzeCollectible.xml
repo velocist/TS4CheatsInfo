@@ -1,0 +1,252 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<I c="SuperInteraction" i="interaction" m="interactions.base.super_interaction" n="archaeologyTable_AnalyzeCollectible" s="175702">
+  <V t="Forward" n="_forwarding" />
+  <V t="enabled" n="_saveable" />
+  <T n="attention_cost">0.5</T>
+  <V n="basic_content" t="flexible_length">
+    <U n="flexible_length">
+      <L n="conditional_actions">
+        <V t="literal">
+          <U n="literal">
+            <L n="conditions">
+              <V t="stat_based">
+                <U n="stat_based">
+                  <T n="stat">182766<!--Commodity: commodity_ArchaeologyTable_AnalyzeCollectible--></T>
+                  <U n="threshold">
+                    <T n="value">100</T>
+                  </U>
+                  <E n="who">Object</E>
+                </U>
+              </V>
+            </L>
+            <E n="interaction_action">EXIT_NATURALLY</E>
+          </U>
+        </V>
+        <V t="literal">
+          <U n="literal">
+            <L n="conditions">
+              <V t="child_based">
+                <U n="child_based">
+                  <V n="condition" t="single_child_changed">
+                    <U n="single_child_changed">
+                      <T n="negate">True</T>
+                    </U>
+                  </V>
+                  <V n="slot_types" t="enabled">
+                    <L n="enabled">
+                      <T>slot_archaeologyTable</T>
+                    </L>
+                  </V>
+                </U>
+              </V>
+            </L>
+            <E n="interaction_action">EXIT_CANCEL</E>
+          </U>
+        </V>
+      </L>
+      <V n="content" t="staging_content">
+        <U n="staging_content">
+          <U n="content_set">
+            <L n="affordance_links">
+              <T>175734<!--MixerInteraction: archaeologyTable_AnalyzeCollectible_Contemplate--></T>
+              <T>175733<!--MixerInteraction: archaeologyTable_AnalyzeCollectible_Sketch--></T>
+              <T>175735<!--MixerInteraction: archaeologyTable_AnalyzeCollectible_TakeNotes--></T>
+              <T>175736<!--MixerInteraction: archaeologyTable_AnalyzeCollectible_TakePicture--></T>
+            </L>
+          </U>
+        </U>
+      </V>
+      <V n="periodic_stat_change" t="enabled">
+        <U n="enabled">
+          <L n="operations">
+            <V t="dynamic_skill">
+              <U n="dynamic_skill">
+                <U n="skill_loot_data_override">
+                  <E n="effectiveness">SmallPeriodic</E>
+                </U>
+              </U>
+            </V>
+          </L>
+        </U>
+      </V>
+    </U>
+  </V>
+  <L n="basic_extras">
+    <V t="state_change">
+      <U n="state_change">
+        <V n="new_value" t="single_value">
+          <U n="single_value">
+            <T n="new_value">151675<!--ObjectStateValue: generic_ObjectInUse_True--></T>
+          </U>
+        </V>
+        <E n="state_change_target">ObjectChildren</E>
+        <V t="immediately" n="timing" />
+      </U>
+    </V>
+    <V t="state_change">
+      <U n="state_change">
+        <V n="new_value" t="single_value">
+          <U n="single_value">
+            <T n="new_value">151677<!--ObjectStateValue: generic_ObjectInUse_False--></T>
+          </U>
+        </V>
+        <E n="state_change_target">ObjectChildren</E>
+        <V t="at_end" n="timing">
+          <U n="at_end">
+            <E n="criticality">OnCancelOrException</E>
+          </U>
+        </V>
+      </U>
+    </V>
+    <V t="loot">
+      <U n="loot">
+        <L n="loot_list">
+          <T>182874<!--LootActions: loot_ArchaeologyTable_TransferStat_Start_AnalyzeCollectible--></T>
+        </L>
+        <V t="at_beginning" n="timing" />
+      </U>
+    </V>
+    <V t="loot">
+      <U n="loot">
+        <L n="loot_list">
+          <T>182878<!--LootActions: loot_ArchaeologyTable_TransferStat_End_AnalyzeCollectible--></T>
+        </L>
+        <V t="at_end" n="timing">
+          <U n="at_end">
+            <E n="criticality">OnCancelOrException</E>
+          </U>
+        </V>
+      </U>
+    </V>
+  </L>
+  <V t="disabled" n="content_score" />
+  <T n="display_name">0x81BB057<!--String: "Realizar análisis arqueológico"--></T>
+  <U n="display_name_text_tokens">
+    <L n="tokens">
+      <V t="participant_type">
+        <U n="participant_type">
+          <V t="from_participant" n="objects">
+            <U n="from_participant">
+              <E n="participant">Actor</E>
+            </U>
+          </V>
+        </U>
+      </V>
+      <V t="participant_type">
+        <U n="participant_type">
+          <V t="from_participant" n="objects">
+            <U n="from_participant">
+              <E n="participant">Object</E>
+            </U>
+          </V>
+        </U>
+      </V>
+    </L>
+  </U>
+  <L n="interaction_category_tags">
+    <E>Interaction_Super</E>
+    <E>Interaction_All</E>
+  </L>
+  <V n="outcome" t="test_based">
+    <U n="test_based">
+      <L n="fallback_outcomes">
+        <U>
+          <U n="outcome">
+            <L n="loot_list">
+              <T>175738<!--LootActions: archaeologyTable_AnalyzeCollectible_Focused--></T>
+            </L>
+          </U>
+        </U>
+      </L>
+      <L n="tested_outcomes">
+        <U>
+          <L n="potential_outcomes">
+            <U>
+              <U n="outcome">
+                <L n="basic_extras">
+                  <V t="destroy_object">
+                    <U n="destroy_object">
+                      <V t="from_participant" n="objects_to_destroy">
+                        <U n="from_participant">
+                          <E n="participant">ObjectChildren</E>
+                        </U>
+                      </V>
+                    </U>
+                  </V>
+                </L>
+                <L n="loot_list">
+                  <T>30734<!--LootActions: loot_ObjectReward_Collectible_Excavate_Unbrushed--></T>
+                  <T>175738<!--LootActions: archaeologyTable_AnalyzeCollectible_Focused--></T>
+                </L>
+              </U>
+            </U>
+          </L>
+          <L n="tests">
+            <L>
+              <V t="object_criteria">
+                <U n="object_criteria">
+                  <V n="identity_test" t="tags">
+                    <U n="tags">
+                      <L n="tag_set">
+                        <E>Func_FossilRock</E>
+                      </L>
+                    </U>
+                  </V>
+                  <V t="single_object" n="subject_specific_tests">
+                    <U n="single_object">
+                      <E n="target">ObjectChildren</E>
+                    </U>
+                  </V>
+                </U>
+              </V>
+            </L>
+          </L>
+        </U>
+      </L>
+    </U>
+  </V>
+  <U n="progress_bar_enabled">
+    <V n="force_listen_statistic" t="enabled">
+      <U n="enabled">
+        <T n="statistic">182766<!--Commodity: commodity_ArchaeologyTable_AnalyzeCollectible--></T>
+        <E n="subject">Object</E>
+        <U n="target_value">
+          <T n="value">100</T>
+        </U>
+      </U>
+    </V>
+  </U>
+  <E n="scoring_priority">NORMAL</E>
+  <U n="skill_loot_data">
+    <T n="stat">174237<!--Skill: statistic_Skill_AdultMajor_Archaeology--></T>
+  </U>
+  <T n="subaction_selection_weight">1</T>
+  <E n="target_type">OBJECT</E>
+  <L n="test_globals">
+    <V t="sim_info">
+      <U n="sim_info">
+        <V t="specified" n="ages" />
+        <V t="specified" n="species">
+          <U n="specified">
+            <L n="species">
+              <E />
+            </L>
+          </U>
+        </V>
+        <E n="who">Actor</E>
+      </U>
+    </V>
+    <V t="slot_test">
+      <U n="slot_test">
+        <V t="by_reference" n="child_slot">
+          <T n="by_reference">slot_archaeologyTable</T>
+        </V>
+        <V t="has_used_slot" n="slot_test_type" />
+      </U>
+    </V>
+    <V t="test_set_reference">
+      <T n="test_set_reference">176975<!--TestSetInstance: testSet_ArchaeologyTable_AnalyzeCollectible--></T>
+    </V>
+  </L>
+  <T n="time_overhead">30</T>
+</I>

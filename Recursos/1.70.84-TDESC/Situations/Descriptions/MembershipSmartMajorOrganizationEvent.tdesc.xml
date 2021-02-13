@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+
+<TuningRoot>
+    <Instance instance_type="situation" class="MembershipSmartMajorOrganizationEvent" module="organizations.organization_situations" muid="D1FB179FB36EEAF" description="A Major Event that uses Festival conditional layers and contains an Activity&#xA;State with special sub-situation properties." instance_subclasses_only="False" parents="FestivalOrganizationEventType, BaseGenericFestivalSituation, SituationComplexCommon, SituationComplex, Situation" path="Situations\Descriptions" use_guid_for_reference="True">
+        <TunableTuple name="activity_state" class="TunableActivityLoopingSmartSituationState" display="2. Activity State" muid="D626A4F45DDB0F1" description="The second state that this situation will be put into once the&#xA;gather state ends." Deprecated="False" filter="0" group="Situation State">
+            <TunableList name="job_and_role_changes" class="TunableMapping" display="Job And Role Changes" muid="83DC6CCD11F968A2" mapping_key="Situation Job" mapping_value="Role State" description="A mapping between situation jobs and role states that defines&#xA;what role states we want to switch to for sims on which jobs&#xA;when this situation state is entered." Deprecated="False" filter="0" group="General">
+                <TunableTuple class="TunableTuple" muid="22CB370D2F50E66A" Deprecated="False" filter="0" group="General">
+                    <Tunable type="role_state" name="Role State" class="TunableReference" display="Role State" muid="35BF2A78E6FE4FCE" description="The role state that we will switch sims of the linked job&#xA;into." allow_none="False" Deprecated="False" filter="0" group="General" />
+                    <Tunable type="situation_job" name="Situation Job" class="TunableReference" display="Situation Job" muid="2DE372CEBA8C0990" description="A reference to a SituationJob that we will use to change&#xA;sim's role state." allow_none="False" Deprecated="False" filter="0" group="General" />
+                </TunableTuple>
+            </TunableList>
+            <TunableList name="job_mapping" class="TunableMapping" display="Job Mapping" muid="DBCF3B152823977" min="1" mapping_key="Sub Situation Job" mapping_value="Sub Situation Job Constraint" description="A mapping between sub-situation job and the owner situation job.&#xA;When creating the guest list for the sub-situation, job pairings will&#xA;inform which Sim is pulled in to fill the sub-situation's job. " Deprecated="False" filter="0" group="General">
+                <TunableTuple class="TunableTuple" muid="988598B222BF366E" Deprecated="False" filter="0" group="General">
+                    <Tunable type="situation_job" name="Sub Situation Job" class="TunableReference" display="Sub Situation Job" muid="EF3AFC7D01927BF" description="A job created for the sub-situation." allow_none="False" Deprecated="False" filter="0" group="General" />
+                    <TunableTuple name="Sub Situation Job Constraint" class="TunableTuple" display="Sub Situation Job Constraint" muid="B04B3F2723E8AAED" Deprecated="False" filter="0" group="General">
+                        <Tunable type="situation_job" name="job" class="TunableReference" display="Job" muid="46DA7CB5029185BC" description="A job from the owner situation. Sims with this job will be&#xA;used as a source for the sub-situation's job." allow_none="False" Deprecated="False" filter="0" group="General" />
+                        <TunableEnum type="ReUseType" name="reuse_type" class="TunableEnumEntry" default="SAME_SIM" display="Reuse Type" muid="77786337F0FB655B" static_entries="organizations-organization_situations.ReUseType" description="Rule to determine how the sub-situation job should be filled&#xA;on next creation.&#xA;&#xA;If Same, then on repeated iterations of the sub-situation, its job will&#xA;be filled by the sim that had filled it in the past iterations.&#xA;&#xA;If Different, then on repeated iterations of the sub-situation, its job&#xA;will be filled by a sim other than those that filled it in past iterations." Deprecated="False" filter="0" group="General" />
+                    </TunableTuple>
+                </TunableTuple>
+            </TunableList>
+            <Tunable type="int" name="situation_iterations" class="TunableRange" default="3" display="Situation Iterations" muid="E625A2657ACEC852" min="1" max="None" description="Number of iterations for which the sub-situation is created within&#xA;the owning situation state." tuning_state="NeedsTuning" Deprecated="False" filter="0" group="General" />
+            <Tunable type="situation" name="sub_situation" class="TunableReference" display="Sub Situation" muid="CBE786118829F2F2" description="Sub-situation to run within this situation state. When the sub-situation&#xA;ends, the owning situation state will end." allow_none="False" Deprecated="False" filter="0" group="Situation State" restrict="SituationSimple" />
+            <TunableVariant type="None" name="time_out" class="OptionalTunable" default="disabled" display="Time Out" muid="D3E01663F28493E" description="How long this state will last before time expired. Please talk to the GPE who implemented the specific&#xA;situation to see what the state will do on time expired." Deprecated="False" filter="0" group="General">
+                <Tunable name="disabled" class="TunableExistance" display="Disabled" muid="1B519B831F67A052" />
+                <Tunable type="float" name="enabled" class="TunableSimMinute" default="15" display="Enabled" muid="D74AF58125848D1F" min="1" max="None" tuning_state="NeedsTuning" Deprecated="False" filter="0" group="General" />
+            </TunableVariant>
+        </TunableTuple>
+
+        <TunableTuple name="end_state" class="TunableEndEventSituationState" display="3. End State" muid="EF438AFB4BF1E0C3" description="The third state that this situation will be put into once the activity&#xA;state ends." Deprecated="False" filter="0" group="Situation State">
+            <TunableList name="job_and_role_changes" class="TunableMapping" display="Job And Role Changes" muid="A45DEFA56675E358" mapping_key="Situation Job" mapping_value="Role State" description="A mapping between situation jobs and role states that defines&#xA;what role states we want to switch to for sims on which jobs&#xA;when this situation state is entered." Deprecated="False" filter="0" group="General">
+                <TunableTuple class="TunableTuple" muid="85A7898411ABC11B" Deprecated="False" filter="0" group="General">
+                    <Tunable type="role_state" name="Role State" class="TunableReference" display="Role State" muid="326DE904D7B15635" description="The role state that we will switch sims of the linked job&#xA;into." allow_none="False" Deprecated="False" filter="0" group="General" />
+                    <Tunable type="situation_job" name="Situation Job" class="TunableReference" display="Situation Job" muid="AB2C22113F8E6752" description="A reference to a SituationJob that we will use to change&#xA;sim's role state." allow_none="False" Deprecated="False" filter="0" group="General" />
+                </TunableTuple>
+            </TunableList>
+        </TunableTuple>
+    </Instance>
+</TuningRoot>

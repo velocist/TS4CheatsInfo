@@ -1,0 +1,358 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<I c="SuperInteraction" i="interaction" m="interactions.base.super_interaction" n="interactableStatue_MakeOffering" s="224387">
+  <L n="_constraints">
+    <U>
+      <L n="constraints">
+        <U>
+          <V n="value" t="cone">
+            <U n="cone">
+              <T n="max_radius">2.5</T>
+              <T n="min_radius">1</T>
+            </U>
+          </V>
+        </U>
+      </L>
+    </U>
+    <U>
+      <L n="constraints">
+        <U>
+          <V t="facing" n="value" />
+        </U>
+      </L>
+    </U>
+  </L>
+  <V t="enabled" n="_saveable" />
+  <T n="attention_cost">0.5</T>
+  <V n="basic_content" t="flexible_length">
+    <U n="flexible_length">
+      <L n="conditional_actions">
+        <V t="literal">
+          <U n="literal">
+            <L n="conditions">
+              <V t="time_based">
+                <U n="time_based">
+                  <T n="max_time">2</T>
+                  <T n="min_time">2</T>
+                </U>
+              </V>
+            </L>
+            <E n="interaction_action">EXIT_NATURALLY</E>
+          </U>
+        </V>
+      </L>
+    </U>
+  </V>
+  <L n="basic_extras">
+    <V t="slot_objects_from_inventory">
+      <U n="slot_objects_from_inventory">
+        <V t="slot_type_strategy" n="slot_strategy">
+          <U n="slot_type_strategy">
+            <T n="max_number_of_objects">1</T>
+            <V n="objects_to_slot" t="object_participant">
+              <U n="object_participant">
+                <E n="transfer_participant">PickedObject</E>
+              </U>
+            </V>
+            <T n="target_slot_type">slot_Offering</T>
+          </U>
+        </V>
+        <V t="at_end" n="timing" />
+      </U>
+    </V>
+    <V t="loot">
+      <U n="loot">
+        <L n="loot_list">
+          <T>228867<!--LootActions: loot_InteractableStatue_OfferingVFX--></T>
+        </L>
+      </U>
+    </V>
+  </L>
+  <V t="disabled" n="content_score" />
+  <T n="display_name">0x7ADA4C18<!--String: "Hacer ofrenda para recibir éxito académico"--></T>
+  <U n="display_name_text_tokens">
+    <L n="tokens">
+      <V t="participant_type">
+        <U n="participant_type">
+          <V n="objects" t="from_participant">
+            <U n="from_participant">
+              <E n="participant">Actor</E>
+            </U>
+          </V>
+        </U>
+      </V>
+      <V t="participant_type">
+        <U n="participant_type">
+          <V t="from_participant" n="objects">
+            <U n="from_participant">
+              <E n="participant">Object</E>
+            </U>
+          </V>
+        </U>
+      </V>
+    </L>
+  </U>
+  <L n="interaction_category_tags">
+    <E>Interaction_Super</E>
+    <E>Interaction_All</E>
+  </L>
+  <V n="outcome" t="test_based">
+    <U n="test_based">
+      <L n="fallback_outcomes">
+        <U>
+          <U n="outcome">
+            <V t="enabled" n="animation_ref">
+              <U n="enabled">
+                <T n="factory">23927<!--AnimationElement: Generic_PutDown--></T>
+              </U>
+            </V>
+            <L n="basic_extras">
+              <V t="buff_fire_and_forget">
+                <U n="buff_fire_and_forget">
+                  <U n="buff">
+                    <V t="enabled" n="buff_reason">
+                      <T n="enabled">0xA6816815<!--String: "(Por hacer una ofrenda)"--></T>
+                    </V>
+                    <T n="buff_type">224541<!--Buff: buff_InteractableStatue_Placebo--></T>
+                  </U>
+                </U>
+              </V>
+            </L>
+            <L n="continuation">
+              <U>
+                <T n="affordance">229532<!--SuperInteraction: interactableStatue_MakeOffering_DestroyObject--></T>
+              </U>
+            </L>
+          </U>
+          <U n="weight">
+            <T n="base_value">66</T>
+          </U>
+        </U>
+        <U>
+          <U n="outcome">
+            <V t="enabled" n="animation_ref">
+              <U n="enabled">
+                <T n="factory">23927<!--AnimationElement: Generic_PutDown--></T>
+              </U>
+            </V>
+            <L n="basic_extras">
+              <V t="buff_fire_and_forget">
+                <U n="buff_fire_and_forget">
+                  <U n="buff">
+                    <V t="enabled" n="buff_reason">
+                      <T n="enabled">0xA6816815<!--String: "(Por hacer una ofrenda)"--></T>
+                    </V>
+                    <T n="buff_type">224542<!--Buff: buff_InteractableStatue_LaserFocus--></T>
+                  </U>
+                </U>
+              </V>
+            </L>
+            <L n="continuation">
+              <U>
+                <T n="affordance">229532<!--SuperInteraction: interactableStatue_MakeOffering_DestroyObject--></T>
+              </U>
+            </L>
+          </U>
+          <U n="weight">
+            <T n="base_value">33</T>
+          </U>
+        </U>
+      </L>
+      <L n="tested_outcomes">
+        <U>
+          <L n="potential_outcomes">
+            <U>
+              <U n="outcome">
+                <V t="enabled" n="animation_ref">
+                  <U n="enabled">
+                    <T n="factory">23927<!--AnimationElement: Generic_PutDown--></T>
+                  </U>
+                </V>
+                <L n="basic_extras" />
+                <L n="continuation">
+                  <U>
+                    <T n="affordance">229532<!--SuperInteraction: interactableStatue_MakeOffering_DestroyObject--></T>
+                  </U>
+                </L>
+                <L n="loot_list">
+                  <T>227440<!--LootActions: loot_CollegeOrganization_SecretSociety_Buff_Sprite_Tense_FromStatue--></T>
+                </L>
+              </U>
+            </U>
+          </L>
+          <L n="tests">
+            <L>
+              <V t="object_criteria">
+                <U n="object_criteria">
+                  <V n="identity_test" t="tags">
+                    <U n="tags">
+                      <L n="tag_set">
+                        <E>Food_Any</E>
+                      </L>
+                    </U>
+                  </V>
+                  <V t="single_object" n="subject_specific_tests">
+                    <U n="single_object">
+                      <E n="target">PickedObject</E>
+                    </U>
+                  </V>
+                </U>
+              </V>
+              <V t="state_white_black">
+                <U n="state_white_black">
+                  <E n="participant">PickedObject</E>
+                  <U n="states">
+                    <V n="whitelist" t="specify">
+                      <U n="specify">
+                        <L n="whitelist">
+                          <T>15190<!--CommodityBasedObjectStateValue: Freshness_Spoiled--></T>
+                          <T>132135<!--ObjectStateValue: FoodPoisoningStatus_Poisoned--></T>
+                        </L>
+                      </U>
+                    </V>
+                  </U>
+                </U>
+              </V>
+            </L>
+          </L>
+        </U>
+        <U>
+          <L n="potential_outcomes">
+            <U>
+              <U n="outcome">
+                <V t="enabled" n="animation_ref">
+                  <U n="enabled">
+                    <T n="factory">23927<!--AnimationElement: Generic_PutDown--></T>
+                  </U>
+                </V>
+                <L n="basic_extras">
+                  <V t="buff_fire_and_forget">
+                    <U n="buff_fire_and_forget">
+                      <U n="buff">
+                        <V t="enabled" n="buff_reason">
+                          <T n="enabled">0xA6816815<!--String: "(Por hacer una ofrenda)"--></T>
+                        </V>
+                        <T n="buff_type">224523<!--Buff: buff_InteractableStatue_SurrealFocus--></T>
+                      </U>
+                    </U>
+                  </V>
+                </L>
+                <L n="continuation">
+                  <U>
+                    <T n="affordance">229532<!--SuperInteraction: interactableStatue_MakeOffering_DestroyObject--></T>
+                  </U>
+                </L>
+                <L n="loot_list">
+                  <T>222958<!--LootActions: loot_CollegeOrganization_SecretSociety_JoinVisit_Trigger--></T>
+                </L>
+              </U>
+            </U>
+          </L>
+          <L n="tests">
+            <L>
+              <V t="object_criteria">
+                <U n="object_criteria">
+                  <V t="tags" n="identity_test">
+                    <U n="tags">
+                      <L n="tag_set">
+                        <E>Food_Dessert</E>
+                      </L>
+                    </U>
+                  </V>
+                  <V t="single_object" n="subject_specific_tests">
+                    <U n="single_object">
+                      <E n="target">PickedObject</E>
+                    </U>
+                  </V>
+                </U>
+              </V>
+              <V t="state_white_black">
+                <U n="state_white_black">
+                  <E n="participant">PickedObject</E>
+                  <U n="states">
+                    <V n="blacklist" t="specify">
+                      <U n="specify">
+                        <L n="blacklist">
+                          <T>15190<!--CommodityBasedObjectStateValue: Freshness_Spoiled--></T>
+                          <T>132135<!--ObjectStateValue: FoodPoisoningStatus_Poisoned--></T>
+                        </L>
+                      </U>
+                    </V>
+                  </U>
+                </U>
+              </V>
+            </L>
+            <L>
+              <V t="object_criteria">
+                <U n="object_criteria">
+                  <V n="identity_test" t="tags">
+                    <U n="tags">
+                      <L n="tag_set">
+                        <E>Func_Harvestable</E>
+                      </L>
+                    </U>
+                  </V>
+                  <V t="single_object" n="subject_specific_tests">
+                    <U n="single_object">
+                      <E n="target">PickedObject</E>
+                    </U>
+                  </V>
+                </U>
+              </V>
+              <V t="state">
+                <U n="state">
+                  <E n="operator">GREATER_OR_EQUAL</E>
+                  <T n="value">15305<!--CommodityBasedObjectStateValue: Quality_Outstanding--></T>
+                  <E n="who">PickedObject</E>
+                </U>
+              </V>
+            </L>
+            <L>
+              <V t="object_criteria">
+                <U n="object_criteria">
+                  <V n="identity_test" t="tags">
+                    <U n="tags">
+                      <L n="tag_set">
+                        <E>Func_Ingredient_Metal_Rare</E>
+                        <E>Func_Ingredient_Crystal_Rare</E>
+                        <E>Func_MysticalRelic_Crystal</E>
+                      </L>
+                    </U>
+                  </V>
+                  <V t="single_object" n="subject_specific_tests">
+                    <U n="single_object">
+                      <E n="target">PickedObject</E>
+                    </U>
+                  </V>
+                </U>
+              </V>
+            </L>
+          </L>
+        </U>
+      </L>
+    </U>
+  </V>
+  <E n="scoring_priority">NORMAL</E>
+  <T n="subaction_selection_weight">1</T>
+  <V t="literal" n="super_affordance_compatibility">
+    <U n="literal">
+      <V n="default_inclusion" t="exclude_all" />
+    </U>
+  </V>
+  <E n="target_type">OBJECT</E>
+  <L n="test_globals">
+    <V t="sim_info">
+      <U n="sim_info">
+        <V t="specified" n="ages" />
+        <V t="specified" n="species">
+          <U n="specified">
+            <L n="species">
+              <E />
+            </L>
+          </U>
+        </V>
+        <E n="who">Actor</E>
+      </U>
+    </V>
+  </L>
+  <T n="time_overhead">30</T>
+</I>

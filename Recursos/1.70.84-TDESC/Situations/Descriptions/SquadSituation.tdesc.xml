@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+
+<TuningRoot>
+    <Instance instance_type="situation" class="SquadSituation" module="fame.squad_situation" muid="71E5F4BC55F5ADAA" description="The situation used for the Squad Fame Perk." instance_subclasses_only="False" parents="SituationComplexCommon, SituationComplex, Situation" path="Situations\Descriptions" use_guid_for_reference="True">
+        <TunableTuple name="_be_in_squad_state" class="Tunable_BeInSquadState" display="01_be_in_squad_state" muid="1D1C38458B44478" description="The situation state used for sims in this situation." Deprecated="False" filter="0" group="Situation State">
+            <Tunable type="bool" name="allow_join_situation" class="Tunable" default="True" display="Allow Join Situation" muid="669A299B43C6C83D" description="Whether the situation is allowed to join at this state." Deprecated="False" filter="0" group="General" />
+            <TunableList name="job_and_role_changes" class="TunableMapping" display="Job And Role Changes" muid="CEB5524ACCD7B95" mapping_key="Situation Job" mapping_value="Role State" description="A mapping between situation jobs and role states that defines&#xA;what role states we want to switch to for sims on which jobs&#xA;when this situation state is entered." Deprecated="False" filter="0" group="General">
+                <TunableTuple class="TunableTuple" muid="D540F3E1B4D77061" Deprecated="False" filter="0" group="General">
+                    <Tunable type="role_state" name="Role State" class="TunableReference" display="Role State" muid="4D502D49856C79BB" description="The role state that we will switch sims of the linked job&#xA;into." allow_none="False" Deprecated="False" filter="0" group="General" />
+                    <Tunable type="situation_job" name="Situation Job" class="TunableReference" display="Situation Job" muid="CD78A345BB39DE19" description="A reference to a SituationJob that we will use to change&#xA;sim's role state." allow_none="False" Deprecated="False" filter="0" group="General" />
+                </TunableTuple>
+            </TunableList>
+            <TunableVariant type="None" name="time_out" class="OptionalTunable" default="disabled" display="Time Out" muid="E1CCAE07222934AB" description="How long this state will last before time expired. Please talk to the GPE who implemented the specific&#xA;situation to see what the state will do on time expired." Deprecated="False" filter="0" group="General">
+                <Tunable name="disabled" class="TunableExistance" display="Disabled" muid="C168DA2A89ABA657" />
+                <Tunable type="float" name="enabled" class="TunableSimMinute" default="15" display="Enabled" muid="50D63ED0E69E8CA6" min="1" max="None" tuning_state="NeedsTuning" Deprecated="False" filter="0" group="General" />
+            </TunableVariant>
+        </TunableTuple>
+
+        <Deleted name="_buff" muid="4B54378EAF2D48E7" />
+
+        <Deleted name="_cost" muid="3AC6ACDD2B7987E8" />
+
+        <Deleted name="_display_name" muid="6F55004EA8EFB1F1" />
+
+        <Deleted name="_icon" muid="26D86C572F56D7B1" />
+
+        <Deleted name="_initiating_sim_tests" muid="7DE1F042EE1B056E" />
+
+        <Deleted name="_level_data" muid="C03C188AFFC1B3E5" />
+
+        <Deleted name="_main_goal_visibility_test" muid="8CCA974508369A63" />
+
+        <Deleted name="_relationship_between_job_members" muid="E9890B4CD044F996" />
+
+        <Deleted name="_resident_job" muid="4921599104E6E9EA" />
+
+        <Deleted name="audio_sting_on_start" muid="B5AEA903374B4929" />
+
+        <Deleted name="background_audio" muid="366057411CB26E92" />
+
+        <Deleted name="category" muid="A2A1C29B0F4EF70C" />
+
+        <Deleted name="compatible_venues" muid="A0F8471E0EA32AAF" />
+
+        <Tunable type="ensemble" name="ensemble_type" class="TunableReference" display="Ensemble Type" muid="F469E5927DDB20" description="The type of ensemble you want the squad to start." allow_none="False" Deprecated="False" filter="0" group="General" />
+
+        <Deleted name="entitlement" muid="1C4AA7AD920631A1" />
+
+        <Deleted name="force_invite_only" muid="24A06ADA77A47CB3" />
+
+        <Deleted name="goal_button_text" muid="3102E1DA28B66E35" />
+
+        <Deleted name="goal_sub_text" muid="CAAB49FDC84DB65D" />
+
+        <Deleted name="highlight_first_incomplete_minor_goal" muid="EC02554D2E9FF9FA" />
+
+        <Deleted name="job_display_ordering" muid="4BA13797FE019584" />
+
+        <Tunable type="situation_job" name="leader_job" class="TunableReference" display="Leader Job" muid="917F255EB706542A" description="The job that the leader will have. This will be used to identify&#xA;the leader." allow_none="False" Deprecated="False" filter="0" group="General" />
+
+        <Deleted name="main_goal" muid="62EA674332EAE149" />
+
+        <Deleted name="main_goal_audio_sting" muid="2339CE91B36D698A" />
+
+        <Deleted name="max_participants" muid="66AA7EA1D1323925" />
+
+        <Deleted name="minor_goal_chains" muid="428EF0FDE58F78CA" />
+
+        <Deleted name="recommended_job_object_notification" muid="3CD32F2488957079" />
+
+        <Deleted name="recommended_job_object_text" muid="158359952C3FC372" />
+
+        <Deleted name="screen_slam_bronze" muid="DD984E09FC152DA1" />
+
+        <Deleted name="screen_slam_gold" muid="730C5BEBD9329A9C" />
+
+        <Deleted name="screen_slam_no_medal" muid="95350406A32E00AE" />
+
+        <Deleted name="screen_slam_silver" muid="71CC4EF45F9FFED0" />
+
+        <Deleted name="situation_description" muid="9B1D219DB1005801" />
+
+        <Tunable type="situation_job" name="squad_member_job" class="TunableReference" display="Squad Member Job" muid="AC96ECBDDB45F42A" description="The job that each member of the squad will get when they are added&#xA;to this situation." allow_none="False" Deprecated="False" filter="0" group="General" />
+
+        <Deleted name="suppress_scoring_progress_bar" muid="4A70245874576F8B" />
+
+        <Deleted name="targeted_situation" muid="CCE25361D920EEE8" />
+
+        <Deleted name="travel_request_behavior" muid="3339CDB1383C2D98" />
+
+        <Deleted name="venue_invitation_message" muid="2799B2662C4A4B03" />
+
+        <Deleted name="venue_situation_player_job" muid="E829C1B503D5F5CB" />
+    </Instance>
+
+    <VersionHistory>
+        <ActionList>
+            <Action type="kRemove" old_muid="937CF6B95C77173D" />
+        </ActionList>
+
+        <ActionList>
+            <Action type="kRename" old_muid="7CC3C4980F4CB311" new_muid="A0F8471E0EA32AAF" />
+        </ActionList>
+
+        <ActionList>
+            <Action type="kRemove" old_muid="9D368E824C2DD0B" />
+            <Action type="kRemove" old_muid="8E0CCCD9580398C1" />
+        </ActionList>
+    </VersionHistory>
+</TuningRoot>

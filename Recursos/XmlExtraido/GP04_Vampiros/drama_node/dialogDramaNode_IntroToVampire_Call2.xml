@@ -1,0 +1,79 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<I c="DialogDramaNode" i="drama_node" m="drama_scheduler.dialog_drama_node" n="dialogDramaNode_IntroToVampire_Call2" s="154435">
+  <V t="node_cooldown" n="cooldown_data">
+    <U n="node_cooldown">
+      <E n="cooldown_option">ON_DIALOG_RESPONSE</E>
+      <V t="permanent" n="duration" />
+    </U>
+  </V>
+  <V n="dialog_and_loot" t="dialog_ok_cancel">
+    <U n="dialog_ok_cancel">
+      <U n="dialog">
+        <E n="phone_ring_type">BUZZ</E>
+        <V n="text" t="single">
+          <T n="single">0xF048F80A<!--String: "Te estarás preguntando por tu nueva energía vampírica. ¡Es el combustible que alimenta tus poderes y te permite hacer todo tipo de magia! Si se te acaba, no te preocupes; puedes restaurarla durmiendo o realizando meditación oscura. No obstante, los rayos solares la consumen. ¡Si estás al sol y no tienes ninguna, arderás hasta morir, así que extrema la precaución durante el día!"--></T>
+        </V>
+        <T n="text_cancel">0x288DCCD6<!--String: "Lo pillo. No me llames más."--></T>
+        <T n="text_ok">0x41CC8FAE<!--String: "Sol más cero energía vampírica igual a muerte. Vale."--></T>
+      </U>
+      <L n="on_dialog_accetped_loot_list">
+        <T>154452<!--LootActions: loot_IntroToVampire_Call2--></T>
+      </L>
+    </U>
+  </V>
+  <U n="min_and_max_times">
+    <T n="lower_bound">24</T>
+    <T n="upper_bound">48</T>
+  </U>
+  <L n="receiver_sim_pretests">
+    <L>
+      <V t="sim_info">
+        <U n="sim_info">
+          <V t="specified" n="ages">
+            <L n="specified">
+              <E>TEEN</E>
+              <E>YOUNGADULT</E>
+              <E>ADULT</E>
+              <E>ELDER</E>
+              <E>CHILD</E>
+            </L>
+          </V>
+          <V t="specified" n="species">
+            <U n="specified">
+              <L n="species">
+                <E />
+              </L>
+            </U>
+          </V>
+        </U>
+      </V>
+    </L>
+  </L>
+  <V t="sim_filter" n="sender_sim_info">
+    <U n="sim_filter">
+      <T n="sim_filter">154811<!--TunableSimFilter: filter_Vampires_IntroToVampire_Caller--></T>
+    </U>
+  </V>
+  <E n="sender_sim_info_type">INSTANCED_ALLOWED</E>
+  <V t="schedule" n="time_option">
+    <U n="schedule">
+      <L n="valid_times">
+        <U>
+          <U n="days_available">
+            <T n="0 SUNDAY">True</T>
+            <T n="1 MONDAY">True</T>
+            <T n="2 TUESDAY">True</T>
+            <T n="3 WEDNESDAY">True</T>
+            <T n="4 THURSDAY">True</T>
+            <T n="5 FRIDAY">True</T>
+            <T n="6 SATURDAY">True</T>
+          </U>
+          <T n="duration">4</T>
+          <U n="start_time">
+            <T n="hour">20</T>
+          </U>
+        </U>
+      </L>
+    </U>
+  </V>
+</I>

@@ -1,0 +1,170 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<I c="Recipe" i="recipe" m="crafting.recipe" n="recipe_RoboticsTable_MechanicalHelmet_BlackGold" s="227852">
+  <L n="_first_phases">
+    <E>1-ICO-Transition</E>
+  </L>
+  <L n="_phases">
+    <U>
+      <E n="key">1-ICO-Transition</E>
+      <V n="value" t="simple_phase_ref">
+        <U n="simple_phase_ref">
+          <T n="factory">220592<!--SimplePhase: phaseSimple_RoboticsTable_StartCrafting_Small--></T>
+          <L n="next_phases">
+            <E>2-Staging</E>
+          </L>
+        </U>
+      </V>
+    </U>
+    <U>
+      <E n="key">2-Staging</E>
+      <V n="value" t="multi_stage_phase_ref">
+        <U n="multi_stage_phase_ref">
+          <U n="content_set">
+            <L n="affordance_links">
+              <T>220912<!--CraftingStepInteraction: robotics_Table_Step_Soldering--></T>
+              <T>221242<!--CraftingStepInteraction: robotics_Table_Step_Hammer_Succeed--></T>
+              <T>221244<!--CraftingStepInteraction: robotics_Table_Step_Paint--></T>
+              <T>221245<!--CraftingStepInteraction: robotics_Table_Step_Passive--></T>
+              <T>221246<!--CraftingStepInteraction: robotics_Table_Step_Repair--></T>
+              <T>220912<!--CraftingStepInteraction: robotics_Table_Step_Soldering--></T>
+              <T>221247<!--CraftingStepInteraction: robotics_Table_Step_Torch_Succeed--></T>
+            </L>
+          </U>
+          <T n="factory">220789<!--MultiStagePhase: multiStagePhase_RoboticsTable_GenericCraftable--></T>
+          <L n="next_phases">
+            <E>GetCraftableFromObject</E>
+          </L>
+        </U>
+      </V>
+    </U>
+    <U>
+      <E n="key">GetCraftableFromObject</E>
+      <V n="value" t="simple_phase">
+        <U n="simple_phase">
+          <V t="use_final_product" n="_object_info" />
+          <T n="point_of_no_return">True</T>
+          <T n="super_affordance">220791<!--CraftingPhaseCreateObjectInInventorySuperInteraction: roboticsTable_CreateObject_InSimInventory--></T>
+        </U>
+      </V>
+    </U>
+  </L>
+  <V t="enabled" n="_quality_control_stat">
+    <U n="enabled">
+      <T n="statistic">217413<!--Skill: statistic_Skill_AdultMajor_Robotics--></T>
+    </U>
+  </V>
+  <T n="_retail_price">3000</T>
+  <L n="additional_tests">
+    <L>
+      <V t="career_test">
+        <U n="career_test">
+          <V n="test_type" t="career_track">
+            <U n="career_track">
+              <T n="career_track">217878<!--TunableCareerTrack: Engineer_Track3_MechanicalEngineer--></T>
+              <V t="enabled" n="user_level">
+                <U n="enabled">
+                  <T n="lower_bound">9</T>
+                </U>
+              </V>
+            </U>
+          </V>
+        </U>
+      </V>
+    </L>
+  </L>
+  <T n="autonomy_weight">1</T>
+  <T n="available_in_restaurant">False</T>
+  <T n="crafted_by_text">0x2642142E<!--String: "Obra de: {0.SimName}"--></T>
+  <V t="discount" n="crafting_cost">
+    <T n="discount">0.2666666667</T>
+  </V>
+  <U n="final_product">
+    <L n="apply_states">
+      <T>226762<!--ObjectStateValue: mechanicalSuit_StateValues_HelmetType_BlackGold--></T>
+    </L>
+    <V t="enabled" n="carry_track">
+      <E n="enabled">RIGHT</E>
+    </V>
+    <L n="conditional_apply_states" />
+    <T n="definition">235634</T>
+    <L n="loot_list">
+      <T>33896<!--LootActions: loot_Buff_Trait_Perfectionist_Outstanding--></T>
+      <T>33897<!--LootActions: loot_Buff_Trait_Perfectionist_Poor--></T>
+      <T>229236<!--LootActions: loot_RoboticsTable_RoboticsArmEquip_QualityUpgrade--></T>
+    </L>
+    <U n="quality_adjustment">
+      <T n="base_quality">-15</T>
+      <T n="skill_adjustment">20</T>
+    </U>
+    <L n="simoleon_value_modifiers_map">
+      <U>
+        <T n="key">32305<!--ObjectStateValue: Marketable_HigherValue--></T>
+        <U n="value">
+          <T n="upper_bound">3</T>
+        </U>
+      </U>
+    </L>
+  </U>
+  <T n="hidden_until_unlock">True</T>
+  <T n="name">0x79DE07E<!--String: "Casco exomecánico negro y dorado"--></T>
+  <T n="phase_interaction_name">0x8DAEA912<!--String: "Fabricando casco exomecánico"--></T>
+  <T n="push_consume">False</T>
+  <T n="recipe_description">0x0000</T>
+  <E n="recipe_difficulty">1</E>
+  <V t="enabled" n="resume_affordance">
+    <T n="enabled">220652<!--CraftingResumeInteraction: craftingResume_Robotics--></T>
+  </V>
+  <U n="skill_loot_data">
+    <E n="effectiveness">VerySmallPeriodic</E>
+    <T n="stat">217413<!--Skill: statistic_Skill_AdultMajor_Robotics--></T>
+  </U>
+  <V t="enabled" n="skill_test">
+    <U n="enabled">
+      <T n="skill">217413<!--Skill: statistic_Skill_AdultMajor_Robotics--></T>
+      <V t="threshold" n="skill_range">
+        <U n="threshold">
+          <U n="skill_threshold">
+            <T n="value">2</T>
+          </U>
+        </U>
+      </V>
+    </U>
+  </V>
+  <V t="enabled" n="use_ingredients">
+    <U n="enabled">
+      <T n="all_ingredients_required">True</T>
+      <L n="ingredient_list">
+        <V t="ingredient_by_definition">
+          <U n="ingredient_by_definition">
+            <T n="count">6</T>
+            <T n="ingredient_ref">22671</T>
+          </U>
+        </V>
+        <V t="ingredient_by_definition">
+          <U n="ingredient_by_definition">
+            <T n="count">8</T>
+            <T n="ingredient_ref">22678</T>
+          </U>
+        </V>
+        <V t="ingredient_by_definition">
+          <U n="ingredient_by_definition">
+            <T n="count">8</T>
+            <T n="ingredient_ref">232528</T>
+          </U>
+        </V>
+        <V t="ingredient_by_definition">
+          <U n="ingredient_by_definition">
+            <T n="count">6</T>
+            <T n="ingredient_ref">232526</T>
+          </U>
+        </V>
+        <V t="ingredient_by_definition">
+          <U n="ingredient_by_definition">
+            <T n="count">35</T>
+            <T n="ingredient_ref">232042</T>
+          </U>
+        </V>
+      </L>
+    </U>
+  </V>
+</I>

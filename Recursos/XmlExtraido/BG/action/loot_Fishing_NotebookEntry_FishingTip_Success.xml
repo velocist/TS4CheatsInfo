@@ -1,0 +1,122 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<I c="LootActions" i="action" m="interactions.utils.loot" n="loot_Fishing_NotebookEntry_FishingTip_Success" s="209402">
+  <L n="loot_actions">
+    <V t="create_notebook_entry">
+      <U n="create_notebook_entry">
+        <V t="create_entry_from_participant" n="notebook_entry">
+          <U n="create_entry_from_participant">
+            <E n="entry_participant">CreatedObject</E>
+            <T n="reference_notebook_entry">103949<!--NotebookEntryBait: NotebookEntry_FishingBait--></T>
+          </U>
+        </V>
+        <U n="notifications">
+          <V n="unlocked_success_notification" t="enabled">
+            <V n="enabled" t="literal">
+              <U n="literal">
+                <L n="dialog_options">
+                  <E>DISABLE_CLOSE_BUTTON</E>
+                </L>
+                <V t="enabled" n="icon">
+                  <V t="resource_key" n="enabled">
+                    <U n="resource_key">
+                      <T n="key" p="InGame\UI\Icons\Headlines\Final\headline_notepad.png">2f7d0004:00000000:175c369d841d8703</T>
+                    </U>
+                  </V>
+                </V>
+                <V t="enabled" n="primary_icon_response">
+                  <U n="enabled">
+                    <E n="ui_request">SEND_COMMAND</E>
+                  </U>
+                </V>
+                <V n="text" t="single">
+                  <T n="single">0x4834168<!--String: "{0.SimName} le ha hablado a {2.SimName} {M1.del}{F1.de la} {1.ObjectName|xxLower}, un nuevo tipo de pez que puede pescarse en los puntos de pesca de todas partes.\n\n{2.SimFirstName} ha anotado la información sobre este descubrimiento en la libreta. Haz clic abajo para saber más."--></T>
+                </V>
+                <V t="enabled" n="text_tokens">
+                  <U n="enabled">
+                    <L n="tokens">
+                      <V t="participant_type" />
+                      <V t="participant_type">
+                        <U n="participant_type">
+                          <V t="from_participant" n="objects">
+                            <U n="from_participant">
+                              <E n="participant">CreatedObject</E>
+                            </U>
+                          </V>
+                        </U>
+                      </V>
+                      <V t="participant_type">
+                        <U n="participant_type">
+                          <V t="from_participant" n="objects">
+                            <U n="from_participant">
+                              <E n="participant">TargetSim</E>
+                            </U>
+                          </V>
+                        </U>
+                      </V>
+                    </L>
+                  </U>
+                </V>
+                <L n="ui_responses">
+                  <U>
+                    <V t="enabled" n="response_command">
+                      <V n="enabled" t="literal">
+                        <U n="literal">
+                          <L n="arguments">
+                            <V t="special_command_data" />
+                            <V t="integer">
+                              <U n="integer">
+                                <T n="arg_value">3</T>
+                              </U>
+                            </V>
+                          </L>
+                          <T n="command">notebook.generate_notebook</T>
+                        </U>
+                      </V>
+                    </V>
+                    <T n="text">0xF3022429<!--String: "Abrir libreta"--></T>
+                    <E n="ui_request">SEND_COMMAND</E>
+                  </U>
+                </L>
+              </U>
+            </V>
+          </V>
+        </U>
+        <E n="subject">TargetSim</E>
+        <L n="tests">
+          <L>
+            <V t="existence">
+              <U n="existence">
+                <E n="participant">CreatedObject</E>
+              </U>
+            </V>
+            <V t="skill_test">
+              <U n="skill_test">
+                <T n="skill">39397<!--Skill: statistic_Skill_AdultMajor_Fishing--></T>
+                <V t="interval" n="skill_range">
+                  <U n="interval">
+                    <U n="skill_interval">
+                      <T n="upper_bound">9</T>
+                    </U>
+                  </U>
+                </V>
+              </U>
+            </V>
+            <V t="skill_test">
+              <U n="skill_test">
+                <T n="skill">39397<!--Skill: statistic_Skill_AdultMajor_Fishing--></T>
+                <V t="threshold" n="skill_range">
+                  <U n="threshold">
+                    <U n="skill_threshold">
+                      <T n="value">1</T>
+                    </U>
+                  </U>
+                </V>
+                <E n="subject">TargetSim</E>
+              </U>
+            </V>
+          </L>
+        </L>
+      </U>
+    </V>
+  </L>
+</I>

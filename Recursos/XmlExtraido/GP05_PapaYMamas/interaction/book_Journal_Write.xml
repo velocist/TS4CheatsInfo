@@ -1,0 +1,649 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<I c="SuperInteraction" i="interaction" m="interactions.base.super_interaction" n="book_Journal_Write" s="160098">
+  <V t="reference" n="_animation_actor_map">
+    <T n="reference">104045<!--AnimationActorMap: PickupInteractionTarget--></T>
+  </V>
+  <V n="_carry_transfer_animation" t="enabled">
+    <U n="enabled">
+      <U n="begin">
+        <T n="factory">11321<!--AnimationElementSet: Book_Teen_Homework_Start_Set--></T>
+      </U>
+      <V n="end" t="enabled">
+        <U n="enabled">
+          <T n="factory">77044<!--AnimationElementSet: Book_Teen_Homework_Stop_Set--></T>
+        </U>
+      </V>
+    </U>
+  </V>
+  <L n="_constraints">
+    <U>
+      <L n="constraints">
+        <U>
+          <V n="value" t="posture">
+            <U n="posture">
+              <L n="posture_manifest_tuning">
+                <U>
+                  <V n="surface" t="actor">
+                    <E n="actor">BASE_OBJECT</E>
+                  </V>
+                </U>
+              </L>
+            </U>
+          </V>
+        </U>
+      </L>
+    </U>
+  </L>
+  <V t="participant" n="_icon">
+    <U n="participant">
+      <L n="participant_type">
+        <E>Object</E>
+      </L>
+    </U>
+  </V>
+  <V t="enabled" n="_saveable" />
+  <T n="allow_autonomous">True</T>
+  <T n="allow_from_object_inventory">True</T>
+  <T n="allow_from_sim_inventory">True</T>
+  <L n="appropriateness_tags">
+    <E>Appropriateness_ReadBooks</E>
+  </L>
+  <T n="attention_cost">1</T>
+  <V n="basic_content" t="flexible_length">
+    <U n="flexible_length">
+      <L n="conditional_actions">
+        <V t="list_reference">
+          <T n="list_reference">40705<!--ExitConditionList: ExitConditionList_MotivesNearFail--></T>
+        </V>
+        <V t="literal">
+          <U n="literal">
+            <L n="conditions">
+              <V t="time_based">
+                <U n="time_based">
+                  <T n="max_time">60</T>
+                  <T n="min_time">45</T>
+                </U>
+              </V>
+            </L>
+            <E n="interaction_action">EXIT_NATURALLY</E>
+          </U>
+        </V>
+        <V t="literal">
+          <U n="literal">
+            <L n="conditions">
+              <V t="time_based">
+                <U n="time_based">
+                  <T n="max_time">20</T>
+                  <T n="min_time">20</T>
+                </U>
+              </V>
+            </L>
+            <E n="interaction_action">NO_ACTION</E>
+            <L n="loot_actions">
+              <T>160166<!--LootActions: journal_Loot_WroteInJournal--></T>
+            </L>
+          </U>
+        </V>
+      </L>
+      <V n="content" t="staging_content">
+        <U n="staging_content">
+          <U n="content_set">
+            <L n="affordance_links">
+              <T>160182<!--MixerInteraction: Journal_Write_Active--></T>
+              <T>160183<!--MixerInteraction: Journal_Write_Passive--></T>
+            </L>
+          </U>
+        </U>
+      </V>
+      <V n="periodic_stat_change" t="enabled">
+        <U n="enabled">
+          <L n="operations">
+            <V t="dynamic_skill">
+              <U n="dynamic_skill">
+                <U n="skill_loot_data_override">
+                  <E n="effectiveness">StandardPeriodic</E>
+                  <T n="stat">16718<!--Skill: statistic_Skill_Child_Creativity--></T>
+                </U>
+                <L n="tests">
+                  <L>
+                    <V t="sim_info">
+                      <U n="sim_info">
+                        <V t="specified" n="ages">
+                          <L n="specified">
+                            <E>CHILD</E>
+                          </L>
+                        </V>
+                      </U>
+                    </V>
+                  </L>
+                </L>
+              </U>
+            </V>
+            <V t="dynamic_skill">
+              <U n="dynamic_skill">
+                <U n="skill_loot_data_override">
+                  <E n="effectiveness">StandardPeriodic</E>
+                  <T n="stat">16714<!--Skill: statistic_Skill_AdultMajor_Writing--></T>
+                </U>
+                <L n="tests">
+                  <L>
+                    <V t="sim_info">
+                      <U n="sim_info">
+                        <V t="specified" n="ages">
+                          <L n="specified">
+                            <E>TEEN</E>
+                            <E>YOUNGADULT</E>
+                            <E>ADULT</E>
+                            <E>ELDER</E>
+                          </L>
+                        </V>
+                      </U>
+                    </V>
+                  </L>
+                </L>
+              </U>
+            </V>
+            <V t="statistic_set_max">
+              <U n="statistic_set_max">
+                <T n="stat">16455<!--Commodity: commodity_Emotion_Autonomy_Angry--></T>
+                <L n="tests">
+                  <L>
+                    <V t="sim_info">
+                      <U n="sim_info">
+                        <V t="specified" n="ages">
+                          <L n="specified">
+                            <E>TEEN</E>
+                            <E>CHILD</E>
+                          </L>
+                        </V>
+                      </U>
+                    </V>
+                  </L>
+                </L>
+              </U>
+            </V>
+            <V t="statistic_set_max">
+              <U n="statistic_set_max">
+                <T n="stat">16462<!--Commodity: commodity_Emotion_Autonomy_Embarrassed--></T>
+                <L n="tests">
+                  <L>
+                    <V t="sim_info">
+                      <U n="sim_info">
+                        <V t="specified" n="ages">
+                          <L n="specified">
+                            <E>TEEN</E>
+                            <E>CHILD</E>
+                          </L>
+                        </V>
+                      </U>
+                    </V>
+                  </L>
+                </L>
+              </U>
+            </V>
+            <V t="statistic_set_max">
+              <U n="statistic_set_max">
+                <T n="stat">16469<!--Commodity: commodity_Emotion_Autonomy_Sad--></T>
+                <L n="tests">
+                  <L>
+                    <V t="sim_info">
+                      <U n="sim_info">
+                        <V t="specified" n="ages">
+                          <L n="specified">
+                            <E>TEEN</E>
+                            <E>CHILD</E>
+                          </L>
+                        </V>
+                      </U>
+                    </V>
+                  </L>
+                </L>
+              </U>
+            </V>
+            <V t="statistic_set_max">
+              <U n="statistic_set_max">
+                <T n="stat">16471<!--Commodity: commodity_Emotion_Autonomy_Stressed--></T>
+                <L n="tests">
+                  <L>
+                    <V t="sim_info">
+                      <U n="sim_info">
+                        <V t="specified" n="ages">
+                          <L n="specified">
+                            <E>TEEN</E>
+                            <E>CHILD</E>
+                          </L>
+                        </V>
+                      </U>
+                    </V>
+                  </L>
+                </L>
+              </U>
+            </V>
+            <V t="statistic_change">
+              <U n="statistic_change">
+                <T n="advertise">False</T>
+                <T n="amount">0.09047619</T>
+                <T n="stat">161618<!--LifeSkillStatistic: lifeSkillStatistic_EmotionalControl--></T>
+                <L n="tests">
+                  <L>
+                    <V t="sim_info">
+                      <U n="sim_info">
+                        <V t="specified" n="ages">
+                          <L n="specified">
+                            <E>TEEN</E>
+                            <E>CHILD</E>
+                          </L>
+                        </V>
+                      </U>
+                    </V>
+                  </L>
+                </L>
+              </U>
+            </V>
+            <V t="statistic_set_max">
+              <U n="statistic_set_max">
+                <T n="stat">163758<!--Commodity: commodity_LifeSkills_Autonomy_EmotionalControl_Positive--></T>
+              </U>
+            </V>
+          </L>
+        </U>
+      </V>
+      <V n="statistic_reduction_by_category" t="enabled">
+        <U n="enabled">
+          <L n="categories">
+            <E>Stressed_Buffs</E>
+            <E>Angry_Buffs</E>
+            <E>Embarrassed_Buffs</E>
+            <E>Sad_Buffs</E>
+            <E>TeenMoodSwing_Buffs</E>
+          </L>
+          <T n="rate">3</T>
+        </U>
+      </V>
+    </U>
+  </V>
+  <L n="basic_extras">
+    <V t="buff">
+      <U n="buff">
+        <U n="buff_type">
+          <T n="buff_type">185734<!--Buff: buff_Umbrella_Close--></T>
+        </U>
+      </U>
+    </V>
+    <V t="loot">
+      <U n="loot">
+        <L n="loot_list">
+          <T>160107<!--LootActions: Journal_GiveOwnership--></T>
+        </L>
+        <V t="at_beginning" n="timing" />
+      </U>
+    </V>
+    <V t="loot">
+      <U n="loot">
+        <L n="loot_list">
+          <T>199496<!--LootActions: loot_ActorCareer_PrepTask_Research_Mean--></T>
+        </L>
+      </U>
+    </V>
+  </L>
+  <V t="do_not_change_focus" n="basic_focus" />
+  <L n="basic_liabilities">
+    <V t="push_affordance_on_route_fail">
+      <U n="push_affordance_on_route_fail">
+        <T n="affordance">166864<!--SuperInteraction: book_Journal_noSurfaceFail--></T>
+        <V t="enabled" n="target">
+          <E n="enabled">Actor</E>
+        </V>
+      </U>
+    </V>
+  </L>
+  <L n="cancel_replacement_affordances">
+    <U>
+      <E n="key">BODY</E>
+      <U n="value">
+        <T n="affordance">131317<!--SuperInteraction: cancelReplacements_ReadtoCarry_fromSurface--></T>
+        <V t="enabled" n="target" />
+      </U>
+    </U>
+    <U>
+      <E n="key">CARRY</E>
+      <U n="value">
+        <T n="affordance">122714<!--SuperInteraction: cancelReplacements_ReadtoCarry--></T>
+        <V t="enabled" n="target" />
+      </U>
+    </U>
+  </L>
+  <V n="canonical_animation" t="enabled">
+    <U n="enabled">
+      <T n="factory">11319<!--AnimationElementSet: Book_Teen_Homework_Active_Set--></T>
+    </U>
+  </V>
+  <V t="disabled" n="content_score" />
+  <T n="display_name">0xA661EF04<!--String: "Escribir en su diario"--></T>
+  <V n="display_name_overrides" t="testable">
+    <U n="testable">
+      <L n="overrides">
+        <U>
+          <V n="new_display_name" t="enabled">
+            <T n="enabled">0x3092A02A<!--String: "Expresar pensamientos melancólicos"--></T>
+          </V>
+          <L n="test">
+            <L>
+              <V t="mood">
+                <U n="mood">
+                  <T n="mood">14643<!--Mood: Mood_Sad--></T>
+                </U>
+              </V>
+            </L>
+          </L>
+        </U>
+        <U>
+          <V n="new_display_name" t="enabled">
+            <T n="enabled">0x7C04876A<!--String: "Escribir efusivamente"--></T>
+          </V>
+          <L n="test">
+            <L>
+              <V t="mood">
+                <U n="mood">
+                  <T n="mood">14632<!--Mood: Mood_Angry--></T>
+                </U>
+              </V>
+            </L>
+          </L>
+        </U>
+        <U>
+          <V n="new_display_name" t="enabled">
+            <T n="enabled">0x79DAB813<!--String: "Confesar momentos embarazosos"--></T>
+          </V>
+          <L n="test">
+            <L>
+              <V t="mood">
+                <U n="mood">
+                  <T n="mood">14635<!--Mood: Mood_Embarrassed--></T>
+                </U>
+              </V>
+            </L>
+          </L>
+        </U>
+        <U>
+          <V n="new_display_name" t="enabled">
+            <T n="enabled">0x30906354<!--String: "Despotricar sobre estrés"--></T>
+          </V>
+          <L n="test">
+            <L>
+              <V t="mood">
+                <U n="mood">
+                  <T n="mood">14645<!--Mood: Mood_Stressed--></T>
+                </U>
+              </V>
+            </L>
+          </L>
+        </U>
+      </L>
+    </U>
+  </V>
+  <U n="display_name_text_tokens">
+    <L n="tokens">
+      <V t="participant_type">
+        <U n="participant_type">
+          <V t="from_participant" n="objects">
+            <U n="from_participant">
+              <E n="participant">Actor</E>
+            </U>
+          </V>
+        </U>
+      </V>
+      <V t="participant_type">
+        <U n="participant_type">
+          <V t="from_participant" n="objects">
+            <U n="from_participant">
+              <E n="participant">Object</E>
+            </U>
+          </V>
+        </U>
+      </V>
+    </L>
+  </U>
+  <T n="force_exit_on_inertia">False</T>
+  <L n="interaction_category_tags">
+    <E>Interaction_Super</E>
+    <E>Interaction_All</E>
+    <E>Interaction_Skill_Writing</E>
+    <E>Interaction_Skill_Child_Creativity</E>
+  </L>
+  <L n="mood_list">
+    <T>14632<!--Mood: Mood_Angry--></T>
+    <T>14635<!--Mood: Mood_Embarrassed--></T>
+    <T>14643<!--Mood: Mood_Sad--></T>
+    <T>14645<!--Mood: Mood_Stressed--></T>
+  </L>
+  <V t="single" n="outcome">
+    <U n="single">
+      <U n="actions">
+        <L n="continuation">
+          <U>
+            <T n="affordance">13855<!--PutInInventoryInteraction: Put_Item_In_My_Inventory--></T>
+          </U>
+        </L>
+        <T n="force_outcome_on_exit">True</T>
+      </U>
+    </U>
+  </V>
+  <T n="pie_menu_priority">10</T>
+  <U n="posture_preferences">
+    <T n="apply_penalties">True</T>
+    <L n="posture_cost_overrides">
+      <U>
+        <T n="key">134340<!--Posture: posture_SitOnGround--></T>
+        <T n="value">100</T>
+      </U>
+      <U>
+        <T n="key">15527<!--Posture: posture_Kneel--></T>
+        <T n="value">30</T>
+      </U>
+      <U>
+        <T n="key">15537<!--MobilePosture: posture_Stand--></T>
+        <T n="value">40</T>
+      </U>
+    </L>
+    <T n="prefer_surface">True</T>
+  </U>
+  <V t="enabled" n="posture_target_preference">
+    <L n="enabled">
+      <U>
+        <E n="key">DINING_TABLE</E>
+        <T n="value">80</T>
+      </U>
+      <U>
+        <E n="key">SEATING_BARSTOOL</E>
+        <T n="value">80</T>
+      </U>
+      <U>
+        <E n="key">SEATING_BED</E>
+        <T n="value">5</T>
+      </U>
+      <U>
+        <E n="key">SEATING_DESK</E>
+        <T n="value">80</T>
+      </U>
+      <U>
+        <E n="key">SEATING_DINING</E>
+        <T n="value">80</T>
+      </U>
+      <U>
+        <E n="key">SEATING_LIVING</E>
+        <T n="value">0</T>
+      </U>
+      <U>
+        <E n="key">SEATING_LOVESEAT</E>
+        <T n="value">0</T>
+      </U>
+      <U>
+        <E n="key">SEATING_SOFA</E>
+        <T n="value">0</T>
+      </U>
+      <U>
+        <E n="key">SURFACE_COUNTER</E>
+        <T n="value">80</T>
+      </U>
+      <U>
+        <E n="key">SURFACE_DESK</E>
+        <T n="value">80</T>
+      </U>
+    </L>
+  </V>
+  <V n="provided_template_affordances" t="enabled">
+    <U n="enabled">
+      <L n="template_affordances">
+        <V t="discipline">
+          <U n="discipline">
+            <T n="display_name_override">0x5E71C1DC<!--String: "Alentar a escribir en el diario"--></T>
+            <L n="outcome_basic_extras">
+              <V t="loot">
+                <U n="loot">
+                  <L n="loot_list">
+                    <T>167135<!--LootActions: loot_Statistic_LifeSkill_EmotionalControl_Target_Discipline_EncourageGain--></T>
+                    <T>130279<!--LootActions: rel_Gain_Small_TargetSim--></T>
+                    <T>163075<!--LootActions: loot_ParentingSkill_Discipline_Encourage--></T>
+                  </L>
+                </U>
+              </V>
+            </L>
+            <T n="template_affordance">163026<!--DisciplineTemplateSuperInteraction: disciplineTemplate_Encourage--></T>
+          </U>
+        </V>
+      </L>
+    </U>
+  </V>
+  <V t="enabled" n="route_start_balloon">
+    <U n="enabled">
+      <U n="balloon">
+        <L n="balloon_choices">
+          <U>
+            <V n="item" t="balloon_icon">
+              <U n="balloon_icon">
+                <V t="participant" n="icon">
+                  <U n="participant">
+                    <L n="participant_type">
+                      <E>Object</E>
+                    </L>
+                  </U>
+                </V>
+              </U>
+            </V>
+          </U>
+        </L>
+        <L n="balloon_target">
+          <E>Actor</E>
+        </L>
+      </U>
+    </U>
+  </V>
+  <E n="scoring_priority">NORMAL</E>
+  <V t="disabled" n="sim_affinity_posture_scoring_data" />
+  <T n="subaction_selection_weight">6</T>
+  <V n="super_affordance_compatibility" t="literal">
+    <U n="literal">
+      <V n="default_inclusion" t="exclude_all">
+        <U n="exclude_all">
+          <L n="include_affordances">
+            <T>14410<!--GoHereSuperInteraction: terrain-gohere--></T>
+            <T>102930<!--GoHereSuperInteraction: terrain-sitHere--></T>
+            <T>102930<!--GoHereSuperInteraction: terrain-sitHere--></T>
+            <T>31564<!--SuperInteraction: seating_Sit--></T>
+          </L>
+          <L n="include_lists">
+            <T>33624<!--AffordanceList: AffordanceList_Stereo_Listens--></T>
+          </L>
+        </U>
+      </V>
+    </U>
+  </V>
+  <V t="enabled" n="super_affordance_klobberers">
+    <V n="enabled" t="literal">
+      <U n="literal">
+        <V n="default_inclusion" t="exclude_all">
+          <U n="exclude_all">
+            <L n="include_affordances">
+              <T>182089<!--SuperInteraction: sim_CreateCarryUmbrella--></T>
+            </L>
+          </U>
+        </V>
+      </U>
+    </V>
+  </V>
+  <E n="target_type">OBJECT</E>
+  <L n="test_autonomous">
+    <L>
+      <V t="appropriateness" />
+      <V t="buff">
+        <U n="buff">
+          <L n="blacklist">
+            <T>214844<!--Buff: buff_Trait_IslandAncestors_Spirit_RoleAutonomy_PositiveJudging--></T>
+            <T>214845<!--Buff: buff_Trait_IslandAncestors_Spirit_RoleAutonomy_NegativeJudging--></T>
+          </L>
+        </U>
+      </V>
+      <V t="sim_info">
+        <U n="sim_info">
+          <V t="specified" n="ages">
+            <L n="specified">
+              <E>TEEN</E>
+              <E>CHILD</E>
+            </L>
+          </V>
+        </U>
+      </V>
+    </L>
+  </L>
+  <L n="test_globals">
+    <V t="sim_info">
+      <U n="sim_info">
+        <V t="specified" n="ages">
+          <L n="specified">
+            <E>TEEN</E>
+            <E>YOUNGADULT</E>
+            <E>ADULT</E>
+            <E>ELDER</E>
+            <E>CHILD</E>
+          </L>
+        </V>
+        <V t="specified" n="species">
+          <U n="specified">
+            <L n="species">
+              <E />
+            </L>
+          </U>
+        </V>
+        <E n="who">Actor</E>
+      </U>
+    </V>
+  </L>
+  <L n="tests">
+    <L>
+      <V t="object_ownership">
+        <U n="object_ownership">
+          <T n="consider_renter_as_household_owner">False</T>
+          <T n="is_not_owner">False</T>
+          <T n="is_owner">False</T>
+          <T n="must_be_owned">False</T>
+          <E n="sim">Actor</E>
+          <T n="test_household_owner">False</T>
+        </U>
+      </V>
+    </L>
+    <L>
+      <V t="object_ownership">
+        <U n="object_ownership">
+          <T n="consider_renter_as_household_owner">False</T>
+          <T n="is_not_owner">False</T>
+          <T n="is_owner">True</T>
+          <T n="must_be_owned">True</T>
+          <E n="sim">Actor</E>
+          <T n="test_household_owner">False</T>
+        </U>
+      </V>
+    </L>
+  </L>
+  <T n="time_overhead">30</T>
+</I>

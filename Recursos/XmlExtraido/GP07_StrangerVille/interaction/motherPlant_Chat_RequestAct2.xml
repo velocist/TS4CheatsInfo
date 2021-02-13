@@ -1,0 +1,216 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<I c="SuperInteraction" i="interaction" m="interactions.base.super_interaction" n="motherPlant_Chat_RequestAct2" s="204918">
+  <L n="_constraints">
+    <U>
+      <L n="constraints">
+        <U>
+          <V n="value" t="cone">
+            <U n="cone">
+              <T n="angle">10</T>
+              <T n="max_radius">7</T>
+              <T n="min_radius">6</T>
+            </U>
+          </V>
+        </U>
+        <U>
+          <V n="value" t="facing" />
+        </U>
+      </L>
+    </U>
+  </L>
+  <V t="enabled" n="_saveable" />
+  <T n="allow_autonomous">False</T>
+  <T n="attention_cost">0.5</T>
+  <V t="flexible_length" n="basic_content">
+    <U n="flexible_length">
+      <L n="conditional_actions">
+        <V t="literal">
+          <U n="literal">
+            <L n="conditions">
+              <V t="time_based">
+                <U n="time_based">
+                  <T n="max_time">10</T>
+                  <T n="min_time">10</T>
+                </U>
+              </V>
+            </L>
+            <E n="interaction_action">EXIT_NATURALLY</E>
+          </U>
+        </V>
+      </L>
+      <V n="content" t="staging_content">
+        <U n="staging_content">
+          <U n="content_set">
+            <L n="affordance_links">
+              <T>206571<!--MixerInteraction: motherPlant_Mixers_Request_Uninfected--></T>
+            </L>
+          </U>
+        </U>
+      </V>
+    </U>
+  </V>
+  <L n="basic_extras">
+    <V t="state_change">
+      <U n="state_change">
+        <V n="new_value" t="single_value">
+          <U n="single_value">
+            <T n="new_value">204350<!--ObjectStateValue: motherplant_Idle_Talk--></T>
+          </U>
+        </V>
+        <V t="immediately" n="timing" />
+      </U>
+    </V>
+    <V t="state_change">
+      <U n="state_change">
+        <V t="single_value" n="new_value">
+          <U n="single_value">
+            <T n="new_value">201778<!--ObjectStateValue: motherplant_Idle_basic--></T>
+          </U>
+        </V>
+        <V t="at_end" n="timing">
+          <U n="at_end">
+            <E n="criticality">OnCancelOrException</E>
+          </U>
+        </V>
+      </U>
+    </V>
+    <V t="notification">
+      <U n="notification">
+        <V n="dialog" t="single">
+          <V n="single" t="literal">
+            <U n="literal">
+              <V t="enabled" n="icon">
+                <V t="resource_key" n="enabled">
+                  <U n="resource_key">
+                    <T p="InGP07\UI\Icons\Headlines\headline_MotherPlantFace.png" n="key">2f7d0004:00000000:a72300acb7937e5b</T>
+                  </U>
+                </V>
+              </V>
+              <V n="text" t="single">
+                <T n="single">0x6C740598<!--String: "Con un chasquido de su poderoso tentáculo, la planta madre ha propagado una cantidad moderada de esporas por StrangerVille. Habrá un número intermedio de Sims poseídos caminando por las calles y las plantas insólitas han vuelto a estar en flor."--></T>
+              </V>
+            </U>
+          </V>
+        </V>
+      </U>
+    </V>
+  </L>
+  <V t="enabled" n="canonical_animation">
+    <U n="enabled">
+      <T n="factory">11854<!--AnimationElement: Soc_Friendly_NT_askQuestionFriendly_success_basic--></T>
+    </U>
+  </V>
+  <T n="category">205664<!--PieMenuCategory: pieMenuCategory_MotherplantRequestWeirdness--></T>
+  <V t="disabled" n="content_score" />
+  <T n="display_name">0xA3281B48<!--String: "Pedir rareza moderada"--></T>
+  <U n="display_name_text_tokens">
+    <L n="tokens">
+      <V t="participant_type">
+        <U n="participant_type">
+          <V n="objects" t="from_participant">
+            <U n="from_participant">
+              <E n="participant">Actor</E>
+            </U>
+          </V>
+        </U>
+      </V>
+      <V t="participant_type">
+        <U n="participant_type">
+          <V t="from_participant" n="objects">
+            <U n="from_participant">
+              <E n="participant">Object</E>
+            </U>
+          </V>
+        </U>
+      </V>
+    </L>
+  </U>
+  <L n="interaction_category_tags">
+    <E>Interaction_Super</E>
+    <E>Interaction_All</E>
+  </L>
+  <V n="outcome" t="single">
+    <U n="single">
+      <U n="actions">
+        <L n="loot_list">
+          <T>204913<!--LootActions: loot_MotherPlant_RequestAct2--></T>
+        </L>
+      </U>
+    </U>
+  </V>
+  <E n="scoring_priority">NORMAL</E>
+  <T n="subaction_selection_weight">1</T>
+  <E n="target_type">OBJECT</E>
+  <L n="test_globals">
+    <V t="sim_info">
+      <U n="sim_info">
+        <V t="specified" n="ages" />
+        <V t="specified" n="species">
+          <U n="specified">
+            <L n="species">
+              <E />
+            </L>
+          </U>
+        </V>
+        <E n="who">Actor</E>
+      </U>
+    </V>
+    <V t="state">
+      <U n="state">
+        <T n="value">204484<!--ObjectStateValue: motherplant_Vitals_Values_Alive--></T>
+      </U>
+    </V>
+    <V t="state">
+      <U n="state">
+        <V t="always_pass" n="fallback_behavior" />
+        <E n="operator">NOTEQUAL</E>
+        <T n="value">204713<!--CommodityBasedObjectStateValue: motherplantEnrage_Values_Rage--></T>
+      </U>
+    </V>
+    <V t="narrative">
+      <U n="narrative">
+        <V n="test_type" t="completed_narrative_test">
+          <U n="completed_narrative_test">
+            <U n="narratives">
+              <V n="whitelist" t="specify">
+                <U n="specify">
+                  <L n="whitelist">
+                    <T>201917<!--Narrative: narrative_Strangetown_Act3--></T>
+                  </L>
+                </U>
+              </V>
+            </U>
+          </U>
+        </V>
+      </U>
+    </V>
+    <V t="narrative">
+      <U n="narrative">
+        <V n="test_type" t="active_narrative_test">
+          <U n="active_narrative_test">
+            <U n="narratives">
+              <V n="blacklist" t="specify">
+                <U n="specify">
+                  <L n="blacklist">
+                    <T>201916<!--Narrative: narrative_Strangetown_Act2--></T>
+                  </L>
+                </U>
+              </V>
+            </U>
+          </U>
+        </V>
+      </U>
+    </V>
+    <V t="situation_running_test">
+      <U n="situation_running_test">
+        <V t="enabled" n="situation_blacklist">
+          <L n="enabled">
+            <T>203311<!--MotherPlantBattleSituation: motherPlantBattleSituation--></T>
+          </L>
+        </V>
+      </U>
+    </V>
+  </L>
+  <L n="tests" />
+  <T n="time_overhead">30</T>
+</I>

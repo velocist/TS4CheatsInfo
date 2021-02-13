@@ -1,0 +1,344 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<I c="SuperInteraction" i="interaction" m="interactions.base.super_interaction" n="Ghost_Possess_Bonfire" s="121648">
+  <L n="_constraints">
+    <U>
+      <L n="constraints">
+        <U>
+          <V t="facing" n="value" />
+        </U>
+      </L>
+    </U>
+    <U>
+      <L n="constraints">
+        <U>
+          <V n="value" t="circle">
+            <U n="circle">
+              <T n="ideal_radius">1</T>
+              <T n="ideal_radius_width">1</T>
+              <T n="radius">3</T>
+              <T n="require_los">False</T>
+            </U>
+          </V>
+        </U>
+      </L>
+    </U>
+  </L>
+  <V t="participant" n="_icon">
+    <U n="participant">
+      <L n="participant_type">
+        <E>Object</E>
+      </L>
+    </U>
+  </V>
+  <V t="enabled" n="_saveable" />
+  <L n="_static_commodities">
+    <U>
+      <T n="static_commodity">108714<!--StaticCommodity: staticCommodity_GhostStory_Haunting--></T>
+    </U>
+  </L>
+  <T n="attention_cost">0.5</T>
+  <V n="basic_content" t="flexible_length">
+    <U n="flexible_length">
+      <L n="conditional_actions">
+        <V t="literal">
+          <U n="literal">
+            <L n="conditions">
+              <V t="state_based">
+                <U n="state_based">
+                  <V n="state" t="on_trigger">
+                    <T n="on_trigger">15078<!--CommodityBasedObjectStateValue: Brokenness_Unbroken--></T>
+                  </V>
+                </U>
+              </V>
+            </L>
+            <E n="interaction_action">EXIT_NATURALLY</E>
+          </U>
+        </V>
+        <V t="literal">
+          <U n="literal">
+            <L n="conditions">
+              <V t="time_based">
+                <U n="time_based">
+                  <T n="max_time">20</T>
+                  <T n="min_time">15</T>
+                </U>
+              </V>
+            </L>
+            <E n="interaction_action">EXIT_NATURALLY</E>
+          </U>
+        </V>
+      </L>
+      <V n="content" t="looping_content">
+        <U n="looping_content">
+          <U n="animation_ref">
+            <T n="factory">121818<!--AnimationElement: bonfire_Haunt--></T>
+          </U>
+        </U>
+      </V>
+      <V n="periodic_stat_change" t="enabled">
+        <U n="enabled">
+          <L n="operations">
+            <V t="statistic_change">
+              <U n="statistic_change">
+                <T n="advertise">False</T>
+                <T n="amount">0.6</T>
+                <T n="stat">16655<!--Commodity: motive_Fun--></T>
+              </U>
+            </V>
+            <V t="statistic_set_max">
+              <U n="statistic_set_max">
+                <T n="stat">115027<!--Commodity: commodity_Trait_Autonomy_Ghost--></T>
+              </U>
+            </V>
+          </L>
+          <T n="trigger_gain_on_start">False</T>
+        </U>
+      </V>
+      <T n="start_autonomous_inertial">False</T>
+    </U>
+  </V>
+  <L n="basic_extras">
+    <V t="broadcaster">
+      <U n="broadcaster">
+        <L n="broadcaster_types">
+          <U>
+            <T n="item">102375<!--Broadcaster: broadcaster_Ghost_Possess--></T>
+          </U>
+        </L>
+        <E n="participant">Object</E>
+      </U>
+    </V>
+    <V t="reslot_plumbbob">
+      <U n="reslot_plumbbob">
+        <T n="bone_name">b__ROOT__</T>
+        <U n="offset">
+          <T n="y">3</T>
+        </U>
+      </U>
+    </V>
+    <V t="set_visibility_state">
+      <U n="set_visibility_state">
+        <T n="fade">False</T>
+        <V t="on_xevt" n="timing">
+          <U n="on_xevt">
+            <E n="criticality">NotCritical</E>
+            <T n="xevt_id">101</T>
+          </U>
+        </V>
+        <T n="visibility">False</T>
+      </U>
+    </V>
+    <V t="set_visibility_state">
+      <U n="set_visibility_state">
+        <T n="fade">True</T>
+        <V t="on_xevt" n="timing">
+          <U n="on_xevt">
+            <E n="criticality">OnCancelOrException</E>
+            <T n="xevt_id">102</T>
+          </U>
+        </V>
+        <T n="visibility">True</T>
+      </U>
+    </V>
+    <V t="state_change">
+      <U n="state_change">
+        <V n="new_value" t="single_value">
+          <U n="single_value">
+            <T n="new_value">125635<!--ObjectStateValue: bonfire_Broadcaster_Ghost_Large--></T>
+          </U>
+        </V>
+        <V t="on_xevt" n="timing">
+          <U n="on_xevt">
+            <T n="xevt_id">101</T>
+          </U>
+        </V>
+      </U>
+    </V>
+    <V t="state_change">
+      <U n="state_change">
+        <V n="new_value" t="single_value">
+          <U n="single_value">
+            <T n="new_value">125636<!--ObjectStateValue: bonfire_High_Ghost--></T>
+          </U>
+        </V>
+        <V t="on_xevt" n="timing">
+          <U n="on_xevt">
+            <T n="xevt_id">101</T>
+          </U>
+        </V>
+      </U>
+    </V>
+    <V t="state_change">
+      <U n="state_change">
+        <V n="new_value" t="single_value">
+          <U n="single_value">
+            <T n="new_value">121840<!--ObjectStateValue: bonfire_Broadcaster_CozyFire_Large--></T>
+          </U>
+        </V>
+        <V t="at_end" n="timing">
+          <U n="at_end">
+            <E n="criticality">OnCancelOrException</E>
+          </U>
+        </V>
+      </U>
+    </V>
+    <V t="buff">
+      <U n="buff">
+        <U n="buff_type">
+          <T n="buff_type">126588<!--Buff: buff_Object_Bonfire_FireDecayStop--></T>
+        </U>
+      </U>
+    </V>
+  </L>
+  <L n="basic_liabilities">
+    <V t="crafting_station" />
+  </L>
+  <V t="enabled" n="basic_reserve_object">
+    <U n="enabled">
+      <L n="subject_list">
+        <U>
+          <V t="reserve_and_lock_all_parts" n="reserve_type" />
+        </U>
+      </L>
+    </U>
+  </V>
+  <V t="disabled" n="content_score" />
+  <T n="display_name">0x2D3EBD19<!--String: "Poseer"--></T>
+  <U n="display_name_text_tokens">
+    <L n="tokens">
+      <V t="participant_type">
+        <U n="participant_type">
+          <V t="from_participant" n="objects">
+            <U n="from_participant">
+              <E n="participant">Actor</E>
+            </U>
+          </V>
+        </U>
+      </V>
+      <V t="participant_type">
+        <U n="participant_type">
+          <V t="from_participant" n="objects">
+            <U n="from_participant">
+              <E n="participant">Object</E>
+            </U>
+          </V>
+        </U>
+      </V>
+    </L>
+  </U>
+  <L n="interaction_category_tags">
+    <E>Interaction_Super</E>
+    <E>Interaction_All</E>
+  </L>
+  <V n="outcome" t="single">
+    <U n="single">
+      <U n="actions">
+        <T n="force_outcome_on_exit">True</T>
+        <L n="loot_list">
+          <T>121847<!--LootActions: loot_Statistic_Bonfire_SetMax--></T>
+        </L>
+      </U>
+    </U>
+  </V>
+  <V t="enabled" n="pie_menu_icon">
+    <V t="resource_key" n="enabled">
+      <U n="resource_key">
+        <T n="key" p="InGame\UI\Icons\Headlines\Final\headline_ghost.png">2f7d0004:00000000:14094b494cd3f93d</T>
+      </U>
+    </V>
+  </V>
+  <V t="enabled" n="privacy">
+    <U n="enabled">
+      <T n="animate_shoo">False</T>
+      <V t="reference" n="privacy_snippet">
+        <T n="reference">142957<!--Privacy: privacy_SurfaceShoo--></T>
+      </V>
+    </U>
+  </V>
+  <E n="scoring_priority">NORMAL</E>
+  <T n="subaction_selection_weight">1</T>
+  <V t="literal" n="super_affordance_compatibility">
+    <U n="literal">
+      <V n="default_inclusion" t="exclude_all" />
+    </U>
+  </V>
+  <E n="target_type">OBJECT</E>
+  <L n="test_autonomous">
+    <L>
+      <V t="buff">
+        <U n="buff">
+          <L n="blacklist">
+            <T>214844<!--Buff: buff_Trait_IslandAncestors_Spirit_RoleAutonomy_PositiveJudging--></T>
+          </L>
+        </U>
+      </V>
+    </L>
+  </L>
+  <L n="test_globals">
+    <V t="sim_info">
+      <U n="sim_info">
+        <V t="specified" n="ages">
+          <L n="specified">
+            <E>TEEN</E>
+            <E>YOUNGADULT</E>
+            <E>ADULT</E>
+            <E>ELDER</E>
+            <E>CHILD</E>
+          </L>
+        </V>
+        <V t="specified" n="species">
+          <U n="specified">
+            <L n="species">
+              <E />
+            </L>
+          </U>
+        </V>
+        <E n="who">Actor</E>
+      </U>
+    </V>
+    <V t="test_set_reference">
+      <T n="test_set_reference">101697<!--TestSetInstance: testSet_ActorIsGhost--></T>
+    </V>
+    <V t="test_set_reference">
+      <T n="test_set_reference">77630<!--TestSetInstance: testSet_StateNotBroken--></T>
+    </V>
+    <V t="object_has_no_children">
+      <U n="object_has_no_children">
+        <T n="check_part_owner">True</T>
+      </U>
+    </V>
+    <V t="location">
+      <U n="location">
+        <U n="location_tests">
+          <V t="enabled" n="is_in_slot">
+            <U n="enabled">
+              <V n="slot_test_type" t="specific_slot">
+                <U n="specific_slot">
+                  <T n="require_slotted">False</T>
+                  <T n="specific_slot_set">slotSet_InventionConstructorScience</T>
+                </U>
+              </V>
+            </U>
+          </V>
+          <V t="Don't_Test" n="is_on_active_lot" />
+        </U>
+        <E n="subject">Object</E>
+      </U>
+    </V>
+    <V t="situation_running_test">
+      <U n="situation_running_test">
+        <V n="situation_blacklist" t="enabled">
+          <L n="enabled">
+            <T>108865<!--SituationSimple: situation_Career_Detective_CrimeScene--></T>
+          </L>
+        </V>
+      </U>
+    </V>
+    <V t="in_use">
+      <U n="in_use">
+        <T n="negate">True</T>
+      </U>
+    </V>
+  </L>
+  <T n="time_overhead">30</T>
+</I>

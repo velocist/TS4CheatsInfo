@@ -1,0 +1,181 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<I c="StartCraftingAutonomouslySuperInteraction" i="interaction" m="crafting.crafting_interactions" n="coffeeTea_StartGroupCrafting_Autonomously" s="26324">
+  <L n="_false_advertisements">
+    <V t="statistic_change">
+      <U n="statistic_change">
+        <T n="amount">0.25</T>
+        <T n="stat">16654<!--Commodity: motive_Energy--></T>
+      </U>
+    </V>
+    <V t="statistic_change">
+      <U n="statistic_change">
+        <T n="amount">1</T>
+        <T n="stat">181210<!--Commodity: commodity_sim_BodyTemperature--></T>
+      </U>
+    </V>
+  </L>
+  <V t="participant" n="_icon">
+    <U n="participant">
+      <L n="participant_type">
+        <E>Object</E>
+      </L>
+    </U>
+  </V>
+  <V t="enabled" n="_saveable" />
+  <L n="_static_commodities">
+    <U>
+      <T n="static_commodity">26290<!--StaticCommodity: StaticCommodity_MakeCoffeeTea--></T>
+    </U>
+    <U>
+      <T n="static_commodity">119925<!--StaticCommodity: StaticCommodity_SteamGhost--></T>
+    </U>
+    <U>
+      <T n="static_commodity">177237<!--StaticCommodity: staticCommodity_Skeleton--></T>
+    </U>
+    <U>
+      <T n="static_commodity">246805<!--StaticCommodity: staticCommodity_Lifestyles_CoffeeFanatic_DrinkCoffee--></T>
+    </U>
+  </L>
+  <L n="appropriateness_tags">
+    <E>Appropriateness_Cooking</E>
+  </L>
+  <T n="attention_cost">0.75</T>
+  <V t="one_shot" n="basic_content" />
+  <V t="enabled" n="canonical_animation">
+    <U n="enabled">
+      <T n="factory">11350<!--AnimationElement: CoffeeMaker_Brew_Fill--></T>
+    </U>
+  </V>
+  <V t="disabled" n="content_score" />
+  <T n="display_name">0xD0AF20CC<!--String: "Hacer café"--></T>
+  <U n="display_name_text_tokens">
+    <L n="tokens">
+      <V t="participant_type">
+        <U n="participant_type">
+          <V t="from_participant" n="objects">
+            <U n="from_participant">
+              <E n="participant">Actor</E>
+            </U>
+          </V>
+        </U>
+      </V>
+      <V t="participant_type">
+        <U n="participant_type">
+          <V t="from_participant" n="objects">
+            <U n="from_participant">
+              <E n="participant">Object</E>
+            </U>
+          </V>
+        </U>
+      </V>
+    </L>
+  </U>
+  <L n="interaction_category_tags">
+    <E>Interaction_MakeCoffeeOrTea</E>
+    <E>Interaction_Super</E>
+    <E>Interaction_All</E>
+  </L>
+  <V t="single" n="outcome" />
+  <L n="recipes">
+    <T>15665<!--Recipe: recipe_Drink_Brewed_Coffee_Coffee--></T>
+  </L>
+  <V t="enabled" n="route_start_balloon">
+    <U n="enabled">
+      <U n="balloon">
+        <L n="balloon_choices">
+          <U>
+            <V n="item" t="balloon_icon">
+              <U n="balloon_icon">
+                <V t="participant" n="icon">
+                  <U n="participant">
+                    <L n="participant_type">
+                      <E>Object</E>
+                    </L>
+                  </U>
+                </V>
+              </U>
+            </V>
+          </U>
+        </L>
+        <L n="balloon_target">
+          <E>Actor</E>
+        </L>
+      </U>
+    </U>
+  </V>
+  <E n="scoring_priority">NORMAL</E>
+  <T n="subaction_selection_weight">1</T>
+  <E n="target_type">OBJECT</E>
+  <L n="test_autonomous">
+    <L>
+      <V t="appropriateness" />
+    </L>
+    <L>
+      <V t="buff">
+        <U n="buff">
+          <L n="blacklist">
+            <T>36123<!--Buff: buff_AllowSleepDesire--></T>
+            <T>8904<!--Buff: buff_LargeSleepDesire--></T>
+            <T>8847<!--Buff: buff_SmallSleepDesire--></T>
+          </L>
+        </U>
+      </V>
+      <V t="appropriateness" />
+    </L>
+  </L>
+  <L n="test_globals">
+    <V t="sim_info">
+      <U n="sim_info">
+        <V t="specified" n="ages" />
+        <V t="specified" n="species">
+          <U n="specified">
+            <L n="species">
+              <E />
+            </L>
+          </U>
+        </V>
+        <E n="who">Actor</E>
+      </U>
+    </V>
+    <V t="state">
+      <U n="state">
+        <E n="operator">NOTEQUAL</E>
+        <T n="value">15080<!--ObjectStateValue: BrokenState_Broken--></T>
+      </U>
+    </V>
+    <V t="statistic">
+      <U n="statistic">
+        <T n="stat">27539<!--Commodity: Brew_Pot--></T>
+        <V t="value_threshold" n="threshold">
+          <U n="value_threshold">
+            <E n="comparison">LESS</E>
+            <T n="value">1</T>
+          </U>
+        </V>
+        <E n="who">Object</E>
+      </U>
+    </V>
+    <V t="statistic">
+      <U n="statistic">
+        <T n="stat">27552<!--Commodity: Brew_Single--></T>
+        <V t="value_threshold" n="threshold">
+          <U n="value_threshold">
+            <E n="comparison">LESS</E>
+            <T n="value">1</T>
+          </U>
+        </V>
+        <E n="who">Object</E>
+      </U>
+    </V>
+  </L>
+  <L n="tests">
+    <L>
+      <V t="state">
+        <U n="state">
+          <T n="value">15320<!--CommodityBasedObjectStateValue: Servings_Empty--></T>
+        </U>
+      </V>
+    </L>
+  </L>
+  <T n="time_overhead">30</T>
+</I>

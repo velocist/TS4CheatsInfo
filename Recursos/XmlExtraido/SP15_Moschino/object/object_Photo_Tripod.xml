@@ -1,0 +1,219 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<I c="GameObject" i="object" m="objects.game_object" n="object_Photo_Tripod" s="215085">
+  <U n="_components">
+    <V t="enabled" n="focus">
+      <U n="enabled">
+        <V n="_focus_score" t="globally">
+          <U n="globally">
+            <E n="base">LOW</E>
+          </U>
+        </V>
+      </U>
+    </V>
+    <V t="enabled" n="inventory_item">
+      <U n="enabled">
+        <T n="skip_carry_pose">True</T>
+        <L n="valid_inventory_types">
+          <E>SIM</E>
+          <E>STORAGE_CHEST_DORM</E>
+        </L>
+      </U>
+    </V>
+    <V t="enabled" n="object_relationships">
+      <U n="enabled">
+        <T n="relationship_stat">9892<!--Statistic: statistic_Object_Sculpture-Relationship--></T>
+      </U>
+    </V>
+    <V t="enabled" n="retail_component">
+      <V n="enabled" t="reference">
+        <T n="reference">115301<!--RetailComponent: retailComponent_Default_LowAppeal--></T>
+      </V>
+    </V>
+    <V n="state" t="enabled">
+      <U n="enabled">
+        <L n="state_triggers">
+          <U>
+            <L n="at_states">
+              <T>77532<!--CommodityBasedObjectStateValue: FireState_Burn_Material_Change_Replace--></T>
+            </L>
+            <V n="set_states" t="Set_state_list">
+              <L n="Set_state_list">
+                <T>39737<!--CommodityBasedObjectStateValue: FireState_Burn_Material_Change_Not_Burning--></T>
+              </L>
+            </V>
+          </U>
+        </L>
+        <L n="states">
+          <U>
+            <L n="client_states">
+              <U>
+                <T n="key">221179<!--ObjectStateValue: objectStateValue_PhotoStudio_Tripod_Timer_On--></T>
+                <U n="value">
+                  <V n="audio_state" t="apply_new_value">
+                    <V n="apply_new_value" t="start_audio">
+                      <U n="start_audio">
+                        <T n="audio" p="InSP15\Audio\SFX\cameratripod\cameratripod_photo_timer_lp.propx">39b2aa4a:00000000:26e21093970705e6</T>
+                      </U>
+                    </V>
+                  </V>
+                </U>
+              </U>
+              <U>
+                <T n="key">221180<!--ObjectStateValue: objectStateValue_PhotoStudio_Tripod_Timer_Off--></T>
+                <U n="value">
+                  <V t="apply_new_value" n="audio_state" />
+                </U>
+              </U>
+            </L>
+            <V n="default_value" t="reference">
+              <T n="reference">221180<!--ObjectStateValue: objectStateValue_PhotoStudio_Tripod_Timer_Off--></T>
+            </V>
+          </U>
+          <U>
+            <L n="client_states">
+              <U>
+                <T n="key">39611<!--CommodityBasedObjectStateValue: FireState_Burn_Material_Change--></T>
+              </U>
+              <U>
+                <T n="key">39736<!--CommodityBasedObjectStateValue: FireState_Burn_Material_Change_Burning--></T>
+              </U>
+              <U>
+                <T n="key">39737<!--CommodityBasedObjectStateValue: FireState_Burn_Material_Change_Not_Burning--></T>
+              </U>
+              <U>
+                <T n="key">77532<!--CommodityBasedObjectStateValue: FireState_Burn_Material_Change_Replace--></T>
+              </U>
+            </L>
+            <V n="default_value" t="reference">
+              <T n="reference">39737<!--CommodityBasedObjectStateValue: FireState_Burn_Material_Change_Not_Burning--></T>
+            </V>
+          </U>
+          <U>
+            <L n="client_states">
+              <U>
+                <T n="key">35956<!--CommodityBasedObjectStateValue: Materialistic_Admired--></T>
+              </U>
+              <U>
+                <T n="key">35957<!--CommodityBasedObjectStateValue: Materialistic_YetToAdmire--></T>
+              </U>
+            </L>
+            <V n="default_value" t="reference">
+              <T n="reference">35957<!--CommodityBasedObjectStateValue: Materialistic_YetToAdmire--></T>
+            </V>
+          </U>
+        </L>
+        <V n="timed_state_triggers" t="enabled">
+          <L n="enabled">
+            <U>
+              <T n="key">221179<!--ObjectStateValue: objectStateValue_PhotoStudio_Tripod_Timer_On--></T>
+              <U n="value">
+                <L n="ops">
+                  <U>
+                    <L n="states_to_trigger">
+                      <T>221180<!--ObjectStateValue: objectStateValue_PhotoStudio_Tripod_Timer_Off--></T>
+                    </L>
+                    <T n="trigger_time">60</T>
+                  </U>
+                </L>
+              </U>
+            </U>
+          </L>
+        </V>
+      </U>
+    </V>
+    <V t="enabled" n="tooltip_component">
+      <U n="enabled">
+        <L n="custom_tooltips">
+          <U>
+            <L n="object_tests">
+              <L>
+                <V t="in_inventory" />
+              </L>
+            </L>
+            <L n="tooltip_fields">
+              <U>
+                <E n="key">recipe_name</E>
+                <U n="value">
+                  <V n="text" t="single">
+                    <T n="single">0x144FD666<!--String: "{0.ObjectName}"--></T>
+                  </V>
+                  <V t="enabled" n="text_tokens">
+                    <U n="enabled">
+                      <L n="tokens">
+                        <V t="participant_type">
+                          <U n="participant_type">
+                            <V t="from_participant" n="objects">
+                              <U n="from_participant">
+                                <E n="participant">Object</E>
+                              </U>
+                            </V>
+                          </U>
+                        </V>
+                      </L>
+                    </U>
+                  </V>
+                </U>
+              </U>
+            </L>
+          </U>
+        </L>
+      </U>
+    </V>
+  </U>
+  <L n="_super_affordances">
+    <T>13328<!--ImmediateSuperInteraction: debug_Reset--></T>
+    <T>13326<!--ImmediateSuperInteraction: debug_ObjectDestroy--></T>
+    <T>103888<!--ImmediateSuperInteraction: cheat_set_as_head--></T>
+    <T>196759<!--SuperInteraction: famePerks_GoodReputation_GivingBack_DonateObject--></T>
+    <T>156936<!--SuperInteraction: generic_Object_Toddler_Check_Out_HighChair--></T>
+    <T>215355<!--ObjectInInventoryPickerInteraction: fashion_Studio_Camera_Tripod_Add_Camera--></T>
+    <T>215357<!--SuperInteraction: fashion_Studio_Camera_Tripod_SuperInteraction_Add_Camera--></T>
+    <T>216321<!--SuperInteraction: fashion_Studio_Camera_Tripod_SuperInteraction_Remove_Camera--></T>
+    <T>221067<!--SuperInteraction: fashion_Studio_Camera_Tripod_SuperInteraction_Remove_Camera_EP07--></T>
+    <T>215155<!--SimPickerInteraction: simPicker_Photography_Tripod_Take_Picture_Of--></T>
+    <T>215405<!--SimPickerInteraction: simPicker_Photography_Tripod_Take_Picture_With--></T>
+    <T>217016<!--SimPickerInteraction: simPicker_Photography_Tripod_Take_Picture_Carry_Sim_TYAE--></T>
+    <T>13983<!--StandSuperInteraction: sim-stand--></T>
+    <T>217870<!--SimPickerInteraction: simPicker_Photography_Tripod_Picture_Carry_Pet_CTYAE--></T>
+    <T>218023<!--SuperInteraction: fashion_Studio_Camera_Tripod_Photographer_Take_Photo_With_2_Sims--></T>
+    <T>218086<!--SuperInteraction: fashion_Studio_Camera_Tripod_Photographer_Take_Photo_Paired--></T>
+    <T>218085<!--SuperInteraction: fashion_Studio_Camera_Tripod_Photographer_Take_Photo_Solo_2--></T>
+    <T>218023<!--SuperInteraction: fashion_Studio_Camera_Tripod_Photographer_Take_Photo_With_2_Sims--></T>
+    <T>217829<!--SuperInteraction: fashion_Studio_Camera_Tripod_Photographer_Take_Photo_3_Sims--></T>
+    <T>217874<!--SuperInteraction: fashion_Studio_Camera_Tripod_Photographer_Take_Photo_Carry_Pet--></T>
+    <T>217023<!--SuperInteraction: fashion_Studio_Camera_Tripod_Photographer_Take_Photo_Carry_Sim--></T>
+    <T>218304<!--SuperInteraction: fashion_Studio_Camera_Tripod_Photographer_Take_Photo_3_Sims_Solo--></T>
+    <T>218427<!--SuperInteraction: fashion_Studio_Camera_Tripod_Take_Photo_Get_In_Place_Photographer_Wait--></T>
+    <T>218610<!--SuperInteraction: fashion_Studio_Camera_Tripod_Photographer_Take_Photo_With_3_Sims--></T>
+    <T>216824<!--SuperInteraction: fashion_Studio_Camera_Tripod_Photographer_Take_Photo--></T>
+    <T>218891<!--SimPickerInteraction: simPicker_Photography_Tripod_take_Picture_Of_Sims_At_Marker--></T>
+    <T>219288<!--SuperInteraction: fashion_Studio_Camera_Tripod_Photographer_Take_Photo_No_Target--></T>
+    <T>219955<!--SuperInteraction: fashion_Studio_Camera_Tripod_Photographer_Take_Photo_Paired_Large_Pet--></T>
+    <T>106859<!--SuperInteraction: simRay_Transform_Object--></T>
+    <T>144099<!--SuperInteraction: generic_Object_Toddler_Check_Out--></T>
+    <T>74457<!--ImmediateSuperInteraction: fire_ReplaceBurntObject--></T>
+    <T>102258<!--SuperInteraction: Ghost_Possess--></T>
+    <T>168502<!--SuperInteraction: Ghost_Pet_Possess--></T>
+  </L>
+  <U n="aop_forward_data">
+    <T n="should_search_forwarded_child_aop">True</T>
+    <T n="should_search_forwarded_parent_aop">True</T>
+  </U>
+  <U n="recycling_data">
+    <L n="recycling_values">
+      <U>
+        <E n="Bucks Type">RecycleBitsBucks</E>
+        <T n="Value">0.5</T>
+      </U>
+      <U>
+        <E n="Bucks Type">RecyclePiecesBucks</E>
+        <T n="Value">0.5</T>
+      </U>
+    </L>
+  </U>
+  <L n="slot_cost_modifiers">
+    <U>
+      <T n="key">slot_Camera_Tripod</T>
+    </U>
+  </L>
+</I>

@@ -1,0 +1,268 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<I c="SuperInteraction" i="interaction" m="interactions.base.super_interaction" n="collection_MetalCrystal_SellToSimsonian" s="76840">
+  <L n="_constraints">
+    <U>
+      <L n="constraints">
+        <U>
+          <V n="value" t="circle">
+            <U n="circle">
+              <T n="ideal_radius">1</T>
+              <T n="radius">2</T>
+            </U>
+          </V>
+        </U>
+      </L>
+    </U>
+    <U>
+      <L n="constraints">
+        <U>
+          <V t="facing" n="value" />
+        </U>
+      </L>
+    </U>
+  </L>
+  <V t="participant" n="_icon">
+    <U n="participant">
+      <L n="participant_type">
+        <E>Object</E>
+      </L>
+    </U>
+  </V>
+  <V t="enabled" n="_saveable" />
+  <T n="allow_from_sim_inventory">True</T>
+  <T n="attention_cost">0.5</T>
+  <V t="one_shot" n="basic_content">
+    <U n="one_shot">
+      <U n="animation_ref">
+        <T n="factory">23926<!--AnimationElement: Generic_PickUp--></T>
+      </U>
+    </U>
+  </V>
+  <L n="basic_extras">
+    <V t="destroy_object">
+      <U n="destroy_object">
+        <V t="at_end" n="timing">
+          <U n="at_end">
+            <E n="criticality">NotCritical</E>
+          </U>
+        </V>
+      </U>
+    </V>
+    <V t="notification">
+      <U n="notification">
+        <V n="dialog" t="single">
+          <V n="single" t="literal">
+            <U n="literal">
+              <V t="enabled" n="icon">
+                <V t="participant" n="enabled">
+                  <U n="participant">
+                    <L n="participant_type">
+                      <E>Object</E>
+                    </L>
+                  </U>
+                </V>
+              </V>
+              <V t="enabled" n="secondary_icon">
+                <V t="participant" n="enabled" />
+              </V>
+              <V n="text" t="single">
+                <T n="single">0x6683C3C6<!--String: "El Museo Nacional Simsonian le agradece a {0.SimFirstName} su aportación de {M1.un}{G1.un}{F!G1.una} {1.ObjectName} y le ha enviado el generoso obsequio de {2.Money}."--></T>
+              </V>
+              <V n="text_tokens" t="enabled">
+                <U n="enabled">
+                  <L n="tokens">
+                    <V t="participant_type" />
+                    <V t="participant_type">
+                      <U n="participant_type">
+                        <V t="from_participant" n="objects">
+                          <U n="from_participant">
+                            <E n="participant">Object</E>
+                          </U>
+                        </V>
+                      </U>
+                    </V>
+                    <V t="money_amount">
+                      <U n="money_amount">
+                        <E n="participant">Actor</E>
+                      </U>
+                    </V>
+                  </L>
+                </U>
+              </V>
+            </U>
+          </V>
+        </V>
+        <V t="at_end" n="timing" />
+      </U>
+    </V>
+  </L>
+  <V t="disabled" n="content_score" />
+  <T n="display_name">0x6D791CEC<!--String: "Vender al museo Simsonian"--></T>
+  <U n="display_name_text_tokens">
+    <L n="tokens">
+      <V t="participant_type">
+        <U n="participant_type">
+          <V t="from_participant" n="objects">
+            <U n="from_participant">
+              <E n="participant">Actor</E>
+            </U>
+          </V>
+        </U>
+      </V>
+      <V t="participant_type">
+        <U n="participant_type">
+          <V t="from_participant" n="objects">
+            <U n="from_participant">
+              <E n="participant">Object</E>
+            </U>
+          </V>
+        </U>
+      </V>
+    </L>
+  </U>
+  <L n="interaction_category_tags">
+    <E>Interaction_Super</E>
+    <E>Interaction_All</E>
+  </L>
+  <V n="outcome" t="test_based">
+    <U n="test_based">
+      <L n="fallback_outcomes">
+        <U>
+          <U n="outcome">
+            <L n="loot_list">
+              <T>101277<!--LootActions: loot_$150_to_$250--></T>
+              <T>188878<!--LootActions: loot_Fame_Actor_Small--></T>
+            </L>
+          </U>
+        </U>
+      </L>
+      <L n="tested_outcomes">
+        <U>
+          <L n="potential_outcomes">
+            <U>
+              <U n="outcome">
+                <L n="loot_list">
+                  <T>101279<!--LootActions: loot_$1500_to_$2500--></T>
+                  <T>188892<!--LootActions: loot_Fame_Actor_Large--></T>
+                </L>
+              </U>
+            </U>
+          </L>
+          <L n="tests">
+            <L>
+              <V t="simoleon_value">
+                <U n="simoleon_value">
+                  <E n="test_event">AllSimoloenEvents</E>
+                  <V t="current_value" n="value_context" />
+                  <U n="value_threshold">
+                    <T n="value">500</T>
+                  </U>
+                </U>
+              </V>
+            </L>
+          </L>
+        </U>
+        <U>
+          <L n="potential_outcomes">
+            <U>
+              <U n="outcome">
+                <L n="loot_list">
+                  <T>101278<!--LootActions: loot_$750_to_$1250--></T>
+                  <T>188886<!--LootActions: loot_Fame_Actor_Med--></T>
+                </L>
+              </U>
+            </U>
+          </L>
+          <L n="tests">
+            <L>
+              <V t="simoleon_value">
+                <U n="simoleon_value">
+                  <V t="current_value" n="value_context" />
+                  <U n="value_threshold">
+                    <T n="value">200</T>
+                  </U>
+                </U>
+              </V>
+              <V t="simoleon_value">
+                <U n="simoleon_value">
+                  <V t="current_value" n="value_context" />
+                  <U n="value_threshold">
+                    <E n="comparison">LESS</E>
+                    <T n="value">500</T>
+                  </U>
+                </U>
+              </V>
+            </L>
+          </L>
+        </U>
+        <U>
+          <L n="potential_outcomes">
+            <U>
+              <U n="outcome">
+                <L n="loot_list">
+                  <T>101280<!--LootActions: loot_$250_to_$500--></T>
+                  <T>188878<!--LootActions: loot_Fame_Actor_Small--></T>
+                </L>
+              </U>
+            </U>
+          </L>
+          <L n="tests">
+            <L>
+              <V t="simoleon_value">
+                <U n="simoleon_value">
+                  <V t="current_value" n="value_context" />
+                  <U n="value_threshold">
+                    <T n="value">100</T>
+                  </U>
+                </U>
+              </V>
+              <V t="simoleon_value">
+                <U n="simoleon_value">
+                  <V t="current_value" n="value_context" />
+                  <U n="value_threshold">
+                    <E n="comparison">LESS</E>
+                    <T n="value">200</T>
+                  </U>
+                </U>
+              </V>
+            </L>
+          </L>
+        </U>
+      </L>
+      <T n="use_fallback_as_default">False</T>
+    </U>
+  </V>
+  <V n="pie_menu_icon" t="enabled">
+    <V n="enabled" t="resource_key">
+      <U n="resource_key">
+        <T n="key" p="InGame\UI\Icons\PieMenu\Traits\traitAspiration_Appraiser_piemenu.png">2f7d0004:00000000:bceacee06726fdab</T>
+      </U>
+    </V>
+  </V>
+  <E n="scoring_priority">NORMAL</E>
+  <T n="subaction_selection_weight">1</T>
+  <E n="target_type">OBJECT</E>
+  <L n="test_globals">
+    <V t="sim_info">
+      <U n="sim_info">
+        <V t="specified" n="ages" />
+        <V t="specified" n="species">
+          <U n="specified">
+            <L n="species">
+              <E />
+            </L>
+          </U>
+        </V>
+        <E n="who">Actor</E>
+      </U>
+    </V>
+    <V t="trait">
+      <U n="trait">
+        <L n="whitelist_traits">
+          <T>76821<!--Trait: trait_Appraiser--></T>
+        </L>
+      </U>
+    </V>
+  </L>
+  <T n="time_overhead">15</T>
+</I>

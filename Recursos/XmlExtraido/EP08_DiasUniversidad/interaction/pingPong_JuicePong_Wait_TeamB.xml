@@ -1,0 +1,544 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<I c="SocialSuperInteraction" i="interaction" m="interactions.social.social_super_interaction" n="pingPong_JuicePong_Wait_TeamB" s="212891">
+  <L n="_constraints">
+    <U>
+      <L n="constraints">
+        <U>
+          <V n="value" t="facing">
+            <U n="facing">
+              <T n="range">180</T>
+            </U>
+          </V>
+        </U>
+        <U>
+          <V n="value" t="circle">
+            <U n="circle">
+              <T n="ideal_radius">2.5</T>
+              <T n="radius">4</T>
+            </U>
+          </V>
+        </U>
+      </L>
+    </U>
+  </L>
+  <L n="_false_advertisements">
+    <V t="statistic_change">
+      <U n="statistic_change">
+        <T n="amount">20</T>
+        <T n="stat">16655<!--Commodity: motive_Fun--></T>
+      </U>
+    </V>
+  </L>
+  <V t="participant" n="_icon">
+    <U n="participant">
+      <L n="participant_type">
+        <E>Object</E>
+      </L>
+    </U>
+  </V>
+  <L n="_party_size_weight_tuning">
+    <U>
+      <T n="y">100</T>
+    </U>
+    <U>
+      <T n="x">1</T>
+      <T n="y">100</T>
+    </U>
+    <U>
+      <T n="x">2</T>
+      <T n="y">50</T>
+    </U>
+    <U>
+      <T n="x">3</T>
+      <T n="y">0</T>
+    </U>
+    <U>
+      <T n="x">4</T>
+    </U>
+  </L>
+  <V t="disabled" n="_saveable" />
+  <T n="_social_group_type">212537<!--GameGroup: group_pingPong_JuicePong--></T>
+  <T n="attention_cost">0</T>
+  <V n="basic_content" t="flexible_length">
+    <U n="flexible_length">
+      <L n="conditional_actions">
+        <V t="literal">
+          <U n="literal">
+            <L n="conditions">
+              <V t="in_use_based">
+                <U n="in_use_based">
+                  <V n="affordance" t="Specific_Interaction">
+                    <T n="Specific_Interaction">212525<!--SocialSuperInteraction: pingPong_JuicePong_Shoot--></T>
+                  </V>
+                </U>
+              </V>
+            </L>
+            <E n="interaction_action">EXIT_NATURALLY</E>
+          </U>
+        </V>
+        <V t="literal">
+          <U n="literal">
+            <L n="conditions">
+              <V t="state_based">
+                <U n="state_based">
+                  <V n="state" t="on_trigger">
+                    <T n="on_trigger">228679<!--CommodityBasedObjectStateValue: pingPong_Game_Stopped--></T>
+                  </V>
+                </U>
+              </V>
+            </L>
+            <E n="interaction_action">EXIT_CANCEL</E>
+            <L n="loot_actions">
+              <T>230423<!--LootActions: loot_PingPong_Game_JuicePong_RemoveRivalBuff--></T>
+            </L>
+          </U>
+        </V>
+        <V t="literal">
+          <U n="literal">
+            <L n="conditions">
+              <V t="time_based">
+                <U n="time_based">
+                  <T n="max_time">30</T>
+                  <T n="min_time">30</T>
+                </U>
+              </V>
+            </L>
+            <E n="interaction_action">EXIT_CANCEL</E>
+            <L n="loot_actions">
+              <T>229560<!--LootActions: loot_PingPong_JuicePong_EndGame--></T>
+              <T>230423<!--LootActions: loot_PingPong_Game_JuicePong_RemoveRivalBuff--></T>
+            </L>
+            <E n="progress_bar_action">FORCE_USE_CONDITION</E>
+          </U>
+        </V>
+      </L>
+      <V t="looping_content" n="content">
+        <U n="looping_content">
+          <U n="animation_ref">
+            <T n="factory">12142<!--AnimationElement: View_View_Looping_basic--></T>
+          </U>
+        </U>
+      </V>
+      <V t="enabled" n="periodic_stat_change">
+        <U n="enabled">
+          <L n="operations">
+            <V t="statistic_change">
+              <U n="statistic_change">
+                <T n="advertise">False</T>
+                <T n="amount">10</T>
+                <T n="stat">228875<!--Commodity: commodity_Object_PingPong_Timer--></T>
+                <L n="subject">
+                  <E>Object</E>
+                </L>
+              </U>
+            </V>
+            <V t="statistic_change">
+              <U n="statistic_change">
+                <T n="amount">0.7</T>
+                <T n="stat">16655<!--Commodity: motive_Fun--></T>
+                <L n="subject">
+                  <E>Actor</E>
+                </L>
+              </U>
+            </V>
+            <V t="statistic_set_max">
+              <U n="statistic_set_max">
+                <T n="stat">125579<!--Commodity: commodity_Buff_InsiderTrait_MissHangingOut--></T>
+                <L n="tests">
+                  <L>
+                    <V t="relationship">
+                      <U n="relationship">
+                        <U n="relationship_score_interval">
+                          <T n="lower_bound">35</T>
+                          <T n="upper_bound">100</T>
+                        </U>
+                        <L n="target_sim">
+                          <E>TargetSim</E>
+                        </L>
+                      </U>
+                    </V>
+                    <V t="trait">
+                      <U n="trait">
+                        <L n="whitelist_traits">
+                          <T>125437<!--Trait: trait_Insider--></T>
+                        </L>
+                      </U>
+                    </V>
+                  </L>
+                </L>
+              </U>
+            </V>
+          </L>
+        </U>
+      </V>
+      <T n="start_autonomous_inertial">False</T>
+    </U>
+  </V>
+  <L n="basic_extras">
+    <V t="loot">
+      <U n="loot">
+        <L n="loot_list">
+          <T>162659<!--LootActions: loot_Commodity_Culling_GhostAdd_target--></T>
+        </L>
+      </U>
+    </V>
+    <V t="buff">
+      <U n="buff">
+        <U n="buff_type">
+          <V n="buff_reason" t="enabled">
+            <T n="enabled">0x9C09275F<!--String: "(Por estar en un grupo social con al menos 3 Sims)"--></T>
+          </V>
+          <T n="buff_type">125555<!--Buff: buff_Trait_WithMyFriends--></T>
+        </U>
+        <L n="subject">
+          <E>Actor</E>
+          <E>SocialGroupSims</E>
+          <E>TargetSim</E>
+        </L>
+        <L n="tests">
+          <L>
+            <V t="social_group">
+              <U n="social_group">
+                <V n="threshold" t="enabled">
+                  <U n="enabled">
+                    <T n="value">3</T>
+                  </U>
+                </V>
+              </U>
+            </V>
+          </L>
+        </L>
+      </U>
+    </V>
+  </L>
+  <V t="disabled" n="basic_reserve_object" />
+  <V t="enabled" n="canonical_animation">
+    <U n="enabled">
+      <T n="factory">12142<!--AnimationElement: View_View_Looping_basic--></T>
+    </U>
+  </V>
+  <V t="disabled" n="content_score" />
+  <T n="disable_autonomous_multitasking_if_user_directed">False</T>
+  <T n="display_name">0x5F40F8D7<!--String: "Esperar"--></T>
+  <U n="display_name_text_tokens">
+    <L n="tokens">
+      <V t="participant_type">
+        <U n="participant_type">
+          <V n="objects" t="from_participant">
+            <U n="from_participant">
+              <E n="participant">Actor</E>
+            </U>
+          </V>
+        </U>
+      </V>
+      <V t="participant_type">
+        <U n="participant_type">
+          <V t="from_participant" n="objects">
+            <U n="from_participant">
+              <E n="participant">Object</E>
+            </U>
+          </V>
+        </U>
+      </V>
+    </L>
+  </U>
+  <V t="disabled" n="idle_animation" />
+  <T n="ignore_group_socials">False</T>
+  <L n="interaction_category_tags">
+    <E>Interaction_SocialSuper</E>
+    <E>Interaction_Super</E>
+    <E>Interaction_All</E>
+    <E>Interaction_SocialAll</E>
+    <E>Interaction_Social_Contagious</E>
+  </L>
+  <T n="invite_in_after_interaction">True</T>
+  <U n="listen_animation">
+    <T n="factory">11570<!--AnimationElement: Listen_Listen_Looping_basic--></T>
+  </U>
+  <V n="outcome" t="test_based">
+    <U n="test_based">
+      <L n="fallback_outcomes">
+        <U>
+          <U n="outcome">
+            <L n="basic_extras">
+              <V t="state_change">
+                <U n="state_change">
+                  <V t="single_value" n="new_value">
+                    <U n="single_value">
+                      <T n="new_value">228679<!--CommodityBasedObjectStateValue: pingPong_Game_Stopped--></T>
+                    </U>
+                  </V>
+                  <V t="immediately" n="timing" />
+                </U>
+              </V>
+            </L>
+            <T n="force_outcome_on_exit">True</T>
+            <L n="loot_list">
+              <T>230423<!--LootActions: loot_PingPong_Game_JuicePong_RemoveRivalBuff--></T>
+            </L>
+          </U>
+        </U>
+      </L>
+      <L n="tested_outcomes">
+        <U>
+          <L n="potential_outcomes">
+            <U>
+              <U n="outcome">
+                <V t="enabled" n="animation_ref">
+                  <U n="enabled">
+                    <T n="factory">28388<!--AnimationElement: Socials_Responses_Sad_HighIntensity--></T>
+                  </U>
+                </V>
+                <L n="loot_list">
+                  <T>10869<!--LootActions: loot_Game_GameOver--></T>
+                  <T>212771<!--LootActions: loot_PingPong_JuicePong_SlotClear--></T>
+                  <T>230423<!--LootActions: loot_PingPong_Game_JuicePong_RemoveRivalBuff--></T>
+                </L>
+              </U>
+            </U>
+          </L>
+          <L n="tests">
+            <L>
+              <V t="game_component">
+                <U n="game_component">
+                  <V t="enabled" n="game_over" />
+                  <V t="enabled" n="is_sim_turn" />
+                </U>
+              </V>
+            </L>
+          </L>
+        </U>
+        <U>
+          <L n="potential_outcomes">
+            <U>
+              <U n="outcome">
+                <L n="continuation">
+                  <U>
+                    <T n="affordance">212893<!--SocialSuperInteraction: pingPong_JuicePong_Drink_TeamB--></T>
+                  </U>
+                </L>
+              </U>
+            </U>
+          </L>
+          <L n="tests">
+            <L>
+              <V t="game_component">
+                <U n="game_component">
+                  <V t="enabled" n="game_over">
+                    <T n="enabled">False</T>
+                  </V>
+                  <V t="enabled" n="is_sim_turn" />
+                </U>
+              </V>
+              <V t="statistic">
+                <U n="statistic">
+                  <T n="stat">212590<!--Statistic: statistic_Object_PingPong_WinningSlot--></T>
+                  <V t="value_threshold" n="threshold">
+                    <U n="value_threshold">
+                      <E n="comparison">GREATER</E>
+                      <T n="value">0</T>
+                    </U>
+                  </V>
+                  <E n="who">Object</E>
+                </U>
+              </V>
+            </L>
+          </L>
+        </U>
+        <U>
+          <L n="potential_outcomes">
+            <U>
+              <U n="outcome">
+                <L n="continuation">
+                  <U>
+                    <T n="affordance">212895<!--SocialSuperInteraction: pingPong_JuicePong_Shoot_TeamB--></T>
+                  </U>
+                </L>
+              </U>
+            </U>
+          </L>
+          <L n="tests">
+            <L>
+              <V t="game_component">
+                <U n="game_component">
+                  <V t="enabled" n="game_over">
+                    <T n="enabled">False</T>
+                  </V>
+                  <V t="enabled" n="is_sim_turn" />
+                </U>
+              </V>
+              <V t="statistic">
+                <U n="statistic">
+                  <T n="stat">212590<!--Statistic: statistic_Object_PingPong_WinningSlot--></T>
+                  <V t="value_threshold" n="threshold">
+                    <U n="value_threshold">
+                      <E n="comparison">EQUAL</E>
+                      <T n="value">0</T>
+                    </U>
+                  </V>
+                  <E n="who">Object</E>
+                </U>
+              </V>
+            </L>
+          </L>
+        </U>
+        <U>
+          <L n="potential_outcomes">
+            <U>
+              <U n="outcome">
+                <L n="continuation">
+                  <U>
+                    <T n="affordance">212891<!--SocialSuperInteraction: pingPong_JuicePong_Wait_TeamB--></T>
+                  </U>
+                </L>
+              </U>
+            </U>
+          </L>
+          <L n="tests">
+            <L>
+              <V t="game_component">
+                <U n="game_component">
+                  <V t="enabled" n="game_over">
+                    <T n="enabled">False</T>
+                  </V>
+                  <V t="enabled" n="is_sim_turn">
+                    <T n="enabled">False</T>
+                  </V>
+                </U>
+              </V>
+            </L>
+          </L>
+        </U>
+        <U>
+          <L n="potential_outcomes">
+            <U>
+              <U n="outcome">
+                <V n="animation_ref" t="enabled">
+                  <U n="enabled">
+                    <T n="factory">28360<!--AnimationElement: Socials_Responses_Excited_HighIntensity_FistPump--></T>
+                  </U>
+                </V>
+                <L n="basic_extras">
+                  <V t="loot">
+                    <U n="loot">
+                      <L n="loot_list">
+                        <T>230411<!--LootActions: loot_PingPong_Game_BetterSchoolWins_JuicePong--></T>
+                        <T>230423<!--LootActions: loot_PingPong_Game_JuicePong_RemoveRivalBuff--></T>
+                      </L>
+                      <V t="at_beginning" n="timing" />
+                    </U>
+                  </V>
+                </L>
+                <L n="loot_list">
+                  <T>229012<!--LootActions: loot_PingPong_Org_Progress--></T>
+                </L>
+              </U>
+            </U>
+          </L>
+          <L n="tests">
+            <L>
+              <V t="game_component">
+                <U n="game_component">
+                  <V t="enabled" n="game_over">
+                    <T n="enabled">True</T>
+                  </V>
+                  <V t="enabled" n="is_sim_turn">
+                    <T n="enabled">False</T>
+                  </V>
+                  <V t="enabled" n="is_winner" />
+                </U>
+              </V>
+            </L>
+          </L>
+        </U>
+        <U>
+          <L n="potential_outcomes">
+            <U>
+              <U n="outcome">
+                <V t="enabled" n="animation_ref">
+                  <U n="enabled">
+                    <T n="factory">28388<!--AnimationElement: Socials_Responses_Sad_HighIntensity--></T>
+                  </U>
+                </V>
+                <L n="loot_list">
+                  <T>230423<!--LootActions: loot_PingPong_Game_JuicePong_RemoveRivalBuff--></T>
+                </L>
+              </U>
+            </U>
+          </L>
+          <L n="tests">
+            <L>
+              <V t="game_component">
+                <U n="game_component">
+                  <V t="enabled" n="game_over">
+                    <T n="enabled">True</T>
+                  </V>
+                  <V t="enabled" n="is_sim_turn">
+                    <T n="enabled">False</T>
+                  </V>
+                  <V t="enabled" n="is_winner">
+                    <T n="enabled">False</T>
+                  </V>
+                </U>
+              </V>
+            </L>
+          </L>
+        </U>
+      </L>
+    </U>
+  </V>
+  <U n="progress_bar_enabled">
+    <T n="bar_enabled">True</T>
+  </U>
+  <T n="relationship_scoring">True</T>
+  <E n="scoring_priority">NORMAL</E>
+  <V t="enabled" n="sim_affinity_posture_scoring_data">
+    <U n="enabled">
+      <L n="my_scoring">
+        <U>
+          <V t="relationship_based" n="affinity_strategy" />
+          <T n="negate_tag">True</T>
+          <E n="running_interaction_tag">Sleeping</E>
+        </U>
+        <U>
+          <V t="avoid" n="affinity_strategy" />
+          <E n="running_interaction_tag">Very_Loud</E>
+        </U>
+      </L>
+      <L n="my_tags">
+        <E>Loud</E>
+        <E>Chat</E>
+      </L>
+    </U>
+  </V>
+  <T n="subaction_selection_weight">1</T>
+  <V t="literal" n="super_affordance_compatibility">
+    <U n="literal">
+      <V n="default_inclusion" t="exclude_all">
+        <U n="exclude_all">
+          <L n="include_affordances">
+            <T>228996<!--SuperInteraction: PingPong_JuicePong_Holder--></T>
+          </L>
+        </U>
+      </V>
+    </U>
+  </V>
+  <E n="target_type">OBJECT</E>
+  <L n="test_globals">
+    <V t="state">
+      <U n="state">
+        <T n="value">228678<!--CommodityBasedObjectStateValue: pingPong_Game_Playing--></T>
+      </U>
+    </V>
+    <V t="user_running_interaction">
+      <U n="user_running_interaction">
+        <L n="affordances">
+          <T>212552<!--SuperInteraction: generic_PingPong_ReadyStance--></T>
+        </L>
+        <T n="test_for_not_running">True</T>
+      </U>
+    </V>
+  </L>
+  <T n="time_overhead">30</T>
+  <T n="visible">True</T>
+</I>

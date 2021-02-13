@@ -1,0 +1,75 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<I c="SituationGoalEventRanSuccessfullyTargetedSim" i="situation_goal" m="situations.situation_goal_targeted_sim" n="goal_ActorCareer_Fight" s="193687">
+  <V t="enabled" n="_display_data">
+    <U n="enabled">
+      <V n="instance_display_icon" t="enabled">
+        <T n="enabled" p="InGame\UI\Icons\Events\EventGoal_Fight.png">2f7d0004:00000000:5319446cbc5eb001</T>
+      </V>
+      <V n="instance_display_name" t="enabled">
+        <T n="enabled">0xE6974943<!--String: "Interpretar escena de pelea"--></T>
+      </V>
+      <V n="instance_display_tooltip" t="enabled">
+        <T n="enabled">0x6B46224D<!--String: "Haz clic en las dos marcas resplandecientes del escenario y selecciona Pelear."--></T>
+      </V>
+    </U>
+  </V>
+  <L n="_goal_loot_list">
+    <T>196473<!--SituationGoalLootActions: goalLoot_ActorCareer_Scene1_1--></T>
+  </L>
+  <L n="_pre_tests">
+    <V t="buff">
+      <U n="buff">
+        <V n="whitelist" t="enabled">
+          <L n="enabled">
+            <T>191351<!--Buff: buff_ActorCareer_ReadyToPerform--></T>
+          </L>
+        </V>
+      </U>
+    </V>
+    <V t="situation_running">
+      <U n="situation_running">
+        <V t="enabled" n="situation_whitelist">
+          <L n="enabled">
+            <T>193646<!--CareerEventSituation: careerSituation_ActorCareer_TVHigh_Apocalypse--></T>
+          </L>
+        </V>
+      </U>
+    </V>
+  </L>
+  <T n="_select_sims_outside_of_situation">True</T>
+  <L n="test_events_to_score">
+    <U>
+      <E n="key">actorCareer_Fight_RiskySuccess</E>
+      <U n="value">
+        <T n="score">10</T>
+      </U>
+    </U>
+    <U>
+      <E n="key">actorCareer_RiskyFail</E>
+      <U n="value">
+        <V n="interaction" t="enabled">
+          <T n="enabled">196629<!--SocialSuperInteraction: stage_Socials_Fight_PreActing_Risky--></T>
+        </V>
+        <T n="score">0</T>
+      </U>
+    </U>
+    <U>
+      <E n="key">actorCareer_SafeFail</E>
+      <U n="value">
+        <V t="enabled" n="interaction">
+          <T n="enabled">196622<!--SocialSuperInteraction: stage_Socials_Fight_Content_Safe--></T>
+        </V>
+        <T n="score">0</T>
+      </U>
+    </U>
+    <U>
+      <E n="key">actorCareer_SafeSuccess</E>
+      <U n="value">
+        <V t="enabled" n="interaction">
+          <T n="enabled">196622<!--SocialSuperInteraction: stage_Socials_Fight_Content_Safe--></T>
+        </V>
+        <T n="score">5</T>
+      </U>
+    </U>
+  </L>
+</I>

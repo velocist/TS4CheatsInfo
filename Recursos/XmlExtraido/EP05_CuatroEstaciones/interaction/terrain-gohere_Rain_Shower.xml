@@ -1,0 +1,194 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<I c="GoHereSuperInteraction" i="interaction" m="objects.terrain" n="terrain-gohere_Rain_Shower" s="185934">
+  <L n="_constraints">
+    <U>
+      <L n="constraints">
+        <U>
+          <V n="value" t="circle">
+            <U n="circle">
+              <T n="ideal_radius">0</T>
+              <T n="radius">1.25</T>
+            </U>
+          </V>
+        </U>
+      </L>
+    </U>
+  </L>
+  <V t="resource_key" n="_icon">
+    <U n="resource_key">
+      <T n="key" p="InGame\UI\Icons\InteractionQueue\IconQueueGoHere.png">2f7d0004:00000000:97d318ad9e4da2b3</T>
+    </U>
+  </V>
+  <T n="_multi_surface">False</T>
+  <V t="enabled" n="_saveable" />
+  <T n="allow_autonomous">False</T>
+  <T n="attention_cost">0.5</T>
+  <V t="disabled" n="canonical_animation" />
+  <T n="collapsible">True</T>
+  <V t="disabled" n="content_score" />
+  <T n="display_name">0x4109BC1B<!--String: "Ducharse en la lluvia"--></T>
+  <U n="display_name_text_tokens">
+    <L n="tokens">
+      <V t="participant_type">
+        <U n="participant_type">
+          <V t="from_participant" n="objects">
+            <U n="from_participant">
+              <E n="participant">Actor</E>
+            </U>
+          </V>
+        </U>
+      </V>
+      <V t="participant_type">
+        <U n="participant_type">
+          <V t="from_participant" n="objects">
+            <U n="from_participant">
+              <E n="participant">Object</E>
+            </U>
+          </V>
+        </U>
+      </V>
+    </L>
+  </U>
+  <T n="ignore_group_socials">False</T>
+  <L n="interaction_category_tags">
+    <E>Interaction_Super</E>
+    <E>Interaction_All</E>
+  </L>
+  <V n="outcome" t="test_based">
+    <U n="test_based">
+      <L n="fallback_outcomes">
+        <U>
+          <U n="outcome">
+            <L n="continuation">
+              <U>
+                <T n="affordance">238902<!--SuperInteraction: sim_AcidRain_Shower_EcoFootprint--></T>
+                <E n="target">Actor</E>
+              </U>
+            </L>
+            <T n="force_outcome_on_exit">True</T>
+          </U>
+        </U>
+      </L>
+      <L n="tested_outcomes">
+        <U>
+          <L n="potential_outcomes">
+            <U>
+              <U n="outcome">
+                <L n="continuation">
+                  <U>
+                    <T n="affordance">185951<!--SuperInteraction: sim_Rain_Shower--></T>
+                    <E n="target">Actor</E>
+                  </U>
+                </L>
+                <T n="force_outcome_on_exit">True</T>
+              </U>
+            </U>
+          </L>
+          <L n="tests">
+            <L>
+              <V t="eco_footprint">
+                <U n="eco_footprint">
+                  <L n="eco_footprint_tests">
+                    <V t="state">
+                      <U n="state">
+                        <T n="invert">True</T>
+                        <E n="required_eco_footprint_state">INDUSTRIAL</E>
+                      </U>
+                    </V>
+                  </L>
+                  <V t="via_zone_source" n="street" />
+                </U>
+              </V>
+            </L>
+          </L>
+        </U>
+      </L>
+    </U>
+  </V>
+  <T n="pie_menu_priority">10</T>
+  <L n="rallyable" />
+  <E n="scoring_priority">NORMAL</E>
+  <T n="subaction_selection_weight">1</T>
+  <V t="enabled" n="super_affordance_klobberers">
+    <V n="enabled" t="literal">
+      <U n="literal">
+        <V n="default_inclusion" t="exclude_all">
+          <U n="exclude_all">
+            <L n="include_affordances">
+              <T>182954<!--GoHereSuperInteraction: terrain-rakeLeaf--></T>
+            </L>
+          </U>
+        </V>
+      </U>
+    </V>
+  </V>
+  <E n="target_type">OBJECT</E>
+  <L n="test_globals">
+    <V t="pick_info_test">
+      <U n="pick_info_test">
+        <V n="pick_type_test" t="pick_terrain">
+          <U n="pick_terrain">
+            <E n="terrain_location">IS_OUTSIDE</E>
+          </U>
+        </V>
+      </U>
+    </V>
+    <V t="pick_info_test">
+      <U n="pick_info_test">
+        <V n="pick_type_test" t="pick_type">
+          <U n="pick_type">
+            <L n="blacklist">
+              <E>PICK_POOL_EDGE</E>
+              <E>PICK_POOL_SURFACE</E>
+              <E>PICK_WATER_TERRAIN</E>
+              <E>PICK_POOL_TRIM</E>
+              <E>PICK_ROOF</E>
+            </L>
+          </U>
+        </V>
+      </U>
+    </V>
+    <V t="sim_info">
+      <U n="sim_info">
+        <V t="specified" n="ages">
+          <L n="specified">
+            <E>YOUNGADULT</E>
+            <E>ADULT</E>
+            <E>ELDER</E>
+          </L>
+        </V>
+      </U>
+    </V>
+    <V t="weather_type">
+      <U n="weather_type">
+        <L n="weather_types">
+          <E>Rain_Heavy</E>
+          <E>Rain_Storm</E>
+          <E>Rain_Light</E>
+        </L>
+      </U>
+    </V>
+    <V t="sims_in_constraint">
+      <U n="sims_in_constraint">
+        <L n="constraints">
+          <V t="circle">
+            <U n="circle">
+              <T n="multi_surface">True</T>
+              <T n="radius">10</T>
+            </U>
+          </V>
+        </L>
+        <E n="constraints_target">Object</E>
+        <E n="test_actor">Actor</E>
+        <T n="test_set">129094<!--TestSetInstance: testSetInstance_YoungAdultOrAbove_YAE--></T>
+        <V n="tooltip" t="enabled">
+          <T n="enabled">0x87321C70<!--String: "Tus Sims no pueden desnudarse delante de niños."--></T>
+        </V>
+      </U>
+    </V>
+  </L>
+  <T n="time_overhead">30</T>
+  <U n="visual_type_override_data">
+    <T n="icon" p="InGame\UI\Icons\InteractionQueue\IconQueueWalking.png">2f7d0004:00000000:7c3ee3d732a8ea1c</T>
+  </U>
+</I>

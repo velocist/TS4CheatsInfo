@@ -1,0 +1,65 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<I c="SituationGoalRanInteractionOnTargetedSim" i="situation_goal" m="situations.situation_goal_targeted_sim" n="situationGoalInteractionSim_Coworkers_DeepConversation_Breakthrough" s="113427">
+  <V t="enabled" n="_display_data">
+    <U n="enabled">
+      <V t="enabled" n="instance_display_icon">
+        <T n="enabled" p="InGame\UI\Icons\Events\EventGoal_Socialize.png">2f7d0004:00000000:21835a4b8238b2fa</T>
+      </V>
+      <V n="instance_display_name" t="enabled">
+        <T n="enabled">0xEDDC8322<!--String: "Tener una conversación profunda con {2.SimName}"--></T>
+      </V>
+      <V n="instance_display_tooltip" t="enabled">
+        <T n="enabled">0x7693EDF3<!--String: "Relaciónate con {2.SimName} hasta que veas disponible Conversación profunda en la lista de interacciones amistosas. A continuación, selecciona esa interacción."--></T>
+      </V>
+    </U>
+  </V>
+  <U n="_goal_test">
+    <L n="affordances">
+      <T>26910<!--SocialMixerInteraction: mixer_social_DeepConversation_targeted_Friendly_MiddleScore--></T>
+    </L>
+    <E n="test_event">InteractionComplete</E>
+  </U>
+  <L n="_pre_tests">
+    <V t="statistic">
+      <U n="statistic">
+        <T n="stat">113011<!--Statistic: statistic_Career_Scientist_Inventing--></T>
+        <V t="value_threshold" n="threshold">
+          <U n="value_threshold">
+            <E n="comparison">EQUAL</E>
+          </U>
+        </V>
+      </U>
+    </V>
+  </L>
+  <T n="_select_sims_outside_of_situation">True</T>
+  <E n="_target_option">GoalSystemChoice</E>
+  <L n="_target_tests">
+    <V t="relationship">
+      <U n="relationship">
+        <T n="num_relations">1</T>
+        <U n="required_relationship_bits">
+          <L n="match_all">
+            <T>107373<!--RelationshipBit: relationshipbit_CoWorkers--></T>
+            <T>15803<!--RelationshipBit: has_met--></T>
+          </L>
+        </U>
+      </U>
+    </V>
+    <V t="relationship">
+      <U n="relationship">
+        <T n="num_relations">1</T>
+        <U n="required_relationship_bits">
+          <L n="match_any">
+            <T>15797<!--RelationshipBit: friendship-friend--></T>
+            <T>15799<!--RelationshipBit: friendship-good_friends--></T>
+            <T>15794<!--RelationshipBit: friendship-bff--></T>
+            <T>31211<!--RelationshipBit: friendship-bff_BromanticPartner--></T>
+          </L>
+        </U>
+        <E n="test_event">AllRelationshipEvents</E>
+        <T o="true" n="track" />
+      </U>
+    </V>
+  </L>
+  <T p="InGame\Audio\Bumper\bumper_event_goal_complete.propx" n="audio_sting_on_complete">39b2aa4a:00000000:ed52c39bcc2a7111</T>
+</I>

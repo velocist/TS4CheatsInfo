@@ -1,0 +1,219 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<I c="SuperInteraction" i="interaction" m="interactions.base.super_interaction" n="superInteraction_SetTheTable" s="161837">
+  <L n="_constraints">
+    <U>
+      <L n="constraints">
+        <U>
+          <V n="value" t="cone">
+            <U n="cone">
+              <T n="max_radius">1.5</T>
+              <T n="min_radius">1</T>
+            </U>
+          </V>
+        </U>
+      </L>
+    </U>
+    <U>
+      <L n="constraints">
+        <U>
+          <V n="value" t="facing" />
+        </U>
+      </L>
+    </U>
+  </L>
+  <V t="resource_key" n="_icon">
+    <U n="resource_key">
+      <T n="key" p="InGP05\UI\Icons\InteractionQueue\IconQueueSetTable.png">2f7d0004:00000000:08bd8855928c0d5b</T>
+    </U>
+  </V>
+  <V t="enabled" n="_saveable" />
+  <T n="attention_cost">0.5</T>
+  <V t="one_shot" n="basic_content">
+    <U n="one_shot">
+      <U n="animation_ref">
+        <T n="factory">23927<!--AnimationElement: Generic_PutDown--></T>
+      </U>
+    </U>
+  </V>
+  <V t="disabled" n="content_score" />
+  <T n="display_name">0xD720E9D2<!--String: "Poner la mesa"--></T>
+  <U n="display_name_text_tokens">
+    <L n="tokens">
+      <V t="participant_type">
+        <U n="participant_type">
+          <V t="from_participant" n="objects">
+            <U n="from_participant">
+              <E n="participant">Actor</E>
+            </U>
+          </V>
+        </U>
+      </V>
+      <V t="participant_type">
+        <U n="participant_type">
+          <V t="from_participant" n="objects">
+            <U n="from_participant">
+              <E n="participant">Object</E>
+            </U>
+          </V>
+        </U>
+      </V>
+    </L>
+  </U>
+  <L n="interaction_category_tags">
+    <E>Interaction_Super</E>
+    <E>Interaction_All</E>
+  </L>
+  <V t="single" n="outcome">
+    <U n="single">
+      <U n="actions">
+        <L n="loot_list">
+          <T>161449<!--LootActions: loot_Statistic_LifeSkill_Manners_Gain_Small--></T>
+          <T>168312<!--LootActions: loot_Statistic_LifeSkill_MannersPositive_AutonomyMax--></T>
+        </L>
+      </U>
+    </U>
+  </V>
+  <U n="posture_preferences">
+    <L n="posture_cost_overrides">
+      <U>
+        <T n="key">15535<!--Posture: posture_Sit--></T>
+        <T n="value">100</T>
+      </U>
+    </L>
+  </U>
+  <V t="enabled" n="provided_template_affordances">
+    <U n="enabled">
+      <L n="template_affordances">
+        <V t="discipline">
+          <U n="discipline">
+            <T n="display_name_override">0x51C534AA<!--String: "Alentar a poner la mesa"--></T>
+            <L n="outcome_basic_extras">
+              <V t="loot">
+                <U n="loot">
+                  <L n="loot_list">
+                    <T>167153<!--LootActions: loot_Statistic_LifeSkill_Manners_Target_Discipline_EncourageGain--></T>
+                    <T>130279<!--LootActions: rel_Gain_Small_TargetSim--></T>
+                    <T>163075<!--LootActions: loot_ParentingSkill_Discipline_Encourage--></T>
+                  </L>
+                </U>
+              </V>
+            </L>
+            <T n="template_affordance">163026<!--DisciplineTemplateSuperInteraction: disciplineTemplate_Encourage--></T>
+          </U>
+        </V>
+      </L>
+    </U>
+  </V>
+  <E n="scoring_priority">NORMAL</E>
+  <T n="subaction_selection_weight">1</T>
+  <E n="target_type">OBJECT</E>
+  <L n="test_globals">
+    <V t="sim_info">
+      <U n="sim_info">
+        <V t="specified" n="ages">
+          <L n="specified">
+            <E>TEEN</E>
+            <E>YOUNGADULT</E>
+            <E>ADULT</E>
+            <E>ELDER</E>
+            <E>CHILD</E>
+          </L>
+        </V>
+        <V t="specified" n="species">
+          <U n="specified">
+            <L n="species">
+              <E />
+            </L>
+          </U>
+        </V>
+        <E n="who">Actor</E>
+      </U>
+    </V>
+    <V t="slot_test">
+      <U n="slot_test">
+        <T n="check_part_owner">True</T>
+        <V t="by_reference" n="child_slot">
+          <T n="by_reference">slot_SitEat</T>
+        </V>
+        <V t="has_empty_slot" n="slot_test_type" />
+      </U>
+    </V>
+    <V t="slot_test">
+      <U n="slot_test">
+        <T n="check_part_owner">False</T>
+        <V t="by_reference" n="child_slot">
+          <T n="by_reference">slot_PlacematDrawing</T>
+        </V>
+        <V t="has_empty_slot" n="slot_test_type" />
+      </U>
+    </V>
+    <V t="slot_test">
+      <U n="slot_test">
+        <T n="check_part_owner">True</T>
+        <V t="by_reference" n="child_slot">
+          <T n="by_reference">slot_SitShared</T>
+        </V>
+        <V t="has_empty_slot" n="slot_test_type" />
+      </U>
+    </V>
+  </L>
+  <L n="tests">
+    <L>
+      <V t="slot_test">
+        <U n="slot_test">
+          <V t="by_reference" n="child_slot">
+            <T n="by_reference">slot_SitChair</T>
+          </V>
+          <V t="has_used_slot" n="slot_test_type" />
+        </U>
+      </V>
+    </L>
+    <L>
+      <V t="has_child_of_type">
+        <U n="has_child_of_type">
+          <L n="object_type_tags">
+            <E>Func_Booth</E>
+            <E>Func_Booth_Banquette</E>
+            <E>Func_Booth_Corner</E>
+          </L>
+        </U>
+      </V>
+    </L>
+    <L>
+      <V t="slot_test">
+        <U n="slot_test">
+          <V t="by_reference" n="child_slot">
+            <T n="by_reference">slot_SitChairTall</T>
+          </V>
+          <V n="slot_test_type" t="has_used_slot">
+            <U n="has_used_slot">
+              <V n="object_type" t="enabled">
+                <V n="enabled" t="object_tags">
+                  <U n="object_tags">
+                    <L n="tag_set">
+                      <E>Func_Stool</E>
+                    </L>
+                  </U>
+                </V>
+              </V>
+            </U>
+          </V>
+        </U>
+      </V>
+    </L>
+    <L>
+      <V t="object_definition_criteria">
+        <U n="object_definition_criteria">
+          <V n="identity_test" t="tags">
+            <U n="tags">
+              <L n="tag_set">
+                <E>Func_Table_Low</E>
+              </L>
+            </U>
+          </V>
+        </U>
+      </V>
+    </L>
+  </L>
+  <T n="time_overhead">30</T>
+</I>

@@ -1,0 +1,152 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<I c="SuperInteraction" i="interaction" m="interactions.base.super_interaction" n="sim_Dog_BladderFailure" s="157051">
+  <V t="prohibit_cancelation" n="_cancelable_by_user" />
+  <V t="participant" n="_icon">
+    <U n="participant">
+      <L n="participant_type">
+        <E>Actor</E>
+      </L>
+    </U>
+  </V>
+  <V t="enabled" n="_saveable" />
+  <T n="allow_autonomous">False</T>
+  <T n="allow_user_directed">False</T>
+  <T n="attention_cost">0.5</T>
+  <V t="one_shot" n="basic_content">
+    <U n="one_shot">
+      <U n="animation_ref">
+        <T n="factory">162942<!--AnimationElement: animationElement_Dog_Pee--></T>
+        <U n="overrides">
+          <V t="disabled" n="balloons" />
+        </U>
+      </U>
+    </U>
+  </V>
+  <L n="basic_extras">
+    <V t="broadcaster">
+      <U n="broadcaster">
+        <L n="broadcaster_types">
+          <U>
+            <T n="item">169965<!--Broadcaster: broadcaster_Reaction_Vet_SickPet_DisgustingAction--></T>
+          </U>
+        </L>
+      </U>
+    </V>
+  </L>
+  <V t="enabled" n="carry_cancel_override_for_displaced_interactions">
+    <T n="enabled">99868<!--PutDownQuicklySuperInteraction: put_down_quickly_cancel_aop--></T>
+  </V>
+  <V t="disabled" n="content_score" />
+  <T n="display_name">0xD4F7B857<!--String: "Sufrir problema de vejiga"--></T>
+  <U n="display_name_text_tokens">
+    <L n="tokens">
+      <V t="participant_type">
+        <U n="participant_type">
+          <V t="from_participant" n="objects">
+            <U n="from_participant">
+              <E n="participant">Actor</E>
+            </U>
+          </V>
+        </U>
+      </V>
+      <V t="participant_type">
+        <U n="participant_type">
+          <V t="from_participant" n="objects">
+            <U n="from_participant">
+              <E n="participant">Object</E>
+            </U>
+          </V>
+        </U>
+      </V>
+    </L>
+  </U>
+  <L n="interaction_category_tags">
+    <E>Interaction_Super</E>
+    <E>Interaction_All</E>
+  </L>
+  <V t="single" n="outcome">
+    <U n="single">
+      <U n="actions">
+        <L n="continuation">
+          <U>
+            <T n="affordance">14412<!--GoHereSuperInteraction: terrain-MoveAway--></T>
+            <E n="target">Actor</E>
+          </U>
+        </L>
+        <L n="loot_list">
+          <T>151081<!--LootActions: loot_BladderMax_Dog--></T>
+          <T>157064<!--LootActions: loot_BladderFailure_PuddleChance_Pets--></T>
+        </L>
+      </U>
+    </U>
+  </V>
+  <U n="posture_preferences">
+    <T n="apply_penalties">False</T>
+  </U>
+  <V t="enabled" n="provided_template_affordances">
+    <U n="enabled">
+      <V t="Use_Custom_Time" n="post_run_duration">
+        <T n="Use_Custom_Time">60</T>
+      </V>
+      <L n="template_affordances">
+        <V t="discipline">
+          <U n="discipline">
+            <T n="display_name_override">0x95F78732<!--String: "Regañar por hacer sus necesidades en casa"--></T>
+            <T n="template_affordance">167990<!--DisciplineTemplateSocialSuperInteraction: discipline_Pets_PottyTraining_Scold--></T>
+          </U>
+        </V>
+        <V t="discipline">
+          <U n="discipline">
+            <T n="display_name_override">0xF5F73E35<!--String: "Sermonear por hacer necesidades dentro de casa"--></T>
+            <T n="template_affordance">167989<!--DisciplineTemplateSocialSuperInteraction: discipline_Pets_PottyTraining_Lecture--></T>
+          </U>
+        </V>
+        <V t="discipline">
+          <U n="discipline">
+            <T n="display_name_override">0x2E09FF60<!--String: "Suplicar que deje de hacer sus necesidades dentro de casa"--></T>
+            <T n="template_affordance">173688<!--DisciplineTemplateSocialSuperInteraction: discipline_Pets_PottyTraining_BegToStop--></T>
+          </U>
+        </V>
+      </L>
+    </U>
+  </V>
+  <E n="scoring_priority">NORMAL</E>
+  <T n="subaction_selection_weight">1</T>
+  <V t="literal" n="super_affordance_compatibility">
+    <U n="literal">
+      <V n="default_inclusion" t="exclude_all">
+        <U n="exclude_all">
+          <L n="include_lists">
+            <T>139888<!--AffordanceList: affordanceList_Restaurants_WaitInteractions--></T>
+          </L>
+        </U>
+      </V>
+    </U>
+  </V>
+  <E n="target_type">ACTOR</E>
+  <V t="enabled" n="test_disallow_while_running">
+    <U n="enabled">
+      <L n="affordances" />
+      <T n="test_self">True</T>
+    </U>
+  </V>
+  <L n="test_globals">
+    <V t="location">
+      <U n="location">
+        <U n="location_tests">
+          <V t="enabled" n="is_outside">
+            <T n="enabled">False</T>
+          </V>
+        </U>
+      </U>
+    </V>
+    <V t="buff">
+      <U n="buff">
+        <L n="blacklist">
+          <T>167048<!--Buff: buff_Motives_Pet_Dog_InSS3Mode--></T>
+        </L>
+      </U>
+    </V>
+  </L>
+  <T n="time_overhead">10</T>
+</I>

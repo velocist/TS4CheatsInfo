@@ -1,0 +1,304 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<I c="SuperInteraction" i="interaction" m="interactions.base.super_interaction" n="pathObstacles_Clear_staging" s="174766">
+  <V t="enabled" n="_saveable" />
+  <T n="attention_cost">0.5</T>
+  <V t="flexible_length" n="basic_content">
+    <U n="flexible_length">
+      <L n="conditional_actions">
+        <V t="literal">
+          <U n="literal">
+            <L n="conditions">
+              <V t="stat_based">
+                <U n="stat_based">
+                  <T n="stat">181047<!--Statistic: statistic_PathObstacle_Clear--></T>
+                  <U n="threshold">
+                    <T n="value">100</T>
+                  </U>
+                  <E n="who">Object</E>
+                </U>
+              </V>
+            </L>
+            <E n="interaction_action">EXIT_NATURALLY</E>
+            <E n="progress_bar_action">FORCE_USE_CONDITION</E>
+          </U>
+        </V>
+        <V t="list_reference">
+          <T n="list_reference">33040<!--ExitConditionList: ExitConditionList_FunOrMotiveFailureExit--></T>
+        </V>
+      </L>
+      <V n="content" t="staging_content">
+        <U n="staging_content">
+          <U n="content_set">
+            <L n="affordance_links">
+              <T>174778<!--MixerInteraction: pathObstacles_mixer_hand_idle--></T>
+              <T>174777<!--MixerInteraction: pathObstacles_mixer_hand_loop_fail--></T>
+              <T>174775<!--MixerInteraction: pathObstacles_mixer_hand_loop_1--></T>
+              <T>174776<!--MixerInteraction: pathObstacles_mixer_hand_loop_2--></T>
+              <T>174774<!--MixerInteraction: pathObstacles_mixer_hand_loop_3--></T>
+            </L>
+          </U>
+        </U>
+      </V>
+      <V n="periodic_stat_change" t="enabled">
+        <U n="enabled">
+          <L n="operations">
+            <V t="dynamic_skill">
+              <U n="dynamic_skill">
+                <U n="skill_loot_data_override">
+                  <E n="effectiveness">StandardPeriodic</E>
+                  <V n="level_range" t="enabled">
+                    <U n="enabled">
+                      <T n="upper_bound">3</T>
+                    </U>
+                  </V>
+                  <T n="stat">16700<!--Skill: statistic_Skill_AdultMajor_Gardening--></T>
+                </U>
+              </U>
+            </V>
+            <V t="statistic_change">
+              <U n="statistic_change">
+                <T n="amount">0.001</T>
+                <T n="stat">181047<!--Statistic: statistic_PathObstacle_Clear--></T>
+                <L n="subject">
+                  <E>Object</E>
+                </L>
+              </U>
+            </V>
+            <V t="reference">
+              <T n="reference">248870<!--PeriodicStatChangeOperation: periodicStatChangeOperation_Lifestyles_Progress_FrequentTraveler--></T>
+            </V>
+            <V t="reference">
+              <T n="reference">249762<!--PeriodicStatChangeOperation: periodicStatChangeOperation_Lifestyles_Progress_AdrenalineSeeker--></T>
+            </V>
+            <V t="reference">
+              <T n="reference">249770<!--PeriodicStatChangeOperation: periodicStatChangeOperation_Lifestyles_Liked_AdrenalineSeeker--></T>
+            </V>
+          </L>
+        </U>
+      </V>
+    </U>
+  </V>
+  <V t="enabled" n="canonical_animation">
+    <U n="enabled">
+      <T n="factory">174761<!--AnimationElement: path_Obstacles_Hand_loop_1--></T>
+    </U>
+  </V>
+  <V t="disabled" n="content_score" />
+  <T n="disallow_as_mixer_target">True</T>
+  <T n="display_name">0x70426301<!--String: "Abrirse camino con las manos"--></T>
+  <U n="display_name_text_tokens">
+    <L n="tokens">
+      <V t="participant_type">
+        <U n="participant_type">
+          <V t="from_participant" n="objects">
+            <U n="from_participant">
+              <E n="participant">Actor</E>
+            </U>
+          </V>
+        </U>
+      </V>
+      <V t="participant_type">
+        <U n="participant_type">
+          <V t="from_participant" n="objects">
+            <U n="from_participant">
+              <E n="participant">Object</E>
+            </U>
+          </V>
+        </U>
+      </V>
+    </L>
+  </U>
+  <V t="enabled" n="display_tooltip">
+    <T n="enabled">0x9C6C87E0<!--String: "¡Los Sims con un nivel más alto en la habilidad Jardinería se abren paso entre la vegetación más rápido y tienen menos probabilidades de lastimarse las manos! Otra opción es comprar un machete en el mercado."--></T>
+  </V>
+  <L n="interaction_category_tags">
+    <E>Interaction_Super</E>
+    <E>Interaction_All</E>
+    <E>Interaction_Skill_Gardening</E>
+    <E>Interaction_Lifestyles_FrequentTraveler_FlexibleLength</E>
+    <E>Interaction_Lifestyles_AdrenalineSeeker_FlexibleLength</E>
+  </L>
+  <V n="outcome" t="test_based">
+    <U n="test_based">
+      <L n="tested_outcomes">
+        <U>
+          <L n="potential_outcomes">
+            <U>
+              <U n="outcome">
+                <V t="enabled" n="animation_ref">
+                  <U n="enabled">
+                    <T n="factory">180909<!--AnimationElement: path_Obstacles_HandPain--></T>
+                    <U n="overrides">
+                      <T n="animation_context">True</T>
+                    </U>
+                  </U>
+                </V>
+                <L n="basic_extras">
+                  <V t="audio_sting">
+                    <U n="audio_sting">
+                      <U n="audio_sting">
+                        <T n="audio" p="InGP06\Audio\bumper\bumper_obstacle_cleared.propx">39b2aa4a:00000000:1df79069dc37c7e5</T>
+                      </U>
+                      <V t="at_beginning" n="timing" />
+                    </U>
+                  </V>
+                </L>
+                <L n="continuation">
+                  <U>
+                    <T n="affordance">175755<!--SuperInteraction: superInteraction_TravelThrough_JungleAdventure--></T>
+                  </U>
+                </L>
+                <T n="force_outcome_on_exit">True</T>
+                <L n="loot_list">
+                  <T>174796<!--LootActions: loot_PathObstacles_SetAccessibleState--></T>
+                </L>
+              </U>
+            </U>
+          </L>
+          <L n="tests">
+            <L>
+              <V t="statistic">
+                <U n="statistic">
+                  <T n="stat">181047<!--Statistic: statistic_PathObstacle_Clear--></T>
+                  <V t="value_threshold" n="threshold">
+                    <U n="value_threshold">
+                      <T n="value">100</T>
+                    </U>
+                  </V>
+                  <E n="who">Object</E>
+                </U>
+              </V>
+              <V t="skill_test">
+                <U n="skill_test">
+                  <T n="skill">16700<!--Skill: statistic_Skill_AdultMajor_Gardening--></T>
+                  <V t="interval" n="skill_range">
+                    <U n="interval">
+                      <U n="skill_interval">
+                        <T n="upper_bound">5</T>
+                      </U>
+                    </U>
+                  </V>
+                </U>
+              </V>
+            </L>
+          </L>
+        </U>
+        <U>
+          <L n="potential_outcomes">
+            <U>
+              <U n="outcome">
+                <V t="enabled" n="animation_ref">
+                  <U n="enabled">
+                    <T n="factory">28360<!--AnimationElement: Socials_Responses_Excited_HighIntensity_FistPump--></T>
+                  </U>
+                </V>
+                <L n="basic_extras">
+                  <V t="audio_sting">
+                    <U n="audio_sting">
+                      <U n="audio_sting">
+                        <T n="audio" p="InGP06\Audio\bumper\bumper_obstacle_cleared.propx">39b2aa4a:00000000:1df79069dc37c7e5</T>
+                      </U>
+                      <V t="at_beginning" n="timing" />
+                    </U>
+                  </V>
+                </L>
+                <L n="continuation">
+                  <U>
+                    <T n="affordance">175755<!--SuperInteraction: superInteraction_TravelThrough_JungleAdventure--></T>
+                  </U>
+                </L>
+                <T n="force_outcome_on_exit">True</T>
+                <L n="loot_list">
+                  <T>174796<!--LootActions: loot_PathObstacles_SetAccessibleState--></T>
+                </L>
+              </U>
+            </U>
+          </L>
+          <L n="tests">
+            <L>
+              <V t="statistic">
+                <U n="statistic">
+                  <T n="stat">181047<!--Statistic: statistic_PathObstacle_Clear--></T>
+                  <V t="value_threshold" n="threshold">
+                    <U n="value_threshold">
+                      <T n="value">100</T>
+                    </U>
+                  </V>
+                  <E n="who">Object</E>
+                </U>
+              </V>
+              <V t="skill_test">
+                <U n="skill_test">
+                  <T n="skill">16700<!--Skill: statistic_Skill_AdultMajor_Gardening--></T>
+                  <V n="skill_range" t="interval">
+                    <U n="interval">
+                      <U n="skill_interval">
+                        <T n="lower_bound">5</T>
+                        <T n="upper_bound">11</T>
+                      </U>
+                    </U>
+                  </V>
+                </U>
+              </V>
+            </L>
+          </L>
+        </U>
+      </L>
+    </U>
+  </V>
+  <E n="scoring_priority">NORMAL</E>
+  <T n="subaction_selection_weight">10</T>
+  <V t="literal" n="super_affordance_compatibility">
+    <U n="literal">
+      <V n="default_inclusion" t="exclude_all">
+        <U n="exclude_all">
+          <L n="include_lists">
+            <T>36156<!--AffordanceList: AffordanceList_Socialize--></T>
+          </L>
+        </U>
+      </V>
+    </U>
+  </V>
+  <E n="target_type">OBJECT</E>
+  <L n="test_globals">
+    <V t="sim_info">
+      <U n="sim_info">
+        <V t="specified" n="ages" />
+        <V t="specified" n="species">
+          <U n="specified">
+            <L n="species">
+              <E />
+            </L>
+          </U>
+        </V>
+        <E n="who">Actor</E>
+      </U>
+    </V>
+    <V t="state">
+      <U n="state">
+        <E n="operator">NOTEQUAL</E>
+        <T n="value">174733<!--ObjectStateValue: objectStateValue_PathObstacles_Accessible--></T>
+      </U>
+    </V>
+    <V t="state">
+      <U n="state">
+        <E n="operator">NOTEQUAL</E>
+        <V n="tooltip" t="enabled">
+          <T n="enabled">0xB9668380<!--String: "¡Este camino está precintado y no puede abrirse en este viaje! Tal vez abra para las próximas vacaciones."--></T>
+        </V>
+        <T n="value">174731<!--ObjectStateValue: objectStateValue_PathObstacles_Access_PermanentlyBlocked--></T>
+      </U>
+    </V>
+    <V t="buff">
+      <U n="buff">
+        <L n="blacklist">
+          <T>175098<!--Buff: buff_PathObstacle_SoreHands--></T>
+        </L>
+        <V n="tooltip" t="enabled">
+          <T n="enabled">0x65FEB0A<!--String: "¡Las manos de {0.SimFirstName} siguen doloridas de retirar los espinos del último obstáculo! Va a necesitar esperar un poco antes de hacerlo otra vez."--></T>
+        </V>
+      </U>
+    </V>
+  </L>
+  <T n="time_overhead">30</T>
+</I>

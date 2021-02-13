@@ -1,0 +1,181 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<I c="SuperInteraction" i="interaction" m="interactions.base.super_interaction" n="gardening_EatHarvestable_Toddler_atSurface" s="156643">
+  <V t="reference" n="_animation_actor_map">
+    <T n="reference">104045<!--AnimationActorMap: PickupInteractionTarget--></T>
+  </V>
+  <L n="_constraints" />
+  <V t="participant" n="_icon">
+    <U n="participant">
+      <L n="participant_type">
+        <E>Object</E>
+      </L>
+    </U>
+  </V>
+  <V t="enabled" n="_saveable" />
+  <T n="allow_from_sim_inventory">True</T>
+  <T n="attention_cost">0.75</T>
+  <V n="basic_content" t="one_shot">
+    <U n="one_shot">
+      <U n="animation_ref">
+        <T n="factory">156639<!--AnimationElement: harvestable_Eat_Toddler_AtSurface--></T>
+      </U>
+    </U>
+  </V>
+  <L n="basic_extras">
+    <V t="transience_change">
+      <U n="transience_change">
+        <V t="make_transient" n="new_value_beginning" />
+        <V n="xevt_id" t="enabled">
+          <T n="enabled">701</T>
+        </V>
+      </U>
+    </V>
+    <V t="exit_carry_while_holding" />
+    <V t="loot">
+      <U n="loot">
+        <L n="loot_list">
+          <T>176148<!--LootActions: loot_Skeleton_Eat--></T>
+        </L>
+      </U>
+    </V>
+  </L>
+  <V n="canonical_animation" t="enabled">
+    <U n="enabled">
+      <T n="factory">156639<!--AnimationElement: harvestable_Eat_Toddler_AtSurface--></T>
+    </U>
+  </V>
+  <V t="disabled" n="content_score" />
+  <T n="display_name">0x5CAF0B79<!--String: "Comer {1.ObjectName|xxLower}"--></T>
+  <V t="testable" n="display_name_overrides">
+    <U n="testable">
+      <L n="overrides" />
+    </U>
+  </V>
+  <U n="display_name_text_tokens">
+    <L n="tokens">
+      <V t="participant_type">
+        <U n="participant_type">
+          <V t="from_participant" n="objects">
+            <U n="from_participant">
+              <E n="participant">Actor</E>
+            </U>
+          </V>
+        </U>
+      </V>
+      <V t="participant_type">
+        <U n="participant_type">
+          <V t="from_participant" n="objects">
+            <U n="from_participant">
+              <E n="participant">Object</E>
+            </U>
+          </V>
+        </U>
+      </V>
+    </L>
+  </U>
+  <L n="interaction_category_tags">
+    <E>Interaction_Super</E>
+    <E>Interaction_All</E>
+  </L>
+  <V t="single" n="outcome">
+    <U n="single">
+      <U n="actions">
+        <L n="loot_list">
+          <T>103202<!--LootActions: loot_Buff_EatHarvestable--></T>
+        </L>
+      </U>
+    </U>
+  </V>
+  <E n="scoring_priority">NORMAL</E>
+  <T n="subaction_selection_weight">1</T>
+  <V t="literal" n="super_affordance_compatibility">
+    <U n="literal">
+      <V n="default_inclusion" t="include_all">
+        <U n="include_all">
+          <L n="exclude_lists">
+            <T>75763<!--AffordanceList: AffordanceList_Painting--></T>
+            <T>30816<!--AffordanceList: affordanceList_FoodConsume--></T>
+          </L>
+        </U>
+      </V>
+    </U>
+  </V>
+  <E n="target_type">OBJECT</E>
+  <L n="test_autonomous">
+    <L>
+      <V t="buff">
+        <U n="buff">
+          <V n="whitelist" t="enabled">
+            <L n="enabled">
+              <T>144745<!--Buff: buff_Toddler_AutonomyMod_InHighChair--></T>
+            </L>
+          </V>
+        </U>
+      </V>
+      <V t="has_parent_object">
+        <U n="has_parent_object">
+          <E n="targets">ActorPostureTarget</E>
+        </U>
+      </V>
+    </L>
+  </L>
+  <V t="enabled" n="test_disallow_while_running" />
+  <L n="test_globals">
+    <V t="sim_info">
+      <U n="sim_info">
+        <V t="specified" n="ages">
+          <L n="specified">
+            <E>TODDLER</E>
+          </L>
+        </V>
+        <V t="specified" n="species">
+          <U n="specified">
+            <L n="species">
+              <E />
+            </L>
+          </U>
+        </V>
+        <E n="who">Actor</E>
+      </U>
+    </V>
+    <V t="location">
+      <U n="location">
+        <U n="location_tests">
+          <V n="is_in_slot" t="enabled">
+            <U n="enabled">
+              <V n="slot_test_type" t="specific_slot">
+                <U n="specific_slot">
+                  <T n="require_slotted">False</T>
+                  <T n="specific_slot_set">slotSet_SpawnPoint</T>
+                </U>
+              </V>
+            </U>
+          </V>
+        </U>
+        <E n="subject">Object</E>
+      </U>
+    </V>
+    <V t="has_parent_object" />
+    <V t="object_criteria">
+      <U n="object_criteria">
+        <V t="tags" n="identity_test">
+          <U n="tags">
+            <L n="tag_set">
+              <E>Func_HighChair</E>
+            </L>
+          </U>
+        </V>
+        <T n="owned">False</T>
+        <V t="single_object" n="subject_specific_tests">
+          <U n="single_object">
+            <E n="target">ObjectParent</E>
+          </U>
+        </V>
+      </U>
+    </V>
+    <V t="test_set_reference">
+      <T n="test_set_reference">252105<!--TestSetInstance: testSet_SimBot_Disallow--></T>
+    </V>
+  </L>
+  <T n="time_overhead">30</T>
+</I>

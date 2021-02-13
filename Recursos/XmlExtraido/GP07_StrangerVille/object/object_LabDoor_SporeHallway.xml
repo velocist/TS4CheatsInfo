@@ -1,0 +1,159 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<I c="Door" i="object" m="objects.doors.door" n="object_LabDoor_SporeHallway" s="204765">
+  <V n="_anim_overrides" t="enabled">
+    <U n="enabled">
+      <L n="vfx">
+        <U>
+          <T n="original_effect">fx_secret_lab_spores_door</T>
+          <U n="replacement_effect">
+            <V n="effect" t="play_effect">
+              <T n="play_effect">gp07_secret_lab_spores_door2</T>
+            </V>
+          </U>
+        </U>
+      </L>
+    </U>
+  </V>
+  <U n="_components">
+    <V t="enabled" n="focus">
+      <U n="enabled">
+        <V n="_focus_score" t="globally">
+          <U n="globally">
+            <E n="base">NONE</E>
+          </U>
+        </V>
+      </U>
+    </V>
+    <V n="narrative_aware_component" t="enabled">
+      <U n="enabled">
+        <L n="narrative_state_mapping">
+          <U>
+            <T n="key">201915<!--Narrative: narrative_Strangetown_Act1--></T>
+            <L n="value">
+              <T>35296<!--ObjectStateValue: GenericOnOff_On--></T>
+            </L>
+          </U>
+          <U>
+            <T n="key">201916<!--Narrative: narrative_Strangetown_Act2--></T>
+            <L n="value">
+              <T>35296<!--ObjectStateValue: GenericOnOff_On--></T>
+            </L>
+          </U>
+          <U>
+            <T n="key">201917<!--Narrative: narrative_Strangetown_Act3--></T>
+            <L n="value">
+              <T>35297<!--ObjectStateValue: GenericOnOff_Off--></T>
+            </L>
+          </U>
+          <U>
+            <T n="key">201918<!--Narrative: narrative_Strangetown_Act4--></T>
+            <L n="value">
+              <T>35297<!--ObjectStateValue: GenericOnOff_Off--></T>
+            </L>
+          </U>
+        </L>
+      </U>
+    </V>
+    <V t="enabled" n="portal">
+      <U n="enabled">
+        <V t="disabled" n="_portal_animation_component" />
+        <L n="_portal_data">
+          <T>178685<!--PortalData: portalData_Door--></T>
+        </L>
+        <V t="enabled" n="_portal_locking_component" />
+      </U>
+    </V>
+    <V n="state" t="enabled">
+      <U n="enabled">
+        <L n="states">
+          <U>
+            <L n="client_states">
+              <U>
+                <T n="key">29002<!--ObjectStateValue: FrontDoor_Disabled--></T>
+              </U>
+            </L>
+            <V n="default_value" t="reference">
+              <T n="reference">29002<!--ObjectStateValue: FrontDoor_Disabled--></T>
+            </V>
+          </U>
+          <U>
+            <L n="client_states">
+              <U>
+                <T n="key">203039<!--ObjectStateValue: genericOpenClosed_Closed--></T>
+                <U n="value">
+                  <V n="geometry_state" t="apply_new_value">
+                    <V n="apply_new_value" t="set_to_custom_value">
+                      <T n="set_to_custom_value">doorFunction</T>
+                    </V>
+                  </V>
+                </U>
+              </U>
+              <U>
+                <T n="key">203040<!--ObjectStateValue: genericOpenClosed_Open--></T>
+                <U n="value">
+                  <V n="geometry_state" t="apply_new_value">
+                    <V n="apply_new_value" t="set_to_custom_value">
+                      <T n="set_to_custom_value">doorOpen</T>
+                    </V>
+                  </V>
+                </U>
+              </U>
+            </L>
+            <V n="default_value" t="reference">
+              <T n="reference">203039<!--ObjectStateValue: genericOpenClosed_Closed--></T>
+            </V>
+          </U>
+          <U>
+            <L n="client_states">
+              <U>
+                <T n="key">35296<!--ObjectStateValue: GenericOnOff_On--></T>
+                <U n="value">
+                  <V n="vfx_state" t="apply_new_value">
+                    <V n="apply_new_value" t="start_vfx">
+                      <V n="start_vfx" t="single_effect">
+                        <U n="single_effect">
+                          <T n="effect_name">gp07_secret_lab_spores_hallway</T>
+                        </U>
+                      </V>
+                    </V>
+                  </V>
+                </U>
+              </U>
+              <U>
+                <T n="key">35297<!--ObjectStateValue: GenericOnOff_Off--></T>
+                <U n="value">
+                  <V t="apply_new_value" n="vfx_state" />
+                </U>
+              </U>
+            </L>
+            <V t="reference" n="default_value">
+              <T n="reference">35296<!--ObjectStateValue: GenericOnOff_On--></T>
+            </V>
+            <T n="reset_on_load_if_time_passes">True</T>
+          </U>
+        </L>
+      </U>
+    </V>
+  </U>
+  <L n="_super_affordances">
+    <T>13328<!--ImmediateSuperInteraction: debug_Reset--></T>
+    <T>13326<!--ImmediateSuperInteraction: debug_ObjectDestroy--></T>
+    <T>103888<!--ImmediateSuperInteraction: cheat_set_as_head--></T>
+    <T>13983<!--StandSuperInteraction: sim-stand--></T>
+    <T>201730<!--SuperInteraction: SealedDoor_Examine--></T>
+    <T>201732<!--SuperInteraction: SealedDoor_TakePhoto--></T>
+    <T>201731<!--SuperInteraction: SealedDoor_UseKeycard--></T>
+  </L>
+  <U n="recycling_data">
+    <L n="recycling_values">
+      <U>
+        <E n="Bucks Type">RecycleBitsBucks</E>
+        <T n="Value">0.5</T>
+      </U>
+      <U>
+        <E n="Bucks Type">RecyclePiecesBucks</E>
+        <T n="Value">0.5</T>
+      </U>
+    </L>
+  </U>
+</I>

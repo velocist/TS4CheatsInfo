@@ -1,0 +1,594 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<I c="DeathSuperInteraction" i="interaction" m="interactions.utils.death_interactions" n="death_OldAge" s="13300">
+  <V t="prohibit_cancelation" n="_cancelable_by_user" />
+  <L n="_constraints">
+    <U>
+      <L n="constraints">
+        <U>
+          <V n="value" t="jig">
+            <U n="jig">
+              <T n="is_soft_constraint">True</T>
+              <T n="jig">63746</T>
+            </U>
+          </V>
+        </U>
+      </L>
+    </U>
+  </L>
+  <V t="participant" n="_icon">
+    <U n="participant">
+      <L n="participant_type">
+        <E>Actor</E>
+      </L>
+    </U>
+  </V>
+  <V t="enabled" n="_saveable" />
+  <T n="allow_autonomous">False</T>
+  <T n="attention_cost">0.5</T>
+  <T n="automation">True</T>
+  <V n="basic_content" t="flexible_length">
+    <U n="flexible_length">
+      <L n="conditional_actions">
+        <V t="literal">
+          <U n="literal">
+            <L n="conditions">
+              <V t="stat_based">
+                <U n="stat_based">
+                  <T n="stat">16666<!--Statistic: statistic_NPC-GrimReaper_BeReaped--></T>
+                  <U n="threshold">
+                    <T n="value">100</T>
+                  </U>
+                </U>
+              </V>
+            </L>
+            <E n="interaction_action">EXIT_NATURALLY</E>
+          </U>
+        </V>
+        <V t="literal">
+          <U n="literal">
+            <L n="conditions">
+              <V t="stat_based">
+                <U n="stat_based">
+                  <T n="stat">16668<!--Statistic: statistic_NPC-GrimReaper_Count--></T>
+                  <U n="threshold">
+                    <E n="comparison">LESS_OR_EQUAL</E>
+                  </U>
+                  <E n="who">Lot</E>
+                </U>
+              </V>
+              <V t="time_based">
+                <U n="time_based">
+                  <T n="max_time">40</T>
+                  <T n="min_time">40</T>
+                </U>
+              </V>
+            </L>
+            <E n="interaction_action">EXIT_NATURALLY</E>
+          </U>
+        </V>
+        <V t="literal">
+          <U n="literal">
+            <L n="conditions">
+              <V t="buff_based">
+                <U n="buff_based">
+                  <T n="buff">215771<!--Buff: buff_Cauldron_Potion_DeathProof_Success--></T>
+                  <E n="timing">HAS_BUFF</E>
+                </U>
+              </V>
+            </L>
+            <E n="interaction_action">EXIT_NATURALLY</E>
+          </U>
+        </V>
+        <V t="literal">
+          <U n="literal">
+            <L n="conditions">
+              <V t="buff_based">
+                <U n="buff_based">
+                  <T n="buff">215775<!--Buff: buff_Cauldron_Potion_DeathProof_Success_Potent--></T>
+                  <E n="timing">HAS_BUFF</E>
+                </U>
+              </V>
+            </L>
+            <E n="interaction_action">EXIT_NATURALLY</E>
+          </U>
+        </V>
+        <V t="literal">
+          <U n="literal">
+            <L n="conditions">
+              <V t="buff_based">
+                <U n="buff_based">
+                  <T n="buff">236604<!--Buff: buff_JuiceFizzer_DrinkEffects_Kombucha_Grimbucha_1--></T>
+                  <E n="timing">HAS_BUFF</E>
+                </U>
+              </V>
+            </L>
+            <E n="interaction_action">EXIT_NATURALLY</E>
+          </U>
+        </V>
+        <V t="literal">
+          <U n="literal">
+            <L n="conditions">
+              <V t="buff_based">
+                <U n="buff_based">
+                  <T n="buff">236605<!--Buff: buff_JuiceFizzer_DrinkEffects_Kombucha_Grimbucha_2--></T>
+                  <E n="timing">HAS_BUFF</E>
+                </U>
+              </V>
+            </L>
+            <E n="interaction_action">EXIT_NATURALLY</E>
+          </U>
+        </V>
+        <V t="literal">
+          <U n="literal">
+            <L n="conditions">
+              <V t="buff_based">
+                <U n="buff_based">
+                  <T n="buff">236606<!--Buff: buff_JuiceFizzer_DrinkEffects_Kombucha_Grimbucha_4--></T>
+                  <E n="timing">HAS_BUFF</E>
+                </U>
+              </V>
+            </L>
+            <E n="interaction_action">EXIT_NATURALLY</E>
+          </U>
+        </V>
+        <V t="literal">
+          <U n="literal">
+            <L n="conditions">
+              <V t="buff_based">
+                <U n="buff_based">
+                  <T n="buff">236614<!--Buff: buff_JuiceFizzer_DrinkEffects_Kombucha_Grimbucha_Dazed--></T>
+                  <E n="timing">HAS_BUFF</E>
+                </U>
+              </V>
+            </L>
+            <E n="interaction_action">EXIT_NATURALLY</E>
+          </U>
+        </V>
+      </L>
+      <V n="content" t="looping_content">
+        <U n="looping_content">
+          <U n="animation_ref">
+            <T n="factory">32310<!--AnimationElement: Death_OldAge--></T>
+          </U>
+        </U>
+      </V>
+      <T n="start_autonomous_inertial">False</T>
+    </U>
+  </V>
+  <L n="basic_extras">
+    <V t="broadcaster">
+      <U n="broadcaster">
+        <L n="broadcaster_types">
+          <U>
+            <T n="item">73868<!--Broadcaster: broadcaster_ReactionDeath--></T>
+            <L n="test">
+              <L>
+                <V t="buff">
+                  <U n="buff">
+                    <L n="blacklist">
+                      <T>215771<!--Buff: buff_Cauldron_Potion_DeathProof_Success--></T>
+                      <T>215775<!--Buff: buff_Cauldron_Potion_DeathProof_Success_Potent--></T>
+                      <T>236604<!--Buff: buff_JuiceFizzer_DrinkEffects_Kombucha_Grimbucha_1--></T>
+                      <T>236605<!--Buff: buff_JuiceFizzer_DrinkEffects_Kombucha_Grimbucha_2--></T>
+                      <T>236606<!--Buff: buff_JuiceFizzer_DrinkEffects_Kombucha_Grimbucha_4--></T>
+                      <T>236614<!--Buff: buff_JuiceFizzer_DrinkEffects_Kombucha_Grimbucha_Dazed--></T>
+                    </L>
+                  </U>
+                </V>
+              </L>
+            </L>
+          </U>
+        </L>
+        <V t="enabled" n="offset_time">
+          <T n="enabled">12</T>
+        </V>
+      </U>
+    </V>
+    <V t="create_situation">
+      <U n="create_situation">
+        <V t="situation_start" n="create_situation">
+          <U n="situation_start">
+            <T n="situation">16195<!--WorkerNpcSituation: situation_GrimReaper--></T>
+            <T n="user_facing">False</T>
+          </U>
+        </V>
+        <V n="timing" t="at_beginning">
+          <U n="at_beginning">
+            <V t="enabled" n="offset_time">
+              <T n="enabled">3</T>
+            </V>
+          </U>
+        </V>
+      </U>
+    </V>
+    <V t="dynamic_spawn_point">
+      <U n="dynamic_spawn_point">
+        <E n="participant">Actor</E>
+        <L n="tags">
+          <E>Spawn_Grim_Reaper</E>
+        </L>
+      </U>
+    </V>
+    <V t="camera_focus">
+      <U n="camera_focus">
+        <V t="at_beginning" n="timing" />
+      </U>
+    </V>
+    <V t="stat_increment_decrement">
+      <U n="stat_increment_decrement">
+        <T n="stat">16665<!--Statistic: statistic_GrimReaper_DeathCount--></T>
+        <L n="subject">
+          <E>Lot</E>
+        </L>
+      </U>
+    </V>
+    <V t="buff">
+      <U n="buff">
+        <U n="buff_type">
+          <T n="buff_type">26171<!--Buff: buff_Sim_IsDying--></T>
+        </U>
+      </U>
+    </V>
+    <V t="set_game_speed">
+      <U n="set_game_speed">
+        <V t="at_beginning" n="timing" />
+      </U>
+    </V>
+    <V t="audio_sting">
+      <U n="audio_sting">
+        <U n="audio_sting">
+          <T n="audio" p="InGame\Audio\Stings\sting_death_old_age.propx">39b2aa4a:00000000:5156f52e3995c93d</T>
+        </U>
+        <V t="at_beginning" n="timing" />
+      </U>
+    </V>
+    <V t="notification">
+      <U n="notification">
+        <V n="dialog" t="single">
+          <V n="single" t="literal">
+            <U n="literal">
+              <V t="enabled" n="audio_sting">
+                <U n="enabled">
+                  <T p="InGame\Audio\Bumper\bumper_tns_negative.propx" n="audio">39b2aa4a:00000000:4ff5444df03530b2</T>
+                </U>
+              </V>
+              <V t="enabled" n="icon">
+                <V t="resource_key" n="enabled">
+                  <U n="resource_key">
+                    <T n="key" p="InGame\UI\Icons\Headlines\Final\headline_scythe.png">2f7d0004:00000000:c7c12ed9acb0a54c</T>
+                  </U>
+                </V>
+              </V>
+              <V t="enabled" n="secondary_icon">
+                <V t="participant" n="enabled" />
+              </V>
+              <V n="text" t="single">
+                <T n="single">0xCC7D0587<!--String: "{0.SimName} ha vivido una vida larga, pero al fin ha llegado su momento. Está muriendo de vejez."--></T>
+              </V>
+              <E n="visual_type">SPECIAL_MOMENT</E>
+            </U>
+          </V>
+        </V>
+        <V t="at_beginning" n="timing" />
+      </U>
+    </V>
+    <V t="remove_from_ensemble">
+      <U n="remove_from_ensemble">
+        <T n="ensemble_type">127285<!--Ensemble: ensemble_Generic--></T>
+        <V t="at_beginning" n="timing" />
+      </U>
+    </V>
+    <V t="change_outfit">
+      <U n="change_outfit">
+        <V n="outfit_change" t="for_reason">
+          <U n="for_reason">
+            <V n="on_entry" t="enabled">
+              <E n="enabled">EnterDying</E>
+            </V>
+          </U>
+        </V>
+      </U>
+    </V>
+    <V t="loot">
+      <U n="loot">
+        <L n="loot_list">
+          <T>184202<!--LootActions: loot_Temperature_VFX_ColdBreath_Removal--></T>
+        </L>
+        <V t="at_beginning" n="timing" />
+      </U>
+    </V>
+  </L>
+  <T n="can_shoo">False</T>
+  <T n="category">26027<!--PieMenuCategory: pieMenuCategory_Death--></T>
+  <V t="disabled" n="content_score" />
+  <U n="death_dialog">
+    <V t="enabled" n="audio_sting">
+      <U n="enabled">
+        <T n="audio" p="InGame\Audio\Bumper\bumper_game_over.propx">39b2aa4a:00000000:e4380625f832c48e</T>
+      </U>
+    </V>
+    <V t="enabled" n="icon">
+      <V t="resource_key" n="enabled">
+        <U n="resource_key">
+          <T p="InGame\UI\Icons\Headlines\Final\headline_gravestone.png" n="key">2f7d0004:00000000:7c70ef2a230cf012</T>
+        </U>
+      </V>
+    </V>
+    <U n="text">
+      <V n="empty_household" t="enabled">
+        <V n="enabled" t="single">
+          <T n="single">0x4D48CC9E<!--String: "¿Es realmente el fin? Todos los Sims de esta unidad doméstica han muerto, pero puedes crear más, elegir una unidad doméstica para jugar o trasladar una de la galería."--></T>
+        </V>
+      </V>
+      <V n="fallback" t="single">
+        <T n="single">0x290909F9<!--String: "¡Oh, no! ¡{1.SimFirstName} se ha muerto y no hay más Sims adultos vivos! Los servicios sociales pasarán a encargarse del cuidado de los niños."--></T>
+      </V>
+      <V n="pets" t="enabled">
+        <U n="enabled">
+          <V n="multiple_pets" t="single">
+            <T n="single">0xD791194F<!--String: "Los servicios de adopción se harán cargo de {0.SimFirstNameList}. Hay un montón de familias en busca de mascotas."--></T>
+          </V>
+          <V n="single_pet" t="single">
+            <T n="single">0x8AEC03D6<!--String: "Los servicios de adopción se harán cargo de {0.SimFirstName} y le buscarán una buena familia."--></T>
+          </V>
+        </U>
+      </V>
+      <V n="single_sim" t="enabled">
+        <V n="enabled" t="single">
+          <T n="single">0xEC5C00FD<!--String: "¡Oh, no! {1.SimFirstName} está {M1.muerto}{F1.muerta}. Pero no te preocupes por {0.SimFirstName}. Los servicios sociales cuidarán bien de {M0.él}{F0.ella}."--></T>
+        </V>
+      </V>
+    </U>
+    <V t="enabled" n="title">
+      <T n="enabled">0x992A95D2<!--String: "¡Fin de la partida!"--></T>
+    </V>
+    <L n="ui_responses">
+      <U>
+        <T n="text">0x2B08947E<!--String: "Guardar y gestionar mundos"--></T>
+        <E n="ui_request">TRANSITION_TO_NEIGHBORHOOD_SAVE</E>
+      </U>
+      <U>
+        <T n="text">0xF9E584E6<!--String: "Salir al menú principal"--></T>
+        <E n="ui_request">TRANSITION_TO_MAIN_MENU_NO_SAVE</E>
+      </U>
+    </L>
+  </U>
+  <U n="death_element">
+    <V t="position" n="location">
+      <U n="position">
+        <T n="allow_off_lot_placement">True</T>
+        <T n="ignore_bb_footprints">False</T>
+        <U n="initial_location_offset">
+          <U n="default_offset">
+            <T n="z">0.75</T>
+          </U>
+        </U>
+        <V t="enabled" n="surface_type_override" />
+      </U>
+    </V>
+    <V t="on_xevt" n="timing">
+      <U n="on_xevt">
+        <E n="criticality">OnCancelOrException</E>
+        <T n="xevt_id">101</T>
+      </U>
+    </V>
+  </U>
+  <V n="death_info" t="enabled">
+    <U n="enabled">
+      <E n="death_type">Old Age</E>
+    </U>
+  </V>
+  <T n="debug">True</T>
+  <T n="display_name">0xCCA90F32<!--String: "Morir de {M0.viejo}{F0.vieja}"--></T>
+  <U n="display_name_text_tokens">
+    <L n="tokens">
+      <V t="participant_type">
+        <U n="participant_type">
+          <V t="from_participant" n="objects">
+            <U n="from_participant">
+              <E n="participant">Actor</E>
+            </U>
+          </V>
+        </U>
+      </V>
+      <V t="participant_type">
+        <U n="participant_type">
+          <V t="from_participant" n="objects">
+            <U n="from_participant">
+              <E n="participant">Object</E>
+            </U>
+          </V>
+        </U>
+      </V>
+    </L>
+  </U>
+  <L n="interaction_category_tags">
+    <E>Interaction_Death</E>
+    <E>Interaction_Super</E>
+    <E>Interaction_All</E>
+  </L>
+  <V t="enabled" n="off_lot_death_notification">
+    <U n="enabled">
+      <V t="enabled" n="icon">
+        <V t="resource_key" n="enabled">
+          <U n="resource_key">
+            <T p="InGame\UI\Icons\Headlines\Final\headline_gravestone.png" n="key">2f7d0004:00000000:7c70ef2a230cf012</T>
+          </U>
+        </V>
+      </V>
+      <V n="text" t="single">
+        <T n="single">0x2CE3AF5<!--String: "¡Oh, no! {0.SimFirstName} ha muerto lejos de casa. Su urna está en {1.String}."--></T>
+      </V>
+      <V t="enabled" n="text_tokens">
+        <U n="enabled">
+          <L n="tokens">
+            <V t="participant_type" />
+          </L>
+        </U>
+      </V>
+    </U>
+  </V>
+  <V t="dual" n="outcome">
+    <U n="dual">
+      <U n="failure_actions">
+        <V n="animation_ref" t="enabled">
+          <U n="enabled">
+            <T n="factory">11454<!--AnimationElement: Death_Finalizer_Doom--></T>
+          </U>
+        </V>
+        <T n="force_outcome_on_exit">True</T>
+        <L n="loot_list">
+          <T>97629<!--LootActions: loot_PostDeath--></T>
+        </L>
+      </U>
+      <U n="success_actions">
+        <V t="enabled" n="animation_ref">
+          <U n="enabled">
+            <T n="factory">11455<!--AnimationElement: Death_Finalizer_Resurrect--></T>
+          </U>
+        </V>
+        <L n="basic_extras">
+          <V t="broadcaster">
+            <U n="broadcaster">
+              <L n="broadcaster_types">
+                <U>
+                  <T n="item">101060<!--Broadcaster: broadcaster_ReactionDeath_Spared--></T>
+                </U>
+              </L>
+            </U>
+          </V>
+        </L>
+        <T n="force_outcome_on_exit">True</T>
+        <L n="loot_list">
+          <T>97629<!--LootActions: loot_PostDeath--></T>
+          <T>184199<!--LootActions: loot_Temperature_VFX_ColdBreath--></T>
+        </L>
+      </U>
+      <U n="success_chance">
+        <T n="base_chance">100</T>
+        <L n="multipliers">
+          <U>
+            <T n="multiplier">0</T>
+            <L n="tests">
+              <L>
+                <V t="buff">
+                  <U n="buff">
+                    <L n="blacklist">
+                      <T>12451<!--Buff: Buff_GrimReaper_Spared--></T>
+                      <T>215771<!--Buff: buff_Cauldron_Potion_DeathProof_Success--></T>
+                      <T>215775<!--Buff: buff_Cauldron_Potion_DeathProof_Success_Potent--></T>
+                      <T>236604<!--Buff: buff_JuiceFizzer_DrinkEffects_Kombucha_Grimbucha_1--></T>
+                      <T>236605<!--Buff: buff_JuiceFizzer_DrinkEffects_Kombucha_Grimbucha_2--></T>
+                      <T>236606<!--Buff: buff_JuiceFizzer_DrinkEffects_Kombucha_Grimbucha_4--></T>
+                      <T>236614<!--Buff: buff_JuiceFizzer_DrinkEffects_Kombucha_Grimbucha_Dazed--></T>
+                    </L>
+                  </U>
+                </V>
+              </L>
+            </L>
+          </U>
+          <U>
+            <L n="tests">
+              <L>
+                <V t="buff">
+                  <U n="buff">
+                    <V n="whitelist" t="enabled">
+                      <L n="enabled">
+                        <T>104803<!--Buff: buff_Serums_ReapersFriend--></T>
+                      </L>
+                    </V>
+                  </U>
+                </V>
+              </L>
+            </L>
+          </U>
+        </L>
+      </U>
+    </U>
+  </V>
+  <U n="progress_bar_enabled">
+    <T n="bar_enabled">False</T>
+  </U>
+  <L n="provided_affordances">
+    <U>
+      <T n="affordance">13453<!--SuperInteraction: grimReaper_DeathInspect--></T>
+    </U>
+    <U>
+      <T n="affordance">13452<!--SuperInteraction: grimReaper_DeathFinalize--></T>
+    </U>
+  </L>
+  <T n="save_lock_tooltip">0x58E0B681<!--String: "¡No puedes hacer esto mientras un Sim se muere!"--></T>
+  <E n="scoring_priority">NORMAL</E>
+  <T n="subaction_selection_weight">1</T>
+  <V t="literal" n="super_affordance_compatibility">
+    <U n="literal">
+      <V n="default_inclusion" t="exclude_all" />
+    </U>
+  </V>
+  <E n="target_type">ACTOR</E>
+  <L n="test_globals">
+    <V t="sim_info">
+      <U n="sim_info">
+        <V t="specified" n="ages" />
+        <V t="specified" n="species">
+          <U n="specified">
+            <L n="species">
+              <E />
+            </L>
+          </U>
+        </V>
+        <E n="who">Actor</E>
+      </U>
+    </V>
+    <V t="test_set_reference">
+      <T n="test_set_reference">39374<!--TestSetInstance: testSet_SelfOrNone--></T>
+    </V>
+    <V t="test_set_reference">
+      <T n="test_set_reference">228130<!--TestSetInstance: testSet_NoRobots--></T>
+    </V>
+    <V t="buff">
+      <U n="buff">
+        <L n="blacklist">
+          <T>117010<!--Buff: buff_Death_WontDoDeathSoloInteractions--></T>
+        </L>
+      </U>
+    </V>
+    <V t="trait">
+      <U n="trait">
+        <L n="blacklist_traits">
+          <T>149527<!--Trait: trait_OccultVampire--></T>
+          <T>214389<!--Trait: trait_Cauldron_Potion_Immortality--></T>
+        </L>
+      </U>
+    </V>
+    <V t="test_set_reference">
+      <T n="test_set_reference">25731<!--TestSetInstance: testSet_PregnantDisallow--></T>
+    </V>
+  </L>
+  <L n="tests">
+    <L>
+      <V t="sim_info">
+        <U n="sim_info">
+          <V t="enabled" n="npc" />
+        </U>
+      </V>
+    </L>
+    <L>
+      <V t="sim_info">
+        <U n="sim_info">
+          <V t="enabled" n="npc">
+            <T n="enabled">True</T>
+          </V>
+        </U>
+      </V>
+      <V t="location">
+        <U n="location">
+          <U n="location_tests">
+            <V t="Is_or_is_not_on_active_lot" n="is_on_active_lot" />
+          </U>
+        </U>
+      </V>
+    </L>
+  </L>
+  <T n="time_overhead">30</T>
+</I>

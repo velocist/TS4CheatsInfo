@@ -1,0 +1,83 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<I c="SituationGoalObjectInteraction" i="situation_goal" m="situations.situation_goal_object_interaction" n="situationGoalObjectInteraction_CareerScientist_AnalyzeMetal_Collect" s="112993">
+  <T n="_cooldown">120</T>
+  <V t="enabled" n="_display_data">
+    <U n="enabled">
+      <V n="instance_display_icon" t="enabled">
+        <T p="InGame\UI\Icons\Headlines\Final\headline_CollectionMetals.png" n="enabled">2f7d0004:00000000:78e80b1ee0f4fde4</T>
+      </V>
+      <V n="instance_display_name" t="enabled">
+        <T n="enabled">0xABB5DF60<!--String: "Analizar un metal"--></T>
+      </V>
+      <V n="instance_display_tooltip" t="enabled">
+        <T n="enabled">0xB9071DA1<!--String: "Selecciona un analizador químico. A continuación, elige un metal para escanear. Los Sims inspirados o centrados tienen una mayor probabilidad de tener éxito."--></T>
+      </V>
+    </U>
+  </V>
+  <U n="_goal_test">
+    <L n="affordances">
+      <T>107906<!--SuperInteraction: chemicalAnalyzer_Analyze_Collectible--></T>
+    </L>
+    <E n="test_event">InteractionComplete</E>
+  </U>
+  <L n="_post_tests">
+    <V t="object_criteria">
+      <U n="object_criteria">
+        <V t="tags" n="identity_test">
+          <U n="tags">
+            <L n="tag_set">
+              <E>BuyCat_Collection_Metal</E>
+            </L>
+          </U>
+        </V>
+        <V t="single_object" n="subject_specific_tests">
+          <U n="single_object">
+            <E n="target">PickedObject</E>
+          </U>
+        </V>
+        <L n="test_events">
+          <E>OnInventoryChanged</E>
+        </L>
+      </U>
+    </V>
+  </L>
+  <L n="_pre_tests">
+    <V t="inventory">
+      <U n="inventory">
+        <V n="contents_check" t="has_object_with_states">
+          <U n="has_object_with_states">
+            <V n="object_requirement" t="tag">
+              <U n="tag">
+                <U n="tag">
+                  <L n="tag_set">
+                    <E>BuyCat_Collection_Metal</E>
+                  </L>
+                </U>
+              </U>
+            </V>
+            <L n="state_set">
+              <T>107804<!--ObjectStateValue: chemicalAnalyzer_SampleAnalysis_UnTested--></T>
+            </L>
+            <E n="test_type">CONTAINS_ANY_STATE_IN_SET</E>
+          </U>
+        </V>
+      </U>
+    </V>
+    <V t="career">
+      <U n="career">
+        <V n="test_type" t="career_reference">
+          <U n="career_reference">
+            <V t="specific_career" n="career">
+              <T n="specific_career">107255<!--Career: career_Adult_Active_Scientist--></T>
+            </V>
+            <V t="enabled" n="user_level" />
+          </U>
+        </V>
+      </U>
+    </V>
+  </L>
+  <T p="InGame\Audio\Bumper\bumper_event_goal_complete.propx" n="audio_sting_on_complete">39b2aa4a:00000000:ed52c39bcc2a7111</T>
+  <L n="role_tags">
+    <E>Role_Scientist</E>
+  </L>
+</I>

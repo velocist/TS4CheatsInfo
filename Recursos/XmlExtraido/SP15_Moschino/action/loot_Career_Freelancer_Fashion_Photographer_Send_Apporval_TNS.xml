@@ -1,0 +1,138 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<I c="LootActions" i="action" m="interactions.utils.loot" n="loot_Career_Freelancer_Fashion_Photographer_Send_Apporval_TNS" s="215222">
+  <L n="loot_actions">
+    <V t="state_change">
+      <U n="state_change">
+        <U n="chance">
+          <T n="base_chance">40</T>
+          <L n="multipliers">
+            <U>
+              <T n="multiplier">5</T>
+              <L n="tests">
+                <L>
+                  <V t="state">
+                    <U n="state">
+                      <T n="value">15305<!--CommodityBasedObjectStateValue: Quality_Outstanding--></T>
+                    </U>
+                  </V>
+                </L>
+              </L>
+            </U>
+          </L>
+        </U>
+        <T n="state_value">214962<!--ObjectStateValue: objectStateValue_Freelancer_Fashion_Photographer_Approved--></T>
+        <V t="participant" n="subject">
+          <E n="participant">Object</E>
+        </V>
+        <L n="tests">
+          <L>
+            <V t="state">
+              <U n="state">
+                <E n="operator">NOTEQUAL</E>
+                <T n="value">215081<!--ObjectStateValue: objectStateValue_Freelancer_Fashion_Photographer_Rejected--></T>
+              </U>
+            </V>
+          </L>
+        </L>
+      </U>
+    </V>
+    <V t="state_change">
+      <U n="state_change">
+        <U n="chance">
+          <T n="base_chance">100</T>
+        </U>
+        <T n="state_value">215081<!--ObjectStateValue: objectStateValue_Freelancer_Fashion_Photographer_Rejected--></T>
+        <V t="participant" n="subject">
+          <E n="participant">Object</E>
+        </V>
+        <L n="tests">
+          <L>
+            <V t="state">
+              <U n="state">
+                <E n="operator">NOTEQUAL</E>
+                <T n="value">214962<!--ObjectStateValue: objectStateValue_Freelancer_Fashion_Photographer_Approved--></T>
+              </U>
+            </V>
+          </L>
+        </L>
+      </U>
+    </V>
+    <V t="event">
+      <U n="event">
+        <E n="subject">StoredSim</E>
+        <E n="test_event">photography_PhotoApproved</E>
+        <L n="tests">
+          <L>
+            <V t="state">
+              <U n="state">
+                <T n="value">214962<!--ObjectStateValue: objectStateValue_Freelancer_Fashion_Photographer_Approved--></T>
+              </U>
+            </V>
+          </L>
+        </L>
+      </U>
+    </V>
+    <V t="notification_and_dialog">
+      <U n="notification_and_dialog">
+        <V n="dialog" t="notification">
+          <U n="notification">
+            <V t="enabled" n="icon">
+              <V t="participant" n="enabled">
+                <U n="participant">
+                  <L n="participant_type">
+                    <E>Object</E>
+                  </L>
+                </U>
+              </V>
+            </V>
+            <V t="enabled" n="primary_icon_response" />
+            <V n="text" t="single">
+              <T n="single">0x7432E4C0<!--String: "¡El cliente ha aprobado tu foto! Qué pasada de imagen. Las fotos aprobadas llegan por correo, así que comprueba tu buzón y, a continuación, publica la foto en tu Simstagram de moda."--></T>
+            </V>
+          </U>
+        </V>
+        <E n="subject">LotOwnerSingleAndInstanced</E>
+        <L n="tests">
+          <L>
+            <V t="state">
+              <U n="state">
+                <T n="value">214962<!--ObjectStateValue: objectStateValue_Freelancer_Fashion_Photographer_Approved--></T>
+              </U>
+            </V>
+          </L>
+        </L>
+      </U>
+    </V>
+    <V t="notification_and_dialog">
+      <U n="notification_and_dialog">
+        <V n="dialog" t="notification">
+          <U n="notification">
+            <V t="enabled" n="icon">
+              <V t="participant" n="enabled">
+                <U n="participant">
+                  <L n="participant_type">
+                    <E>Object</E>
+                  </L>
+                </U>
+              </V>
+            </V>
+            <V t="enabled" n="primary_icon_response" />
+            <V n="text" t="single">
+              <T n="single">0x3D55D9D5<!--String: "Nunca es fácil encajar un no. Tu cliente no cree que sea una foto adecuada. ¿Puedes enviar otra?"--></T>
+            </V>
+          </U>
+        </V>
+        <E n="subject">LotOwnerSingleAndInstanced</E>
+        <L n="tests">
+          <L>
+            <V t="state">
+              <U n="state">
+                <T n="value">215081<!--ObjectStateValue: objectStateValue_Freelancer_Fashion_Photographer_Rejected--></T>
+              </U>
+            </V>
+          </L>
+        </L>
+      </U>
+    </V>
+  </L>
+</I>

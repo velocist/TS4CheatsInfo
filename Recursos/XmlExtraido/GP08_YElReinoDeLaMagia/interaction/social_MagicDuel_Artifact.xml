@@ -1,0 +1,2206 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<I c="SocialSuperInteraction" i="interaction" m="interactions.social.social_super_interaction" n="social_MagicDuel_Artifact" s="220233">
+  <V t="participant" n="_icon">
+    <U n="participant">
+      <L n="participant_type">
+        <E>TargetSim</E>
+      </L>
+    </U>
+  </V>
+  <L n="_party_size_weight_tuning">
+    <U>
+      <T n="y">100</T>
+    </U>
+    <U>
+      <T n="x">1</T>
+      <T n="y">100</T>
+    </U>
+    <U>
+      <T n="x">2</T>
+      <T n="y">50</T>
+    </U>
+    <U>
+      <T n="x">3</T>
+      <T n="y">0</T>
+    </U>
+    <U>
+      <T n="x">4</T>
+    </U>
+  </L>
+  <V t="enabled" n="_saveable" />
+  <T n="_social_group_type">216273<!--JigGroup: group_MagicDuel--></T>
+  <V t="push_affordance" n="affordance_to_push_on_target">
+    <T n="push_affordance">216272<!--SocialSuperInteraction: social_MagicDuel_Listen--></T>
+  </V>
+  <T n="allow_autonomous">False</T>
+  <T n="attention_cost">0</T>
+  <V t="flexible_length" n="basic_content">
+    <U n="flexible_length">
+      <L n="conditional_actions">
+        <V t="literal">
+          <U n="literal">
+            <L n="conditions">
+              <V t="time_based">
+                <U n="time_based">
+                  <T n="max_time">20</T>
+                  <T n="min_time">15</T>
+                </U>
+              </V>
+            </L>
+            <E n="interaction_action">EXIT_NATURALLY</E>
+          </U>
+        </V>
+      </L>
+      <V t="looping_content" n="content">
+        <U n="looping_content">
+          <U n="animation_ref">
+            <T n="factory">216268<!--AnimationElement: magicDuel_Attack_X--></T>
+          </U>
+        </U>
+      </V>
+      <V t="enabled" n="periodic_stat_change">
+        <U n="enabled">
+          <L n="operations">
+            <V t="statistic_set_max">
+              <U n="statistic_set_max">
+                <T n="stat">217260<!--Commodity: commodity_Trait_Autonomy_Ghost_WitchOverload--></T>
+                <L n="tests">
+                  <L>
+                    <V t="trait">
+                      <U n="trait">
+                        <T n="apply_thresholds_on_individual_basis">False</T>
+                        <L n="whitelist_traits">
+                          <T>216974<!--Trait: trait_Ghost_WitchOverload--></T>
+                        </L>
+                      </U>
+                    </V>
+                  </L>
+                  <L>
+                    <V t="sim_info">
+                      <U n="sim_info">
+                        <V t="enabled" n="npc">
+                          <T n="enabled">True</T>
+                        </V>
+                      </U>
+                    </V>
+                  </L>
+                </L>
+              </U>
+            </V>
+            <V t="statistic_change">
+              <U n="statistic_change">
+                <T n="amount">3</T>
+                <T n="stat">213024<!--Commodity: commodity_Motive_WitchOccult_Charge--></T>
+              </U>
+            </V>
+            <V t="reference">
+              <T n="reference">249770<!--PeriodicStatChangeOperation: periodicStatChangeOperation_Lifestyles_Liked_AdrenalineSeeker--></T>
+            </V>
+            <V t="reference">
+              <T n="reference">249762<!--PeriodicStatChangeOperation: periodicStatChangeOperation_Lifestyles_Progress_AdrenalineSeeker--></T>
+            </V>
+            <V t="statistic_set_max">
+              <U n="statistic_set_max">
+                <T n="advertise">False</T>
+                <T n="stat">222442<!--Commodity: commodity_MagicVenueNPC_Autonomy--></T>
+              </U>
+            </V>
+            <V t="statistic_set_max">
+              <U n="statistic_set_max">
+                <T n="stat">125579<!--Commodity: commodity_Buff_InsiderTrait_MissHangingOut--></T>
+                <L n="tests">
+                  <L>
+                    <V t="relationship">
+                      <U n="relationship">
+                        <U n="relationship_score_interval">
+                          <T n="lower_bound">35</T>
+                          <T n="upper_bound">100</T>
+                        </U>
+                        <L n="target_sim">
+                          <E>TargetSim</E>
+                        </L>
+                      </U>
+                    </V>
+                    <V t="trait">
+                      <U n="trait">
+                        <L n="whitelist_traits">
+                          <T>125437<!--Trait: trait_Insider--></T>
+                        </L>
+                      </U>
+                    </V>
+                  </L>
+                </L>
+              </U>
+            </V>
+          </L>
+        </U>
+      </V>
+    </U>
+  </V>
+  <L n="basic_extras">
+    <V t="loot">
+      <U n="loot">
+        <L n="loot_list">
+          <T>162659<!--LootActions: loot_Commodity_Culling_GhostAdd_target--></T>
+        </L>
+      </U>
+    </V>
+    <V t="buff">
+      <U n="buff">
+        <U n="buff_type">
+          <V n="buff_reason" t="enabled">
+            <T n="enabled">0x9C09275F<!--String: "(Por estar en un grupo social con al menos 3 Sims)"--></T>
+          </V>
+          <T n="buff_type">125555<!--Buff: buff_Trait_WithMyFriends--></T>
+        </U>
+        <L n="subject">
+          <E>Actor</E>
+          <E>SocialGroupSims</E>
+          <E>TargetSim</E>
+        </L>
+        <L n="tests">
+          <L>
+            <V t="social_group">
+              <U n="social_group">
+                <V n="threshold" t="enabled">
+                  <U n="enabled">
+                    <T n="value">3</T>
+                  </U>
+                </V>
+              </U>
+            </V>
+          </L>
+        </L>
+      </U>
+    </V>
+    <V t="buff">
+      <U n="buff">
+        <U n="buff_type">
+          <T n="buff_type">129126<!--Buff: buff_Suppress_Emotion_Idle--></T>
+        </U>
+      </U>
+    </V>
+    <V t="buff">
+      <U n="buff">
+        <U n="buff_type">
+          <T n="buff_type">190542<!--Buff: buff_Suppress_Snow_Idle--></T>
+        </U>
+      </U>
+    </V>
+    <V t="buff">
+      <U n="buff">
+        <U n="buff_type">
+          <T n="buff_type">188623<!--Buff: buff_Suppress_Temperature_Idle--></T>
+        </U>
+      </U>
+    </V>
+    <V t="broadcaster">
+      <U n="broadcaster">
+        <L n="broadcaster_types">
+          <U>
+            <T n="item">220817<!--Broadcaster: broadcaster_MagicDuel_Watch--></T>
+          </U>
+        </L>
+      </U>
+    </V>
+    <V t="loot">
+      <U n="loot">
+        <L n="loot_list">
+          <T>215302<!--LootActions: loot_WitchOccult_UseWand_Add--></T>
+        </L>
+        <V t="at_beginning" n="timing" />
+      </U>
+    </V>
+  </L>
+  <L n="basic_liabilities">
+    <V t="remove_buff">
+      <U n="remove_buff">
+        <T n="buff_to_remove">215320<!--Buff: buff_WitchOccult_UseWand--></T>
+      </U>
+    </V>
+  </L>
+  <V t="disabled" n="basic_reserve_object" />
+  <V t="enabled" n="canonical_animation">
+    <U n="enabled">
+      <T n="factory">216268<!--AnimationElement: magicDuel_Attack_X--></T>
+    </U>
+  </V>
+  <V t="disabled" n="content_score" />
+  <T n="display_name">0xA7230BD3<!--String: "Duelo mágico"--></T>
+  <U n="display_name_text_tokens">
+    <L n="tokens">
+      <V t="participant_type">
+        <U n="participant_type">
+          <V t="from_participant" n="objects">
+            <U n="from_participant">
+              <E n="participant">Actor</E>
+            </U>
+          </V>
+        </U>
+      </V>
+      <V t="participant_type">
+        <U n="participant_type">
+          <V t="from_participant" n="objects">
+            <U n="from_participant">
+              <E n="participant">Object</E>
+            </U>
+          </V>
+        </U>
+      </V>
+    </L>
+  </U>
+  <V t="disabled" n="idle_animation" />
+  <T n="ignore_group_socials">False</T>
+  <L n="interaction_category_tags">
+    <E>Interaction_SocialSuper</E>
+    <E>Interaction_Super</E>
+    <E>Interaction_All</E>
+    <E>Interaction_SocialAll</E>
+    <E>Interaction_Lifestyles_AdrenalineSeeker_FlexibleLength</E>
+    <E>Interaction_Social_Contagious</E>
+  </L>
+  <T n="invite_in_after_interaction">True</T>
+  <U n="listen_animation">
+    <T o="true" n="factory" />
+  </U>
+  <V n="outcome" t="test_based">
+    <U n="test_based">
+      <L n="fallback_outcomes">
+        <U>
+          <U n="outcome">
+            <V t="enabled" n="animation_ref">
+              <U n="enabled">
+                <T n="factory">216266<!--AnimationElement: magicDuel_Succeed_Clash_X--></T>
+              </U>
+            </V>
+            <L n="basic_extras">
+              <V t="loot">
+                <U n="loot">
+                  <L n="loot_list">
+                    <T>220261<!--LootActions: loot_Familiars_React--></T>
+                  </L>
+                </U>
+              </V>
+              <V t="loot">
+                <U n="loot">
+                  <L n="loot_list">
+                    <T>215241<!--LootActions: loot_Familiars_TNSs_DuelWin--></T>
+                  </L>
+                  <U n="success_chance">
+                    <T n="base_chance">20</T>
+                  </U>
+                </U>
+              </V>
+              <V t="balloon">
+                <U n="balloon">
+                  <L n="balloon_choices">
+                    <U>
+                      <V n="item" t="balloon_category">
+                        <T n="balloon_category">215247<!--BalloonCategory: balloonCategory_Familiars_Happy--></T>
+                      </V>
+                    </U>
+                  </L>
+                  <L n="balloon_target">
+                    <E>Familiar</E>
+                  </L>
+                </U>
+              </V>
+            </L>
+            <L n="loot_list">
+              <T>213294<!--LootActions: loot_WitchOccult_WitchXP_Gain_High--></T>
+              <T>216666<!--LootActions: loot_Curses_CurseTracker_DuelLost_Increment_Target--></T>
+              <T>216955<!--LootActions: loot_WitchOverload_Chance--></T>
+              <T>217418<!--LootActions: loot_Buff_MagicDuel_Win_Actor--></T>
+              <T>217361<!--RandomWeightedLoot: randomWeightedLoot_MagicDuel_Reward_Artifact--></T>
+            </L>
+          </U>
+          <U n="weight">
+            <T n="base_value">10</T>
+            <L n="multipliers">
+              <U>
+                <T n="multiplier">2</T>
+                <L n="tests">
+                  <L>
+                    <V t="ranked_statistic">
+                      <U n="ranked_statistic">
+                        <T n="ranked_stat">213064<!--RankedStatistic: rankedStatistic_WitchOccult_WitchXP--></T>
+                        <V t="value_threshold" n="threshold">
+                          <U n="value_threshold">
+                            <E n="comparison">EQUAL</E>
+                            <T n="value">2</T>
+                          </U>
+                        </V>
+                      </U>
+                    </V>
+                  </L>
+                </L>
+              </U>
+              <U>
+                <T n="multiplier">4</T>
+                <L n="tests">
+                  <L>
+                    <V t="ranked_statistic">
+                      <U n="ranked_statistic">
+                        <T n="ranked_stat">213064<!--RankedStatistic: rankedStatistic_WitchOccult_WitchXP--></T>
+                        <V t="value_threshold" n="threshold">
+                          <U n="value_threshold">
+                            <E n="comparison">EQUAL</E>
+                            <T n="value">3</T>
+                          </U>
+                        </V>
+                      </U>
+                    </V>
+                  </L>
+                </L>
+              </U>
+              <U>
+                <T n="multiplier">6</T>
+                <L n="tests">
+                  <L>
+                    <V t="ranked_statistic">
+                      <U n="ranked_statistic">
+                        <T n="ranked_stat">213064<!--RankedStatistic: rankedStatistic_WitchOccult_WitchXP--></T>
+                        <V t="value_threshold" n="threshold">
+                          <U n="value_threshold">
+                            <E n="comparison">EQUAL</E>
+                            <T n="value">4</T>
+                          </U>
+                        </V>
+                      </U>
+                    </V>
+                  </L>
+                </L>
+              </U>
+              <U>
+                <T n="multiplier">10</T>
+                <L n="tests">
+                  <L>
+                    <V t="ranked_statistic">
+                      <U n="ranked_statistic">
+                        <T n="ranked_stat">213064<!--RankedStatistic: rankedStatistic_WitchOccult_WitchXP--></T>
+                        <V t="value_threshold" n="threshold">
+                          <U n="value_threshold">
+                            <E n="comparison">EQUAL</E>
+                            <T n="value">5</T>
+                          </U>
+                        </V>
+                      </U>
+                    </V>
+                  </L>
+                </L>
+              </U>
+              <U>
+                <T n="multiplier">1.25</T>
+                <L n="tests">
+                  <L>
+                    <V t="buff">
+                      <U n="buff">
+                        <V t="enabled" n="whitelist">
+                          <L n="enabled">
+                            <T>213026<!--Buff: buff_WitchOccult_Charge_1_Charged--></T>
+                          </L>
+                        </V>
+                      </U>
+                    </V>
+                  </L>
+                </L>
+              </U>
+              <U>
+                <T n="multiplier">1.75</T>
+                <L n="tests">
+                  <L>
+                    <V t="buff">
+                      <U n="buff">
+                        <V t="enabled" n="whitelist">
+                          <L n="enabled">
+                            <T>213028<!--Buff: buff_WitchOccult_Charge_2_Overcharged--></T>
+                          </L>
+                        </V>
+                      </U>
+                    </V>
+                  </L>
+                </L>
+              </U>
+              <U>
+                <T n="multiplier">2.25</T>
+                <L n="tests">
+                  <L>
+                    <V t="buff">
+                      <U n="buff">
+                        <V t="enabled" n="whitelist">
+                          <L n="enabled">
+                            <T>213029<!--Buff: buff_WitchOccult_Charge_3_DangerouslyOvercharged--></T>
+                          </L>
+                        </V>
+                      </U>
+                    </V>
+                  </L>
+                </L>
+              </U>
+              <U>
+                <T n="multiplier">2</T>
+                <L n="tests">
+                  <L>
+                    <V t="bucks_perks_test">
+                      <U n="bucks_perks_test">
+                        <T n="bucks_perk">216497<!--BucksPerk: witchPerks_Spellcasting_5_MasterDuelist--></T>
+                      </U>
+                    </V>
+                  </L>
+                </L>
+              </U>
+            </L>
+          </U>
+        </U>
+        <U>
+          <U n="outcome">
+            <V t="enabled" n="animation_ref">
+              <U n="enabled">
+                <T n="factory">216267<!--AnimationElement: magicDuel_Succeed_liftUp_X--></T>
+              </U>
+            </V>
+            <L n="basic_extras">
+              <V t="loot">
+                <U n="loot">
+                  <L n="loot_list">
+                    <T>220261<!--LootActions: loot_Familiars_React--></T>
+                  </L>
+                </U>
+              </V>
+              <V t="loot">
+                <U n="loot">
+                  <L n="loot_list">
+                    <T>215241<!--LootActions: loot_Familiars_TNSs_DuelWin--></T>
+                  </L>
+                  <U n="success_chance">
+                    <T n="base_chance">20</T>
+                  </U>
+                </U>
+              </V>
+              <V t="balloon">
+                <U n="balloon">
+                  <L n="balloon_choices">
+                    <U>
+                      <V n="item" t="balloon_category">
+                        <T n="balloon_category">215247<!--BalloonCategory: balloonCategory_Familiars_Happy--></T>
+                      </V>
+                    </U>
+                  </L>
+                  <L n="balloon_target">
+                    <E>Familiar</E>
+                  </L>
+                </U>
+              </V>
+            </L>
+            <L n="loot_list">
+              <T>213294<!--LootActions: loot_WitchOccult_WitchXP_Gain_High--></T>
+              <T>216666<!--LootActions: loot_Curses_CurseTracker_DuelLost_Increment_Target--></T>
+              <T>216955<!--LootActions: loot_WitchOverload_Chance--></T>
+              <T>217418<!--LootActions: loot_Buff_MagicDuel_Win_Actor--></T>
+              <T>217361<!--RandomWeightedLoot: randomWeightedLoot_MagicDuel_Reward_Artifact--></T>
+            </L>
+          </U>
+          <U n="weight">
+            <T n="base_value">10</T>
+            <L n="multipliers">
+              <U>
+                <T n="multiplier">2</T>
+                <L n="tests">
+                  <L>
+                    <V t="ranked_statistic">
+                      <U n="ranked_statistic">
+                        <T n="ranked_stat">213064<!--RankedStatistic: rankedStatistic_WitchOccult_WitchXP--></T>
+                        <V t="value_threshold" n="threshold">
+                          <U n="value_threshold">
+                            <E n="comparison">EQUAL</E>
+                            <T n="value">2</T>
+                          </U>
+                        </V>
+                      </U>
+                    </V>
+                  </L>
+                </L>
+              </U>
+              <U>
+                <T n="multiplier">4</T>
+                <L n="tests">
+                  <L>
+                    <V t="ranked_statistic">
+                      <U n="ranked_statistic">
+                        <T n="ranked_stat">213064<!--RankedStatistic: rankedStatistic_WitchOccult_WitchXP--></T>
+                        <V t="value_threshold" n="threshold">
+                          <U n="value_threshold">
+                            <E n="comparison">EQUAL</E>
+                            <T n="value">3</T>
+                          </U>
+                        </V>
+                      </U>
+                    </V>
+                  </L>
+                </L>
+              </U>
+              <U>
+                <T n="multiplier">6</T>
+                <L n="tests">
+                  <L>
+                    <V t="ranked_statistic">
+                      <U n="ranked_statistic">
+                        <T n="ranked_stat">213064<!--RankedStatistic: rankedStatistic_WitchOccult_WitchXP--></T>
+                        <V t="value_threshold" n="threshold">
+                          <U n="value_threshold">
+                            <E n="comparison">EQUAL</E>
+                            <T n="value">4</T>
+                          </U>
+                        </V>
+                      </U>
+                    </V>
+                  </L>
+                </L>
+              </U>
+              <U>
+                <T n="multiplier">10</T>
+                <L n="tests">
+                  <L>
+                    <V t="ranked_statistic">
+                      <U n="ranked_statistic">
+                        <T n="ranked_stat">213064<!--RankedStatistic: rankedStatistic_WitchOccult_WitchXP--></T>
+                        <V t="value_threshold" n="threshold">
+                          <U n="value_threshold">
+                            <E n="comparison">EQUAL</E>
+                            <T n="value">5</T>
+                          </U>
+                        </V>
+                      </U>
+                    </V>
+                  </L>
+                </L>
+              </U>
+              <U>
+                <T n="multiplier">1.25</T>
+                <L n="tests">
+                  <L>
+                    <V t="buff">
+                      <U n="buff">
+                        <V t="enabled" n="whitelist">
+                          <L n="enabled">
+                            <T>213026<!--Buff: buff_WitchOccult_Charge_1_Charged--></T>
+                          </L>
+                        </V>
+                      </U>
+                    </V>
+                  </L>
+                </L>
+              </U>
+              <U>
+                <T n="multiplier">1.75</T>
+                <L n="tests">
+                  <L>
+                    <V t="buff">
+                      <U n="buff">
+                        <V t="enabled" n="whitelist">
+                          <L n="enabled">
+                            <T>213028<!--Buff: buff_WitchOccult_Charge_2_Overcharged--></T>
+                          </L>
+                        </V>
+                      </U>
+                    </V>
+                  </L>
+                </L>
+              </U>
+              <U>
+                <T n="multiplier">2.25</T>
+                <L n="tests">
+                  <L>
+                    <V t="buff">
+                      <U n="buff">
+                        <V t="enabled" n="whitelist">
+                          <L n="enabled">
+                            <T>213029<!--Buff: buff_WitchOccult_Charge_3_DangerouslyOvercharged--></T>
+                          </L>
+                        </V>
+                      </U>
+                    </V>
+                  </L>
+                </L>
+              </U>
+              <U>
+                <T n="multiplier">2</T>
+                <L n="tests">
+                  <L>
+                    <V t="bucks_perks_test">
+                      <U n="bucks_perks_test">
+                        <T n="bucks_perk">216497<!--BucksPerk: witchPerks_Spellcasting_5_MasterDuelist--></T>
+                      </U>
+                    </V>
+                  </L>
+                </L>
+              </U>
+            </L>
+          </U>
+        </U>
+        <U>
+          <U n="outcome">
+            <V t="enabled" n="animation_ref">
+              <U n="enabled">
+                <T n="factory">216280<!--AnimationElement: magicDuel_Succeed_Clash_Y--></T>
+              </U>
+            </V>
+            <L n="basic_extras">
+              <V t="loot">
+                <U n="loot">
+                  <L n="loot_list">
+                    <T>220261<!--LootActions: loot_Familiars_React--></T>
+                  </L>
+                </U>
+              </V>
+              <V t="loot">
+                <U n="loot">
+                  <L n="loot_list">
+                    <T>215242<!--LootActions: loot_Familiars_TNSs_DuelLose--></T>
+                  </L>
+                  <U n="success_chance">
+                    <T n="base_chance">20</T>
+                  </U>
+                </U>
+              </V>
+              <V t="balloon">
+                <U n="balloon">
+                  <L n="balloon_choices">
+                    <U>
+                      <V n="item" t="balloon_category">
+                        <T n="balloon_category">215248<!--BalloonCategory: balloonCategory_Familiars_Angry--></T>
+                      </V>
+                    </U>
+                  </L>
+                  <L n="balloon_target">
+                    <E>Familiar</E>
+                  </L>
+                </U>
+              </V>
+            </L>
+            <T n="force_outcome_on_exit">True</T>
+            <L n="loot_list">
+              <T>215687<!--LootActions: loot_Curses_CurseTracker_DuelLost_Increment--></T>
+              <T>217419<!--LootActions: loot_Buff_MagicDuel_Win_Target--></T>
+              <T>216955<!--LootActions: loot_WitchOverload_Chance--></T>
+              <T>213294<!--LootActions: loot_WitchOccult_WitchXP_Gain_High--></T>
+            </L>
+            <E n="outcome_result">FAILURE</E>
+          </U>
+          <U n="weight">
+            <T n="base_value">10</T>
+            <L n="multipliers">
+              <U>
+                <T n="multiplier">2</T>
+                <L n="tests">
+                  <L>
+                    <V t="ranked_statistic">
+                      <U n="ranked_statistic">
+                        <T n="ranked_stat">213064<!--RankedStatistic: rankedStatistic_WitchOccult_WitchXP--></T>
+                        <V t="value_threshold" n="threshold">
+                          <U n="value_threshold">
+                            <E n="comparison">EQUAL</E>
+                            <T n="value">2</T>
+                          </U>
+                        </V>
+                        <E n="who">TargetSim</E>
+                      </U>
+                    </V>
+                  </L>
+                </L>
+              </U>
+              <U>
+                <T n="multiplier">4</T>
+                <L n="tests">
+                  <L>
+                    <V t="ranked_statistic">
+                      <U n="ranked_statistic">
+                        <T n="ranked_stat">213064<!--RankedStatistic: rankedStatistic_WitchOccult_WitchXP--></T>
+                        <V t="value_threshold" n="threshold">
+                          <U n="value_threshold">
+                            <E n="comparison">EQUAL</E>
+                            <T n="value">3</T>
+                          </U>
+                        </V>
+                        <E n="who">TargetSim</E>
+                      </U>
+                    </V>
+                  </L>
+                </L>
+              </U>
+              <U>
+                <T n="multiplier">6</T>
+                <L n="tests">
+                  <L>
+                    <V t="ranked_statistic">
+                      <U n="ranked_statistic">
+                        <T n="ranked_stat">213064<!--RankedStatistic: rankedStatistic_WitchOccult_WitchXP--></T>
+                        <V t="value_threshold" n="threshold">
+                          <U n="value_threshold">
+                            <E n="comparison">EQUAL</E>
+                            <T n="value">4</T>
+                          </U>
+                        </V>
+                        <E n="who">TargetSim</E>
+                      </U>
+                    </V>
+                  </L>
+                </L>
+              </U>
+              <U>
+                <T n="multiplier">10</T>
+                <L n="tests">
+                  <L>
+                    <V t="ranked_statistic">
+                      <U n="ranked_statistic">
+                        <T n="ranked_stat">213064<!--RankedStatistic: rankedStatistic_WitchOccult_WitchXP--></T>
+                        <V t="value_threshold" n="threshold">
+                          <U n="value_threshold">
+                            <E n="comparison">EQUAL</E>
+                            <T n="value">5</T>
+                          </U>
+                        </V>
+                        <E n="who">TargetSim</E>
+                      </U>
+                    </V>
+                  </L>
+                </L>
+              </U>
+              <U>
+                <T n="multiplier">1.25</T>
+                <L n="tests">
+                  <L>
+                    <V t="buff">
+                      <U n="buff">
+                        <E n="subject">TargetSim</E>
+                        <V t="enabled" n="whitelist">
+                          <L n="enabled">
+                            <T>213026<!--Buff: buff_WitchOccult_Charge_1_Charged--></T>
+                          </L>
+                        </V>
+                      </U>
+                    </V>
+                  </L>
+                </L>
+              </U>
+              <U>
+                <T n="multiplier">1.75</T>
+                <L n="tests">
+                  <L>
+                    <V t="buff">
+                      <U n="buff">
+                        <E n="subject">TargetSim</E>
+                        <V t="enabled" n="whitelist">
+                          <L n="enabled">
+                            <T>213028<!--Buff: buff_WitchOccult_Charge_2_Overcharged--></T>
+                          </L>
+                        </V>
+                      </U>
+                    </V>
+                  </L>
+                </L>
+              </U>
+              <U>
+                <T n="multiplier">2.25</T>
+                <L n="tests">
+                  <L>
+                    <V t="buff">
+                      <U n="buff">
+                        <E n="subject">TargetSim</E>
+                        <V t="enabled" n="whitelist">
+                          <L n="enabled">
+                            <T>213029<!--Buff: buff_WitchOccult_Charge_3_DangerouslyOvercharged--></T>
+                          </L>
+                        </V>
+                      </U>
+                    </V>
+                  </L>
+                </L>
+              </U>
+              <U>
+                <T n="multiplier">2</T>
+                <L n="tests">
+                  <L>
+                    <V t="bucks_perks_test">
+                      <U n="bucks_perks_test">
+                        <T n="bucks_perk">216497<!--BucksPerk: witchPerks_Spellcasting_5_MasterDuelist--></T>
+                        <E n="participant">TargetSim</E>
+                      </U>
+                    </V>
+                  </L>
+                </L>
+              </U>
+            </L>
+          </U>
+        </U>
+        <U>
+          <U n="outcome">
+            <V t="enabled" n="animation_ref">
+              <U n="enabled">
+                <T n="factory">216282<!--AnimationElement: magicDuel_Succeed_liftUp_Y--></T>
+              </U>
+            </V>
+            <L n="basic_extras">
+              <V t="loot">
+                <U n="loot">
+                  <L n="loot_list">
+                    <T>220261<!--LootActions: loot_Familiars_React--></T>
+                  </L>
+                </U>
+              </V>
+              <V t="loot">
+                <U n="loot">
+                  <L n="loot_list">
+                    <T>215242<!--LootActions: loot_Familiars_TNSs_DuelLose--></T>
+                  </L>
+                  <U n="success_chance">
+                    <T n="base_chance">20</T>
+                  </U>
+                </U>
+              </V>
+              <V t="balloon">
+                <U n="balloon">
+                  <L n="balloon_choices">
+                    <U>
+                      <V n="item" t="balloon_category">
+                        <T n="balloon_category">215248<!--BalloonCategory: balloonCategory_Familiars_Angry--></T>
+                      </V>
+                    </U>
+                  </L>
+                  <L n="balloon_target">
+                    <E>Familiar</E>
+                  </L>
+                </U>
+              </V>
+            </L>
+            <T n="force_outcome_on_exit">True</T>
+            <L n="loot_list">
+              <T>215687<!--LootActions: loot_Curses_CurseTracker_DuelLost_Increment--></T>
+              <T>217419<!--LootActions: loot_Buff_MagicDuel_Win_Target--></T>
+              <T>216955<!--LootActions: loot_WitchOverload_Chance--></T>
+              <T>213294<!--LootActions: loot_WitchOccult_WitchXP_Gain_High--></T>
+            </L>
+            <E n="outcome_result">FAILURE</E>
+          </U>
+          <U n="weight">
+            <T n="base_value">10</T>
+            <L n="multipliers">
+              <U>
+                <T n="multiplier">2</T>
+                <L n="tests">
+                  <L>
+                    <V t="ranked_statistic">
+                      <U n="ranked_statistic">
+                        <T n="ranked_stat">213064<!--RankedStatistic: rankedStatistic_WitchOccult_WitchXP--></T>
+                        <V t="value_threshold" n="threshold">
+                          <U n="value_threshold">
+                            <E n="comparison">EQUAL</E>
+                            <T n="value">2</T>
+                          </U>
+                        </V>
+                        <E n="who">TargetSim</E>
+                      </U>
+                    </V>
+                  </L>
+                </L>
+              </U>
+              <U>
+                <T n="multiplier">4</T>
+                <L n="tests">
+                  <L>
+                    <V t="ranked_statistic">
+                      <U n="ranked_statistic">
+                        <T n="ranked_stat">213064<!--RankedStatistic: rankedStatistic_WitchOccult_WitchXP--></T>
+                        <V t="value_threshold" n="threshold">
+                          <U n="value_threshold">
+                            <E n="comparison">EQUAL</E>
+                            <T n="value">3</T>
+                          </U>
+                        </V>
+                        <E n="who">TargetSim</E>
+                      </U>
+                    </V>
+                  </L>
+                </L>
+              </U>
+              <U>
+                <T n="multiplier">6</T>
+                <L n="tests">
+                  <L>
+                    <V t="ranked_statistic">
+                      <U n="ranked_statistic">
+                        <T n="ranked_stat">213064<!--RankedStatistic: rankedStatistic_WitchOccult_WitchXP--></T>
+                        <V t="value_threshold" n="threshold">
+                          <U n="value_threshold">
+                            <E n="comparison">EQUAL</E>
+                            <T n="value">4</T>
+                          </U>
+                        </V>
+                        <E n="who">TargetSim</E>
+                      </U>
+                    </V>
+                  </L>
+                </L>
+              </U>
+              <U>
+                <T n="multiplier">10</T>
+                <L n="tests">
+                  <L>
+                    <V t="ranked_statistic">
+                      <U n="ranked_statistic">
+                        <T n="ranked_stat">213064<!--RankedStatistic: rankedStatistic_WitchOccult_WitchXP--></T>
+                        <V t="value_threshold" n="threshold">
+                          <U n="value_threshold">
+                            <E n="comparison">EQUAL</E>
+                            <T n="value">5</T>
+                          </U>
+                        </V>
+                        <E n="who">TargetSim</E>
+                      </U>
+                    </V>
+                  </L>
+                </L>
+              </U>
+              <U>
+                <T n="multiplier">1.25</T>
+                <L n="tests">
+                  <L>
+                    <V t="buff">
+                      <U n="buff">
+                        <E n="subject">TargetSim</E>
+                        <V t="enabled" n="whitelist">
+                          <L n="enabled">
+                            <T>213026<!--Buff: buff_WitchOccult_Charge_1_Charged--></T>
+                          </L>
+                        </V>
+                      </U>
+                    </V>
+                  </L>
+                </L>
+              </U>
+              <U>
+                <T n="multiplier">1.75</T>
+                <L n="tests">
+                  <L>
+                    <V t="buff">
+                      <U n="buff">
+                        <E n="subject">TargetSim</E>
+                        <V t="enabled" n="whitelist">
+                          <L n="enabled">
+                            <T>213028<!--Buff: buff_WitchOccult_Charge_2_Overcharged--></T>
+                          </L>
+                        </V>
+                      </U>
+                    </V>
+                  </L>
+                </L>
+              </U>
+              <U>
+                <T n="multiplier">2.25</T>
+                <L n="tests">
+                  <L>
+                    <V t="buff">
+                      <U n="buff">
+                        <E n="subject">TargetSim</E>
+                        <V t="enabled" n="whitelist">
+                          <L n="enabled">
+                            <T>213029<!--Buff: buff_WitchOccult_Charge_3_DangerouslyOvercharged--></T>
+                          </L>
+                        </V>
+                      </U>
+                    </V>
+                  </L>
+                </L>
+              </U>
+              <U>
+                <T n="multiplier">2</T>
+                <L n="tests">
+                  <L>
+                    <V t="bucks_perks_test">
+                      <U n="bucks_perks_test">
+                        <T n="bucks_perk">216497<!--BucksPerk: witchPerks_Spellcasting_5_MasterDuelist--></T>
+                        <E n="participant">TargetSim</E>
+                      </U>
+                    </V>
+                  </L>
+                </L>
+              </U>
+            </L>
+          </U>
+        </U>
+      </L>
+      <L n="tested_outcomes">
+        <U>
+          <L n="potential_outcomes">
+            <U>
+              <U n="outcome">
+                <V t="enabled" n="animation_ref">
+                  <U n="enabled">
+                    <T n="factory">216266<!--AnimationElement: magicDuel_Succeed_Clash_X--></T>
+                  </U>
+                </V>
+                <L n="basic_extras">
+                  <V t="loot">
+                    <U n="loot">
+                      <L n="loot_list">
+                        <T>220261<!--LootActions: loot_Familiars_React--></T>
+                      </L>
+                    </U>
+                  </V>
+                  <V t="loot">
+                    <U n="loot">
+                      <L n="loot_list">
+                        <T>215241<!--LootActions: loot_Familiars_TNSs_DuelWin--></T>
+                      </L>
+                      <U n="success_chance">
+                        <T n="base_chance">10</T>
+                      </U>
+                    </U>
+                  </V>
+                  <V t="balloon">
+                    <U n="balloon">
+                      <L n="balloon_choices">
+                        <U>
+                          <V n="item" t="balloon_category">
+                            <T n="balloon_category">215247<!--BalloonCategory: balloonCategory_Familiars_Happy--></T>
+                          </V>
+                        </U>
+                      </L>
+                      <L n="balloon_target">
+                        <E>Familiar</E>
+                      </L>
+                    </U>
+                  </V>
+                </L>
+                <L n="loot_list">
+                  <T>213294<!--LootActions: loot_WitchOccult_WitchXP_Gain_High--></T>
+                  <T>216666<!--LootActions: loot_Curses_CurseTracker_DuelLost_Increment_Target--></T>
+                  <T>216955<!--LootActions: loot_WitchOverload_Chance--></T>
+                  <T>217418<!--LootActions: loot_Buff_MagicDuel_Win_Actor--></T>
+                  <T>217361<!--RandomWeightedLoot: randomWeightedLoot_MagicDuel_Reward_Artifact--></T>
+                </L>
+              </U>
+              <U n="weight">
+                <T n="base_value">10</T>
+                <L n="multipliers">
+                  <U>
+                    <T n="multiplier">0.031</T>
+                    <L n="tests">
+                      <L>
+                        <V t="ranked_statistic">
+                          <U n="ranked_statistic">
+                            <T n="ranked_stat">213064<!--RankedStatistic: rankedStatistic_WitchOccult_WitchXP--></T>
+                            <V t="value_threshold" n="threshold">
+                              <U n="value_threshold">
+                                <E n="comparison">EQUAL</E>
+                                <T n="value">0</T>
+                              </U>
+                            </V>
+                          </U>
+                        </V>
+                        <V t="trait">
+                          <U n="trait">
+                            <L n="whitelist_traits">
+                              <T>214644<!--Trait: trait_Curses_HexOfDuelist--></T>
+                            </L>
+                          </U>
+                        </V>
+                      </L>
+                    </L>
+                  </U>
+                  <U>
+                    <T n="multiplier">0.042</T>
+                    <L n="tests">
+                      <L>
+                        <V t="ranked_statistic">
+                          <U n="ranked_statistic">
+                            <T n="ranked_stat">213064<!--RankedStatistic: rankedStatistic_WitchOccult_WitchXP--></T>
+                            <V t="value_threshold" n="threshold">
+                              <U n="value_threshold">
+                                <E n="comparison">EQUAL</E>
+                                <T n="value">1</T>
+                              </U>
+                            </V>
+                          </U>
+                        </V>
+                        <V t="trait">
+                          <U n="trait">
+                            <L n="whitelist_traits">
+                              <T>214644<!--Trait: trait_Curses_HexOfDuelist--></T>
+                            </L>
+                          </U>
+                        </V>
+                      </L>
+                    </L>
+                  </U>
+                  <U>
+                    <T n="multiplier">0.053</T>
+                    <L n="tests">
+                      <L>
+                        <V t="ranked_statistic">
+                          <U n="ranked_statistic">
+                            <T n="ranked_stat">213064<!--RankedStatistic: rankedStatistic_WitchOccult_WitchXP--></T>
+                            <V t="value_threshold" n="threshold">
+                              <U n="value_threshold">
+                                <E n="comparison">EQUAL</E>
+                                <T n="value">2</T>
+                              </U>
+                            </V>
+                          </U>
+                        </V>
+                        <V t="trait">
+                          <U n="trait">
+                            <L n="whitelist_traits">
+                              <T>214644<!--Trait: trait_Curses_HexOfDuelist--></T>
+                            </L>
+                          </U>
+                        </V>
+                      </L>
+                    </L>
+                  </U>
+                  <U>
+                    <T n="multiplier">0.112</T>
+                    <L n="tests">
+                      <L>
+                        <V t="ranked_statistic">
+                          <U n="ranked_statistic">
+                            <T n="ranked_stat">213064<!--RankedStatistic: rankedStatistic_WitchOccult_WitchXP--></T>
+                            <V t="value_threshold" n="threshold">
+                              <U n="value_threshold">
+                                <E n="comparison">EQUAL</E>
+                                <T n="value">3</T>
+                              </U>
+                            </V>
+                          </U>
+                        </V>
+                        <V t="trait">
+                          <U n="trait">
+                            <L n="whitelist_traits">
+                              <T>214644<!--Trait: trait_Curses_HexOfDuelist--></T>
+                            </L>
+                          </U>
+                        </V>
+                      </L>
+                    </L>
+                  </U>
+                  <U>
+                    <T n="multiplier">0.163</T>
+                    <L n="tests">
+                      <L>
+                        <V t="ranked_statistic">
+                          <U n="ranked_statistic">
+                            <T n="ranked_stat">213064<!--RankedStatistic: rankedStatistic_WitchOccult_WitchXP--></T>
+                            <V t="value_threshold" n="threshold">
+                              <U n="value_threshold">
+                                <E n="comparison">EQUAL</E>
+                                <T n="value">4</T>
+                              </U>
+                            </V>
+                          </U>
+                        </V>
+                        <V t="trait">
+                          <U n="trait">
+                            <L n="whitelist_traits">
+                              <T>214644<!--Trait: trait_Curses_HexOfDuelist--></T>
+                            </L>
+                          </U>
+                        </V>
+                      </L>
+                    </L>
+                  </U>
+                  <U>
+                    <T n="multiplier">0.25</T>
+                    <L n="tests">
+                      <L>
+                        <V t="ranked_statistic">
+                          <U n="ranked_statistic">
+                            <T n="ranked_stat">213064<!--RankedStatistic: rankedStatistic_WitchOccult_WitchXP--></T>
+                            <V t="value_threshold" n="threshold">
+                              <U n="value_threshold">
+                                <E n="comparison">EQUAL</E>
+                                <T n="value">5</T>
+                              </U>
+                            </V>
+                          </U>
+                        </V>
+                        <V t="trait">
+                          <U n="trait">
+                            <L n="whitelist_traits">
+                              <T>214644<!--Trait: trait_Curses_HexOfDuelist--></T>
+                            </L>
+                          </U>
+                        </V>
+                      </L>
+                    </L>
+                  </U>
+                </L>
+              </U>
+            </U>
+            <U>
+              <U n="outcome">
+                <V t="enabled" n="animation_ref">
+                  <U n="enabled">
+                    <T n="factory">216267<!--AnimationElement: magicDuel_Succeed_liftUp_X--></T>
+                  </U>
+                </V>
+                <L n="basic_extras">
+                  <V t="loot">
+                    <U n="loot">
+                      <L n="loot_list">
+                        <T>220261<!--LootActions: loot_Familiars_React--></T>
+                      </L>
+                    </U>
+                  </V>
+                  <V t="loot">
+                    <U n="loot">
+                      <L n="loot_list">
+                        <T>215241<!--LootActions: loot_Familiars_TNSs_DuelWin--></T>
+                      </L>
+                      <U n="success_chance">
+                        <T n="base_chance">10</T>
+                      </U>
+                    </U>
+                  </V>
+                  <V t="balloon">
+                    <U n="balloon">
+                      <L n="balloon_choices">
+                        <U>
+                          <V n="item" t="balloon_category">
+                            <T n="balloon_category">215247<!--BalloonCategory: balloonCategory_Familiars_Happy--></T>
+                          </V>
+                        </U>
+                      </L>
+                      <L n="balloon_target">
+                        <E>Familiar</E>
+                      </L>
+                    </U>
+                  </V>
+                </L>
+                <L n="loot_list">
+                  <T>213294<!--LootActions: loot_WitchOccult_WitchXP_Gain_High--></T>
+                  <T>216666<!--LootActions: loot_Curses_CurseTracker_DuelLost_Increment_Target--></T>
+                  <T>216955<!--LootActions: loot_WitchOverload_Chance--></T>
+                  <T>217418<!--LootActions: loot_Buff_MagicDuel_Win_Actor--></T>
+                  <T>217361<!--RandomWeightedLoot: randomWeightedLoot_MagicDuel_Reward_Artifact--></T>
+                </L>
+              </U>
+              <U n="weight">
+                <T n="base_value">10</T>
+                <L n="multipliers">
+                  <U>
+                    <T n="multiplier">0.031</T>
+                    <L n="tests">
+                      <L>
+                        <V t="ranked_statistic">
+                          <U n="ranked_statistic">
+                            <T n="ranked_stat">213064<!--RankedStatistic: rankedStatistic_WitchOccult_WitchXP--></T>
+                            <V t="value_threshold" n="threshold">
+                              <U n="value_threshold">
+                                <E n="comparison">EQUAL</E>
+                                <T n="value">0</T>
+                              </U>
+                            </V>
+                          </U>
+                        </V>
+                        <V t="trait">
+                          <U n="trait">
+                            <L n="whitelist_traits">
+                              <T>214644<!--Trait: trait_Curses_HexOfDuelist--></T>
+                            </L>
+                          </U>
+                        </V>
+                      </L>
+                    </L>
+                  </U>
+                  <U>
+                    <T n="multiplier">0.042</T>
+                    <L n="tests">
+                      <L>
+                        <V t="ranked_statistic">
+                          <U n="ranked_statistic">
+                            <T n="ranked_stat">213064<!--RankedStatistic: rankedStatistic_WitchOccult_WitchXP--></T>
+                            <V t="value_threshold" n="threshold">
+                              <U n="value_threshold">
+                                <E n="comparison">EQUAL</E>
+                                <T n="value">1</T>
+                              </U>
+                            </V>
+                          </U>
+                        </V>
+                        <V t="trait">
+                          <U n="trait">
+                            <L n="whitelist_traits">
+                              <T>214644<!--Trait: trait_Curses_HexOfDuelist--></T>
+                            </L>
+                          </U>
+                        </V>
+                      </L>
+                    </L>
+                  </U>
+                  <U>
+                    <T n="multiplier">0.053</T>
+                    <L n="tests">
+                      <L>
+                        <V t="ranked_statistic">
+                          <U n="ranked_statistic">
+                            <T n="ranked_stat">213064<!--RankedStatistic: rankedStatistic_WitchOccult_WitchXP--></T>
+                            <V t="value_threshold" n="threshold">
+                              <U n="value_threshold">
+                                <E n="comparison">EQUAL</E>
+                                <T n="value">2</T>
+                              </U>
+                            </V>
+                          </U>
+                        </V>
+                        <V t="trait">
+                          <U n="trait">
+                            <L n="whitelist_traits">
+                              <T>214644<!--Trait: trait_Curses_HexOfDuelist--></T>
+                            </L>
+                          </U>
+                        </V>
+                      </L>
+                    </L>
+                  </U>
+                  <U>
+                    <T n="multiplier">0.112</T>
+                    <L n="tests">
+                      <L>
+                        <V t="ranked_statistic">
+                          <U n="ranked_statistic">
+                            <T n="ranked_stat">213064<!--RankedStatistic: rankedStatistic_WitchOccult_WitchXP--></T>
+                            <V t="value_threshold" n="threshold">
+                              <U n="value_threshold">
+                                <E n="comparison">EQUAL</E>
+                                <T n="value">3</T>
+                              </U>
+                            </V>
+                          </U>
+                        </V>
+                        <V t="trait">
+                          <U n="trait">
+                            <L n="whitelist_traits">
+                              <T>214644<!--Trait: trait_Curses_HexOfDuelist--></T>
+                            </L>
+                          </U>
+                        </V>
+                      </L>
+                    </L>
+                  </U>
+                  <U>
+                    <T n="multiplier">0.163</T>
+                    <L n="tests">
+                      <L>
+                        <V t="ranked_statistic">
+                          <U n="ranked_statistic">
+                            <T n="ranked_stat">213064<!--RankedStatistic: rankedStatistic_WitchOccult_WitchXP--></T>
+                            <V t="value_threshold" n="threshold">
+                              <U n="value_threshold">
+                                <E n="comparison">EQUAL</E>
+                                <T n="value">4</T>
+                              </U>
+                            </V>
+                          </U>
+                        </V>
+                        <V t="trait">
+                          <U n="trait">
+                            <L n="whitelist_traits">
+                              <T>214644<!--Trait: trait_Curses_HexOfDuelist--></T>
+                            </L>
+                          </U>
+                        </V>
+                      </L>
+                    </L>
+                  </U>
+                  <U>
+                    <T n="multiplier">0.25</T>
+                    <L n="tests">
+                      <L>
+                        <V t="ranked_statistic">
+                          <U n="ranked_statistic">
+                            <T n="ranked_stat">213064<!--RankedStatistic: rankedStatistic_WitchOccult_WitchXP--></T>
+                            <V t="value_threshold" n="threshold">
+                              <U n="value_threshold">
+                                <E n="comparison">EQUAL</E>
+                                <T n="value">5</T>
+                              </U>
+                            </V>
+                          </U>
+                        </V>
+                        <V t="trait">
+                          <U n="trait">
+                            <L n="whitelist_traits">
+                              <T>214644<!--Trait: trait_Curses_HexOfDuelist--></T>
+                            </L>
+                          </U>
+                        </V>
+                      </L>
+                    </L>
+                  </U>
+                </L>
+              </U>
+            </U>
+            <U>
+              <U n="outcome">
+                <V t="enabled" n="animation_ref">
+                  <U n="enabled">
+                    <T n="factory">216280<!--AnimationElement: magicDuel_Succeed_Clash_Y--></T>
+                  </U>
+                </V>
+                <L n="basic_extras">
+                  <V t="loot">
+                    <U n="loot">
+                      <L n="loot_list">
+                        <T>220261<!--LootActions: loot_Familiars_React--></T>
+                      </L>
+                    </U>
+                  </V>
+                  <V t="loot">
+                    <U n="loot">
+                      <L n="loot_list">
+                        <T>215242<!--LootActions: loot_Familiars_TNSs_DuelLose--></T>
+                      </L>
+                      <U n="success_chance">
+                        <T n="base_chance">10</T>
+                      </U>
+                    </U>
+                  </V>
+                  <V t="balloon">
+                    <U n="balloon">
+                      <L n="balloon_choices">
+                        <U>
+                          <V n="item" t="balloon_category">
+                            <T n="balloon_category">215248<!--BalloonCategory: balloonCategory_Familiars_Angry--></T>
+                          </V>
+                        </U>
+                      </L>
+                      <L n="balloon_target">
+                        <E>Familiar</E>
+                      </L>
+                    </U>
+                  </V>
+                </L>
+                <T n="force_outcome_on_exit">True</T>
+                <L n="loot_list">
+                  <T>215687<!--LootActions: loot_Curses_CurseTracker_DuelLost_Increment--></T>
+                  <T>217419<!--LootActions: loot_Buff_MagicDuel_Win_Target--></T>
+                  <T>216955<!--LootActions: loot_WitchOverload_Chance--></T>
+                  <T>213294<!--LootActions: loot_WitchOccult_WitchXP_Gain_High--></T>
+                </L>
+                <E n="outcome_result">FAILURE</E>
+              </U>
+              <U n="weight">
+                <T n="base_value">10</T>
+                <L n="multipliers">
+                  <U>
+                    <T n="multiplier">0.031</T>
+                    <L n="tests">
+                      <L>
+                        <V t="ranked_statistic">
+                          <U n="ranked_statistic">
+                            <T n="ranked_stat">213064<!--RankedStatistic: rankedStatistic_WitchOccult_WitchXP--></T>
+                            <V t="value_threshold" n="threshold">
+                              <U n="value_threshold">
+                                <E n="comparison">EQUAL</E>
+                                <T n="value">0</T>
+                              </U>
+                            </V>
+                            <E n="who">TargetSim</E>
+                          </U>
+                        </V>
+                        <V t="trait">
+                          <U n="trait">
+                            <E n="subject">TargetSim</E>
+                            <L n="whitelist_traits">
+                              <T>214644<!--Trait: trait_Curses_HexOfDuelist--></T>
+                            </L>
+                          </U>
+                        </V>
+                      </L>
+                    </L>
+                  </U>
+                  <U>
+                    <T n="multiplier">0.042</T>
+                    <L n="tests">
+                      <L>
+                        <V t="ranked_statistic">
+                          <U n="ranked_statistic">
+                            <T n="ranked_stat">213064<!--RankedStatistic: rankedStatistic_WitchOccult_WitchXP--></T>
+                            <V t="value_threshold" n="threshold">
+                              <U n="value_threshold">
+                                <E n="comparison">EQUAL</E>
+                                <T n="value">1</T>
+                              </U>
+                            </V>
+                            <E n="who">TargetSim</E>
+                          </U>
+                        </V>
+                        <V t="trait">
+                          <U n="trait">
+                            <E n="subject">TargetSim</E>
+                            <L n="whitelist_traits">
+                              <T>214644<!--Trait: trait_Curses_HexOfDuelist--></T>
+                            </L>
+                          </U>
+                        </V>
+                      </L>
+                    </L>
+                  </U>
+                  <U>
+                    <T n="multiplier">0.053</T>
+                    <L n="tests">
+                      <L>
+                        <V t="ranked_statistic">
+                          <U n="ranked_statistic">
+                            <T n="ranked_stat">213064<!--RankedStatistic: rankedStatistic_WitchOccult_WitchXP--></T>
+                            <V t="value_threshold" n="threshold">
+                              <U n="value_threshold">
+                                <E n="comparison">EQUAL</E>
+                                <T n="value">2</T>
+                              </U>
+                            </V>
+                            <E n="who">TargetSim</E>
+                          </U>
+                        </V>
+                        <V t="trait">
+                          <U n="trait">
+                            <E n="subject">TargetSim</E>
+                            <L n="whitelist_traits">
+                              <T>214644<!--Trait: trait_Curses_HexOfDuelist--></T>
+                            </L>
+                          </U>
+                        </V>
+                      </L>
+                    </L>
+                  </U>
+                  <U>
+                    <T n="multiplier">0.112</T>
+                    <L n="tests">
+                      <L>
+                        <V t="ranked_statistic">
+                          <U n="ranked_statistic">
+                            <T n="ranked_stat">213064<!--RankedStatistic: rankedStatistic_WitchOccult_WitchXP--></T>
+                            <V t="value_threshold" n="threshold">
+                              <U n="value_threshold">
+                                <E n="comparison">EQUAL</E>
+                                <T n="value">3</T>
+                              </U>
+                            </V>
+                            <E n="who">TargetSim</E>
+                          </U>
+                        </V>
+                        <V t="trait">
+                          <U n="trait">
+                            <E n="subject">TargetSim</E>
+                            <L n="whitelist_traits">
+                              <T>214644<!--Trait: trait_Curses_HexOfDuelist--></T>
+                            </L>
+                          </U>
+                        </V>
+                      </L>
+                    </L>
+                  </U>
+                  <U>
+                    <T n="multiplier">0.163</T>
+                    <L n="tests">
+                      <L>
+                        <V t="ranked_statistic">
+                          <U n="ranked_statistic">
+                            <T n="ranked_stat">213064<!--RankedStatistic: rankedStatistic_WitchOccult_WitchXP--></T>
+                            <V t="value_threshold" n="threshold">
+                              <U n="value_threshold">
+                                <E n="comparison">EQUAL</E>
+                                <T n="value">4</T>
+                              </U>
+                            </V>
+                            <E n="who">TargetSim</E>
+                          </U>
+                        </V>
+                        <V t="trait">
+                          <U n="trait">
+                            <E n="subject">TargetSim</E>
+                            <L n="whitelist_traits">
+                              <T>214644<!--Trait: trait_Curses_HexOfDuelist--></T>
+                            </L>
+                          </U>
+                        </V>
+                      </L>
+                    </L>
+                  </U>
+                  <U>
+                    <T n="multiplier">0.25</T>
+                    <L n="tests">
+                      <L>
+                        <V t="ranked_statistic">
+                          <U n="ranked_statistic">
+                            <T n="ranked_stat">213064<!--RankedStatistic: rankedStatistic_WitchOccult_WitchXP--></T>
+                            <V t="value_threshold" n="threshold">
+                              <U n="value_threshold">
+                                <E n="comparison">EQUAL</E>
+                                <T n="value">5</T>
+                              </U>
+                            </V>
+                            <E n="who">TargetSim</E>
+                          </U>
+                        </V>
+                        <V t="trait">
+                          <U n="trait">
+                            <E n="subject">TargetSim</E>
+                            <L n="whitelist_traits">
+                              <T>214644<!--Trait: trait_Curses_HexOfDuelist--></T>
+                            </L>
+                          </U>
+                        </V>
+                      </L>
+                    </L>
+                  </U>
+                </L>
+              </U>
+            </U>
+            <U>
+              <U n="outcome">
+                <V t="enabled" n="animation_ref">
+                  <U n="enabled">
+                    <T n="factory">216282<!--AnimationElement: magicDuel_Succeed_liftUp_Y--></T>
+                  </U>
+                </V>
+                <L n="basic_extras">
+                  <V t="loot">
+                    <U n="loot">
+                      <L n="loot_list">
+                        <T>220261<!--LootActions: loot_Familiars_React--></T>
+                      </L>
+                    </U>
+                  </V>
+                  <V t="loot">
+                    <U n="loot">
+                      <L n="loot_list">
+                        <T>215242<!--LootActions: loot_Familiars_TNSs_DuelLose--></T>
+                      </L>
+                      <U n="success_chance">
+                        <T n="base_chance">10</T>
+                      </U>
+                    </U>
+                  </V>
+                  <V t="balloon">
+                    <U n="balloon">
+                      <L n="balloon_choices">
+                        <U>
+                          <V n="item" t="balloon_category">
+                            <T n="balloon_category">215248<!--BalloonCategory: balloonCategory_Familiars_Angry--></T>
+                          </V>
+                        </U>
+                      </L>
+                      <L n="balloon_target">
+                        <E>Familiar</E>
+                      </L>
+                    </U>
+                  </V>
+                </L>
+                <T n="force_outcome_on_exit">True</T>
+                <L n="loot_list">
+                  <T>215687<!--LootActions: loot_Curses_CurseTracker_DuelLost_Increment--></T>
+                  <T>217419<!--LootActions: loot_Buff_MagicDuel_Win_Target--></T>
+                  <T>216955<!--LootActions: loot_WitchOverload_Chance--></T>
+                  <T>213294<!--LootActions: loot_WitchOccult_WitchXP_Gain_High--></T>
+                </L>
+                <E n="outcome_result">FAILURE</E>
+              </U>
+              <U n="weight">
+                <T n="base_value">10</T>
+                <L n="multipliers">
+                  <U>
+                    <T n="multiplier">0.031</T>
+                    <L n="tests">
+                      <L>
+                        <V t="ranked_statistic">
+                          <U n="ranked_statistic">
+                            <T n="ranked_stat">213064<!--RankedStatistic: rankedStatistic_WitchOccult_WitchXP--></T>
+                            <V t="value_threshold" n="threshold">
+                              <U n="value_threshold">
+                                <E n="comparison">EQUAL</E>
+                                <T n="value">0</T>
+                              </U>
+                            </V>
+                            <E n="who">TargetSim</E>
+                          </U>
+                        </V>
+                        <V t="trait">
+                          <U n="trait">
+                            <E n="subject">TargetSim</E>
+                            <L n="whitelist_traits">
+                              <T>214644<!--Trait: trait_Curses_HexOfDuelist--></T>
+                            </L>
+                          </U>
+                        </V>
+                      </L>
+                    </L>
+                  </U>
+                  <U>
+                    <T n="multiplier">0.042</T>
+                    <L n="tests">
+                      <L>
+                        <V t="ranked_statistic">
+                          <U n="ranked_statistic">
+                            <T n="ranked_stat">213064<!--RankedStatistic: rankedStatistic_WitchOccult_WitchXP--></T>
+                            <V t="value_threshold" n="threshold">
+                              <U n="value_threshold">
+                                <E n="comparison">EQUAL</E>
+                                <T n="value">1</T>
+                              </U>
+                            </V>
+                            <E n="who">TargetSim</E>
+                          </U>
+                        </V>
+                        <V t="trait">
+                          <U n="trait">
+                            <E n="subject">TargetSim</E>
+                            <L n="whitelist_traits">
+                              <T>214644<!--Trait: trait_Curses_HexOfDuelist--></T>
+                            </L>
+                          </U>
+                        </V>
+                      </L>
+                    </L>
+                  </U>
+                  <U>
+                    <T n="multiplier">0.053</T>
+                    <L n="tests">
+                      <L>
+                        <V t="ranked_statistic">
+                          <U n="ranked_statistic">
+                            <T n="ranked_stat">213064<!--RankedStatistic: rankedStatistic_WitchOccult_WitchXP--></T>
+                            <V t="value_threshold" n="threshold">
+                              <U n="value_threshold">
+                                <E n="comparison">EQUAL</E>
+                                <T n="value">2</T>
+                              </U>
+                            </V>
+                            <E n="who">TargetSim</E>
+                          </U>
+                        </V>
+                        <V t="trait">
+                          <U n="trait">
+                            <E n="subject">TargetSim</E>
+                            <L n="whitelist_traits">
+                              <T>214644<!--Trait: trait_Curses_HexOfDuelist--></T>
+                            </L>
+                          </U>
+                        </V>
+                      </L>
+                    </L>
+                  </U>
+                  <U>
+                    <T n="multiplier">0.112</T>
+                    <L n="tests">
+                      <L>
+                        <V t="ranked_statistic">
+                          <U n="ranked_statistic">
+                            <T n="ranked_stat">213064<!--RankedStatistic: rankedStatistic_WitchOccult_WitchXP--></T>
+                            <V t="value_threshold" n="threshold">
+                              <U n="value_threshold">
+                                <E n="comparison">EQUAL</E>
+                                <T n="value">3</T>
+                              </U>
+                            </V>
+                            <E n="who">TargetSim</E>
+                          </U>
+                        </V>
+                        <V t="trait">
+                          <U n="trait">
+                            <E n="subject">TargetSim</E>
+                            <L n="whitelist_traits">
+                              <T>214644<!--Trait: trait_Curses_HexOfDuelist--></T>
+                            </L>
+                          </U>
+                        </V>
+                      </L>
+                    </L>
+                  </U>
+                  <U>
+                    <T n="multiplier">0.163</T>
+                    <L n="tests">
+                      <L>
+                        <V t="ranked_statistic">
+                          <U n="ranked_statistic">
+                            <T n="ranked_stat">213064<!--RankedStatistic: rankedStatistic_WitchOccult_WitchXP--></T>
+                            <V t="value_threshold" n="threshold">
+                              <U n="value_threshold">
+                                <E n="comparison">EQUAL</E>
+                                <T n="value">4</T>
+                              </U>
+                            </V>
+                            <E n="who">TargetSim</E>
+                          </U>
+                        </V>
+                        <V t="trait">
+                          <U n="trait">
+                            <E n="subject">TargetSim</E>
+                            <L n="whitelist_traits">
+                              <T>214644<!--Trait: trait_Curses_HexOfDuelist--></T>
+                            </L>
+                          </U>
+                        </V>
+                      </L>
+                    </L>
+                  </U>
+                  <U>
+                    <T n="multiplier">0.25</T>
+                    <L n="tests">
+                      <L>
+                        <V t="ranked_statistic">
+                          <U n="ranked_statistic">
+                            <T n="ranked_stat">213064<!--RankedStatistic: rankedStatistic_WitchOccult_WitchXP--></T>
+                            <V t="value_threshold" n="threshold">
+                              <U n="value_threshold">
+                                <E n="comparison">EQUAL</E>
+                                <T n="value">5</T>
+                              </U>
+                            </V>
+                            <E n="who">TargetSim</E>
+                          </U>
+                        </V>
+                        <V t="trait">
+                          <U n="trait">
+                            <E n="subject">TargetSim</E>
+                            <L n="whitelist_traits">
+                              <T>214644<!--Trait: trait_Curses_HexOfDuelist--></T>
+                            </L>
+                          </U>
+                        </V>
+                      </L>
+                    </L>
+                  </U>
+                </L>
+              </U>
+            </U>
+          </L>
+          <L n="tests">
+            <L>
+              <V t="trait">
+                <U n="trait">
+                  <L n="whitelist_traits">
+                    <T>214644<!--Trait: trait_Curses_HexOfDuelist--></T>
+                  </L>
+                </U>
+              </V>
+            </L>
+            <L>
+              <V t="trait">
+                <U n="trait">
+                  <E n="subject">TargetSim</E>
+                  <L n="whitelist_traits">
+                    <T>214644<!--Trait: trait_Curses_HexOfDuelist--></T>
+                  </L>
+                </U>
+              </V>
+            </L>
+          </L>
+        </U>
+        <U>
+          <L n="potential_outcomes">
+            <U>
+              <U n="outcome">
+                <V t="enabled" n="animation_ref">
+                  <U n="enabled">
+                    <T n="factory">216266<!--AnimationElement: magicDuel_Succeed_Clash_X--></T>
+                  </U>
+                </V>
+                <L n="basic_extras">
+                  <V t="loot">
+                    <U n="loot">
+                      <L n="loot_list">
+                        <T>220261<!--LootActions: loot_Familiars_React--></T>
+                      </L>
+                    </U>
+                  </V>
+                  <V t="loot">
+                    <U n="loot">
+                      <L n="loot_list">
+                        <T>215241<!--LootActions: loot_Familiars_TNSs_DuelWin--></T>
+                      </L>
+                      <U n="success_chance">
+                        <T n="base_chance">10</T>
+                      </U>
+                    </U>
+                  </V>
+                  <V t="balloon">
+                    <U n="balloon">
+                      <L n="balloon_choices">
+                        <U>
+                          <V n="item" t="balloon_category">
+                            <T n="balloon_category">215247<!--BalloonCategory: balloonCategory_Familiars_Happy--></T>
+                          </V>
+                        </U>
+                      </L>
+                      <L n="balloon_target">
+                        <E>Familiar</E>
+                      </L>
+                    </U>
+                  </V>
+                </L>
+                <L n="loot_list">
+                  <T>213294<!--LootActions: loot_WitchOccult_WitchXP_Gain_High--></T>
+                  <T>216666<!--LootActions: loot_Curses_CurseTracker_DuelLost_Increment_Target--></T>
+                  <T>216955<!--LootActions: loot_WitchOverload_Chance--></T>
+                  <T>217418<!--LootActions: loot_Buff_MagicDuel_Win_Actor--></T>
+                  <T>217361<!--RandomWeightedLoot: randomWeightedLoot_MagicDuel_Reward_Artifact--></T>
+                </L>
+              </U>
+              <U n="weight">
+                <T n="base_value">10</T>
+              </U>
+            </U>
+            <U>
+              <U n="outcome">
+                <V t="enabled" n="animation_ref">
+                  <U n="enabled">
+                    <T n="factory">216267<!--AnimationElement: magicDuel_Succeed_liftUp_X--></T>
+                  </U>
+                </V>
+                <L n="basic_extras">
+                  <V t="loot">
+                    <U n="loot">
+                      <L n="loot_list">
+                        <T>220261<!--LootActions: loot_Familiars_React--></T>
+                      </L>
+                    </U>
+                  </V>
+                  <V t="loot">
+                    <U n="loot">
+                      <L n="loot_list">
+                        <T>215241<!--LootActions: loot_Familiars_TNSs_DuelWin--></T>
+                      </L>
+                      <U n="success_chance">
+                        <T n="base_chance">10</T>
+                      </U>
+                    </U>
+                  </V>
+                  <V t="balloon">
+                    <U n="balloon">
+                      <L n="balloon_choices">
+                        <U>
+                          <V n="item" t="balloon_category">
+                            <T n="balloon_category">215247<!--BalloonCategory: balloonCategory_Familiars_Happy--></T>
+                          </V>
+                        </U>
+                      </L>
+                      <L n="balloon_target">
+                        <E>Familiar</E>
+                      </L>
+                    </U>
+                  </V>
+                </L>
+                <L n="loot_list">
+                  <T>213294<!--LootActions: loot_WitchOccult_WitchXP_Gain_High--></T>
+                  <T>216666<!--LootActions: loot_Curses_CurseTracker_DuelLost_Increment_Target--></T>
+                  <T>216955<!--LootActions: loot_WitchOverload_Chance--></T>
+                  <T>217418<!--LootActions: loot_Buff_MagicDuel_Win_Actor--></T>
+                  <T>217361<!--RandomWeightedLoot: randomWeightedLoot_MagicDuel_Reward_Artifact--></T>
+                </L>
+              </U>
+              <U n="weight">
+                <T n="base_value">10</T>
+              </U>
+            </U>
+            <U>
+              <U n="outcome">
+                <V t="enabled" n="animation_ref">
+                  <U n="enabled">
+                    <T n="factory">216280<!--AnimationElement: magicDuel_Succeed_Clash_Y--></T>
+                  </U>
+                </V>
+                <L n="basic_extras">
+                  <V t="loot">
+                    <U n="loot">
+                      <L n="loot_list">
+                        <T>220261<!--LootActions: loot_Familiars_React--></T>
+                      </L>
+                    </U>
+                  </V>
+                  <V t="loot">
+                    <U n="loot">
+                      <L n="loot_list">
+                        <T>215242<!--LootActions: loot_Familiars_TNSs_DuelLose--></T>
+                      </L>
+                      <U n="success_chance">
+                        <T n="base_chance">10</T>
+                      </U>
+                    </U>
+                  </V>
+                  <V t="balloon">
+                    <U n="balloon">
+                      <L n="balloon_choices">
+                        <U>
+                          <V n="item" t="balloon_category">
+                            <T n="balloon_category">215248<!--BalloonCategory: balloonCategory_Familiars_Angry--></T>
+                          </V>
+                        </U>
+                      </L>
+                      <L n="balloon_target">
+                        <E>Familiar</E>
+                      </L>
+                    </U>
+                  </V>
+                </L>
+                <T n="force_outcome_on_exit">True</T>
+                <L n="loot_list">
+                  <T>215687<!--LootActions: loot_Curses_CurseTracker_DuelLost_Increment--></T>
+                  <T>217419<!--LootActions: loot_Buff_MagicDuel_Win_Target--></T>
+                  <T>216955<!--LootActions: loot_WitchOverload_Chance--></T>
+                  <T>213294<!--LootActions: loot_WitchOccult_WitchXP_Gain_High--></T>
+                </L>
+                <E n="outcome_result">FAILURE</E>
+              </U>
+              <U n="weight">
+                <T n="base_value">10</T>
+              </U>
+            </U>
+            <U>
+              <U n="outcome">
+                <V t="enabled" n="animation_ref">
+                  <U n="enabled">
+                    <T n="factory">216282<!--AnimationElement: magicDuel_Succeed_liftUp_Y--></T>
+                  </U>
+                </V>
+                <L n="basic_extras">
+                  <V t="loot">
+                    <U n="loot">
+                      <L n="loot_list">
+                        <T>220261<!--LootActions: loot_Familiars_React--></T>
+                      </L>
+                    </U>
+                  </V>
+                  <V t="loot">
+                    <U n="loot">
+                      <L n="loot_list">
+                        <T>215242<!--LootActions: loot_Familiars_TNSs_DuelLose--></T>
+                      </L>
+                      <U n="success_chance">
+                        <T n="base_chance">10</T>
+                      </U>
+                    </U>
+                  </V>
+                  <V t="balloon">
+                    <U n="balloon">
+                      <L n="balloon_choices">
+                        <U>
+                          <V n="item" t="balloon_category">
+                            <T n="balloon_category">215248<!--BalloonCategory: balloonCategory_Familiars_Angry--></T>
+                          </V>
+                        </U>
+                      </L>
+                      <L n="balloon_target">
+                        <E>Familiar</E>
+                      </L>
+                    </U>
+                  </V>
+                </L>
+                <T n="force_outcome_on_exit">True</T>
+                <L n="loot_list">
+                  <T>215687<!--LootActions: loot_Curses_CurseTracker_DuelLost_Increment--></T>
+                  <T>217419<!--LootActions: loot_Buff_MagicDuel_Win_Target--></T>
+                  <T>216955<!--LootActions: loot_WitchOverload_Chance--></T>
+                  <T>213294<!--LootActions: loot_WitchOccult_WitchXP_Gain_High--></T>
+                </L>
+                <E n="outcome_result">FAILURE</E>
+              </U>
+              <U n="weight">
+                <T n="base_value">10</T>
+              </U>
+            </U>
+          </L>
+          <L n="tests">
+            <L>
+              <V t="trait">
+                <U n="trait">
+                  <L n="whitelist_traits">
+                    <T>214644<!--Trait: trait_Curses_HexOfDuelist--></T>
+                  </L>
+                </U>
+              </V>
+              <V t="trait">
+                <U n="trait">
+                  <E n="subject">TargetSim</E>
+                  <L n="whitelist_traits">
+                    <T>214644<!--Trait: trait_Curses_HexOfDuelist--></T>
+                  </L>
+                </U>
+              </V>
+            </L>
+          </L>
+        </U>
+      </L>
+    </U>
+  </V>
+  <U n="progress_bar_enabled">
+    <T n="bar_enabled">False</T>
+  </U>
+  <L n="provided_affordances">
+    <U>
+      <T n="affordance">218347<!--SuperInteraction: si_MagicDuel_Watch--></T>
+    </U>
+  </L>
+  <T n="relationship_scoring">True</T>
+  <E n="scoring_priority">NORMAL</E>
+  <V t="enabled" n="sim_affinity_posture_scoring_data">
+    <U n="enabled">
+      <L n="my_scoring">
+        <U>
+          <V t="relationship_based" n="affinity_strategy" />
+          <T n="negate_tag">True</T>
+          <E n="running_interaction_tag">Sleeping</E>
+        </U>
+        <U>
+          <V t="avoid" n="affinity_strategy" />
+          <E n="running_interaction_tag">Very_Loud</E>
+        </U>
+      </L>
+      <L n="my_tags">
+        <E>Loud</E>
+        <E>Chat</E>
+      </L>
+    </U>
+  </V>
+  <T n="subaction_selection_weight">1</T>
+  <V t="literal" n="super_affordance_compatibility">
+    <U n="literal">
+      <V n="default_inclusion" t="exclude_all" />
+    </U>
+  </V>
+  <E n="target_type">TARGET</E>
+  <L n="test_globals">
+    <V t="sim_info">
+      <U n="sim_info">
+        <V t="specified" n="species">
+          <U n="specified">
+            <L n="species">
+              <E />
+            </L>
+          </U>
+        </V>
+        <E n="who">TargetSim</E>
+      </U>
+    </V>
+    <V t="sim_info">
+      <U n="sim_info">
+        <V t="specified" n="ages" />
+        <V t="specified" n="species">
+          <U n="specified">
+            <L n="species">
+              <E />
+            </L>
+          </U>
+        </V>
+        <E n="who">Actor</E>
+      </U>
+    </V>
+    <V t="test_set_reference">
+      <T n="test_set_reference">29473<!--TestSetInstance: testSet_PregnantAll_Actor_Blocked--></T>
+    </V>
+    <V t="test_set_reference">
+      <T n="test_set_reference">29474<!--TestSetInstance: testSet_PregnantAll_Target_Blocked--></T>
+    </V>
+  </L>
+  <T n="time_overhead">30</T>
+</I>

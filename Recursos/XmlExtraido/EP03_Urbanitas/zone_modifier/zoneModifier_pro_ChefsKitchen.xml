@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<I c="ZoneModifier" i="zone_modifier" m="zone_modifier.zone_modifier" n="zoneModifier_pro_ChefsKitchen" s="137281">
+  <L n="enter_lot_loot">
+    <T>140737<!--LootActions: loot_Buff_LotMods_Apartment_ChefsKitchen--></T>
+  </L>
+  <L n="exit_lot_loot">
+    <T>145858<!--LootActions: loot_Buff_LotMods_BaseGame_Visible_RemoveAll--></T>
+  </L>
+  <L n="interaction_triggers">
+    <U>
+      <L n="on_interaction_loot">
+        <T>150815<!--LootActions: loot_Buff_zoneMods_ep03_ChefsKitchen_visible--></T>
+      </L>
+      <L n="trigger_conditions">
+        <U>
+          <U n="test">
+            <L n="affordances">
+              <T>13434<!--SuperInteraction: generic_cook--></T>
+            </L>
+            <L n="tags">
+              <E>Interaction_Cook</E>
+              <E>Interaction_Skill_GourmetCooking</E>
+              <E>Interaction_Skill_HomestyleCooking</E>
+            </L>
+            <E n="test_event">InteractionStart</E>
+          </U>
+        </U>
+      </L>
+    </U>
+    <U>
+      <L n="on_interaction_loot">
+        <T>151964<!--LootActions: loot_Buff_zoneMods_RemoveAll_VFX_hidden--></T>
+      </L>
+      <L n="trigger_conditions">
+        <U>
+          <U n="test">
+            <L n="affordances">
+              <T>13434<!--SuperInteraction: generic_cook--></T>
+            </L>
+            <T n="consider_user_cancelled_as_failure">False</T>
+            <L n="tags">
+              <E>Interaction_Cook</E>
+              <E>Interaction_Skill_GourmetCooking</E>
+              <E>Interaction_Skill_HomestyleCooking</E>
+            </L>
+            <E n="test_event">InteractionComplete</E>
+          </U>
+        </U>
+      </L>
+    </U>
+  </L>
+  <T n="zone_modifier_locked">False</T>
+</I>

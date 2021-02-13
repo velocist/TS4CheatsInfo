@@ -1,0 +1,426 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<I c="StandSuperInteraction" i="interaction" m="postures.stand" n="generic_IceSkate" s="172636">
+  <V t="resource_key" n="_icon">
+    <U n="resource_key">
+      <T n="key" p="InEP05\UI\Icons\InteractionQueue\IconQueuePostureSkate.png">2f7d0004:00000000:50298130aca7a7ad</T>
+    </U>
+  </V>
+  <T n="_provided_posture_type">172634<!--MobilePosture: posture_IceSkate--></T>
+  <T n="_report_running_time">True</T>
+  <V t="disabled" n="_saveable" />
+  <T n="allow_autonomous">False</T>
+  <T n="allow_user_directed">False</T>
+  <T n="attention_cost">0</T>
+  <V t="flexible_length" n="basic_content">
+    <U n="flexible_length">
+      <L n="conditional_actions">
+        <V t="list_reference">
+          <T n="list_reference">40705<!--ExitConditionList: ExitConditionList_MotivesNearFail--></T>
+        </V>
+        <V t="literal">
+          <U n="literal">
+            <L n="conditions">
+              <V t="time_based">
+                <U n="time_based">
+                  <T n="max_time">35</T>
+                  <T n="min_time">25</T>
+                </U>
+              </V>
+            </L>
+          </U>
+        </V>
+      </L>
+      <V n="periodic_stat_change" t="enabled">
+        <U n="enabled">
+          <U n="operation_actions">
+            <L n="actions">
+              <T>9317<!--LootActions: loot_Death_ElderExhaustion_Periodic--></T>
+              <T>187605<!--LootActions: loot_Commodity_Fitness_FatigueGain_Skating--></T>
+              <T>97350<!--LootActions: Loot_Commodity_Fitness_PulledMuscle--></T>
+            </L>
+          </U>
+          <L n="operations">
+            <V t="dynamic_skill">
+              <U n="dynamic_skill">
+                <T n="exclusive_to_owning_si">False</T>
+                <U n="skill_loot_data_override">
+                  <E n="effectiveness">VerySmallPeriodic</E>
+                  <V t="enabled" n="level_range">
+                    <U n="enabled">
+                      <T n="lower_bound">1</T>
+                      <T n="upper_bound">5</T>
+                    </U>
+                  </V>
+                  <T n="stat">16659<!--Skill: skill_Fitness--></T>
+                </U>
+              </U>
+            </V>
+            <V t="dynamic_skill">
+              <U n="dynamic_skill">
+                <U n="skill_loot_data_override">
+                  <E n="effectiveness">SmallPeriodic</E>
+                  <T n="stat">16720<!--Skill: statistic_Skill_Child_Motor--></T>
+                </U>
+                <L n="tests">
+                  <L>
+                    <V t="sim_info">
+                      <U n="sim_info">
+                        <V t="specified" n="ages">
+                          <L n="specified">
+                            <E>CHILD</E>
+                          </L>
+                        </V>
+                      </U>
+                    </V>
+                  </L>
+                </L>
+              </U>
+            </V>
+            <V t="dynamic_skill">
+              <U n="dynamic_skill">
+                <U n="skill_loot_data_override">
+                  <E n="effectiveness">LargePeriodic</E>
+                  <V t="enabled" n="level_range">
+                    <U n="enabled">
+                      <T n="lower_bound">1</T>
+                      <T n="upper_bound">3</T>
+                    </U>
+                  </V>
+                  <T n="stat">179925<!--Skill: statistic_Skill_Hidden_Skating--></T>
+                </U>
+                <L n="tests">
+                  <L>
+                    <V t="skill_test">
+                      <U n="skill_test">
+                        <T n="skill">179925<!--Skill: statistic_Skill_Hidden_Skating--></T>
+                        <V t="threshold" n="skill_range">
+                          <U n="threshold">
+                            <U n="skill_threshold">
+                              <E n="comparison">LESS</E>
+                              <T n="value">3</T>
+                            </U>
+                          </U>
+                        </V>
+                      </U>
+                    </V>
+                  </L>
+                </L>
+              </U>
+            </V>
+            <V t="dynamic_skill">
+              <U n="dynamic_skill">
+                <U n="skill_loot_data_override">
+                  <E n="effectiveness">StandardPeriodic</E>
+                  <V t="enabled" n="level_range">
+                    <U n="enabled">
+                      <T n="lower_bound">1</T>
+                      <T n="upper_bound">5</T>
+                    </U>
+                  </V>
+                  <T n="stat">179925<!--Skill: statistic_Skill_Hidden_Skating--></T>
+                </U>
+                <L n="tests">
+                  <L>
+                    <V t="skill_test">
+                      <U n="skill_test">
+                        <T n="skill">179925<!--Skill: statistic_Skill_Hidden_Skating--></T>
+                        <V t="threshold" n="skill_range">
+                          <U n="threshold">
+                            <U n="skill_threshold">
+                              <E n="comparison">GREATER_OR_EQUAL</E>
+                              <T n="value">3</T>
+                            </U>
+                          </U>
+                        </V>
+                      </U>
+                    </V>
+                  </L>
+                </L>
+              </U>
+            </V>
+            <V t="statistic_change">
+              <U n="statistic_change">
+                <T n="advertise">False</T>
+                <T n="amount">-10</T>
+                <T n="exclusive_to_owning_si">False</T>
+                <T n="stat">99491<!--Commodity: Commodity_Trait_Active_TenseTimer--></T>
+                <L n="subject">
+                  <E>Actor</E>
+                </L>
+                <L n="tests">
+                  <L>
+                    <V t="buff">
+                      <U n="buff">
+                        <V n="whitelist" t="enabled">
+                          <L n="enabled">
+                            <T>27457<!--Buff: Buff_Trait_Active_Antsy--></T>
+                          </L>
+                        </V>
+                      </U>
+                    </V>
+                  </L>
+                </L>
+              </U>
+            </V>
+            <V t="statistic_change">
+              <U n="statistic_change">
+                <T n="advertise">False</T>
+                <T n="amount">-0.05</T>
+                <T n="exclusive_to_owning_si">False</T>
+                <T n="stat">16589<!--Commodity: commodity_Fitness_Fat--></T>
+                <L n="subject">
+                  <E>Actor</E>
+                </L>
+              </U>
+            </V>
+            <V t="statistic_change">
+              <U n="statistic_change">
+                <T n="advertise">False</T>
+                <T n="amount">10</T>
+                <T n="exclusive_to_owning_si">False</T>
+                <T n="stat">27458<!--Commodity: commodity_Trait_Active_Activity--></T>
+                <L n="subject">
+                  <E>Actor</E>
+                </L>
+              </U>
+            </V>
+            <V t="statistic_change">
+              <U n="statistic_change">
+                <T n="advertise">False</T>
+                <T n="amount">1</T>
+                <T n="exclusive_to_owning_si">False</T>
+                <T n="stat">76227<!--Commodity: commodity_CareerBenefit_Astronaut--></T>
+                <L n="subject">
+                  <E>Actor</E>
+                </L>
+                <L n="tests">
+                  <L>
+                    <V t="career_test">
+                      <U n="career_test">
+                        <V n="test_type" t="career_reference">
+                          <U n="career_reference">
+                            <V n="career" t="specific_career">
+                              <T n="specific_career">12893<!--Career: career_Adult_Astronaut--></T>
+                            </V>
+                            <V t="enabled" n="user_level">
+                              <U n="enabled">
+                                <T n="lower_bound">4</T>
+                                <T n="upper_bound">7</T>
+                              </U>
+                            </V>
+                          </U>
+                        </V>
+                      </U>
+                    </V>
+                  </L>
+                </L>
+              </U>
+            </V>
+            <V t="statistic_change">
+              <U n="statistic_change">
+                <T n="advertise">False</T>
+                <T n="amount">1</T>
+                <T n="stat">106738<!--Commodity: commodity_CareerBenefit_Athlete--></T>
+                <L n="subject">
+                  <E>Actor</E>
+                </L>
+                <L n="tests">
+                  <L>
+                    <V t="career_test">
+                      <U n="career_test">
+                        <V n="test_type" t="career_reference">
+                          <U n="career_reference">
+                            <V n="career" t="specific_career">
+                              <T n="specific_career">106458<!--Career: career_Adult_Athletic--></T>
+                            </V>
+                            <V t="enabled" n="user_level">
+                              <U n="enabled">
+                                <T n="upper_bound">4</T>
+                              </U>
+                            </V>
+                          </U>
+                        </V>
+                      </U>
+                    </V>
+                  </L>
+                </L>
+              </U>
+            </V>
+          </L>
+          <T n="trigger_gain_on_start">True</T>
+        </U>
+      </V>
+      <T n="start_user_directed_inertial">True</T>
+    </U>
+  </V>
+  <L n="basic_extras">
+    <V t="buff">
+      <U n="buff">
+        <U n="buff_type">
+          <T n="buff_type">180342<!--Buff: buff_Object_SkatingRink_Ice_SkillLow--></T>
+        </U>
+        <L n="tests">
+          <L>
+            <V t="skill_test">
+              <U n="skill_test">
+                <T n="skill">179925<!--Skill: statistic_Skill_Hidden_Skating--></T>
+                <V t="interval" n="skill_range">
+                  <U n="interval">
+                    <U n="skill_interval">
+                      <T n="upper_bound">2</T>
+                    </U>
+                  </U>
+                </V>
+              </U>
+            </V>
+          </L>
+        </L>
+      </U>
+    </V>
+    <V t="buff">
+      <U n="buff">
+        <U n="buff_type">
+          <T n="buff_type">185397<!--Buff: buff_Object_SkatingRink_Ice_SkillMed--></T>
+        </U>
+        <L n="subject">
+          <E>Actor</E>
+        </L>
+        <L n="tests">
+          <L>
+            <V t="skill_test">
+              <U n="skill_test">
+                <T n="skill">179925<!--Skill: statistic_Skill_Hidden_Skating--></T>
+                <V t="interval" n="skill_range">
+                  <U n="interval">
+                    <U n="skill_interval">
+                      <T n="lower_bound">3</T>
+                      <T n="upper_bound">4</T>
+                    </U>
+                  </U>
+                </V>
+              </U>
+            </V>
+          </L>
+        </L>
+      </U>
+    </V>
+    <V t="buff">
+      <U n="buff">
+        <U n="buff_type">
+          <T n="buff_type">183869<!--Buff: buff_Object_SkatingRink_Ice_SkillHigh--></T>
+        </U>
+        <L n="tests">
+          <L>
+            <V t="skill_test">
+              <U n="skill_test">
+                <T n="skill">179925<!--Skill: statistic_Skill_Hidden_Skating--></T>
+                <V t="threshold" n="skill_range">
+                  <U n="threshold">
+                    <U n="skill_threshold">
+                      <E n="comparison">GREATER_OR_EQUAL</E>
+                      <T n="value">5</T>
+                    </U>
+                  </U>
+                </V>
+              </U>
+            </V>
+          </L>
+        </L>
+      </U>
+    </V>
+    <V t="buff">
+      <U n="buff">
+        <U n="buff_type">
+          <T n="buff_type">141984<!--Buff: buff_Sim_SuppressTargetSimSocials_Hidden--></T>
+        </U>
+        <L n="subject">
+          <E>Actor</E>
+        </L>
+      </U>
+    </V>
+  </L>
+  <V t="disabled" n="basic_reserve_object" />
+  <T n="can_shoo">True</T>
+  <L n="cancel_replacement_affordances">
+    <U>
+      <E n="key">BODY</E>
+      <U n="value">
+        <T n="affordance">183184<!--ExitMobilePostureSuperInteraction: si_ExitMobilePosture--></T>
+        <T n="always_run">True</T>
+      </U>
+    </U>
+  </L>
+  <V t="disabled" n="content_score" />
+  <T n="display_name">0xAA6B0A26<!--String: "Patinar sobre hielo"--></T>
+  <U n="display_name_text_tokens">
+    <L n="tokens">
+      <V t="participant_type">
+        <U n="participant_type">
+          <V t="from_participant" n="objects">
+            <U n="from_participant">
+              <E n="participant">Actor</E>
+            </U>
+          </V>
+        </U>
+      </V>
+      <V t="participant_type">
+        <U n="participant_type">
+          <V t="from_participant" n="objects">
+            <U n="from_participant">
+              <E n="participant">Object</E>
+            </U>
+          </V>
+        </U>
+      </V>
+    </L>
+  </U>
+  <T n="ignore_group_socials">False</T>
+  <L n="interaction_category_tags">
+    <E>Interaction_Skating_Skating</E>
+    <E>Interaction_Super</E>
+    <E>Interaction_All</E>
+    <E>Interaction_Skill_Fitness</E>
+    <E>Interaction_Skill_Child_Motor</E>
+    <E>Interaction_Skating_IceSkating</E>
+  </L>
+  <U n="progress_bar_enabled">
+    <T n="bar_enabled">False</T>
+  </U>
+  <E n="scoring_priority">NORMAL</E>
+  <U n="skill_loot_data">
+    <E n="effectiveness">SmallPeriodic</E>
+    <T n="stat">179925<!--Skill: statistic_Skill_Hidden_Skating--></T>
+  </U>
+  <T n="subaction_selection_weight">0</T>
+  <E n="target_type">OBJECT</E>
+  <L n="test_globals">
+    <V t="sim_info">
+      <U n="sim_info">
+        <V t="specified" n="ages">
+          <L n="specified">
+            <E>TEEN</E>
+            <E>YOUNGADULT</E>
+            <E>ADULT</E>
+            <E>ELDER</E>
+            <E>CHILD</E>
+          </L>
+        </V>
+        <V t="specified" n="species">
+          <U n="specified">
+            <L n="species">
+              <E />
+            </L>
+          </U>
+        </V>
+      </U>
+    </V>
+  </L>
+  <T n="time_overhead">30</T>
+  <E n="visual_type_override">POSTURE</E>
+  <V n="walk_style" t="enabled">
+    <U n="enabled">
+      <E n="priority">INTERACTION</E>
+      <T p="InEP05\Locomotion\EP05_IceSkate.walkstyle" n="walkstyle">27c01d95:00000000:0000000003eddea7</T>
+    </U>
+  </V>
+</I>

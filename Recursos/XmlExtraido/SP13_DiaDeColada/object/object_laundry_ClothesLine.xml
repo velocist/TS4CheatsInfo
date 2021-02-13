@@ -1,0 +1,790 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<I c="GameObject" i="object" m="objects.game_object" n="object_laundry_ClothesLine" s="176277">
+  <V n="_anim_overrides" t="enabled">
+    <U n="enabled">
+      <L n="params" />
+    </U>
+  </V>
+  <U n="_components">
+    <V n="affordance_tuning" t="enabled">
+      <U n="enabled">
+        <L n="affordance_map">
+          <U>
+            <T n="key">74457<!--ImmediateSuperInteraction: fire_ReplaceBurntObject--></T>
+            <U n="value">
+              <V n="outcome" t="single">
+                <U n="single">
+                  <U n="actions">
+                    <L n="basic_extras">
+                      <V t="state_change">
+                        <U n="state_change">
+                          <V t="single_value" n="new_value">
+                            <U n="single_value">
+                              <T n="new_value">179061<!--ObjectStateValue: laundry_ClothesLine_Values_Broken_Geo_Off--></T>
+                            </U>
+                          </V>
+                          <V t="immediately" n="timing" />
+                        </U>
+                      </V>
+                      <V t="state_change">
+                        <U n="state_change">
+                          <V n="new_value" t="single_value">
+                            <U n="single_value">
+                              <T n="new_value">179063<!--ObjectStateValue: laundry_ClothesLine_Values_Broken_Geo_None--></T>
+                            </U>
+                          </V>
+                        </U>
+                      </V>
+                    </L>
+                  </U>
+                </U>
+              </V>
+            </U>
+          </U>
+          <U>
+            <T n="key">99087<!--ImmediateSuperInteraction: object_ReplaceBrokenObject--></T>
+            <U n="value">
+              <V n="outcome" t="single">
+                <U n="single">
+                  <U n="actions">
+                    <L n="basic_extras">
+                      <V t="state_change">
+                        <U n="state_change">
+                          <V t="single_value" n="new_value">
+                            <U n="single_value">
+                              <T n="new_value">179061<!--ObjectStateValue: laundry_ClothesLine_Values_Broken_Geo_Off--></T>
+                            </U>
+                          </V>
+                          <V t="immediately" n="timing" />
+                        </U>
+                      </V>
+                      <V t="state_change">
+                        <U n="state_change">
+                          <V n="new_value" t="single_value">
+                            <U n="single_value">
+                              <T n="new_value">179063<!--ObjectStateValue: laundry_ClothesLine_Values_Broken_Geo_None--></T>
+                            </U>
+                          </V>
+                        </U>
+                      </V>
+                    </L>
+                  </U>
+                </U>
+              </V>
+            </U>
+          </U>
+        </L>
+      </U>
+    </V>
+    <V t="disabled" n="carryable" />
+    <V t="enabled" n="focus">
+      <U n="enabled">
+        <V n="_focus_score" t="globally">
+          <U n="globally">
+            <E n="base">LOW</E>
+          </U>
+        </V>
+      </U>
+    </V>
+    <V t="enabled" n="inventory_item">
+      <U n="enabled">
+        <L n="valid_inventory_types">
+          <E>LAUNDRY_STORAGE</E>
+        </L>
+      </U>
+    </V>
+    <V t="enabled" n="retail_component">
+      <V n="enabled" t="reference">
+        <T n="reference">110393<!--RetailComponent: retailComponent_Default--></T>
+      </V>
+    </V>
+    <V n="state" t="enabled">
+      <U n="enabled">
+        <L n="state_triggers">
+          <U>
+            <L n="at_states">
+              <T>15076<!--CommodityBasedObjectStateValue: Brokenness_Broken--></T>
+              <T>177421<!--CommodityBasedObjectStateValue: upgrade_Laundry_ClothesLine_IronLine_NotStarted--></T>
+              <T>176489<!--ObjectStateValue: laundry_ClothesLine_LineLoad_Values_Full--></T>
+            </L>
+            <V n="set_states" t="Set_state_list">
+              <L n="Set_state_list">
+                <T>15080<!--ObjectStateValue: BrokenState_Broken--></T>
+                <T>176487<!--ObjectStateValue: laundry_ClothesLine_LineLoad_Values_Empty--></T>
+              </L>
+            </V>
+            <E n="trigger_operation">AND</E>
+          </U>
+          <U>
+            <L n="at_states">
+              <T>15076<!--CommodityBasedObjectStateValue: Brokenness_Broken--></T>
+              <T>177421<!--CommodityBasedObjectStateValue: upgrade_Laundry_ClothesLine_IronLine_NotStarted--></T>
+              <T>176487<!--ObjectStateValue: laundry_ClothesLine_LineLoad_Values_Empty--></T>
+            </L>
+            <V t="Set_state_list" n="set_states">
+              <L n="Set_state_list">
+                <T>15080<!--ObjectStateValue: BrokenState_Broken--></T>
+              </L>
+            </V>
+          </U>
+          <U>
+            <L n="at_states">
+              <T>39611<!--CommodityBasedObjectStateValue: FireState_Burn_Material_Change--></T>
+              <T>176489<!--ObjectStateValue: laundry_ClothesLine_LineLoad_Values_Full--></T>
+              <T>177421<!--CommodityBasedObjectStateValue: upgrade_Laundry_ClothesLine_IronLine_NotStarted--></T>
+            </L>
+            <V t="Set_state_list" n="set_states">
+              <L n="Set_state_list">
+                <T>176487<!--ObjectStateValue: laundry_ClothesLine_LineLoad_Values_Empty--></T>
+                <T>15076<!--CommodityBasedObjectStateValue: Brokenness_Broken--></T>
+              </L>
+            </V>
+          </U>
+          <U>
+            <L n="at_states">
+              <T>15078<!--CommodityBasedObjectStateValue: Brokenness_Unbroken--></T>
+            </L>
+            <V n="set_states" t="Set_state_list">
+              <L n="Set_state_list">
+                <T>15081<!--ObjectStateValue: BrokenState_Unbroken--></T>
+              </L>
+            </V>
+          </U>
+          <U>
+            <L n="at_states">
+              <T>39611<!--CommodityBasedObjectStateValue: FireState_Burn_Material_Change--></T>
+              <T>176487<!--ObjectStateValue: laundry_ClothesLine_LineLoad_Values_Empty--></T>
+              <T>177422<!--CommodityBasedObjectStateValue: upgrade_Laundry_ClothesLine_IronLine_Partial--></T>
+            </L>
+            <V t="Set_state_list" n="set_states">
+              <L n="Set_state_list">
+                <T>15076<!--CommodityBasedObjectStateValue: Brokenness_Broken--></T>
+              </L>
+            </V>
+          </U>
+          <U>
+            <L n="at_states">
+              <T>39611<!--CommodityBasedObjectStateValue: FireState_Burn_Material_Change--></T>
+              <T>176487<!--ObjectStateValue: laundry_ClothesLine_LineLoad_Values_Empty--></T>
+              <T>177421<!--CommodityBasedObjectStateValue: upgrade_Laundry_ClothesLine_IronLine_NotStarted--></T>
+            </L>
+            <V t="Set_state_list" n="set_states">
+              <L n="Set_state_list">
+                <T>15076<!--CommodityBasedObjectStateValue: Brokenness_Broken--></T>
+              </L>
+            </V>
+          </U>
+          <U>
+            <L n="at_states">
+              <T>15080<!--ObjectStateValue: BrokenState_Broken--></T>
+            </L>
+            <V n="set_states" t="Set_state_list">
+              <L n="Set_state_list">
+                <T>179059<!--ObjectStateValue: laundry_ClothesLine_Values_Broken_Geo_On--></T>
+              </L>
+            </V>
+          </U>
+          <U>
+            <L n="at_states">
+              <T>176487<!--ObjectStateValue: laundry_ClothesLine_LineLoad_Values_Empty--></T>
+              <T>179061<!--ObjectStateValue: laundry_ClothesLine_Values_Broken_Geo_Off--></T>
+            </L>
+            <V t="Set_state_list" n="set_states">
+              <L n="Set_state_list">
+                <T>179083<!--ObjectStateValue: laundry_ClothesLine_Values_LineLoad_Geo_Empty--></T>
+              </L>
+            </V>
+          </U>
+          <U>
+            <L n="at_states">
+              <T>176489<!--ObjectStateValue: laundry_ClothesLine_LineLoad_Values_Full--></T>
+            </L>
+            <V n="set_states" t="Set_state_list">
+              <L n="Set_state_list">
+                <T>179084<!--ObjectStateValue: laundry_ClothesLine_Values_LineLoad_Geo_Full--></T>
+              </L>
+            </V>
+          </U>
+          <U>
+            <L n="at_states">
+              <T>176487<!--ObjectStateValue: laundry_ClothesLine_LineLoad_Values_Empty--></T>
+              <T>179063<!--ObjectStateValue: laundry_ClothesLine_Values_Broken_Geo_None--></T>
+            </L>
+            <V t="Set_state_list" n="set_states">
+              <L n="Set_state_list">
+                <T>179083<!--ObjectStateValue: laundry_ClothesLine_Values_LineLoad_Geo_Empty--></T>
+              </L>
+            </V>
+          </U>
+          <U>
+            <L n="at_states">
+              <T>176487<!--ObjectStateValue: laundry_ClothesLine_LineLoad_Values_Empty--></T>
+            </L>
+            <V t="Set_state_list" n="set_states">
+              <L n="Set_state_list">
+                <T>179505<!--ObjectStateValue: laundry_ClothesLine_Dryness_VFX_Values_Off--></T>
+              </L>
+            </V>
+          </U>
+          <U>
+            <L n="at_states">
+              <T>175425<!--CommodityBasedObjectStateValue: laundry_Dyness_Values_Soaked--></T>
+              <T>176489<!--ObjectStateValue: laundry_ClothesLine_LineLoad_Values_Full--></T>
+            </L>
+            <V t="Set_state_list" n="set_states">
+              <L n="Set_state_list">
+                <T>179504<!--ObjectStateValue: laundry_ClothesLine_Dryness_VFX_Values_On--></T>
+              </L>
+            </V>
+          </U>
+          <U>
+            <L n="at_states">
+              <T>175426<!--CommodityBasedObjectStateValue: laundry_Dyness_Values_Damp--></T>
+              <T>176489<!--ObjectStateValue: laundry_ClothesLine_LineLoad_Values_Full--></T>
+            </L>
+            <V t="Set_state_list" n="set_states">
+              <L n="Set_state_list">
+                <T>179504<!--ObjectStateValue: laundry_ClothesLine_Dryness_VFX_Values_On--></T>
+              </L>
+            </V>
+          </U>
+          <U>
+            <L n="at_states">
+              <T>175427<!--CommodityBasedObjectStateValue: laundry_Dyness_Values_Dry--></T>
+              <T>176489<!--ObjectStateValue: laundry_ClothesLine_LineLoad_Values_Full--></T>
+            </L>
+            <V t="Set_state_list" n="set_states">
+              <L n="Set_state_list">
+                <T>179505<!--ObjectStateValue: laundry_ClothesLine_Dryness_VFX_Values_Off--></T>
+              </L>
+            </V>
+          </U>
+          <U>
+            <L n="at_states">
+              <T>77532<!--CommodityBasedObjectStateValue: FireState_Burn_Material_Change_Replace--></T>
+              <T>177421<!--CommodityBasedObjectStateValue: upgrade_Laundry_ClothesLine_IronLine_NotStarted--></T>
+            </L>
+            <V t="Set_state_list" n="set_states">
+              <L n="Set_state_list">
+                <T>39737<!--CommodityBasedObjectStateValue: FireState_Burn_Material_Change_Not_Burning--></T>
+              </L>
+            </V>
+          </U>
+          <U>
+            <L n="at_states">
+              <T>77532<!--CommodityBasedObjectStateValue: FireState_Burn_Material_Change_Replace--></T>
+              <T>177422<!--CommodityBasedObjectStateValue: upgrade_Laundry_ClothesLine_IronLine_Partial--></T>
+            </L>
+            <V t="Set_state_list" n="set_states">
+              <L n="Set_state_list">
+                <T>39737<!--CommodityBasedObjectStateValue: FireState_Burn_Material_Change_Not_Burning--></T>
+              </L>
+            </V>
+          </U>
+          <U>
+            <L n="at_states">
+              <T>15076<!--CommodityBasedObjectStateValue: Brokenness_Broken--></T>
+              <T>177422<!--CommodityBasedObjectStateValue: upgrade_Laundry_ClothesLine_IronLine_Partial--></T>
+            </L>
+            <V t="Set_state_list" n="set_states">
+              <L n="Set_state_list">
+                <T>15080<!--ObjectStateValue: BrokenState_Broken--></T>
+              </L>
+            </V>
+          </U>
+          <U>
+            <L n="at_states">
+              <T>39611<!--CommodityBasedObjectStateValue: FireState_Burn_Material_Change--></T>
+              <T>176489<!--ObjectStateValue: laundry_ClothesLine_LineLoad_Values_Full--></T>
+              <T>177422<!--CommodityBasedObjectStateValue: upgrade_Laundry_ClothesLine_IronLine_Partial--></T>
+            </L>
+            <V t="Set_state_list" n="set_states">
+              <L n="Set_state_list">
+                <T>176487<!--ObjectStateValue: laundry_ClothesLine_LineLoad_Values_Empty--></T>
+                <T>15076<!--CommodityBasedObjectStateValue: Brokenness_Broken--></T>
+              </L>
+            </V>
+          </U>
+        </L>
+        <L n="states">
+          <U>
+            <L n="client_states">
+              <U>
+                <T n="key">175404<!--CommodityBasedObjectStateValue: laundry_Cleanliness_Values_Filthy--></T>
+              </U>
+              <U>
+                <T n="key">175405<!--CommodityBasedObjectStateValue: laundry_Cleanliness_Values_Grungy--></T>
+              </U>
+              <U>
+                <T n="key">175406<!--CommodityBasedObjectStateValue: laundry_Cleanliness_Values_Used--></T>
+              </U>
+              <U>
+                <T n="key">175407<!--CommodityBasedObjectStateValue: laundry_Cleanliness_Values_Clean--></T>
+              </U>
+              <U>
+                <T n="key">175408<!--CommodityBasedObjectStateValue: laundry_Cleanliness_Values_Pristine--></T>
+              </U>
+            </L>
+            <V t="reference" n="default_value">
+              <T n="reference">175406<!--CommodityBasedObjectStateValue: laundry_Cleanliness_Values_Used--></T>
+            </V>
+          </U>
+          <U>
+            <L n="client_states">
+              <U>
+                <T n="key">175425<!--CommodityBasedObjectStateValue: laundry_Dyness_Values_Soaked--></T>
+              </U>
+              <U>
+                <T n="key">175426<!--CommodityBasedObjectStateValue: laundry_Dyness_Values_Damp--></T>
+              </U>
+              <U>
+                <T n="key">175427<!--CommodityBasedObjectStateValue: laundry_Dyness_Values_Dry--></T>
+              </U>
+              <U>
+                <T n="key">175428<!--CommodityBasedObjectStateValue: laundry_Dyness_Values_Warm--></T>
+              </U>
+            </L>
+            <V t="reference" n="default_value">
+              <T n="reference">175427<!--CommodityBasedObjectStateValue: laundry_Dyness_Values_Dry--></T>
+            </V>
+          </U>
+          <U>
+            <L n="client_states">
+              <U>
+                <T n="key">175432<!--CommodityBasedObjectStateValue: laundry_Values_Scented_Rank--></T>
+              </U>
+              <U>
+                <T n="key">175433<!--CommodityBasedObjectStateValue: laundry_Values_Scented_NoScent--></T>
+              </U>
+              <U>
+                <T n="key">175434<!--CommodityBasedObjectStateValue: laundry_Values_Scented_Fragrant--></T>
+              </U>
+            </L>
+            <V t="reference" n="default_value">
+              <T n="reference">175433<!--CommodityBasedObjectStateValue: laundry_Values_Scented_NoScent--></T>
+            </V>
+          </U>
+          <U>
+            <L n="client_states">
+              <U>
+                <T n="key">39611<!--CommodityBasedObjectStateValue: FireState_Burn_Material_Change--></T>
+              </U>
+              <U>
+                <T n="key">39736<!--CommodityBasedObjectStateValue: FireState_Burn_Material_Change_Burning--></T>
+              </U>
+              <U>
+                <T n="key">39737<!--CommodityBasedObjectStateValue: FireState_Burn_Material_Change_Not_Burning--></T>
+              </U>
+              <U>
+                <T n="key">77532<!--CommodityBasedObjectStateValue: FireState_Burn_Material_Change_Replace--></T>
+              </U>
+            </L>
+            <V n="default_value" t="reference">
+              <T n="reference">39737<!--CommodityBasedObjectStateValue: FireState_Burn_Material_Change_Not_Burning--></T>
+            </V>
+          </U>
+          <U>
+            <L n="client_states">
+              <U>
+                <T n="key">176487<!--ObjectStateValue: laundry_ClothesLine_LineLoad_Values_Empty--></T>
+                <U n="value">
+                  <V t="apply_new_value" n="autonomy_modifiers">
+                    <V n="apply_new_value" t="apply_statistic_modifiers">
+                      <U n="apply_statistic_modifiers">
+                        <L n="autonomy_modifiers">
+                          <U>
+                            <L n="decay_modifiers">
+                              <U>
+                                <T n="key">16633<!--Commodity: commodity_Object_Brokenness--></T>
+                                <T n="value">0</T>
+                              </U>
+                            </L>
+                          </U>
+                        </L>
+                      </U>
+                    </V>
+                  </V>
+                </U>
+              </U>
+              <U>
+                <T n="key">176489<!--ObjectStateValue: laundry_ClothesLine_LineLoad_Values_Full--></T>
+                <U n="value">
+                  <V n="autonomy_modifiers" t="apply_new_value">
+                    <V n="apply_new_value" t="apply_statistic_modifiers">
+                      <U n="apply_statistic_modifiers">
+                        <L n="autonomy_modifiers">
+                          <U>
+                            <L n="decay_modifiers">
+                              <U>
+                                <T n="key">175411<!--Commodity: commodity_Laundry_Object_Cleanliness--></T>
+                                <T n="value">0</T>
+                              </U>
+                              <U>
+                                <T n="key">175436<!--Commodity: commodity_Laundry_Object_Scented--></T>
+                                <T n="value">0</T>
+                              </U>
+                            </L>
+                          </U>
+                        </L>
+                        <U n="periodic_statistic_change">
+                          <T n="interval">5</T>
+                          <L n="operations">
+                            <U>
+                              <T n="amount">-0.5</T>
+                              <T n="stat">175430<!--Commodity: commodity_Laundry_Object_Dryness--></T>
+                            </U>
+                            <U>
+                              <T n="amount">-0.075</T>
+                              <T n="stat">16633<!--Commodity: commodity_Object_Brokenness--></T>
+                            </U>
+                          </L>
+                        </U>
+                      </U>
+                    </V>
+                  </V>
+                </U>
+              </U>
+              <U>
+                <T n="key">185876<!--ObjectStateValue: laundry_ClothesLine_LineLoad_Values_Full_Rain--></T>
+                <U n="value">
+                  <V n="autonomy_modifiers" t="apply_new_value">
+                    <V n="apply_new_value" t="apply_statistic_modifiers">
+                      <U n="apply_statistic_modifiers">
+                        <L n="autonomy_modifiers">
+                          <U>
+                            <L n="decay_modifiers">
+                              <U>
+                                <T n="key">175411<!--Commodity: commodity_Laundry_Object_Cleanliness--></T>
+                                <T n="value">0</T>
+                              </U>
+                              <U>
+                                <T n="key">175436<!--Commodity: commodity_Laundry_Object_Scented--></T>
+                                <T n="value">0</T>
+                              </U>
+                            </L>
+                          </U>
+                        </L>
+                        <U n="periodic_statistic_change">
+                          <T n="interval">5</T>
+                          <L n="operations">
+                            <U>
+                              <T n="amount">-0.075</T>
+                              <T n="stat">16633<!--Commodity: commodity_Object_Brokenness--></T>
+                            </U>
+                          </L>
+                        </U>
+                      </U>
+                    </V>
+                  </V>
+                </U>
+              </U>
+            </L>
+            <V n="default_value" t="reference">
+              <T n="reference">176487<!--ObjectStateValue: laundry_ClothesLine_LineLoad_Values_Empty--></T>
+            </V>
+          </U>
+          <U>
+            <L n="client_states">
+              <U>
+                <T n="key">15076<!--CommodityBasedObjectStateValue: Brokenness_Broken--></T>
+              </U>
+              <U>
+                <T n="key">15077<!--CommodityBasedObjectStateValue: Brokenness_Neutral--></T>
+              </U>
+              <U>
+                <T n="key">15078<!--CommodityBasedObjectStateValue: Brokenness_Unbroken--></T>
+              </U>
+              <U>
+                <T n="key">97754<!--CommodityBasedObjectStateValue: Brokenness_Broken_Sabotage--></T>
+              </U>
+            </L>
+            <V n="default_value" t="reference">
+              <T n="reference">15078<!--CommodityBasedObjectStateValue: Brokenness_Unbroken--></T>
+            </V>
+          </U>
+          <U>
+            <L n="client_states">
+              <U>
+                <T n="key">177420<!--CommodityBasedObjectStateValue: upgrade_Laundry_ClothesLine_IronLine_Completed--></T>
+                <U n="value">
+                  <V n="autonomy_modifiers" t="apply_new_value">
+                    <V n="apply_new_value" t="apply_statistic_modifiers">
+                      <U n="apply_statistic_modifiers">
+                        <L n="autonomy_modifiers">
+                          <U>
+                            <L n="decay_modifiers">
+                              <U>
+                                <T n="key">39470<!--Commodity: commodity_object_burning--></T>
+                              </U>
+                            </L>
+                          </U>
+                        </L>
+                      </U>
+                    </V>
+                  </V>
+                </U>
+              </U>
+              <U>
+                <T n="key">177421<!--CommodityBasedObjectStateValue: upgrade_Laundry_ClothesLine_IronLine_NotStarted--></T>
+              </U>
+              <U>
+                <T n="key">177422<!--CommodityBasedObjectStateValue: upgrade_Laundry_ClothesLine_IronLine_Partial--></T>
+              </U>
+            </L>
+            <V n="default_value" t="reference">
+              <T n="reference">177421<!--CommodityBasedObjectStateValue: upgrade_Laundry_ClothesLine_IronLine_NotStarted--></T>
+            </V>
+          </U>
+          <U>
+            <L n="client_states">
+              <U>
+                <T n="key">179059<!--ObjectStateValue: laundry_ClothesLine_Values_Broken_Geo_On--></T>
+                <U n="value">
+                  <V n="geometry_state" t="apply_new_value">
+                    <V n="apply_new_value" t="set_to_custom_value">
+                      <T n="set_to_custom_value">Broken</T>
+                    </V>
+                  </V>
+                </U>
+              </U>
+              <U>
+                <T n="key">179061<!--ObjectStateValue: laundry_ClothesLine_Values_Broken_Geo_Off--></T>
+                <U n="value">
+                  <V t="apply_new_value" n="geometry_state" />
+                </U>
+              </U>
+              <U>
+                <T n="key">179063<!--ObjectStateValue: laundry_ClothesLine_Values_Broken_Geo_None--></T>
+              </U>
+            </L>
+            <V n="default_value" t="reference">
+              <T n="reference">179063<!--ObjectStateValue: laundry_ClothesLine_Values_Broken_Geo_None--></T>
+            </V>
+            <T n="reset_on_load_if_time_passes">True</T>
+            <V n="tested_states_on_add" t="enabled">
+              <U n="enabled">
+                <V n="fallback_state" t="enabled">
+                  <T n="enabled">179063<!--ObjectStateValue: laundry_ClothesLine_Values_Broken_Geo_None--></T>
+                </V>
+                <L n="tested_states">
+                  <U>
+                    <T n="state">179059<!--ObjectStateValue: laundry_ClothesLine_Values_Broken_Geo_On--></T>
+                    <L n="tests">
+                      <L>
+                        <V t="state">
+                          <U n="state">
+                            <T n="value">15080<!--ObjectStateValue: BrokenState_Broken--></T>
+                          </U>
+                        </V>
+                      </L>
+                    </L>
+                  </U>
+                </L>
+              </U>
+            </V>
+          </U>
+          <U>
+            <L n="client_states">
+              <U>
+                <T n="key">184455<!--ObjectStateValue: weather_Values_RainedOn--></T>
+                <U n="value">
+                  <V t="apply_new_value" n="autonomy_modifiers">
+                    <V n="apply_new_value" t="apply_statistic_modifiers">
+                      <U n="apply_statistic_modifiers">
+                        <L n="autonomy_modifiers">
+                          <U>
+                            <L n="locked_stats">
+                              <T>175430<!--Commodity: commodity_Laundry_Object_Dryness--></T>
+                            </L>
+                          </U>
+                        </L>
+                      </U>
+                    </V>
+                  </V>
+                  <V n="periodic_loot" t="apply_new_value">
+                    <U n="apply_new_value">
+                      <L n="periodic_loots">
+                        <U>
+                          <T n="frequency_interval">5</T>
+                          <T n="initial_delay">0</T>
+                          <L n="loots_to_apply">
+                            <T>192755<!--LootActions: loot_Laundry_RainStateTriggers_Raining--></T>
+                          </L>
+                        </U>
+                      </L>
+                    </U>
+                  </V>
+                </U>
+              </U>
+              <U>
+                <T n="key">184458<!--ObjectStateValue: weather_Values_NotRainedOn--></T>
+                <U n="value">
+                  <V t="apply_new_value" n="autonomy_modifiers" />
+                  <V n="periodic_loot" t="apply_new_value">
+                    <U n="apply_new_value">
+                      <L n="periodic_loots">
+                        <U>
+                          <T n="frequency_interval">5</T>
+                          <T n="initial_delay">0</T>
+                          <L n="loots_to_apply">
+                            <T>192757<!--LootActions: loot_Laundry_RainStateTriggers_Dry--></T>
+                          </L>
+                        </U>
+                      </L>
+                    </U>
+                  </V>
+                </U>
+              </U>
+            </L>
+            <V t="reference" n="default_value">
+              <T n="reference">184458<!--ObjectStateValue: weather_Values_NotRainedOn--></T>
+            </V>
+            <T n="reset_on_load_if_time_passes">True</T>
+          </U>
+          <U>
+            <L n="client_states">
+              <U>
+                <T n="key">179083<!--ObjectStateValue: laundry_ClothesLine_Values_LineLoad_Geo_Empty--></T>
+                <U n="value">
+                  <V t="apply_new_value" n="geometry_state" />
+                </U>
+              </U>
+              <U>
+                <T n="key">179084<!--ObjectStateValue: laundry_ClothesLine_Values_LineLoad_Geo_Full--></T>
+                <U n="value">
+                  <V t="apply_new_value" n="geometry_state">
+                    <V n="apply_new_value" t="set_to_custom_value">
+                      <T n="set_to_custom_value">Full</T>
+                    </V>
+                  </V>
+                </U>
+              </U>
+              <U>
+                <T n="key">179087<!--ObjectStateValue: laundry_ClothesLine_Values_LineLoad_Geo_None--></T>
+              </U>
+            </L>
+            <V n="default_value" t="reference">
+              <T n="reference">179087<!--ObjectStateValue: laundry_ClothesLine_Values_LineLoad_Geo_None--></T>
+            </V>
+          </U>
+          <U>
+            <L n="client_states">
+              <U>
+                <T n="key">179504<!--ObjectStateValue: laundry_ClothesLine_Dryness_VFX_Values_On--></T>
+                <U n="value">
+                  <V n="vfx_state" t="apply_new_value">
+                    <V n="apply_new_value" t="start_vfx">
+                      <V n="start_vfx" t="single_effect">
+                        <U n="single_effect">
+                          <T n="effect_name">sp13_clothesline_drips</T>
+                        </U>
+                      </V>
+                    </V>
+                  </V>
+                </U>
+              </U>
+              <U>
+                <T n="key">179505<!--ObjectStateValue: laundry_ClothesLine_Dryness_VFX_Values_Off--></T>
+                <U n="value">
+                  <V t="apply_new_value" n="vfx_state" />
+                </U>
+              </U>
+            </L>
+            <V n="default_value" t="reference">
+              <T n="reference">179505<!--ObjectStateValue: laundry_ClothesLine_Dryness_VFX_Values_Off--></T>
+            </V>
+          </U>
+          <U>
+            <L n="client_states">
+              <U>
+                <T n="key">15080<!--ObjectStateValue: BrokenState_Broken--></T>
+                <U n="value">
+                  <V t="apply_new_value" n="vfx_state" />
+                </U>
+              </U>
+              <U>
+                <T n="key">15081<!--ObjectStateValue: BrokenState_Unbroken--></T>
+              </U>
+            </L>
+            <V t="reference" n="default_value">
+              <T n="reference">15081<!--ObjectStateValue: BrokenState_Unbroken--></T>
+            </V>
+          </U>
+        </L>
+      </U>
+    </V>
+    <V t="enabled" n="weather_aware_component">
+      <U n="enabled">
+        <L n="outside_loot">
+          <U>
+            <E n="key">AnyRain</E>
+            <U n="value">
+              <L n="end_loot">
+                <T>184449<!--LootActions: loot_Weather_NotRainedOn--></T>
+              </L>
+              <L n="start_loot">
+                <T>184448<!--LootActions: loot_Weather_RainedOn--></T>
+              </L>
+            </U>
+          </U>
+        </L>
+      </U>
+    </V>
+  </U>
+  <L n="_super_affordances">
+    <T>13983<!--StandSuperInteraction: sim-stand--></T>
+    <T>13319<!--ImmediateSuperInteraction: debug_BreakObject--></T>
+    <T>13328<!--ImmediateSuperInteraction: debug_Reset--></T>
+    <T>13326<!--ImmediateSuperInteraction: debug_ObjectDestroy--></T>
+    <T>103888<!--ImmediateSuperInteraction: cheat_set_as_head--></T>
+    <T>176485<!--SuperInteraction: laundry_ClothesLine_HangClothes--></T>
+    <T>177438<!--SuperInteraction: laundry_ClothesLine_Repair--></T>
+    <T>129510<!--SuperInteraction: object_Hire_Repair_Service--></T>
+    <T>74457<!--ImmediateSuperInteraction: fire_ReplaceBurntObject--></T>
+    <T>99087<!--ImmediateSuperInteraction: object_ReplaceBrokenObject--></T>
+  </L>
+  <L n="environment_score_trait_modifiers">
+    <U>
+      <T n="trait">102265<!--Trait: trait_Hidden_Camping--></T>
+      <U n="modifiers">
+        <V n="negative_modifiers" t="enabled">
+          <U n="enabled">
+            <T n="multiply_modifier">0.75</T>
+          </U>
+        </V>
+      </U>
+    </U>
+    <U>
+      <T n="trait">16858<!--Trait: trait_Neat--></T>
+      <U n="modifiers">
+        <V n="negative_modifiers" t="enabled">
+          <U n="enabled">
+            <T n="multiply_modifier">2</T>
+          </U>
+        </V>
+      </U>
+    </U>
+    <U>
+      <T n="trait">16860<!--Trait: trait_Slob--></T>
+      <U n="modifiers">
+        <V n="negative_modifiers" t="enabled">
+          <U n="enabled">
+            <T n="multiply_modifier">0</T>
+          </U>
+        </V>
+      </U>
+    </U>
+  </L>
+  <U n="recycling_data">
+    <L n="recycling_values">
+      <U>
+        <E n="Bucks Type">RecycleBitsBucks</E>
+        <T n="Value">0.5</T>
+      </U>
+      <U>
+        <E n="Bucks Type">RecyclePiecesBucks</E>
+        <T n="Value">0.5</T>
+      </U>
+    </L>
+  </U>
+</I>

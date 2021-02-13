@@ -1,0 +1,451 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<I c="SuperInteraction" i="interaction" m="interactions.base.super_interaction" n="Gardening_Fertilize_VerticalGarden_continuation" s="234917">
+  <V n="_animation_actor_map" t="literal">
+    <U n="literal">
+      <V n="carry_target" t="enabled">
+        <E n="enabled">CarriedObject</E>
+      </V>
+    </U>
+  </V>
+  <L n="_constraints" />
+  <V t="resource_key" n="_icon">
+    <U n="resource_key">
+      <T n="key" p="InGame\UI\Icons\InteractionQueue\IconQueueFertilize.png">2f7d0004:00000000:4eb4aafa50aa6d81</T>
+    </U>
+  </V>
+  <V t="enabled" n="_saveable" />
+  <T n="allow_autonomous">False</T>
+  <T n="allow_user_directed">False</T>
+  <T n="attention_cost">0.75</T>
+  <V t="one_shot" n="basic_content">
+    <U n="one_shot">
+      <U n="animation_ref">
+        <T n="factory">234788<!--AnimationElement: VerticalGarden_Planter_Fertilize--></T>
+      </U>
+    </U>
+  </V>
+  <V t="disabled" n="content_score" />
+  <T n="display_name">0x83299D8F<!--String: "Fertilizando planta"--></T>
+  <V t="testable" n="display_name_overrides">
+    <U n="testable">
+      <L n="overrides">
+        <U>
+          <V t="disabled" n="new_display_name" />
+          <V t="enabled" n="new_pie_menu_icon">
+            <V n="enabled" t="tradition" />
+          </V>
+          <L n="test">
+            <L>
+              <V t="holiday_tradition">
+                <U n="holiday_tradition">
+                  <U n="tradition_filter">
+                    <V n="whitelist" t="specify">
+                      <U n="specify">
+                        <L n="whitelist">
+                          <T>182135<!--HolidayTradition: holidayTradition_Gardening--></T>
+                        </L>
+                      </U>
+                    </V>
+                  </U>
+                </U>
+              </V>
+            </L>
+          </L>
+        </U>
+      </L>
+    </U>
+  </V>
+  <U n="display_name_text_tokens">
+    <L n="tokens">
+      <V t="participant_type">
+        <U n="participant_type">
+          <V t="from_participant" n="objects">
+            <U n="from_participant">
+              <E n="participant">Actor</E>
+            </U>
+          </V>
+        </U>
+      </V>
+      <V t="participant_type">
+        <U n="participant_type">
+          <V t="from_participant" n="objects">
+            <U n="from_participant">
+              <E n="participant">Object</E>
+            </U>
+          </V>
+        </U>
+      </V>
+    </L>
+  </U>
+  <L n="interaction_category_tags">
+    <E>Interaction_Skill_Gardening</E>
+    <E>Interaction_Super</E>
+    <E>Interaction_All</E>
+    <E>Interaction_Lifestyles_Outdoorsy_FlexibleLength</E>
+    <E>Interaction_Lifestyles_AdrenalineSeeker_Mundane</E>
+  </L>
+  <L n="mood_list" />
+  <V n="outcome" t="test_based">
+    <U n="test_based">
+      <L n="fallback_outcomes">
+        <U>
+          <U n="outcome">
+            <L n="loot_list">
+              <T>231015<!--LootActions: Loot_Gardening_Fertilize_fallback--></T>
+            </L>
+          </U>
+        </U>
+      </L>
+      <L n="tested_outcomes">
+        <U>
+          <L n="potential_outcomes">
+            <U>
+              <U n="outcome">
+                <L n="basic_extras">
+                  <V t="destroy_object">
+                    <U n="destroy_object">
+                      <V n="objects_to_destroy" t="from_participant">
+                        <U n="from_participant">
+                          <E n="participant">CarriedObject</E>
+                        </U>
+                      </V>
+                    </U>
+                  </V>
+                </L>
+                <L n="loot_list">
+                  <T>77094<!--LootActions: Loot_Gardening_Fertilize_0_veryLow--></T>
+                  <T>97603<!--LootActions: Loot_Gardening_Fertilize_ResetCooldown--></T>
+                </L>
+              </U>
+            </U>
+          </L>
+          <L n="tests">
+            <L>
+              <V t="simoleon_value">
+                <U n="simoleon_value">
+                  <V t="current_value" n="value_context">
+                    <U n="current_value">
+                      <E n="subject">CarriedObject</E>
+                    </U>
+                  </V>
+                  <U n="value_threshold">
+                    <E n="comparison">LESS</E>
+                    <T n="value">5</T>
+                  </U>
+                </U>
+              </V>
+              <V t="simoleon_value">
+                <U n="simoleon_value">
+                  <V t="current_value" n="value_context">
+                    <U n="current_value">
+                      <E n="subject">CarriedObject</E>
+                    </U>
+                  </V>
+                  <U n="value_threshold">
+                    <E n="comparison">GREATER</E>
+                    <T n="value">0</T>
+                  </U>
+                </U>
+              </V>
+            </L>
+            <L>
+              <V t="object_definition_criteria">
+                <U n="object_definition_criteria">
+                  <V n="identity_test" t="definition_id">
+                    <U n="definition_id">
+                      <T n="actual_object">22174</T>
+                    </U>
+                  </V>
+                  <E n="participant">PickedObject</E>
+                </U>
+              </V>
+            </L>
+          </L>
+        </U>
+        <U>
+          <L n="potential_outcomes">
+            <U>
+              <U n="outcome">
+                <L n="basic_extras">
+                  <V t="destroy_object">
+                    <U n="destroy_object">
+                      <V n="objects_to_destroy" t="from_participant">
+                        <U n="from_participant">
+                          <E n="participant">CarriedObject</E>
+                        </U>
+                      </V>
+                    </U>
+                  </V>
+                </L>
+                <L n="loot_list">
+                  <T>77095<!--LootActions: Loot_Gardening_Fertilize_1_low--></T>
+                  <T>97603<!--LootActions: Loot_Gardening_Fertilize_ResetCooldown--></T>
+                </L>
+              </U>
+            </U>
+          </L>
+          <L n="tests">
+            <L>
+              <V t="simoleon_value">
+                <U n="simoleon_value">
+                  <V t="current_value" n="value_context">
+                    <U n="current_value">
+                      <E n="subject">CarriedObject</E>
+                    </U>
+                  </V>
+                  <U n="value_threshold">
+                    <E n="comparison">GREATER_OR_EQUAL</E>
+                    <T n="value">5</T>
+                  </U>
+                </U>
+              </V>
+              <V t="simoleon_value">
+                <U n="simoleon_value">
+                  <V t="current_value" n="value_context">
+                    <U n="current_value">
+                      <E n="subject">CarriedObject</E>
+                    </U>
+                  </V>
+                  <U n="value_threshold">
+                    <E n="comparison">LESS</E>
+                    <T n="value">12</T>
+                  </U>
+                </U>
+              </V>
+            </L>
+          </L>
+        </U>
+        <U>
+          <L n="potential_outcomes">
+            <U>
+              <U n="outcome">
+                <L n="basic_extras">
+                  <V t="destroy_object">
+                    <U n="destroy_object">
+                      <V n="objects_to_destroy" t="from_participant">
+                        <U n="from_participant">
+                          <E n="participant">CarriedObject</E>
+                        </U>
+                      </V>
+                    </U>
+                  </V>
+                </L>
+                <L n="loot_list">
+                  <T>77096<!--LootActions: Loot_Gardening_Fertilize_2_med--></T>
+                  <T>97603<!--LootActions: Loot_Gardening_Fertilize_ResetCooldown--></T>
+                </L>
+              </U>
+            </U>
+          </L>
+          <L n="tests">
+            <L>
+              <V t="simoleon_value">
+                <U n="simoleon_value">
+                  <V t="current_value" n="value_context">
+                    <U n="current_value">
+                      <E n="subject">CarriedObject</E>
+                    </U>
+                  </V>
+                  <U n="value_threshold">
+                    <E n="comparison">GREATER_OR_EQUAL</E>
+                    <T n="value">12</T>
+                  </U>
+                </U>
+              </V>
+              <V t="simoleon_value">
+                <U n="simoleon_value">
+                  <V t="current_value" n="value_context">
+                    <U n="current_value">
+                      <E n="subject">CarriedObject</E>
+                    </U>
+                  </V>
+                  <U n="value_threshold">
+                    <E n="comparison">LESS</E>
+                    <T n="value">20</T>
+                  </U>
+                </U>
+              </V>
+            </L>
+            <L>
+              <V t="object_definition_criteria">
+                <U n="object_definition_criteria">
+                  <V n="identity_test" t="definition_id">
+                    <U n="definition_id">
+                      <T n="actual_object">22542</T>
+                    </U>
+                  </V>
+                  <E n="participant">PickedObject</E>
+                </U>
+              </V>
+            </L>
+            <L>
+              <V t="object_definition_criteria">
+                <U n="object_definition_criteria">
+                  <V n="identity_test" t="definition_id">
+                    <U n="definition_id">
+                      <T n="actual_object">132297</T>
+                    </U>
+                  </V>
+                  <E n="participant">PickedObject</E>
+                </U>
+              </V>
+            </L>
+          </L>
+        </U>
+        <U>
+          <L n="potential_outcomes">
+            <U>
+              <U n="outcome">
+                <L n="basic_extras">
+                  <V t="destroy_object">
+                    <U n="destroy_object">
+                      <V n="objects_to_destroy" t="from_participant">
+                        <U n="from_participant">
+                          <E n="participant">CarriedObject</E>
+                        </U>
+                      </V>
+                    </U>
+                  </V>
+                </L>
+                <L n="loot_list">
+                  <T>39244<!--LootActions: Loot_Gardening_Fertilize_3_high--></T>
+                  <T>97603<!--LootActions: Loot_Gardening_Fertilize_ResetCooldown--></T>
+                </L>
+              </U>
+            </U>
+          </L>
+          <L n="tests">
+            <L>
+              <V t="simoleon_value">
+                <U n="simoleon_value">
+                  <V t="current_value" n="value_context">
+                    <U n="current_value">
+                      <E n="subject">CarriedObject</E>
+                    </U>
+                  </V>
+                  <U n="value_threshold">
+                    <E n="comparison">GREATER_OR_EQUAL</E>
+                    <T n="value">20</T>
+                  </U>
+                </U>
+              </V>
+              <V t="simoleon_value">
+                <U n="simoleon_value">
+                  <V t="current_value" n="value_context">
+                    <U n="current_value">
+                      <E n="subject">CarriedObject</E>
+                    </U>
+                  </V>
+                  <U n="value_threshold">
+                    <E n="comparison">LESS</E>
+                    <T n="value">50</T>
+                  </U>
+                </U>
+              </V>
+            </L>
+          </L>
+        </U>
+        <U>
+          <L n="potential_outcomes">
+            <U>
+              <U n="outcome">
+                <L n="basic_extras">
+                  <V t="destroy_object">
+                    <U n="destroy_object">
+                      <V n="objects_to_destroy" t="from_participant">
+                        <U n="from_participant">
+                          <E n="participant">CarriedObject</E>
+                        </U>
+                      </V>
+                    </U>
+                  </V>
+                </L>
+                <L n="loot_list">
+                  <T>77097<!--LootActions: Loot_Gardening_Fertilize_4_max--></T>
+                  <T>97603<!--LootActions: Loot_Gardening_Fertilize_ResetCooldown--></T>
+                </L>
+              </U>
+            </U>
+          </L>
+          <L n="tests">
+            <L>
+              <V t="simoleon_value">
+                <U n="simoleon_value">
+                  <V t="current_value" n="value_context">
+                    <U n="current_value">
+                      <E n="subject">CarriedObject</E>
+                    </U>
+                  </V>
+                  <U n="value_threshold">
+                    <E n="comparison">GREATER_OR_EQUAL</E>
+                    <T n="value">50</T>
+                  </U>
+                </U>
+              </V>
+            </L>
+          </L>
+        </U>
+      </L>
+    </U>
+  </V>
+  <T n="pie_menu_priority">2</T>
+  <E n="scoring_priority">NORMAL</E>
+  <U n="skill_loot_data">
+    <E n="effectiveness">STANDARD</E>
+    <T n="stat">16700<!--Skill: statistic_Skill_AdultMajor_Gardening--></T>
+  </U>
+  <T n="subaction_selection_weight">3</T>
+  <V t="literal" n="super_affordance_compatibility">
+    <U n="literal">
+      <V n="default_inclusion" t="include_all">
+        <U n="include_all">
+          <L n="exclude_lists">
+            <T>75763<!--AffordanceList: AffordanceList_Painting--></T>
+            <T>30816<!--AffordanceList: affordanceList_FoodConsume--></T>
+          </L>
+        </U>
+      </V>
+    </U>
+  </V>
+  <E n="target_type">OBJECT</E>
+  <V t="enabled" n="test_disallow_while_running" />
+  <L n="test_globals">
+    <V t="sim_info">
+      <U n="sim_info">
+        <V t="specified" n="ages" />
+        <V t="specified" n="species">
+          <U n="specified">
+            <L n="species">
+              <E />
+            </L>
+          </U>
+        </V>
+        <E n="who">Actor</E>
+      </U>
+    </V>
+    <V t="state">
+      <U n="state">
+        <E n="operator">NOTEQUAL</E>
+        <T n="value">39611<!--CommodityBasedObjectStateValue: FireState_Burn_Material_Change--></T>
+        <E n="who">ObjectParent</E>
+      </U>
+    </V>
+    <V t="state">
+      <U n="state">
+        <V t="always_pass" n="fallback_behavior" />
+        <E n="operator">NOTEQUAL</E>
+        <T n="value">32491<!--ObjectStateValue: Cowplant_GrowthState_Mature--></T>
+      </U>
+    </V>
+    <V t="state">
+      <U n="state">
+        <E n="operator">NOTEQUAL</E>
+        <T n="value">39330<!--CommodityBasedObjectStateValue: PlantEvolution_0_Death--></T>
+      </U>
+    </V>
+    <V t="test_set_reference">
+      <T n="test_set_reference">28305<!--TestSetInstance: testSet_EmotionNotMiserable--></T>
+    </V>
+  </L>
+  <T n="time_overhead">15</T>
+</I>

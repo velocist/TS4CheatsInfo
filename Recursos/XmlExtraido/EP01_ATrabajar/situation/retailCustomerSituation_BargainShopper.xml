@@ -1,0 +1,82 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<I c="RetailCustomerSituation" i="situation" m="retail.retail_customer_situation" n="retailCustomerSituation_BargainShopper" s="109145">
+  <T n="_implies_greeted_status">True</T>
+  <U n="buy_interaction">
+    <L n="affordances">
+      <T>105847<!--SuperInteraction: retail_BuyItem--></T>
+      <T>107746<!--SuperInteraction: mannequin_OutfitChange_BuyOutfit_AllowClobber--></T>
+      <T>107194<!--SuperInteraction: mannequin_OutfitChange_BuyOutfit--></T>
+      <T>116619<!--SuperInteraction: si_Retail_BuyItemFromInventory_Autonomous--></T>
+    </L>
+  </U>
+  <T n="customer_job">109149<!--SituationJob: situationJob_Retail_Customer_BargainShopper--></T>
+  <U n="go_to_store_interaction">
+    <L n="affordances">
+      <T>108962<!--SuperInteraction: si_Retail_Browse--></T>
+      <T>115925<!--SuperInteraction: si_Retail_Browse_Wall--></T>
+      <T>77271<!--SuperInteraction: sim_EnterFrontDoor--></T>
+      <T>107193<!--SuperInteraction: mannequin_OutfitChange_TryOnOutfit--></T>
+      <T>115644<!--SuperInteraction: si_Retail_Browse_Freezer--></T>
+    </L>
+  </U>
+  <U n="initial_purchase_intent">
+    <T n="lower_bound">80</T>
+    <T n="upper_bound">95</T>
+  </U>
+  <V t="literal" n="nothing_in_price_range_notification">
+    <U n="literal">
+      <V t="enabled" n="icon">
+        <V t="participant" n="enabled" />
+      </V>
+      <V n="text" t="single">
+        <T n="single">0xA88DB13B<!--String: "Me gustaría comprar algo, pero no encuentro nada en el rango de precio que ando buscando. ¿Tienes alguna otra cosa que se ajuste a mi presupuesto?"--></T>
+      </V>
+      <E n="visual_type">SPEECH</E>
+    </U>
+  </V>
+  <V t="literal" n="purchase_intent_empty_notification">
+    <U n="literal">
+      <V t="enabled" n="icon">
+        <V t="participant" n="enabled" />
+      </V>
+      <V n="text" t="single">
+        <T n="single">0xB6140662<!--String: "Aquí no hay mucho que me interese, y el personal de ventas no ha sido complaciente que se diga. Me voy con mi dinero a otra parte."--></T>
+      </V>
+      <E n="visual_type">SPEECH</E>
+    </U>
+  </V>
+  <V t="enabled" n="purchase_intent_extension_tunables">
+    <U n="enabled">
+      <T n="extension_perk">113849<!--BucksPerk: retailPerks_CustomerPurchaseIntent--></T>
+      <T n="purchase_intent_extension">10</T>
+    </U>
+  </V>
+  <V t="enabled" n="role_state_browse">
+    <U n="enabled">
+      <V t="enabled" n="browse_time_extension_tunables">
+        <U n="enabled">
+          <T n="extension_perk">113751<!--BucksPerk: retailPerks_CustomerBrowseTime--></T>
+        </U>
+      </V>
+      <T n="browse_time_max">120</T>
+      <T n="browse_time_min">60</T>
+      <T n="role_state">109047<!--RoleState: roleState_RetailCustomer_Browse--></T>
+    </U>
+  </V>
+  <V t="enabled" n="role_state_buy">
+    <U n="enabled">
+      <U n="price_range">
+        <T n="lower_bound">1</T>
+        <T n="upper_bound">200</T>
+      </U>
+      <T n="role_state">109689<!--RoleState: roleState_RetailCustomer_Purchase--></T>
+    </U>
+  </V>
+  <T n="role_state_go_to_store">109054<!--RoleState: roleState_RetailCustomer_BeginShopping--></T>
+  <T n="role_state_loiter">109048<!--RoleState: roleState_RetailCustomer_Loiter--></T>
+  <L n="tags">
+    <E>Situation_Retail_Customer</E>
+  </L>
+  <T n="total_shop_time_max">1000</T>
+  <T n="total_shop_time_min">1000</T>
+</I>

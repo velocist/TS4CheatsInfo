@@ -1,0 +1,391 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<I c="SuperInteraction" i="interaction" m="interactions.base.super_interaction" n="SI_JuiceKeg_FillCups_SlotsEmpty_DragonFruit" s="208452">
+  <L n="_constraints">
+    <U>
+      <L n="constraints">
+        <U>
+          <V n="value" t="circle">
+            <U n="circle">
+              <T n="radius">1.5</T>
+            </U>
+          </V>
+        </U>
+        <U>
+          <V t="facing" n="value" />
+        </U>
+      </L>
+    </U>
+  </L>
+  <V t="enabled" n="_saveable" />
+  <L n="_static_commodities">
+    <U>
+      <T n="static_commodity">37409<!--StaticCommodity: StaticCommodity_Make_BlackAndWhitePartyDrinks--></T>
+    </U>
+    <U>
+      <T n="static_commodity">37417<!--StaticCommodity: StaticCommodity_Make_CostumePartyDrinks--></T>
+    </U>
+    <U>
+      <T n="static_commodity">26279<!--StaticCommodity: StaticCommodity_MakeDrink--></T>
+    </U>
+    <U>
+      <T n="static_commodity">234647<!--StaticCommodity: staticCommodity_CivicPolicy_JuicedCommunity--></T>
+    </U>
+  </L>
+  <T n="attention_cost">0.5</T>
+  <V t="one_shot" n="basic_content">
+    <U n="one_shot">
+      <U n="animation_ref">
+        <T n="factory">23927<!--AnimationElement: Generic_PutDown--></T>
+      </U>
+    </U>
+  </V>
+  <L n="basic_extras">
+    <V t="destroy_object">
+      <U n="destroy_object">
+        <V n="objects_to_destroy" t="from_participant">
+          <U n="from_participant">
+            <V n="in_slot" t="use_participant" />
+            <E n="participant">ObjectChildren</E>
+          </U>
+        </V>
+        <V t="at_beginning" n="timing" />
+      </U>
+    </V>
+    <V t="loot">
+      <U n="loot">
+        <L n="loot_list">
+          <T>208470<!--LootActions: Loot_JuiceKeg_CreateDrinks--></T>
+        </L>
+        <V t="at_beginning" n="timing" />
+      </U>
+    </V>
+  </L>
+  <V t="enabled" n="basic_reserve_object">
+    <U n="enabled">
+      <L n="subject_list">
+        <U>
+          <V n="reserve_type" t="reserve_and_lock_all_parts" />
+        </U>
+      </L>
+    </U>
+  </V>
+  <V t="disabled" n="content_score" />
+  <T n="display_name">0xE5D75E24<!--String: "Llenar vasos de zumo"--></T>
+  <U n="display_name_text_tokens">
+    <L n="tokens">
+      <V t="participant_type">
+        <U n="participant_type">
+          <V n="objects" t="from_participant">
+            <U n="from_participant">
+              <E n="participant">Actor</E>
+            </U>
+          </V>
+        </U>
+      </V>
+      <V t="participant_type">
+        <U n="participant_type">
+          <V t="from_participant" n="objects">
+            <U n="from_participant">
+              <E n="participant">Object</E>
+            </U>
+          </V>
+        </U>
+      </V>
+    </L>
+  </U>
+  <L n="interaction_category_tags">
+    <E>Interaction_Super</E>
+    <E>Interaction_All</E>
+    <E>Interaction_JuiceKeg</E>
+  </L>
+  <V t="test_based" n="outcome">
+    <U n="test_based">
+      <L n="fallback_outcomes">
+        <U>
+          <U n="outcome">
+            <V n="animation_ref" t="enabled">
+              <U n="enabled">
+                <T n="factory">209582<!--AnimationElement: juiceKeg_FillCups_Success--></T>
+                <U n="overrides">
+                  <T n="animation_context">True</T>
+                  <L n="vfx">
+                    <U>
+                      <T n="original_effect">cupfill_01_purple</T>
+                      <U n="replacement_effect">
+                        <V n="effect" t="play_effect">
+                          <T n="play_effect">ep08_keg_cupFill_02_purple</T>
+                        </V>
+                      </U>
+                    </U>
+                    <U>
+                      <T n="original_effect">cupfill_02_purple</T>
+                      <U n="replacement_effect">
+                        <V n="effect" t="play_effect">
+                          <T n="play_effect">ep08_keg_cupFill_01_purple</T>
+                        </V>
+                      </U>
+                    </U>
+                    <U>
+                      <T n="original_effect">cupfill_03_purple</T>
+                      <U n="replacement_effect">
+                        <V n="effect" t="play_effect">
+                          <T n="play_effect">ep08_keg_cupFill_04_purple</T>
+                        </V>
+                      </U>
+                    </U>
+                    <U>
+                      <T n="original_effect">cupfill_04_purple</T>
+                      <U n="replacement_effect">
+                        <V n="effect" t="play_effect">
+                          <T n="play_effect">ep08_keg_cupFill_03_purple</T>
+                        </V>
+                      </U>
+                    </U>
+                    <U>
+                      <T n="original_effect">keg_spout_purple</T>
+                      <U n="replacement_effect">
+                        <V n="effect" t="play_effect">
+                          <T n="play_effect">ep08_keg_spout_purple</T>
+                        </V>
+                      </U>
+                    </U>
+                  </L>
+                </U>
+              </U>
+            </V>
+            <L n="basic_extras">
+              <V t="state_change">
+                <U n="state_change">
+                  <V n="new_value" t="single_value">
+                    <U n="single_value">
+                      <T n="new_value">15113<!--CommodityBasedObjectStateValue: Consumable_Untouched--></T>
+                    </U>
+                  </V>
+                  <E n="state_change_target">ObjectChildren</E>
+                  <V n="timing" t="on_xevt">
+                    <U n="on_xevt">
+                      <E n="criticality">OnCancelOrException</E>
+                      <T n="xevt_id">240</T>
+                    </U>
+                  </V>
+                </U>
+              </V>
+            </L>
+          </U>
+          <U n="weight">
+            <T n="base_value">2</T>
+          </U>
+        </U>
+      </L>
+      <L n="tested_outcomes">
+        <U>
+          <L n="potential_outcomes">
+            <U>
+              <U n="outcome">
+                <V n="animation_ref" t="enabled">
+                  <U n="enabled">
+                    <T n="factory">209580<!--AnimationElement: JuiceKeg_FillCups_Failure--></T>
+                    <U n="overrides">
+                      <T n="animation_context">True</T>
+                      <L n="vfx">
+                        <U>
+                          <T n="original_effect">cupfill_01_purple</T>
+                          <U n="replacement_effect">
+                            <V n="effect" t="play_effect">
+                              <T n="play_effect">ep08_keg_cupFill_02_purple</T>
+                            </V>
+                          </U>
+                        </U>
+                        <U>
+                          <T n="original_effect">cupfill_02_purple</T>
+                          <U n="replacement_effect">
+                            <V n="effect" t="play_effect">
+                              <T n="play_effect">ep08_keg_cupFill_01_purple</T>
+                            </V>
+                          </U>
+                        </U>
+                        <U>
+                          <T n="original_effect">cupfill_03_purple</T>
+                          <U n="replacement_effect">
+                            <V n="effect" t="play_effect">
+                              <T n="play_effect">ep08_keg_cupFill_04_purple</T>
+                            </V>
+                          </U>
+                        </U>
+                        <U>
+                          <T n="original_effect">cupfill_04_purple</T>
+                          <U n="replacement_effect">
+                            <V n="effect" t="play_effect">
+                              <T n="play_effect">ep08_keg_cupFill_03_purple</T>
+                            </V>
+                          </U>
+                        </U>
+                        <U>
+                          <T n="original_effect">impactsplash_purple</T>
+                          <U n="replacement_effect">
+                            <V n="effect" t="play_effect">
+                              <T n="play_effect">ep08_keg_fillmulti_fail_impactSplash_purple</T>
+                            </V>
+                          </U>
+                        </U>
+                        <U>
+                          <T n="original_effect">keg_spout_spray_impactspawners_purple</T>
+                          <U n="replacement_effect">
+                            <V n="effect" t="play_effect">
+                              <T n="play_effect">ep08_keg_spout_impactsplash_spawners_purple</T>
+                            </V>
+                          </U>
+                        </U>
+                        <U>
+                          <T n="original_effect">kegspout_purple</T>
+                          <U n="replacement_effect">
+                            <V n="effect" t="play_effect">
+                              <T n="play_effect">ep08_keg_spout_purple</T>
+                            </V>
+                          </U>
+                        </U>
+                      </L>
+                    </U>
+                  </U>
+                </V>
+                <L n="basic_extras">
+                  <V t="state_change">
+                    <U n="state_change">
+                      <V n="new_value" t="single_value">
+                        <U n="single_value">
+                          <T n="new_value">15113<!--CommodityBasedObjectStateValue: Consumable_Untouched--></T>
+                        </U>
+                      </V>
+                      <E n="state_change_target">ObjectChildren</E>
+                      <V n="timing" t="on_xevt">
+                        <U n="on_xevt">
+                          <E n="criticality">OnCancelOrException</E>
+                          <T n="xevt_id">240</T>
+                        </U>
+                      </V>
+                    </U>
+                  </V>
+                </L>
+                <L n="loot_list">
+                  <T>176833<!--LootActions: loot_ObjectCreate_Puddle--></T>
+                </L>
+                <E n="outcome_result">FAILURE</E>
+              </U>
+              <U n="weight">
+                <L n="multipliers">
+                  <U>
+                    <T n="multiplier">6</T>
+                    <L n="tests">
+                      <L>
+                        <V t="buff">
+                          <U n="buff">
+                            <V t="enabled" n="whitelist">
+                              <L n="enabled">
+                                <T>208586<!--Buff: buff_JuiceKeg_BlueRaspberryConfident_3--></T>
+                                <T>208589<!--Buff: buff_JuiceKeg_DragonfruitPlayful_3--></T>
+                                <T>208592<!--Buff: buff_JuiceKeg_PassionFruitFlirty_3--></T>
+                                <T>208595<!--Buff: buff_JuiceKeg_PineappleHappy_3--></T>
+                              </L>
+                            </V>
+                          </U>
+                        </V>
+                      </L>
+                    </L>
+                  </U>
+                </L>
+              </U>
+            </U>
+          </L>
+          <L n="tests">
+            <L>
+              <V t="trait">
+                <U n="trait">
+                  <L n="whitelist_traits">
+                    <T>16832<!--Trait: trait_Clumsy--></T>
+                  </L>
+                </U>
+              </V>
+            </L>
+            <L>
+              <V t="buff">
+                <U n="buff">
+                  <V n="whitelist" t="enabled">
+                    <L n="enabled">
+                      <T>208585<!--Buff: buff_JuiceKeg_BlueRaspberryConfident_2--></T>
+                      <T>208586<!--Buff: buff_JuiceKeg_BlueRaspberryConfident_3--></T>
+                      <T>208588<!--Buff: buff_JuiceKeg_DragonfruitPlayful_2--></T>
+                      <T>208589<!--Buff: buff_JuiceKeg_DragonfruitPlayful_3--></T>
+                      <T>208591<!--Buff: buff_JuiceKeg_PassionFruitFlirty_2--></T>
+                      <T>208592<!--Buff: buff_JuiceKeg_PassionFruitFlirty_3--></T>
+                      <T>208594<!--Buff: buff_JuiceKeg_PineappleHappy_2--></T>
+                      <T>208595<!--Buff: buff_JuiceKeg_PineappleHappy_3--></T>
+                    </L>
+                  </V>
+                </U>
+              </V>
+            </L>
+          </L>
+        </U>
+      </L>
+      <T n="use_fallback_as_default">True</T>
+    </U>
+  </V>
+  <E n="scoring_priority">NORMAL</E>
+  <T n="subaction_selection_weight">1</T>
+  <E n="target_type">OBJECT</E>
+  <L n="test_autonomous">
+    <L>
+      <V t="slot_test">
+        <U n="slot_test">
+          <T n="check_part_owner">True</T>
+          <V t="by_reference" n="child_slot">
+            <T n="by_reference">slot_JuiceKegCup</T>
+          </V>
+          <T n="slot_count_required">4</T>
+          <V t="has_empty_slot" n="slot_test_type" />
+        </U>
+      </V>
+    </L>
+  </L>
+  <L n="test_globals">
+    <V t="sim_info">
+      <U n="sim_info">
+        <V t="specified" n="ages" />
+        <V t="specified" n="species">
+          <U n="specified">
+            <L n="species">
+              <E />
+            </L>
+          </U>
+        </V>
+        <E n="who">Actor</E>
+      </U>
+    </V>
+    <V t="state_white_black">
+      <U n="state_white_black">
+        <U n="states">
+          <V n="whitelist" t="specify">
+            <U n="specify">
+              <L n="whitelist">
+                <T>209630<!--CommodityBasedObjectStateValue: juiceKeg_Servings_Low--></T>
+                <T>209629<!--CommodityBasedObjectStateValue: juiceKeg_Servings_Partial--></T>
+                <T>209637<!--CommodityBasedObjectStateValue: juiceKeg_Servings_Tapped--></T>
+              </L>
+            </U>
+          </V>
+        </U>
+      </U>
+    </V>
+    <V t="slot_test">
+      <U n="slot_test">
+        <T n="check_part_owner">True</T>
+        <V t="by_reference" n="child_slot">
+          <T n="by_reference">slot_JuiceKegCup</T>
+        </V>
+        <T n="slot_count_required">1</T>
+        <V t="has_empty_slot" n="slot_test_type" />
+      </U>
+    </V>
+  </L>
+  <T n="time_overhead">30</T>
+</I>

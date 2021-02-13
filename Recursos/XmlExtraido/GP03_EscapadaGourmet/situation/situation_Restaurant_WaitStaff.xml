@@ -1,0 +1,126 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<I c="WaitstaffSituation" i="situation" m="restaurants.waitstaff_situation" n="situation_Restaurant_WaitStaff" s="132213">
+  <V n="_object_to_staff_filter" t="object_tags">
+    <U n="object_tags">
+      <L n="tag_set">
+        <E>Func_WaiterStation</E>
+      </L>
+    </U>
+  </V>
+  <T n="_survives_active_household_change">True</T>
+  <U n="clean_tables_state">
+    <U n="interaction_of_interest">
+      <L n="tags">
+        <E>Interaction_WaitstaffIdle</E>
+      </L>
+    </U>
+    <L n="job_and_role_changes">
+      <U>
+        <T n="Situation Job">130418<!--SituationJob: jobs_Venue_Waiter--></T>
+        <T n="Role State">132216<!--RoleState: role_WaitStaff_CleanTable--></T>
+      </U>
+    </L>
+    <V t="enabled" n="time_out">
+      <T n="enabled">60</T>
+    </V>
+  </U>
+  <E n="creation_ui_option">NOT_AVAILABLE</E>
+  <U n="deliver_order_to_chef_state">
+    <U n="interaction_of_interest">
+      <L n="affordances">
+        <T>131743<!--SuperInteraction: chefStation_AddOrder--></T>
+      </L>
+    </U>
+    <L n="job_and_role_changes">
+      <U>
+        <T n="Situation Job">130418<!--SituationJob: jobs_Venue_Waiter--></T>
+        <T n="Role State">132219<!--RoleState: role_WaitStaff_AddOrder--></T>
+      </U>
+    </L>
+  </U>
+  <U n="deliver_order_to_table_state">
+    <U n="interaction_of_interest">
+      <L n="affordances">
+        <T>132233<!--SuperInteraction: si_waitStaff_ServeFood--></T>
+      </L>
+    </U>
+    <L n="job_and_role_changes">
+      <U>
+        <T n="Situation Job">130418<!--SituationJob: jobs_Venue_Waiter--></T>
+        <T n="Role State">132220<!--RoleState: role_WaitStaff_DeliverFood--></T>
+      </U>
+    </L>
+    <U n="must_exit_naturally_interactions">
+      <L n="affordances">
+        <T>132598<!--SuperInteraction: si_waitStaff_DeliverFood--></T>
+      </L>
+    </U>
+    <U n="resubmit_order_interactions">
+      <L n="affordances">
+        <T>139216<!--SuperInteraction: si_waitStaff_ServeFood_Spill--></T>
+      </L>
+    </U>
+  </U>
+  <T n="duration">0</T>
+  <E n="exclusivity">VENUE_EMPLOYEE</E>
+  <U n="give_chef_feedback_state">
+    <U n="interaction_of_interest">
+      <L n="affordances">
+        <T>133737<!--SuperInteraction: chefStation_Talk_Compliment_Waiter--></T>
+        <T>133739<!--SuperInteraction: chefStation_Talk_Insult_Waiter--></T>
+      </L>
+    </U>
+    <L n="job_and_role_changes">
+      <U>
+        <T n="Situation Job">130418<!--SituationJob: jobs_Venue_Waiter--></T>
+        <T n="Role State">132221<!--RoleState: role_WaitStaff_DeliverFeedback--></T>
+      </U>
+    </L>
+  </U>
+  <U n="idle_state">
+    <U n="interaction_of_interest">
+      <L n="tags">
+        <E>Interaction_WaitstaffIdle</E>
+      </L>
+    </U>
+    <L n="job_and_role_changes">
+      <U>
+        <T n="Situation Job">130418<!--SituationJob: jobs_Venue_Waiter--></T>
+        <T n="Role State">132215<!--RoleState: role_WaitStaff_Idle--></T>
+      </U>
+    </L>
+  </U>
+  <T n="situation_job">130418<!--SituationJob: jobs_Venue_Waiter--></T>
+  <T n="staff_table_count">5</T>
+  <U n="take_order_for_table_state">
+    <U n="interaction_of_interest">
+      <L n="affordances">
+        <T>133562<!--SocialSuperInteraction: waitstaff_TakeOrder--></T>
+      </L>
+    </U>
+    <L n="job_and_role_changes">
+      <U>
+        <T n="Situation Job">130418<!--SituationJob: jobs_Venue_Waiter--></T>
+        <T n="Role State">132218<!--RoleState: role_WaitStaff_TakeOrder--></T>
+      </U>
+    </L>
+  </U>
+  <U n="total_work_time">
+    <T n="lower_bound">2592</T>
+    <T n="upper_bound">3168</T>
+  </U>
+  <L n="total_work_time_buffs">
+    <U>
+      <T n="key">25</T>
+      <U n="value">
+        <T n="buff_type">137104<!--Buff: buff_OwnableBusiness_Employee_Exhausted--></T>
+      </U>
+    </U>
+    <U>
+      <T n="key">99</T>
+      <U n="value">
+        <T n="buff_type">142993<!--Buff: buff_OwnableBusiness_Employee_Exhausted_Quit--></T>
+      </U>
+    </U>
+  </L>
+</I>

@@ -1,0 +1,157 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<M n="fishing.fishing_interactions" s="2657216378188850812">
+  <C n="FishingLocationGoFishingSuperInteraction">
+    <T n="FISHING_WITH_BAIT_INTERACTION_NAME">0x1497611D<!--String: "Pescar con cebo"--></T>
+    <U n="OUT_OF_BAIT_NOTIFICATION">
+      <V n="text" t="single">
+        <T n="single">0xE311DC61<!--String: "{0.SimFirstName} se ha quedado sin {2.ObjectCatalogName} para poner en el anzuelo. Seguirá pescando sin cebo."--></T>
+      </V>
+    </U>
+  </C>
+  <C n="FishingLocationExamineWaterSuperInteraction">
+    <L n="BAIT_NOTIFICATION_TEXT_MAP">
+      <U>
+        <T n="Bait Buff">155037<!--Buff: buff_Bait_PlasmaFruit--></T>
+        <T n="Notification Text">0x886CDB7A<!--String: "Ciertos animales acuáticos necesitan un cebo al que poder hincarle los dientes."--></T>
+      </U>
+      <U>
+        <T n="Bait Buff">75548<!--Buff: buff_Bait_Frog--></T>
+        <T n="Notification Text">0xED035DB4<!--String: "Hay peces que prefieren comer anfibios. Prueba a usar una rana como cebo."--></T>
+      </U>
+      <U>
+        <T n="Bait Buff">75549<!--Buff: buff_BaitGroup_Organic--></T>
+        <T n="Notification Text">0x4741E769<!--String: "Aquí, la mayoría de los peces comen lo que sea. ¡Mientras sea orgánico, pican que no veas!"--></T>
+      </U>
+      <U>
+        <T n="Bait Buff">75556<!--Buff: buff_Bait_SmallFish--></T>
+        <T n="Notification Text">0x4DC951EA<!--String: "A los ejemplares más preciados de este lugar les gusta zampar peces pequeños. Pobres pezqueñines."--></T>
+      </U>
+      <U>
+        <T n="Bait Buff">76071<!--Buff: buff_Bait_MediumFish--></T>
+        <T n="Notification Text">0x935D9017<!--String: "Las capturas más extraordinarias de este lugar están en lo más alto de la pirámide alimentaria. Si usas como cebo un pez mediano, igual se animan a picar."--></T>
+      </U>
+      <U>
+        <T n="Bait Buff">76072<!--Buff: buff_Bait_FreshFruit--></T>
+        <T n="Notification Text">0x7E4B04A0<!--String: "A los perspicaces peces de este lugar les gustan la fruta y la verdura frescas. Prueba a poner fruta como cebo."--></T>
+      </U>
+      <U>
+        <T n="Bait Buff">76073<!--Buff: buff_Bait_FreshFlower--></T>
+        <T n="Notification Text">0xEB66100D<!--String: "Aquí hay unos peces muy sofisticados que solo comen flores."--></T>
+      </U>
+    </L>
+    <U n="EXAMINE_SUCCESS_NOTIFICATION">
+      <V t="enabled" n="icon">
+        <V t="participant" n="enabled" />
+      </V>
+    </U>
+    <T n="GENERIC_EXAMINE_NOTIFICATION_TEXT">0xCCB1A5B3<!--String: "Estos peces pican con todo. ¡Mientras sea algo especial, allá que se lanzan!"--></T>
+  </C>
+  <C n="FishingLocationCatchMixerInteraction">
+    <U n="BUFF_CATCH_FISH_WITH_BAIT">
+      <T n="buff_type">77314<!--Buff: Buff_Skill_Fishing_CaughtFishWithBait--></T>
+    </U>
+    <U n="CATCH_CHANCE_MODIFIER_CURVE">
+      <V n="multiplier" t="value_curve">
+        <L n="value_curve">
+          <U>
+            <T n="x">1</T>
+            <T n="y">0.5</T>
+          </U>
+          <U>
+            <T n="x">2</T>
+            <T n="y">0.75</T>
+          </U>
+          <U>
+            <T n="x">3</T>
+            <T n="y">1</T>
+          </U>
+          <U>
+            <T n="x">4</T>
+            <T n="y">1.25</T>
+          </U>
+          <U>
+            <T n="x">5</T>
+            <T n="y">1.5</T>
+          </U>
+          <U>
+            <T n="x">6</T>
+            <T n="y">1.75</T>
+          </U>
+          <U>
+            <T n="x">7</T>
+            <T n="y">2</T>
+          </U>
+          <U>
+            <T n="x">8</T>
+            <T n="y">2.25</T>
+          </U>
+          <U>
+            <T n="x">9</T>
+            <T n="y">2.5</T>
+          </U>
+          <U>
+            <T n="x">10</T>
+            <T n="y">3</T>
+          </U>
+        </L>
+      </V>
+      <T n="statistic">39397<!--Skill: statistic_Skill_AdultMajor_Fishing--></T>
+      <T n="use_effective_skill_level">True</T>
+    </U>
+    <U n="CATCH_ENDANGERED_FISH">
+      <T n="dialog">231049<!--DialogOkCancel: fishing_Catch_Or_Release--></T>
+      <L n="loots_on_cancel">
+        <T>212536<!--LootActions: loot_CatchFishAnyway--></T>
+        <T>212664<!--LootActions: loot_DramaNode_CaughtEndangeredSpecies--></T>
+      </L>
+      <L n="loots_on_ok">
+        <T>212533<!--LootActions: loot_ReleaseFish_DestroyObject--></T>
+      </L>
+      <L n="tests">
+        <L>
+          <V t="object_criteria">
+            <U n="object_criteria">
+              <V n="identity_test" t="tags">
+                <U n="tags">
+                  <L n="tag_set">
+                    <E>Func_Fish_Endangered</E>
+                  </L>
+                </U>
+              </V>
+              <V n="subject_specific_tests" t="single_object">
+                <U n="single_object">
+                  <E n="target">CreatedObject</E>
+                </U>
+              </V>
+            </U>
+          </V>
+        </L>
+      </L>
+    </U>
+    <U n="CATCH_FISH_NOTIFICATION">
+      <V t="enabled" n="primary_icon_response">
+        <U n="enabled">
+          <E n="ui_request">SHOW_SIM_INVENTORY</E>
+        </U>
+      </V>
+    </U>
+    <T n="CATCH_FISH_NOTIFICATION_BAIT_TEXT">0x673F66F9<!--String: "Tipo de pez: {0.String}\nTipo de cebo: {1.String}"--></T>
+    <T n="CATCH_FISH_NOTIFICATION_TEXT">0x30BA6E7C<!--String: "¡{0.SimFirstName} ha pescado un ejemplar de {2.String} de {3.String} que vale {4.String}! ¿Qué más puede picar por ahí?"--></T>
+    <U n="CATCH_TREASURE_NOTIFICATION">
+      <V t="enabled" n="primary_icon_response">
+        <U n="enabled">
+          <E n="ui_request">SHOW_SIM_INVENTORY</E>
+        </U>
+      </V>
+      <V n="text" t="single">
+        <T n="single">0xB99F692A<!--String: "¡{0.SimFirstName} acaba de pescar {M2.un}{G2.un}{F!G2.una} {2.ObjectName}!"--></T>
+      </V>
+    </U>
+    <L n="JUNK_OBJECTS">
+      <T>44816</T>
+      <T>44956</T>
+      <T>44685</T>
+    </L>
+    <T n="TREASURE_PROP_OBJECT">45220</T>
+  </C>
+</M>

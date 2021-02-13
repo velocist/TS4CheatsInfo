@@ -1,0 +1,159 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<I c="TeleportHereInteraction" i="interaction" m="interactions.base.teleport_interaction" n="meditation_Levitate_TeleportHere" s="119547">
+  <L n="_constraints">
+    <U>
+      <L n="constraints">
+        <U>
+          <V n="value" t="posture">
+            <U n="posture">
+              <L n="posture_manifest_tuning">
+                <U>
+                  <V n="posture_type" t="enabled">
+                    <T n="enabled">118964<!--Posture: posture_Meditate_Levitation--></T>
+                  </V>
+                </U>
+              </L>
+            </U>
+          </V>
+        </U>
+      </L>
+    </U>
+  </L>
+  <V t="resource_key" n="_icon">
+    <U n="resource_key">
+      <T n="key" p="InGame\UI\Icons\InteractionQueue\IconQueueGoHere.png">2f7d0004:00000000:97d318ad9e4da2b3</T>
+    </U>
+  </V>
+  <T n="_multi_surface">False</T>
+  <V t="enabled" n="_saveable" />
+  <T n="attention_cost">0.5</T>
+  <V t="one_shot" n="basic_content">
+    <U n="one_shot">
+      <U n="animation_ref">
+        <T n="factory">119545<!--AnimationElement: object_MeditationStool_Teleport_FadeOut--></T>
+      </U>
+    </U>
+  </V>
+  <L n="basic_extras">
+    <V t="set_visibility_state">
+      <U n="set_visibility_state">
+        <T n="fade">True</T>
+        <V n="timing" t="on_xevt">
+          <U n="on_xevt">
+            <T n="xevt_id">105</T>
+          </U>
+        </V>
+        <T n="visibility">False</T>
+      </U>
+    </V>
+  </L>
+  <V t="disabled" n="content_score" />
+  <T n="display_name">0x13152E89<!--String: "Teletransportarse desde taburete de meditación"--></T>
+  <U n="display_name_text_tokens">
+    <L n="tokens">
+      <V t="participant_type">
+        <U n="participant_type">
+          <V t="from_participant" n="objects">
+            <U n="from_participant">
+              <E n="participant">Actor</E>
+            </U>
+          </V>
+        </U>
+      </V>
+      <V t="participant_type">
+        <U n="participant_type">
+          <V t="from_participant" n="objects">
+            <U n="from_participant">
+              <E n="participant">Object</E>
+            </U>
+          </V>
+        </U>
+      </V>
+    </L>
+  </U>
+  <L n="interaction_category_tags">
+    <E>Interaction_Super</E>
+    <E>Interaction_All</E>
+  </L>
+  <V t="single" n="outcome">
+    <U n="single">
+      <U n="actions">
+        <V n="animation_ref" t="enabled">
+          <U n="enabled">
+            <T n="factory">119546<!--AnimationElement: object_MeditationStool_Teleport_FadeIn--></T>
+          </U>
+        </V>
+        <L n="basic_extras">
+          <V t="set_visibility_state">
+            <U n="set_visibility_state">
+              <T n="fade">True</T>
+              <V n="timing" t="on_xevt">
+                <U n="on_xevt">
+                  <E n="criticality">NotCritical</E>
+                  <T n="xevt_id">106</T>
+                </U>
+              </V>
+            </U>
+          </V>
+        </L>
+        <L n="loot_list">
+          <T>119829<!--LootActions: loot_Buff_MeditationStool_StopFloating--></T>
+        </L>
+      </U>
+    </U>
+  </V>
+  <E n="scoring_priority">NORMAL</E>
+  <T n="subaction_selection_weight">1</T>
+  <V t="enabled" n="target_jig">
+    <T n="enabled">19511</T>
+  </V>
+  <E n="target_type">OBJECT</E>
+  <V t="enabled" n="test_disallow_while_running">
+    <U n="enabled">
+      <T n="test_self">True</T>
+    </U>
+  </V>
+  <L n="test_globals">
+    <V t="posture">
+      <U n="posture">
+        <L n="required_postures">
+          <T>118964<!--Posture: posture_Meditate_Levitation--></T>
+        </L>
+      </U>
+    </V>
+    <V t="pick_info_test">
+      <U n="pick_info_test">
+        <V n="pick_type_test" t="pick_terrain">
+          <U n="pick_terrain">
+            <E n="terrain_location">ANYWHERE</E>
+          </U>
+        </V>
+      </U>
+    </V>
+    <V t="buff">
+      <U n="buff">
+        <V n="whitelist" t="enabled">
+          <L n="enabled">
+            <T>119069<!--Buff: buff_IsFloating_Hidden--></T>
+          </L>
+        </V>
+      </U>
+    </V>
+    <V t="skill_test">
+      <U n="skill_test">
+        <T n="skill">117858<!--Skill: statistic_Skill_AdultMajor_Wellness--></T>
+        <V n="skill_range" t="interval">
+          <U n="interval">
+            <U n="skill_interval">
+              <T n="lower_bound">7</T>
+            </U>
+          </U>
+        </V>
+      </U>
+    </V>
+  </L>
+  <T n="time_overhead">30</T>
+  <U n="visual_type_override_data">
+    <T n="icon" p="InGame\UI\Icons\InteractionQueue\IconQueueWalking.png">2f7d0004:00000000:7c3ee3d732a8ea1c</T>
+  </U>
+</I>

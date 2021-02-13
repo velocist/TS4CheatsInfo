@@ -1,0 +1,772 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<I c="MixerInteraction" i="interaction" m="interactions.base.mixer_interaction" n="mixer_hospitalExamBed_Reclined_social_GiveShot" s="111129">
+  <V t="resource_key" n="_icon">
+    <U n="resource_key">
+      <T p="InEP01\UI\Icons\InteractionQueue\IconQueueSyringe.png" n="key">2f7d0004:00000000:54ef83b6cb806dce</T>
+    </U>
+  </V>
+  <T n="allow_autonomous">False</T>
+  <T n="allow_user_directed">True</T>
+  <V t="disable_focus" n="basic_focus" />
+  <T n="category">115395<!--PieMenuCategory: pieMenuCategories_DoctorCareer_TreatPatient--></T>
+  <T n="display_name">0x24F04C28<!--String: "Tratar con inyección"--></T>
+  <V n="display_name_overrides" t="testable">
+    <U n="testable">
+      <L n="overrides">
+        <U>
+          <V n="new_display_name" t="enabled">
+            <T n="enabled">0xA73CB95B<!--String: "Tratar cabeza embotada con inyección"--></T>
+          </V>
+          <L n="test">
+            <L>
+              <V t="buff">
+                <U n="buff">
+                  <E n="subject">TargetSim</E>
+                  <V n="whitelist" t="enabled">
+                    <L n="enabled">
+                      <T>108169<!--Buff: buff_SicknessSystem_Diagnosed_BloatyHead--></T>
+                    </L>
+                  </V>
+                </U>
+              </V>
+            </L>
+          </L>
+        </U>
+        <U>
+          <V n="new_display_name" t="enabled">
+            <T n="enabled">0x4F0E756D<!--String: "Poner vacuna antigripe de la llama"--></T>
+          </V>
+          <L n="test">
+            <L>
+              <V t="buff">
+                <U n="buff">
+                  <E n="subject">TargetSim</E>
+                  <V n="whitelist" t="enabled">
+                    <L n="enabled">
+                      <T>108173<!--Buff: buff_SicknessSystem_Diagnosed_LlamaFlu--></T>
+                    </L>
+                  </V>
+                </U>
+              </V>
+            </L>
+          </L>
+        </U>
+        <U>
+          <V n="new_display_name" t="enabled">
+            <T n="enabled">0xE662B14D<!--String: "Inocular por sudores y escalofríos"--></T>
+          </V>
+          <L n="test">
+            <L>
+              <V t="buff">
+                <U n="buff">
+                  <E n="subject">TargetSim</E>
+                  <V n="whitelist" t="enabled">
+                    <L n="enabled">
+                      <T>108176<!--Buff: buff_SicknessSystem_Diagnosed_SweatyShivers--></T>
+                    </L>
+                  </V>
+                </U>
+              </V>
+            </L>
+          </L>
+        </U>
+      </L>
+    </U>
+  </V>
+  <U n="display_name_text_tokens">
+    <L n="tokens">
+      <V t="participant_type">
+        <U n="participant_type">
+          <V t="from_participant" n="objects">
+            <U n="from_participant">
+              <E n="participant">Actor</E>
+            </U>
+          </V>
+        </U>
+      </V>
+      <V t="participant_type">
+        <U n="participant_type">
+          <V t="from_participant" n="objects">
+            <U n="from_participant">
+              <E n="participant">Object</E>
+            </U>
+          </V>
+        </U>
+      </V>
+    </L>
+  </U>
+  <L n="interaction_category_tags">
+    <E>Interaction_Mixer</E>
+    <E>Interaction_All</E>
+    <E>Interaction_Doctor_TreatPatient</E>
+  </L>
+  <V t="enabled" n="lock_out_time">
+    <U n="enabled">
+      <U n="interval">
+        <T n="lower_bound">60</T>
+        <T n="upper_bound">60</T>
+      </U>
+      <T n="target_based_lock_out">True</T>
+    </U>
+  </V>
+  <V n="outcome" t="test_based">
+    <U n="test_based">
+      <L n="fallback_outcomes">
+        <U>
+          <U n="outcome">
+            <T n="force_outcome_on_exit">True</T>
+            <E n="outcome_result">NONE</E>
+          </U>
+        </U>
+      </L>
+      <L n="tested_outcomes">
+        <U>
+          <L n="potential_outcomes">
+            <U>
+              <U n="outcome">
+                <V n="animation_ref" t="enabled">
+                  <U n="enabled">
+                    <T n="factory">107413<!--AnimationElement: object_HospitalExamBed_Patient_soc_ReclinedActions_GetShot_Success--></T>
+                  </U>
+                </V>
+                <L n="basic_extras">
+                  <V t="notification">
+                    <U n="notification">
+                      <T n="allow_autonomous">False</T>
+                      <V n="dialog" t="single">
+                        <V n="single" t="literal">
+                          <U n="literal">
+                            <V t="enabled" n="icon">
+                              <V t="participant" n="enabled">
+                                <U n="participant">
+                                  <L n="participant_type">
+                                    <E>TargetSim</E>
+                                  </L>
+                                </U>
+                              </V>
+                            </V>
+                            <V t="enabled" n="secondary_icon">
+                              <V t="participant" n="enabled" />
+                            </V>
+                            <V n="text" t="single">
+                              <T n="single">0x5D3C29D4<!--String: "La vacuna para {1.SimName} ha sido un éxito como tratamiento a su enfermedad. {0.SimFirstName} ha diagnosticado correctamente el asunto, lo que ha mejorado su rendimiento laboral."--></T>
+                            </V>
+                            <V t="enabled" n="text_tokens">
+                              <U n="enabled">
+                                <L n="tokens">
+                                  <V t="participant_type" />
+                                  <V t="participant_type">
+                                    <U n="participant_type">
+                                      <V t="from_participant" n="objects">
+                                        <U n="from_participant">
+                                          <E n="participant">TargetSim</E>
+                                        </U>
+                                      </V>
+                                    </U>
+                                  </V>
+                                </L>
+                              </U>
+                            </V>
+                            <V t="enabled" n="title">
+                              <T n="enabled">0x40A2E252<!--String: "¡Paciente {M1.curado}{F1.curada}!"--></T>
+                            </V>
+                          </U>
+                        </V>
+                      </V>
+                    </U>
+                  </V>
+                </L>
+                <L n="continuation">
+                  <U>
+                    <E n="actor">TargetSim</E>
+                    <T n="affordance">169887<!--ImmediateSuperInteraction: Push_Leave_Lot_Must_Run_Immediate--></T>
+                  </U>
+                </L>
+                <L n="loot_list">
+                  <T>111150<!--LootActions: loot_Commodity_SicknessSystem_Patient_Illness_Cured_target--></T>
+                  <T>116217<!--LootActions: loot_SicknessSystem_Symptom_Remove_target--></T>
+                  <T>114419<!--LootActions: loot_Career_Doctor_RoleState_Patient_Treated--></T>
+                  <T>112670<!--LootActions: loot_Buff_DoctorCareer_ExamBed_Patient_Discharge--></T>
+                  <T>109497<!--LootActions: loot_JobPerformance_Gain_Small_Doctor--></T>
+                  <T>112638<!--LootActions: loot_Buff_DoctorCareer_PatientTreated_MedRecord--></T>
+                </L>
+              </U>
+              <U n="weight">
+                <L n="multipliers">
+                  <U>
+                    <T n="multiplier">0</T>
+                    <L n="tests">
+                      <L>
+                        <V t="buff">
+                          <U n="buff">
+                            <L n="blacklist">
+                              <T>105478<!--Buff: buff_SicknessSystem_Illness_BloatyHead--></T>
+                            </L>
+                            <E n="subject">TargetSim</E>
+                          </U>
+                        </V>
+                      </L>
+                    </L>
+                  </U>
+                </L>
+              </U>
+            </U>
+            <U>
+              <U n="outcome">
+                <V n="animation_ref" t="enabled">
+                  <U n="enabled">
+                    <T n="factory">107412<!--AnimationElement: object_HospitalExamBed_Patient_soc_ReclinedActions_GetShot_Failure--></T>
+                  </U>
+                </V>
+                <L n="basic_extras">
+                  <V t="notification">
+                    <U n="notification">
+                      <T n="allow_autonomous">False</T>
+                      <V n="dialog" t="single">
+                        <V n="single" t="literal">
+                          <U n="literal">
+                            <V t="enabled" n="icon">
+                              <V t="participant" n="enabled">
+                                <U n="participant">
+                                  <L n="participant_type">
+                                    <E>TargetSim</E>
+                                  </L>
+                                </U>
+                              </V>
+                            </V>
+                            <V t="enabled" n="secondary_icon">
+                              <V t="participant" n="enabled" />
+                            </V>
+                            <V n="text" t="single">
+                              <T n="single">0x361B2872<!--String: "{1.SimName} no parece haber mejorado tras la inyección. {0.SimFirstName} no ha acertado con su diagnóstico y eso afectará a su rendimiento laboral. Al menos no es {M0.un}{F0.una} matasanos."--></T>
+                            </V>
+                            <V t="enabled" n="text_tokens">
+                              <U n="enabled">
+                                <L n="tokens">
+                                  <V t="participant_type" />
+                                  <V t="participant_type">
+                                    <U n="participant_type">
+                                      <V t="from_participant" n="objects">
+                                        <U n="from_participant">
+                                          <E n="participant">TargetSim</E>
+                                        </U>
+                                      </V>
+                                    </U>
+                                  </V>
+                                </L>
+                              </U>
+                            </V>
+                            <V t="enabled" n="title">
+                              <T n="enabled">0xEBEABBB5<!--String: "Tratamiento ineficaz"--></T>
+                            </V>
+                          </U>
+                        </V>
+                      </V>
+                    </U>
+                  </V>
+                </L>
+                <L n="continuation">
+                  <U>
+                    <E n="actor">TargetSim</E>
+                    <T n="affordance">115430<!--SuperInteraction: hospitalExamBed_Patient_Recline_Sleep--></T>
+                    <E n="target">ActorPostureTarget</E>
+                  </U>
+                </L>
+                <L n="loot_list">
+                  <T>115288<!--LootActions: Rel_Loss_Medium_target--></T>
+                  <T>114419<!--LootActions: loot_Career_Doctor_RoleState_Patient_Treated--></T>
+                  <T>113326<!--LootActions: loot_JobPerformance_Loss_MediumSmall_Doctor_tested--></T>
+                  <T>112638<!--LootActions: loot_Buff_DoctorCareer_PatientTreated_MedRecord--></T>
+                </L>
+                <E n="outcome_result">FAILURE</E>
+              </U>
+              <U n="weight">
+                <L n="multipliers">
+                  <U>
+                    <T n="multiplier">0</T>
+                    <L n="tests">
+                      <L>
+                        <V t="buff">
+                          <U n="buff">
+                            <E n="subject">TargetSim</E>
+                            <V t="enabled" n="whitelist">
+                              <L n="enabled">
+                                <T>105478<!--Buff: buff_SicknessSystem_Illness_BloatyHead--></T>
+                              </L>
+                            </V>
+                          </U>
+                        </V>
+                      </L>
+                    </L>
+                  </U>
+                </L>
+              </U>
+            </U>
+          </L>
+          <L n="tests">
+            <L>
+              <V t="buff">
+                <U n="buff">
+                  <E n="subject">TargetSim</E>
+                  <V n="whitelist" t="enabled">
+                    <L n="enabled">
+                      <T>108169<!--Buff: buff_SicknessSystem_Diagnosed_BloatyHead--></T>
+                    </L>
+                  </V>
+                </U>
+              </V>
+            </L>
+          </L>
+        </U>
+        <U>
+          <L n="potential_outcomes">
+            <U>
+              <U n="outcome">
+                <V n="animation_ref" t="enabled">
+                  <U n="enabled">
+                    <T n="factory">107413<!--AnimationElement: object_HospitalExamBed_Patient_soc_ReclinedActions_GetShot_Success--></T>
+                  </U>
+                </V>
+                <L n="basic_extras">
+                  <V t="notification">
+                    <U n="notification">
+                      <T n="allow_autonomous">False</T>
+                      <V n="dialog" t="single">
+                        <V n="single" t="literal">
+                          <U n="literal">
+                            <V t="enabled" n="icon">
+                              <V t="participant" n="enabled">
+                                <U n="participant">
+                                  <L n="participant_type">
+                                    <E>TargetSim</E>
+                                  </L>
+                                </U>
+                              </V>
+                            </V>
+                            <V t="enabled" n="secondary_icon">
+                              <V t="participant" n="enabled" />
+                            </V>
+                            <V n="text" t="single">
+                              <T n="single">0x5D3C29D4<!--String: "La vacuna para {1.SimName} ha sido un éxito como tratamiento a su enfermedad. {0.SimFirstName} ha diagnosticado correctamente el asunto, lo que ha mejorado su rendimiento laboral."--></T>
+                            </V>
+                            <V t="enabled" n="text_tokens">
+                              <U n="enabled">
+                                <L n="tokens">
+                                  <V t="participant_type" />
+                                  <V t="participant_type">
+                                    <U n="participant_type">
+                                      <V t="from_participant" n="objects">
+                                        <U n="from_participant">
+                                          <E n="participant">TargetSim</E>
+                                        </U>
+                                      </V>
+                                    </U>
+                                  </V>
+                                </L>
+                              </U>
+                            </V>
+                            <V t="enabled" n="title">
+                              <T n="enabled">0x40A2E252<!--String: "¡Paciente {M1.curado}{F1.curada}!"--></T>
+                            </V>
+                          </U>
+                        </V>
+                      </V>
+                    </U>
+                  </V>
+                </L>
+                <L n="continuation">
+                  <U>
+                    <E n="actor">TargetSim</E>
+                    <T n="affordance">169887<!--ImmediateSuperInteraction: Push_Leave_Lot_Must_Run_Immediate--></T>
+                  </U>
+                </L>
+                <L n="loot_list">
+                  <T>111150<!--LootActions: loot_Commodity_SicknessSystem_Patient_Illness_Cured_target--></T>
+                  <T>116217<!--LootActions: loot_SicknessSystem_Symptom_Remove_target--></T>
+                  <T>114419<!--LootActions: loot_Career_Doctor_RoleState_Patient_Treated--></T>
+                  <T>112670<!--LootActions: loot_Buff_DoctorCareer_ExamBed_Patient_Discharge--></T>
+                  <T>109497<!--LootActions: loot_JobPerformance_Gain_Small_Doctor--></T>
+                  <T>112638<!--LootActions: loot_Buff_DoctorCareer_PatientTreated_MedRecord--></T>
+                </L>
+              </U>
+              <U n="weight">
+                <L n="multipliers">
+                  <U>
+                    <T n="multiplier">0</T>
+                    <L n="tests">
+                      <L>
+                        <V t="buff">
+                          <U n="buff">
+                            <L n="blacklist">
+                              <T>105618<!--Buff: buff_SicknessSystem_Illness_LlamaFlu--></T>
+                            </L>
+                            <E n="subject">TargetSim</E>
+                          </U>
+                        </V>
+                      </L>
+                    </L>
+                  </U>
+                </L>
+              </U>
+            </U>
+            <U>
+              <U n="outcome">
+                <V n="animation_ref" t="enabled">
+                  <U n="enabled">
+                    <T n="factory">107412<!--AnimationElement: object_HospitalExamBed_Patient_soc_ReclinedActions_GetShot_Failure--></T>
+                  </U>
+                </V>
+                <L n="basic_extras">
+                  <V t="notification">
+                    <U n="notification">
+                      <T n="allow_autonomous">False</T>
+                      <V n="dialog" t="single">
+                        <V n="single" t="literal">
+                          <U n="literal">
+                            <V t="enabled" n="icon">
+                              <V t="participant" n="enabled">
+                                <U n="participant">
+                                  <L n="participant_type">
+                                    <E>TargetSim</E>
+                                  </L>
+                                </U>
+                              </V>
+                            </V>
+                            <V t="enabled" n="secondary_icon">
+                              <V t="participant" n="enabled" />
+                            </V>
+                            <V n="text" t="single">
+                              <T n="single">0x361B2872<!--String: "{1.SimName} no parece haber mejorado tras la inyección. {0.SimFirstName} no ha acertado con su diagnóstico y eso afectará a su rendimiento laboral. Al menos no es {M0.un}{F0.una} matasanos."--></T>
+                            </V>
+                            <V t="enabled" n="text_tokens">
+                              <U n="enabled">
+                                <L n="tokens">
+                                  <V t="participant_type" />
+                                  <V t="participant_type">
+                                    <U n="participant_type">
+                                      <V t="from_participant" n="objects">
+                                        <U n="from_participant">
+                                          <E n="participant">TargetSim</E>
+                                        </U>
+                                      </V>
+                                    </U>
+                                  </V>
+                                </L>
+                              </U>
+                            </V>
+                            <V t="enabled" n="title">
+                              <T n="enabled">0xEBEABBB5<!--String: "Tratamiento ineficaz"--></T>
+                            </V>
+                          </U>
+                        </V>
+                      </V>
+                    </U>
+                  </V>
+                </L>
+                <L n="continuation">
+                  <U>
+                    <E n="actor">TargetSim</E>
+                    <T n="affordance">115430<!--SuperInteraction: hospitalExamBed_Patient_Recline_Sleep--></T>
+                    <E n="target">ActorPostureTarget</E>
+                  </U>
+                </L>
+                <L n="loot_list">
+                  <T>115288<!--LootActions: Rel_Loss_Medium_target--></T>
+                  <T>114419<!--LootActions: loot_Career_Doctor_RoleState_Patient_Treated--></T>
+                  <T>113326<!--LootActions: loot_JobPerformance_Loss_MediumSmall_Doctor_tested--></T>
+                  <T>112638<!--LootActions: loot_Buff_DoctorCareer_PatientTreated_MedRecord--></T>
+                </L>
+                <E n="outcome_result">FAILURE</E>
+              </U>
+              <U n="weight">
+                <L n="multipliers">
+                  <U>
+                    <T n="multiplier">0</T>
+                    <L n="tests">
+                      <L>
+                        <V t="buff">
+                          <U n="buff">
+                            <E n="subject">TargetSim</E>
+                            <V t="enabled" n="whitelist">
+                              <L n="enabled">
+                                <T>105618<!--Buff: buff_SicknessSystem_Illness_LlamaFlu--></T>
+                              </L>
+                            </V>
+                          </U>
+                        </V>
+                      </L>
+                    </L>
+                  </U>
+                </L>
+              </U>
+            </U>
+          </L>
+          <L n="tests">
+            <L>
+              <V t="buff">
+                <U n="buff">
+                  <E n="subject">TargetSim</E>
+                  <V n="whitelist" t="enabled">
+                    <L n="enabled">
+                      <T>108173<!--Buff: buff_SicknessSystem_Diagnosed_LlamaFlu--></T>
+                    </L>
+                  </V>
+                </U>
+              </V>
+            </L>
+          </L>
+        </U>
+        <U>
+          <L n="potential_outcomes">
+            <U>
+              <U n="outcome">
+                <V n="animation_ref" t="enabled">
+                  <U n="enabled">
+                    <T n="factory">107413<!--AnimationElement: object_HospitalExamBed_Patient_soc_ReclinedActions_GetShot_Success--></T>
+                  </U>
+                </V>
+                <L n="basic_extras">
+                  <V t="notification">
+                    <U n="notification">
+                      <T n="allow_autonomous">False</T>
+                      <V n="dialog" t="single">
+                        <V n="single" t="literal">
+                          <U n="literal">
+                            <V t="enabled" n="icon">
+                              <V t="participant" n="enabled">
+                                <U n="participant">
+                                  <L n="participant_type">
+                                    <E>TargetSim</E>
+                                  </L>
+                                </U>
+                              </V>
+                            </V>
+                            <V t="enabled" n="secondary_icon">
+                              <V t="participant" n="enabled" />
+                            </V>
+                            <V n="text" t="single">
+                              <T n="single">0x5D3C29D4<!--String: "La vacuna para {1.SimName} ha sido un éxito como tratamiento a su enfermedad. {0.SimFirstName} ha diagnosticado correctamente el asunto, lo que ha mejorado su rendimiento laboral."--></T>
+                            </V>
+                            <V t="enabled" n="text_tokens">
+                              <U n="enabled">
+                                <L n="tokens">
+                                  <V t="participant_type" />
+                                  <V t="participant_type">
+                                    <U n="participant_type">
+                                      <V t="from_participant" n="objects">
+                                        <U n="from_participant">
+                                          <E n="participant">TargetSim</E>
+                                        </U>
+                                      </V>
+                                    </U>
+                                  </V>
+                                </L>
+                              </U>
+                            </V>
+                            <V t="enabled" n="title">
+                              <T n="enabled">0x40A2E252<!--String: "¡Paciente {M1.curado}{F1.curada}!"--></T>
+                            </V>
+                          </U>
+                        </V>
+                      </V>
+                    </U>
+                  </V>
+                </L>
+                <L n="continuation">
+                  <U>
+                    <E n="actor">TargetSim</E>
+                    <T n="affordance">169887<!--ImmediateSuperInteraction: Push_Leave_Lot_Must_Run_Immediate--></T>
+                  </U>
+                </L>
+                <L n="loot_list">
+                  <T>111150<!--LootActions: loot_Commodity_SicknessSystem_Patient_Illness_Cured_target--></T>
+                  <T>116217<!--LootActions: loot_SicknessSystem_Symptom_Remove_target--></T>
+                  <T>114419<!--LootActions: loot_Career_Doctor_RoleState_Patient_Treated--></T>
+                  <T>112670<!--LootActions: loot_Buff_DoctorCareer_ExamBed_Patient_Discharge--></T>
+                  <T>109497<!--LootActions: loot_JobPerformance_Gain_Small_Doctor--></T>
+                  <T>112638<!--LootActions: loot_Buff_DoctorCareer_PatientTreated_MedRecord--></T>
+                </L>
+              </U>
+              <U n="weight">
+                <L n="multipliers">
+                  <U>
+                    <T n="multiplier">0</T>
+                    <L n="tests">
+                      <L>
+                        <V t="buff">
+                          <U n="buff">
+                            <L n="blacklist">
+                              <T>105616<!--Buff: buff_SicknessSystem_Illness_SweatyShivers--></T>
+                            </L>
+                            <E n="subject">TargetSim</E>
+                          </U>
+                        </V>
+                      </L>
+                    </L>
+                  </U>
+                </L>
+              </U>
+            </U>
+            <U>
+              <U n="outcome">
+                <V n="animation_ref" t="enabled">
+                  <U n="enabled">
+                    <T n="factory">107412<!--AnimationElement: object_HospitalExamBed_Patient_soc_ReclinedActions_GetShot_Failure--></T>
+                  </U>
+                </V>
+                <L n="basic_extras">
+                  <V t="notification">
+                    <U n="notification">
+                      <T n="allow_autonomous">False</T>
+                      <V n="dialog" t="single">
+                        <V n="single" t="literal">
+                          <U n="literal">
+                            <V t="enabled" n="icon">
+                              <V t="participant" n="enabled">
+                                <U n="participant">
+                                  <L n="participant_type">
+                                    <E>TargetSim</E>
+                                  </L>
+                                </U>
+                              </V>
+                            </V>
+                            <V t="enabled" n="secondary_icon">
+                              <V t="participant" n="enabled" />
+                            </V>
+                            <V n="text" t="single">
+                              <T n="single">0x361B2872<!--String: "{1.SimName} no parece haber mejorado tras la inyección. {0.SimFirstName} no ha acertado con su diagnóstico y eso afectará a su rendimiento laboral. Al menos no es {M0.un}{F0.una} matasanos."--></T>
+                            </V>
+                            <V t="enabled" n="text_tokens">
+                              <U n="enabled">
+                                <L n="tokens">
+                                  <V t="participant_type" />
+                                  <V t="participant_type">
+                                    <U n="participant_type">
+                                      <V t="from_participant" n="objects">
+                                        <U n="from_participant">
+                                          <E n="participant">TargetSim</E>
+                                        </U>
+                                      </V>
+                                    </U>
+                                  </V>
+                                </L>
+                              </U>
+                            </V>
+                            <V t="enabled" n="title">
+                              <T n="enabled">0xEBEABBB5<!--String: "Tratamiento ineficaz"--></T>
+                            </V>
+                          </U>
+                        </V>
+                      </V>
+                    </U>
+                  </V>
+                </L>
+                <L n="continuation">
+                  <U>
+                    <E n="actor">TargetSim</E>
+                    <T n="affordance">115430<!--SuperInteraction: hospitalExamBed_Patient_Recline_Sleep--></T>
+                    <E n="target">ActorPostureTarget</E>
+                  </U>
+                </L>
+                <L n="loot_list">
+                  <T>115288<!--LootActions: Rel_Loss_Medium_target--></T>
+                  <T>114419<!--LootActions: loot_Career_Doctor_RoleState_Patient_Treated--></T>
+                  <T>113326<!--LootActions: loot_JobPerformance_Loss_MediumSmall_Doctor_tested--></T>
+                  <T>112638<!--LootActions: loot_Buff_DoctorCareer_PatientTreated_MedRecord--></T>
+                </L>
+                <E n="outcome_result">FAILURE</E>
+              </U>
+              <U n="weight">
+                <L n="multipliers">
+                  <U>
+                    <T n="multiplier">0</T>
+                    <L n="tests">
+                      <L>
+                        <V t="buff">
+                          <U n="buff">
+                            <E n="subject">TargetSim</E>
+                            <V t="enabled" n="whitelist">
+                              <L n="enabled">
+                                <T>105616<!--Buff: buff_SicknessSystem_Illness_SweatyShivers--></T>
+                              </L>
+                            </V>
+                          </U>
+                        </V>
+                      </L>
+                    </L>
+                  </U>
+                </L>
+              </U>
+            </U>
+          </L>
+          <L n="tests">
+            <L>
+              <V t="buff">
+                <U n="buff">
+                  <E n="subject">TargetSim</E>
+                  <V n="whitelist" t="enabled">
+                    <L n="enabled">
+                      <T>108176<!--Buff: buff_SicknessSystem_Diagnosed_SweatyShivers--></T>
+                    </L>
+                  </V>
+                </U>
+              </V>
+            </L>
+          </L>
+        </U>
+      </L>
+    </U>
+  </V>
+  <V n="pie_menu_icon" t="enabled">
+    <V t="resource_key" n="enabled">
+      <U n="resource_key">
+        <T p="InEP01\UI\Icons\InteractionQueue\IconQueueSyringe.png" n="key">2f7d0004:00000000:54ef83b6cb806dce</T>
+      </U>
+    </V>
+  </V>
+  <T n="pie_menu_priority">8</T>
+  <U n="sub_action">
+    <T n="base_weight">2</T>
+  </U>
+  <E n="target_type">OBJECT</E>
+  <L n="test_globals">
+    <V t="test_set_reference">
+      <T n="test_set_reference">115422<!--TestSetInstance: testSet_Doctor_CareerEvent_Target_isPatient_notPregnant--></T>
+    </V>
+    <V t="buff">
+      <U n="buff">
+        <L n="blacklist">
+          <T>114415<!--Buff: buff_Role_DoctorCareer_PatientState_Treated--></T>
+        </L>
+        <E n="subject">TargetSim</E>
+      </U>
+    </V>
+    <V t="career_test">
+      <U n="career_test">
+        <V t="career_reference" n="test_type">
+          <U n="career_reference">
+            <V t="specific_career" n="career">
+              <T n="specific_career">107230<!--Career: career_Adult_Active_Doctor--></T>
+            </V>
+          </U>
+        </V>
+      </U>
+    </V>
+    <V t="buff">
+      <U n="buff">
+        <E n="subject">TargetSim</E>
+        <V t="enabled" n="tooltip">
+          <T n="enabled">0xB373FBFD<!--String: "A los pacientes se les debe diagnosticar la enfermedad apropiada para que puedan recibir este tratamiento."--></T>
+        </V>
+        <V n="whitelist" t="enabled">
+          <L n="enabled">
+            <T>108169<!--Buff: buff_SicknessSystem_Diagnosed_BloatyHead--></T>
+            <T>108173<!--Buff: buff_SicknessSystem_Diagnosed_LlamaFlu--></T>
+            <T>108176<!--Buff: buff_SicknessSystem_Diagnosed_SweatyShivers--></T>
+          </L>
+        </V>
+      </U>
+    </V>
+  </L>
+  <T n="visible">True</T>
+</I>

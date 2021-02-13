@@ -1,0 +1,141 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<I c="AutonomousObjectInInventoryPickerInteraction" i="interaction" m="interactions.base.picker_interaction" n="Bed_Journal_Hide_AutoPicker" s="161260">
+  <V t="enabled" n="_saveable" />
+  <L n="_static_commodities">
+    <U>
+      <T n="static_commodity">161255<!--StaticCommodity: staticCommodity_HideJournalInBed--></T>
+    </U>
+  </L>
+  <T n="attention_cost">0.5</T>
+  <V n="autonomy_preference" t="enabled">
+    <V n="enabled" t="use_only">
+      <U n="use_only">
+        <U n="preference">
+          <E n="tag">BED</E>
+        </U>
+      </U>
+    </V>
+  </V>
+  <V t="one_shot" n="basic_content" />
+  <V t="disabled" n="content_score" />
+  <V t="enabled" n="continuation">
+    <L n="enabled">
+      <U>
+        <T n="affordance">160220<!--SuperInteraction: Bed_Journal_Hide--></T>
+        <E n="target">Object</E>
+      </U>
+    </L>
+  </V>
+  <T n="display_name">0x16E2CCED<!--String: "Esconder diario"--></T>
+  <U n="display_name_text_tokens">
+    <L n="tokens">
+      <V t="participant_type">
+        <U n="participant_type">
+          <V t="from_participant" n="objects">
+            <U n="from_participant">
+              <E n="participant">Actor</E>
+            </U>
+          </V>
+        </U>
+      </V>
+      <V t="participant_type">
+        <U n="participant_type">
+          <V t="from_participant" n="objects">
+            <U n="from_participant">
+              <E n="participant">Object</E>
+            </U>
+          </V>
+        </U>
+      </V>
+      <V t="participant_type">
+        <U n="participant_type">
+          <V n="objects" t="from_participant">
+            <U n="from_participant">
+              <E n="participant">PickedObject</E>
+            </U>
+          </V>
+        </U>
+      </V>
+    </L>
+  </U>
+  <L n="interaction_category_tags">
+    <E>Interaction_Super</E>
+    <E>Interaction_All</E>
+  </L>
+  <V t="tag_set" n="inventory_item_test">
+    <U n="tag_set">
+      <L n="tag_set">
+        <E>Func_Journal</E>
+      </L>
+    </U>
+  </V>
+  <E n="inventory_subject">Actor</E>
+  <E n="scoring_priority">NORMAL</E>
+  <T n="subaction_selection_weight">1</T>
+  <E n="target_type">OBJECT</E>
+  <L n="test_globals">
+    <V t="sim_info">
+      <U n="sim_info">
+        <V t="specified" n="ages">
+          <L n="specified">
+            <E>TEEN</E>
+            <E>YOUNGADULT</E>
+            <E>ADULT</E>
+            <E>ELDER</E>
+            <E>CHILD</E>
+          </L>
+        </V>
+        <V t="specified" n="species">
+          <U n="specified">
+            <L n="species">
+              <E />
+            </L>
+          </U>
+        </V>
+        <E n="who">Actor</E>
+      </U>
+    </V>
+    <V t="inventory">
+      <U n="inventory">
+        <V t="has_object_with_tag" n="contents_check">
+          <U n="has_object_with_tag">
+            <L n="tag_set">
+              <E>Func_Journal</E>
+            </L>
+          </U>
+        </V>
+        <V t="participant_inventory" n="inventory_location">
+          <U n="participant_inventory">
+            <E n="inventory">Actor</E>
+          </U>
+        </V>
+        <U n="required_count">
+          <E n="comparison">GREATER_OR_EQUAL</E>
+          <T n="value">1</T>
+        </U>
+      </U>
+    </V>
+    <V t="inventory">
+      <U n="inventory">
+        <V t="has_object_with_tag" n="contents_check">
+          <U n="has_object_with_tag">
+            <L n="tag_set">
+              <E>Func_Journal</E>
+            </L>
+          </U>
+        </V>
+        <V t="participant_inventory" n="inventory_location">
+          <U n="participant_inventory">
+            <E n="inventory">Object</E>
+          </U>
+        </V>
+        <U n="required_count">
+          <E n="comparison">EQUAL</E>
+          <T n="value">0</T>
+        </U>
+      </U>
+    </V>
+  </L>
+  <T n="time_overhead">30</T>
+  <T n="visible">False</T>
+</I>

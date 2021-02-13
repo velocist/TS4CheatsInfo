@@ -1,0 +1,280 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<I c="SuperInteraction" i="interaction" m="interactions.base.super_interaction" n="si_Restaurant_Customer_CreateCake_Chocolate" s="135550">
+  <V t="enabled" n="_saveable" />
+  <T n="allow_user_directed">True</T>
+  <T n="attention_cost">0.5</T>
+  <V t="one_shot" n="basic_content">
+    <U n="one_shot">
+      <U n="animation_ref">
+        <T n="factory">23927<!--AnimationElement: Generic_PutDown--></T>
+      </U>
+    </U>
+  </V>
+  <L n="basic_extras">
+    <V t="create_object">
+      <U n="create_object">
+        <V n="creation_data" t="recipe">
+          <U n="recipe">
+            <T n="recipe">97467<!--Recipe: recipe_Food_Homestyle_CakeChocolate-Large--></T>
+          </U>
+        </V>
+        <L n="initial_states">
+          <U>
+            <T n="state">15323<!--CommodityBasedObjectStateValue: Servings_LargeUntouched--></T>
+          </U>
+          <U>
+            <T n="state">76724<!--CommodityBasedObjectStateValue: Trash_Consumable_HasFood--></T>
+          </U>
+        </L>
+        <V t="slot" n="location">
+          <U n="slot">
+            <V t="by_reference" n="parent_slot">
+              <T n="by_reference">slot_SitShared</T>
+            </V>
+          </U>
+        </V>
+        <E n="owner_sim">Actor</E>
+        <V t="at_beginning" n="timing" />
+      </U>
+    </V>
+  </L>
+  <T n="category">135622<!--PieMenuCategory: pieMenuCategory_BringOutCake--></T>
+  <V t="disabled" n="content_score" />
+  <T n="display_name">0xF4DB18E1<!--String: "Tarta de chocolate"--></T>
+  <U n="display_name_text_tokens">
+    <L n="tokens">
+      <V t="participant_type">
+        <U n="participant_type">
+          <V n="objects" t="from_participant">
+            <U n="from_participant">
+              <E n="participant">Actor</E>
+            </U>
+          </V>
+        </U>
+      </V>
+      <V t="participant_type">
+        <U n="participant_type">
+          <V n="objects" t="from_participant">
+            <U n="from_participant">
+              <E n="participant">Object</E>
+            </U>
+          </V>
+        </U>
+      </V>
+    </L>
+  </U>
+  <L n="interaction_category_tags">
+    <E>Interaction_Super</E>
+    <E>Interaction_All</E>
+  </L>
+  <V n="outcome" t="test_based">
+    <U n="test_based">
+      <L n="fallback_outcomes">
+        <U>
+          <U n="outcome">
+            <V n="animation_ref" t="enabled">
+              <U n="enabled">
+                <T n="factory">11763<!--AnimationElement: RouteFail--></T>
+                <U n="overrides">
+                  <V n="balloons" t="enabled">
+                    <L n="enabled">
+                      <U>
+                        <L n="balloon_choices">
+                          <U>
+                            <V n="item" t="balloon_icon">
+                              <U n="balloon_icon">
+                                <V n="icon" t="resource_key">
+                                  <U n="resource_key">
+                                    <T n="key" p="InGame\UI\Icons\Headlines\Final\headline_RouteFail.png">2f7d0004:00000000:97cc3201d9f385cf</T>
+                                  </U>
+                                </V>
+                              </U>
+                            </V>
+                          </U>
+                        </L>
+                        <L n="balloon_target">
+                          <E>Actor</E>
+                        </L>
+                      </U>
+                    </L>
+                  </V>
+                </U>
+              </U>
+            </V>
+          </U>
+        </U>
+      </L>
+      <L n="tested_outcomes">
+        <U>
+          <L n="potential_outcomes">
+            <U>
+              <U n="outcome">
+                <L n="basic_extras">
+                  <V t="payment">
+                    <U n="payment">
+                      <V n="payment" t="literal">
+                        <U n="literal">
+                          <U n="cost_modifiers">
+                            <L n="multipliers">
+                              <U>
+                                <T n="multiplier">0</T>
+                                <L n="tests">
+                                  <L>
+                                    <V t="bucks_perks_test">
+                                      <U n="bucks_perks_test">
+                                        <T n="bucks_perk">193750<!--BucksPerk: famePerks_GoodReputation_StarTreatment--></T>
+                                      </U>
+                                    </V>
+                                  </L>
+                                </L>
+                              </U>
+                              <U>
+                                <T n="multiplier">0</T>
+                                <L n="tests">
+                                  <L>
+                                    <V t="trait">
+                                      <U n="trait">
+                                        <L n="whitelist_traits">
+                                          <T>204044<!--Trait: trait_HeroOfStrangerville--></T>
+                                        </L>
+                                      </U>
+                                    </V>
+                                    <V t="region">
+                                      <U n="region">
+                                        <V n="whitelist" t="enabled">
+                                          <L n="enabled">
+                                            <T>201699<!--Region: region_Residential_Strangetown--></T>
+                                          </L>
+                                        </V>
+                                      </U>
+                                    </V>
+                                  </L>
+                                </L>
+                              </U>
+                            </L>
+                          </U>
+                          <V n="payment_cost" t="amount">
+                            <U n="amount">
+                              <T n="amount">24</T>
+                            </U>
+                          </V>
+                        </U>
+                      </V>
+                    </U>
+                  </V>
+                </L>
+              </U>
+            </U>
+          </L>
+          <L n="tests">
+            <L>
+              <V t="existence">
+                <U n="existence">
+                  <E n="participant">CreatedObject</E>
+                </U>
+              </V>
+            </L>
+          </L>
+        </U>
+      </L>
+    </U>
+  </V>
+  <E n="scoring_priority">NORMAL</E>
+  <T n="subaction_selection_weight">1</T>
+  <E n="target_type">OBJECT</E>
+  <L n="test_globals">
+    <V t="sim_info">
+      <U n="sim_info">
+        <V t="specified" n="ages">
+          <L n="specified">
+            <E>TEEN</E>
+            <E>YOUNGADULT</E>
+            <E>ADULT</E>
+            <E>ELDER</E>
+            <E>CHILD</E>
+          </L>
+        </V>
+        <V t="specified" n="species">
+          <U n="specified">
+            <L n="species">
+              <E />
+            </L>
+          </U>
+        </V>
+        <E n="who">Actor</E>
+      </U>
+    </V>
+    <V t="location">
+      <U n="location">
+        <U n="location_tests">
+          <V t="enabled" n="is_venue_type">
+            <U n="enabled">
+              <T n="venue_type">130713<!--Venue: venue_Restaurant--></T>
+            </U>
+          </V>
+        </U>
+      </U>
+    </V>
+    <V t="restaurant_dining_spot">
+      <U n="restaurant_dining_spot">
+        <T n="non_spot_seat_always_pass">False</T>
+        <E n="test_type">CLAIMED_BY_GROUP</E>
+      </U>
+    </V>
+    <V t="object_criteria">
+      <U n="object_criteria">
+        <V t="disabled" n="desired_state_threshold" />
+        <V t="tags" n="identity_test">
+          <U n="tags">
+            <L n="tag_set">
+              <E>Func_Table</E>
+            </L>
+          </U>
+        </V>
+        <T n="on_active_lot">True</T>
+        <T n="owned">False</T>
+        <V t="single_object" n="subject_specific_tests">
+          <U n="single_object">
+            <E n="target">ActorSurface</E>
+          </U>
+        </V>
+        <V t="disabled" n="tooltip" />
+        <V t="disabled" n="value" />
+      </U>
+    </V>
+    <V t="slot_test">
+      <U n="slot_test">
+        <V t="by_reference" n="child_slot">
+          <T n="by_reference">slot_SitShared</T>
+        </V>
+        <V n="slot_test_type" t="has_empty_slot">
+          <U n="has_empty_slot">
+            <T n="check_all_slots">True</T>
+          </U>
+        </V>
+        <V n="tooltip" t="enabled">
+          <T n="enabled">0x79BDA03C<!--String: "No hay suficiente espacio para poner nada más en la mesa."--></T>
+        </V>
+      </U>
+    </V>
+    <V t="object_criteria">
+      <U n="object_criteria">
+        <V n="identity_test" t="tags">
+          <U n="tags">
+            <L n="tag_set">
+              <E>Func_TableDiningUmbrella</E>
+            </L>
+            <E n="test_type">CONTAINS_NO_TAGS_IN_SET</E>
+          </U>
+        </V>
+        <T n="on_active_lot">True</T>
+        <T n="owned">False</T>
+        <V t="single_object" n="subject_specific_tests" />
+        <V n="tooltip" t="enabled">
+          <T n="enabled">0xEC958B78<!--String: "La sombrilla está en medio."--></T>
+        </V>
+      </U>
+    </V>
+  </L>
+  <T n="time_overhead">30</T>
+</I>

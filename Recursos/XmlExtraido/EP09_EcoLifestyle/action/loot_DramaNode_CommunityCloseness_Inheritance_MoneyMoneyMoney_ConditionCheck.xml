@@ -1,0 +1,68 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<I c="LootActions" i="action" m="interactions.utils.loot" n="loot_DramaNode_CommunityCloseness_Inheritance_MoneyMoneyMoney_ConditionCheck" s="233024">
+  <L n="loot_actions">
+    <V t="notification_and_dialog">
+      <U n="notification_and_dialog">
+        <V n="dialog" t="notification">
+          <U n="notification">
+            <V n="icon" t="enabled">
+              <V n="enabled" t="resource_key">
+                <U n="resource_key">
+                  <T n="key" p="InGame\UI\Icons\Notifications\notification_Criminal.png">2f7d0004:00000000:e43ebf3f9da2c560</T>
+                </U>
+              </V>
+            </V>
+            <V n="text" t="single">
+              <T n="single">0x6EFF0D8D<!--String: "Has cumplido las condiciones para recibir el dinero de la herencia. Pronto recibirás un depósito. ¡Enhorabuena!"--></T>
+            </V>
+            <E n="urgency">DEFAULT</E>
+            <E n="visual_type">INFORMATION</E>
+          </U>
+        </V>
+      </U>
+    </V>
+    <V t="money_loot">
+      <U n="money_loot">
+        <V n="amount" t="random_in_range">
+          <U n="random_in_range">
+            <T n="lower_bound">5000</T>
+            <T n="upper_bound">25000</T>
+          </U>
+        </V>
+      </U>
+    </V>
+    <V t="buff_removal">
+      <U n="buff_removal">
+        <L n="buffs_to_remove">
+          <T>233023<!--Buff: buff_CommunityCloseness_Inheritence_MarriedForMoney--></T>
+        </L>
+      </U>
+    </V>
+  </L>
+  <L n="tests">
+    <L>
+      <V t="buff">
+        <U n="buff">
+          <V n="whitelist" t="enabled">
+            <L n="enabled">
+              <T>233023<!--Buff: buff_CommunityCloseness_Inheritence_MarriedForMoney--></T>
+            </L>
+          </V>
+        </U>
+      </V>
+      <V t="relationship">
+        <U n="relationship">
+          <T n="num_relations">1</T>
+          <U n="required_relationship_bits">
+            <L n="match_any">
+              <T>15822<!--RelationshipBit: romantic-Married--></T>
+            </L>
+          </U>
+          <L n="target_sim">
+            <E>AllRelationships</E>
+          </L>
+        </U>
+      </V>
+    </L>
+  </L>
+</I>

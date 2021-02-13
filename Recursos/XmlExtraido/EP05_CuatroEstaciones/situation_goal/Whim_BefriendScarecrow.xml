@@ -1,0 +1,91 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<I c="SituationGoalObjectInteraction" i="situation_goal" m="situations.situation_goal_object_interaction" n="Whim_BefriendScarecrow" s="190202">
+  <V n="_display_data" t="enabled">
+    <U n="enabled">
+      <V n="instance_display_icon" t="enabled">
+        <T n="enabled" p="InEP05\UI\Icons\Whims\whim_Scarecrow.png">2f7d0004:00000000:7d3cc047c24d76ea</T>
+      </V>
+      <V n="instance_display_name" t="enabled">
+        <T n="enabled">0x25FAB5CA<!--String: "Trabar amistad con un espantapájaros"--></T>
+      </V>
+      <V n="instance_display_tooltip" t="enabled">
+        <T n="enabled">0x3C7B1BF2<!--String: "Realiza interacciones amistosas con el espantapájaros."--></T>
+      </V>
+    </U>
+  </V>
+  <U n="_goal_test">
+    <L n="affordances">
+      <T>187933<!--SuperInteraction: scarecrow_Examine--></T>
+      <T>187935<!--SuperInteraction: scarecrow_ChatWithScarecrow--></T>
+      <T>188593<!--SuperInteraction: scarecrow_DiscussTheBirds--></T>
+      <T>188595<!--SuperInteraction: scarecrow_InsultBarnyardSmell--></T>
+      <T>188594<!--SuperInteraction: scarecrow_TellHarvestJokes--></T>
+    </L>
+    <E n="test_event">InteractionComplete</E>
+  </U>
+  <L n="_post_tests">
+    <V t="state">
+      <U n="state">
+        <T n="value">187948<!--ObjectStateValue: scarecrow_Alive_Yes--></T>
+      </U>
+    </V>
+    <V t="buff">
+      <U n="buff">
+        <V n="whitelist" t="enabled">
+          <L n="enabled">
+            <T>190220<!--Buff: buff_Scarecrow_Hidden_JustBefriended--></T>
+          </L>
+        </V>
+      </U>
+    </V>
+  </L>
+  <L n="_pre_tests">
+    <V t="sim_info">
+      <U n="sim_info">
+        <V t="specified" n="ages">
+          <L n="specified">
+            <E>TEEN</E>
+            <E>YOUNGADULT</E>
+            <E>ADULT</E>
+            <E>ELDER</E>
+            <E>CHILD</E>
+          </L>
+        </V>
+        <V t="specified" n="species">
+          <U n="specified">
+            <L n="species">
+              <E />
+            </L>
+          </U>
+        </V>
+      </U>
+    </V>
+    <V t="object_criteria">
+      <U n="object_criteria">
+        <V n="desired_state_threshold" t="enabled">
+          <U n="enabled">
+            <E n="comparison">EQUAL</E>
+            <T n="value">187947<!--ObjectStateValue: scarecrow_Alive_No--></T>
+          </U>
+        </V>
+        <V t="tags" n="identity_test">
+          <U n="tags">
+            <L n="tag_set">
+              <E>Func_Scarecrow</E>
+            </L>
+          </U>
+        </V>
+        <V n="subject_specific_tests" t="all_objects">
+          <U n="all_objects">
+            <U n="quantity">
+              <E n="comparison">GREATER</E>
+              <T n="value">0</T>
+            </U>
+          </U>
+        </V>
+      </U>
+    </V>
+  </L>
+  <T n="_score">25</T>
+  <T p="InGame\Audio\Bumper\bumper_event_goal_complete.propx" n="audio_sting_on_complete">39b2aa4a:00000000:ed52c39bcc2a7111</T>
+</I>

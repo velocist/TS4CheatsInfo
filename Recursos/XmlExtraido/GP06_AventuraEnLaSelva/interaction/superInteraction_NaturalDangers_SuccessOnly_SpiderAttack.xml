@@ -1,0 +1,354 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<I c="SuperInteraction" i="interaction" m="interactions.base.super_interaction" n="superInteraction_NaturalDangers_SuccessOnly_SpiderAttack" s="176505">
+  <V t="prohibit_cancelation" n="_cancelable_by_user" />
+  <V t="resource_key" n="_icon">
+    <U n="resource_key">
+      <T n="key" p="InGP06\UI\Icons\InteractionQueue\Queue_Spider.png">2f7d0004:00000000:c274adda95047a42</T>
+    </U>
+  </V>
+  <V t="enabled" n="_saveable" />
+  <T n="attention_cost">0.5</T>
+  <V t="one_shot" n="basic_content" />
+  <L n="basic_extras">
+    <V t="loot">
+      <U n="loot">
+        <L n="loot_list">
+          <T>250343<!--LootActions: loot_Lifestyles_Progress_Unlock_AdrenalineSeeker--></T>
+        </L>
+        <V t="at_beginning" n="timing" />
+      </U>
+    </V>
+    <V t="camera_focus">
+      <U n="camera_focus">
+        <T n="follow">True</T>
+        <U n="success_chance">
+          <L n="multipliers">
+            <U>
+              <T n="multiplier">0</T>
+              <L n="tests">
+                <L>
+                  <V t="sim_info">
+                    <U n="sim_info">
+                      <V t="enabled" n="npc">
+                        <T n="enabled">True</T>
+                      </V>
+                    </U>
+                  </V>
+                </L>
+              </L>
+            </U>
+          </L>
+        </U>
+        <V t="at_beginning" n="timing" />
+      </U>
+    </V>
+    <V t="audio_sting">
+      <U n="audio_sting">
+        <U n="audio_sting">
+          <T n="audio" p="InGP06\Audio\bumper\bumper_naturaldanger_warning.propx">39b2aa4a:00000000:6007dfc4836d7fae</T>
+          <T n="play_on_active_sim_only">True</T>
+        </U>
+        <V t="at_beginning" n="timing" />
+      </U>
+    </V>
+  </L>
+  <V t="disabled" n="content_score" />
+  <T n="display_name">0x47D05192<!--String: "Ataque de arañas"--></T>
+  <U n="display_name_text_tokens">
+    <L n="tokens">
+      <V t="participant_type">
+        <U n="participant_type">
+          <V t="from_participant" n="objects">
+            <U n="from_participant">
+              <E n="participant">Actor</E>
+            </U>
+          </V>
+        </U>
+      </V>
+      <V t="participant_type">
+        <U n="participant_type">
+          <V t="from_participant" n="objects">
+            <U n="from_participant">
+              <E n="participant">Object</E>
+            </U>
+          </V>
+        </U>
+      </V>
+    </L>
+  </U>
+  <L n="interaction_category_tags">
+    <E>Interaction_Super</E>
+    <E>Interaction_All</E>
+    <E>Interaction_Lifestyles_AdrenalineSeeker_OneShot</E>
+  </L>
+  <V n="outcome" t="test_based">
+    <U n="test_based">
+      <L n="fallback_outcomes">
+        <U>
+          <U n="outcome">
+            <V n="animation_ref" t="enabled">
+              <U n="enabled">
+                <T n="factory">176473<!--AnimationElement: natural_Dangers_Spider_Gear--></T>
+              </U>
+            </V>
+            <L n="basic_extras">
+              <V t="notification">
+                <U n="notification">
+                  <V n="dialog" t="single">
+                    <V n="single" t="literal">
+                      <U n="literal">
+                        <V t="enabled" n="icon">
+                          <V n="enabled" t="resource_key">
+                            <U n="resource_key">
+                              <T n="key" p="InGP06\UI\icons\Headlines\headline_CreepyCrawlyInvasion.png">2f7d0004:00000000:4774bea8944332cf</T>
+                            </U>
+                          </V>
+                        </V>
+                        <V t="enabled" n="secondary_icon">
+                          <V n="enabled" t="participant" />
+                        </V>
+                        <V n="text" t="single">
+                          <T n="single">0x5E9A954D<!--String: "Parece que {0.SimFirstName} tiene una visita inesperada: ¡la de unas arañas!\n\n"¿Qué mejor momento para sacar el Doctor Parker?", piensa {0.SimFirstName}. Tener el repelente de arañas preparado seguro que ayuda a mantener alejados a esos artrópodos indeseados."--></T>
+                        </V>
+                      </U>
+                    </V>
+                  </V>
+                  <V t="at_beginning" n="timing" />
+                </U>
+              </V>
+            </L>
+            <L n="loot_list">
+              <T>177141<!--LootActions: loot_NaturalDangers_Spider_Gear--></T>
+            </L>
+          </U>
+          <U n="weight">
+            <T n="base_value">2</T>
+            <L n="multipliers">
+              <U>
+                <T n="multiplier">0</T>
+                <L n="tests">
+                  <L>
+                    <V t="skill_test">
+                      <U n="skill_test">
+                        <T n="skill">16706<!--Skill: statistic_Skill_AdultMajor_Logic--></T>
+                        <V t="threshold" n="skill_range">
+                          <U n="threshold">
+                            <U n="skill_threshold">
+                              <T n="value">8</T>
+                            </U>
+                          </U>
+                        </V>
+                        <T n="use_effective_skill_level">True</T>
+                      </U>
+                    </V>
+                  </L>
+                  <L>
+                    <V t="inventory">
+                      <U n="inventory">
+                        <V t="has_object_with_def" n="contents_check">
+                          <U n="has_object_with_def">
+                            <T n="definition">179462</T>
+                          </U>
+                        </V>
+                        <U n="required_count">
+                          <E n="comparison">LESS_OR_EQUAL</E>
+                          <T n="value">0</T>
+                        </U>
+                      </U>
+                    </V>
+                  </L>
+                  <L>
+                    <V t="buff">
+                      <U n="buff">
+                        <V n="whitelist" t="enabled">
+                          <L n="enabled">
+                            <T>104543<!--Buff: buff_Object_HerbalistPotion_InsectRepellent--></T>
+                          </L>
+                        </V>
+                      </U>
+                    </V>
+                  </L>
+                </L>
+              </U>
+            </L>
+          </U>
+        </U>
+      </L>
+      <L n="tested_outcomes">
+        <U>
+          <L n="potential_outcomes">
+            <U>
+              <U n="outcome">
+                <V t="enabled" n="animation_ref">
+                  <U n="enabled">
+                    <T n="factory">176474<!--AnimationElement: natural_Dangers_Spider_Skill--></T>
+                  </U>
+                </V>
+                <L n="basic_extras">
+                  <V t="notification">
+                    <U n="notification">
+                      <V n="dialog" t="single">
+                        <V n="single" t="literal">
+                          <U n="literal">
+                            <V t="enabled" n="icon">
+                              <V n="enabled" t="resource_key">
+                                <U n="resource_key">
+                                  <T n="key" p="InGP06\UI\icons\Headlines\headline_CreepyCrawlyInvasion.png">2f7d0004:00000000:4774bea8944332cf</T>
+                                </U>
+                              </V>
+                            </V>
+                            <V t="enabled" n="secondary_icon">
+                              <V n="enabled" t="participant" />
+                            </V>
+                            <V n="text" t="single">
+                              <T n="single">0x51A99B5C<!--String: "Parece que {0.SimFirstName} tiene una visita inesperada: ¡la de unas arañas!\n\nTras considerar sus opciones, decide que mantenerse inmóvil sin perder la calma, tal como dicta la lógica, podría bastar para no perturbar a los arácnidos y evitar picaduras."--></T>
+                            </V>
+                          </U>
+                        </V>
+                      </V>
+                      <V t="at_beginning" n="timing" />
+                    </U>
+                  </V>
+                </L>
+                <L n="loot_list">
+                  <T>177146<!--LootActions: loot_NaturalDangers_Spider_Skill--></T>
+                </L>
+              </U>
+              <U n="weight">
+                <T n="base_value">1</T>
+                <L n="multipliers">
+                  <U>
+                    <T n="multiplier">4</T>
+                    <L n="tests">
+                      <L>
+                        <V t="skill_test">
+                          <U n="skill_test">
+                            <T n="skill">16706<!--Skill: statistic_Skill_AdultMajor_Logic--></T>
+                            <V t="threshold" n="skill_range">
+                              <U n="threshold">
+                                <U n="skill_threshold">
+                                  <T n="value">6</T>
+                                </U>
+                              </U>
+                            </V>
+                            <T n="use_effective_skill_level">True</T>
+                          </U>
+                        </V>
+                      </L>
+                    </L>
+                  </U>
+                </L>
+              </U>
+            </U>
+          </L>
+          <L n="tests">
+            <L>
+              <V t="skill_test">
+                <U n="skill_test">
+                  <T n="skill">16706<!--Skill: statistic_Skill_AdultMajor_Logic--></T>
+                  <V t="threshold" n="skill_range">
+                    <U n="threshold">
+                      <U n="skill_threshold">
+                        <T n="value">4</T>
+                      </U>
+                    </U>
+                  </V>
+                </U>
+              </V>
+              <V t="buff">
+                <U n="buff">
+                  <L n="blacklist">
+                    <T>104543<!--Buff: buff_Object_HerbalistPotion_InsectRepellent--></T>
+                  </L>
+                </U>
+              </V>
+            </L>
+          </L>
+        </U>
+        <U>
+          <L n="potential_outcomes">
+            <U>
+              <U n="outcome">
+                <V t="enabled" n="animation_ref">
+                  <U n="enabled">
+                    <T n="factory">176474<!--AnimationElement: natural_Dangers_Spider_Skill--></T>
+                  </U>
+                </V>
+                <L n="basic_extras">
+                  <V t="notification">
+                    <U n="notification">
+                      <V n="dialog" t="single">
+                        <V n="single" t="literal">
+                          <U n="literal">
+                            <V t="enabled" n="icon">
+                              <V n="enabled" t="resource_key">
+                                <U n="resource_key">
+                                  <T n="key" p="InGP06\UI\icons\Headlines\headline_CreepyCrawlyInvasion.png">2f7d0004:00000000:4774bea8944332cf</T>
+                                </U>
+                              </V>
+                            </V>
+                            <V t="enabled" n="secondary_icon">
+                              <V n="enabled" t="participant" />
+                            </V>
+                            <V n="text" t="single">
+                              <T n="single">0xE8542637<!--String: "Parece que {0.SimFirstName} tiene una visita inesperada: ¡la de unas arañas!\n\nPero a {M0.este}{F0.esta} no le preocupa demasiado. Se ha acordado de usar repelente de insectos y está bastante {M0.seguro}{F0.segura} de que a las arañas no les gustará nada."--></T>
+                            </V>
+                          </U>
+                        </V>
+                      </V>
+                      <V t="at_beginning" n="timing" />
+                    </U>
+                  </V>
+                </L>
+                <L n="loot_list">
+                  <T>179464<!--LootActions: loot_NaturalDangers_InsectsRepelled_Spiders--></T>
+                </L>
+              </U>
+            </U>
+          </L>
+          <L n="tests">
+            <L>
+              <V t="buff">
+                <U n="buff">
+                  <V n="whitelist" t="enabled">
+                    <L n="enabled">
+                      <T>104543<!--Buff: buff_Object_HerbalistPotion_InsectRepellent--></T>
+                    </L>
+                  </V>
+                </U>
+              </V>
+            </L>
+          </L>
+        </U>
+      </L>
+      <T n="use_fallback_as_default">True</T>
+    </U>
+  </V>
+  <E n="scoring_priority">NORMAL</E>
+  <T n="subaction_selection_weight">1</T>
+  <E n="target_type">OBJECT</E>
+  <L n="test_globals">
+    <V t="sim_info">
+      <U n="sim_info">
+        <V t="specified" n="ages">
+          <L n="specified">
+            <E>TEEN</E>
+            <E>YOUNGADULT</E>
+            <E>ADULT</E>
+            <E>ELDER</E>
+            <E>CHILD</E>
+          </L>
+        </V>
+        <V t="specified" n="species">
+          <U n="specified">
+            <L n="species">
+              <E />
+            </L>
+          </U>
+        </V>
+        <E n="who">Actor</E>
+      </U>
+    </V>
+  </L>
+  <T n="time_overhead">30</T>
+</I>

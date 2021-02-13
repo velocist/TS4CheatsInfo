@@ -1,0 +1,701 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<I c="SuperInteraction" i="interaction" m="interactions.base.super_interaction" n="wishingWell_MakeAWish_Skill" s="130879">
+  <V t="participant" n="_icon">
+    <U n="participant">
+      <L n="participant_type">
+        <E>Object</E>
+      </L>
+    </U>
+  </V>
+  <V t="enabled" n="_saveable" />
+  <T n="allowed_to_combine">False</T>
+  <T n="attention_cost">0.5</T>
+  <V t="one_shot" n="basic_content" />
+  <L n="basic_extras">
+    <V t="payment">
+      <U n="payment">
+        <V t="literal" n="payment">
+          <U n="literal">
+            <V n="payment_cost" t="amount">
+              <U n="amount">
+                <T n="amount">1</T>
+              </U>
+            </V>
+          </U>
+        </V>
+      </U>
+    </V>
+  </L>
+  <V t="enabled" n="canonical_animation">
+    <U n="enabled">
+      <T n="factory">130892<!--AnimationElement: wishingWell_MakeAWish_Success--></T>
+    </U>
+  </V>
+  <T n="category">130902<!--PieMenuCategory: WishingWell_Wishes--></T>
+  <V t="disabled" n="content_score" />
+  <T n="display_name">0x944F915A<!--String: "Pedir habilidades"--></T>
+  <U n="display_name_text_tokens">
+    <L n="tokens">
+      <V t="participant_type">
+        <U n="participant_type">
+          <V t="from_participant" n="objects">
+            <U n="from_participant">
+              <E n="participant">Actor</E>
+            </U>
+          </V>
+        </U>
+      </V>
+      <V t="participant_type">
+        <U n="participant_type">
+          <V n="objects" t="from_participant">
+            <U n="from_participant">
+              <E n="participant">Object</E>
+            </U>
+          </V>
+        </U>
+      </V>
+    </L>
+  </U>
+  <L n="interaction_category_tags">
+    <E>Interaction_Super</E>
+    <E>Interaction_All</E>
+  </L>
+  <V n="outcome" t="test_based">
+    <U n="test_based">
+      <L n="fallback_outcomes">
+        <U>
+          <U n="outcome">
+            <V t="enabled" n="animation_ref">
+              <U n="enabled">
+                <T n="factory">130892<!--AnimationElement: wishingWell_MakeAWish_Success--></T>
+              </U>
+            </V>
+            <L n="basic_extras">
+              <V t="state_change">
+                <U n="state_change">
+                  <V n="new_value" t="single_value">
+                    <U n="single_value">
+                      <T n="new_value">131000<!--CommodityBasedObjectStateValue: wishingWell_Sting_OverwhelminglyPositive_On--></T>
+                    </U>
+                  </V>
+                </U>
+              </V>
+              <V t="vfx">
+                <U n="vfx">
+                  <V t="at_beginning" n="timing">
+                    <U n="at_beginning">
+                      <V t="enabled" n="offset_time">
+                        <T n="enabled">2</T>
+                      </V>
+                    </U>
+                  </V>
+                  <U n="vfx">
+                    <T n="effect_name">sp06_obj_wishing_well_face_positive_super</T>
+                    <V t="Slot" n="joint_name">
+                      <T n="Slot">_fx_2</T>
+                    </V>
+                  </U>
+                </U>
+              </V>
+            </L>
+            <L n="continuation">
+              <U>
+                <T n="affordance">130932<!--SuperInteraction: wishingWell_WishOutcomes_Skill_OverwhelminglyPositive--></T>
+              </U>
+            </L>
+          </U>
+          <U n="weight">
+            <T n="base_value">20</T>
+            <L n="multipliers">
+              <U>
+                <T n="multiplier">0</T>
+                <L n="tests">
+                  <L>
+                    <V t="state">
+                      <U n="state">
+                        <E n="operator">NOTEQUAL</E>
+                        <T n="value">131420<!--ObjectStateValue: wishingWell_CheatOutcomes_Off--></T>
+                      </U>
+                    </V>
+                    <V t="state">
+                      <U n="state">
+                        <E n="operator">NOTEQUAL</E>
+                        <T n="value">131421<!--ObjectStateValue: wishingWell_CheatOutcomes_OverwhelmingPositive--></T>
+                      </U>
+                    </V>
+                  </L>
+                </L>
+              </U>
+              <U>
+                <T n="multiplier">2</T>
+                <L n="tests">
+                  <L>
+                    <V t="state">
+                      <U n="state">
+                        <T n="value">130864<!--ObjectStateValue: wishingWell_Faces_Joy--></T>
+                      </U>
+                    </V>
+                  </L>
+                </L>
+              </U>
+              <U>
+                <T n="multiplier">0.3</T>
+                <L n="tests">
+                  <L>
+                    <V t="state">
+                      <U n="state">
+                        <T n="value">130863<!--ObjectStateValue: wishingWell_Faces_Dispair--></T>
+                      </U>
+                    </V>
+                  </L>
+                </L>
+              </U>
+              <U>
+                <T n="multiplier">0.1</T>
+                <L n="tests">
+                  <L>
+                    <V t="state">
+                      <U n="state">
+                        <T n="value">130862<!--ObjectStateValue: wishingWell_Faces_Reaper--></T>
+                      </U>
+                    </V>
+                  </L>
+                </L>
+              </U>
+            </L>
+          </U>
+        </U>
+        <U>
+          <U n="outcome">
+            <V t="enabled" n="animation_ref">
+              <U n="enabled">
+                <T n="factory">130892<!--AnimationElement: wishingWell_MakeAWish_Success--></T>
+              </U>
+            </V>
+            <L n="basic_extras">
+              <V t="state_change">
+                <U n="state_change">
+                  <V n="new_value" t="single_value">
+                    <U n="single_value">
+                      <T n="new_value">131002<!--CommodityBasedObjectStateValue: wishingWell_Sting_Positive_On--></T>
+                    </U>
+                  </V>
+                </U>
+              </V>
+              <V t="vfx">
+                <U n="vfx">
+                  <V t="at_beginning" n="timing">
+                    <U n="at_beginning">
+                      <V t="enabled" n="offset_time">
+                        <T n="enabled">2</T>
+                      </V>
+                    </U>
+                  </V>
+                  <U n="vfx">
+                    <T n="effect_name">sp06_obj_wishing_well_face_positive</T>
+                    <V t="Slot" n="joint_name">
+                      <T n="Slot">_fx_2</T>
+                    </V>
+                  </U>
+                </U>
+              </V>
+            </L>
+            <L n="continuation">
+              <U>
+                <T n="affordance">130931<!--SuperInteraction: wishingWell_WishOutcomes_Skill_Positive--></T>
+              </U>
+            </L>
+          </U>
+          <U n="weight">
+            <T n="base_value">50</T>
+            <L n="multipliers">
+              <U>
+                <T n="multiplier">0</T>
+                <L n="tests">
+                  <L>
+                    <V t="state">
+                      <U n="state">
+                        <E n="operator">NOTEQUAL</E>
+                        <T n="value">131420<!--ObjectStateValue: wishingWell_CheatOutcomes_Off--></T>
+                      </U>
+                    </V>
+                    <V t="state">
+                      <U n="state">
+                        <E n="operator">NOTEQUAL</E>
+                        <T n="value">131423<!--ObjectStateValue: wishingWell_CheatOutcomes_Positive--></T>
+                      </U>
+                    </V>
+                  </L>
+                </L>
+              </U>
+              <U>
+                <T n="multiplier">1.8</T>
+                <L n="tests">
+                  <L>
+                    <V t="state">
+                      <U n="state">
+                        <T n="value">130864<!--ObjectStateValue: wishingWell_Faces_Joy--></T>
+                      </U>
+                    </V>
+                  </L>
+                </L>
+              </U>
+              <U>
+                <T n="multiplier">0.28</T>
+                <L n="tests">
+                  <L>
+                    <V t="state">
+                      <U n="state">
+                        <T n="value">130863<!--ObjectStateValue: wishingWell_Faces_Dispair--></T>
+                      </U>
+                    </V>
+                  </L>
+                </L>
+              </U>
+              <U>
+                <T n="multiplier">0.2</T>
+                <L n="tests">
+                  <L>
+                    <V t="state">
+                      <U n="state">
+                        <T n="value">130862<!--ObjectStateValue: wishingWell_Faces_Reaper--></T>
+                      </U>
+                    </V>
+                  </L>
+                </L>
+              </U>
+            </L>
+          </U>
+        </U>
+        <U>
+          <U n="outcome">
+            <V t="enabled" n="animation_ref">
+              <U n="enabled">
+                <T n="factory">130892<!--AnimationElement: wishingWell_MakeAWish_Success--></T>
+              </U>
+            </V>
+            <L n="basic_extras">
+              <V t="state_change">
+                <U n="state_change">
+                  <V n="new_value" t="single_value">
+                    <U n="single_value">
+                      <T n="new_value">130996<!--CommodityBasedObjectStateValue: wishingWell_Sting_Neutral_On--></T>
+                    </U>
+                  </V>
+                </U>
+              </V>
+              <V t="vfx">
+                <U n="vfx">
+                  <V t="at_beginning" n="timing">
+                    <U n="at_beginning">
+                      <V t="enabled" n="offset_time">
+                        <T n="enabled">2</T>
+                      </V>
+                    </U>
+                  </V>
+                  <U n="vfx">
+                    <T n="effect_name">sp06_obj_wishing_well_face_neutral</T>
+                    <V t="Slot" n="joint_name">
+                      <T n="Slot">_fx_2</T>
+                    </V>
+                  </U>
+                </U>
+              </V>
+            </L>
+            <L n="continuation">
+              <U>
+                <T n="affordance">130930<!--SuperInteraction: wishingWell_WishOutcomes_Skill_Neutral--></T>
+              </U>
+            </L>
+          </U>
+          <U n="weight">
+            <T n="base_value">60</T>
+            <L n="multipliers">
+              <U>
+                <T n="multiplier">0</T>
+                <L n="tests">
+                  <L>
+                    <V t="state">
+                      <U n="state">
+                        <E n="operator">NOTEQUAL</E>
+                        <T n="value">131420<!--ObjectStateValue: wishingWell_CheatOutcomes_Off--></T>
+                      </U>
+                    </V>
+                    <V t="state">
+                      <U n="state">
+                        <E n="operator">NOTEQUAL</E>
+                        <T n="value">131425<!--ObjectStateValue: wishingWell_CheatOutcomes_Neutral--></T>
+                      </U>
+                    </V>
+                  </L>
+                </L>
+              </U>
+              <U>
+                <T n="multiplier">0.8333</T>
+                <L n="tests">
+                  <L>
+                    <V t="state">
+                      <U n="state">
+                        <T n="value">130864<!--ObjectStateValue: wishingWell_Faces_Joy--></T>
+                      </U>
+                    </V>
+                  </L>
+                </L>
+              </U>
+              <U>
+                <T n="multiplier">0.8333</T>
+                <L n="tests">
+                  <L>
+                    <V t="state">
+                      <U n="state">
+                        <T n="value">130863<!--ObjectStateValue: wishingWell_Faces_Dispair--></T>
+                      </U>
+                    </V>
+                  </L>
+                </L>
+              </U>
+              <U>
+                <T n="multiplier">0.2667</T>
+                <L n="tests">
+                  <L>
+                    <V t="state">
+                      <U n="state">
+                        <T n="value">130862<!--ObjectStateValue: wishingWell_Faces_Reaper--></T>
+                      </U>
+                    </V>
+                  </L>
+                </L>
+              </U>
+            </L>
+          </U>
+        </U>
+        <U>
+          <U n="outcome">
+            <V t="enabled" n="animation_ref">
+              <U n="enabled">
+                <T n="factory">130893<!--AnimationElement: wishingWell_MakeAWish_Failure--></T>
+              </U>
+            </V>
+            <L n="basic_extras">
+              <V t="state_change">
+                <U n="state_change">
+                  <V n="new_value" t="single_value">
+                    <U n="single_value">
+                      <T n="new_value">130994<!--CommodityBasedObjectStateValue: wishingWell_Sting_Negative_On--></T>
+                    </U>
+                  </V>
+                </U>
+              </V>
+              <V t="vfx">
+                <U n="vfx">
+                  <V t="at_beginning" n="timing">
+                    <U n="at_beginning">
+                      <V t="enabled" n="offset_time">
+                        <T n="enabled">2</T>
+                      </V>
+                    </U>
+                  </V>
+                  <U n="vfx">
+                    <T n="effect_name">sp06_obj_wishing_well_face_negative</T>
+                    <V t="Slot" n="joint_name">
+                      <T n="Slot">_fx_2</T>
+                    </V>
+                  </U>
+                </U>
+              </V>
+            </L>
+            <L n="continuation">
+              <U>
+                <T n="affordance">130929<!--SuperInteraction: wishingWell_WishOutcomes_Skill_Negative--></T>
+              </U>
+            </L>
+          </U>
+          <U n="weight">
+            <T n="base_value">50</T>
+            <L n="multipliers">
+              <U>
+                <T n="multiplier">0</T>
+                <L n="tests">
+                  <L>
+                    <V t="state">
+                      <U n="state">
+                        <E n="operator">NOTEQUAL</E>
+                        <T n="value">131420<!--ObjectStateValue: wishingWell_CheatOutcomes_Off--></T>
+                      </U>
+                    </V>
+                    <V t="state">
+                      <U n="state">
+                        <E n="operator">NOTEQUAL</E>
+                        <T n="value">131424<!--ObjectStateValue: wishingWell_CheatOutcomes_Negative--></T>
+                      </U>
+                    </V>
+                  </L>
+                </L>
+              </U>
+              <U>
+                <T n="multiplier">0.28</T>
+                <L n="tests">
+                  <L>
+                    <V t="state">
+                      <U n="state">
+                        <T n="value">130864<!--ObjectStateValue: wishingWell_Faces_Joy--></T>
+                      </U>
+                    </V>
+                  </L>
+                </L>
+              </U>
+              <U>
+                <T n="multiplier">1.8</T>
+                <L n="tests">
+                  <L>
+                    <V t="state">
+                      <U n="state">
+                        <T n="value">130863<!--ObjectStateValue: wishingWell_Faces_Dispair--></T>
+                      </U>
+                    </V>
+                  </L>
+                </L>
+              </U>
+              <U>
+                <T n="multiplier">0.2</T>
+                <L n="tests">
+                  <L>
+                    <V t="state">
+                      <U n="state">
+                        <T n="value">130862<!--ObjectStateValue: wishingWell_Faces_Reaper--></T>
+                      </U>
+                    </V>
+                  </L>
+                </L>
+              </U>
+            </L>
+          </U>
+        </U>
+        <U>
+          <U n="outcome">
+            <V t="enabled" n="animation_ref">
+              <U n="enabled">
+                <T n="factory">130893<!--AnimationElement: wishingWell_MakeAWish_Failure--></T>
+              </U>
+            </V>
+            <L n="basic_extras">
+              <V t="state_change">
+                <U n="state_change">
+                  <V n="new_value" t="single_value">
+                    <U n="single_value">
+                      <T n="new_value">130998<!--CommodityBasedObjectStateValue: wishingWell_Sting_OverwhelminglyNegative_On--></T>
+                    </U>
+                  </V>
+                </U>
+              </V>
+              <V t="vfx">
+                <U n="vfx">
+                  <V t="at_beginning" n="timing">
+                    <U n="at_beginning">
+                      <V t="enabled" n="offset_time">
+                        <T n="enabled">2</T>
+                      </V>
+                    </U>
+                  </V>
+                  <U n="vfx">
+                    <T n="effect_name">sp06_obj_wishing_well_face_negative_super</T>
+                    <V t="Slot" n="joint_name">
+                      <T n="Slot">_fx_2</T>
+                    </V>
+                  </U>
+                </U>
+              </V>
+            </L>
+            <L n="continuation">
+              <U>
+                <T n="affordance">130933<!--SuperInteraction: wishingWell_WishOutcomes_Skill_OverwhelminglyNegative--></T>
+              </U>
+            </L>
+          </U>
+          <U n="weight">
+            <T n="base_value">20</T>
+            <L n="multipliers">
+              <U>
+                <T n="multiplier">0</T>
+                <L n="tests">
+                  <L>
+                    <V t="state">
+                      <U n="state">
+                        <E n="operator">NOTEQUAL</E>
+                        <T n="value">131420<!--ObjectStateValue: wishingWell_CheatOutcomes_Off--></T>
+                      </U>
+                    </V>
+                    <V t="state">
+                      <U n="state">
+                        <E n="operator">NOTEQUAL</E>
+                        <T n="value">131422<!--ObjectStateValue: wishingWell_CheatOutcomes_OverwhelminglyNegative--></T>
+                      </U>
+                    </V>
+                  </L>
+                </L>
+              </U>
+              <U>
+                <T n="multiplier">0.3</T>
+                <L n="tests">
+                  <L>
+                    <V t="state">
+                      <U n="state">
+                        <T n="value">130864<!--ObjectStateValue: wishingWell_Faces_Joy--></T>
+                      </U>
+                    </V>
+                  </L>
+                </L>
+              </U>
+              <U>
+                <T n="multiplier">2</T>
+                <L n="tests">
+                  <L>
+                    <V t="state">
+                      <U n="state">
+                        <T n="value">130863<!--ObjectStateValue: wishingWell_Faces_Dispair--></T>
+                      </U>
+                    </V>
+                  </L>
+                </L>
+              </U>
+              <U>
+                <T n="multiplier">0.1</T>
+                <L n="tests">
+                  <L>
+                    <V t="state">
+                      <U n="state">
+                        <T n="value">130862<!--ObjectStateValue: wishingWell_Faces_Reaper--></T>
+                      </U>
+                    </V>
+                  </L>
+                </L>
+              </U>
+            </L>
+          </U>
+        </U>
+        <U>
+          <U n="outcome">
+            <V t="enabled" n="animation_ref">
+              <U n="enabled">
+                <T n="factory">130893<!--AnimationElement: wishingWell_MakeAWish_Failure--></T>
+              </U>
+            </V>
+            <L n="basic_extras">
+              <V t="state_change">
+                <U n="state_change">
+                  <V n="new_value" t="single_value">
+                    <U n="single_value">
+                      <T n="new_value">130998<!--CommodityBasedObjectStateValue: wishingWell_Sting_OverwhelminglyNegative_On--></T>
+                    </U>
+                  </V>
+                </U>
+              </V>
+              <V t="vfx">
+                <U n="vfx">
+                  <V t="at_beginning" n="timing">
+                    <U n="at_beginning">
+                      <V t="enabled" n="offset_time">
+                        <T n="enabled">2</T>
+                      </V>
+                    </U>
+                  </V>
+                  <U n="vfx">
+                    <T n="effect_name">sp06_obj_wishing_well_face_death_reaper</T>
+                    <V t="Slot" n="joint_name">
+                      <T n="Slot">_fx_2</T>
+                    </V>
+                  </U>
+                </U>
+              </V>
+            </L>
+            <L n="continuation">
+              <U>
+                <T n="affordance">130928<!--SuperInteraction: wishingWell_WishOutcomes_Skill_Death--></T>
+              </U>
+            </L>
+          </U>
+          <U n="weight">
+            <T n="base_value">160</T>
+            <L n="multipliers">
+              <U>
+                <T n="multiplier">0</T>
+                <L n="tests">
+                  <L>
+                    <V t="state">
+                      <U n="state">
+                        <E n="operator">NOTEQUAL</E>
+                        <T n="value">131420<!--ObjectStateValue: wishingWell_CheatOutcomes_Off--></T>
+                      </U>
+                    </V>
+                    <V t="state">
+                      <U n="state">
+                        <E n="operator">NOTEQUAL</E>
+                        <T n="value">131426<!--ObjectStateValue: wishingWell_CheatOutcomes_Death--></T>
+                      </U>
+                    </V>
+                  </L>
+                  <L>
+                    <V t="state">
+                      <U n="state">
+                        <E n="operator">NOTEQUAL</E>
+                        <T n="value">130862<!--ObjectStateValue: wishingWell_Faces_Reaper--></T>
+                      </U>
+                    </V>
+                    <V t="state">
+                      <U n="state">
+                        <E n="operator">EQUAL</E>
+                        <T n="value">131420<!--ObjectStateValue: wishingWell_CheatOutcomes_Off--></T>
+                      </U>
+                    </V>
+                  </L>
+                </L>
+              </U>
+            </L>
+          </U>
+        </U>
+      </L>
+    </U>
+  </V>
+  <E n="scoring_priority">NORMAL</E>
+  <T n="subaction_selection_weight">1</T>
+  <V t="literal" n="super_affordance_compatibility">
+    <U n="literal">
+      <V n="default_inclusion" t="exclude_all" />
+    </U>
+  </V>
+  <E n="target_type">OBJECT</E>
+  <L n="test_globals">
+    <V t="sim_info">
+      <U n="sim_info">
+        <V t="specified" n="ages">
+          <L n="specified">
+            <E>TEEN</E>
+            <E>YOUNGADULT</E>
+            <E>ADULT</E>
+            <E>ELDER</E>
+            <E>CHILD</E>
+          </L>
+        </V>
+        <V t="specified" n="species">
+          <U n="specified">
+            <L n="species">
+              <E />
+            </L>
+          </U>
+        </V>
+        <E n="who">Actor</E>
+      </U>
+    </V>
+    <V t="buff">
+      <U n="buff">
+        <L n="blacklist">
+          <T>132178<!--Buff: buff_WishingWell_Hidden_AlreadyWished--></T>
+        </L>
+        <V n="tooltip" t="enabled">
+          <T n="enabled">0x29FA448F<!--String: "{0.SimFirstName} ya ha pedido un deseo hace poco."--></T>
+        </V>
+      </U>
+    </V>
+  </L>
+  <T n="time_overhead">30</T>
+</I>

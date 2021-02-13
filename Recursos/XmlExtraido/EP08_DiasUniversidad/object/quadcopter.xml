@@ -1,0 +1,216 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<I c="GameObject" i="object" m="objects.game_object" n="quadcopter" s="224396">
+  <U n="_components">
+    <V t="enabled" n="focus">
+      <U n="enabled">
+        <V n="_focus_score" t="globally">
+          <U n="globally">
+            <E n="base">LOW</E>
+          </U>
+        </V>
+      </U>
+    </V>
+    <V n="idle_component" t="enabled">
+      <U n="enabled">
+        <L n="idle_animation_map">
+          <U>
+            <T n="key">224417<!--ObjectStateValue: quadcopter_Values_Animation_Hovering--></T>
+            <T n="value">224445<!--ObjectAnimationElement: quadcopter_Animations_Hover--></T>
+          </U>
+          <U>
+            <T n="key">224418<!--ObjectStateValue: quadcopter_Values_Animation_Land--></T>
+            <T n="value">224446<!--ObjectAnimationElement: quadcopter_Animations_Land--></T>
+          </U>
+          <U>
+            <T n="key">225978<!--ObjectStateValue: quadcopter_Values_Animation_OnGround--></T>
+            <T n="value">224447<!--ObjectAnimationElement: quadcopter_Animations_OnGround--></T>
+          </U>
+          <U>
+            <T n="key">228433<!--ObjectStateValue: quadcopter_Values_Animation_Hovering_Exhibition--></T>
+            <T n="value">224445<!--ObjectAnimationElement: quadcopter_Animations_Hover--></T>
+          </U>
+        </L>
+      </U>
+    </V>
+    <V n="inventory_item" t="enabled">
+      <U n="enabled">
+        <V n="no_carry_add_to_sim_inventory_affordances" t="OVERRIDE">
+          <L n="OVERRIDE">
+            <T>10459<!--SuperInteraction: si_SwipeIntoSimInventory--></T>
+            <T>202254<!--SuperInteraction: si_SwipeIntoSimInventory_Swim--></T>
+          </L>
+        </V>
+        <T n="skip_carry_pose">True</T>
+        <E n="stack_scheme">NONE</E>
+        <L n="valid_inventory_types">
+          <E>SIM</E>
+          <E>STORAGE_CHEST_DORM</E>
+        </L>
+      </U>
+    </V>
+    <V t="enabled" n="retail_component">
+      <V n="enabled" t="reference">
+        <T n="reference">115303<!--RetailComponent: retailComponent_Default_HighAppeal--></T>
+      </V>
+    </V>
+    <V n="routing_component" t="enabled">
+      <U n="enabled">
+        <V n="object_routing_component" t="enabled">
+          <U n="enabled">
+            <V t="enabled" n="privacy_rules" />
+            <L n="routing_behavior_map">
+              <U>
+                <T n="key">224417<!--ObjectStateValue: quadcopter_Values_Animation_Hovering--></T>
+                <V n="value" t="Start_Behavior">
+                  <T n="Start_Behavior">226031<!--ObjectRoutingBehavior: objectRoutingBehavior_Quadcopter_Hover--></T>
+                </V>
+              </U>
+              <U>
+                <T n="key">224418<!--ObjectStateValue: quadcopter_Values_Animation_Land--></T>
+                <V n="value" t="Start_Behavior">
+                  <T n="Start_Behavior">226032<!--ObjectRoutingBehavior: objectRoutingBehavior_Quadcopter_Land--></T>
+                </V>
+              </U>
+              <U>
+                <T n="key">225978<!--ObjectStateValue: quadcopter_Values_Animation_OnGround--></T>
+                <V t="Stop_All_Behavior" n="value" />
+              </U>
+              <U>
+                <T n="key">228433<!--ObjectStateValue: quadcopter_Values_Animation_Hovering_Exhibition--></T>
+                <V t="Start_Behavior" n="value">
+                  <T n="Start_Behavior">226534<!--ObjectRoutingBehavior: objectRoutingBehavior_Bots_Generic_ExhibitionEvent--></T>
+                </V>
+              </U>
+            </L>
+          </U>
+        </V>
+        <U n="plan_context_data">
+          <U n="default_context">
+            <V t="enabled" n="_allowed_heights">
+              <L n="enabled">
+                <E>LARGE_HEIGHT</E>
+              </L>
+            </V>
+            <V t="enabled" n="_allowed_portal_flags">
+              <L n="enabled">
+                <E>DoorHuman</E>
+                <E>REQUIRE_NO_CARRY</E>
+                <E>SPECIES_HUMAN</E>
+                <E>STAIRS_PORTAL_LONG</E>
+                <E>STAIRS_PORTAL_SHORT</E>
+                <E>PoolPortal</E>
+              </L>
+            </V>
+            <V n="_discouraged_portal_flags" t="enabled">
+              <L n="enabled">
+                <E>DoorHuman</E>
+              </L>
+            </V>
+          </U>
+        </U>
+        <U n="walkstyle_behavior">
+          <T p="InEP08\Locomotion\EP08_Quadcopter_Default.walkstyle" n="default_walkstyle">27c01d95:00000000:0000000077a52145</T>
+          <T n="run_walkstyle" p="InEP08\Locomotion\EP08_Quadcopter_Fast.walkstyle">27c01d95:00000000:000000000d5a1d28</T>
+          <T p="InEP08\Locomotion\EP08_Quadcopter_Default.walkstyle" n="short_walkstyle">27c01d95:00000000:0000000077a52145</T>
+        </U>
+      </U>
+    </V>
+    <V n="state" t="enabled">
+      <U n="enabled">
+        <L n="state_triggers">
+          <U>
+            <L n="at_states">
+              <T>224418<!--ObjectStateValue: quadcopter_Values_Animation_Land--></T>
+            </L>
+            <V n="set_states" t="Set_state_list">
+              <L n="Set_state_list">
+                <T>225978<!--ObjectStateValue: quadcopter_Values_Animation_OnGround--></T>
+              </L>
+            </V>
+          </U>
+        </L>
+        <L n="states">
+          <U>
+            <L n="client_states">
+              <U>
+                <T n="key">224417<!--ObjectStateValue: quadcopter_Values_Animation_Hovering--></T>
+              </U>
+              <U>
+                <T n="key">224418<!--ObjectStateValue: quadcopter_Values_Animation_Land--></T>
+              </U>
+              <U>
+                <T n="key">225978<!--ObjectStateValue: quadcopter_Values_Animation_OnGround--></T>
+              </U>
+              <U>
+                <T n="key">228433<!--ObjectStateValue: quadcopter_Values_Animation_Hovering_Exhibition--></T>
+              </U>
+            </L>
+            <V n="default_value" t="reference">
+              <T n="reference">225978<!--ObjectStateValue: quadcopter_Values_Animation_OnGround--></T>
+            </V>
+            <T n="reset_to_default">True</T>
+          </U>
+          <U>
+            <L n="client_states">
+              <U>
+                <T n="key">224420<!--ObjectStateValue: quadcopter_Values_VFX_1--></T>
+              </U>
+              <U>
+                <T n="key">224422<!--ObjectStateValue: quadcopter_Values_VFX_5--></T>
+              </U>
+              <U>
+                <T n="key">224423<!--ObjectStateValue: quadcopter_Values_VFX_4--></T>
+              </U>
+              <U>
+                <T n="key">224424<!--ObjectStateValue: quadcopter_Values_VFX_2--></T>
+              </U>
+              <U>
+                <T n="key">224425<!--ObjectStateValue: quadcopter_Values_VFX_3--></T>
+              </U>
+              <U>
+                <T n="key">228078<!--ObjectStateValue: quadcopter_Values_VFX_6--></T>
+              </U>
+              <U>
+                <T n="key">228079<!--ObjectStateValue: quadcopter_Values_VFX_7--></T>
+              </U>
+              <U>
+                <T n="key">228080<!--ObjectStateValue: quadcopter_Values_VFX_8--></T>
+              </U>
+              <U>
+                <T n="key">228094<!--ObjectStateValue: quadcopter_Values_VFX_Off--></T>
+              </U>
+            </L>
+            <V n="default_value" t="reference">
+              <T n="reference">228094<!--ObjectStateValue: quadcopter_Values_VFX_Off--></T>
+            </V>
+          </U>
+          <U>
+            <V t="reference" n="default_value">
+              <T n="reference">15304<!--CommodityBasedObjectStateValue: Quality_Normal--></T>
+            </V>
+          </U>
+        </L>
+      </U>
+    </V>
+    <V t="enabled" n="tooltip_component" />
+  </U>
+  <L n="_super_affordances">
+    <T>13328<!--ImmediateSuperInteraction: debug_Reset--></T>
+    <T>13326<!--ImmediateSuperInteraction: debug_ObjectDestroy--></T>
+    <T>103888<!--ImmediateSuperInteraction: cheat_set_as_head--></T>
+    <T>224534<!--SuperInteraction: quadcopter_Start--></T>
+    <T>226045<!--SwipeAddToWorldSuperInteraction: si_SwipeAddToWorld_Quadcopter--></T>
+  </L>
+  <U n="recycling_data">
+    <L n="recycling_values">
+      <U>
+        <E n="Bucks Type">RecycleBitsBucks</E>
+        <T n="Value">0.5</T>
+      </U>
+      <U>
+        <E n="Bucks Type">RecyclePiecesBucks</E>
+        <T n="Value">0.5</T>
+      </U>
+    </L>
+  </U>
+</I>

@@ -1,0 +1,445 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<I c="SocialSuperInteraction" i="interaction" m="interactions.social.social_super_interaction" n="social_Sabacc_DealCards_Autonomous" s="244265">
+  <T n="_acquire_listeners_as_resource">True</T>
+  <L n="_constraints">
+    <U>
+      <L n="constraints">
+        <U>
+          <V n="value" t="circle">
+            <U n="circle">
+              <T n="ideal_radius">3</T>
+              <T n="ideal_radius_width">3</T>
+              <T n="radius">3</T>
+            </U>
+          </V>
+        </U>
+        <U>
+          <V n="value" t="posture">
+            <U n="posture">
+              <L n="posture_manifest_tuning">
+                <U>
+                  <V n="posture_type" t="enabled">
+                    <T n="enabled">15535<!--Posture: posture_Sit--></T>
+                  </V>
+                </U>
+              </L>
+            </U>
+          </V>
+        </U>
+      </L>
+    </U>
+  </L>
+  <V t="participant" n="_icon">
+    <U n="participant">
+      <L n="participant_type">
+        <E>Object</E>
+      </L>
+    </U>
+  </V>
+  <L n="_party_size_weight_tuning">
+    <U>
+      <T n="y">100</T>
+    </U>
+    <U>
+      <T n="x">1</T>
+      <T n="y">100</T>
+    </U>
+    <U>
+      <T n="x">2</T>
+      <T n="y">50</T>
+    </U>
+    <U>
+      <T n="x">3</T>
+      <T n="y">0</T>
+    </U>
+    <U>
+      <T n="x">4</T>
+    </U>
+  </L>
+  <U n="_preserve_held_props">
+    <T n="preserve_during_other_si">True</T>
+  </U>
+  <V t="disabled" n="_saveable" />
+  <T n="_social_group_type">16391<!--GameGroup: group_Cards--></T>
+  <L n="_static_commodities">
+    <U>
+      <T n="static_commodity">244248<!--StaticCommodity: staticCommodity_Batuu_Play_SabaccTournie--></T>
+    </U>
+  </L>
+  <T n="_super_affordance_can_share_target">True</T>
+  <V t="push_self_or_none" n="affordance_to_push_on_target">
+    <T n="push_self_or_none">False</T>
+  </V>
+  <T n="allow_autonomous">True</T>
+  <T n="allow_user_directed">False</T>
+  <T n="attention_cost">0</T>
+  <V n="basic_content" t="flexible_length">
+    <U n="flexible_length">
+      <L n="conditional_actions">
+        <V t="literal">
+          <U n="literal">
+            <L n="conditions">
+              <V t="state_based">
+                <U n="state_based">
+                  <V n="state" t="on_trigger">
+                    <T n="on_trigger">234582<!--ObjectStateValue: sabaccTable_StateValues_Game_BettingPhase--></T>
+                  </V>
+                </U>
+              </V>
+            </L>
+            <E n="interaction_action">EXIT_NATURALLY</E>
+            <L n="loot_actions">
+              <T>239483<!--LootActions: loot_SabaccTable_Spawn_IndividualCards--></T>
+            </L>
+          </U>
+        </V>
+        <V t="literal">
+          <U n="literal">
+            <L n="conditions">
+              <V t="time_based">
+                <U n="time_based">
+                  <T n="max_time">30</T>
+                  <T n="min_time">30</T>
+                </U>
+              </V>
+            </L>
+            <E n="interaction_action">EXIT_CANCEL</E>
+            <E n="progress_bar_action">FORCE_USE_CONDITION</E>
+          </U>
+        </V>
+      </L>
+      <V t="staging_content" n="content">
+        <U n="staging_content">
+          <U n="content_set">
+            <L n="affordance_links">
+              <T>233810<!--SocialMixerInteraction: socialMixer_Sabacc_DealHand--></T>
+            </L>
+          </U>
+        </U>
+      </V>
+      <V t="enabled" n="periodic_stat_change">
+        <U n="enabled">
+          <L n="operations" />
+        </U>
+      </V>
+      <T n="start_autonomous_inertial">False</T>
+    </U>
+  </V>
+  <L n="basic_extras">
+    <V t="state_change">
+      <U n="state_change">
+        <V n="new_value" t="single_value">
+          <U n="single_value">
+            <T n="new_value">234580<!--ObjectStateValue: sabaccTable_StateValues_Game_DealingPhase--></T>
+          </U>
+        </V>
+        <V t="immediately" n="timing" />
+      </U>
+    </V>
+    <V t="destroy_object">
+      <U n="destroy_object">
+        <V t="from_participant" n="objects_to_destroy">
+          <U n="from_participant">
+            <E n="participant">ObjectChildren</E>
+          </U>
+        </V>
+        <V t="add_restriction" n="tag_restriction">
+          <L n="add_restriction">
+            <E>Func_Sabacc_ChipPile</E>
+          </L>
+        </V>
+        <V t="at_beginning" n="timing" />
+      </U>
+    </V>
+    <V t="broadcaster">
+      <U n="broadcaster">
+        <L n="broadcaster_types">
+          <U>
+            <T n="item">245760<!--Broadcaster: broadcaster_Batuu_SabaccClearTable--></T>
+          </U>
+        </L>
+      </U>
+    </V>
+  </L>
+  <L n="basic_liabilities">
+    <V t="user_cancelable_chain" />
+    <V t="critical_priority">
+      <U n="critical_priority">
+        <E n="priority_on_push">High</E>
+        <E n="priority_on_run">High</E>
+      </U>
+    </V>
+  </L>
+  <V t="enabled" n="basic_reserve_object" />
+  <V t="enabled" n="canonical_animation">
+    <U n="enabled">
+      <T n="factory">236549<!--AnimationElement: Sabacc_Deal--></T>
+    </U>
+  </V>
+  <V t="disabled" n="content_score" />
+  <T n="display_name">0x36A50963<!--String: "Jugar al sabacc con"--></T>
+  <V t="enabled" n="display_name_in_queue">
+    <T n="enabled">0x79AE8F7C<!--String: "Sabacc"--></T>
+  </V>
+  <V t="testable" n="display_name_overrides">
+    <U n="testable">
+      <L n="overrides">
+        <U>
+          <V n="new_display_name" t="enabled">
+            <T n="enabled">0x5F40F8D7<!--String: "Esperar"--></T>
+          </V>
+          <L n="test">
+            <L>
+              <V t="count">
+                <U n="count">
+                  <V t="from_participant" n="participant">
+                    <U n="from_participant">
+                      <E n="participant">SocialGroupSims</E>
+                    </U>
+                  </V>
+                  <V n="threshold" t="from_value">
+                    <U n="from_value">
+                      <E n="comparison">LESS</E>
+                      <T n="value">2</T>
+                    </U>
+                  </V>
+                </U>
+              </V>
+            </L>
+          </L>
+        </U>
+      </L>
+    </U>
+  </V>
+  <U n="display_name_text_tokens">
+    <L n="tokens">
+      <V t="participant_type">
+        <U n="participant_type">
+          <V n="objects" t="from_participant">
+            <U n="from_participant">
+              <E n="participant">Actor</E>
+            </U>
+          </V>
+        </U>
+      </V>
+      <V t="participant_type">
+        <U n="participant_type">
+          <V t="from_participant" n="objects">
+            <U n="from_participant">
+              <E n="participant">Object</E>
+            </U>
+          </V>
+        </U>
+      </V>
+    </L>
+  </U>
+  <V t="enabled" n="idle_animation">
+    <U n="enabled">
+      <T n="factory">11570<!--AnimationElement: Listen_Listen_Looping_basic--></T>
+    </U>
+  </V>
+  <T n="ignore_group_socials">False</T>
+  <L n="interaction_category_tags">
+    <E>Interaction_SocialSuper</E>
+    <E>Interaction_Super</E>
+    <E>Interaction_All</E>
+    <E>Interaction_SocialAll</E>
+    <E>Interaction_PlayGame</E>
+    <E>Interaction_Social_Contagious</E>
+  </L>
+  <T n="invite_in_after_interaction">True</T>
+  <U n="listen_animation">
+    <T n="factory">11570<!--AnimationElement: Listen_Listen_Looping_basic--></T>
+  </U>
+  <V t="test_based" n="outcome">
+    <U n="test_based">
+      <L n="fallback_outcomes">
+        <U>
+          <U n="outcome">
+            <L n="continuation">
+              <U>
+                <T n="affordance">239200<!--SocialSuperInteraction: social_Sabacc_DealCards--></T>
+              </U>
+            </L>
+          </U>
+        </U>
+      </L>
+      <L n="tested_outcomes">
+        <U>
+          <L n="potential_outcomes">
+            <U>
+              <U n="outcome">
+                <L n="basic_extras">
+                  <V t="destroy_object">
+                    <U n="destroy_object">
+                      <V n="objects_to_destroy" t="from_participant">
+                        <U n="from_participant">
+                          <V n="in_slot" t="by_reference">
+                            <T n="by_reference">slot_TableGameIndividual</T>
+                          </V>
+                        </U>
+                      </V>
+                    </U>
+                  </V>
+                </L>
+                <L n="continuation">
+                  <U>
+                    <T n="affordance">230949<!--SocialSuperInteraction: social_Sabacc_PlayGame--></T>
+                    <E n="target">Object</E>
+                  </U>
+                </L>
+              </U>
+            </U>
+          </L>
+          <L n="tests">
+            <L>
+              <V t="state">
+                <U n="state">
+                  <T n="value">234582<!--ObjectStateValue: sabaccTable_StateValues_Game_BettingPhase--></T>
+                </U>
+              </V>
+            </L>
+          </L>
+        </U>
+      </L>
+    </U>
+  </V>
+  <U n="posture_preferences">
+    <T n="prefer_clicked_part">False</T>
+  </U>
+  <U n="progress_bar_enabled">
+    <T n="bar_enabled">True</T>
+  </U>
+  <L n="rallyable">
+    <U>
+      <V n="behavior" t="push_affordance">
+        <U n="push_affordance">
+          <T n="affordance">230949<!--SocialSuperInteraction: social_Sabacc_PlayGame--></T>
+        </U>
+      </V>
+    </U>
+  </L>
+  <T n="relationship_scoring">True</T>
+  <E n="scoring_priority">NORMAL</E>
+  <V t="disabled" n="sim_affinity_posture_scoring_data" />
+  <T n="subaction_selection_weight">1</T>
+  <V t="literal" n="super_affordance_compatibility">
+    <U n="literal">
+      <V n="default_inclusion" t="exclude_all" />
+    </U>
+  </V>
+  <V t="enabled" n="super_affordance_klobberers" />
+  <E n="target_type">OBJECT</E>
+  <L n="test_autonomous">
+    <L>
+      <V t="career_gig_test">
+        <U n="career_gig_test">
+          <T n="career">231099<!--Career: career_Batuu--></T>
+          <V t="specific_gigs" n="test_type">
+            <U n="specific_gigs">
+              <L n="gigs">
+                <T>241260<!--MissionGig: missionGig_Missions_Scoundrel_Repeatable_09--></T>
+              </L>
+            </U>
+          </V>
+        </U>
+      </V>
+    </L>
+    <L>
+      <V t="situation_job_test">
+        <U n="situation_job_test">
+          <L n="situation_jobs">
+            <T>244190<!--SituationJob: job_Batuu_Rich_Scoundrel--></T>
+          </L>
+        </U>
+      </V>
+      <V t="buff">
+        <U n="buff">
+          <V n="whitelist" t="enabled">
+            <L n="enabled">
+              <T>244249<!--Buff: buff_SabaccTable_Play--></T>
+            </L>
+          </V>
+        </U>
+      </V>
+    </L>
+    <L>
+      <V t="career_gig_test">
+        <U n="career_gig_test">
+          <T n="career">231099<!--Career: career_Batuu--></T>
+          <V t="specific_gigs" n="test_type">
+            <U n="specific_gigs">
+              <L n="gigs">
+                <T>241259<!--MissionGig: missionGig_Missions_Scoundrel_Repeatable_08--></T>
+              </L>
+            </U>
+          </V>
+        </U>
+      </V>
+    </L>
+    <L>
+      <V t="situation_job_test">
+        <U n="situation_job_test">
+          <L n="situation_jobs">
+            <T>244394<!--SituationJob: job_barfly_Batuu_Sabacc_Tournament_1st_Opponent_SR8--></T>
+            <T>244396<!--SituationJob: job_barfly_Batuu_Sabacc_Tournament_2nd_Opponent_SR8--></T>
+            <T>244397<!--SituationJob: job_barfly_Batuu_Sabacc_Tournament_Final_Opponent_SR8--></T>
+          </L>
+        </U>
+      </V>
+    </L>
+    <L>
+      <V t="sim_info">
+        <U n="sim_info">
+          <V t="enabled" n="npc" />
+        </U>
+      </V>
+    </L>
+  </L>
+  <V t="enabled" n="test_disallow_while_running">
+    <U n="enabled">
+      <L n="affordances">
+        <T>230949<!--SocialSuperInteraction: social_Sabacc_PlayGame--></T>
+        <T>239200<!--SocialSuperInteraction: social_Sabacc_DealCards--></T>
+      </L>
+      <T n="test_self">True</T>
+    </U>
+  </V>
+  <L n="test_globals">
+    <V t="trait">
+      <U n="trait">
+        <L n="blacklist_traits">
+          <T>243568<!--Trait: trait_Batuu_Mission_Traits_Defector--></T>
+          <T>243985<!--Trait: trait_Batuu_Mission_Traits_Stormtrooper_CheckID--></T>
+        </L>
+      </U>
+    </V>
+    <V t="buff">
+      <U n="buff">
+        <L n="blacklist">
+          <T>241922<!--Buff: buff_SabaccTable_Caught_SabaccCheat--></T>
+          <T>241791<!--Buff: buff_SabaccTable_AccuseOfCheating_Accuser--></T>
+          <T>241815<!--Buff: buff_SabaccTable_AccuseOfCheating_Accused--></T>
+          <T>247612<!--Buff: buff_SabaccTable_NPC_NotAllowedToPlay--></T>
+        </L>
+      </U>
+    </V>
+  </L>
+  <L n="tests">
+    <L>
+      <V t="test_set_reference">
+        <T n="test_set_reference">242310<!--TestSetInstance: testSet_SabaccTable_MinPayment--></T>
+      </V>
+    </L>
+    <L>
+      <V t="sim_info">
+        <U n="sim_info">
+          <V t="enabled" n="npc">
+            <T n="enabled">True</T>
+          </V>
+        </U>
+      </V>
+    </L>
+  </L>
+  <T n="time_overhead">30</T>
+</I>

@@ -1,0 +1,444 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<I c="GameObject" i="object" m="objects.game_object" n="object_SpaceHeater" s="252926">
+  <U n="_components">
+    <V t="enabled" n="focus">
+      <U n="enabled">
+        <V n="_focus_score" t="globally">
+          <U n="globally">
+            <E n="base">LOW</E>
+          </U>
+        </V>
+      </U>
+    </V>
+    <V n="inventory_item" t="enabled">
+      <U n="enabled">
+        <T n="can_place_in_world">True</T>
+        <T n="skip_carry_pose">True</T>
+        <L n="valid_inventory_types">
+          <E>SIM</E>
+          <E>STORAGE_CHEST_DORM</E>
+        </L>
+      </U>
+    </V>
+    <V t="enabled" n="lighting" />
+    <V t="enabled" n="retail_component">
+      <V n="enabled" t="reference">
+        <T n="reference">115301<!--RetailComponent: retailComponent_Default_LowAppeal--></T>
+      </V>
+    </V>
+    <V n="state" t="enabled">
+      <U n="enabled">
+        <V n="delinquency_state_changes" t="enabled">
+          <L n="enabled">
+            <U>
+              <E n="key">POWER</E>
+              <L n="value">
+                <T>35297<!--ObjectStateValue: GenericOnOff_Off--></T>
+                <T>252932<!--ObjectStateValue: spaceHeater_Auto_Off--></T>
+              </L>
+            </U>
+          </L>
+        </V>
+        <L n="state_triggers">
+          <U>
+            <L n="at_states">
+              <T>252931<!--ObjectStateValue: spaceHeater_Auto_On--></T>
+              <T>252936<!--ObjectStateValue: spaceHeater_Weather_NotCold--></T>
+            </L>
+            <V n="set_states" t="Set_state_list">
+              <L n="Set_state_list">
+                <T>35297<!--ObjectStateValue: GenericOnOff_Off--></T>
+                <T>224564<!--ObjectStateValue: utilities_Power_Consumption_Off--></T>
+              </L>
+            </V>
+          </U>
+          <U>
+            <L n="at_states">
+              <T>252931<!--ObjectStateValue: spaceHeater_Auto_On--></T>
+              <T>252935<!--ObjectStateValue: spaceHeater_Weather_Cold--></T>
+            </L>
+            <V n="set_states" t="Set_state_list">
+              <L n="Set_state_list">
+                <T>35296<!--ObjectStateValue: GenericOnOff_On--></T>
+                <T>224553<!--ObjectStateValue: utilities_Power_Consumption_On--></T>
+              </L>
+            </V>
+          </U>
+        </L>
+        <L n="states">
+          <U>
+            <L n="client_states">
+              <U>
+                <T n="key">35296<!--ObjectStateValue: GenericOnOff_On--></T>
+                <U n="value">
+                  <V t="apply_new_value" n="autonomy_modifiers">
+                    <V n="apply_new_value" t="apply_statistic_modifiers">
+                      <U n="apply_statistic_modifiers">
+                        <L n="lot_statistic_modifiers">
+                          <U>
+                            <V n="modifier" t="basic_value">
+                              <U n="basic_value">
+                                <T n="value">0.00875</T>
+                              </U>
+                            </V>
+                            <T n="statistic">233233<!--Commodity: commodity_EcoFootprint_Lot--></T>
+                          </U>
+                        </L>
+                      </U>
+                    </V>
+                  </V>
+                  <V n="broadcaster" t="apply_new_value">
+                    <V n="apply_new_value" t="start_broadcaster">
+                      <U n="start_broadcaster">
+                        <L n="broadcaster_types">
+                          <U>
+                            <T n="item">252947<!--Broadcaster: broadcaster_SpaceHeater_On--></T>
+                          </U>
+                          <U>
+                            <T n="item">135887<!--Broadcaster: broadcaster_HeatLamp_On_StartFire--></T>
+                          </U>
+                        </L>
+                      </U>
+                    </V>
+                  </V>
+                  <V n="geometry_state" t="apply_new_value">
+                    <V n="apply_new_value" t="set_to_custom_value">
+                      <T n="set_to_custom_value">on</T>
+                    </V>
+                  </V>
+                  <V n="light_dimmer" t="apply_new_value">
+                    <T n="apply_new_value">1</T>
+                  </V>
+                  <V n="vfx_state" t="apply_new_value">
+                    <V n="apply_new_value" t="start_vfx">
+                      <V n="start_vfx" t="single_effect">
+                        <U n="single_effect">
+                          <T n="effect_name">ep10_spaceheater_coils</T>
+                        </U>
+                      </V>
+                    </V>
+                  </V>
+                </U>
+              </U>
+              <U>
+                <T n="key">35297<!--ObjectStateValue: GenericOnOff_Off--></T>
+                <U n="value">
+                  <V t="apply_new_value" n="broadcaster" />
+                  <V n="geometry_state" t="apply_new_value">
+                    <V n="apply_new_value" t="set_to_custom_value">
+                      <T n="set_to_custom_value">off</T>
+                    </V>
+                  </V>
+                  <V t="apply_new_value" n="light_dimmer" />
+                  <V t="apply_new_value" n="vfx_state" />
+                </U>
+              </U>
+            </L>
+            <V n="default_value" t="reference">
+              <T n="reference">35297<!--ObjectStateValue: GenericOnOff_Off--></T>
+            </V>
+          </U>
+          <U>
+            <L n="client_states">
+              <U>
+                <T n="key">131671<!--ObjectStateValue: HeatLamp_AutoTimer_Off--></T>
+              </U>
+              <U>
+                <T n="key">131672<!--ObjectStateValue: HeatLamp_AutoTimer_On--></T>
+              </U>
+            </L>
+            <V n="default_value" t="reference">
+              <T n="reference">131671<!--ObjectStateValue: HeatLamp_AutoTimer_Off--></T>
+            </V>
+            <V n="tested_states_on_add" t="enabled">
+              <U n="enabled">
+                <L n="tested_states">
+                  <U>
+                    <T n="state">131672<!--ObjectStateValue: HeatLamp_AutoTimer_On--></T>
+                    <L n="tests">
+                      <L>
+                        <V t="test_set_reference">
+                          <T n="test_set_reference">229188<!--TestSetInstance: testSet_Venue_Residential_Disallow_Object--></T>
+                        </V>
+                      </L>
+                    </L>
+                  </U>
+                </L>
+              </U>
+            </V>
+          </U>
+          <U>
+            <L n="client_states">
+              <U>
+                <T n="key">131673<!--CommodityBasedObjectStateValue: Upgrade_HeatLamp_FireSafe_Completed--></T>
+              </U>
+              <U>
+                <T n="key">131674<!--CommodityBasedObjectStateValue: Upgrade_HeatLamp_FireSafe_NotStarted--></T>
+              </U>
+              <U>
+                <T n="key">131675<!--CommodityBasedObjectStateValue: Upgrade_HeatLamp_FireSafe_Partial--></T>
+              </U>
+            </L>
+            <V n="default_value" t="reference">
+              <T n="reference">131674<!--CommodityBasedObjectStateValue: Upgrade_HeatLamp_FireSafe_NotStarted--></T>
+            </V>
+          </U>
+          <U>
+            <L n="client_states">
+              <U>
+                <T n="key">73870<!--ObjectStateValue: TheKnack_Awesome--></T>
+              </U>
+              <U>
+                <T n="key">73871<!--ObjectStateValue: TheKnack_NotAwesome--></T>
+              </U>
+            </L>
+            <V t="reference" n="default_value">
+              <T n="reference">73871<!--ObjectStateValue: TheKnack_NotAwesome--></T>
+            </V>
+          </U>
+          <U>
+            <L n="client_states">
+              <U>
+                <T n="key">252935<!--ObjectStateValue: spaceHeater_Weather_Cold--></T>
+              </U>
+              <U>
+                <T n="key">252936<!--ObjectStateValue: spaceHeater_Weather_NotCold--></T>
+              </U>
+            </L>
+            <V n="default_value" t="reference">
+              <T n="reference">252936<!--ObjectStateValue: spaceHeater_Weather_NotCold--></T>
+            </V>
+            <V n="tested_states_on_add" t="enabled">
+              <U n="enabled">
+                <V n="fallback_state" t="enabled">
+                  <T n="enabled">252936<!--ObjectStateValue: spaceHeater_Weather_NotCold--></T>
+                </V>
+                <L n="tested_states">
+                  <U>
+                    <T n="state">252935<!--ObjectStateValue: spaceHeater_Weather_Cold--></T>
+                    <L n="tests">
+                      <L>
+                        <V t="weather">
+                          <U n="weather">
+                            <V n="temperature" t="enabled">
+                              <U n="enabled">
+                                <L n="temperature">
+                                  <E />
+                                  <E>COLD</E>
+                                </L>
+                              </U>
+                            </V>
+                          </U>
+                        </V>
+                      </L>
+                    </L>
+                  </U>
+                </L>
+              </U>
+            </V>
+          </U>
+          <U>
+            <L n="client_states">
+              <U>
+                <T n="key">252931<!--ObjectStateValue: spaceHeater_Auto_On--></T>
+              </U>
+              <U>
+                <T n="key">252932<!--ObjectStateValue: spaceHeater_Auto_Off--></T>
+              </U>
+            </L>
+            <V n="default_value" t="reference">
+              <T n="reference">252932<!--ObjectStateValue: spaceHeater_Auto_Off--></T>
+            </V>
+          </U>
+          <U>
+            <L n="client_states">
+              <U>
+                <T n="key">224553<!--ObjectStateValue: utilities_Power_Consumption_On--></T>
+                <U n="value">
+                  <V n="autonomy_modifiers" t="apply_new_value">
+                    <V n="apply_new_value" t="apply_statistic_modifiers">
+                      <U n="apply_statistic_modifiers">
+                        <L n="lot_statistic_modifiers">
+                          <U>
+                            <V n="modifier" t="multipliers">
+                              <U n="multipliers">
+                                <U n="value">
+                                  <T n="base_value">-0.00694</T>
+                                  <L n="multipliers">
+                                    <U>
+                                      <T n="multiplier">0.8</T>
+                                      <L n="tests">
+                                        <L>
+                                          <V t="statistic">
+                                            <U n="statistic">
+                                              <T n="stat">187710<!--Statistic: statistic_Object_Thermostat_LotStat_Setting--></T>
+                                              <V t="value_threshold" n="threshold">
+                                                <U n="value_threshold">
+                                                  <E n="comparison">LESS_OR_EQUAL</E>
+                                                  <T n="value">-1</T>
+                                                </U>
+                                              </V>
+                                              <E n="who">Lot</E>
+                                            </U>
+                                          </V>
+                                        </L>
+                                      </L>
+                                    </U>
+                                  </L>
+                                </U>
+                              </U>
+                            </V>
+                            <T n="statistic">233027<!--Commodity: commodity_Utilities_Power--></T>
+                          </U>
+                        </L>
+                        <U n="periodic_statistic_change">
+                          <T n="interval">10</T>
+                          <L n="operations" />
+                        </U>
+                      </U>
+                    </V>
+                  </V>
+                </U>
+              </U>
+              <U>
+                <T n="key">224564<!--ObjectStateValue: utilities_Power_Consumption_Off--></T>
+                <U n="value">
+                  <V t="apply_new_value" n="autonomy_modifiers" />
+                </U>
+              </U>
+            </L>
+            <V t="reference" n="default_value">
+              <T n="reference">224564<!--ObjectStateValue: utilities_Power_Consumption_Off--></T>
+            </V>
+          </U>
+          <U>
+            <L n="client_states">
+              <U>
+                <T n="key">35956<!--CommodityBasedObjectStateValue: Materialistic_Admired--></T>
+              </U>
+              <U>
+                <T n="key">35957<!--CommodityBasedObjectStateValue: Materialistic_YetToAdmire--></T>
+              </U>
+            </L>
+            <V n="default_value" t="reference">
+              <T n="reference">35957<!--CommodityBasedObjectStateValue: Materialistic_YetToAdmire--></T>
+            </V>
+          </U>
+        </L>
+      </U>
+    </V>
+    <V t="disabled" n="time_of_day_component" />
+    <V n="tooltip_component" t="enabled">
+      <U n="enabled">
+        <L n="custom_tooltips">
+          <U>
+            <L n="object_tests">
+              <L>
+                <V t="game_option">
+                  <U n="game_option">
+                    <E n="gameplay_option">ECO_FOOTPRINT_GAMEPLAY</E>
+                  </U>
+                </V>
+                <V t="state">
+                  <U n="state">
+                    <T n="value">35296<!--ObjectStateValue: GenericOnOff_On--></T>
+                  </U>
+                </V>
+              </L>
+            </L>
+            <L n="tooltip_fields">
+              <U>
+                <E n="key">header</E>
+                <U n="value">
+                  <V t="concatenate_with_component_fields" n="override_component_information" />
+                  <V n="text" t="single">
+                    <T n="single">0xE6403AD8<!--String: "<font color='#C9A927'>+ huella ecológica industrial</font>"--></T>
+                  </V>
+                </U>
+              </U>
+            </L>
+          </U>
+        </L>
+        <T n="update_on_game_option_changed">True</T>
+      </U>
+    </V>
+    <V n="weather_aware_component" t="enabled">
+      <U n="enabled">
+        <L n="anywhere_loot">
+          <U>
+            <E n="key">Cold</E>
+            <U n="value">
+              <L n="end_loot">
+                <T>252952<!--LootActions: loot_SpaceHeater_Weather_NotCold--></T>
+              </L>
+              <L n="start_loot">
+                <T>252951<!--LootActions: loot_SpaceHeater_Weather_Cold--></T>
+              </L>
+            </U>
+          </U>
+          <U>
+            <E n="key">Freezing</E>
+            <U n="value">
+              <L n="end_loot">
+                <T>252952<!--LootActions: loot_SpaceHeater_Weather_NotCold--></T>
+              </L>
+              <L n="start_loot">
+                <T>252951<!--LootActions: loot_SpaceHeater_Weather_Cold--></T>
+              </L>
+            </U>
+          </U>
+        </L>
+        <L n="outside_loot">
+          <U>
+            <E n="key">AnyRain</E>
+            <U n="value">
+              <L n="start_loot">
+                <T>252950<!--LootActions: loot_SpaceHeater_Weather_Off--></T>
+              </L>
+            </U>
+          </U>
+          <U>
+            <E n="key">AnySnow</E>
+            <U n="value">
+              <L n="start_loot">
+                <T>252950<!--LootActions: loot_SpaceHeater_Weather_Off--></T>
+              </L>
+            </U>
+          </U>
+        </L>
+      </U>
+    </V>
+  </U>
+  <L n="_super_affordances">
+    <T>13328<!--ImmediateSuperInteraction: debug_Reset--></T>
+    <T>13326<!--ImmediateSuperInteraction: debug_ObjectDestroy--></T>
+    <T>103888<!--ImmediateSuperInteraction: cheat_set_as_head--></T>
+    <T>196759<!--SuperInteraction: famePerks_GoodReputation_GivingBack_DonateObject--></T>
+    <T>252948<!--SuperInteraction: spaceHeater_WarmSelf--></T>
+    <T>131660<!--SuperInteraction: heatLamp_TurnOff--></T>
+    <T>131661<!--SuperInteraction: heatLamp_TurnOn--></T>
+    <T>131663<!--SuperInteraction: heatLamp_Upgrade_FireSafe--></T>
+    <T>131664<!--SuperInteraction: heatLamp_Upgrade_FireSafe_Resume--></T>
+    <T>156448<!--SuperInteraction: heatLamp_Upgrade_FireSafe_CompletedDisplay--></T>
+    <T>252939<!--SuperInteraction: spaceHeater_Auto_Off--></T>
+    <T>252940<!--SuperInteraction: spaceHeater_Auto_On--></T>
+    <T>156445<!--SuperInteraction: object_Knack_MakeAwesome_HeatLamp--></T>
+    <T>106859<!--SuperInteraction: simRay_Transform_Object--></T>
+    <T>74457<!--ImmediateSuperInteraction: fire_ReplaceBurntObject--></T>
+    <T>102258<!--SuperInteraction: Ghost_Possess--></T>
+    <T>168502<!--SuperInteraction: Ghost_Pet_Possess--></T>
+  </L>
+  <T n="fire_retardant">True</T>
+  <U n="recycling_data">
+    <L n="recycling_values">
+      <U>
+        <E n="Bucks Type">RecycleBitsBucks</E>
+        <T n="Value">0.75</T>
+      </U>
+      <U>
+        <E n="Bucks Type">RecyclePiecesBucks</E>
+        <T n="Value">0.25</T>
+      </U>
+    </L>
+  </U>
+</I>

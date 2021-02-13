@@ -1,0 +1,249 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<I c="MixerInteraction" i="interaction" m="interactions.base.mixer_interaction" n="bowlingLane_Mixers_WaitForTurn" s="158169">
+  <V t="enabled" n="_interruptible">
+    <T n="enabled">True</T>
+  </V>
+  <T n="allow_user_directed">False</T>
+  <V n="basic_content" t="looping_animation">
+    <U n="looping_animation">
+      <U n="animation_ref">
+        <T n="factory">11570<!--AnimationElement: Listen_Listen_Looping_basic--></T>
+        <U n="overrides">
+          <V t="disabled" n="balloons" />
+        </U>
+      </U>
+      <L n="conditional_actions">
+        <V t="literal">
+          <U n="literal">
+            <L n="conditions">
+              <V t="time_based">
+                <U n="time_based">
+                  <T n="max_time">5</T>
+                  <T n="min_time">5</T>
+                </U>
+              </V>
+            </L>
+            <E n="interaction_action">EXIT_NATURALLY</E>
+            <L n="tests">
+              <L>
+                <V t="game_component">
+                  <U n="game_component">
+                    <V t="enabled" n="is_sim_turn" />
+                    <V t="enabled" n="number_of_players">
+                      <U n="enabled">
+                        <T n="lower_bound">2</T>
+                        <T n="upper_bound">10</T>
+                      </U>
+                    </V>
+                  </U>
+                </V>
+              </L>
+            </L>
+          </U>
+        </V>
+        <V t="literal">
+          <U n="literal">
+            <L n="conditions">
+              <V t="time_based">
+                <U n="time_based">
+                  <T n="max_time">1</T>
+                  <T n="min_time">1</T>
+                </U>
+              </V>
+            </L>
+            <E n="interaction_action">EXIT_NATURALLY</E>
+            <L n="tests">
+              <L>
+                <V t="game_component">
+                  <U n="game_component">
+                    <V t="enabled" n="is_sim_turn" />
+                    <V t="enabled" n="number_of_players">
+                      <U n="enabled">
+                        <T n="lower_bound">1</T>
+                        <T n="upper_bound">1</T>
+                      </U>
+                    </V>
+                  </U>
+                </V>
+              </L>
+            </L>
+          </U>
+        </V>
+        <V t="literal">
+          <U n="literal">
+            <L n="conditions">
+              <V t="buff_based">
+                <U n="buff_based">
+                  <T n="buff">158834<!--Buff: buff_Object_BowlingLane_Hidden_ShotFailed--></T>
+                  <E n="timing">HAS_BUFF</E>
+                </U>
+              </V>
+            </L>
+            <E n="interaction_action">EXIT_NATURALLY</E>
+            <L n="tests">
+              <L>
+                <V t="game_component">
+                  <U n="game_component">
+                    <V t="enabled" n="is_sim_turn" />
+                  </U>
+                </V>
+              </L>
+            </L>
+          </U>
+        </V>
+        <V t="literal">
+          <U n="literal">
+            <L n="conditions">
+              <V t="time_based">
+                <U n="time_based">
+                  <T n="max_time">5</T>
+                  <T n="min_time">5</T>
+                </U>
+              </V>
+            </L>
+            <E n="interaction_action">EXIT_NATURALLY</E>
+            <L n="tests">
+              <L>
+                <V t="game_component">
+                  <U n="game_component">
+                    <V t="enabled" n="game_over">
+                      <T n="enabled">False</T>
+                    </V>
+                    <V t="enabled" n="is_sim_turn">
+                      <T n="enabled">False</T>
+                    </V>
+                  </U>
+                </V>
+              </L>
+            </L>
+          </U>
+        </V>
+        <V t="literal">
+          <U n="literal">
+            <L n="conditions">
+              <V t="time_based">
+                <U n="time_based">
+                  <T n="max_time">1</T>
+                </U>
+              </V>
+            </L>
+            <E n="interaction_action">EXIT_NATURALLY</E>
+            <L n="tests">
+              <L>
+                <V t="game_component">
+                  <U n="game_component">
+                    <V t="enabled" n="number_of_players" />
+                  </U>
+                </V>
+              </L>
+            </L>
+          </U>
+        </V>
+      </L>
+    </U>
+  </V>
+  <V t="disable_focus" n="basic_focus" />
+  <U n="display_name_text_tokens">
+    <L n="tokens">
+      <V t="participant_type">
+        <U n="participant_type">
+          <V n="objects" t="from_participant">
+            <U n="from_participant">
+              <E n="participant">Actor</E>
+            </U>
+          </V>
+        </U>
+      </V>
+      <V t="participant_type">
+        <U n="participant_type">
+          <V n="objects" t="from_participant">
+            <U n="from_participant">
+              <E n="participant">Object</E>
+            </U>
+          </V>
+        </U>
+      </V>
+    </L>
+  </U>
+  <L n="interaction_category_tags">
+    <E>Interaction_Mixer</E>
+    <E>Interaction_All</E>
+  </L>
+  <V n="outcome" t="test_based">
+    <U n="test_based">
+      <L n="fallback_outcomes">
+        <U>
+          <U n="outcome">
+            <T n="force_outcome_on_exit">True</T>
+          </U>
+        </U>
+      </L>
+      <L n="tested_outcomes">
+        <U>
+          <L n="potential_outcomes">
+            <U>
+              <U n="outcome">
+                <L n="continuation">
+                  <U>
+                    <T n="affordance">162656<!--MixerInteraction: bowlingLane_Mixers_TakeTurn--></T>
+                    <T n="si_affordance_override">158452<!--SuperInteraction: bowlingLane_WaitForTurn--></T>
+                  </U>
+                </L>
+              </U>
+            </U>
+          </L>
+          <L n="tests">
+            <L>
+              <V t="game_component">
+                <U n="game_component">
+                  <V t="enabled" n="game_over">
+                    <T n="enabled">False</T>
+                  </V>
+                  <V t="enabled" n="is_sim_turn" />
+                </U>
+              </V>
+            </L>
+          </L>
+        </U>
+        <U>
+          <L n="potential_outcomes">
+            <U>
+              <U n="outcome">
+                <L n="continuation">
+                  <U>
+                    <T n="affordance">161832<!--MixerInteraction: bowlingLane_Mixers_WaitForTurn_EndGame--></T>
+                  </U>
+                </L>
+              </U>
+            </U>
+          </L>
+          <L n="tests">
+            <L>
+              <V t="game_component">
+                <U n="game_component">
+                  <V t="enabled" n="game_over">
+                    <T n="enabled">True</T>
+                  </V>
+                </U>
+              </V>
+            </L>
+          </L>
+        </U>
+      </L>
+    </U>
+  </V>
+  <U n="sub_action">
+    <T n="base_weight">2</T>
+  </U>
+  <E n="target_type">OBJECT</E>
+  <L n="test_globals">
+    <V t="game_component">
+      <U n="game_component">
+        <V t="enabled" n="game_over">
+          <T n="enabled">False</T>
+        </V>
+      </U>
+    </V>
+  </L>
+  <T n="visible">False</T>
+</I>

@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+
+<TuningRoot>
+    <Instance instance_type="situation" class="LoopingInteractionSituation" module="situations.complex.looping_interaction_situation" muid="8D949675D0AF0AAD" description="A Situation that has one state that loops over and over again running the&#xA;tuned interaction. The interaction will run on the specified target(s)&#xA;assuming the targets pass the tuned tests." instance_subclasses_only="False" parents="SituationComplexCommon, SituationComplex, Situation" path="Situations\Descriptions" use_guid_for_reference="True">
+        <Deleted name="_buff" muid="CC1DC44892014CC4" />
+
+        <Deleted name="_cost" muid="D193A288CBCA8D0D" />
+
+        <Deleted name="_display_name" muid="30BFE4D16CDB0240" />
+
+        <Deleted name="_icon" muid="C76FF76B7A181DA3" />
+
+        <Deleted name="_initiating_sim_tests" muid="3EA14B8692FF7842" />
+
+        <Deleted name="_level_data" muid="4EF5C602589BB5A7" />
+
+        <Deleted name="_main_goal_visibility_test" muid="BB8B07B9388EC4DE" />
+
+        <Deleted name="_relationship_between_job_members" muid="983A0D8AF5141BF" />
+
+        <Deleted name="_resident_job" muid="AF53FCAA2A5BD0F" />
+
+        <Deleted name="audio_sting_on_start" muid="DC8FB963CC9F04BD" />
+
+        <Deleted name="background_audio" muid="B90C654A33089B4D" />
+
+        <Deleted name="category" muid="AE4564B3F7A81D6A" />
+
+        <Deleted name="compatible_venues" muid="DDAAF1A9534908C7" />
+
+        <Deleted name="entitlement" muid="FF6AB41B6EC2081C" />
+
+        <Deleted name="force_invite_only" muid="C130F2F6FDBAF786" />
+
+        <Deleted name="goal_button_text" muid="1527593682ABF7DD" />
+
+        <Deleted name="goal_sub_text" muid="F0F7474975C45A2F" />
+
+        <Deleted name="highlight_first_incomplete_minor_goal" muid="DAD8E80D6178AD48" />
+
+        <Tunable type="interaction" name="interaction" class="TunableReference" display="Interaction" muid="F7B69CA55E7F811A" description="The interaction that the Sim will run in looping succession on&#xA;the object(s) specified if the tests pass." allow_none="False" Deprecated="False" filter="0" group="General" pack_safe="True" />
+
+        <Deleted name="job_display_ordering" muid="6F9D292ED6A05318" />
+
+        <Deleted name="main_goal" muid="75306BAE17A80EA7" />
+
+        <Deleted name="main_goal_audio_sting" muid="9A929E4082411579" />
+
+        <Deleted name="max_participants" muid="2F6BCAB4DF4CD4FE" />
+
+        <Deleted name="minor_goal_chains" muid="ADFEB0E46625A81B" />
+
+        <Deleted name="recommended_job_object_notification" muid="D6F0A53D7EBB3886" />
+
+        <Deleted name="recommended_job_object_text" muid="36E17ED38F9E45F1" />
+
+        <TunableTuple name="run_interaction_state" class="TunableRunInteractionState" display="Run Interaction State" muid="2DDDFA28DB36DE9" description="Situation State used to run the tuned interaction on a specific&#xA;object." Deprecated="False" filter="0" group="Situation State">
+            <Tunable type="bool" name="allow_join_situation" class="Tunable" default="True" display="Allow Join Situation" muid="4E47C663CE3C6AC7" description="Whether the situation is allowed to join at this state." Deprecated="False" filter="0" group="General" />
+            <TunableList name="job_and_role_changes" class="TunableMapping" display="Job And Role Changes" muid="344AFE0CFB0B3ACB" mapping_key="Situation Job" mapping_value="Role State" description="A mapping between situation jobs and role states that defines&#xA;what role states we want to switch to for sims on which jobs&#xA;when this situation state is entered." Deprecated="False" filter="0" group="General">
+                <TunableTuple class="TunableTuple" muid="DF4EF6D42E1CF2D1" Deprecated="False" filter="0" group="General">
+                    <Tunable type="role_state" name="Role State" class="TunableReference" display="Role State" muid="823F42AF89930DED" description="The role state that we will switch sims of the linked job&#xA;into." allow_none="False" Deprecated="False" filter="0" group="General" />
+                    <Tunable type="situation_job" name="Situation Job" class="TunableReference" display="Situation Job" muid="AC951FD06AF95E2D" description="A reference to a SituationJob that we will use to change&#xA;sim's role state." allow_none="False" Deprecated="False" filter="0" group="General" />
+                </TunableTuple>
+            </TunableList>
+            <Tunable type="int" name="max_retry_attempts" class="Tunable" default="3" display="Max Retry Attempts" muid="C35292AD4D0D83C9" description="The number of times the Sim can fail to successfully run the &#xA;tuned interaction before giving up and moving on to the next &#xA;object as a target." tuning_state="NeedsTuning" Deprecated="False" filter="0" group="General" />
+            <TunableVariant type="None" name="time_out" class="OptionalTunable" default="disabled" display="Time Out" muid="75E84DA8A147A204" description="How long this state will last before time expired. Please talk to the GPE who implemented the specific&#xA;situation to see what the state will do on time expired." Deprecated="False" filter="0" group="General">
+                <Tunable name="disabled" class="TunableExistance" display="Disabled" muid="D0452D1EE715C610" />
+                <Tunable type="float" name="enabled" class="TunableSimMinute" default="15" display="Enabled" muid="FDB410E2C3AABB5" min="1" max="None" tuning_state="NeedsTuning" Deprecated="False" filter="0" group="General" />
+            </TunableVariant>
+        </TunableTuple>
+
+        <Deleted name="screen_slam_bronze" muid="9E6334CECF8B2986" />
+
+        <Deleted name="screen_slam_gold" muid="ECE04DEA67B0BD0E" />
+
+        <Deleted name="screen_slam_no_medal" muid="9F428CA04BE5CCA1" />
+
+        <Deleted name="screen_slam_silver" muid="F9968529A82AB4ED" />
+
+        <Deleted name="situation_description" muid="C4E696A793000530" />
+
+        <Deleted name="suppress_scoring_progress_bar" muid="75A7CD0CCF16585E" />
+
+        <Deleted name="targeted_situation" muid="ADCD8A3B57EED3A2" />
+
+        <TunableTuple name="tendor_job_and_role_state" class="TunableSituationJobAndRoleState" display="Tendor Job And Role State" muid="7481C77416A1E3DB" description="Job and Role State for the Sim in this situation." Deprecated="False" filter="0" group="General">
+            <Tunable type="role_state" name="role_state" class="TunableReference" display="Role State" muid="152B92A3A9936F05" description="A role state the sim assigned to the job will perform" allow_none="False" Deprecated="False" filter="0" group="General" />
+            <Tunable type="situation_job" name="situation_job" class="TunableReference" display="Situation Job" muid="790DBFA30506C604" description="A reference to a SituationJob that can be performed at this Situation." allow_none="False" Deprecated="False" filter="0" group="General" />
+        </TunableTuple>
+
+        <TdescFragTag name="tests" class="TunableTestSet" display="Tests" muid="88CC96F3A2622721" description="The tests that muss pass for the Sim to run the tuned interaction&#xA;with the object as the target." filter="0" group="General" />
+
+        <Deleted name="travel_request_behavior" muid="C9350C80A7C59346" />
+
+        <Deleted name="venue_invitation_message" muid="8FBD6FAF49754B61" />
+
+        <Deleted name="venue_situation_player_job" muid="7436868B7C9DC329" />
+    </Instance>
+
+    <VersionHistory>
+        <ActionList>
+            <Action type="kRemove" old_muid="937CF6B95C77173D" />
+        </ActionList>
+
+        <ActionList>
+            <Action type="kRename" old_muid="9A51D043B3D2980" new_muid="DDAAF1A9534908C7" />
+        </ActionList>
+
+        <ActionList>
+            <Action type="kRemove" old_muid="9D368E824C2DD0B" />
+            <Action type="kRemove" old_muid="8E0CCCD9580398C1" />
+        </ActionList>
+    </VersionHistory>
+</TuningRoot>

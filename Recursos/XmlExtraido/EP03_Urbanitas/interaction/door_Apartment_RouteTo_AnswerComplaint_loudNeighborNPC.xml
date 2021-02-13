@@ -1,0 +1,240 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<I c="SuperInteraction" i="interaction" m="interactions.base.super_interaction" n="door_Apartment_RouteTo_AnswerComplaint_loudNeighborNPC" s="138068">
+  <L n="_constraints">
+    <U>
+      <L n="constraints">
+        <U>
+          <V n="value" t="front_door">
+            <U n="front_door">
+              <V t="participant_apartment_door" n="door_select_option" />
+            </U>
+          </V>
+        </U>
+      </L>
+    </U>
+    <U>
+      <L n="constraints">
+        <U>
+          <V n="value" t="cone">
+            <U n="cone">
+              <T n="angle">90</T>
+              <T n="max_radius">1.5</T>
+              <T n="min_radius">0.5</T>
+            </U>
+          </V>
+        </U>
+      </L>
+    </U>
+  </L>
+  <V t="enabled" n="_saveable" />
+  <L n="_static_commodities">
+    <U>
+      <T n="desire">2</T>
+      <T n="static_commodity">154597<!--StaticCommodity: staticCommodity_ApartmentNeighborSituations_LoudNPC_answerDoor--></T>
+    </U>
+  </L>
+  <T n="allow_autonomous">False</T>
+  <T n="allow_user_directed">False</T>
+  <T n="attention_cost">0.5</T>
+  <V n="basic_content" t="one_shot">
+    <U n="one_shot">
+      <U n="animation_ref">
+        <T n="factory">11804<!--AnimationElement: Social_Responses_Annoyed_Random--></T>
+        <U n="overrides">
+          <V n="balloons" t="enabled">
+            <L n="enabled">
+              <U>
+                <L n="balloon_choices">
+                  <U>
+                    <V n="item" t="balloon_category">
+                      <T n="balloon_category">12341<!--BalloonCategory: Mood_Frustrated_Response_Thought--></T>
+                    </V>
+                    <L n="tests">
+                      <L>
+                        <V t="situation_running_test">
+                          <U n="situation_running_test">
+                            <V n="situation_whitelist" t="enabled">
+                              <L n="enabled">
+                                <T>145043<!--NeighborResponseSituation: LoudNeighbor_Apartment_NPC_situation_AnswerDoor_loudFight--></T>
+                              </L>
+                            </V>
+                            <E n="test_event">SituationStarted</E>
+                          </U>
+                        </V>
+                      </L>
+                    </L>
+                  </U>
+                  <U>
+                    <V n="item" t="balloon_category">
+                      <T n="balloon_category">31108<!--BalloonCategory: balloonCategory_SetMusic_Thought--></T>
+                    </V>
+                    <L n="tests">
+                      <L>
+                        <V t="situation_running_test">
+                          <U n="situation_running_test">
+                            <V n="situation_whitelist" t="enabled">
+                              <L n="enabled">
+                                <T>138072<!--NeighborResponseSituation: LoudNeighbor_Apartment_NPC_situation_AnswerDoor_loudMusic--></T>
+                              </L>
+                            </V>
+                            <E n="test_event">SituationStarted</E>
+                          </U>
+                        </V>
+                      </L>
+                    </L>
+                  </U>
+                  <U>
+                    <V n="item" t="balloon_category">
+                      <T n="balloon_category">38616<!--BalloonCategory: BalloonCategory_SkillWooHoo_Thought--></T>
+                    </V>
+                    <L n="tests">
+                      <L>
+                        <V t="situation_running_test">
+                          <U n="situation_running_test">
+                            <V n="situation_whitelist" t="enabled">
+                              <L n="enabled">
+                                <T>138079<!--NeighborResponseSituation: LoudNeighbor_Apartment_NPC_situation_AnswerDoor_loudWoohoo--></T>
+                              </L>
+                            </V>
+                            <E n="test_event">SituationStarted</E>
+                          </U>
+                        </V>
+                      </L>
+                    </L>
+                  </U>
+                </L>
+                <T n="balloon_delay">0.5</T>
+                <T n="balloon_delay_random_offset">0.25</T>
+                <L n="balloon_target">
+                  <E>Actor</E>
+                </L>
+              </U>
+            </L>
+          </V>
+        </U>
+      </U>
+    </U>
+  </V>
+  <L n="basic_extras" />
+  <V t="disabled" n="basic_reserve_object" />
+  <V t="disabled" n="content_score" />
+  <T n="display_name">0x78AB947E<!--String: "Visita en la puerta"--></T>
+  <U n="display_name_text_tokens">
+    <L n="tokens">
+      <V t="participant_type">
+        <U n="participant_type">
+          <V t="from_participant" n="objects">
+            <U n="from_participant">
+              <E n="participant">Actor</E>
+            </U>
+          </V>
+        </U>
+      </V>
+      <V t="participant_type">
+        <U n="participant_type">
+          <V t="from_participant" n="objects">
+            <U n="from_participant">
+              <E n="participant">Object</E>
+            </U>
+          </V>
+        </U>
+      </V>
+    </L>
+  </U>
+  <L n="interaction_category_tags">
+    <E>Interaction_Super</E>
+    <E>Interaction_All</E>
+  </L>
+  <V n="outcome" t="single">
+    <U n="single">
+      <U n="actions">
+        <L n="continuation" />
+        <L n="loot_list">
+          <T>139247<!--LootActions: loot_Situation_ApartmentNeighbors_NPC_DoorRoutedTo_hidden--></T>
+        </L>
+        <L n="parameterized_autonomy">
+          <U>
+            <E n="key">Actor</E>
+            <U n="value">
+              <L n="requests">
+                <U>
+                  <T n="consider_same_target">False</T>
+                  <L n="static_commodities">
+                    <T>139259<!--StaticCommodity: staticCommodity_ApartmentNeighborSituations_LoudNPC_listenToComplaint--></T>
+                  </L>
+                </U>
+              </L>
+            </U>
+          </U>
+        </L>
+      </U>
+    </U>
+  </V>
+  <U n="posture_preferences">
+    <T n="apply_penalties">True</T>
+    <T n="prefer_clicked_part">False</T>
+  </U>
+  <E n="scoring_priority">NORMAL</E>
+  <T n="subaction_selection_weight">1</T>
+  <E n="target_type">OBJECT</E>
+  <L n="test_autonomous">
+    <L>
+      <V t="situation_job_test">
+        <U n="situation_job_test">
+          <L n="situation_jobs">
+            <T>145044<!--SituationJob: situationJob_ApartmentNeighbor_NPChost_loudFight--></T>
+            <T>138077<!--SituationJob: situationJob_ApartmentNeighbor_NPChost_loudMusic--></T>
+            <T>138078<!--SituationJob: situationJob_ApartmentNeighbor_NPChost_loudWoohoo--></T>
+          </L>
+        </U>
+      </V>
+    </L>
+  </L>
+  <L n="test_globals">
+    <V t="sim_info">
+      <U n="sim_info">
+        <V t="specified" n="ages">
+          <L n="specified">
+            <E>TEEN</E>
+            <E>YOUNGADULT</E>
+            <E>ADULT</E>
+            <E>ELDER</E>
+            <E>CHILD</E>
+          </L>
+        </V>
+        <V t="specified" n="species">
+          <U n="specified">
+            <L n="species">
+              <E />
+            </L>
+          </U>
+        </V>
+        <E n="who">Actor</E>
+      </U>
+    </V>
+    <V t="lot_owner">
+      <U n="lot_owner">
+        <T n="owns_lot">False</T>
+      </U>
+    </V>
+    <V t="buff">
+      <U n="buff">
+        <L n="blacklist">
+          <T>139244<!--Buff: buff_Situation_ApartmentNeighbors_DoorRoutedTo_hidden--></T>
+        </L>
+      </U>
+    </V>
+    <V t="situation_running_test">
+      <U n="situation_running_test">
+        <V t="enabled" n="situation_whitelist">
+          <L n="enabled">
+            <T>145043<!--NeighborResponseSituation: LoudNeighbor_Apartment_NPC_situation_AnswerDoor_loudFight--></T>
+            <T>138072<!--NeighborResponseSituation: LoudNeighbor_Apartment_NPC_situation_AnswerDoor_loudMusic--></T>
+            <T>138079<!--NeighborResponseSituation: LoudNeighbor_Apartment_NPC_situation_AnswerDoor_loudWoohoo--></T>
+          </L>
+        </V>
+      </U>
+    </V>
+  </L>
+  <T n="time_overhead">30</T>
+</I>

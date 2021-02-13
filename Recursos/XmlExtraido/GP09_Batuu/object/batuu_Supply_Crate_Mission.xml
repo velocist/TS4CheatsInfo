@@ -1,0 +1,196 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<I c="GameObject" i="object" m="objects.game_object" n="batuu_Supply_Crate_Mission" s="244419">
+  <U n="_components">
+    <V t="enabled" n="focus">
+      <U n="enabled">
+        <V n="_focus_score" t="globally">
+          <U n="globally">
+            <E n="base">LOW</E>
+          </U>
+        </V>
+      </U>
+    </V>
+    <V n="state" t="enabled">
+      <U n="enabled">
+        <L n="state_triggers">
+          <U>
+            <L n="at_states">
+              <T>233841<!--ObjectStateValue: supplyCrates_Value_Locked--></T>
+            </L>
+            <V n="set_states" t="Set_state_list">
+              <L n="Set_state_list">
+                <T>243417<!--ObjectStateValue: supplyCrates_Lid_VFX_Red_Values--></T>
+              </L>
+            </V>
+          </U>
+          <U>
+            <L n="at_states">
+              <T>249580<!--ObjectStateValue: supplyCrates_MissionReset_Reset--></T>
+            </L>
+            <V n="set_states" t="Set_state_list">
+              <L n="Set_state_list">
+                <T>249581<!--ObjectStateValue: supplyCrates_MissionReset_Idle--></T>
+                <T>233844<!--ObjectStateValue: supplyCrates_Value_Closed--></T>
+              </L>
+            </V>
+            <L n="statistic_operations">
+              <V t="statistic_set_min">
+                <U n="statistic_set_min">
+                  <T n="stat">249146<!--Commodity: commodity_SupplyCrates_MissionActionTaken--></T>
+                </U>
+              </V>
+            </L>
+          </U>
+        </L>
+        <L n="states">
+          <U>
+            <L n="client_states">
+              <U>
+                <T n="key">233841<!--ObjectStateValue: supplyCrates_Value_Locked--></T>
+              </U>
+              <U>
+                <T n="key">233842<!--ObjectStateValue: supplyCrates_Value_Unlocked--></T>
+              </U>
+            </L>
+            <V n="default_value" t="reference">
+              <T n="reference">233841<!--ObjectStateValue: supplyCrates_Value_Locked--></T>
+            </V>
+            <T n="reset_on_load_if_time_passes">True</T>
+            <T n="reset_to_default">True</T>
+          </U>
+          <U>
+            <L n="client_states">
+              <U>
+                <T n="key">233843<!--ObjectStateValue: supplyCrates_Value_Open--></T>
+              </U>
+              <U>
+                <T n="key">233844<!--ObjectStateValue: supplyCrates_Value_Closed--></T>
+              </U>
+            </L>
+            <V n="default_value" t="reference">
+              <T n="reference">233844<!--ObjectStateValue: supplyCrates_Value_Closed--></T>
+            </V>
+            <T n="reset_on_load_if_time_passes">True</T>
+            <T n="reset_to_default">True</T>
+            <V n="tested_states_on_add" t="enabled">
+              <U n="enabled">
+                <L n="tested_states">
+                  <U>
+                    <T n="state">233843<!--ObjectStateValue: supplyCrates_Value_Open--></T>
+                    <L n="tests">
+                      <L>
+                        <V t="career_gig_test">
+                          <U n="career_gig_test">
+                            <T n="career">231099<!--Career: career_Batuu--></T>
+                            <E n="participant">ActiveHousehold</E>
+                            <V t="specific_gigs" n="test_type">
+                              <U n="specific_gigs">
+                                <L n="gigs">
+                                  <T>239856<!--MissionGig: missionGig_Missions_FirstOrder_Story_2--></T>
+                                </L>
+                              </U>
+                            </V>
+                          </U>
+                        </V>
+                      </L>
+                    </L>
+                  </U>
+                </L>
+              </U>
+            </V>
+            <V t="enabled" n="tested_states_on_location_changed" />
+          </U>
+          <U>
+            <L n="client_states">
+              <U>
+                <T n="key">243416<!--ObjectStateValue: supplyCrates_Lid_VFX_Green_Values--></T>
+              </U>
+              <U>
+                <T n="key">243417<!--ObjectStateValue: supplyCrates_Lid_VFX_Red_Values--></T>
+              </U>
+              <U>
+                <T n="key">243418<!--ObjectStateValue: supplyCrates_Lid_VFX_Blink_Red_Values--></T>
+              </U>
+              <U>
+                <T n="key">243419<!--ObjectStateValue: supplyCrates_Lid_VFX_Blink_Green_Values--></T>
+              </U>
+            </L>
+            <V n="default_value" t="reference">
+              <T n="reference">243417<!--ObjectStateValue: supplyCrates_Lid_VFX_Red_Values--></T>
+            </V>
+          </U>
+          <U>
+            <V n="default_value" t="reference">
+              <T n="reference">244368<!--CommodityBasedObjectStateValue: supplyCrates_SabotageAvailable--></T>
+            </V>
+          </U>
+          <U>
+            <V n="default_value" t="reference">
+              <T n="reference">249143<!--CommodityBasedObjectStateValue: supplyCrates_MissionActionTaken_InteractionReady--></T>
+            </V>
+          </U>
+          <U>
+            <V n="default_value" t="reference">
+              <T n="reference">249581<!--ObjectStateValue: supplyCrates_MissionReset_Idle--></T>
+            </V>
+          </U>
+        </L>
+        <V n="timed_state_triggers" t="enabled">
+          <L n="enabled">
+            <U>
+              <T n="key">243418<!--ObjectStateValue: supplyCrates_Lid_VFX_Blink_Red_Values--></T>
+              <U n="value">
+                <L n="ops">
+                  <U>
+                    <L n="states_to_trigger">
+                      <T>243417<!--ObjectStateValue: supplyCrates_Lid_VFX_Red_Values--></T>
+                    </L>
+                    <T n="trigger_time">3</T>
+                  </U>
+                </L>
+              </U>
+            </U>
+            <U>
+              <T n="key">243419<!--ObjectStateValue: supplyCrates_Lid_VFX_Blink_Green_Values--></T>
+              <U n="value">
+                <L n="ops">
+                  <U>
+                    <L n="states_to_trigger">
+                      <T>243416<!--ObjectStateValue: supplyCrates_Lid_VFX_Green_Values--></T>
+                    </L>
+                    <T n="trigger_time">5</T>
+                  </U>
+                </L>
+              </U>
+            </U>
+          </L>
+        </V>
+      </U>
+    </V>
+  </U>
+  <L n="_super_affordances">
+    <T>13328<!--ImmediateSuperInteraction: debug_Reset--></T>
+    <T>13326<!--ImmediateSuperInteraction: debug_ObjectDestroy--></T>
+    <T>103888<!--ImmediateSuperInteraction: cheat_set_as_head--></T>
+    <T>233836<!--SuperInteraction: Splice_supplyCrate--></T>
+    <T>233837<!--SuperInteraction: Loot_supplyCrate--></T>
+    <T>234413<!--SuperInteraction: Slice_supplyCrate_Droid--></T>
+    <T>13983<!--StandSuperInteraction: sim-stand--></T>
+    <T>239084<!--SuperInteraction: Survey_supplyCrate_Mission--></T>
+    <T>240301<!--SuperInteraction: Reseal_supplyCrate--></T>
+    <T>244161<!--SuperInteraction: Search_SupplyCrate_CollectResistanceCrateSupplies_RR1--></T>
+    <T>243549<!--SuperInteraction: supplyCrate_Missions_Resistance_Story_04_Steal_Prototype_Blaster_Rifle--></T>
+  </L>
+  <U n="recycling_data">
+    <L n="recycling_values">
+      <U>
+        <E n="Bucks Type">RecycleBitsBucks</E>
+        <T n="Value">0.5</T>
+      </U>
+      <U>
+        <E n="Bucks Type">RecyclePiecesBucks</E>
+        <T n="Value">0.5</T>
+      </U>
+    </L>
+  </U>
+</I>

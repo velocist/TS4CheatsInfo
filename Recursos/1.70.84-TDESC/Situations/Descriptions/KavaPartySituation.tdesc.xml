@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+
+<TuningRoot>
+    <Instance instance_type="situation" class="KavaPartySituation" module="situations.complex.kava_party" muid="350D53A2A5AE98B6" description="A situation used to control the flow of the Kava Party." instance_subclasses_only="False" parents="SituationComplexCommon, SituationComplex, Situation" path="Situations\Descriptions" use_guid_for_reference="True">
+        <TunableTuple name="_post_kava_served_state" class="Tunable_PostKavaServed" display="02_post_kava_served_state" muid="A637075037F61AE1" description="The situation state used during the party after the kava has been&#xA;served for the first time." Deprecated="False" filter="0" group="Situation State">
+            <Tunable type="bool" name="allow_join_situation" class="Tunable" default="True" display="Allow Join Situation" muid="BEBF3CAFF7F1F32F" description="Whether the situation is allowed to join at this state." Deprecated="False" filter="0" group="General" />
+            <TunableList name="job_and_role_changes" class="TunableMapping" display="Job And Role Changes" muid="68C446F6CD359A1F" mapping_key="Situation Job" mapping_value="Role State" description="A mapping between situation jobs and role states that defines&#xA;what role states we want to switch to for sims on which jobs&#xA;when this situation state is entered." Deprecated="False" filter="0" group="General">
+                <TunableTuple class="TunableTuple" muid="2BE283C80C4B2435" Deprecated="False" filter="0" group="General">
+                    <Tunable type="role_state" name="Role State" class="TunableReference" display="Role State" muid="54B0362FE7C965ED" description="The role state that we will switch sims of the linked job&#xA;into." allow_none="False" Deprecated="False" filter="0" group="General" />
+                    <Tunable type="situation_job" name="Situation Job" class="TunableReference" display="Situation Job" muid="40FC61985716DF8C" description="A reference to a SituationJob that we will use to change&#xA;sim's role state." allow_none="False" Deprecated="False" filter="0" group="General" />
+                </TunableTuple>
+            </TunableList>
+            <TunableVariant type="None" name="time_out" class="OptionalTunable" default="disabled" display="Time Out" muid="EE8EC0F4793D74AE" description="How long this state will last before time expired. Please talk to the GPE who implemented the specific&#xA;situation to see what the state will do on time expired." Deprecated="False" filter="0" group="General">
+                <Tunable name="disabled" class="TunableExistance" display="Disabled" muid="E0D71804193D3F63" />
+                <Tunable type="float" name="enabled" class="TunableSimMinute" default="15" display="Enabled" muid="48E689434AD487D6" min="1" max="None" tuning_state="NeedsTuning" Deprecated="False" filter="0" group="General" />
+            </TunableVariant>
+        </TunableTuple>
+
+        <TunableTuple name="_pre_kava_served_state" class="Tunable_PreKavaServed" display="01_pre_kava_served_state" muid="E58269BB49F421F8" description="The situation state used at the start of the party, before the&#xA;kava has been served for the first time." Deprecated="False" filter="0" group="Situation State">
+            <Tunable type="bool" name="allow_join_situation" class="Tunable" default="True" display="Allow Join Situation" muid="C6F0CDECB4E1650C" description="Whether the situation is allowed to join at this state." Deprecated="False" filter="0" group="General" />
+            <TunableTuple name="interaction_of_interest" class="TunableInteractionOfInterest" display="Interaction Of Interest" muid="6F4BDAFD389EC88A" description="The interaction that when run will cause GPE defined behavior&#xA;to run." Deprecated="False" filter="0" group="General">
+                <TunableList name="affordances" class="TunableList" display="Affordances" muid="BA230DE0986AA9C3" description="The Sim must have started either any affordance in this list or an&#xA;interaction matching one of the tags in this tunable's Tags&#xA;field." Deprecated="False" filter="0" group="General">
+                    <Tunable type="interaction" class="TunableReference" muid="762E8E27D117FCD" allow_none="False" Deprecated="False" filter="0" group="General" pack_safe="True" />
+                </TunableList>
+                <TunableList name="tags" class="TunableSet" display="Tags" muid="23DC5DD08A5A609E" description="The Sim must have run either an interaction matching one of these&#xA;Tags or an affordance from the list of Affordances in this&#xA;tunable." Deprecated="False" filter="0" group="General" unique_entries="true">
+                    <TunableEnum type="Tag" class="TunableEnumEntry" default="INVALID" muid="A1CE53A0240F4473" dynamic_entries="tag.Tag._elements" static_entries="tag.Tag" Deprecated="False" filter="0" group="General" />
+                </TunableList>
+            </TunableTuple>
+            <TunableList name="job_and_role_changes" class="TunableMapping" display="Job And Role Changes" muid="6CC05A3B14171AF1" mapping_key="Situation Job" mapping_value="Role State" description="A mapping between situation jobs and role states that defines&#xA;what role states we want to switch to for sims on which jobs&#xA;when this situation state is entered." Deprecated="False" filter="0" group="General">
+                <TunableTuple class="TunableTuple" muid="41EF98F2FC1AA76D" Deprecated="False" filter="0" group="General">
+                    <Tunable type="role_state" name="Role State" class="TunableReference" display="Role State" muid="47214E5188124B5F" description="The role state that we will switch sims of the linked job&#xA;into." allow_none="False" Deprecated="False" filter="0" group="General" />
+                    <Tunable type="situation_job" name="Situation Job" class="TunableReference" display="Situation Job" muid="53C1D020DC331EDD" description="A reference to a SituationJob that we will use to change&#xA;sim's role state." allow_none="False" Deprecated="False" filter="0" group="General" />
+                </TunableTuple>
+            </TunableList>
+            <TunableVariant type="None" name="time_out" class="OptionalTunable" default="disabled" display="Time Out" muid="ACD3D308E9AF209E" description="How long this state will last before time expired. Please talk to the GPE who implemented the specific&#xA;situation to see what the state will do on time expired." Deprecated="False" filter="0" group="General">
+                <Tunable name="disabled" class="TunableExistance" display="Disabled" muid="5474A66BB13E92CD" />
+                <Tunable type="float" name="enabled" class="TunableSimMinute" default="15" display="Enabled" muid="22CF5BF63DF28538" min="1" max="None" tuning_state="NeedsTuning" Deprecated="False" filter="0" group="General" />
+            </TunableVariant>
+        </TunableTuple>
+
+        <TunableList name="auto_invite_disabled_traits" class="TunableList" display="Auto Invite Disabled Traits" muid="39644CDDBF196971" description="A list of traits, that if any one of them is present in the lot&#xA;traits of a lot will keep the kava party situation from auto&#xA;inviting locals." Deprecated="False" filter="0" group="General">
+            <Tunable type="zone_modifier" class="TunableReference" muid="25AC83C6EECD15F4" description="The lot trait that, if present on the lot, will stop the&#xA;situation from auto inviting locals to the party." allow_none="False" Deprecated="False" filter="0" group="General" pack_safe="True" />
+        </TunableList>
+
+        <Tunable type="situation_job" name="guest_job" class="TunableReference" display="Guest Job" muid="5EDD65A2A3825225" description="The job that guests will use." allow_none="False" Deprecated="False" filter="0" group="Roles" />
+
+        <Tunable type="situation_job" name="host_job" class="TunableReference" display="Host Job" muid="D137C3B2E7A33263" description="The job that the host will use." allow_none="False" Deprecated="False" filter="0" group="Roles" />
+
+        <Tunable type="situation_job" name="island_guest_job" class="TunableReference" display="Island Guest Job" muid="41A38728048DD3" description="The job that will be used for Islander auto invited to the party.&#xA;&#xA;This needs to be different because it will only filter Island Sims&#xA;as valid guests, which is different than the regular guest job." allow_none="False" Deprecated="False" filter="0" group="Roles" />
+
+        <Tunable type="int" name="min_number_of_guests" class="Tunable" default="8" display="Min Number Of Guests" muid="7F93814C91AA8050" description="The minimum number of Sims that should show up for a Kava Party,&#xA;assuming there is enough room in the Sim cap to accommodate them. &#xA;&#xA;If less than this number of Sims is chosen as a &#xA;guest by the user, then the rest will be filled with random island&#xA;Sims." tuning_state="NeedsTuning" Deprecated="False" filter="0" group="Roles" />
+    </Instance>
+</TuningRoot>

@@ -1,0 +1,64 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<I c="GlobalPolicy" i="snippet" m="global_policies.global_policy_tuning" n="globalPolicy_Conservationist_Energy_GreenEnergy" s="210610">
+  <V n="_display_data" t="optional_display_mixin">
+    <U n="optional_display_mixin">
+      <V n="instance_display_description" t="enabled_display_description">
+        <T n="enabled_display_description">0x85DFE54<!--String: "Efecto de la política: bajadas en las facturas para todas la unidades domésticas, pero posibilidad de apagones en la horas nocturnas de más consumo."--></T>
+      </V>
+      <V n="instance_display_icon" t="enabled_display_icon">
+        <T n="enabled_display_icon" p="InGame\UI\Icons\Headlines\Final\headline_energized_v1.png">2f7d0004:00000000:22885cbbeb2e6507</T>
+      </V>
+      <V n="instance_display_name" t="enabled_display_name">
+        <T n="enabled_display_name">0xA54DE161<!--String: "Desgravación por energías limpias"--></T>
+      </V>
+      <V n="instance_display_tooltip" t="enabled_display_tooltip">
+        <T n="enabled_display_tooltip">0x674DB3C3<!--String: "¡Si queremos salvar el medio ambiente, tenemos que utilizar fuentes de energía alternativas! Las centrales eléctricas contaminantes deben cerrarse en favor de soluciones más limpias como la energía solar o la eólica. ¡No hay desventajas! Bueno, salvo que la energía generada podría no ser suficiente para <i>todos</i>...\n\nEvalúa esta política para regular la fuente de energía utilizada por todas las unidades domésticas. ¿Qué posibilidades hay de que todo el mundo use la electricidad al mismo tiempo?"--></T>
+      </V>
+    </U>
+  </V>
+  <T n="decay_days">60</T>
+  <L n="global_policy_effects">
+    <V t="bill_reduction">
+      <U n="bill_reduction">
+        <U n="percent_reduction">
+          <E n="reduction_reason">GlobalPolicy_GreenEnergyRebate</E>
+        </U>
+      </U>
+    </V>
+    <V t="shut_off_utilities">
+      <U n="shut_off_utilities">
+        <V t="enabled" n="chance">
+          <T n="enabled">10</T>
+        </V>
+        <U n="schedule_data">
+          <L n="schedule_entries">
+            <U>
+              <U n="days_available">
+                <T n="0 SUNDAY">True</T>
+                <T n="1 MONDAY">True</T>
+                <T n="2 TUESDAY">True</T>
+                <T n="3 WEDNESDAY">True</T>
+                <T n="4 THURSDAY">True</T>
+                <T n="5 FRIDAY">True</T>
+                <T n="6 SATURDAY">True</T>
+              </U>
+              <T n="duration">2</T>
+              <U n="start_time">
+                <T n="hour">20</T>
+              </U>
+            </U>
+          </L>
+        </U>
+        <L n="utilities">
+          <U>
+            <E n="shutoff_reason">GLOBAL_POLICY_ENERGY_REBATE</E>
+            <T n="shutoff_tooltip">0xD8F0D2F5<!--String: "Se ha producido un apagón durante el horario de máximo consumo debido a la política de desgravación por energías limpias."--></T>
+          </U>
+        </L>
+      </U>
+    </V>
+  </L>
+  <L n="loot_on_complete">
+    <T>206237<!--LootActions: loot_Career_Conservationist_RegulationComplete--></T>
+  </L>
+</I>

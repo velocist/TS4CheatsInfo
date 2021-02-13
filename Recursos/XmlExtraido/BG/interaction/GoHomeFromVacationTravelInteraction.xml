@@ -1,0 +1,119 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<I c="GoHomeFromVacationTravelInteraction" i="interaction" m="sims.self_interactions" n="GoHomeFromVacationTravelInteraction" s="112603">
+  <V t="prohibit_cancelation" n="_cancelable_by_user" />
+  <V t="resource_key" n="_icon">
+    <U n="resource_key">
+      <T n="key" p="InGame\UI\Icons\InteractionQueue\IconQueueGoHere.png">2f7d0004:00000000:97d318ad9e4da2b3</T>
+    </U>
+  </V>
+  <T n="_must_run">False</T>
+  <V t="enabled" n="_saveable" />
+  <T n="allow_autonomous">False</T>
+  <T n="allow_while_save_locked">False</T>
+  <T n="attention_cost">0.5</T>
+  <V t="one_shot" n="basic_content" />
+  <L n="basic_extras">
+    <V t="remove_from_ensemble">
+      <U n="remove_from_ensemble">
+        <T n="ensemble_type">127285<!--Ensemble: ensemble_Generic--></T>
+      </U>
+    </V>
+    <V t="remove_from_travel_group">
+      <U n="remove_from_travel_group">
+        <V t="at_beginning" n="timing" />
+      </U>
+    </V>
+  </L>
+  <T n="collapsible">True</T>
+  <V n="confirmation_dialog" t="enabled">
+    <U n="enabled">
+      <U n="dialog">
+        <V n="dialog" t="ok_cancel">
+          <U n="ok_cancel">
+            <V t="enabled" n="icon">
+              <V n="enabled" t="resource_key">
+                <U n="resource_key">
+                  <T p="InGame\UI\Icons\Headlines\Final\headline_GoHome.png" n="key">2f7d0004:00000000:f2ce027635927c83</T>
+                </U>
+              </V>
+            </V>
+            <V n="text" t="single">
+              <T n="single">0x616E4CCF<!--String: "Esto pondrá fin a las vacaciones de {0.SimFirstName} y {M0.lo}{F0.la} mandará de vuelta a casa."--></T>
+            </V>
+            <V t="enabled" n="title">
+              <T n="enabled">0x3110D0ED<!--String: "¿Irse a casa?"--></T>
+            </V>
+          </U>
+        </V>
+      </U>
+    </U>
+  </V>
+  <V t="disabled" n="content_score" />
+  <T n="display_name">0x818DC8A9<!--String: "Enviar a casa"--></T>
+  <U n="display_name_text_tokens">
+    <L n="tokens">
+      <V t="participant_type">
+        <U n="participant_type">
+          <V t="from_participant" n="objects">
+            <U n="from_participant">
+              <E n="participant">Actor</E>
+            </U>
+          </V>
+        </U>
+      </V>
+      <V t="participant_type">
+        <U n="participant_type">
+          <V t="from_participant" n="objects">
+            <U n="from_participant">
+              <E n="participant">Object</E>
+            </U>
+          </V>
+        </U>
+      </V>
+    </L>
+  </U>
+  <U n="home_spawn_point_constraint">
+    <E n="spawn_point_request_reason">LEAVE</E>
+    <V t="Use_Saved_Spawn_Point_Options" n="tags" />
+  </U>
+  <L n="interaction_category_tags">
+    <E>Interaction_Super</E>
+    <E>Interaction_All</E>
+  </L>
+  <E n="scoring_priority">NORMAL</E>
+  <U n="street_spawn_point_constraint">
+    <E n="spawn_point_request_reason">LEAVE</E>
+    <V t="Use_Saved_Spawn_Point_Options" n="tags" />
+  </U>
+  <V n="super_affordance_compatibility" t="literal">
+    <U n="literal">
+      <V n="default_inclusion" t="exclude_all">
+        <U n="exclude_all">
+          <L n="include_affordances">
+            <T>132170<!--HoldObject: carry_HoldSim--></T>
+            <T>134423<!--SuperInteraction: socialSuperInteraction_CarryPickUp--></T>
+            <T>155633<!--SuperInteraction: socialSuperInteraction_CarryPickUp_FromSeated--></T>
+            <T>230818<!--SuperInteraction: droid_BB_Follow--></T>
+            <T>245584<!--SuperInteraction: droid_BB_Following--></T>
+          </L>
+        </U>
+      </V>
+    </U>
+  </V>
+  <E n="target_type">ACTOR</E>
+  <L n="test_globals">
+    <V t="test_set_reference">
+      <T n="test_set_reference">97308<!--TestSetInstance: testSet_Travel--></T>
+    </V>
+  </L>
+  <L n="tests">
+    <L>
+      <V t="identity">
+        <U n="identity">
+          <T n="subjects_match">True</T>
+        </U>
+      </V>
+    </L>
+  </L>
+  <T n="time_overhead">100000</T>
+</I>

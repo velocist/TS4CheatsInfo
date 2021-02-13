@@ -1,0 +1,184 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<I c="GameObject" i="object" m="objects.game_object" n="object_SurgeryTable" s="108726">
+  <U n="_components">
+    <V t="enabled" n="focus">
+      <U n="enabled">
+        <V t="globally" n="_focus_score">
+          <U n="globally">
+            <E n="base">LOW</E>
+          </U>
+        </V>
+      </U>
+    </V>
+    <V n="state" t="enabled">
+      <U n="enabled">
+        <L n="state_triggers">
+          <U>
+            <L n="at_states">
+              <T>15076<!--CommodityBasedObjectStateValue: Brokenness_Broken--></T>
+            </L>
+            <V n="set_states" t="Set_state_list">
+              <L n="Set_state_list">
+                <T>15080<!--ObjectStateValue: BrokenState_Broken--></T>
+              </L>
+            </V>
+          </U>
+          <U>
+            <L n="at_states">
+              <T>15080<!--ObjectStateValue: BrokenState_Broken--></T>
+            </L>
+            <V n="set_states" t="Set_state_list">
+              <L n="Set_state_list">
+                <T>112144<!--VideoChannel: surgeryTable_Off--></T>
+              </L>
+            </V>
+          </U>
+          <U>
+            <L n="at_states">
+              <T>15078<!--CommodityBasedObjectStateValue: Brokenness_Unbroken--></T>
+            </L>
+            <V t="Set_state_list" n="set_states">
+              <L n="Set_state_list">
+                <T>15081<!--ObjectStateValue: BrokenState_Unbroken--></T>
+              </L>
+            </V>
+          </U>
+        </L>
+        <L n="states">
+          <U>
+            <L n="client_states">
+              <U>
+                <T n="key">15076<!--CommodityBasedObjectStateValue: Brokenness_Broken--></T>
+              </U>
+              <U>
+                <T n="key">15078<!--CommodityBasedObjectStateValue: Brokenness_Unbroken--></T>
+              </U>
+            </L>
+            <V t="reference" n="default_value">
+              <T n="reference">15078<!--CommodityBasedObjectStateValue: Brokenness_Unbroken--></T>
+            </V>
+          </U>
+          <U>
+            <L n="client_states">
+              <U>
+                <T n="key">15080<!--ObjectStateValue: BrokenState_Broken--></T>
+              </U>
+              <U>
+                <T n="key">15081<!--ObjectStateValue: BrokenState_Unbroken--></T>
+              </U>
+            </L>
+            <V t="reference" n="default_value">
+              <T n="reference">15081<!--ObjectStateValue: BrokenState_Unbroken--></T>
+            </V>
+          </U>
+          <U>
+            <L n="client_states">
+              <U>
+                <T n="key">108728<!--ObjectStateValue: surgeryTable_PatientOccupancy_full--></T>
+              </U>
+              <U>
+                <T n="key">108729<!--ObjectStateValue: surgeryTable_PatientOccupancy_empty--></T>
+              </U>
+              <U>
+                <T n="key">110030<!--ObjectStateValue: surgeryTable_Patient_Occupany_completed_Success--></T>
+              </U>
+              <U>
+                <T n="key">110031<!--ObjectStateValue: surgeryTable_Patient_Occupany_completed_Fail--></T>
+              </U>
+              <U>
+                <T n="key">111843<!--ObjectStateValue: surgeryTable_Patient_Occupany_completed_default--></T>
+              </U>
+            </L>
+            <V n="default_value" t="reference">
+              <T n="reference">108729<!--ObjectStateValue: surgeryTable_PatientOccupancy_empty--></T>
+            </V>
+            <T n="reset_on_load_if_time_passes">True</T>
+            <T n="reset_to_default">True</T>
+          </U>
+          <U>
+            <L n="client_states">
+              <U>
+                <T n="key">110028<!--ObjectStateValue: surgeryTable_Doctor_Occupany_untended--></T>
+              </U>
+              <U>
+                <T n="key">110029<!--ObjectStateValue: surgeryTable_Doctor_Occupancy_tended--></T>
+              </U>
+            </L>
+            <V n="default_value" t="reference">
+              <T n="reference">110028<!--ObjectStateValue: surgeryTable_Doctor_Occupany_untended--></T>
+            </V>
+            <T n="reset_on_load_if_time_passes">True</T>
+            <T n="reset_to_default">True</T>
+          </U>
+          <U>
+            <L n="client_states">
+              <U>
+                <T n="key">112144<!--VideoChannel: surgeryTable_Off--></T>
+              </U>
+              <U>
+                <T n="key">112145<!--VideoChannel: surgeryTable_Operation--></T>
+              </U>
+              <U>
+                <T n="key">112146<!--VideoChannel: surgeryTable_DeliveryBaby--></T>
+              </U>
+            </L>
+            <V n="default_value" t="reference">
+              <T n="reference">112144<!--VideoChannel: surgeryTable_Off--></T>
+            </V>
+          </U>
+        </L>
+      </U>
+    </V>
+  </U>
+  <L n="_part_data">
+    <U>
+      <T n="part_definition">108733<!--ObjectPart: surgeryTable_Part_0_Doctor--></T>
+      <V t="enabled" n="subroot_index">
+        <T n="enabled">1</T>
+      </V>
+    </U>
+    <U>
+      <T n="part_definition">108734<!--ObjectPart: surgeryTable_Part_1_Patient--></T>
+      <V t="enabled" n="subroot_index">
+        <T n="enabled">0</T>
+      </V>
+    </U>
+    <U>
+      <T n="part_definition">112362<!--ObjectPart: surgeryTable_Part_2_BassinetSlot--></T>
+      <V t="enabled" n="subroot_index">
+        <T n="enabled">2</T>
+      </V>
+    </U>
+  </L>
+  <L n="_super_affordances">
+    <T>13983<!--StandSuperInteraction: sim-stand--></T>
+    <T>110018<!--SuperInteraction: generic_SurgeryTable_Doctor_Stand--></T>
+    <T>110019<!--SuperInteraction: generic_SurgeryTable_Patiet_Recline--></T>
+    <T>110023<!--SimPickerInteraction: SurgeryTable_PerformSurgery_simPicker--></T>
+    <T>13328<!--ImmediateSuperInteraction: debug_Reset--></T>
+    <T>13326<!--ImmediateSuperInteraction: debug_ObjectDestroy--></T>
+    <T>103888<!--ImmediateSuperInteraction: cheat_set_as_head--></T>
+    <T>110024<!--SuperInteraction: surgeryTable_Doctor_PerformSurgery--></T>
+    <T>111767<!--SuperInteraction: surgeryTable_Doctor_DeliverBaby--></T>
+    <T>110025<!--SuperInteraction: surgeryTable_Patient_HaveSurgery_Idle--></T>
+    <T>111768<!--SuperInteraction: surgeryTable_Patient_HaveBaby_idle--></T>
+    <T>110026<!--SuperInteraction: surgeryTable_Patient_HaveSurgery_outcome--></T>
+    <T>111769<!--DeliverBabyOnSurgeryTableInteraction: surgeryTable_Patient_HaveBaby_outcome--></T>
+    <T>115249<!--SuperInteraction: surgeryTable_Doctor_Treat_display--></T>
+    <T>115743<!--SuperInteraction: surgeryTable_Doctor_NPC_DeliverBaby--></T>
+    <T>115754<!--DeliverBabyOnSurgeryTableInteraction: surgeryTable_Player_HaveBaby_outcome--></T>
+  </L>
+  <T n="custom_posture_target_name">surgeryTableAnimated</T>
+  <U n="recycling_data">
+    <L n="recycling_values">
+      <U>
+        <E n="Bucks Type">RecycleBitsBucks</E>
+        <T n="Value">0.5</T>
+      </U>
+      <U>
+        <E n="Bucks Type">RecyclePiecesBucks</E>
+        <T n="Value">0.5</T>
+      </U>
+    </L>
+  </U>
+</I>

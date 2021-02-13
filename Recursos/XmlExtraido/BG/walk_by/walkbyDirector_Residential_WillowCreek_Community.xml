@@ -1,0 +1,2233 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<I c="SchedulingWalkbyDirector" i="walk_by" m="situations.ambient.walkby_tuning" n="walkbyDirector_Residential_WillowCreek_Community" s="203949">
+  <T n="set_host_as_active_sim">True</T>
+  <L n="situation_shifts">
+    <U>
+      <T n="count_based_on_expected_sims">True</T>
+      <V n="shift_curve" t="curve_based">
+        <U n="curve_based">
+          <L n="entries">
+            <U>
+              <U n="days_of_the_week">
+                <T n="0 SUNDAY">True</T>
+                <T n="1 MONDAY">True</T>
+                <T n="2 TUESDAY">True</T>
+                <T n="3 WEDNESDAY">True</T>
+                <T n="4 THURSDAY">True</T>
+                <T n="5 FRIDAY">True</T>
+                <T n="6 SATURDAY">True</T>
+              </U>
+              <L n="walkby_desire_by_time_of_day">
+                <U>
+                  <T n="hour_of_day">6</T>
+                  <U n="desired_walkby_situations">
+                    <V t="literal" n="desired_sim_count">
+                      <U n="literal">
+                        <T n="value">1</T>
+                      </U>
+                    </V>
+                    <L n="weighted_situations">
+                      <U>
+                        <T n="situation">77411<!--WalkbyNobodySituation: situation_walkby_nobody--></T>
+                      </U>
+                      <U>
+                        <T n="situation">149996<!--WalkbyAmbientSituation: situation_walkby_Ambient_EventNPC_XP_Boost--></T>
+                        <L n="tests">
+                          <L>
+                            <V t="is_live_event_active">
+                              <U n="is_live_event_active">
+                                <T n="event_id">doublexpweekend</T>
+                              </U>
+                            </V>
+                          </L>
+                          <L>
+                            <V t="is_live_event_active">
+                              <U n="is_live_event_active">
+                                <T n="event_id">doublespmotive</T>
+                              </U>
+                            </V>
+                          </L>
+                          <L>
+                            <V t="is_live_event_active">
+                              <U n="is_live_event_active">
+                                <T n="event_id">doublerel</T>
+                              </U>
+                            </V>
+                          </L>
+                        </L>
+                      </U>
+                      <U>
+                        <T n="situation">153170<!--WalkbyAmbientSituation: situation_walkby_Ambient_EventNPC_FallChallenge--></T>
+                        <L n="tests">
+                          <L>
+                            <V t="is_live_event_active">
+                              <U n="is_live_event_active">
+                                <T n="event_id">fallchallenge</T>
+                              </U>
+                            </V>
+                          </L>
+                        </L>
+                      </U>
+                      <U>
+                        <T n="situation">162934<!--WalkbyAmbientSituation: situation_walkby_Ambient_EventNPC_SpringChallenge--></T>
+                        <L n="tests">
+                          <L>
+                            <V t="is_live_event_active">
+                              <U n="is_live_event_active">
+                                <T n="event_id">springchallenge</T>
+                              </U>
+                            </V>
+                          </L>
+                        </L>
+                        <T n="weight">2</T>
+                      </U>
+                    </L>
+                  </U>
+                </U>
+                <U>
+                  <T n="hour_of_day">20</T>
+                </U>
+              </L>
+            </U>
+          </L>
+        </U>
+      </V>
+    </U>
+    <U>
+      <T n="count_based_on_expected_sims">True</T>
+      <V n="shift_curve" t="curve_based">
+        <U n="curve_based">
+          <L n="entries">
+            <U>
+              <U n="days_of_the_week">
+                <T n="0 SUNDAY">True</T>
+                <T n="1 MONDAY">True</T>
+                <T n="2 TUESDAY">True</T>
+                <T n="3 WEDNESDAY">True</T>
+                <T n="4 THURSDAY">True</T>
+                <T n="5 FRIDAY">True</T>
+                <T n="6 SATURDAY">True</T>
+              </U>
+              <L n="walkby_desire_by_time_of_day">
+                <U>
+                  <T n="hour_of_day">0</T>
+                  <U n="desired_walkby_situations">
+                    <V t="random_in_range" n="desired_sim_count">
+                      <U n="random_in_range">
+                        <T n="upper_bound">3</T>
+                      </U>
+                    </V>
+                    <L n="weighted_situations">
+                      <U>
+                        <T n="situation">77411<!--WalkbyNobodySituation: situation_walkby_nobody--></T>
+                        <T n="weight">8</T>
+                        <U n="weight_multipliers">
+                          <L n="multipliers">
+                            <U>
+                              <T n="multiplier">0.5</T>
+                              <L n="tests">
+                                <L>
+                                  <V t="region">
+                                    <U n="region">
+                                      <V n="whitelist" t="enabled">
+                                        <L n="enabled">
+                                          <T>152175<!--Region: region_Residential_VampireWorld--></T>
+                                        </L>
+                                      </V>
+                                    </U>
+                                  </V>
+                                </L>
+                              </L>
+                            </U>
+                          </L>
+                        </U>
+                      </U>
+                      <U>
+                        <T n="situation">153768<!--WalkbyAmbientSituation: situation_walkby_ambient_FakeVampire_AfterDark--></T>
+                        <U n="weight_multipliers">
+                          <L n="multipliers">
+                            <U>
+                              <T n="multiplier">0</T>
+                              <L n="tests">
+                                <L>
+                                  <V t="test_set_reference">
+                                    <T n="test_set_reference">184877<!--TestSetInstance: testSet_Weather_RainSnow--></T>
+                                  </V>
+                                </L>
+                              </L>
+                            </U>
+                          </L>
+                        </U>
+                      </U>
+                      <U>
+                        <T n="situation">153739<!--WalkbyAmbientSituation: situation_walkby_ambient_Vampire_AfterDark--></T>
+                      </U>
+                    </L>
+                  </U>
+                </U>
+                <U>
+                  <T n="hour_of_day">4</T>
+                </U>
+                <U>
+                  <T n="hour_of_day">22</T>
+                  <U n="desired_walkby_situations">
+                    <V t="random_in_range" n="desired_sim_count">
+                      <U n="random_in_range">
+                        <T n="upper_bound">2</T>
+                      </U>
+                    </V>
+                    <L n="weighted_situations">
+                      <U>
+                        <T n="situation">77411<!--WalkbyNobodySituation: situation_walkby_nobody--></T>
+                        <T n="weight">8</T>
+                        <U n="weight_multipliers">
+                          <L n="multipliers">
+                            <U>
+                              <T n="multiplier">0.5</T>
+                              <L n="tests">
+                                <L>
+                                  <V t="region">
+                                    <U n="region">
+                                      <V n="whitelist" t="enabled">
+                                        <L n="enabled">
+                                          <T>152175<!--Region: region_Residential_VampireWorld--></T>
+                                        </L>
+                                      </V>
+                                    </U>
+                                  </V>
+                                </L>
+                              </L>
+                            </U>
+                          </L>
+                        </U>
+                      </U>
+                      <U>
+                        <T n="situation">153768<!--WalkbyAmbientSituation: situation_walkby_ambient_FakeVampire_AfterDark--></T>
+                        <U n="weight_multipliers">
+                          <L n="multipliers">
+                            <U>
+                              <T n="multiplier">0</T>
+                              <L n="tests">
+                                <L>
+                                  <V t="test_set_reference">
+                                    <T n="test_set_reference">184877<!--TestSetInstance: testSet_Weather_RainSnow--></T>
+                                  </V>
+                                </L>
+                              </L>
+                            </U>
+                          </L>
+                        </U>
+                      </U>
+                      <U>
+                        <T n="situation">153739<!--WalkbyAmbientSituation: situation_walkby_ambient_Vampire_AfterDark--></T>
+                      </U>
+                    </L>
+                  </U>
+                </U>
+              </L>
+            </U>
+          </L>
+        </U>
+      </V>
+    </U>
+    <U>
+      <T n="count_based_on_expected_sims">True</T>
+      <V n="shift_curve" t="curve_based">
+        <U n="curve_based">
+          <L n="entries">
+            <U>
+              <U n="days_of_the_week">
+                <T n="1 MONDAY">True</T>
+                <T n="2 TUESDAY">True</T>
+                <T n="3 WEDNESDAY">True</T>
+                <T n="4 THURSDAY">True</T>
+                <T n="5 FRIDAY">True</T>
+              </U>
+              <L n="walkby_desire_by_time_of_day">
+                <U>
+                  <T n="hour_of_day">0</T>
+                </U>
+                <U>
+                  <T n="hour_of_day">10</T>
+                  <U n="desired_walkby_situations">
+                    <V t="literal" n="desired_sim_count">
+                      <U n="literal">
+                        <T n="value">1</T>
+                      </U>
+                    </V>
+                    <L n="weighted_situations">
+                      <U>
+                        <T n="situation">77411<!--WalkbyNobodySituation: situation_walkby_nobody--></T>
+                        <T n="weight">5</T>
+                      </U>
+                      <U>
+                        <T n="situation">35723<!--WalkbyRingDoorBellSituation: situation_walkby_RingDoorbell_withRelationship--></T>
+                      </U>
+                    </L>
+                  </U>
+                </U>
+                <U>
+                  <T n="hour_of_day">15</T>
+                  <U n="desired_walkby_situations">
+                    <V t="literal" n="desired_sim_count">
+                      <U n="literal">
+                        <T n="value">1</T>
+                      </U>
+                    </V>
+                    <L n="weighted_situations">
+                      <U>
+                        <T n="situation">77411<!--WalkbyNobodySituation: situation_walkby_nobody--></T>
+                        <T n="weight">5</T>
+                      </U>
+                      <U>
+                        <T n="situation">35723<!--WalkbyRingDoorBellSituation: situation_walkby_RingDoorbell_withRelationship--></T>
+                      </U>
+                    </L>
+                  </U>
+                </U>
+                <U>
+                  <T n="hour_of_day">18</T>
+                  <U n="desired_walkby_situations">
+                    <V t="literal" n="desired_sim_count">
+                      <U n="literal">
+                        <T n="value">1</T>
+                      </U>
+                    </V>
+                    <L n="weighted_situations">
+                      <U>
+                        <T n="situation">77411<!--WalkbyNobodySituation: situation_walkby_nobody--></T>
+                        <T n="weight">4</T>
+                      </U>
+                      <U>
+                        <T n="situation">35723<!--WalkbyRingDoorBellSituation: situation_walkby_RingDoorbell_withRelationship--></T>
+                      </U>
+                      <U>
+                        <T n="situation">100055<!--WalkbyRingDoorBellSituation: situation_walkby_RingDoorbell_Neighbor--></T>
+                      </U>
+                      <U>
+                        <T n="situation">168415<!--WalkbyRingDoorBellSituation: situation_walkby_RingDoorbell_MaxFamilyRelbit--></T>
+                      </U>
+                    </L>
+                  </U>
+                </U>
+                <U>
+                  <T n="hour_of_day">20</T>
+                  <U n="desired_walkby_situations">
+                    <V t="literal" n="desired_sim_count">
+                      <U n="literal">
+                        <T n="value">1</T>
+                      </U>
+                    </V>
+                    <L n="weighted_situations">
+                      <U>
+                        <T n="situation">77411<!--WalkbyNobodySituation: situation_walkby_nobody--></T>
+                        <T n="weight">8</T>
+                      </U>
+                      <U>
+                        <T n="situation">153167<!--WalkbyRingDoorBellSituation: situation_walkby_RingDoorbell_Vampire--></T>
+                        <U n="weight_multipliers">
+                          <L n="multipliers">
+                            <U>
+                              <T n="multiplier">2</T>
+                              <L n="tests">
+                                <L>
+                                  <V t="region">
+                                    <U n="region">
+                                      <V n="whitelist" t="enabled">
+                                        <L n="enabled">
+                                          <T>152175<!--Region: region_Residential_VampireWorld--></T>
+                                        </L>
+                                      </V>
+                                    </U>
+                                  </V>
+                                </L>
+                              </L>
+                            </U>
+                          </L>
+                        </U>
+                      </U>
+                      <U>
+                        <T n="situation">35723<!--WalkbyRingDoorBellSituation: situation_walkby_RingDoorbell_withRelationship--></T>
+                      </U>
+                    </L>
+                  </U>
+                </U>
+              </L>
+            </U>
+            <U>
+              <U n="days_of_the_week">
+                <T n="0 SUNDAY">True</T>
+                <T n="6 SATURDAY">True</T>
+              </U>
+              <L n="walkby_desire_by_time_of_day">
+                <U>
+                  <T n="hour_of_day">0</T>
+                  <U n="desired_walkby_situations">
+                    <V t="literal" n="desired_sim_count">
+                      <U n="literal">
+                        <T n="value">0</T>
+                      </U>
+                    </V>
+                  </U>
+                </U>
+                <U>
+                  <T n="hour_of_day">10</T>
+                  <U n="desired_walkby_situations">
+                    <V t="literal" n="desired_sim_count">
+                      <U n="literal">
+                        <T n="value">1</T>
+                      </U>
+                    </V>
+                    <L n="weighted_situations">
+                      <U>
+                        <T n="situation">77411<!--WalkbyNobodySituation: situation_walkby_nobody--></T>
+                        <T n="weight">4</T>
+                      </U>
+                      <U>
+                        <T n="situation">35723<!--WalkbyRingDoorBellSituation: situation_walkby_RingDoorbell_withRelationship--></T>
+                      </U>
+                      <U>
+                        <T n="situation">100055<!--WalkbyRingDoorBellSituation: situation_walkby_RingDoorbell_Neighbor--></T>
+                      </U>
+                      <U>
+                        <T n="situation">164639<!--WalkbyRingDoorBellSituation: situation_walkby_RingDoorbell_AcquiredFamilyRelbit--></T>
+                      </U>
+                    </L>
+                  </U>
+                </U>
+                <U>
+                  <T n="hour_of_day">15</T>
+                  <U n="desired_walkby_situations">
+                    <V t="literal" n="desired_sim_count">
+                      <U n="literal">
+                        <T n="value">1</T>
+                      </U>
+                    </V>
+                    <L n="weighted_situations">
+                      <U>
+                        <T n="situation">77411<!--WalkbyNobodySituation: situation_walkby_nobody--></T>
+                        <T n="weight">4</T>
+                      </U>
+                      <U>
+                        <T n="situation">35723<!--WalkbyRingDoorBellSituation: situation_walkby_RingDoorbell_withRelationship--></T>
+                      </U>
+                      <U>
+                        <T n="situation">100055<!--WalkbyRingDoorBellSituation: situation_walkby_RingDoorbell_Neighbor--></T>
+                      </U>
+                    </L>
+                  </U>
+                </U>
+                <U>
+                  <T n="hour_of_day">18</T>
+                  <U n="desired_walkby_situations">
+                    <V t="literal" n="desired_sim_count">
+                      <U n="literal">
+                        <T n="value">1</T>
+                      </U>
+                    </V>
+                    <L n="weighted_situations">
+                      <U>
+                        <T n="situation">77411<!--WalkbyNobodySituation: situation_walkby_nobody--></T>
+                        <T n="weight">5</T>
+                      </U>
+                      <U>
+                        <T n="situation">35723<!--WalkbyRingDoorBellSituation: situation_walkby_RingDoorbell_withRelationship--></T>
+                      </U>
+                      <U>
+                        <T n="situation">164639<!--WalkbyRingDoorBellSituation: situation_walkby_RingDoorbell_AcquiredFamilyRelbit--></T>
+                      </U>
+                    </L>
+                  </U>
+                </U>
+                <U>
+                  <T n="hour_of_day">20</T>
+                  <U n="desired_walkby_situations">
+                    <V t="literal" n="desired_sim_count">
+                      <U n="literal">
+                        <T n="value">1</T>
+                      </U>
+                    </V>
+                    <L n="weighted_situations">
+                      <U>
+                        <T n="situation">77411<!--WalkbyNobodySituation: situation_walkby_nobody--></T>
+                        <T n="weight">8</T>
+                        <U n="weight_multipliers">
+                          <L n="multipliers">
+                            <U>
+                              <T n="multiplier">0.5</T>
+                              <L n="tests">
+                                <L>
+                                  <V t="region">
+                                    <U n="region">
+                                      <V n="whitelist" t="enabled">
+                                        <L n="enabled">
+                                          <T>152175<!--Region: region_Residential_VampireWorld--></T>
+                                        </L>
+                                      </V>
+                                    </U>
+                                  </V>
+                                </L>
+                              </L>
+                            </U>
+                          </L>
+                        </U>
+                      </U>
+                      <U>
+                        <T n="situation">35723<!--WalkbyRingDoorBellSituation: situation_walkby_RingDoorbell_withRelationship--></T>
+                      </U>
+                      <U>
+                        <T n="situation">153167<!--WalkbyRingDoorBellSituation: situation_walkby_RingDoorbell_Vampire--></T>
+                        <U n="weight_multipliers">
+                          <L n="multipliers">
+                            <U>
+                              <T n="multiplier">2</T>
+                              <L n="tests">
+                                <L>
+                                  <V t="region">
+                                    <U n="region">
+                                      <V n="whitelist" t="enabled">
+                                        <L n="enabled">
+                                          <T>152175<!--Region: region_Residential_VampireWorld--></T>
+                                        </L>
+                                      </V>
+                                    </U>
+                                  </V>
+                                </L>
+                              </L>
+                            </U>
+                          </L>
+                        </U>
+                      </U>
+                    </L>
+                  </U>
+                </U>
+              </L>
+            </U>
+          </L>
+        </U>
+      </V>
+      <E n="shift_strictness">OVERLAP</E>
+    </U>
+    <U>
+      <L n="additional_sources">
+        <V t="holiday" />
+      </L>
+      <T n="count_based_on_expected_sims">True</T>
+      <V n="shift_curve" t="curve_based">
+        <U n="curve_based">
+          <U n="desired_sim_count_multipliers">
+            <L n="multipliers">
+              <U>
+                <T n="multiplier">0.75</T>
+                <L n="tests">
+                  <L>
+                    <V t="test_set_reference">
+                      <T n="test_set_reference">184874<!--TestSetInstance: testSet_Weather_RainOnly--></T>
+                    </V>
+                  </L>
+                </L>
+              </U>
+              <U>
+                <T n="multiplier">0.5</T>
+                <L n="tests">
+                  <L>
+                    <V t="test_set_reference">
+                      <T n="test_set_reference">184876<!--TestSetInstance: testSet_Weather_SnowOnly--></T>
+                    </V>
+                  </L>
+                </L>
+              </U>
+            </L>
+          </U>
+          <L n="entries">
+            <U>
+              <U n="days_of_the_week">
+                <T n="1 MONDAY">True</T>
+                <T n="2 TUESDAY">True</T>
+                <T n="3 WEDNESDAY">True</T>
+                <T n="4 THURSDAY">True</T>
+                <T n="5 FRIDAY">True</T>
+              </U>
+              <L n="walkby_desire_by_time_of_day">
+                <U>
+                  <T n="hour_of_day">4</T>
+                  <U n="desired_walkby_situations">
+                    <V t="random_in_range" n="desired_sim_count">
+                      <U n="random_in_range">
+                        <T n="lower_bound">2</T>
+                        <T n="upper_bound">5</T>
+                      </U>
+                    </V>
+                    <L n="weighted_situations">
+                      <U>
+                        <T n="situation">77411<!--WalkbyNobodySituation: situation_walkby_nobody--></T>
+                        <T n="weight">10</T>
+                      </U>
+                      <U>
+                        <T n="situation">36777<!--WalkbyAmbientSituation: situation_walkby_ambient_GardenDistrict_Park_Jogger--></T>
+                        <T n="weight">4</T>
+                        <U n="weight_multipliers">
+                          <L n="multipliers">
+                            <U>
+                              <T n="multiplier">2</T>
+                              <L n="tests">
+                                <L>
+                                  <V t="street_civic_policy_test">
+                                    <U n="street_civic_policy_test">
+                                      <L n="civic_policy_tests">
+                                        <V t="enacted">
+                                          <U n="enacted">
+                                            <U n="white_black_list">
+                                              <V n="whitelist" t="specify">
+                                                <U n="specify">
+                                                  <L n="whitelist">
+                                                    <T>231968<!--StreetCivicPolicy: streetCivicPolicy_SkillBased_SelfCare--></T>
+                                                  </L>
+                                                </U>
+                                              </V>
+                                            </U>
+                                          </U>
+                                        </V>
+                                      </L>
+                                      <V t="via_zone_source" n="street" />
+                                    </U>
+                                  </V>
+                                </L>
+                              </L>
+                            </U>
+                          </L>
+                        </U>
+                      </U>
+                      <U>
+                        <T n="situation">36650<!--WalkbyAmbientSituation: situation_walkby_ambient_GardenDistrict_WorkCommute--></T>
+                        <T n="weight">3</T>
+                      </U>
+                      <U>
+                        <T n="situation">184882<!--WalkbyAmbientSituation: situation_Walkby_Ambient_Weather_Raining--></T>
+                        <L n="tests">
+                          <L>
+                            <V t="test_set_reference">
+                              <T n="test_set_reference">184874<!--TestSetInstance: testSet_Weather_RainOnly--></T>
+                            </V>
+                          </L>
+                        </L>
+                        <T n="weight">3</T>
+                      </U>
+                      <U>
+                        <T n="situation">184883<!--WalkbyAmbientSituation: situation_Walkby_Ambient_Weather_Snowing--></T>
+                        <L n="tests">
+                          <L>
+                            <V t="test_set_reference">
+                              <T n="test_set_reference">184876<!--TestSetInstance: testSet_Weather_SnowOnly--></T>
+                            </V>
+                          </L>
+                        </L>
+                        <T n="weight">3</T>
+                      </U>
+                      <U>
+                        <T n="situation">153126<!--WalkbyAmbientSituation: situation_walkby_Event_FallChallenge2016_DoTD_Celebrator--></T>
+                        <L n="tests">
+                          <L>
+                            <V t="is_live_event_active">
+                              <U n="is_live_event_active">
+                                <T n="event_id">fallchallenge</T>
+                              </U>
+                            </V>
+                          </L>
+                        </L>
+                      </U>
+                    </L>
+                  </U>
+                </U>
+                <U>
+                  <T n="hour_of_day">7</T>
+                  <U n="desired_walkby_situations">
+                    <V t="literal" n="desired_sim_count">
+                      <U n="literal">
+                        <T n="value">6</T>
+                      </U>
+                    </V>
+                    <L n="weighted_situations">
+                      <U>
+                        <T n="situation">77411<!--WalkbyNobodySituation: situation_walkby_nobody--></T>
+                        <T n="weight">2</T>
+                      </U>
+                      <U>
+                        <T n="situation">160242<!--WalkbyAmbientSituation: situation_Walkby_Ambient_Teen--></T>
+                        <L n="tests">
+                          <L>
+                            <V t="zone">
+                              <U n="zone">
+                                <U n="zone_tests">
+                                  <V n="zone_modifiers" t="enabled">
+                                    <U n="enabled">
+                                      <V n="whitelist" t="specify">
+                                        <U n="specify">
+                                          <L n="whitelist">
+                                            <T>162560<!--ZoneModifier: zoneModifiers-lotTrait_Teen_Hang_Out--></T>
+                                          </L>
+                                        </U>
+                                      </V>
+                                    </U>
+                                  </V>
+                                </U>
+                              </U>
+                            </V>
+                          </L>
+                        </L>
+                        <T n="weight">15</T>
+                      </U>
+                      <U>
+                        <T n="situation">188541<!--WalkbyAmbientSituation: situation_Walkby_Ambient_Scouting--></T>
+                        <T n="weight">3</T>
+                      </U>
+                      <U>
+                        <T n="situation">238441<!--WalkbyAmbientSituation: situation_walkby_ambient_GardenDistrict_Park_Streaker--></T>
+                        <L n="tests">
+                          <L>
+                            <V t="street_civic_policy_test">
+                              <U n="street_civic_policy_test">
+                                <L n="civic_policy_tests">
+                                  <V t="enacted">
+                                    <U n="enacted">
+                                      <U n="white_black_list">
+                                        <V n="whitelist" t="specify">
+                                          <U n="specify">
+                                            <L n="whitelist">
+                                              <T>237846<!--StreetCivicPolicy: streetCivicPolicy_SkillBased_FreeLove--></T>
+                                            </L>
+                                          </U>
+                                        </V>
+                                      </U>
+                                    </U>
+                                  </V>
+                                </L>
+                                <V t="via_zone_source" n="street" />
+                              </U>
+                            </V>
+                          </L>
+                        </L>
+                        <T n="weight">5</T>
+                      </U>
+                      <U>
+                        <T n="situation">36777<!--WalkbyAmbientSituation: situation_walkby_ambient_GardenDistrict_Park_Jogger--></T>
+                        <T n="weight">5</T>
+                        <U n="weight_multipliers">
+                          <L n="multipliers">
+                            <U>
+                              <T n="multiplier">2</T>
+                              <L n="tests">
+                                <L>
+                                  <V t="street_civic_policy_test">
+                                    <U n="street_civic_policy_test">
+                                      <L n="civic_policy_tests">
+                                        <V t="enacted">
+                                          <U n="enacted">
+                                            <U n="white_black_list">
+                                              <V n="whitelist" t="specify">
+                                                <U n="specify">
+                                                  <L n="whitelist">
+                                                    <T>231968<!--StreetCivicPolicy: streetCivicPolicy_SkillBased_SelfCare--></T>
+                                                  </L>
+                                                </U>
+                                              </V>
+                                            </U>
+                                          </U>
+                                        </V>
+                                      </L>
+                                      <V t="via_zone_source" n="street" />
+                                    </U>
+                                  </V>
+                                </L>
+                              </L>
+                            </U>
+                          </L>
+                        </U>
+                      </U>
+                      <U>
+                        <T n="situation">36650<!--WalkbyAmbientSituation: situation_walkby_ambient_GardenDistrict_WorkCommute--></T>
+                        <T n="weight">8</T>
+                      </U>
+                      <U>
+                        <T n="situation">36743<!--WalkbyAmbientSituation: situation_walkby_ambient_GardenDistrict_SchoolCommute--></T>
+                        <T n="weight">6</T>
+                      </U>
+                      <U>
+                        <T n="situation">112304<!--WalkbyAmbientSituation: situation_Walkby_Ambient_Mailman--></T>
+                        <L n="tests">
+                          <L>
+                            <V t="situation_running_test">
+                              <U n="situation_running_test">
+                                <V n="situation_blacklist" t="enabled">
+                                  <L n="enabled">
+                                    <T>112304<!--WalkbyAmbientSituation: situation_Walkby_Ambient_Mailman--></T>
+                                  </L>
+                                </V>
+                                <E n="test_event">SituationStarted</E>
+                              </U>
+                            </V>
+                          </L>
+                        </L>
+                        <T n="weight">1</T>
+                      </U>
+                      <U>
+                        <T n="situation">120057<!--WalkbyAmbientSituation: situation_Walkby_Neighbor--></T>
+                        <T n="weight">2</T>
+                      </U>
+                      <U>
+                        <T n="situation">40367<!--OpenStreetsAutonomySituation: situation_autonomous_OpenStreets_mastergardener--></T>
+                        <L n="tests">
+                          <L>
+                            <V t="situation_running_test">
+                              <U n="situation_running_test">
+                                <V n="situation_blacklist" t="enabled">
+                                  <L n="enabled">
+                                    <T>40367<!--OpenStreetsAutonomySituation: situation_autonomous_OpenStreets_mastergardener--></T>
+                                  </L>
+                                </V>
+                                <E n="test_event">SituationStarted</E>
+                              </U>
+                            </V>
+                          </L>
+                        </L>
+                        <T n="weight">1</T>
+                      </U>
+                      <U>
+                        <T n="situation">184882<!--WalkbyAmbientSituation: situation_Walkby_Ambient_Weather_Raining--></T>
+                        <L n="tests">
+                          <L>
+                            <V t="test_set_reference">
+                              <T n="test_set_reference">184874<!--TestSetInstance: testSet_Weather_RainOnly--></T>
+                            </V>
+                          </L>
+                        </L>
+                        <T n="weight">5</T>
+                      </U>
+                      <U>
+                        <T n="situation">184883<!--WalkbyAmbientSituation: situation_Walkby_Ambient_Weather_Snowing--></T>
+                        <L n="tests">
+                          <L>
+                            <V t="test_set_reference">
+                              <T n="test_set_reference">184876<!--TestSetInstance: testSet_Weather_SnowOnly--></T>
+                            </V>
+                          </L>
+                        </L>
+                        <T n="weight">5</T>
+                      </U>
+                      <U>
+                        <T n="situation">163056<!--WalkbyAmbientSituation: situation_walkby_Event_SpringChallenge_PlantSimNPC--></T>
+                        <L n="tests">
+                          <L>
+                            <V t="is_live_event_active">
+                              <U n="is_live_event_active">
+                                <T n="event_id">springchallenge</T>
+                              </U>
+                            </V>
+                          </L>
+                        </L>
+                        <T n="weight">15</T>
+                      </U>
+                      <U>
+                        <T n="situation">153126<!--WalkbyAmbientSituation: situation_walkby_Event_FallChallenge2016_DoTD_Celebrator--></T>
+                        <L n="tests">
+                          <L>
+                            <V t="is_live_event_active">
+                              <U n="is_live_event_active">
+                                <T n="event_id">fallchallenge</T>
+                              </U>
+                            </V>
+                          </L>
+                        </L>
+                        <T n="weight">15</T>
+                      </U>
+                    </L>
+                  </U>
+                </U>
+                <U>
+                  <T n="hour_of_day">10</T>
+                  <U n="desired_walkby_situations">
+                    <V t="literal" n="desired_sim_count">
+                      <U n="literal">
+                        <T n="value">8</T>
+                      </U>
+                    </V>
+                    <L n="weighted_situations">
+                      <U>
+                        <T n="situation">160242<!--WalkbyAmbientSituation: situation_Walkby_Ambient_Teen--></T>
+                        <L n="tests">
+                          <L>
+                            <V t="zone">
+                              <U n="zone">
+                                <U n="zone_tests">
+                                  <V n="zone_modifiers" t="enabled">
+                                    <U n="enabled">
+                                      <V n="whitelist" t="specify">
+                                        <U n="specify">
+                                          <L n="whitelist">
+                                            <T>162560<!--ZoneModifier: zoneModifiers-lotTrait_Teen_Hang_Out--></T>
+                                          </L>
+                                        </U>
+                                      </V>
+                                    </U>
+                                  </V>
+                                </U>
+                              </U>
+                            </V>
+                          </L>
+                        </L>
+                        <T n="weight">15</T>
+                      </U>
+                      <U>
+                        <T n="situation">116920<!--WalkbyAmbientSituation: situation_Walkby_Ambient_Alien_InDisguise--></T>
+                        <T n="weight">3</T>
+                      </U>
+                      <U>
+                        <T n="situation">238441<!--WalkbyAmbientSituation: situation_walkby_ambient_GardenDistrict_Park_Streaker--></T>
+                        <L n="tests">
+                          <L>
+                            <V t="street_civic_policy_test">
+                              <U n="street_civic_policy_test">
+                                <L n="civic_policy_tests">
+                                  <V t="enacted">
+                                    <U n="enacted">
+                                      <U n="white_black_list">
+                                        <V n="whitelist" t="specify">
+                                          <U n="specify">
+                                            <L n="whitelist">
+                                              <T>237846<!--StreetCivicPolicy: streetCivicPolicy_SkillBased_FreeLove--></T>
+                                            </L>
+                                          </U>
+                                        </V>
+                                      </U>
+                                    </U>
+                                  </V>
+                                </L>
+                                <V t="via_zone_source" n="street" />
+                              </U>
+                            </V>
+                          </L>
+                        </L>
+                        <T n="weight">4</T>
+                      </U>
+                      <U>
+                        <T n="situation">36777<!--WalkbyAmbientSituation: situation_walkby_ambient_GardenDistrict_Park_Jogger--></T>
+                        <T n="weight">4</T>
+                        <U n="weight_multipliers">
+                          <L n="multipliers">
+                            <U>
+                              <T n="multiplier">2</T>
+                              <L n="tests">
+                                <L>
+                                  <V t="street_civic_policy_test">
+                                    <U n="street_civic_policy_test">
+                                      <L n="civic_policy_tests">
+                                        <V t="enacted">
+                                          <U n="enacted">
+                                            <U n="white_black_list">
+                                              <V n="whitelist" t="specify">
+                                                <U n="specify">
+                                                  <L n="whitelist">
+                                                    <T>231968<!--StreetCivicPolicy: streetCivicPolicy_SkillBased_SelfCare--></T>
+                                                  </L>
+                                                </U>
+                                              </V>
+                                            </U>
+                                          </U>
+                                        </V>
+                                      </L>
+                                      <V t="via_zone_source" n="street" />
+                                    </U>
+                                  </V>
+                                </L>
+                              </L>
+                            </U>
+                          </L>
+                        </U>
+                      </U>
+                      <U>
+                        <T n="situation">36778<!--WalkbyAmbientSituation: situation_walkby_ambient_GardenDistrict_Park_Relaxer--></T>
+                        <T n="weight">8</T>
+                      </U>
+                      <U>
+                        <T n="situation">36751<!--WalkbyAmbientSituation: situation_walkby_ambient_GardenDistrict_FamilyTime--></T>
+                        <T n="weight">6</T>
+                      </U>
+                      <U>
+                        <T n="situation">112304<!--WalkbyAmbientSituation: situation_Walkby_Ambient_Mailman--></T>
+                        <L n="tests">
+                          <L>
+                            <V t="situation_running_test">
+                              <U n="situation_running_test">
+                                <V n="situation_blacklist" t="enabled">
+                                  <L n="enabled">
+                                    <T>112304<!--WalkbyAmbientSituation: situation_Walkby_Ambient_Mailman--></T>
+                                  </L>
+                                </V>
+                                <E n="test_event">SituationStarted</E>
+                              </U>
+                            </V>
+                          </L>
+                        </L>
+                        <T n="weight">1</T>
+                      </U>
+                      <U>
+                        <T n="situation">97233<!--WalkbyAmbientSituation: situation_Walkby_Ambient_Maid--></T>
+                        <L n="tests">
+                          <L>
+                            <V t="situation_running_test">
+                              <U n="situation_running_test">
+                                <V n="situation_blacklist" t="enabled">
+                                  <L n="enabled">
+                                    <T>97233<!--WalkbyAmbientSituation: situation_Walkby_Ambient_Maid--></T>
+                                  </L>
+                                </V>
+                                <E n="test_event">SituationStarted</E>
+                              </U>
+                            </V>
+                          </L>
+                        </L>
+                        <T n="weight">2</T>
+                      </U>
+                      <U>
+                        <T n="situation">97234<!--WalkbyAmbientSituation: situation_Walkby_Ambient_Pizza--></T>
+                        <L n="tests">
+                          <L>
+                            <V t="situation_running_test">
+                              <U n="situation_running_test">
+                                <V n="situation_blacklist" t="enabled">
+                                  <L n="enabled">
+                                    <T>97234<!--WalkbyAmbientSituation: situation_Walkby_Ambient_Pizza--></T>
+                                  </L>
+                                </V>
+                                <E n="test_event">SituationStarted</E>
+                              </U>
+                            </V>
+                          </L>
+                        </L>
+                      </U>
+                      <U>
+                        <T n="situation">184882<!--WalkbyAmbientSituation: situation_Walkby_Ambient_Weather_Raining--></T>
+                        <L n="tests">
+                          <L>
+                            <V t="test_set_reference">
+                              <T n="test_set_reference">184874<!--TestSetInstance: testSet_Weather_RainOnly--></T>
+                            </V>
+                          </L>
+                        </L>
+                      </U>
+                      <U>
+                        <T n="situation">184883<!--WalkbyAmbientSituation: situation_Walkby_Ambient_Weather_Snowing--></T>
+                        <L n="tests">
+                          <L>
+                            <V t="test_set_reference">
+                              <T n="test_set_reference">184876<!--TestSetInstance: testSet_Weather_SnowOnly--></T>
+                            </V>
+                          </L>
+                        </L>
+                      </U>
+                      <U>
+                        <T n="situation">163056<!--WalkbyAmbientSituation: situation_walkby_Event_SpringChallenge_PlantSimNPC--></T>
+                        <L n="tests">
+                          <L>
+                            <V t="is_live_event_active">
+                              <U n="is_live_event_active">
+                                <T n="event_id">springchallenge</T>
+                              </U>
+                            </V>
+                          </L>
+                        </L>
+                        <T n="weight">15</T>
+                      </U>
+                      <U>
+                        <T n="situation">153126<!--WalkbyAmbientSituation: situation_walkby_Event_FallChallenge2016_DoTD_Celebrator--></T>
+                        <L n="tests">
+                          <L>
+                            <V t="is_live_event_active">
+                              <U n="is_live_event_active">
+                                <T n="event_id">fallchallenge</T>
+                              </U>
+                            </V>
+                          </L>
+                        </L>
+                        <T n="weight">15</T>
+                      </U>
+                    </L>
+                  </U>
+                </U>
+                <U>
+                  <T n="hour_of_day">15</T>
+                  <U n="desired_walkby_situations">
+                    <V t="literal" n="desired_sim_count">
+                      <U n="literal">
+                        <T n="value">9</T>
+                      </U>
+                    </V>
+                    <L n="weighted_situations">
+                      <U>
+                        <T n="situation">160242<!--WalkbyAmbientSituation: situation_Walkby_Ambient_Teen--></T>
+                        <L n="tests">
+                          <L>
+                            <V t="zone">
+                              <U n="zone">
+                                <U n="zone_tests">
+                                  <V n="zone_modifiers" t="enabled">
+                                    <U n="enabled">
+                                      <V n="whitelist" t="specify">
+                                        <U n="specify">
+                                          <L n="whitelist">
+                                            <T>162560<!--ZoneModifier: zoneModifiers-lotTrait_Teen_Hang_Out--></T>
+                                          </L>
+                                        </U>
+                                      </V>
+                                    </U>
+                                  </V>
+                                </U>
+                              </U>
+                            </V>
+                          </L>
+                        </L>
+                        <T n="weight">15</T>
+                      </U>
+                      <U>
+                        <T n="situation">116920<!--WalkbyAmbientSituation: situation_Walkby_Ambient_Alien_InDisguise--></T>
+                        <T n="weight">4</T>
+                      </U>
+                      <U>
+                        <T n="situation">188541<!--WalkbyAmbientSituation: situation_Walkby_Ambient_Scouting--></T>
+                        <T n="weight">6</T>
+                      </U>
+                      <U>
+                        <T n="situation">238441<!--WalkbyAmbientSituation: situation_walkby_ambient_GardenDistrict_Park_Streaker--></T>
+                        <L n="tests">
+                          <L>
+                            <V t="street_civic_policy_test">
+                              <U n="street_civic_policy_test">
+                                <L n="civic_policy_tests">
+                                  <V t="enacted">
+                                    <U n="enacted">
+                                      <U n="white_black_list">
+                                        <V n="whitelist" t="specify">
+                                          <U n="specify">
+                                            <L n="whitelist">
+                                              <T>237846<!--StreetCivicPolicy: streetCivicPolicy_SkillBased_FreeLove--></T>
+                                            </L>
+                                          </U>
+                                        </V>
+                                      </U>
+                                    </U>
+                                  </V>
+                                </L>
+                                <V t="via_zone_source" n="street" />
+                              </U>
+                            </V>
+                          </L>
+                        </L>
+                        <T n="weight">2</T>
+                      </U>
+                      <U>
+                        <T n="situation">36777<!--WalkbyAmbientSituation: situation_walkby_ambient_GardenDistrict_Park_Jogger--></T>
+                        <T n="weight">2</T>
+                        <U n="weight_multipliers">
+                          <L n="multipliers">
+                            <U>
+                              <T n="multiplier">4</T>
+                              <L n="tests">
+                                <L>
+                                  <V t="street_civic_policy_test">
+                                    <U n="street_civic_policy_test">
+                                      <L n="civic_policy_tests">
+                                        <V t="enacted">
+                                          <U n="enacted">
+                                            <U n="white_black_list">
+                                              <V n="whitelist" t="specify">
+                                                <U n="specify">
+                                                  <L n="whitelist">
+                                                    <T>231968<!--StreetCivicPolicy: streetCivicPolicy_SkillBased_SelfCare--></T>
+                                                  </L>
+                                                </U>
+                                              </V>
+                                            </U>
+                                          </U>
+                                        </V>
+                                      </L>
+                                      <V t="via_zone_source" n="street" />
+                                    </U>
+                                  </V>
+                                </L>
+                              </L>
+                            </U>
+                          </L>
+                        </U>
+                      </U>
+                      <U>
+                        <T n="situation">36751<!--WalkbyAmbientSituation: situation_walkby_ambient_GardenDistrict_FamilyTime--></T>
+                        <T n="weight">5</T>
+                      </U>
+                      <U>
+                        <T n="situation">36650<!--WalkbyAmbientSituation: situation_walkby_ambient_GardenDistrict_WorkCommute--></T>
+                        <T n="weight">8</T>
+                      </U>
+                      <U>
+                        <T n="situation">36743<!--WalkbyAmbientSituation: situation_walkby_ambient_GardenDistrict_SchoolCommute--></T>
+                        <T n="weight">6</T>
+                      </U>
+                      <U>
+                        <T n="situation">76164<!--OpenStreetsAutonomySituation: situation_OpenStreets_Lounger--></T>
+                        <T n="weight">2</T>
+                      </U>
+                      <U>
+                        <T n="situation">77048<!--OpenStreetsAutonomySituation: situation_autonomous_OpenStreets_fish--></T>
+                        <T n="weight">2</T>
+                      </U>
+                      <U>
+                        <T n="situation">38307<!--OpenStreetsAutonomySituation: situation_open_streets_playground--></T>
+                      </U>
+                      <U>
+                        <T n="situation">38900<!--OpenStreetsAutonomySituation: situation_autonomous_OpenStreets_bbq--></T>
+                      </U>
+                      <U>
+                        <T n="situation">112304<!--WalkbyAmbientSituation: situation_Walkby_Ambient_Mailman--></T>
+                        <L n="tests">
+                          <L>
+                            <V t="situation_running_test">
+                              <U n="situation_running_test">
+                                <V n="situation_blacklist" t="enabled">
+                                  <L n="enabled">
+                                    <T>112304<!--WalkbyAmbientSituation: situation_Walkby_Ambient_Mailman--></T>
+                                  </L>
+                                </V>
+                                <E n="test_event">SituationStarted</E>
+                              </U>
+                            </V>
+                          </L>
+                        </L>
+                        <T n="weight">1</T>
+                      </U>
+                      <U>
+                        <T n="situation">97233<!--WalkbyAmbientSituation: situation_Walkby_Ambient_Maid--></T>
+                        <L n="tests">
+                          <L>
+                            <V t="situation_running_test">
+                              <U n="situation_running_test">
+                                <V n="situation_blacklist" t="enabled">
+                                  <L n="enabled">
+                                    <T>97233<!--WalkbyAmbientSituation: situation_Walkby_Ambient_Maid--></T>
+                                  </L>
+                                </V>
+                                <E n="test_event">SituationStarted</E>
+                              </U>
+                            </V>
+                          </L>
+                        </L>
+                        <T n="weight">2</T>
+                      </U>
+                      <U>
+                        <T n="situation">97234<!--WalkbyAmbientSituation: situation_Walkby_Ambient_Pizza--></T>
+                        <L n="tests">
+                          <L>
+                            <V t="situation_running_test">
+                              <U n="situation_running_test">
+                                <V n="situation_blacklist" t="enabled">
+                                  <L n="enabled">
+                                    <T>97234<!--WalkbyAmbientSituation: situation_Walkby_Ambient_Pizza--></T>
+                                  </L>
+                                </V>
+                                <E n="test_event">SituationStarted</E>
+                              </U>
+                            </V>
+                          </L>
+                        </L>
+                      </U>
+                      <U>
+                        <T n="situation">120057<!--WalkbyAmbientSituation: situation_Walkby_Neighbor--></T>
+                        <T n="weight">5</T>
+                      </U>
+                      <U>
+                        <T n="situation">38486<!--OpenStreetsAutonomySituation: situation_open_streets_chess--></T>
+                      </U>
+                      <U>
+                        <T n="situation">184882<!--WalkbyAmbientSituation: situation_Walkby_Ambient_Weather_Raining--></T>
+                        <L n="tests">
+                          <L>
+                            <V t="test_set_reference">
+                              <T n="test_set_reference">184874<!--TestSetInstance: testSet_Weather_RainOnly--></T>
+                            </V>
+                          </L>
+                        </L>
+                      </U>
+                      <U>
+                        <T n="situation">184883<!--WalkbyAmbientSituation: situation_Walkby_Ambient_Weather_Snowing--></T>
+                        <L n="tests">
+                          <L>
+                            <V t="test_set_reference">
+                              <T n="test_set_reference">184876<!--TestSetInstance: testSet_Weather_SnowOnly--></T>
+                            </V>
+                          </L>
+                        </L>
+                      </U>
+                      <U>
+                        <T n="situation">163056<!--WalkbyAmbientSituation: situation_walkby_Event_SpringChallenge_PlantSimNPC--></T>
+                        <L n="tests">
+                          <L>
+                            <V t="is_live_event_active">
+                              <U n="is_live_event_active">
+                                <T n="event_id">springchallenge</T>
+                              </U>
+                            </V>
+                          </L>
+                        </L>
+                      </U>
+                      <U>
+                        <T n="situation">153126<!--WalkbyAmbientSituation: situation_walkby_Event_FallChallenge2016_DoTD_Celebrator--></T>
+                        <L n="tests">
+                          <L>
+                            <V t="is_live_event_active">
+                              <U n="is_live_event_active">
+                                <T n="event_id">fallchallenge</T>
+                              </U>
+                            </V>
+                          </L>
+                        </L>
+                      </U>
+                    </L>
+                  </U>
+                </U>
+                <U>
+                  <T n="hour_of_day">18</T>
+                  <U n="desired_walkby_situations">
+                    <V t="literal" n="desired_sim_count">
+                      <U n="literal">
+                        <T n="value">6</T>
+                      </U>
+                    </V>
+                    <L n="weighted_situations">
+                      <U>
+                        <T n="situation">77411<!--WalkbyNobodySituation: situation_walkby_nobody--></T>
+                        <T n="weight">1</T>
+                      </U>
+                      <U>
+                        <T n="situation">160242<!--WalkbyAmbientSituation: situation_Walkby_Ambient_Teen--></T>
+                        <L n="tests">
+                          <L>
+                            <V t="zone">
+                              <U n="zone">
+                                <U n="zone_tests">
+                                  <V n="zone_modifiers" t="enabled">
+                                    <U n="enabled">
+                                      <V n="whitelist" t="specify">
+                                        <U n="specify">
+                                          <L n="whitelist">
+                                            <T>162560<!--ZoneModifier: zoneModifiers-lotTrait_Teen_Hang_Out--></T>
+                                          </L>
+                                        </U>
+                                      </V>
+                                    </U>
+                                  </V>
+                                </U>
+                              </U>
+                            </V>
+                          </L>
+                        </L>
+                        <T n="weight">15</T>
+                      </U>
+                      <U>
+                        <T n="situation">116920<!--WalkbyAmbientSituation: situation_Walkby_Ambient_Alien_InDisguise--></T>
+                        <T n="weight">3</T>
+                      </U>
+                      <U>
+                        <T n="situation">36777<!--WalkbyAmbientSituation: situation_walkby_ambient_GardenDistrict_Park_Jogger--></T>
+                        <T n="weight">6</T>
+                        <U n="weight_multipliers">
+                          <L n="multipliers">
+                            <U>
+                              <T n="multiplier">2</T>
+                              <L n="tests">
+                                <L>
+                                  <V t="street_civic_policy_test">
+                                    <U n="street_civic_policy_test">
+                                      <L n="civic_policy_tests">
+                                        <V t="enacted">
+                                          <U n="enacted">
+                                            <U n="white_black_list">
+                                              <V n="whitelist" t="specify">
+                                                <U n="specify">
+                                                  <L n="whitelist">
+                                                    <T>231968<!--StreetCivicPolicy: streetCivicPolicy_SkillBased_SelfCare--></T>
+                                                  </L>
+                                                </U>
+                                              </V>
+                                            </U>
+                                          </U>
+                                        </V>
+                                      </L>
+                                      <V t="via_zone_source" n="street" />
+                                    </U>
+                                  </V>
+                                </L>
+                              </L>
+                            </U>
+                          </L>
+                        </U>
+                      </U>
+                      <U>
+                        <T n="situation">36779<!--WalkbyAmbientSituation: situation_walkby_ambient_GardenDistrict_Park_AfterDark--></T>
+                        <T n="weight">8</T>
+                      </U>
+                      <U>
+                        <T n="situation">36650<!--WalkbyAmbientSituation: situation_walkby_ambient_GardenDistrict_WorkCommute--></T>
+                        <T n="weight">1</T>
+                      </U>
+                      <U>
+                        <T n="situation">112304<!--WalkbyAmbientSituation: situation_Walkby_Ambient_Mailman--></T>
+                        <L n="tests">
+                          <L>
+                            <V t="situation_running_test">
+                              <U n="situation_running_test">
+                                <V n="situation_blacklist" t="enabled">
+                                  <L n="enabled">
+                                    <T>112304<!--WalkbyAmbientSituation: situation_Walkby_Ambient_Mailman--></T>
+                                  </L>
+                                </V>
+                                <E n="test_event">SituationStarted</E>
+                              </U>
+                            </V>
+                          </L>
+                        </L>
+                        <T n="weight">1</T>
+                      </U>
+                      <U>
+                        <T n="situation">97234<!--WalkbyAmbientSituation: situation_Walkby_Ambient_Pizza--></T>
+                        <L n="tests">
+                          <L>
+                            <V t="situation_running_test">
+                              <U n="situation_running_test">
+                                <V n="situation_blacklist" t="enabled">
+                                  <L n="enabled">
+                                    <T>97234<!--WalkbyAmbientSituation: situation_Walkby_Ambient_Pizza--></T>
+                                  </L>
+                                </V>
+                                <E n="test_event">SituationStarted</E>
+                              </U>
+                            </V>
+                          </L>
+                        </L>
+                      </U>
+                      <U>
+                        <T n="situation">184882<!--WalkbyAmbientSituation: situation_Walkby_Ambient_Weather_Raining--></T>
+                        <L n="tests">
+                          <L>
+                            <V t="test_set_reference">
+                              <T n="test_set_reference">184874<!--TestSetInstance: testSet_Weather_RainOnly--></T>
+                            </V>
+                          </L>
+                        </L>
+                        <T n="weight">4</T>
+                      </U>
+                      <U>
+                        <T n="situation">184883<!--WalkbyAmbientSituation: situation_Walkby_Ambient_Weather_Snowing--></T>
+                        <L n="tests">
+                          <L>
+                            <V t="test_set_reference">
+                              <T n="test_set_reference">184876<!--TestSetInstance: testSet_Weather_SnowOnly--></T>
+                            </V>
+                          </L>
+                        </L>
+                        <T n="weight">4</T>
+                      </U>
+                    </L>
+                  </U>
+                </U>
+                <U>
+                  <T n="hour_of_day">22</T>
+                  <U n="desired_walkby_situations">
+                    <V t="literal" n="desired_sim_count">
+                      <U n="literal">
+                        <T n="value">0</T>
+                      </U>
+                    </V>
+                  </U>
+                </U>
+              </L>
+            </U>
+            <U>
+              <U n="days_of_the_week">
+                <T n="0 SUNDAY">True</T>
+                <T n="6 SATURDAY">True</T>
+              </U>
+              <L n="walkby_desire_by_time_of_day">
+                <U>
+                  <T n="hour_of_day">4</T>
+                  <U n="desired_walkby_situations">
+                    <V t="random_in_range" n="desired_sim_count">
+                      <U n="random_in_range">
+                        <T n="lower_bound">1</T>
+                        <T n="upper_bound">4</T>
+                      </U>
+                    </V>
+                    <L n="weighted_situations">
+                      <U>
+                        <T n="situation">77411<!--WalkbyNobodySituation: situation_walkby_nobody--></T>
+                        <T n="weight">8</T>
+                      </U>
+                      <U>
+                        <T n="situation">36777<!--WalkbyAmbientSituation: situation_walkby_ambient_GardenDistrict_Park_Jogger--></T>
+                        <T n="weight">8</T>
+                        <U n="weight_multipliers">
+                          <L n="multipliers">
+                            <U>
+                              <T n="multiplier">2</T>
+                              <L n="tests">
+                                <L>
+                                  <V t="street_civic_policy_test">
+                                    <U n="street_civic_policy_test">
+                                      <L n="civic_policy_tests">
+                                        <V t="enacted">
+                                          <U n="enacted">
+                                            <U n="white_black_list">
+                                              <V n="whitelist" t="specify">
+                                                <U n="specify">
+                                                  <L n="whitelist">
+                                                    <T>231968<!--StreetCivicPolicy: streetCivicPolicy_SkillBased_SelfCare--></T>
+                                                  </L>
+                                                </U>
+                                              </V>
+                                            </U>
+                                          </U>
+                                        </V>
+                                      </L>
+                                      <V t="via_zone_source" n="street" />
+                                    </U>
+                                  </V>
+                                </L>
+                              </L>
+                            </U>
+                          </L>
+                        </U>
+                      </U>
+                      <U>
+                        <T n="situation">77048<!--OpenStreetsAutonomySituation: situation_autonomous_OpenStreets_fish--></T>
+                        <T n="weight">4</T>
+                      </U>
+                      <U>
+                        <T n="situation">184882<!--WalkbyAmbientSituation: situation_Walkby_Ambient_Weather_Raining--></T>
+                        <L n="tests">
+                          <L>
+                            <V t="test_set_reference">
+                              <T n="test_set_reference">184874<!--TestSetInstance: testSet_Weather_RainOnly--></T>
+                            </V>
+                          </L>
+                        </L>
+                        <T n="weight">3</T>
+                      </U>
+                      <U>
+                        <T n="situation">184883<!--WalkbyAmbientSituation: situation_Walkby_Ambient_Weather_Snowing--></T>
+                        <L n="tests">
+                          <L>
+                            <V t="test_set_reference">
+                              <T n="test_set_reference">184876<!--TestSetInstance: testSet_Weather_SnowOnly--></T>
+                            </V>
+                          </L>
+                        </L>
+                        <T n="weight">3</T>
+                      </U>
+                      <U>
+                        <T n="situation">153126<!--WalkbyAmbientSituation: situation_walkby_Event_FallChallenge2016_DoTD_Celebrator--></T>
+                        <L n="tests">
+                          <L>
+                            <V t="is_live_event_active">
+                              <U n="is_live_event_active">
+                                <T n="event_id">fallchallenge</T>
+                              </U>
+                            </V>
+                          </L>
+                        </L>
+                      </U>
+                    </L>
+                  </U>
+                </U>
+                <U>
+                  <T n="hour_of_day">7</T>
+                  <U n="desired_walkby_situations">
+                    <V t="literal" n="desired_sim_count">
+                      <U n="literal">
+                        <T n="value">5</T>
+                      </U>
+                    </V>
+                    <L n="weighted_situations">
+                      <U>
+                        <T n="situation">77411<!--WalkbyNobodySituation: situation_walkby_nobody--></T>
+                        <T n="weight">1</T>
+                      </U>
+                      <U>
+                        <T n="situation">160242<!--WalkbyAmbientSituation: situation_Walkby_Ambient_Teen--></T>
+                        <L n="tests">
+                          <L>
+                            <V t="zone">
+                              <U n="zone">
+                                <U n="zone_tests">
+                                  <V n="zone_modifiers" t="enabled">
+                                    <U n="enabled">
+                                      <V n="whitelist" t="specify">
+                                        <U n="specify">
+                                          <L n="whitelist">
+                                            <T>162560<!--ZoneModifier: zoneModifiers-lotTrait_Teen_Hang_Out--></T>
+                                          </L>
+                                        </U>
+                                      </V>
+                                    </U>
+                                  </V>
+                                </U>
+                              </U>
+                            </V>
+                          </L>
+                        </L>
+                        <T n="weight">15</T>
+                      </U>
+                      <U>
+                        <T n="situation">188541<!--WalkbyAmbientSituation: situation_Walkby_Ambient_Scouting--></T>
+                        <T n="weight">4</T>
+                      </U>
+                      <U>
+                        <T n="situation">238441<!--WalkbyAmbientSituation: situation_walkby_ambient_GardenDistrict_Park_Streaker--></T>
+                        <L n="tests">
+                          <L>
+                            <V t="street_civic_policy_test">
+                              <U n="street_civic_policy_test">
+                                <L n="civic_policy_tests">
+                                  <V t="enacted">
+                                    <U n="enacted">
+                                      <U n="white_black_list">
+                                        <V n="whitelist" t="specify">
+                                          <U n="specify">
+                                            <L n="whitelist">
+                                              <T>237846<!--StreetCivicPolicy: streetCivicPolicy_SkillBased_FreeLove--></T>
+                                            </L>
+                                          </U>
+                                        </V>
+                                      </U>
+                                    </U>
+                                  </V>
+                                </L>
+                                <V t="via_zone_source" n="street" />
+                              </U>
+                            </V>
+                          </L>
+                        </L>
+                        <T n="weight">4</T>
+                      </U>
+                      <U>
+                        <T n="situation">36777<!--WalkbyAmbientSituation: situation_walkby_ambient_GardenDistrict_Park_Jogger--></T>
+                        <T n="weight">8</T>
+                        <U n="weight_multipliers">
+                          <L n="multipliers">
+                            <U>
+                              <T n="multiplier">2</T>
+                              <L n="tests">
+                                <L>
+                                  <V t="street_civic_policy_test">
+                                    <U n="street_civic_policy_test">
+                                      <L n="civic_policy_tests">
+                                        <V t="enacted">
+                                          <U n="enacted">
+                                            <U n="white_black_list">
+                                              <V n="whitelist" t="specify">
+                                                <U n="specify">
+                                                  <L n="whitelist">
+                                                    <T>231968<!--StreetCivicPolicy: streetCivicPolicy_SkillBased_SelfCare--></T>
+                                                  </L>
+                                                </U>
+                                              </V>
+                                            </U>
+                                          </U>
+                                        </V>
+                                      </L>
+                                      <V t="via_zone_source" n="street" />
+                                    </U>
+                                  </V>
+                                </L>
+                              </L>
+                            </U>
+                          </L>
+                        </U>
+                      </U>
+                      <U>
+                        <T n="situation">36650<!--WalkbyAmbientSituation: situation_walkby_ambient_GardenDistrict_WorkCommute--></T>
+                        <T n="weight">1</T>
+                      </U>
+                      <U>
+                        <T n="situation">77048<!--OpenStreetsAutonomySituation: situation_autonomous_OpenStreets_fish--></T>
+                        <T n="weight">4</T>
+                      </U>
+                      <U>
+                        <T n="situation">40367<!--OpenStreetsAutonomySituation: situation_autonomous_OpenStreets_mastergardener--></T>
+                        <L n="tests">
+                          <L>
+                            <V t="situation_running_test">
+                              <U n="situation_running_test">
+                                <V n="situation_blacklist" t="enabled">
+                                  <L n="enabled">
+                                    <T>40367<!--OpenStreetsAutonomySituation: situation_autonomous_OpenStreets_mastergardener--></T>
+                                  </L>
+                                </V>
+                                <E n="test_event">SituationStarted</E>
+                              </U>
+                            </V>
+                          </L>
+                        </L>
+                        <T n="weight">1</T>
+                      </U>
+                      <U>
+                        <T n="situation">184882<!--WalkbyAmbientSituation: situation_Walkby_Ambient_Weather_Raining--></T>
+                        <L n="tests">
+                          <L>
+                            <V t="test_set_reference">
+                              <T n="test_set_reference">184874<!--TestSetInstance: testSet_Weather_RainOnly--></T>
+                            </V>
+                          </L>
+                        </L>
+                        <T n="weight">5</T>
+                      </U>
+                      <U>
+                        <T n="situation">184883<!--WalkbyAmbientSituation: situation_Walkby_Ambient_Weather_Snowing--></T>
+                        <L n="tests">
+                          <L>
+                            <V t="test_set_reference">
+                              <T n="test_set_reference">184876<!--TestSetInstance: testSet_Weather_SnowOnly--></T>
+                            </V>
+                          </L>
+                        </L>
+                        <T n="weight">5</T>
+                      </U>
+                      <U>
+                        <T n="situation">163056<!--WalkbyAmbientSituation: situation_walkby_Event_SpringChallenge_PlantSimNPC--></T>
+                        <L n="tests">
+                          <L>
+                            <V t="is_live_event_active">
+                              <U n="is_live_event_active">
+                                <T n="event_id">springchallenge</T>
+                              </U>
+                            </V>
+                          </L>
+                        </L>
+                      </U>
+                      <U>
+                        <T n="situation">153126<!--WalkbyAmbientSituation: situation_walkby_Event_FallChallenge2016_DoTD_Celebrator--></T>
+                        <L n="tests">
+                          <L>
+                            <V t="is_live_event_active">
+                              <U n="is_live_event_active">
+                                <T n="event_id">fallchallenge</T>
+                              </U>
+                            </V>
+                          </L>
+                        </L>
+                      </U>
+                    </L>
+                  </U>
+                </U>
+                <U>
+                  <T n="hour_of_day">10</T>
+                  <U n="desired_walkby_situations">
+                    <V t="random_in_range" n="desired_sim_count">
+                      <U n="random_in_range">
+                        <T n="lower_bound">10</T>
+                        <T n="upper_bound">14</T>
+                      </U>
+                    </V>
+                    <L n="weighted_situations">
+                      <U>
+                        <T n="situation">160242<!--WalkbyAmbientSituation: situation_Walkby_Ambient_Teen--></T>
+                        <L n="tests">
+                          <L>
+                            <V t="zone">
+                              <U n="zone">
+                                <U n="zone_tests">
+                                  <V n="zone_modifiers" t="enabled">
+                                    <U n="enabled">
+                                      <V n="whitelist" t="specify">
+                                        <U n="specify">
+                                          <L n="whitelist">
+                                            <T>162560<!--ZoneModifier: zoneModifiers-lotTrait_Teen_Hang_Out--></T>
+                                          </L>
+                                        </U>
+                                      </V>
+                                    </U>
+                                  </V>
+                                </U>
+                              </U>
+                            </V>
+                          </L>
+                        </L>
+                        <T n="weight">15</T>
+                      </U>
+                      <U>
+                        <T n="situation">116920<!--WalkbyAmbientSituation: situation_Walkby_Ambient_Alien_InDisguise--></T>
+                      </U>
+                      <U>
+                        <T n="situation">188541<!--WalkbyAmbientSituation: situation_Walkby_Ambient_Scouting--></T>
+                        <T n="weight">4</T>
+                      </U>
+                      <U>
+                        <T n="situation">238441<!--WalkbyAmbientSituation: situation_walkby_ambient_GardenDistrict_Park_Streaker--></T>
+                        <L n="tests">
+                          <L>
+                            <V t="street_civic_policy_test">
+                              <U n="street_civic_policy_test">
+                                <L n="civic_policy_tests">
+                                  <V t="enacted">
+                                    <U n="enacted">
+                                      <U n="white_black_list">
+                                        <V n="whitelist" t="specify">
+                                          <U n="specify">
+                                            <L n="whitelist">
+                                              <T>237846<!--StreetCivicPolicy: streetCivicPolicy_SkillBased_FreeLove--></T>
+                                            </L>
+                                          </U>
+                                        </V>
+                                      </U>
+                                    </U>
+                                  </V>
+                                </L>
+                                <V t="via_zone_source" n="street" />
+                              </U>
+                            </V>
+                          </L>
+                        </L>
+                        <T n="weight">4</T>
+                      </U>
+                      <U>
+                        <T n="situation">36777<!--WalkbyAmbientSituation: situation_walkby_ambient_GardenDistrict_Park_Jogger--></T>
+                        <T n="weight">4</T>
+                        <U n="weight_multipliers">
+                          <L n="multipliers">
+                            <U>
+                              <T n="multiplier">3</T>
+                              <L n="tests">
+                                <L>
+                                  <V t="street_civic_policy_test">
+                                    <U n="street_civic_policy_test">
+                                      <L n="civic_policy_tests">
+                                        <V t="enacted">
+                                          <U n="enacted">
+                                            <U n="white_black_list">
+                                              <V n="whitelist" t="specify">
+                                                <U n="specify">
+                                                  <L n="whitelist">
+                                                    <T>231968<!--StreetCivicPolicy: streetCivicPolicy_SkillBased_SelfCare--></T>
+                                                  </L>
+                                                </U>
+                                              </V>
+                                            </U>
+                                          </U>
+                                        </V>
+                                      </L>
+                                      <V t="via_zone_source" n="street" />
+                                    </U>
+                                  </V>
+                                </L>
+                              </L>
+                            </U>
+                          </L>
+                        </U>
+                      </U>
+                      <U>
+                        <T n="situation">36778<!--WalkbyAmbientSituation: situation_walkby_ambient_GardenDistrict_Park_Relaxer--></T>
+                        <T n="weight">6</T>
+                      </U>
+                      <U>
+                        <T n="situation">36751<!--WalkbyAmbientSituation: situation_walkby_ambient_GardenDistrict_FamilyTime--></T>
+                        <T n="weight">6</T>
+                      </U>
+                      <U>
+                        <T n="situation">76164<!--OpenStreetsAutonomySituation: situation_OpenStreets_Lounger--></T>
+                        <T n="weight">4</T>
+                      </U>
+                      <U>
+                        <T n="situation">77048<!--OpenStreetsAutonomySituation: situation_autonomous_OpenStreets_fish--></T>
+                        <T n="weight">2</T>
+                      </U>
+                      <U>
+                        <T n="situation">38307<!--OpenStreetsAutonomySituation: situation_open_streets_playground--></T>
+                        <T n="weight">2</T>
+                      </U>
+                      <U>
+                        <T n="situation">38900<!--OpenStreetsAutonomySituation: situation_autonomous_OpenStreets_bbq--></T>
+                        <T n="weight">2</T>
+                      </U>
+                      <U>
+                        <T n="situation">97234<!--WalkbyAmbientSituation: situation_Walkby_Ambient_Pizza--></T>
+                        <L n="tests">
+                          <L>
+                            <V t="situation_running_test">
+                              <U n="situation_running_test">
+                                <V n="situation_blacklist" t="enabled">
+                                  <L n="enabled">
+                                    <T>97234<!--WalkbyAmbientSituation: situation_Walkby_Ambient_Pizza--></T>
+                                  </L>
+                                </V>
+                                <E n="test_event">SituationStarted</E>
+                              </U>
+                            </V>
+                          </L>
+                        </L>
+                      </U>
+                      <U>
+                        <T n="situation">120057<!--WalkbyAmbientSituation: situation_Walkby_Neighbor--></T>
+                        <T n="weight">6</T>
+                      </U>
+                      <U>
+                        <T n="situation">38486<!--OpenStreetsAutonomySituation: situation_open_streets_chess--></T>
+                      </U>
+                      <U>
+                        <T n="situation">184882<!--WalkbyAmbientSituation: situation_Walkby_Ambient_Weather_Raining--></T>
+                        <L n="tests">
+                          <L>
+                            <V t="test_set_reference">
+                              <T n="test_set_reference">184874<!--TestSetInstance: testSet_Weather_RainOnly--></T>
+                            </V>
+                          </L>
+                        </L>
+                      </U>
+                      <U>
+                        <T n="situation">184883<!--WalkbyAmbientSituation: situation_Walkby_Ambient_Weather_Snowing--></T>
+                        <L n="tests">
+                          <L>
+                            <V t="test_set_reference">
+                              <T n="test_set_reference">184876<!--TestSetInstance: testSet_Weather_SnowOnly--></T>
+                            </V>
+                          </L>
+                        </L>
+                      </U>
+                      <U>
+                        <T n="situation">163056<!--WalkbyAmbientSituation: situation_walkby_Event_SpringChallenge_PlantSimNPC--></T>
+                        <L n="tests">
+                          <L>
+                            <V t="is_live_event_active">
+                              <U n="is_live_event_active">
+                                <T n="event_id">springchallenge</T>
+                              </U>
+                            </V>
+                          </L>
+                        </L>
+                      </U>
+                      <U>
+                        <T n="situation">153126<!--WalkbyAmbientSituation: situation_walkby_Event_FallChallenge2016_DoTD_Celebrator--></T>
+                        <L n="tests">
+                          <L>
+                            <V t="is_live_event_active">
+                              <U n="is_live_event_active">
+                                <T n="event_id">fallchallenge</T>
+                              </U>
+                            </V>
+                          </L>
+                        </L>
+                      </U>
+                    </L>
+                  </U>
+                </U>
+                <U>
+                  <T n="hour_of_day">15</T>
+                  <U n="desired_walkby_situations">
+                    <V t="random_in_range" n="desired_sim_count">
+                      <U n="random_in_range">
+                        <T n="lower_bound">9</T>
+                        <T n="upper_bound">12</T>
+                      </U>
+                    </V>
+                    <L n="weighted_situations">
+                      <U>
+                        <T n="situation">160242<!--WalkbyAmbientSituation: situation_Walkby_Ambient_Teen--></T>
+                        <L n="tests">
+                          <L>
+                            <V t="zone">
+                              <U n="zone">
+                                <U n="zone_tests">
+                                  <V n="zone_modifiers" t="enabled">
+                                    <U n="enabled">
+                                      <V n="whitelist" t="specify">
+                                        <U n="specify">
+                                          <L n="whitelist">
+                                            <T>162560<!--ZoneModifier: zoneModifiers-lotTrait_Teen_Hang_Out--></T>
+                                          </L>
+                                        </U>
+                                      </V>
+                                    </U>
+                                  </V>
+                                </U>
+                              </U>
+                            </V>
+                          </L>
+                        </L>
+                        <T n="weight">15</T>
+                      </U>
+                      <U>
+                        <T n="situation">116920<!--WalkbyAmbientSituation: situation_Walkby_Ambient_Alien_InDisguise--></T>
+                        <T n="weight">2</T>
+                      </U>
+                      <U>
+                        <T n="situation">188541<!--WalkbyAmbientSituation: situation_Walkby_Ambient_Scouting--></T>
+                        <T n="weight">2</T>
+                      </U>
+                      <U>
+                        <T n="situation">238441<!--WalkbyAmbientSituation: situation_walkby_ambient_GardenDistrict_Park_Streaker--></T>
+                        <L n="tests">
+                          <L>
+                            <V t="street_civic_policy_test">
+                              <U n="street_civic_policy_test">
+                                <L n="civic_policy_tests">
+                                  <V t="enacted">
+                                    <U n="enacted">
+                                      <U n="white_black_list">
+                                        <V n="whitelist" t="specify">
+                                          <U n="specify">
+                                            <L n="whitelist">
+                                              <T>237846<!--StreetCivicPolicy: streetCivicPolicy_SkillBased_FreeLove--></T>
+                                            </L>
+                                          </U>
+                                        </V>
+                                      </U>
+                                    </U>
+                                  </V>
+                                </L>
+                                <V t="via_zone_source" n="street" />
+                              </U>
+                            </V>
+                          </L>
+                        </L>
+                        <T n="weight">2</T>
+                      </U>
+                      <U>
+                        <T n="situation">36777<!--WalkbyAmbientSituation: situation_walkby_ambient_GardenDistrict_Park_Jogger--></T>
+                        <T n="weight">2</T>
+                        <U n="weight_multipliers">
+                          <L n="multipliers">
+                            <U>
+                              <T n="multiplier">4</T>
+                              <L n="tests">
+                                <L>
+                                  <V t="street_civic_policy_test">
+                                    <U n="street_civic_policy_test">
+                                      <L n="civic_policy_tests">
+                                        <V t="enacted">
+                                          <U n="enacted">
+                                            <U n="white_black_list">
+                                              <V n="whitelist" t="specify">
+                                                <U n="specify">
+                                                  <L n="whitelist">
+                                                    <T>231968<!--StreetCivicPolicy: streetCivicPolicy_SkillBased_SelfCare--></T>
+                                                  </L>
+                                                </U>
+                                              </V>
+                                            </U>
+                                          </U>
+                                        </V>
+                                      </L>
+                                      <V t="via_zone_source" n="street" />
+                                    </U>
+                                  </V>
+                                </L>
+                              </L>
+                            </U>
+                          </L>
+                        </U>
+                      </U>
+                      <U>
+                        <T n="situation">36778<!--WalkbyAmbientSituation: situation_walkby_ambient_GardenDistrict_Park_Relaxer--></T>
+                        <T n="weight">4</T>
+                      </U>
+                      <U>
+                        <T n="situation">36751<!--WalkbyAmbientSituation: situation_walkby_ambient_GardenDistrict_FamilyTime--></T>
+                        <T n="weight">6</T>
+                      </U>
+                      <U>
+                        <T n="situation">76164<!--OpenStreetsAutonomySituation: situation_OpenStreets_Lounger--></T>
+                        <T n="weight">1</T>
+                      </U>
+                      <U>
+                        <T n="situation">77048<!--OpenStreetsAutonomySituation: situation_autonomous_OpenStreets_fish--></T>
+                        <T n="weight">2</T>
+                      </U>
+                      <U>
+                        <T n="situation">38307<!--OpenStreetsAutonomySituation: situation_open_streets_playground--></T>
+                        <T n="weight">2</T>
+                      </U>
+                      <U>
+                        <T n="situation">38900<!--OpenStreetsAutonomySituation: situation_autonomous_OpenStreets_bbq--></T>
+                        <T n="weight">2</T>
+                      </U>
+                      <U>
+                        <T n="situation">97234<!--WalkbyAmbientSituation: situation_Walkby_Ambient_Pizza--></T>
+                        <L n="tests">
+                          <L>
+                            <V t="situation_running_test">
+                              <U n="situation_running_test">
+                                <V n="situation_blacklist" t="enabled">
+                                  <L n="enabled">
+                                    <T>97234<!--WalkbyAmbientSituation: situation_Walkby_Ambient_Pizza--></T>
+                                  </L>
+                                </V>
+                                <E n="test_event">SituationStarted</E>
+                              </U>
+                            </V>
+                          </L>
+                        </L>
+                        <T n="weight">2</T>
+                      </U>
+                      <U>
+                        <T n="situation">120057<!--WalkbyAmbientSituation: situation_Walkby_Neighbor--></T>
+                        <T n="weight">2</T>
+                      </U>
+                      <U>
+                        <T n="situation">38486<!--OpenStreetsAutonomySituation: situation_open_streets_chess--></T>
+                      </U>
+                      <U>
+                        <T n="situation">184882<!--WalkbyAmbientSituation: situation_Walkby_Ambient_Weather_Raining--></T>
+                        <L n="tests">
+                          <L>
+                            <V t="test_set_reference">
+                              <T n="test_set_reference">184874<!--TestSetInstance: testSet_Weather_RainOnly--></T>
+                            </V>
+                          </L>
+                        </L>
+                      </U>
+                      <U>
+                        <T n="situation">184883<!--WalkbyAmbientSituation: situation_Walkby_Ambient_Weather_Snowing--></T>
+                        <L n="tests">
+                          <L>
+                            <V t="test_set_reference">
+                              <T n="test_set_reference">184876<!--TestSetInstance: testSet_Weather_SnowOnly--></T>
+                            </V>
+                          </L>
+                        </L>
+                      </U>
+                      <U>
+                        <T n="situation">153126<!--WalkbyAmbientSituation: situation_walkby_Event_FallChallenge2016_DoTD_Celebrator--></T>
+                        <L n="tests">
+                          <L>
+                            <V t="is_live_event_active">
+                              <U n="is_live_event_active">
+                                <T n="event_id">fallchallenge</T>
+                              </U>
+                            </V>
+                          </L>
+                        </L>
+                      </U>
+                    </L>
+                  </U>
+                </U>
+                <U>
+                  <T n="hour_of_day">18</T>
+                  <U n="desired_walkby_situations">
+                    <V t="random_in_range" n="desired_sim_count">
+                      <U n="random_in_range">
+                        <T n="lower_bound">5</T>
+                        <T n="upper_bound">8</T>
+                      </U>
+                    </V>
+                    <L n="weighted_situations">
+                      <U>
+                        <T n="situation">77411<!--WalkbyNobodySituation: situation_walkby_nobody--></T>
+                      </U>
+                      <U>
+                        <T n="situation">160242<!--WalkbyAmbientSituation: situation_Walkby_Ambient_Teen--></T>
+                        <L n="tests">
+                          <L>
+                            <V t="zone">
+                              <U n="zone">
+                                <U n="zone_tests">
+                                  <V n="zone_modifiers" t="enabled">
+                                    <U n="enabled">
+                                      <V n="whitelist" t="specify">
+                                        <U n="specify">
+                                          <L n="whitelist">
+                                            <T>162560<!--ZoneModifier: zoneModifiers-lotTrait_Teen_Hang_Out--></T>
+                                          </L>
+                                        </U>
+                                      </V>
+                                    </U>
+                                  </V>
+                                </U>
+                              </U>
+                            </V>
+                          </L>
+                        </L>
+                        <T n="weight">15</T>
+                      </U>
+                      <U>
+                        <T n="situation">116920<!--WalkbyAmbientSituation: situation_Walkby_Ambient_Alien_InDisguise--></T>
+                        <T n="weight">3</T>
+                      </U>
+                      <U>
+                        <T n="situation">36750<!--WalkbyAmbientSituation: situation_walkby_ambient_GardenDistrict_OnTheTown--></T>
+                        <T n="weight">8</T>
+                      </U>
+                      <U>
+                        <T n="situation">36779<!--WalkbyAmbientSituation: situation_walkby_ambient_GardenDistrict_Park_AfterDark--></T>
+                        <T n="weight">6</T>
+                      </U>
+                      <U>
+                        <T n="situation">38900<!--OpenStreetsAutonomySituation: situation_autonomous_OpenStreets_bbq--></T>
+                        <T n="weight">1</T>
+                      </U>
+                      <U>
+                        <T n="situation">97234<!--WalkbyAmbientSituation: situation_Walkby_Ambient_Pizza--></T>
+                        <L n="tests">
+                          <L>
+                            <V t="situation_running_test">
+                              <U n="situation_running_test">
+                                <V n="situation_blacklist" t="enabled">
+                                  <L n="enabled">
+                                    <T>97234<!--WalkbyAmbientSituation: situation_Walkby_Ambient_Pizza--></T>
+                                  </L>
+                                </V>
+                                <E n="test_event">SituationStarted</E>
+                              </U>
+                            </V>
+                          </L>
+                        </L>
+                        <T n="weight">2</T>
+                      </U>
+                      <U>
+                        <T n="situation">184882<!--WalkbyAmbientSituation: situation_Walkby_Ambient_Weather_Raining--></T>
+                        <L n="tests">
+                          <L>
+                            <V t="test_set_reference">
+                              <T n="test_set_reference">184874<!--TestSetInstance: testSet_Weather_RainOnly--></T>
+                            </V>
+                          </L>
+                        </L>
+                        <T n="weight">4</T>
+                      </U>
+                      <U>
+                        <T n="situation">184883<!--WalkbyAmbientSituation: situation_Walkby_Ambient_Weather_Snowing--></T>
+                        <L n="tests">
+                          <L>
+                            <V t="test_set_reference">
+                              <T n="test_set_reference">184876<!--TestSetInstance: testSet_Weather_SnowOnly--></T>
+                            </V>
+                          </L>
+                        </L>
+                        <T n="weight">4</T>
+                      </U>
+                    </L>
+                  </U>
+                </U>
+                <U>
+                  <T n="hour_of_day">22</T>
+                  <U n="desired_walkby_situations">
+                    <V t="literal" n="desired_sim_count">
+                      <U n="literal">
+                        <T n="value">0</T>
+                      </U>
+                    </V>
+                  </U>
+                </U>
+              </L>
+            </U>
+          </L>
+        </U>
+      </V>
+      <E n="shift_strictness">OVERLAP</E>
+    </U>
+  </L>
+</I>

@@ -1,0 +1,1880 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<I c="SuperInteraction" i="interaction" m="interactions.base.super_interaction" n="archaeologyTable_RefineCrystal" s="175475">
+  <V t="Forward" n="_forwarding" />
+  <V t="enabled" n="_saveable" />
+  <T n="allow_from_sim_inventory">True</T>
+  <T n="attention_cost">0.5</T>
+  <V n="basic_content" t="flexible_length">
+    <U n="flexible_length">
+      <L n="conditional_actions">
+        <V t="literal">
+          <U n="literal">
+            <L n="conditions">
+              <V t="stat_based">
+                <U n="stat_based">
+                  <T n="stat">182768<!--Commodity: commodity_ArchaeologyTable_RefineCrystal--></T>
+                  <U n="threshold">
+                    <T n="value">100</T>
+                  </U>
+                  <E n="who">Object</E>
+                </U>
+              </V>
+            </L>
+            <E n="interaction_action">EXIT_NATURALLY</E>
+          </U>
+        </V>
+        <V t="literal">
+          <U n="literal">
+            <L n="conditions">
+              <V t="child_based">
+                <U n="child_based">
+                  <V n="condition" t="single_child_changed">
+                    <U n="single_child_changed">
+                      <T n="negate">True</T>
+                    </U>
+                  </V>
+                  <V n="slot_types" t="enabled">
+                    <L n="enabled">
+                      <T>slot_archaeologyTable</T>
+                    </L>
+                  </V>
+                </U>
+              </V>
+            </L>
+            <E n="interaction_action">EXIT_CANCEL</E>
+          </U>
+        </V>
+      </L>
+      <V t="staging_content" n="content">
+        <U n="staging_content">
+          <U n="content_set">
+            <L n="affordance_links">
+              <T>175643<!--MixerInteraction: archaeologyTable_ExtractElement_Breathe--></T>
+              <T>175644<!--MixerInteraction: archaeologyTable_ExtractElement_Brush--></T>
+              <T>175645<!--MixerInteraction: archaeologyTable_ExtractElement_Chisel--></T>
+              <T>175646<!--MixerInteraction: archaeologyTable_ExtractElement_Hammer--></T>
+              <T>175647<!--MixerInteraction: archaeologyTable_ExtractElement_MangifyingGlass--></T>
+            </L>
+          </U>
+        </U>
+      </V>
+      <V t="enabled" n="periodic_stat_change">
+        <U n="enabled">
+          <L n="operations">
+            <V t="dynamic_skill">
+              <U n="dynamic_skill">
+                <U n="skill_loot_data_override">
+                  <E n="effectiveness">StandardPeriodic</E>
+                </U>
+              </U>
+            </V>
+          </L>
+        </U>
+      </V>
+    </U>
+  </V>
+  <L n="basic_extras">
+    <V t="state_change">
+      <U n="state_change">
+        <V n="new_value" t="single_value">
+          <U n="single_value">
+            <T n="new_value">151675<!--ObjectStateValue: generic_ObjectInUse_True--></T>
+          </U>
+        </V>
+        <E n="state_change_target">ObjectChildren</E>
+        <V t="immediately" n="timing" />
+      </U>
+    </V>
+    <V t="state_change">
+      <U n="state_change">
+        <V n="new_value" t="single_value">
+          <U n="single_value">
+            <T n="new_value">151677<!--ObjectStateValue: generic_ObjectInUse_False--></T>
+          </U>
+        </V>
+        <E n="state_change_target">ObjectChildren</E>
+        <V t="at_end" n="timing">
+          <U n="at_end">
+            <E n="criticality">OnCancelOrException</E>
+          </U>
+        </V>
+      </U>
+    </V>
+    <V t="loot">
+      <U n="loot">
+        <L n="loot_list">
+          <T>182821<!--LootActions: loot_ArchaeologyTable_TransferStat_Start_RefineCrystal--></T>
+        </L>
+        <V t="at_beginning" n="timing" />
+      </U>
+    </V>
+    <V t="loot">
+      <U n="loot">
+        <L n="loot_list">
+          <T>182820<!--LootActions: loot_ArchaeologyTable_TransferStat_End_RefineCrystal--></T>
+        </L>
+        <V t="at_end" n="timing">
+          <U n="at_end">
+            <E n="criticality">OnCancelOrException</E>
+          </U>
+        </V>
+      </U>
+    </V>
+  </L>
+  <V t="enabled" n="canonical_animation">
+    <U n="enabled">
+      <T n="factory">175480<!--AnimationElement: archaeologyTable_ExtractElement_Breathe--></T>
+    </U>
+  </V>
+  <V t="disabled" n="content_score" />
+  <T n="display_name">0xD97C1B34<!--String: "Pulir cristal"--></T>
+  <U n="display_name_text_tokens">
+    <L n="tokens">
+      <V t="participant_type">
+        <U n="participant_type">
+          <V t="from_participant" n="objects">
+            <U n="from_participant">
+              <E n="participant">Actor</E>
+            </U>
+          </V>
+        </U>
+      </V>
+      <V t="participant_type">
+        <U n="participant_type">
+          <V t="from_participant" n="objects">
+            <U n="from_participant">
+              <E n="participant">Object</E>
+            </U>
+          </V>
+        </U>
+      </V>
+    </L>
+  </U>
+  <L n="interaction_category_tags">
+    <E>Interaction_Super</E>
+    <E>Interaction_All</E>
+  </L>
+  <V n="outcome" t="test_based">
+    <U n="test_based">
+      <L n="tested_outcomes">
+        <U>
+          <L n="potential_outcomes">
+            <U>
+              <U n="outcome">
+                <V t="enabled" n="animation_ref">
+                  <U n="enabled">
+                    <T n="factory">28358<!--AnimationElement: Socials_Responses_Excited_LowIntensity--></T>
+                  </U>
+                </V>
+                <L n="basic_extras">
+                  <V t="destroy_object">
+                    <U n="destroy_object">
+                      <V t="from_participant" n="objects_to_destroy">
+                        <U n="from_participant">
+                          <E n="participant">ObjectChildren</E>
+                        </U>
+                      </V>
+                      <V n="timing" t="at_beginning">
+                        <U n="at_beginning">
+                          <V t="enabled" n="offset_time" />
+                        </U>
+                      </V>
+                    </U>
+                  </V>
+                  <V t="create_object">
+                    <U n="create_object">
+                      <V n="creation_data" t="definition">
+                        <U n="definition">
+                          <T n="definition">178419</T>
+                        </U>
+                      </V>
+                      <V t="slot" n="location">
+                        <U n="slot">
+                          <V t="by_reference" n="parent_slot">
+                            <T n="by_reference">slot_archaeologyTable</T>
+                          </V>
+                        </U>
+                      </V>
+                      <E n="owner_sim">Actor</E>
+                    </U>
+                  </V>
+                </L>
+              </U>
+            </U>
+          </L>
+          <L n="tests">
+            <L>
+              <V t="slot_test">
+                <U n="slot_test">
+                  <V t="by_reference" n="child_slot">
+                    <T n="by_reference">slot_archaeologyTable</T>
+                  </V>
+                  <V n="slot_test_type" t="has_used_slot">
+                    <U n="has_used_slot">
+                      <V n="object_type" t="enabled">
+                        <V n="enabled" t="definition_id">
+                          <U n="definition_id">
+                            <T n="actual_object">28738</T>
+                          </U>
+                        </V>
+                      </V>
+                    </U>
+                  </V>
+                </U>
+              </V>
+            </L>
+          </L>
+        </U>
+        <U>
+          <L n="potential_outcomes">
+            <U>
+              <U n="outcome">
+                <V t="enabled" n="animation_ref">
+                  <U n="enabled">
+                    <T n="factory">28358<!--AnimationElement: Socials_Responses_Excited_LowIntensity--></T>
+                  </U>
+                </V>
+                <L n="basic_extras">
+                  <V t="destroy_object">
+                    <U n="destroy_object">
+                      <V t="from_participant" n="objects_to_destroy">
+                        <U n="from_participant">
+                          <E n="participant">ObjectChildren</E>
+                        </U>
+                      </V>
+                      <V n="timing" t="at_beginning">
+                        <U n="at_beginning">
+                          <V t="enabled" n="offset_time" />
+                        </U>
+                      </V>
+                    </U>
+                  </V>
+                  <V t="create_object">
+                    <U n="create_object">
+                      <V n="creation_data" t="definition">
+                        <U n="definition">
+                          <T n="definition">179188</T>
+                        </U>
+                      </V>
+                      <V t="slot" n="location">
+                        <U n="slot">
+                          <V t="by_reference" n="parent_slot">
+                            <T n="by_reference">slot_archaeologyTable</T>
+                          </V>
+                        </U>
+                      </V>
+                      <E n="owner_sim">Actor</E>
+                    </U>
+                  </V>
+                </L>
+              </U>
+            </U>
+          </L>
+          <L n="tests">
+            <L>
+              <V t="slot_test">
+                <U n="slot_test">
+                  <V t="by_reference" n="child_slot">
+                    <T n="by_reference">slot_archaeologyTable</T>
+                  </V>
+                  <V n="slot_test_type" t="has_used_slot">
+                    <U n="has_used_slot">
+                      <V n="object_type" t="enabled">
+                        <V n="enabled" t="definition_id">
+                          <U n="definition_id">
+                            <T n="actual_object">178735</T>
+                          </U>
+                        </V>
+                      </V>
+                    </U>
+                  </V>
+                </U>
+              </V>
+            </L>
+          </L>
+        </U>
+        <U>
+          <L n="potential_outcomes">
+            <U>
+              <U n="outcome">
+                <V t="enabled" n="animation_ref">
+                  <U n="enabled">
+                    <T n="factory">28358<!--AnimationElement: Socials_Responses_Excited_LowIntensity--></T>
+                  </U>
+                </V>
+                <L n="basic_extras">
+                  <V t="destroy_object">
+                    <U n="destroy_object">
+                      <V t="from_participant" n="objects_to_destroy">
+                        <U n="from_participant">
+                          <E n="participant">ObjectChildren</E>
+                        </U>
+                      </V>
+                      <V n="timing" t="at_beginning">
+                        <U n="at_beginning">
+                          <V t="enabled" n="offset_time" />
+                        </U>
+                      </V>
+                    </U>
+                  </V>
+                  <V t="create_object">
+                    <U n="create_object">
+                      <V n="creation_data" t="definition">
+                        <U n="definition">
+                          <T n="definition">179189</T>
+                        </U>
+                      </V>
+                      <V t="slot" n="location">
+                        <U n="slot">
+                          <V t="by_reference" n="parent_slot">
+                            <T n="by_reference">slot_archaeologyTable</T>
+                          </V>
+                        </U>
+                      </V>
+                      <E n="owner_sim">Actor</E>
+                    </U>
+                  </V>
+                </L>
+              </U>
+            </U>
+          </L>
+          <L n="tests">
+            <L>
+              <V t="slot_test">
+                <U n="slot_test">
+                  <V t="by_reference" n="child_slot">
+                    <T n="by_reference">slot_archaeologyTable</T>
+                  </V>
+                  <V n="slot_test_type" t="has_used_slot">
+                    <U n="has_used_slot">
+                      <V n="object_type" t="enabled">
+                        <V n="enabled" t="definition_id">
+                          <U n="definition_id">
+                            <T n="actual_object">178736</T>
+                          </U>
+                        </V>
+                      </V>
+                    </U>
+                  </V>
+                </U>
+              </V>
+            </L>
+          </L>
+        </U>
+        <U>
+          <L n="potential_outcomes">
+            <U>
+              <U n="outcome">
+                <V t="enabled" n="animation_ref">
+                  <U n="enabled">
+                    <T n="factory">28358<!--AnimationElement: Socials_Responses_Excited_LowIntensity--></T>
+                  </U>
+                </V>
+                <L n="basic_extras">
+                  <V t="destroy_object">
+                    <U n="destroy_object">
+                      <V t="from_participant" n="objects_to_destroy">
+                        <U n="from_participant">
+                          <E n="participant">ObjectChildren</E>
+                        </U>
+                      </V>
+                      <V n="timing" t="at_beginning">
+                        <U n="at_beginning">
+                          <V t="enabled" n="offset_time" />
+                        </U>
+                      </V>
+                    </U>
+                  </V>
+                  <V t="create_object">
+                    <U n="create_object">
+                      <V n="creation_data" t="definition">
+                        <U n="definition">
+                          <T n="definition">178420</T>
+                        </U>
+                      </V>
+                      <V t="slot" n="location">
+                        <U n="slot">
+                          <V t="by_reference" n="parent_slot">
+                            <T n="by_reference">slot_archaeologyTable</T>
+                          </V>
+                        </U>
+                      </V>
+                      <E n="owner_sim">Actor</E>
+                    </U>
+                  </V>
+                </L>
+              </U>
+            </U>
+          </L>
+          <L n="tests">
+            <L>
+              <V t="slot_test">
+                <U n="slot_test">
+                  <V t="by_reference" n="child_slot">
+                    <T n="by_reference">slot_archaeologyTable</T>
+                  </V>
+                  <V n="slot_test_type" t="has_used_slot">
+                    <U n="has_used_slot">
+                      <V n="object_type" t="enabled">
+                        <V n="enabled" t="definition_id">
+                          <U n="definition_id">
+                            <T n="actual_object">28727</T>
+                          </U>
+                        </V>
+                      </V>
+                    </U>
+                  </V>
+                </U>
+              </V>
+            </L>
+          </L>
+        </U>
+        <U>
+          <L n="potential_outcomes">
+            <U>
+              <U n="outcome">
+                <V t="enabled" n="animation_ref">
+                  <U n="enabled">
+                    <T n="factory">28358<!--AnimationElement: Socials_Responses_Excited_LowIntensity--></T>
+                  </U>
+                </V>
+                <L n="basic_extras">
+                  <V t="destroy_object">
+                    <U n="destroy_object">
+                      <V t="from_participant" n="objects_to_destroy">
+                        <U n="from_participant">
+                          <E n="participant">ObjectChildren</E>
+                        </U>
+                      </V>
+                      <V n="timing" t="at_beginning">
+                        <U n="at_beginning">
+                          <V t="enabled" n="offset_time" />
+                        </U>
+                      </V>
+                    </U>
+                  </V>
+                  <V t="create_object">
+                    <U n="create_object">
+                      <V n="creation_data" t="definition">
+                        <U n="definition">
+                          <T n="definition">178421</T>
+                        </U>
+                      </V>
+                      <V t="slot" n="location">
+                        <U n="slot">
+                          <V t="by_reference" n="parent_slot">
+                            <T n="by_reference">slot_archaeologyTable</T>
+                          </V>
+                        </U>
+                      </V>
+                      <E n="owner_sim">Actor</E>
+                    </U>
+                  </V>
+                </L>
+              </U>
+            </U>
+          </L>
+          <L n="tests">
+            <L>
+              <V t="slot_test">
+                <U n="slot_test">
+                  <V t="by_reference" n="child_slot">
+                    <T n="by_reference">slot_archaeologyTable</T>
+                  </V>
+                  <V n="slot_test_type" t="has_used_slot">
+                    <U n="has_used_slot">
+                      <V n="object_type" t="enabled">
+                        <V n="enabled" t="definition_id">
+                          <U n="definition_id">
+                            <T n="actual_object">28739</T>
+                          </U>
+                        </V>
+                      </V>
+                    </U>
+                  </V>
+                </U>
+              </V>
+            </L>
+          </L>
+        </U>
+        <U>
+          <L n="potential_outcomes">
+            <U>
+              <U n="outcome">
+                <V t="enabled" n="animation_ref">
+                  <U n="enabled">
+                    <T n="factory">28358<!--AnimationElement: Socials_Responses_Excited_LowIntensity--></T>
+                  </U>
+                </V>
+                <L n="basic_extras">
+                  <V t="destroy_object">
+                    <U n="destroy_object">
+                      <V t="from_participant" n="objects_to_destroy">
+                        <U n="from_participant">
+                          <E n="participant">ObjectChildren</E>
+                        </U>
+                      </V>
+                      <V n="timing" t="at_beginning">
+                        <U n="at_beginning">
+                          <V t="enabled" n="offset_time" />
+                        </U>
+                      </V>
+                    </U>
+                  </V>
+                  <V t="create_object">
+                    <U n="create_object">
+                      <V n="creation_data" t="definition">
+                        <U n="definition">
+                          <T n="definition">178422</T>
+                        </U>
+                      </V>
+                      <V t="slot" n="location">
+                        <U n="slot">
+                          <V t="by_reference" n="parent_slot">
+                            <T n="by_reference">slot_archaeologyTable</T>
+                          </V>
+                        </U>
+                      </V>
+                      <E n="owner_sim">Actor</E>
+                    </U>
+                  </V>
+                </L>
+              </U>
+            </U>
+          </L>
+          <L n="tests">
+            <L>
+              <V t="slot_test">
+                <U n="slot_test">
+                  <V t="by_reference" n="child_slot">
+                    <T n="by_reference">slot_archaeologyTable</T>
+                  </V>
+                  <V n="slot_test_type" t="has_used_slot">
+                    <U n="has_used_slot">
+                      <V n="object_type" t="enabled">
+                        <V n="enabled" t="definition_id">
+                          <U n="definition_id">
+                            <T n="actual_object">72395</T>
+                          </U>
+                        </V>
+                      </V>
+                    </U>
+                  </V>
+                </U>
+              </V>
+              <V t="object_criteria">
+                <U n="object_criteria">
+                  <V n="identity_test" t="tags">
+                    <U n="tags">
+                      <L n="tag_set">
+                        <E>Func_EP1Collectible_BG</E>
+                      </L>
+                    </U>
+                  </V>
+                  <V t="single_object" n="subject_specific_tests">
+                    <U n="single_object">
+                      <E n="target">ObjectChildren</E>
+                    </U>
+                  </V>
+                </U>
+              </V>
+            </L>
+          </L>
+        </U>
+        <U>
+          <L n="potential_outcomes">
+            <U>
+              <U n="outcome">
+                <V t="enabled" n="animation_ref">
+                  <U n="enabled">
+                    <T n="factory">28358<!--AnimationElement: Socials_Responses_Excited_LowIntensity--></T>
+                  </U>
+                </V>
+                <L n="basic_extras">
+                  <V t="destroy_object">
+                    <U n="destroy_object">
+                      <V t="from_participant" n="objects_to_destroy">
+                        <U n="from_participant">
+                          <E n="participant">ObjectChildren</E>
+                        </U>
+                      </V>
+                      <V n="timing" t="at_beginning">
+                        <U n="at_beginning">
+                          <V t="enabled" n="offset_time" />
+                        </U>
+                      </V>
+                    </U>
+                  </V>
+                  <V t="create_object">
+                    <U n="create_object">
+                      <V n="creation_data" t="definition">
+                        <U n="definition">
+                          <T n="definition">178423</T>
+                        </U>
+                      </V>
+                      <V t="slot" n="location">
+                        <U n="slot">
+                          <V t="by_reference" n="parent_slot">
+                            <T n="by_reference">slot_archaeologyTable</T>
+                          </V>
+                        </U>
+                      </V>
+                      <E n="owner_sim">Actor</E>
+                    </U>
+                  </V>
+                </L>
+              </U>
+            </U>
+          </L>
+          <L n="tests">
+            <L>
+              <V t="slot_test">
+                <U n="slot_test">
+                  <V t="by_reference" n="child_slot">
+                    <T n="by_reference">slot_archaeologyTable</T>
+                  </V>
+                  <V n="slot_test_type" t="has_used_slot">
+                    <U n="has_used_slot">
+                      <V n="object_type" t="enabled">
+                        <V n="enabled" t="definition_id">
+                          <U n="definition_id">
+                            <T n="actual_object">28728</T>
+                          </U>
+                        </V>
+                      </V>
+                    </U>
+                  </V>
+                </U>
+              </V>
+            </L>
+          </L>
+        </U>
+        <U>
+          <L n="potential_outcomes">
+            <U>
+              <U n="outcome">
+                <V t="enabled" n="animation_ref">
+                  <U n="enabled">
+                    <T n="factory">28358<!--AnimationElement: Socials_Responses_Excited_LowIntensity--></T>
+                  </U>
+                </V>
+                <L n="basic_extras">
+                  <V t="destroy_object">
+                    <U n="destroy_object">
+                      <V t="from_participant" n="objects_to_destroy">
+                        <U n="from_participant">
+                          <E n="participant">ObjectChildren</E>
+                        </U>
+                      </V>
+                      <V n="timing" t="at_beginning">
+                        <U n="at_beginning">
+                          <V t="enabled" n="offset_time" />
+                        </U>
+                      </V>
+                    </U>
+                  </V>
+                  <V t="create_object">
+                    <U n="create_object">
+                      <V n="creation_data" t="definition">
+                        <U n="definition">
+                          <T n="definition">178424</T>
+                        </U>
+                      </V>
+                      <V t="slot" n="location">
+                        <U n="slot">
+                          <V t="by_reference" n="parent_slot">
+                            <T n="by_reference">slot_archaeologyTable</T>
+                          </V>
+                        </U>
+                      </V>
+                      <E n="owner_sim">Actor</E>
+                    </U>
+                  </V>
+                </L>
+              </U>
+            </U>
+          </L>
+          <L n="tests">
+            <L>
+              <V t="slot_test">
+                <U n="slot_test">
+                  <V t="by_reference" n="child_slot">
+                    <T n="by_reference">slot_archaeologyTable</T>
+                  </V>
+                  <V n="slot_test_type" t="has_used_slot">
+                    <U n="has_used_slot">
+                      <V n="object_type" t="enabled">
+                        <V n="enabled" t="definition_id">
+                          <U n="definition_id">
+                            <T n="actual_object">28729</T>
+                          </U>
+                        </V>
+                      </V>
+                    </U>
+                  </V>
+                </U>
+              </V>
+            </L>
+          </L>
+        </U>
+        <U>
+          <L n="potential_outcomes">
+            <U>
+              <U n="outcome">
+                <V t="enabled" n="animation_ref">
+                  <U n="enabled">
+                    <T n="factory">28358<!--AnimationElement: Socials_Responses_Excited_LowIntensity--></T>
+                  </U>
+                </V>
+                <L n="basic_extras">
+                  <V t="destroy_object">
+                    <U n="destroy_object">
+                      <V t="from_participant" n="objects_to_destroy">
+                        <U n="from_participant">
+                          <E n="participant">ObjectChildren</E>
+                        </U>
+                      </V>
+                      <V n="timing" t="at_beginning">
+                        <U n="at_beginning">
+                          <V t="enabled" n="offset_time" />
+                        </U>
+                      </V>
+                    </U>
+                  </V>
+                  <V t="create_object">
+                    <U n="create_object">
+                      <V n="creation_data" t="definition">
+                        <U n="definition">
+                          <T n="definition">178425</T>
+                        </U>
+                      </V>
+                      <V t="slot" n="location">
+                        <U n="slot">
+                          <V t="by_reference" n="parent_slot">
+                            <T n="by_reference">slot_archaeologyTable</T>
+                          </V>
+                        </U>
+                      </V>
+                      <E n="owner_sim">Actor</E>
+                    </U>
+                  </V>
+                </L>
+              </U>
+            </U>
+          </L>
+          <L n="tests">
+            <L>
+              <V t="slot_test">
+                <U n="slot_test">
+                  <V t="by_reference" n="child_slot">
+                    <T n="by_reference">slot_archaeologyTable</T>
+                  </V>
+                  <V n="slot_test_type" t="has_used_slot">
+                    <U n="has_used_slot">
+                      <V n="object_type" t="enabled">
+                        <V n="enabled" t="definition_id">
+                          <U n="definition_id">
+                            <T n="actual_object">28740</T>
+                          </U>
+                        </V>
+                      </V>
+                    </U>
+                  </V>
+                </U>
+              </V>
+            </L>
+          </L>
+        </U>
+        <U>
+          <L n="potential_outcomes">
+            <U>
+              <U n="outcome">
+                <V t="enabled" n="animation_ref">
+                  <U n="enabled">
+                    <T n="factory">28358<!--AnimationElement: Socials_Responses_Excited_LowIntensity--></T>
+                  </U>
+                </V>
+                <L n="basic_extras">
+                  <V t="destroy_object">
+                    <U n="destroy_object">
+                      <V t="from_participant" n="objects_to_destroy">
+                        <U n="from_participant">
+                          <E n="participant">ObjectChildren</E>
+                        </U>
+                      </V>
+                      <V n="timing" t="at_beginning">
+                        <U n="at_beginning">
+                          <V t="enabled" n="offset_time" />
+                        </U>
+                      </V>
+                    </U>
+                  </V>
+                  <V t="create_object">
+                    <U n="create_object">
+                      <V n="creation_data" t="definition">
+                        <U n="definition">
+                          <T n="definition">178426</T>
+                        </U>
+                      </V>
+                      <V t="slot" n="location">
+                        <U n="slot">
+                          <V t="by_reference" n="parent_slot">
+                            <T n="by_reference">slot_archaeologyTable</T>
+                          </V>
+                        </U>
+                      </V>
+                      <E n="owner_sim">Actor</E>
+                    </U>
+                  </V>
+                </L>
+              </U>
+            </U>
+          </L>
+          <L n="tests">
+            <L>
+              <V t="slot_test">
+                <U n="slot_test">
+                  <V t="by_reference" n="child_slot">
+                    <T n="by_reference">slot_archaeologyTable</T>
+                  </V>
+                  <V n="slot_test_type" t="has_used_slot">
+                    <U n="has_used_slot">
+                      <V n="object_type" t="enabled">
+                        <V n="enabled" t="definition_id">
+                          <U n="definition_id">
+                            <T n="actual_object">28730</T>
+                          </U>
+                        </V>
+                      </V>
+                    </U>
+                  </V>
+                </U>
+              </V>
+            </L>
+          </L>
+        </U>
+        <U>
+          <L n="potential_outcomes">
+            <U>
+              <U n="outcome">
+                <V t="enabled" n="animation_ref">
+                  <U n="enabled">
+                    <T n="factory">28358<!--AnimationElement: Socials_Responses_Excited_LowIntensity--></T>
+                  </U>
+                </V>
+                <L n="basic_extras">
+                  <V t="destroy_object">
+                    <U n="destroy_object">
+                      <V t="from_participant" n="objects_to_destroy">
+                        <U n="from_participant">
+                          <E n="participant">ObjectChildren</E>
+                        </U>
+                      </V>
+                      <V n="timing" t="at_beginning">
+                        <U n="at_beginning">
+                          <V t="enabled" n="offset_time" />
+                        </U>
+                      </V>
+                    </U>
+                  </V>
+                  <V t="create_object">
+                    <U n="create_object">
+                      <V n="creation_data" t="definition">
+                        <U n="definition">
+                          <T n="definition">178427</T>
+                        </U>
+                      </V>
+                      <V t="slot" n="location">
+                        <U n="slot">
+                          <V t="by_reference" n="parent_slot">
+                            <T n="by_reference">slot_archaeologyTable</T>
+                          </V>
+                        </U>
+                      </V>
+                      <E n="owner_sim">Actor</E>
+                    </U>
+                  </V>
+                </L>
+              </U>
+            </U>
+          </L>
+          <L n="tests">
+            <L>
+              <V t="slot_test">
+                <U n="slot_test">
+                  <V t="by_reference" n="child_slot">
+                    <T n="by_reference">slot_archaeologyTable</T>
+                  </V>
+                  <V n="slot_test_type" t="has_used_slot">
+                    <U n="has_used_slot">
+                      <V n="object_type" t="enabled">
+                        <V n="enabled" t="definition_id">
+                          <U n="definition_id">
+                            <T n="actual_object">28741</T>
+                          </U>
+                        </V>
+                      </V>
+                    </U>
+                  </V>
+                </U>
+              </V>
+            </L>
+          </L>
+        </U>
+        <U>
+          <L n="potential_outcomes">
+            <U>
+              <U n="outcome">
+                <V t="enabled" n="animation_ref">
+                  <U n="enabled">
+                    <T n="factory">28358<!--AnimationElement: Socials_Responses_Excited_LowIntensity--></T>
+                  </U>
+                </V>
+                <L n="basic_extras">
+                  <V t="destroy_object">
+                    <U n="destroy_object">
+                      <V t="from_participant" n="objects_to_destroy">
+                        <U n="from_participant">
+                          <E n="participant">ObjectChildren</E>
+                        </U>
+                      </V>
+                      <V n="timing" t="at_beginning">
+                        <U n="at_beginning">
+                          <V t="enabled" n="offset_time" />
+                        </U>
+                      </V>
+                    </U>
+                  </V>
+                  <V t="create_object">
+                    <U n="create_object">
+                      <V n="creation_data" t="definition">
+                        <U n="definition">
+                          <T n="definition">178428</T>
+                        </U>
+                      </V>
+                      <V t="slot" n="location">
+                        <U n="slot">
+                          <V t="by_reference" n="parent_slot">
+                            <T n="by_reference">slot_archaeologyTable</T>
+                          </V>
+                        </U>
+                      </V>
+                      <E n="owner_sim">Actor</E>
+                    </U>
+                  </V>
+                </L>
+              </U>
+            </U>
+          </L>
+          <L n="tests">
+            <L>
+              <V t="slot_test">
+                <U n="slot_test">
+                  <V t="by_reference" n="child_slot">
+                    <T n="by_reference">slot_archaeologyTable</T>
+                  </V>
+                  <V n="slot_test_type" t="has_used_slot">
+                    <U n="has_used_slot">
+                      <V n="object_type" t="enabled">
+                        <V n="enabled" t="definition_id">
+                          <U n="definition_id">
+                            <T n="actual_object">28731</T>
+                          </U>
+                        </V>
+                      </V>
+                    </U>
+                  </V>
+                </U>
+              </V>
+            </L>
+          </L>
+        </U>
+        <U>
+          <L n="potential_outcomes">
+            <U>
+              <U n="outcome">
+                <V t="enabled" n="animation_ref">
+                  <U n="enabled">
+                    <T n="factory">28358<!--AnimationElement: Socials_Responses_Excited_LowIntensity--></T>
+                  </U>
+                </V>
+                <L n="basic_extras">
+                  <V t="destroy_object">
+                    <U n="destroy_object">
+                      <V t="from_participant" n="objects_to_destroy">
+                        <U n="from_participant">
+                          <E n="participant">ObjectChildren</E>
+                        </U>
+                      </V>
+                      <V n="timing" t="at_beginning">
+                        <U n="at_beginning">
+                          <V t="enabled" n="offset_time" />
+                        </U>
+                      </V>
+                    </U>
+                  </V>
+                  <V t="create_object">
+                    <U n="create_object">
+                      <V n="creation_data" t="definition">
+                        <U n="definition">
+                          <T n="definition">178429</T>
+                        </U>
+                      </V>
+                      <V t="slot" n="location">
+                        <U n="slot">
+                          <V t="by_reference" n="parent_slot">
+                            <T n="by_reference">slot_archaeologyTable</T>
+                          </V>
+                        </U>
+                      </V>
+                      <E n="owner_sim">Actor</E>
+                    </U>
+                  </V>
+                </L>
+              </U>
+            </U>
+          </L>
+          <L n="tests">
+            <L>
+              <V t="slot_test">
+                <U n="slot_test">
+                  <V t="by_reference" n="child_slot">
+                    <T n="by_reference">slot_archaeologyTable</T>
+                  </V>
+                  <V n="slot_test_type" t="has_used_slot">
+                    <U n="has_used_slot">
+                      <V n="object_type" t="enabled">
+                        <V n="enabled" t="definition_id">
+                          <U n="definition_id">
+                            <T n="actual_object">72396</T>
+                          </U>
+                        </V>
+                      </V>
+                    </U>
+                  </V>
+                </U>
+              </V>
+              <V t="object_criteria">
+                <U n="object_criteria">
+                  <V n="identity_test" t="tags">
+                    <U n="tags">
+                      <L n="tag_set">
+                        <E>Func_EP1Collectible_BG</E>
+                      </L>
+                    </U>
+                  </V>
+                  <V t="single_object" n="subject_specific_tests">
+                    <U n="single_object">
+                      <E n="target">ObjectChildren</E>
+                    </U>
+                  </V>
+                </U>
+              </V>
+            </L>
+          </L>
+        </U>
+        <U>
+          <L n="potential_outcomes">
+            <U>
+              <U n="outcome">
+                <V t="enabled" n="animation_ref">
+                  <U n="enabled">
+                    <T n="factory">28358<!--AnimationElement: Socials_Responses_Excited_LowIntensity--></T>
+                  </U>
+                </V>
+                <L n="basic_extras">
+                  <V t="destroy_object">
+                    <U n="destroy_object">
+                      <V t="from_participant" n="objects_to_destroy">
+                        <U n="from_participant">
+                          <E n="participant">ObjectChildren</E>
+                        </U>
+                      </V>
+                      <V n="timing" t="at_beginning">
+                        <U n="at_beginning">
+                          <V t="enabled" n="offset_time" />
+                        </U>
+                      </V>
+                    </U>
+                  </V>
+                  <V t="create_object">
+                    <U n="create_object">
+                      <V n="creation_data" t="definition">
+                        <U n="definition">
+                          <T n="definition">178430</T>
+                        </U>
+                      </V>
+                      <V t="slot" n="location">
+                        <U n="slot">
+                          <V t="by_reference" n="parent_slot">
+                            <T n="by_reference">slot_archaeologyTable</T>
+                          </V>
+                        </U>
+                      </V>
+                      <E n="owner_sim">Actor</E>
+                    </U>
+                  </V>
+                </L>
+              </U>
+            </U>
+          </L>
+          <L n="tests">
+            <L>
+              <V t="slot_test">
+                <U n="slot_test">
+                  <V t="by_reference" n="child_slot">
+                    <T n="by_reference">slot_archaeologyTable</T>
+                  </V>
+                  <V n="slot_test_type" t="has_used_slot">
+                    <U n="has_used_slot">
+                      <V n="object_type" t="enabled">
+                        <V n="enabled" t="definition_id">
+                          <U n="definition_id">
+                            <T n="actual_object">28732</T>
+                          </U>
+                        </V>
+                      </V>
+                    </U>
+                  </V>
+                </U>
+              </V>
+            </L>
+          </L>
+        </U>
+        <U>
+          <L n="potential_outcomes">
+            <U>
+              <U n="outcome">
+                <V t="enabled" n="animation_ref">
+                  <U n="enabled">
+                    <T n="factory">28358<!--AnimationElement: Socials_Responses_Excited_LowIntensity--></T>
+                  </U>
+                </V>
+                <L n="basic_extras">
+                  <V t="destroy_object">
+                    <U n="destroy_object">
+                      <V t="from_participant" n="objects_to_destroy">
+                        <U n="from_participant">
+                          <E n="participant">ObjectChildren</E>
+                        </U>
+                      </V>
+                      <V n="timing" t="at_beginning">
+                        <U n="at_beginning">
+                          <V t="enabled" n="offset_time" />
+                        </U>
+                      </V>
+                    </U>
+                  </V>
+                  <V t="create_object">
+                    <U n="create_object">
+                      <V n="creation_data" t="definition">
+                        <U n="definition">
+                          <T n="definition">178431</T>
+                        </U>
+                      </V>
+                      <V t="slot" n="location">
+                        <U n="slot">
+                          <V t="by_reference" n="parent_slot">
+                            <T n="by_reference">slot_archaeologyTable</T>
+                          </V>
+                        </U>
+                      </V>
+                      <E n="owner_sim">Actor</E>
+                    </U>
+                  </V>
+                </L>
+              </U>
+            </U>
+          </L>
+          <L n="tests">
+            <L>
+              <V t="slot_test">
+                <U n="slot_test">
+                  <V t="by_reference" n="child_slot">
+                    <T n="by_reference">slot_archaeologyTable</T>
+                  </V>
+                  <V n="slot_test_type" t="has_used_slot">
+                    <U n="has_used_slot">
+                      <V n="object_type" t="enabled">
+                        <V n="enabled" t="definition_id">
+                          <U n="definition_id">
+                            <T n="actual_object">28733</T>
+                          </U>
+                        </V>
+                      </V>
+                    </U>
+                  </V>
+                </U>
+              </V>
+            </L>
+          </L>
+        </U>
+        <U>
+          <L n="potential_outcomes">
+            <U>
+              <U n="outcome">
+                <V t="enabled" n="animation_ref">
+                  <U n="enabled">
+                    <T n="factory">28358<!--AnimationElement: Socials_Responses_Excited_LowIntensity--></T>
+                  </U>
+                </V>
+                <L n="basic_extras">
+                  <V t="destroy_object">
+                    <U n="destroy_object">
+                      <V t="from_participant" n="objects_to_destroy">
+                        <U n="from_participant">
+                          <E n="participant">ObjectChildren</E>
+                        </U>
+                      </V>
+                      <V n="timing" t="at_beginning">
+                        <U n="at_beginning">
+                          <V t="enabled" n="offset_time" />
+                        </U>
+                      </V>
+                    </U>
+                  </V>
+                  <V t="create_object">
+                    <U n="create_object">
+                      <V n="creation_data" t="definition">
+                        <U n="definition">
+                          <T n="definition">178432</T>
+                        </U>
+                      </V>
+                      <V t="slot" n="location">
+                        <U n="slot">
+                          <V t="by_reference" n="parent_slot">
+                            <T n="by_reference">slot_archaeologyTable</T>
+                          </V>
+                        </U>
+                      </V>
+                      <E n="owner_sim">Actor</E>
+                    </U>
+                  </V>
+                </L>
+              </U>
+            </U>
+          </L>
+          <L n="tests">
+            <L>
+              <V t="slot_test">
+                <U n="slot_test">
+                  <V t="by_reference" n="child_slot">
+                    <T n="by_reference">slot_archaeologyTable</T>
+                  </V>
+                  <V n="slot_test_type" t="has_used_slot">
+                    <U n="has_used_slot">
+                      <V n="object_type" t="enabled">
+                        <V n="enabled" t="definition_id">
+                          <U n="definition_id">
+                            <T n="actual_object">28743</T>
+                          </U>
+                        </V>
+                      </V>
+                    </U>
+                  </V>
+                </U>
+              </V>
+            </L>
+          </L>
+        </U>
+        <U>
+          <L n="potential_outcomes">
+            <U>
+              <U n="outcome">
+                <V t="enabled" n="animation_ref">
+                  <U n="enabled">
+                    <T n="factory">28358<!--AnimationElement: Socials_Responses_Excited_LowIntensity--></T>
+                  </U>
+                </V>
+                <L n="basic_extras">
+                  <V t="destroy_object">
+                    <U n="destroy_object">
+                      <V t="from_participant" n="objects_to_destroy">
+                        <U n="from_participant">
+                          <E n="participant">ObjectChildren</E>
+                        </U>
+                      </V>
+                      <V n="timing" t="at_beginning">
+                        <U n="at_beginning">
+                          <V t="enabled" n="offset_time" />
+                        </U>
+                      </V>
+                    </U>
+                  </V>
+                  <V t="create_object">
+                    <U n="create_object">
+                      <V n="creation_data" t="definition">
+                        <U n="definition">
+                          <T n="definition">178433</T>
+                        </U>
+                      </V>
+                      <V t="slot" n="location">
+                        <U n="slot">
+                          <V t="by_reference" n="parent_slot">
+                            <T n="by_reference">slot_archaeologyTable</T>
+                          </V>
+                        </U>
+                      </V>
+                      <E n="owner_sim">Actor</E>
+                    </U>
+                  </V>
+                </L>
+              </U>
+            </U>
+          </L>
+          <L n="tests">
+            <L>
+              <V t="slot_test">
+                <U n="slot_test">
+                  <V t="by_reference" n="child_slot">
+                    <T n="by_reference">slot_archaeologyTable</T>
+                  </V>
+                  <V n="slot_test_type" t="has_used_slot">
+                    <U n="has_used_slot">
+                      <V n="object_type" t="enabled">
+                        <V n="enabled" t="definition_id">
+                          <U n="definition_id">
+                            <T n="actual_object">28744</T>
+                          </U>
+                        </V>
+                      </V>
+                    </U>
+                  </V>
+                </U>
+              </V>
+            </L>
+          </L>
+        </U>
+        <U>
+          <L n="potential_outcomes">
+            <U>
+              <U n="outcome">
+                <V t="enabled" n="animation_ref">
+                  <U n="enabled">
+                    <T n="factory">28358<!--AnimationElement: Socials_Responses_Excited_LowIntensity--></T>
+                  </U>
+                </V>
+                <L n="basic_extras">
+                  <V t="destroy_object">
+                    <U n="destroy_object">
+                      <V t="from_participant" n="objects_to_destroy">
+                        <U n="from_participant">
+                          <E n="participant">ObjectChildren</E>
+                        </U>
+                      </V>
+                      <V n="timing" t="at_beginning">
+                        <U n="at_beginning">
+                          <V t="enabled" n="offset_time" />
+                        </U>
+                      </V>
+                    </U>
+                  </V>
+                  <V t="create_object">
+                    <U n="create_object">
+                      <V n="creation_data" t="definition">
+                        <U n="definition">
+                          <T n="definition">178434</T>
+                        </U>
+                      </V>
+                      <V t="slot" n="location">
+                        <U n="slot">
+                          <V t="by_reference" n="parent_slot">
+                            <T n="by_reference">slot_archaeologyTable</T>
+                          </V>
+                        </U>
+                      </V>
+                      <E n="owner_sim">Actor</E>
+                    </U>
+                  </V>
+                </L>
+              </U>
+            </U>
+          </L>
+          <L n="tests">
+            <L>
+              <V t="slot_test">
+                <U n="slot_test">
+                  <V t="by_reference" n="child_slot">
+                    <T n="by_reference">slot_archaeologyTable</T>
+                  </V>
+                  <V n="slot_test_type" t="has_used_slot">
+                    <U n="has_used_slot">
+                      <V n="object_type" t="enabled">
+                        <V n="enabled" t="definition_id">
+                          <U n="definition_id">
+                            <T n="actual_object">28734</T>
+                          </U>
+                        </V>
+                      </V>
+                    </U>
+                  </V>
+                </U>
+              </V>
+            </L>
+          </L>
+        </U>
+        <U>
+          <L n="potential_outcomes">
+            <U>
+              <U n="outcome">
+                <V t="enabled" n="animation_ref">
+                  <U n="enabled">
+                    <T n="factory">28358<!--AnimationElement: Socials_Responses_Excited_LowIntensity--></T>
+                  </U>
+                </V>
+                <L n="basic_extras">
+                  <V t="destroy_object">
+                    <U n="destroy_object">
+                      <V t="from_participant" n="objects_to_destroy">
+                        <U n="from_participant">
+                          <E n="participant">ObjectChildren</E>
+                        </U>
+                      </V>
+                      <V n="timing" t="at_beginning">
+                        <U n="at_beginning">
+                          <V t="enabled" n="offset_time" />
+                        </U>
+                      </V>
+                    </U>
+                  </V>
+                  <V t="create_object">
+                    <U n="create_object">
+                      <V n="creation_data" t="definition">
+                        <U n="definition">
+                          <T n="definition">178435</T>
+                        </U>
+                      </V>
+                      <V t="slot" n="location">
+                        <U n="slot">
+                          <V t="by_reference" n="parent_slot">
+                            <T n="by_reference">slot_archaeologyTable</T>
+                          </V>
+                        </U>
+                      </V>
+                      <E n="owner_sim">Actor</E>
+                    </U>
+                  </V>
+                </L>
+              </U>
+            </U>
+          </L>
+          <L n="tests">
+            <L>
+              <V t="slot_test">
+                <U n="slot_test">
+                  <V t="by_reference" n="child_slot">
+                    <T n="by_reference">slot_archaeologyTable</T>
+                  </V>
+                  <V n="slot_test_type" t="has_used_slot">
+                    <U n="has_used_slot">
+                      <V n="object_type" t="enabled">
+                        <V n="enabled" t="definition_id">
+                          <U n="definition_id">
+                            <T n="actual_object">28747</T>
+                          </U>
+                        </V>
+                      </V>
+                    </U>
+                  </V>
+                </U>
+              </V>
+            </L>
+          </L>
+        </U>
+        <U>
+          <L n="potential_outcomes">
+            <U>
+              <U n="outcome">
+                <V t="enabled" n="animation_ref">
+                  <U n="enabled">
+                    <T n="factory">28358<!--AnimationElement: Socials_Responses_Excited_LowIntensity--></T>
+                  </U>
+                </V>
+                <L n="basic_extras">
+                  <V t="destroy_object">
+                    <U n="destroy_object">
+                      <V t="from_participant" n="objects_to_destroy">
+                        <U n="from_participant">
+                          <E n="participant">ObjectChildren</E>
+                        </U>
+                      </V>
+                      <V n="timing" t="at_beginning">
+                        <U n="at_beginning">
+                          <V t="enabled" n="offset_time" />
+                        </U>
+                      </V>
+                    </U>
+                  </V>
+                  <V t="create_object">
+                    <U n="create_object">
+                      <V n="creation_data" t="definition">
+                        <U n="definition">
+                          <T n="definition">178436</T>
+                        </U>
+                      </V>
+                      <V t="slot" n="location">
+                        <U n="slot">
+                          <V t="by_reference" n="parent_slot">
+                            <T n="by_reference">slot_archaeologyTable</T>
+                          </V>
+                        </U>
+                      </V>
+                      <E n="owner_sim">Actor</E>
+                    </U>
+                  </V>
+                </L>
+              </U>
+            </U>
+          </L>
+          <L n="tests">
+            <L>
+              <V t="slot_test">
+                <U n="slot_test">
+                  <V t="by_reference" n="child_slot">
+                    <T n="by_reference">slot_archaeologyTable</T>
+                  </V>
+                  <V n="slot_test_type" t="has_used_slot">
+                    <U n="has_used_slot">
+                      <V n="object_type" t="enabled">
+                        <V n="enabled" t="definition_id">
+                          <U n="definition_id">
+                            <T n="actual_object">28748</T>
+                          </U>
+                        </V>
+                      </V>
+                    </U>
+                  </V>
+                </U>
+              </V>
+            </L>
+          </L>
+        </U>
+        <U>
+          <L n="potential_outcomes">
+            <U>
+              <U n="outcome">
+                <V t="enabled" n="animation_ref">
+                  <U n="enabled">
+                    <T n="factory">28358<!--AnimationElement: Socials_Responses_Excited_LowIntensity--></T>
+                  </U>
+                </V>
+                <L n="basic_extras">
+                  <V t="destroy_object">
+                    <U n="destroy_object">
+                      <V t="from_participant" n="objects_to_destroy">
+                        <U n="from_participant">
+                          <E n="participant">ObjectChildren</E>
+                        </U>
+                      </V>
+                      <V n="timing" t="at_beginning">
+                        <U n="at_beginning">
+                          <V t="enabled" n="offset_time" />
+                        </U>
+                      </V>
+                    </U>
+                  </V>
+                  <V t="create_object">
+                    <U n="create_object">
+                      <V n="creation_data" t="definition">
+                        <U n="definition">
+                          <T n="definition">178438</T>
+                        </U>
+                      </V>
+                      <V t="slot" n="location">
+                        <U n="slot">
+                          <V t="by_reference" n="parent_slot">
+                            <T n="by_reference">slot_archaeologyTable</T>
+                          </V>
+                        </U>
+                      </V>
+                      <E n="owner_sim">Actor</E>
+                    </U>
+                  </V>
+                </L>
+              </U>
+            </U>
+          </L>
+          <L n="tests">
+            <L>
+              <V t="slot_test">
+                <U n="slot_test">
+                  <V t="by_reference" n="child_slot">
+                    <T n="by_reference">slot_archaeologyTable</T>
+                  </V>
+                  <V n="slot_test_type" t="has_used_slot">
+                    <U n="has_used_slot">
+                      <V n="object_type" t="enabled">
+                        <V n="enabled" t="definition_id">
+                          <U n="definition_id">
+                            <T n="actual_object">28735</T>
+                          </U>
+                        </V>
+                      </V>
+                    </U>
+                  </V>
+                </U>
+              </V>
+            </L>
+          </L>
+        </U>
+        <U>
+          <L n="potential_outcomes">
+            <U>
+              <U n="outcome">
+                <V t="enabled" n="animation_ref">
+                  <U n="enabled">
+                    <T n="factory">28358<!--AnimationElement: Socials_Responses_Excited_LowIntensity--></T>
+                  </U>
+                </V>
+                <L n="basic_extras">
+                  <V t="destroy_object">
+                    <U n="destroy_object">
+                      <V t="from_participant" n="objects_to_destroy">
+                        <U n="from_participant">
+                          <E n="participant">ObjectChildren</E>
+                        </U>
+                      </V>
+                      <V n="timing" t="at_beginning">
+                        <U n="at_beginning">
+                          <V t="enabled" n="offset_time" />
+                        </U>
+                      </V>
+                    </U>
+                  </V>
+                  <V t="create_object">
+                    <U n="create_object">
+                      <V n="creation_data" t="definition">
+                        <U n="definition">
+                          <T n="definition">178440</T>
+                        </U>
+                      </V>
+                      <V t="slot" n="location">
+                        <U n="slot">
+                          <V t="by_reference" n="parent_slot">
+                            <T n="by_reference">slot_archaeologyTable</T>
+                          </V>
+                        </U>
+                      </V>
+                      <E n="owner_sim">Actor</E>
+                    </U>
+                  </V>
+                </L>
+              </U>
+            </U>
+          </L>
+          <L n="tests">
+            <L>
+              <V t="slot_test">
+                <U n="slot_test">
+                  <V t="by_reference" n="child_slot">
+                    <T n="by_reference">slot_archaeologyTable</T>
+                  </V>
+                  <V n="slot_test_type" t="has_used_slot">
+                    <U n="has_used_slot">
+                      <V n="object_type" t="enabled">
+                        <V n="enabled" t="definition_id">
+                          <U n="definition_id">
+                            <T n="actual_object">28749</T>
+                          </U>
+                        </V>
+                      </V>
+                    </U>
+                  </V>
+                </U>
+              </V>
+            </L>
+          </L>
+        </U>
+        <U>
+          <L n="potential_outcomes">
+            <U>
+              <U n="outcome">
+                <V t="enabled" n="animation_ref">
+                  <U n="enabled">
+                    <T n="factory">28358<!--AnimationElement: Socials_Responses_Excited_LowIntensity--></T>
+                  </U>
+                </V>
+                <L n="basic_extras">
+                  <V t="destroy_object">
+                    <U n="destroy_object">
+                      <V t="from_participant" n="objects_to_destroy">
+                        <U n="from_participant">
+                          <E n="participant">ObjectChildren</E>
+                        </U>
+                      </V>
+                      <V n="timing" t="at_beginning">
+                        <U n="at_beginning">
+                          <V t="enabled" n="offset_time" />
+                        </U>
+                      </V>
+                    </U>
+                  </V>
+                  <V t="create_object">
+                    <U n="create_object">
+                      <V n="creation_data" t="definition">
+                        <U n="definition">
+                          <T n="definition">178441</T>
+                        </U>
+                      </V>
+                      <V t="slot" n="location">
+                        <U n="slot">
+                          <V t="by_reference" n="parent_slot">
+                            <T n="by_reference">slot_archaeologyTable</T>
+                          </V>
+                        </U>
+                      </V>
+                      <E n="owner_sim">Actor</E>
+                    </U>
+                  </V>
+                </L>
+              </U>
+            </U>
+          </L>
+          <L n="tests">
+            <L>
+              <V t="slot_test">
+                <U n="slot_test">
+                  <V t="by_reference" n="child_slot">
+                    <T n="by_reference">slot_archaeologyTable</T>
+                  </V>
+                  <V n="slot_test_type" t="has_used_slot">
+                    <U n="has_used_slot">
+                      <V n="object_type" t="enabled">
+                        <V n="enabled" t="definition_id">
+                          <U n="definition_id">
+                            <T n="actual_object">28736</T>
+                          </U>
+                        </V>
+                      </V>
+                    </U>
+                  </V>
+                </U>
+              </V>
+            </L>
+          </L>
+        </U>
+        <U>
+          <L n="potential_outcomes">
+            <U>
+              <U n="outcome">
+                <V t="enabled" n="animation_ref">
+                  <U n="enabled">
+                    <T n="factory">28358<!--AnimationElement: Socials_Responses_Excited_LowIntensity--></T>
+                  </U>
+                </V>
+                <L n="basic_extras">
+                  <V t="destroy_object">
+                    <U n="destroy_object">
+                      <V t="from_participant" n="objects_to_destroy">
+                        <U n="from_participant">
+                          <E n="participant">ObjectChildren</E>
+                        </U>
+                      </V>
+                      <V n="timing" t="at_beginning">
+                        <U n="at_beginning">
+                          <V t="enabled" n="offset_time" />
+                        </U>
+                      </V>
+                    </U>
+                  </V>
+                  <V t="create_object">
+                    <U n="create_object">
+                      <V n="creation_data" t="definition">
+                        <U n="definition">
+                          <T n="definition">178442</T>
+                        </U>
+                      </V>
+                      <V t="slot" n="location">
+                        <U n="slot">
+                          <V t="by_reference" n="parent_slot">
+                            <T n="by_reference">slot_archaeologyTable</T>
+                          </V>
+                        </U>
+                      </V>
+                      <E n="owner_sim">Actor</E>
+                    </U>
+                  </V>
+                </L>
+              </U>
+            </U>
+          </L>
+          <L n="tests">
+            <L>
+              <V t="slot_test">
+                <U n="slot_test">
+                  <V t="by_reference" n="child_slot">
+                    <T n="by_reference">slot_archaeologyTable</T>
+                  </V>
+                  <V n="slot_test_type" t="has_used_slot">
+                    <U n="has_used_slot">
+                      <V n="object_type" t="enabled">
+                        <V n="enabled" t="definition_id">
+                          <U n="definition_id">
+                            <T n="actual_object">28750</T>
+                          </U>
+                        </V>
+                      </V>
+                    </U>
+                  </V>
+                </U>
+              </V>
+            </L>
+          </L>
+        </U>
+      </L>
+    </U>
+  </V>
+  <U n="progress_bar_enabled">
+    <V n="force_listen_statistic" t="enabled">
+      <U n="enabled">
+        <T n="statistic">182768<!--Commodity: commodity_ArchaeologyTable_RefineCrystal--></T>
+        <E n="subject">Object</E>
+        <U n="target_value">
+          <T n="value">100</T>
+        </U>
+      </U>
+    </V>
+  </U>
+  <E n="scoring_priority">NORMAL</E>
+  <U n="skill_loot_data">
+    <T n="stat">174237<!--Skill: statistic_Skill_AdultMajor_Archaeology--></T>
+  </U>
+  <T n="subaction_selection_weight">1</T>
+  <E n="target_type">OBJECT</E>
+  <L n="test_globals">
+    <V t="sim_info">
+      <U n="sim_info">
+        <V t="specified" n="ages" />
+        <V t="specified" n="species">
+          <U n="specified">
+            <L n="species">
+              <E />
+            </L>
+          </U>
+        </V>
+        <E n="who">Actor</E>
+      </U>
+    </V>
+    <V t="slot_test">
+      <U n="slot_test">
+        <V t="by_reference" n="child_slot">
+          <T n="by_reference">slot_archaeologyTable</T>
+        </V>
+        <V n="slot_test_type" t="has_used_slot">
+          <U n="has_used_slot">
+            <V n="object_type" t="enabled">
+              <V n="enabled" t="object_tags">
+                <U n="object_tags">
+                  <L n="tag_set">
+                    <E>Func_Ingredient_Crystal</E>
+                  </L>
+                </U>
+              </V>
+            </V>
+          </U>
+        </V>
+      </U>
+    </V>
+  </L>
+  <T n="time_overhead">30</T>
+</I>

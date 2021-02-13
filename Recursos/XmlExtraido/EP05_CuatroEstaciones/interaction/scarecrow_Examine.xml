@@ -1,0 +1,418 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<I c="SuperInteraction" i="interaction" m="interactions.base.super_interaction" n="scarecrow_Examine" s="187933">
+  <T n="_add_actor_sim_as_listener">True</T>
+  <L n="_constraints">
+    <U>
+      <L n="constraints">
+        <U>
+          <V n="value" t="cone">
+            <U n="cone">
+              <T n="angle">30</T>
+              <T n="ideal_radius_max">1</T>
+              <T n="ideal_radius_min">0.5</T>
+              <T n="max_radius">1.5</T>
+              <T n="min_radius">0.5</T>
+            </U>
+          </V>
+        </U>
+      </L>
+    </U>
+    <U>
+      <L n="constraints">
+        <U>
+          <V n="value" t="facing">
+            <U n="facing">
+              <T n="inner_radius">0.1</T>
+              <T n="range">30</T>
+            </U>
+          </V>
+        </U>
+      </L>
+    </U>
+  </L>
+  <V t="enabled" n="_saveable" />
+  <T n="allow_autonomous">False</T>
+  <T n="attention_cost">0.5</T>
+  <V n="basic_content" t="flexible_length">
+    <U n="flexible_length">
+      <L n="conditional_actions">
+        <V t="literal">
+          <U n="literal">
+            <L n="conditions">
+              <V t="time_based">
+                <U n="time_based">
+                  <T n="max_time">15</T>
+                  <T n="min_time">10</T>
+                </U>
+              </V>
+            </L>
+            <E n="interaction_action">EXIT_NATURALLY</E>
+          </U>
+        </V>
+      </L>
+      <V n="content" t="looping_content">
+        <U n="looping_content">
+          <U n="animation_ref">
+            <T n="factory">188490<!--AnimationElement: Scarecrow_Interactions_Examine--></T>
+          </U>
+        </U>
+      </V>
+    </U>
+  </V>
+  <V t="disabled" n="basic_reserve_object" />
+  <V t="disabled" n="content_score" />
+  <T n="display_name">0x976BDE94<!--String: "Inspeccionar espantapájaros"--></T>
+  <U n="display_name_text_tokens">
+    <L n="tokens">
+      <V t="participant_type">
+        <U n="participant_type">
+          <V t="from_participant" n="objects">
+            <U n="from_participant">
+              <E n="participant">Actor</E>
+            </U>
+          </V>
+        </U>
+      </V>
+      <V t="participant_type">
+        <U n="participant_type">
+          <V t="from_participant" n="objects">
+            <U n="from_participant">
+              <E n="participant">Object</E>
+            </U>
+          </V>
+        </U>
+      </V>
+    </L>
+  </U>
+  <L n="interaction_category_tags">
+    <E>Interaction_Super</E>
+    <E>Interaction_All</E>
+  </L>
+  <V n="outcome" t="test_based">
+    <U n="test_based">
+      <L n="fallback_outcomes">
+        <U>
+          <U n="outcome">
+            <V n="animation_ref" t="enabled">
+              <U n="enabled">
+                <T n="factory">188492<!--AnimationElement: Scarecrow_Interactions_scarecrow_Move--></T>
+              </U>
+            </V>
+            <L n="loot_list">
+              <T>188479<!--LootActions: loot_Scarecrow_RelGain--></T>
+              <T>187995<!--LootActions: loot_Scarecrow_ReactNeg--></T>
+            </L>
+          </U>
+          <U n="weight">
+            <T n="base_value">2</T>
+            <L n="multipliers">
+              <U>
+                <T n="multiplier">0</T>
+                <L n="tests">
+                  <L>
+                    <V t="sim_info">
+                      <U n="sim_info">
+                        <V t="specified" n="ages">
+                          <L n="specified">
+                            <E>CHILD</E>
+                          </L>
+                        </V>
+                      </U>
+                    </V>
+                  </L>
+                </L>
+              </U>
+              <U>
+                <T n="multiplier">0</T>
+                <L n="tests">
+                  <L>
+                    <V t="object_relationship">
+                      <U n="object_relationship">
+                        <V n="relationship_status" t="relationship_range">
+                          <U n="relationship_range">
+                            <T n="use_default_value_if_no_relationship">True</T>
+                            <U n="value_interval">
+                              <T n="lower_bound">51</T>
+                              <T n="upper_bound">100</T>
+                            </U>
+                          </U>
+                        </V>
+                      </U>
+                    </V>
+                  </L>
+                </L>
+              </U>
+            </L>
+          </U>
+        </U>
+        <U>
+          <U n="outcome">
+            <V n="animation_ref" t="enabled">
+              <U n="enabled">
+                <T n="factory">188492<!--AnimationElement: Scarecrow_Interactions_scarecrow_Move--></T>
+                <U n="overrides">
+                  <V n="reactionlet" t="enabled">
+                    <U n="enabled">
+                      <V n="selector" t="single_ref">
+                        <U n="single_ref">
+                          <T n="factory">188774<!--AnimationElement: scarecrow_Reactionlets_Happy--></T>
+                        </U>
+                      </V>
+                    </U>
+                  </V>
+                </U>
+              </U>
+            </V>
+            <L n="loot_list">
+              <T>188479<!--LootActions: loot_Scarecrow_RelGain--></T>
+              <T>187996<!--LootActions: loot_Scarecrow_ReactPos--></T>
+            </L>
+          </U>
+          <U n="weight">
+            <T n="base_value">2</T>
+            <L n="multipliers">
+              <U>
+                <T n="multiplier">0</T>
+                <L n="tests">
+                  <L>
+                    <V t="sim_info">
+                      <U n="sim_info">
+                        <V t="specified" n="ages">
+                          <L n="specified">
+                            <E>CHILD</E>
+                          </L>
+                        </V>
+                      </U>
+                    </V>
+                  </L>
+                </L>
+              </U>
+              <U>
+                <T n="multiplier">0</T>
+                <L n="tests">
+                  <L>
+                    <V t="object_relationship">
+                      <U n="object_relationship">
+                        <V n="relationship_status" t="relationship_range">
+                          <U n="relationship_range">
+                            <T n="use_default_value_if_no_relationship">True</T>
+                            <U n="value_interval">
+                              <T n="lower_bound">0</T>
+                              <T n="upper_bound">50</T>
+                            </U>
+                          </U>
+                        </V>
+                      </U>
+                    </V>
+                  </L>
+                </L>
+              </U>
+            </L>
+          </U>
+        </U>
+        <U>
+          <U n="outcome">
+            <V n="animation_ref" t="enabled">
+              <U n="enabled">
+                <T n="factory">188491<!--AnimationElement: Scarecrow_Interactions_scarecrow_Lunge--></T>
+              </U>
+            </V>
+            <L n="loot_list">
+              <T>188479<!--LootActions: loot_Scarecrow_RelGain--></T>
+              <T>188792<!--LootActions: loot_Scarecrow_LungeReact--></T>
+            </L>
+          </U>
+          <U n="weight">
+            <T n="base_value">1</T>
+            <L n="multipliers">
+              <U>
+                <T n="multiplier">3</T>
+                <L n="tests">
+                  <L>
+                    <V t="sim_info">
+                      <U n="sim_info">
+                        <V t="specified" n="ages">
+                          <L n="specified">
+                            <E>CHILD</E>
+                          </L>
+                        </V>
+                      </U>
+                    </V>
+                  </L>
+                </L>
+              </U>
+            </L>
+          </U>
+        </U>
+        <U>
+          <U n="outcome">
+            <L n="loot_list">
+              <T>188479<!--LootActions: loot_Scarecrow_RelGain--></T>
+              <T>189330<!--LootActions: loot_Scarecrow_React_Focused--></T>
+            </L>
+          </U>
+          <U n="weight">
+            <T n="base_value">1</T>
+            <L n="multipliers">
+              <U>
+                <T n="multiplier">1</T>
+                <L n="tests">
+                  <L>
+                    <V t="object_relationship">
+                      <U n="object_relationship">
+                        <V n="relationship_status" t="relationship_range">
+                          <U n="relationship_range">
+                            <U n="value_interval">
+                              <T n="lower_bound">0</T>
+                              <T n="upper_bound">33</T>
+                            </U>
+                          </U>
+                        </V>
+                      </U>
+                    </V>
+                  </L>
+                </L>
+              </U>
+              <U>
+                <T n="multiplier">2</T>
+                <L n="tests">
+                  <L>
+                    <V t="object_relationship">
+                      <U n="object_relationship">
+                        <V n="relationship_status" t="relationship_range">
+                          <U n="relationship_range">
+                            <U n="value_interval">
+                              <T n="lower_bound">34</T>
+                              <T n="upper_bound">66</T>
+                            </U>
+                          </U>
+                        </V>
+                      </U>
+                    </V>
+                  </L>
+                </L>
+              </U>
+              <U>
+                <T n="multiplier">3</T>
+                <L n="tests">
+                  <L>
+                    <V t="object_relationship">
+                      <U n="object_relationship">
+                        <V n="relationship_status" t="relationship_range">
+                          <U n="relationship_range">
+                            <U n="value_interval">
+                              <T n="lower_bound">67</T>
+                              <T n="upper_bound">100</T>
+                            </U>
+                          </U>
+                        </V>
+                      </U>
+                    </V>
+                  </L>
+                </L>
+              </U>
+            </L>
+          </U>
+        </U>
+        <U>
+          <U n="outcome">
+            <L n="loot_list">
+              <T>188479<!--LootActions: loot_Scarecrow_RelGain--></T>
+            </L>
+          </U>
+          <U n="weight">
+            <T n="base_value">1</T>
+            <L n="multipliers">
+              <U>
+                <T n="multiplier">3</T>
+                <L n="tests">
+                  <L>
+                    <V t="object_relationship">
+                      <U n="object_relationship">
+                        <V n="relationship_status" t="relationship_range">
+                          <U n="relationship_range">
+                            <U n="value_interval">
+                              <T n="lower_bound">0</T>
+                              <T n="upper_bound">33</T>
+                            </U>
+                          </U>
+                        </V>
+                      </U>
+                    </V>
+                  </L>
+                </L>
+              </U>
+              <U>
+                <T n="multiplier">2</T>
+                <L n="tests">
+                  <L>
+                    <V t="object_relationship">
+                      <U n="object_relationship">
+                        <V n="relationship_status" t="relationship_range">
+                          <U n="relationship_range">
+                            <U n="value_interval">
+                              <T n="lower_bound">34</T>
+                              <T n="upper_bound">66</T>
+                            </U>
+                          </U>
+                        </V>
+                      </U>
+                    </V>
+                  </L>
+                </L>
+              </U>
+              <U>
+                <T n="multiplier">1</T>
+                <L n="tests">
+                  <L>
+                    <V t="object_relationship">
+                      <U n="object_relationship">
+                        <V n="relationship_status" t="relationship_range">
+                          <U n="relationship_range">
+                            <U n="value_interval">
+                              <T n="lower_bound">67</T>
+                              <T n="upper_bound">100</T>
+                            </U>
+                          </U>
+                        </V>
+                      </U>
+                    </V>
+                  </L>
+                </L>
+              </U>
+            </L>
+          </U>
+        </U>
+      </L>
+      <T n="use_fallback_as_default">True</T>
+    </U>
+  </V>
+  <E n="scoring_priority">NORMAL</E>
+  <T n="subaction_selection_weight">1</T>
+  <E n="target_type">OBJECT</E>
+  <L n="test_globals">
+    <V t="sim_info">
+      <U n="sim_info">
+        <V t="specified" n="ages">
+          <L n="specified">
+            <E>TEEN</E>
+            <E>YOUNGADULT</E>
+            <E>ADULT</E>
+            <E>ELDER</E>
+            <E>CHILD</E>
+          </L>
+        </V>
+        <V t="specified" n="species">
+          <U n="specified">
+            <L n="species">
+              <E />
+            </L>
+          </U>
+        </V>
+        <E n="who">Actor</E>
+      </U>
+    </V>
+  </L>
+  <T n="time_overhead">30</T>
+  <T n="visible">True</T>
+</I>

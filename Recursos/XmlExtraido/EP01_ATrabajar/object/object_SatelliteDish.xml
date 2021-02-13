@@ -1,0 +1,166 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<I c="GameObject" i="object" m="objects.game_object" n="object_SatelliteDish" s="107142">
+  <U n="_components">
+    <V t="enabled" n="focus">
+      <U n="enabled">
+        <V t="globally" n="_focus_score">
+          <U n="globally">
+            <E n="base">LOW</E>
+          </U>
+        </V>
+      </U>
+    </V>
+    <V t="enabled" n="inventory_item">
+      <U n="enabled">
+        <V n="no_carry_add_to_sim_inventory_affordances" t="OVERRIDE">
+          <L n="OVERRIDE">
+            <T>116433<!--SuperInteraction: si_SwipeIntoSimInventory_slottedItem_InventionConstructor--></T>
+          </L>
+        </V>
+        <T n="skip_carry_pose">True</T>
+        <L n="valid_inventory_types">
+          <E>SIM</E>
+          <E>STORAGE_CHEST_DORM</E>
+        </L>
+      </U>
+    </V>
+    <V t="enabled" n="retail_component">
+      <V n="enabled" t="reference">
+        <T n="reference">110393<!--RetailComponent: retailComponent_Default--></T>
+      </V>
+    </V>
+    <V n="state" t="enabled">
+      <U n="enabled">
+        <L n="state_triggers">
+          <U>
+            <L n="at_states">
+              <T>77532<!--CommodityBasedObjectStateValue: FireState_Burn_Material_Change_Replace--></T>
+            </L>
+            <V t="Set_state_list" n="set_states">
+              <L n="Set_state_list">
+                <T>39737<!--CommodityBasedObjectStateValue: FireState_Burn_Material_Change_Not_Burning--></T>
+              </L>
+            </V>
+          </U>
+        </L>
+        <L n="states">
+          <U>
+            <V t="reference" n="default_value">
+              <T n="reference">111993<!--CommodityBasedObjectStateValue: osv_InventionConstructorUpgrade_NotStarted--></T>
+            </V>
+          </U>
+          <U>
+            <L n="client_states">
+              <U>
+                <T n="key">39611<!--CommodityBasedObjectStateValue: FireState_Burn_Material_Change--></T>
+              </U>
+              <U>
+                <T n="key">39736<!--CommodityBasedObjectStateValue: FireState_Burn_Material_Change_Burning--></T>
+              </U>
+              <U>
+                <T n="key">39737<!--CommodityBasedObjectStateValue: FireState_Burn_Material_Change_Not_Burning--></T>
+              </U>
+              <U>
+                <T n="key">77532<!--CommodityBasedObjectStateValue: FireState_Burn_Material_Change_Replace--></T>
+              </U>
+            </L>
+            <V t="reference" n="default_value">
+              <T n="reference">39737<!--CommodityBasedObjectStateValue: FireState_Burn_Material_Change_Not_Burning--></T>
+            </V>
+          </U>
+          <U>
+            <L n="client_states">
+              <U>
+                <T n="key">115523<!--CommodityBasedObjectStateValue: satelliteDish_VFX_On--></T>
+              </U>
+              <U>
+                <T n="key">115524<!--CommodityBasedObjectStateValue: satelliteDish_VFX_Off--></T>
+              </U>
+            </L>
+            <V n="default_value" t="reference">
+              <T n="reference">115524<!--CommodityBasedObjectStateValue: satelliteDish_VFX_Off--></T>
+            </V>
+          </U>
+          <U>
+            <L n="client_states">
+              <U>
+                <T n="key">115906<!--CommodityBasedObjectStateValue: satelliteDish_DeflectVFX_On--></T>
+              </U>
+              <U>
+                <T n="key">115907<!--CommodityBasedObjectStateValue: satelliteDish_DeflectVFX_Off--></T>
+              </U>
+            </L>
+            <V n="default_value" t="reference">
+              <T n="reference">115907<!--CommodityBasedObjectStateValue: satelliteDish_DeflectVFX_Off--></T>
+            </V>
+          </U>
+          <U>
+            <L n="client_states">
+              <U>
+                <T n="key">116480<!--CommodityBasedObjectStateValue: satelliteDish_HiveMind_Values_Active--></T>
+              </U>
+              <U>
+                <T n="key">116481<!--CommodityBasedObjectStateValue: satelliteDish_HiveMind_Values_OnCoolDown--></T>
+              </U>
+            </L>
+            <V n="default_value" t="reference">
+              <T n="reference">116480<!--CommodityBasedObjectStateValue: satelliteDish_HiveMind_Values_Active--></T>
+            </V>
+            <V n="tested_states_on_add" t="enabled">
+              <U n="enabled">
+                <L n="tested_states">
+                  <U>
+                    <T n="state">116480<!--CommodityBasedObjectStateValue: satelliteDish_HiveMind_Values_Active--></T>
+                    <L n="tests">
+                      <L>
+                        <V t="location">
+                          <U n="location">
+                            <U n="location_tests">
+                              <V t="Is_or_is_not_on_active_lot" n="is_on_active_lot" />
+                            </U>
+                            <E n="subject">Object</E>
+                          </U>
+                        </V>
+                      </L>
+                    </L>
+                  </U>
+                </L>
+              </U>
+            </V>
+          </U>
+        </L>
+      </U>
+    </V>
+    <V t="enabled" n="tooltip_component" />
+  </U>
+  <L n="_super_affordances">
+    <T>13328<!--ImmediateSuperInteraction: debug_Reset--></T>
+    <T>13326<!--ImmediateSuperInteraction: debug_ObjectDestroy--></T>
+    <T>103888<!--ImmediateSuperInteraction: cheat_set_as_head--></T>
+    <T>102258<!--SuperInteraction: Ghost_Possess--></T>
+    <T>168502<!--SuperInteraction: Ghost_Pet_Possess--></T>
+    <T>74457<!--ImmediateSuperInteraction: fire_ReplaceBurntObject--></T>
+    <T>107157<!--SuperInteraction: si_Object_SatelliteDish_PreventAbduction--></T>
+    <T>107161<!--SuperInteraction: si_Object_SatelliteDish_ContactAliens--></T>
+    <T>114862<!--SuperInteraction: object_SatelliteDish_Hivemind_Angrytown--></T>
+    <T>108245<!--SuperInteraction: si_object_SatelliteDish_DetectAliens--></T>
+    <T>112002<!--SuperInteraction: si_Object_SatelliteDish_Upgrade--></T>
+    <T>114864<!--SuperInteraction: object_SatelliteDish_Hivemind_BladderEpidemic--></T>
+    <T>114860<!--SuperInteraction: object_SatelliteDish_Hivemind_DanceParty--></T>
+    <T>114863<!--SuperInteraction: object_SatelliteDish_Hivemind_Happytown--></T>
+    <T>114865<!--SuperInteraction: object_SatelliteDish_Hivemind_Knockout--></T>
+    <T>168615<!--SuperInteraction: satelliteDish_Upgrade_CompletedDisplay--></T>
+  </L>
+  <U n="recycling_data">
+    <L n="recycling_values">
+      <U>
+        <E n="Bucks Type">RecycleBitsBucks</E>
+        <T n="Value">0.5</T>
+      </U>
+      <U>
+        <E n="Bucks Type">RecyclePiecesBucks</E>
+        <T n="Value">0.5</T>
+      </U>
+    </L>
+  </U>
+</I>

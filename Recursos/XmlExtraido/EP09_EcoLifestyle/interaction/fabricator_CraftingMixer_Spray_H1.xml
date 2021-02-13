@@ -1,0 +1,230 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<I c="CraftingStepInteraction" i="interaction" m="crafting.crafting_interactions" n="fabricator_CraftingMixer_Spray_H1" s="225792">
+  <V t="participant" n="_icon">
+    <U n="participant">
+      <L n="participant_type">
+        <E>Object</E>
+      </L>
+    </U>
+  </V>
+  <V t="enabled" n="_interruptible">
+    <T n="enabled">False</T>
+  </V>
+  <T n="allow_user_directed">False</T>
+  <V n="basic_content" t="one_shot">
+    <U n="one_shot">
+      <U n="animation_ref">
+        <T n="factory">225741<!--AnimationElement: Fabricator_Spray_H1--></T>
+      </U>
+    </U>
+  </V>
+  <L n="basic_extras">
+    <V t="state_change">
+      <U n="state_change">
+        <V n="new_value" t="single_value">
+          <U n="single_value">
+            <T n="new_value">230441<!--ObjectStateValue: fabricator_Tool_Spray--></T>
+          </U>
+        </V>
+        <V t="immediately" n="timing" />
+      </U>
+    </V>
+    <V t="state_change">
+      <U n="state_change">
+        <V n="new_value" t="single_value">
+          <U n="single_value">
+            <T n="new_value">230440<!--ObjectStateValue: fabricator_Tool_Carve--></T>
+          </U>
+        </V>
+      </U>
+    </V>
+  </L>
+  <V t="do_not_change_focus" n="basic_focus" />
+  <U n="display_name_text_tokens">
+    <L n="tokens">
+      <V t="participant_type">
+        <U n="participant_type">
+          <V t="from_participant" n="objects">
+            <U n="from_participant">
+              <E n="participant">Actor</E>
+            </U>
+          </V>
+        </U>
+      </V>
+      <V t="participant_type">
+        <U n="participant_type">
+          <V t="from_participant" n="objects">
+            <U n="from_participant">
+              <E n="participant">Object</E>
+            </U>
+          </V>
+        </U>
+      </V>
+    </L>
+  </U>
+  <L n="interaction_category_tags">
+    <E>Interaction_Mixer</E>
+    <E>Interaction_All</E>
+  </L>
+  <V t="enabled" n="lock_out_time">
+    <U n="enabled">
+      <U n="interval">
+        <T n="lower_bound">3</T>
+        <T n="upper_bound">3</T>
+      </U>
+    </U>
+  </V>
+  <V t="enabled" n="lock_out_time_initial" />
+  <V n="outcome" t="test_based">
+    <U n="test_based">
+      <L n="tested_outcomes">
+        <U>
+          <L n="potential_outcomes">
+            <U>
+              <U n="outcome">
+                <V t="enabled" n="cancel_si" />
+                <L n="continuation">
+                  <U>
+                    <T n="affordance">239480<!--SuperInteraction: si_Fabricator_Fight_H1--></T>
+                  </U>
+                </L>
+              </U>
+              <U n="weight">
+                <T n="base_value">1</T>
+              </U>
+            </U>
+            <U>
+              <U n="weight">
+                <T n="base_value">9</T>
+              </U>
+            </U>
+            <U>
+              <U n="outcome">
+                <V t="enabled" n="animation_ref">
+                  <U n="enabled">
+                    <T n="factory">233279<!--AnimationElement: Fabricator_Fail_Explosion--></T>
+                  </U>
+                </V>
+                <V t="enabled" n="cancel_si" />
+                <L n="continuation">
+                  <U>
+                    <T n="affordance">239567<!--SuperInteraction: si_Fabricator_Scrap_Failure_instant--></T>
+                  </U>
+                </L>
+                <L n="loot_list">
+                  <T>233395<!--LootActions: loot_Buff_Skill_Fabrication_Explosion--></T>
+                </L>
+              </U>
+              <U n="weight">
+                <T n="base_value">1</T>
+              </U>
+            </U>
+          </L>
+          <L n="tests">
+            <L>
+              <V t="skill_test">
+                <U n="skill_test">
+                  <T n="skill">231908<!--Skill: statistic_Skill_AdultMajor_Fabrication--></T>
+                  <V t="interval" n="skill_range">
+                    <U n="interval">
+                      <U n="skill_interval">
+                        <T n="upper_bound">3</T>
+                      </U>
+                    </U>
+                  </V>
+                </U>
+              </V>
+              <V t="buff">
+                <U n="buff">
+                  <L n="blacklist">
+                    <T>233401<!--Buff: buff_Skill_Fabrication_Fight--></T>
+                    <T>233402<!--Buff: buff_Skill_Fabrication_Explosion--></T>
+                  </L>
+                </U>
+              </V>
+            </L>
+          </L>
+        </U>
+        <U>
+          <L n="potential_outcomes">
+            <U>
+              <U n="outcome">
+                <V t="disabled" n="animation_ref" />
+                <V t="enabled" n="cancel_si" />
+                <L n="continuation">
+                  <U>
+                    <T n="affordance">239480<!--SuperInteraction: si_Fabricator_Fight_H1--></T>
+                  </U>
+                </L>
+                <L n="loot_list">
+                  <T>233394<!--LootActions: loot_Buff_Skill_Fabrication_Fight--></T>
+                </L>
+              </U>
+              <U n="weight">
+                <T n="base_value">1</T>
+              </U>
+            </U>
+            <U>
+              <U n="weight">
+                <T n="base_value">18</T>
+              </U>
+            </U>
+            <U>
+              <U n="outcome">
+                <V t="enabled" n="animation_ref">
+                  <U n="enabled">
+                    <T n="factory">233279<!--AnimationElement: Fabricator_Fail_Explosion--></T>
+                  </U>
+                </V>
+                <V t="enabled" n="cancel_si" />
+                <L n="continuation">
+                  <U>
+                    <T n="affordance">239567<!--SuperInteraction: si_Fabricator_Scrap_Failure_instant--></T>
+                  </U>
+                </L>
+                <L n="loot_list">
+                  <T>233395<!--LootActions: loot_Buff_Skill_Fabrication_Explosion--></T>
+                </L>
+              </U>
+              <U n="weight">
+                <T n="base_value">1</T>
+              </U>
+            </U>
+          </L>
+          <L n="tests">
+            <L>
+              <V t="skill_test">
+                <U n="skill_test">
+                  <T n="skill">231908<!--Skill: statistic_Skill_AdultMajor_Fabrication--></T>
+                  <V t="interval" n="skill_range">
+                    <U n="interval">
+                      <U n="skill_interval">
+                        <T n="lower_bound">4</T>
+                        <T n="upper_bound">5</T>
+                      </U>
+                    </U>
+                  </V>
+                </U>
+              </V>
+              <V t="buff">
+                <U n="buff">
+                  <L n="blacklist">
+                    <T>233401<!--Buff: buff_Skill_Fabrication_Fight--></T>
+                    <T>233402<!--Buff: buff_Skill_Fabrication_Explosion--></T>
+                  </L>
+                </U>
+              </V>
+            </L>
+          </L>
+        </U>
+      </L>
+      <T n="use_fallback_as_default">True</T>
+    </U>
+  </V>
+  <U n="sub_action">
+    <T n="base_weight">1</T>
+  </U>
+  <E n="target_type">OBJECT</E>
+  <L n="test_globals" />
+  <T n="visible">False</T>
+</I>

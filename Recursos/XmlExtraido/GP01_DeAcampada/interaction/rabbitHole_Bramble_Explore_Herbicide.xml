@@ -1,0 +1,1045 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<I c="SuperInteraction" i="interaction" m="interactions.base.super_interaction" n="rabbitHole_Bramble_Explore_Herbicide" s="105599">
+  <V t="resource_key" n="_icon">
+    <U n="resource_key">
+      <T n="key" p="InGP01\UI\Icons\InteractionQueue\iconQueueExplore.png">2f7d0004:00000000:86198602f29b6948</T>
+    </U>
+  </V>
+  <V t="enabled" n="_saveable" />
+  <T n="allow_autonomous">False</T>
+  <T n="attention_cost">0.75</T>
+  <V t="flexible_length" n="basic_content">
+    <U n="flexible_length">
+      <L n="conditional_actions">
+        <V t="list_reference">
+          <T n="list_reference">40705<!--ExitConditionList: ExitConditionList_MotivesNearFail--></T>
+        </V>
+        <V t="literal">
+          <U n="literal">
+            <L n="conditions">
+              <V t="stat_based">
+                <U n="stat_based">
+                  <T n="stat">103097<!--Statistic: statistic_Object_RabbitHoleBramble_AdventureState--></T>
+                  <U n="threshold">
+                    <E n="comparison">LESS_OR_EQUAL</E>
+                    <T n="value">0</T>
+                  </U>
+                  <E n="who">Object</E>
+                </U>
+              </V>
+            </L>
+            <E n="interaction_action">EXIT_NATURALLY</E>
+          </U>
+        </V>
+        <V t="list_reference">
+          <T n="list_reference">40144<!--ExitConditionList: ExitConditionList_EmotionMiserable--></T>
+        </V>
+        <V t="list_reference">
+          <T n="list_reference">40702<!--ExitConditionList: ExitConditionList_EmotionStressed--></T>
+        </V>
+      </L>
+      <V t="looping_content" n="content">
+        <U n="looping_content">
+          <U n="animation_ref">
+            <T n="factory">102996<!--AnimationElement: PostureIdle_Bramble--></T>
+          </U>
+        </U>
+      </V>
+      <T n="start_autonomous_inertial">False</T>
+    </U>
+  </V>
+  <L n="basic_extras">
+    <V t="adventure">
+      <U n="adventure">
+        <L n="_adventure_moments">
+          <U>
+            <E n="key">RabbitHole_Bamble_Start_Herbicide</E>
+            <U n="value">
+              <V n="aventure_moment" t="literal">
+                <U n="literal">
+                  <L n="_finish_actions">
+                    <U>
+                      <L n="action_results">
+                        <U>
+                          <L n="loot_actions">
+                            <T>103186<!--LootActions: Loot_RabbitHoleBramble_AdventureHerbicide--></T>
+                            <T>252301<!--LootActions: loot_Adventurous_AdventuringGain_OneShot--></T>
+                          </L>
+                          <L n="next_moments">
+                            <E>RabbitHole_Bramble_Herbicide</E>
+                          </L>
+                        </U>
+                      </L>
+                      <V n="cost" t="item_cost">
+                        <U n="item_cost">
+                          <U n="item_cost">
+                            <L n="ingredients">
+                              <U>
+                                <T n="ingredient">68219</T>
+                              </U>
+                            </L>
+                          </U>
+                        </U>
+                      </V>
+                      <V n="display_text" t="single">
+                        <T n="single">0x3EDFDC6F<!--String: "Usar herbicida"--></T>
+                      </V>
+                    </U>
+                    <U>
+                      <L n="action_results">
+                        <U>
+                          <L n="next_moments">
+                            <E>RabbitHole_Bramble_Start</E>
+                          </L>
+                        </U>
+                      </L>
+                      <V n="display_text" t="single">
+                        <T n="single">0xFD5538DD<!--String: "No usar herbicida"--></T>
+                      </V>
+                    </U>
+                  </L>
+                  <V n="_visibility" t="show_dialog">
+                    <U n="show_dialog">
+                      <V t="enabled" n="icon">
+                        <V n="enabled" t="resource_key">
+                          <U n="resource_key">
+                            <T n="key" p="InGame\UI\Icons\Headlines\Final\headline_maptreasure.png">2f7d0004:00000000:b9d25ec85100e581</T>
+                          </U>
+                        </V>
+                      </V>
+                      <V n="text" t="single">
+                        <T n="single">0x42EBBB61<!--String: "Parece que {0.SimFirstName} tiene herbicida a mano. ¡Con eso podría despejar esta maraña de zarzas!"--></T>
+                      </V>
+                      <V t="enabled" n="text_tokens">
+                        <U n="enabled">
+                          <L n="tokens">
+                            <V t="participant_type" />
+                          </L>
+                        </U>
+                      </V>
+                      <V t="enabled" n="title">
+                        <T n="enabled">0x50B8B1D3<!--String: "Explorando las zarzas"--></T>
+                      </V>
+                    </U>
+                  </V>
+                </U>
+              </V>
+            </U>
+          </U>
+          <U>
+            <E n="key">RabbitHole_Bramble_1_Fail</E>
+            <U n="value">
+              <V n="aventure_moment" t="literal">
+                <U n="literal">
+                  <L n="_finish_actions">
+                    <U>
+                      <L n="action_results">
+                        <U>
+                          <L n="loot_actions">
+                            <T>103100<!--LootActions: Loot_RabbitHoleBramble_AdventureFail--></T>
+                            <T>107000<!--LootActions: loot_Buff_GotLost_BramblePatch--></T>
+                            <T>252301<!--LootActions: loot_Adventurous_AdventuringGain_OneShot--></T>
+                          </L>
+                        </U>
+                      </L>
+                      <V t="single" n="display_text">
+                        <T n="single">0xB96FA11A<!--String: "Aceptar"--></T>
+                      </V>
+                    </U>
+                  </L>
+                  <V n="_visibility" t="show_dialog">
+                    <U n="show_dialog">
+                      <V t="enabled" n="icon">
+                        <V n="enabled" t="resource_key">
+                          <U n="resource_key">
+                            <T n="key" p="InGame\UI\Icons\Headlines\Final\headline_maptreasure.png">2f7d0004:00000000:b9d25ec85100e581</T>
+                          </U>
+                        </V>
+                      </V>
+                      <V n="text" t="single">
+                        <T n="single">0x31033EF0<!--String: "Al decantarse por la opción cobarde, {0.SimFirstName} termina su exploración donde la empezó. Las zarzas no están más verdes en este lado."--></T>
+                      </V>
+                      <V t="enabled" n="text_tokens">
+                        <U n="enabled">
+                          <L n="tokens">
+                            <V t="participant_type" />
+                          </L>
+                        </U>
+                      </V>
+                      <V t="enabled" n="title">
+                        <T n="enabled">0x50B8B1D3<!--String: "Explorando las zarzas"--></T>
+                      </V>
+                    </U>
+                  </V>
+                </U>
+              </V>
+            </U>
+          </U>
+          <U>
+            <E n="key">RabbitHole_Bramble_1a_Success</E>
+            <U n="value">
+              <V n="aventure_moment" t="literal">
+                <U n="literal">
+                  <L n="_finish_actions">
+                    <U>
+                      <L n="action_results">
+                        <U>
+                          <L n="loot_actions">
+                            <T>252301<!--LootActions: loot_Adventurous_AdventuringGain_OneShot--></T>
+                          </L>
+                          <L n="next_moments">
+                            <E>RabbitHole_Bramble_2a_Fail</E>
+                          </L>
+                        </U>
+                      </L>
+                      <V n="display_text" t="single">
+                        <T n="single">0x865A1A3A<!--String: "Buscar una ruta alternativa"--></T>
+                      </V>
+                    </U>
+                    <U>
+                      <L n="action_results">
+                        <U>
+                          <L n="loot_actions">
+                            <T>252301<!--LootActions: loot_Adventurous_AdventuringGain_OneShot--></T>
+                          </L>
+                          <L n="next_moments">
+                            <E>RabbitHole_Bramble_2a_Success</E>
+                            <E>RabbitHole_Bramble_2b_Success</E>
+                          </L>
+                        </U>
+                      </L>
+                      <V n="display_text" t="single">
+                        <T n="single">0xB4D0C925<!--String: "Atravesar la telaraña"--></T>
+                      </V>
+                    </U>
+                  </L>
+                  <V n="_visibility" t="show_dialog">
+                    <U n="show_dialog">
+                      <V t="enabled" n="icon">
+                        <V n="enabled" t="resource_key">
+                          <U n="resource_key">
+                            <T n="key" p="InGame\UI\Icons\Headlines\Final\headline_maptreasure.png">2f7d0004:00000000:b9d25ec85100e581</T>
+                          </U>
+                        </V>
+                      </V>
+                      <V n="text" t="single">
+                        <T n="single">0xC390D5B4<!--String: "Tras varios minutos luchando por atravesar la maleza, una enorme telaraña bloquea el camino de {0.SimFirstName}, que preferiría que esta no viniese con araña incluida..."--></T>
+                      </V>
+                      <V t="enabled" n="text_tokens">
+                        <U n="enabled">
+                          <L n="tokens">
+                            <V t="participant_type" />
+                          </L>
+                        </U>
+                      </V>
+                      <V t="enabled" n="title">
+                        <T n="enabled">0x50B8B1D3<!--String: "Explorando las zarzas"--></T>
+                      </V>
+                    </U>
+                  </V>
+                </U>
+              </V>
+            </U>
+          </U>
+          <U>
+            <E n="key">RabbitHole_Bramble_1b_Success</E>
+            <U n="value">
+              <V n="aventure_moment" t="literal">
+                <U n="literal">
+                  <L n="_finish_actions">
+                    <U>
+                      <L n="action_results">
+                        <U>
+                          <L n="loot_actions">
+                            <T>252301<!--LootActions: loot_Adventurous_AdventuringGain_OneShot--></T>
+                          </L>
+                          <L n="next_moments">
+                            <E>RabbitHole_Bramble_2a_Success</E>
+                            <E>RabbitHole_Bramble_2b_Success</E>
+                          </L>
+                        </U>
+                      </L>
+                      <V n="display_text" t="single">
+                        <T n="single">0x5E9E2E13<!--String: "Seguir caminando"--></T>
+                      </V>
+                    </U>
+                    <U>
+                      <L n="action_results">
+                        <U>
+                          <L n="loot_actions">
+                            <T>252301<!--LootActions: loot_Adventurous_AdventuringGain_OneShot--></T>
+                          </L>
+                          <L n="next_moments">
+                            <E>RabbitHole_Bramble_2b_Fail</E>
+                          </L>
+                        </U>
+                      </L>
+                      <V n="display_text" t="single">
+                        <T n="single">0x2BE6D528<!--String: "Pescar"--></T>
+                      </V>
+                    </U>
+                  </L>
+                  <V n="_visibility" t="show_dialog">
+                    <U n="show_dialog">
+                      <V t="enabled" n="icon">
+                        <V n="enabled" t="resource_key">
+                          <U n="resource_key">
+                            <T n="key" p="InGame\UI\Icons\Headlines\Final\headline_maptreasure.png">2f7d0004:00000000:b9d25ec85100e581</T>
+                          </U>
+                        </V>
+                      </V>
+                      <V n="text" t="single">
+                        <T n="single">0x9FA8B18F<!--String: "Durante su intrépido avance con gran coraje por entre el follaje, {0.SimFirstName} se topa con un pequeño arroyo. ¿Debería pararse a pescar?"--></T>
+                      </V>
+                      <V t="enabled" n="text_tokens">
+                        <U n="enabled">
+                          <L n="tokens">
+                            <V t="participant_type" />
+                          </L>
+                        </U>
+                      </V>
+                      <V t="enabled" n="title">
+                        <T n="enabled">0x50B8B1D3<!--String: "Explorando las zarzas"--></T>
+                      </V>
+                    </U>
+                  </V>
+                </U>
+              </V>
+            </U>
+          </U>
+          <U>
+            <E n="key">RabbitHole_Bramble_2a_Fail</E>
+            <U n="value">
+              <V n="aventure_moment" t="literal">
+                <U n="literal">
+                  <L n="_finish_actions">
+                    <U>
+                      <L n="action_results">
+                        <U>
+                          <L n="loot_actions">
+                            <T>103100<!--LootActions: Loot_RabbitHoleBramble_AdventureFail--></T>
+                            <T>107013<!--LootActions: loot_Buff_BramblePatch_FireLeaf--></T>
+                            <T>252301<!--LootActions: loot_Adventurous_AdventuringGain_OneShot--></T>
+                          </L>
+                        </U>
+                      </L>
+                      <V t="single" n="display_text">
+                        <T n="single">0xB96FA11A<!--String: "Aceptar"--></T>
+                      </V>
+                    </U>
+                  </L>
+                  <V n="_visibility" t="show_dialog">
+                    <U n="show_dialog">
+                      <V t="enabled" n="icon">
+                        <V n="enabled" t="resource_key">
+                          <U n="resource_key">
+                            <T n="key" p="InGame\UI\Icons\Headlines\Final\headline_maptreasure.png">2f7d0004:00000000:b9d25ec85100e581</T>
+                          </U>
+                        </V>
+                      </V>
+                      <V n="text" t="single">
+                        <T n="single">0xE2C8802F<!--String: "Un miedo semirracional a las habilidosas arañas ha enviado a {0.SimFirstName} en busca de una ruta alternativa. ¡Naturalmente, esa ruta estaba cubierta de hoja de fuego a punto de caramelo!"--></T>
+                      </V>
+                      <V t="enabled" n="text_tokens">
+                        <U n="enabled">
+                          <L n="tokens">
+                            <V t="participant_type" />
+                          </L>
+                        </U>
+                      </V>
+                      <V t="enabled" n="title">
+                        <T n="enabled">0x50B8B1D3<!--String: "Explorando las zarzas"--></T>
+                      </V>
+                    </U>
+                  </V>
+                </U>
+              </V>
+            </U>
+          </U>
+          <U>
+            <E n="key">RabbitHole_Bramble_2a_Success</E>
+            <U n="value">
+              <V n="aventure_moment" t="literal">
+                <U n="literal">
+                  <L n="_finish_actions">
+                    <U>
+                      <L n="action_results">
+                        <U>
+                          <L n="loot_actions">
+                            <T>252301<!--LootActions: loot_Adventurous_AdventuringGain_OneShot--></T>
+                          </L>
+                          <L n="next_moments">
+                            <E>RabbitHole_Bramble_3a_Fail</E>
+                          </L>
+                          <L n="weight_modifiers">
+                            <U>
+                              <V t="buff" n="test">
+                                <U n="buff">
+                                  <V n="whitelist" t="enabled">
+                                    <L n="enabled">
+                                      <T>104543<!--Buff: buff_Object_HerbalistPotion_InsectRepellent--></T>
+                                    </L>
+                                  </V>
+                                </U>
+                              </V>
+                              <T n="weight_multiplier">0</T>
+                            </U>
+                          </L>
+                        </U>
+                        <U>
+                          <L n="loot_actions">
+                            <T>252301<!--LootActions: loot_Adventurous_AdventuringGain_OneShot--></T>
+                          </L>
+                          <L n="next_moments">
+                            <E>RabbitHole_Bramble_3a_Success</E>
+                          </L>
+                          <V n="notification" t="enabled">
+                            <V n="enabled" t="literal">
+                              <U n="literal">
+                                <V t="enabled" n="icon">
+                                  <V t="participant" n="enabled">
+                                    <U n="participant">
+                                      <L n="participant_type">
+                                        <E>Object</E>
+                                      </L>
+                                    </U>
+                                  </V>
+                                </V>
+                                <V n="text" t="single">
+                                  <T n="single">0xE558BD91<!--String: "Al despertarse {M0.fresco}{F0.fresca} como una lechuga, {0.SimFirstName} ve algo moviéndose por el suelo. ¡Una garrapata voraz! Esperemos que el próximo explorador que se eche aquí una siesta tenga también las luces de usar repelente de insectos."--></T>
+                                </V>
+                              </U>
+                            </V>
+                          </V>
+                          <L n="weight_modifiers">
+                            <U>
+                              <V t="buff" n="test">
+                                <U n="buff">
+                                  <V n="whitelist" t="enabled">
+                                    <L n="enabled">
+                                      <T>104543<!--Buff: buff_Object_HerbalistPotion_InsectRepellent--></T>
+                                    </L>
+                                  </V>
+                                </U>
+                              </V>
+                              <T n="weight_multiplier">1</T>
+                            </U>
+                          </L>
+                        </U>
+                      </L>
+                      <V n="display_text" t="single">
+                        <T n="single">0x5C7957E1<!--String: "Echarse una siesta"--></T>
+                      </V>
+                    </U>
+                    <U>
+                      <L n="action_results">
+                        <U>
+                          <L n="loot_actions">
+                            <T>252301<!--LootActions: loot_Adventurous_AdventuringGain_OneShot--></T>
+                          </L>
+                          <L n="next_moments">
+                            <E>RabbitHole_Bramble_3a_Success</E>
+                          </L>
+                        </U>
+                      </L>
+                      <V n="display_text" t="single">
+                        <T n="single">0x97FDBC2D<!--String: "Seguir adelante"--></T>
+                      </V>
+                    </U>
+                  </L>
+                  <V n="_visibility" t="show_dialog">
+                    <U n="show_dialog">
+                      <V t="enabled" n="icon">
+                        <V n="enabled" t="resource_key">
+                          <U n="resource_key">
+                            <T n="key" p="InGame\UI\Icons\Headlines\Final\headline_maptreasure.png">2f7d0004:00000000:b9d25ec85100e581</T>
+                          </U>
+                        </V>
+                      </V>
+                      <V n="text" t="single">
+                        <T n="single">0xEA648D01<!--String: "{0.SimFirstName} siente que está a punto de encontrar algo especial, algo que hará que todo esto haya valido la pena, pero se está cansando con rapidez. ¿Debería echarse una siesta rápida o seguir adelante?"--></T>
+                      </V>
+                      <V t="enabled" n="text_tokens">
+                        <U n="enabled">
+                          <L n="tokens">
+                            <V t="participant_type" />
+                          </L>
+                        </U>
+                      </V>
+                      <V t="enabled" n="title">
+                        <T n="enabled">0x50B8B1D3<!--String: "Explorando las zarzas"--></T>
+                      </V>
+                    </U>
+                  </V>
+                </U>
+              </V>
+            </U>
+          </U>
+          <U>
+            <E n="key">RabbitHole_Bramble_2b_Fail</E>
+            <U n="value">
+              <V n="aventure_moment" t="literal">
+                <U n="literal">
+                  <L n="_finish_actions">
+                    <U>
+                      <L n="action_results">
+                        <U>
+                          <L n="loot_actions">
+                            <T>103100<!--LootActions: Loot_RabbitHoleBramble_AdventureFail--></T>
+                            <T>107014<!--LootActions: loot_Buff_BramblePatch_MauledByBear--></T>
+                            <T>252301<!--LootActions: loot_Adventurous_AdventuringGain_OneShot--></T>
+                          </L>
+                        </U>
+                      </L>
+                      <V t="single" n="display_text">
+                        <T n="single">0xB96FA11A<!--String: "Aceptar"--></T>
+                      </V>
+                    </U>
+                  </L>
+                  <V n="_visibility" t="show_dialog">
+                    <U n="show_dialog">
+                      <V t="enabled" n="icon">
+                        <V n="enabled" t="resource_key">
+                          <U n="resource_key">
+                            <T n="key" p="InGame\UI\Icons\Headlines\Final\headline_maptreasure.png">2f7d0004:00000000:b9d25ec85100e581</T>
+                          </U>
+                        </V>
+                      </V>
+                      <V n="text" t="single">
+                        <T n="single">0x6AB3341D<!--String: "Mientras se encontraba con los pies en la cristalina agua del arroyo y la caña en la mano, {0.SimFirstName} se topó con uno de los entusiastas de la pesca más temibles de la naturaleza: ¡el oso pardo!"--></T>
+                      </V>
+                      <V t="enabled" n="text_tokens">
+                        <U n="enabled">
+                          <L n="tokens">
+                            <V t="participant_type" />
+                          </L>
+                        </U>
+                      </V>
+                      <V t="enabled" n="title">
+                        <T n="enabled">0x50B8B1D3<!--String: "Explorando las zarzas"--></T>
+                      </V>
+                    </U>
+                  </V>
+                </U>
+              </V>
+            </U>
+          </U>
+          <U>
+            <E n="key">RabbitHole_Bramble_2b_Success</E>
+            <U n="value">
+              <V n="aventure_moment" t="literal">
+                <U n="literal">
+                  <L n="_finish_actions">
+                    <U>
+                      <L n="action_results">
+                        <U>
+                          <L n="loot_actions">
+                            <T>252301<!--LootActions: loot_Adventurous_AdventuringGain_OneShot--></T>
+                          </L>
+                          <L n="next_moments">
+                            <E>RabbitHole_Bramble_3a_Success</E>
+                          </L>
+                        </U>
+                      </L>
+                      <V n="display_text" t="single">
+                        <T n="single">0xC7EDEE5F<!--String: "Ignorar el objeto"--></T>
+                      </V>
+                    </U>
+                    <U>
+                      <L n="action_results">
+                        <U>
+                          <L n="loot_actions">
+                            <T>252301<!--LootActions: loot_Adventurous_AdventuringGain_OneShot--></T>
+                          </L>
+                          <L n="next_moments">
+                            <E>RabbitHole_Bramble_3b_Fail</E>
+                          </L>
+                        </U>
+                      </L>
+                      <V n="display_text" t="single">
+                        <T n="single">0x9979B346<!--String: "Coger el objeto"--></T>
+                      </V>
+                    </U>
+                  </L>
+                  <V n="_visibility" t="show_dialog">
+                    <U n="show_dialog">
+                      <V t="enabled" n="icon">
+                        <V n="enabled" t="resource_key">
+                          <U n="resource_key">
+                            <T n="key" p="InGame\UI\Icons\Headlines\Final\headline_maptreasure.png">2f7d0004:00000000:b9d25ec85100e581</T>
+                          </U>
+                        </V>
+                      </V>
+                      <V n="text" t="single">
+                        <T n="single">0x5FAA8828<!--String: "{0.SimFirstName} atraviesa la maleza con buen ánimo, moviendo los brazos y entonando cantos, cuando un objeto reluciente atrae su atención. ¡Qué tentación!"--></T>
+                      </V>
+                      <V t="enabled" n="text_tokens">
+                        <U n="enabled">
+                          <L n="tokens">
+                            <V t="participant_type" />
+                          </L>
+                        </U>
+                      </V>
+                      <V t="enabled" n="title">
+                        <T n="enabled">0x50B8B1D3<!--String: "Explorando las zarzas"--></T>
+                      </V>
+                    </U>
+                  </V>
+                </U>
+              </V>
+            </U>
+          </U>
+          <U>
+            <E n="key">RabbitHole_Bramble_3a_Fail</E>
+            <U n="value">
+              <V n="aventure_moment" t="literal">
+                <U n="literal">
+                  <L n="_finish_actions">
+                    <U>
+                      <L n="action_results">
+                        <U>
+                          <L n="loot_actions">
+                            <T>107016<!--LootActions: loot_Buff_BramblePatch_Ticks--></T>
+                            <T>103100<!--LootActions: Loot_RabbitHoleBramble_AdventureFail--></T>
+                            <T>252301<!--LootActions: loot_Adventurous_AdventuringGain_OneShot--></T>
+                          </L>
+                        </U>
+                      </L>
+                      <V t="single" n="display_text">
+                        <T n="single">0xB96FA11A<!--String: "Aceptar"--></T>
+                      </V>
+                    </U>
+                  </L>
+                  <V n="_visibility" t="show_dialog">
+                    <U n="show_dialog">
+                      <V t="enabled" n="icon">
+                        <V n="enabled" t="resource_key">
+                          <U n="resource_key">
+                            <T n="key" p="InGame\UI\Icons\Headlines\Final\headline_maptreasure.png">2f7d0004:00000000:b9d25ec85100e581</T>
+                          </U>
+                        </V>
+                      </V>
+                      <V n="text" t="single">
+                        <T n="single">0xB73446D5<!--String: "¡Al despertarse de una pesadilla sobre un picor imposible de calmar, {0.SimFirstName} se da cuenta de que no era ningún sueño! Moraleja: conviene comprobar que no hay garrapatas cerca antes de irse a dormir."--></T>
+                      </V>
+                      <V t="enabled" n="text_tokens">
+                        <U n="enabled">
+                          <L n="tokens">
+                            <V t="participant_type" />
+                          </L>
+                        </U>
+                      </V>
+                      <V t="enabled" n="title">
+                        <T n="enabled">0x50B8B1D3<!--String: "Explorando las zarzas"--></T>
+                      </V>
+                    </U>
+                  </V>
+                </U>
+              </V>
+            </U>
+          </U>
+          <U>
+            <E n="key">RabbitHole_Bramble_3a_Success</E>
+            <U n="value">
+              <V n="aventure_moment" t="literal">
+                <U n="literal">
+                  <L n="_finish_actions">
+                    <U>
+                      <L n="action_results">
+                        <U>
+                          <L n="continuation">
+                            <U>
+                              <T n="affordance">103011<!--GoToSpecificLotTravelInteraction: go_To_Specific_Lot_DeepWoods--></T>
+                            </U>
+                          </L>
+                          <L n="loot_actions">
+                            <T>103098<!--LootActions: Loot_RabbitHoleBramble_AdventureEnd--></T>
+                            <T>252301<!--LootActions: loot_Adventurous_AdventuringGain_OneShot--></T>
+                          </L>
+                        </U>
+                      </L>
+                      <V n="display_text" t="single">
+                        <T n="single">0x2FBA1788<!--String: "Desplazarse hacia el Sim"--></T>
+                      </V>
+                    </U>
+                    <U>
+                      <L n="action_results">
+                        <U>
+                          <L n="loot_actions">
+                            <T>103098<!--LootActions: Loot_RabbitHoleBramble_AdventureEnd--></T>
+                            <T>252301<!--LootActions: loot_Adventurous_AdventuringGain_OneShot--></T>
+                          </L>
+                        </U>
+                      </L>
+                      <V n="display_text" t="single">
+                        <T n="single">0x239081D<!--String: "Irse del campo de zarzas"--></T>
+                      </V>
+                    </U>
+                  </L>
+                  <V n="_visibility" t="show_dialog">
+                    <U n="show_dialog">
+                      <V t="enabled" n="icon">
+                        <V n="enabled" t="resource_key">
+                          <U n="resource_key">
+                            <T n="key" p="InGame\UI\Icons\Headlines\Final\headline_maptreasure.png">2f7d0004:00000000:b9d25ec85100e581</T>
+                          </U>
+                        </V>
+                      </V>
+                      <V n="text" t="single">
+                        <T n="single">0xC6EFE8C2<!--String: "{0.SimFirstName} se ha abierto paso a través de la casi infranqueable vegetación y ha descubierto un valle sagrado en medio del bosque en el que hay un misterioso Sim..."--></T>
+                      </V>
+                      <V t="enabled" n="text_tokens">
+                        <U n="enabled">
+                          <L n="tokens">
+                            <V t="participant_type" />
+                          </L>
+                        </U>
+                      </V>
+                      <V t="enabled" n="title">
+                        <T n="enabled">0x50B8B1D3<!--String: "Explorando las zarzas"--></T>
+                      </V>
+                    </U>
+                  </V>
+                </U>
+              </V>
+            </U>
+          </U>
+          <U>
+            <E n="key">RabbitHole_Bramble_3b_Fail</E>
+            <U n="value">
+              <V n="aventure_moment" t="literal">
+                <U n="literal">
+                  <L n="_finish_actions">
+                    <U>
+                      <L n="action_results">
+                        <U>
+                          <L n="loot_actions">
+                            <T>103100<!--LootActions: Loot_RabbitHoleBramble_AdventureFail--></T>
+                            <T>107015<!--LootActions: loot_Buff_BramblePatch_FreakedOut--></T>
+                            <T>252301<!--LootActions: loot_Adventurous_AdventuringGain_OneShot--></T>
+                          </L>
+                        </U>
+                      </L>
+                      <V t="single" n="display_text">
+                        <T n="single">0xB96FA11A<!--String: "Aceptar"--></T>
+                      </V>
+                    </U>
+                  </L>
+                  <V n="_visibility" t="show_dialog">
+                    <U n="show_dialog">
+                      <V t="enabled" n="icon">
+                        <V n="enabled" t="resource_key">
+                          <U n="resource_key">
+                            <T n="key" p="InGame\UI\Icons\Headlines\Final\headline_maptreasure.png">2f7d0004:00000000:b9d25ec85100e581</T>
+                          </U>
+                        </V>
+                      </V>
+                      <V n="text" t="single">
+                        <T n="single">0x50102963<!--String: "Al extender la mano hacia el reluciente y suculento tesoro, {0.SimFirstName} ve parpadear más relucientes tesoros.... ¡Glup! ¡Lo que brillaba no era una joya, era un monstruo del bosque!"--></T>
+                      </V>
+                      <V t="enabled" n="text_tokens">
+                        <U n="enabled">
+                          <L n="tokens">
+                            <V t="participant_type" />
+                          </L>
+                        </U>
+                      </V>
+                      <V t="enabled" n="title">
+                        <T n="enabled">0x50B8B1D3<!--String: "Explorando las zarzas"--></T>
+                      </V>
+                    </U>
+                  </V>
+                </U>
+              </V>
+            </U>
+          </U>
+          <U>
+            <E n="key">RabbitHole_Bramble_Herbicide</E>
+            <U n="value">
+              <V n="aventure_moment" t="literal">
+                <U n="literal">
+                  <L n="_finish_actions">
+                    <U>
+                      <L n="action_results">
+                        <U>
+                          <L n="continuation">
+                            <U>
+                              <T n="affordance">103011<!--GoToSpecificLotTravelInteraction: go_To_Specific_Lot_DeepWoods--></T>
+                            </U>
+                          </L>
+                          <L n="loot_actions">
+                            <T>103098<!--LootActions: Loot_RabbitHoleBramble_AdventureEnd--></T>
+                            <T>252301<!--LootActions: loot_Adventurous_AdventuringGain_OneShot--></T>
+                          </L>
+                        </U>
+                      </L>
+                      <V n="display_text" t="single">
+                        <T n="single">0x693A2421<!--String: "Andar hacia el Sim"--></T>
+                      </V>
+                    </U>
+                    <U>
+                      <L n="action_results">
+                        <U>
+                          <L n="loot_actions">
+                            <T>103098<!--LootActions: Loot_RabbitHoleBramble_AdventureEnd--></T>
+                            <T>252301<!--LootActions: loot_Adventurous_AdventuringGain_OneShot--></T>
+                          </L>
+                        </U>
+                      </L>
+                      <V n="display_text" t="single">
+                        <T n="single">0x88B8725F<!--String: "Retroceder"--></T>
+                      </V>
+                    </U>
+                  </L>
+                  <V n="_visibility" t="show_dialog">
+                    <U n="show_dialog">
+                      <V t="enabled" n="icon">
+                        <V n="enabled" t="resource_key">
+                          <U n="resource_key">
+                            <T n="key" p="InGame\UI\Icons\Headlines\Final\headline_maptreasure.png">2f7d0004:00000000:b9d25ec85100e581</T>
+                          </U>
+                        </V>
+                      </V>
+                      <V n="text" t="single">
+                        <T n="single">0x8ED2F676<!--String: "El herbicida parece haber abierto un sendero, aunque las zarzas ya comienzan a crecer de nuevo. {0.SimFirstName} ve a un Sim con pinta de loco en la distancia."--></T>
+                      </V>
+                      <V t="enabled" n="text_tokens">
+                        <U n="enabled">
+                          <L n="tokens">
+                            <V t="participant_type" />
+                          </L>
+                        </U>
+                      </V>
+                      <V t="enabled" n="title">
+                        <T n="enabled">0x50B8B1D3<!--String: "Explorando las zarzas"--></T>
+                      </V>
+                    </U>
+                  </V>
+                </U>
+              </V>
+            </U>
+          </U>
+          <U>
+            <E n="key">RabbitHole_Bramble_Start</E>
+            <U n="value">
+              <V n="aventure_moment" t="literal">
+                <U n="literal">
+                  <L n="_finish_actions">
+                    <U>
+                      <L n="action_results">
+                        <U>
+                          <L n="loot_actions">
+                            <T>252301<!--LootActions: loot_Adventurous_AdventuringGain_OneShot--></T>
+                          </L>
+                          <L n="next_moments">
+                            <E>RabbitHole_Bramble_1a_Success</E>
+                            <E>RabbitHole_Bramble_1b_Success</E>
+                          </L>
+                        </U>
+                      </L>
+                      <V n="display_text" t="single">
+                        <T n="single">0xAF9CADEE<!--String: "Seguir adelante"--></T>
+                      </V>
+                    </U>
+                    <U>
+                      <L n="action_results">
+                        <U>
+                          <L n="loot_actions">
+                            <T>252301<!--LootActions: loot_Adventurous_AdventuringGain_OneShot--></T>
+                          </L>
+                          <L n="next_moments">
+                            <E>RabbitHole_Bramble_1_Fail</E>
+                          </L>
+                        </U>
+                      </L>
+                      <V n="display_text" t="single">
+                        <T n="single">0x1F834D14<!--String: "Retirarse de la aventura"--></T>
+                      </V>
+                    </U>
+                  </L>
+                  <V n="_visibility" t="show_dialog">
+                    <U n="show_dialog">
+                      <V t="enabled" n="icon">
+                        <V n="enabled" t="resource_key">
+                          <U n="resource_key">
+                            <T n="key" p="InGame\UI\Icons\Headlines\Final\headline_maptreasure.png">2f7d0004:00000000:b9d25ec85100e581</T>
+                          </U>
+                        </V>
+                      </V>
+                      <V n="text" t="single">
+                        <T n="single">0x2D386B29<!--String: "{M0.Rodeado}{F0.Rodeada} de espesura, espinas y peligro casi garantizado, a {0.SimFirstName} solo le resta una decisión: seguir adelante o retirarse de la aventura."--></T>
+                      </V>
+                      <V t="enabled" n="text_tokens">
+                        <U n="enabled">
+                          <L n="tokens">
+                            <V t="participant_type" />
+                          </L>
+                        </U>
+                      </V>
+                      <V t="enabled" n="title">
+                        <T n="enabled">0x50B8B1D3<!--String: "Explorando las zarzas"--></T>
+                      </V>
+                    </U>
+                  </V>
+                </U>
+              </V>
+            </U>
+          </U>
+        </L>
+        <L n="_initial_moments">
+          <U>
+            <E n="adventure_moment_key">RabbitHole_Bamble_Start_Herbicide</E>
+          </U>
+        </L>
+        <T n="_resumable">False</T>
+        <U n="_trigger_interval">
+          <T n="lower_bound">3</T>
+          <T n="upper_bound">6</T>
+        </U>
+        <V t="at_beginning" n="timing">
+          <U n="at_beginning">
+            <V t="enabled" n="offset_time">
+              <T n="enabled">5</T>
+            </V>
+          </U>
+        </V>
+      </U>
+    </V>
+  </L>
+  <V t="disabled" n="content_score" />
+  <T n="display_name">0xD54F2901<!--String: "Explorar"--></T>
+  <U n="display_name_text_tokens">
+    <L n="tokens">
+      <V t="participant_type">
+        <U n="participant_type">
+          <V t="from_participant" n="objects">
+            <U n="from_participant">
+              <E n="participant">Actor</E>
+            </U>
+          </V>
+        </U>
+      </V>
+      <V t="participant_type">
+        <U n="participant_type">
+          <V n="objects" t="from_participant">
+            <U n="from_participant">
+              <E n="participant">Object</E>
+            </U>
+          </V>
+        </U>
+      </V>
+    </L>
+  </U>
+  <L n="interaction_category_tags">
+    <E>Interaction_Super</E>
+    <E>Interaction_All</E>
+  </L>
+  <V t="test_based" n="outcome">
+    <U n="test_based">
+      <L n="fallback_outcomes">
+        <U>
+          <U n="outcome">
+            <L n="loot_list">
+              <T>103099<!--LootActions: Loot_RabbitHoleBramble_AdventureStart--></T>
+            </L>
+          </U>
+        </U>
+      </L>
+      <L n="tested_outcomes">
+        <U>
+          <L n="potential_outcomes">
+            <U>
+              <U n="outcome">
+                <L n="continuation">
+                  <U>
+                    <T n="affordance">110196<!--SuperInteraction: RabbitHole_Bramble_Explore_FailureExit--></T>
+                  </U>
+                </L>
+                <L n="loot_list">
+                  <T>103099<!--LootActions: Loot_RabbitHoleBramble_AdventureStart--></T>
+                </L>
+              </U>
+            </U>
+          </L>
+          <L n="tests">
+            <L>
+              <V t="buff">
+                <U n="buff">
+                  <V n="whitelist" t="enabled">
+                    <L n="enabled">
+                      <T>107011<!--Buff: buff_Object_BramblePatch_FreakedOut--></T>
+                      <T>107012<!--Buff: buff_Object_BramblePatch_MauledByBear--></T>
+                      <T>107010<!--Buff: buff_Object_BramblePatch_Ticks--></T>
+                      <T>75523<!--Buff: Buff_EmbarrassedGotLost--></T>
+                    </L>
+                  </V>
+                </U>
+              </V>
+            </L>
+          </L>
+        </U>
+      </L>
+    </U>
+  </V>
+  <E n="scoring_priority">NORMAL</E>
+  <T n="subaction_selection_weight">1</T>
+  <E n="target_type">OBJECT</E>
+  <L n="test_globals">
+    <V t="sim_info">
+      <U n="sim_info">
+        <V t="specified" n="ages">
+          <L n="specified">
+            <E>TEEN</E>
+            <E>YOUNGADULT</E>
+            <E>ADULT</E>
+            <E>ELDER</E>
+            <E>CHILD</E>
+          </L>
+        </V>
+        <V t="specified" n="species">
+          <U n="specified">
+            <L n="species">
+              <E />
+            </L>
+          </U>
+        </V>
+        <E n="who">Actor</E>
+      </U>
+    </V>
+    <V t="location">
+      <U n="location">
+        <U n="location_tests">
+          <V n="is_venue_type" t="enabled">
+            <U n="enabled">
+              <T n="negate">True</T>
+              <T n="venue_type">105591<!--Venue: venue_Hermit--></T>
+            </U>
+          </V>
+        </U>
+      </U>
+    </V>
+    <V t="state">
+      <U n="state">
+        <E n="operator">NOTEQUAL</E>
+        <T n="value">103166<!--CommodityBasedObjectStateValue: RabbitHole_Bramble_DirectTravel_Available--></T>
+      </U>
+    </V>
+    <V t="inventory">
+      <U n="inventory">
+        <V t="has_object_with_def" n="contents_check">
+          <U n="has_object_with_def">
+            <T n="definition">68219</T>
+          </U>
+        </V>
+      </U>
+    </V>
+    <V t="mood">
+      <U n="mood">
+        <T n="disallow">True</T>
+        <T n="mood">14646<!--Mood: Mood_Uncomfortable--></T>
+        <V t="disabled" n="tooltip" />
+      </U>
+    </V>
+  </L>
+  <T n="time_overhead">30</T>
+</I>

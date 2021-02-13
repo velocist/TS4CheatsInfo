@@ -1,0 +1,195 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<I c="SuperInteraction" i="interaction" m="interactions.base.super_interaction" n="si_infectedChemicalAnalyzer_ConvertExperimentalCure" s="207076">
+  <V t="enabled" n="_saveable" />
+  <T n="allow_autonomous">False</T>
+  <T n="attention_cost">0.5</T>
+  <V n="basic_content" t="flexible_length">
+    <U n="flexible_length">
+      <L n="conditional_actions">
+        <V t="literal">
+          <U n="literal">
+            <L n="conditions">
+              <V t="time_based">
+                <U n="time_based">
+                  <T n="max_time">25</T>
+                  <T n="min_time">20</T>
+                </U>
+              </V>
+            </L>
+            <E n="interaction_action">EXIT_NATURALLY</E>
+          </U>
+        </V>
+      </L>
+      <V t="staging_content" n="content">
+        <U n="staging_content">
+          <U n="content_set">
+            <L n="affordance_links">
+              <T>204171<!--MixerInteraction: mixer_InfectedChemicalAnalyzer_Analyze--></T>
+              <T>204170<!--MixerInteraction: mixer_InfectedChemicalAnalyzer_Breakdown--></T>
+            </L>
+          </U>
+        </U>
+      </V>
+      <V n="periodic_stat_change" t="enabled">
+        <U n="enabled">
+          <L n="operations">
+            <V t="dynamic_skill">
+              <U n="dynamic_skill">
+                <U n="skill_loot_data_override">
+                  <E n="effectiveness">StandardPeriodic</E>
+                  <T n="stat">16706<!--Skill: statistic_Skill_AdultMajor_Logic--></T>
+                </U>
+              </U>
+            </V>
+            <V t="statistic_change">
+              <U n="statistic_change">
+                <T n="amount">-0.01042</T>
+                <T n="stat">233027<!--Commodity: commodity_Utilities_Power--></T>
+                <L n="subject">
+                  <E>Lot</E>
+                </L>
+              </U>
+            </V>
+          </L>
+        </U>
+      </V>
+    </U>
+  </V>
+  <L n="basic_extras" />
+  <V t="enabled" n="canonical_animation">
+    <U n="enabled">
+      <T n="factory">204162<!--AnimationElement: InfectedChemicalAnalyzer_Analyze_Loop--></T>
+    </U>
+  </V>
+  <V t="disabled" n="content_score" />
+  <T n="display_name">0x7A10F3B5<!--String: "Convertir vacuna experimental"--></T>
+  <U n="display_name_text_tokens">
+    <L n="tokens">
+      <V t="participant_type">
+        <U n="participant_type">
+          <V n="objects" t="from_participant">
+            <U n="from_participant">
+              <E n="participant">Actor</E>
+            </U>
+          </V>
+        </U>
+      </V>
+      <V t="participant_type">
+        <U n="participant_type">
+          <V t="from_participant" n="objects">
+            <U n="from_participant">
+              <E n="participant">Object</E>
+            </U>
+          </V>
+        </U>
+      </V>
+    </L>
+  </U>
+  <V n="display_tooltip" t="enabled">
+    <T n="enabled">0x8AF65C87<!--String: "Convierte una <b>vacuna experimental</b> sin usar del inventario de tu Sim en una <b>vacuna para la infección</b>."--></T>
+  </V>
+  <L n="interaction_category_tags">
+    <E>Interaction_Super</E>
+    <E>Interaction_All</E>
+  </L>
+  <V n="outcome" t="single">
+    <U n="single">
+      <U n="actions">
+        <V t="enabled" n="animation_ref">
+          <U n="enabled">
+            <T n="factory">106766<!--AnimationElement: Generic_PickUp_StandOnly--></T>
+          </U>
+        </V>
+        <L n="basic_extras">
+          <V t="create_object">
+            <U n="create_object">
+              <V t="definition" n="creation_data">
+                <U n="definition">
+                  <T n="definition">212377</T>
+                </U>
+              </V>
+              <V t="inventory" n="location" />
+              <E n="owner_sim">Actor</E>
+            </U>
+          </V>
+          <V t="destroy_specified_objects_from_target_inventory">
+            <U n="destroy_specified_objects_from_target_inventory">
+              <V t="number" n="count" />
+              <E n="inventory_owner">Actor</E>
+              <L n="object_tests">
+                <L>
+                  <V t="object_criteria">
+                    <U n="object_criteria">
+                      <V n="identity_test" t="definition_id">
+                        <U n="definition_id">
+                          <T n="actual_object">209180</T>
+                        </U>
+                      </V>
+                      <V t="single_object" n="subject_specific_tests" />
+                    </U>
+                  </V>
+                </L>
+              </L>
+            </U>
+          </V>
+        </L>
+      </U>
+    </U>
+  </V>
+  <V t="enabled" n="pie_menu_icon">
+    <V n="enabled" t="resource_key">
+      <U n="resource_key">
+        <T n="key" p="InGP07\UI\Icons\PieMenu\Interactions\icon_piemenu_investigate.png">2f7d0004:00000000:aa10800c290b2564</T>
+      </U>
+    </V>
+  </V>
+  <E n="scoring_priority">NORMAL</E>
+  <T n="subaction_selection_weight">1</T>
+  <E n="target_type">OBJECT</E>
+  <L n="test_globals">
+    <V t="sim_info">
+      <U n="sim_info">
+        <V t="specified" n="ages" />
+        <V t="specified" n="species">
+          <U n="specified">
+            <L n="species">
+              <E />
+            </L>
+          </U>
+        </V>
+        <E n="who">Actor</E>
+      </U>
+    </V>
+    <V t="trait">
+      <U n="trait">
+        <L n="whitelist_traits">
+          <T>206105<!--Trait: trait_Strangerville_Hidden_HasSeenMotherPlant--></T>
+        </L>
+      </U>
+    </V>
+    <V t="inventory">
+      <U n="inventory">
+        <V t="has_object_with_def" n="contents_check">
+          <U n="has_object_with_def">
+            <T n="definition">209180</T>
+          </U>
+        </V>
+        <U n="required_count">
+          <T n="value">1</T>
+        </U>
+        <V t="disabled" n="tooltip" />
+      </U>
+    </V>
+    <V t="statistic">
+      <U n="statistic">
+        <T n="stat">204175<!--Statistic: statistic_InfectionCure_ExperimentalTracker--></T>
+        <V n="threshold" t="value_threshold">
+          <U n="value_threshold">
+            <T n="value">10</T>
+          </U>
+        </V>
+      </U>
+    </V>
+  </L>
+  <T n="time_overhead">30</T>
+</I>

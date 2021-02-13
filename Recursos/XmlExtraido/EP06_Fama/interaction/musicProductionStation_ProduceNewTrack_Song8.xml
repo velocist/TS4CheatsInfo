@@ -1,0 +1,410 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<I c="UseMusicProductionStationSuperInteraction" i="interaction" m="interactions.music_production_station_interactions" n="musicProductionStation_ProduceNewTrack_Song8" s="194123">
+  <V t="enabled" n="_saveable" />
+  <T n="allow_autonomous">False</T>
+  <T n="attention_cost">0.5</T>
+  <V t="flexible_length" n="basic_content">
+    <U n="flexible_length">
+      <L n="conditional_actions">
+        <V t="list_reference">
+          <T n="list_reference">40705<!--ExitConditionList: ExitConditionList_MotivesNearFail--></T>
+        </V>
+        <V t="list_reference">
+          <T n="list_reference">39200<!--ExitConditionList: ExitConditionList_StateBrokenObject--></T>
+        </V>
+        <V t="literal">
+          <U n="literal">
+            <L n="conditions">
+              <V t="state_based">
+                <U n="state_based">
+                  <V t="on_trigger" n="state">
+                    <T n="on_trigger">191966<!--ObjectStateValue: MusicProductionStation_AudioState_Off--></T>
+                  </V>
+                </U>
+              </V>
+            </L>
+            <E n="interaction_action">EXIT_NATURALLY</E>
+          </U>
+        </V>
+        <V t="list_reference">
+          <T n="list_reference">40144<!--ExitConditionList: ExitConditionList_EmotionMiserable--></T>
+        </V>
+        <V t="list_reference">
+          <T n="list_reference">40702<!--ExitConditionList: ExitConditionList_EmotionStressed--></T>
+        </V>
+      </L>
+      <V n="content" t="staging_content">
+        <U n="staging_content">
+          <U n="content_set">
+            <L n="affordance_links">
+              <T>194106<!--RemixTrackMixerInteraction: mixer_MusicProductionStation_Remix--></T>
+              <T>194110<!--MixerInteraction: mixer_MusicProductionStation_Idle--></T>
+              <T>194118<!--MixerInteraction: mixer_MusicProductionStation_HeadphoneIdles--></T>
+              <T>194119<!--MixerInteraction: mixer_MusicProductionStation_BurnTrack--></T>
+              <T>195195<!--MixerInteraction: mixer_MusicProductionStation_RemixIdle--></T>
+            </L>
+            <V n="balloon_overrides" t="enabled">
+              <L n="enabled">
+                <U>
+                  <L n="balloon_choices">
+                    <U>
+                      <V n="item" t="balloon_category">
+                        <T n="balloon_category">31108<!--BalloonCategory: balloonCategory_SetMusic_Thought--></T>
+                      </V>
+                    </U>
+                  </L>
+                  <L n="balloon_target">
+                    <E>Actor</E>
+                  </L>
+                </U>
+              </L>
+            </V>
+          </U>
+          <T n="only_use_mixers_from_SI">True</T>
+        </U>
+      </V>
+      <V n="periodic_stat_change" t="enabled">
+        <U n="enabled">
+          <U n="operation_actions">
+            <T n="alarm_interval">20</T>
+          </U>
+          <L n="operations">
+            <V t="statistic_change">
+              <U n="statistic_change">
+                <T n="amount">-0.01042</T>
+                <T n="stat">233027<!--Commodity: commodity_Utilities_Power--></T>
+                <L n="subject">
+                  <E>Lot</E>
+                </L>
+              </U>
+            </V>
+            <V t="dynamic_skill">
+              <U n="dynamic_skill">
+                <U n="skill_loot_data_override">
+                  <E n="effectiveness">SmallPeriodic</E>
+                  <T n="stat">192655<!--Skill: statistic_Skill_AdultMinor_MediaProduction--></T>
+                </U>
+              </U>
+            </V>
+          </L>
+        </U>
+      </V>
+    </U>
+  </V>
+  <L n="basic_extras">
+    <V t="state_change">
+      <U n="state_change">
+        <V n="new_value" t="single_value">
+          <U n="single_value">
+            <T n="new_value">74181<!--ObjectStateValue: CraftingEmotion_None--></T>
+          </U>
+        </V>
+        <V t="immediately" n="timing" />
+      </U>
+    </V>
+    <V t="state_change">
+      <U n="state_change">
+        <V t="single_value" n="new_value">
+          <U n="single_value">
+            <T n="new_value">195580<!--ObjectStateValue: musicProductionStation_AudioState_Create--></T>
+          </U>
+        </V>
+        <V t="immediately" n="timing" />
+      </U>
+    </V>
+    <V t="state_change">
+      <U n="state_change">
+        <V t="single_value" n="new_value">
+          <U n="single_value">
+            <T n="new_value">191966<!--ObjectStateValue: MusicProductionStation_AudioState_Off--></T>
+          </U>
+        </V>
+        <V t="at_end" n="timing">
+          <U n="at_end">
+            <E n="criticality">OnCancelOrException</E>
+          </U>
+        </V>
+      </U>
+    </V>
+    <V t="state_change">
+      <U n="state_change">
+        <V t="single_value" n="new_value">
+          <U n="single_value">
+            <T n="new_value">153260<!--ObjectStateValue: stereoOnOff_VFX_Music--></T>
+          </U>
+        </V>
+        <V t="immediately" n="timing" />
+      </U>
+    </V>
+    <V t="state_change">
+      <U n="state_change">
+        <V t="single_value" n="new_value">
+          <U n="single_value">
+            <T n="new_value">153299<!--ObjectStateValue: stereoOnOff_VFX_Off--></T>
+          </U>
+        </V>
+        <V t="at_end" n="timing">
+          <U n="at_end">
+            <E n="criticality">OnCancelOrException</E>
+          </U>
+        </V>
+      </U>
+    </V>
+    <V t="loot">
+      <U n="loot">
+        <L n="loot_list">
+          <T>199913<!--LootActions: loot_MusicProductionStation_Brokenness--></T>
+        </L>
+        <V t="at_end" n="timing">
+          <U n="at_end">
+            <E n="criticality">OnCancelOrException</E>
+          </U>
+        </V>
+      </U>
+    </V>
+  </L>
+  <V t="enabled" n="basic_reserve_object">
+    <U n="enabled">
+      <L n="subject_list">
+        <U>
+          <V t="basic" n="reserve_type" />
+          <L n="subject">
+            <E>Object</E>
+            <E>CarriedObject</E>
+            <E>CraftingObject</E>
+          </L>
+        </U>
+      </L>
+    </U>
+  </V>
+  <V t="enabled" n="canonical_animation">
+    <U n="enabled">
+      <T n="factory">194112<!--AnimationElement: musicProductionStation_Idle--></T>
+    </U>
+  </V>
+  <T n="category">194168<!--PieMenuCategory: pieMenuCategory_MusicProductionStation_ProduceNewTrack--></T>
+  <L n="channels">
+    <U>
+      <E n="key">CHANNEL1</E>
+      <U n="value">
+        <T n="channel_name">0x3D25B8C5<!--String: "Tema de base"--></T>
+      </U>
+    </U>
+    <U>
+      <E n="key">CHANNEL2</E>
+      <U n="value">
+        <T n="channel_name">0x4A1D79E1<!--String: "Explosión vocal"--></T>
+      </U>
+    </U>
+    <U>
+      <E n="key">CHANNEL3</E>
+      <U n="value">
+        <T n="channel_name">0x1827F74<!--String: "Saxo y voces de fondo"--></T>
+      </U>
+    </U>
+    <U>
+      <E n="key">CHANNEL4</E>
+      <U n="value">
+        <T n="channel_name">0x2B7A5A0D<!--String: "Tonos masculinos"--></T>
+      </U>
+    </U>
+    <U>
+      <E n="key">CHANNEL5</E>
+      <U n="value">
+        <T n="channel_name">0x363A7A55<!--String: "Caja de ritmos"--></T>
+        <L n="channel_tests">
+          <L>
+            <V t="skill_test">
+              <U n="skill_test">
+                <T n="skill">192655<!--Skill: statistic_Skill_AdultMinor_MediaProduction--></T>
+                <V t="threshold" n="skill_range">
+                  <U n="threshold">
+                    <U n="skill_threshold">
+                      <T n="value">2</T>
+                    </U>
+                  </U>
+                </V>
+              </U>
+            </V>
+          </L>
+        </L>
+      </U>
+    </U>
+    <U>
+      <E n="key">CHANNEL6</E>
+      <U n="value">
+        <T n="channel_name">0xC288636C<!--String: "Bucle raro"--></T>
+        <L n="channel_tests">
+          <L>
+            <V t="skill_test">
+              <U n="skill_test">
+                <T n="skill">192655<!--Skill: statistic_Skill_AdultMinor_MediaProduction--></T>
+                <V t="threshold" n="skill_range">
+                  <U n="threshold">
+                    <U n="skill_threshold">
+                      <T n="value">3</T>
+                    </U>
+                  </U>
+                </V>
+              </U>
+            </V>
+          </L>
+        </L>
+      </U>
+    </U>
+    <U>
+      <E n="key">CHANNEL7</E>
+      <U n="value">
+        <T n="channel_name">0xF0AB30E0<!--String: "Subgraves"--></T>
+        <L n="channel_tests">
+          <L>
+            <V t="skill_test">
+              <U n="skill_test">
+                <T n="skill">192655<!--Skill: statistic_Skill_AdultMinor_MediaProduction--></T>
+                <V n="skill_range" t="threshold">
+                  <U n="threshold">
+                    <U n="skill_threshold">
+                      <T n="value">4</T>
+                    </U>
+                  </U>
+                </V>
+              </U>
+            </V>
+          </L>
+        </L>
+      </U>
+    </U>
+    <U>
+      <E n="key">CHANNEL8</E>
+      <U n="value">
+        <T n="channel_name">0x1E97E08<!--String: "Voces principales"--></T>
+        <L n="channel_tests">
+          <L>
+            <V t="skill_test">
+              <U n="skill_test">
+                <T n="skill">192655<!--Skill: statistic_Skill_AdultMinor_MediaProduction--></T>
+                <V t="threshold" n="skill_range">
+                  <U n="threshold">
+                    <U n="skill_threshold">
+                      <T n="value">5</T>
+                    </U>
+                  </U>
+                </V>
+              </U>
+            </V>
+          </L>
+        </L>
+      </U>
+    </U>
+  </L>
+  <V t="disabled" n="content_score" />
+  <T n="display_name">0xEB7643EE<!--String: "Plonky Zombray"--></T>
+  <V t="enabled" n="display_name_in_queue">
+    <T n="enabled">0x9AFAB6C4<!--String: "Producir tema nuevo"--></T>
+  </V>
+  <U n="display_name_text_tokens">
+    <L n="tokens">
+      <V t="participant_type">
+        <U n="participant_type">
+          <V t="from_participant" n="objects">
+            <U n="from_participant">
+              <E n="participant">Actor</E>
+            </U>
+          </V>
+        </U>
+      </V>
+      <V t="participant_type">
+        <U n="participant_type">
+          <V t="from_participant" n="objects">
+            <U n="from_participant">
+              <E n="participant">Object</E>
+            </U>
+          </V>
+        </U>
+      </V>
+    </L>
+  </U>
+  <V t="enabled" n="idle_animation">
+    <U n="enabled">
+      <T n="factory">194112<!--AnimationElement: musicProductionStation_Idle--></T>
+    </U>
+  </V>
+  <L n="interaction_category_tags">
+    <E>Interaction_Super</E>
+    <E>Interaction_All</E>
+    <E>Interaction_Skill_MediaProduction</E>
+  </L>
+  <V n="music_track_data_snippet" t="reference">
+    <T n="reference">197512<!--MusicTrackData: musicTrackData_MusicProductionStation_Song8--></T>
+  </V>
+  <V t="enabled" n="pie_menu_icon">
+    <V n="enabled" t="resource_key">
+      <U n="resource_key">
+        <T n="key" p="InEP06\UI\Icons\Skills\Skill_MediaProduction.png">2f7d0004:00000000:e73c22d1671998b0</T>
+      </U>
+    </V>
+  </V>
+  <E n="scoring_priority">NORMAL</E>
+  <T n="subaction_selection_weight">1</T>
+  <V t="literal" n="super_affordance_compatibility">
+    <U n="literal">
+      <V n="default_inclusion" t="exclude_all" />
+    </U>
+  </V>
+  <E n="target_type">OBJECT</E>
+  <L n="test_globals">
+    <V t="sim_info">
+      <U n="sim_info">
+        <V t="specified" n="ages">
+          <L n="specified">
+            <E>TEEN</E>
+            <E>YOUNGADULT</E>
+            <E>ADULT</E>
+            <E>ELDER</E>
+          </L>
+        </V>
+        <V t="specified" n="species">
+          <U n="specified">
+            <L n="species">
+              <E />
+            </L>
+          </U>
+        </V>
+        <E n="who">Actor</E>
+      </U>
+    </V>
+    <V t="test_set_reference">
+      <T n="test_set_reference">77630<!--TestSetInstance: testSet_StateNotBroken--></T>
+    </V>
+    <V t="skill_test">
+      <U n="skill_test">
+        <T n="skill">192655<!--Skill: statistic_Skill_AdultMinor_MediaProduction--></T>
+        <V t="threshold" n="skill_range">
+          <U n="threshold">
+            <U n="skill_threshold">
+              <T n="value">5</T>
+            </U>
+          </U>
+        </V>
+      </U>
+    </V>
+    <V t="test_set_reference">
+      <T n="test_set_reference">28305<!--TestSetInstance: testSet_EmotionNotMiserable--></T>
+    </V>
+    <V t="test_set_reference">
+      <T n="test_set_reference">28176<!--TestSetInstance: testSet_EmotionNotStressed--></T>
+    </V>
+  </L>
+  <T n="time_overhead">30</T>
+  <T n="turn_off_channel_display_name">0x1E3E6B7C<!--String: "{0.String} está encendido."--></T>
+  <T p="InGame\UI\Icons\PieMenu\Interactions\icon_pieMenu_OnState.png" n="turn_off_channel_icon">2f7d0004:00000000:e8abb0cbe84020bf</T>
+  <T n="turn_on_channel_display_name">0x2B58A938<!--String: "{0.String} está apagado."--></T>
+  <T p="InGame\UI\Icons\PieMenu\Interactions\icon_pieMenu_OffState.png" n="turn_on_channel_icon">2f7d0004:00000000:525d8f4b2021683d</T>
+  <V t="enabled" n="utility_info">
+    <L n="enabled">
+      <U>
+        <E n="key">POWER</E>
+      </U>
+    </L>
+  </V>
+</I>

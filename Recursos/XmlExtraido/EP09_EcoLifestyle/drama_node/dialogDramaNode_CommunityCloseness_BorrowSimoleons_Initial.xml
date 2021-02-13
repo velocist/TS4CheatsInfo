@@ -1,0 +1,119 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<I c="DialogDramaNode" i="drama_node" m="drama_scheduler.dialog_drama_node" n="dialogDramaNode_CommunityCloseness_BorrowSimoleons_Initial" s="231583">
+  <T n="allow_during_work_hours">False</T>
+  <V t="node_cooldown" n="cooldown_data">
+    <U n="node_cooldown">
+      <V n="duration" t="permanent" />
+    </U>
+  </V>
+  <V n="dialog_and_loot" t="dialog_multi_response">
+    <U n="dialog_multi_response">
+      <U n="dialog">
+        <E n="phone_ring_type">RING</E>
+        <V n="text" t="single">
+          <T n="single">0x9263EC02<!--String: "¡Eh, oye, figura! Te cuento: tengo una idea buenísima para un negocio. Va a ser la <b>bomba</b>. Pero la cosa es que, em..., necesito unos cuantos simoleones más para ponerla en marcha. Mil, más o menos. ¿Le echarías un cable a tu camarada? Te lo devolveré con creces, palabrita."--></T>
+        </V>
+      </U>
+      <L n="possible_responses">
+        <U>
+          <U n="item">
+            <L n="loot">
+              <T>231620<!--LootActions: loot_DramaNode_CommunityCloseness_BorrowSimoleons_GiveSimoleons--></T>
+            </L>
+            <T n="text">0x802D8056<!--String: "Darle a {1.SimFirstName} mil simoleones."--></T>
+          </U>
+          <L n="test">
+            <L>
+              <V t="simoleon_value">
+                <U n="simoleon_value">
+                  <U n="value_threshold">
+                    <T n="value">1000</T>
+                  </U>
+                </U>
+              </V>
+            </L>
+          </L>
+        </U>
+        <U>
+          <U n="item">
+            <L n="loot">
+              <T>231649<!--LootActions: loot_DramaNode_CommunityCloseness_BorrowSimoleons_NotRightNow--></T>
+            </L>
+            <T n="text">0x86DB7A7E<!--String: "Lo siento, ahora mismo no puedo permitírmelo."--></T>
+          </U>
+        </U>
+      </L>
+    </U>
+  </V>
+  <U n="min_and_max_times">
+    <T n="lower_bound">1</T>
+    <T n="upper_bound">72</T>
+  </U>
+  <L n="receiver_sim_pretests">
+    <L>
+      <V t="sim_info">
+        <U n="sim_info">
+          <V t="specified" n="ages">
+            <L n="specified">
+              <E>TEEN</E>
+              <E>YOUNGADULT</E>
+              <E>ADULT</E>
+              <E>ELDER</E>
+              <E>CHILD</E>
+            </L>
+          </V>
+          <V t="specified" n="species">
+            <U n="specified">
+              <L n="species">
+                <E>HUMAN</E>
+              </L>
+            </U>
+          </V>
+        </U>
+      </V>
+    </L>
+  </L>
+  <L n="run_tests">
+    <L>
+      <V t="buff">
+        <U n="buff">
+          <L n="blacklist">
+            <T>10094<!--Buff: buff_Sim_IsSleeping--></T>
+          </L>
+        </U>
+      </V>
+    </L>
+  </L>
+  <V t="enabled" n="scoring">
+    <U n="enabled">
+      <T n="base_score">100</T>
+      <E n="bucket">CommunityClosenessCalls</E>
+    </U>
+  </V>
+  <V n="sender_sim_info" t="sim_filter">
+    <U n="sim_filter">
+      <T n="sim_filter">234661<!--TunableSimFilter: dramaNodeFilters_CommunityCloseness_BorrowedSimoleons_Initial--></T>
+    </U>
+  </V>
+  <V t="schedule" n="time_option">
+    <U n="schedule">
+      <L n="valid_times">
+        <U>
+          <U n="days_available">
+            <T n="0 SUNDAY">True</T>
+            <T n="1 MONDAY">True</T>
+            <T n="2 TUESDAY">True</T>
+            <T n="3 WEDNESDAY">True</T>
+            <T n="4 THURSDAY">True</T>
+            <T n="5 FRIDAY">True</T>
+            <T n="6 SATURDAY">True</T>
+          </U>
+          <T n="duration">8</T>
+          <U n="start_time">
+            <T n="hour">12</T>
+          </U>
+        </U>
+      </L>
+    </U>
+  </V>
+</I>

@@ -1,0 +1,184 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<I c="MixerInteraction" i="interaction" m="interactions.base.mixer_interaction" n="mixer_Karaoke_Solo_MicAccent_2" s="142518">
+  <T n="allow_user_directed">False</T>
+  <V n="basic_content" t="one_shot">
+    <U n="one_shot">
+      <U n="animation_ref">
+        <T n="factory">142515<!--AnimationElement: karaokeMachine_Solo_micAccent_2--></T>
+      </U>
+    </U>
+  </V>
+  <L n="basic_extras">
+    <V t="loot">
+      <U n="loot">
+        <L n="loot_list">
+          <T>11086<!--LootActions: StatChange_Turns_01_Object--></T>
+        </L>
+      </U>
+    </V>
+    <V t="broadcaster">
+      <U n="broadcaster">
+        <L n="broadcaster_types">
+          <U>
+            <T n="item">137653<!--Broadcaster: broadcaster_KaraokeMachine_Cheer--></T>
+            <T n="stop_processing">True</T>
+            <L n="test">
+              <L>
+                <V t="skill_test">
+                  <U n="skill_test">
+                    <T n="skill">137811<!--Skill: statistic_Skill_AdultMajor_Singing--></T>
+                    <V t="threshold" n="skill_range">
+                      <U n="threshold">
+                        <U n="skill_threshold">
+                          <T n="value">4</T>
+                        </U>
+                      </U>
+                    </V>
+                  </U>
+                </V>
+              </L>
+            </L>
+          </U>
+          <U>
+            <T n="item">137715<!--Broadcaster: broadcaster_KaraokeMachine_Heckle--></T>
+          </U>
+        </L>
+      </U>
+    </V>
+  </L>
+  <V t="disable_focus" n="basic_focus" />
+  <U n="display_name_text_tokens">
+    <L n="tokens">
+      <V t="participant_type">
+        <U n="participant_type">
+          <V t="from_participant" n="objects">
+            <U n="from_participant">
+              <E n="participant">Actor</E>
+            </U>
+          </V>
+        </U>
+      </V>
+      <V t="participant_type">
+        <U n="participant_type">
+          <V t="from_participant" n="objects">
+            <U n="from_participant">
+              <E n="participant">Object</E>
+            </U>
+          </V>
+        </U>
+      </V>
+    </L>
+  </U>
+  <L n="interaction_category_tags">
+    <E>Interaction_Mixer</E>
+    <E>Interaction_All</E>
+  </L>
+  <V t="test_based" n="outcome">
+    <U n="test_based">
+      <L n="fallback_outcomes">
+        <U>
+          <U n="outcome">
+            <L n="loot_list">
+              <T>137624<!--LootActions: loot_KaraokeMachine_Score_Low--></T>
+            </L>
+          </U>
+          <U n="weight">
+            <T n="base_value">1</T>
+            <L n="multipliers">
+              <U>
+                <T n="multiplier">2</T>
+                <L n="tests">
+                  <L>
+                    <V t="skill_test">
+                      <U n="skill_test">
+                        <T n="skill">137811<!--Skill: statistic_Skill_AdultMajor_Singing--></T>
+                        <V t="threshold" n="skill_range">
+                          <U n="threshold">
+                            <U n="skill_threshold">
+                              <E n="comparison">LESS_OR_EQUAL</E>
+                              <T n="value">4</T>
+                            </U>
+                          </U>
+                        </V>
+                        <T n="use_effective_skill_level">True</T>
+                      </U>
+                    </V>
+                  </L>
+                </L>
+              </U>
+            </L>
+          </U>
+        </U>
+        <U>
+          <U n="outcome">
+            <L n="loot_list">
+              <T>137651<!--LootActions: loot_KaraokeMachine_Score_Medium--></T>
+            </L>
+          </U>
+          <U n="weight">
+            <T n="base_value">1</T>
+          </U>
+        </U>
+        <U>
+          <U n="outcome">
+            <L n="loot_list">
+              <T>137650<!--LootActions: loot_KaraokeMachine_Score_High--></T>
+            </L>
+          </U>
+          <U n="weight">
+            <T n="base_value">1</T>
+            <L n="multipliers">
+              <U>
+                <T n="multiplier">0</T>
+                <L n="tests">
+                  <L>
+                    <V t="skill_test">
+                      <U n="skill_test">
+                        <T n="skill">137811<!--Skill: statistic_Skill_AdultMajor_Singing--></T>
+                        <V n="skill_range" t="threshold">
+                          <U n="threshold">
+                            <U n="skill_threshold">
+                              <E n="comparison">LESS_OR_EQUAL</E>
+                              <T n="value">6</T>
+                            </U>
+                          </U>
+                        </V>
+                        <T n="use_effective_skill_level">True</T>
+                      </U>
+                    </V>
+                  </L>
+                </L>
+              </U>
+              <U>
+                <T n="multiplier">2</T>
+                <L n="tests">
+                  <L>
+                    <V t="skill_test">
+                      <U n="skill_test">
+                        <T n="skill">137811<!--Skill: statistic_Skill_AdultMajor_Singing--></T>
+                        <V t="threshold" n="skill_range">
+                          <U n="threshold">
+                            <U n="skill_threshold">
+                              <T n="value">8</T>
+                            </U>
+                          </U>
+                        </V>
+                        <T n="use_effective_skill_level">True</T>
+                      </U>
+                    </V>
+                  </L>
+                </L>
+              </U>
+            </L>
+          </U>
+        </U>
+      </L>
+    </U>
+  </V>
+  <U n="sub_action">
+    <T n="base_weight">2</T>
+  </U>
+  <E n="target_type">OBJECT</E>
+  <L n="test_globals" />
+  <T n="visible">False</T>
+</I>

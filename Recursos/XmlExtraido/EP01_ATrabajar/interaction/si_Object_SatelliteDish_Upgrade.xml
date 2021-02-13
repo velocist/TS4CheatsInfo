@@ -1,0 +1,167 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<I c="SuperInteraction" i="interaction" m="interactions.base.super_interaction" n="si_Object_SatelliteDish_Upgrade" s="112002">
+  <L n="_constraints" />
+  <V t="Forward" n="_forwarding" />
+  <V t="participant" n="_icon">
+    <U n="participant">
+      <L n="participant_type">
+        <E>Object</E>
+      </L>
+    </U>
+  </V>
+  <V t="enabled" n="_saveable" />
+  <T n="allow_autonomous">False</T>
+  <T n="allow_from_sim_inventory">True</T>
+  <T n="attention_cost">0.5</T>
+  <V t="one_shot" n="basic_content" />
+  <V t="disabled" n="basic_reserve_object" />
+  <T n="category">168607<!--PieMenuCategory: pieMenuCategory_Upgrade_Scientist--></T>
+  <V t="disabled" n="content_score" />
+  <T n="display_name">0x3C16204F<!--String: "Mejorar antena parabólica"--></T>
+  <V t="testable" n="display_name_overrides">
+    <U n="testable">
+      <L n="overrides">
+        <U>
+          <V n="new_display_name" t="enabled">
+            <T n="enabled">0x4685257F<!--String: "Seguir mejorando antena parabólica"--></T>
+          </V>
+          <L n="test">
+            <L>
+              <V t="state">
+                <U n="state">
+                  <T n="value">111994<!--CommodityBasedObjectStateValue: osv_InventionConstructorUpgrade_Partial--></T>
+                </U>
+              </V>
+            </L>
+          </L>
+        </U>
+      </L>
+    </U>
+  </V>
+  <U n="display_name_text_tokens">
+    <L n="tokens">
+      <V t="participant_type">
+        <U n="participant_type">
+          <V t="from_participant" n="objects">
+            <U n="from_participant">
+              <E n="participant">Actor</E>
+            </U>
+          </V>
+        </U>
+      </V>
+      <V t="participant_type">
+        <U n="participant_type">
+          <V t="from_participant" n="objects">
+            <U n="from_participant">
+              <E n="participant">Object</E>
+            </U>
+          </V>
+        </U>
+      </V>
+    </L>
+  </U>
+  <V t="enabled" n="display_tooltip">
+    <T n="enabled">0xE4E8BBA4<!--String: "Instala el módulo detector de alienígenas para localizar a alienígenas locales. ¡Basta de permitir que se escondan entre nosotros!"--></T>
+  </V>
+  <L n="interaction_category_tags">
+    <E>Interaction_Super</E>
+    <E>Interaction_All</E>
+  </L>
+  <V n="outcome" t="single">
+    <U n="single">
+      <U n="actions">
+        <L n="continuation">
+          <U>
+            <T n="affordance">113473<!--SuperInteraction: si_Object_SatelliteDish_Upgrade_ParentCont--></T>
+            <E n="target">ObjectParent</E>
+          </U>
+        </L>
+      </U>
+    </U>
+  </V>
+  <U n="posture_preferences">
+    <L n="posture_cost_overrides" />
+    <T n="require_current_constraint">False</T>
+  </U>
+  <E n="scoring_priority">NORMAL</E>
+  <T n="subaction_selection_weight">1</T>
+  <E n="target_type">OBJECT</E>
+  <L n="test_globals">
+    <V t="sim_info">
+      <U n="sim_info">
+        <V t="specified" n="ages" />
+        <V t="specified" n="species">
+          <U n="specified">
+            <L n="species">
+              <E />
+            </L>
+          </U>
+        </V>
+        <E n="who">Actor</E>
+      </U>
+    </V>
+    <V t="state">
+      <U n="state">
+        <E n="operator">NOTEQUAL</E>
+        <T n="value">111992<!--CommodityBasedObjectStateValue: osv_InventionConstructorUpgrade_Completed--></T>
+      </U>
+    </V>
+    <V t="participant_running_interaction">
+      <U n="participant_running_interaction">
+        <L n="affordances">
+          <T>113473<!--SuperInteraction: si_Object_SatelliteDish_Upgrade_ParentCont--></T>
+        </L>
+        <E n="participant">Actor</E>
+        <T n="test_for_not_running">True</T>
+      </U>
+    </V>
+    <V t="career_test">
+      <U n="career_test">
+        <V t="career_reference" n="test_type">
+          <U n="career_reference">
+            <V t="specific_career" n="career">
+              <T n="specific_career">107255<!--Career: career_Adult_Active_Scientist--></T>
+            </V>
+            <V t="enabled" n="user_level">
+              <U n="enabled">
+                <T n="lower_bound">8</T>
+              </U>
+            </V>
+          </U>
+        </V>
+        <V n="tooltip" t="enabled">
+          <T n="enabled">0x9173AD00<!--String: "Desbloquea este objeto alcanzando el nivel 8 de la profesión científica."--></T>
+        </V>
+      </U>
+    </V>
+    <V t="object_criteria">
+      <U n="object_criteria">
+        <V t="definition_id" n="identity_test">
+          <U n="definition_id">
+            <T n="actual_object">74029</T>
+          </U>
+        </V>
+        <T n="on_active_lot">True</T>
+        <T n="owned">False</T>
+        <V t="single_object" n="subject_specific_tests">
+          <U n="single_object">
+            <E n="target">ObjectParent</E>
+          </U>
+        </V>
+        <V n="tooltip" t="enabled">
+          <T n="enabled">0x9C5B49F6<!--String: "Para mejorar la antena parabólica, arrástrala al creador de inventos, haz clic en este y selecciona Mejorar."--></T>
+        </V>
+      </U>
+    </V>
+    <V t="state">
+      <U n="state">
+        <V n="tooltip" t="enabled">
+          <T n="enabled">0x52F40F5D<!--String: "No se puede mejorar si el creador de inventos está estropeado."--></T>
+        </V>
+        <T n="value">15081<!--ObjectStateValue: BrokenState_Unbroken--></T>
+        <E n="who">ObjectParent</E>
+      </U>
+    </V>
+  </L>
+  <T n="time_overhead">30</T>
+</I>

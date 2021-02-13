@@ -1,0 +1,196 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<I c="SuperInteraction" i="interaction" m="interactions.base.super_interaction" n="si_Retail_BuyItemFromInventory_Autonomous" s="116619">
+  <V t="reference" n="_animation_actor_map">
+    <T n="reference">104045<!--AnimationActorMap: PickupInteractionTarget--></T>
+  </V>
+  <L n="_constraints">
+    <U>
+      <L n="constraints">
+        <U>
+          <V n="value" t="posture">
+            <U n="posture">
+              <L n="posture_manifest_tuning">
+                <U>
+                  <V t="actor" n="carry_left" />
+                  <V t="None" n="carry_right" />
+                  <V t="enabled" n="posture_type">
+                    <T n="enabled">15537<!--MobilePosture: posture_Stand--></T>
+                  </V>
+                </U>
+                <U>
+                  <V t="None" n="carry_left" />
+                  <V t="actor" n="carry_right" />
+                  <V t="enabled" n="posture_type">
+                    <T n="enabled">15537<!--MobilePosture: posture_Stand--></T>
+                  </V>
+                </U>
+              </L>
+            </U>
+          </V>
+        </U>
+      </L>
+    </U>
+  </L>
+  <V t="participant" n="_icon">
+    <U n="participant">
+      <L n="participant_type">
+        <E>Object</E>
+      </L>
+    </U>
+  </V>
+  <V t="enabled" n="_saveable" />
+  <T n="allow_from_object_inventory">True</T>
+  <T n="allow_from_portrait">False</T>
+  <T n="allow_from_world">False</T>
+  <T n="allow_user_directed">False</T>
+  <T n="attention_cost">0.5</T>
+  <V t="one_shot" n="basic_content">
+    <U n="one_shot">
+      <U n="animation_ref">
+        <T o="true" n="factory" />
+      </U>
+    </U>
+  </V>
+  <L n="basic_extras">
+    <V t="loot">
+      <U n="loot">
+        <L n="loot_list">
+          <T>237924<!--LootActions: loot_Freegan_RemoveDiscount--></T>
+        </L>
+      </U>
+    </V>
+    <V t="loot">
+      <U n="loot">
+        <L n="loot_list">
+          <T>249905<!--LootActions: loot_Trait_WorldlyKnowledge_RemoveDiscount--></T>
+        </L>
+      </U>
+    </V>
+  </L>
+  <L n="cancel_replacement_affordances">
+    <U>
+      <E n="key">CARRY</E>
+      <U n="value">
+        <T n="affordance">116634<!--PutDownQuicklySuperInteraction: put_down_prefer_own_inventory_cancel_aop--></T>
+        <V t="enabled" n="target" />
+      </U>
+    </U>
+  </L>
+  <V t="disabled" n="content_score" />
+  <T n="display_name">0x30535EBE<!--String: "Comprar de expositor"--></T>
+  <U n="display_name_text_tokens">
+    <L n="tokens">
+      <V t="participant_type">
+        <U n="participant_type">
+          <V t="from_participant" n="objects">
+            <U n="from_participant">
+              <E n="participant">Actor</E>
+            </U>
+          </V>
+        </U>
+      </V>
+      <V t="participant_type">
+        <U n="participant_type">
+          <V t="from_participant" n="objects">
+            <U n="from_participant">
+              <E n="participant">Object</E>
+            </U>
+          </V>
+        </U>
+      </V>
+    </L>
+  </U>
+  <L n="interaction_category_tags">
+    <E>Interaction_Super</E>
+    <E>Interaction_All</E>
+  </L>
+  <V n="outcome" t="single">
+    <U n="single">
+      <U n="actions">
+        <L n="basic_extras">
+          <V t="notification">
+            <U n="notification">
+              <V n="dialog" t="single">
+                <V n="single" t="literal">
+                  <U n="literal">
+                    <V t="enabled" n="icon">
+                      <V t="participant" n="enabled" />
+                    </V>
+                    <V n="text" t="single">
+                      <T n="single">0xA989003E<!--String: "{0.SimFirstName} acaba de comprar un artículo ({1.ObjectName}) por {2.Money}."--></T>
+                    </V>
+                    <V n="text_tokens" t="enabled">
+                      <U n="enabled">
+                        <L n="tokens">
+                          <V t="participant_type" />
+                          <V t="participant_type">
+                            <U n="participant_type">
+                              <V t="from_participant" n="objects">
+                                <U n="from_participant">
+                                  <E n="participant">Object</E>
+                                </U>
+                              </V>
+                            </U>
+                          </V>
+                          <V t="interaction_cost" />
+                        </L>
+                      </U>
+                    </V>
+                  </U>
+                </V>
+              </V>
+              <T n="limit_to_one_notification">True</T>
+              <E n="recipient_subject">LotOwners</E>
+            </U>
+          </V>
+          <V t="payment">
+            <U n="payment">
+              <V n="payment" t="literal">
+                <U n="literal">
+                  <V n="payment_cost" t="business_amount">
+                    <U n="business_amount">
+                      <V n="wrapped_cost" t="current_value">
+                        <U n="current_value">
+                          <L n="payment_destinations">
+                            <V t="business" />
+                          </L>
+                        </U>
+                      </V>
+                    </U>
+                  </V>
+                </U>
+              </V>
+            </U>
+          </V>
+        </L>
+      </U>
+    </U>
+  </V>
+  <E n="scoring_priority">NORMAL</E>
+  <T n="subaction_selection_weight">1</T>
+  <E n="target_type">OBJECT</E>
+  <L n="test_globals">
+    <V t="sim_info">
+      <U n="sim_info">
+        <V t="specified" n="ages">
+          <L n="specified">
+            <E>TEEN</E>
+            <E>YOUNGADULT</E>
+            <E>ADULT</E>
+            <E>ELDER</E>
+            <E>CHILD</E>
+          </L>
+        </V>
+        <V t="specified" n="species">
+          <U n="specified">
+            <L n="species">
+              <E />
+            </L>
+          </U>
+        </V>
+        <E n="who">Actor</E>
+      </U>
+    </V>
+  </L>
+  <T n="time_overhead">30</T>
+</I>

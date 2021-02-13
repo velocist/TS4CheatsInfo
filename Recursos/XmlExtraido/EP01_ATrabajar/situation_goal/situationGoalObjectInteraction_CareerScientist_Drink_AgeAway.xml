@@ -1,0 +1,91 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<I c="SituationGoalObjectInteraction" i="situation_goal" m="situations.situation_goal_object_interaction" n="situationGoalObjectInteraction_CareerScientist_Drink_AgeAway" s="112839">
+  <V n="_display_data" t="enabled">
+    <U n="enabled">
+      <V t="enabled" n="instance_display_icon">
+        <T n="enabled" p="InEP01\UI\Icons\Headlines\headline_serum_ageaway.png">2f7d0004:00000000:24397c1c483eecc2</T>
+      </V>
+      <V n="instance_display_name" t="enabled">
+        <T n="enabled">0x1D8ACAF0<!--String: "Beber o darle a alguien suero antiedad"--></T>
+      </V>
+      <V n="instance_display_tooltip" t="enabled">
+        <T n="enabled">0xD36BB731<!--String: "Haz clic en un suero antiedad que haya en el mundo o en el inventario de tu Sim y selecciona Beber. O, si lo prefieres, selecciona a otro Sim, elige Probar suero y, a continuación, escoge el suero antiedad."--></T>
+      </V>
+    </U>
+  </V>
+  <U n="_goal_test">
+    <L n="affordances">
+      <T>115158<!--SuperInteraction: si_Serums_Outcomes_AgeAway--></T>
+      <T>115030<!--SocialSuperInteraction: si_Touching_Serums_TestSerum--></T>
+    </L>
+    <E n="test_event">InteractionComplete</E>
+  </U>
+  <L n="_post_tests">
+    <V t="object_criteria">
+      <U n="object_criteria">
+        <V n="identity_test" t="tags">
+          <U n="tags">
+            <L n="tag_set">
+              <E>Func_EP01_Serum_AgeAway</E>
+            </L>
+          </U>
+        </V>
+        <T n="owned">False</T>
+        <V t="single_object" n="subject_specific_tests">
+          <U n="single_object">
+            <E n="target">SavedActor1</E>
+          </U>
+        </V>
+      </U>
+    </V>
+  </L>
+  <L n="_pre_goal_loot_list">
+    <T>112797<!--SituationGoalLootActions: loot_Career_ScientistGoalChain_Breakthrough_21--></T>
+  </L>
+  <L n="_pre_tests">
+    <V t="statistic">
+      <U n="statistic">
+        <T n="must_have_stat">True</T>
+        <T n="stat">112758<!--Statistic: statistic_Career_Scientist_SituationGoalChain_Breakthrough_21--></T>
+        <V t="value_threshold" n="threshold">
+          <U n="value_threshold">
+            <E n="comparison">EQUAL</E>
+            <T n="value">1</T>
+          </U>
+        </V>
+      </U>
+    </V>
+    <V t="statistic">
+      <U n="statistic">
+        <T n="stat">113011<!--Statistic: statistic_Career_Scientist_Inventing--></T>
+        <V t="value_threshold" n="threshold">
+          <U n="value_threshold">
+            <E n="comparison">EQUAL</E>
+            <T n="value">1</T>
+          </U>
+        </V>
+      </U>
+    </V>
+    <V t="career">
+      <U n="career">
+        <V n="test_type" t="career_reference">
+          <U n="career_reference">
+            <V t="specific_career" n="career">
+              <T n="specific_career">107255<!--Career: career_Adult_Active_Scientist--></T>
+            </V>
+            <V t="enabled" n="user_level">
+              <U n="enabled">
+                <T n="lower_bound">10</T>
+                <T n="upper_bound">10</T>
+              </U>
+            </V>
+          </U>
+        </V>
+      </U>
+    </V>
+  </L>
+  <T p="InGame\Audio\Bumper\bumper_event_goal_complete.propx" n="audio_sting_on_complete">39b2aa4a:00000000:ed52c39bcc2a7111</T>
+  <L n="role_tags">
+    <E>Role_Scientist</E>
+  </L>
+</I>

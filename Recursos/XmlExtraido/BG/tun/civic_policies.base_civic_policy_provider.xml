@@ -1,0 +1,279 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<M n="civic_policies.base_civic_policy_provider" s="10253027151476237732">
+  <C n="BaseCivicPolicyProvider">
+    <L n="CALL_TO_ACTIONS">
+      <T>238078<!--CallToAction: callToAction_CommunityBoard_Vote--></T>
+    </L>
+    <U n="CIVIC_POLICY_SCHEDULE">
+      <T n="schedule_text">0x42CAE75A<!--String: "{0.DayOfWeekShort} {0.TimeShort} - {1.DayOfWeekShort} {1.TimeShort}"--></T>
+      <U n="voting_close">
+        <E n="day">MONDAY</E>
+        <T n="hour">18</T>
+      </U>
+      <U n="voting_open">
+        <E n="day">FRIDAY</E>
+      </U>
+    </U>
+    <E n="COMMUNITY_BOARD_TAG">Func_CommunityBoard_BG</E>
+    <U n="COMMUNITY_BOARD_TEXT">
+      <V n="add_policy_picker" t="item_picker">
+        <U n="item_picker">
+          <V t="enabled" n="icon_override_participant">
+            <E n="enabled">Actor</E>
+          </V>
+          <V t="static_count" n="max_selectable">
+            <U n="static_count">
+              <T n="number_selectable">7</T>
+            </U>
+          </V>
+          <V n="title" t="enabled">
+            <T n="enabled">0x357C725<!--String: "Añadir plan de acción para el barrio…"--></T>
+          </V>
+        </U>
+      </V>
+      <T n="ineligible_voter_confirm_tooltip_text">0x98790C72<!--String: "Solo pueden votar residentes del barrio."--></T>
+      <T n="ineligible_voter_policy_tooltip_text">0xAFBAEEC4<!--String: "<font color='#ff0000'> No puedes votar sobre esto </font>"--></T>
+      <T n="no_room_confirm_tooltip_text">0x7A52BEE<!--String: "Ya se ha alcanzado el número máximo de planes de acción para el barrio vigentes. Inicia el proceso de revocación de un plan activo para reabrir las votaciones."--></T>
+      <T n="no_room_policy_tooltip_text">0x7A52BEE<!--String: "Ya se ha alcanzado el número máximo de planes de acción para el barrio vigentes. Inicia el proceso de revocación de un plan activo para reabrir las votaciones."--></T>
+      <T n="voting_closed_policy_tooltip_text">0xE290C941<!--String: "<font color='#ff0000'>La votación está cerrada </font>"--></T>
+      <T n="voting_open_add_policy_tooltip_text">0x374A4535<!--String: "¡No puedes añadir un plan de acción para el barrio durante el período de votación!"--></T>
+    </U>
+    <E n="INFLUENCE_BUCK_TYPE">InfluenceBuck</E>
+    <T n="REPEAL_PETITION_THRESHOLD">5</T>
+    <U n="VOTING_CLOSE_MAX_ENABLED_NOTIFICATION_FAIL">
+      <V t="enabled" n="audio_sting">
+        <U n="enabled">
+          <T n="audio" p="InGame\Audio\Music\bumpers\bumper_eco_policy_results.propx">39b2aa4a:00000000:b59aab1933c571f0</T>
+        </U>
+      </V>
+      <V t="enabled" n="icon">
+        <V n="enabled" t="resource_key">
+          <U n="resource_key">
+            <T n="key" p="InGame\UI\Icons\Notifications\notification_Checklist.png">2f7d0004:00000000:e18becb89f76b41d</T>
+          </U>
+        </V>
+      </V>
+      <V n="text" t="single">
+        <T n="single">0xF8512B7A<!--String: "La votación ha concluido y la revocación del plan de {0.String|xxLower} no ha salido adelante.\n\nPodrán realizarse más peticiones de revocación durante el próximo período de votación, que comienza el {1.DayOfWeekLong} {1.TimeShort|itTime/a las /a la }."--></T>
+      </V>
+      <V t="enabled" n="text_tokens">
+        <U n="enabled">
+          <L n="tokens">
+            <V t="street">
+              <U n="street">
+                <U n="street">
+                  <V n="street" t="via_zone_source">
+                    <V t="use_participant_home_zone" n="via_zone_source">
+                      <U n="use_participant_home_zone">
+                        <E n="participant">Actor</E>
+                      </U>
+                    </V>
+                  </V>
+                </U>
+                <V n="street_data" t="policy_up_for_repeal" />
+              </U>
+            </V>
+            <V t="civic_policy">
+              <U n="civic_policy">
+                <V n="civic_policy_data" t="voting_start_time" />
+              </U>
+            </V>
+          </L>
+        </U>
+      </V>
+    </U>
+    <U n="VOTING_CLOSE_MAX_ENABLED_NOTIFICATION_SUCCESS">
+      <V t="enabled" n="audio_sting">
+        <U n="enabled">
+          <T n="audio" p="InGame\Audio\Music\bumpers\bumper_eco_policy_results.propx">39b2aa4a:00000000:b59aab1933c571f0</T>
+        </U>
+      </V>
+      <V t="enabled" n="icon">
+        <V n="enabled" t="resource_key">
+          <U n="resource_key">
+            <T n="key" p="InGame\UI\Icons\Notifications\notification_Checklist.png">2f7d0004:00000000:e18becb89f76b41d</T>
+          </U>
+        </V>
+      </V>
+      <V n="text" t="single">
+        <T n="single">0x2B38A6AB<!--String: "La votación ha concluido y el plan de {0.String|xxLower} se ha revocado.\n\nEl próximo período de votación comienza el {1.DayOfWeekLong} {1.TimeShort|itTime/a las /a la }."--></T>
+      </V>
+      <V t="enabled" n="text_tokens">
+        <U n="enabled">
+          <L n="tokens">
+            <V t="street">
+              <U n="street">
+                <U n="street">
+                  <V n="street" t="via_zone_source">
+                    <V t="use_participant_home_zone" n="via_zone_source">
+                      <U n="use_participant_home_zone">
+                        <E n="participant">Actor</E>
+                      </U>
+                    </V>
+                  </V>
+                </U>
+                <V n="street_data" t="policy_up_for_repeal" />
+              </U>
+            </V>
+            <V t="civic_policy">
+              <U n="civic_policy">
+                <V n="civic_policy_data" t="voting_start_time" />
+              </U>
+            </V>
+          </L>
+        </U>
+      </V>
+    </U>
+    <U n="VOTING_CLOSE_NOTIFICATION">
+      <V t="enabled" n="audio_sting">
+        <U n="enabled">
+          <T n="audio" p="InGame\Audio\Music\bumpers\bumper_eco_policy_results.propx">39b2aa4a:00000000:b59aab1933c571f0</T>
+        </U>
+      </V>
+      <V t="enabled" n="icon">
+        <V n="enabled" t="resource_key">
+          <U n="resource_key">
+            <T n="key" p="InGame\UI\Icons\Notifications\notification_Checklist.png">2f7d0004:00000000:e18becb89f76b41d</T>
+          </U>
+        </V>
+      </V>
+      <V n="text" t="single">
+        <T n="single">0x23F166DC<!--String: "La votación está cerrada.\n\nEl plan de {0.String|xxLower} ha sido el más votado por la comunidad y entrará en vigor de inmediato.\n\nLa votación vuelve a abrirse el {1.DayOfWeekLong} {1.TimeShort|itTime/a las /a la }."--></T>
+      </V>
+      <V n="text_tokens" t="enabled">
+        <U n="enabled">
+          <L n="tokens">
+            <V t="street">
+              <U n="street">
+                <U n="street">
+                  <V n="street" t="via_zone_source">
+                    <V t="use_participant_home_zone" n="via_zone_source">
+                      <U n="use_participant_home_zone">
+                        <E n="participant">Actor</E>
+                      </U>
+                    </V>
+                  </V>
+                </U>
+                <V n="street_data" t="winning_balloted_policy" />
+              </U>
+            </V>
+            <V t="civic_policy">
+              <U n="civic_policy">
+                <V n="civic_policy_data" t="voting_start_time" />
+              </U>
+            </V>
+          </L>
+        </U>
+      </V>
+    </U>
+    <U n="VOTING_CLOSE_WARNING_MAX_ENABLED_NOTIFICATION">
+      <V t="enabled" n="icon">
+        <V n="enabled" t="resource_key">
+          <U n="resource_key">
+            <T n="key" p="InGame\UI\Icons\Notifications\notification_list.png">2f7d0004:00000000:0510e12c848e1c53</T>
+          </U>
+        </V>
+      </V>
+      <V n="text" t="single">
+        <T n="single">0xF5CE450<!--String: "El período de votación concluirá pronto. ¡Date prisa y reúne todas las firmas necesarias para la revocación antes del {0.DayOfWeekLong} {0.TimeShort|itTime/a las /a la }!"--></T>
+      </V>
+      <V t="enabled" n="text_tokens">
+        <U n="enabled">
+          <L n="tokens">
+            <V t="civic_policy">
+              <U n="civic_policy">
+                <V n="civic_policy_data" t="voting_end_time" />
+              </U>
+            </V>
+          </L>
+        </U>
+      </V>
+    </U>
+    <U n="VOTING_CLOSE_WARNING_NOTIFICATION">
+      <V t="enabled" n="icon">
+        <V n="enabled" t="resource_key">
+          <U n="resource_key">
+            <T n="key" p="InGame\UI\Icons\Notifications\notification_list.png">2f7d0004:00000000:0510e12c848e1c53</T>
+          </U>
+        </V>
+      </V>
+      <V n="text" t="single">
+        <T n="single">0xD2DD405B<!--String: "El período de votación casi ha finalizado y la opción que va en cabeza es {0.String}. ¡Dirígete al tablón de votaciones más cercano o al buzón para emitir tu voto antes del {1.DayOfWeekLong} {1.TimeShort|itTime/a las /a la }!"--></T>
+      </V>
+      <V n="text_tokens" t="enabled">
+        <U n="enabled">
+          <L n="tokens">
+            <V t="street">
+              <U n="street">
+                <U n="street">
+                  <V n="street" t="via_zone_source">
+                    <V t="use_participant_home_zone" n="via_zone_source">
+                      <U n="use_participant_home_zone">
+                        <E n="participant">Actor</E>
+                      </U>
+                    </V>
+                  </V>
+                </U>
+                <V n="street_data" t="winning_balloted_policy" />
+              </U>
+            </V>
+            <V t="civic_policy">
+              <U n="civic_policy">
+                <V n="civic_policy_data" t="voting_end_time" />
+              </U>
+            </V>
+          </L>
+        </U>
+      </V>
+    </U>
+    <L n="VOTING_CONTINUATION_AUTONOMY_COMMODITIES">
+      <T>236227<!--StaticCommodity: staticCommodity_CivicPolicy_Voting--></T>
+    </L>
+    <U n="VOTING_OPEN_MAX_ENABLED_NOTIFICATION">
+      <V t="enabled" n="icon">
+        <V n="enabled" t="resource_key">
+          <U n="resource_key">
+            <T n="key" p="InGame\UI\Icons\Notifications\notification_list.png">2f7d0004:00000000:0510e12c848e1c53</T>
+          </U>
+        </V>
+      </V>
+      <V n="text" t="single">
+        <T n="single">0xFAF65FDB<!--String: "¡El período de votación ha comenzado!\n\nEl cupo de planes de acción para el barrio vigentes ya está cubierto.\n\nRealiza una petición para revocar alguno en tu <b>buzón</b> o en el <b>tablón de votaciones</b> público más cercano para intentar que la votación se reabra en el próximo período."--></T>
+      </V>
+      <V t="enabled" n="text_tokens">
+        <U n="enabled">
+          <L n="tokens">
+            <V t="civic_policy">
+              <U n="civic_policy">
+                <V n="civic_policy_data" t="voting_end_time" />
+              </U>
+            </V>
+          </L>
+        </U>
+      </V>
+    </U>
+    <U n="VOTING_OPEN_NOTIFICATION">
+      <V t="enabled" n="icon">
+        <V n="enabled" t="resource_key">
+          <U n="resource_key">
+            <T n="key" p="InGame\UI\Icons\Notifications\notification_list.png">2f7d0004:00000000:0510e12c848e1c53</T>
+          </U>
+        </V>
+      </V>
+      <V n="text" t="single">
+        <T n="single">0xFA769C34<!--String: "¡Ha comenzado el período de votación!\n\nDirígete a tu <b>buzón</b> o al <b>tablón de votaciones</b> público más cercano para votar por alguno de los planes de acción para el barrio disponibles esta semana."--></T>
+      </V>
+      <V t="enabled" n="text_tokens">
+        <U n="enabled">
+          <L n="tokens">
+            <V t="civic_policy">
+              <U n="civic_policy">
+                <V n="civic_policy_data" t="voting_end_time" />
+              </U>
+            </V>
+          </L>
+        </U>
+      </V>
+    </U>
+  </C>
+</M>

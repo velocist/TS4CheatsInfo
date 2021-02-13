@@ -1,0 +1,1784 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<I c="SuperInteraction" i="interaction" m="interactions.base.super_interaction" n="starship_Falcon_InSpace_Mission_SS8" s="243293">
+  <L n="_constraints">
+    <U>
+      <L n="constraints">
+        <U>
+          <V n="value" t="spawn_points">
+            <U n="spawn_points">
+              <V t="Spawn_Point_Tags" n="tags">
+                <L n="Spawn_Point_Tags">
+                  <E>Spawn_Starship</E>
+                </L>
+              </V>
+            </U>
+          </V>
+        </U>
+      </L>
+    </U>
+  </L>
+  <V t="enabled" n="_saveable" />
+  <T n="allow_autonomous">False</T>
+  <T n="attention_cost">0.5</T>
+  <V t="flexible_length" n="basic_content">
+    <U n="flexible_length">
+      <L n="conditional_actions">
+        <V t="literal">
+          <U n="literal">
+            <L n="conditions">
+              <V t="state_based">
+                <U n="state_based">
+                  <V n="state" t="on_trigger">
+                    <T n="on_trigger">238529<!--ObjectStateValue: starship_CanExit_Yes--></T>
+                  </V>
+                </U>
+              </V>
+            </L>
+            <E n="interaction_action">EXIT_NATURALLY</E>
+          </U>
+        </V>
+      </L>
+      <V t="staging_content" n="content">
+        <U n="staging_content">
+          <U n="content_set">
+            <L n="affordance_links">
+              <T>239542<!--MixerInteraction: mixer_Starship_Motive_Bladder--></T>
+              <T>239544<!--MixerInteraction: mixer_Starship_Motive_Default--></T>
+              <T>239546<!--MixerInteraction: mixer_Starship_Motive_Energy--></T>
+              <T>239545<!--MixerInteraction: mixer_Starship_Motive_Hunger--></T>
+            </L>
+          </U>
+          <T n="only_use_mixers_from_SI">True</T>
+        </U>
+      </V>
+      <V n="periodic_stat_change" t="enabled">
+        <U n="enabled">
+          <L n="operations">
+            <V t="dynamic_skill">
+              <U n="dynamic_skill">
+                <U n="skill_loot_data_override">
+                  <E n="effectiveness">VerySmallPeriodic</E>
+                </U>
+              </U>
+            </V>
+          </L>
+        </U>
+      </V>
+      <T n="start_autonomous_inertial">False</T>
+    </U>
+  </V>
+  <L n="basic_extras">
+    <V t="state_change">
+      <U n="state_change">
+        <V n="new_value" t="single_value">
+          <U n="single_value">
+            <T n="new_value">238526<!--ObjectStateValue: starship_Idle_Space--></T>
+          </U>
+        </V>
+        <V t="immediately" n="timing" />
+      </U>
+    </V>
+    <V t="adventure">
+      <U n="adventure">
+        <L n="_adventure_moments">
+          <U>
+            <E n="key">Generic_01</E>
+            <U n="value">
+              <V n="aventure_moment" t="literal">
+                <U n="literal">
+                  <L n="_finish_actions">
+                    <U>
+                      <L n="action_results">
+                        <U>
+                          <L n="next_moments">
+                            <E>Generic_02</E>
+                          </L>
+                        </U>
+                      </L>
+                      <L n="availability_tests">
+                        <L>
+                          <V t="inventory">
+                            <U n="inventory">
+                              <V t="has_object_with_tag" n="contents_check">
+                                <U n="has_object_with_tag">
+                                  <L n="tag_set">
+                                    <E>Func_DroidBB</E>
+                                    <E>Func_DroidR</E>
+                                  </L>
+                                </U>
+                              </V>
+                            </U>
+                          </V>
+                        </L>
+                        <L>
+                          <V t="routing_slave_formation">
+                            <U n="routing_slave_formation">
+                              <V t="in_formation" n="formation_test">
+                                <U n="in_formation">
+                                  <V t="enabled" n="formations_to_validate">
+                                    <U n="enabled">
+                                      <V n="whitelist" t="specify">
+                                        <U n="specify">
+                                          <L n="whitelist">
+                                            <T>230813<!--RoutingFormation: routingFormation_Droid_Follow--></T>
+                                          </L>
+                                        </U>
+                                      </V>
+                                    </U>
+                                  </V>
+                                </U>
+                              </V>
+                              <V t="enabled" n="participant_master" />
+                            </U>
+                          </V>
+                        </L>
+                      </L>
+                      <V t="enabled" n="disabled_text">
+                        <T n="enabled">0xEC11B8E3<!--String: "Requiere un droide."--></T>
+                      </V>
+                      <V n="display_text" t="single">
+                        <T n="single">0x44780EED<!--String: "Enviar droide"--></T>
+                      </V>
+                    </U>
+                    <U>
+                      <L n="action_results">
+                        <U>
+                          <L n="loot_actions">
+                            <T>248599<!--LootActions: loot_Batuu_Starship_Mission_SS8_Fake_Clumsiness--></T>
+                          </L>
+                          <L n="next_moments">
+                            <E>Generic_04</E>
+                          </L>
+                        </U>
+                      </L>
+                      <L n="availability_tests">
+                        <L>
+                          <V t="bucks_test">
+                            <U n="bucks_test">
+                              <E n="bucks_type">GalacticCredits</E>
+                              <U n="value_threshold">
+                                <T n="value">500</T>
+                              </U>
+                            </U>
+                          </V>
+                        </L>
+                      </L>
+                      <V n="disabled_text" t="enabled">
+                        <T n="enabled">0xCB7EC26F<!--String: "Requiere 500 créditos galácticos."--></T>
+                      </V>
+                      <V n="display_text" t="single">
+                        <T n="single">0xEBBFC6D3<!--String: "Fingir torpeza con créditos"--></T>
+                      </V>
+                    </U>
+                    <U>
+                      <L n="action_results">
+                        <U>
+                          <L n="next_moments">
+                            <E>Generic_03</E>
+                          </L>
+                        </U>
+                      </L>
+                      <V n="display_text" t="single">
+                        <T n="single">0x9E8FDEF8<!--String: "Iniciar una pelea"--></T>
+                      </V>
+                    </U>
+                  </L>
+                  <V n="_visibility" t="show_dialog">
+                    <U n="show_dialog">
+                      <V t="disabled" n="audio_sting" />
+                      <E n="dialog_style">LARGE_ICON</E>
+                      <V t="enabled" n="icon">
+                        <V n="enabled" t="resource_key">
+                          <U n="resource_key">
+                            <T n="key" p="InGP09\UI\Icons\ChanceCard\ChanceCard_Casino.png">2f7d0004:00000000:45a759e78f1aa56b</T>
+                          </U>
+                        </V>
+                      </V>
+                      <V n="text" t="single">
+                        <T n="single">0x59066AF3<!--String: "Los indómitos miembros del equipo caminan desde el apartado lugar del aterrizaje hasta el casino. La adinerada clientela del local parece evitarlos cuando pasan por su lado. A cualquiera que preste atención le resulta evidente que este escandaloso grupo no es de por aquí y podría no tramar nada bueno. Si {0.SimFirstName} y sus cómplices quieren llegar hasta la cámara sin que los vean, van a necesitar una distracción."--></T>
+                      </V>
+                    </U>
+                  </V>
+                </U>
+              </V>
+            </U>
+          </U>
+          <U>
+            <E n="key">Generic_02</E>
+            <U n="value">
+              <V n="aventure_moment" t="literal">
+                <U n="literal">
+                  <L n="_finish_actions">
+                    <U>
+                      <L n="action_results">
+                        <U>
+                          <L n="next_moments">
+                            <E>Generic_06</E>
+                          </L>
+                        </U>
+                      </L>
+                      <L n="availability_tests">
+                        <L>
+                          <V t="inventory">
+                            <U n="inventory">
+                              <V n="contents_check" t="has_object_with_tag">
+                                <U n="has_object_with_tag">
+                                  <L n="tag_set">
+                                    <E>Func_Batuu_Thermal_Detonator</E>
+                                  </L>
+                                </U>
+                              </V>
+                            </U>
+                          </V>
+                        </L>
+                      </L>
+                      <V t="enabled" n="disabled_text">
+                        <T n="enabled">0x54026D11<!--String: "Requiere un detonador térmico."--></T>
+                      </V>
+                      <V n="display_text" t="single">
+                        <T n="single">0x2D11EE86<!--String: "Volarla con detonador térmico"--></T>
+                      </V>
+                    </U>
+                    <U>
+                      <L n="action_results">
+                        <U>
+                          <L n="next_moments">
+                            <E>Generic_05</E>
+                          </L>
+                        </U>
+                      </L>
+                      <V n="display_text" t="single">
+                        <T n="single">0x5CF3ACC6<!--String: "Preguntar a miembro del equipo"--></T>
+                      </V>
+                    </U>
+                    <U>
+                      <L n="action_results">
+                        <U>
+                          <L n="next_moments">
+                            <E>Generic_07</E>
+                          </L>
+                        </U>
+                      </L>
+                      <L n="availability_tests">
+                        <L>
+                          <V t="inventory">
+                            <U n="inventory">
+                              <V t="has_object_with_tag" n="contents_check">
+                                <U n="has_object_with_tag">
+                                  <L n="tag_set">
+                                    <E>Func_DroidBB</E>
+                                    <E>Func_DroidR</E>
+                                  </L>
+                                </U>
+                              </V>
+                            </U>
+                          </V>
+                        </L>
+                        <L>
+                          <V t="routing_slave_formation">
+                            <U n="routing_slave_formation">
+                              <V t="in_formation" n="formation_test">
+                                <U n="in_formation">
+                                  <V t="enabled" n="formations_to_validate">
+                                    <U n="enabled">
+                                      <V n="whitelist" t="specify">
+                                        <U n="specify">
+                                          <L n="whitelist">
+                                            <T>230813<!--RoutingFormation: routingFormation_Droid_Follow--></T>
+                                          </L>
+                                        </U>
+                                      </V>
+                                    </U>
+                                  </V>
+                                </U>
+                              </V>
+                              <V t="enabled" n="participant_master" />
+                            </U>
+                          </V>
+                        </L>
+                      </L>
+                      <V t="enabled" n="disabled_text">
+                        <T n="enabled">0xEC11B8E3<!--String: "Requiere un droide."--></T>
+                      </V>
+                      <V n="display_text" t="single">
+                        <T n="single">0xCA806675<!--String: "Piratear con droide"--></T>
+                      </V>
+                    </U>
+                    <U>
+                      <L n="action_results">
+                        <U>
+                          <L n="next_moments">
+                            <E>Generic_08</E>
+                          </L>
+                        </U>
+                      </L>
+                      <L n="availability_tests">
+                        <L>
+                          <V t="inventory">
+                            <U n="inventory">
+                              <V n="contents_check" t="has_object_with_tag">
+                                <U n="has_object_with_tag">
+                                  <L n="tag_set">
+                                    <E>Func_Lightsaber_Hilt</E>
+                                  </L>
+                                </U>
+                              </V>
+                            </U>
+                          </V>
+                        </L>
+                      </L>
+                      <V t="enabled" n="disabled_text">
+                        <T n="enabled">0x82A701C4<!--String: "Requiere una espada láser."--></T>
+                      </V>
+                      <V n="display_text" t="single">
+                        <T n="single">0xE96B9F2<!--String: "Perforar con espada láser"--></T>
+                      </V>
+                    </U>
+                  </L>
+                  <V n="_visibility" t="show_dialog">
+                    <U n="show_dialog">
+                      <V t="enabled" n="audio_sting">
+                        <U n="enabled">
+                          <T n="audio" p="InGP09\Audio\ui\ui_gp09_advm_droid_beeps.propx">39b2aa4a:00000000:c7503bbf5f02db88</T>
+                        </U>
+                      </V>
+                      <E n="dialog_style">LARGE_ICON</E>
+                      <V t="enabled" n="icon">
+                        <V n="enabled" t="resource_key">
+                          <U n="resource_key">
+                            <T n="key" p="InGP09\UI\Icons\ChanceCard\ChanceCard_Casino.png">2f7d0004:00000000:45a759e78f1aa56b</T>
+                          </U>
+                        </V>
+                      </V>
+                      <V n="text" t="single">
+                        <T n="single">0xA08923CD<!--String: "El droide de {0.SimFirstName} rueda con indiferencia hasta el suelo del casino, se dirige a las máquinas tragaperras flotantes y le da una descarga rápida a una con su punta de electroshock. ¡La máquina rebosante de dinero se vuelve loca y numerosas cantofichas salen volando en todas las direcciones! Los clientes se abalanzan y empiezan a cogerlas. ¡Estallan peleas! Seguridad interviene para ocuparse de la situación. El camino a la cámara está despejado. El equipo avanza y se encuentra cara a cara con la imponente puerta de la cámara. ¿Cómo debería intentar atravesarla?"--></T>
+                      </V>
+                    </U>
+                  </V>
+                </U>
+              </V>
+            </U>
+          </U>
+          <U>
+            <E n="key">Generic_03</E>
+            <U n="value">
+              <V n="aventure_moment" t="literal">
+                <U n="literal">
+                  <L n="_finish_actions">
+                    <U>
+                      <L n="action_results">
+                        <U>
+                          <L n="next_moments">
+                            <E>Generic_05</E>
+                          </L>
+                        </U>
+                      </L>
+                      <V n="display_text" t="single">
+                        <T n="single">0x5CF3ACC6<!--String: "Preguntar a miembro del equipo"--></T>
+                      </V>
+                    </U>
+                    <U>
+                      <L n="action_results">
+                        <U>
+                          <L n="next_moments">
+                            <E>Generic_06</E>
+                          </L>
+                        </U>
+                      </L>
+                      <L n="availability_tests">
+                        <L>
+                          <V t="inventory">
+                            <U n="inventory">
+                              <V n="contents_check" t="has_object_with_tag">
+                                <U n="has_object_with_tag">
+                                  <L n="tag_set">
+                                    <E>Func_Batuu_Thermal_Detonator</E>
+                                  </L>
+                                </U>
+                              </V>
+                            </U>
+                          </V>
+                        </L>
+                      </L>
+                      <V t="enabled" n="disabled_text">
+                        <T n="enabled">0x54026D11<!--String: "Requiere un detonador térmico."--></T>
+                      </V>
+                      <V n="display_text" t="single">
+                        <T n="single">0x2D11EE86<!--String: "Volarla con detonador térmico"--></T>
+                      </V>
+                    </U>
+                    <U>
+                      <L n="action_results">
+                        <U>
+                          <L n="next_moments">
+                            <E>Generic_07</E>
+                          </L>
+                        </U>
+                      </L>
+                      <L n="availability_tests">
+                        <L>
+                          <V t="inventory">
+                            <U n="inventory">
+                              <V t="has_object_with_tag" n="contents_check">
+                                <U n="has_object_with_tag">
+                                  <L n="tag_set">
+                                    <E>Func_DroidBB</E>
+                                    <E>Func_DroidR</E>
+                                  </L>
+                                </U>
+                              </V>
+                            </U>
+                          </V>
+                        </L>
+                        <L>
+                          <V t="routing_slave_formation">
+                            <U n="routing_slave_formation">
+                              <V t="in_formation" n="formation_test">
+                                <U n="in_formation">
+                                  <V t="enabled" n="formations_to_validate">
+                                    <U n="enabled">
+                                      <V n="whitelist" t="specify">
+                                        <U n="specify">
+                                          <L n="whitelist">
+                                            <T>230813<!--RoutingFormation: routingFormation_Droid_Follow--></T>
+                                          </L>
+                                        </U>
+                                      </V>
+                                    </U>
+                                  </V>
+                                </U>
+                              </V>
+                              <V t="enabled" n="participant_master" />
+                            </U>
+                          </V>
+                        </L>
+                      </L>
+                      <V t="enabled" n="disabled_text">
+                        <T n="enabled">0xEC11B8E3<!--String: "Requiere un droide."--></T>
+                      </V>
+                      <V n="display_text" t="single">
+                        <T n="single">0xCA806675<!--String: "Piratear con droide"--></T>
+                      </V>
+                    </U>
+                    <U>
+                      <L n="action_results">
+                        <U>
+                          <L n="next_moments">
+                            <E>Generic_08</E>
+                          </L>
+                        </U>
+                      </L>
+                      <L n="availability_tests">
+                        <L>
+                          <V t="inventory">
+                            <U n="inventory">
+                              <V n="contents_check" t="has_object_with_tag">
+                                <U n="has_object_with_tag">
+                                  <L n="tag_set">
+                                    <E>Func_Lightsaber_Hilt</E>
+                                  </L>
+                                </U>
+                              </V>
+                            </U>
+                          </V>
+                        </L>
+                      </L>
+                      <V t="enabled" n="disabled_text">
+                        <T n="enabled">0x82A701C4<!--String: "Requiere una espada láser."--></T>
+                      </V>
+                      <V n="display_text" t="single">
+                        <T n="single">0xE96B9F2<!--String: "Perforar con espada láser"--></T>
+                      </V>
+                    </U>
+                  </L>
+                  <V n="_visibility" t="show_dialog">
+                    <U n="show_dialog">
+                      <V t="disabled" n="audio_sting" />
+                      <E n="dialog_style">LARGE_ICON</E>
+                      <V t="enabled" n="icon">
+                        <V n="enabled" t="resource_key">
+                          <U n="resource_key">
+                            <T n="key" p="InGP09\UI\Icons\ChanceCard\ChanceCard_Casino.png">2f7d0004:00000000:45a759e78f1aa56b</T>
+                          </U>
+                        </V>
+                      </V>
+                      <V n="text" t="single">
+                        <T n="single">0x2D7EBA8<!--String: "{0.SimFirstName} le hace un gesto afirmativo a uno de sus cómplices y señala a los clientes del casino. Este sonríe, se aprieta los nudillos y se acerca a un abednedo enorme vestido con un traje elegante. “¡Mira por dónde vas!”, grita al tiempo que empuja al abednedo contra otro jugador. Se derraman varias bebidas y numerosas cantofichas salen volando en todas las direcciones. Los clientes se abalanzan a cogerlas. ¡Estallan más peleas! Seguridad interviene para ocuparse de la situación. El camino a la cámara está despejado. El equipo avanza y se encuentra cara a cara con la imponente puerta de la cámara. ¿Cómo debería intentar atravesarla?"--></T>
+                      </V>
+                    </U>
+                  </V>
+                </U>
+              </V>
+            </U>
+          </U>
+          <U>
+            <E n="key">Generic_04</E>
+            <U n="value">
+              <V n="aventure_moment" t="literal">
+                <U n="literal">
+                  <L n="_finish_actions">
+                    <U>
+                      <L n="action_results">
+                        <U>
+                          <L n="next_moments">
+                            <E>Generic_05</E>
+                          </L>
+                        </U>
+                      </L>
+                      <V n="display_text" t="single">
+                        <T n="single">0x5CF3ACC6<!--String: "Preguntar a miembro del equipo"--></T>
+                      </V>
+                    </U>
+                    <U>
+                      <L n="action_results">
+                        <U>
+                          <L n="next_moments">
+                            <E>Generic_06</E>
+                          </L>
+                        </U>
+                      </L>
+                      <L n="availability_tests">
+                        <L>
+                          <V t="inventory">
+                            <U n="inventory">
+                              <V n="contents_check" t="has_object_with_tag">
+                                <U n="has_object_with_tag">
+                                  <L n="tag_set">
+                                    <E>Func_Batuu_Thermal_Detonator</E>
+                                  </L>
+                                </U>
+                              </V>
+                            </U>
+                          </V>
+                        </L>
+                      </L>
+                      <V t="enabled" n="disabled_text">
+                        <T n="enabled">0x54026D11<!--String: "Requiere un detonador térmico."--></T>
+                      </V>
+                      <V n="display_text" t="single">
+                        <T n="single">0x2D11EE86<!--String: "Volarla con detonador térmico"--></T>
+                      </V>
+                    </U>
+                    <U>
+                      <L n="action_results">
+                        <U>
+                          <L n="next_moments">
+                            <E>Generic_07</E>
+                          </L>
+                        </U>
+                      </L>
+                      <L n="availability_tests">
+                        <L>
+                          <V t="inventory">
+                            <U n="inventory">
+                              <V t="has_object_with_tag" n="contents_check">
+                                <U n="has_object_with_tag">
+                                  <L n="tag_set">
+                                    <E>Func_DroidBB</E>
+                                    <E>Func_DroidR</E>
+                                  </L>
+                                </U>
+                              </V>
+                            </U>
+                          </V>
+                        </L>
+                        <L>
+                          <V t="routing_slave_formation">
+                            <U n="routing_slave_formation">
+                              <V t="in_formation" n="formation_test">
+                                <U n="in_formation">
+                                  <V t="enabled" n="formations_to_validate">
+                                    <U n="enabled">
+                                      <V n="whitelist" t="specify">
+                                        <U n="specify">
+                                          <L n="whitelist">
+                                            <T>230813<!--RoutingFormation: routingFormation_Droid_Follow--></T>
+                                          </L>
+                                        </U>
+                                      </V>
+                                    </U>
+                                  </V>
+                                </U>
+                              </V>
+                              <V t="enabled" n="participant_master" />
+                            </U>
+                          </V>
+                        </L>
+                      </L>
+                      <V t="enabled" n="disabled_text">
+                        <T n="enabled">0xEC11B8E3<!--String: "Requiere un droide."--></T>
+                      </V>
+                      <V n="display_text" t="single">
+                        <T n="single">0xCA806675<!--String: "Piratear con droide"--></T>
+                      </V>
+                    </U>
+                    <U>
+                      <L n="action_results">
+                        <U>
+                          <L n="next_moments">
+                            <E>Generic_08</E>
+                          </L>
+                        </U>
+                      </L>
+                      <L n="availability_tests">
+                        <L>
+                          <V t="inventory">
+                            <U n="inventory">
+                              <V n="contents_check" t="has_object_with_tag">
+                                <U n="has_object_with_tag">
+                                  <L n="tag_set">
+                                    <E>Func_Lightsaber_Hilt</E>
+                                  </L>
+                                </U>
+                              </V>
+                            </U>
+                          </V>
+                        </L>
+                      </L>
+                      <V t="enabled" n="disabled_text">
+                        <T n="enabled">0x82A701C4<!--String: "Requiere una espada láser."--></T>
+                      </V>
+                      <V n="display_text" t="single">
+                        <T n="single">0xE96B9F2<!--String: "Perforar con espada láser"--></T>
+                      </V>
+                    </U>
+                  </L>
+                  <V n="_visibility" t="show_dialog">
+                    <U n="show_dialog">
+                      <V t="disabled" n="audio_sting" />
+                      <E n="dialog_style">LARGE_ICON</E>
+                      <V t="enabled" n="icon">
+                        <V n="enabled" t="resource_key">
+                          <U n="resource_key">
+                            <T n="key" p="InGP09\UI\Icons\ChanceCard\ChanceCard_Casino.png">2f7d0004:00000000:45a759e78f1aa56b</T>
+                          </U>
+                        </V>
+                      </V>
+                      <V n="text" t="single">
+                        <T n="single">0x182605A4<!--String: "{0.SimFirstName} finge ser torpe y vuelca un gran cubo lleno de créditos en el suelo del casino. ¡Los créditos se esparcen en todas las direcciones! Los clientes se abalanzan a cogerlos. ¡Estallan peleas! Seguridad interviene para ocuparse de la situación. El camino a la cámara está despejado. El equipo avanza y se encuentra cara a cara con la imponente puerta de la cámara. ¿Cómo debería intentar atravesarla?"--></T>
+                      </V>
+                    </U>
+                  </V>
+                </U>
+              </V>
+            </U>
+          </U>
+          <U>
+            <E n="key">Generic_05</E>
+            <U n="value">
+              <V n="aventure_moment" t="literal">
+                <U n="literal">
+                  <L n="_finish_actions">
+                    <U>
+                      <L n="action_results">
+                        <U>
+                          <L n="next_moments">
+                            <E>Generic_09</E>
+                          </L>
+                        </U>
+                      </L>
+                      <V n="display_text" t="single">
+                        <T n="single">0x74B62D96<!--String: "Entrar en las cloacas"--></T>
+                      </V>
+                    </U>
+                  </L>
+                  <V n="_visibility" t="show_dialog">
+                    <U n="show_dialog">
+                      <V t="disabled" n="audio_sting" />
+                      <E n="dialog_style">LARGE_ICON</E>
+                      <V t="enabled" n="icon">
+                        <V n="enabled" t="resource_key">
+                          <U n="resource_key">
+                            <T n="key" p="InGP09\UI\Icons\ChanceCard\ChanceCard_Casino_Vault.png">2f7d0004:00000000:e8fbcfc7ed455d92</T>
+                          </U>
+                        </V>
+                      </V>
+                      <V n="text" t="single">
+                        <T n="single">0x61EBA44E<!--String: "Uno de los miembros del equipo de {0.SimFirstName} da un paso adelante, saca un pincho de datos y se pone a trabajar en el teclado de la cámara acorazada mientras el resto del equipo vigila. “¿Por qué tardas tanto?” ¡CLIC! La cámara está abierta, pero la alarma resuena con estridencia. El equipo carga rápidamente con todo lo que puede. ¡¿Por qué tienen qué pesar tanto las cantofichas?! ¡Hora de largarse!"--></T>
+                      </V>
+                    </U>
+                  </V>
+                </U>
+              </V>
+            </U>
+          </U>
+          <U>
+            <E n="key">Generic_06</E>
+            <U n="value">
+              <V n="aventure_moment" t="literal">
+                <U n="literal">
+                  <L n="_finish_actions">
+                    <U>
+                      <L n="action_results">
+                        <U>
+                          <L n="next_moments">
+                            <E>Generic_09</E>
+                          </L>
+                        </U>
+                      </L>
+                      <V n="display_text" t="single">
+                        <T n="single">0x74B62D96<!--String: "Entrar en las cloacas"--></T>
+                      </V>
+                    </U>
+                  </L>
+                  <V n="_visibility" t="show_dialog">
+                    <U n="show_dialog">
+                      <V t="enabled" n="audio_sting">
+                        <U n="enabled">
+                          <T n="audio" p="InGP09\Audio\ui\ui_gp09_advm_detonator_explosion.propx">39b2aa4a:00000000:4bd864bcd6d44204</T>
+                        </U>
+                      </V>
+                      <E n="dialog_style">LARGE_ICON</E>
+                      <V t="enabled" n="icon">
+                        <V n="enabled" t="resource_key">
+                          <U n="resource_key">
+                            <T n="key" p="InGP09\UI\Icons\ChanceCard\ChanceCard_Thermal_Detonator.png">2f7d0004:00000000:28efc19706f96866</T>
+                          </U>
+                        </V>
+                      </V>
+                      <V n="text" t="single">
+                        <T n="single">0x65BCD05B<!--String: "{0.SimFirstName} saca un detonador térmico y el resto del equipo retrocede. “¿Seguro que esta es la mejor opción?”, pregunta alguien, pero es demasiado tarde. {0.SimFirstName} activa el dispositivo y corre a ponerse a cubierto con el resto del equipo. ¡BUM! La cámara está abierta, pero la alarma resuena con estridencia. El equipo carga con todo lo que puede. ¡¿Por qué tienen qué pesar tanto las cantofichas?! ¡Hora de largarse!"--></T>
+                      </V>
+                    </U>
+                  </V>
+                </U>
+              </V>
+            </U>
+          </U>
+          <U>
+            <E n="key">Generic_07</E>
+            <U n="value">
+              <V n="aventure_moment" t="literal">
+                <U n="literal">
+                  <L n="_finish_actions">
+                    <U>
+                      <L n="action_results">
+                        <U>
+                          <L n="next_moments">
+                            <E>Generic_09</E>
+                          </L>
+                        </U>
+                      </L>
+                      <V n="display_text" t="single">
+                        <T n="single">0x74B62D96<!--String: "Entrar en las cloacas"--></T>
+                      </V>
+                    </U>
+                  </L>
+                  <V n="_visibility" t="show_dialog">
+                    <U n="show_dialog">
+                      <V t="enabled" n="audio_sting">
+                        <U n="enabled">
+                          <T n="audio" p="InGP09\Audio\ui\ui_gp09_advm_droid_beeps.propx">39b2aa4a:00000000:c7503bbf5f02db88</T>
+                        </U>
+                      </V>
+                      <E n="dialog_style">LARGE_ICON</E>
+                      <V t="enabled" n="icon">
+                        <V n="enabled" t="resource_key">
+                          <U n="resource_key">
+                            <T n="key" p="InGP09\UI\Icons\ChanceCard\ChanceCard_Casino_Vault.png">2f7d0004:00000000:e8fbcfc7ed455d92</T>
+                          </U>
+                        </V>
+                      </V>
+                      <V n="text" t="single">
+                        <T n="single">0xDA1C7C22<!--String: "El droide de {0.SimFirstName} se pone a trabajar en el panel de control de la cámara acorazada. “Bip bop” exclama al cabo de un rato. ¡CLIC! La puerta de la cámara está abierta, pero la alarma resuena con estridencia. El equipo carga rápidamente con todo lo que puede. ¡¿Por qué tienen qué pesar tanto las cantofichas?! ¡Hora de largarse!"--></T>
+                      </V>
+                    </U>
+                  </V>
+                </U>
+              </V>
+            </U>
+          </U>
+          <U>
+            <E n="key">Generic_08</E>
+            <U n="value">
+              <V n="aventure_moment" t="literal">
+                <U n="literal">
+                  <L n="_finish_actions">
+                    <U>
+                      <L n="action_results">
+                        <U>
+                          <L n="next_moments">
+                            <E>Generic_09</E>
+                          </L>
+                        </U>
+                      </L>
+                      <V n="display_text" t="single">
+                        <T n="single">0x74B62D96<!--String: "Entrar en las cloacas"--></T>
+                      </V>
+                    </U>
+                  </L>
+                  <V n="_visibility" t="show_dialog">
+                    <U n="show_dialog">
+                      <V t="enabled" n="audio_sting">
+                        <U n="enabled">
+                          <T n="audio" p="InGP09\Audio\ui\ui_gp09_advm_lightsaber_cut.propx">39b2aa4a:00000000:0d5a481e5fc7ef32</T>
+                        </U>
+                      </V>
+                      <E n="dialog_style">LARGE_ICON</E>
+                      <V t="enabled" n="icon">
+                        <V n="enabled" t="resource_key">
+                          <U n="resource_key">
+                            <T n="key" p="InGP09\UI\Icons\ChanceCard\ChanceCard_Lightsaber_Metal.png">2f7d0004:00000000:e90444f3b50baf99</T>
+                          </U>
+                        </V>
+                      </V>
+                      <V n="text" t="single">
+                        <T n="single">0x9DBFD49E<!--String: "{0.SimFirstName} empuña su espada láser, la enciende, atraviesa con ella la puerta de la cámara y empieza a abrir un gran agujero. ¡Una enorme sección de la puerta cae al suelo con un sonoro golpe! La cámara está abierta, pero la alarma resuena con estridencia. El equipo carga rápidamente con todo lo que puede. ¡¿Por qué tienen qué pesar tanto las cantofichas?! ¡Hora de largarse!"--></T>
+                      </V>
+                    </U>
+                  </V>
+                </U>
+              </V>
+            </U>
+          </U>
+          <U>
+            <E n="key">Generic_09</E>
+            <U n="value">
+              <V n="aventure_moment" t="literal">
+                <U n="literal">
+                  <L n="_finish_actions">
+                    <U>
+                      <L n="action_results">
+                        <U>
+                          <L n="next_moments">
+                            <E>Generic_10</E>
+                          </L>
+                        </U>
+                      </L>
+                      <V n="display_text" t="single">
+                        <T n="single">0xC7222562<!--String: "Recordar el camino"--></T>
+                      </V>
+                    </U>
+                    <U>
+                      <L n="action_results">
+                        <U>
+                          <L n="next_moments">
+                            <E>Generic_11</E>
+                          </L>
+                        </U>
+                      </L>
+                      <L n="availability_tests">
+                        <L>
+                          <V t="inventory">
+                            <U n="inventory">
+                              <V t="has_object_with_tag" n="contents_check">
+                                <U n="has_object_with_tag">
+                                  <L n="tag_set">
+                                    <E>Func_DroidBB</E>
+                                    <E>Func_DroidR</E>
+                                  </L>
+                                </U>
+                              </V>
+                            </U>
+                          </V>
+                        </L>
+                        <L>
+                          <V t="routing_slave_formation">
+                            <U n="routing_slave_formation">
+                              <V t="in_formation" n="formation_test">
+                                <U n="in_formation">
+                                  <V t="enabled" n="formations_to_validate">
+                                    <U n="enabled">
+                                      <V n="whitelist" t="specify">
+                                        <U n="specify">
+                                          <L n="whitelist">
+                                            <T>230813<!--RoutingFormation: routingFormation_Droid_Follow--></T>
+                                          </L>
+                                        </U>
+                                      </V>
+                                    </U>
+                                  </V>
+                                </U>
+                              </V>
+                              <V t="enabled" n="participant_master" />
+                            </U>
+                          </V>
+                        </L>
+                      </L>
+                      <V t="enabled" n="disabled_text">
+                        <T n="enabled">0xEC11B8E3<!--String: "Requiere un droide."--></T>
+                      </V>
+                      <V n="display_text" t="single">
+                        <T n="single">0x508702FB<!--String: "Ruta guiada con droide"--></T>
+                      </V>
+                    </U>
+                  </L>
+                  <V n="_visibility" t="show_dialog">
+                    <U n="show_dialog">
+                      <V t="disabled" n="audio_sting" />
+                      <E n="dialog_style">LARGE_ICON</E>
+                      <V t="enabled" n="icon">
+                        <V n="enabled" t="resource_key">
+                          <U n="resource_key">
+                            <T n="key" p="InGP09\UI\Icons\ChanceCard\ChanceCard_Sewers.png">2f7d0004:00000000:2ee0c8d83b484827</T>
+                          </U>
+                        </V>
+                      </V>
+                      <V n="text" t="single">
+                        <T n="single">0x922893FC<!--String: "El equipo intenta con dificultad salir por una puerta lateral con su botín de cantofichas. ¡PIU, PIU! Sus componentes reciben un aluvión de disparos de bláster. Uno de esos disparos alcanza la bolsa del botín de {0.SimFirstName} y las fichas de su interior empiezan a caer al suelo. Cuanto más tarde el equipo, más fichas se perderán. Con los guardias pisándoles los talones, la policía no estará mucho más lejos. El grupo se dirige a una tapa de alcantarilla cercana y se mete en las cloacas. Con suerte, nadie les habrá visto. ¿Por dónde van ahora para ir a la salida?"--></T>
+                      </V>
+                    </U>
+                  </V>
+                </U>
+              </V>
+            </U>
+          </U>
+          <U>
+            <E n="key">Generic_10</E>
+            <U n="value">
+              <V n="aventure_moment" t="literal">
+                <U n="literal">
+                  <L n="_finish_actions">
+                    <U>
+                      <L n="action_results">
+                        <U>
+                          <L n="next_moments">
+                            <E>Generic_12</E>
+                          </L>
+                        </U>
+                      </L>
+                      <V n="display_text" t="single">
+                        <T n="single">0xC9DC900B<!--String: "Ruta alternativa"--></T>
+                      </V>
+                    </U>
+                    <U>
+                      <L n="action_results">
+                        <U>
+                          <L n="next_moments">
+                            <E>Generic_13</E>
+                          </L>
+                        </U>
+                      </L>
+                      <L n="availability_tests">
+                        <L>
+                          <V t="inventory">
+                            <U n="inventory">
+                              <V n="contents_check" t="has_object_with_tag">
+                                <U n="has_object_with_tag">
+                                  <L n="tag_set">
+                                    <E>Func_Lightsaber_Hilt</E>
+                                  </L>
+                                </U>
+                              </V>
+                            </U>
+                          </V>
+                        </L>
+                      </L>
+                      <V t="enabled" n="disabled_text">
+                        <T n="enabled">0x82A701C4<!--String: "Requiere una espada láser."--></T>
+                      </V>
+                      <V n="display_text" t="single">
+                        <T n="single">0xE5242BF1<!--String: "Perforar puerta con espada láser"--></T>
+                      </V>
+                    </U>
+                  </L>
+                  <V n="_visibility" t="show_dialog">
+                    <U n="show_dialog">
+                      <V t="disabled" n="audio_sting" />
+                      <E n="dialog_style">LARGE_ICON</E>
+                      <V t="enabled" n="icon">
+                        <V n="enabled" t="resource_key">
+                          <U n="resource_key">
+                            <T n="key" p="InGP09\UI\Icons\ChanceCard\ChanceCard_Sewers.png">2f7d0004:00000000:2ee0c8d83b484827</T>
+                          </U>
+                        </V>
+                      </V>
+                      <V n="text" t="single">
+                        <T n="single">0x1EEEE002<!--String: "{0.SimFirstName} intenta recordar la ruta óptima, pero el tufo hace que tenga dificultad para concentrarse. ¿Era izquierda, izquierda, derecha, izquierda o izquierda, derecha, izquierda, izquierda? Mientras el equipo corre por los túneles, se van cayendo más fichas. Al rato, se encuentran con una puerta cerrada. ¿Cómo deberían intentar atravesarla?"--></T>
+                      </V>
+                    </U>
+                  </V>
+                </U>
+              </V>
+            </U>
+          </U>
+          <U>
+            <E n="key">Generic_11</E>
+            <U n="value">
+              <V n="aventure_moment" t="literal">
+                <U n="literal">
+                  <L n="_finish_actions">
+                    <U>
+                      <L n="action_results">
+                        <U>
+                          <L n="next_moments">
+                            <E>Generic_14</E>
+                          </L>
+                        </U>
+                      </L>
+                      <V n="display_text" t="single">
+                        <T n="single">0x9728A50D<!--String: "Huir al <i>Halcón</i>"--></T>
+                      </V>
+                    </U>
+                    <U>
+                      <L n="action_results">
+                        <U>
+                          <L n="next_moments">
+                            <E>Generic_15</E>
+                          </L>
+                        </U>
+                      </L>
+                      <L n="availability_tests">
+                        <L>
+                          <V t="inventory">
+                            <U n="inventory">
+                              <V n="contents_check" t="has_object_with_tag">
+                                <U n="has_object_with_tag">
+                                  <L n="tag_set">
+                                    <E>Func_Batuu_Binoculars</E>
+                                  </L>
+                                </U>
+                              </V>
+                            </U>
+                          </V>
+                        </L>
+                      </L>
+                      <V n="disabled_text" t="enabled">
+                        <T n="enabled">0x64B29ABD<!--String: "Requiere electrobinoculares."--></T>
+                      </V>
+                      <V n="display_text" t="single">
+                        <T n="single">0x512DD48<!--String: "Inspeccionar zona con electrobinoculares"--></T>
+                      </V>
+                    </U>
+                  </L>
+                  <V n="_visibility" t="show_dialog">
+                    <U n="show_dialog">
+                      <V t="enabled" n="audio_sting">
+                        <U n="enabled">
+                          <T n="audio" p="InGP09\Audio\ui\ui_gp09_advm_droid_beeps.propx">39b2aa4a:00000000:c7503bbf5f02db88</T>
+                        </U>
+                      </V>
+                      <E n="dialog_style">LARGE_ICON</E>
+                      <V t="enabled" n="icon">
+                        <V n="enabled" t="resource_key">
+                          <U n="resource_key">
+                            <T n="key" p="InGP09\UI\Icons\ChanceCard\ChanceCard_Sewers.png">2f7d0004:00000000:2ee0c8d83b484827</T>
+                          </U>
+                        </V>
+                      </V>
+                      <V n="text" t="single">
+                        <T n="single">0x5F090B0B<!--String: "El droide de {0.SimFirstName} emite un "bip bop" de satisfacción y emprende la marcha por la ruta explorada previamente. Los demás lo siguen y, al poco rato, ven la tapa de la alcantarilla que {0.SimFirstName} estaba buscando. El equipo atraviesa la abertura y llega a la superficie. El <i>Halcón Milenario</i> no está lejos..."--></T>
+                      </V>
+                    </U>
+                  </V>
+                </U>
+              </V>
+            </U>
+          </U>
+          <U>
+            <E n="key">Generic_12</E>
+            <U n="value">
+              <V n="aventure_moment" t="literal">
+                <U n="literal">
+                  <L n="_finish_actions">
+                    <U>
+                      <L n="action_results">
+                        <U>
+                          <L n="next_moments">
+                            <E>Generic_14</E>
+                          </L>
+                        </U>
+                      </L>
+                      <V n="display_text" t="single">
+                        <T n="single">0x9728A50D<!--String: "Huir al <i>Halcón</i>"--></T>
+                      </V>
+                    </U>
+                    <U>
+                      <L n="action_results">
+                        <U>
+                          <L n="next_moments">
+                            <E>Generic_15</E>
+                          </L>
+                        </U>
+                      </L>
+                      <L n="availability_tests">
+                        <L>
+                          <V t="inventory">
+                            <U n="inventory">
+                              <V n="contents_check" t="has_object_with_tag">
+                                <U n="has_object_with_tag">
+                                  <L n="tag_set">
+                                    <E>Func_Batuu_Binoculars</E>
+                                  </L>
+                                </U>
+                              </V>
+                            </U>
+                          </V>
+                        </L>
+                      </L>
+                      <V n="disabled_text" t="enabled">
+                        <T n="enabled">0x64B29ABD<!--String: "Requiere electrobinoculares."--></T>
+                      </V>
+                      <V n="display_text" t="single">
+                        <T n="single">0x512DD48<!--String: "Inspeccionar zona con electrobinoculares"--></T>
+                      </V>
+                    </U>
+                  </L>
+                  <V n="_visibility" t="show_dialog">
+                    <U n="show_dialog">
+                      <V t="disabled" n="audio_sting" />
+                      <E n="dialog_style">LARGE_ICON</E>
+                      <V t="enabled" n="icon">
+                        <V n="enabled" t="resource_key">
+                          <U n="resource_key">
+                            <T n="key" p="InGP09\UI\Icons\ChanceCard\ChanceCard_Sewers.png">2f7d0004:00000000:2ee0c8d83b484827</T>
+                          </U>
+                        </V>
+                      </V>
+                      <V n="text" t="single">
+                        <T n="single">0x88B9030<!--String: "¡Sin herramientas para perforar no hay manera de atravesar esta puerta! El equipo tendrá que volver sobre sus pasos y buscar otra salida. {0.SimFirstName} oye tras ellos el ruido de unos pasos en el agua. De su bolsa siguen cayendo fichas. El grupo debe moverse deprisa. Justo delante está la tapa de alcantarilla que {0.SimFirstName} estaba buscando. El equipo atraviesa la abertura y llega a la superficie. El <i>Halcón Milenario</i> no está lejos..."--></T>
+                      </V>
+                    </U>
+                  </V>
+                </U>
+              </V>
+            </U>
+          </U>
+          <U>
+            <E n="key">Generic_13</E>
+            <U n="value">
+              <V n="aventure_moment" t="literal">
+                <U n="literal">
+                  <L n="_finish_actions">
+                    <U>
+                      <L n="action_results">
+                        <U>
+                          <L n="next_moments">
+                            <E>Generic_14</E>
+                          </L>
+                        </U>
+                      </L>
+                      <V n="display_text" t="single">
+                        <T n="single">0x9728A50D<!--String: "Huir al <i>Halcón</i>"--></T>
+                      </V>
+                    </U>
+                    <U>
+                      <L n="action_results">
+                        <U>
+                          <L n="next_moments">
+                            <E>Generic_15</E>
+                          </L>
+                        </U>
+                      </L>
+                      <L n="availability_tests">
+                        <L>
+                          <V t="inventory">
+                            <U n="inventory">
+                              <V n="contents_check" t="has_object_with_tag">
+                                <U n="has_object_with_tag">
+                                  <L n="tag_set">
+                                    <E>Func_Batuu_Binoculars</E>
+                                  </L>
+                                </U>
+                              </V>
+                            </U>
+                          </V>
+                        </L>
+                      </L>
+                      <V n="disabled_text" t="enabled">
+                        <T n="enabled">0x64B29ABD<!--String: "Requiere electrobinoculares."--></T>
+                      </V>
+                      <V n="display_text" t="single">
+                        <T n="single">0x512DD48<!--String: "Inspeccionar zona con electrobinoculares"--></T>
+                      </V>
+                    </U>
+                  </L>
+                  <V n="_visibility" t="show_dialog">
+                    <U n="show_dialog">
+                      <V t="enabled" n="audio_sting">
+                        <U n="enabled">
+                          <T n="audio" p="InGP09\Audio\ui\ui_gp09_advm_lightsaber_cut.propx">39b2aa4a:00000000:0d5a481e5fc7ef32</T>
+                        </U>
+                      </V>
+                      <E n="dialog_style">LARGE_ICON</E>
+                      <V t="enabled" n="icon">
+                        <V n="enabled" t="resource_key">
+                          <U n="resource_key">
+                            <T n="key" p="InGP09\UI\Icons\ChanceCard\ChanceCard_Lightsaber_Metal.png">2f7d0004:00000000:e90444f3b50baf99</T>
+                          </U>
+                        </V>
+                      </V>
+                      <V n="text" t="single">
+                        <T n="single">0xEA5B0796<!--String: "{0.SimFirstName} empuña su espada láser y perfora la puerta con facilidad. Justo delante está la tapa de alcantarilla que estaba buscando. El equipo atraviesa la abertura y llega a la superficie. El <i>Halcón Milenario</i> no está lejos..."--></T>
+                      </V>
+                    </U>
+                  </V>
+                </U>
+              </V>
+            </U>
+          </U>
+          <U>
+            <E n="key">Generic_14</E>
+            <U n="value">
+              <V n="aventure_moment" t="literal">
+                <U n="literal">
+                  <L n="_finish_actions">
+                    <U>
+                      <L n="action_results">
+                        <U>
+                          <L n="next_moments">
+                            <E>Generic_16</E>
+                          </L>
+                        </U>
+                      </L>
+                      <V n="display_text" t="single">
+                        <T n="single">0xD00B14C6<!--String: "Combatir a la policía"--></T>
+                      </V>
+                    </U>
+                    <U>
+                      <L n="action_results">
+                        <U>
+                          <L n="next_moments">
+                            <E>Generic_17</E>
+                          </L>
+                        </U>
+                      </L>
+                      <L n="availability_tests">
+                        <L>
+                          <V t="inventory">
+                            <U n="inventory">
+                              <V n="contents_check" t="has_object_with_tag">
+                                <U n="has_object_with_tag">
+                                  <L n="tag_set">
+                                    <E>Func_Batuu_FakeID</E>
+                                  </L>
+                                </U>
+                              </V>
+                            </U>
+                          </V>
+                        </L>
+                      </L>
+                      <V t="enabled" n="disabled_text">
+                        <T n="enabled">0xB9D513D3<!--String: "Requiere una identificación falsa."--></T>
+                      </V>
+                      <V n="display_text" t="single">
+                        <T n="single">0x6EC4CAC7<!--String: "Dar identificación falsa"--></T>
+                      </V>
+                    </U>
+                    <U>
+                      <L n="action_results">
+                        <U>
+                          <L n="next_moments">
+                            <E>Generic_18</E>
+                          </L>
+                        </U>
+                      </L>
+                      <L n="availability_tests">
+                        <L>
+                          <V t="inventory">
+                            <U n="inventory">
+                              <V n="contents_check" t="has_object_with_tag">
+                                <U n="has_object_with_tag">
+                                  <L n="tag_set">
+                                    <E>Func_Batuu_Blaster</E>
+                                  </L>
+                                </U>
+                              </V>
+                            </U>
+                          </V>
+                        </L>
+                      </L>
+                      <V t="enabled" n="disabled_text">
+                        <T n="enabled">0xC6A5F149<!--String: "Requiere un bláster."--></T>
+                      </V>
+                      <V t="single" n="display_subtext" />
+                      <V n="display_text" t="single">
+                        <T n="single">0xC7DFD0C4<!--String: "Aturdir con bláster"--></T>
+                      </V>
+                    </U>
+                  </L>
+                  <V n="_visibility" t="show_dialog">
+                    <U n="show_dialog">
+                      <V t="disabled" n="audio_sting" />
+                      <E n="dialog_style">LARGE_ICON</E>
+                      <V t="enabled" n="icon">
+                        <V n="enabled" t="resource_key">
+                          <U n="resource_key">
+                            <T n="key" p="InGP09\UI\Icons\ChanceCard\ChanceCard_Falcon_Canto_Bight.png">2f7d0004:00000000:a93dea6cb48e35ce</T>
+                          </U>
+                        </V>
+                      </V>
+                      <V n="text" t="single">
+                        <T n="single">0xA4247F40<!--String: "El equipo se abalanza hacia el <i>Halcón</i>, dejando tras de sí un reguero de fichas que suenan al caer al suelo. Por desgracia para ellos, se tropiezan con un pequeño grupo de policías de Canto Bight."--></T>
+                      </V>
+                    </U>
+                  </V>
+                </U>
+              </V>
+            </U>
+          </U>
+          <U>
+            <E n="key">Generic_15</E>
+            <U n="value">
+              <V n="aventure_moment" t="literal">
+                <U n="literal">
+                  <L n="_finish_actions">
+                    <U>
+                      <L n="action_results">
+                        <U>
+                          <L n="next_moments">
+                            <E>Generic_19</E>
+                          </L>
+                        </U>
+                      </L>
+                      <V n="display_text" t="single">
+                        <T n="single">0x307AE349<!--String: "Esperar a tener vía libre"--></T>
+                      </V>
+                    </U>
+                    <U>
+                      <L n="action_results">
+                        <U>
+                          <L n="next_moments">
+                            <E>Generic_20</E>
+                          </L>
+                        </U>
+                      </L>
+                      <L n="availability_tests">
+                        <L>
+                          <V t="inventory">
+                            <U n="inventory">
+                              <V n="contents_check" t="has_object_with_tag">
+                                <U n="has_object_with_tag">
+                                  <L n="tag_set">
+                                    <E>Func_Batuu_Comm_Link</E>
+                                  </L>
+                                </U>
+                              </V>
+                            </U>
+                          </V>
+                        </L>
+                      </L>
+                      <V n="disabled_text" t="enabled">
+                        <T n="enabled">0xF0C91D73<!--String: "Requiere un comunicador."--></T>
+                      </V>
+                      <V n="display_text" t="single">
+                        <T n="single">0x432756A7<!--String: "Distraer a la policía con comunicador"--></T>
+                      </V>
+                    </U>
+                  </L>
+                  <V n="_visibility" t="show_dialog">
+                    <U n="show_dialog">
+                      <V t="disabled" n="audio_sting" />
+                      <E n="dialog_style">LARGE_ICON</E>
+                      <V t="enabled" n="icon">
+                        <V n="enabled" t="resource_key">
+                          <U n="resource_key">
+                            <T n="key" p="InGP09\UI\Icons\ChanceCard\ChanceCard_Falcon_Police.png">2f7d0004:00000000:faeaa90976a42212</T>
+                          </U>
+                        </V>
+                      </V>
+                      <V n="text" t="single">
+                        <T n="single">0x72B9691<!--String: "¡{0.SimFirstName} saca unos electrobinoculares y ve a un grupo de policías de Canto Bight investigando el <i>Halcón</i>! ¿Qué debería hacer el equipo?"--></T>
+                      </V>
+                    </U>
+                  </V>
+                </U>
+              </V>
+            </U>
+          </U>
+          <U>
+            <E n="key">Generic_16</E>
+            <U n="value">
+              <V n="aventure_moment" t="literal">
+                <U n="literal">
+                  <L n="_finish_actions">
+                    <U>
+                      <L n="action_results">
+                        <U>
+                          <L n="loot_actions">
+                            <T>238560<!--LootActions: loot_Batuu_Starship_IdleGround--></T>
+                          </L>
+                        </U>
+                      </L>
+                      <V n="display_text" t="single">
+                        <T n="single">0x50F82E9D<!--String: "Volver a Batuu"--></T>
+                      </V>
+                    </U>
+                  </L>
+                  <V n="_visibility" t="show_dialog">
+                    <U n="show_dialog">
+                      <V t="disabled" n="audio_sting" />
+                      <E n="dialog_style">LARGE_ICON</E>
+                      <V t="enabled" n="icon">
+                        <V n="enabled" t="resource_key">
+                          <U n="resource_key">
+                            <T n="key" p="InGP09\UI\Icons\ChanceCard\ChanceCard_Falcon_Canto_Bight.png">2f7d0004:00000000:a93dea6cb48e35ce</T>
+                          </U>
+                        </V>
+                      </V>
+                      <V n="text" t="single">
+                        <T n="single">0x77061076<!--String: "Pensando con rapidez, {0.SimFirstName} intenta acercarse con aire despreocupado al agente. Cuando este levanta un bláster, el equipo pasa a la acción e inicia una pelea. Dos agentes yacen en el suelo inconscientes mientras Chewbacca levanta al último de ellos por encima de su cabeza y lo lanza sobre un arbusto cercano. Hay fichas esparcidas por todas partes, pero no hay tiempo de recogerlas; ¡el equipo debe volver al <i>Halcón</i>!"--></T>
+                      </V>
+                    </U>
+                  </V>
+                </U>
+              </V>
+            </U>
+          </U>
+          <U>
+            <E n="key">Generic_17</E>
+            <U n="value">
+              <V n="aventure_moment" t="literal">
+                <U n="literal">
+                  <L n="_finish_actions">
+                    <U>
+                      <L n="action_results">
+                        <U>
+                          <L n="loot_actions">
+                            <T>238560<!--LootActions: loot_Batuu_Starship_IdleGround--></T>
+                          </L>
+                        </U>
+                      </L>
+                      <V n="display_text" t="single">
+                        <T n="single">0x50F82E9D<!--String: "Volver a Batuu"--></T>
+                      </V>
+                    </U>
+                  </L>
+                  <V n="_visibility" t="show_dialog">
+                    <U n="show_dialog">
+                      <V t="disabled" n="audio_sting" />
+                      <E n="dialog_style">LARGE_ICON</E>
+                      <V t="enabled" n="icon">
+                        <V n="enabled" t="resource_key">
+                          <U n="resource_key">
+                            <T n="key" p="InGP09\UI\Icons\ChanceCard\ChanceCard_Falcon_Canto_Bight.png">2f7d0004:00000000:a93dea6cb48e35ce</T>
+                          </U>
+                        </V>
+                      </V>
+                      <V n="text" t="single">
+                        <T n="single">0xB7637987<!--String: "{0.SimFirstName} saca una identificación falsa y se la entrega al agente de policía receloso. Mientras intenta convencerlo, el resto del equipo avanza hacia el <i>Halcón</i>. “¡Un segundo, esto no parece auténtico! ¡Manos arriba!”, grita el agente al tiempo que Chewbacca lo levanta por encima de su cabeza y lo lanza sobre un arbusto cercano. ¡El camino hasta el <i>Halcón</i> está despejado!"--></T>
+                      </V>
+                    </U>
+                  </V>
+                </U>
+              </V>
+            </U>
+          </U>
+          <U>
+            <E n="key">Generic_18</E>
+            <U n="value">
+              <V n="aventure_moment" t="literal">
+                <U n="literal">
+                  <L n="_finish_actions">
+                    <U>
+                      <L n="action_results">
+                        <U>
+                          <L n="loot_actions">
+                            <T>238560<!--LootActions: loot_Batuu_Starship_IdleGround--></T>
+                          </L>
+                        </U>
+                      </L>
+                      <V n="display_text" t="single">
+                        <T n="single">0x50F82E9D<!--String: "Volver a Batuu"--></T>
+                      </V>
+                    </U>
+                  </L>
+                  <V n="_visibility" t="show_dialog">
+                    <U n="show_dialog">
+                      <V t="enabled" n="audio_sting">
+                        <U n="enabled">
+                          <T n="audio" p="InGP09\Audio\ui\ui_gp09_advm_blaster_gun_generic.propx">39b2aa4a:00000000:da5caab4346a23d2</T>
+                        </U>
+                      </V>
+                      <E n="dialog_style">LARGE_ICON</E>
+                      <V t="enabled" n="icon">
+                        <V n="enabled" t="resource_key">
+                          <U n="resource_key">
+                            <T n="key" p="InGP09\UI\Icons\ChanceCard\ChanceCard_Falcon_Canto_Bight.png">2f7d0004:00000000:a93dea6cb48e35ce</T>
+                          </U>
+                        </V>
+                      </V>
+                      <V n="text" t="single">
+                        <T n="single">0x9CB4D0F<!--String: "{0.SimFirstName} activa la función aturdidora del bláster y dispara a las unidades policiales. Un agente de policía recibe un impacto y cae al suelo desorientado mientras otro se agazapa tras unos arbustos. ¡El camino hasta el <i>Halcón</i> está despejado!"--></T>
+                      </V>
+                    </U>
+                  </V>
+                </U>
+              </V>
+            </U>
+          </U>
+          <U>
+            <E n="key">Generic_19</E>
+            <U n="value">
+              <V n="aventure_moment" t="literal">
+                <U n="literal">
+                  <L n="_finish_actions">
+                    <U>
+                      <L n="action_results">
+                        <U>
+                          <L n="loot_actions">
+                            <T>238560<!--LootActions: loot_Batuu_Starship_IdleGround--></T>
+                          </L>
+                        </U>
+                      </L>
+                      <V n="display_text" t="single">
+                        <T n="single">0x50F82E9D<!--String: "Volver a Batuu"--></T>
+                      </V>
+                    </U>
+                  </L>
+                  <V n="_visibility" t="show_dialog">
+                    <U n="show_dialog">
+                      <V t="disabled" n="audio_sting" />
+                      <E n="dialog_style">LARGE_ICON</E>
+                      <V t="enabled" n="icon">
+                        <V n="enabled" t="resource_key">
+                          <U n="resource_key">
+                            <T n="key" p="InGP09\UI\Icons\ChanceCard\ChanceCard_Falcon_Police.png">2f7d0004:00000000:faeaa90976a42212</T>
+                          </U>
+                        </V>
+                      </V>
+                      <V n="text" t="single">
+                        <T n="single">0x10423B3C<!--String: "Tras una breve espera, las unidades policiales recogen y se van. Seguro que solo estaban rellenando informes rutinarios. ¡El camino hasta el <i>Halcón</i> está despejado!"--></T>
+                      </V>
+                    </U>
+                  </V>
+                </U>
+              </V>
+            </U>
+          </U>
+          <U>
+            <E n="key">Generic_20</E>
+            <U n="value">
+              <V n="aventure_moment" t="literal">
+                <U n="literal">
+                  <L n="_finish_actions">
+                    <U>
+                      <L n="action_results">
+                        <U>
+                          <L n="loot_actions">
+                            <T>238560<!--LootActions: loot_Batuu_Starship_IdleGround--></T>
+                          </L>
+                        </U>
+                      </L>
+                      <V n="display_text" t="single">
+                        <T n="single">0x50F82E9D<!--String: "Volver a Batuu"--></T>
+                      </V>
+                    </U>
+                  </L>
+                  <V n="_visibility" t="show_dialog">
+                    <U n="show_dialog">
+                      <V t="disabled" n="audio_sting" />
+                      <E n="dialog_style">LARGE_ICON</E>
+                      <V t="enabled" n="icon">
+                        <V n="enabled" t="resource_key">
+                          <U n="resource_key">
+                            <T n="key" p="InGP09\UI\Icons\ChanceCard\ChanceCard_Falcon_Police.png">2f7d0004:00000000:faeaa90976a42212</T>
+                          </U>
+                        </V>
+                      </V>
+                      <V n="text" t="single">
+                        <T n="single">0xFFB0D462<!--String: "{0.SimFirstName} se conecta a la frecuencia de las comunicaciones policiales e informa de que han visto a los bandidos del casino huir hacia la playa. ¡La policía se apresura a dispersarse en esa dirección, dejando vía libre hacia el <i>Halcón</i>!"--></T>
+                      </V>
+                    </U>
+                  </V>
+                </U>
+              </V>
+            </U>
+          </U>
+          <U>
+            <E n="key">Generic_Starter</E>
+            <U n="value">
+              <V n="aventure_moment" t="literal">
+                <U n="literal">
+                  <L n="_finish_actions">
+                    <U>
+                      <L n="action_results">
+                        <U>
+                          <L n="next_moments">
+                            <E>Generic_01</E>
+                          </L>
+                        </U>
+                      </L>
+                      <V n="display_text" t="single">
+                        <T n="single">0xCD464C2A<!--String: "Caminar hasta el casino"--></T>
+                      </V>
+                    </U>
+                  </L>
+                  <V n="_visibility" t="show_dialog">
+                    <U n="show_dialog">
+                      <V t="enabled" n="audio_sting">
+                        <U n="enabled">
+                          <T n="audio" p="InGP09\Audio\music\bumpers\bumper_mission_adventure_scoundrel.propx">39b2aa4a:00000000:a52d0dd850c6fcda</T>
+                        </U>
+                      </V>
+                      <E n="dialog_style">LARGE_ICON</E>
+                      <V t="enabled" n="icon">
+                        <V n="enabled" t="resource_key">
+                          <U n="resource_key">
+                            <T n="key" p="InGP09\UI\Icons\ChanceCard\ChanceCard_Canto_Bight.png">2f7d0004:00000000:ee7050ad805ee728</T>
+                          </U>
+                        </V>
+                      </V>
+                      <V n="text" t="single">
+                        <T n="single">0x570B8791<!--String: "{0.SimFirstName} regresa a Canto Bight en el <i>Halcón Milenario</i> con el resto del escandaloso equipo... Tras su misión de exploración, {0.SimFirstName} decide que es mejor no aterrizar en el puerto espacial para evitar la exposición y el control de identificaciones. “¡Aterricemos en la playa!”, grita un miembro del equipo. “¡RAAAWWWRR!”, interviene Chewbacca. “Chewbacca dice que son muy estrictos con aterrizar ahí. Hagámoslo en ese claro y vayamos a la ciudad a pie”, propone {0.SimFirstName}."--></T>
+                      </V>
+                    </U>
+                  </V>
+                </U>
+              </V>
+            </U>
+          </U>
+        </L>
+        <L n="_initial_moments">
+          <U>
+            <E n="adventure_moment_key">Generic_Starter</E>
+          </U>
+        </L>
+        <T n="_resumable">False</T>
+        <V t="at_beginning" n="timing">
+          <U n="at_beginning">
+            <V t="enabled" n="offset_time">
+              <T n="enabled">5</T>
+            </V>
+          </U>
+        </V>
+      </U>
+    </V>
+    <V t="state_change">
+      <U n="state_change">
+        <T n="force_update">True</T>
+        <V t="single_value" n="new_value">
+          <U n="single_value">
+            <T n="new_value">242321<!--ObjectStateValue: droid_Anim_Idle_Off--></T>
+          </U>
+        </V>
+        <E n="state_change_target">RoutingSlaves</E>
+        <V t="immediately" n="timing" />
+      </U>
+    </V>
+  </L>
+  <L n="basic_liabilities">
+    <V t="hide_sim_liability">
+      <U n="hide_sim_liability">
+        <T n="should_transfer_liabilities">True</T>
+      </U>
+    </V>
+  </L>
+  <V t="disabled" n="basic_reserve_object" />
+  <V t="disabled" n="content_score" />
+  <T n="counts_as_inside">True</T>
+  <T n="display_name">0x6F3C3BCB<!--String: "De misión"--></T>
+  <U n="display_name_text_tokens">
+    <L n="tokens">
+      <V t="participant_type">
+        <U n="participant_type">
+          <V n="objects" t="from_participant">
+            <U n="from_participant">
+              <E n="participant">Actor</E>
+            </U>
+          </V>
+        </U>
+      </V>
+      <V t="participant_type">
+        <U n="participant_type">
+          <V t="from_participant" n="objects">
+            <U n="from_participant">
+              <E n="participant">Object</E>
+            </U>
+          </V>
+        </U>
+      </V>
+    </L>
+  </U>
+  <T n="fade_sim_out">True</T>
+  <L n="interaction_category_tags">
+    <E>Interaction_Super</E>
+    <E>Interaction_All</E>
+  </L>
+  <V t="test_based" n="outcome">
+    <U n="test_based">
+      <L n="fallback_outcomes">
+        <U>
+          <U n="outcome">
+            <L n="basic_extras">
+              <V t="change_outfit">
+                <U n="change_outfit">
+                  <V t="for_reason" n="outfit_change">
+                    <U n="for_reason">
+                      <V n="on_entry" t="enabled">
+                        <E n="enabled">PreviousClothing</E>
+                      </V>
+                    </U>
+                  </V>
+                  <L n="tests">
+                    <L>
+                      <V t="object_definition_criteria">
+                        <U n="object_definition_criteria">
+                          <V t="definition_id" n="identity_test">
+                            <U n="definition_id">
+                              <T n="actual_object">241487</T>
+                            </U>
+                          </V>
+                        </U>
+                      </V>
+                    </L>
+                  </L>
+                </U>
+              </V>
+              <V t="state_change">
+                <U n="state_change">
+                  <T n="force_update">True</T>
+                  <V t="single_value" n="new_value">
+                    <U n="single_value">
+                      <T n="new_value">239626<!--ObjectStateValue: droid_Anim_Idle_Active--></T>
+                    </U>
+                  </V>
+                  <E n="state_change_target">RoutingSlaves</E>
+                  <V t="immediately" n="timing" />
+                </U>
+              </V>
+            </L>
+            <L n="continuation">
+              <U>
+                <T n="affordance">245773<!--SuperInteraction: Starship_Land--></T>
+              </U>
+            </L>
+            <T n="force_outcome_on_exit">True</T>
+            <L n="loot_list">
+              <T>238560<!--LootActions: loot_Batuu_Starship_IdleGround--></T>
+            </L>
+          </U>
+        </U>
+      </L>
+    </U>
+  </V>
+  <E n="scoring_priority">NORMAL</E>
+  <U n="skill_loot_data">
+    <E n="effectiveness">VerySmallPeriodic</E>
+    <V t="enabled" n="level_range">
+      <U n="enabled">
+        <T n="lower_bound">1</T>
+        <T n="upper_bound">10</T>
+      </U>
+    </V>
+    <T n="stat">16710<!--Skill: statistic_Skill_AdultMajor_RocketScience--></T>
+  </U>
+  <T n="subaction_selection_weight">1</T>
+  <V t="literal" n="super_affordance_compatibility">
+    <U n="literal">
+      <V n="default_inclusion" t="exclude_all">
+        <U n="exclude_all">
+          <L n="include_affordances">
+            <T>245584<!--SuperInteraction: droid_BB_Following--></T>
+          </L>
+        </U>
+      </V>
+    </U>
+  </V>
+  <E n="target_type">OBJECT</E>
+  <L n="test_globals">
+    <V t="career_gig_test">
+      <U n="career_gig_test">
+        <T n="career">231099<!--Career: career_Batuu--></T>
+        <V t="specific_gigs" n="test_type">
+          <U n="specific_gigs">
+            <L n="gigs">
+              <T>241651<!--MissionGig: missionGig_Missions_Scoundrel_Story_08--></T>
+            </L>
+          </U>
+        </V>
+      </U>
+    </V>
+  </L>
+  <T n="time_overhead">30</T>
+</I>

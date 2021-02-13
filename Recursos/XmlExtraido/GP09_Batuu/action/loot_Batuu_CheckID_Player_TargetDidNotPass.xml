@@ -1,0 +1,86 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<I c="LootActions" i="action" m="interactions.utils.loot" n="loot_Batuu_CheckID_Player_TargetDidNotPass" s="243497">
+  <L n="loot_actions">
+    <V t="create_situation">
+      <U n="create_situation">
+        <U n="create_situation">
+          <V t="specify_job" n="actor_init_job">
+            <T n="specify_job">242380<!--SituationJob: job_Batuu_StormtrooperInspection_Inspector--></T>
+          </V>
+          <T n="situation">242377<!--StormtrooperInspectionSituation: situation_Batuu_StormtrooperInspection--></T>
+          <V t="specify_job" n="target_init_job">
+            <T n="specify_job">242381<!--SituationJob: job_Batuu_StormtrooperInspection_Suspect--></T>
+          </V>
+          <T n="user_facing">False</T>
+        </U>
+        <L n="tests">
+          <L>
+            <V t="test_set_reference">
+              <T n="test_set_reference">248854<!--TestSetInstance: testSet_Batuu_CheckID_CanFight_Yes--></T>
+            </V>
+          </L>
+        </L>
+      </U>
+    </V>
+    <V t="create_situation">
+      <U n="create_situation">
+        <U n="create_situation">
+          <V t="specify_job" n="actor_init_job">
+            <T n="specify_job">242080<!--SituationJob: job_Batuu_StormtrooperArrest_Escort--></T>
+          </V>
+          <T n="situation">243490<!--PrisonerEscortSituation: situation_Batuu_StarShip_Arrest--></T>
+          <V t="specify_job" n="target_init_job">
+            <T n="specify_job">243496<!--SituationJob: job_Batuu_StarShip_Arrest_Prisoner--></T>
+          </V>
+          <T n="user_facing">False</T>
+        </U>
+        <L n="tests">
+          <L>
+            <V t="test_set_reference">
+              <T n="test_set_reference">248860<!--TestSetInstance: testSet_Batuu_CheckID_CanFight_No--></T>
+            </V>
+          </L>
+        </L>
+      </U>
+    </V>
+    <V t="reaction">
+      <U n="reaction">
+        <V t="enabled" n="si_reaction">
+          <U n="enabled">
+            <T n="affordance">242823<!--SuperInteraction: batuu_Inspection_Suspect_HandsUp--></T>
+            <V t="disabled" n="affordance_target" />
+          </U>
+        </V>
+        <E n="subject">TargetSim</E>
+      </U>
+    </V>
+  </L>
+  <L n="tests">
+    <L>
+      <V t="location">
+        <U n="location">
+          <U n="location_tests">
+            <V t="enabled" n="is_venue_type">
+              <U n="enabled">
+                <T n="venue_type">233449<!--Venue: venue_OgasCantina--></T>
+              </U>
+            </V>
+          </U>
+        </U>
+      </V>
+    </L>
+    <L>
+      <V t="location">
+        <U n="location">
+          <U n="location_tests">
+            <V n="is_venue_type" t="enabled">
+              <U n="enabled">
+                <T n="venue_type">231964<!--Venue: venue_FirstOrderOutpost--></T>
+              </U>
+            </V>
+          </U>
+        </U>
+      </V>
+    </L>
+  </L>
+</I>

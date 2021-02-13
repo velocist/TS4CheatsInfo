@@ -1,0 +1,143 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<I c="LootActions" i="action" m="interactions.utils.loot" n="loot_Situation_Firefighter_SavedBuff" s="234811">
+  <L n="loot_actions">
+    <V t="notification_and_dialog">
+      <U n="notification_and_dialog">
+        <V n="dialog" t="notification">
+          <U n="notification">
+            <L n="dialog_options">
+              <E>DISABLE_CLOSE_BUTTON</E>
+            </L>
+            <V t="enabled" n="icon">
+              <V t="participant" n="enabled">
+                <U n="participant">
+                  <L n="participant_type">
+                    <E>Actor</E>
+                  </L>
+                </U>
+              </V>
+            </V>
+            <V n="text" t="single">
+              <T n="single">0xFF93520C<!--String: "El incendio se ha apagado. Intenta tener más cuidado la próxima vez, ¿vale?"--></T>
+            </V>
+            <E n="visual_type">SPEECH</E>
+          </U>
+        </V>
+        <E n="subject">LotOwnerSingleAndInstanced</E>
+        <L n="tests">
+          <L>
+            <V t="buff">
+              <U n="buff">
+                <L n="blacklist">
+                  <T>241074<!--Buff: buff_Situation_Fire_Firefighter_FinishedCooldown--></T>
+                  <T>237794<!--Buff: buff_Fire_FlirtyFirefighters--></T>
+                </L>
+                <E n="subject">ActiveHousehold</E>
+              </U>
+            </V>
+          </L>
+        </L>
+      </U>
+    </V>
+    <V t="notification_and_dialog">
+      <U n="notification_and_dialog">
+        <V n="dialog" t="notification">
+          <U n="notification">
+            <L n="dialog_options">
+              <E>DISABLE_CLOSE_BUTTON</E>
+            </L>
+            <V t="enabled" n="icon">
+              <V t="participant" n="enabled">
+                <U n="participant">
+                  <L n="participant_type">
+                    <E>Actor</E>
+                  </L>
+                </U>
+              </V>
+            </V>
+            <V n="text" t="single">
+              <T n="single">0x5895898E<!--String: "¿Alguien ha llamado a los bomberos? ¡Porque aquí la cosa está <i>que arde</i>!\n\nBromas aparte, cuídate y que tengas un buen día."--></T>
+            </V>
+            <E n="visual_type">SPEECH</E>
+          </U>
+        </V>
+        <E n="subject">LotOwnerSingleAndInstanced</E>
+        <L n="tests">
+          <L>
+            <V t="buff">
+              <U n="buff">
+                <L n="blacklist">
+                  <T>241074<!--Buff: buff_Situation_Fire_Firefighter_FinishedCooldown--></T>
+                </L>
+                <E n="subject">ActiveHousehold</E>
+                <V t="enabled" n="whitelist">
+                  <L n="enabled">
+                    <T>237794<!--Buff: buff_Fire_FlirtyFirefighters--></T>
+                  </L>
+                </V>
+              </U>
+            </V>
+          </L>
+        </L>
+      </U>
+    </V>
+    <V t="buff">
+      <U n="buff">
+        <U n="buff">
+          <V n="buff_reason" t="enabled">
+            <T n="enabled">0xA6AD813D<!--String: "(Por rescate de bomberos)"--></T>
+          </V>
+          <T n="buff_type">234741<!--Buff: buff_Situation_Fire_SavedByFirefighter--></T>
+        </U>
+        <E n="subject">ActiveHousehold</E>
+        <L n="tests">
+          <L>
+            <V t="buff">
+              <U n="buff">
+                <V n="whitelist" t="enabled">
+                  <L n="enabled">
+                    <T>97139<!--Buff: Buff_Fire_Extinguisher--></T>
+                  </L>
+                </V>
+              </U>
+            </V>
+          </L>
+        </L>
+      </U>
+    </V>
+    <V t="relationship_bits_loot">
+      <U n="relationship_bits_loot">
+        <L n="bit_operations">
+          <U>
+            <T n="bit">15803<!--RelationshipBit: has_met--></T>
+            <E n="operation">ADD</E>
+            <E n="recipients">Actor</E>
+            <E n="targets">ActiveHousehold</E>
+          </U>
+        </L>
+      </U>
+    </V>
+    <V t="statistics">
+      <V n="statistics" t="relationship_change">
+        <U n="relationship_change">
+          <T n="amount">1</T>
+          <L n="target_participant_type">
+            <E>ActiveHousehold</E>
+          </L>
+          <T n="track">16650<!--RelationshipTrack: LTR_Friendship_Main--></T>
+        </U>
+      </V>
+    </V>
+    <V t="actions">
+      <T n="actions">97131<!--LootActions: Loot_Fire_ClearExtinguisherBuff--></T>
+    </V>
+    <V t="buff">
+      <U n="buff">
+        <U n="buff">
+          <T n="buff_type">241074<!--Buff: buff_Situation_Fire_Firefighter_FinishedCooldown--></T>
+        </U>
+        <E n="subject">ActiveHousehold</E>
+      </U>
+    </V>
+  </L>
+</I>

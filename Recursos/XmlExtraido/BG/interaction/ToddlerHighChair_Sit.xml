@@ -1,0 +1,170 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<I c="SuperInteraction" i="interaction" m="interactions.base.super_interaction" n="ToddlerHighChair_Sit" s="135526">
+  <T n="_provided_posture_type">135522<!--Posture: posture_SitInToddlerHighChair--></T>
+  <V t="enabled" n="_saveable" />
+  <L n="_static_commodities">
+    <U>
+      <T n="static_commodity">152648<!--StaticCommodity: StaticCommodity_CheckToddler_SitInHighChair--></T>
+    </U>
+  </L>
+  <T n="allow_user_directed">False</T>
+  <T n="attention_cost">0.5</T>
+  <T n="automation">False</T>
+  <V t="flexible_length" n="basic_content">
+    <U n="flexible_length">
+      <L n="conditional_actions">
+        <V t="literal">
+          <U n="literal">
+            <L n="conditions">
+              <V t="buff_based">
+                <U n="buff_based">
+                  <T n="buff">144745<!--Buff: buff_Toddler_AutonomyMod_InHighChair--></T>
+                  <E n="timing">ON_REMOVE</E>
+                </U>
+              </V>
+            </L>
+            <E n="interaction_action">EXIT_NATURALLY</E>
+          </U>
+        </V>
+      </L>
+      <V t="staging_content" n="content" />
+      <T n="start_user_directed_inertial">True</T>
+    </U>
+  </V>
+  <L n="basic_extras">
+    <V t="loot">
+      <U n="loot">
+        <L n="loot_list">
+          <T>157125<!--LootActions: loot_Buff_HighChairTimer--></T>
+        </L>
+        <V t="at_beginning" n="timing" />
+      </U>
+    </V>
+    <V t="loot">
+      <U n="loot">
+        <L n="loot_list">
+          <T>157481<!--LootActions: loot_Buff_RemoveHighChairTimer--></T>
+        </L>
+        <V t="at_end" n="timing">
+          <U n="at_end">
+            <E n="criticality">OnCancelOrException</E>
+          </U>
+        </V>
+      </U>
+    </V>
+  </L>
+  <V t="enabled" n="basic_reserve_object">
+    <U n="enabled">
+      <L n="subject_list">
+        <U>
+          <V t="basic" n="reserve_type" />
+        </U>
+      </L>
+    </U>
+  </V>
+  <V t="enabled" n="canonical_animation">
+    <U n="enabled">
+      <T n="factory">135523<!--AnimationElement: postureIdle_SitInToddlerHighChair--></T>
+    </U>
+  </V>
+  <V t="disabled" n="content_score" />
+  <T n="display_name">0xE656E517<!--String: "Sentar"--></T>
+  <U n="display_name_text_tokens">
+    <L n="tokens">
+      <V t="participant_type">
+        <U n="participant_type">
+          <V t="from_participant" n="objects">
+            <U n="from_participant">
+              <E n="participant">Actor</E>
+            </U>
+          </V>
+        </U>
+      </V>
+      <V t="participant_type">
+        <U n="participant_type">
+          <V t="from_participant" n="objects">
+            <U n="from_participant">
+              <E n="participant">Object</E>
+            </U>
+          </V>
+        </U>
+      </V>
+    </L>
+  </U>
+  <T n="ignore_group_socials">False</T>
+  <L n="interaction_category_tags">
+    <E>Interaction_Super</E>
+    <E>Interaction_All</E>
+  </L>
+  <V t="single" n="outcome">
+    <U n="single">
+      <U n="actions">
+        <L n="continuation">
+          <U>
+            <T n="affordance">157528<!--SuperInteraction: toddlerHighChair_Cry--></T>
+          </U>
+        </L>
+        <T n="force_outcome_on_exit">False</T>
+      </U>
+    </U>
+  </V>
+  <L n="provided_affordances">
+    <U>
+      <T n="affordance">149600<!--StartCraftingSuperInteraction: toddlerHighChair_GiveFood_Provided--></T>
+      <T n="is_linked">False</T>
+      <E n="target">Actor</E>
+    </U>
+    <U>
+      <T n="affordance">149601<!--StartCraftingSuperInteraction: toddlerHighChair_GiveDrink_Provided--></T>
+      <T n="is_linked">False</T>
+      <E n="target">Actor</E>
+    </U>
+    <U>
+      <T n="affordance">152449<!--SuperInteraction: socialSuperInteraction_CarryLetOut--></T>
+      <T n="is_linked">False</T>
+      <E n="target">Actor</E>
+    </U>
+    <U>
+      <T n="affordance">146041<!--StartCraftingAutonomouslySuperInteraction: ToddlerHighChair_GiveFoodAutonomously--></T>
+      <E n="target">Actor</E>
+    </U>
+    <U>
+      <T n="affordance">146042<!--StartCraftingAutonomouslySuperInteraction: ToddlerHighChair_GiveDrinkAutonomously--></T>
+    </U>
+    <U>
+      <T n="affordance">155633<!--SuperInteraction: socialSuperInteraction_CarryPickUp_FromSeated--></T>
+      <T n="is_linked">False</T>
+    </U>
+    <U>
+      <T n="affordance">153920<!--StartCraftingAutonomouslySuperInteraction: toddlerHighChair_GiveDessertAutonomously--></T>
+      <E n="target">Actor</E>
+    </U>
+  </L>
+  <E n="scoring_priority">NORMAL</E>
+  <T n="subaction_selection_weight">1</T>
+  <E n="target_type">OBJECT</E>
+  <L n="test_globals">
+    <V t="sim_info">
+      <U n="sim_info">
+        <V t="specified" n="ages">
+          <L n="specified">
+            <E>TODDLER</E>
+          </L>
+        </V>
+        <V t="specified" n="species">
+          <U n="specified">
+            <L n="species">
+              <E />
+            </L>
+          </U>
+        </V>
+        <E n="who">Actor</E>
+      </U>
+    </V>
+  </L>
+  <T n="time_overhead">30</T>
+  <E n="visual_type_override">POSTURE</E>
+  <U n="visual_type_override_data">
+    <T p="InGame\UI\Icons\InteractionQueue\IconQueueSitting.png" n="icon">2f7d0004:00000000:1150bb0e5d1ff959</T>
+  </U>
+</I>

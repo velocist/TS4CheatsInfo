@@ -1,0 +1,339 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<I c="SimPickerInteraction" i="interaction" m="interactions.base.picker_interaction" n="simPickerInteraction_SeanceTable_PerformCeremony" s="251602">
+  <V t="disabled" n="_saveable" />
+  <L n="actor_continuation">
+    <U>
+      <T n="affordance">251976<!--SuperInteraction: superInteraction_SeanceTable_PickedActor_PerformCeremony--></T>
+    </U>
+  </L>
+  <T n="category">251977<!--PieMenuCategory: pieMenuCategory_SeanceTable--></T>
+  <V t="disabled" n="content_score" />
+  <T n="display_name">0xEF15C2C8<!--String: "Realizar ceremonia con"--></T>
+  <V n="display_name_overrides" t="testable">
+    <U n="testable">
+      <L n="overrides">
+        <U>
+          <V t="disabled" n="new_display_name" />
+          <V n="new_display_tooltip" t="enabled">
+            <T n="enabled">0xE4270FDF<!--String: "Aumenta bastante el nivel de progreso de la investigación si se realiza con éxito."--></T>
+          </V>
+          <V t="enabled" n="new_pie_menu_icon">
+            <V n="enabled" t="resource_key">
+              <U n="resource_key">
+                <T n="key" p="InSP18\UI\Icons\Piemenu\Traits\trait_paranormal_piemenu.png">2f7d0004:00000000:febb4051af4f8583</T>
+              </U>
+            </V>
+          </V>
+          <L n="test">
+            <L>
+              <V t="situation_running_test">
+                <U n="situation_running_test">
+                  <V t="enabled" n="situation_whitelist">
+                    <L n="enabled">
+                      <T>254923<!--LotStatisticBasedCareerEventSituation: lotStatisticBasedCareerEventSituation_ParanormalInvestigator_Hard--></T>
+                      <T>253765<!--LotStatisticBasedCareerEventSituation: lotStatisticBasedCareerEventSituation_ParanormalInvestigator--></T>
+                      <T>254924<!--LotStatisticBasedCareerEventSituation: lotStatisticBasedCareerEventSituation_ParanormalInvestigator_Easy--></T>
+                    </L>
+                  </V>
+                </U>
+              </V>
+            </L>
+          </L>
+        </U>
+        <U>
+          <V t="disabled" n="new_display_name" />
+          <L n="test">
+            <L>
+              <V t="mood">
+                <U n="mood">
+                  <T n="mood">14639<!--Mood: Mood_Focused--></T>
+                </U>
+              </V>
+            </L>
+          </L>
+        </U>
+      </L>
+    </U>
+  </V>
+  <U n="display_name_text_tokens">
+    <L n="tokens">
+      <V t="participant_type">
+        <U n="participant_type">
+          <V n="objects" t="from_participant">
+            <U n="from_participant">
+              <E n="participant">Actor</E>
+            </U>
+          </V>
+        </U>
+      </V>
+      <V t="participant_type">
+        <U n="participant_type">
+          <V t="from_participant" n="objects">
+            <U n="from_participant">
+              <E n="participant">Object</E>
+            </U>
+          </V>
+        </U>
+      </V>
+      <V t="participant_type">
+        <U n="participant_type">
+          <V n="objects" t="from_participant">
+            <U n="from_participant">
+              <E n="participant">PickedSim</E>
+            </U>
+          </V>
+        </U>
+      </V>
+    </L>
+  </U>
+  <V t="enabled" n="display_tooltip">
+    <T n="enabled">0xA9E997F2<!--String: "¡Realiza una ceremonia para hacer que la casa esté un pelín menos encantada! ¡Ten en cuenta que esta ceremonia consume la energía de los Sims! ¡Las ceremonias realizadas con éxito también hacen que los Sims tengan menos miedo!"--></T>
+  </V>
+  <T n="include_uninstantiated_sims">False</T>
+  <L n="interaction_category_tags">
+    <E>INVALID</E>
+  </L>
+  <L n="picked_continuation">
+    <U>
+      <T n="affordance">251673<!--SuperInteraction: superInteraction_SeanceTable_PickedSim_PerformCeremony--></T>
+    </U>
+  </L>
+  <V t="sim_picker" n="picker_dialog">
+    <U n="sim_picker">
+      <V n="max_selectable" t="static_count">
+        <U n="static_count">
+          <T n="number_selectable">3</T>
+        </U>
+      </V>
+    </U>
+  </V>
+  <V t="enabled" n="pie_menu_icon">
+    <V n="enabled" t="resource_key">
+      <U n="resource_key">
+        <T n="key" p="InSP18\UI\Icons\Piemenu\icon_piemenu_hauntedhouse.png">2f7d0004:00000000:fec25d2e69b0b482</T>
+      </U>
+    </V>
+  </V>
+  <U n="progress_bar_enabled">
+    <T n="bar_enabled">False</T>
+  </U>
+  <L n="sim_tests">
+    <L>
+      <V t="location">
+        <U n="location">
+          <U n="location_tests">
+            <V n="is_on_active_lot" t="Is_or_is_not_on_active_lot" />
+          </U>
+          <E n="subject">PickedSim</E>
+        </U>
+      </V>
+      <V t="mood">
+        <U n="mood">
+          <T n="disallow">True</T>
+          <T n="mood">14646<!--Mood: Mood_Uncomfortable--></T>
+          <E n="who">PickedSim</E>
+        </U>
+      </V>
+      <V t="mood">
+        <U n="mood">
+          <T n="disallow">True</T>
+          <T n="mood">14645<!--Mood: Mood_Stressed--></T>
+          <E n="who">PickedSim</E>
+        </U>
+      </V>
+      <V t="relationship">
+        <U n="relationship">
+          <U n="required_relationship_bits">
+            <L n="match_any">
+              <T>15803<!--RelationshipBit: has_met--></T>
+            </L>
+          </U>
+          <L n="target_sim">
+            <E>PickedSim</E>
+          </L>
+        </U>
+      </V>
+      <V t="sim_info">
+        <U n="sim_info">
+          <V t="specified" n="ages">
+            <L n="specified">
+              <E>TEEN</E>
+              <E>YOUNGADULT</E>
+              <E>ADULT</E>
+              <E>ELDER</E>
+              <E>CHILD</E>
+            </L>
+          </V>
+          <V t="specified" n="species">
+            <U n="specified">
+              <L n="species">
+                <E />
+              </L>
+            </U>
+          </V>
+          <E n="who">PickedSim</E>
+        </U>
+      </V>
+      <V t="trait">
+        <U n="trait">
+          <L n="blacklist_traits">
+            <T>256353<!--Trait: trait_HauntedHouse_Temperance--></T>
+          </L>
+          <E n="subject">PickedSim</E>
+        </U>
+      </V>
+      <V t="buff">
+        <U n="buff">
+          <L n="blacklist">
+            <T>12818<!--Buff: Buff_Motives_Energy_Exhausted--></T>
+          </L>
+          <E n="subject">PickedSim</E>
+        </U>
+      </V>
+      <V t="buff">
+        <U n="buff">
+          <L n="blacklist">
+            <T>251622<!--Buff: buff_SeanceTable_AintAfraid--></T>
+            <T>251623<!--Buff: buff_SeanceTable_BotchedRitual--></T>
+          </L>
+          <E n="subject">PickedSim</E>
+        </U>
+      </V>
+    </L>
+  </L>
+  <V n="single_choice_display_name" t="enabled">
+    <T n="enabled">0x1B449365<!--String: "Realizar ceremonia con {2.SimFirstName}"--></T>
+  </V>
+  <E n="target_type">OBJECT</E>
+  <L n="test_globals">
+    <V t="sim_info">
+      <U n="sim_info">
+        <V t="specified" n="ages">
+          <L n="specified">
+            <E>TEEN</E>
+            <E>YOUNGADULT</E>
+            <E>ADULT</E>
+            <E>ELDER</E>
+            <E>CHILD</E>
+          </L>
+        </V>
+        <V t="specified" n="species">
+          <U n="specified">
+            <L n="species">
+              <E />
+            </L>
+          </U>
+        </V>
+        <E n="who">Actor</E>
+      </U>
+    </V>
+    <V t="skill_test">
+      <U n="skill_test">
+        <T n="skill">255249<!--Skill: statistic_Skill_AdultMinor_Medium--></T>
+        <V n="skill_range" t="interval">
+          <U n="interval">
+            <U n="skill_interval">
+              <T n="lower_bound">2</T>
+            </U>
+          </U>
+        </V>
+      </U>
+    </V>
+    <V t="slot_test_related">
+      <U n="slot_test_related">
+        <L n="slot_tests">
+          <U>
+            <V n="requires_child" t="Has_Children">
+              <U n="Has_Children">
+                <V n="object_type" t="enabled">
+                  <V n="enabled" t="object_tags">
+                    <U n="object_tags">
+                      <L n="tag_set">
+                        <E>Func_DiningChair</E>
+                        <E>BuyCatSS_DeskChair</E>
+                      </L>
+                    </U>
+                  </V>
+                </V>
+              </U>
+            </V>
+            <T n="slot">slot_SitChair</T>
+          </U>
+          <U>
+            <T n="slot">slot_SitIndividual</T>
+          </U>
+          <U>
+            <T n="slot">slot_SitShared</T>
+          </U>
+        </L>
+      </U>
+    </V>
+    <V t="in_use">
+      <U n="in_use">
+        <T n="negate">True</T>
+        <L n="targets">
+          <E>Object</E>
+        </L>
+        <V t="enabled" n="tooltip">
+          <T n="enabled">0xEF4B85DB<!--String: "¡La mesa de espiritismo ya está en uso!"--></T>
+        </V>
+      </U>
+    </V>
+    <V t="test_set_reference">
+      <T n="test_set_reference">28305<!--TestSetInstance: testSet_EmotionNotMiserable--></T>
+    </V>
+    <V t="test_set_reference">
+      <T n="test_set_reference">28176<!--TestSetInstance: testSet_EmotionNotStressed--></T>
+    </V>
+    <V t="buff">
+      <U n="buff">
+        <L n="blacklist">
+          <T>12818<!--Buff: Buff_Motives_Energy_Exhausted--></T>
+        </L>
+        <V n="tooltip" t="enabled">
+          <T n="enabled">0xAA6B8E8<!--String: "{0.SimFirstName} está demasiado {M0.cansado}{F0.cansada} para hacer esto ahora mismo."--></T>
+        </V>
+      </U>
+    </V>
+    <V t="buff">
+      <U n="buff">
+        <L n="blacklist">
+          <T>251622<!--Buff: buff_SeanceTable_AintAfraid--></T>
+          <T>251623<!--Buff: buff_SeanceTable_BotchedRitual--></T>
+        </L>
+        <V n="tooltip" t="enabled">
+          <T n="enabled">0x445F11CB<!--String: "¡Qué intenso ha sido eso! ¡{0.SimFirstName} debe esperar un poco antes de realizar otra ceremonia!"--></T>
+        </V>
+      </U>
+    </V>
+  </L>
+  <L n="tests">
+    <L>
+      <V t="location">
+        <U n="location">
+          <U n="location_tests">
+            <V n="is_venue_type" t="enabled">
+              <U n="enabled">
+                <T n="venue_type">252380<!--Venue: venue_residential_HauntedHouse--></T>
+              </U>
+            </V>
+          </U>
+          <E n="subject">Lot</E>
+        </U>
+      </V>
+    </L>
+    <L>
+      <V t="situation_running_test">
+        <U n="situation_running_test">
+          <V t="enabled" n="situation_whitelist">
+            <L n="enabled">
+              <T>253765<!--LotStatisticBasedCareerEventSituation: lotStatisticBasedCareerEventSituation_ParanormalInvestigator--></T>
+              <T>254924<!--LotStatisticBasedCareerEventSituation: lotStatisticBasedCareerEventSituation_ParanormalInvestigator_Easy--></T>
+              <T>254923<!--LotStatisticBasedCareerEventSituation: lotStatisticBasedCareerEventSituation_ParanormalInvestigator_Hard--></T>
+            </L>
+          </V>
+        </U>
+      </V>
+    </L>
+  </L>
+</I>

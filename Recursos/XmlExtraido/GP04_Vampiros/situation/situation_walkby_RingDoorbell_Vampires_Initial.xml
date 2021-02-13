@@ -1,0 +1,66 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<I c="WalkbyRingDoorBellSituation" i="situation" m="situations.ambient.walkby_ring_doorbell_situation" n="situation_walkby_RingDoorbell_Vampires_Initial" s="157974">
+  <L n="can_start_walkby_limiting_tags">
+    <E>Situation_Tutorial_FTUE</E>
+    <E>Situation_Ring_Doorbell</E>
+  </L>
+  <T n="duration">120</T>
+  <L n="tags">
+    <E>Situation_Ring_Doorbell</E>
+    <E>Situation_VisitorNPCs</E>
+  </L>
+  <U n="walker_job">
+    <T n="leave_state">24224<!--RoleState: rolestate_leave_now--></T>
+    <T n="mailbox_state">24828<!--RoleState: walkby_visit_mailbox--></T>
+    <T n="ring_doorbell_state">15920<!--RoleState: walkby_ring_doorbell--></T>
+    <T n="situation_job">153168<!--SituationJob: walker_job_RingDoorbell_Vampire--></T>
+    <T n="wait_for_invitation_state">157976<!--RoleState: walkby_wait_for_invitation_Vampires_Initial--></T>
+  </U>
+  <U n="weight_multipliers">
+    <L n="multipliers">
+      <U>
+        <T n="multiplier">3</T>
+        <L n="tests">
+          <L>
+            <V t="zone">
+              <U n="zone">
+                <U n="zone_tests">
+                  <V n="zone_modifiers" t="enabled">
+                    <U n="enabled">
+                      <V n="whitelist" t="specify">
+                        <U n="specify">
+                          <L n="whitelist">
+                            <T>154888<!--ZoneModifier: zoneModifier_lotTrait_VampireNexus--></T>
+                          </L>
+                        </U>
+                      </V>
+                    </U>
+                  </V>
+                </U>
+              </U>
+            </V>
+          </L>
+        </L>
+      </U>
+      <U>
+        <T n="multiplier">0</T>
+        <L n="tests">
+          <L>
+            <V t="statistic">
+              <U n="statistic">
+                <T n="stat">233817<!--Statistic: statistic_Situations_Disallow_Vampires--></T>
+                <V t="value_threshold" n="threshold">
+                  <U n="value_threshold">
+                    <E n="comparison">EQUAL</E>
+                    <T n="value">1</T>
+                  </U>
+                </V>
+                <E n="who">Lot</E>
+              </U>
+            </V>
+          </L>
+        </L>
+      </U>
+    </L>
+  </U>
+</I>

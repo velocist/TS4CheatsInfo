@@ -1,0 +1,1716 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<I c="MixerInteraction" i="interaction" m="interactions.base.mixer_interaction" n="BubbleBlower_Use_mixer" s="133671">
+  <V t="resource_key" n="_icon">
+    <U n="resource_key">
+      <T n="key" p="InGame\UI\Icons\InteractionQueueSubInteractions\icon_queuesubinteraction_bubbles.png">2f7d0004:00000000:116b6f60091cf9cc</T>
+    </U>
+  </V>
+  <T n="allow_user_directed">True</T>
+  <L n="basic_extras">
+    <V t="state_change">
+      <U n="state_change">
+        <V n="new_value" t="single_value">
+          <U n="single_value">
+            <T n="new_value">142956<!--ObjectStateValue: BubbleBlower_InUse_1_Yes--></T>
+          </U>
+        </V>
+        <V t="immediately" n="timing" />
+      </U>
+    </V>
+    <V t="state_change">
+      <U n="state_change">
+        <V n="new_value" t="single_value">
+          <U n="single_value">
+            <T n="new_value">142955<!--ObjectStateValue: BubbleBlower_InUse_0_No--></T>
+          </U>
+        </V>
+        <V t="at_end" n="timing">
+          <U n="at_end">
+            <E n="criticality">OnCancelOrException</E>
+          </U>
+        </V>
+      </U>
+    </V>
+  </L>
+  <V t="disable_focus" n="basic_focus" />
+  <T n="display_name">0x90734DC2<!--String: "Hacer pompas"--></T>
+  <V n="display_name_overrides" t="testable">
+    <U n="testable">
+      <L n="overrides">
+        <U>
+          <V n="new_display_name" t="enabled">
+            <T n="enabled">0xA368E84B<!--String: "Usar"--></T>
+          </V>
+          <L n="test">
+            <L>
+              <V t="statistic">
+                <U n="statistic">
+                  <T n="stat">134849<!--Statistic: statistic_Sim_objectFamiliarity_BubbleBlower--></T>
+                  <V n="threshold" t="value_threshold">
+                    <U n="value_threshold">
+                      <E n="comparison">LESS_OR_EQUAL</E>
+                      <T n="value">7</T>
+                    </U>
+                  </V>
+                </U>
+              </V>
+            </L>
+          </L>
+        </U>
+      </L>
+    </U>
+  </V>
+  <U n="display_name_text_tokens">
+    <L n="tokens">
+      <V t="participant_type">
+        <U n="participant_type">
+          <V t="from_participant" n="objects">
+            <U n="from_participant">
+              <E n="participant">Actor</E>
+            </U>
+          </V>
+        </U>
+      </V>
+      <V t="participant_type">
+        <U n="participant_type">
+          <V t="from_participant" n="objects">
+            <U n="from_participant">
+              <E n="participant">Object</E>
+            </U>
+          </V>
+        </U>
+      </V>
+    </L>
+  </U>
+  <L n="interaction_category_tags">
+    <E>Interaction_Mixer</E>
+    <E>Interaction_All</E>
+  </L>
+  <V n="lock_out_time" t="enabled">
+    <U n="enabled">
+      <U n="interval">
+        <T n="lower_bound">3</T>
+        <T n="upper_bound">3</T>
+      </U>
+      <T n="target_based_lock_out">True</T>
+    </U>
+  </V>
+  <V n="outcome" t="test_based">
+    <U n="test_based">
+      <L n="fallback_outcomes">
+        <U>
+          <U n="outcome">
+            <L n="basic_extras">
+              <V t="state_change">
+                <U n="state_change">
+                  <V n="new_value" t="single_value">
+                    <U n="single_value">
+                      <T n="new_value">142955<!--ObjectStateValue: BubbleBlower_InUse_0_No--></T>
+                    </U>
+                  </V>
+                  <V t="at_end" n="timing">
+                    <U n="at_end">
+                      <E n="criticality">OnCancelOrException</E>
+                    </U>
+                  </V>
+                </U>
+              </V>
+            </L>
+            <T n="force_outcome_on_exit">True</T>
+            <E n="outcome_result">NONE</E>
+          </U>
+        </U>
+      </L>
+      <L n="tested_outcomes">
+        <U>
+          <L n="potential_outcomes">
+            <U>
+              <U n="outcome">
+                <V t="enabled" n="animation_ref">
+                  <U n="enabled">
+                    <T n="factory">133474<!--AnimationElement: BubbleBlower_blowBubble_default_success--></T>
+                  </U>
+                </V>
+                <L n="basic_extras">
+                  <V t="broadcaster">
+                    <U n="broadcaster">
+                      <L n="broadcaster_types">
+                        <U>
+                          <T n="item">135675<!--Broadcaster: broadcaster_BubbleBlower_Use_Watcher_reaction_Positive--></T>
+                        </U>
+                      </L>
+                      <V t="enabled" n="offset_time" />
+                    </U>
+                  </V>
+                  <V t="state_change">
+                    <U n="state_change">
+                      <V n="new_value" t="single_value">
+                        <U n="single_value">
+                          <T n="new_value">142955<!--ObjectStateValue: BubbleBlower_InUse_0_No--></T>
+                        </U>
+                      </V>
+                      <V t="at_end" n="timing">
+                        <U n="at_end">
+                          <E n="criticality">OnCancelOrException</E>
+                        </U>
+                      </V>
+                    </U>
+                  </V>
+                </L>
+                <L n="loot_list">
+                  <T>135247<!--LootActions: loot_Buff_BubbleBlower_autonomousUse_cooldown--></T>
+                  <T>134901<!--LootActions: loot_Statistic_ObjectFamiliarity_BubbleBlower_small--></T>
+                  <T>135242<!--LootActions: loot_Buff_BubbleBlower_Use_1_default_success--></T>
+                  <T>135834<!--LootActions: Loot_Commodity_Sim_BubbleBlowerEffectiveness--></T>
+                </L>
+              </U>
+              <U n="weight">
+                <L n="multipliers">
+                  <U>
+                    <T n="multiplier">3</T>
+                    <L n="tests">
+                      <L>
+                        <V t="statistic">
+                          <U n="statistic">
+                            <T n="stat">134849<!--Statistic: statistic_Sim_objectFamiliarity_BubbleBlower--></T>
+                            <V t="value_threshold" n="threshold">
+                              <U n="value_threshold">
+                                <T n="value">50</T>
+                              </U>
+                            </V>
+                          </U>
+                        </V>
+                      </L>
+                    </L>
+                  </U>
+                </L>
+              </U>
+            </U>
+            <U>
+              <U n="outcome">
+                <V t="enabled" n="animation_ref">
+                  <U n="enabled">
+                    <T n="factory">133473<!--AnimationElement: BubbleBlower_blowBubble_default_fail--></T>
+                  </U>
+                </V>
+                <L n="basic_extras">
+                  <V t="broadcaster">
+                    <U n="broadcaster">
+                      <L n="broadcaster_types">
+                        <U>
+                          <T n="item">135676<!--Broadcaster: broadcaster_BubbleBlower_Use_Watcher_reaction_Negative--></T>
+                        </U>
+                      </L>
+                      <V t="enabled" n="offset_time" />
+                    </U>
+                  </V>
+                  <V t="state_change">
+                    <U n="state_change">
+                      <V n="new_value" t="single_value">
+                        <U n="single_value">
+                          <T n="new_value">142955<!--ObjectStateValue: BubbleBlower_InUse_0_No--></T>
+                        </U>
+                      </V>
+                      <V t="at_end" n="timing">
+                        <U n="at_end">
+                          <E n="criticality">OnCancelOrException</E>
+                        </U>
+                      </V>
+                    </U>
+                  </V>
+                </L>
+                <L n="loot_list">
+                  <T>135247<!--LootActions: loot_Buff_BubbleBlower_autonomousUse_cooldown--></T>
+                  <T>135369<!--LootActions: loot_Statistic_ObjectFamiliarity_BubbleBlower_tiny--></T>
+                  <T>135243<!--LootActions: loot_Buff_BubbleBlower_Use_1_default_fail--></T>
+                  <T>135834<!--LootActions: Loot_Commodity_Sim_BubbleBlowerEffectiveness--></T>
+                </L>
+                <E n="outcome_result">FAILURE</E>
+              </U>
+              <U n="weight">
+                <L n="multipliers">
+                  <U>
+                    <T n="multiplier">2</T>
+                    <L n="tests">
+                      <L>
+                        <V t="statistic">
+                          <U n="statistic">
+                            <T n="stat">134849<!--Statistic: statistic_Sim_objectFamiliarity_BubbleBlower--></T>
+                            <V t="value_threshold" n="threshold">
+                              <U n="value_threshold">
+                                <E n="comparison">LESS_OR_EQUAL</E>
+                                <T n="value">25</T>
+                              </U>
+                            </V>
+                          </U>
+                        </V>
+                      </L>
+                    </L>
+                  </U>
+                </L>
+              </U>
+            </U>
+            <U>
+              <U n="outcome">
+                <V n="animation_ref" t="enabled">
+                  <U n="enabled">
+                    <T n="factory">133473<!--AnimationElement: BubbleBlower_blowBubble_default_fail--></T>
+                    <U n="overrides">
+                      <V t="disabled" n="balloons" />
+                      <V t="disabled" n="reactionlet" />
+                    </U>
+                  </U>
+                </V>
+                <L n="basic_extras">
+                  <V t="broadcaster">
+                    <U n="broadcaster">
+                      <L n="broadcaster_types">
+                        <U>
+                          <T n="item">135676<!--Broadcaster: broadcaster_BubbleBlower_Use_Watcher_reaction_Negative--></T>
+                        </U>
+                      </L>
+                      <V t="enabled" n="offset_time" />
+                    </U>
+                  </V>
+                  <V t="state_change">
+                    <U n="state_change">
+                      <V n="new_value" t="single_value">
+                        <U n="single_value">
+                          <T n="new_value">142955<!--ObjectStateValue: BubbleBlower_InUse_0_No--></T>
+                        </U>
+                      </V>
+                      <V t="at_end" n="timing">
+                        <U n="at_end">
+                          <E n="criticality">OnCancelOrException</E>
+                        </U>
+                      </V>
+                    </U>
+                  </V>
+                </L>
+                <L n="continuation">
+                  <U>
+                    <T n="affordance">9297<!--DeathSuperInteraction: death_Laughter--></T>
+                  </U>
+                </L>
+                <L n="loot_list">
+                  <T>135247<!--LootActions: loot_Buff_BubbleBlower_autonomousUse_cooldown--></T>
+                  <T>135369<!--LootActions: loot_Statistic_ObjectFamiliarity_BubbleBlower_tiny--></T>
+                </L>
+                <E n="outcome_result">FAILURE</E>
+              </U>
+              <U n="weight">
+                <T n="base_value">0.01</T>
+                <L n="multipliers">
+                  <U>
+                    <T n="multiplier">100</T>
+                    <L n="tests">
+                      <L>
+                        <V t="statistic">
+                          <U n="statistic">
+                            <T n="stat">134849<!--Statistic: statistic_Sim_objectFamiliarity_BubbleBlower--></T>
+                            <V n="threshold" t="value_threshold">
+                              <U n="value_threshold">
+                                <E n="comparison">LESS</E>
+                                <T n="value">25</T>
+                              </U>
+                            </V>
+                          </U>
+                        </V>
+                        <V t="buff">
+                          <U n="buff">
+                            <V n="whitelist" t="enabled">
+                              <L n="enabled">
+                                <T>135240<!--Buff: buff_Object_BubbleBlower_Use_2_white_success1--></T>
+                                <T>135325<!--Buff: buff_Object_BubbleBlower_Use_6_purple_success1--></T>
+                                <T>135327<!--Buff: buff_Object_BubbleBlower_Use_7_dense_success1--></T>
+                              </L>
+                            </V>
+                          </U>
+                        </V>
+                      </L>
+                    </L>
+                  </U>
+                  <U>
+                    <T n="multiplier">0</T>
+                    <L n="tests">
+                      <L>
+                        <V t="statistic">
+                          <U n="statistic">
+                            <T n="stat">134849<!--Statistic: statistic_Sim_objectFamiliarity_BubbleBlower--></T>
+                            <V t="value_threshold" n="threshold">
+                              <U n="value_threshold">
+                                <T n="value">50</T>
+                              </U>
+                            </V>
+                          </U>
+                        </V>
+                      </L>
+                    </L>
+                  </U>
+                </L>
+              </U>
+            </U>
+          </L>
+          <L n="tests">
+            <L>
+              <V t="state">
+                <U n="state">
+                  <V t="always_pass" n="fallback_behavior" />
+                  <T n="value">133021<!--ObjectStateValue: BubbleBlower_Cartridge_1_Default--></T>
+                </U>
+              </V>
+            </L>
+          </L>
+        </U>
+        <U>
+          <L n="potential_outcomes">
+            <U>
+              <U n="outcome">
+                <V t="enabled" n="animation_ref">
+                  <U n="enabled">
+                    <T n="factory">133474<!--AnimationElement: BubbleBlower_blowBubble_default_success--></T>
+                  </U>
+                </V>
+                <L n="basic_extras">
+                  <V t="broadcaster">
+                    <U n="broadcaster">
+                      <L n="broadcaster_types">
+                        <U>
+                          <T n="item">135675<!--Broadcaster: broadcaster_BubbleBlower_Use_Watcher_reaction_Positive--></T>
+                        </U>
+                      </L>
+                      <V t="enabled" n="offset_time" />
+                    </U>
+                  </V>
+                  <V t="state_change">
+                    <U n="state_change">
+                      <V n="new_value" t="single_value">
+                        <U n="single_value">
+                          <T n="new_value">142955<!--ObjectStateValue: BubbleBlower_InUse_0_No--></T>
+                        </U>
+                      </V>
+                      <V t="at_end" n="timing">
+                        <U n="at_end">
+                          <E n="criticality">OnCancelOrException</E>
+                        </U>
+                      </V>
+                    </U>
+                  </V>
+                </L>
+                <L n="loot_list">
+                  <T>135247<!--LootActions: loot_Buff_BubbleBlower_autonomousUse_cooldown--></T>
+                  <T>134901<!--LootActions: loot_Statistic_ObjectFamiliarity_BubbleBlower_small--></T>
+                  <T>135244<!--LootActions: loot_Buff_BubbleBlower_Use_2_cartridge_success--></T>
+                  <T>135834<!--LootActions: Loot_Commodity_Sim_BubbleBlowerEffectiveness--></T>
+                </L>
+              </U>
+              <U n="weight">
+                <L n="multipliers">
+                  <U>
+                    <T n="multiplier">3</T>
+                    <L n="tests">
+                      <L>
+                        <V t="statistic">
+                          <U n="statistic">
+                            <T n="stat">134849<!--Statistic: statistic_Sim_objectFamiliarity_BubbleBlower--></T>
+                            <V t="value_threshold" n="threshold">
+                              <U n="value_threshold">
+                                <E n="comparison">GREATER_OR_EQUAL</E>
+                                <T n="value">50</T>
+                              </U>
+                            </V>
+                          </U>
+                        </V>
+                      </L>
+                    </L>
+                  </U>
+                </L>
+              </U>
+            </U>
+            <U>
+              <U n="outcome">
+                <V n="animation_ref" t="enabled">
+                  <U n="enabled">
+                    <T n="factory">133969<!--AnimationElement: BubbleBlower_blowBubble_helium_success--></T>
+                  </U>
+                </V>
+                <L n="basic_extras">
+                  <V t="broadcaster">
+                    <U n="broadcaster">
+                      <L n="broadcaster_types">
+                        <U>
+                          <T n="item">135675<!--Broadcaster: broadcaster_BubbleBlower_Use_Watcher_reaction_Positive--></T>
+                        </U>
+                      </L>
+                      <V t="enabled" n="offset_time" />
+                    </U>
+                  </V>
+                  <V t="state_change">
+                    <U n="state_change">
+                      <V n="new_value" t="single_value">
+                        <U n="single_value">
+                          <T n="new_value">142955<!--ObjectStateValue: BubbleBlower_InUse_0_No--></T>
+                        </U>
+                      </V>
+                      <V t="at_end" n="timing">
+                        <U n="at_end">
+                          <E n="criticality">OnCancelOrException</E>
+                        </U>
+                      </V>
+                    </U>
+                  </V>
+                </L>
+                <L n="loot_list">
+                  <T>135247<!--LootActions: loot_Buff_BubbleBlower_autonomousUse_cooldown--></T>
+                  <T>134901<!--LootActions: loot_Statistic_ObjectFamiliarity_BubbleBlower_small--></T>
+                  <T>135244<!--LootActions: loot_Buff_BubbleBlower_Use_2_cartridge_success--></T>
+                  <T>135834<!--LootActions: Loot_Commodity_Sim_BubbleBlowerEffectiveness--></T>
+                </L>
+              </U>
+              <U n="weight">
+                <L n="multipliers">
+                  <U>
+                    <T n="multiplier">3</T>
+                    <L n="tests">
+                      <L>
+                        <V t="statistic">
+                          <U n="statistic">
+                            <T n="stat">134849<!--Statistic: statistic_Sim_objectFamiliarity_BubbleBlower--></T>
+                            <V n="threshold" t="value_threshold">
+                              <U n="value_threshold">
+                                <E n="comparison">GREATER_OR_EQUAL</E>
+                                <T n="value">75</T>
+                              </U>
+                            </V>
+                          </U>
+                        </V>
+                      </L>
+                    </L>
+                  </U>
+                  <U>
+                    <T n="multiplier">0</T>
+                    <L n="tests">
+                      <L>
+                        <V t="statistic">
+                          <U n="statistic">
+                            <T n="stat">134849<!--Statistic: statistic_Sim_objectFamiliarity_BubbleBlower--></T>
+                            <V t="value_threshold" n="threshold">
+                              <U n="value_threshold">
+                                <E n="comparison">LESS_OR_EQUAL</E>
+                                <T n="value">50</T>
+                              </U>
+                            </V>
+                          </U>
+                        </V>
+                      </L>
+                    </L>
+                  </U>
+                </L>
+              </U>
+            </U>
+            <U>
+              <U n="outcome">
+                <V t="enabled" n="animation_ref">
+                  <U n="enabled">
+                    <T n="factory">133473<!--AnimationElement: BubbleBlower_blowBubble_default_fail--></T>
+                  </U>
+                </V>
+                <L n="basic_extras">
+                  <V t="broadcaster">
+                    <U n="broadcaster">
+                      <L n="broadcaster_types">
+                        <U>
+                          <T n="item">135676<!--Broadcaster: broadcaster_BubbleBlower_Use_Watcher_reaction_Negative--></T>
+                        </U>
+                      </L>
+                      <V t="enabled" n="offset_time" />
+                    </U>
+                  </V>
+                  <V t="state_change">
+                    <U n="state_change">
+                      <V n="new_value" t="single_value">
+                        <U n="single_value">
+                          <T n="new_value">142955<!--ObjectStateValue: BubbleBlower_InUse_0_No--></T>
+                        </U>
+                      </V>
+                      <V t="at_end" n="timing">
+                        <U n="at_end">
+                          <E n="criticality">OnCancelOrException</E>
+                        </U>
+                      </V>
+                    </U>
+                  </V>
+                </L>
+                <L n="loot_list">
+                  <T>135247<!--LootActions: loot_Buff_BubbleBlower_autonomousUse_cooldown--></T>
+                  <T>135369<!--LootActions: loot_Statistic_ObjectFamiliarity_BubbleBlower_tiny--></T>
+                  <T>135245<!--LootActions: loot_Buff_BubbleBlower_Use_2_cartridge_fail--></T>
+                  <T>135834<!--LootActions: Loot_Commodity_Sim_BubbleBlowerEffectiveness--></T>
+                </L>
+                <E n="outcome_result">FAILURE</E>
+              </U>
+              <U n="weight">
+                <L n="multipliers">
+                  <U>
+                    <T n="multiplier">3</T>
+                    <L n="tests">
+                      <L>
+                        <V t="statistic">
+                          <U n="statistic">
+                            <T n="stat">134849<!--Statistic: statistic_Sim_objectFamiliarity_BubbleBlower--></T>
+                            <V t="value_threshold" n="threshold">
+                              <U n="value_threshold">
+                                <E n="comparison">LESS_OR_EQUAL</E>
+                                <T n="value">25</T>
+                              </U>
+                            </V>
+                          </U>
+                        </V>
+                      </L>
+                    </L>
+                  </U>
+                </L>
+              </U>
+            </U>
+          </L>
+          <L n="tests">
+            <L>
+              <V t="state">
+                <U n="state">
+                  <T n="value">133022<!--ObjectStateValue: BubbleBlower_Cartridge_2--></T>
+                </U>
+              </V>
+            </L>
+          </L>
+        </U>
+        <U>
+          <L n="potential_outcomes">
+            <U>
+              <U n="outcome">
+                <V n="animation_ref" t="enabled">
+                  <U n="enabled">
+                    <T n="factory">135315<!--AnimationElement: BubbleBlower_blowBubble_frost_success--></T>
+                  </U>
+                </V>
+                <L n="basic_extras">
+                  <V t="broadcaster">
+                    <U n="broadcaster">
+                      <L n="broadcaster_types">
+                        <U>
+                          <T n="item">135675<!--Broadcaster: broadcaster_BubbleBlower_Use_Watcher_reaction_Positive--></T>
+                        </U>
+                      </L>
+                      <V t="enabled" n="offset_time" />
+                    </U>
+                  </V>
+                  <V t="state_change">
+                    <U n="state_change">
+                      <V n="new_value" t="single_value">
+                        <U n="single_value">
+                          <T n="new_value">142955<!--ObjectStateValue: BubbleBlower_InUse_0_No--></T>
+                        </U>
+                      </V>
+                      <V t="at_end" n="timing">
+                        <U n="at_end">
+                          <E n="criticality">OnCancelOrException</E>
+                        </U>
+                      </V>
+                    </U>
+                  </V>
+                </L>
+                <L n="loot_list">
+                  <T>135247<!--LootActions: loot_Buff_BubbleBlower_autonomousUse_cooldown--></T>
+                  <T>134901<!--LootActions: loot_Statistic_ObjectFamiliarity_BubbleBlower_small--></T>
+                  <T>135340<!--LootActions: loot_Buff_BubbleBlower_Use_3_frost_success--></T>
+                  <T>135834<!--LootActions: Loot_Commodity_Sim_BubbleBlowerEffectiveness--></T>
+                </L>
+              </U>
+              <U n="weight">
+                <L n="multipliers">
+                  <U>
+                    <T n="multiplier">3</T>
+                    <L n="tests">
+                      <L>
+                        <V t="statistic">
+                          <U n="statistic">
+                            <T n="stat">134849<!--Statistic: statistic_Sim_objectFamiliarity_BubbleBlower--></T>
+                            <V n="threshold" t="value_threshold">
+                              <U n="value_threshold">
+                                <E n="comparison">GREATER_OR_EQUAL</E>
+                                <T n="value">75</T>
+                              </U>
+                            </V>
+                          </U>
+                        </V>
+                      </L>
+                    </L>
+                  </U>
+                </L>
+              </U>
+            </U>
+            <U>
+              <U n="outcome">
+                <V n="animation_ref" t="enabled">
+                  <U n="enabled">
+                    <T n="factory">135314<!--AnimationElement: BubbleBlower_blowBubble_frost_fail--></T>
+                  </U>
+                </V>
+                <L n="basic_extras">
+                  <V t="broadcaster">
+                    <U n="broadcaster">
+                      <L n="broadcaster_types">
+                        <U>
+                          <T n="item">135676<!--Broadcaster: broadcaster_BubbleBlower_Use_Watcher_reaction_Negative--></T>
+                        </U>
+                      </L>
+                      <V t="enabled" n="offset_time" />
+                    </U>
+                  </V>
+                  <V t="state_change">
+                    <U n="state_change">
+                      <V n="new_value" t="single_value">
+                        <U n="single_value">
+                          <T n="new_value">142955<!--ObjectStateValue: BubbleBlower_InUse_0_No--></T>
+                        </U>
+                      </V>
+                      <V t="at_end" n="timing">
+                        <U n="at_end">
+                          <E n="criticality">OnCancelOrException</E>
+                        </U>
+                      </V>
+                    </U>
+                  </V>
+                </L>
+                <L n="loot_list">
+                  <T>135247<!--LootActions: loot_Buff_BubbleBlower_autonomousUse_cooldown--></T>
+                  <T>135369<!--LootActions: loot_Statistic_ObjectFamiliarity_BubbleBlower_tiny--></T>
+                  <T>135341<!--LootActions: loot_Buff_BubbleBlower_Use_3_frost_fail--></T>
+                  <T>135834<!--LootActions: Loot_Commodity_Sim_BubbleBlowerEffectiveness--></T>
+                </L>
+                <E n="outcome_result">FAILURE</E>
+              </U>
+              <U n="weight">
+                <L n="multipliers">
+                  <U>
+                    <T n="multiplier">3</T>
+                    <L n="tests">
+                      <L>
+                        <V t="statistic">
+                          <U n="statistic">
+                            <T n="stat">134849<!--Statistic: statistic_Sim_objectFamiliarity_BubbleBlower--></T>
+                            <V t="value_threshold" n="threshold">
+                              <U n="value_threshold">
+                                <E n="comparison">LESS_OR_EQUAL</E>
+                                <T n="value">25</T>
+                              </U>
+                            </V>
+                          </U>
+                        </V>
+                      </L>
+                    </L>
+                  </U>
+                </L>
+              </U>
+            </U>
+          </L>
+          <L n="tests">
+            <L>
+              <V t="state">
+                <U n="state">
+                  <V t="always_fail" n="fallback_behavior" />
+                  <T n="value">133023<!--ObjectStateValue: BubbleBlower_Cartridge_3--></T>
+                </U>
+              </V>
+            </L>
+          </L>
+        </U>
+        <U>
+          <L n="potential_outcomes">
+            <U>
+              <U n="outcome">
+                <V n="animation_ref" t="enabled">
+                  <U n="enabled">
+                    <T n="factory">135316<!--AnimationElement: BubbleBlower_blowBubble_sulfur_success--></T>
+                  </U>
+                </V>
+                <L n="basic_extras">
+                  <V t="broadcaster">
+                    <U n="broadcaster">
+                      <L n="broadcaster_types">
+                        <U>
+                          <T n="item">135675<!--Broadcaster: broadcaster_BubbleBlower_Use_Watcher_reaction_Positive--></T>
+                        </U>
+                      </L>
+                      <V t="enabled" n="offset_time" />
+                    </U>
+                  </V>
+                  <V t="state_change">
+                    <U n="state_change">
+                      <V n="new_value" t="single_value">
+                        <U n="single_value">
+                          <T n="new_value">142955<!--ObjectStateValue: BubbleBlower_InUse_0_No--></T>
+                        </U>
+                      </V>
+                      <V t="at_end" n="timing">
+                        <U n="at_end">
+                          <E n="criticality">OnCancelOrException</E>
+                        </U>
+                      </V>
+                    </U>
+                  </V>
+                </L>
+                <L n="loot_list">
+                  <T>135247<!--LootActions: loot_Buff_BubbleBlower_autonomousUse_cooldown--></T>
+                  <T>134901<!--LootActions: loot_Statistic_ObjectFamiliarity_BubbleBlower_small--></T>
+                  <T>135339<!--LootActions: loot_Buff_BubbleBlower_Use_4_sulfur_success--></T>
+                  <T>135834<!--LootActions: Loot_Commodity_Sim_BubbleBlowerEffectiveness--></T>
+                </L>
+              </U>
+              <U n="weight">
+                <L n="multipliers">
+                  <U>
+                    <T n="multiplier">3</T>
+                    <L n="tests">
+                      <L>
+                        <V t="statistic">
+                          <U n="statistic">
+                            <T n="stat">134849<!--Statistic: statistic_Sim_objectFamiliarity_BubbleBlower--></T>
+                            <V n="threshold" t="value_threshold">
+                              <U n="value_threshold">
+                                <E n="comparison">GREATER_OR_EQUAL</E>
+                                <T n="value">75</T>
+                              </U>
+                            </V>
+                          </U>
+                        </V>
+                      </L>
+                    </L>
+                  </U>
+                </L>
+              </U>
+            </U>
+            <U>
+              <U n="outcome">
+                <V n="animation_ref" t="enabled">
+                  <U n="enabled">
+                    <T n="factory">135317<!--AnimationElement: BubbleBlower_blowBubble_sulfur_fail--></T>
+                  </U>
+                </V>
+                <L n="basic_extras">
+                  <V t="broadcaster">
+                    <U n="broadcaster">
+                      <L n="broadcaster_types">
+                        <U>
+                          <T n="item">135676<!--Broadcaster: broadcaster_BubbleBlower_Use_Watcher_reaction_Negative--></T>
+                        </U>
+                      </L>
+                      <V t="enabled" n="offset_time" />
+                    </U>
+                  </V>
+                  <V t="state_change">
+                    <U n="state_change">
+                      <V n="new_value" t="single_value">
+                        <U n="single_value">
+                          <T n="new_value">142955<!--ObjectStateValue: BubbleBlower_InUse_0_No--></T>
+                        </U>
+                      </V>
+                      <V t="at_end" n="timing">
+                        <U n="at_end">
+                          <E n="criticality">OnCancelOrException</E>
+                        </U>
+                      </V>
+                    </U>
+                  </V>
+                </L>
+                <L n="loot_list">
+                  <T>135247<!--LootActions: loot_Buff_BubbleBlower_autonomousUse_cooldown--></T>
+                  <T>135369<!--LootActions: loot_Statistic_ObjectFamiliarity_BubbleBlower_tiny--></T>
+                  <T>135342<!--LootActions: loot_Buff_BubbleBlower_Use_4_sulfur_fail--></T>
+                  <T>135834<!--LootActions: Loot_Commodity_Sim_BubbleBlowerEffectiveness--></T>
+                </L>
+                <E n="outcome_result">FAILURE</E>
+              </U>
+              <U n="weight">
+                <L n="multipliers">
+                  <U>
+                    <T n="multiplier">3</T>
+                    <L n="tests">
+                      <L>
+                        <V t="statistic">
+                          <U n="statistic">
+                            <T n="stat">134849<!--Statistic: statistic_Sim_objectFamiliarity_BubbleBlower--></T>
+                            <V t="value_threshold" n="threshold">
+                              <U n="value_threshold">
+                                <E n="comparison">LESS_OR_EQUAL</E>
+                                <T n="value">25</T>
+                              </U>
+                            </V>
+                          </U>
+                        </V>
+                      </L>
+                    </L>
+                  </U>
+                </L>
+              </U>
+            </U>
+          </L>
+          <L n="tests">
+            <L>
+              <V t="state">
+                <U n="state">
+                  <V t="always_fail" n="fallback_behavior" />
+                  <T n="value">133024<!--ObjectStateValue: BubbleBlower_Cartridge_4--></T>
+                </U>
+              </V>
+            </L>
+          </L>
+        </U>
+        <U>
+          <L n="potential_outcomes">
+            <U>
+              <U n="outcome">
+                <V t="enabled" n="animation_ref">
+                  <U n="enabled">
+                    <T n="factory">133474<!--AnimationElement: BubbleBlower_blowBubble_default_success--></T>
+                    <U n="overrides">
+                      <V t="disabled" n="balloons" />
+                      <V t="disabled" n="reactionlet" />
+                    </U>
+                  </U>
+                </V>
+                <L n="basic_extras">
+                  <V t="broadcaster">
+                    <U n="broadcaster">
+                      <L n="broadcaster_types">
+                        <U>
+                          <T n="item">135675<!--Broadcaster: broadcaster_BubbleBlower_Use_Watcher_reaction_Positive--></T>
+                        </U>
+                      </L>
+                      <V t="enabled" n="offset_time" />
+                    </U>
+                  </V>
+                  <V t="state_change">
+                    <U n="state_change">
+                      <V n="new_value" t="single_value">
+                        <U n="single_value">
+                          <T n="new_value">142955<!--ObjectStateValue: BubbleBlower_InUse_0_No--></T>
+                        </U>
+                      </V>
+                      <V t="at_end" n="timing">
+                        <U n="at_end">
+                          <E n="criticality">OnCancelOrException</E>
+                        </U>
+                      </V>
+                    </U>
+                  </V>
+                </L>
+                <L n="loot_list">
+                  <T>135247<!--LootActions: loot_Buff_BubbleBlower_autonomousUse_cooldown--></T>
+                  <T>134901<!--LootActions: loot_Statistic_ObjectFamiliarity_BubbleBlower_small--></T>
+                  <T>135343<!--LootActions: loot_Buff_BubbleBlower_Use_5_krypton_success--></T>
+                  <T>135834<!--LootActions: Loot_Commodity_Sim_BubbleBlowerEffectiveness--></T>
+                </L>
+              </U>
+              <U n="weight">
+                <L n="multipliers">
+                  <U>
+                    <T n="multiplier">3</T>
+                    <L n="tests">
+                      <L>
+                        <V t="statistic">
+                          <U n="statistic">
+                            <T n="stat">134849<!--Statistic: statistic_Sim_objectFamiliarity_BubbleBlower--></T>
+                            <V n="threshold" t="value_threshold">
+                              <U n="value_threshold">
+                                <E n="comparison">GREATER_OR_EQUAL</E>
+                                <T n="value">75</T>
+                              </U>
+                            </V>
+                          </U>
+                        </V>
+                      </L>
+                    </L>
+                  </U>
+                </L>
+              </U>
+            </U>
+            <U>
+              <U n="outcome">
+                <V t="enabled" n="animation_ref">
+                  <U n="enabled">
+                    <T n="factory">133473<!--AnimationElement: BubbleBlower_blowBubble_default_fail--></T>
+                  </U>
+                </V>
+                <L n="basic_extras">
+                  <V t="broadcaster">
+                    <U n="broadcaster">
+                      <L n="broadcaster_types">
+                        <U>
+                          <T n="item">135676<!--Broadcaster: broadcaster_BubbleBlower_Use_Watcher_reaction_Negative--></T>
+                        </U>
+                      </L>
+                      <V t="enabled" n="offset_time" />
+                    </U>
+                  </V>
+                  <V t="state_change">
+                    <U n="state_change">
+                      <V n="new_value" t="single_value">
+                        <U n="single_value">
+                          <T n="new_value">142955<!--ObjectStateValue: BubbleBlower_InUse_0_No--></T>
+                        </U>
+                      </V>
+                      <V t="at_end" n="timing">
+                        <U n="at_end">
+                          <E n="criticality">OnCancelOrException</E>
+                        </U>
+                      </V>
+                    </U>
+                  </V>
+                </L>
+                <L n="loot_list">
+                  <T>135247<!--LootActions: loot_Buff_BubbleBlower_autonomousUse_cooldown--></T>
+                  <T>135369<!--LootActions: loot_Statistic_ObjectFamiliarity_BubbleBlower_tiny--></T>
+                  <T>135338<!--LootActions: loot_Buff_BubbleBlower_Use_5_krypton_fail--></T>
+                  <T>135834<!--LootActions: Loot_Commodity_Sim_BubbleBlowerEffectiveness--></T>
+                </L>
+                <E n="outcome_result">FAILURE</E>
+              </U>
+              <U n="weight">
+                <L n="multipliers">
+                  <U>
+                    <T n="multiplier">3</T>
+                    <L n="tests">
+                      <L>
+                        <V t="statistic">
+                          <U n="statistic">
+                            <T n="stat">134849<!--Statistic: statistic_Sim_objectFamiliarity_BubbleBlower--></T>
+                            <V t="value_threshold" n="threshold">
+                              <U n="value_threshold">
+                                <E n="comparison">LESS_OR_EQUAL</E>
+                                <T n="value">25</T>
+                              </U>
+                            </V>
+                          </U>
+                        </V>
+                      </L>
+                    </L>
+                  </U>
+                </L>
+              </U>
+            </U>
+          </L>
+          <L n="tests">
+            <L>
+              <V t="state">
+                <U n="state">
+                  <V t="always_fail" n="fallback_behavior" />
+                  <T n="value">133025<!--ObjectStateValue: BubbleBlower_Cartridge_5--></T>
+                </U>
+              </V>
+            </L>
+          </L>
+        </U>
+        <U>
+          <L n="potential_outcomes">
+            <U>
+              <U n="outcome">
+                <V t="enabled" n="animation_ref">
+                  <U n="enabled">
+                    <T n="factory">133474<!--AnimationElement: BubbleBlower_blowBubble_default_success--></T>
+                  </U>
+                </V>
+                <L n="basic_extras">
+                  <V t="broadcaster">
+                    <U n="broadcaster">
+                      <L n="broadcaster_types">
+                        <U>
+                          <T n="item">135675<!--Broadcaster: broadcaster_BubbleBlower_Use_Watcher_reaction_Positive--></T>
+                        </U>
+                      </L>
+                      <V t="enabled" n="offset_time" />
+                    </U>
+                  </V>
+                  <V t="state_change">
+                    <U n="state_change">
+                      <V n="new_value" t="single_value">
+                        <U n="single_value">
+                          <T n="new_value">142955<!--ObjectStateValue: BubbleBlower_InUse_0_No--></T>
+                        </U>
+                      </V>
+                      <V t="at_end" n="timing">
+                        <U n="at_end">
+                          <E n="criticality">OnCancelOrException</E>
+                        </U>
+                      </V>
+                    </U>
+                  </V>
+                </L>
+                <L n="loot_list">
+                  <T>135247<!--LootActions: loot_Buff_BubbleBlower_autonomousUse_cooldown--></T>
+                  <T>134901<!--LootActions: loot_Statistic_ObjectFamiliarity_BubbleBlower_small--></T>
+                  <T>135346<!--LootActions: loot_Buff_BubbleBlower_Use_6_xenon_success--></T>
+                  <T>135834<!--LootActions: Loot_Commodity_Sim_BubbleBlowerEffectiveness--></T>
+                </L>
+              </U>
+              <U n="weight">
+                <L n="multipliers">
+                  <U>
+                    <T n="multiplier">3</T>
+                    <L n="tests">
+                      <L>
+                        <V t="statistic">
+                          <U n="statistic">
+                            <T n="stat">134849<!--Statistic: statistic_Sim_objectFamiliarity_BubbleBlower--></T>
+                            <V n="threshold" t="value_threshold">
+                              <U n="value_threshold">
+                                <E n="comparison">GREATER_OR_EQUAL</E>
+                                <T n="value">75</T>
+                              </U>
+                            </V>
+                          </U>
+                        </V>
+                      </L>
+                    </L>
+                  </U>
+                </L>
+              </U>
+            </U>
+            <U>
+              <U n="outcome">
+                <V t="enabled" n="animation_ref">
+                  <U n="enabled">
+                    <T n="factory">133473<!--AnimationElement: BubbleBlower_blowBubble_default_fail--></T>
+                  </U>
+                </V>
+                <L n="basic_extras">
+                  <V t="broadcaster">
+                    <U n="broadcaster">
+                      <L n="broadcaster_types">
+                        <U>
+                          <T n="item">135676<!--Broadcaster: broadcaster_BubbleBlower_Use_Watcher_reaction_Negative--></T>
+                        </U>
+                      </L>
+                      <V t="enabled" n="offset_time" />
+                    </U>
+                  </V>
+                  <V t="state_change">
+                    <U n="state_change">
+                      <V n="new_value" t="single_value">
+                        <U n="single_value">
+                          <T n="new_value">142955<!--ObjectStateValue: BubbleBlower_InUse_0_No--></T>
+                        </U>
+                      </V>
+                      <V t="at_end" n="timing">
+                        <U n="at_end">
+                          <E n="criticality">OnCancelOrException</E>
+                        </U>
+                      </V>
+                    </U>
+                  </V>
+                </L>
+                <L n="loot_list">
+                  <T>135247<!--LootActions: loot_Buff_BubbleBlower_autonomousUse_cooldown--></T>
+                  <T>135369<!--LootActions: loot_Statistic_ObjectFamiliarity_BubbleBlower_tiny--></T>
+                  <T>135344<!--LootActions: loot_Buff_BubbleBlower_Use_6_xenon_fail--></T>
+                  <T>135834<!--LootActions: Loot_Commodity_Sim_BubbleBlowerEffectiveness--></T>
+                </L>
+                <E n="outcome_result">FAILURE</E>
+              </U>
+              <U n="weight">
+                <L n="multipliers">
+                  <U>
+                    <T n="multiplier">3</T>
+                    <L n="tests">
+                      <L>
+                        <V t="statistic">
+                          <U n="statistic">
+                            <T n="stat">134849<!--Statistic: statistic_Sim_objectFamiliarity_BubbleBlower--></T>
+                            <V t="value_threshold" n="threshold">
+                              <U n="value_threshold">
+                                <E n="comparison">LESS_OR_EQUAL</E>
+                                <T n="value">25</T>
+                              </U>
+                            </V>
+                          </U>
+                        </V>
+                      </L>
+                    </L>
+                  </U>
+                </L>
+              </U>
+            </U>
+          </L>
+          <L n="tests">
+            <L>
+              <V t="state">
+                <U n="state">
+                  <V t="always_fail" n="fallback_behavior" />
+                  <T n="value">133026<!--ObjectStateValue: BubbleBlower_Cartridge_6--></T>
+                </U>
+              </V>
+            </L>
+          </L>
+        </U>
+        <U>
+          <L n="potential_outcomes">
+            <U>
+              <U n="outcome">
+                <V t="enabled" n="animation_ref">
+                  <U n="enabled">
+                    <T n="factory">133474<!--AnimationElement: BubbleBlower_blowBubble_default_success--></T>
+                  </U>
+                </V>
+                <L n="basic_extras">
+                  <V t="broadcaster">
+                    <U n="broadcaster">
+                      <L n="broadcaster_types">
+                        <U>
+                          <T n="item">135675<!--Broadcaster: broadcaster_BubbleBlower_Use_Watcher_reaction_Positive--></T>
+                        </U>
+                      </L>
+                      <V t="enabled" n="offset_time" />
+                    </U>
+                  </V>
+                  <V t="state_change">
+                    <U n="state_change">
+                      <V n="new_value" t="single_value">
+                        <U n="single_value">
+                          <T n="new_value">142955<!--ObjectStateValue: BubbleBlower_InUse_0_No--></T>
+                        </U>
+                      </V>
+                      <V t="at_end" n="timing">
+                        <U n="at_end">
+                          <E n="criticality">OnCancelOrException</E>
+                        </U>
+                      </V>
+                    </U>
+                  </V>
+                </L>
+                <L n="loot_list">
+                  <T>135247<!--LootActions: loot_Buff_BubbleBlower_autonomousUse_cooldown--></T>
+                  <T>134901<!--LootActions: loot_Statistic_ObjectFamiliarity_BubbleBlower_small--></T>
+                  <T>135347<!--LootActions: loot_Buff_BubbleBlower_Use_7_argon_success--></T>
+                  <T>135834<!--LootActions: Loot_Commodity_Sim_BubbleBlowerEffectiveness--></T>
+                </L>
+              </U>
+              <U n="weight">
+                <L n="multipliers">
+                  <U>
+                    <T n="multiplier">3</T>
+                    <L n="tests">
+                      <L>
+                        <V t="statistic">
+                          <U n="statistic">
+                            <T n="stat">134849<!--Statistic: statistic_Sim_objectFamiliarity_BubbleBlower--></T>
+                            <V n="threshold" t="value_threshold">
+                              <U n="value_threshold">
+                                <E n="comparison">GREATER_OR_EQUAL</E>
+                                <T n="value">75</T>
+                              </U>
+                            </V>
+                          </U>
+                        </V>
+                      </L>
+                    </L>
+                  </U>
+                </L>
+              </U>
+            </U>
+            <U>
+              <U n="outcome">
+                <V t="enabled" n="animation_ref">
+                  <U n="enabled">
+                    <T n="factory">133473<!--AnimationElement: BubbleBlower_blowBubble_default_fail--></T>
+                  </U>
+                </V>
+                <L n="basic_extras">
+                  <V t="broadcaster">
+                    <U n="broadcaster">
+                      <L n="broadcaster_types">
+                        <U>
+                          <T n="item">135676<!--Broadcaster: broadcaster_BubbleBlower_Use_Watcher_reaction_Negative--></T>
+                        </U>
+                      </L>
+                      <V t="enabled" n="offset_time" />
+                    </U>
+                  </V>
+                  <V t="state_change">
+                    <U n="state_change">
+                      <V n="new_value" t="single_value">
+                        <U n="single_value">
+                          <T n="new_value">142955<!--ObjectStateValue: BubbleBlower_InUse_0_No--></T>
+                        </U>
+                      </V>
+                      <V t="at_end" n="timing">
+                        <U n="at_end">
+                          <E n="criticality">OnCancelOrException</E>
+                        </U>
+                      </V>
+                    </U>
+                  </V>
+                </L>
+                <L n="loot_list">
+                  <T>135247<!--LootActions: loot_Buff_BubbleBlower_autonomousUse_cooldown--></T>
+                  <T>135369<!--LootActions: loot_Statistic_ObjectFamiliarity_BubbleBlower_tiny--></T>
+                  <T>135345<!--LootActions: loot_Buff_BubbleBlower_Use_7_argon_fail--></T>
+                  <T>135834<!--LootActions: Loot_Commodity_Sim_BubbleBlowerEffectiveness--></T>
+                </L>
+                <E n="outcome_result">FAILURE</E>
+              </U>
+              <U n="weight">
+                <L n="multipliers">
+                  <U>
+                    <T n="multiplier">3</T>
+                    <L n="tests">
+                      <L>
+                        <V t="statistic">
+                          <U n="statistic">
+                            <T n="stat">134849<!--Statistic: statistic_Sim_objectFamiliarity_BubbleBlower--></T>
+                            <V t="value_threshold" n="threshold">
+                              <U n="value_threshold">
+                                <E n="comparison">LESS_OR_EQUAL</E>
+                                <T n="value">25</T>
+                              </U>
+                            </V>
+                          </U>
+                        </V>
+                      </L>
+                    </L>
+                  </U>
+                </L>
+              </U>
+            </U>
+          </L>
+          <L n="tests">
+            <L>
+              <V t="state">
+                <U n="state">
+                  <V t="always_fail" n="fallback_behavior" />
+                  <T n="value">133027<!--ObjectStateValue: BubbleBlower_Cartridge_7--></T>
+                </U>
+              </V>
+            </L>
+          </L>
+        </U>
+        <U>
+          <L n="potential_outcomes">
+            <U>
+              <U n="outcome">
+                <V t="enabled" n="animation_ref">
+                  <U n="enabled">
+                    <T n="factory">133474<!--AnimationElement: BubbleBlower_blowBubble_default_success--></T>
+                  </U>
+                </V>
+                <L n="basic_extras">
+                  <V t="broadcaster">
+                    <U n="broadcaster">
+                      <L n="broadcaster_types">
+                        <U>
+                          <T n="item">135675<!--Broadcaster: broadcaster_BubbleBlower_Use_Watcher_reaction_Positive--></T>
+                        </U>
+                      </L>
+                      <V t="enabled" n="offset_time" />
+                    </U>
+                  </V>
+                  <V t="state_change">
+                    <U n="state_change">
+                      <V n="new_value" t="single_value">
+                        <U n="single_value">
+                          <T n="new_value">142955<!--ObjectStateValue: BubbleBlower_InUse_0_No--></T>
+                        </U>
+                      </V>
+                      <V t="at_end" n="timing">
+                        <U n="at_end">
+                          <E n="criticality">OnCancelOrException</E>
+                        </U>
+                      </V>
+                    </U>
+                  </V>
+                </L>
+                <L n="loot_list">
+                  <T>135247<!--LootActions: loot_Buff_BubbleBlower_autonomousUse_cooldown--></T>
+                  <T>134901<!--LootActions: loot_Statistic_ObjectFamiliarity_BubbleBlower_small--></T>
+                  <T>135412<!--LootActions: loot_Buff_BubbleBlower_Use_8_neon_success--></T>
+                  <T>135834<!--LootActions: Loot_Commodity_Sim_BubbleBlowerEffectiveness--></T>
+                </L>
+              </U>
+              <U n="weight">
+                <L n="multipliers">
+                  <U>
+                    <T n="multiplier">3</T>
+                    <L n="tests">
+                      <L>
+                        <V t="statistic">
+                          <U n="statistic">
+                            <T n="stat">134849<!--Statistic: statistic_Sim_objectFamiliarity_BubbleBlower--></T>
+                            <V n="threshold" t="value_threshold">
+                              <U n="value_threshold">
+                                <E n="comparison">GREATER_OR_EQUAL</E>
+                                <T n="value">75</T>
+                              </U>
+                            </V>
+                          </U>
+                        </V>
+                      </L>
+                    </L>
+                  </U>
+                </L>
+              </U>
+            </U>
+            <U>
+              <U n="outcome">
+                <V t="enabled" n="animation_ref">
+                  <U n="enabled">
+                    <T n="factory">133473<!--AnimationElement: BubbleBlower_blowBubble_default_fail--></T>
+                  </U>
+                </V>
+                <L n="basic_extras">
+                  <V t="broadcaster">
+                    <U n="broadcaster">
+                      <L n="broadcaster_types">
+                        <U>
+                          <T n="item">135676<!--Broadcaster: broadcaster_BubbleBlower_Use_Watcher_reaction_Negative--></T>
+                        </U>
+                      </L>
+                      <V t="enabled" n="offset_time">
+                        <T n="enabled">2</T>
+                      </V>
+                    </U>
+                  </V>
+                  <V t="state_change">
+                    <U n="state_change">
+                      <V n="new_value" t="single_value">
+                        <U n="single_value">
+                          <T n="new_value">142955<!--ObjectStateValue: BubbleBlower_InUse_0_No--></T>
+                        </U>
+                      </V>
+                      <V t="at_end" n="timing">
+                        <U n="at_end">
+                          <E n="criticality">OnCancelOrException</E>
+                        </U>
+                      </V>
+                    </U>
+                  </V>
+                </L>
+                <L n="loot_list">
+                  <T>135247<!--LootActions: loot_Buff_BubbleBlower_autonomousUse_cooldown--></T>
+                  <T>135369<!--LootActions: loot_Statistic_ObjectFamiliarity_BubbleBlower_tiny--></T>
+                  <T>135411<!--LootActions: loot_Buff_BubbleBlower_Use_8_neon_fail--></T>
+                  <T>135834<!--LootActions: Loot_Commodity_Sim_BubbleBlowerEffectiveness--></T>
+                </L>
+                <E n="outcome_result">FAILURE</E>
+              </U>
+              <U n="weight">
+                <L n="multipliers">
+                  <U>
+                    <T n="multiplier">3</T>
+                    <L n="tests">
+                      <L>
+                        <V t="statistic">
+                          <U n="statistic">
+                            <T n="stat">134849<!--Statistic: statistic_Sim_objectFamiliarity_BubbleBlower--></T>
+                            <V t="value_threshold" n="threshold">
+                              <U n="value_threshold">
+                                <E n="comparison">LESS_OR_EQUAL</E>
+                                <T n="value">25</T>
+                              </U>
+                            </V>
+                          </U>
+                        </V>
+                      </L>
+                    </L>
+                  </U>
+                </L>
+              </U>
+            </U>
+            <U>
+              <U n="outcome">
+                <V n="animation_ref" t="enabled">
+                  <U n="enabled">
+                    <T n="factory">135312<!--AnimationElement: BubbleBlower_blowBubble_krypton_fail--></T>
+                    <U n="overrides">
+                      <V t="disabled" n="balloons" />
+                      <V t="disabled" n="reactionlet" />
+                    </U>
+                  </U>
+                </V>
+                <L n="basic_extras">
+                  <V t="broadcaster">
+                    <U n="broadcaster">
+                      <L n="broadcaster_types">
+                        <U>
+                          <T n="item">135676<!--Broadcaster: broadcaster_BubbleBlower_Use_Watcher_reaction_Negative--></T>
+                        </U>
+                      </L>
+                      <V t="enabled" n="offset_time">
+                        <T n="enabled">2</T>
+                      </V>
+                    </U>
+                  </V>
+                  <V t="state_change">
+                    <U n="state_change">
+                      <V n="new_value" t="single_value">
+                        <U n="single_value">
+                          <T n="new_value">142955<!--ObjectStateValue: BubbleBlower_InUse_0_No--></T>
+                        </U>
+                      </V>
+                      <V t="at_end" n="timing">
+                        <U n="at_end">
+                          <E n="criticality">OnCancelOrException</E>
+                        </U>
+                      </V>
+                    </U>
+                  </V>
+                </L>
+                <L n="continuation">
+                  <U>
+                    <T n="affordance">135737<!--SuperInteraction: chair_BubbleBlower_Nap--></T>
+                    <E n="target">ActorPostureTarget</E>
+                  </U>
+                </L>
+                <L n="loot_list">
+                  <T>135247<!--LootActions: loot_Buff_BubbleBlower_autonomousUse_cooldown--></T>
+                  <T>135369<!--LootActions: loot_Statistic_ObjectFamiliarity_BubbleBlower_tiny--></T>
+                  <T>136051<!--LootActions: loot_Buff_BubbleBlower_Use_8_neon_fail2--></T>
+                  <T>135834<!--LootActions: Loot_Commodity_Sim_BubbleBlowerEffectiveness--></T>
+                </L>
+                <E n="outcome_result">FAILURE</E>
+              </U>
+              <U n="weight">
+                <L n="multipliers">
+                  <U>
+                    <T n="multiplier">3</T>
+                    <L n="tests">
+                      <L>
+                        <V t="statistic">
+                          <U n="statistic">
+                            <T n="stat">135797<!--Commodity: commodity_Sim_BubbleBlowerEffectiveness--></T>
+                            <V t="value_threshold" n="threshold">
+                              <U n="value_threshold">
+                                <E n="comparison">GREATER_OR_EQUAL</E>
+                                <T n="value">4</T>
+                              </U>
+                            </V>
+                          </U>
+                        </V>
+                        <V t="statistic">
+                          <U n="statistic">
+                            <T n="stat">134849<!--Statistic: statistic_Sim_objectFamiliarity_BubbleBlower--></T>
+                            <V t="value_threshold" n="threshold">
+                              <U n="value_threshold">
+                                <E n="comparison">LESS</E>
+                                <T n="value">50</T>
+                              </U>
+                            </V>
+                          </U>
+                        </V>
+                      </L>
+                    </L>
+                  </U>
+                </L>
+              </U>
+            </U>
+          </L>
+          <L n="tests">
+            <L>
+              <V t="state">
+                <U n="state">
+                  <V t="always_fail" n="fallback_behavior" />
+                  <T n="value">133038<!--ObjectStateValue: BubbleBlower_Cartridge_8--></T>
+                </U>
+              </V>
+            </L>
+          </L>
+        </U>
+        <U>
+          <L n="potential_outcomes">
+            <U>
+              <U n="outcome">
+                <V t="enabled" n="animation_ref">
+                  <U n="enabled">
+                    <T n="factory">133474<!--AnimationElement: BubbleBlower_blowBubble_default_success--></T>
+                    <U n="overrides">
+                      <V t="disabled" n="balloons" />
+                      <V t="disabled" n="reactionlet" />
+                    </U>
+                  </U>
+                </V>
+                <L n="basic_extras">
+                  <V t="broadcaster">
+                    <U n="broadcaster">
+                      <L n="broadcaster_types">
+                        <U>
+                          <T n="item">135675<!--Broadcaster: broadcaster_BubbleBlower_Use_Watcher_reaction_Positive--></T>
+                        </U>
+                      </L>
+                      <V t="enabled" n="offset_time" />
+                    </U>
+                  </V>
+                  <V t="state_change">
+                    <U n="state_change">
+                      <V n="new_value" t="single_value">
+                        <U n="single_value">
+                          <T n="new_value">142955<!--ObjectStateValue: BubbleBlower_InUse_0_No--></T>
+                        </U>
+                      </V>
+                      <V t="at_end" n="timing">
+                        <U n="at_end">
+                          <E n="criticality">OnCancelOrException</E>
+                        </U>
+                      </V>
+                    </U>
+                  </V>
+                </L>
+                <L n="loot_list">
+                  <T>135247<!--LootActions: loot_Buff_BubbleBlower_autonomousUse_cooldown--></T>
+                  <T>134901<!--LootActions: loot_Statistic_ObjectFamiliarity_BubbleBlower_small--></T>
+                  <T>135906<!--LootActions: loot_Buff_BubbleBlower_Use_9_radon_success--></T>
+                  <T>135834<!--LootActions: Loot_Commodity_Sim_BubbleBlowerEffectiveness--></T>
+                </L>
+              </U>
+              <U n="weight">
+                <L n="multipliers">
+                  <U>
+                    <T n="multiplier">3</T>
+                    <L n="tests">
+                      <L>
+                        <V t="statistic">
+                          <U n="statistic">
+                            <T n="stat">134849<!--Statistic: statistic_Sim_objectFamiliarity_BubbleBlower--></T>
+                            <V n="threshold" t="value_threshold">
+                              <U n="value_threshold">
+                                <E n="comparison">GREATER_OR_EQUAL</E>
+                                <T n="value">75</T>
+                              </U>
+                            </V>
+                          </U>
+                        </V>
+                      </L>
+                    </L>
+                  </U>
+                </L>
+              </U>
+            </U>
+            <U>
+              <U n="outcome">
+                <V n="animation_ref" t="enabled">
+                  <U n="enabled">
+                    <T n="factory">135313<!--AnimationElement: BubbleBlower_blowBubble_radon_fail--></T>
+                    <U n="overrides">
+                      <V t="disabled" n="balloons" />
+                      <V t="disabled" n="reactionlet" />
+                    </U>
+                  </U>
+                </V>
+                <L n="basic_extras">
+                  <V t="broadcaster">
+                    <U n="broadcaster">
+                      <L n="broadcaster_types">
+                        <U>
+                          <T n="item">135676<!--Broadcaster: broadcaster_BubbleBlower_Use_Watcher_reaction_Negative--></T>
+                        </U>
+                      </L>
+                      <V t="enabled" n="offset_time">
+                        <T n="enabled">2</T>
+                      </V>
+                    </U>
+                  </V>
+                  <V t="state_change">
+                    <U n="state_change">
+                      <V n="new_value" t="single_value">
+                        <U n="single_value">
+                          <T n="new_value">142955<!--ObjectStateValue: BubbleBlower_InUse_0_No--></T>
+                        </U>
+                      </V>
+                      <V t="at_end" n="timing">
+                        <U n="at_end">
+                          <E n="criticality">OnCancelOrException</E>
+                        </U>
+                      </V>
+                    </U>
+                  </V>
+                </L>
+                <L n="loot_list">
+                  <T>135247<!--LootActions: loot_Buff_BubbleBlower_autonomousUse_cooldown--></T>
+                  <T>135369<!--LootActions: loot_Statistic_ObjectFamiliarity_BubbleBlower_tiny--></T>
+                  <T>135907<!--LootActions: loot_Buff_BubbleBlower_Use_9_radon_fail--></T>
+                  <T>135834<!--LootActions: Loot_Commodity_Sim_BubbleBlowerEffectiveness--></T>
+                </L>
+                <E n="outcome_result">FAILURE</E>
+              </U>
+              <U n="weight">
+                <L n="multipliers">
+                  <U>
+                    <T n="multiplier">3</T>
+                    <L n="tests">
+                      <L>
+                        <V t="statistic">
+                          <U n="statistic">
+                            <T n="stat">134849<!--Statistic: statistic_Sim_objectFamiliarity_BubbleBlower--></T>
+                            <V t="value_threshold" n="threshold">
+                              <U n="value_threshold">
+                                <E n="comparison">LESS_OR_EQUAL</E>
+                                <T n="value">25</T>
+                              </U>
+                            </V>
+                          </U>
+                        </V>
+                      </L>
+                    </L>
+                  </U>
+                </L>
+              </U>
+            </U>
+          </L>
+          <L n="tests">
+            <L>
+              <V t="state">
+                <U n="state">
+                  <T n="value">133029<!--ObjectStateValue: BubbleBlower_Cartridge_9--></T>
+                </U>
+              </V>
+            </L>
+          </L>
+        </U>
+      </L>
+    </U>
+  </V>
+  <T n="pie_menu_priority">8</T>
+  <U n="sub_action">
+    <T n="base_weight">2</T>
+  </U>
+  <E n="target_type">OBJECT</E>
+  <L n="test_autonomous">
+    <L>
+      <V t="buff">
+        <U n="buff">
+          <L n="blacklist">
+            <T>135246<!--Buff: buff_Object_BubbleBlower_autonomousUse_cooldown_hidden--></T>
+          </L>
+        </U>
+      </V>
+    </L>
+  </L>
+  <L n="test_globals">
+    <V t="sim_info">
+      <U n="sim_info">
+        <V t="specified" n="ages" />
+      </U>
+    </V>
+    <V t="mood">
+      <U n="mood">
+        <T n="disallow">True</T>
+        <T n="mood">27149<!--Mood: Mood_Asleep--></T>
+      </U>
+    </V>
+    <V t="state">
+      <U n="state">
+        <V t="enabled" n="tooltip">
+          <T n="enabled">0x91E86BD9<!--String: "Este objeto está en uso."--></T>
+        </V>
+        <T n="value">142955<!--ObjectStateValue: BubbleBlower_InUse_0_No--></T>
+      </U>
+    </V>
+  </L>
+  <T n="visible">True</T>
+</I>

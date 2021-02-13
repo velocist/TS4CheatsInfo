@@ -1,0 +1,74 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<I c="Buff" i="buff" m="buffs.buff" n="buff_Temperature_Freezing" s="180208">
+  <L n="_loot_on_removal">
+    <T>188539<!--LootActions: loot_Temperature_Death_Reset_Freezing--></T>
+  </L>
+  <V t="enabled" n="appearance_modifier">
+    <U n="enabled">
+      <L n="appearance_modifiers">
+        <L>
+          <U>
+            <V n="modifier" t="randomize_skintone_between_tags">
+              <U n="randomize_skintone_between_tags">
+                <L n="tag_list">
+                  <E>SkinHue_BlueSkin</E>
+                </L>
+              </U>
+            </V>
+          </U>
+        </L>
+      </L>
+      <E n="priority">FROZEN</E>
+    </U>
+  </V>
+  <T p="InGame\audio\stings\sting_death_freezing.propx" n="audio_sting_on_add">39b2aa4a:00000000:46030b9b22934592</T>
+  <T p="InGame\Audio\Stings\sting_buff_loss.propx" n="audio_sting_on_remove">39b2aa4a:00000000:3bf33216a25546ea</T>
+  <T n="buff_description">0xE779E5FF<!--String: "A los Sims que se están empezando a congelar les sienta bien entrar en calor. Prueba a ponerles su ropa de tiempo frío."--></T>
+  <T n="buff_name">0x73067B26<!--String: "Frío intenso"--></T>
+  <U n="game_effect_modifier">
+    <L n="_game_effect_modifiers">
+      <V t="continuous_statistic_modifier">
+        <U n="continuous_statistic_modifier">
+          <T n="modifier_value">1</T>
+          <T n="statistic">182176<!--Commodity: commodity_Death_Temperature_Freezing--></T>
+        </U>
+      </V>
+      <V t="autonomy_modifier">
+        <U n="autonomy_modifier">
+          <L n="locked_stats">
+            <T>190848<!--Commodity: commodity_sim_Overheating--></T>
+          </L>
+          <V n="outside_objects_multiplier" t="enabled">
+            <T n="enabled">0.25</T>
+          </V>
+        </U>
+      </V>
+    </L>
+  </U>
+  <T p="InGame\ui\icons\buffs\Buff_SnowHater.png" n="icon">2f7d0004:00000000:37248ec3670ab50e</T>
+  <V t="enabled" n="interactions">
+    <U n="enabled">
+      <L n="interaction_items">
+        <T>188432<!--MixerInteraction: idle_Buff_Temperature_Freezing--></T>
+      </L>
+      <T n="weight">10</T>
+    </U>
+  </V>
+  <T n="mood_type">14646<!--Mood: Mood_Uncomfortable--></T>
+  <T n="mood_weight">99</T>
+  <L n="provided_mixers">
+    <U>
+      <T n="key">13991<!--SocialSuperInteraction: sim_BeAffectionate--></T>
+      <L n="value">
+        <T>182705<!--SocialMixerInteraction: mixer_social_WeatherTemperatureSocials_HugOutCold--></T>
+      </L>
+    </U>
+  </L>
+  <T n="show_timeout">False</T>
+  <L n="super_affordances">
+    <T>186338<!--SuperInteraction: temperature_Autonomy_MoveInside_WarmUp--></T>
+  </L>
+  <L n="tags">
+    <E>Buff_Temperature</E>
+  </L>
+</I>

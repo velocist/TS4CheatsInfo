@@ -1,0 +1,123 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<I c="DialogDramaNode" i="drama_node" m="drama_scheduler.dialog_drama_node" n="dialogDramaNode_CommunityCloseness_DreamOfYou" s="231586">
+  <T n="allow_during_work_hours">False</T>
+  <V t="group_cooldown" n="cooldown_data">
+    <U n="group_cooldown">
+      <E n="group">CommunityClosenessCooldown</E>
+    </U>
+  </V>
+  <V n="dialog_and_loot" t="dialog_multi_response">
+    <U n="dialog_multi_response">
+      <U n="dialog">
+        <E n="phone_ring_type">RING</E>
+        <V n="text" t="variation">
+          <U n="variation">
+            <L n="variations">
+              <T>0x96588EA5<!--String: "Siento venirte con esto, de sopetón, pero es que anoche soñé contigo. Estábamos en el campo y había unas llamas eléctricas. Y estaban durmiendo. No sé por qué eran eléctricas, pero el caso es que tú no me dejabas despertar a una. ¿Por qué no querías que la despertase, {0.SimFirstName}? <i>¡¿Por qué?!</i>"--></T>
+              <T>0x52D7805E<!--String: "¡Anda, {0.SimFirstName}! ¡Anoche tuve un sueño rarísimo contigo! Estábamos en una fiesta y tú me ignorabas. Yo me ponía delante de ti y te hacía aspavientos, pero era como si ni siquiera pudieras verme. ¿Sería invisible? ¡¿Por qué no me veías?!"--></T>
+              <T>0x1404DA29<!--String: "Ostras... Acabo de tener un sueño... en el que salías. Llegábamos tarde a algo. No sé a qué. Y luego tú te convertías en plátano. ¿Por qué narices te convertías en un plátano?"--></T>
+              <T>0x2BEDAA18<!--String: "Madre mía, he tenido un sueño rarísimo. Había un monstruo... o algo así en nuestro barrio, y no podíamos salir de casa. ¡Pero el monstruo no se iba! Nos pasábamos atrapados en casa durante días..., meses..., años (era un sueño, ¿vale?). Y luego resulta que salías y al final te comía. ¿Cómo se te ocurre salir teniendo el monstruo ahí, en nuestras narices, {0.SimFirstName}?"--></T>
+            </L>
+          </U>
+        </V>
+      </U>
+      <L n="possible_responses">
+        <U>
+          <U n="item">
+            <L n="loot">
+              <T>231628<!--LootActions: loot_DramaNode_CommunityCloseness_DreamOfYou_Because--></T>
+            </L>
+            <T n="text">0x31C3215D<!--String: "Explicar por qué"--></T>
+          </U>
+        </U>
+        <U>
+          <U n="item">
+            <L n="loot">
+              <T>231674<!--LootActions: loot_DramaNode_CommunityCloseness_DreamOfYou_IDontLikeYou--></T>
+            </L>
+            <T n="text">0xB12CC481<!--String: "Ser mordaz"--></T>
+          </U>
+        </U>
+        <U>
+          <U n="item">
+            <L n="loot">
+              <T>231675<!--LootActions: loot_DramaNode_CommunityCloseness_DreamOfYou_ICareAboutYou--></T>
+            </L>
+            <T n="text">0x6FF53590<!--String: "Ser amable"--></T>
+          </U>
+        </U>
+      </L>
+    </U>
+  </V>
+  <U n="min_and_max_times">
+    <T n="lower_bound">1</T>
+    <T n="upper_bound">72</T>
+  </U>
+  <L n="receiver_sim_pretests">
+    <L>
+      <V t="sim_info">
+        <U n="sim_info">
+          <V t="specified" n="ages">
+            <L n="specified">
+              <E>TEEN</E>
+              <E>YOUNGADULT</E>
+              <E>ADULT</E>
+              <E>ELDER</E>
+              <E>CHILD</E>
+            </L>
+          </V>
+          <V t="specified" n="species">
+            <U n="specified">
+              <L n="species">
+                <E>HUMAN</E>
+              </L>
+            </U>
+          </V>
+        </U>
+      </V>
+    </L>
+  </L>
+  <L n="run_tests">
+    <L>
+      <V t="buff">
+        <U n="buff">
+          <L n="blacklist">
+            <T>10094<!--Buff: buff_Sim_IsSleeping--></T>
+          </L>
+        </U>
+      </V>
+    </L>
+  </L>
+  <V t="enabled" n="scoring">
+    <U n="enabled">
+      <T n="base_score">100</T>
+      <E n="bucket">CommunityClosenessCalls</E>
+    </U>
+  </V>
+  <V n="sender_sim_info" t="sim_filter">
+    <U n="sim_filter">
+      <T n="sim_filter">234680<!--TunableSimFilter: dramaNodeFilters_CommunityCloseness_DreamOfYou--></T>
+    </U>
+  </V>
+  <V t="schedule" n="time_option">
+    <U n="schedule">
+      <L n="valid_times">
+        <U>
+          <U n="days_available">
+            <T n="0 SUNDAY">True</T>
+            <T n="1 MONDAY">True</T>
+            <T n="2 TUESDAY">True</T>
+            <T n="3 WEDNESDAY">True</T>
+            <T n="4 THURSDAY">True</T>
+            <T n="5 FRIDAY">True</T>
+            <T n="6 SATURDAY">True</T>
+          </U>
+          <T n="duration">8</T>
+          <U n="start_time">
+            <T n="hour">12</T>
+          </U>
+        </U>
+      </L>
+    </U>
+  </V>
+</I>

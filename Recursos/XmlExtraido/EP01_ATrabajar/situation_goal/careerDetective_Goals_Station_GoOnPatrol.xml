@@ -1,0 +1,93 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<I c="SituationGoalObjectInteraction" i="situation_goal" m="situations.situation_goal_object_interaction" n="careerDetective_Goals_Station_GoOnPatrol" s="116143">
+  <T n="_cancel_on_travel">True</T>
+  <T n="_cooldown">240</T>
+  <V n="_display_data" t="enabled">
+    <U n="enabled">
+      <V t="enabled" n="instance_display_icon">
+        <T p="InEP01\UI\Icons\Career\Career_Detective_Main.png" n="enabled">2f7d0004:00000000:7e10457cfc46f451</T>
+      </V>
+      <V n="instance_display_name" t="enabled">
+        <T n="enabled">0x158AEC98<!--String: "Salir a patrullar"--></T>
+      </V>
+      <V n="instance_display_tooltip" t="enabled">
+        <T n="enabled">0x7D7402A9<!--String: "Patrulla las calles para mejorar las relaciones de la comunidad y expedir citaciones."--></T>
+      </V>
+    </U>
+  </V>
+  <U n="_goal_test">
+    <L n="affordances">
+      <T>108204<!--SuperInteraction: crimeMap_Detective_StartPatrol--></T>
+      <T>114899<!--SuperInteraction: detective_PatrolTravelComputer--></T>
+      <T>114898<!--SuperInteraction: detective_PatrolTravelStreet--></T>
+    </L>
+    <E n="test_event">InteractionComplete</E>
+  </U>
+  <L n="_pre_tests">
+    <V t="situation_job">
+      <U n="situation_job">
+        <L n="situation_jobs">
+          <T>109187<!--SituationJob: situationJob_Detective_PoliceStationPlayer--></T>
+        </L>
+      </U>
+    </V>
+    <V t="situation_job">
+      <U n="situation_job">
+        <T n="negate">True</T>
+        <L n="situation_jobs">
+          <T>109056<!--SituationJob: situationJob_Detective_CrimeScenePlayer--></T>
+        </L>
+      </U>
+    </V>
+    <V t="situation_job">
+      <U n="situation_job">
+        <T n="negate">True</T>
+        <L n="situation_jobs">
+          <T>110742<!--SituationJob: situationJob_Detective_PatrolPlayer--></T>
+        </L>
+      </U>
+    </V>
+    <V t="situation_job">
+      <U n="situation_job">
+        <T n="negate">True</T>
+        <L n="situation_jobs">
+          <T>108029<!--SituationJob: situationJob_Detective_ApbDetective--></T>
+        </L>
+      </U>
+    </V>
+    <V t="statistic">
+      <U n="statistic">
+        <T n="stat">112059<!--Statistic: statistic_Career_Detective_HasCase--></T>
+        <V t="value_threshold" n="threshold">
+          <U n="value_threshold">
+            <E n="comparison">GREATER_OR_EQUAL</E>
+            <T n="value">1</T>
+          </U>
+        </V>
+      </U>
+    </V>
+    <V t="buff">
+      <U n="buff">
+        <L n="blacklist">
+          <T>113855<!--Buff: buff_Career_Detective_InterrogatingGuiltySuspect--></T>
+          <T>113854<!--Buff: buff_Career_Detective_InterrogatingInnocentSuspect--></T>
+        </L>
+      </U>
+    </V>
+    <V t="career">
+      <U n="career">
+        <V n="test_type" t="days_worked">
+          <U n="days_worked">
+            <T n="career">106132<!--DetectiveCareer: detectiveCareer_1--></T>
+            <U n="threshold">
+              <E n="comparison">GREATER</E>
+              <T n="value">2</T>
+            </U>
+          </U>
+        </V>
+      </U>
+    </V>
+  </L>
+  <T n="_score">2</T>
+  <T p="InGame\Audio\Bumper\bumper_event_goal_complete.propx" n="audio_sting_on_complete">39b2aa4a:00000000:ed52c39bcc2a7111</T>
+</I>

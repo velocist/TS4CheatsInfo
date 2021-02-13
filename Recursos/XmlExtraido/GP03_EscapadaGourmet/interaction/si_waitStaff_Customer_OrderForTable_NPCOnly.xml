@@ -1,0 +1,107 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<I c="SuperInteraction" i="interaction" m="interactions.base.super_interaction" n="si_waitStaff_Customer_OrderForTable_NPCOnly" s="132600">
+  <V t="participant" n="_icon">
+    <U n="participant">
+      <L n="participant_type">
+        <E>Actor</E>
+      </L>
+    </U>
+  </V>
+  <V t="enabled" n="_saveable" />
+  <L n="_static_commodities">
+    <U>
+      <T n="static_commodity">133216<!--StaticCommodity: staticCommodity_Restaurants_Diner_Basic_PlaceOrderWithWaiter--></T>
+    </U>
+  </L>
+  <T n="allow_user_directed">False</T>
+  <T n="attention_cost">0.5</T>
+  <V t="one_shot" n="basic_content" />
+  <L n="basic_extras">
+    <V t="do_command">
+      <U n="do_command">
+        <L n="arguments">
+          <V t="participant">
+            <U n="participant">
+              <E n="argument">Actor</E>
+            </U>
+          </V>
+        </L>
+        <T n="command">restaurant.npc_order_food_from_waitstaff</T>
+      </U>
+    </V>
+  </L>
+  <V t="disabled" n="content_score" />
+  <T n="display_name">0x3809ACCF<!--String: "Pedir para la mesa"--></T>
+  <U n="display_name_text_tokens">
+    <L n="tokens">
+      <V t="participant_type">
+        <U n="participant_type">
+          <V n="objects" t="from_participant">
+            <U n="from_participant">
+              <E n="participant">Actor</E>
+            </U>
+          </V>
+        </U>
+      </V>
+      <V t="participant_type">
+        <U n="participant_type">
+          <V n="objects" t="from_participant">
+            <U n="from_participant">
+              <E n="participant">Object</E>
+            </U>
+          </V>
+        </U>
+      </V>
+    </L>
+  </U>
+  <L n="interaction_category_tags">
+    <E>Interaction_Super</E>
+    <E>Interaction_All</E>
+  </L>
+  <E n="scoring_priority">NORMAL</E>
+  <T n="subaction_selection_weight">1</T>
+  <E n="target_type">OBJECT</E>
+  <L n="test_globals">
+    <V t="restaurant">
+      <U n="restaurant">
+        <V t="enabled" n="claimed_table_status" />
+        <V t="enabled" n="waiting_for_food">
+          <T n="enabled">False</T>
+        </V>
+      </U>
+    </V>
+    <V t="situation_count_test">
+      <U n="situation_count_test">
+        <T n="situation">132213<!--WaitstaffSituation: situation_Restaurant_WaitStaff--></T>
+        <U n="test">
+          <T n="value">1</T>
+        </U>
+      </U>
+    </V>
+    <V t="sim_info">
+      <U n="sim_info">
+        <V t="enabled" n="npc">
+          <T n="enabled">True</T>
+        </V>
+      </U>
+    </V>
+    <V t="buff">
+      <U n="buff">
+        <L n="blacklist">
+          <T>143842<!--Buff: buff_OwnableRestaurant_Hospitality_DelayPlaceOrder--></T>
+        </L>
+      </U>
+    </V>
+    <V t="buff">
+      <U n="buff">
+        <L n="blacklist">
+          <T>132849<!--Buff: buff_Restaurant_Banned--></T>
+        </L>
+        <V n="tooltip" t="enabled">
+          <T n="enabled">0xB072EF9F<!--String: "Tiene prohibida la admisión en el restaurante."--></T>
+        </V>
+      </U>
+    </V>
+  </L>
+  <T n="time_overhead">30</T>
+</I>

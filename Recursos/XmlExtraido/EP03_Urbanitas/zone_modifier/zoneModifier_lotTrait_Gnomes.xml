@@ -1,0 +1,190 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<I c="ZoneModifier" i="zone_modifier" m="zone_modifier.zone_modifier" n="zoneModifier_lotTrait_Gnomes" s="147778">
+  <U n="schedule">
+    <L n="schedule_entries">
+      <U>
+        <L n="actions">
+          <V t="literal">
+            <V n="literal" t="modify_lot_items">
+              <U n="modify_lot_items">
+                <U n="actions">
+                  <L n="modifications">
+                    <U>
+                      <V n="action" t="set_state">
+                        <U n="set_state">
+                          <T n="action_value">15078<!--CommodityBasedObjectStateValue: Brokenness_Unbroken--></T>
+                        </U>
+                      </V>
+                      <L n="tests">
+                        <L>
+                          <V t="state">
+                            <U n="state">
+                              <E n="operator">NOTEQUAL</E>
+                              <T n="value">15078<!--CommodityBasedObjectStateValue: Brokenness_Unbroken--></T>
+                            </U>
+                          </V>
+                        </L>
+                      </L>
+                    </U>
+                    <U>
+                      <V n="action" t="set_state">
+                        <U n="set_state">
+                          <T n="action_value">132910<!--CommodityBasedObjectStateValue: Brokenness_TalkingToilet_electronic_0_Unbroken--></T>
+                        </U>
+                      </V>
+                      <L n="tests">
+                        <L>
+                          <V t="state">
+                            <U n="state">
+                              <E n="operator">NOTEQUAL</E>
+                              <T n="value">132910<!--CommodityBasedObjectStateValue: Brokenness_TalkingToilet_electronic_0_Unbroken--></T>
+                            </U>
+                          </V>
+                          <V t="object_definition">
+                            <U n="object_definition">
+                              <V n="item" t="tagged_item">
+                                <U n="tagged_item">
+                                  <L n="tag_set">
+                                    <E>Func_Toilet_Talking</E>
+                                  </L>
+                                </U>
+                              </V>
+                            </U>
+                          </V>
+                        </L>
+                      </L>
+                    </U>
+                    <U>
+                      <V n="action" t="set_state">
+                        <U n="set_state">
+                          <T n="action_value">177050<!--CommodityBasedObjectStateValue: laundry_WashingMachine_Brokeness_Plumbing_Unbroken--></T>
+                        </U>
+                      </V>
+                      <L n="tests">
+                        <L>
+                          <V t="state">
+                            <U n="state">
+                              <E n="operator">NOTEQUAL</E>
+                              <T n="value">177050<!--CommodityBasedObjectStateValue: laundry_WashingMachine_Brokeness_Plumbing_Unbroken--></T>
+                            </U>
+                          </V>
+                          <V t="object_definition">
+                            <U n="object_definition">
+                              <V n="item" t="tagged_item">
+                                <U n="tagged_item">
+                                  <L n="tag_set">
+                                    <E>Func_Laundry_WashingMachine</E>
+                                  </L>
+                                </U>
+                              </V>
+                            </U>
+                          </V>
+                        </L>
+                      </L>
+                    </U>
+                  </L>
+                </U>
+                <L n="threshold_requirements">
+                  <U>
+                    <L n="tests">
+                      <L>
+                        <V t="buff">
+                          <U n="buff">
+                            <V n="whitelist" t="enabled">
+                              <L n="enabled">
+                                <T>10094<!--Buff: buff_Sim_IsSleeping--></T>
+                              </L>
+                            </V>
+                          </U>
+                        </V>
+                      </L>
+                    </L>
+                    <U n="threshold">
+                      <T n="value">1</T>
+                    </U>
+                  </U>
+                  <U>
+                    <L n="tests">
+                      <L>
+                        <V t="buff">
+                          <U n="buff">
+                            <L n="blacklist">
+                              <T>10094<!--Buff: buff_Sim_IsSleeping--></T>
+                            </L>
+                          </U>
+                        </V>
+                      </L>
+                    </L>
+                    <U n="threshold">
+                      <E n="comparison">EQUAL</E>
+                    </U>
+                  </U>
+                </L>
+              </U>
+            </V>
+          </V>
+          <V t="literal">
+            <V n="literal" t="loot">
+              <U n="loot">
+                <E n="behavior">ONCE_IF_ACTIVE_SIM_ON_LOT</E>
+                <V t="active_sim_only" n="loot_distribution" />
+                <L n="loots">
+                  <T>150723<!--LootActions: loot_Notification_lotTrait_Gnomes--></T>
+                </L>
+                <L n="threshold_requirements">
+                  <U>
+                    <L n="tests">
+                      <L>
+                        <V t="buff">
+                          <U n="buff">
+                            <V n="whitelist" t="enabled">
+                              <L n="enabled">
+                                <T>10094<!--Buff: buff_Sim_IsSleeping--></T>
+                              </L>
+                            </V>
+                          </U>
+                        </V>
+                      </L>
+                    </L>
+                    <U n="threshold">
+                      <T n="value">1</T>
+                    </U>
+                  </U>
+                  <U>
+                    <L n="tests">
+                      <L>
+                        <V t="buff">
+                          <U n="buff">
+                            <L n="blacklist">
+                              <T>10094<!--Buff: buff_Sim_IsSleeping--></T>
+                            </L>
+                          </U>
+                        </V>
+                      </L>
+                    </L>
+                    <U n="threshold">
+                      <E n="comparison">EQUAL</E>
+                    </U>
+                  </U>
+                </L>
+              </U>
+            </V>
+          </V>
+        </L>
+        <U n="days_available">
+          <T n="0 SUNDAY">True</T>
+          <T n="1 MONDAY">True</T>
+          <T n="2 TUESDAY">True</T>
+          <T n="3 WEDNESDAY">True</T>
+          <T n="4 THURSDAY">True</T>
+          <T n="5 FRIDAY">True</T>
+          <T n="6 SATURDAY">True</T>
+        </U>
+        <T n="random_start">True</T>
+        <U n="start_time">
+          <T n="hour">3</T>
+        </U>
+      </U>
+    </L>
+  </U>
+</I>

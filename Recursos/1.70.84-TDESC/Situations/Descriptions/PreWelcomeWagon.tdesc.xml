@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+
+<TuningRoot>
+    <Instance instance_type="situation" class="PreWelcomeWagon" module="situations.npc_hosted.welcome_wagon" muid="56B3B82DAF25D4BB" description="Situation for getting Sims to get to where they will start the welcome&#xA;wagon situation." instance_subclasses_only="False" parents="SituationComplexCommon, SituationComplex, Situation" path="Situations\Descriptions" use_guid_for_reference="True">
+        <TunableList name="_bearer_recipes" class="TunableList" display="Bearer Recipes" muid="EFDA9395549E6AE1" min="1" description="A list of recipes from which a random selection will&#xA;be made and used by the fruitcake bearer to generate and carry&#xA;a craftable into the Pre Welcome Wagon situation." Deprecated="False" filter="0" group="General">
+            <Tunable type="recipe" class="TunableReference" muid="F000BD048E3DF6ED" description="Recipe that will be brought in during the Pre Welcome Wagon &#xA;situation by the fruitcake-bearer." allow_none="False" Deprecated="False" filter="0" group="General" />
+        </TunableList>
+
+        <Deleted name="_buff" muid="344C6DCB48BA8DCB" />
+
+        <Deleted name="_cost" muid="D0121D6ECA049CE5" />
+
+        <Deleted name="_display_name" muid="DB1EE8CFD7AE2B60" />
+
+        <Tunable type="situation_job" name="_door_knocker_situation_job" class="TunableReference" display="Door Knocker Situation Job" muid="EEE1746F7DF3498" description="The job for the situation door knocker.  This sim will end up&#xA;being the host for the situation." allow_none="False" Deprecated="False" filter="0" group="General" />
+
+        <Tunable type="situation_job" name="_fruitcake_bearer_situation_job" class="TunableReference" display="Fruitcake Bearer Situation Job" muid="368929A2C98251D3" description="The job for the bearing of the vile nastiness known as...&#xA;&#xA;&#xA;...fruitcake..." allow_none="False" Deprecated="False" filter="0" group="General" />
+
+        <Deleted name="_icon" muid="BB653AEA6F355FCD" />
+
+        <Deleted name="_initiating_sim_tests" muid="EB927CA3E6D8C127" />
+
+        <Deleted name="_level_data" muid="3623E62F3695ABEB" />
+
+        <Deleted name="_main_goal_visibility_test" muid="92AA44FCDC195391" />
+
+        <Tunable type="int" name="_number_of_neighbors" class="TunableRange" default="0" display="Number Of Neighbors" muid="37185F79B1F55C8A" min="0" max="None" description="The number of other neighbors to bring to the situation.  If&#xA;there aren't enough neighbors then none will be generated to&#xA;bring." tuning_state="NeedsTuning" Deprecated="False" filter="0" group="General" />
+
+        <Tunable type="situation_job" name="_other_neighbors_job" class="TunableReference" display="Other Neighbors Job" muid="3608E437F91297A9" description="The job for all of the other neighbors in the situation." allow_none="False" Deprecated="False" filter="0" group="General" />
+
+        <Deleted name="_relationship_between_job_members" muid="81B6F6B4E241DC5A" />
+
+        <Deleted name="_resident_job" muid="40F9F7B51DEF2FEC" />
+
+        <Tunable type="situation" name="_welcome_wagon_situation" class="TunableReference" display="Welcome Wagon Situation" muid="B45C8AFA3C2F97A4" description="The actual welcome wagon situation that we want to start once&#xA;we have actually gotten the Sims to where we want them to be." allow_none="False" Deprecated="False" filter="0" group="General" />
+
+        <Deleted name="audio_sting_on_start" muid="95135D5ABB3D1B25" />
+
+        <Deleted name="background_audio" muid="D232443F42D1426F" />
+
+        <Deleted name="category" muid="915813EE7ECFE76A" />
+
+        <Deleted name="compatible_venues" muid="D4C4564E07094176" />
+
+        <Deleted name="creation_ui_option" muid="7CF726011CA5A398" />
+
+        <Deleted name="entitlement" muid="4C67587DE715F286" />
+
+        <Deleted name="exclusivity" muid="69C8E8C07EDEDE91" />
+
+        <Deleted name="force_invite_only" muid="11A4D0B381CAC414" />
+
+        <Deleted name="goal_button_text" muid="CB25A4D640DC2B92" />
+
+        <Deleted name="goal_sub_text" muid="724C456370594DF5" />
+
+        <TunableTuple name="has_front_door_situation_starting_state" class="Tunable_HasFrontDoorSituationStartingState" display="Has Front Door Situation Starting State" muid="2FF72EAB7B471671" description="The first state of this situation in the case that the lot&#xA;has a front door.  If it does not then the Has No Front Door&#xA;Situation Starting State will be started instead." Deprecated="False" filter="0" group="State">
+            <Tunable type="bool" name="allow_join_situation" class="Tunable" default="True" display="Allow Join Situation" muid="797FD5685AB10E44" description="Whether the situation is allowed to join at this state." Deprecated="False" filter="0" group="General" />
+            <TunableTuple name="interaction_of_interest" class="TunableInteractionOfInterest" display="Interaction Of Interest" muid="784E9A2EC4C2BE94" description="The interaction that when run will cause GPE defined behavior&#xA;to run." Deprecated="False" filter="0" group="General">
+                <TunableList name="affordances" class="TunableList" display="Affordances" muid="BE37F853B81619E0" description="The Sim must have started either any affordance in this list or an&#xA;interaction matching one of the tags in this tunable's Tags&#xA;field." Deprecated="False" filter="0" group="General">
+                    <Tunable type="interaction" class="TunableReference" muid="FE156745516CB375" allow_none="False" Deprecated="False" filter="0" group="General" pack_safe="True" />
+                </TunableList>
+                <TunableList name="tags" class="TunableSet" display="Tags" muid="5A442E4E12A7BC5" description="The Sim must have run either an interaction matching one of these&#xA;Tags or an affordance from the list of Affordances in this&#xA;tunable." Deprecated="False" filter="0" group="General" unique_entries="true">
+                    <TunableEnum type="Tag" class="TunableEnumEntry" default="INVALID" muid="5A67FC034710C061" dynamic_entries="tag.Tag._elements" static_entries="tag.Tag" Deprecated="False" filter="0" group="General" />
+                </TunableList>
+            </TunableTuple>
+            <TunableList name="job_and_role_changes" class="TunableMapping" display="Job And Role Changes" muid="C74C2B7A481CF36" mapping_key="Situation Job" mapping_value="Role State" description="A mapping between situation jobs and role states that defines&#xA;what role states we want to switch to for sims on which jobs&#xA;when this situation state is entered." Deprecated="False" filter="0" group="General">
+                <TunableTuple class="TunableTuple" muid="83C252C0CBA09EA8" Deprecated="False" filter="0" group="General">
+                    <Tunable type="role_state" name="Role State" class="TunableReference" display="Role State" muid="923F3DAB2B435C8F" description="The role state that we will switch sims of the linked job&#xA;into." allow_none="False" Deprecated="False" filter="0" group="General" />
+                    <Tunable type="situation_job" name="Situation Job" class="TunableReference" display="Situation Job" muid="D5372BEF5F23DE71" description="A reference to a SituationJob that we will use to change&#xA;sim's role state." allow_none="False" Deprecated="False" filter="0" group="General" />
+                </TunableTuple>
+            </TunableList>
+            <TunableVariant type="None" name="time_out" class="OptionalTunable" default="disabled" display="Time Out" muid="F47CE18FE2751A32" description="How long this state will last before time expired. Please talk to the GPE who implemented the specific&#xA;situation to see what the state will do on time expired." Deprecated="False" filter="0" group="General">
+                <Tunable name="disabled" class="TunableExistance" display="Disabled" muid="FC369E18384839E9" />
+                <Tunable type="float" name="enabled" class="TunableSimMinute" default="15" display="Enabled" muid="939596553EAD102F" min="1" max="None" tuning_state="NeedsTuning" Deprecated="False" filter="0" group="General" />
+            </TunableVariant>
+        </TunableTuple>
+
+        <TunableTuple name="has_no_front_door_situation_starting_state" class="Tunable_HasNoFrontDoorSituationStartingState" display="Has No Front Door Situation Starting State" muid="EBA0BAE9EEE9D2CA" description="The first state of this situation in the case that the lot has&#xA;no front door.  Sims should be routing to the arrival spawn&#xA;point." Deprecated="False" filter="0" group="State">
+            <Tunable type="bool" name="allow_join_situation" class="Tunable" default="True" display="Allow Join Situation" muid="86A7A624D484B3F" description="Whether the situation is allowed to join at this state." Deprecated="False" filter="0" group="General" />
+            <TunableTuple name="interaction_of_interest" class="TunableInteractionOfInterest" display="Interaction Of Interest" muid="78BEE7C1D31D0DD8" description="The interaction that when run will cause GPE defined behavior&#xA;to run." Deprecated="False" filter="0" group="General">
+                <TunableList name="affordances" class="TunableList" display="Affordances" muid="D3E58A002CA7BDFF" description="The Sim must have started either any affordance in this list or an&#xA;interaction matching one of the tags in this tunable's Tags&#xA;field." Deprecated="False" filter="0" group="General">
+                    <Tunable type="interaction" class="TunableReference" muid="64A16C19F6572FA5" allow_none="False" Deprecated="False" filter="0" group="General" pack_safe="True" />
+                </TunableList>
+                <TunableList name="tags" class="TunableSet" display="Tags" muid="79E9B47E4DBCB61A" description="The Sim must have run either an interaction matching one of these&#xA;Tags or an affordance from the list of Affordances in this&#xA;tunable." Deprecated="False" filter="0" group="General" unique_entries="true">
+                    <TunableEnum type="Tag" class="TunableEnumEntry" default="INVALID" muid="9C663EE5E3F3424E" dynamic_entries="tag.Tag._elements" static_entries="tag.Tag" Deprecated="False" filter="0" group="General" />
+                </TunableList>
+            </TunableTuple>
+            <TunableList name="job_and_role_changes" class="TunableMapping" display="Job And Role Changes" muid="1A53F2D6B49604D2" mapping_key="Situation Job" mapping_value="Role State" description="A mapping between situation jobs and role states that defines&#xA;what role states we want to switch to for sims on which jobs&#xA;when this situation state is entered." Deprecated="False" filter="0" group="General">
+                <TunableTuple class="TunableTuple" muid="6C791981D57A172" Deprecated="False" filter="0" group="General">
+                    <Tunable type="role_state" name="Role State" class="TunableReference" display="Role State" muid="5D6959992A0E276A" description="The role state that we will switch sims of the linked job&#xA;into." allow_none="False" Deprecated="False" filter="0" group="General" />
+                    <Tunable type="situation_job" name="Situation Job" class="TunableReference" display="Situation Job" muid="59FF686008E56CAD" description="A reference to a SituationJob that we will use to change&#xA;sim's role state." allow_none="False" Deprecated="False" filter="0" group="General" />
+                </TunableTuple>
+            </TunableList>
+            <TunableVariant type="None" name="time_out" class="OptionalTunable" default="disabled" display="Time Out" muid="29A4BDBA91344F92" description="How long this state will last before time expired. Please talk to the GPE who implemented the specific&#xA;situation to see what the state will do on time expired." Deprecated="False" filter="0" group="General">
+                <Tunable name="disabled" class="TunableExistance" display="Disabled" muid="CB2DB7D03F30831E" />
+                <Tunable type="float" name="enabled" class="TunableSimMinute" default="15" display="Enabled" muid="6470EB041EC311B1" min="1" max="None" tuning_state="NeedsTuning" Deprecated="False" filter="0" group="General" />
+            </TunableVariant>
+        </TunableTuple>
+
+        <Deleted name="highlight_first_incomplete_minor_goal" muid="32423BEA9403C5A8" />
+
+        <Deleted name="job_display_ordering" muid="A4929E4E32C3D0AF" />
+
+        <Deleted name="main_goal" muid="C4076DFE9EFA6883" />
+
+        <Deleted name="main_goal_audio_sting" muid="12454AE9C6F69C96" />
+
+        <Deleted name="max_participants" muid="EF8B0EB9EB81B4D7" />
+
+        <Deleted name="minor_goal_chains" muid="78217A5442E65554" />
+
+        <Deleted name="recommended_job_object_notification" muid="EBEBBA344C027213" />
+
+        <Deleted name="recommended_job_object_text" muid="B6E50523685793ED" />
+
+        <Deleted name="screen_slam_bronze" muid="3ECC70D008D9AF16" />
+
+        <Deleted name="screen_slam_gold" muid="D02F6A9DFAD96346" />
+
+        <Deleted name="screen_slam_no_medal" muid="7C4878A969254252" />
+
+        <Deleted name="screen_slam_silver" muid="BC16715C49D41888" />
+
+        <Deleted name="situation_description" muid="F9A92C30BDF8C44F" />
+
+        <Deleted name="suppress_scoring_progress_bar" muid="74773FBAF8EB57B9" />
+
+        <Deleted name="targeted_situation" muid="5AAF0381C3A04B12" />
+
+        <Deleted name="travel_request_behavior" muid="E6F0D796645E331B" />
+
+        <Deleted name="venue_invitation_message" muid="74F1C16AD88FA823" />
+
+        <Deleted name="venue_situation_player_job" muid="77A0274C06A23472" />
+    </Instance>
+
+    <VersionHistory>
+        <ActionList>
+            <Action type="kRemove" old_muid="937CF6B95C77173D" />
+        </ActionList>
+
+        <ActionList>
+            <Action type="kRename" old_muid="870C286956ACE99F" new_muid="F000BD048E3DF6ED" />
+        </ActionList>
+
+        <ActionList>
+            <Action type="kRename" old_muid="33BD2F622F6134A9" new_muid="D4C4564E07094176" />
+        </ActionList>
+
+        <ActionList>
+            <Action type="kRemove" old_muid="9D368E824C2DD0B" />
+            <Action type="kRemove" old_muid="8E0CCCD9580398C1" />
+        </ActionList>
+    </VersionHistory>
+</TuningRoot>

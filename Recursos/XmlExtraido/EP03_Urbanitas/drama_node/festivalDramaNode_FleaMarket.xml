@@ -1,0 +1,107 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<I c="FestivalDramaNode" i="drama_node" m="drama_scheduler.festival_drama_node" n="festivalDramaNode_FleaMarket" s="140085">
+  <L n="additional_drama_nodes">
+    <T>143041<!--NPCInviteSituationDramaNode: npcInvite_CityInvites_Festivals_FleaMarket_BuySomething--></T>
+    <T>143042<!--NPCInviteSituationDramaNode: npcInvite_CityInvites_Festivals_FleaMarket_Haggle--></T>
+    <T>143043<!--NPCInviteSituationDramaNode: npcInvite_CityInvites_Festivals_FleaMarket_WatchPerformer--></T>
+  </L>
+  <V t="node_cooldown" n="cooldown_data">
+    <U n="node_cooldown">
+      <V n="duration" t="duration">
+        <T n="duration">168</T>
+      </V>
+    </U>
+  </V>
+  <T n="fake_duration">480</T>
+  <V n="festival_dynamic_sign_info" t="enabled">
+    <U n="enabled">
+      <L n="activity_info">
+        <U>
+          <T n="activity_description">0xCCC56120<!--String: "Lo que un Sim no quiere, para otro es un tesoro. Descubre muebles únicos y asegúrate de regatear siempre para obtener el mejor precio."--></T>
+          <T n="activity_name">0x9123066F<!--String: "Comprar Trastos o Tesoros"--></T>
+          <T n="icon" p="InGame\UI\Icons\Headlines\Final\headline_Salvage.png">2f7d0004:00000000:21f4290acb4914f3</T>
+        </U>
+        <U>
+          <T n="activity_description">0xDD093E3F<!--String: "Visita una de las múltiples mesas expositor para poner a la venta tus propios tesoros."--></T>
+          <T n="activity_name">0xED813C66<!--String: "Poner tienda"--></T>
+          <T n="icon" p="InGame\UI\Icons\Headlines\Final\headline_Marketable.png">2f7d0004:00000000:70d3d90966c4ee28</T>
+        </U>
+        <U>
+          <T n="activity_description">0x813A45A7<!--String: "Busca las cajas de trastos tiradas por ahí. Curiosea su contenido para dar con objetos coleccionables únicos que solo encontrarás en la ciudad."--></T>
+          <T n="activity_name">0xD3FBFADE<!--String: "Buscar bolas de nieve y carteles"--></T>
+          <T p="InEP03\UI\Icons\headlines\headline_SnowGlobe.png" n="icon">2f7d0004:00000000:7a8bc0ec9157d898</T>
+        </U>
+        <U>
+          <T n="activity_description">0x50BE1CF3<!--String: "Habla con cualquiera de los vendedores locales. Podrás cambiarles tus objetos coleccionables por otros incluso mejores."--></T>
+          <T n="activity_name">0x374BC522<!--String: "Cambiar cosas"--></T>
+          <T n="icon" p="InGame\UI\Icons\Headlines\Final\headline_handshake.png">2f7d0004:00000000:50d2460689fc1353</T>
+        </U>
+      </L>
+      <T n="background_image" p="InGame\UI\Icons\DynamicSigns\Backgrounds\Gradient_FleaMarket.png">2f7d0004:00000000:d16a4c1382cc0228</T>
+      <T n="display_image" p="InGame\UI\Icons\DynamicSigns\Screenshots\FleaMarket_Dynamic.png">2f7d0004:00000000:07e82a4009307fe3</T>
+      <T n="festival_name">0xA4F26AAF<!--String: "Mercadillo"--></T>
+      <T n="festival_not_started_tooltip">0xDB93E2AF<!--String: "El festival aún no ha empezado."--></T>
+      <T n="festival_time">0x3376BB8D<!--String: "Domingo 10:00 - 18:00"--></T>
+      <T n="on_street_tooltip">0xB97CE0C7<!--String: "¡Se está celebrando un festival en este barrio!"--></T>
+      <T n="on_vacation_tooltip">0xFF5F6ADA<!--String: "La opción de desplazarse no está disponible desde la ubicación actual."--></T>
+      <T n="travel_to_festival_text">0xD9DFDC6A<!--String: "Ir al mercadillo"--></T>
+    </U>
+  </V>
+  <T n="festival_open_street_director">137229<!--BasicFestivalOpenStreetDirector: FleaMarketFestival--></T>
+  <U n="min_and_max_times">
+    <T n="lower_bound">0</T>
+    <T n="upper_bound">168</T>
+  </U>
+  <V n="scoring" t="enabled">
+    <U n="enabled">
+      <T n="base_score">60</T>
+      <E n="bucket">FestivalBucket1</E>
+    </U>
+  </V>
+  <V n="starting_notification" t="enabled">
+    <V n="enabled" t="literal">
+      <U n="literal">
+        <V n="audio_sting" t="enabled">
+          <U n="enabled">
+            <T n="audio" p="InEP03\Audio\bumpers\bumper_festival_begin_fleamarket.propx">39b2aa4a:00000000:73cad018f19dea60</T>
+          </U>
+        </V>
+        <V t="enabled" n="icon">
+          <V n="enabled" t="resource_key">
+            <U n="resource_key">
+              <T p="InEP03\UI\Icons\headlines\headline_festival.png" n="key">2f7d0004:00000000:808e78b2d6f94688</T>
+            </U>
+          </V>
+        </V>
+        <V n="text" t="single">
+          <T n="single">0x5DDEA064<!--String: "¡El mercadillo ya está aquí! Haz clic en cualquier letrero dinámico de la ciudad para saber más."--></T>
+        </V>
+        <L n="ui_responses">
+          <U>
+            <V n="response_command" t="enabled">
+              <V n="enabled" t="literal">
+                <U n="literal">
+                  <L n="arguments">
+                    <V t="special_command_data" />
+                  </L>
+                  <T n="command">drama.show_festival_info</T>
+                </U>
+              </V>
+            </V>
+            <T n="text">0xEF8684CE<!--String: "Información del festival"--></T>
+            <E n="ui_request">SEND_COMMAND</E>
+          </U>
+        </L>
+      </U>
+    </V>
+  </V>
+  <T n="street">136911<!--Street: street_CityLife_SpiceMarket--></T>
+  <V n="time_option" t="single_time">
+    <U n="single_time">
+      <U n="valid_time">
+        <E n="day">SUNDAY</E>
+        <T n="hour">8</T>
+      </U>
+    </U>
+  </V>
+</I>

@@ -1,0 +1,1465 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<I c="SuperInteraction" i="interaction" m="interactions.base.super_interaction" n="xrayMachine_ScanTarget_doctor" s="105942">
+  <V t="participant" n="_icon">
+    <U n="participant">
+      <L n="participant_type">
+        <E>TargetSim</E>
+      </L>
+    </U>
+  </V>
+  <V t="enabled" n="_saveable" />
+  <T n="allow_autonomous">False</T>
+  <T n="allow_user_directed">False</T>
+  <T n="attention_cost">0.5</T>
+  <V n="basic_content" t="flexible_length">
+    <U n="flexible_length">
+      <L n="conditional_actions">
+        <V t="list_reference">
+          <T n="list_reference">40705<!--ExitConditionList: ExitConditionList_MotivesNearFail--></T>
+        </V>
+        <V t="literal">
+          <U n="literal">
+            <L n="conditions">
+              <V t="state_based">
+                <U n="state_based">
+                  <V t="on_trigger" n="state">
+                    <T n="on_trigger">15080<!--ObjectStateValue: BrokenState_Broken--></T>
+                  </V>
+                  <E n="subject">ActorPostureTarget</E>
+                </U>
+              </V>
+            </L>
+            <E n="interaction_action">EXIT_NATURALLY</E>
+            <E n="progress_bar_action">IGNORE_CONDITION</E>
+          </U>
+        </V>
+        <V t="literal">
+          <U n="literal">
+            <L n="conditions">
+              <V t="time_based">
+                <U n="time_based">
+                  <T n="max_time">28</T>
+                  <T n="min_time">28</T>
+                </U>
+              </V>
+            </L>
+            <E n="interaction_action">EXIT_NATURALLY</E>
+            <L n="tests">
+              <L>
+                <V t="state">
+                  <U n="state">
+                    <V t="always_pass" n="fallback_behavior" />
+                    <T n="value">105758<!--CommodityBasedObjectStateValue: xrayMachine_Calibrate_Uncalibrated--></T>
+                    <E n="who">ActorPostureTarget</E>
+                  </U>
+                </V>
+              </L>
+            </L>
+          </U>
+        </V>
+        <V t="literal">
+          <U n="literal">
+            <L n="conditions">
+              <V t="time_based">
+                <U n="time_based">
+                  <T n="max_time">18</T>
+                  <T n="min_time">18</T>
+                </U>
+              </V>
+            </L>
+            <E n="interaction_action">EXIT_NATURALLY</E>
+            <L n="tests">
+              <L>
+                <V t="state">
+                  <U n="state">
+                    <V t="always_fail" n="fallback_behavior" />
+                    <T n="value">105757<!--CommodityBasedObjectStateValue: xrayMachine_Calibrate_Calibrated--></T>
+                    <E n="who">ActorPostureTarget</E>
+                  </U>
+                </V>
+              </L>
+            </L>
+          </U>
+        </V>
+      </L>
+      <V n="content" t="looping_content">
+        <U n="looping_content">
+          <U n="animation_ref">
+            <T n="factory">106070<!--AnimationElement: object_XrayMachine_Doctor_Idle--></T>
+            <U n="overrides">
+              <V t="enabled" n="balloons">
+                <L n="enabled">
+                  <U>
+                    <L n="balloon_choices">
+                      <U>
+                        <V n="item" t="balloon_category">
+                          <T n="balloon_category">114275<!--BalloonCategory: balloonCategory_CareerDoctor_XRay_Scan--></T>
+                        </V>
+                      </U>
+                    </L>
+                    <T n="balloon_delay">2</T>
+                    <T n="balloon_delay_random_offset">1</T>
+                    <L n="balloon_target">
+                      <E>Actor</E>
+                    </L>
+                  </U>
+                </L>
+              </V>
+            </U>
+          </U>
+        </U>
+      </V>
+      <V n="periodic_stat_change" t="enabled">
+        <U n="enabled">
+          <U n="operation_actions">
+            <L n="actions">
+              <T>105967<!--LootActions: loot_Statistic_Breakage_XrayMachine_Scan_periodic--></T>
+            </L>
+          </U>
+        </U>
+      </V>
+    </U>
+  </V>
+  <L n="basic_extras">
+    <V t="state_change">
+      <U n="state_change">
+        <V n="new_value" t="single_value">
+          <U n="single_value">
+            <T n="new_value">112140<!--VideoChannel: XrayMachine_Scan--></T>
+          </U>
+        </V>
+        <E n="state_change_target">ActorPostureTarget</E>
+        <V t="immediately" n="timing" />
+      </U>
+    </V>
+    <V t="state_change">
+      <U n="state_change">
+        <V t="single_value" n="new_value">
+          <U n="single_value">
+            <T n="new_value">106059<!--ObjectStateValue: xrayMachine_Scan_Doctor_inprogress--></T>
+          </U>
+        </V>
+        <E n="state_change_target">ActorPostureTarget</E>
+        <V t="immediately" n="timing" />
+      </U>
+    </V>
+    <V t="state_change">
+      <U n="state_change">
+        <V n="new_value" t="single_value">
+          <U n="single_value">
+            <T n="new_value">106061<!--ObjectStateValue: xrayMachine_Scan_Doctor_completed--></T>
+          </U>
+        </V>
+        <E n="state_change_target">ActorPostureTarget</E>
+      </U>
+    </V>
+  </L>
+  <V t="disabled" n="content_score" />
+  <T n="display_name">0x73583FF<!--String: "Haciendo escáner a {1.SimFirstName}"--></T>
+  <U n="display_name_text_tokens">
+    <L n="tokens">
+      <V t="participant_type">
+        <U n="participant_type">
+          <V t="from_participant" n="objects">
+            <U n="from_participant">
+              <E n="participant">Actor</E>
+            </U>
+          </V>
+        </U>
+      </V>
+      <V t="participant_type">
+        <U n="participant_type">
+          <V t="from_participant" n="objects">
+            <U n="from_participant">
+              <E n="participant">TargetSim</E>
+            </U>
+          </V>
+        </U>
+      </V>
+    </L>
+  </U>
+  <L n="interaction_category_tags">
+    <E>Interaction_Super</E>
+    <E>Interaction_All</E>
+  </L>
+  <V n="outcome" t="test_based">
+    <U n="test_based">
+      <L n="fallback_outcomes">
+        <U>
+          <U n="outcome">
+            <V t="enabled" n="animation_ref">
+              <U n="enabled">
+                <T n="factory">106088<!--AnimationElement: object_XrayMachine_Scan_Success_minor--></T>
+              </U>
+            </V>
+            <L n="basic_extras">
+              <V t="state_change">
+                <U n="state_change">
+                  <V n="new_value" t="single_value">
+                    <U n="single_value">
+                      <T n="new_value">105979<!--ObjectStateValue: xrayMachine_Scan_Patient_vacant--></T>
+                    </U>
+                  </V>
+                  <E n="state_change_target">ActorPostureTarget</E>
+                </U>
+              </V>
+              <V t="state_change">
+                <U n="state_change">
+                  <V n="new_value" t="single_value">
+                    <U n="single_value">
+                      <T n="new_value">105979<!--ObjectStateValue: xrayMachine_Scan_Patient_vacant--></T>
+                    </U>
+                  </V>
+                  <E n="state_change_target">ActorPostureTarget</E>
+                </U>
+              </V>
+              <V t="state_change">
+                <U n="state_change">
+                  <V t="single_value" n="new_value">
+                    <U n="single_value">
+                      <T n="new_value">112141<!--VideoChannel: XrayMachine_Off--></T>
+                    </U>
+                  </V>
+                  <E n="state_change_target">ActorPostureTarget</E>
+                </U>
+              </V>
+            </L>
+            <T n="force_outcome_on_exit">True</T>
+            <E n="outcome_result">NONE</E>
+          </U>
+        </U>
+      </L>
+      <L n="tested_outcomes">
+        <U>
+          <L n="potential_outcomes">
+            <U>
+              <U n="outcome">
+                <V n="animation_ref" t="enabled">
+                  <U n="enabled">
+                    <T n="factory">106090<!--AnimationElement: object_XrayMachine_Scan_Success_major--></T>
+                  </U>
+                </V>
+                <L n="basic_extras">
+                  <V t="notification">
+                    <U n="notification">
+                      <V n="dialog" t="tested">
+                        <U n="tested">
+                          <L n="records">
+                            <U>
+                              <V n="item" t="literal">
+                                <U n="literal">
+                                  <V t="enabled" n="icon">
+                                    <V t="participant" n="enabled">
+                                      <U n="participant">
+                                        <L n="participant_type">
+                                          <E>Object</E>
+                                        </L>
+                                      </U>
+                                    </V>
+                                  </V>
+                                  <V t="enabled" n="secondary_icon">
+                                    <V t="participant" n="enabled" />
+                                  </V>
+                                  <V n="text" t="single">
+                                    <T n="single">0xCEDC167B<!--String: "Los resultados del escáner de {1.SimFirstName} indican la presencia clara de una enfermedad tratable."--></T>
+                                  </V>
+                                  <V t="enabled" n="text_tokens">
+                                    <U n="enabled">
+                                      <L n="tokens">
+                                        <V t="participant_type" />
+                                        <V t="participant_type">
+                                          <U n="participant_type">
+                                            <V t="from_participant" n="objects">
+                                              <U n="from_participant">
+                                                <E n="participant">TargetSim</E>
+                                              </U>
+                                            </V>
+                                          </U>
+                                        </V>
+                                      </L>
+                                    </U>
+                                  </V>
+                                </U>
+                              </V>
+                              <L n="tests">
+                                <L>
+                                  <V t="career_test">
+                                    <U n="career_test">
+                                      <V t="career_reference" n="test_type">
+                                        <U n="career_reference">
+                                          <V t="specific_career" n="career">
+                                            <T n="specific_career">107230<!--Career: career_Adult_Active_Doctor--></T>
+                                          </V>
+                                          <V t="enabled" n="user_level">
+                                            <U n="enabled">
+                                              <T n="lower_bound">4</T>
+                                            </U>
+                                          </V>
+                                        </U>
+                                      </V>
+                                    </U>
+                                  </V>
+                                </L>
+                              </L>
+                            </U>
+                            <U>
+                              <V n="item" t="literal">
+                                <U n="literal">
+                                  <V n="icon" t="enabled">
+                                    <V t="participant" n="enabled">
+                                      <U n="participant">
+                                        <L n="participant_type">
+                                          <E>ActorPostureTarget</E>
+                                        </L>
+                                      </U>
+                                    </V>
+                                  </V>
+                                  <V t="enabled" n="secondary_icon">
+                                    <V t="participant" n="enabled" />
+                                  </V>
+                                  <V t="single" n="text">
+                                    <T n="single">0x8B5B2FB<!--String: "{0.SimFirstName} ha realizado con éxito un examen médico de práctica a un paciente. \nLos resultados parecen válidos, pero los datos específicos {M0.lo}{F0.la} superan un poco y pasarán a manos de un médico para que este realice un diagnóstico. Ha sido una buena experiencia de aprendizaje, en todo caso."--></T>
+                                  </V>
+                                  <V t="enabled" n="text_tokens">
+                                    <U n="enabled">
+                                      <L n="tokens">
+                                        <V t="participant_type" />
+                                      </L>
+                                    </U>
+                                  </V>
+                                </U>
+                              </V>
+                              <L n="tests">
+                                <L>
+                                  <V t="career_test">
+                                    <U n="career_test">
+                                      <V t="career_reference" n="test_type">
+                                        <U n="career_reference">
+                                          <V t="specific_career" n="career">
+                                            <T n="specific_career">107230<!--Career: career_Adult_Active_Doctor--></T>
+                                          </V>
+                                          <V t="enabled" n="user_level">
+                                            <U n="enabled">
+                                              <T n="upper_bound">3</T>
+                                            </U>
+                                          </V>
+                                        </U>
+                                      </V>
+                                    </U>
+                                  </V>
+                                </L>
+                              </L>
+                            </U>
+                          </L>
+                        </U>
+                      </V>
+                    </U>
+                  </V>
+                  <V t="state_change">
+                    <U n="state_change">
+                      <V n="new_value" t="single_value">
+                        <U n="single_value">
+                          <T n="new_value">105979<!--ObjectStateValue: xrayMachine_Scan_Patient_vacant--></T>
+                        </U>
+                      </V>
+                      <E n="state_change_target">ActorPostureTarget</E>
+                    </U>
+                  </V>
+                  <V t="state_change">
+                    <U n="state_change">
+                      <V t="single_value" n="new_value">
+                        <U n="single_value">
+                          <T n="new_value">106060<!--ObjectStateValue: xrayMachine_Scan_Doctor_untended--></T>
+                        </U>
+                      </V>
+                      <E n="state_change_target">ActorPostureTarget</E>
+                      <V t="at_end" n="timing">
+                        <U n="at_end">
+                          <E n="criticality">OnCancel</E>
+                        </U>
+                      </V>
+                    </U>
+                  </V>
+                  <V t="state_change">
+                    <U n="state_change">
+                      <V t="single_value" n="new_value">
+                        <U n="single_value">
+                          <T n="new_value">112141<!--VideoChannel: XrayMachine_Off--></T>
+                        </U>
+                      </V>
+                      <E n="state_change_target">ActorPostureTarget</E>
+                    </U>
+                  </V>
+                </L>
+                <L n="continuation">
+                  <U>
+                    <T n="affordance">116244<!--SuperInteraction: doctor_Refer_SI_ExamBed--></T>
+                    <E n="target">TargetSim</E>
+                  </U>
+                </L>
+                <L n="loot_list">
+                  <T>105943<!--LootActions: loot_Statistic_XrayMachine_Calibrate_decrement--></T>
+                  <T>113218<!--LootActions: loot_Commodity_SicknessSystem_Patient_Target_Diagnosis_MajorExamBonus--></T>
+                  <T>109497<!--LootActions: loot_JobPerformance_Gain_Small_Doctor--></T>
+                  <T>114587<!--LootActions: loot_Career_Doctor_Dialog_XrayScan_AlienDiscovered--></T>
+                  <T>115286<!--LootActions: Rel_Gain_Small_target--></T>
+                </L>
+                <V n="response" t="enabled">
+                  <V n="enabled" t="individual">
+                    <U n="individual">
+                      <L n="animations">
+                        <U>
+                          <E n="target">Actor</E>
+                          <U n="animation">
+                            <T n="factory">11832<!--AnimationElement: Social_Responses_Inspired_Revelation--></T>
+                          </U>
+                        </U>
+                      </L>
+                    </U>
+                  </V>
+                </V>
+              </U>
+              <U n="weight">
+                <L n="multipliers">
+                  <U>
+                    <T n="multiplier">5</T>
+                    <L n="tests">
+                      <L>
+                        <V t="mood">
+                          <U n="mood">
+                            <T n="mood">14639<!--Mood: Mood_Focused--></T>
+                          </U>
+                        </V>
+                      </L>
+                      <L>
+                        <V t="mood">
+                          <U n="mood">
+                            <T n="mood">14634<!--Mood: Mood_Confident--></T>
+                          </U>
+                        </V>
+                      </L>
+                    </L>
+                  </U>
+                  <U>
+                    <T n="multiplier">3</T>
+                    <L n="tests">
+                      <L>
+                        <V t="career_test">
+                          <U n="career_test">
+                            <V n="test_type" t="career_reference">
+                              <U n="career_reference">
+                                <V t="specific_career" n="career">
+                                  <T n="specific_career">107230<!--Career: career_Adult_Active_Doctor--></T>
+                                </V>
+                                <V t="enabled" n="user_level">
+                                  <U n="enabled">
+                                    <T n="lower_bound">6</T>
+                                    <T n="upper_bound">8</T>
+                                  </U>
+                                </V>
+                              </U>
+                            </V>
+                          </U>
+                        </V>
+                      </L>
+                    </L>
+                  </U>
+                  <U>
+                    <T n="multiplier">5</T>
+                    <L n="tests">
+                      <L>
+                        <V t="career_test">
+                          <U n="career_test">
+                            <V n="test_type" t="career_reference">
+                              <U n="career_reference">
+                                <V t="specific_career" n="career">
+                                  <T n="specific_career">107230<!--Career: career_Adult_Active_Doctor--></T>
+                                </V>
+                                <V t="enabled" n="user_level">
+                                  <U n="enabled">
+                                    <T n="lower_bound">9</T>
+                                    <T n="upper_bound">10</T>
+                                  </U>
+                                </V>
+                              </U>
+                            </V>
+                          </U>
+                        </V>
+                      </L>
+                    </L>
+                  </U>
+                </L>
+              </U>
+            </U>
+            <U>
+              <U n="outcome">
+                <V n="animation_ref" t="enabled">
+                  <U n="enabled">
+                    <T n="factory">106091<!--AnimationElement: object_XrayMachine_Scan_Failure_minor--></T>
+                    <U n="overrides">
+                      <T n="animation_context">False</T>
+                      <V t="disabled" n="balloons" />
+                      <L n="manifests" />
+                      <L n="params" />
+                      <L n="prop_state_values" />
+                      <L n="props" />
+                      <V t="disabled" n="reactionlet" />
+                      <L n="required_slots" />
+                      <L n="sounds" />
+                      <L n="vfx" />
+                    </U>
+                  </U>
+                </V>
+                <L n="basic_extras">
+                  <V t="notification">
+                    <U n="notification">
+                      <V n="dialog" t="tested">
+                        <U n="tested">
+                          <L n="records">
+                            <U>
+                              <V n="item" t="literal">
+                                <U n="literal">
+                                  <V t="enabled" n="icon">
+                                    <V t="participant" n="enabled">
+                                      <U n="participant">
+                                        <L n="participant_type">
+                                          <E>Object</E>
+                                        </L>
+                                      </U>
+                                    </V>
+                                  </V>
+                                  <V t="enabled" n="secondary_icon">
+                                    <V t="participant" n="enabled">
+                                      <U n="participant">
+                                        <L n="participant_type">
+                                          <E>Actor</E>
+                                        </L>
+                                      </U>
+                                    </V>
+                                  </V>
+                                  <V n="text" t="single">
+                                    <T n="single">0x2CAF0B23<!--String: "Los resultados del escáner de {1.SimFirstName} indican una posible enfermedad. Puede que sea necesario {M1.examinarlo}{F1.examinarla} más para realizar un diagnóstico más preciso."--></T>
+                                  </V>
+                                  <V t="enabled" n="text_tokens">
+                                    <U n="enabled">
+                                      <L n="tokens">
+                                        <V t="participant_type">
+                                          <U n="participant_type">
+                                            <V t="from_participant" n="objects">
+                                              <U n="from_participant">
+                                                <E n="participant">Actor</E>
+                                              </U>
+                                            </V>
+                                          </U>
+                                        </V>
+                                        <V t="participant_type">
+                                          <U n="participant_type">
+                                            <V t="from_participant" n="objects">
+                                              <U n="from_participant">
+                                                <E n="participant">TargetSim</E>
+                                              </U>
+                                            </V>
+                                          </U>
+                                        </V>
+                                      </L>
+                                    </U>
+                                  </V>
+                                </U>
+                              </V>
+                              <L n="tests">
+                                <L>
+                                  <V t="career_test">
+                                    <U n="career_test">
+                                      <V t="career_reference" n="test_type">
+                                        <U n="career_reference">
+                                          <V t="specific_career" n="career">
+                                            <T n="specific_career">107230<!--Career: career_Adult_Active_Doctor--></T>
+                                          </V>
+                                          <V t="enabled" n="user_level">
+                                            <U n="enabled">
+                                              <T n="lower_bound">4</T>
+                                            </U>
+                                          </V>
+                                        </U>
+                                      </V>
+                                    </U>
+                                  </V>
+                                </L>
+                              </L>
+                            </U>
+                            <U>
+                              <V n="item" t="literal">
+                                <U n="literal">
+                                  <V n="icon" t="enabled">
+                                    <V t="participant" n="enabled">
+                                      <U n="participant">
+                                        <L n="participant_type">
+                                          <E>ActorPostureTarget</E>
+                                        </L>
+                                      </U>
+                                    </V>
+                                  </V>
+                                  <V t="enabled" n="secondary_icon">
+                                    <V t="participant" n="enabled" />
+                                  </V>
+                                  <V t="single" n="text">
+                                    <T n="single">0x8B5B2FB<!--String: "{0.SimFirstName} ha realizado con éxito un examen médico de práctica a un paciente. \nLos resultados parecen válidos, pero los datos específicos {M0.lo}{F0.la} superan un poco y pasarán a manos de un médico para que este realice un diagnóstico. Ha sido una buena experiencia de aprendizaje, en todo caso."--></T>
+                                  </V>
+                                  <V t="enabled" n="text_tokens">
+                                    <U n="enabled">
+                                      <L n="tokens">
+                                        <V t="participant_type" />
+                                      </L>
+                                    </U>
+                                  </V>
+                                </U>
+                              </V>
+                              <L n="tests">
+                                <L>
+                                  <V t="career_test">
+                                    <U n="career_test">
+                                      <V t="career_reference" n="test_type">
+                                        <U n="career_reference">
+                                          <V t="specific_career" n="career">
+                                            <T n="specific_career">107230<!--Career: career_Adult_Active_Doctor--></T>
+                                          </V>
+                                          <V t="enabled" n="user_level">
+                                            <U n="enabled">
+                                              <T n="upper_bound">3</T>
+                                            </U>
+                                          </V>
+                                        </U>
+                                      </V>
+                                    </U>
+                                  </V>
+                                </L>
+                              </L>
+                            </U>
+                          </L>
+                        </U>
+                      </V>
+                    </U>
+                  </V>
+                  <V t="state_change">
+                    <U n="state_change">
+                      <V n="new_value" t="single_value">
+                        <U n="single_value">
+                          <T n="new_value">105979<!--ObjectStateValue: xrayMachine_Scan_Patient_vacant--></T>
+                        </U>
+                      </V>
+                      <E n="state_change_target">ActorPostureTarget</E>
+                    </U>
+                  </V>
+                  <V t="state_change">
+                    <U n="state_change">
+                      <V t="single_value" n="new_value">
+                        <U n="single_value">
+                          <T n="new_value">106060<!--ObjectStateValue: xrayMachine_Scan_Doctor_untended--></T>
+                        </U>
+                      </V>
+                      <E n="state_change_target">ActorPostureTarget</E>
+                      <V t="at_end" n="timing">
+                        <U n="at_end">
+                          <E n="criticality">OnCancel</E>
+                        </U>
+                      </V>
+                    </U>
+                  </V>
+                  <V t="state_change">
+                    <U n="state_change">
+                      <V t="single_value" n="new_value">
+                        <U n="single_value">
+                          <T n="new_value">112141<!--VideoChannel: XrayMachine_Off--></T>
+                        </U>
+                      </V>
+                      <E n="state_change_target">ActorPostureTarget</E>
+                    </U>
+                  </V>
+                </L>
+                <T n="consume_object">False</T>
+                <L n="continuation">
+                  <U>
+                    <T n="affordance">116244<!--SuperInteraction: doctor_Refer_SI_ExamBed--></T>
+                    <E n="target">TargetSim</E>
+                  </U>
+                </L>
+                <T n="force_outcome_on_exit">False</T>
+                <L n="loot_list">
+                  <T>105943<!--LootActions: loot_Statistic_XrayMachine_Calibrate_decrement--></T>
+                  <T>112941<!--LootActions: loot_Commodity_SicknessSystem_Patient_Target_Diagnosis_MajorExam--></T>
+                  <T>114586<!--LootActions: loot_Career_Doctor_Dialog_XrayScan_AlienProbable--></T>
+                </L>
+                <V t="enabled" n="response">
+                  <V n="enabled" t="individual">
+                    <U n="individual">
+                      <L n="animations">
+                        <U>
+                          <E n="target">Actor</E>
+                          <U n="animation">
+                            <T n="factory">11830<!--AnimationElement: Social_Responses_Inspired_HandOnChin--></T>
+                          </U>
+                        </U>
+                      </L>
+                    </U>
+                  </V>
+                </V>
+              </U>
+              <U n="weight">
+                <T n="base_value">8</T>
+              </U>
+            </U>
+            <U>
+              <U n="outcome">
+                <V t="enabled" n="animation_ref">
+                  <U n="enabled">
+                    <T n="factory">106092<!--AnimationElement: object_XrayMachine_Scan_Failure_major--></T>
+                  </U>
+                </V>
+                <L n="basic_extras">
+                  <V t="notification">
+                    <U n="notification">
+                      <V n="dialog" t="single">
+                        <V n="single" t="literal">
+                          <U n="literal">
+                            <V t="enabled" n="icon">
+                              <V t="participant" n="enabled">
+                                <U n="participant">
+                                  <L n="participant_type">
+                                    <E>Object</E>
+                                  </L>
+                                </U>
+                              </V>
+                            </V>
+                            <V t="enabled" n="secondary_icon">
+                              <V t="participant" n="enabled">
+                                <U n="participant">
+                                  <L n="participant_type">
+                                    <E>Actor</E>
+                                  </L>
+                                </U>
+                              </V>
+                            </V>
+                            <V n="text" t="single">
+                              <T n="single">0x6AA27B67<!--String: "El escáner realizado a {1.SimFirstName} ya ha concluido, pero {0.SimFirstName} se ve incapaz de interpretar los resultados. ¡Qué bochorno!"--></T>
+                            </V>
+                            <V t="enabled" n="text_tokens">
+                              <U n="enabled">
+                                <L n="tokens">
+                                  <V t="participant_type">
+                                    <U n="participant_type">
+                                      <V t="from_participant" n="objects">
+                                        <U n="from_participant">
+                                          <E n="participant">Actor</E>
+                                        </U>
+                                      </V>
+                                    </U>
+                                  </V>
+                                  <V t="participant_type">
+                                    <U n="participant_type">
+                                      <V t="from_participant" n="objects">
+                                        <U n="from_participant">
+                                          <E n="participant">TargetSim</E>
+                                        </U>
+                                      </V>
+                                    </U>
+                                  </V>
+                                </L>
+                              </U>
+                            </V>
+                          </U>
+                        </V>
+                      </V>
+                    </U>
+                  </V>
+                  <V t="state_change">
+                    <U n="state_change">
+                      <V n="new_value" t="single_value">
+                        <U n="single_value">
+                          <T n="new_value">105979<!--ObjectStateValue: xrayMachine_Scan_Patient_vacant--></T>
+                        </U>
+                      </V>
+                      <E n="state_change_target">ActorPostureTarget</E>
+                    </U>
+                  </V>
+                  <V t="state_change">
+                    <U n="state_change">
+                      <V t="single_value" n="new_value">
+                        <U n="single_value">
+                          <T n="new_value">106060<!--ObjectStateValue: xrayMachine_Scan_Doctor_untended--></T>
+                        </U>
+                      </V>
+                      <E n="state_change_target">ActorPostureTarget</E>
+                      <V t="at_end" n="timing">
+                        <U n="at_end">
+                          <E n="criticality">OnCancel</E>
+                        </U>
+                      </V>
+                    </U>
+                  </V>
+                  <V t="state_change">
+                    <U n="state_change">
+                      <V t="single_value" n="new_value">
+                        <U n="single_value">
+                          <T n="new_value">112141<!--VideoChannel: XrayMachine_Off--></T>
+                        </U>
+                      </V>
+                      <E n="state_change_target">ActorPostureTarget</E>
+                    </U>
+                  </V>
+                </L>
+                <L n="continuation">
+                  <U>
+                    <T n="affordance">116244<!--SuperInteraction: doctor_Refer_SI_ExamBed--></T>
+                    <E n="target">TargetSim</E>
+                  </U>
+                </L>
+                <L n="loot_list">
+                  <T>105943<!--LootActions: loot_Statistic_XrayMachine_Calibrate_decrement--></T>
+                  <T>109081<!--LootActions: loot_Buff_SicknessSystem_Doctor_ExamResults_Bad--></T>
+                  <T>109498<!--LootActions: loot_JobPerformance_Loss_Small_Doctor--></T>
+                  <T>109672<!--LootActions: loot_Buff_SicknessSystem_IllnessDiagnosis_1_noneChance--></T>
+                  <T>115288<!--LootActions: Rel_Loss_Medium_target--></T>
+                </L>
+                <E n="outcome_result">FAILURE</E>
+                <V t="enabled" n="response">
+                  <V n="enabled" t="individual">
+                    <U n="individual">
+                      <L n="animations">
+                        <U>
+                          <E n="target">Actor</E>
+                          <U n="animation">
+                            <T n="factory">28356<!--AnimationElement: Socials_Responses_Embarrassed_LowIntensity--></T>
+                          </U>
+                        </U>
+                      </L>
+                    </U>
+                  </V>
+                </V>
+              </U>
+              <U n="weight">
+                <L n="multipliers">
+                  <U>
+                    <T n="multiplier">5</T>
+                    <L n="tests">
+                      <L>
+                        <V t="mood">
+                          <U n="mood">
+                            <T n="mood">14646<!--Mood: Mood_Uncomfortable--></T>
+                          </U>
+                        </V>
+                      </L>
+                      <L>
+                        <V t="mood">
+                          <U n="mood">
+                            <T n="mood">14645<!--Mood: Mood_Stressed--></T>
+                          </U>
+                        </V>
+                      </L>
+                      <L>
+                        <V t="mood">
+                          <U n="mood">
+                            <T n="mood">14644<!--Mood: Mood_Dazed--></T>
+                          </U>
+                        </V>
+                      </L>
+                    </L>
+                  </U>
+                </L>
+              </U>
+            </U>
+          </L>
+          <L n="tests">
+            <L>
+              <V t="state">
+                <U n="state">
+                  <V t="always_pass" n="fallback_behavior" />
+                  <T n="value">15081<!--ObjectStateValue: BrokenState_Unbroken--></T>
+                  <E n="who">ActorPostureTarget</E>
+                </U>
+              </V>
+              <V t="buff">
+                <U n="buff">
+                  <E n="subject">TargetSim</E>
+                  <V t="enabled" n="whitelist">
+                    <L n="enabled">
+                      <T>105478<!--Buff: buff_SicknessSystem_Illness_BloatyHead--></T>
+                      <T>105621<!--Buff: buff_SicknessSystem_Illness_BurningTummy--></T>
+                      <T>105620<!--Buff: buff_SicknessSystem_Illness_GasAndGiggles--></T>
+                      <T>105619<!--Buff: buff_SicknessSystem_Illness_ItchyPlumbob--></T>
+                      <T>105618<!--Buff: buff_SicknessSystem_Illness_LlamaFlu--></T>
+                      <T>105617<!--Buff: buff_SicknessSystem_Illness_StarryEyes--></T>
+                      <T>105616<!--Buff: buff_SicknessSystem_Illness_SweatyShivers--></T>
+                      <T>105615<!--Buff: buff_SicknessSystem_Illness_TripleThreat--></T>
+                    </L>
+                  </V>
+                </U>
+              </V>
+            </L>
+          </L>
+        </U>
+        <U>
+          <L n="potential_outcomes">
+            <U>
+              <U n="outcome">
+                <V t="enabled" n="animation_ref">
+                  <U n="enabled">
+                    <T n="factory">106088<!--AnimationElement: object_XrayMachine_Scan_Success_minor--></T>
+                  </U>
+                </V>
+                <L n="basic_extras">
+                  <V t="notification">
+                    <U n="notification">
+                      <V n="dialog" t="tested">
+                        <U n="tested">
+                          <L n="records">
+                            <U>
+                              <V n="item" t="literal">
+                                <U n="literal">
+                                  <V t="enabled" n="icon">
+                                    <V t="participant" n="enabled">
+                                      <U n="participant">
+                                        <L n="participant_type">
+                                          <E>Object</E>
+                                        </L>
+                                      </U>
+                                    </V>
+                                  </V>
+                                  <V t="enabled" n="secondary_icon">
+                                    <V t="participant" n="enabled">
+                                      <U n="participant">
+                                        <L n="participant_type">
+                                          <E>Actor</E>
+                                        </L>
+                                      </U>
+                                    </V>
+                                  </V>
+                                  <V n="text" t="single">
+                                    <T n="single">0xB6BD2244<!--String: "Los resultados del escáner de {1.SimFirstName} no muestran indicios de enfermedad."--></T>
+                                  </V>
+                                  <V t="enabled" n="text_tokens">
+                                    <U n="enabled">
+                                      <L n="tokens">
+                                        <V t="participant_type">
+                                          <U n="participant_type">
+                                            <V t="from_participant" n="objects">
+                                              <U n="from_participant">
+                                                <E n="participant">Actor</E>
+                                              </U>
+                                            </V>
+                                          </U>
+                                        </V>
+                                        <V t="participant_type">
+                                          <U n="participant_type">
+                                            <V t="from_participant" n="objects">
+                                              <U n="from_participant">
+                                                <E n="participant">TargetSim</E>
+                                              </U>
+                                            </V>
+                                          </U>
+                                        </V>
+                                      </L>
+                                    </U>
+                                  </V>
+                                </U>
+                              </V>
+                              <L n="tests">
+                                <L>
+                                  <V t="career_test">
+                                    <U n="career_test">
+                                      <V t="career_reference" n="test_type">
+                                        <U n="career_reference">
+                                          <V t="specific_career" n="career">
+                                            <T n="specific_career">107230<!--Career: career_Adult_Active_Doctor--></T>
+                                          </V>
+                                          <V t="enabled" n="user_level">
+                                            <U n="enabled">
+                                              <T n="lower_bound">4</T>
+                                            </U>
+                                          </V>
+                                        </U>
+                                      </V>
+                                    </U>
+                                  </V>
+                                </L>
+                              </L>
+                            </U>
+                            <U>
+                              <V n="item" t="literal">
+                                <U n="literal">
+                                  <V n="icon" t="enabled">
+                                    <V t="participant" n="enabled">
+                                      <U n="participant">
+                                        <L n="participant_type">
+                                          <E>ActorPostureTarget</E>
+                                        </L>
+                                      </U>
+                                    </V>
+                                  </V>
+                                  <V t="enabled" n="secondary_icon">
+                                    <V t="participant" n="enabled" />
+                                  </V>
+                                  <V t="single" n="text">
+                                    <T n="single">0x8B5B2FB<!--String: "{0.SimFirstName} ha realizado con éxito un examen médico de práctica a un paciente. \nLos resultados parecen válidos, pero los datos específicos {M0.lo}{F0.la} superan un poco y pasarán a manos de un médico para que este realice un diagnóstico. Ha sido una buena experiencia de aprendizaje, en todo caso."--></T>
+                                  </V>
+                                  <V t="enabled" n="text_tokens">
+                                    <U n="enabled">
+                                      <L n="tokens">
+                                        <V t="participant_type" />
+                                      </L>
+                                    </U>
+                                  </V>
+                                </U>
+                              </V>
+                              <L n="tests">
+                                <L>
+                                  <V t="career_test">
+                                    <U n="career_test">
+                                      <V t="career_reference" n="test_type">
+                                        <U n="career_reference">
+                                          <V t="specific_career" n="career">
+                                            <T n="specific_career">107230<!--Career: career_Adult_Active_Doctor--></T>
+                                          </V>
+                                          <V t="enabled" n="user_level">
+                                            <U n="enabled">
+                                              <T n="upper_bound">3</T>
+                                            </U>
+                                          </V>
+                                        </U>
+                                      </V>
+                                    </U>
+                                  </V>
+                                </L>
+                              </L>
+                            </U>
+                          </L>
+                        </U>
+                      </V>
+                    </U>
+                  </V>
+                  <V t="state_change">
+                    <U n="state_change">
+                      <V n="new_value" t="single_value">
+                        <U n="single_value">
+                          <T n="new_value">105979<!--ObjectStateValue: xrayMachine_Scan_Patient_vacant--></T>
+                        </U>
+                      </V>
+                      <E n="state_change_target">ActorPostureTarget</E>
+                    </U>
+                  </V>
+                  <V t="state_change">
+                    <U n="state_change">
+                      <V t="single_value" n="new_value">
+                        <U n="single_value">
+                          <T n="new_value">106060<!--ObjectStateValue: xrayMachine_Scan_Doctor_untended--></T>
+                        </U>
+                      </V>
+                      <E n="state_change_target">ActorPostureTarget</E>
+                      <V t="at_end" n="timing">
+                        <U n="at_end">
+                          <E n="criticality">OnCancel</E>
+                        </U>
+                      </V>
+                    </U>
+                  </V>
+                  <V t="state_change">
+                    <U n="state_change">
+                      <V t="single_value" n="new_value">
+                        <U n="single_value">
+                          <T n="new_value">112141<!--VideoChannel: XrayMachine_Off--></T>
+                        </U>
+                      </V>
+                      <E n="state_change_target">ActorPostureTarget</E>
+                    </U>
+                  </V>
+                </L>
+                <L n="continuation">
+                  <U>
+                    <T n="affordance">116244<!--SuperInteraction: doctor_Refer_SI_ExamBed--></T>
+                    <E n="target">TargetSim</E>
+                  </U>
+                </L>
+                <L n="loot_list">
+                  <T>105943<!--LootActions: loot_Statistic_XrayMachine_Calibrate_decrement--></T>
+                  <T>112941<!--LootActions: loot_Commodity_SicknessSystem_Patient_Target_Diagnosis_MajorExam--></T>
+                  <T>109497<!--LootActions: loot_JobPerformance_Gain_Small_Doctor--></T>
+                  <T>114587<!--LootActions: loot_Career_Doctor_Dialog_XrayScan_AlienDiscovered--></T>
+                  <T>115286<!--LootActions: Rel_Gain_Small_target--></T>
+                </L>
+                <V t="enabled" n="response">
+                  <V n="enabled" t="individual">
+                    <U n="individual">
+                      <L n="animations">
+                        <U>
+                          <E n="target">Actor</E>
+                          <U n="animation">
+                            <T n="factory">28358<!--AnimationElement: Socials_Responses_Excited_LowIntensity--></T>
+                          </U>
+                        </U>
+                      </L>
+                    </U>
+                  </V>
+                </V>
+              </U>
+              <U n="weight">
+                <L n="multipliers">
+                  <U>
+                    <T n="multiplier">5</T>
+                    <L n="tests">
+                      <L>
+                        <V t="mood">
+                          <U n="mood">
+                            <T n="mood">14639<!--Mood: Mood_Focused--></T>
+                          </U>
+                        </V>
+                        <V t="mood">
+                          <U n="mood">
+                            <T n="mood">14634<!--Mood: Mood_Confident--></T>
+                          </U>
+                        </V>
+                      </L>
+                    </L>
+                  </U>
+                  <U>
+                    <T n="multiplier">3</T>
+                    <L n="tests">
+                      <L>
+                        <V t="career_test">
+                          <U n="career_test">
+                            <V n="test_type" t="career_reference">
+                              <U n="career_reference">
+                                <V t="specific_career" n="career">
+                                  <T n="specific_career">107230<!--Career: career_Adult_Active_Doctor--></T>
+                                </V>
+                                <V t="enabled" n="user_level">
+                                  <U n="enabled">
+                                    <T n="lower_bound">6</T>
+                                    <T n="upper_bound">8</T>
+                                  </U>
+                                </V>
+                              </U>
+                            </V>
+                          </U>
+                        </V>
+                      </L>
+                    </L>
+                  </U>
+                  <U>
+                    <T n="multiplier">5</T>
+                    <L n="tests">
+                      <L>
+                        <V t="career_test">
+                          <U n="career_test">
+                            <V n="test_type" t="career_reference">
+                              <U n="career_reference">
+                                <V t="specific_career" n="career">
+                                  <T n="specific_career">107230<!--Career: career_Adult_Active_Doctor--></T>
+                                </V>
+                                <V t="enabled" n="user_level">
+                                  <U n="enabled">
+                                    <T n="lower_bound">9</T>
+                                    <T n="upper_bound">10</T>
+                                  </U>
+                                </V>
+                              </U>
+                            </V>
+                          </U>
+                        </V>
+                      </L>
+                    </L>
+                  </U>
+                </L>
+              </U>
+            </U>
+            <U>
+              <U n="outcome">
+                <V n="animation_ref" t="enabled">
+                  <U n="enabled">
+                    <T n="factory">106091<!--AnimationElement: object_XrayMachine_Scan_Failure_minor--></T>
+                  </U>
+                </V>
+                <L n="basic_extras">
+                  <V t="notification">
+                    <U n="notification">
+                      <T n="allow_autonomous">True</T>
+                      <V n="dialog" t="single">
+                        <V n="single" t="literal">
+                          <U n="literal">
+                            <V t="enabled" n="icon">
+                              <V t="participant" n="enabled">
+                                <U n="participant">
+                                  <L n="participant_type">
+                                    <E>Object</E>
+                                  </L>
+                                </U>
+                              </V>
+                            </V>
+                            <V t="enabled" n="secondary_icon">
+                              <V t="participant" n="enabled">
+                                <U n="participant">
+                                  <L n="participant_type">
+                                    <E>Actor</E>
+                                  </L>
+                                </U>
+                              </V>
+                            </V>
+                            <V t="disabled" n="secondary_icon_response" />
+                            <V n="text" t="single">
+                              <T n="single">0xBE4D18BE<!--String: "Los resultados del escáner de {1.SimFirstName} no son concluyentes."--></T>
+                            </V>
+                            <V t="enabled" n="text_tokens">
+                              <U n="enabled">
+                                <L n="tokens">
+                                  <V t="participant_type">
+                                    <U n="participant_type">
+                                      <V t="from_participant" n="objects">
+                                        <U n="from_participant">
+                                          <E n="participant">Actor</E>
+                                        </U>
+                                      </V>
+                                    </U>
+                                  </V>
+                                  <V t="participant_type">
+                                    <U n="participant_type">
+                                      <V t="from_participant" n="objects">
+                                        <U n="from_participant">
+                                          <E n="participant">TargetSim</E>
+                                        </U>
+                                      </V>
+                                    </U>
+                                  </V>
+                                </L>
+                              </U>
+                            </V>
+                          </U>
+                        </V>
+                      </V>
+                    </U>
+                  </V>
+                  <V t="state_change">
+                    <U n="state_change">
+                      <V n="new_value" t="single_value">
+                        <U n="single_value">
+                          <T n="new_value">105979<!--ObjectStateValue: xrayMachine_Scan_Patient_vacant--></T>
+                        </U>
+                      </V>
+                      <E n="state_change_target">ActorPostureTarget</E>
+                    </U>
+                  </V>
+                  <V t="state_change">
+                    <U n="state_change">
+                      <V t="single_value" n="new_value">
+                        <U n="single_value">
+                          <T n="new_value">106060<!--ObjectStateValue: xrayMachine_Scan_Doctor_untended--></T>
+                        </U>
+                      </V>
+                      <E n="state_change_target">ActorPostureTarget</E>
+                      <V t="at_end" n="timing">
+                        <U n="at_end">
+                          <E n="criticality">OnCancel</E>
+                        </U>
+                      </V>
+                    </U>
+                  </V>
+                  <V t="state_change">
+                    <U n="state_change">
+                      <V t="single_value" n="new_value">
+                        <U n="single_value">
+                          <T n="new_value">112141<!--VideoChannel: XrayMachine_Off--></T>
+                        </U>
+                      </V>
+                      <E n="state_change_target">ActorPostureTarget</E>
+                    </U>
+                  </V>
+                </L>
+                <L n="continuation">
+                  <U>
+                    <T n="affordance">116244<!--SuperInteraction: doctor_Refer_SI_ExamBed--></T>
+                    <E n="target">TargetSim</E>
+                  </U>
+                </L>
+                <L n="loot_list">
+                  <T>105943<!--LootActions: loot_Statistic_XrayMachine_Calibrate_decrement--></T>
+                  <T>114586<!--LootActions: loot_Career_Doctor_Dialog_XrayScan_AlienProbable--></T>
+                </L>
+                <E n="outcome_result">FAILURE</E>
+                <V t="enabled" n="response">
+                  <V n="enabled" t="individual">
+                    <U n="individual">
+                      <L n="animations">
+                        <U>
+                          <E n="target">Actor</E>
+                          <U n="animation">
+                            <T n="factory">11830<!--AnimationElement: Social_Responses_Inspired_HandOnChin--></T>
+                          </U>
+                        </U>
+                      </L>
+                    </U>
+                  </V>
+                </V>
+              </U>
+              <U n="weight">
+                <T n="base_value">9</T>
+              </U>
+            </U>
+          </L>
+          <L n="tests">
+            <L>
+              <V t="state">
+                <U n="state">
+                  <V t="always_pass" n="fallback_behavior" />
+                  <T n="value">15081<!--ObjectStateValue: BrokenState_Unbroken--></T>
+                  <E n="who">ActorPostureTarget</E>
+                </U>
+              </V>
+              <V t="buff">
+                <U n="buff">
+                  <L n="blacklist">
+                    <T>105478<!--Buff: buff_SicknessSystem_Illness_BloatyHead--></T>
+                    <T>105621<!--Buff: buff_SicknessSystem_Illness_BurningTummy--></T>
+                    <T>105620<!--Buff: buff_SicknessSystem_Illness_GasAndGiggles--></T>
+                    <T>105619<!--Buff: buff_SicknessSystem_Illness_ItchyPlumbob--></T>
+                    <T>105618<!--Buff: buff_SicknessSystem_Illness_LlamaFlu--></T>
+                    <T>105617<!--Buff: buff_SicknessSystem_Illness_StarryEyes--></T>
+                    <T>105616<!--Buff: buff_SicknessSystem_Illness_SweatyShivers--></T>
+                    <T>105615<!--Buff: buff_SicknessSystem_Illness_TripleThreat--></T>
+                  </L>
+                  <E n="subject">TargetSim</E>
+                </U>
+              </V>
+            </L>
+          </L>
+        </U>
+        <U>
+          <L n="potential_outcomes">
+            <U>
+              <U n="outcome">
+                <V t="enabled" n="animation_ref">
+                  <U n="enabled">
+                    <T n="factory">106092<!--AnimationElement: object_XrayMachine_Scan_Failure_major--></T>
+                  </U>
+                </V>
+                <L n="basic_extras">
+                  <V t="notification">
+                    <U n="notification">
+                      <T n="allow_autonomous">True</T>
+                      <V n="dialog" t="single">
+                        <V n="single" t="literal">
+                          <U n="literal">
+                            <V t="enabled" n="icon">
+                              <V t="participant" n="enabled">
+                                <U n="participant">
+                                  <L n="participant_type">
+                                    <E>Object</E>
+                                  </L>
+                                </U>
+                              </V>
+                            </V>
+                            <V t="enabled" n="secondary_icon">
+                              <V t="participant" n="enabled" />
+                            </V>
+                            <V n="text" t="single">
+                              <T n="single">0x34F7695B<!--String: "No se han obtenido resultados porque el escáner de rayos X se ha averiado en el proceso y hay que repararlo."--></T>
+                            </V>
+                          </U>
+                        </V>
+                      </V>
+                      <T n="limit_to_one_notification">False</T>
+                    </U>
+                  </V>
+                  <V t="state_change">
+                    <U n="state_change">
+                      <V n="new_value" t="single_value">
+                        <U n="single_value">
+                          <T n="new_value">105979<!--ObjectStateValue: xrayMachine_Scan_Patient_vacant--></T>
+                        </U>
+                      </V>
+                      <E n="state_change_target">ActorPostureTarget</E>
+                    </U>
+                  </V>
+                  <V t="state_change">
+                    <U n="state_change">
+                      <V t="single_value" n="new_value">
+                        <U n="single_value">
+                          <T n="new_value">106060<!--ObjectStateValue: xrayMachine_Scan_Doctor_untended--></T>
+                        </U>
+                      </V>
+                      <E n="state_change_target">ActorPostureTarget</E>
+                      <V t="at_end" n="timing">
+                        <U n="at_end">
+                          <E n="criticality">OnCancel</E>
+                        </U>
+                      </V>
+                    </U>
+                  </V>
+                  <V t="state_change">
+                    <U n="state_change">
+                      <V t="single_value" n="new_value">
+                        <U n="single_value">
+                          <T n="new_value">112141<!--VideoChannel: XrayMachine_Off--></T>
+                        </U>
+                      </V>
+                      <E n="state_change_target">ActorPostureTarget</E>
+                    </U>
+                  </V>
+                </L>
+                <L n="loot_list">
+                  <T>105943<!--LootActions: loot_Statistic_XrayMachine_Calibrate_decrement--></T>
+                  <T>115289<!--LootActions: Rel_Loss_Small_target--></T>
+                </L>
+                <E n="outcome_result">FAILURE</E>
+                <V t="enabled" n="response">
+                  <V n="enabled" t="individual">
+                    <U n="individual">
+                      <L n="animations">
+                        <U>
+                          <E n="target">Actor</E>
+                          <U n="animation">
+                            <T n="factory">28336<!--AnimationElement: Socials_Responses_Angry_LowIntensity--></T>
+                          </U>
+                        </U>
+                      </L>
+                    </U>
+                  </V>
+                </V>
+              </U>
+            </U>
+          </L>
+          <L n="tests">
+            <L>
+              <V t="state">
+                <U n="state">
+                  <T n="value">15080<!--ObjectStateValue: BrokenState_Broken--></T>
+                  <E n="who">ActorPostureTarget</E>
+                </U>
+              </V>
+            </L>
+          </L>
+        </U>
+      </L>
+    </U>
+  </V>
+  <E n="scoring_priority">NORMAL</E>
+  <T n="subaction_selection_weight">1</T>
+  <V t="literal" n="super_affordance_compatibility">
+    <U n="literal">
+      <V n="default_inclusion" t="exclude_all" />
+    </U>
+  </V>
+  <E n="target_type">OBJECT</E>
+  <L n="test_globals">
+    <V t="sim_info">
+      <U n="sim_info">
+        <V t="specified" n="ages" />
+        <V t="specified" n="species">
+          <U n="specified">
+            <L n="species">
+              <E />
+            </L>
+          </U>
+        </V>
+        <E n="who">Actor</E>
+      </U>
+    </V>
+  </L>
+  <T n="time_overhead">25</T>
+</I>

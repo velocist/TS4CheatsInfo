@@ -1,0 +1,124 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<I c="DialogDramaNode" i="drama_node" m="drama_scheduler.dialog_drama_node" n="dialogDramaNode_Loans_SecondCall" s="226815">
+  <V t="dialog_ok_cancel" n="dialog_and_loot">
+    <U n="dialog_ok_cancel">
+      <U n="dialog">
+        <E n="phone_ring_type">RING</E>
+        <V n="text" t="single">
+          <T n="single">0x13A8BD1A<!--String: "{0.SimFirstName} no ha conseguido realizar a tiempo un pago de su préstamo estudiantil. Su saldo restante es de {2.Money}. El banco ha ampliado el plazo de pago y ha subrayado que cualquier demora adicional tendrá sus consecuencias. "--></T>
+        </V>
+        <T n="text_cancel">0xCA404E4E<!--String: "Ignorar pago"--></T>
+        <T n="text_ok">0x98214D26<!--String: "Realizar un pago"--></T>
+        <V n="text_tokens" t="enabled">
+          <U n="enabled">
+            <L n="tokens">
+              <V t="participant_type" />
+              <V t="participant_type">
+                <U n="participant_type">
+                  <V n="objects" t="from_participant">
+                    <U n="from_participant">
+                      <E n="participant">TargetSim</E>
+                    </U>
+                  </V>
+                </U>
+              </V>
+              <V t="statistic_value">
+                <U n="statistic_value">
+                  <T n="statistic">223186<!--Statistic: statistic_Debt--></T>
+                </U>
+              </V>
+            </L>
+          </U>
+        </V>
+        <V n="title" t="enabled">
+          <T n="enabled">0x8FB70214<!--String: "Pago vencido de préstamos estudiantiles"--></T>
+        </V>
+      </U>
+      <L n="on_dialog_accetped_loot_list">
+        <T>226847<!--LootActions: loot_Loans_PaymentDialog--></T>
+      </L>
+      <L n="on_dialog_canceled_loot_list">
+        <T>226849<!--LootActions: loot_Loans_Payment_Refuse_1--></T>
+      </L>
+    </U>
+  </V>
+  <U n="min_and_max_times">
+    <T n="upper_bound">12</T>
+  </U>
+  <L n="pretests">
+    <L>
+      <V t="statistic">
+        <U n="statistic">
+          <T n="must_have_stat">True</T>
+          <V t="user_value" n="score_to_use" />
+          <T n="stat">223186<!--Statistic: statistic_Debt--></T>
+          <V t="value_threshold" n="threshold">
+            <U n="value_threshold">
+              <T n="value">50</T>
+            </U>
+          </V>
+        </U>
+      </V>
+      <V t="university_enrollment_test">
+        <U n="university_enrollment_test">
+          <V n="enrollment_status" t="enabled">
+            <U n="enabled">
+              <V n="blacklist" t="specify">
+                <U n="specify">
+                  <L n="blacklist">
+                    <E>ENROLLED</E>
+                    <E>PROBATION</E>
+                  </L>
+                </U>
+              </V>
+            </U>
+          </V>
+          <V t="disabled" n="major" />
+        </U>
+      </V>
+    </L>
+  </L>
+  <L n="run_tests">
+    <L>
+      <V t="university_enrollment_test">
+        <U n="university_enrollment_test">
+          <V n="enrollment_status" t="enabled">
+            <U n="enabled">
+              <V n="blacklist" t="specify">
+                <U n="specify">
+                  <L n="blacklist">
+                    <E>ENROLLED</E>
+                    <E>PROBATION</E>
+                  </L>
+                </U>
+              </V>
+            </U>
+          </V>
+          <V t="disabled" n="major" />
+        </U>
+      </V>
+    </L>
+  </L>
+  <V t="no_participant" n="sender_sim_info" />
+  <V t="schedule" n="time_option">
+    <U n="schedule">
+      <L n="valid_times">
+        <U>
+          <U n="days_available">
+            <T n="0 SUNDAY">True</T>
+            <T n="1 MONDAY">True</T>
+            <T n="2 TUESDAY">True</T>
+            <T n="3 WEDNESDAY">True</T>
+            <T n="4 THURSDAY">True</T>
+            <T n="5 FRIDAY">True</T>
+            <T n="6 SATURDAY">True</T>
+          </U>
+          <T n="duration">13</T>
+          <U n="start_time">
+            <T n="hour">8</T>
+          </U>
+        </U>
+      </L>
+    </U>
+  </V>
+</I>

@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+
+<TuningRoot>
+    <Instance instance_type="situation" class="OpenMicPlayerControllerSituation" module="venues.lounge_venue.open_mic_night_zone_director" muid="CFCB2DC770C9EE1C" description="A container situation for the player Sims to notify the zone director that&#xA;they want to take a turn." instance_subclasses_only="False" parents="SituationComplexCommon, SituationComplex, Situation" path="Situations\Descriptions" use_guid_for_reference="True">
+        <Deleted name="_buff" muid="4E1C9116E159CD5D" />
+
+        <Deleted name="_cost" muid="EF3FCEA5BDD50C1E" />
+
+        <Deleted name="_display_name" muid="1B3C59A5606C8E85" />
+
+        <Deleted name="_icon" muid="EB0F42CC8FE2443" />
+
+        <Deleted name="_initiating_sim_tests" muid="308668CF7CD11745" />
+
+        <Deleted name="_level_data" muid="71E9FCF59367C85E" />
+
+        <Deleted name="_main_goal_visibility_test" muid="50B13FAB230BB181" />
+
+        <Deleted name="_relationship_between_job_members" muid="5498175914308055" />
+
+        <Deleted name="_resident_job" muid="99BEB2E91646549E" />
+
+        <Deleted name="audio_sting_on_start" muid="D32525DB07041FB7" />
+
+        <Deleted name="background_audio" muid="DFFF1E5BB89E932F" />
+
+        <Deleted name="category" muid="86E275D2128ADEBC" />
+
+        <Deleted name="compatible_venues" muid="53CC932DB4D89F81" />
+
+        <Deleted name="entitlement" muid="53F56CD12B9356EA" />
+
+        <Deleted name="force_invite_only" muid="BA751AF237AF9978" />
+
+        <Deleted name="goal_button_text" muid="3F91ED9BE489CD0D" />
+
+        <Deleted name="goal_sub_text" muid="B76F3075C2B832A9" />
+
+        <Deleted name="highlight_first_incomplete_minor_goal" muid="73A5AAA9D2DF9EFA" />
+
+        <Deleted name="job_display_ordering" muid="5D48A1667AC1E69E" />
+
+        <Deleted name="main_goal" muid="BB8C3CE3CD9D654B" />
+
+        <Deleted name="main_goal_audio_sting" muid="5CC973C09E503BF9" />
+
+        <Deleted name="max_participants" muid="89935426B543295E" />
+
+        <Deleted name="minor_goal_chains" muid="16C5508E47DF8EAA" />
+
+        <Tunable type="situation_job" name="player_job" class="TunableReference" display="Player Job" muid="3EA5856A52DB8FA4" description="The job for the player Sim." allow_none="False" Deprecated="False" filter="0" group="General" />
+
+        <Deleted name="recommended_job_object_notification" muid="CCF81B70F8C2442" />
+
+        <Deleted name="recommended_job_object_text" muid="220B691F8E78001E" />
+
+        <Deleted name="screen_slam_bronze" muid="1827AE6CC26D6D55" />
+
+        <Deleted name="screen_slam_gold" muid="83DC8E188870250" />
+
+        <Deleted name="screen_slam_no_medal" muid="E55D6D7C6CD60EE1" />
+
+        <Deleted name="screen_slam_silver" muid="423C927F8DABE71F" />
+
+        <Deleted name="situation_description" muid="C97A364921DC157A" />
+
+        <TunableTuple name="situation_state" class="TunablePlayerSituationState" display="Situation State" muid="964F688C267D56D0" description="A situation state for the player so that they can be put into taking their&#xA;turn.  When the interaction of interest is played then the sim will be put&#xA;into a state of trying to take a turn." Deprecated="False" filter="0" group="General">
+            <TunableTuple name="interaction_of_interest" class="TunableInteractionOfInterest" display="Interaction Of Interest" muid="1FFFAFDFF7873530" description="The interaction that when run will cause GPE defined behavior&#xA;to run." Deprecated="False" filter="0" group="General">
+                <TunableList name="affordances" class="TunableList" display="Affordances" muid="B81E83D439E63A40" description="The Sim must have started either any affordance in this list or an&#xA;interaction matching one of the tags in this tunable's Tags&#xA;field." Deprecated="False" filter="0" group="General">
+                    <Tunable type="interaction" class="TunableReference" muid="8B6309A632D26F18" allow_none="False" Deprecated="False" filter="0" group="General" pack_safe="True" />
+                </TunableList>
+                <TunableList name="tags" class="TunableSet" display="Tags" muid="AC5114BC0088DCCD" description="The Sim must have run either an interaction matching one of these&#xA;Tags or an affordance from the list of Affordances in this&#xA;tunable." Deprecated="False" filter="0" group="General" unique_entries="true">
+                    <TunableEnum type="Tag" class="TunableEnumEntry" default="INVALID" muid="4366694D91CE4AAB" dynamic_entries="tag.Tag._elements" static_entries="tag.Tag" Deprecated="False" filter="0" group="General" />
+                </TunableList>
+            </TunableTuple>
+            <TunableList name="job_and_role_changes" class="TunableMapping" display="Job And Role Changes" muid="C4F27D094808C854" mapping_key="Situation Job" mapping_value="Role State" description="A mapping between situation jobs and role states that defines&#xA;what role states we want to switch to for sims on which jobs&#xA;when this situation state is entered." Deprecated="False" filter="0" group="General">
+                <TunableTuple class="TunableTuple" muid="7D438F5EB5A8CF23" Deprecated="False" filter="0" group="General">
+                    <Tunable type="role_state" name="Role State" class="TunableReference" display="Role State" muid="AC0F3A04C66E2D9C" description="The role state that we will switch sims of the linked job&#xA;into." allow_none="False" Deprecated="False" filter="0" group="General" />
+                    <Tunable type="situation_job" name="Situation Job" class="TunableReference" display="Situation Job" muid="458F1E075D92E8A4" description="A reference to a SituationJob that we will use to change&#xA;sim's role state." allow_none="False" Deprecated="False" filter="0" group="General" />
+                </TunableTuple>
+            </TunableList>
+        </TunableTuple>
+
+        <Deleted name="suppress_scoring_progress_bar" muid="D199AA2EA1556CCD" />
+
+        <Deleted name="targeted_situation" muid="140DBB2536F6D8AD" />
+
+        <Deleted name="travel_request_behavior" muid="36480F573EAAFB9B" />
+
+        <Deleted name="venue_invitation_message" muid="18505B70C1A97415" />
+
+        <Deleted name="venue_situation_player_job" muid="3EAFD24111F939B0" />
+    </Instance>
+
+    <VersionHistory>
+        <ActionList>
+            <Action type="kRemove" old_muid="937CF6B95C77173D" />
+        </ActionList>
+
+        <ActionList>
+            <Action type="kRename" old_muid="7D4663AB73985CA7" new_muid="53CC932DB4D89F81" />
+        </ActionList>
+
+        <ActionList>
+            <Action type="kRemove" old_muid="9D368E824C2DD0B" />
+            <Action type="kRemove" old_muid="8E0CCCD9580398C1" />
+        </ActionList>
+    </VersionHistory>
+</TuningRoot>

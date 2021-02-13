@@ -1,0 +1,151 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<I c="SuperInteraction" i="interaction" m="interactions.base.super_interaction" n="Loans_MakePayment" s="226854">
+  <V n="_animation_actor_map" t="literal">
+    <U n="literal">
+      <V t="enabled" n="target_override">
+        <E n="enabled">Actor</E>
+      </V>
+    </U>
+  </V>
+  <E n="_constraints_actor">Actor</E>
+  <V t="participant" n="_icon">
+    <U n="participant">
+      <L n="participant_type">
+        <E>Actor</E>
+      </L>
+    </U>
+  </V>
+  <V t="enabled" n="_saveable" />
+  <T n="_super_affordance_can_share_target">True</T>
+  <T n="apply_autonomous_posture_change_cost">True</T>
+  <T n="attention_cost">0.5</T>
+  <V n="basic_content" t="one_shot">
+    <U n="one_shot">
+      <U n="animation_ref">
+        <T n="factory">11704<!--AnimationElement: Phone_Text--></T>
+      </U>
+    </U>
+  </V>
+  <L n="basic_extras">
+    <V t="payment">
+      <U n="payment">
+        <V n="payment" t="literal">
+          <U n="literal">
+            <V n="payment_cost" t="input_dialog">
+              <U n="input_dialog">
+                <V t="enabled" n="below_min_tooltip">
+                  <T n="enabled">0x490AFE45<!--String: "Introduce un importe igual o superior al mínimo."--></T>
+                </V>
+                <V t="enabled" n="dest_exceed_tooltip">
+                  <T n="enabled">0xFAB7B0FA<!--String: "Introduce un importe igual o inferior al del saldo total."--></T>
+                </V>
+                <U n="input_dialog">
+                  <V t="enabled" n="additional_texts">
+                    <L n="enabled">
+                      <T>0xB6D8A250<!--String: "Saldo del préstamo:"--></T>
+                      <T>0x432DA8EE<!--String: "<span class="negative">{3.Money}</span>"--></T>
+                    </L>
+                  </V>
+                  <L n="dialog_options">
+                    <E>DISABLE_CLOSE_BUTTON</E>
+                  </L>
+                  <V t="enabled" n="icon_override_participant">
+                    <E n="enabled">Actor</E>
+                  </V>
+                  <T n="is_special_dialog">True</T>
+                  <V t="single" n="text">
+                    <T n="single">0xC0CA363<!--String: "Establecer cantidad para amortizar del saldo"--></T>
+                  </V>
+                  <U n="text_inputs">
+                    <U n="payment_value">
+                      <V n="default_text" t="enabled">
+                        <T n="enabled">0x695E72FB<!--String: "Mínimo: {4.Money}"--></T>
+                      </V>
+                      <V n="length_restriction" t="fixed">
+                        <U n="fixed">
+                          <V n="min_length" t="enabled">
+                            <U n="enabled">
+                              <V t="enabled" n="tooltip">
+                                <T n="enabled">0x490AFE45<!--String: "Introduce un importe igual o superior al mínimo."--></T>
+                              </V>
+                            </U>
+                          </V>
+                        </U>
+                      </V>
+                      <V n="restricted_characters" t="enabled">
+                        <T n="enabled">0x8FE40C44<!--String: "0-9"--></T>
+                      </V>
+                      <V n="title" t="enabled">
+                        <T n="enabled">0x4F72CE52<!--String: "Establecer cantidad:"--></T>
+                      </V>
+                    </U>
+                  </U>
+                  <V t="enabled" n="title">
+                    <T n="enabled">0x8E2635F1<!--String: "Amortizar deuda del préstamo"--></T>
+                  </V>
+                </U>
+                <L n="payment_destinations">
+                  <V t="statistic">
+                    <U n="statistic">
+                      <V n="is_debt" t="True" />
+                      <T n="statistic">223186<!--Statistic: statistic_Debt--></T>
+                    </U>
+                  </V>
+                </L>
+                <V t="enabled" n="source_exceed_tooltip">
+                  <T n="enabled">0x3E3D76E6<!--String: "Fondos insuficientes"--></T>
+                </V>
+                <V n="success_continuation" t="enabled">
+                  <U n="enabled">
+                    <T n="interaction">229783<!--ImmediateSuperInteraction: loan_Immediate_Payment_Continuation--></T>
+                    <E n="target_participant">Actor</E>
+                  </U>
+                </V>
+              </U>
+            </V>
+            <V t="household" n="payment_source" />
+          </U>
+        </V>
+        <V t="at_end" n="timing">
+          <U n="at_end">
+            <E n="criticality">OnCancelOrException</E>
+          </U>
+        </V>
+      </U>
+    </V>
+  </L>
+  <V t="disabled" n="content_score" />
+  <T n="display_name">0x10FD3F17<!--String: "Devolver préstamo"--></T>
+  <U n="display_name_text_tokens">
+    <L n="tokens">
+      <V t="participant_type">
+        <U n="participant_type">
+          <V n="objects" t="from_participant">
+            <U n="from_participant">
+              <E n="participant">Actor</E>
+            </U>
+          </V>
+        </U>
+      </V>
+      <V t="participant_type">
+        <U n="participant_type">
+          <V t="from_participant" n="objects">
+            <U n="from_participant">
+              <E n="participant">Object</E>
+            </U>
+          </V>
+        </U>
+      </V>
+    </L>
+  </U>
+  <L n="interaction_category_tags">
+    <E>Interaction_Super</E>
+    <E>Interaction_All</E>
+  </L>
+  <E n="scoring_priority">NORMAL</E>
+  <T n="subaction_selection_weight">1</T>
+  <E n="target_type">ACTOR</E>
+  <L n="test_globals" />
+  <T n="time_overhead">30</T>
+  <T n="visible">True</T>
+</I>

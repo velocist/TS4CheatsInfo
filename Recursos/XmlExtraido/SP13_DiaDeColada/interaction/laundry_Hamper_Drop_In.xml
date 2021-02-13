@@ -1,0 +1,130 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<I c="SuperInteraction" i="interaction" m="interactions.base.super_interaction" n="laundry_Hamper_Drop_In" s="175391">
+  <V t="reference" n="_animation_actor_map">
+    <T n="reference">104104<!--AnimationActorMap: AlreadyCarryingCarryTarget--></T>
+  </V>
+  <V t="enabled" n="_saveable" />
+  <L n="_static_commodities">
+    <U>
+      <T n="desire">1.5</T>
+      <T n="static_commodity">175392<!--StaticCommodity: StaticCommodity_DumpIn_Laundry--></T>
+    </U>
+  </L>
+  <T n="allow_user_directed">False</T>
+  <T n="attention_cost">0.5</T>
+  <V n="basic_content" t="one_shot">
+    <U n="one_shot">
+      <U n="animation_ref">
+        <T n="factory">176727<!--AnimationElement: laundry_Hamper_GetPut_Put--></T>
+      </U>
+    </U>
+  </V>
+  <L n="basic_extras">
+    <V t="loot">
+      <U n="loot">
+        <L n="loot_list">
+          <T>175452<!--LootActions: loot_Laundry_Transfer_PutDown--></T>
+        </L>
+        <V n="timing" t="on_xevt">
+          <U n="on_xevt">
+            <T n="xevt_id">701</T>
+          </U>
+        </V>
+      </U>
+    </V>
+    <V t="transience_change">
+      <U n="transience_change">
+        <V n="new_value_beginning" t="make_transient" />
+        <E n="who">CarriedObject</E>
+      </U>
+    </V>
+    <V t="exit_carry_while_holding" />
+  </L>
+  <V t="disabled" n="content_score" />
+  <T n="display_name">0x496A70B<!--String: "Poner ropa en cesto"--></T>
+  <U n="display_name_text_tokens">
+    <L n="tokens">
+      <V t="participant_type">
+        <U n="participant_type">
+          <V t="from_participant" n="objects">
+            <U n="from_participant">
+              <E n="participant">Actor</E>
+            </U>
+          </V>
+        </U>
+      </V>
+      <V t="participant_type">
+        <U n="participant_type">
+          <V t="from_participant" n="objects">
+            <U n="from_participant">
+              <E n="participant">Object</E>
+            </U>
+          </V>
+        </U>
+      </V>
+    </L>
+  </U>
+  <L n="interaction_category_tags">
+    <E>Interaction_Super</E>
+    <E>Interaction_All</E>
+  </L>
+  <V n="outcome" t="single">
+    <U n="single">
+      <U n="actions">
+        <L n="loot_list">
+          <T>10904<!--LootActions: Loot_MaidClean--></T>
+          <T>96886<!--LootActions: loot_Commodity_HygieneHands_ReduceMed--></T>
+          <T>167478<!--LootActions: loot_Statistic_LifeSkill_Responsibility_Gain_MediumLow--></T>
+          <T>168429<!--LootActions: loot_Statistic_LifeSkill_ResponsibilityPositive_AutonomyMax--></T>
+        </L>
+      </U>
+    </U>
+  </V>
+  <U n="post_run_autonomy_commodities">
+    <L n="requests">
+      <U>
+        <T n="consider_same_target">False</T>
+        <V t="enabled" n="randomization_override">
+          <E n="enabled">DISABLED</E>
+        </V>
+        <L n="static_commodities">
+          <T>175358<!--StaticCommodity: StaticCommodity_Collect_Laundry--></T>
+          <T>178104<!--StaticCommodity: staticCommodity_Laundry_Hamper_Empty--></T>
+        </L>
+      </U>
+    </L>
+  </U>
+  <E n="scoring_priority">NORMAL</E>
+  <T n="subaction_selection_weight">1</T>
+  <E n="target_type">OBJECT</E>
+  <L n="test_globals">
+    <V t="sim_info">
+      <U n="sim_info">
+        <V t="specified" n="ages">
+          <L n="specified">
+            <E>TEEN</E>
+            <E>YOUNGADULT</E>
+            <E>ADULT</E>
+            <E>ELDER</E>
+            <E>CHILD</E>
+          </L>
+        </V>
+        <V t="specified" n="species">
+          <U n="specified">
+            <L n="species">
+              <E />
+            </L>
+          </U>
+        </V>
+        <E n="who">Actor</E>
+      </U>
+    </V>
+    <V t="state">
+      <U n="state">
+        <E n="operator">NOTEQUAL</E>
+        <T n="value">175578<!--CommodityBasedObjectStateValue: laundry_Hamper_Capacity_Values_Full--></T>
+      </U>
+    </V>
+  </L>
+  <T n="time_overhead">30</T>
+</I>

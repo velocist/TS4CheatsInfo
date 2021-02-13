@@ -1,0 +1,180 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<I c="WaypointInteraction" i="interaction" m="interactions.jog_interaction" n="waypoint_Batuu_Wander_AroundNeighborhood_Stormtrooper" s="243240">
+  <V t="participant" n="_icon">
+    <U n="participant">
+      <L n="participant_type">
+        <E>Actor</E>
+      </L>
+    </U>
+  </V>
+  <V t="enabled" n="_saveable" />
+  <T n="allow_teleport_style_injection">False</T>
+  <T n="allow_user_directed">False</T>
+  <T n="allowed_to_combine">False</T>
+  <T n="attention_cost">0.5</T>
+  <V n="basic_content" t="flexible_length">
+    <U n="flexible_length">
+      <L n="conditional_actions">
+        <V t="literal">
+          <U n="literal">
+            <L n="conditions">
+              <V t="time_based">
+                <U n="time_based">
+                  <T n="max_time">90</T>
+                  <T n="min_time">60</T>
+                </U>
+              </V>
+            </L>
+            <E n="interaction_action">EXIT_NATURALLY</E>
+          </U>
+        </V>
+      </L>
+      <V t="enabled" n="periodic_stat_change">
+        <U n="enabled">
+          <L n="operations">
+            <V t="statistic_set_max">
+              <U n="statistic_set_max">
+                <T n="stat">250268<!--Commodity: commodity_Batuu_NPC_Patrol_Resistance--></T>
+              </U>
+            </V>
+            <V t="statistic_set_max">
+              <U n="statistic_set_max">
+                <T n="stat">250272<!--Commodity: commodity_Batuu_NPC_Patrol_FirstOrder_Stormtrooper--></T>
+              </U>
+            </V>
+          </L>
+        </U>
+      </V>
+      <T n="start_autonomous_inertial">False</T>
+    </U>
+  </V>
+  <L n="basic_extras">
+    <V t="buff_fire_and_forget">
+      <U n="buff_fire_and_forget">
+        <U n="buff">
+          <T n="buff_type">239701<!--Buff: buff_Batuu_NPC_Walkby_Cooldown--></T>
+        </U>
+        <V t="at_end" n="timing">
+          <U n="at_end">
+            <E n="criticality">OnCancelOrException</E>
+          </U>
+        </V>
+      </U>
+    </V>
+  </L>
+  <L n="basic_liabilities">
+    <V t="critical_priority">
+      <U n="critical_priority">
+        <E n="priority_on_push">Low</E>
+        <E n="priority_on_run">Low</E>
+      </U>
+    </V>
+  </L>
+  <V t="enabled" n="canonical_animation">
+    <U n="enabled">
+      <T n="factory">8749<!--AnimationElement: PostureIdle_Stand--></T>
+    </U>
+  </V>
+  <V t="disabled" n="content_score" />
+  <U n="display_name_text_tokens">
+    <L n="tokens">
+      <V t="participant_type">
+        <U n="participant_type">
+          <V n="objects" t="from_participant">
+            <U n="from_participant">
+              <E n="participant">Actor</E>
+            </U>
+          </V>
+        </U>
+      </V>
+      <V t="participant_type">
+        <U n="participant_type">
+          <V t="from_participant" n="objects">
+            <U n="from_participant">
+              <E n="participant">Object</E>
+            </U>
+          </V>
+        </U>
+      </V>
+    </L>
+  </U>
+  <L n="interaction_category_tags">
+    <E>Interaction_Super</E>
+    <E>Interaction_All</E>
+  </L>
+  <E n="scoring_priority">LOW</E>
+  <T n="subaction_selection_weight">1</T>
+  <V t="literal" n="super_affordance_compatibility">
+    <U n="literal">
+      <V n="default_inclusion" t="exclude_all">
+        <U n="exclude_all">
+          <L n="include_affordances">
+            <T>242368<!--CreateCarriedObjectSuperInteraction: Batuu_Stormtrooper_CreateAndCarry_Blaster--></T>
+            <T>241952<!--SuperInteraction: sim_Batuu_Stormtrooper_CarryBlaster--></T>
+          </L>
+          <L n="include_lists" />
+        </U>
+      </V>
+    </U>
+  </V>
+  <E n="target_type">ACTOR</E>
+  <L n="test_globals">
+    <V t="sim_info">
+      <U n="sim_info">
+        <V t="specified" n="ages" />
+        <V t="specified" n="species">
+          <U n="specified">
+            <L n="species">
+              <E />
+            </L>
+          </U>
+        </V>
+        <E n="who">Actor</E>
+      </U>
+    </V>
+    <V t="buff">
+      <U n="buff">
+        <L n="blacklist">
+          <T>239701<!--Buff: buff_Batuu_NPC_Walkby_Cooldown--></T>
+        </L>
+      </U>
+    </V>
+  </L>
+  <T n="time_overhead">30</T>
+  <T n="visible">False</T>
+  <V n="waypoint_constraint" t="multiple_objects_by_tag">
+    <U n="multiple_objects_by_tag">
+      <T n="object_max_distance">100</T>
+      <L n="object_tags">
+        <E>Func_Batuu_SupplyCrate</E>
+        <E>Func_Batuu_ControlPanel</E>
+      </L>
+      <T n="randomize_order">True</T>
+    </U>
+  </V>
+  <T n="waypoint_count">6</T>
+  <V t="enabled" n="waypoint_route_fail_balloon">
+    <U n="enabled">
+      <L n="balloon_choices">
+        <U>
+          <V n="item" t="balloon_icon">
+            <U n="balloon_icon">
+              <V n="icon" t="resource_key">
+                <U n="resource_key">
+                  <T n="key" p="InGame\UI\Icons\Headlines\Final\headline_RouteFail.png">2f7d0004:00000000:97cc3201d9f385cf</T>
+                </U>
+              </V>
+            </U>
+          </V>
+        </U>
+      </L>
+      <L n="balloon_target">
+        <E>Actor</E>
+      </L>
+    </U>
+  </V>
+  <U n="waypoint_walk_style">
+    <E n="priority">INTERACTION</E>
+    <T p="InGP09\Locomotion\FirstOrderTrooper_Default.walkstyle" n="walkstyle">27c01d95:00000000:000000001b49f92a</T>
+  </U>
+</I>

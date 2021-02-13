@@ -1,0 +1,76 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<I c="SituationGoalObjectInteraction" i="situation_goal" m="situations.situation_goal_object_interaction" n="situationGoalObjectInteraction_CareerScientist_MixSerum_Tainted" s="113737">
+  <V n="_display_data" t="enabled">
+    <U n="enabled">
+      <V t="enabled" n="instance_display_icon">
+        <T n="enabled" p="InEP01\UI\Icons\Events\EventGoal_SerumSynthesizer.png">2f7d0004:00000000:4a37894640cc0dab</T>
+      </V>
+      <V n="instance_display_name" t="enabled">
+        <T n="enabled">0x32ADF448<!--String: "Preparar un suero contaminado"--></T>
+      </V>
+      <V n="instance_display_tooltip" t="enabled">
+        <T n="enabled">0x2991DA53<!--String: "Selecciona el laboratorio de química, elige Sintetizar suero contaminado y escoge el suero que quieras preparar."--></T>
+      </V>
+    </U>
+  </V>
+  <U n="_goal_test">
+    <L n="affordances">
+      <T>107472<!--CraftingPhaseCreateObjectInSlotSuperInteraction: siCrafting_Serum_CreateSerum--></T>
+    </L>
+    <V t="enabled" n="interaction_outcome">
+      <E n="enabled">SUCCESS</E>
+    </V>
+    <E n="test_event">InteractionComplete</E>
+  </U>
+  <L n="_post_tests">
+    <V t="object_criteria">
+      <U n="object_criteria">
+        <V t="enabled" n="desired_state_threshold">
+          <U n="enabled">
+            <E n="comparison">EQUAL</E>
+            <T n="value">104872<!--ObjectStateValue: objectStateValue_Serum_Tainted_Tainted--></T>
+          </U>
+        </V>
+        <V t="single_object" n="subject_specific_tests">
+          <U n="single_object">
+            <E n="target">CarriedObject</E>
+          </U>
+        </V>
+      </U>
+    </V>
+  </L>
+  <L n="_pre_tests">
+    <V t="statistic">
+      <U n="statistic">
+        <T n="stat">113011<!--Statistic: statistic_Career_Scientist_Inventing--></T>
+        <V t="value_threshold" n="threshold">
+          <U n="value_threshold">
+            <E n="comparison">EQUAL</E>
+            <T n="value">1</T>
+          </U>
+        </V>
+      </U>
+    </V>
+    <V t="career">
+      <U n="career">
+        <V n="test_type" t="career_reference">
+          <U n="career_reference">
+            <V t="specific_career" n="career">
+              <T n="specific_career">107255<!--Career: career_Adult_Active_Scientist--></T>
+            </V>
+            <V n="user_level" t="enabled">
+              <U n="enabled">
+                <T n="lower_bound">4</T>
+                <T n="upper_bound">10</T>
+              </U>
+            </V>
+          </U>
+        </V>
+      </U>
+    </V>
+  </L>
+  <T p="InGame\Audio\Bumper\bumper_event_goal_complete.propx" n="audio_sting_on_complete">39b2aa4a:00000000:ed52c39bcc2a7111</T>
+  <L n="role_tags">
+    <E>Role_Scientist</E>
+  </L>
+</I>

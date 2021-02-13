@@ -1,0 +1,774 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<I c="GameObject" i="object" m="objects.game_object" n="object_bedSingle_EP09KIDcovers" s="240299">
+  <T n="_add_to_posture_graph_if_parented">True</T>
+  <V t="enabled" n="_anim_overrides">
+    <U n="enabled">
+      <L n="params">
+        <U>
+          <T n="name">surfaceObject</T>
+          <V n="value" t="string">
+            <T n="string">bed</T>
+          </V>
+        </U>
+        <U>
+          <T n="name">objectName</T>
+          <V n="value" t="string">
+            <T n="string">bedSingle</T>
+          </V>
+        </U>
+      </L>
+    </U>
+  </V>
+  <U n="_components">
+    <V t="enabled" n="affordance_tuning">
+      <U n="enabled">
+        <L n="affordance_map">
+          <U>
+            <T n="key">13094<!--SuperInteraction: bed_sleep--></T>
+            <U n="value">
+              <V n="basic_content" t="flexible_length">
+                <U n="flexible_length">
+                  <V n="statistic_reduction_by_category" t="enabled">
+                    <U n="enabled">
+                      <L n="categories">
+                        <E>Stressed_Buffs</E>
+                        <E>Sloshed_Buffs</E>
+                        <E>Uncomfortable_Buffs</E>
+                      </L>
+                      <T n="rate">3</T>
+                    </U>
+                  </V>
+                </U>
+              </V>
+              <L n="loot_list">
+                <T>10294<!--LootActions: loot_Wakeup_MedQuality--></T>
+              </L>
+            </U>
+          </U>
+        </L>
+      </U>
+    </V>
+    <V t="enabled" n="focus">
+      <U n="enabled">
+        <V n="_focus_score" t="globally">
+          <U n="globally">
+            <E n="base">NONE</E>
+          </U>
+        </V>
+      </U>
+    </V>
+    <V t="enabled" n="inventory">
+      <U n="enabled">
+        <T n="allow_putdown_in_inventory">False</T>
+        <E n="inventory_type">HIDINGSPOT_GP05</E>
+        <T n="score_contained_objects_for_autonomy">False</T>
+        <T n="visible">False</T>
+      </U>
+    </V>
+    <V t="enabled" n="portal">
+      <U n="enabled">
+        <L n="_portal_data">
+          <T>163888<!--PortalData: portalData_VariableJump_UnderBed_SingleBed--></T>
+          <T>163869<!--PortalData: portalData_VariableJump_BedSingle--></T>
+          <T>176558<!--PortalData: portalData_VariableJump_UnderBed_SingleBed_ChildPets--></T>
+        </L>
+      </U>
+    </V>
+    <V t="enabled" n="retail_component">
+      <V n="enabled" t="reference">
+        <T n="reference">110393<!--RetailComponent: retailComponent_Default--></T>
+      </V>
+    </V>
+    <V t="enabled" n="state">
+      <U n="enabled">
+        <L n="state_triggers">
+          <U>
+            <L n="at_states">
+              <T>136025<!--CommodityBasedObjectStateValue: bed_MonsterUnder_Spawn_Values_Reset--></T>
+            </L>
+            <V n="set_states" t="Set_state_list">
+              <L n="Set_state_list">
+                <T>135985<!--CommodityBasedObjectStateValue: bed_MonsterUnder_Spawn_Values_Allow_Spawn--></T>
+              </L>
+            </V>
+          </U>
+          <U>
+            <L n="at_states">
+              <T>135802<!--ObjectStateValue: bed_InUse_Low_Chance_Monster--></T>
+              <T>135884<!--ObjectStateValue: bed_MonsterUnder_CanSpawn--></T>
+            </L>
+            <V t="Trigger_random_state" n="set_random_state">
+              <L n="Trigger_random_state">
+                <U>
+                  <T n="state_value">133683<!--ObjectStateValue: bed_MonsterUnder_Active--></T>
+                </U>
+              </L>
+            </V>
+            <V n="trigger_chance" t="enabled">
+              <T n="enabled">30</T>
+            </V>
+          </U>
+          <U>
+            <L n="at_states">
+              <T>135884<!--ObjectStateValue: bed_MonsterUnder_CanSpawn--></T>
+              <T>135801<!--ObjectStateValue: bed_InUse_High_Chance_Monster--></T>
+            </L>
+            <V t="Trigger_random_state" n="set_random_state">
+              <L n="Trigger_random_state">
+                <U>
+                  <T n="state_value">133683<!--ObjectStateValue: bed_MonsterUnder_Active--></T>
+                </U>
+              </L>
+            </V>
+            <V t="enabled" n="trigger_chance">
+              <T n="enabled">40</T>
+            </V>
+          </U>
+          <U>
+            <L n="at_states">
+              <T>133684<!--ObjectStateValue: bed_MonsterUnder_Not_Active--></T>
+            </L>
+            <V n="set_states" t="Set_state_list">
+              <L n="Set_state_list">
+                <T>138728<!--ObjectStateValue: bed_MonsterUnder_Active_VFX_None--></T>
+              </L>
+            </V>
+          </U>
+          <U>
+            <L n="at_states">
+              <T>77532<!--CommodityBasedObjectStateValue: FireState_Burn_Material_Change_Replace--></T>
+            </L>
+            <V t="Set_state_list" n="set_states">
+              <L n="Set_state_list">
+                <T>39737<!--CommodityBasedObjectStateValue: FireState_Burn_Material_Change_Not_Burning--></T>
+              </L>
+            </V>
+          </U>
+        </L>
+        <L n="states">
+          <U>
+            <V n="default_value" t="reference">
+              <T n="reference">104260<!--CommodityBasedObjectStateValue: objectStateValue_elixirOfBurning_Applied_Off--></T>
+            </V>
+          </U>
+          <U>
+            <L n="client_states">
+              <U>
+                <T n="key">163407<!--CommodityBasedObjectStateValue: statevalue_Pets_Cat_ScratchFurniture_On--></T>
+              </U>
+              <U>
+                <T n="key">163408<!--CommodityBasedObjectStateValue: statevalue_Pets_Cat_ScratchFurniture_Off--></T>
+              </U>
+            </L>
+            <V n="default_value" t="reference">
+              <T n="reference">163408<!--CommodityBasedObjectStateValue: statevalue_Pets_Cat_ScratchFurniture_Off--></T>
+            </V>
+          </U>
+          <U>
+            <L n="client_states">
+              <U>
+                <T n="key">131794<!--ObjectStateValue: Kelpto_Stolen_Object--></T>
+              </U>
+              <U>
+                <T n="key">131795<!--ObjectStateValue: Klepto_Not_Stolen_Object--></T>
+              </U>
+            </L>
+            <V n="default_value" t="reference">
+              <T n="reference">131795<!--ObjectStateValue: Klepto_Not_Stolen_Object--></T>
+            </V>
+          </U>
+          <U>
+            <L n="client_states">
+              <U>
+                <T n="key">133683<!--ObjectStateValue: bed_MonsterUnder_Active--></T>
+              </U>
+              <U>
+                <T n="key">133684<!--ObjectStateValue: bed_MonsterUnder_Not_Active--></T>
+              </U>
+              <U>
+                <T n="key">135884<!--ObjectStateValue: bed_MonsterUnder_CanSpawn--></T>
+              </U>
+            </L>
+            <V n="default_value" t="reference">
+              <T n="reference">133684<!--ObjectStateValue: bed_MonsterUnder_Not_Active--></T>
+            </V>
+          </U>
+          <U>
+            <L n="client_states">
+              <U>
+                <T n="key">135984<!--CommodityBasedObjectStateValue: bed_MonsterUnder_Spawn_Values_Prevent_Spawn--></T>
+              </U>
+              <U>
+                <T n="key">135985<!--CommodityBasedObjectStateValue: bed_MonsterUnder_Spawn_Values_Allow_Spawn--></T>
+              </U>
+              <U>
+                <T n="key">136025<!--CommodityBasedObjectStateValue: bed_MonsterUnder_Spawn_Values_Reset--></T>
+              </U>
+            </L>
+            <V n="default_value" t="reference">
+              <T n="reference">135985<!--CommodityBasedObjectStateValue: bed_MonsterUnder_Spawn_Values_Allow_Spawn--></T>
+            </V>
+          </U>
+          <U>
+            <L n="client_states">
+              <U>
+                <T n="key">135937<!--ObjectStateValue: bed_InUse_Child_Valid_Monster_Chance--></T>
+              </U>
+            </L>
+            <V n="default_value" t="reference">
+              <T n="reference">136439<!--ObjectStateValue: bed_Child_Single_NotInUse--></T>
+            </V>
+          </U>
+          <U>
+            <L n="client_states">
+              <U>
+                <T n="key">135801<!--ObjectStateValue: bed_InUse_High_Chance_Monster--></T>
+              </U>
+              <U>
+                <T n="key">135802<!--ObjectStateValue: bed_InUse_Low_Chance_Monster--></T>
+              </U>
+            </L>
+            <V n="default_value" t="reference">
+              <T n="reference">135802<!--ObjectStateValue: bed_InUse_Low_Chance_Monster--></T>
+            </V>
+          </U>
+          <U>
+            <L n="client_states">
+              <U>
+                <T n="key">138576<!--ObjectStateValue: bed_MonsterUnder_Active_Left--></T>
+                <U n="value">
+                  <V n="broadcaster" t="apply_new_value">
+                    <V n="apply_new_value" t="start_broadcaster">
+                      <U n="start_broadcaster">
+                        <L n="broadcaster_types">
+                          <U>
+                            <T n="item">133679<!--Broadcaster: broadcaster_Bed_Monster--></T>
+                          </U>
+                        </L>
+                      </U>
+                    </V>
+                  </V>
+                </U>
+              </U>
+              <U>
+                <T n="key">138577<!--ObjectStateValue: bed_MonsterUnder_Active_Right--></T>
+                <U n="value">
+                  <V n="broadcaster" t="apply_new_value">
+                    <V n="apply_new_value" t="start_broadcaster">
+                      <U n="start_broadcaster">
+                        <L n="broadcaster_types">
+                          <U>
+                            <T n="item">133679<!--Broadcaster: broadcaster_Bed_Monster--></T>
+                          </U>
+                        </L>
+                      </U>
+                    </V>
+                  </V>
+                </U>
+              </U>
+              <U>
+                <T n="key">138728<!--ObjectStateValue: bed_MonsterUnder_Active_VFX_None--></T>
+                <U n="value">
+                  <V t="apply_new_value" n="broadcaster" />
+                  <V t="apply_new_value" n="vfx_state" />
+                </U>
+              </U>
+            </L>
+            <V n="default_value" t="reference">
+              <T n="reference">138728<!--ObjectStateValue: bed_MonsterUnder_Active_VFX_None--></T>
+            </V>
+          </U>
+          <U>
+            <L n="client_states">
+              <U>
+                <T n="key">97744<!--ObjectStateValue: bed_CurrentlyInUse--></T>
+              </U>
+              <U>
+                <T n="key">97745<!--ObjectStateValue: bed_CurrentlyAvailable--></T>
+              </U>
+            </L>
+            <V n="default_value" t="reference">
+              <T n="reference">97745<!--ObjectStateValue: bed_CurrentlyAvailable--></T>
+            </V>
+          </U>
+          <U>
+            <L n="client_states">
+              <U>
+                <T n="key">165350<!--ObjectStateValue: bed_Nightlight_Active--></T>
+              </U>
+              <U>
+                <T n="key">165351<!--ObjectStateValue: bed_Nightlight_Inactive--></T>
+              </U>
+            </L>
+            <V n="default_value" t="reference">
+              <T n="reference">165351<!--ObjectStateValue: bed_Nightlight_Inactive--></T>
+            </V>
+          </U>
+          <U>
+            <L n="client_states">
+              <U>
+                <T n="key">166931<!--ObjectStateValue: inventoryBool_CanPutInInventory_False--></T>
+              </U>
+              <U>
+                <T n="key">166932<!--ObjectStateValue: inventoryBool_CanPutInInventory_True--></T>
+              </U>
+            </L>
+            <V n="default_value" t="reference">
+              <T n="reference">166932<!--ObjectStateValue: inventoryBool_CanPutInInventory_True--></T>
+            </V>
+          </U>
+          <U>
+            <L n="client_states">
+              <U>
+                <T n="key">39611<!--CommodityBasedObjectStateValue: FireState_Burn_Material_Change--></T>
+              </U>
+              <U>
+                <T n="key">39736<!--CommodityBasedObjectStateValue: FireState_Burn_Material_Change_Burning--></T>
+              </U>
+              <U>
+                <T n="key">39737<!--CommodityBasedObjectStateValue: FireState_Burn_Material_Change_Not_Burning--></T>
+              </U>
+              <U>
+                <T n="key">77532<!--CommodityBasedObjectStateValue: FireState_Burn_Material_Change_Replace--></T>
+              </U>
+            </L>
+            <V t="reference" n="default_value">
+              <T n="reference">39737<!--CommodityBasedObjectStateValue: FireState_Burn_Material_Change_Not_Burning--></T>
+            </V>
+          </U>
+          <U>
+            <L n="client_states">
+              <U>
+                <T n="key">35956<!--CommodityBasedObjectStateValue: Materialistic_Admired--></T>
+              </U>
+              <U>
+                <T n="key">35957<!--CommodityBasedObjectStateValue: Materialistic_YetToAdmire--></T>
+              </U>
+            </L>
+            <V t="reference" n="default_value">
+              <T n="reference">35957<!--CommodityBasedObjectStateValue: Materialistic_YetToAdmire--></T>
+            </V>
+          </U>
+          <U>
+            <L n="client_states">
+              <U>
+                <T n="key">229995<!--CommodityBasedObjectStateValue: upgrade_Bed_Mattress_Firmness_NotStarted--></T>
+              </U>
+              <U>
+                <T n="key">229997<!--CommodityBasedObjectStateValue: upgrade_Bed_Mattres_Firmness_Completed--></T>
+              </U>
+              <U>
+                <T n="key">229999<!--CommodityBasedObjectStateValue: upgrade_Bed_Mattress_Firmness_Partial--></T>
+              </U>
+            </L>
+            <V n="default_value" t="reference">
+              <T n="reference">229995<!--CommodityBasedObjectStateValue: upgrade_Bed_Mattress_Firmness_NotStarted--></T>
+            </V>
+          </U>
+          <U>
+            <L n="client_states">
+              <U>
+                <T n="key">229996<!--CommodityBasedObjectStateValue: upgrade_Bed_Massage_Controls_Energy_Gain_NotStarted--></T>
+              </U>
+              <U>
+                <T n="key">229998<!--CommodityBasedObjectStateValue: upgrade_Bed_Massage_Controls_Energy_Gain_Completed--></T>
+                <U n="value">
+                  <V n="autonomy_modifiers" t="apply_new_value">
+                    <V n="apply_new_value" t="apply_statistic_modifiers">
+                      <U n="apply_statistic_modifiers">
+                        <L n="autonomy_modifiers">
+                          <U>
+                            <L n="stat_use_multiplier">
+                              <U>
+                                <T n="key">16654<!--Commodity: motive_Energy--></T>
+                                <U n="value">
+                                  <E n="apply_direction">INCREASE</E>
+                                  <T n="multiplier">1.75</T>
+                                </U>
+                              </U>
+                            </L>
+                            <V t="apply_on_interaction_to_participant" n="subject">
+                              <V n="apply_on_interaction_to_participant" t="enabled">
+                                <L n="enabled">
+                                  <E>Actor</E>
+                                </L>
+                              </V>
+                            </V>
+                          </U>
+                        </L>
+                      </U>
+                    </V>
+                  </V>
+                </U>
+              </U>
+              <U>
+                <T n="key">230000<!--CommodityBasedObjectStateValue: upgrade_Bed_Massage_Controls_Energy_Gain_Partial--></T>
+              </U>
+            </L>
+            <V t="reference" n="default_value">
+              <T n="reference">229996<!--CommodityBasedObjectStateValue: upgrade_Bed_Massage_Controls_Energy_Gain_NotStarted--></T>
+            </V>
+          </U>
+        </L>
+        <V t="enabled" n="timed_state_triggers">
+          <L n="enabled">
+            <U>
+              <T n="key">135937<!--ObjectStateValue: bed_InUse_Child_Valid_Monster_Chance--></T>
+              <U n="value">
+                <L n="ops">
+                  <U>
+                    <L n="states_to_trigger">
+                      <T>135884<!--ObjectStateValue: bed_MonsterUnder_CanSpawn--></T>
+                    </L>
+                    <T n="trigger_time">120</T>
+                  </U>
+                </L>
+              </U>
+            </U>
+          </L>
+        </V>
+      </U>
+    </V>
+    <V t="enabled" n="time_of_day_component">
+      <U n="enabled">
+        <L n="state_changes">
+          <U>
+            <T n="key">135725<!--ObjectState: BedMonsterUnderBedState--></T>
+            <L n="value">
+              <U>
+                <T n="start_time">6</T>
+                <T n="value">133684<!--ObjectStateValue: bed_MonsterUnder_Not_Active--></T>
+              </U>
+            </L>
+          </U>
+        </L>
+      </U>
+    </V>
+    <V t="enabled" n="tooltip_component">
+      <U n="enabled">
+        <L n="custom_tooltips">
+          <U>
+            <V t="enabled" n="display_object_preference">
+              <E n="enabled">BED</E>
+            </V>
+            <L n="object_tests">
+              <L>
+                <V t="object_preference">
+                  <U n="object_preference">
+                    <V t="enabled" n="any_sim">
+                      <E n="enabled">BED</E>
+                    </V>
+                  </U>
+                </V>
+              </L>
+            </L>
+            <L n="tooltip_fields">
+              <U>
+                <E n="key">recipe_name</E>
+                <U n="value">
+                  <V n="text" t="single">
+                    <T n="single">0x50B67E1C<!--String: "Cama individual"--></T>
+                  </V>
+                </U>
+              </U>
+              <U>
+                <E n="key">subtext</E>
+                <U n="value">
+                  <V t="single" n="text">
+                    <T n="single">0xD7D023D8<!--String: "Para:"--></T>
+                  </V>
+                  <V n="text_tokens" t="enabled">
+                    <U n="enabled">
+                      <L n="tokens">
+                        <V t="participant_type">
+                          <U n="participant_type">
+                            <V n="objects" t="from_participant">
+                              <U n="from_participant">
+                                <E n="participant">StoredSim</E>
+                              </U>
+                            </V>
+                          </U>
+                        </V>
+                      </L>
+                    </U>
+                  </V>
+                </U>
+              </U>
+            </L>
+            <E n="tooltip_style">HOVER_TIP_OBJECT_RELATIONSHIP</E>
+          </U>
+        </L>
+      </U>
+    </V>
+  </U>
+  <L n="_part_data">
+    <U>
+      <V t="enabled" n="adjacent_parts">
+        <L n="enabled">
+          <T>2</T>
+          <T>1</T>
+        </L>
+      </V>
+      <U n="forward_direction_for_picking">
+        <T n="x">-1</T>
+        <T n="y">0</T>
+      </U>
+      <V t="enabled" n="is_mirrored">
+        <T n="enabled">False</T>
+      </V>
+      <L n="overlapping_parts">
+        <T>1</T>
+        <T>2</T>
+        <T>3</T>
+        <T>4</T>
+        <T>5</T>
+      </L>
+      <T n="part_definition">138706<!--ObjectPart: part_Bed_Solo_Left--></T>
+      <V t="enabled" n="subroot_index">
+        <T n="enabled">0</T>
+      </V>
+    </U>
+    <U>
+      <V t="enabled" n="adjacent_parts">
+        <L n="enabled">
+          <T>5</T>
+          <T>0</T>
+        </L>
+      </V>
+      <U n="forward_direction_for_picking">
+        <T n="x">1</T>
+        <T n="y">0</T>
+      </U>
+      <V t="enabled" n="is_mirrored">
+        <T n="enabled">True</T>
+      </V>
+      <L n="overlapping_parts">
+        <T>0</T>
+        <T>2</T>
+        <T>3</T>
+        <T>4</T>
+        <T>5</T>
+      </L>
+      <T n="part_definition">14782<!--ObjectPart: part_Bed_Solo--></T>
+      <V t="enabled" n="subroot_index">
+        <T n="enabled">1</T>
+      </V>
+    </U>
+    <U>
+      <V t="enabled" n="adjacent_parts">
+        <L n="enabled">
+          <T>0</T>
+          <T>3</T>
+        </L>
+      </V>
+      <L n="overlapping_parts">
+        <T>0</T>
+        <T>1</T>
+      </L>
+      <T n="part_definition">100305<!--ObjectPart: part_Sit_Bed--></T>
+      <V t="enabled" n="subroot_index">
+        <T n="enabled">2</T>
+      </V>
+    </U>
+    <U>
+      <V t="enabled" n="adjacent_parts">
+        <L n="enabled">
+          <T>2</T>
+        </L>
+      </V>
+      <L n="overlapping_parts">
+        <T>0</T>
+        <T>1</T>
+      </L>
+      <T n="part_definition">100305<!--ObjectPart: part_Sit_Bed--></T>
+      <V t="enabled" n="subroot_index">
+        <T n="enabled">3</T>
+      </V>
+    </U>
+    <U>
+      <V t="enabled" n="adjacent_parts">
+        <L n="enabled">
+          <T>5</T>
+        </L>
+      </V>
+      <L n="overlapping_parts">
+        <T>0</T>
+        <T>1</T>
+      </L>
+      <T n="part_definition">100305<!--ObjectPart: part_Sit_Bed--></T>
+      <V t="enabled" n="subroot_index">
+        <T n="enabled">5</T>
+      </V>
+    </U>
+    <U>
+      <V t="enabled" n="adjacent_parts">
+        <L n="enabled">
+          <T>1</T>
+          <T>4</T>
+        </L>
+      </V>
+      <L n="overlapping_parts">
+        <T>0</T>
+        <T>1</T>
+      </L>
+      <T n="part_definition">100305<!--ObjectPart: part_Sit_Bed--></T>
+      <V t="enabled" n="subroot_index">
+        <T n="enabled">4</T>
+      </V>
+    </U>
+    <U>
+      <T n="part_definition">163241<!--ObjectPart: part_Bed_Hide--></T>
+      <V t="enabled" n="subroot_index">
+        <T n="enabled">5</T>
+      </V>
+    </U>
+  </L>
+  <L n="_preroll_super_affordances">
+    <T>210624<!--SuperInteraction: roommateNPC_PrerollToBed--></T>
+  </L>
+  <L n="_super_affordances">
+    <T>73869<!--SuperInteraction: generic_BedUndercovers--></T>
+    <T>13328<!--ImmediateSuperInteraction: debug_Reset--></T>
+    <T>13326<!--ImmediateSuperInteraction: debug_ObjectDestroy--></T>
+    <T>103888<!--ImmediateSuperInteraction: cheat_set_as_head--></T>
+    <T>13094<!--SuperInteraction: bed_sleep--></T>
+    <T>13093<!--SuperInteraction: bed_relax--></T>
+    <T>13091<!--SuperInteraction: bed_Nap--></T>
+    <T>13441<!--SuperInteraction: generic_SitIntimate--></T>
+    <T>33975<!--SuperInteraction: Bed_Undercovers_Cry--></T>
+    <T>34080<!--SuperInteraction: Bed_Undercovers_Hide--></T>
+    <T>228809<!--SuperInteraction: generic_HumanoidRobot_Posture_Stasis_Sit--></T>
+    <T>239948<!--CraftingPhaseCreateObjectInInventorySuperInteraction: knitting_CreateObject_Finished--></T>
+    <T>239937<!--CraftingPhaseCreateObjectInInventorySuperInteraction: Knitting_CreateObject_WorkInProgress--></T>
+    <T>239802<!--ObjectInInventoryPickerInteraction: knitting_Picker_Scrap--></T>
+    <T>239944<!--CraftingPhaseStagingSuperInteraction: Knitting_CraftingPhase--></T>
+    <T>244857<!--CraftingPhaseStagingSuperInteraction: knitting_CraftingPhase_BigProject--></T>
+    <T>239801<!--ObjectInInventoryPickerInteraction: knitting_Picker_Resume--></T>
+    <T>240784<!--CraftingResumeInteraction: craftingResume_Knitting--></T>
+    <T>239529<!--StartCraftingSuperInteraction: Knitting_StartCrafting_Beanies--></T>
+    <T>239797<!--StartCraftingSuperInteraction: knitting_StartCrafting_Socks--></T>
+    <T>240542<!--StartCraftingSuperInteraction: knitting_StartCrafting_Decorations--></T>
+    <T>240538<!--StartCraftingSuperInteraction: knitting_StartCrafting_Furnishings--></T>
+    <T>244901<!--StartCraftingSuperInteraction: knitting_StartCrafting_Mailboxes--></T>
+    <T>240543<!--StartCraftingSuperInteraction: knitting_StartCrafting_Onesies--></T>
+    <T>240541<!--StartCraftingSuperInteraction: knitting_StartCrafting_Pouffes--></T>
+    <T>240539<!--StartCraftingSuperInteraction: knitting_StartCrafting_Rugs--></T>
+    <T>240540<!--StartCraftingSuperInteraction: knitting_StartCrafting_Sweaters--></T>
+    <T>240544<!--StartCraftingSuperInteraction: knitting_StartCrafting_SweaterScarfs--></T>
+    <T>240545<!--StartCraftingSuperInteraction: knitting_StartCrafting_ChildToys--></T>
+    <T>243771<!--StartCraftingSuperInteraction: knitting_StartCrafting_SuperFail--></T>
+    <T>245830<!--StartCraftingSuperInteraction: knitting_StartCrafting_BabyOnesies--></T>
+    <T>111810<!--ObjectInInventoryPickerInteraction: herbalism_ElixirOfBurning_picker--></T>
+    <T>115176<!--SuperInteraction: sit-Autonomous--></T>
+    <T>134949<!--SuperInteraction: seating_Sit_restaurant_rally_only--></T>
+    <T>13983<!--StandSuperInteraction: sim-stand--></T>
+    <T>163417<!--ImmediateSuperInteraction: debug_ScratchFurniture--></T>
+    <T>163419<!--ImmediateSuperInteraction: scratch_ReplaceScratchedObject--></T>
+    <T>163450<!--ImmediateSuperInteraction: debug_ScratchFurnitureFix--></T>
+    <T>120562<!--StandSuperInteraction: cat_Stand--></T>
+    <T>129130<!--SuperInteraction: generic_WatchIntimate--></T>
+    <T>131566<!--SuperInteraction: generic_SitTogether--></T>
+    <T>133688<!--ImmediateSuperInteraction: bed_Monster_Under_Debug_Set_Monster_Active--></T>
+    <T>134315<!--SuperInteraction: bed_Monster_Talk--></T>
+    <T>135798<!--SuperInteraction: bed_Monster_Watch_SprayForMonster--></T>
+    <T>136442<!--SuperInteraction: bed_Monster_Play--></T>
+    <T>133623<!--SuperInteraction: SprayFor_Monster--></T>
+    <T>137471<!--SuperInteraction: bed_Monster_Talk_AskAbout_UnderBed--></T>
+    <T>137472<!--SuperInteraction: bed_Monster_Talk_CallNames--></T>
+    <T>137470<!--SuperInteraction: bed_Monster_Talk_TellSecret--></T>
+    <T>137479<!--SuperInteraction: bed_Monster_Talk_YellAt--></T>
+    <T>138151<!--SuperInteraction: sprayFor_Monster_Autonomous--></T>
+    <T>138238<!--SimPickerInteraction: Bed_simPicker_AskToSprayMonster--></T>
+    <T>139197<!--SuperInteraction: bed_Monster_Talk_AskMonsterToLeave--></T>
+    <T>147335<!--SuperInteraction: bed_Sleep_Butler--></T>
+    <T>147334<!--SituationSimsPickerInteraction: bed_Picker_AssignButler--></T>
+    <T>151428<!--SuperInteraction: generic_Bed_Sleep--></T>
+    <T>160221<!--ObjectInInventoryPickerInteraction: Bed_Journal_Hide_Picker--></T>
+    <T>160227<!--ObjectInInventoryPickerInteraction: Bed_Journal_Locate_Picker--></T>
+    <T>161260<!--AutonomousObjectInInventoryPickerInteraction: Bed_Journal_Hide_AutoPicker--></T>
+    <T>229993<!--SuperInteraction: bed_Upgrades_Massage_Controls_Energy_Gain--></T>
+    <T>229994<!--SuperInteraction: bed_Upgrades_Massage_Controls_Energy_Gain_Resume--></T>
+    <T>230003<!--SuperInteraction: bed_Upgrades_Mattress_Firmness--></T>
+    <T>230004<!--SuperInteraction: bed_Upgrades_Mattress_Firmness_Resume--></T>
+    <T>230956<!--SuperInteraction: upgrades_CompletedDisplay_MassageControls--></T>
+    <T>230957<!--SuperInteraction: upgrades_CompletedDisplay_MattressFirmness--></T>
+    <T>161261<!--AutonomousObjectInInventoryPickerInteraction: Bed_Journal_Locate_AutoPicker--></T>
+    <T>162491<!--SimPickerInteraction: Bed_SimPicker_PutToBed_TYAE--></T>
+    <T>162556<!--SuperInteraction: bed_GetNear_FromSocial--></T>
+    <T>162586<!--SimPickerInteraction: bed_SimPicker_PutToBed_C--></T>
+    <T>162630<!--SimPickerInteraction: bed_SimPicker_TuckIn_InBed_TYAE--></T>
+    <T>174206<!--SuperInteraction: generic_Cat_Hide--></T>
+    <T>174207<!--SuperInteraction: generic_Dog_Hide--></T>
+    <T>208221<!--SimPickerInteraction: SimPicker_Bed_AssignSim--></T>
+    <T>252514<!--SuperInteraction: bed_Undercovers_ScaredHide--></T>
+    <T>106859<!--SuperInteraction: simRay_Transform_Object--></T>
+    <T>100083<!--SuperInteraction: bed_Autonomous_SingleBed_Sleep--></T>
+    <T>100768<!--SuperInteraction: bed_Autonomous_SingleBed_Sleep_Child--></T>
+    <T>100080<!--SuperInteraction: bed_Autonomous_SingleBed_Nap--></T>
+    <T>100770<!--SuperInteraction: bed_Autonomous_SingleBed_Nap_Child--></T>
+    <T>157667<!--SuperInteraction: seating_sit_CTYAE--></T>
+    <T>74457<!--ImmediateSuperInteraction: fire_ReplaceBurntObject--></T>
+  </L>
+  <U n="aop_forward_data">
+    <T n="should_search_forwarded_sim_aop">True</T>
+  </U>
+  <L n="autonomy_modifiers">
+    <U>
+      <L n="stat_use_multiplier">
+        <U>
+          <T n="key">16654<!--Commodity: motive_Energy--></T>
+          <U n="value">
+            <E n="apply_direction">INCREASE</E>
+            <T n="multiplier">1.03</T>
+          </U>
+        </U>
+      </L>
+      <V t="apply_on_interaction_to_participant" n="subject">
+        <V n="apply_on_interaction_to_participant" t="enabled">
+          <L n="enabled">
+            <E>Actor</E>
+          </L>
+        </V>
+      </V>
+    </U>
+    <U>
+      <L n="stat_use_multiplier">
+        <U>
+          <T n="key">24998<!--Commodity: commodity_Buff_Object_SeatingDiscomfort--></T>
+          <U n="value">
+            <E n="apply_direction">BOTH</E>
+            <T n="multiplier">1E-05</T>
+          </U>
+        </U>
+        <U>
+          <T n="key">25002<!--Commodity: commodity_Buff_Object_SeatingComfort--></T>
+          <U n="value">
+            <E n="apply_direction">INCREASE</E>
+            <T n="multiplier">1E-05</T>
+          </U>
+        </U>
+      </L>
+      <V t="apply_on_interaction_to_participant" n="subject">
+        <V n="apply_on_interaction_to_participant" t="enabled">
+          <L n="enabled">
+            <E>Actor</E>
+          </L>
+        </V>
+      </V>
+    </U>
+  </L>
+  <T n="custom_posture_target_name">bed</T>
+  <E n="posture_transition_target_tag">SEATING_BED</E>
+  <U n="recycling_data">
+    <L n="recycling_values">
+      <U>
+        <E n="Bucks Type">RecycleBitsBucks</E>
+        <T n="Value">0.25</T>
+      </U>
+      <U>
+        <E n="Bucks Type">RecyclePiecesBucks</E>
+        <T n="Value">0.75</T>
+      </U>
+    </L>
+  </U>
+</I>

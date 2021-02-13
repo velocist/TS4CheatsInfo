@@ -1,0 +1,177 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<I c="GoHomeTravelInteraction" i="interaction" m="sims.self_interactions" n="sim-gohome_Batuu_SNPC_Kylo_LashOut" s="240650">
+  <V t="prohibit_cancelation" n="_cancelable_by_user" />
+  <V t="resource_key" n="_icon">
+    <U n="resource_key">
+      <T n="key" p="InGame\UI\Icons\InteractionQueue\IconQueueGoHere.png">2f7d0004:00000000:97d318ad9e4da2b3</T>
+    </U>
+  </V>
+  <T n="_must_run">False</T>
+  <V t="disabled" n="_saveable" />
+  <T n="_super_affordance_can_share_target">True</T>
+  <T n="allow_autonomous">False</T>
+  <T n="allow_user_directed">True</T>
+  <T n="allow_while_save_locked">False</T>
+  <T n="attention_cost">0.5</T>
+  <V t="one_shot" n="basic_content" />
+  <L n="basic_extras">
+    <V t="remove_from_ensemble">
+      <U n="remove_from_ensemble">
+        <T n="ensemble_type">127285<!--Ensemble: ensemble_Generic--></T>
+      </U>
+    </V>
+  </L>
+  <V t="disabled" n="content_score" />
+  <T n="display_name">0x2C120D88<!--String: "Irse a casa"--></T>
+  <V t="testable" n="display_name_overrides">
+    <U n="testable">
+      <L n="overrides">
+        <U>
+          <V n="new_display_name" t="enabled">
+            <T n="enabled">0xD238C400<!--String: "Ir al alojamiento"--></T>
+          </V>
+          <L n="test">
+            <L>
+              <V t="travel_group" />
+              <V t="region">
+                <U n="region">
+                  <V t="enabled" n="blacklist">
+                    <L n="enabled">
+                      <T>231104<!--Region: region_Destination_Batuu--></T>
+                    </L>
+                  </V>
+                </U>
+              </V>
+            </L>
+          </L>
+        </U>
+        <U>
+          <V n="new_display_name" t="enabled">
+            <T n="enabled">0x7E954F82<!--String: "Ir a la cantina"--></T>
+          </V>
+          <L n="test">
+            <L>
+              <V t="travel_group" />
+              <V t="region">
+                <U n="region">
+                  <V t="enabled" n="whitelist">
+                    <L n="enabled">
+                      <T>231104<!--Region: region_Destination_Batuu--></T>
+                    </L>
+                  </V>
+                </U>
+              </V>
+            </L>
+          </L>
+        </U>
+      </L>
+    </U>
+  </V>
+  <U n="display_name_text_tokens">
+    <L n="tokens">
+      <V t="participant_type">
+        <U n="participant_type">
+          <V n="objects" t="from_participant">
+            <U n="from_participant">
+              <E n="participant">Actor</E>
+            </U>
+          </V>
+        </U>
+      </V>
+      <V t="participant_type">
+        <U n="participant_type">
+          <V t="from_participant" n="objects">
+            <U n="from_participant">
+              <E n="participant">Object</E>
+            </U>
+          </V>
+        </U>
+      </V>
+    </L>
+  </U>
+  <U n="home_spawn_point_constraint">
+    <E n="spawn_point_request_reason">LEAVE</E>
+    <V t="Spawn_Point_Tags" n="tags">
+      <L n="Spawn_Point_Tags">
+        <E>Spawn_Arrival</E>
+      </L>
+    </V>
+  </U>
+  <L n="interaction_category_tags">
+    <E>Interaction_Super</E>
+    <E>Interaction_All</E>
+  </L>
+  <E n="scoring_priority">NORMAL</E>
+  <U n="street_spawn_point_constraint">
+    <E n="spawn_point_request_reason">LEAVE</E>
+    <V n="tags" t="Spawn_Point_Tags">
+      <L n="Spawn_Point_Tags">
+        <E>Spawn_Walkby</E>
+      </L>
+    </V>
+  </U>
+  <V t="literal" n="super_affordance_compatibility">
+    <U n="literal">
+      <V n="default_inclusion" t="exclude_all">
+        <U n="exclude_all">
+          <L n="include_affordances">
+            <T>132170<!--HoldObject: carry_HoldSim--></T>
+            <T>134423<!--SuperInteraction: socialSuperInteraction_CarryPickUp--></T>
+            <T>155633<!--SuperInteraction: socialSuperInteraction_CarryPickUp_FromSeated--></T>
+            <T>245584<!--SuperInteraction: droid_BB_Following--></T>
+            <T>168304<!--SuperInteraction: walk_Dog_Leashed--></T>
+          </L>
+          <L n="include_lists">
+            <T>190968<!--AffordanceList: affordanceList_Umbrella--></T>
+          </L>
+        </U>
+      </V>
+    </U>
+  </V>
+  <V t="enabled" n="super_affordance_klobberers">
+    <V n="enabled" t="literal">
+      <U n="literal">
+        <V n="default_inclusion" t="exclude_all">
+          <U n="exclude_all">
+            <L n="include_lists">
+              <T>168241<!--AffordanceList: affordanceList_Stereo_Listens_Earbuds--></T>
+            </L>
+          </U>
+        </V>
+      </U>
+    </V>
+  </V>
+  <E n="target_type">ACTOR</E>
+  <L n="test_globals">
+    <V t="situation_running_test">
+      <U n="situation_running_test">
+        <V t="enabled" n="participant" />
+        <L n="tag_blacklist">
+          <E>Situation_ActiveCareer</E>
+        </L>
+        <V n="tooltip" t="enabled">
+          <T n="enabled">0xABE83794<!--String: "Para irte pronto del trabajo, haz clic en el temporizador situado junto a tu rendimiento laboral en la parte superior izquierda."--></T>
+        </V>
+      </U>
+    </V>
+    <V t="test_set_reference">
+      <T n="test_set_reference">97308<!--TestSetInstance: testSet_Travel--></T>
+    </V>
+  </L>
+  <L n="tests">
+    <L>
+      <V t="identity">
+        <U n="identity">
+          <T n="subjects_match">True</T>
+        </U>
+      </V>
+    </L>
+  </L>
+  <T n="time_overhead">100000</T>
+  <V n="walk_style" t="enabled">
+    <U n="enabled">
+      <E n="priority">PANIC_HIGH</E>
+      <T n="walkstyle" p="InGame\Locomotion\RunPanic.walkstyle">27c01d95:00000000:00000000278b1e71</T>
+    </U>
+  </V>
+</I>

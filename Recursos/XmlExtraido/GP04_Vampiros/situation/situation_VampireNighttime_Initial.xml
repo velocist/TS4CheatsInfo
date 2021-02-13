@@ -1,0 +1,131 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<I c="VampireNighttimeSituation" i="situation" m="situations.complex.vampire_nighttime_situation" n="situation_VampireNighttime_Initial" s="155503">
+  <T n="_implies_greeted_status">True</T>
+  <T n="allowed_in_super_speed_3">True</T>
+  <T n="blocks_super_speed_three">True</T>
+  <L n="can_start_walkby_limiting_tags">
+    <E>Situation_NightTimeVisit</E>
+  </L>
+  <T n="duration">120</T>
+  <L n="household_sim_tests">
+    <L>
+      <V t="sim_info">
+        <U n="sim_info">
+          <V t="specified" n="ages" />
+        </U>
+      </V>
+      <V t="test_set_reference">
+        <T n="test_set_reference">101703<!--TestSetInstance: testSet_ActorIsNotGhost--></T>
+      </V>
+      <V t="trait">
+        <U n="trait">
+          <L n="blacklist_traits">
+            <T>16851<!--Trait: trait_isGrimReaper--></T>
+          </L>
+        </U>
+      </V>
+      <V t="state">
+        <U n="state">
+          <E n="operator">LESS_OR_EQUAL</E>
+          <T n="value">15300<!--CommodityBasedObjectStateValue: Pregnant_NotShowing--></T>
+          <E n="who">Actor</E>
+        </U>
+      </V>
+      <V t="trait">
+        <U n="trait">
+          <L n="blacklist_traits">
+            <T>153867<!--Trait: trait_OccultVampire_Manifested--></T>
+          </L>
+        </U>
+      </V>
+      <V t="buff">
+        <U n="buff">
+          <L n="blacklist">
+            <T>155487<!--Buff: buff_Vampire_NonVampire_VampireResistanceCocktail--></T>
+          </L>
+        </U>
+      </V>
+      <V t="buff">
+        <U n="buff">
+          <L n="blacklist">
+            <T>152829<!--Buff: buff_Vampire_SpiritPowers_RestoreLifeSpirit--></T>
+          </L>
+        </U>
+      </V>
+    </L>
+  </L>
+  <E n="power_buck_type">VampirePowerBucks</E>
+  <T n="save_lock_tooltip">0x582ADC0<!--String: "¡No puedes hacer esto mientras un vampiro está en pleno allanamiento!"--></T>
+  <E n="sleep_category_tag">Interaction_Sleep</E>
+  <L n="tags">
+    <E>Situation_NightTimeVisit</E>
+    <E>Situation_VisitorNPCs</E>
+  </L>
+  <L n="vampire_discovered_buffs">
+    <U>
+      <T n="buff_type">151175<!--Buff: buff_GarlicBraid_GarlicSickness_Level1--></T>
+    </U>
+    <U>
+      <T n="buff_type">151178<!--Buff: buff_GarlicBraid_GarlicSickness_Level2--></T>
+    </U>
+    <U>
+      <T n="buff_type">151177<!--Buff: buff_GarlicBraid_GarlicSickness_Level3--></T>
+    </U>
+  </L>
+  <U n="vampire_job">
+    <U n="arrival_state">
+      <U n="interaction_of_interest">
+        <L n="affordances">
+          <T>153617<!--SuperInteraction: si_WelcomeWagon_GoTo_ArrivalSpawn_NightTime_Vampire--></T>
+        </L>
+      </U>
+      <L n="job_and_role_changes">
+        <U>
+          <T n="Situation Job">155259<!--SituationJob: job_VampireVisit_Initial--></T>
+          <T n="Role State">152612<!--RoleState: VampireNighttime_Arrival--></T>
+        </U>
+      </L>
+    </U>
+    <U n="bite_state">
+      <T n="bite_interaction">156809<!--SocialSuperInteraction: vampire_DrinkDeeply_NightTimeVisit--></T>
+      <U n="interaction_of_interest">
+        <L n="affordances">
+          <T>156809<!--SocialSuperInteraction: vampire_DrinkDeeply_NightTimeVisit--></T>
+        </L>
+      </U>
+      <L n="job_and_role_changes">
+        <U>
+          <T n="Situation Job">155259<!--SituationJob: job_VampireVisit_Initial--></T>
+          <T n="Role State">152614<!--RoleState: vampireNighttime_Bite--></T>
+        </U>
+      </L>
+    </U>
+    <U n="break_in_state">
+      <U n="interaction_of_interest">
+        <L n="affordances">
+          <T>156603<!--SuperInteraction: si_Route_to_Target_Cont--></T>
+        </L>
+      </U>
+      <L n="job_and_role_changes">
+        <U>
+          <T n="Situation Job">155259<!--SituationJob: job_VampireVisit_Initial--></T>
+          <T n="Role State">152613<!--RoleState: vampireNighttime_BreakIn--></T>
+        </U>
+      </L>
+    </U>
+    <U n="leave_startled_state">
+      <U n="interaction_of_interest">
+        <L n="affordances">
+          <T>156873<!--SuperInteraction: NightTimeVisit_Garlic_StartledLeave--></T>
+        </L>
+      </U>
+      <L n="job_and_role_changes">
+        <U>
+          <T n="Situation Job">155259<!--SituationJob: job_VampireVisit_Initial--></T>
+          <T n="Role State">156870<!--RoleState: vampireNighttime_StartledLeave--></T>
+        </U>
+      </L>
+    </U>
+    <T n="situation_job">155259<!--SituationJob: job_VampireVisit_Initial--></T>
+  </U>
+</I>

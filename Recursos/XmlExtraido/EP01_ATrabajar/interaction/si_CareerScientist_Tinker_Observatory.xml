@@ -1,0 +1,343 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<I c="SuperInteraction" i="interaction" m="interactions.base.super_interaction" n="si_CareerScientist_Tinker_Observatory" s="107834">
+  <L n="_constraints" />
+  <V t="resource_key" n="_icon">
+    <U n="resource_key">
+      <T p="InGame\UI\Icons\Headlines\Final\headline_gears.png" n="key">2f7d0004:00000000:2d62d7495b01c1a8</T>
+    </U>
+  </V>
+  <V t="enabled" n="_saveable" />
+  <T n="attention_cost">0.5</T>
+  <V n="basic_content" t="flexible_length">
+    <U n="flexible_length">
+      <L n="conditional_actions">
+        <V t="list_reference">
+          <T n="list_reference">40705<!--ExitConditionList: ExitConditionList_MotivesNearFail--></T>
+        </V>
+        <V t="literal">
+          <U n="literal">
+            <L n="conditions">
+              <V t="state_based">
+                <U n="state_based">
+                  <V n="state" t="on_trigger">
+                    <T n="on_trigger">15076<!--CommodityBasedObjectStateValue: Brokenness_Broken--></T>
+                  </V>
+                </U>
+              </V>
+            </L>
+            <E n="interaction_action">EXIT_CANCEL</E>
+          </U>
+        </V>
+        <V t="literal">
+          <U n="literal">
+            <L n="conditions">
+              <V t="stat_based">
+                <U n="stat_based">
+                  <T n="stat">8935<!--Commodity: Commodity_Death_Electrocution_Tracker--></T>
+                  <U n="threshold">
+                    <T n="value">100</T>
+                  </U>
+                </U>
+              </V>
+            </L>
+            <E n="interaction_action">EXIT_NATURALLY</E>
+          </U>
+        </V>
+        <V t="literal">
+          <U n="literal">
+            <L n="conditions">
+              <V t="time_based">
+                <U n="time_based">
+                  <T n="max_time">10</T>
+                  <T n="min_time">8</T>
+                </U>
+              </V>
+            </L>
+          </U>
+        </V>
+      </L>
+      <V n="content" t="looping_content">
+        <U n="looping_content">
+          <U n="animation_ref">
+            <T n="factory">37390<!--AnimationElement: Handiness_Upgrade_Repair_Observatory--></T>
+          </U>
+        </U>
+      </V>
+      <V t="enabled" n="periodic_stat_change">
+        <U n="enabled">
+          <U n="operation_actions">
+            <L n="actions">
+              <T>8932<!--LootActions: loot_Repair_Death_Electrocution_Periodic--></T>
+              <T>108520<!--LootActions: loot_Career_Scientist_Breakthrough_Progress_High_Periodic_Likely--></T>
+            </L>
+          </U>
+          <L n="operations">
+            <V t="statistic_change">
+              <U n="statistic_change">
+                <T n="advertise">False</T>
+                <T n="amount">5</T>
+                <T n="exclusive_to_owning_si">True</T>
+                <T n="stat">28786<!--Commodity: commodity_Trait_Genius_MentalStimulation--></T>
+                <L n="subject">
+                  <E>Actor</E>
+                </L>
+                <L n="tests" />
+                <V t="use_default" n="text" />
+              </U>
+            </V>
+            <V t="statistic_change">
+              <U n="statistic_change">
+                <T n="advertise">True</T>
+                <T n="amount">-5</T>
+                <T n="exclusive_to_owning_si">True</T>
+                <T n="stat">16616<!--Commodity: commodity_Motive_HygieneHands--></T>
+                <L n="subject">
+                  <E>Actor</E>
+                </L>
+                <L n="tests" />
+                <V t="use_default" n="text" />
+              </U>
+            </V>
+            <V t="statistic_change">
+              <U n="statistic_change">
+                <T n="advertise">False</T>
+                <T n="amount">-1</T>
+                <T n="stat">16633<!--Commodity: commodity_Object_Brokenness--></T>
+                <L n="tests">
+                  <L>
+                    <V t="state">
+                      <U n="state">
+                        <V t="always_pass" n="fallback_behavior" />
+                        <E n="operator">NOTEQUAL</E>
+                        <T n="value">15384<!--CommodityBasedObjectStateValue: Upgrade_Generic_LockBrokenness_Completed--></T>
+                      </U>
+                    </V>
+                  </L>
+                </L>
+              </U>
+            </V>
+          </L>
+        </U>
+      </V>
+    </U>
+  </V>
+  <V t="enabled" n="basic_reserve_object">
+    <U n="enabled">
+      <L n="subject_list">
+        <U>
+          <V t="all" n="reserve_type" />
+        </U>
+      </L>
+    </U>
+  </V>
+  <V t="disabled" n="content_score" />
+  <T n="display_name">0x46B9D74C<!--String: "Trastear"--></T>
+  <V t="testable" n="display_name_overrides">
+    <U n="testable">
+      <L n="overrides">
+        <U>
+          <V t="disabled" n="new_display_name" />
+          <V t="enabled" n="new_pie_menu_icon">
+            <V n="enabled" t="resource_key">
+              <U n="resource_key">
+                <T p="InGame\UI\Icons\Events\EventGoal_Inspired.png" n="key">2f7d0004:00000000:b2edb9db21e6c47f</T>
+              </U>
+            </V>
+          </V>
+          <L n="test">
+            <L>
+              <V t="career_test">
+                <U n="career_test">
+                  <V t="career_reference" n="test_type">
+                    <U n="career_reference">
+                      <V t="specific_career" n="career">
+                        <T n="specific_career">107255<!--Career: career_Adult_Active_Scientist--></T>
+                      </V>
+                    </U>
+                  </V>
+                </U>
+              </V>
+              <V t="test_set_reference">
+                <T n="test_set_reference">115714<!--TestSetInstance: testSet_EP01_ScientistBreakthroughValidAtCareerLevel--></T>
+              </V>
+              <V t="mood">
+                <U n="mood">
+                  <T n="disallow">True</T>
+                  <T n="mood">14639<!--Mood: Mood_Focused--></T>
+                </U>
+              </V>
+            </L>
+          </L>
+        </U>
+        <U>
+          <V t="disabled" n="new_display_name" />
+          <V t="enabled" n="new_pie_menu_icon">
+            <V n="enabled" t="resource_key">
+              <U n="resource_key">
+                <T p="InGame\UI\Icons\Events\EventGoal_Inspired.png" n="key">2f7d0004:00000000:b2edb9db21e6c47f</T>
+              </U>
+            </V>
+          </V>
+          <L n="test">
+            <L>
+              <V t="career_test">
+                <U n="career_test">
+                  <V t="career_reference" n="test_type">
+                    <U n="career_reference">
+                      <V t="specific_career" n="career">
+                        <T n="specific_career">107255<!--Career: career_Adult_Active_Scientist--></T>
+                      </V>
+                    </U>
+                  </V>
+                </U>
+              </V>
+              <V t="test_set_reference">
+                <T n="test_set_reference">115714<!--TestSetInstance: testSet_EP01_ScientistBreakthroughValidAtCareerLevel--></T>
+              </V>
+              <V t="mood">
+                <U n="mood">
+                  <T n="mood">14639<!--Mood: Mood_Focused--></T>
+                </U>
+              </V>
+            </L>
+          </L>
+        </U>
+      </L>
+    </U>
+  </V>
+  <U n="display_name_text_tokens">
+    <L n="tokens">
+      <V t="participant_type">
+        <U n="participant_type">
+          <V t="from_participant" n="objects">
+            <U n="from_participant">
+              <E n="participant">Actor</E>
+            </U>
+          </V>
+        </U>
+      </V>
+      <V t="participant_type">
+        <U n="participant_type">
+          <V t="from_participant" n="objects">
+            <U n="from_participant">
+              <E n="participant">Object</E>
+            </U>
+          </V>
+        </U>
+      </V>
+    </L>
+  </U>
+  <L n="interaction_category_tags">
+    <E>Interaction_Super</E>
+    <E>Interaction_All</E>
+  </L>
+  <L n="mood_list">
+    <T>14639<!--Mood: Mood_Focused--></T>
+  </L>
+  <V t="test_based" n="outcome">
+    <U n="test_based">
+      <L n="fallback_outcomes">
+        <U>
+          <U n="outcome">
+            <L n="loot_list">
+              <T>8936<!--LootActions: loot_Death_Electrocution_Outcome--></T>
+              <T>113517<!--LootActions: Loot_Tinker_Salvage_FixersLuck--></T>
+            </L>
+          </U>
+        </U>
+      </L>
+      <L n="tested_outcomes">
+        <U>
+          <L n="potential_outcomes">
+            <U>
+              <U n="outcome">
+                <V t="disabled" n="animation_ref" />
+                <L n="loot_list">
+                  <T>8936<!--LootActions: loot_Death_Electrocution_Outcome--></T>
+                  <T>74015<!--LootActions: Loot_Fire_TestHandiness--></T>
+                </L>
+              </U>
+            </U>
+          </L>
+          <L n="tests">
+            <L>
+              <V t="statistic">
+                <U n="statistic">
+                  <T n="must_have_stat">False</T>
+                  <T n="stat">8935<!--Commodity: Commodity_Death_Electrocution_Tracker--></T>
+                  <V n="threshold" t="value_threshold">
+                    <U n="value_threshold">
+                      <E n="comparison">GREATER_OR_EQUAL</E>
+                      <T n="value">100</T>
+                    </U>
+                  </V>
+                  <E n="who">Actor</E>
+                </U>
+              </V>
+            </L>
+          </L>
+        </U>
+      </L>
+    </U>
+  </V>
+  <V t="enabled" n="pie_menu_icon">
+    <V t="resource_key" n="enabled">
+      <U n="resource_key">
+        <T p="InGame\UI\Icons\Headlines\Final\headline_gears.png" n="key">2f7d0004:00000000:2d62d7495b01c1a8</T>
+      </U>
+    </V>
+  </V>
+  <T n="pie_menu_priority">0</T>
+  <U n="progress_bar_enabled">
+    <T n="bar_enabled">True</T>
+    <V t="specify_blacklist_statistics" n="blacklist_statistics">
+      <L n="specify_blacklist_statistics">
+        <T>8935<!--Commodity: Commodity_Death_Electrocution_Tracker--></T>
+      </L>
+    </V>
+    <V t="disabled" n="force_listen_statistic" />
+    <U n="interaction_exceptions">
+      <T n="is_music_interaction">False</T>
+    </U>
+    <V t="disabled" n="override_min_max_values" />
+    <T n="remember_progress">False</T>
+  </U>
+  <E n="scoring_priority">NORMAL</E>
+  <T n="subaction_selection_weight">1</T>
+  <E n="target_type">OBJECT</E>
+  <L n="test_globals">
+    <V t="sim_info">
+      <U n="sim_info">
+        <V t="specified" n="ages" />
+        <V t="specified" n="species">
+          <U n="specified">
+            <L n="species">
+              <E />
+            </L>
+          </U>
+        </V>
+        <E n="who">Actor</E>
+      </U>
+    </V>
+    <V t="career_test">
+      <U n="career_test">
+        <V t="career_reference" n="test_type">
+          <U n="career_reference">
+            <V t="specific_career" n="career">
+              <T n="specific_career">107255<!--Career: career_Adult_Active_Scientist--></T>
+            </V>
+            <V t="enabled" n="user_level">
+              <U n="enabled">
+                <T n="lower_bound">3</T>
+              </U>
+            </V>
+          </U>
+        </V>
+      </U>
+    </V>
+    <V t="test_set_reference">
+      <T n="test_set_reference">77630<!--TestSetInstance: testSet_StateNotBroken--></T>
+    </V>
+  </L>
+  <T n="time_overhead">30</T>
+</I>
